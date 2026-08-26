@@ -1,0 +1,519 @@
+{
+  "id": "the-conditionality-of-life",
+  "title": "The Conditionality of Life",
+  "parts": {
+    "texto": {
+      "label": "Text",
+      "files": [
+        "texto__0.json",
+        "texto__1.json"
+      ],
+      "toc": [
+        {
+          "id": 2,
+          "rend": "subhead",
+          "text": "Nina van Gorkom"
+        },
+        {
+          "id": 32,
+          "rend": "subhead",
+          "text": "Preface 1"
+        },
+        {
+          "id": 34,
+          "rend": "chapter",
+          "text": "2 The Conditionality of Life"
+        },
+        {
+          "id": 36,
+          "rend": "subhead",
+          "text": "Preface 3"
+        },
+        {
+          "id": 38,
+          "rend": "chapter",
+          "text": "4 The Conditionality of Life"
+        },
+        {
+          "id": 41,
+          "rend": "subhead",
+          "text": "Chapter 1: Introduction 5"
+        },
+        {
+          "id": 43,
+          "rend": "chapter",
+          "text": "6 The Conditionality of Life"
+        },
+        {
+          "id": 45,
+          "rend": "subhead",
+          "text": "Chapter 1: Introduction 7"
+        },
+        {
+          "id": 51,
+          "rend": "chapter",
+          "text": "8 The Conditionality of Life"
+        },
+        {
+          "id": 53,
+          "rend": "subhead",
+          "text": "Chapter 1: Introduction 9"
+        },
+        {
+          "id": 55,
+          "rend": "subhead",
+          "text": "Chapter 2: Root-Condition 11"
+        },
+        {
+          "id": 57,
+          "rend": "chapter",
+          "text": "12 The Conditionality of Life"
+        },
+        {
+          "id": 59,
+          "rend": "subhead",
+          "text": "Chapter 2: Root-Condition 13"
+        },
+        {
+          "id": 61,
+          "rend": "chapter",
+          "text": "14 The Conditionality of Life"
+        },
+        {
+          "id": 68,
+          "rend": "subhead",
+          "text": "Chapter 2: Root-Condition 15"
+        },
+        {
+          "id": 71,
+          "rend": "chapter",
+          "text": "16 The Conditionality of Life"
+        },
+        {
+          "id": 79,
+          "rend": "subhead",
+          "text": "Chapter 2: Root-Condition 17"
+        },
+        {
+          "id": 81,
+          "rend": "subhead",
+          "text": "Chapter 3: Object-Condition 19"
+        },
+        {
+          "id": 83,
+          "rend": "chapter",
+          "text": "20 The Conditionality of Life"
+        },
+        {
+          "id": 85,
+          "rend": "subhead",
+          "text": "Chapter 3: Object-Condition 21"
+        },
+        {
+          "id": 88,
+          "rend": "chapter",
+          "text": "22 The Conditionality of Life"
+        },
+        {
+          "id": 90,
+          "rend": "subhead",
+          "text": "Chapter 3: Object-Condition 23"
+        },
+        {
+          "id": 92,
+          "rend": "chapter",
+          "text": "24 The Conditionality of Life"
+        },
+        {
+          "id": 94,
+          "rend": "subhead",
+          "text": "Chapter 3: Object-Condition 25"
+        },
+        {
+          "id": 96,
+          "rend": "subhead",
+          "text": "Chapter 4: Predominance-Condition 27"
+        },
+        {
+          "id": 98,
+          "rend": "chapter",
+          "text": "28 The Conditionality of Life"
+        },
+        {
+          "id": 100,
+          "rend": "subhead",
+          "text": "Chapter 4: Predominance-Condition 29"
+        },
+        {
+          "id": 102,
+          "rend": "chapter",
+          "text": "30 The Conditionality of Life"
+        },
+        {
+          "id": 104,
+          "rend": "subhead",
+          "text": "Chapter 4: Predominance-Condition 31"
+        },
+        {
+          "id": 107,
+          "rend": "chapter",
+          "text": "32 The Conditionality of Life"
+        },
+        {
+          "id": 110,
+          "rend": "subhead",
+          "text": "Chapter 4: Predominance-Condition 33"
+        },
+        {
+          "id": 114,
+          "rend": "chapter",
+          "text": "36 The Conditionality of Life"
+        },
+        {
+          "id": 118,
+          "rend": "chapter",
+          "text": "38 The Conditionality of Life"
+        },
+        {
+          "id": 125,
+          "rend": "chapter",
+          "text": "40 The Conditionality of Life"
+        },
+        {
+          "id": 129,
+          "rend": "chapter",
+          "text": "42 The Conditionality of Life"
+        },
+        {
+          "id": 134,
+          "rend": "chapter",
+          "text": "44 The Conditionality of Life"
+        },
+        {
+          "id": 136,
+          "rend": "subhead",
+          "text": "Chapter 7: Dependence-Condition 45"
+        },
+        {
+          "id": 138,
+          "rend": "chapter",
+          "text": "46 The Conditionality of Life"
+        },
+        {
+          "id": 140,
+          "rend": "subhead",
+          "text": "Chapter 7: Dependence-Condition 47"
+        },
+        {
+          "id": 143,
+          "rend": "subhead",
+          "text": "Chapter 8: Decisive Support-Condition (Part I) 49"
+        },
+        {
+          "id": 145,
+          "rend": "chapter",
+          "text": "50 The Conditionality of Life"
+        },
+        {
+          "id": 148,
+          "rend": "subhead",
+          "text": "Chapter 8: Decisive Support-Condition (Part I) 51"
+        },
+        {
+          "id": 151,
+          "rend": "chapter",
+          "text": "52 The Conditionality of Life"
+        },
+        {
+          "id": 157,
+          "rend": "subhead",
+          "text": "Chapter 8: Decisive Support-Condition (Part I) 53"
+        },
+        {
+          "id": 162,
+          "rend": "subhead",
+          "text": "Chapter 9: Decisive Support-Condition (Part II) 55"
+        },
+        {
+          "id": 164,
+          "rend": "chapter",
+          "text": "56 The Conditionality of Life"
+        },
+        {
+          "id": 169,
+          "rend": "subhead",
+          "text": "Chapter 9: Decisive Support-Condition (Part II) 57"
+        },
+        {
+          "id": 171,
+          "rend": "chapter",
+          "text": "58 The Conditionality of Life"
+        },
+        {
+          "id": 173,
+          "rend": "subhead",
+          "text": "Chapter 9: Decisive Support-Condition (Part II) 59"
+        },
+        {
+          "id": 175,
+          "rend": "chapter",
+          "text": "60 The Conditionality of Life"
+        },
+        {
+          "id": 177,
+          "rend": "subhead",
+          "text": "Chapter 9: Decisive Support-Condition (Part II) 61"
+        },
+        {
+          "id": 179,
+          "rend": "subhead",
+          "text": "Chapter 10: Prenascence, Postnascence-Condition 63"
+        },
+        {
+          "id": 182,
+          "rend": "chapter",
+          "text": "64 The Conditionality of Life"
+        },
+        {
+          "id": 184,
+          "rend": "subhead",
+          "text": "Chapter 10: Prenascence, Postnascence-Condition 65"
+        },
+        {
+          "id": 186,
+          "rend": "chapter",
+          "text": "66 The Conditionality of Life"
+        },
+        {
+          "id": 188,
+          "rend": "subhead",
+          "text": "Chapter 10: Prenascence, Postnascence-Condition 67"
+        },
+        {
+          "id": 190,
+          "rend": "chapter",
+          "text": "68 The Conditionality of Life"
+        },
+        {
+          "id": 192,
+          "rend": "subhead",
+          "text": "Chapter 11: Repetition-Condition 69"
+        },
+        {
+          "id": 194,
+          "rend": "chapter",
+          "text": "70 The Conditionality of Life"
+        },
+        {
+          "id": 197,
+          "rend": "subhead",
+          "text": "Chapter 11: Repetition-Condition 71"
+        },
+        {
+          "id": 199,
+          "rend": "chapter",
+          "text": "72 The Conditionality of Life"
+        },
+        {
+          "id": 201,
+          "rend": "subhead",
+          "text": "Chapter 11: Repetition-Condition 73"
+        },
+        {
+          "id": 204,
+          "rend": "chapter",
+          "text": "74 The Conditionality of Life"
+        },
+        {
+          "id": 208,
+          "rend": "chapter",
+          "text": "76 The Conditionality of Life"
+        },
+        {
+          "id": 213,
+          "rend": "chapter",
+          "text": "78 The Conditionality of Life"
+        },
+        {
+          "id": 217,
+          "rend": "chapter",
+          "text": "80 The Conditionality of Life"
+        },
+        {
+          "id": 219,
+          "rend": "subhead",
+          "text": "Chapter 13: Nutriment-Condition 81"
+        },
+        {
+          "id": 221,
+          "rend": "chapter",
+          "text": "82 The Conditionality of Life"
+        },
+        {
+          "id": 223,
+          "rend": "subhead",
+          "text": "Chapter 13: Nutriment-Condition 83"
+        },
+        {
+          "id": 225,
+          "rend": "chapter",
+          "text": "84 The Conditionality of Life"
+        },
+        {
+          "id": 227,
+          "rend": "subhead",
+          "text": "Chapter 13: Nutriment-Condition 85"
+        },
+        {
+          "id": 230,
+          "rend": "subhead",
+          "text": "Chapter 14: Faculty-Condition 87"
+        },
+        {
+          "id": 232,
+          "rend": "chapter",
+          "text": "88 The Conditionality of Life"
+        },
+        {
+          "id": 234,
+          "rend": "subhead",
+          "text": "Chapter 14: Faculty-Condition 89"
+        },
+        {
+          "id": 237,
+          "rend": "chapter",
+          "text": "90 The Conditionality of Life"
+        },
+        {
+          "id": 239,
+          "rend": "subhead",
+          "text": "Chapter 14: Faculty-Condition 91"
+        },
+        {
+          "id": 241,
+          "rend": "chapter",
+          "text": "92 The Conditionality of Life"
+        },
+        {
+          "id": 243,
+          "rend": "subhead",
+          "text": "Chapter 14: Faculty-Condition 93"
+        },
+        {
+          "id": 245,
+          "rend": "chapter",
+          "text": "94 The Conditionality of Life"
+        },
+        {
+          "id": 248,
+          "rend": "subhead",
+          "text": "Chapter 15: Jhāna-Condition 95"
+        },
+        {
+          "id": 250,
+          "rend": "chapter",
+          "text": "96 The Conditionality of Life"
+        },
+        {
+          "id": 254,
+          "rend": "subhead",
+          "text": "Chapter 15: Jhāna-Condition 97"
+        },
+        {
+          "id": 256,
+          "rend": "chapter",
+          "text": "98 The Conditionality of Life"
+        },
+        {
+          "id": 259,
+          "rend": "subhead",
+          "text": "Chapter 15: Jhāna-Condition 99"
+        },
+        {
+          "id": 263,
+          "rend": "subhead",
+          "text": "Chapter 16: Path-Condition 101"
+        },
+        {
+          "id": 267,
+          "rend": "subhead",
+          "text": "Chapter 16: Path-Condition 103"
+        },
+        {
+          "id": 271,
+          "rend": "subhead",
+          "text": "Chapter 16: Path-Condition 105"
+        },
+        {
+          "id": 303,
+          "rend": "subhead",
+          "text": "Selā answered:"
+        },
+        {
+          "id": 307,
+          "rend": "chapter",
+          "text": "Appendix 1 121"
+        },
+        {
+          "id": 308,
+          "rend": "chapter",
+          "text": "Appendix 1 Sense-door process and mind-door process of cittas"
+        },
+        {
+          "id": 312,
+          "rend": "chapter",
+          "text": "Appendix 2 123"
+        },
+        {
+          "id": 313,
+          "rend": "chapter",
+          "text": "Appendix 2 Appendix to Ch 3, Conascent-Predominance-Condition."
+        },
+        {
+          "id": 317,
+          "rend": "chapter",
+          "text": "Appendix 3 125"
+        },
+        {
+          "id": 318,
+          "rend": "chapter",
+          "text": "Appendix 3 Appendix to Ch 10, Repetition-Condition."
+        },
+        {
+          "id": 320,
+          "rend": "subhead",
+          "text": "Glossary 127"
+        },
+        {
+          "id": 321,
+          "rend": "chapter",
+          "text": "Glossary"
+        },
+        {
+          "id": 329,
+          "rend": "subhead",
+          "text": "Glossary 129"
+        },
+        {
+          "id": 333,
+          "rend": "subhead",
+          "text": "Glossary 131"
+        },
+        {
+          "id": 337,
+          "rend": "subhead",
+          "text": "Books 133"
+        },
+        {
+          "id": 338,
+          "rend": "subhead",
+          "text": "Books"
+        }
+      ],
+      "count": 339,
+      "chunkStarts": [
+        1
+      ]
+    }
+  }
+}

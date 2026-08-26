@@ -1,0 +1,123 @@
+{
+  "id": "path-without-ownership",
+  "title": "Path Without Ownership",
+  "parts": {
+    "texto": {
+      "label": "Text",
+      "files": [
+        "texto.json"
+      ],
+      "toc": [
+        {
+          "id": 6,
+          "rend": "chapter",
+          "text": "Introduction"
+        },
+        {
+          "id": 18,
+          "rend": "chapter",
+          "text": "Buddhist Life"
+        },
+        {
+          "id": 32,
+          "rend": "chapter",
+          "text": "In Sri Lanka"
+        },
+        {
+          "id": 59,
+          "rend": "chapter",
+          "text": "In Varanasi and Bodhgaya (2024)"
+        },
+        {
+          "id": 120,
+          "rend": "chapter",
+          "text": "In Bangkok (June and July, 2024)"
+        },
+        {
+          "id": 161,
+          "rend": "chapter",
+          "text": "Cambodia (August 2024)"
+        },
+        {
+          "id": 202,
+          "rend": "chapter",
+          "text": "Nepal (2024)"
+        },
+        {
+          "id": 267,
+          "rend": "chapter",
+          "text": "Dukkha"
+        },
+        {
+          "id": 283,
+          "rend": "chapter",
+          "text": "Overcoming wrong views"
+        },
+        {
+          "id": 309,
+          "rend": "chapter",
+          "text": "Clinging to rules and rituals"
+        },
+        {
+          "id": 332,
+          "rend": "chapter",
+          "text": "Accumulations"
+        },
+        {
+          "id": 349,
+          "rend": "chapter",
+          "text": "Bhavana in Daily life"
+        },
+        {
+          "id": 429,
+          "rend": "chapter",
+          "text": "Vañcaka (Cheating) Dhammas"
+        },
+        {
+          "id": 435,
+          "rend": "chapter",
+          "text": "Viññanam anidassanam"
+        },
+        {
+          "id": 460,
+          "rend": "chapter",
+          "text": "Heart base"
+        },
+        {
+          "id": 480,
+          "rend": "chapter",
+          "text": "Abhidhamma"
+        },
+        {
+          "id": 518,
+          "rend": "chapter",
+          "text": "Momentariness"
+        },
+        {
+          "id": 550,
+          "rend": "chapter",
+          "text": "Anatta and Effort"
+        },
+        {
+          "id": 583,
+          "rend": "chapter",
+          "text": "Kamma"
+        },
+        {
+          "id": 623,
+          "rend": "chapter",
+          "text": "Glossary"
+        },
+        {
+          "id": 629,
+          "rend": "chapter",
+          "text": "Final"
+        }
+      ],
+      "count": 635,
+      "chunkStarts": [
+        1
+      ]
+    }
+  }
+}

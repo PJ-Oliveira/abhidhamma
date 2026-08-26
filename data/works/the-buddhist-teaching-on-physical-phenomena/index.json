@@ -1,0 +1,348 @@
+{
+  "id": "the-buddhist-teaching-on-physical-phenomena",
+  "title": "The Buddhist Teaching on Physical Phenomena",
+  "parts": {
+    "texto": {
+      "label": "Text",
+      "files": [
+        "texto.json"
+      ],
+      "toc": [
+        {
+          "id": 2,
+          "rend": "subhead",
+          "text": "Nina van Gorkom"
+        },
+        {
+          "id": 20,
+          "rend": "chapter",
+          "text": "Preface"
+        },
+        {
+          "id": 35,
+          "rend": "chapter",
+          "text": "Introduction"
+        },
+        {
+          "id": 44,
+          "rend": "subhead",
+          "text": "Chapter 1"
+        },
+        {
+          "id": 51,
+          "rend": "chapter",
+          "text": "2 CHAPTER 1. THE FOUR GREAT ELEMENTS"
+        },
+        {
+          "id": 57,
+          "rend": "chapter",
+          "text": "4 CHAPTER 1. THE FOUR GREAT ELEMENTS"
+        },
+        {
+          "id": 71,
+          "rend": "chapter",
+          "text": "6 CHAPTER 1. THE FOUR GREAT ELEMENTS"
+        },
+        {
+          "id": 80,
+          "rend": "chapter",
+          "text": "8 CHAPTER 1. THE FOUR GREAT ELEMENTS"
+        },
+        {
+          "id": 87,
+          "rend": "chapter",
+          "text": "10 CHAPTER 1. THE FOUR GREAT ELEMENTS"
+        },
+        {
+          "id": 96,
+          "rend": "chapter",
+          "text": "12 CHAPTER 1. THE FOUR GREAT ELEMENTS"
+        },
+        {
+          "id": 97,
+          "rend": "subhead",
+          "text": "Chapter 2"
+        },
+        {
+          "id": 104,
+          "rend": "chapter",
+          "text": "14 CHAPTER 2. THE EIGHT INSEPARABLES"
+        },
+        {
+          "id": 109,
+          "rend": "chapter",
+          "text": "16 CHAPTER 2. THE EIGHT INSEPARABLES"
+        },
+        {
+          "id": 116,
+          "rend": "chapter",
+          "text": "18 CHAPTER 2. THE EIGHT INSEPARABLES"
+        },
+        {
+          "id": 124,
+          "rend": "chapter",
+          "text": "20 CHAPTER 2. THE EIGHT INSEPARABLES"
+        },
+        {
+          "id": 130,
+          "rend": "subhead",
+          "text": "Chapter 3"
+        },
+        {
+          "id": 132,
+          "rend": "chapter",
+          "text": "22 CHAPTER 3. THE SENSE-ORGANS"
+        },
+        {
+          "id": 136,
+          "rend": "chapter",
+          "text": "24 CHAPTER 3. THE SENSE-ORGANS"
+        },
+        {
+          "id": 148,
+          "rend": "chapter",
+          "text": "26 CHAPTER 3. THE SENSE-ORGANS"
+        },
+        {
+          "id": 153,
+          "rend": "chapter",
+          "text": "28 CHAPTER 3. THE SENSE-ORGANS"
+        },
+        {
+          "id": 157,
+          "rend": "chapter",
+          "text": "30 CHAPTER 3. THE SENSE-ORGANS"
+        },
+        {
+          "id": 159,
+          "rend": "subhead",
+          "text": "Questions 1. Can eyesense experience something?"
+        },
+        {
+          "id": 164,
+          "rend": "subhead",
+          "text": "Chapter 4"
+        },
+        {
+          "id": 172,
+          "rend": "chapter",
+          "text": "32 CHAPTER 4. SENSE OBJECTS"
+        },
+        {
+          "id": 181,
+          "rend": "chapter",
+          "text": "34 CHAPTER 4. SENSE OBJECTS"
+        },
+        {
+          "id": 189,
+          "rend": "chapter",
+          "text": "36 CHAPTER 4. SENSE OBJECTS"
+        },
+        {
+          "id": 198,
+          "rend": "chapter",
+          "text": "38 CHAPTER 4. SENSE OBJECTS"
+        },
+        {
+          "id": 200,
+          "rend": "subhead",
+          "text": "Questions 1. Which factors can produce sound?"
+        },
+        {
+          "id": 204,
+          "rend": "subhead",
+          "text": "5. Through which doorways can gross rūpas be known?"
+        },
+        {
+          "id": 205,
+          "rend": "subhead",
+          "text": "Chapter 5"
+        },
+        {
+          "id": 207,
+          "rend": "chapter",
+          "text": "40 CHAPTER 5. SUBTLE RŪPAS AND KAMMA"
+        },
+        {
+          "id": 212,
+          "rend": "chapter",
+          "text": "42 CHAPTER 5. SUBTLE RŪPAS AND KAMMA"
+        },
+        {
+          "id": 219,
+          "rend": "chapter",
+          "text": "44 CHAPTER 5. SUBTLE RŪPAS AND KAMMA"
+        },
+        {
+          "id": 234,
+          "rend": "chapter",
+          "text": "46 CHAPTER 5. SUBTLE RŪPAS AND KAMMA"
+        },
+        {
+          "id": 235,
+          "rend": "subhead",
+          "text": "Chapter 6"
+        },
+        {
+          "id": 238,
+          "rend": "chapter",
+          "text": "48 CHAPTER 6. INTIMATION"
+        },
+        {
+          "id": 244,
+          "rend": "chapter",
+          "text": "50 CHAPTER 6. INTIMATION"
+        },
+        {
+          "id": 249,
+          "rend": "chapter",
+          "text": "52 CHAPTER 6. INTIMATION"
+        },
+        {
+          "id": 256,
+          "rend": "chapter",
+          "text": "54 CHAPTER 6. INTIMATION"
+        },
+        {
+          "id": 262,
+          "rend": "subhead",
+          "text": "Chapter 7"
+        },
+        {
+          "id": 264,
+          "rend": "chapter",
+          "text": "56 CHAPTER 7. RŪPAS FROM DIFFERENT FACTORS"
+        },
+        {
+          "id": 274,
+          "rend": "chapter",
+          "text": "58 CHAPTER 7. RŪPAS FROM DIFFERENT FACTORS"
+        },
+        {
+          "id": 281,
+          "rend": "chapter",
+          "text": "60 CHAPTER 7. RŪPAS FROM DIFFERENT FACTORS"
+        },
+        {
+          "id": 286,
+          "rend": "subhead",
+          "text": "3. Can these three qualities also be produced by kamma?"
+        },
+        {
+          "id": 288,
+          "rend": "chapter",
+          "text": "5 Space in the ear or the nose is space that is not conditioned by one of the four"
+        },
+        {
+          "id": 290,
+          "rend": "subhead",
+          "text": "Chapter 8"
+        },
+        {
+          "id": 292,
+          "rend": "chapter",
+          "text": "62 CHAPTER 8. CHARACTERISTICS OF ALL RŪPAS"
+        },
+        {
+          "id": 296,
+          "rend": "chapter",
+          "text": "64 CHAPTER 8. CHARACTERISTICS OF ALL RŪPAS"
+        },
+        {
+          "id": 307,
+          "rend": "chapter",
+          "text": "66 CHAPTER 8. CHARACTERISTICS OF ALL RŪPAS"
+        },
+        {
+          "id": 339,
+          "rend": "chapter",
+          "text": "68 CHAPTER 8. CHARACTERISTICS OF ALL RŪPAS"
+        },
+        {
+          "id": 343,
+          "rend": "chapter",
+          "text": "3 For details see Visuddhimagga XIV, 73, 77."
+        },
+        {
+          "id": 344,
+          "rend": "chapter",
+          "text": "70 CHAPTER 8. CHARACTERISTICS OF ALL RŪPAS"
+        },
+        {
+          "id": 345,
+          "rend": "subhead",
+          "text": "Chapter 9"
+        },
+        {
+          "id": 347,
+          "rend": "chapter",
+          "text": "72 CHAPTER 9. GROUPS OF RŪPAS"
+        },
+        {
+          "id": 353,
+          "rend": "chapter",
+          "text": "74 CHAPTER 9. GROUPS OF RŪPAS"
+        },
+        {
+          "id": 360,
+          "rend": "chapter",
+          "text": "76 CHAPTER 9. GROUPS OF RŪPAS"
+        },
+        {
+          "id": 364,
+          "rend": "subhead",
+          "text": "3. Can rebirth-consciousness produce rūpa?"
+        },
+        {
+          "id": 365,
+          "rend": "subhead",
+          "text": "4. Can seeing-consciousness produce rūpa?"
+        },
+        {
+          "id": 370,
+          "rend": "subhead",
+          "text": "Chapter 10"
+        },
+        {
+          "id": 372,
+          "rend": "chapter",
+          "text": "78 CHAPTER 10. CONCLUSION"
+        },
+        {
+          "id": 376,
+          "rend": "chapter",
+          "text": "80 CHAPTER 10. CONCLUSION"
+        },
+        {
+          "id": 380,
+          "rend": "chapter",
+          "text": "Glossary"
+        },
+        {
+          "id": 394,
+          "rend": "chapter",
+          "text": "82 GLOSSARY"
+        },
+        {
+          "id": 431,
+          "rend": "chapter",
+          "text": "84 GLOSSARY"
+        },
+        {
+          "id": 467,
+          "rend": "chapter",
+          "text": "86 GLOSSARY"
+        },
+        {
+          "id": 496,
+          "rend": "chapter",
+          "text": "88 GLOSSARY"
+        }
+      ],
+      "count": 501,
+      "chunkStarts": [
+        1
+      ]
+    }
+  }
+}

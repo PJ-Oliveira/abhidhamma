@@ -1,0 +1,1461 @@
+{
+  "root": {
+    "id": "paramattha",
+    "label": "Paramattha Dhamma",
+    "labelEn": "Ultimate Realities",
+    "labelPt": "Realidades Últimas",
+    "children": [
+      {
+        "id": "citta",
+        "label": "Citta",
+        "labelEn": "Consciousness",
+        "labelPt": "Consciência",
+        "desc": "89 types (121 with jhāna distinctions)",
+        "descPt": "89 tipos (121 com distinções de jhāna)",
+        "children": [
+          {
+            "id": "kamavacara",
+            "label": "Kāmāvacara Citta",
+            "labelEn": "Sense-Sphere Consciousness",
+            "labelPt": "Consciência da Esfera Sensorial",
+            "count": 54,
+            "children": [
+              {
+                "id": "akusala",
+                "label": "Akusala Citta",
+                "labelEn": "Unwholesome Consciousness",
+                "labelPt": "Consciência Insalubre",
+                "count": 12,
+                "children": [
+                  {
+                    "id": "lobha-mula",
+                    "label": "Lobha-mūla-citta",
+                    "labelEn": "Consciousness rooted in greed",
+                    "labelPt": "Consciência enraizada na cobiça",
+                    "children": [
+                      {
+                        "id": "lobha-1",
+                        "label": "Somanassasahagataṃ diṭṭhigatasampayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, associated with wrong view, unprompted",
+                        "labelPt": "Acompanhada de alegria, associada à visão incorreta, não-instigada"
+                      },
+                      {
+                        "id": "lobha-2",
+                        "label": "Somanassasahagataṃ diṭṭhigatasampayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, associated with wrong view, prompted",
+                        "labelPt": "Acompanhada de alegria, associada à visão incorreta, instigada"
+                      },
+                      {
+                        "id": "lobha-3",
+                        "label": "Somanassasahagataṃ diṭṭhigatavippayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, dissociated from wrong view, unprompted",
+                        "labelPt": "Acompanhada de alegria, dissociada da visão incorreta, não-instigada"
+                      },
+                      {
+                        "id": "lobha-4",
+                        "label": "Somanassasahagataṃ diṭṭhigatavippayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, dissociated from wrong view, prompted",
+                        "labelPt": "Acompanhada de alegria, dissociada da visão incorreta, instigada"
+                      },
+                      {
+                        "id": "lobha-5",
+                        "label": "Upekkhāsahagataṃ diṭṭhigatasampayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, associated with wrong view, unprompted",
+                        "labelPt": "Acompanhada de equanimidade, associada à visão incorreta, não-instigada"
+                      },
+                      {
+                        "id": "lobha-6",
+                        "label": "Upekkhāsahagataṃ diṭṭhigatasampayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, associated with wrong view, prompted",
+                        "labelPt": "Acompanhada de equanimidade, associada à visão incorreta, instigada"
+                      },
+                      {
+                        "id": "lobha-7",
+                        "label": "Upekkhāsahagataṃ diṭṭhigatavippayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, dissociated from wrong view, unprompted",
+                        "labelPt": "Acompanhada de equanimidade, dissociada da visão incorreta, não-instigada"
+                      },
+                      {
+                        "id": "lobha-8",
+                        "label": "Upekkhāsahagataṃ diṭṭhigatavippayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, dissociated from wrong view, prompted",
+                        "labelPt": "Acompanhada de equanimidade, dissociada da visão incorreta, instigada"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "dosa-mula",
+                    "label": "Dosa-mūla-citta",
+                    "labelEn": "Consciousness rooted in hatred",
+                    "labelPt": "Consciência enraizada no ódio",
+                    "children": [
+                      {
+                        "id": "dosa-1",
+                        "label": "Domanassasahagataṃ paṭighasampayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by displeasure, associated with aversion, unprompted",
+                        "labelPt": "Acompanhada de desprazer, associada à aversão, não-instigada"
+                      },
+                      {
+                        "id": "dosa-2",
+                        "label": "Domanassasahagataṃ paṭighasampayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by displeasure, associated with aversion, prompted",
+                        "labelPt": "Acompanhada de desprazer, associada à aversão, instigada"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "moha-mula",
+                    "label": "Moha-mūla-citta",
+                    "labelEn": "Consciousness rooted in delusion",
+                    "labelPt": "Consciência enraizada na ilusão",
+                    "children": [
+                      {
+                        "id": "moha-1",
+                        "label": "Upekkhāsahagataṃ vicikicchāsampayuttaṃ ekaṃ",
+                        "labelEn": "Accompanied by equanimity, associated with doubt",
+                        "labelPt": "Acompanhada de equanimidade, associada à dúvida"
+                      },
+                      {
+                        "id": "moha-2",
+                        "label": "Upekkhāsahagataṃ uddhaccasampayuttaṃ ekaṃ",
+                        "labelEn": "Accompanied by equanimity, associated with restlessness",
+                        "labelPt": "Acompanhada de equanimidade, associada à inquietação"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "ahetuka",
+                "label": "Ahetuka Citta",
+                "labelEn": "Rootless Consciousness",
+                "labelPt": "Consciência sem Raiz",
+                "count": 18,
+                "children": [
+                  {
+                    "id": "akusala-vipaka",
+                    "label": "Akusala-vipāka",
+                    "labelEn": "Unwholesome-resultant",
+                    "labelPt": "Resultante-insalubre",
+                    "children": [
+                      {
+                        "id": "akusala-vipaka-1",
+                        "label": "Cakkhuviññāṇaṃ",
+                        "labelEn": "Eye-consciousness",
+                        "labelPt": "Consciência do olho"
+                      },
+                      {
+                        "id": "akusala-vipaka-2",
+                        "label": "Sotaviññāṇaṃ",
+                        "labelEn": "Ear-consciousness",
+                        "labelPt": "Consciência da orelha"
+                      },
+                      {
+                        "id": "akusala-vipaka-3",
+                        "label": "Ghānaviññāṇaṃ",
+                        "labelEn": "Nose-consciousness",
+                        "labelPt": "Consciência do nariz"
+                      },
+                      {
+                        "id": "akusala-vipaka-4",
+                        "label": "Jivhāviññāṇaṃ",
+                        "labelEn": "Tongue-consciousness",
+                        "labelPt": "Consciência da língua"
+                      },
+                      {
+                        "id": "akusala-vipaka-5",
+                        "label": "Kāyaviññāṇaṃ",
+                        "labelEn": "Body-consciousness",
+                        "labelPt": "Consciência do corpo"
+                      },
+                      {
+                        "id": "akusala-vipaka-6",
+                        "label": "Sampaṭicchanacittaṃ",
+                        "labelEn": "Receiving consciousness",
+                        "labelPt": "Consciência receptora"
+                      },
+                      {
+                        "id": "akusala-vipaka-7",
+                        "label": "Santīraṇacittaṃ",
+                        "labelEn": "Investigating consciousness",
+                        "labelPt": "Consciência investigadora"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "kusala-vipaka-ahetuka",
+                    "label": "Kusala-vipāka ahetuka",
+                    "labelEn": "Wholesome-resultant rootless",
+                    "labelPt": "Resultante-salubre sem raiz",
+                    "children": [
+                      {
+                        "id": "kusala-vipaka-ahetuka-1",
+                        "label": "Cakkhuviññāṇaṃ",
+                        "labelEn": "Eye-consciousness",
+                        "labelPt": "Consciência do olho"
+                      },
+                      {
+                        "id": "kusala-vipaka-ahetuka-2",
+                        "label": "Sotaviññāṇaṃ",
+                        "labelEn": "Ear-consciousness",
+                        "labelPt": "Consciência da orelha"
+                      },
+                      {
+                        "id": "kusala-vipaka-ahetuka-3",
+                        "label": "Ghānaviññāṇaṃ",
+                        "labelEn": "Nose-consciousness",
+                        "labelPt": "Consciência do nariz"
+                      },
+                      {
+                        "id": "kusala-vipaka-ahetuka-4",
+                        "label": "Jivhāviññāṇaṃ",
+                        "labelEn": "Tongue-consciousness",
+                        "labelPt": "Consciência da língua"
+                      },
+                      {
+                        "id": "kusala-vipaka-ahetuka-5",
+                        "label": "Kāyaviññāṇaṃ",
+                        "labelEn": "Body-consciousness",
+                        "labelPt": "Consciência do corpo"
+                      },
+                      {
+                        "id": "kusala-vipaka-ahetuka-6",
+                        "label": "Sampaṭicchanacittaṃ",
+                        "labelEn": "Receiving consciousness",
+                        "labelPt": "Consciência receptora"
+                      },
+                      {
+                        "id": "kusala-vipaka-ahetuka-7",
+                        "label": "Somanassasahagataṃ santīraṇacittaṃ",
+                        "labelEn": "Investigating consciousness accompanied by joy",
+                        "labelPt": "Consciência investigadora acompanhada de alegria"
+                      },
+                      {
+                        "id": "kusala-vipaka-ahetuka-8",
+                        "label": "Upekkhāsahagataṃ santīraṇacittaṃ",
+                        "labelEn": "Investigating consciousness accompanied by equanimity",
+                        "labelPt": "Consciência investigadora acompanhada de equanimidade"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "ahetuka-kiriya",
+                    "label": "Ahetuka Kiriya",
+                    "labelEn": "Rootless Functional",
+                    "labelPt": "Funcional sem Raiz",
+                    "children": [
+                      {
+                        "id": "ahetuka-kiriya-1",
+                        "label": "Pañcadvārāvajjanacittaṃ",
+                        "labelEn": "Five-sense-door adverting consciousness",
+                        "labelPt": "Consciência de advertência às portas dos cinco sentidos"
+                      },
+                      {
+                        "id": "ahetuka-kiriya-2",
+                        "label": "Manodvārāvajjanacittaṃ",
+                        "labelEn": "Mind-door adverting consciousness",
+                        "labelPt": "Consciência de advertência à porta da mente"
+                      },
+                      {
+                        "id": "ahetuka-kiriya-3",
+                        "label": "Hasituppādacittaṃ",
+                        "labelEn": "Smile-producing consciousness",
+                        "labelPt": "Consciência produtora de sorriso"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "kamavacara-sobhana",
+                "label": "Kāmāvacara Sobhana Citta",
+                "labelEn": "Sense-Sphere Beautiful Consciousness",
+                "labelPt": "Consciência Bela da Esfera Sensorial",
+                "count": 24,
+                "children": [
+                  {
+                    "id": "kamavacara-kusala",
+                    "label": "Kāmāvacara Kusala",
+                    "labelEn": "Sense-Sphere Wholesome",
+                    "labelPt": "Salubre da Esfera Sensorial",
+                    "children": [
+                      {
+                        "id": "kusala-1",
+                        "label": "Somanassasahagataṃ ñāṇasampayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, associated with knowledge, unprompted",
+                        "labelPt": "Acompanhada de alegria, associada ao conhecimento, não-instigada"
+                      },
+                      {
+                        "id": "kusala-2",
+                        "label": "Somanassasahagataṃ ñāṇasampayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, associated with knowledge, prompted",
+                        "labelPt": "Acompanhada de alegria, associada ao conhecimento, instigada"
+                      },
+                      {
+                        "id": "kusala-3",
+                        "label": "Somanassasahagataṃ ñāṇavippayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, dissociated from knowledge, unprompted",
+                        "labelPt": "Acompanhada de alegria, dissociada do conhecimento, não-instigada"
+                      },
+                      {
+                        "id": "kusala-4",
+                        "label": "Somanassasahagataṃ ñāṇavippayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, dissociated from knowledge, prompted",
+                        "labelPt": "Acompanhada de alegria, dissociada do conhecimento, instigada"
+                      },
+                      {
+                        "id": "kusala-5",
+                        "label": "Upekkhāsahagataṃ ñāṇasampayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, associated with knowledge, unprompted",
+                        "labelPt": "Acompanhada de equanimidade, associada ao conhecimento, não-instigada"
+                      },
+                      {
+                        "id": "kusala-6",
+                        "label": "Upekkhāsahagataṃ ñāṇasampayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, associated with knowledge, prompted",
+                        "labelPt": "Acompanhada de equanimidade, associada ao conhecimento, instigada"
+                      },
+                      {
+                        "id": "kusala-7",
+                        "label": "Upekkhāsahagataṃ ñāṇavippayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, dissociated from knowledge, unprompted",
+                        "labelPt": "Acompanhada de equanimidade, dissociada do conhecimento, não-instigada"
+                      },
+                      {
+                        "id": "kusala-8",
+                        "label": "Upekkhāsahagataṃ ñāṇavippayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, dissociated from knowledge, prompted",
+                        "labelPt": "Acompanhada de equanimidade, dissociada do conhecimento, instigada"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "kamavacara-vipaka",
+                    "label": "Kāmāvacara Vipāka",
+                    "labelEn": "Sense-Sphere Resultant",
+                    "labelPt": "Resultante da Esfera Sensorial",
+                    "children": [
+                      {
+                        "id": "vipaka-1",
+                        "label": "Somanassasahagataṃ ñāṇasampayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, associated with knowledge, unprompted",
+                        "labelPt": "Acompanhada de alegria, associada ao conhecimento, não-instigada"
+                      },
+                      {
+                        "id": "vipaka-2",
+                        "label": "Somanassasahagataṃ ñāṇasampayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, associated with knowledge, prompted",
+                        "labelPt": "Acompanhada de alegria, associada ao conhecimento, instigada"
+                      },
+                      {
+                        "id": "vipaka-3",
+                        "label": "Somanassasahagataṃ ñāṇavippayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, dissociated from knowledge, unprompted",
+                        "labelPt": "Acompanhada de alegria, dissociada do conhecimento, não-instigada"
+                      },
+                      {
+                        "id": "vipaka-4",
+                        "label": "Somanassasahagataṃ ñāṇavippayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, dissociated from knowledge, prompted",
+                        "labelPt": "Acompanhada de alegria, dissociada do conhecimento, instigada"
+                      },
+                      {
+                        "id": "vipaka-5",
+                        "label": "Upekkhāsahagataṃ ñāṇasampayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, associated with knowledge, unprompted",
+                        "labelPt": "Acompanhada de equanimidade, associada ao conhecimento, não-instigada"
+                      },
+                      {
+                        "id": "vipaka-6",
+                        "label": "Upekkhāsahagataṃ ñāṇasampayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, associated with knowledge, prompted",
+                        "labelPt": "Acompanhada de equanimidade, associada ao conhecimento, instigada"
+                      },
+                      {
+                        "id": "vipaka-7",
+                        "label": "Upekkhāsahagataṃ ñāṇavippayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, dissociated from knowledge, unprompted",
+                        "labelPt": "Acompanhada de equanimidade, dissociada do conhecimento, não-instigada"
+                      },
+                      {
+                        "id": "vipaka-8",
+                        "label": "Upekkhāsahagataṃ ñāṇavippayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, dissociated from knowledge, prompted",
+                        "labelPt": "Acompanhada de equanimidade, dissociada do conhecimento, instigada"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "kamavacara-kiriya",
+                    "label": "Kāmāvacara Kiriya",
+                    "labelEn": "Sense-Sphere Functional",
+                    "labelPt": "Funcional da Esfera Sensorial",
+                    "children": [
+                      {
+                        "id": "kiriya-1",
+                        "label": "Somanassasahagataṃ ñāṇasampayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, associated with knowledge, unprompted",
+                        "labelPt": "Acompanhada de alegria, associada ao conhecimento, não-instigada"
+                      },
+                      {
+                        "id": "kiriya-2",
+                        "label": "Somanassasahagataṃ ñāṇasampayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, associated with knowledge, prompted",
+                        "labelPt": "Acompanhada de alegria, associada ao conhecimento, instigada"
+                      },
+                      {
+                        "id": "kiriya-3",
+                        "label": "Somanassasahagataṃ ñāṇavippayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, dissociated from knowledge, unprompted",
+                        "labelPt": "Acompanhada de alegria, dissociada do conhecimento, não-instigada"
+                      },
+                      {
+                        "id": "kiriya-4",
+                        "label": "Somanassasahagataṃ ñāṇavippayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by joy, dissociated from knowledge, prompted",
+                        "labelPt": "Acompanhada de alegria, dissociada do conhecimento, instigada"
+                      },
+                      {
+                        "id": "kiriya-5",
+                        "label": "Upekkhāsahagataṃ ñāṇasampayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, associated with knowledge, unprompted",
+                        "labelPt": "Acompanhada de equanimidade, associada ao conhecimento, não-instigada"
+                      },
+                      {
+                        "id": "kiriya-6",
+                        "label": "Upekkhāsahagataṃ ñāṇasampayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, associated with knowledge, prompted",
+                        "labelPt": "Acompanhada de equanimidade, associada ao conhecimento, instigada"
+                      },
+                      {
+                        "id": "kiriya-7",
+                        "label": "Upekkhāsahagataṃ ñāṇavippayuttaṃ asaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, dissociated from knowledge, unprompted",
+                        "labelPt": "Acompanhada de equanimidade, dissociada do conhecimento, não-instigada"
+                      },
+                      {
+                        "id": "kiriya-8",
+                        "label": "Upekkhāsahagataṃ ñāṇavippayuttaṃ sasaṅkhārikamekaṃ",
+                        "labelEn": "Accompanied by equanimity, dissociated from knowledge, prompted",
+                        "labelPt": "Acompanhada de equanimidade, dissociada do conhecimento, instigada"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "rupavacara",
+            "label": "Rūpāvacara Citta",
+            "labelEn": "Fine-Material Sphere Consciousness",
+            "labelPt": "Consciência da Esfera Material",
+            "count": 15,
+            "children": [
+              {
+                "id": "rupavacara-kusala",
+                "label": "Rūpāvacara Kusala",
+                "labelEn": "Fine-Material Wholesome",
+                "labelPt": "Salubre da Esfera Material",
+                "children": [
+                  {
+                    "id": "rupa-ku-1",
+                    "label": "Paṭhamajjhāna kusalacittaṃ",
+                    "labelEn": "First jhāna wholesome consciousness",
+                    "labelPt": "Consciência salubre do primeiro jhāna"
+                  },
+                  {
+                    "id": "rupa-ku-2",
+                    "label": "Dutiyajjhāna kusalacittaṃ",
+                    "labelEn": "Second jhāna wholesome consciousness",
+                    "labelPt": "Consciência salubre do segundo jhāna"
+                  },
+                  {
+                    "id": "rupa-ku-3",
+                    "label": "Tatiyajjhāna kusalacittaṃ",
+                    "labelEn": "Third jhāna wholesome consciousness",
+                    "labelPt": "Consciência salubre do terceiro jhāna"
+                  },
+                  {
+                    "id": "rupa-ku-4",
+                    "label": "Catutthajjhāna kusalacittaṃ",
+                    "labelEn": "Fourth jhāna wholesome consciousness",
+                    "labelPt": "Consciência salubre do quarto jhāna"
+                  },
+                  {
+                    "id": "rupa-ku-5",
+                    "label": "Pañcamajjhāna kusalacittaṃ",
+                    "labelEn": "Fifth jhāna wholesome consciousness",
+                    "labelPt": "Consciência salubre do quinto jhāna"
+                  }
+                ]
+              },
+              {
+                "id": "rupavacara-vipaka",
+                "label": "Rūpāvacara Vipāka",
+                "labelEn": "Fine-Material Resultant",
+                "labelPt": "Resultante da Esfera Material",
+                "children": [
+                  {
+                    "id": "rupa-vi-1",
+                    "label": "Paṭhamajjhāna vipākacittaṃ",
+                    "labelEn": "First jhāna resultant consciousness",
+                    "labelPt": "Consciência resultante do primeiro jhāna"
+                  },
+                  {
+                    "id": "rupa-vi-2",
+                    "label": "Dutiyajjhāna vipākacittaṃ",
+                    "labelEn": "Second jhāna resultant consciousness",
+                    "labelPt": "Consciência resultante do segundo jhāna"
+                  },
+                  {
+                    "id": "rupa-vi-3",
+                    "label": "Tatiyajjhāna vipākacittaṃ",
+                    "labelEn": "Third jhāna resultant consciousness",
+                    "labelPt": "Consciência resultante do terceiro jhāna"
+                  },
+                  {
+                    "id": "rupa-vi-4",
+                    "label": "Catutthajjhāna vipākacittaṃ",
+                    "labelEn": "Fourth jhāna resultant consciousness",
+                    "labelPt": "Consciência resultante do quarto jhāna"
+                  },
+                  {
+                    "id": "rupa-vi-5",
+                    "label": "Pañcamajjhāna vipākacittaṃ",
+                    "labelEn": "Fifth jhāna resultant consciousness",
+                    "labelPt": "Consciência resultante do quinto jhāna"
+                  }
+                ]
+              },
+              {
+                "id": "rupavacara-kiriya",
+                "label": "Rūpāvacara Kiriya",
+                "labelEn": "Fine-Material Functional",
+                "labelPt": "Funcional da Esfera Material",
+                "children": [
+                  {
+                    "id": "rupa-ki-1",
+                    "label": "Paṭhamajjhāna kiriyacittaṃ",
+                    "labelEn": "First jhāna functional consciousness",
+                    "labelPt": "Consciência funcional do primeiro jhāna"
+                  },
+                  {
+                    "id": "rupa-ki-2",
+                    "label": "Dutiyajjhāna kiriyacittaṃ",
+                    "labelEn": "Second jhāna functional consciousness",
+                    "labelPt": "Consciência funcional do segundo jhāna"
+                  },
+                  {
+                    "id": "rupa-ki-3",
+                    "label": "Tatiyajjhāna kiriyacittaṃ",
+                    "labelEn": "Third jhāna functional consciousness",
+                    "labelPt": "Consciência funcional do terceiro jhāna"
+                  },
+                  {
+                    "id": "rupa-ki-4",
+                    "label": "Catutthajjhāna kiriyacittaṃ",
+                    "labelEn": "Fourth jhāna functional consciousness",
+                    "labelPt": "Consciência funcional do quarto jhāna"
+                  },
+                  {
+                    "id": "rupa-ki-5",
+                    "label": "Pañcamajjhāna kiriyacittaṃ",
+                    "labelEn": "Fifth jhāna functional consciousness",
+                    "labelPt": "Consciência funcional do quinto jhāna"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "arupavacara",
+            "label": "Arūpāvacara Citta",
+            "labelEn": "Immaterial-Sphere Consciousness",
+            "labelPt": "Consciência da Esfera Imaterial",
+            "count": 12,
+            "children": [
+              {
+                "id": "arupavacara-kusala",
+                "label": "Arūpāvacara Kusala",
+                "labelEn": "Immaterial-Sphere Wholesome",
+                "labelPt": "Salubre da Esfera Imaterial",
+                "children": [
+                  {
+                    "id": "arupa-ku-1",
+                    "label": "Ākāsānañcāyatana kusalacittaṃ",
+                    "labelEn": "Wholesome consciousness of infinite space",
+                    "labelPt": "Consciência salubre do espaço infinito"
+                  },
+                  {
+                    "id": "arupa-ku-2",
+                    "label": "Viññāṇañcāyatana kusalacittaṃ",
+                    "labelEn": "Wholesome consciousness of infinite consciousness",
+                    "labelPt": "Consciência salubre da consciência infinita"
+                  },
+                  {
+                    "id": "arupa-ku-3",
+                    "label": "Ākiñcaññāyatana kusalacittaṃ",
+                    "labelEn": "Wholesome consciousness of nothingness",
+                    "labelPt": "Consciência salubre da vacuidade"
+                  },
+                  {
+                    "id": "arupa-ku-4",
+                    "label": "Nevasaññānāsaññāyatana kusalacittaṃ",
+                    "labelEn": "Wholesome consciousness of neither-perception-nor-non-perception",
+                    "labelPt": "Consciência salubre da nem-percepção-nem-não-percepção"
+                  }
+                ]
+              },
+              {
+                "id": "arupavacara-vipaka",
+                "label": "Arūpāvacara Vipāka",
+                "labelEn": "Immaterial-Sphere Resultant",
+                "labelPt": "Resultante da Esfera Imaterial",
+                "children": [
+                  {
+                    "id": "arupa-vi-1",
+                    "label": "Ākāsānañcāyatana vipākacittaṃ",
+                    "labelEn": "Resultant consciousness of infinite space",
+                    "labelPt": "Consciência resultante do espaço infinito"
+                  },
+                  {
+                    "id": "arupa-vi-2",
+                    "label": "Viññāṇañcāyatana vipākacittaṃ",
+                    "labelEn": "Resultant consciousness of infinite consciousness",
+                    "labelPt": "Consciência resultante da consciência infinita"
+                  },
+                  {
+                    "id": "arupa-vi-3",
+                    "label": "Ākiñcaññāyatana vipākacittaṃ",
+                    "labelEn": "Resultant consciousness of nothingness",
+                    "labelPt": "Consciência resultante da vacuidade"
+                  },
+                  {
+                    "id": "arupa-vi-4",
+                    "label": "Nevasaññānāsaññāyatana vipākacittaṃ",
+                    "labelEn": "Resultant consciousness of neither-perception-nor-non-perception",
+                    "labelPt": "Consciência resultante da nem-percepção-nem-não-percepção"
+                  }
+                ]
+              },
+              {
+                "id": "arupavacara-kiriya",
+                "label": "Arūpāvacara Kiriya",
+                "labelEn": "Immaterial-Sphere Functional",
+                "labelPt": "Funcional da Esfera Imaterial",
+                "children": [
+                  {
+                    "id": "arupa-ki-1",
+                    "label": "Ākāsānañcāyatana kiriyacittaṃ",
+                    "labelEn": "Functional consciousness of infinite space",
+                    "labelPt": "Consciência funcional do espaço infinito"
+                  },
+                  {
+                    "id": "arupa-ki-2",
+                    "label": "Viññāṇañcāyatana kiriyacittaṃ",
+                    "labelEn": "Functional consciousness of infinite consciousness",
+                    "labelPt": "Consciência funcional da consciência infinita"
+                  },
+                  {
+                    "id": "arupa-ki-3",
+                    "label": "Ākiñcaññāyatana kiriyacittaṃ",
+                    "labelEn": "Functional consciousness of nothingness",
+                    "labelPt": "Consciência funcional da vacuidade"
+                  },
+                  {
+                    "id": "arupa-ki-4",
+                    "label": "Nevasaññānāsaññāyatana kiriyacittaṃ",
+                    "labelEn": "Functional consciousness of neither-perception-nor-non-perception",
+                    "labelPt": "Consciência funcional da nem-percepção-nem-não-percepção"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "lokuttara",
+            "label": "Lokuttara Citta",
+            "labelEn": "Supramundane Consciousness",
+            "labelPt": "Consciência Supramundana",
+            "count": 8,
+            "children": [
+              {
+                "id": "lokuttara-magga",
+                "label": "Lokuttara Magga",
+                "labelEn": "Supramundane Path",
+                "labelPt": "Caminho Supramundano",
+                "children": [
+                  {
+                    "id": "magga-1",
+                    "label": "Sotāpattimagga-cittaṃ",
+                    "labelEn": "Path of Stream-entry",
+                    "labelPt": "Caminho de Entrada na Correnteza"
+                  },
+                  {
+                    "id": "magga-2",
+                    "label": "Sakadāgāmimagga-cittaṃ",
+                    "labelEn": "Path of Once-returning",
+                    "labelPt": "Caminho do Retorno Único"
+                  },
+                  {
+                    "id": "magga-3",
+                    "label": "Anāgāmimagga-cittaṃ",
+                    "labelEn": "Path of Non-returning",
+                    "labelPt": "Caminho do Não-retorno"
+                  },
+                  {
+                    "id": "magga-4",
+                    "label": "Arahattamagga-cittaṃ",
+                    "labelEn": "Path of Arahantship",
+                    "labelPt": "Caminho do Arahant"
+                  }
+                ]
+              },
+              {
+                "id": "lokuttara-phala",
+                "label": "Lokuttara Phala",
+                "labelEn": "Supramundane Fruition",
+                "labelPt": "Fruto Supramundano",
+                "children": [
+                  {
+                    "id": "phala-1",
+                    "label": "Sotāpattiphala-cittaṃ",
+                    "labelEn": "Fruition of Stream-entry",
+                    "labelPt": "Fruto da Entrada na Correnteza"
+                  },
+                  {
+                    "id": "phala-2",
+                    "label": "Sakadāgāmiphala-cittaṃ",
+                    "labelEn": "Fruition of Once-returning",
+                    "labelPt": "Fruto do Retorno Único"
+                  },
+                  {
+                    "id": "phala-3",
+                    "label": "Anāgāmiphala-cittaṃ",
+                    "labelEn": "Fruition of Non-returning",
+                    "labelPt": "Fruto do Não-retorno"
+                  },
+                  {
+                    "id": "phala-4",
+                    "label": "Arahattaphala-cittaṃ",
+                    "labelEn": "Fruition of Arahantship",
+                    "labelPt": "Fruto do Arahant"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cetasika",
+        "label": "Cetasika",
+        "labelEn": "Mental Factors",
+        "labelPt": "Fatores Mentais",
+        "desc": "52 types",
+        "descPt": "52 tipos",
+        "children": [
+          {
+            "id": "annasamana",
+            "label": "Aññasamāna",
+            "labelEn": "Ethically Variable",
+            "labelPt": "Eticamente Variáveis",
+            "children": [
+              {
+                "id": "sabbacitta",
+                "label": "Sabbacittasādhāraṇa",
+                "labelEn": "Universal",
+                "labelPt": "Universais",
+                "children": [
+                  {
+                    "id": "phassa",
+                    "label": "Phassa",
+                    "labelEn": "Contact",
+                    "labelPt": "Contato"
+                  },
+                  {
+                    "id": "vedana",
+                    "label": "Vedanā",
+                    "labelEn": "Feeling",
+                    "labelPt": "Sensação"
+                  },
+                  {
+                    "id": "sanna",
+                    "label": "Saññā",
+                    "labelEn": "Perception",
+                    "labelPt": "Percepção"
+                  },
+                  {
+                    "id": "cetana",
+                    "label": "Cetanā",
+                    "labelEn": "Volition",
+                    "labelPt": "Volição"
+                  },
+                  {
+                    "id": "ekaggata",
+                    "label": "Ekaggatā",
+                    "labelEn": "One-pointedness",
+                    "labelPt": "Unidirecionamento"
+                  },
+                  {
+                    "id": "jivitindriya",
+                    "label": "Jīvitindriya",
+                    "labelEn": "Life faculty",
+                    "labelPt": "Faculdade vital"
+                  },
+                  {
+                    "id": "manasikara",
+                    "label": "Manasikāra",
+                    "labelEn": "Attention",
+                    "labelPt": "Atenção"
+                  }
+                ]
+              },
+              {
+                "id": "pakinnaka",
+                "label": "Pakiṇṇaka",
+                "labelEn": "Occasional",
+                "labelPt": "Ocasionais",
+                "children": [
+                  {
+                    "id": "vitakka",
+                    "label": "Vitakka",
+                    "labelEn": "Initial application",
+                    "labelPt": "Aplicação inicial"
+                  },
+                  {
+                    "id": "vicara",
+                    "label": "Vicāra",
+                    "labelEn": "Sustained application",
+                    "labelPt": "Aplicação sustentada"
+                  },
+                  {
+                    "id": "adhimokkha",
+                    "label": "Adhimokkha",
+                    "labelEn": "Decision",
+                    "labelPt": "Decisão"
+                  },
+                  {
+                    "id": "viriya",
+                    "label": "Viriya",
+                    "labelEn": "Energy",
+                    "labelPt": "Energia"
+                  },
+                  {
+                    "id": "piti",
+                    "label": "Pīti",
+                    "labelEn": "Zest",
+                    "labelPt": "Entusiasmo"
+                  },
+                  {
+                    "id": "chanda",
+                    "label": "Chanda",
+                    "labelEn": "Desire to act",
+                    "labelPt": "Desejo de agir"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "akusala-cetasika",
+            "label": "Akusala Cetasika",
+            "labelEn": "Unwholesome Mental Factors",
+            "labelPt": "Fatores Mentais Insalubres",
+            "children": [
+              {
+                "id": "moha-catukka",
+                "label": "Moha-catukka",
+                "labelEn": "Universal Unwholesome",
+                "labelPt": "Insalubres Universais",
+                "children": [
+                  {
+                    "id": "moha",
+                    "label": "Moha",
+                    "labelEn": "Delusion",
+                    "labelPt": "Ilusão"
+                  },
+                  {
+                    "id": "ahirika",
+                    "label": "Ahirika",
+                    "labelEn": "Shamelessness",
+                    "labelPt": "Falta de vergonha moral"
+                  },
+                  {
+                    "id": "anottappa",
+                    "label": "Anottappa",
+                    "labelEn": "Fearlessness of wrongdoing",
+                    "labelPt": "Falta de temor moral"
+                  },
+                  {
+                    "id": "uddhacca",
+                    "label": "Uddhacca",
+                    "labelEn": "Restlessness",
+                    "labelPt": "Inquietação"
+                  }
+                ]
+              },
+              {
+                "id": "lobha-tika",
+                "label": "Lobha-tika",
+                "labelEn": "Greed Group",
+                "labelPt": "Grupo da Cobiça",
+                "children": [
+                  {
+                    "id": "lobha",
+                    "label": "Lobha",
+                    "labelEn": "Greed",
+                    "labelPt": "Cobiça"
+                  },
+                  {
+                    "id": "ditthi",
+                    "label": "Diṭṭhi",
+                    "labelEn": "Wrong view",
+                    "labelPt": "Visão incorreta"
+                  },
+                  {
+                    "id": "mana",
+                    "label": "Māna",
+                    "labelEn": "Conceit",
+                    "labelPt": "Presunção"
+                  }
+                ]
+              },
+              {
+                "id": "dosa-catukka",
+                "label": "Dosa-catukka",
+                "labelEn": "Hatred Group",
+                "labelPt": "Grupo do Ódio",
+                "children": [
+                  {
+                    "id": "dosa",
+                    "label": "Dosa",
+                    "labelEn": "Hatred",
+                    "labelPt": "Ódio"
+                  },
+                  {
+                    "id": "issa",
+                    "label": "Issā",
+                    "labelEn": "Envy",
+                    "labelPt": "Inveja"
+                  },
+                  {
+                    "id": "macchariya",
+                    "label": "Macchariya",
+                    "labelEn": "Avarice",
+                    "labelPt": "Avareza"
+                  },
+                  {
+                    "id": "kukkucca",
+                    "label": "Kukkucca",
+                    "labelEn": "Worry",
+                    "labelPt": "Preocupação"
+                  }
+                ]
+              },
+              {
+                "id": "thina-middha",
+                "label": "Thīna-middha",
+                "labelEn": "Sloth and Torpor",
+                "labelPt": "Preguiça e Torpor",
+                "children": [
+                  {
+                    "id": "thina",
+                    "label": "Thīna",
+                    "labelEn": "Sloth",
+                    "labelPt": "Preguiça"
+                  },
+                  {
+                    "id": "middha",
+                    "label": "Middha",
+                    "labelEn": "Torpor",
+                    "labelPt": "Torpor"
+                  }
+                ]
+              },
+              {
+                "id": "vicikiccha",
+                "label": "Vicikicchā",
+                "labelEn": "Doubt",
+                "labelPt": "Dúvida"
+              }
+            ]
+          },
+          {
+            "id": "sobhana-cetasika",
+            "label": "Sobhana Cetasika",
+            "labelEn": "Beautiful Mental Factors",
+            "labelPt": "Fatores Mentais Belos",
+            "children": [
+              {
+                "id": "sobhanasadharana",
+                "label": "Sobhanasādhāraṇa",
+                "labelEn": "Universal Beautiful",
+                "labelPt": "Belos Universais",
+                "children": [
+                  {
+                    "id": "saddha",
+                    "label": "Saddhā",
+                    "labelEn": "Faith",
+                    "labelPt": "Fé"
+                  },
+                  {
+                    "id": "sati",
+                    "label": "Sati",
+                    "labelEn": "Mindfulness",
+                    "labelPt": "Atenção plena"
+                  },
+                  {
+                    "id": "hiri",
+                    "label": "Hiri",
+                    "labelEn": "Moral shame",
+                    "labelPt": "Vergonha moral"
+                  },
+                  {
+                    "id": "ottappa",
+                    "label": "Ottappa",
+                    "labelEn": "Moral dread",
+                    "labelPt": "Temor moral"
+                  },
+                  {
+                    "id": "alobha",
+                    "label": "Alobha",
+                    "labelEn": "Non-greed",
+                    "labelPt": "Não-cobiça"
+                  },
+                  {
+                    "id": "adosa",
+                    "label": "Adosa",
+                    "labelEn": "Non-hatred",
+                    "labelPt": "Não-ódio"
+                  },
+                  {
+                    "id": "tatramajjhattata",
+                    "label": "Tatramajjhattatā",
+                    "labelEn": "Neutrality of mind",
+                    "labelPt": "Neutralidade da mente"
+                  },
+                  {
+                    "id": "kaya-passaddhi",
+                    "label": "Kāyapassaddhi",
+                    "labelEn": "Tranquillity of mental body",
+                    "labelPt": "Tranquilidade do corpo mental"
+                  },
+                  {
+                    "id": "citta-passaddhi",
+                    "label": "Cittapassaddhi",
+                    "labelEn": "Tranquillity of consciousness",
+                    "labelPt": "Tranquilidade da consciência"
+                  },
+                  {
+                    "id": "kaya-lahuta",
+                    "label": "Kāyalahutā",
+                    "labelEn": "Lightness of mental body",
+                    "labelPt": "Leveza do corpo mental"
+                  },
+                  {
+                    "id": "citta-lahuta",
+                    "label": "Cittalahutā",
+                    "labelEn": "Lightness of consciousness",
+                    "labelPt": "Leveza da consciência"
+                  },
+                  {
+                    "id": "kaya-muduta",
+                    "label": "Kāyamudutā",
+                    "labelEn": "Malleability of mental body",
+                    "labelPt": "Maleabilidade do corpo mental"
+                  },
+                  {
+                    "id": "citta-muduta",
+                    "label": "Cittamudutā",
+                    "labelEn": "Malleability of consciousness",
+                    "labelPt": "Maleabilidade da consciência"
+                  },
+                  {
+                    "id": "kaya-kammannata",
+                    "label": "Kāyakammaññatā",
+                    "labelEn": "Wieldiness of mental body",
+                    "labelPt": "Manejabilidade do corpo mental"
+                  },
+                  {
+                    "id": "citta-kammannata",
+                    "label": "Cittakammaññatā",
+                    "labelEn": "Wieldiness of consciousness",
+                    "labelPt": "Manejabilidade da consciência"
+                  },
+                  {
+                    "id": "kaya-pagunnata",
+                    "label": "Kāyapāguññatā",
+                    "labelEn": "Proficiency of mental body",
+                    "labelPt": "Proficiência do corpo mental"
+                  },
+                  {
+                    "id": "citta-pagunnata",
+                    "label": "Cittapāguññatā",
+                    "labelEn": "Proficiency of consciousness",
+                    "labelPt": "Proficiência da consciência"
+                  },
+                  {
+                    "id": "kayujukata",
+                    "label": "Kāyujukatā",
+                    "labelEn": "Rectitude of mental body",
+                    "labelPt": "Retidão do corpo mental"
+                  },
+                  {
+                    "id": "cittujukata",
+                    "label": "Cittujukatā",
+                    "labelEn": "Rectitude of consciousness",
+                    "labelPt": "Retidão da consciência"
+                  }
+                ]
+              },
+              {
+                "id": "virati",
+                "label": "Virati",
+                "labelEn": "Abstinences",
+                "labelPt": "Abstinências",
+                "children": [
+                  {
+                    "id": "samma-vaca",
+                    "label": "Sammā-vācā",
+                    "labelEn": "Right speech",
+                    "labelPt": "Linguagem correta"
+                  },
+                  {
+                    "id": "samma-kammanta",
+                    "label": "Sammā-kammanta",
+                    "labelEn": "Right action",
+                    "labelPt": "Ação correta"
+                  },
+                  {
+                    "id": "samma-ajiva",
+                    "label": "Sammā-ājīva",
+                    "labelEn": "Right livelihood",
+                    "labelPt": "Modo de vida correto"
+                  }
+                ]
+              },
+              {
+                "id": "appamanna",
+                "label": "Appamaññā",
+                "labelEn": "Illimitables",
+                "labelPt": "Ilimitáveis",
+                "children": [
+                  {
+                    "id": "karuna",
+                    "label": "Karuṇā",
+                    "labelEn": "Compassion",
+                    "labelPt": "Compaixão"
+                  },
+                  {
+                    "id": "mudita",
+                    "label": "Muditā",
+                    "labelEn": "Sympathetic joy",
+                    "labelPt": "Alegria altruísta"
+                  }
+                ]
+              },
+              {
+                "id": "panna",
+                "label": "Paññā",
+                "labelEn": "Wisdom",
+                "labelPt": "Sabedoria",
+                "children": [
+                  {
+                    "id": "pannindriya",
+                    "label": "Paññindriya",
+                    "labelEn": "Wisdom faculty",
+                    "labelPt": "Faculdade da sabedoria"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rupa",
+        "label": "Rūpa",
+        "labelEn": "Matter",
+        "labelPt": "Matéria",
+        "desc": "28 types",
+        "descPt": "28 tipos",
+        "children": [
+          {
+            "id": "mahabhuta",
+            "label": "Mahābhūta",
+            "labelEn": "Great Essentials",
+            "labelPt": "Grandes Essenciais",
+            "children": [
+              {
+                "id": "pathavi",
+                "label": "Pathavī-dhātu",
+                "labelEn": "Earth element",
+                "labelPt": "Elemento terra"
+              },
+              {
+                "id": "apo",
+                "label": "Āpo-dhātu",
+                "labelEn": "Water element",
+                "labelPt": "Elemento água"
+              },
+              {
+                "id": "tejo",
+                "label": "Tejo-dhātu",
+                "labelEn": "Fire element",
+                "labelPt": "Elemento fogo"
+              },
+              {
+                "id": "vayo",
+                "label": "Vāyo-dhātu",
+                "labelEn": "Air element",
+                "labelPt": "Elemento ar"
+              }
+            ]
+          },
+          {
+            "id": "upadarupa",
+            "label": "Upādārūpa",
+            "labelEn": "Derivative Matter",
+            "labelPt": "Matéria Derivada",
+            "children": [
+              {
+                "id": "pasada",
+                "label": "Pasāda",
+                "labelEn": "Sensitive Materiality",
+                "labelPt": "Matéria Sensitiva",
+                "children": [
+                  {
+                    "id": "cakkhu",
+                    "label": "Cakkhu",
+                    "labelEn": "Eye",
+                    "labelPt": "Olho"
+                  },
+                  {
+                    "id": "sota",
+                    "label": "Sota",
+                    "labelEn": "Ear",
+                    "labelPt": "Orelha"
+                  },
+                  {
+                    "id": "ghana",
+                    "label": "Ghāna",
+                    "labelEn": "Nose",
+                    "labelPt": "Nariz"
+                  },
+                  {
+                    "id": "jivha",
+                    "label": "Jivhā",
+                    "labelEn": "Tongue",
+                    "labelPt": "Língua"
+                  },
+                  {
+                    "id": "kaya",
+                    "label": "Kāya",
+                    "labelEn": "Body",
+                    "labelPt": "Corpo"
+                  }
+                ]
+              },
+              {
+                "id": "gocara",
+                "label": "Gocara",
+                "labelEn": "Objective Materiality",
+                "labelPt": "Matéria Objetiva",
+                "children": [
+                  {
+                    "id": "rupa-rammana",
+                    "label": "Rūpa",
+                    "labelEn": "Visible form",
+                    "labelPt": "Forma visível"
+                  },
+                  {
+                    "id": "sadda",
+                    "label": "Sadda",
+                    "labelEn": "Sound",
+                    "labelPt": "Som"
+                  },
+                  {
+                    "id": "gandha",
+                    "label": "Gandha",
+                    "labelEn": "Smell",
+                    "labelPt": "Odor"
+                  },
+                  {
+                    "id": "rasa",
+                    "label": "Rasa",
+                    "labelEn": "Taste",
+                    "labelPt": "Sabor"
+                  }
+                ]
+              },
+              {
+                "id": "bhava",
+                "label": "Bhāva",
+                "labelEn": "Sexual Materiality",
+                "labelPt": "Matéria Sexual",
+                "children": [
+                  {
+                    "id": "itthi",
+                    "label": "Itthitta",
+                    "labelEn": "Femininity",
+                    "labelPt": "Feminilidade"
+                  },
+                  {
+                    "id": "purisa",
+                    "label": "Purisatta",
+                    "labelEn": "Masculinity",
+                    "labelPt": "Masculinidade"
+                  }
+                ]
+              },
+              {
+                "id": "hadaya",
+                "label": "Hadaya",
+                "labelEn": "Heart Materiality",
+                "labelPt": "Matéria do Coração",
+                "children": [
+                  {
+                    "id": "hadayavatthu",
+                    "label": "Hadayavatthu",
+                    "labelEn": "Heart-base",
+                    "labelPt": "Base do coração"
+                  }
+                ]
+              },
+              {
+                "id": "jivita",
+                "label": "Jīvita",
+                "labelEn": "Life Materiality",
+                "labelPt": "Matéria Vital",
+                "children": [
+                  {
+                    "id": "jivitindriya-rupa",
+                    "label": "Jīvitindriya",
+                    "labelEn": "Life faculty",
+                    "labelPt": "Faculdade vital"
+                  }
+                ]
+              },
+              {
+                "id": "ahara",
+                "label": "Āhāra",
+                "labelEn": "Nutritional Materiality",
+                "labelPt": "Matéria Nutricional",
+                "children": [
+                  {
+                    "id": "kabalinkarāhāra",
+                    "label": "Kabaḷīkārāhāra",
+                    "labelEn": "Nutriment",
+                    "labelPt": "Alimento"
+                  }
+                ]
+              },
+              {
+                "id": "pariccheda",
+                "label": "Pariccheda",
+                "labelEn": "Limiting Materiality",
+                "labelPt": "Matéria Limitante",
+                "children": [
+                  {
+                    "id": "akasadhatu",
+                    "label": "Ākāsadhātu",
+                    "labelEn": "Space element",
+                    "labelPt": "Elemento espaço"
+                  }
+                ]
+              },
+              {
+                "id": "vinnatti",
+                "label": "Viññatti",
+                "labelEn": "Intimating Materiality",
+                "labelPt": "Matéria Comunicadora",
+                "children": [
+                  {
+                    "id": "kaya-vinnatti",
+                    "label": "Kāyaviññatti",
+                    "labelEn": "Bodily intimation",
+                    "labelPt": "Comunicação corporal"
+                  },
+                  {
+                    "id": "vaci-vinnatti",
+                    "label": "Vacīviññatti",
+                    "labelEn": "Vocal intimation",
+                    "labelPt": "Comunicação vocal"
+                  }
+                ]
+              },
+              {
+                "id": "vikara",
+                "label": "Vikāra",
+                "labelEn": "Mutable Materiality",
+                "labelPt": "Matéria Mutável",
+                "children": [
+                  {
+                    "id": "rupa-lahuta",
+                    "label": "Rūpassa lahutā",
+                    "labelEn": "Lightness",
+                    "labelPt": "Leveza"
+                  },
+                  {
+                    "id": "rupa-muduta",
+                    "label": "Rūpassa mudutā",
+                    "labelEn": "Malleability",
+                    "labelPt": "Maleabilidade"
+                  },
+                  {
+                    "id": "rupa-kammannata",
+                    "label": "Rūpassa kammaññatā",
+                    "labelEn": "Wieldiness",
+                    "labelPt": "Manejabilidade"
+                  }
+                ]
+              },
+              {
+                "id": "lakkhana",
+                "label": "Lakkhaṇa",
+                "labelEn": "Characteristics of Materiality",
+                "labelPt": "Características da Matéria",
+                "children": [
+                  {
+                    "id": "upacaya",
+                    "label": "Upacaya",
+                    "labelEn": "Production",
+                    "labelPt": "Produção"
+                  },
+                  {
+                    "id": "santati",
+                    "label": "Santati",
+                    "labelEn": "Continuity",
+                    "labelPt": "Continuidade"
+                  },
+                  {
+                    "id": "jarata",
+                    "label": "Jaratā",
+                    "labelEn": "Decay",
+                    "labelPt": "Declínio"
+                  },
+                  {
+                    "id": "aniccata",
+                    "label": "Aniccatā",
+                    "labelEn": "Impermanence",
+                    "labelPt": "Impermanência"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nibbana",
+        "label": "Nibbāna",
+        "labelEn": "Nibbāna",
+        "labelPt": "Nibbāna",
+        "desc": "The unconditioned element",
+        "descPt": "O elemento incondicionado"
+      }
+    ]
+  }
+}

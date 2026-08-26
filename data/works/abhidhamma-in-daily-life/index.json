@@ -1,0 +1,285 @@
+{
+  "id": "abhidhamma-in-daily-life",
+  "title": "Abhidhamma in Daily Life",
+  "parts": {
+    "texto": {
+      "label": "Text",
+      "files": [
+        "texto__0.json",
+        "texto__1.json"
+      ],
+      "toc": [
+        {
+          "id": 2,
+          "rend": "subhead",
+          "text": "Nina van Gorkom"
+        },
+        {
+          "id": 3,
+          "rend": "chapter",
+          "text": "Preface"
+        },
+        {
+          "id": 25,
+          "rend": "chapter",
+          "text": "1 The Four Paramattha Dhammas"
+        },
+        {
+          "id": 45,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 54,
+          "rend": "chapter",
+          "text": "2 The Five Khandhas"
+        },
+        {
+          "id": 75,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 84,
+          "rend": "chapter",
+          "text": "3 Different Aspects of Citta"
+        },
+        {
+          "id": 105,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 113,
+          "rend": "chapter",
+          "text": "4 The Characteristic of Lobha"
+        },
+        {
+          "id": 127,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 134,
+          "rend": "chapter",
+          "text": "5 Different Degrees of Lobha"
+        },
+        {
+          "id": 145,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 154,
+          "rend": "chapter",
+          "text": "6 The Characteristic of Dosa"
+        },
+        {
+          "id": 170,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 177,
+          "rend": "chapter",
+          "text": "7 Ignorance"
+        },
+        {
+          "id": 187,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 194,
+          "rend": "chapter",
+          "text": "8 Ahetuka Cittas"
+        },
+        {
+          "id": 205,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 214,
+          "rend": "chapter",
+          "text": "9 Ahetuka Cittas Unknown in Daily Life"
+        },
+        {
+          "id": 227,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 234,
+          "rend": "chapter",
+          "text": "Chapter 10: The First Citta in Life"
+        },
+        {
+          "id": 265,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 271,
+          "rend": "chapter",
+          "text": "Chapter 11: Different Types of Rebirth-Consciousness"
+        },
+        {
+          "id": 341,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 346,
+          "rend": "chapter",
+          "text": "Chapter 12: The Function of Bhavanga (Life-Continuum)"
+        },
+        {
+          "id": 394,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 399,
+          "rend": "chapter",
+          "text": "13 Functions of Citta"
+        },
+        {
+          "id": 424,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 431,
+          "rend": "chapter",
+          "text": "14 The Function of Javana"
+        },
+        {
+          "id": 445,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 448,
+          "rend": "chapter",
+          "text": "15 The Functions of Tadārammaṇa and Cuti"
+        },
+        {
+          "id": 461,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 464,
+          "rend": "chapter",
+          "text": "16 Objects and Doors"
+        },
+        {
+          "id": 475,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 480,
+          "rend": "chapter",
+          "text": "17 Doors and Physical Bases of Citta"
+        },
+        {
+          "id": 490,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 496,
+          "rend": "chapter",
+          "text": "18 Elements"
+        },
+        {
+          "id": 507,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 512,
+          "rend": "chapter",
+          "text": "Chapter 19: The Sobhana Cittas in our Life"
+        },
+        {
+          "id": 576,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 585,
+          "rend": "chapter",
+          "text": "Chapter 20: Planes of Existence"
+        },
+        {
+          "id": 635,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 641,
+          "rend": "chapter",
+          "text": "21 Samatha"
+        },
+        {
+          "id": 657,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 663,
+          "rend": "chapter",
+          "text": "22 Jhānacittas"
+        },
+        {
+          "id": 674,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 679,
+          "rend": "chapter",
+          "text": "23 Lokuttara Cittas"
+        },
+        {
+          "id": 691,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 697,
+          "rend": "chapter",
+          "text": "24 Enlightenment"
+        },
+        {
+          "id": 711,
+          "rend": "subhead",
+          "text": "Questions"
+        },
+        {
+          "id": 717,
+          "rend": "chapter",
+          "text": "Glossary"
+        },
+        {
+          "id": 892,
+          "rend": "chapter",
+          "text": "Books"
+        },
+        {
+          "id": 893,
+          "rend": "subhead",
+          "text": "Books written by Nina van Gorkom"
+        },
+        {
+          "id": 900,
+          "rend": "subhead",
+          "text": "Books translated by Nina van Gorkom"
+        }
+      ]
+    }
+  }
+}

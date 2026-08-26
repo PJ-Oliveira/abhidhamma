@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "rend": "book",
+    "paranum": null,
+    "pali": "Buddhism in Daily Life",
+    "pt": "O Budismo na Vida Diária",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 2,
+    "rend": "subhead",
+    "paranum": null,
+    "pali": "Nina van Gorkom",
+    "pt": "Nina van Gorkom",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 3,
+    "rend": "chapter",
+    "paranum": null,
+    "pali": "Preface",
+    "pt": "Prefácio",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 4,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "This book was written in Thailand where I lived for some years. When I got to know the Thai people, I was impressed by their generosity. In Thailand one meets many people who do not set a limit to their generosity, be they rich or poor, and one is inspired to be more generous oneself. When one meets the Thais one notices their sincerity, their tolerance and their wise attitude towards the problems of life. I was also impressed by the earnestness and dedication of the monks who lead a life of simplicity, “contented with little”, and who try to realize the Buddhist teachings in their daily lives. When I visited the temples in Thailand, I saw Buddhism being lived in daily life. And so, I wanted to study Buddhism.",
+    "pt": "Este livro foi escrito na Tailândia, onde vivi por alguns anos. Ao conhecer o povo tailandês, fiquei impressionada com sua generosidade. Na Tailândia, encontramos muitas pessoas que não impõem limites à sua generosidade, sejam ricas ou pobres, e somos inspirados a sermos mais generosos nós mesmos. Ao conviver com os tailandeses, notamos sua sinceridade, sua tolerância e sua atitude sábia perante os problemas da vida. Também fiquei impressionada com a seriedade e a dedicação dos monges, que levam uma vida de simplicidade, “contentes com pouco”, e que buscam realizar os ensinamentos budistas em suas vidas diárias. Quando visitei os templos na Tailândia, vi o Budismo sendo vivido no cotidiano. E assim, quis estudar o Budismo.",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 5,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "We are inclined to think that Buddhism is only a religion for people living in an oriental culture, but when we learn more about it, we see that it is completely different from what we first thought. We learn that it is in fact a “way of life” which makes for the well-being and happiness of all people, no matter what their nationality.",
+    "pt": "Somos inclinados a pensar que o Budismo é apenas uma religião para pessoas que vivem numa cultura oriental, mas, ao aprendermos mais a respeito, vemos que é completamente diferente do que pensávamos no início. Aprendemos que, na verdade, é um “modo de vida” que promove o bem-estar e a felicidade de todas as pessoas, não importando a sua nacionalidade.",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 6,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "Through the study of the Buddha’s teachings, which are also called the “Dhamma”, we learn to develop the wisdom which leads to detachment from the “self” and finally to the eradication of greed, hatred and ignorance. When there is less attachment in our life, there is more room for unselfish loving kindness (mettā) and compassion (karuṇā) for all living beings.",
+    "pt": "Através do estudo dos ensinamentos do Buda, que também são chamados de “Dhamma”, aprendemos a desenvolver a sabedoria que leva ao desapego em relação ao “eu” e, finalmente, à erradicação da cobiça, da aversão e da ignorância. Quando há menos apego em nossa vida, há mais espaço para a benevolência desinteressada (mettā) e para a compaixão (karuṇā) por todos os seres vivos.",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 7,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "The way one has to follow in order to develop this wisdom is the “eightfold Path”. Through the development of the eightfold Path we come to know better the realities within and around ourselves; these realities can be experienced through the six doorways of eyes, ears, nose, tongue, body-sense and mind. They are continually susceptible to change and they are impermanent. What we take for “I” or “self“ all the time does not exist; there are only realities which arise and fall away again.",
+    "pt": "O caminho que se deve seguir para desenvolver essa sabedoria é o “Caminho Óctuplo”. Através do desenvolvimento do Caminho Óctuplo, passamos a conhecer melhor as realidades dentro e à nossa volta; essas realidades podem ser experienciadas através das seis portas dos olhos, ouvidos, nariz, língua, sentido corporal e mente. Elas são continuamente suscetíveis à mudança e são impermanentes. Aquilo que tomamos por “eu” ou “ego” o tempo todo não existe; existem apenas realidades que surgem e desaparecem novamente.",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 8,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "In Thailand I experienced that “to reside in a suitable location is the greatest blessing” (Mahā-Maṅgala Sutta). Thailand was the country where I met the “wise person” who helped me to understand the Buddhist teachings and who showed me the way to develop the eightfold Path. It is a great blessing to live in a country where Buddhism is taught and practised so that one can acquire not only theoretical knowledge of Buddhism, but also the way leading to the realization of the Buddha’s teachings in daily life.",
+    "pt": "Na Tailândia experienciei que “residir em local adequado é a maior das bênçãos” (Mahā-Maṅgala Sutta). A Tailândia foi o país onde conheci a “pessoa sábia” que me ajudou a compreender os ensinamentos budistas e me mostrou o caminho para desenvolver o Caminho Óctuplo. É uma grande bênção viver num país onde o Budismo é ensinado e praticado, de modo que se possa adquirir não apenas o conhecimento teórico do Budismo, mas também o caminho que leva à realização dos ensinamentos do Buda na vida diária.",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 9,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "The Buddha, who attained enlightenment and who had clear comprehension of everything which is real, left us his teachings which are now in the form of the Tipiṭaka (three “baskets”), the three parts of the Buddhist scriptures, consisting of the Vinaya, the Book of Discipline for the monks, the Suttanta, Discourses, and the Abhidhamma, the “higher teachings” or exposition of realities in detail.",
+    "pt": "O Buda, que alcançou a iluminação e que tinha clara compreensão de tudo o que é real, nos deixou os seus ensinamentos, que agora se encontram na forma do Tipiṭaka (três “cestos”), as três partes das escrituras budistas, consistindo no Vinaya, o Livro da Disciplina para os monges, no Suttanta, os Discursos, e no Abhidhamma, os “ensinamentos superiores” ou a exposição das realidades em detalhes.",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 10,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "The Buddhist teachings themselves should be our guide in the practice. Some people want to apply themselves to “meditation” immediately without first studying the teachings and thus they do not know which result their way of mental development will bring. The Buddhist teachings are so subtle; one needs to study them thoroughly and to consider them carefully in order to understand what the Buddha taught about mental development. Mental development includes both the development of calm (samatha) and the development of insight (vipassanā), but they each have a different way of practice and a different result. If one does not follow the Buddha’s way, but follows rather one’s own or someone else’s way, one cannot reach the goal.",
+    "pt": "Os próprios ensinamentos budistas devem ser o nosso guia na prática. Algumas pessoas querem se aplicar à “meditação” imediatamente, sem antes estudar os ensinamentos, e assim não sabem qual resultado o seu método de desenvolvimento mental trará. Os ensinamentos budistas são muito sutis; é preciso estudá-los minuciosamente e considerá-los com cuidado para compreender o que o Buda ensinou acerca do desenvolvimento mental. O desenvolvimento mental inclui tanto o desenvolvimento da tranquilidade (samatha) quanto o desenvolvimento do insight (vipassanā), mas cada um tem um modo de prática diferente e um resultado diferente. Se não seguirmos o caminho do Buda, seguindo, em vez disso, o nosso próprio caminho ou o de outra pessoa, não alcançaremos a meta.",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 11,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "I wrote this book to share with others what I learnt from the Buddhist teachings and from the practice of the Dhamma in daily life. I hope that this book can help others to find the Path that leads to real peace. May the Dhamma be the greatest blessing in our lives.",
+    "pt": "Escrevi este livro para compartilhar com os outros o que aprendi dos ensinamentos budistas e da prática do Dhamma na vida diária. Espero que este livro possa ajudar outras pessoas a encontrar o Caminho que leva à verdadeira paz. Que o Dhamma seja a maior bênção em nossas vidas.",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 12,
+    "rend": "chapter",
+    "paranum": null,
+    "pali": "1 General Aspects of Buddhism",
+    "pt": "1 Aspectos Gerais do Budismo",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 13,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "<b>Questioner:</b> What led you to the study of the Buddha’s teachings?",
+    "pt": "Inquiridor: O que a levou ao estudo dos ensinamentos do Buda?",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 14,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "<b>Nina:</b> When I first came to Thailand I was naturally interested in knowing more about the Thai people. I wanted to learn more about their customs and their way of thinking. I found the study of Buddhism essential for the understanding of the Thai culture because the spiritual background of the Thai people is Buddhism. Therefore I started to study Buddhism and the more I studied, the more I found my interest growing.",
+    "pt": "Nina: Quando vim pela primeira vez à Tailândia, fiquei naturalmente interessada em conhecer melhor o povo tailandês. Eu queria aprender mais sobre os seus costumes e o seu modo de pensar. Achei o estudo do Budismo essencial para a compreensão da cultura tailandesa, porque a base espiritual do povo tailandês é o Budismo. Portanto, comecei a estudar o Budismo e, quanto mais estudava, mais percebia o meu interesse crescer.",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 15,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "When one is in Thailand one should take the opportunity to study Buddhism and to try to understand the practice of Buddhism as well. Deep understanding will not come from books alone. Understanding is developed above all by the practice, by the application of the Buddhist teachings in daily life!",
+    "pt": "Quando se está na Tailândia, deve-se aproveitar a oportunidade para estudar o Budismo e tentar compreender também a prática do Budismo. A compreensão profunda não virá apenas dos livros. A compreensão é desenvolvida, acima de tudo, pela prática, pela aplicação dos ensinamentos budistas na vida diária!",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 16,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "<b>Question:</b> Would you tell me what you mean by the practice of Buddhism in daily life?",
+    "pt": "Pergunta: Poderia me dizer o que você quer dizer com a prática do Budismo na vida diária?",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 17,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "<b>Nina:</b> One is first confronted with the practice of Buddhism when one sees different customs of the Thais, such as giving food to the monks, paying respect to the Buddha image or reciting the “precepts” on special occasions such as “Uposatha Day”<sup>1</sup>.",
+    "pt": "Nina: Somos confrontados com a prática do Budismo pela primeira vez quando vemos diferentes costumes dos tailandeses, tais como oferecer alimento aos monges, prestar respeito à imagem do Buda ou recitar os “preceitos” em ocasiões especiais como o “Dia de Uposatha”(1).",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 18,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "<sup>1</sup> A day of vigil or fasting which laypeople may observe four times a month (the days of the new moon, full moon and the two days of the half moon) by undertaking moral precepts and by visiting the temple.",
+    "pt": "(1) Um dia de vigília ou jejum que os leigos podem observar quatro vezes por mês (nos dias de lua nova, lua cheia e nos dois dias de meia-lua) ao assumirem preceitos morais e ao visitarem o templo.",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 19,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "In the beginning I thought that these customs were mixed with many things which are not essential for the practice of Buddhism. For example, I did not see how the presenting of eggs to the statue of the “Emerald Buddha” could have anything to do with the practice of Buddhism. However, even such popular beliefs can teach us something about the practice of Buddhism. There are many levels of understanding the Buddha’s teachings. The people who present eggs to the statue of the Buddha express their confidence in him. This is a wholesome act which will bear its fruit accordingly. However, the people who present the eggs may not realize that it is their respect to the Buddha which will bring them a good result and not the eggs presented to him. They may not clearly see which cause will bring them which result. They would receive greater benefit from their act of paying respect to the Buddha if this were done in a more meaningful way. They could, for example, pay respect to the Buddha by abstaining from ill deeds, in serving other people, in learning more about the teachings of the Buddha and in helping other people to understand the teachings as well.",
+    "pt": "No começo, achei que esses costumes estivessem misturados com muitas coisas que não são essenciais para a prática do Budismo. Por exemplo, não via como a oferenda de ovos à estátua do “Buda de Esmeralda” pudesse ter algo a ver com a prática do Budismo. No entanto, mesmo essas crenças populares podem nos ensinar algo acerca da prática do Budismo. Existem muitos níveis de compreensão dos ensinamentos do Buda. As pessoas que oferecem ovos à estátua do Buda expressam a sua confiança nele. Esse é um ato benéfico (kusala) que dará os seus frutos de acordo. Contudo, as pessoas que oferecem os ovos podem não perceber que é o seu respeito ao Buda que lhes trará um bom resultado, e não os ovos a ele oferecidos. Elas podem não ver claramente qual causa lhes trará qual resultado. Elas receberiam maior benefício do seu ato de prestar respeito ao Buda se isso fosse feito de uma forma mais significativa. Elas poderiam, por exemplo, prestar respeito ao Buda abstendo-se de más ações, servindo a outras pessoas, aprendendo mais sobre os ensinamentos do Buda e ajudando outras pessoas a também compreenderem os ensinamentos.",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 20,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "<b>Question:</b> Could you tell me more about the different degrees of understanding the Buddha’s teaching?",
+    "pt": "Pergunta: Você poderia me falar mais sobre os diferentes graus de compreensão dos ensinamentos do Buda?",
+    "en": "",
+    "es": ""
+  },
+  {
+    "id": 21,
+    "rend": "bodytext",
+    "paranum": null,
+    "pali": "<b>Nina:</b> As regards paying respect to the Buddha image, people who have a higher level of understanding know that the Buddha has passed away completely. When one has studied the teachings more deeply and when one has tried to verify them in daily life, one understands that, although the Buddha has passed away, it still makes sense to pay respect to him. It is the wholesome mental state of the person who pays respect to the Buddha or who offers something to him which will bring its result accordingly. Every good action brings a good result to the person who performs it. One reaps what one has sown. The person who pays respect to the Buddha with the right understanding does not have a confused idea of a Buddha in heaven who could see him or hear him. The image of the Buddha reminds him of the virtues of the Buddha. He thinks of the wisdom of the Buddha who found the Path to complete freedom from sorrow all by himself and who was able to help other people as well to find this Path. He thinks of the purity of the Buddha, of the purity in all his deeds, his speech and his thoughts. He thinks of the compassion of the Buddha, who taught out of compassion for everybody.",
+    "pt": "Nina: Em relação a prestar respeito à imagem do Buda, as pessoas que têm um nível mais elevado de compreensão sabem que o Buda faleceu completamente. Quando se estudam os ensinamentos mais profundamente e quando se tenta verificá-los na vida diária, compreende-se que, embora o Buda tenha falecido, ainda faz sentido prestar respeito a ele. É o estado mental benéfico da pessoa que presta respeito ao Buda ou que lhe oferece algo que trará o seu resultado de acordo. Toda boa ação traz um bom resultado para a pessoa que a realiza. Colhe-se aquilo que se plantou. A pessoa que presta respeito ao Buda com a compreensão correta não tem uma ideia confusa de um Buda no céu que poderia vê-la ou ouvi-la. A imagem do Buda lembra-lhe as virtudes do Buda. Ela pensa na sabedoria do Buda, que encontrou o Caminho para a completa libertação da tristeza inteiramente por si mesmo, e que foi capaz de ajudar outras pessoas também a encontrarem esse Caminho. Ela pensa na pureza do Buda, da pureza em todas as suas ações, em sua fala e em seus pensamentos. Ela pensa na compaixão do Buda, que ensinou por compaixão a todos.",
+    "en": "",
+    "es": ""
+  }
+]

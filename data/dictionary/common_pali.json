@@ -1,0 +1,1701 @@
+{
+  "meta": {
+    "version": 1,
+    "language": [
+      "pt",
+      "en",
+      "es"
+    ],
+    "source": "Frequência computada a partir do corpus local (data/works/: Abhidhamma Piṭaka + Visuddhimagga + obras independentes); glosas redigidas manualmente, sem chamadas de API.",
+    "count": 182
+  },
+  "entries": [
+    {
+      "h": "ca",
+      "pos": "ind.",
+      "en": "and; also",
+      "pt": "e; também",
+      "es": "y; también",
+      "usage": "Conjunção enclítica; nunca abre frase, sempre segue a palavra que liga.",
+      "freq": 46021
+    },
+    {
+      "h": "na",
+      "pos": "ind.",
+      "en": "not",
+      "pt": "não",
+      "es": "no",
+      "usage": "Partícula de negação; combina-se com atthi → natthi (\"não há\").",
+      "freq": 39275
+    },
+    {
+      "h": "ti / iti",
+      "pos": "ind.",
+      "en": "thus; that (quotative marker closing direct/reported speech)",
+      "pt": "assim; que (marcador citativo que fecha um discurso direto ou indireto)",
+      "es": "así; que (marcador citativo que cierra un discurso directo o indirecto)",
+      "usage": "Equivalente às aspas de fechamento em português; \"iti\" é a forma plena, \"ti\" a forma sandhi após vogal.",
+      "freq": 37732
+    },
+    {
+      "h": "pe",
+      "pos": "ind.",
+      "en": "et cetera (elision marker: \"repeat the preceding pattern\")",
+      "pt": "et cetera (marcador de elisão: \"repita o padrão anterior\")",
+      "es": "etcétera (marcador de elisión: \"repita el patrón anterior\")",
+      "usage": "Abreviação de peyyāla; extremamente comum no Paṭṭhāna e no Yamaka, onde longas séries repetitivas são abreviadas.",
+      "freq": 25373
+    },
+    {
+      "h": "vā",
+      "pos": "ind.",
+      "en": "or",
+      "pt": "ou",
+      "es": "o",
+      "usage": "Conjunção disjuntiva enclítica, como \"ca\".",
+      "freq": 18126
+    },
+    {
+      "h": "pana",
+      "pos": "ind.",
+      "en": "but; now; moreover",
+      "pt": "mas; ora; além disso",
+      "es": "pero; ahora bien; además",
+      "usage": "Marca contraste ou transição de tópico, mais suave que um \"mas\" forte.",
+      "freq": 16626
+    },
+    {
+      "h": "tattha",
+      "pos": "ind.",
+      "en": "there; in that connection; therein",
+      "pt": "ali; a esse respeito; nisso",
+      "es": "allí; a ese respecto; en eso",
+      "root": "ta- (raiz demonstrativa) + -ttha (sufixo locativo)",
+      "usage": "Muito comum para introduzir uma explicação: \"tattha ... \" = \"a esse respeito...\".",
+      "freq": 16410
+    },
+    {
+      "h": "hi",
+      "pos": "ind.",
+      "en": "indeed; for; because",
+      "pt": "com efeito; pois; porque",
+      "es": "en efecto; pues; porque",
+      "usage": "Partícula enfática/explicativa, geralmente na segunda posição da frase.",
+      "freq": 8525
+    },
+    {
+      "h": "evaṃ",
+      "pos": "ind.",
+      "en": "thus; in this way; so",
+      "pt": "assim; deste modo",
+      "es": "así; de este modo",
+      "usage": "Muito frequente ao final de uma explicação (\"evaṃ ... veditabbaṃ\" = \"assim deve ser entendido\").",
+      "freq": 8359
+    },
+    {
+      "h": "no",
+      "pos": "ind.",
+      "en": "not (negation, verse style); also: us/our (obl. of amha)",
+      "pt": "não (negação, estilo poético); também: nos/nosso (oblíquo de amha)",
+      "es": "no (negación, estilo poético); también: nos/nuestro (oblicuo de amha)",
+      "usage": "Ambíguo fora de contexto: negação arcaica em versos ou pronome pessoal de 1ª pl."
+    },
+    {
+      "h": "nāma",
+      "pos": "ind./nt.",
+      "en": "by name; that is to say (particle); also: mentality/the mental (technical term, opposed to rūpa)",
+      "pt": "por nome; ou seja (partícula); também: mentalidade/o mental (termo técnico, em oposição a rūpa)",
+      "es": "por nombre; es decir (partícula); también: mentalidad/lo mental (término técnico, opuesto a rūpa)",
+      "root": "√nam / cf. inglês \"name\"",
+      "syn": [
+        "citta",
+        "mano"
+      ],
+      "usage": "No Abhidhamma, \"nāma\" designa os agregados mentais (vedanā, saññā, saṅkhāra, viññāṇa) em contraste com \"rūpa\" (matéria) — o par nāma-rūpa é central.",
+      "freq": 6384
+    },
+    {
+      "h": "viya",
+      "pos": "ind.",
+      "en": "like; as if; as it were",
+      "pt": "como; como se; como que",
+      "es": "como; como si; como que",
+      "usage": "Partícula comparativa, sinônimo de \"iva\".",
+      "freq": 5408
+    },
+    {
+      "h": "tato",
+      "pos": "ind.",
+      "en": "from that; thereafter; therefore",
+      "pt": "a partir daí; depois disso; por isso",
+      "es": "a partir de eso; después de eso; por eso",
+      "usage": "Ablativo advérbio do pronome demonstrativo \"ta-\".",
+      "freq": 4547
+    },
+    {
+      "h": "ayaṃ",
+      "pos": "pron.",
+      "en": "this (masc./fem. nom. sg. of \"idam\")",
+      "pt": "este/esta (nom. sg. masc./fem. de \"idam\")",
+      "es": "este/esta (nom. sg. masc./fem. de \"idam\")",
+      "usage": "Pronome demonstrativo próximo; a forma neutra é \"idaṃ\".",
+      "freq": 4139
+    },
+    {
+      "h": "yaṃ",
+      "pos": "pron.",
+      "en": "which; that (rel. pron., neut./acc.)",
+      "pt": "o qual; que (pron. relativo, neutro/acusativo)",
+      "es": "el cual; que (pron. relativo, neutro/acusativo)",
+      "usage": "Correlativo típico: \"yaṃ ... taṃ\" = \"o que ... isso\".",
+      "freq": 4047
+    },
+    {
+      "h": "yathā",
+      "pos": "ind.",
+      "en": "as; just as; in accordance with",
+      "pt": "como; assim como; conforme",
+      "es": "como; así como; conforme",
+      "usage": "Correlativo com \"tathā\" (\"assim\"): \"yathā ... tathā\" = \"assim como ... assim também\".",
+      "freq": 3999
+    },
+    {
+      "h": "tasmā",
+      "pos": "ind.",
+      "en": "therefore; for that reason",
+      "pt": "portanto; por essa razão",
+      "es": "por lo tanto; por esa razón",
+      "usage": "Ablativo advérbio de \"ta-\", introduz uma conclusão.",
+      "freq": 3958
+    },
+    {
+      "h": "te",
+      "pos": "pron.",
+      "en": "they/those; also enclitic \"to you / your\" (dat./gen. sg. of tvaṃ)",
+      "pt": "eles/essas; também enclítico \"a ti / teu\" (dat./gen. sg. de tvaṃ)",
+      "es": "ellos/esas; también enclítico \"a ti / tu\" (dat./gen. sg. de tvaṃ)",
+      "usage": "Forma ambígua — nominativo/acusativo plural de \"ta-\" ou pronome de 2ª pessoa enclítico.",
+      "freq": 3927
+    },
+    {
+      "h": "ceva",
+      "pos": "ind.",
+      "en": "and indeed; and also (ca + eva)",
+      "pt": "e também; e de fato (ca + eva)",
+      "es": "y también; y de hecho (ca + eva)",
+      "usage": "Frequentemente em par correlativo \"ceva ... ca\" = \"tanto ... quanto\".",
+      "freq": 3863
+    },
+    {
+      "h": "katvā",
+      "pos": "abs.",
+      "en": "having done; having made",
+      "pt": "tendo feito",
+      "es": "habiendo hecho",
+      "root": "√kar (fazer) — lema karoti",
+      "usage": "Absolutivo (gerúndio) do verbo mais comum do Pāli, karoti.",
+      "freq": 3834
+    },
+    {
+      "h": "yattha",
+      "pos": "ind.",
+      "en": "where; in which (relative)",
+      "pt": "onde; no qual (relativo)",
+      "es": "donde; en el cual (relativo)",
+      "usage": "Correlativo com \"tattha\": \"yattha ... tattha\" = \"onde ... ali\".",
+      "freq": 3594
+    },
+    {
+      "h": "ye",
+      "pos": "pron.",
+      "en": "who; which (rel. pron., masc./nt. pl.)",
+      "pt": "os quais; que (pron. relativo, masc./nt. pl.)",
+      "es": "los cuales; que (pron. relativo, masc./nt. pl.)",
+      "freq": 3487
+    },
+    {
+      "h": "idaṃ",
+      "pos": "pron.",
+      "en": "this (neuter nom./acc. sg.)",
+      "pt": "isto (neutro, nom./acus. sg.)",
+      "es": "esto (neutro, nom./acus. sg.)",
+      "freq": 3426
+    },
+    {
+      "h": "tena",
+      "pos": "pron./ind.",
+      "en": "by that; therefore; with that",
+      "pt": "por isso; portanto; com isso",
+      "es": "por eso; por lo tanto; con eso",
+      "usage": "Instrumental de \"ta-\", frequentemente com valor de conjunção conclusiva.",
+      "freq": 3324
+    },
+    {
+      "h": "vuccati",
+      "pos": "v.",
+      "en": "is said; is called",
+      "pt": "é dito; é chamado",
+      "es": "se dice; se llama",
+      "root": "√vac (falar)",
+      "syn": [
+        "vutta",
+        "kathiyati"
+      ],
+      "usage": "Voz passiva de \"vatti/vadati\"; muito comum ao definir um termo técnico.",
+      "freq": 3144
+    },
+    {
+      "h": "natthi",
+      "pos": "ind.",
+      "en": "there is not; does not exist (na + atthi)",
+      "pt": "não há; não existe (na + atthi)",
+      "es": "no hay; no existe (na + atthi)",
+      "usage": "Também nome de um dos 24 paccayas do Paṭṭhāna (natthipaccaya).",
+      "freq": 3103
+    },
+    {
+      "h": "ettha",
+      "pos": "ind.",
+      "en": "here; in this connection",
+      "pt": "aqui; a este respeito",
+      "es": "aquí; a este respecto",
+      "freq": 2976
+    },
+    {
+      "h": "eva",
+      "pos": "ind.",
+      "en": "just; only; indeed (emphatic particle)",
+      "pt": "justamente; somente; de fato (partícula enfática)",
+      "es": "justamente; solo; de hecho (partícula enfática)",
+      "usage": "Enclítico enfático que reforça a palavra anterior, sem tradução literal fixa.",
+      "freq": 2962
+    },
+    {
+      "h": "tasmiṃ",
+      "pos": "pron.",
+      "en": "in that; on that (loc. sg. of ta-)",
+      "pt": "naquele; naquilo (loc. sg. de ta-)",
+      "es": "en aquel; en aquello (loc. sg. de ta-)",
+      "freq": 2822
+    },
+    {
+      "h": "yo",
+      "pos": "pron.",
+      "en": "who; which (rel. pron., masc. nom. sg.)",
+      "pt": "quem; o qual (pron. relativo, masc. nom. sg.)",
+      "es": "quien; el cual (pron. relativo, masc. nom. sg.)",
+      "usage": "Correlativo clássico: \"yo ... so\" = \"aquele que ... esse\".",
+      "freq": 2729
+    },
+    {
+      "h": "āha",
+      "pos": "v.",
+      "en": "(he/she) says; said",
+      "pt": "(ele/ela) diz; disse",
+      "es": "(él/ella) dice; dijo",
+      "root": "√ah (defectivo, só aoristo/perfeito)",
+      "usage": "Usado para introduzir citações de comentaristas ou do próprio texto-base.",
+      "freq": 2685
+    },
+    {
+      "h": "kho",
+      "pos": "ind.",
+      "en": "indeed; now (emphatic/transitional particle)",
+      "pt": "de fato; ora (partícula enfática/transitiva)",
+      "es": "de hecho; ahora bien (partícula enfática/transitiva)",
+      "freq": 1847
+    },
+    {
+      "h": "idha",
+      "pos": "ind.",
+      "en": "here; in this (teaching/context)",
+      "pt": "aqui; nesta (doutrina/contexto)",
+      "es": "aquí; en esta (doctrina/contexto)",
+      "freq": 1989
+    },
+    {
+      "h": "atha",
+      "pos": "ind.",
+      "en": "then; now; and then",
+      "pt": "então; agora; e então",
+      "es": "entonces; ahora; y entonces",
+      "freq": 1661
+    },
+    {
+      "h": "kiṃ",
+      "pos": "pron.",
+      "en": "what?; why? (interrogative)",
+      "pt": "o quê?; por quê? (interrogativo)",
+      "es": "¿qué?; ¿por qué? (interrogativo)",
+      "freq": 1092
+    },
+    {
+      "h": "yadi",
+      "pos": "ind.",
+      "en": "if",
+      "pt": "se",
+      "es": "si",
+      "usage": "Correlativo com \"tadā\"/\"atha\": \"yadi ... atha\" = \"se ... então\".",
+      "freq": 1200
+    },
+    {
+      "h": "idāni",
+      "pos": "ind.",
+      "en": "now",
+      "pt": "agora",
+      "es": "ahora",
+      "freq": 1125
+    },
+    {
+      "h": "sabba",
+      "pos": "adj.",
+      "en": "all; every",
+      "pt": "todo; cada",
+      "es": "todo; cada",
+      "syn": [
+        "sakala"
+      ],
+      "freq": 987
+    },
+    {
+      "h": "kathaṃ",
+      "pos": "ind.",
+      "en": "how?",
+      "pt": "como?",
+      "es": "¿cómo?",
+      "freq": 944
+    },
+    {
+      "h": "eka",
+      "pos": "num.",
+      "en": "one",
+      "pt": "um",
+      "es": "uno",
+      "usage": "Forma singular \"ekaṃ/eko\" também significa \"um único\" ou \"sozinho\".",
+      "freq": 9880
+    },
+    {
+      "h": "dve",
+      "pos": "num.",
+      "en": "two",
+      "pt": "dois",
+      "es": "dos",
+      "freq": 7301
+    },
+    {
+      "h": "ti / tīṇi",
+      "pos": "num.",
+      "en": "three",
+      "pt": "três",
+      "es": "tres",
+      "freq": 9571
+    },
+    {
+      "h": "catu / cattāri",
+      "pos": "num.",
+      "en": "four",
+      "pt": "quatro",
+      "es": "cuatro",
+      "usage": "Base do composto \"cattāri ariyasaccāni\" (as quatro nobres verdades).",
+      "freq": 2225
+    },
+    {
+      "h": "pañca",
+      "pos": "num.",
+      "en": "five",
+      "pt": "cinco",
+      "es": "cinco",
+      "usage": "Base de \"pañcakkhandhā\" (os cinco agregados).",
+      "freq": 3644
+    },
+    {
+      "h": "cha",
+      "pos": "num.",
+      "en": "six",
+      "pt": "seis",
+      "es": "seis",
+      "usage": "Base de \"cha āyatanāni\" (as seis bases sensoriais).",
+      "freq": 1838
+    },
+    {
+      "h": "satta",
+      "pos": "num.",
+      "en": "seven",
+      "pt": "sete",
+      "es": "siete",
+      "usage": "Base de \"sattappakaraṇa\" (as sete obras do Abhidhamma).",
+      "freq": 3048
+    },
+    {
+      "h": "aṭṭha",
+      "pos": "num.",
+      "en": "eight",
+      "pt": "oito",
+      "es": "ocho",
+      "freq": 1257
+    },
+    {
+      "h": "nava",
+      "pos": "num.",
+      "en": "nine",
+      "pt": "nove",
+      "es": "nueve",
+      "freq": 6796
+    },
+    {
+      "h": "dasa",
+      "pos": "num.",
+      "en": "ten",
+      "pt": "dez",
+      "es": "diez",
+      "freq": 681
+    },
+    {
+      "h": "dhamma",
+      "pos": "m./nt.",
+      "en": "phenomenon; mental/physical state; quality; teaching; the Dhamma (the Buddha's teaching)",
+      "pt": "realidade última discreta (paramattha-dhamma); estado mental/físico; qualidade; ensinamento; o Dhamma (o ensinamento do Buda)",
+      "es": "fenómeno; estado mental/físico; cualidad; enseñanza; el Dhamma (la enseñanza del Buda)",
+      "root": "√dhar (sustentar, manter)",
+      "syn": [
+        "sabhāva",
+        "guṇa"
+      ],
+      "usage": "Termo mais central de todo o Abhidhamma: designa a unidade discreta de realidade última (paramattha-dhamma) nas análises do Piṭaka, e o corpo de ensinamentos do Buda nos Nikāyas. Nunca traduzir como \"fealidade\" neste corpus.",
+      "freq": 13876
+    },
+    {
+      "h": "citta",
+      "pos": "nt.",
+      "en": "mind; consciousness; mental state",
+      "pt": "mente; consciência; estado mental",
+      "es": "mente; consciencia; estado mental",
+      "root": "√cit (pensar, perceber)",
+      "syn": [
+        "viññāṇa",
+        "mano",
+        "hadaya"
+      ],
+      "usage": "No Abhidhamma, sinônimo funcional de \"viññāṇa\"; cada citta surge e cessa acompanhado de fatores mentais (cetasika).",
+      "freq": 4754
+    },
+    {
+      "h": "rūpa",
+      "pos": "nt.",
+      "en": "materiality; matter; physical phenomenon; form",
+      "pt": "materialidade; matéria; rūpa; forma",
+      "es": "materialidad; materia; fenómeno físico; forma",
+      "syn": [
+        "mahābhūta (elemento material)"
+      ],
+      "usage": "Metade do par nāma-rūpa; no Abhidhamma é analisado em 28 tipos de matéria.",
+      "freq": 5828
+    },
+    {
+      "h": "vedanā",
+      "pos": "f.",
+      "en": "feeling; sensation (pleasant, painful or neutral)",
+      "pt": "sensação; sentimento (agradável, doloroso ou neutro)",
+      "es": "sensación; sentimiento (agradable, doloroso o neutro)",
+      "root": "√vid (sentir, experimentar)",
+      "usage": "Um dos cinco agregados (khandha); classifica-se em sukha, dukkha e adukkhamasukha.",
+      "freq": 1369
+    },
+    {
+      "h": "saññā",
+      "pos": "f.",
+      "en": "perception; recognition",
+      "pt": "percepção; reconhecimento",
+      "es": "percepción; reconocimiento",
+      "root": "√ñā (conhecer) + saṃ- (junto)",
+      "usage": "O agregado que reconhece e rotula o objeto percebido (\"isto é azul\", \"isto é uma pessoa\").",
+      "freq": 907
+    },
+    {
+      "h": "saṅkhāra",
+      "pos": "m.",
+      "en": "mental formations; volitional activities; conditioned things",
+      "pt": "formações mentais; atividades volitivas; coisas condicionadas",
+      "es": "formaciones mentales; actividades volitivas; cosas condicionadas",
+      "root": "saṃ- + √kar (fazer)",
+      "usage": "Sentido duplo: (1) o agregado dos fatores mentais volitivos; (2) qualquer coisa condicionada/formada.",
+      "freq": 830
+    },
+    {
+      "h": "viññāṇa",
+      "pos": "nt.",
+      "en": "consciousness",
+      "pt": "consciência",
+      "es": "consciencia",
+      "root": "vi- + √jñā (conhecer)",
+      "syn": [
+        "citta",
+        "mano"
+      ],
+      "usage": "O agregado que simplesmente cognoscente do objeto, sem ainda julgá-lo (isso é feito por saññā/saṅkhāra).",
+      "freq": 1008
+    },
+    {
+      "h": "khandha",
+      "pos": "m.",
+      "en": "aggregate; heap; group",
+      "pt": "agregado; monte; grupo",
+      "es": "agregado; montón; grupo",
+      "usage": "Os cinco khandhā (rūpa, vedanā, saññā, saṅkhāra, viññāṇa) compõem toda experiência de um ser.",
+      "freq": 6380
+    },
+    {
+      "h": "āyatana",
+      "pos": "nt.",
+      "en": "base; sphere; sense-door and its object",
+      "pt": "base; esfera; porta sensorial e seu objeto",
+      "es": "base; esfera; puerta sensorial y su objeto",
+      "usage": "Doze āyatanas: seis internos (olho...mente) e seis externos (forma...objeto mental).",
+      "freq": 1430
+    },
+    {
+      "h": "dhātu",
+      "pos": "f.",
+      "en": "element",
+      "pt": "elemento",
+      "es": "elemento",
+      "usage": "Classificação alternativa da realidade em elementos (ex.: os quatro grandes elementos, ou as 18 dhātus).",
+      "freq": 391
+    },
+    {
+      "h": "indriya",
+      "pos": "nt.",
+      "en": "faculty; controlling principle",
+      "pt": "faculdade; princípio controlador",
+      "es": "facultad; principio controlador",
+      "usage": "22 indriyas no Abhidhamma, incluindo as faculdades sensoriais e a faculdade vital (jīvitindriya).",
+      "freq": 592
+    },
+    {
+      "h": "ārammaṇa",
+      "pos": "nt.",
+      "en": "object (of consciousness); sense-object",
+      "pt": "objeto (da consciência); objeto sensorial",
+      "es": "objeto (de la consciencia); objeto sensorial",
+      "syn": [
+        "visaya"
+      ],
+      "usage": "Aquilo que a consciência (citta) toma como objeto; base do ārammaṇapaccaya.",
+      "freq": 947
+    },
+    {
+      "h": "sabhāva",
+      "pos": "m.",
+      "en": "intrinsic nature; own characteristic",
+      "pt": "natureza intrínseca; característica própria",
+      "es": "naturaleza intrínseca; característica propia",
+      "syn": [
+        "dhamma"
+      ],
+      "usage": "Cada dhamma tem seu próprio \"sabhāva\" — daí a etimologia popular \"dhamma\" = \"o que sustenta sua própria natureza\"."
+    },
+    {
+      "h": "attha",
+      "pos": "m.",
+      "en": "meaning; sense; benefit; matter",
+      "pt": "significado; sentido; benefício; assunto",
+      "es": "significado; sentido; beneficio; asunto",
+      "freq": 3944
+    },
+    {
+      "h": "vatthu",
+      "pos": "nt.",
+      "en": "basis; physical seat (e.g. of a sense faculty); subject-matter",
+      "pt": "base; sede física (p. ex. de uma faculdade sensorial); assunto",
+      "es": "base; sede física (p. ej. de una facultad sensorial); asunto",
+      "freq": 1213
+    },
+    {
+      "h": "mano",
+      "pos": "nt.",
+      "en": "mind; the mind-door (as the 6th internal āyatana)",
+      "pt": "mente; a porta mental (como o 6º āyatana interno)",
+      "es": "mente; la puerta mental (como el 6º āyatana interno)",
+      "syn": [
+        "citta",
+        "viññāṇa"
+      ],
+      "usage": "Distinto dos cinco sentidos físicos; é a base de toda cognição mental e do manāyatana.",
+      "freq": 407
+    },
+    {
+      "h": "cakkhu",
+      "pos": "nt.",
+      "en": "eye; the eye-faculty",
+      "pt": "olho; a faculdade visual",
+      "es": "ojo; la facultad visual",
+      "usage": "Primeiro dos seis āyatanas internos (cakkhāyatana).",
+      "freq": 793
+    },
+    {
+      "h": "sota",
+      "pos": "nt.",
+      "en": "ear; the ear-faculty",
+      "pt": "ouvido; a faculdade auditiva",
+      "es": "oído; la facultad auditiva",
+      "usage": "Segundo dos seis āyatanas internos."
+    },
+    {
+      "h": "ghāna",
+      "pos": "nt.",
+      "en": "nose; the nose-faculty",
+      "pt": "nariz; a faculdade olfativa",
+      "es": "nariz; la facultad olfativa",
+      "usage": "Terceiro āyatana interno (ghānāyatana).",
+      "freq": 613
+    },
+    {
+      "h": "jivhā",
+      "pos": "f.",
+      "en": "tongue; the tongue-faculty",
+      "pt": "língua; a faculdade gustativa",
+      "es": "lengua; la facultad gustativa",
+      "usage": "Quarto āyatana interno."
+    },
+    {
+      "h": "kāya",
+      "pos": "m.",
+      "en": "body; the body-faculty (tactile sense)",
+      "pt": "corpo; a faculdade corporal (tato)",
+      "es": "cuerpo; la facultad corporal (tacto)",
+      "usage": "Quinto āyatana interno; também usado em sentido amplo como \"corpo\" físico ou mental (kāyasaṅkhāra).",
+      "freq": 679
+    },
+    {
+      "h": "rūpāyatana",
+      "pos": "nt.",
+      "en": "visible form (as sense-object)",
+      "pt": "forma visível (como objeto sensorial)",
+      "es": "forma visible (como objeto sensorial)",
+      "usage": "Primeiro dos seis āyatanas externos: objeto do olho.",
+      "freq": 1028
+    },
+    {
+      "h": "saddāyatana",
+      "pos": "nt.",
+      "en": "sound (as sense-object)",
+      "pt": "som (como objeto sensorial)",
+      "es": "sonido (como objeto sensorial)",
+      "usage": "Objeto do ouvido."
+    },
+    {
+      "h": "gandhāyatana",
+      "pos": "nt.",
+      "en": "smell (as sense-object)",
+      "pt": "odor (como objeto sensorial)",
+      "es": "olor (como objeto sensorial)",
+      "usage": "Objeto do nariz."
+    },
+    {
+      "h": "rasāyatana",
+      "pos": "nt.",
+      "en": "taste (as sense-object)",
+      "pt": "sabor (como objeto sensorial)",
+      "es": "sabor (como objeto sensorial)",
+      "usage": "Objeto da língua."
+    },
+    {
+      "h": "phoṭṭhabbāyatana",
+      "pos": "nt.",
+      "en": "tangible object (as sense-object)",
+      "pt": "objeto tangível (como objeto sensorial)",
+      "es": "objeto tangible (como objeto sensorial)",
+      "usage": "Objeto do corpo (tato).",
+      "freq": 371
+    },
+    {
+      "h": "dhammāyatana",
+      "pos": "nt.",
+      "en": "mental object (as sense-object, the 6th external āyatana)",
+      "pt": "objeto mental (como objeto sensorial, o 6º āyatana externo)",
+      "es": "objeto mental (como objeto sensorial, el 6º āyatana externo)",
+      "usage": "Objeto da mente; inclui os cetasikas, o nibbāna e dhammas sutis.",
+      "freq": 840
+    },
+    {
+      "h": "paccaya",
+      "pos": "m.",
+      "en": "condition; cause; requisite",
+      "pt": "condição; causa; requisito",
+      "es": "condición; causa; requisito",
+      "root": "prati- + √i (ir)",
+      "usage": "Termo-chave do Paṭṭhāna, que descreve 24 tipos de paccaya (relação condicional) entre os dhammas.",
+      "freq": 15560
+    },
+    {
+      "h": "hetu",
+      "pos": "m.",
+      "en": "root cause; the six roots (lobha, dosa, moha, alobha, adosa, amoha)",
+      "pt": "causa raiz; as seis raízes (lobha, dosa, moha, alobha, adosa, amoha)",
+      "es": "causa raíz; las seis raíces (lobha, dosa, moha, alobha, adosa, amoha)",
+      "usage": "Também nome do primeiro dos 24 paccayas (hetupaccaya).",
+      "freq": 2150
+    },
+    {
+      "h": "kusala",
+      "pos": "adj./nt.",
+      "en": "wholesome; skilful; meritorious",
+      "pt": "saudável; hábil; meritório",
+      "es": "sano; hábil; meritorio",
+      "syn": [
+        "sobhana"
+      ],
+      "usage": "Estado mental (citta) sem lobha/dosa/moha nas raízes, opondo-se a akusala.",
+      "freq": 1940
+    },
+    {
+      "h": "akusala",
+      "pos": "adj./nt.",
+      "en": "unwholesome; unskilful",
+      "pt": "não saudável; não hábil",
+      "es": "insano; no hábil",
+      "usage": "Estado mental enraizado em lobha, dosa ou moha.",
+      "freq": 1329
+    },
+    {
+      "h": "abyākata",
+      "pos": "adj./nt.",
+      "en": "indeterminate (neither kusala nor akusala)",
+      "pt": "indeterminado (nem kusala nem akusala)",
+      "es": "indeterminado (ni kusala ni akusala)",
+      "usage": "Terceira categoria de citta no Abhidhamma: resultados (vipāka) e funcionais (kiriya) são abyākata.",
+      "freq": 1446
+    },
+    {
+      "h": "kamma",
+      "pos": "nt.",
+      "en": "action; volitional deed",
+      "pt": "ação; ato volitivo",
+      "es": "acción; acto volitivo",
+      "root": "√kar (fazer)",
+      "usage": "Ação intencional que gera resultado (vipāka); também um dos 24 paccayas (kammapaccaya).",
+      "freq": 847
+    },
+    {
+      "h": "vipāka",
+      "pos": "m.",
+      "en": "result; ripening (of kamma)",
+      "pt": "resultado; maturação (do kamma)",
+      "es": "resultado; maduración (del kamma)",
+      "usage": "Fruto de um kamma anterior; categoria de citta \"resultante\".",
+      "freq": 793
+    },
+    {
+      "h": "moha",
+      "pos": "m.",
+      "en": "delusion; ignorance",
+      "pt": "ilusão; ignorância",
+      "es": "engaño; ignorancia",
+      "syn": [
+        "avijjā"
+      ],
+      "usage": "Uma das três raízes akusala; obscurece a percepção correta da realidade.",
+      "freq": 965
+    },
+    {
+      "h": "lobha",
+      "pos": "m.",
+      "en": "greed; attachment",
+      "pt": "avidez; apego",
+      "es": "avidez; apego",
+      "syn": [
+        "rāga",
+        "taṇhā"
+      ],
+      "usage": "Uma das três raízes akusala."
+    },
+    {
+      "h": "rāga",
+      "pos": "m.",
+      "en": "lust; passion; attachment",
+      "pt": "luxúria; paixão; apego",
+      "es": "lujuria; pasión; apego",
+      "syn": [
+        "lobha"
+      ],
+      "freq": 780
+    },
+    {
+      "h": "dosa",
+      "pos": "m.",
+      "en": "hatred; aversion; ill-will",
+      "pt": "aversão; ódio; má vontade",
+      "es": "aversión; odio; mala voluntad",
+      "syn": [
+        "paṭigha"
+      ],
+      "usage": "Uma das três raízes akusala.",
+      "freq": 372
+    },
+    {
+      "h": "taṇhā",
+      "pos": "f.",
+      "en": "craving; thirst",
+      "pt": "sede; ansiedade; desejo ardente",
+      "es": "sed; ansiedad; deseo ardiente",
+      "syn": [
+        "lobha"
+      ],
+      "usage": "Causa central do sofrimento na segunda nobre verdade (samudayasacca).",
+      "freq": 479
+    },
+    {
+      "h": "diṭṭhi",
+      "pos": "f.",
+      "en": "view; belief (often wrong view, micchādiṭṭhi)",
+      "pt": "visão; crença (frequentemente visão errada, micchādiṭṭhi)",
+      "es": "visión; creencia (frecuentemente visión errónea, micchādiṭṭhi)",
+      "freq": 647
+    },
+    {
+      "h": "māna",
+      "pos": "m.",
+      "en": "conceit; pride",
+      "pt": "orgulho; conceito de si",
+      "es": "orgullo; concepto de sí mismo",
+      "usage": "Um dos sete anusaya (tendências latentes)."
+    },
+    {
+      "h": "vicikicchā",
+      "pos": "f.",
+      "en": "doubt; uncertainty",
+      "pt": "dúvida; incerteza",
+      "es": "duda; incertidumbre",
+      "usage": "Um dos cinco nīvaraṇa (obstáculos) e um dos anusaya."
+    },
+    {
+      "h": "anusaya",
+      "pos": "m.",
+      "en": "latent tendency; underlying proclivity",
+      "pt": "tendência latente; propensão subjacente",
+      "es": "tendencia latente; propensión subyacente",
+      "usage": "Sete anusayas dormem na mente até serem ativados por condições apropriadas (ex.: kāmarāgānusaya, paṭighānusaya).",
+      "freq": 655
+    },
+    {
+      "h": "āsava",
+      "pos": "m.",
+      "en": "taint; canker; influx",
+      "pt": "impureza; corrupção; influxo",
+      "es": "mancha; corrupción; influjo",
+      "usage": "Quatro āsavas (kāma, bhava, diṭṭhi, avijjā) cuja erradicação define o arahant."
+    },
+    {
+      "h": "nīvaraṇa",
+      "pos": "nt.",
+      "en": "hindrance",
+      "pt": "obstáculo",
+      "es": "obstáculo",
+      "usage": "Cinco nīvaraṇas (desejo sensorial, aversão, sono e torpor, agitação e remorso, dúvida) que obstruem a concentração."
+    },
+    {
+      "h": "saṃyojana",
+      "pos": "nt.",
+      "en": "fetter",
+      "pt": "grilhão; algema",
+      "es": "grillete; cadena",
+      "usage": "Dez saṃyojanas que atam o ser ao ciclo de nascimentos; sua erradicação gradual marca os quatro estágios de despertar."
+    },
+    {
+      "h": "upādāna",
+      "pos": "nt.",
+      "en": "clinging; grasping",
+      "pt": "apego; aferramento",
+      "es": "apego; aferramiento",
+      "usage": "Elo do paṭiccasamuppāda (originação dependente) que segue a taṇhā."
+    },
+    {
+      "h": "kilesa",
+      "pos": "m.",
+      "en": "defilement",
+      "pt": "aflição; mácula mental",
+      "es": "aflicción; mancha mental",
+      "syn": [
+        "āsava",
+        "anusaya"
+      ],
+      "usage": "Termo geral para todas as impurezas mentais (lobha, dosa, moha e derivados).",
+      "freq": 428
+    },
+    {
+      "h": "sīla",
+      "pos": "nt.",
+      "en": "virtue; moral conduct",
+      "pt": "virtude; conduta moral",
+      "es": "virtud; conducta moral",
+      "freq": 820
+    },
+    {
+      "h": "samādhi",
+      "pos": "m.",
+      "en": "concentration; one-pointedness of mind",
+      "pt": "concentração; unidirecionalidade da mente",
+      "es": "concentración; unidireccionalidad de la mente",
+      "freq": 395
+    },
+    {
+      "h": "paññā",
+      "pos": "f.",
+      "en": "wisdom; understanding",
+      "pt": "sabedoria; compreensão",
+      "es": "sabiduría; comprensión",
+      "syn": [
+        "ñāṇa"
+      ],
+      "freq": 1447
+    },
+    {
+      "h": "ñāṇa",
+      "pos": "nt.",
+      "en": "knowledge; insight",
+      "pt": "conhecimento; discernimento",
+      "es": "conocimiento; discernimiento",
+      "syn": [
+        "paññā"
+      ],
+      "freq": 1215
+    },
+    {
+      "h": "saddhā",
+      "pos": "f.",
+      "en": "faith; confidence",
+      "pt": "fé; confiança",
+      "es": "fe; confianza",
+      "freq": 473
+    },
+    {
+      "h": "vīriya",
+      "pos": "nt.",
+      "en": "energy; effort; diligence",
+      "pt": "energia; esforço; diligência",
+      "es": "energía; esfuerzo; diligencia",
+      "freq": 395
+    },
+    {
+      "h": "sati",
+      "pos": "f.",
+      "en": "mindfulness",
+      "pt": "atenção plena; presença mental",
+      "es": "atención plena; presencia mental",
+      "freq": 1480
+    },
+    {
+      "h": "vitakka",
+      "pos": "m.",
+      "en": "applied thought; initial application of mind",
+      "pt": "pensamento aplicado; aplicação inicial da mente",
+      "es": "pensamiento aplicado; aplicación inicial de la mente",
+      "usage": "Primeiro fator de jhāna, que dirige a mente ao objeto.",
+      "freq": 670
+    },
+    {
+      "h": "vicāra",
+      "pos": "m.",
+      "en": "sustained thought; sustained application",
+      "pt": "pensamento sustentado; aplicação contínua",
+      "es": "pensamiento sostenido; aplicación continua",
+      "usage": "Segundo fator de jhāna, que mantém a mente no objeto.",
+      "freq": 400
+    },
+    {
+      "h": "pīti",
+      "pos": "f.",
+      "en": "rapture; joy",
+      "pt": "júbilo; alegria",
+      "es": "júbilo; alegría"
+    },
+    {
+      "h": "sukha",
+      "pos": "nt./adj.",
+      "en": "pleasure; happiness; pleasant",
+      "pt": "prazer; felicidade; agradável",
+      "es": "placer; felicidad; agradable",
+      "freq": 787
+    },
+    {
+      "h": "dukkha",
+      "pos": "nt./adj.",
+      "en": "suffering; pain; unsatisfactory",
+      "pt": "sofrimento; dor; insatisfatório",
+      "es": "sufrimiento; dolor; insatisfactorio",
+      "usage": "Primeira das quatro nobres verdades (dukkhasacca).",
+      "freq": 1037
+    },
+    {
+      "h": "adukkhamasukha",
+      "pos": "adj.",
+      "en": "neither-painful-nor-pleasant (neutral feeling)",
+      "pt": "nem-doloroso-nem-agradável (sensação neutra)",
+      "es": "ni-doloroso-ni-agradable (sensación neutra)",
+      "usage": "Também chamada upekkhāvedanā; a terceira categoria de vedanā.",
+      "freq": 472
+    },
+    {
+      "h": "somanassa",
+      "pos": "nt.",
+      "en": "mental joy; gladness",
+      "pt": "alegria mental; contentamento",
+      "es": "alegría mental; contento",
+      "freq": 709
+    },
+    {
+      "h": "domanassa",
+      "pos": "nt.",
+      "en": "mental displeasure; sadness",
+      "pt": "desagrado mental; tristeza",
+      "es": "desagrado mental; tristeza",
+      "freq": 550
+    },
+    {
+      "h": "upekkhā",
+      "pos": "f.",
+      "en": "equanimity; neutral feeling",
+      "pt": "equanimidade; sensação neutra",
+      "es": "ecuanimidad; sensación neutra",
+      "freq": 380
+    },
+    {
+      "h": "cetanā",
+      "pos": "f.",
+      "en": "volition; intention",
+      "pt": "volição; intenção",
+      "es": "volición; intención",
+      "usage": "Fator mental que \"organiza\" a ação e produz kamma; para alguns comentadores, é a essência do próprio kamma.",
+      "freq": 1334
+    },
+    {
+      "h": "phassa",
+      "pos": "m.",
+      "en": "contact; sense-impression",
+      "pt": "contato; impressão sensorial",
+      "es": "contacto; impresión sensorial",
+      "usage": "Encontro entre objeto, faculdade sensorial e consciência; condiciona vedanā no paṭiccasamuppāda.",
+      "freq": 1053
+    },
+    {
+      "h": "sacca",
+      "pos": "nt.",
+      "en": "truth",
+      "pt": "verdade",
+      "es": "verdad",
+      "usage": "As quatro nobres verdades: dukkha, samudaya, nirodha (nibbāna) e magga (o caminho)."
+    },
+    {
+      "h": "nibbāna",
+      "pos": "nt.",
+      "en": "extinction; the unconditioned; liberation",
+      "pt": "extinção; o incondicionado; libertação",
+      "es": "extinción; lo incondicionado; liberación",
+      "root": "nir- + √vā (soprar, extinguir)",
+      "usage": "Cessação completa do sofrimento e das causas do sofrimento; o objetivo final do caminho budista.",
+      "freq": 827
+    },
+    {
+      "h": "magga",
+      "pos": "m.",
+      "en": "path",
+      "pt": "caminho",
+      "es": "camino",
+      "usage": "O caminho que leva ao nibbāna; também um dos 24 paccayas (maggapaccaya).",
+      "freq": 903
+    },
+    {
+      "h": "puggala",
+      "pos": "m.",
+      "en": "person; individual",
+      "pt": "pessoa; indivíduo",
+      "es": "persona; individuo",
+      "usage": "Objeto de análise de todo o livro Puggalapaññatti.",
+      "freq": 2557
+    },
+    {
+      "h": "bhikkhu",
+      "pos": "m.",
+      "en": "Buddhist monk",
+      "pt": "monge budista",
+      "es": "monje budista",
+      "freq": 710
+    },
+    {
+      "h": "bhagavā",
+      "pos": "m.",
+      "en": "the Blessed One (epithet of the Buddha)",
+      "pt": "o Bem-Aventurado (epíteto do Buda)",
+      "es": "el Bienaventurado (epíteto del Buda)",
+      "freq": 565
+    },
+    {
+      "h": "arahā / arahant",
+      "pos": "m.",
+      "en": "worthy one; fully liberated being",
+      "pt": "digno; ser completamente liberado",
+      "es": "digno; ser completamente liberado",
+      "usage": "Quem erradicou completamente os āsavas; quarto e último estágio de despertar.",
+      "freq": 596
+    },
+    {
+      "h": "sattā",
+      "pos": "m.pl.",
+      "en": "beings",
+      "pt": "seres",
+      "es": "seres",
+      "root": "√as (ser)"
+    },
+    {
+      "h": "ariya",
+      "pos": "adj./m.",
+      "en": "noble",
+      "pt": "nobre",
+      "es": "noble",
+      "usage": "Refere-se aos seres que atingiram algum dos quatro estágios de despertar, ou às \"quatro nobres verdades\".",
+      "freq": 392
+    },
+    {
+      "h": "uppajjati",
+      "pos": "v.",
+      "en": "arises; comes into being",
+      "pt": "surge; nasce; vem à existência",
+      "es": "surge; nace; llega a existir",
+      "root": "upa- + √jan (nascer)",
+      "syn": [
+        "nibbattati"
+      ],
+      "usage": "Verbo técnico central do Abhidhamma para descrever o surgimento momentâneo de um dhamma.",
+      "freq": 14281
+    },
+    {
+      "h": "nirujjhati",
+      "pos": "v.",
+      "en": "ceases; passes away",
+      "pt": "cessa; desaparece",
+      "es": "cesa; desaparece",
+      "root": "ni- + √rudh (bloquear, deter)",
+      "usage": "Contraponto de uppajjati: todo dhamma condicionado surge e cessa.",
+      "freq": 1413
+    },
+    {
+      "h": "hoti",
+      "pos": "v.",
+      "en": "is; becomes; there is",
+      "pt": "é; torna-se; há",
+      "es": "es; se convierte; hay",
+      "root": "√bhū (ser, tornar-se)",
+      "usage": "Verbo \"ser/estar\" mais comum; plural honti.",
+      "freq": 11872
+    },
+    {
+      "h": "atthi",
+      "pos": "v.",
+      "en": "there is; exists",
+      "pt": "há; existe",
+      "es": "hay; existe",
+      "root": "√as (ser)",
+      "usage": "Também nome de um dos 24 paccayas (atthipaccaya).",
+      "freq": 6782
+    },
+    {
+      "h": "vuttaṃ",
+      "pos": "v.",
+      "en": "(it was) said",
+      "pt": "(foi) dito",
+      "es": "(fue) dicho",
+      "root": "√vac (falar) — part. passado",
+      "freq": 6874
+    },
+    {
+      "h": "veditabba",
+      "pos": "adj./v.",
+      "en": "should be understood/known (gerundive)",
+      "pt": "deve ser entendido/compreendido (gerundivo)",
+      "es": "debe ser entendido/comprendido (gerundivo)",
+      "root": "√vid (saber) — gerundivo",
+      "usage": "Fórmula de fechamento típica de explicações do Abhidhamma: \"... veditabbaṃ\" = \"... deve ser assim entendido\"."
+    },
+    {
+      "h": "jānāti",
+      "pos": "v.",
+      "en": "knows",
+      "pt": "sabe; conhece",
+      "es": "sabe; conoce",
+      "root": "√jñā (conhecer)",
+      "syn": [
+        "pajānāti"
+      ]
+    },
+    {
+      "h": "pajānāti",
+      "pos": "v.",
+      "en": "knows fully; discerns",
+      "pt": "conhece plenamente; discerne",
+      "es": "conoce plenamente; discierne",
+      "root": "pa- + √jñā",
+      "syn": [
+        "jānāti"
+      ],
+      "freq": 426
+    },
+    {
+      "h": "passati",
+      "pos": "v.",
+      "en": "sees",
+      "pt": "vê",
+      "es": "ve",
+      "root": "√dis (ver)",
+      "freq": 711
+    },
+    {
+      "h": "karoti",
+      "pos": "v.",
+      "en": "does; makes",
+      "pt": "faz; realiza",
+      "es": "hace; realiza",
+      "root": "√kar (fazer)",
+      "freq": 870
+    },
+    {
+      "h": "gacchati",
+      "pos": "v.",
+      "en": "goes",
+      "pt": "vai",
+      "es": "va",
+      "root": "√gam (ir)",
+      "freq": 486
+    },
+    {
+      "h": "labbhati",
+      "pos": "v.",
+      "en": "is obtained; is found (passive of labhati)",
+      "pt": "é obtido; é encontrado (passiva de labhati)",
+      "es": "es obtenido; es encontrado (pasiva de labhati)",
+      "root": "√labh (obter)",
+      "syn": [
+        "upalabbhati"
+      ],
+      "freq": 486
+    },
+    {
+      "h": "upalabbhati",
+      "pos": "v.",
+      "en": "is found; is apprehended",
+      "pt": "é encontrado; é apreendido",
+      "es": "es encontrado; es aprehendido",
+      "root": "upa- + √labh",
+      "syn": [
+        "labbhati"
+      ],
+      "freq": 660
+    },
+    {
+      "h": "sampayutta",
+      "pos": "adj.",
+      "en": "associated (with)",
+      "pt": "associado (a)",
+      "es": "asociado (a)",
+      "root": "saṃ- + pa- + √yuj (unir)",
+      "usage": "Diz-se de fatores mentais que surgem sempre juntos com um dado citta; também um dos 24 paccayas.",
+      "freq": 747
+    },
+    {
+      "h": "vippayutta",
+      "pos": "adj.",
+      "en": "dissociated (from)",
+      "pt": "dissociado (de)",
+      "es": "disociado (de)",
+      "root": "vi- + pa- + √yuj",
+      "usage": "Oposto de sampayutta; termo dos 24 paccayas (vippayuttapaccaya).",
+      "freq": 592
+    },
+    {
+      "h": "sahajāta",
+      "pos": "adj.",
+      "en": "co-nascent; arising together",
+      "pt": "co-nascente; que surge junto",
+      "es": "co-naciente; que surge junto",
+      "root": "saha- + √jan",
+      "usage": "Diz-se de dhammas que surgem no mesmo instante; também um dos 24 paccayas (sahajātapaccaya).",
+      "freq": 645
+    },
+    {
+      "h": "pahātabba",
+      "pos": "adj./v.",
+      "en": "should be abandoned (gerundive of pajahati)",
+      "pt": "deve ser abandonado (gerundivo de pajahati)",
+      "es": "debe ser abandonado (gerundivo de pajahati)",
+      "root": "pa- + √hā (deixar)",
+      "freq": 530
+    },
+    {
+      "h": "pajahati",
+      "pos": "v.",
+      "en": "abandons; gives up",
+      "pt": "abandona; renuncia a",
+      "es": "abandona; renuncia a",
+      "root": "pa- + √hā",
+      "freq": 570
+    },
+    {
+      "h": "bhāveti",
+      "pos": "v.",
+      "en": "develops; cultivates",
+      "pt": "desenvolve; cultiva",
+      "es": "desarrolla; cultiva",
+      "root": "causativo de √bhū (ser, tornar-se)",
+      "freq": 625
+    },
+    {
+      "h": "anuseti",
+      "pos": "v.",
+      "en": "lies latent; lies dormant",
+      "pt": "permanece latente; jaz dormente",
+      "es": "permanece latente; yace dormido",
+      "root": "anu- + √si (jazer)",
+      "usage": "Verbo relacionado ao substantivo anusaya (tendência latente).",
+      "freq": 484
+    },
+    {
+      "h": "abhinandati",
+      "pos": "v.",
+      "en": "delights in; welcomes",
+      "pt": "se deleita com; acolhe com prazer",
+      "es": "se deleita con; acoge con placer",
+      "root": "abhi- + √nand (alegrar-se)",
+      "freq": 492
+    },
+    {
+      "h": "viharati",
+      "pos": "v.",
+      "en": "dwells; abides",
+      "pt": "habita; permanece",
+      "es": "habita; permanece",
+      "root": "vi- + √har (portar)",
+      "freq": 808
+    },
+    {
+      "h": "deti",
+      "pos": "v.",
+      "en": "gives",
+      "pt": "dá",
+      "es": "da",
+      "root": "√dā (dar)",
+      "freq": 521
+    },
+    {
+      "h": "uppādeti",
+      "pos": "v.",
+      "en": "produces; generates (causative of uppajjati)",
+      "pt": "produz; gera (causativo de uppajjati)",
+      "es": "produce; genera (causativo de uppajjati)",
+      "root": "causativo de upa- + √jan",
+      "freq": 460
+    },
+    {
+      "h": "vadati",
+      "pos": "v.",
+      "en": "says; speaks",
+      "pt": "diz; fala",
+      "es": "dice; habla",
+      "root": "√vad (falar)",
+      "syn": [
+        "āha",
+        "bhaṇati"
+      ]
+    },
+    {
+      "h": "gaṇhāti",
+      "pos": "v.",
+      "en": "takes; grasps",
+      "pt": "toma; agarra",
+      "es": "toma; agarra",
+      "root": "√gah (agarrar)"
+    },
+    {
+      "h": "hetupaccaya",
+      "pos": "m.",
+      "en": "root-cause condition (1st of the 24 paccayas)",
+      "pt": "condição de causa-raiz (1º dos 24 paccayas)",
+      "es": "condición de causa-raíz (1º de los 24 paccayas)",
+      "usage": "As seis raízes (hetu) condicionam os dhammas associados a elas por hetupaccaya.",
+      "freq": 7119
+    },
+    {
+      "h": "ārammaṇapaccaya",
+      "pos": "m.",
+      "en": "object condition (2nd of the 24 paccayas)",
+      "pt": "condição de objeto (2º dos 24 paccayas)",
+      "es": "condición de objeto (2º de los 24 paccayas)",
+      "usage": "Todo objeto (ārammaṇa) condiciona a consciência que o toma por ārammaṇapaccaya."
+    },
+    {
+      "h": "adhipatipaccaya",
+      "pos": "m.",
+      "en": "predominance condition (3rd of the 24 paccayas)",
+      "pt": "condição de predominância (3º dos 24 paccayas)",
+      "es": "condición de predominancia (3º de los 24 paccayas)",
+      "usage": "Um dhamma dominante (ex.: forte desejo, esforço, consciência ou raciocínio) condiciona os demais por predominância.",
+      "freq": 1022
+    },
+    {
+      "h": "anantarapaccaya",
+      "pos": "m.",
+      "en": "proximity condition (4th of the 24 paccayas)",
+      "pt": "condição de proximidade imediata (4º dos 24 paccayas)",
+      "es": "condición de proximidad inmediata (4º de los 24 paccayas)",
+      "usage": "Um citta condiciona o citta seguinte, imediatamente contíguo, sem intervalo."
+    },
+    {
+      "h": "samanantarapaccaya",
+      "pos": "m.",
+      "en": "contiguity condition (5th of the 24 paccayas, functionally identical to anantarapaccaya)",
+      "pt": "condição de contiguidade (5º dos 24 paccayas, funcionalmente idêntico ao anantarapaccaya)",
+      "es": "condición de contigüidad (5º de los 24 paccayas, funcionalmente idéntico al anantarapaccaya)",
+      "freq": 464
+    },
+    {
+      "h": "sahajātapaccaya",
+      "pos": "m.",
+      "en": "conascence condition (6th of the 24 paccayas)",
+      "pt": "condição de co-nascença (6º dos 24 paccayas)",
+      "es": "condición de co-nacencia (6º de los 24 paccayas)",
+      "usage": "Dhammas que surgem simultaneamente condicionam-se mutuamente por sahajātapaccaya.",
+      "freq": 903
+    },
+    {
+      "h": "aññamaññapaccaya",
+      "pos": "m.",
+      "en": "mutuality condition (7th of the 24 paccayas)",
+      "pt": "condição de mutualidade (7º dos 24 paccayas)",
+      "es": "condición de mutualidad (7º de los 24 paccayas)",
+      "usage": "Caso especial de sahajātapaccaya em que os dhammas se sustentam mutuamente, como os pés de um tripé."
+    },
+    {
+      "h": "nissayapaccaya",
+      "pos": "m.",
+      "en": "support condition (8th of the 24 paccayas)",
+      "pt": "condição de suporte (8º dos 24 paccayas)",
+      "es": "condición de soporte (8º de los 24 paccayas)",
+      "usage": "Um dhamma serve de base/suporte para outro, incluindo os casos de sahajāta e purejāta.",
+      "freq": 742
+    },
+    {
+      "h": "upanissayapaccaya",
+      "pos": "m.",
+      "en": "decisive-support condition (9th of the 24 paccayas)",
+      "pt": "condição de suporte decisivo (9º dos 24 paccayas)",
+      "es": "condición de soporte decisivo (9º de los 24 paccayas)",
+      "usage": "Uma condição forte e duradoura (objeto, proximidade ou tendência natural) que sustenta decisivamente outro dhamma.",
+      "freq": 1708
+    },
+    {
+      "h": "purejātapaccaya",
+      "pos": "m.",
+      "en": "pre-nascence condition (10th of the 24 paccayas)",
+      "pt": "condição de pré-nascença (10º dos 24 paccayas)",
+      "es": "condición de pre-nacencia (10º de los 24 paccayas)",
+      "usage": "Um dhamma material já surgido serve de base a um dhamma mental posterior (ex.: os órgãos dos sentidos).",
+      "freq": 618
+    },
+    {
+      "h": "pacchājātapaccaya",
+      "pos": "m.",
+      "en": "post-nascence condition (11th of the 24 paccayas)",
+      "pt": "condição de pós-nascença (11º dos 24 paccayas)",
+      "es": "condición de post-nacencia (11º de los 24 paccayas)",
+      "usage": "Um citta posterior sustenta, por sua presença, o corpo material já surgido antes dele.",
+      "freq": 421
+    },
+    {
+      "h": "āsevanapaccaya",
+      "pos": "m.",
+      "en": "repetition condition (12th of the 24 paccayas)",
+      "pt": "condição de repetição (12º dos 24 paccayas)",
+      "es": "condición de repetición (12º de los 24 paccayas)",
+      "usage": "Um citta condiciona o citta seguinte da mesma série por repetição, tornando-o mais forte/hábil (ex.: em processos cognitivos consecutivos).",
+      "freq": 477
+    },
+    {
+      "h": "kammapaccaya",
+      "pos": "m.",
+      "en": "kamma condition (13th of the 24 paccayas)",
+      "pt": "condição de kamma (13º dos 24 paccayas)",
+      "es": "condición de kamma (13º de los 24 paccayas)",
+      "usage": "A volição (cetanā) condiciona seus resultados (vipāka) por kammapaccaya.",
+      "freq": 921
+    },
+    {
+      "h": "vipākapaccaya",
+      "pos": "m.",
+      "en": "kamma-result condition (14th of the 24 paccayas)",
+      "pt": "condição de resultado kármico (14º dos 24 paccayas)",
+      "es": "condición de resultado kármico (14º de los 24 paccayas)",
+      "usage": "Um citta/cetasika resultante (vipāka) condiciona os fatores mentais coexistentes."
+    },
+    {
+      "h": "āhārapaccaya",
+      "pos": "m.",
+      "en": "nutriment condition (15th of the 24 paccayas)",
+      "pt": "condição de nutrimento (15º dos 24 paccayas)",
+      "es": "condición de nutrimento (15º de los 24 paccayas)",
+      "usage": "Os quatro nutrimentos (alimento material, contato, volição mental, consciência) sustentam os dhammas resultantes.",
+      "freq": 400
+    },
+    {
+      "h": "indriyapaccaya",
+      "pos": "m.",
+      "en": "faculty condition (16th of the 24 paccayas)",
+      "pt": "condição de faculdade (16º dos 24 paccayas)",
+      "es": "condición de facultad (16º de los 24 paccayas)",
+      "usage": "As faculdades (indriya) controlam e condicionam os dhammas associados na sua esfera."
+    },
+    {
+      "h": "jhānapaccaya",
+      "pos": "m.",
+      "en": "jhāna condition (17th of the 24 paccayas)",
+      "pt": "condição de jhāna (17º dos 24 paccayas)",
+      "es": "condición de jhāna (17º de los 24 paccayas)",
+      "usage": "Os fatores de absorção meditativa (jhāna) condicionam os dhammas coexistentes por meio de sua atenção total ao objeto.",
+      "freq": 1732
+    },
+    {
+      "h": "maggapaccaya",
+      "pos": "m.",
+      "en": "path condition (18th of the 24 paccayas)",
+      "pt": "condição de caminho (18º dos 24 paccayas)",
+      "es": "condición de camino (18º de los 24 paccayas)",
+      "usage": "Os fatores do caminho (magga) — nobre ou não — direcionam os dhammas coexistentes rumo a seu resultado."
+    },
+    {
+      "h": "sampayuttapaccaya",
+      "pos": "m.",
+      "en": "association condition (19th of the 24 paccayas)",
+      "pt": "condição de associação (19º dos 24 paccayas)",
+      "es": "condición de asociación (19º de los 24 paccayas)",
+      "usage": "Dhammas mentais que surgem e cessam juntos, compartilhando base e objeto, condicionam-se por associação."
+    },
+    {
+      "h": "vippayuttapaccaya",
+      "pos": "m.",
+      "en": "dissociation condition (20th of the 24 paccayas)",
+      "pt": "condição de dissociação (20º dos 24 paccayas)",
+      "es": "condición de disociación (20º de los 24 paccayas)",
+      "usage": "Dhammas mentais e materiais que coexistem sem se misturar condicionam-se por dissociação.",
+      "freq": 686
+    },
+    {
+      "h": "atthipaccaya",
+      "pos": "m.",
+      "en": "presence condition (21st of the 24 paccayas)",
+      "pt": "condição de presença (21º dos 24 paccayas)",
+      "es": "condición de presencia (21º de los 24 paccayas)",
+      "usage": "Um dhamma presente no momento condiciona outro dhamma coexistente ou dele dependente.",
+      "freq": 1410
+    },
+    {
+      "h": "natthipaccaya",
+      "pos": "m.",
+      "en": "absence condition (22nd of the 24 paccayas)",
+      "pt": "condição de ausência (22º dos 24 paccayas)",
+      "es": "condición de ausencia (22º de los 24 paccayas)",
+      "usage": "A cessação imediatamente anterior de um citta condiciona o surgimento do citta seguinte, abrindo espaço para ele."
+    },
+    {
+      "h": "vigatapaccaya",
+      "pos": "m.",
+      "en": "disappearance condition (23rd of the 24 paccayas)",
+      "pt": "condição de desaparecimento (23º dos 24 paccayas)",
+      "es": "condición de desaparición (23º de los 24 paccayas)",
+      "usage": "Funcionalmente equivalente ao natthipaccaya: o desaparecimento de um dhamma condiciona o próximo.",
+      "freq": 374
+    },
+    {
+      "h": "avigatapaccaya",
+      "pos": "m.",
+      "en": "non-disappearance condition (24th of the 24 paccayas)",
+      "pt": "condição de não-desaparecimento (24º dos 24 paccayas)",
+      "es": "condición de no-desaparición (24º de los 24 paccayas)",
+      "usage": "Funcionalmente equivalente ao atthipaccaya: a presença contínua condiciona o dhamma dependente.",
+      "freq": 1665
+    },
+    {
+      "h": "āmantā",
+      "pos": "ind.",
+      "en": "\"I assent\" / \"yes, granted\" (dialectical formula in the Kathāvatthu)",
+      "pt": "\"eu concordo\" / \"sim, concedido\" (fórmula dialética do Kathāvatthu)",
+      "es": "\"yo asiento\" / \"sí, concedido\" (fórmula dialéctica del Kathāvatthu)",
+      "usage": "No Kathāvatthu, é a resposta padrão do oponente quando aceita a proposição colocada — marca o ponto de concordância antes da refutação.",
+      "freq": 6341
+    },
+    {
+      "h": "saṃkhittaṃ",
+      "pos": "ind.",
+      "en": "\"in brief\" (abbreviation marker)",
+      "pt": "\"em resumo\" (marcador de abreviação)",
+      "es": "\"en resumen\" (marcador de abreviación)",
+      "root": "saṃ- + √khip (lançar, resumir)",
+      "usage": "Usado no Paṭṭhāna e no Yamaka para sinalizar que uma série repetitiva foi abreviada.",
+      "freq": 3607
+    },
+    {
+      "h": "tiādi / tiādinā",
+      "pos": "ind.",
+      "en": "\"...\" and so on (ti + ādi, \"beginning with\")",
+      "pt": "\"...\" e assim por diante (ti + ādi, \"começando com\")",
+      "es": "\"...\" y así sucesivamente (ti + ādi, \"comenzando con\")",
+      "usage": "Combinação comum para indicar que uma citação ou lista continua segundo o mesmo padrão.",
+      "freq": 1859
+    },
+    {
+      "h": "niṭṭhitā",
+      "pos": "adj.",
+      "en": "finished; concluded (colophon marker)",
+      "pt": "terminado; concluído (marcador de colofão)",
+      "es": "terminado; concluido (marcador de colofón)",
+      "root": "ni- + √sthā (estar de pé) — part. passado",
+      "usage": "Aparece ao final de seções ou obras inteiras, como um \"FIM\" editorial (ex.: \"Dhammasaṅgaṇī niṭṭhitā\").",
+      "freq": 1611
+    },
+    {
+      "h": "ka / kha",
+      "pos": "ind.",
+      "en": "alphabetic list marker (\"(a)\", \"(b)\"...), using consonants of the Pāli alphabet",
+      "pt": "marcador alfabético de lista (\"(a)\", \"(b)\"...), usando as consoantes do alfabeto Pāli",
+      "es": "marcador alfabético de lista (\"(a)\", \"(b)\"...), usando las consonantes del alfabeto Pāli",
+      "usage": "Não são palavras lexicais: funcionam como \"(a)\", \"(b)\", \"(c)\"... para enumerar itens de uma lista ou variante de leitura, como em \"(Ka) kusalā dhammā\".",
+      "freq": 4337
+    },
+    {
+      "h": "jhāna",
+      "pos": "nt.",
+      "en": "meditative absorption",
+      "pt": "absorção meditativa",
+      "es": "absorción meditativa",
+      "root": "√jhe/dhyā (meditar, contemplar)",
+      "usage": "Estado de profunda concentração; também um dos 24 paccayas (jhānapaccaya).",
+      "freq": 1732
+    },
+    {
+      "h": "bhāvanā",
+      "pos": "f.",
+      "en": "meditation; mental development",
+      "pt": "meditação; desenvolvimento mental",
+      "es": "meditación; desarrollo mental",
+      "root": "causativo de √bhū",
+      "freq": 1230
+    },
+    {
+      "h": "ekaggatā",
+      "pos": "f.",
+      "en": "one-pointedness of mind",
+      "pt": "unidirecionalidade da mente",
+      "es": "unidireccionalidad de la mente",
+      "syn": [
+        "samādhi"
+      ],
+      "usage": "Fator mental presente em todo citta, responsável pela unificação da atenção no objeto."
+    }
+  ]
+}
