@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=e06ffa67";
-import { settings } from "./state.js?v=e06ffa67";
-import { createLogger } from "./logger.js?v=e06ffa67";
+import { t } from "./i18n.js?v=8a580b00";
+import { settings } from "./state.js?v=8a580b00";
+import { createLogger } from "./logger.js?v=8a580b00";
 const log = createLogger("export");
 let glossaryData = null;
 async function loadGlossary() {
@@ -18,7 +18,7 @@ async function loadGlossary() {
         return [];
     }
 }
-function collectUsedTerms(segs, glossary) {
+export function collectUsedTerms(segs, glossary) {
     const headwords = new Set(glossary.map((g) => g.h.toLowerCase()));
     const found = new Set();
     for (const seg of segs) {
@@ -33,7 +33,7 @@ function collectUsedTerms(segs, glossary) {
         .filter((g) => found.has(g.h.toLowerCase()))
         .sort((a, b) => a.h.localeCompare(b.h, "pi"));
 }
-function buildGlossaryHtml(terms, langMode) {
+export function buildGlossaryHtml(terms, langMode) {
     if (terms.length === 0)
         return "";
     const mode = langMode;
@@ -68,19 +68,19 @@ const CRC_TABLE = (() => {
     }
     return t;
 })();
-function crc32(data) {
+export function crc32(data) {
     let c = 0xffffffff;
     for (const b of data)
         c = (CRC_TABLE[(c ^ b) & 0xff] ^ (c >>> 8)) >>> 0;
     return (~c) >>> 0;
 }
-function writeUint16LE(view, offset, value) {
+export function writeUint16LE(view, offset, value) {
     view.setUint16(offset, value, true);
 }
-function writeUint32LE(view, offset, value) {
+export function writeUint32LE(view, offset, value) {
     view.setUint32(offset, value, true);
 }
-function buildZip(entries) {
+export function buildZip(entries) {
     const enc = new TextEncoder();
     const fileData = [];
     const parts = [];
@@ -153,10 +153,10 @@ function buildZip(entries) {
     }
     return out;
 }
-function escHtml(s) {
+export function escHtml(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
-function linkifyText(text, termsMap) {
+export function linkifyText(text, termsMap) {
     if (!text)
         return "";
     if (!termsMap || termsMap.size === 0)
@@ -182,7 +182,7 @@ function linkifyText(text, termsMap) {
     }
     return out;
 }
-function walkNode(node, termsMap) {
+export function walkNode(node, termsMap) {
     if (node.nodeType === Node.TEXT_NODE)
         return linkifyText(node.textContent ?? "", termsMap);
     if (node.nodeType !== Node.ELEMENT_NODE)
@@ -205,7 +205,7 @@ function walkNode(node, termsMap) {
     }
     return inner;
 }
-function fieldHtml(raw, termsMap) {
+export function fieldHtml(raw, termsMap) {
     if (!raw)
         return "";
     if (!raw.includes("<"))
@@ -214,7 +214,7 @@ function fieldHtml(raw, termsMap) {
     const doc = parser.parseFromString(`<body>${raw}</body>`, "text/html");
     return walkNode(doc.body, termsMap);
 }
-function segToHtml(seg, langMode, termsMap) {
+export function segToHtml(seg, langMode, termsMap) {
     const rend = seg.rend;
     const paliText = seg.pali ?? "";
     const enText = seg.en ?? "";
@@ -295,7 +295,7 @@ h2.chapter{string-set:bookTitle content();}
 .glossary-entry strong{color:#333;}
 .glossary-entry em{color:#666;font-size:.9em;}
 `;
-function buildPrintHtml(segs, title, langMode, glossaryHtml) {
+export function buildPrintHtml(segs, title, langMode, glossaryHtml) {
     const bodyParts = segs.map((s) => segToHtml(s, langMode)).filter(Boolean);
     return `<!DOCTYPE html>
 <html lang="en">
@@ -345,32 +345,33 @@ const EPUB_CSS = `
 }
 body {
   font-family: 'Gentium Book Plus', Georgia, serif;
-  font-size: 14pt;
+  font-size: 1.1em;
   line-height: 1.6;
-  margin: 0.5cm;
+  margin: 5% 5%;
   color: #111;
   text-align: justify;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
-h1 { text-align: center; font-size: 1.8em; border-bottom: 2px solid #333; padding-bottom: 0.4em; margin-bottom: 1em; }
-h2 { font-size: 1.4em; margin-top: 2em; padding-top: 0.5em; border-top: 1px solid #ccc; }
-h3 { font-size: 1.1em; margin-top: 1.2em; }
+h1 { text-align: center; font-size: 1.8em; border-bottom: 2px solid #333; padding-bottom: 0.4em; margin-bottom: 1em; hyphens: none; }
+h2 { font-size: 1.4em; margin-top: 2em; padding-top: 0.5em; border-top: 1px solid #ccc; hyphens: none; }
+h3 { font-size: 1.2em; margin-top: 1.2em; hyphens: none; }
 h4 { font-size: 1em; font-style: italic; margin-top: 1em; }
-p { margin: 0.7em 0; }
+p { margin: 0.8em 0; }
 p.centre { text-align: center; }
 p.glossary .line.pali { font-weight: 700; }
-blockquote { margin: 1em 2em; font-style: italic; }
+blockquote { margin: 1em 5%; font-style: italic; }
 .pali { font-style: italic; color: #333; margin-bottom: 0.2em; }
 .en, .pt, .es { margin-top: 0.1em; margin-bottom: 0.4em; }
-.footnote { font-size: 0.85em; color: #555; }
-aside.epub-footnote { display: none; } /* Hidden normally, EPUB3 reader shows as popup */
-span.rend-gathalast { margin-left: 2em; }
-span.rend-gatha1, span.rend-gatha2, span.rend-gatha3 { margin-left: 1em; }
-.glossary-appendix { margin-top: 2em; page-break-before: always; }
-.glossary-entry { margin: 0.3em 0; font-size: 0.95em; line-height: 1.5; }
-.glossary-entry strong { color: #333; }
-.glossary-entry em { color: #555; font-size: 0.9em; }
+.back-to-toc { display: block; text-align: center; margin-top: 2em; font-size: 0.9em; text-decoration: none; color: #555; border-top: 1px dashed #ccc; padding-top: 1em; }
+.toc-header h1 { margin-bottom: 0.5em; border-bottom: none; }
+.toc-header h2 { font-size: 1.3em; margin-top: 1.5em; border-top: none; }
+.toc-short, .toc-mid { list-style-type: none; padding-left: 0; }
+.toc-short li, .toc-mid li { margin-bottom: 0.5em; }
+.toc-mid ol { list-style-type: disc; padding-left: 1.5em; margin-top: 0.3em; }
 `;
-function buildEpub(segs, title, langMode, glossaryHtml) {
+export function buildEpub(segs, title, langMode, glossaryHtml) {
     const enc = new TextEncoder();
     const bodyParts = segs.map((s) => segToHtml(s, langMode)).filter(Boolean);
     const contentHtml = `<?xml version="1.0" encoding="UTF-8"?>

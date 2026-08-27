@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=e06ffa67";
-import { settings } from "./state.js?v=e06ffa67";
-import { createLogger } from "./logger.js?v=e06ffa67";
+import { t } from "./i18n.js?v=8a580b00";
+import { settings } from "./state.js?v=8a580b00";
+import { createLogger } from "./logger.js?v=8a580b00";
 const log = createLogger("dictionary");
 let dictData = [];
 let coreData = [];
@@ -79,7 +79,7 @@ const SUPPLETIVE = {
     cattāro: "catu", cattāri: "catu", catunnaṃ: "catu", catūsu: "catu",
     dve: "dvi", dvinnaṃ: "dvi", dvīhi: "dvi", dvīsu: "dvi",
 };
-function normalizePali(token) {
+export function normalizePali(token) {
     const forms = new Set([token]);
     const supp = SUPPLETIVE[token];
     if (supp)

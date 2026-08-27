@@ -1,12 +1,12 @@
-import { createLogger } from "./logger.js?v=e06ffa67";
+import { createLogger } from "./logger.js?v=8a580b00";
 const log = createLogger("state");
 const SETTINGS_KEY = "atp.settings.v1";
 const HISTORY_KEY = "atp.history.v1";
 const BOOKMARKS_KEY = "atp.bookmarks.v1";
 const HISTORY_LIMIT = 50;
 const DEFAULT_SETTINGS = {
-    translationLang: "pt",
-    uiLang: "pt",
+    translationLang: "en",
+    uiLang: "en",
     fontSize: 17,
     showPali: true,
     showTranslation: true,

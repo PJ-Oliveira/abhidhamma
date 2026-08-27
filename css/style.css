@@ -159,7 +159,8 @@ html, body {
 
 .dict-entry-core { padding-bottom: 12px; }
 .dict-entry-core .headword { font-size: 16px; }
-.dict-senses { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+.dict-senses { display: flex; flex-direction: column; gap: 8px;
+    flex-wrap: wrap; margin-top: 6px; }
 .dict-sense { background: var(--bg-content); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; }
 .dict-sense-head { display: flex; align-items: baseline; gap: 4px; }
 .dict-sense-id { font-weight: 700; color: var(--accent); font-size: 13px; }
@@ -222,7 +223,8 @@ main#reader { display: flex; flex-direction: column; min-width: 0; position: rel
 #breadcrumb { color: var(--text-muted); font-size: 13px; margin-bottom: 8px; }
 #breadcrumb .sep { margin: 0 6px; opacity: .5; }
 
-#tabs-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+#tabs-row { display: flex; align-items: center; gap: 8px;
+    flex-wrap: wrap; flex-wrap: wrap; }
 
 .part-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
 .part-tabs button {
@@ -276,6 +278,7 @@ main#reader { display: flex; flex-direction: column; min-width: 0; position: rel
   display: flex;
   align-items: baseline;
   gap: 8px;
+    flex-wrap: wrap;
   padding: 8px 16px;
   cursor: pointer;
   font-size: 13.5px;
@@ -725,7 +728,8 @@ details[open] > summary::before { transform: rotate(90deg); }
 .vithi-label { font-size: 10px; font-weight: 600; color: var(--text); margin-top: 4px; word-break: break-word; line-height: 1.2; }
 .vithi-trans { font-size: 9px; color: var(--text-muted); font-style: italic; margin-top: 2px; line-height: 1.1; }
 .vithi-arrow { color: var(--text-muted); font-size: 14px; flex-shrink: 0; }
-.vithi-controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+.vithi-controls { display: flex; gap: 8px;
+    flex-wrap: wrap; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
 .vithi-btn {
   padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px;
   background: var(--bg-content); font-size: 13px; cursor: pointer; font-family: 'Gentium Book Plus', Georgia, serif;
@@ -751,7 +755,8 @@ details[open] > summary::before { transform: rotate(90deg); }
 .mat-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
 .mat-summary {
   padding: 10px 14px; cursor: pointer; display: flex; align-items: baseline;
-  gap: 8px; font-family: 'Gentium Book Plus', Georgia, serif;
+  gap: 8px;
+    flex-wrap: wrap; font-family: 'Gentium Book Plus', Georgia, serif;
 }
 .mat-summary:hover { background: var(--accent-soft); }
 .mat-id { font-size: 12px; color: var(--text-muted); font-weight: 600; min-width: 24px; }
@@ -915,6 +920,25 @@ details[open] > summary::before { transform: rotate(90deg); }
   
   .cet-comp-wrap {
     flex-direction: column;
+  }
+  
+  /* SRS Mobile tweaks */
+  .srs-card {
+    padding: 24px 20px;
+  }
+  .srs-headword {
+    font-size: 36px;
+  }
+  .srs-card-wrap {
+    min-height: 240px;
+  }
+  .srs-btn {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+  .srs-ratings {
+    gap: 8px;
+    flex-wrap: wrap;
   }
 
   /* Padding adjustments */

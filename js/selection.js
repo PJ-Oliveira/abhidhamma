@@ -1,6 +1,6 @@
-import { lookupPali } from "./dictionary.js?v=e06ffa67";
-import { settings } from "./state.js?v=e06ffa67";
-import { t } from "./i18n.js?v=e06ffa67";
+import { lookupPali } from "./dictionary.js?v=8a580b00";
+import { settings } from "./state.js?v=8a580b00";
+import { t } from "./i18n.js?v=8a580b00";
 let currentHighlight = null;
 let popoverEl = null;
 let contentEl = null;

@@ -1,19 +1,19 @@
-import { t } from "./i18n.js?v=e06ffa67";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=e06ffa67";
-import { renderTree, markActiveLeaf } from "./tree.js?v=e06ffa67";
-import { loadChunk, renderSegments } from "./reader.js?v=e06ffa67";
-import { initDictionaryPanel } from "./dictionary.js?v=e06ffa67";
-import { initSearchPanel } from "./search.js?v=e06ffa67";
-import { initExportPanel } from "./export.js?v=e06ffa67";
-import { initSrsPanel } from "./srs.js?v=e06ffa67";
-import { initToolsPanel } from "./tools/tools.js?v=e06ffa67";
-import "./tools/mindmap.js?v=e06ffa67";
-import "./tools/patthana.js?v=e06ffa67";
-import "./tools/vithi.js?v=e06ffa67";
-import "./tools/matikas.js?v=e06ffa67";
-import "./tools/cetasika.js?v=e06ffa67";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=e06ffa67";
-import { createLogger } from "./logger.js?v=e06ffa67";
+import { t } from "./i18n.js?v=8a580b00";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=8a580b00";
+import { renderTree, markActiveLeaf } from "./tree.js?v=8a580b00";
+import { loadChunk, renderSegments } from "./reader.js?v=8a580b00";
+import { initDictionaryPanel } from "./dictionary.js?v=8a580b00";
+import { initSearchPanel } from "./search.js?v=8a580b00";
+import { initExportPanel } from "./export.js?v=8a580b00";
+import { initSrsPanel } from "./srs.js?v=8a580b00";
+import { initToolsPanel } from "./tools/tools.js?v=8a580b00";
+import "./tools/mindmap.js?v=8a580b00";
+import "./tools/patthana.js?v=8a580b00";
+import "./tools/vithi.js?v=8a580b00";
+import "./tools/matikas.js?v=8a580b00";
+import "./tools/cetasika.js?v=8a580b00";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=8a580b00";
+import { createLogger } from "./logger.js?v=8a580b00";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -354,11 +354,19 @@ function wireIconRail() {
     buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
             const target = btn.dataset.panel;
+            const isMobile = window.innerWidth <= 860;
+            const isFullscreen = target && FULLSCREEN_PANELS.has(target);
             if (btn.classList.contains("active") && !sidePanel.classList.contains("collapsed")) {
                 doCollapse();
                 return;
             }
-            doExpand();
+            if (isMobile && isFullscreen) {
+                if (!sidePanel.classList.contains("collapsed"))
+                    doCollapse();
+            }
+            else {
+                doExpand();
+            }
             buttons.forEach((b) => b.classList.toggle("active", b === btn));
             panels.forEach((p) => p.classList.toggle("active", p.id === `panel-${target}`));
             toggleReaderOverlay(target);

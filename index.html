@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 <title>Abhidhamma Piṭaka</title>
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#8b0000" />
-<link rel="stylesheet" href="css/style.css?v=e06ffa67" />
+<link rel="stylesheet" href="css/style.css?v=8a580b00" />
 </head>
 <body>
 <div id="app">
@@ -15,22 +15,22 @@
     <button class="rail-btn active" data-panel="tipitaka" data-i18n-title="navTipitaka" title="Tipiṭaka">
       <span class="icon">☰</span><span class="lbl" data-i18n="navTipitaka">Tipiṭaka</span>
     </button>
-    <button class="rail-btn" data-panel="dictionary" data-i18n-title="navDictionary" title="Dicionário">
-      <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5V4.5A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="12" y2="15"/></svg></span><span class="lbl" data-i18n="navDictionary">Dicionário</span>
+    <button class="rail-btn" data-panel="dictionary" data-i18n-title="navDictionary" title="Dictionary">
+      <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5V4.5A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="12" y2="15"/></svg></span><span class="lbl" data-i18n="navDictionary">Dictionary</span>
     </button>
-    <button class="rail-btn" data-panel="history" data-i18n-title="navHistory" title="Histórico">
-      <span class="icon">⏱</span><span class="lbl" data-i18n="navHistory">Histórico</span>
+    <button class="rail-btn" data-panel="history" data-i18n-title="navHistory" title="History">
+      <span class="icon">⏱</span><span class="lbl" data-i18n="navHistory">History</span>
     </button>
-    <button class="rail-btn" data-panel="search" data-i18n-title="navSearch" title="Pesquisar">
-      <span class="icon">🔍</span><span class="lbl" data-i18n="navSearch">Pesquisar</span>
+    <button class="rail-btn" data-panel="search" data-i18n-title="navSearch" title="Search">
+      <span class="icon">🔍</span><span class="lbl" data-i18n="navSearch">Search</span>
     </button>
-    <button class="rail-btn" data-panel="settings" data-i18n-title="navSettingsTitle" title="Configurações">
-      <span class="icon">⚙</span><span class="lbl" data-i18n="navSettings">Config.</span>
+    <button class="rail-btn" data-panel="settings" data-i18n-title="navSettingsTitle" title="Settings">
+      <span class="icon">⚙</span><span class="lbl" data-i18n="navSettings">Config</span>
     </button>
-    <button class="rail-btn" data-panel="export" data-i18n-title="navExport" title="Exportar">
-      <span class="icon">⬇</span><span class="lbl" data-i18n="navExport">Exportar</span>
+    <button class="rail-btn" data-panel="export" data-i18n-title="navExport" title="Export">
+      <span class="icon">⬇</span><span class="lbl" data-i18n="navExport">Export</span>
     </button>
-    <button class="rail-btn" data-panel="srs" data-i18n-title="navSrs" title="Memorização Pāli">
+    <button class="rail-btn" data-panel="srs" data-i18n-title="navSrs" title="Pāli Memorization">
       <span class="icon">🧠</span><span class="lbl" data-i18n="navSrs">SRS</span>
     </button>
     <button class="rail-btn" data-panel="tools" data-i18n-title="navTools" title="Abhidhamma Tools">
@@ -45,28 +45,28 @@
     </div>
 
     <div id="panel-dictionary" class="panel">
-      <h2 data-i18n="dictPanelTitle">Dicionário Pāli</h2>
-      <input id="dict-search" type="text" data-i18n-placeholder="dictPlaceholder" placeholder="Buscar palavra em Pāli…" autocomplete="off" />
+      <h2 data-i18n="dictPanelTitle">Pāli Dictionary</h2>
+      <input id="dict-search" type="text" data-i18n-placeholder="dictPlaceholder" placeholder="Search Pāli word…" autocomplete="off" />
       <div id="dict-results" class="dict-results"></div>
     </div>
 
     <div id="panel-history" class="panel">
-      <h2 data-i18n="navHistory">Histórico</h2>
+      <h2 data-i18n="navHistory">History</h2>
       <div id="history-list" class="side-list"></div>
-      <h3 data-i18n="bookmarksTitle">Favoritos</h3>
+      <h3 data-i18n="bookmarksTitle">Bookmarks</h3>
       <div id="bookmark-list" class="side-list"></div>
     </div>
 
     <div id="panel-search" class="panel">
-      <h2 data-i18n="navSearch">Pesquisar</h2>
-      <input id="search-input" type="text" data-i18n-placeholder="searchPlaceholder" placeholder="Pesquisar no Pāli, EN, PT ou ES…" autocomplete="off" />
+      <h2 data-i18n="navSearch">Search</h2>
+      <input id="search-input" type="text" data-i18n-placeholder="searchPlaceholder" placeholder="Search in Pāli, EN, PT or ES…" autocomplete="off" />
       <div id="search-results" class="side-list"></div>
     </div>
 
     <div id="panel-settings" class="panel">
       <h2 data-i18n="navSettingsTitle">Configurações</h2>
       <label class="setting-row">
-        <span data-i18n="settingTranslationLang">Idioma da tradução</span>
+        <span data-i18n="settingTranslationLang">Translation Language</span>
         <select id="setting-lang">
           <option value="pt">Português</option>
           <option value="en">English</option>
@@ -74,7 +74,7 @@
         </select>
       </label>
       <label class="setting-row">
-        <span data-i18n="settingUiLang">Idioma da interface</span>
+        <span data-i18n="settingUiLang">Interface Language</span>
         <select id="setting-ui-lang">
           <option value="pt">Português</option>
           <option value="en">English</option>
@@ -82,7 +82,7 @@
         </select>
       </label>
       <label class="setting-row">
-        <span data-i18n="settingFontSize">Tamanho da fonte</span>
+        <span data-i18n="settingFontSize">Font size</span>
         <span class="font-controls">
           <button id="font-dec">A−</button>
           <button id="font-inc">A+</button>
@@ -90,31 +90,31 @@
       </label>
       <div class="setting-row" id="pwa-install-container" style="display: none; margin-top: 15px;">
         <button id="btn-install-pwa" style="width: 100%; padding: 10px; background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: 4px; font-size: 14px; font-weight: 500; cursor: pointer;">
-          📲 Instalar Aplicativo (Leitura Offline)
+          📲 Install App (Offline Reading)
         </button>
       </div>
       <label class="setting-row">
-        <span id="label-show-pali" data-i18n="settingShowPali">Mostrar Pāli</span>
+        <span id="label-show-pali" data-i18n="settingShowPali">Show Pāli</span>
         <input id="setting-show-pali" type="checkbox" checked />
       </label>
       <label class="setting-row">
-        <span id="label-show-translation" data-i18n="settingShowTranslation">Mostrar tradução</span>
+        <span id="label-show-translation" data-i18n="settingShowTranslation">Show translation</span>
         <input id="setting-show-translation" type="checkbox" checked />
       </label>
     </div>
 
     <div id="panel-export" class="panel">
-      <h2 data-i18n="exportPanelTitle">Exportar</h2>
+      <h2 data-i18n="exportPanelTitle">Export</h2>
       <div id="export-panel-body"></div>
     </div>
 
     <div id="panel-srs" class="panel">
-      <h2 data-i18n="srsPanelTitle">Memorização Pāli</h2>
-      <p class="side-empty" data-i18n="srsFullscreen">Visualizando no painel principal →</p>
+      <h2 data-i18n="srsPanelTitle">Pāli Memorization</h2>
+      <p class="side-empty" data-i18n="srsFullscreen">Viewing in main panel →</p>
     </div>
     <div id="panel-tools" class="panel">
       <h2 data-i18n="toolsPanelTitle">Abhidhamma Tools</h2>
-      <p class="side-empty" data-i18n="toolsFullscreen">Visualizando no painel principal →</p>
+      <p class="side-empty" data-i18n="toolsFullscreen">Viewing in main panel →</p>
     </div>
 
   </aside>
@@ -123,7 +123,7 @@
 
   <main id="reader">
     <div id="reader-header">
-      <button id="panel-collapse" data-i18n-title="collapsePanel" title="Recolher painel">‹</button>
+      <button id="panel-collapse" data-i18n-title="collapsePanel" title="Collapse panel">‹</button>
       <div id="header-text">
         <div id="breadcrumb"></div>
         <div id="tabs-row">
@@ -152,6 +152,6 @@
 <div id="note-tooltip" class="note-tooltip hidden"></div>
 <div id="selection-popover" class="hidden"></div>
 
-<script type="module" src="js/app.js?v=e06ffa67"></script>
+<script type="module" src="js/app.js?v=8a580b00"></script>
 </body>
 </html>

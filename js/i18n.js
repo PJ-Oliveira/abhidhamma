@@ -352,7 +352,7 @@ const STRINGS = {
     },
 };
 export function t(key, uiLang) {
-    const dict = STRINGS[uiLang] ?? STRINGS.pt;
-    return dict[key] ?? STRINGS.pt[key] ?? key;
+    const dict = STRINGS[uiLang] ?? STRINGS.en;
+    return dict[key] ?? STRINGS.en[key] ?? key;
 }
 //# sourceMappingURL=i18n.js.map

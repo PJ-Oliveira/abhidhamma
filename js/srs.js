@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=e06ffa67";
-import { settings } from "./state.js?v=e06ffa67";
-import { createLogger } from "./logger.js?v=e06ffa67";
+import { t } from "./i18n.js?v=8a580b00";
+import { settings } from "./state.js?v=8a580b00";
+import { createLogger } from "./logger.js?v=8a580b00";
 const log = createLogger("srs");
 const SRS_KEY = "atp.srs.v1";
 const SRS_STATS_KEY = "atp.srs.stats.v1";
@@ -24,7 +24,7 @@ function saveSrsState(state) {
         log.warn("Failed to save SRS state", err);
     }
 }
-function loadStats() {
+export function loadStats() {
     try {
         const raw = localStorage.getItem(SRS_STATS_KEY);
         if (raw)
@@ -33,13 +33,13 @@ function loadStats() {
     catch { }
     return { totalReviewed: 0, streak: 0, lastSessionDate: "", correctToday: 0, totalToday: 0 };
 }
-function saveStats(stats) {
+export function saveStats(stats) {
     try {
         localStorage.setItem(SRS_STATS_KEY, JSON.stringify(stats));
     }
     catch { }
 }
-function sm2(card, quality) {
+export function sm2(card, quality) {
     const now = Date.now();
     let { interval, repetitions, easeFactor } = card;
     if (quality < 3) {
