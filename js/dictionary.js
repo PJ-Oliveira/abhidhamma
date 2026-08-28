@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=8a580b00";
-import { settings } from "./state.js?v=8a580b00";
-import { createLogger } from "./logger.js?v=8a580b00";
+import { t } from "./i18n.js?v=a38f104a";
+import { settings } from "./state.js?v=a38f104a";
+import { createLogger } from "./logger.js?v=a38f104a";
 const log = createLogger("dictionary");
 let dictData = [];
 let coreData = [];
@@ -191,6 +191,16 @@ export function initDictionaryPanel(inputEl, resultsEl) {
     };
     const render = () => {
         const query = inputEl.value.trim().toLowerCase();
+        const activeBtn = document.querySelector(".rail-btn.active");
+        if (activeBtn && activeBtn.dataset.panel === "dictionary") {
+            const hashBase = location.hash.split('?')[0];
+            if (query) {
+                history.replaceState(null, "", `${hashBase}?q=${encodeURIComponent(query)}`);
+            }
+            else if (location.hash.includes('?q=')) {
+                history.replaceState(null, "", hashBase);
+            }
+        }
         if (!dictReady) {
             renderHint("dictNotReady");
             return;

@@ -1,6 +1,6 @@
-import { t } from "../i18n.js?v=8a580b00";
-import { settings } from "../state.js?v=8a580b00";
-import { createLogger } from "../logger.js?v=8a580b00";
+import { t } from "../i18n.js?v=a38f104a";
+import { settings } from "../state.js?v=a38f104a";
+import { createLogger } from "../logger.js?v=a38f104a";
 const log = createLogger("tools");
 const TABS = [
     { id: "mindmap", icon: "🗺", i18nKey: "toolMindmap", init: null, loaded: false },
@@ -41,7 +41,13 @@ export function initToolsPanel(container) {
         tabBar.appendChild(btn);
         buttons.push(btn);
     }
-    function switchTab(id) {
+    function switchTab(id, skipUrlUpdate = false) {
+        if (!skipUrlUpdate) {
+            const activeBtn = document.querySelector(".rail-btn.active");
+            if (activeBtn && activeBtn.dataset.panel === "tools") {
+                history.replaceState(null, "", `#/tools/${id}`);
+            }
+        }
         buttons.forEach((btn) => {
             btn.classList.toggle("active", btn.dataset.tab === id);
         });
@@ -56,6 +62,25 @@ export function initToolsPanel(container) {
             log.info(`Loaded tool module: ${id}`);
         }
     }
-    switchTab("mindmap");
+    const syncFromUrl = () => {
+        const parts = (location.hash.replace(/^#\/?/, "").split('?')[0] || "").split('/');
+        const p1 = parts[1];
+        if ((parts[0] || "") === "tools" && p1) {
+            const requested = p1;
+            if (TABS.some(t => t.id === requested)) {
+                switchTab(requested, true);
+                return;
+            }
+        }
+    };
+    window.addEventListener("hashchange", syncFromUrl);
+    const parts = (location.hash.replace(/^#\/?/, "").split('?')[0] || "").split('/');
+    const p1_init = parts[1];
+    if ((parts[0] || "") === "tools" && p1_init && TABS.some(t => t.id === p1_init)) {
+        switchTab(p1_init, true);
+    }
+    else {
+        switchTab("mindmap", true);
+    }
 }
 //# sourceMappingURL=tools.js.map

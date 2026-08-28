@@ -1,19 +1,19 @@
-import { t } from "./i18n.js?v=8a580b00";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=8a580b00";
-import { renderTree, markActiveLeaf } from "./tree.js?v=8a580b00";
-import { loadChunk, renderSegments } from "./reader.js?v=8a580b00";
-import { initDictionaryPanel } from "./dictionary.js?v=8a580b00";
-import { initSearchPanel } from "./search.js?v=8a580b00";
-import { initExportPanel } from "./export.js?v=8a580b00";
-import { initSrsPanel } from "./srs.js?v=8a580b00";
-import { initToolsPanel } from "./tools/tools.js?v=8a580b00";
-import "./tools/mindmap.js?v=8a580b00";
-import "./tools/patthana.js?v=8a580b00";
-import "./tools/vithi.js?v=8a580b00";
-import "./tools/matikas.js?v=8a580b00";
-import "./tools/cetasika.js?v=8a580b00";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=8a580b00";
-import { createLogger } from "./logger.js?v=8a580b00";
+import { t } from "./i18n.js?v=a38f104a";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=a38f104a";
+import { renderTree, markActiveLeaf } from "./tree.js?v=a38f104a";
+import { loadChunk, renderSegments } from "./reader.js?v=a38f104a";
+import { initDictionaryPanel } from "./dictionary.js?v=a38f104a";
+import { initSearchPanel } from "./search.js?v=a38f104a";
+import { initExportPanel } from "./export.js?v=a38f104a";
+import { initSrsPanel } from "./srs.js?v=a38f104a";
+import { initToolsPanel } from "./tools/tools.js?v=a38f104a";
+import "./tools/mindmap.js?v=a38f104a";
+import "./tools/patthana.js?v=a38f104a";
+import "./tools/vithi.js?v=a38f104a";
+import "./tools/matikas.js?v=a38f104a";
+import "./tools/cetasika.js?v=a38f104a";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=a38f104a";
+import { createLogger } from "./logger.js?v=a38f104a";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -67,9 +67,15 @@ function applySettingsToUI() {
     el("setting-show-translation").checked = settings.showTranslation;
 }
 function updateHash() {
-    if (!state.work || !state.partKey)
-        return;
-    location.hash = `#/${state.work.id}/${state.partKey}/${state.chunkIndex}`;
+    const activeBtn = document.querySelector(".rail-btn.active");
+    const panel = activeBtn ? (activeBtn.dataset.panel || "tipitaka") : "tipitaka";
+    let base = `#/${panel}`;
+    if (state.work && state.partKey && state.chunkIndex !== undefined) {
+        base += `/${state.work.id}/${state.partKey}/${state.chunkIndex}`;
+    }
+    if (location.hash !== base) {
+        location.hash = base;
+    }
 }
 function renderBreadcrumb() {
     const breadcrumb = el("breadcrumb");
@@ -305,6 +311,7 @@ function renderBookmarks() {
         listEl.appendChild(div);
     }
 }
+let switchPanel;
 function wireIconRail() {
     const buttons = document.querySelectorAll(".rail-btn");
     const panels = document.querySelectorAll(".panel");
@@ -351,25 +358,34 @@ function wireIconRail() {
         readerSrs.style.display = target === "srs" ? "flex" : "none";
         readerTools.style.display = target === "tools" ? "flex" : "none";
     }
+    switchPanel = (target, skipHashUpdate = false) => {
+        if (!target)
+            return;
+        const isMobile = window.innerWidth <= 860;
+        const isFullscreen = FULLSCREEN_PANELS.has(target);
+        if (isMobile && isFullscreen) {
+            if (!sidePanel.classList.contains("collapsed"))
+                doCollapse();
+        }
+        else {
+            doExpand();
+        }
+        buttons.forEach((b) => b.classList.toggle("active", b.dataset.panel === target));
+        panels.forEach((p) => p.classList.toggle("active", p.id === `panel-${target}`));
+        toggleReaderOverlay(target);
+        if (!skipHashUpdate)
+            updateHash();
+    };
     buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
             const target = btn.dataset.panel;
-            const isMobile = window.innerWidth <= 860;
-            const isFullscreen = target && FULLSCREEN_PANELS.has(target);
+            if (!target)
+                return;
             if (btn.classList.contains("active") && !sidePanel.classList.contains("collapsed")) {
                 doCollapse();
                 return;
             }
-            if (isMobile && isFullscreen) {
-                if (!sidePanel.classList.contains("collapsed"))
-                    doCollapse();
-            }
-            else {
-                doExpand();
-            }
-            buttons.forEach((b) => b.classList.toggle("active", b === btn));
-            panels.forEach((p) => p.classList.toggle("active", p.id === `panel-${target}`));
-            toggleReaderOverlay(target);
+            switchPanel?.(target);
         });
     });
     collapseBtn.addEventListener("click", () => {
@@ -552,19 +568,68 @@ function wireChunkNav() {
     });
 }
 function parseHash() {
-    const match = location.hash.match(/^#\/([^/]+)\/([^/]+)\/(\d+)/);
-    if (!match)
+    const hash = location.hash.replace(/^#\/?/, "");
+    if (!hash)
         return null;
-    const [, workId, partKey, chunk] = match;
-    if (!workId || !partKey || !chunk)
+    const parts = (hash.split("?")[0] || "").split("/").filter(Boolean);
+    if (parts.length === 0)
         return null;
-    return { workId, partKey, chunkIndex: Number(chunk) };
+    let panel = "tipitaka";
+    let workId, partKey, chunkIndexStr;
+    const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools"]);
+    if (parts[0] && knownPanels.has(parts[0])) {
+        panel = parts.shift();
+    }
+    if (parts.length >= 3) {
+        [workId, partKey, chunkIndexStr] = parts;
+    }
+    else if (parts.length > 0 && parts[0] !== "") {
+        if (!knownPanels.has(panel) && parts.length === 3) {
+            [workId, partKey, chunkIndexStr] = parts;
+        }
+    }
+    const route = { panel };
+    if (workId && partKey && chunkIndexStr) {
+        route.workId = workId;
+        route.partKey = partKey;
+        route.chunkIndex = Number(chunkIndexStr);
+    }
+    const queryPart = location.hash.split('?')[1];
+    const urlParams = new URLSearchParams(queryPart || "");
+    if (urlParams.has("seg")) {
+        const s = parseInt(urlParams.get("seg"), 10);
+        if (!isNaN(s))
+            route.segId = s;
+    }
+    if (urlParams.has("q")) {
+        route.q = urlParams.get("q");
+    }
+    return route;
 }
 function wireRouting() {
     window.addEventListener("hashchange", () => {
         const route = parseHash();
-        if (route)
-            void selectWork(route.workId, route.partKey, route.chunkIndex);
+        if (!route)
+            return;
+        const activeBtn = document.querySelector(".rail-btn.active");
+        if (!activeBtn || activeBtn.dataset.panel !== route.panel) {
+            switchPanel?.(route.panel, true);
+        }
+        if (route.workId && route.partKey && route.chunkIndex !== undefined) {
+            if (state.work?.id === route.workId && state.partKey === route.partKey && state.chunkIndex === route.chunkIndex) {
+                if (route.segId != null) {
+                    const target = el("content").querySelector(`.seg[data-seg-id="${route.segId}"]`);
+                    if (target) {
+                        target.scrollIntoView({ block: "center" });
+                        target.classList.add("seg-flash");
+                        setTimeout(() => target.classList.remove("seg-flash"), 1600);
+                    }
+                }
+            }
+            else {
+                void selectWork(route.workId, route.partKey, route.chunkIndex, route.segId);
+            }
+        }
     });
 }
 async function init() {
@@ -603,7 +668,20 @@ async function init() {
     initToolsPanel(el("tools-full-body"));
     const route = parseHash();
     if (route) {
-        await selectWork(route.workId, route.partKey, route.chunkIndex);
+        if (route.panel !== "tipitaka") {
+            switchPanel?.(route.panel, true);
+        }
+        if (route.workId && route.partKey && route.chunkIndex !== undefined) {
+            await selectWork(route.workId, route.partKey, route.chunkIndex, route.segId);
+        }
+        else {
+            el("content").innerHTML = `
+        <div class="welcome">
+          <img src="img/dhammacakka.webp" alt="Dhammacakka" class="welcome-img" />
+          <h1 class="welcome-title">ABHIDHAMMA</h1>
+          <p class="welcome-text">${t("welcomeDesc", settings.uiLang)}</p>
+        </div>`;
+        }
     }
     else {
         el("content").innerHTML = `
