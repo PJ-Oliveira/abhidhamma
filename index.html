@@ -6,7 +6,7 @@
 <title>Abhidhamma Piṭaka</title>
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#8b0000" />
-<link rel="stylesheet" href="css/style.css?v=a38f104a" />
+<link rel="stylesheet" href="css/style.css?v=c1e87eca" />
 </head>
 <body>
 <div id="app">
@@ -73,14 +73,7 @@
           <option value="es">Español</option>
         </select>
       </label>
-      <label class="setting-row">
-        <span data-i18n="settingUiLang">Interface Language</span>
-        <select id="setting-ui-lang">
-          <option value="pt">Português</option>
-          <option value="en">English</option>
-          <option value="es">Español</option>
-        </select>
-      </label>
+      
       <label class="setting-row">
         <span data-i18n="settingFontSize">Font size</span>
         <span class="font-controls">
@@ -152,6 +145,10 @@
 <div id="note-tooltip" class="note-tooltip hidden"></div>
 <div id="selection-popover" class="hidden"></div>
 
-<script type="module" src="js/app.js?v=a38f104a"></script>
+<!-- ABHIDHAMMIKA INTERLOCUTOR CONTAINER -->
+<div id="interlocutor-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 10000; width: 400px; max-width: 90vw; max-height: 80vh; overflow-y: auto; display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border-radius: 8px; background: white;"></div>
+<button id="btn-toggle-interlocutor" style="position: fixed; bottom: 20px; right: 20px; z-index: 10001; padding: 12px 16px; background-color: #0f172a; color: white; border: none; border-radius: 24px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold;">💬 Debate</button>
+
+<script type="module" src="js/app.js?v=c1e87eca"></script>
 </body>
 </html>

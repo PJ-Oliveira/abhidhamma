@@ -1,19 +1,19 @@
-import { t } from "./i18n.js?v=a38f104a";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=a38f104a";
-import { renderTree, markActiveLeaf } from "./tree.js?v=a38f104a";
-import { loadChunk, renderSegments } from "./reader.js?v=a38f104a";
-import { initDictionaryPanel } from "./dictionary.js?v=a38f104a";
-import { initSearchPanel } from "./search.js?v=a38f104a";
-import { initExportPanel } from "./export.js?v=a38f104a";
-import { initSrsPanel } from "./srs.js?v=a38f104a";
-import { initToolsPanel } from "./tools/tools.js?v=a38f104a";
-import "./tools/mindmap.js?v=a38f104a";
-import "./tools/patthana.js?v=a38f104a";
-import "./tools/vithi.js?v=a38f104a";
-import "./tools/matikas.js?v=a38f104a";
-import "./tools/cetasika.js?v=a38f104a";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=a38f104a";
-import { createLogger } from "./logger.js?v=a38f104a";
+import { t } from "./i18n.js?v=c1e87eca";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=c1e87eca";
+import { renderTree, markActiveLeaf } from "./tree.js?v=c1e87eca";
+import { loadChunk, renderSegments } from "./reader.js?v=c1e87eca";
+import { initDictionaryPanel } from "./dictionary.js?v=c1e87eca";
+import { initSearchPanel } from "./search.js?v=c1e87eca";
+import { initExportPanel } from "./export.js?v=c1e87eca";
+import { initSrsPanel } from "./srs.js?v=c1e87eca";
+import { initToolsPanel } from "./tools/tools.js?v=c1e87eca";
+import "./tools/mindmap.js?v=c1e87eca";
+import "./tools/patthana.js?v=c1e87eca";
+import "./tools/vithi.js?v=c1e87eca";
+import "./tools/matikas.js?v=c1e87eca";
+import "./tools/cetasika.js?v=c1e87eca";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=c1e87eca";
+import { createLogger } from "./logger.js?v=c1e87eca";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -60,9 +60,12 @@ function updateSettingsLabels() {
     }
 }
 function applySettingsToUI() {
+    if (settings.uiLang !== settings.translationLang) {
+        settings.uiLang = settings.translationLang;
+        updateSettings({ uiLang: settings.translationLang });
+    }
     document.documentElement.style.setProperty("--font-scale", String(settings.fontSize / 17));
     el("setting-lang").value = settings.translationLang;
-    el("setting-ui-lang").value = settings.uiLang;
     el("setting-show-pali").checked = settings.showPali;
     el("setting-show-translation").checked = settings.showTranslation;
 }
@@ -488,12 +491,8 @@ function wireSettingsPanel() {
     }
     const langSelect = el("setting-lang");
     langSelect.addEventListener("change", () => {
-        updateSettings({ translationLang: langSelect.value });
+        updateSettings({ translationLang: langSelect.value, uiLang: langSelect.value });
         rerenderContent();
-    });
-    const uiLangSelect = el("setting-ui-lang");
-    uiLangSelect.addEventListener("change", () => {
-        updateSettings({ uiLang: uiLangSelect.value });
         refreshLocalizedUI();
     });
     el("font-inc").addEventListener("click", () => {
@@ -677,20 +676,50 @@ async function init() {
         else {
             el("content").innerHTML = `
         <div class="welcome">
-          <img src="img/dhammacakka.webp" alt="Dhammacakka" class="welcome-img" />
-          <h1 class="welcome-title">ABHIDHAMMA</h1>
-          <p class="welcome-text">${t("welcomeDesc", settings.uiLang)}</p>
+          <img src="img/logo.png" alt="Dhammacakka" class="welcome-logo" />
+          <p class="welcome-text">${t("welcomeBody", settings.uiLang)}</p>
         </div>`;
         }
     }
     else {
         el("content").innerHTML = `
-      <div class="welcome">
-        <img src="img/logo.png" alt="Abhidhamma Dhamma Wheel" class="welcome-logo">
-        <p>${t("welcomeBody", settings.uiLang)}</p>
-
-      </div>`;
+        <div class="welcome">
+          <img src="img/logo.png" alt="Dhammacakka" class="welcome-logo" />
+          <p class="welcome-text">${t("welcomeBody", settings.uiLang)}</p>
+        </div>`;
     }
 }
 void init();
+const toggleInterlocutorBtn = document.getElementById('btn-toggle-interlocutor');
+const interlocutorContainer = document.getElementById('interlocutor-container');
+if (toggleInterlocutorBtn && interlocutorContainer) {
+    let isInterlocutorLoaded = false;
+    toggleInterlocutorBtn.addEventListener('click', async () => {
+        if (!isInterlocutorLoaded) {
+            toggleInterlocutorBtn.textContent = '⏳ Loading...';
+            try {
+                const { initInterlocutorPanel } = await import('./ai-feature/ui.js');
+                initInterlocutorPanel(interlocutorContainer);
+                isInterlocutorLoaded = true;
+                interlocutorContainer.addEventListener('interlocutor-submit', (e) => {
+                    console.log('[Interlocutor Event Caught by App]:', e.detail);
+                });
+            }
+            catch (err) {
+                console.error('Failed to load Abhidhammika Interlocutor:', err);
+                toggleInterlocutorBtn.textContent = '❌ Error';
+                return;
+            }
+        }
+        if (interlocutorContainer.style.display === 'none') {
+            interlocutorContainer.style.display = 'block';
+            toggleInterlocutorBtn.textContent = '❌ Close Debate';
+        }
+        else {
+            interlocutorContainer.style.display = 'none';
+            toggleInterlocutorBtn.textContent = '💬 Debate';
+        }
+    });
+}
+console.log('Cache Bust: 1788398640');
 //# sourceMappingURL=app.js.map

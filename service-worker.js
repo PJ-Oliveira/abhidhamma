@@ -1,4 +1,4 @@
-const CACHE_NAME = 'abhidhamma-cache-v7';
+const CACHE_NAME = 'abhidhamma-cache-v8';
 
 // App shell files to cache immediately on install
 const CORE_ASSETS = [
