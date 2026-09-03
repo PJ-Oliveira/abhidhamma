@@ -1,6 +1,6 @@
-import { t } from "../i18n.js?v=c1e87eca";
-import { settings } from "../state.js?v=c1e87eca";
-import { createLogger } from "../logger.js?v=c1e87eca";
+import { t } from "../i18n.js?v=aa3e8f1f";
+import { settings } from "../state.js?v=aa3e8f1f";
+import { createLogger } from "../logger.js?v=aa3e8f1f";
 const log = createLogger("tools");
 const TABS = [
     { id: "mindmap", icon: "🗺", i18nKey: "toolMindmap", init: null, loaded: false },
@@ -45,7 +45,7 @@ export function initToolsPanel(container) {
         if (!skipUrlUpdate) {
             const activeBtn = document.querySelector(".rail-btn.active");
             if (activeBtn && activeBtn.dataset.panel === "tools") {
-                history.replaceState(null, "", `#/tools/${id}`);
+                location.hash = `#/tools/${id}`;
             }
         }
         buttons.forEach((btn) => {

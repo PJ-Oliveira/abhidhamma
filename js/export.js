@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=c1e87eca";
-import { settings } from "./state.js?v=c1e87eca";
-import { createLogger } from "./logger.js?v=c1e87eca";
+import { t } from "./i18n.js?v=aa3e8f1f";
+import { settings } from "./state.js?v=aa3e8f1f";
+import { createLogger } from "./logger.js?v=aa3e8f1f";
 const log = createLogger("export");
 let glossaryData = null;
 async function loadGlossary() {
@@ -19,13 +19,18 @@ async function loadGlossary() {
     }
 }
 export function collectUsedTerms(segs, glossary) {
-    const headwords = new Set(glossary.map((g) => g.h.toLowerCase()));
     const found = new Set();
+    const wordRegex = /[\p{L}\p{M}]+/gu;
     for (const seg of segs) {
         const paliText = (seg.pali || "").toLowerCase();
-        for (const hw of headwords) {
-            if (!found.has(hw) && paliText.includes(hw.split(" / ")[0].split(" ")[0])) {
-                found.add(hw);
+        const paliWords = new Set((paliText.match(wordRegex) || []).map(w => w.toLowerCase()));
+        for (const entry of glossary) {
+            if (!found.has(entry.h.toLowerCase())) {
+                const headword = entry.h.toLowerCase();
+                const headwordBase = headword.split(" / ")[0].split(" ")[0];
+                if (paliWords.has(headwordBase)) {
+                    found.add(entry.h.toLowerCase());
+                }
             }
         }
     }

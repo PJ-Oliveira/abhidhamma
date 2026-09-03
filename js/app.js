@@ -1,19 +1,19 @@
-import { t } from "./i18n.js?v=c1e87eca";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=c1e87eca";
-import { renderTree, markActiveLeaf } from "./tree.js?v=c1e87eca";
-import { loadChunk, renderSegments } from "./reader.js?v=c1e87eca";
-import { initDictionaryPanel } from "./dictionary.js?v=c1e87eca";
-import { initSearchPanel } from "./search.js?v=c1e87eca";
-import { initExportPanel } from "./export.js?v=c1e87eca";
-import { initSrsPanel } from "./srs.js?v=c1e87eca";
-import { initToolsPanel } from "./tools/tools.js?v=c1e87eca";
-import "./tools/mindmap.js?v=c1e87eca";
-import "./tools/patthana.js?v=c1e87eca";
-import "./tools/vithi.js?v=c1e87eca";
-import "./tools/matikas.js?v=c1e87eca";
-import "./tools/cetasika.js?v=c1e87eca";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=c1e87eca";
-import { createLogger } from "./logger.js?v=c1e87eca";
+import { t } from "./i18n.js?v=aa3e8f1f";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=aa3e8f1f";
+import { renderTree, markActiveLeaf } from "./tree.js?v=aa3e8f1f";
+import { loadChunk, renderSegments } from "./reader.js?v=aa3e8f1f";
+import { initDictionaryPanel } from "./dictionary.js?v=aa3e8f1f";
+import { initSearchPanel } from "./search.js?v=aa3e8f1f";
+import { initExportPanel } from "./export.js?v=aa3e8f1f";
+import { initSrsPanel } from "./srs.js?v=aa3e8f1f";
+import { initToolsPanel } from "./tools/tools.js?v=aa3e8f1f";
+import "./tools/mindmap.js?v=aa3e8f1f";
+import "./tools/patthana.js?v=aa3e8f1f";
+import "./tools/vithi.js?v=aa3e8f1f";
+import "./tools/matikas.js?v=aa3e8f1f";
+import "./tools/cetasika.js?v=aa3e8f1f";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=aa3e8f1f";
+import { createLogger } from "./logger.js?v=aa3e8f1f";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -581,11 +581,6 @@ function parseHash() {
     }
     if (parts.length >= 3) {
         [workId, partKey, chunkIndexStr] = parts;
-    }
-    else if (parts.length > 0 && parts[0] !== "") {
-        if (!knownPanels.has(panel) && parts.length === 3) {
-            [workId, partKey, chunkIndexStr] = parts;
-        }
     }
     const route = { panel };
     if (workId && partKey && chunkIndexStr) {

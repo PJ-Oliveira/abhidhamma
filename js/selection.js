@@ -1,6 +1,6 @@
-import { lookupPali } from "./dictionary.js?v=c1e87eca";
-import { settings } from "./state.js?v=c1e87eca";
-import { t } from "./i18n.js?v=c1e87eca";
+import { lookupPali } from "./dictionary.js?v=aa3e8f1f";
+import { settings } from "./state.js?v=aa3e8f1f";
+import { t } from "./i18n.js?v=aa3e8f1f";
 let currentHighlight = null;
 let popoverEl = null;
 let contentEl = null;
@@ -120,9 +120,12 @@ async function buildPopover(rect, segDiv, selectedInPali, selectedText) {
     linkBtn.addEventListener("click", () => {
         const [baseHash] = window.location.hash.split('?');
         const newUrl = `${window.location.origin}${window.location.pathname}${baseHash}?seg=${segDiv.dataset.segId}`;
+        const origHtml = linkBtn.innerHTML;
         navigator.clipboard.writeText(newUrl).then(() => {
-            const origHtml = linkBtn.innerHTML;
             linkBtn.innerHTML = "✓";
+            setTimeout(() => { linkBtn.innerHTML = origHtml; }, 2000);
+        }).catch(() => {
+            linkBtn.innerHTML = "✗";
             setTimeout(() => { linkBtn.innerHTML = origHtml; }, 2000);
         });
     });
