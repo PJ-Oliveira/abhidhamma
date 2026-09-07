@@ -1,19 +1,19 @@
-import { t } from "./i18n.js?v=aa3e8f1f";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=aa3e8f1f";
-import { renderTree, markActiveLeaf } from "./tree.js?v=aa3e8f1f";
-import { loadChunk, renderSegments } from "./reader.js?v=aa3e8f1f";
-import { initDictionaryPanel } from "./dictionary.js?v=aa3e8f1f";
-import { initSearchPanel } from "./search.js?v=aa3e8f1f";
-import { initExportPanel } from "./export.js?v=aa3e8f1f";
-import { initSrsPanel } from "./srs.js?v=aa3e8f1f";
-import { initToolsPanel } from "./tools/tools.js?v=aa3e8f1f";
-import "./tools/mindmap.js?v=aa3e8f1f";
-import "./tools/patthana.js?v=aa3e8f1f";
-import "./tools/vithi.js?v=aa3e8f1f";
-import "./tools/matikas.js?v=aa3e8f1f";
-import "./tools/cetasika.js?v=aa3e8f1f";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=aa3e8f1f";
-import { createLogger } from "./logger.js?v=aa3e8f1f";
+import { t } from "./i18n.js?v=6379fc71";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=6379fc71";
+import { renderTree, markActiveLeaf } from "./tree.js?v=6379fc71";
+import { loadChunk, renderSegments } from "./reader.js?v=6379fc71";
+import { initDictionaryPanel } from "./dictionary.js?v=6379fc71";
+import { initSearchPanel } from "./search.js?v=6379fc71";
+import { initExportPanel } from "./export.js?v=6379fc71";
+import { initSrsPanel } from "./srs.js?v=6379fc71";
+import { initToolsPanel } from "./tools/tools.js?v=6379fc71";
+import "./tools/mindmap.js?v=6379fc71";
+import "./tools/patthana.js?v=6379fc71";
+import "./tools/vithi.js?v=6379fc71";
+import "./tools/matikas.js?v=6379fc71";
+import "./tools/cetasika.js?v=6379fc71";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=6379fc71";
+import { createLogger } from "./logger.js?v=6379fc71";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -494,6 +494,7 @@ function wireSettingsPanel() {
         updateSettings({ translationLang: langSelect.value, uiLang: langSelect.value });
         rerenderContent();
         refreshLocalizedUI();
+        window.dispatchEvent(new Event("languageChanged"));
     });
     el("font-inc").addEventListener("click", () => {
         updateSettings({ fontSize: Math.min(settings.fontSize + 1, 28) });

@@ -1,6 +1,6 @@
-import { lookupPali } from "./dictionary.js?v=aa3e8f1f";
-import { settings } from "./state.js?v=aa3e8f1f";
-import { t } from "./i18n.js?v=aa3e8f1f";
+import { lookupPali } from "./dictionary.js?v=6379fc71";
+import { settings } from "./state.js?v=6379fc71";
+import { t } from "./i18n.js?v=6379fc71";
 let currentHighlight = null;
 let popoverEl = null;
 let contentEl = null;
@@ -140,13 +140,13 @@ async function buildPopover(rect, segDiv, selectedInPali, selectedText) {
     textDiv.className = "sp-text";
     let counterpartText = "";
     if (selectedInPali) {
-        counterpartText = segDiv.querySelector(".translation-line")?.textContent?.trim() ?? "";
+        counterpartText = segDiv.querySelector(".translation-line")?.innerHTML?.trim() ?? "";
     }
     else {
         counterpartText = segDiv.dataset.pali?.trim() ?? "";
     }
     if (counterpartText) {
-        textDiv.textContent = counterpartText;
+        textDiv.innerHTML = counterpartText;
     }
     else {
         textDiv.textContent = "—";

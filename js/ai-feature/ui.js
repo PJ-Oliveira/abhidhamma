@@ -2,7 +2,9 @@ import { t } from '../i18n.js';
 import { settings } from '../state.js';
 import { CanonicalScenarios } from './debate-scenarios.js';
 import { evaluateScenario } from '../ontology/kathavatthu_logic.js';
+let isListenerAdded = false;
 export function initInterlocutorPanel(container) {
+    container.innerHTML = "";
     const wrapper = document.createElement('div');
     wrapper.className = 'interlocutor-panel';
     wrapper.style.display = 'flex';
@@ -158,5 +160,11 @@ export function initInterlocutorPanel(container) {
             }, 1000);
         }
     });
+    if (!isListenerAdded) {
+        window.addEventListener("languageChanged", () => {
+            initInterlocutorPanel(container);
+        });
+        isListenerAdded = true;
+    }
 }
 //# sourceMappingURL=ui.js.map
