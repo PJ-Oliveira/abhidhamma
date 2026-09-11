@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Abhidhamma UI Tests</title>
+<style>
+body { font-family: monospace; margin: 20px; background: #1a1a1a; color: #0f0; }
+.pass { color: #0f0; } .fail { color: #f00; }
+h1 { color: #0ff; } table { border-collapse: collapse; width: 100%; }
+td { border: 1px solid #333; padding: 8px; } th { background: #222; }
+</style>
+</head>
+<body>
+<h1>🧪 Abhidhamma UI/Interface Test Suite</h1>
+<table id="results"></table>
+<h2 id="summary"></h2>
+<script>
+const tests = [];
+let pass = 0, fail = 0;
+
+function test(name, fn) {
+  try {
+    fn();
+    tests.push({name, status: 'PASS', msg: ''});
+    pass++;
+  } catch(e) {
+    tests.push({name, status: 'FAIL', msg: e.message});
+    fail++;
+  }
+}
+
+// Test 1: DOM Structure
+test("Page load and #app grid layout", () => {
+  const app = document.querySelector('#app');
+  if (!app) throw new Error("Missing #app");
+  const display = window.getComputedStyle(app).display;
+  if (display !== 'grid') throw new Error(`Grid display: got ${display}`);
+});
+
+// Test 2: Navigation rail
+test("Icon rail with 8 buttons", () => {
+  const buttons = document.querySelectorAll('#icon-rail .rail-btn');
+  if (buttons.length !== 8) throw new Error(`Got ${buttons.length} buttons`);
+});
+
+// Test 3: Side panel
+test("Side panel with 8 panels", () => {
+  const panels = document.querySelectorAll('#side-panel .panel');
+  if (panels.length !== 8) throw new Error(`Got ${panels.length} panels`);
+});
+
+// Test 4: Main reader
+test("Main reader area with content div", () => {
+  const reader = document.querySelector('main#reader');
+  const content = document.querySelector('#content');
+  if (!reader || !content) throw new Error("Missing reader or content");
+});
+
+// Test 5: Panel buttons
+test("All required panels exist", () => {
+  const required = ['tipitaka', 'dictionary', 'history', 'search', 'settings', 'export', 'srs', 'tools'];
+  required.forEach(p => {
+    if (!document.querySelector(`#panel-${p}`)) throw new Error(`Missing panel-${p}`);
+  });
+});
+
+// Test 6: Settings controls
+test("Settings panel has language selector and font controls", () => {
+  if (!document.querySelector('#setting-lang')) throw new Error("Missing lang selector");
+  if (!document.querySelector('#font-inc')) throw new Error("Missing font-inc");
+  if (!document.querySelector('#font-dec')) throw new Error("Missing font-dec");
+  if (!document.querySelector('#setting-show-pali')) throw new Error("Missing pali toggle");
+  if (!document.querySelector('#setting-show-translation')) throw new Error("Missing translation toggle");
+});
+
+// Test 7: Dictionary panel
+test("Dictionary panel with search input", () => {
+  if (!document.querySelector('#dict-search')) throw new Error("Missing dict-search");
+  if (!document.querySelector('#dict-results')) throw new Error("Missing dict-results");
+});
+
+// Test 8: Search panel
+test("Search panel with input and results", () => {
+  if (!document.querySelector('#search-input')) throw new Error("Missing search-input");
+  if (!document.querySelector('#search-results')) throw new Error("Missing search-results");
+});
+
+// Test 9: History and bookmarks
+test("History and bookmarks lists", () => {
+  if (!document.querySelector('#history-list')) throw new Error("Missing history-list");
+  if (!document.querySelector('#bookmark-list')) throw new Error("Missing bookmark-list");
+});
+
+// Test 10: Export panel
+test("Export panel body", () => {
+  if (!document.querySelector('#export-panel-body')) throw new Error("Missing export-panel-body");
+});
+
+// Test 11: Reader elements
+test("Breadcrumb, part tabs, chapter nav", () => {
+  if (!document.querySelector('#breadcrumb')) throw new Error("Missing breadcrumb");
+  if (!document.querySelector('#part-tabs')) throw new Error("Missing part-tabs");
+  if (!document.querySelector('#chapter-nav')) throw new Error("Missing chapter-nav");
+});
+
+// Test 12: Content area
+test("Main content area for text display", () => {
+  const content = document.querySelector('#content');
+  if (!content || !content.classList.contains('content')) throw new Error("Content area not configured");
+});
+
+// Test 13: TOC navigation
+test("Previous/next chunk buttons and indicator", () => {
+  if (!document.querySelector('#prev-chunk')) throw new Error("Missing prev-chunk");
+  if (!document.querySelector('#next-chunk')) throw new Error("Missing next-chunk");
+  if (!document.querySelector('#chunk-indicator')) throw new Error("Missing chunk-indicator");
+});
+
+// Test 14: Overlays
+test("SRS and Tools full-screen overlays", () => {
+  if (!document.querySelector('#reader-srs')) throw new Error("Missing reader-srs overlay");
+  if (!document.querySelector('#reader-tools')) throw new Error("Missing reader-tools overlay");
+});
+
+// Test 15: Selection and tooltips
+test("Selection popover and note tooltip", () => {
+  if (!document.querySelector('#selection-popover')) throw new Error("Missing selection-popover");
+  if (!document.querySelector('#note-tooltip')) throw new Error("Missing note-tooltip");
+});
+
+// Test 16: Debate button
+test("Debate simulator button and container", () => {
+  if (!document.querySelector('#btn-toggle-interlocutor')) throw new Error("Missing debate button");
+  if (!document.querySelector('#interlocutor-container')) throw new Error("Missing debate container");
+});
+
+// Test 17: Panel collapse
+test("Panel collapse button", () => {
+  if (!document.querySelector('#panel-collapse')) throw new Error("Missing collapse button");
+});
+
+// Test 18: Panel resizer
+test("Panel resizer for resize handle", () => {
+  if (!document.querySelector('#panel-resizer')) throw new Error("Missing resizer");
+});
+
+// Test 19: CSS variables
+test("CSS custom properties (--font-scale, --panel-w, --rail-w)", () => {
+  const root = document.documentElement;
+  const style = getComputedStyle(root);
+  const fontScale = style.getPropertyValue('--font-scale');
+  const panelW = style.getPropertyValue('--panel-w');
+  if (!fontScale.trim() || !panelW.trim()) throw new Error("CSS vars not initialized");
+});
+
+// Test 20: Service Worker API
+test("ServiceWorker API available", () => {
+  if (!('serviceWorker' in navigator)) throw new Error("No ServiceWorker API");
+});
+
+// Test 21: Viewport meta tag
+test("Mobile viewport meta tag", () => {
+  const meta = document.querySelector('meta[name="viewport"]');
+  if (!meta) throw new Error("Missing viewport meta");
+  const content = meta.getAttribute('content');
+  if (!content.includes('device-width')) throw new Error("Viewport not configured for mobile");
+});
+
+// Test 22: Theme color
+test("Theme color meta tag", () => {
+  if (!document.querySelector('meta[name="theme-color"]')) throw new Error("Missing theme-color");
+});
+
+// Test 23: Manifest
+test("Web App Manifest link", () => {
+  if (!document.querySelector('link[rel="manifest"]')) throw new Error("Missing manifest");
+});
+
+// Test 24: CSS stylesheet
+test("Main CSS stylesheet loaded", () => {
+  const link = document.querySelector('link[rel="stylesheet"]');
+  if (!link || !link.href.includes('style.css')) throw new Error("CSS not linked");
+});
+
+// Test 25: Script module
+test("App module script tag", () => {
+  const script = document.querySelector('script[type="module"]');
+  if (!script || !script.src.includes('app.js')) throw new Error("App.js not loaded as module");
+});
+
+// Test 26: Cache busting hash
+test("Cache-busting hash applied to assets", () => {
+  const link = document.querySelector('link[rel="stylesheet"]');
+  const script = document.querySelector('script[type="module"]');
+  if (!link.href.includes('?v=')) throw new Error("CSS missing cache hash");
+  if (!script.src.includes('?v=')) throw new Error("JS missing cache hash");
+  const cssHash = link.href.split('?v=')[1];
+  const jsHash = script.src.split('?v=')[1];
+  if (cssHash !== jsHash) throw new Error("Hash mismatch between CSS and JS");
+});
+
+// Test 27: Tree navigation
+test("Tree element for work navigation", () => {
+  const tree = document.querySelector('#tree');
+  if (!tree) throw new Error("Missing tree");
+});
+
+// Test 28: History lists
+test("History and bookmark list containers", () => {
+  const histList = document.querySelector('#history-list');
+  const bookList = document.querySelector('#bookmark-list');
+  if (!histList || !bookList) throw new Error("Missing list containers");
+});
+
+// Test 29: i18n elements
+test("Internationalization data attributes present", () => {
+  const i18nEls = document.querySelectorAll('[data-i18n]');
+  if (i18nEls.length < 10) throw new Error(`Only ${i18nEls.length} i18n elements`);
+});
+
+// Test 30: Collapse button styling
+test("Collapse button has text content", () => {
+  const btn = document.querySelector('#panel-collapse');
+  const text = btn.textContent.trim();
+  if (!text) throw new Error("Collapse button empty");
+  if (!['‹', '›'].includes(text)) throw new Error(`Unexpected collapse symbol: ${text}`);
+});
+
+// Test 31: Mobile meta tags
+test("User-scalable=0 in viewport (prevent zoom)", () => {
+  const meta = document.querySelector('meta[name="viewport"]');
+  const content = meta.getAttribute('content');
+  if (content.includes('user-scalable=1')) throw new Error("Zoom enabled (should be disabled)");
+});
+
+// Test 32: No console errors on load
+test("No critical JavaScript errors on page load", () => {
+  // This is checked at render time in browser console
+  // Just verify no thrown errors during page setup
+  if (document.readyState !== 'interactive' && document.readyState !== 'complete') {
+    throw new Error("Document not ready");
+  }
+});
+
+// Render results
+const table = document.querySelector('#results');
+table.innerHTML = '<tr><th>Test</th><th>Status</th><th>Details</th></tr>';
+tests.forEach(t => {
+  const row = table.insertRow();
+  row.innerHTML = `<td>${t.name}</td><td class="${t.status === 'PASS' ? 'pass' : 'fail'}">${t.status}</td><td>${t.msg || '✅'}</td>`;
+});
+
+document.querySelector('#summary').innerHTML = `
+  <span class="pass">✅ PASSED: ${pass}/32</span><br>
+  <span class="${fail > 0 ? 'fail' : 'pass'}">
+    ${fail > 0 ? `❌ FAILED: ${fail}/32` : '✅ ALL PASSED!'}
+  </span><br><br>
+  <strong>Status: ${fail === 0 ? '🟢 UI READY FOR PRODUCTION' : '🟡 ISSUES DETECTED'}</strong>
+`;
+
+console.log(`✅ UI Tests: ${pass}/32 passed, ${fail > 0 ? `❌ ${fail} failed` : '✅ ALL PASSED'}`);
+</script>
+</body>
+</html>

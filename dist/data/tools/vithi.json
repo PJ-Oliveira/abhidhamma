@@ -1,0 +1,702 @@
+{
+  "doors": [
+    {
+      "id": "cakkhu",
+      "label": "Cakkhu-dvāra Vīthi",
+      "labelEn": "Eye-door Process",
+      "labelPt": "Processo da Porta Visual",
+      "icon": "👁",
+      "sequence": [
+        {
+          "id": "atita-bhavanga",
+          "label": "Atīta-bhavaṅga",
+          "labelEn": "Past Life-continuum",
+          "labelPt": "Contínuo Vital Passado",
+          "abbrev": "Bh",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        },
+        {
+          "id": "bhavanga-calana",
+          "label": "Bhavaṅga-calana",
+          "labelEn": "Vibrating Life-continuum",
+          "labelPt": "Contínuo Vital Vibrante",
+          "abbrev": "Bc",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        },
+        {
+          "id": "bhavanga-upaccheda",
+          "label": "Bhavaṅgupaccheda",
+          "labelEn": "Arrested Life-continuum",
+          "labelPt": "Contínuo Vital Interrompido",
+          "abbrev": "Bu",
+          "type": "bhavanga",
+          "color": "#95a5a6",
+          "count": 1
+        },
+        {
+          "id": "pancadvaravajjana",
+          "label": "Pañcadvārāvajjana",
+          "labelEn": "Five-door Adverting",
+          "labelPt": "Advertência das Cinco Portas",
+          "abbrev": "Pv",
+          "type": "avajjana",
+          "color": "#3498db",
+          "count": 1
+        },
+        {
+          "id": "cakkhu-vinnana",
+          "label": "Cakkhu-viññāṇa",
+          "labelEn": "Eye-consciousness",
+          "labelPt": "Consciência Visual",
+          "abbrev": "Cv",
+          "type": "vinnana",
+          "color": "#e74c3c",
+          "count": 1
+        },
+        {
+          "id": "sampaticchana",
+          "label": "Sampaṭicchana",
+          "labelEn": "Receiving Consciousness",
+          "labelPt": "Consciência Receptora",
+          "abbrev": "Sp",
+          "type": "sampaticchana",
+          "color": "#9b59b6",
+          "count": 1
+        },
+        {
+          "id": "santiirana",
+          "label": "Santīraṇa",
+          "labelEn": "Investigating Consciousness",
+          "labelPt": "Consciência Investigadora",
+          "abbrev": "St",
+          "type": "santiirana",
+          "color": "#f39c12",
+          "count": 1
+        },
+        {
+          "id": "votthapana",
+          "label": "Voṭṭhapana",
+          "labelEn": "Determining Consciousness",
+          "labelPt": "Consciência Determinadora",
+          "abbrev": "Vt",
+          "type": "votthapana",
+          "color": "#1abc9c",
+          "count": 1
+        },
+        {
+          "id": "javana",
+          "label": "Javana",
+          "labelEn": "Impulsion",
+          "labelPt": "Impulsão",
+          "abbrev": "J",
+          "type": "javana",
+          "color": "#2ecc71",
+          "count": 7
+        },
+        {
+          "id": "tadarammana",
+          "label": "Tadārammaṇa",
+          "labelEn": "Registering Consciousness",
+          "labelPt": "Consciência Registradora",
+          "abbrev": "T",
+          "type": "tadarammana",
+          "color": "#f1c40f",
+          "count": 2
+        },
+        {
+          "id": "bhavanga",
+          "label": "Bhavaṅga",
+          "labelEn": "Life-continuum",
+          "labelPt": "Contínuo Vital",
+          "abbrev": "Bh",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "sota",
+      "label": "Sota-dvāra Vīthi",
+      "labelEn": "Ear-door Process",
+      "labelPt": "Processo da Porta Auditiva",
+      "icon": "👂",
+      "sequence": [
+        {
+          "id": "atita-bhavanga",
+          "label": "Atīta-bhavaṅga",
+          "labelEn": "Past Life-continuum",
+          "labelPt": "Contínuo Vital Passado",
+          "abbrev": "Bh",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        },
+        {
+          "id": "bhavanga-calana",
+          "label": "Bhavaṅga-calana",
+          "labelEn": "Vibrating Life-continuum",
+          "labelPt": "Contínuo Vital Vibrante",
+          "abbrev": "Bc",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        },
+        {
+          "id": "bhavanga-upaccheda",
+          "label": "Bhavaṅgupaccheda",
+          "labelEn": "Arrested Life-continuum",
+          "labelPt": "Contínuo Vital Interrompido",
+          "abbrev": "Bu",
+          "type": "bhavanga",
+          "color": "#95a5a6",
+          "count": 1
+        },
+        {
+          "id": "pancadvaravajjana",
+          "label": "Pañcadvārāvajjana",
+          "labelEn": "Five-door Adverting",
+          "labelPt": "Advertência das Cinco Portas",
+          "abbrev": "Pv",
+          "type": "avajjana",
+          "color": "#3498db",
+          "count": 1
+        },
+        {
+          "id": "sota-vinnana",
+          "label": "Sota-viññāṇa",
+          "labelEn": "Ear-consciousness",
+          "labelPt": "Consciência Auditiva",
+          "abbrev": "Sv",
+          "type": "vinnana",
+          "color": "#e74c3c",
+          "count": 1
+        },
+        {
+          "id": "sampaticchana",
+          "label": "Sampaṭicchana",
+          "labelEn": "Receiving Consciousness",
+          "labelPt": "Consciência Receptora",
+          "abbrev": "Sp",
+          "type": "sampaticchana",
+          "color": "#9b59b6",
+          "count": 1
+        },
+        {
+          "id": "santiirana",
+          "label": "Santīraṇa",
+          "labelEn": "Investigating Consciousness",
+          "labelPt": "Consciência Investigadora",
+          "abbrev": "St",
+          "type": "santiirana",
+          "color": "#f39c12",
+          "count": 1
+        },
+        {
+          "id": "votthapana",
+          "label": "Voṭṭhapana",
+          "labelEn": "Determining Consciousness",
+          "labelPt": "Consciência Determinadora",
+          "abbrev": "Vt",
+          "type": "votthapana",
+          "color": "#1abc9c",
+          "count": 1
+        },
+        {
+          "id": "javana",
+          "label": "Javana",
+          "labelEn": "Impulsion",
+          "labelPt": "Impulsão",
+          "abbrev": "J",
+          "type": "javana",
+          "color": "#2ecc71",
+          "count": 7
+        },
+        {
+          "id": "tadarammana",
+          "label": "Tadārammaṇa",
+          "labelEn": "Registering Consciousness",
+          "labelPt": "Consciência Registradora",
+          "abbrev": "T",
+          "type": "tadarammana",
+          "color": "#f1c40f",
+          "count": 2
+        },
+        {
+          "id": "bhavanga",
+          "label": "Bhavaṅga",
+          "labelEn": "Life-continuum",
+          "labelPt": "Contínuo Vital",
+          "abbrev": "Bh",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ghana",
+      "label": "Ghāna-dvāra Vīthi",
+      "labelEn": "Nose-door Process",
+      "labelPt": "Processo da Porta Olfativa",
+      "icon": "👃",
+      "sequence": [
+        {
+          "id": "atita-bhavanga",
+          "label": "Atīta-bhavaṅga",
+          "labelEn": "Past Life-continuum",
+          "labelPt": "Contínuo Vital Passado",
+          "abbrev": "Bh",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        },
+        {
+          "id": "bhavanga-calana",
+          "label": "Bhavaṅga-calana",
+          "labelEn": "Vibrating Life-continuum",
+          "labelPt": "Contínuo Vital Vibrante",
+          "abbrev": "Bc",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        },
+        {
+          "id": "bhavanga-upaccheda",
+          "label": "Bhavaṅgupaccheda",
+          "labelEn": "Arrested Life-continuum",
+          "labelPt": "Contínuo Vital Interrompido",
+          "abbrev": "Bu",
+          "type": "bhavanga",
+          "color": "#95a5a6",
+          "count": 1
+        },
+        {
+          "id": "pancadvaravajjana",
+          "label": "Pañcadvārāvajjana",
+          "labelEn": "Five-door Adverting",
+          "labelPt": "Advertência das Cinco Portas",
+          "abbrev": "Pv",
+          "type": "avajjana",
+          "color": "#3498db",
+          "count": 1
+        },
+        {
+          "id": "ghana-vinnana",
+          "label": "Ghāna-viññāṇa",
+          "labelEn": "Nose-consciousness",
+          "labelPt": "Consciência Olfativa",
+          "abbrev": "Gv",
+          "type": "vinnana",
+          "color": "#e74c3c",
+          "count": 1
+        },
+        {
+          "id": "sampaticchana",
+          "label": "Sampaṭicchana",
+          "labelEn": "Receiving Consciousness",
+          "labelPt": "Consciência Receptora",
+          "abbrev": "Sp",
+          "type": "sampaticchana",
+          "color": "#9b59b6",
+          "count": 1
+        },
+        {
+          "id": "santiirana",
+          "label": "Santīraṇa",
+          "labelEn": "Investigating Consciousness",
+          "labelPt": "Consciência Investigadora",
+          "abbrev": "St",
+          "type": "santiirana",
+          "color": "#f39c12",
+          "count": 1
+        },
+        {
+          "id": "votthapana",
+          "label": "Voṭṭhapana",
+          "labelEn": "Determining Consciousness",
+          "labelPt": "Consciência Determinadora",
+          "abbrev": "Vt",
+          "type": "votthapana",
+          "color": "#1abc9c",
+          "count": 1
+        },
+        {
+          "id": "javana",
+          "label": "Javana",
+          "labelEn": "Impulsion",
+          "labelPt": "Impulsão",
+          "abbrev": "J",
+          "type": "javana",
+          "color": "#2ecc71",
+          "count": 7
+        },
+        {
+          "id": "tadarammana",
+          "label": "Tadārammaṇa",
+          "labelEn": "Registering Consciousness",
+          "labelPt": "Consciência Registradora",
+          "abbrev": "T",
+          "type": "tadarammana",
+          "color": "#f1c40f",
+          "count": 2
+        },
+        {
+          "id": "bhavanga",
+          "label": "Bhavaṅga",
+          "labelEn": "Life-continuum",
+          "labelPt": "Contínuo Vital",
+          "abbrev": "Bh",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "jivha",
+      "label": "Jivhā-dvāra Vīthi",
+      "labelEn": "Tongue-door Process",
+      "labelPt": "Processo da Porta Gustativa",
+      "icon": "👅",
+      "sequence": [
+        {
+          "id": "atita-bhavanga",
+          "label": "Atīta-bhavaṅga",
+          "labelEn": "Past Life-continuum",
+          "labelPt": "Contínuo Vital Passado",
+          "abbrev": "Bh",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        },
+        {
+          "id": "bhavanga-calana",
+          "label": "Bhavaṅga-calana",
+          "labelEn": "Vibrating Life-continuum",
+          "labelPt": "Contínuo Vital Vibrante",
+          "abbrev": "Bc",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        },
+        {
+          "id": "bhavanga-upaccheda",
+          "label": "Bhavaṅgupaccheda",
+          "labelEn": "Arrested Life-continuum",
+          "labelPt": "Contínuo Vital Interrompido",
+          "abbrev": "Bu",
+          "type": "bhavanga",
+          "color": "#95a5a6",
+          "count": 1
+        },
+        {
+          "id": "pancadvaravajjana",
+          "label": "Pañcadvārāvajjana",
+          "labelEn": "Five-door Adverting",
+          "labelPt": "Advertência das Cinco Portas",
+          "abbrev": "Pv",
+          "type": "avajjana",
+          "color": "#3498db",
+          "count": 1
+        },
+        {
+          "id": "jivha-vinnana",
+          "label": "Jivhā-viññāṇa",
+          "labelEn": "Tongue-consciousness",
+          "labelPt": "Consciência Gustativa",
+          "abbrev": "Jv",
+          "type": "vinnana",
+          "color": "#e74c3c",
+          "count": 1
+        },
+        {
+          "id": "sampaticchana",
+          "label": "Sampaṭicchana",
+          "labelEn": "Receiving Consciousness",
+          "labelPt": "Consciência Receptora",
+          "abbrev": "Sp",
+          "type": "sampaticchana",
+          "color": "#9b59b6",
+          "count": 1
+        },
+        {
+          "id": "santiirana",
+          "label": "Santīraṇa",
+          "labelEn": "Investigating Consciousness",
+          "labelPt": "Consciência Investigadora",
+          "abbrev": "St",
+          "type": "santiirana",
+          "color": "#f39c12",
+          "count": 1
+        },
+        {
+          "id": "votthapana",
+          "label": "Voṭṭhapana",
+          "labelEn": "Determining Consciousness",
+          "labelPt": "Consciência Determinadora",
+          "abbrev": "Vt",
+          "type": "votthapana",
+          "color": "#1abc9c",
+          "count": 1
+        },
+        {
+          "id": "javana",
+          "label": "Javana",
+          "labelEn": "Impulsion",
+          "labelPt": "Impulsão",
+          "abbrev": "J",
+          "type": "javana",
+          "color": "#2ecc71",
+          "count": 7
+        },
+        {
+          "id": "tadarammana",
+          "label": "Tadārammaṇa",
+          "labelEn": "Registering Consciousness",
+          "labelPt": "Consciência Registradora",
+          "abbrev": "T",
+          "type": "tadarammana",
+          "color": "#f1c40f",
+          "count": 2
+        },
+        {
+          "id": "bhavanga",
+          "label": "Bhavaṅga",
+          "labelEn": "Life-continuum",
+          "labelPt": "Contínuo Vital",
+          "abbrev": "Bh",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "kaya",
+      "label": "Kāya-dvāra Vīthi",
+      "labelEn": "Body-door Process",
+      "labelPt": "Processo da Porta Tátil",
+      "icon": "✋",
+      "sequence": [
+        {
+          "id": "atita-bhavanga",
+          "label": "Atīta-bhavaṅga",
+          "labelEn": "Past Life-continuum",
+          "labelPt": "Contínuo Vital Passado",
+          "abbrev": "Bh",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        },
+        {
+          "id": "bhavanga-calana",
+          "label": "Bhavaṅga-calana",
+          "labelEn": "Vibrating Life-continuum",
+          "labelPt": "Contínuo Vital Vibrante",
+          "abbrev": "Bc",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        },
+        {
+          "id": "bhavanga-upaccheda",
+          "label": "Bhavaṅgupaccheda",
+          "labelEn": "Arrested Life-continuum",
+          "labelPt": "Contínuo Vital Interrompido",
+          "abbrev": "Bu",
+          "type": "bhavanga",
+          "color": "#95a5a6",
+          "count": 1
+        },
+        {
+          "id": "pancadvaravajjana",
+          "label": "Pañcadvārāvajjana",
+          "labelEn": "Five-door Adverting",
+          "labelPt": "Advertência das Cinco Portas",
+          "abbrev": "Pv",
+          "type": "avajjana",
+          "color": "#3498db",
+          "count": 1
+        },
+        {
+          "id": "kaya-vinnana",
+          "label": "Kāya-viññāṇa",
+          "labelEn": "Body-consciousness",
+          "labelPt": "Consciência Tátil",
+          "abbrev": "Kv",
+          "type": "vinnana",
+          "color": "#e74c3c",
+          "count": 1
+        },
+        {
+          "id": "sampaticchana",
+          "label": "Sampaṭicchana",
+          "labelEn": "Receiving Consciousness",
+          "labelPt": "Consciência Receptora",
+          "abbrev": "Sp",
+          "type": "sampaticchana",
+          "color": "#9b59b6",
+          "count": 1
+        },
+        {
+          "id": "santiirana",
+          "label": "Santīraṇa",
+          "labelEn": "Investigating Consciousness",
+          "labelPt": "Consciência Investigadora",
+          "abbrev": "St",
+          "type": "santiirana",
+          "color": "#f39c12",
+          "count": 1
+        },
+        {
+          "id": "votthapana",
+          "label": "Voṭṭhapana",
+          "labelEn": "Determining Consciousness",
+          "labelPt": "Consciência Determinadora",
+          "abbrev": "Vt",
+          "type": "votthapana",
+          "color": "#1abc9c",
+          "count": 1
+        },
+        {
+          "id": "javana",
+          "label": "Javana",
+          "labelEn": "Impulsion",
+          "labelPt": "Impulsão",
+          "abbrev": "J",
+          "type": "javana",
+          "color": "#2ecc71",
+          "count": 7
+        },
+        {
+          "id": "tadarammana",
+          "label": "Tadārammaṇa",
+          "labelEn": "Registering Consciousness",
+          "labelPt": "Consciência Registradora",
+          "abbrev": "T",
+          "type": "tadarammana",
+          "color": "#f1c40f",
+          "count": 2
+        },
+        {
+          "id": "bhavanga",
+          "label": "Bhavaṅga",
+          "labelEn": "Life-continuum",
+          "labelPt": "Contínuo Vital",
+          "abbrev": "Bh",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "mano",
+      "label": "Mano-dvāra Vīthi",
+      "labelEn": "Mind-door Process",
+      "labelPt": "Processo da Porta Mental",
+      "icon": "🧠",
+      "sequence": [
+        {
+          "id": "bhavanga-calana",
+          "label": "Bhavaṅga-calana",
+          "labelEn": "Vibrating Life-continuum",
+          "labelPt": "Contínuo Vital Vibrante",
+          "abbrev": "Bc",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        },
+        {
+          "id": "bhavanga-upaccheda",
+          "label": "Bhavaṅgupaccheda",
+          "labelEn": "Arrested Life-continuum",
+          "labelPt": "Contínuo Vital Interrompido",
+          "abbrev": "Bu",
+          "type": "bhavanga",
+          "color": "#95a5a6",
+          "count": 1
+        },
+        {
+          "id": "manodvaravajjana",
+          "label": "Manodvārāvajjana",
+          "labelEn": "Mind-door Adverting",
+          "labelPt": "Advertência da Porta Mental",
+          "abbrev": "Mv",
+          "type": "avajjana",
+          "color": "#3498db",
+          "count": 1
+        },
+        {
+          "id": "javana",
+          "label": "Javana",
+          "labelEn": "Impulsion",
+          "labelPt": "Impulsão",
+          "abbrev": "J",
+          "type": "javana",
+          "color": "#2ecc71",
+          "count": 7
+        },
+        {
+          "id": "tadarammana",
+          "label": "Tadārammaṇa",
+          "labelEn": "Registering Consciousness",
+          "labelPt": "Consciência Registradora",
+          "abbrev": "T",
+          "type": "tadarammana",
+          "color": "#f1c40f",
+          "count": 2
+        },
+        {
+          "id": "bhavanga",
+          "label": "Bhavaṅga",
+          "labelEn": "Life-continuum",
+          "labelPt": "Contínuo Vital",
+          "abbrev": "Bh",
+          "type": "bhavanga",
+          "color": "#7f8c8d",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "cittaInfo": {
+    "bhavanga": {
+      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha", "viriya"],
+      "cetasikaCount": 11
+    },
+    "avajjana": {
+      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha", "viriya"],
+      "cetasikaCount": 11
+    },
+    "vinnana": {
+      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara"],
+      "cetasikaCount": 7
+    },
+    "sampaticchana": {
+      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha"],
+      "cetasikaCount": 10
+    },
+    "santiirana": {
+      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha", "piti"],
+      "cetasikaCount": 11
+    },
+    "votthapana": {
+      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha", "viriya"],
+      "cetasikaCount": 11
+    },
+    "javana": {
+      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha", "viriya", "piti", "chanda", "kusala/akusala cetasikas"],
+      "cetasikaCount": 34
+    },
+    "tadarammana": {
+      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha", "piti"],
+      "cetasikaCount": 11
+    }
+  }
+}

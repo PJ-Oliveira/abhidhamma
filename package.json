@@ -1,0 +1,23 @@
+{
+  "name": "abhidhamma-pitaka-pali-en-pt-es",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run --coverage",
+    "build": "tsc && python3 scripts/version_js.py",
+    "deploy": "python3 scripts/preparar_deploy.py",
+    "watch": "tsc --watch",
+    "integrate-books": "python3 scripts/integrate_books.py",
+    "rebuild-search": "python3 scripts/build_search_index.py"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "@vitest/coverage-v8": "^4.1.11",
+    "jsdom": "^29.1.1",
+    "typescript": "^5.6.0",
+    "vitest": "^4.1.11"
+  },
+  "dependencies": {
+    "@mlc-ai/web-llm": "^0.2.84"
+  }
+}

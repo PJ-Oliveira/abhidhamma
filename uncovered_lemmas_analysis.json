@@ -1,0 +1,6230 @@
+[
+  {
+    "lemma": "nti",
+    "total_freq": 11148,
+    "surfaces": [
+      [
+        "nti",
+        10966
+      ],
+      [
+        "ntipi",
+        182
+      ]
+    ]
+  },
+  {
+    "lemma": "tesa",
+    "total_freq": 10296,
+    "surfaces": [
+      [
+        "tesaṃ",
+        10205
+      ],
+      [
+        "tesa",
+        91
+      ]
+    ]
+  },
+  {
+    "lemma": "tīṇi",
+    "total_freq": 9630,
+    "surfaces": [
+      [
+        "tīṇi",
+        9571
+      ],
+      [
+        "tīṇipi",
+        59
+      ]
+    ]
+  },
+  {
+    "lemma": "rend",
+    "total_freq": 8125,
+    "surfaces": [
+      [
+        "rend",
+        8125
+      ]
+    ]
+  },
+  {
+    "lemma": "gathalast",
+    "total_freq": 6962,
+    "surfaces": [
+      [
+        "gathalast",
+        6962
+      ]
+    ]
+  },
+  {
+    "lemma": "tato",
+    "total_freq": 4604,
+    "surfaces": [
+      [
+        "tato",
+        4547
+      ],
+      [
+        "tatopi",
+        57
+      ]
+    ]
+  },
+  {
+    "lemma": "tasmā",
+    "total_freq": 3983,
+    "surfaces": [
+      [
+        "tasmā",
+        3958
+      ],
+      [
+        "tasmāpi",
+        25
+      ]
+    ]
+  },
+  {
+    "lemma": "ceva",
+    "total_freq": 3876,
+    "surfaces": [
+      [
+        "ceva",
+        3863
+      ],
+      [
+        "cevaṃ",
+        13
+      ]
+    ]
+  },
+  {
+    "lemma": "tayo",
+    "total_freq": 3052,
+    "surfaces": [
+      [
+        "tayo",
+        2987
+      ],
+      [
+        "tayopi",
+        65
+      ]
+    ]
+  },
+  {
+    "lemma": "hetuyā",
+    "total_freq": 2837,
+    "surfaces": [
+      [
+        "hetuyā",
+        2837
+      ]
+    ]
+  },
+  {
+    "lemma": "honti",
+    "total_freq": 2511,
+    "surfaces": [
+      [
+        "honti",
+        2511
+      ]
+    ]
+  },
+  {
+    "lemma": "cattāri",
+    "total_freq": 2265,
+    "surfaces": [
+      [
+        "cattāri",
+        2225
+      ],
+      [
+        "cattāripi",
+        40
+      ]
+    ]
+  },
+  {
+    "lemma": "hot",
+    "total_freq": 2044,
+    "surfaces": [
+      [
+        "hotīti",
+        2022
+      ],
+      [
+        "hoteva",
+        13
+      ],
+      [
+        "hot",
+        8
+      ],
+      [
+        "hotiti",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "attano",
+    "total_freq": 1965,
+    "surfaces": [
+      [
+        "attano",
+        1954
+      ],
+      [
+        "attanopi",
+        11
+      ]
+    ]
+  },
+  {
+    "lemma": "nahetu",
+    "total_freq": 1888,
+    "surfaces": [
+      [
+        "nahetu",
+        1888
+      ]
+    ]
+  },
+  {
+    "lemma": "sup",
+    "total_freq": 1816,
+    "surfaces": [
+      [
+        "sup",
+        1816
+      ]
+    ]
+  },
+  {
+    "lemma": "note",
+    "total_freq": 1671,
+    "surfaces": [
+      [
+        "note",
+        1671
+      ]
+    ]
+  },
+  {
+    "lemma": "yasmā",
+    "total_freq": 1561,
+    "surfaces": [
+      [
+        "yasmā",
+        1561
+      ]
+    ]
+  },
+  {
+    "lemma": "sā",
+    "total_freq": 1561,
+    "surfaces": [
+      [
+        "sā",
+        1469
+      ],
+      [
+        "sāpi",
+        92
+      ]
+    ]
+  },
+  {
+    "lemma": "tiādinā",
+    "total_freq": 1514,
+    "surfaces": [
+      [
+        "tiādinā",
+        1500
+      ],
+      [
+        "tiādināpi",
+        14
+      ]
+    ]
+  },
+  {
+    "lemma": "iminā",
+    "total_freq": 1513,
+    "surfaces": [
+      [
+        "iminā",
+        1467
+      ],
+      [
+        "imināpi",
+        46
+      ]
+    ]
+  },
+  {
+    "lemma": "vatthuṃ",
+    "total_freq": 1461,
+    "surfaces": [
+      [
+        "vatthuṃ",
+        1461
+      ]
+    ]
+  },
+  {
+    "lemma": "sa",
+    "total_freq": 1438,
+    "surfaces": [
+      [
+        "saṃ",
+        747
+      ],
+      [
+        "sa",
+        679
+      ],
+      [
+        "sena",
+        12
+      ]
+    ]
+  },
+  {
+    "lemma": "atthipaccaya",
+    "total_freq": 1414,
+    "surfaces": [
+      [
+        "atthipaccayena",
+        1410
+      ],
+      [
+        "atthipaccayaṃ",
+        2
+      ],
+      [
+        "atthipaccayassa",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "cattāro",
+    "total_freq": 1369,
+    "surfaces": [
+      [
+        "cattāro",
+        1318
+      ],
+      [
+        "cattāropi",
+        51
+      ]
+    ]
+  },
+  {
+    "lemma": "nahetuṃ",
+    "total_freq": 1331,
+    "surfaces": [
+      [
+        "nahetuṃ",
+        1331
+      ]
+    ]
+  },
+  {
+    "lemma": "uppajjat",
+    "total_freq": 1259,
+    "surfaces": [
+      [
+        "uppajjatīti",
+        1250
+      ],
+      [
+        "uppajjateva",
+        9
+      ]
+    ]
+  },
+  {
+    "lemma": "nahetupaccayā",
+    "total_freq": 1253,
+    "surfaces": [
+      [
+        "nahetupaccayā",
+        1253
+      ]
+    ]
+  },
+  {
+    "lemma": "gatha",
+    "total_freq": 1163,
+    "surfaces": [
+      [
+        "gatha",
+        1163
+      ]
+    ]
+  },
+  {
+    "lemma": "bhikkhave",
+    "total_freq": 1141,
+    "surfaces": [
+      [
+        "bhikkhave",
+        1141
+      ]
+    ]
+  },
+  {
+    "lemma": "uppādakkhaṇe",
+    "total_freq": 1134,
+    "surfaces": [
+      [
+        "uppādakkhaṇe",
+        1129
+      ],
+      [
+        "uppādakkhaṇepi",
+        5
+      ]
+    ]
+  },
+  {
+    "lemma": "kiṃ",
+    "total_freq": 1092,
+    "surfaces": [
+      [
+        "kiṃ",
+        1092
+      ]
+    ]
+  },
+  {
+    "lemma": "nabhāvanā",
+    "total_freq": 1054,
+    "surfaces": [
+      [
+        "nabhāvanāya",
+        1054
+      ]
+    ]
+  },
+  {
+    "lemma": "naārammaṇe",
+    "total_freq": 1044,
+    "surfaces": [
+      [
+        "naārammaṇe",
+        1044
+      ]
+    ]
+  },
+  {
+    "lemma": "adhipatipaccaya",
+    "total_freq": 1026,
+    "surfaces": [
+      [
+        "adhipatipaccayena",
+        1022
+      ],
+      [
+        "adhipatipaccayaṃ",
+        3
+      ],
+      [
+        "adhipatipaccayassa",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "yato",
+    "total_freq": 1022,
+    "surfaces": [
+      [
+        "yato",
+        1022
+      ]
+    ]
+  },
+  {
+    "lemma": "nahetuyā",
+    "total_freq": 1013,
+    "surfaces": [
+      [
+        "nahetuyā",
+        1012
+      ],
+      [
+        "nahetuyāpi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "katha",
+    "total_freq": 983,
+    "surfaces": [
+      [
+        "kathaṃ",
+        944
+      ],
+      [
+        "katha",
+        34
+      ],
+      [
+        "kathehi",
+        5
+      ]
+    ]
+  },
+  {
+    "lemma": "sabbesa",
+    "total_freq": 975,
+    "surfaces": [
+      [
+        "sabbesaṃ",
+        951
+      ],
+      [
+        "sabbesa",
+        23
+      ],
+      [
+        "sabbesānaṃ",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "cāti",
+    "total_freq": 975,
+    "surfaces": [
+      [
+        "cāti",
+        946
+      ],
+      [
+        "cātipi",
+        29
+      ]
+    ]
+  },
+  {
+    "lemma": "kammapaccaya",
+    "total_freq": 942,
+    "surfaces": [
+      [
+        "kammapaccayena",
+        921
+      ],
+      [
+        "kammapaccayaṃ",
+        16
+      ],
+      [
+        "kammapaccayassa",
+        4
+      ],
+      [
+        "kammapaccaya",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "hotī",
+    "total_freq": 937,
+    "surfaces": [
+      [
+        "hotī",
+        937
+      ]
+    ]
+  },
+  {
+    "lemma": "garuṃ",
+    "total_freq": 922,
+    "surfaces": [
+      [
+        "garuṃ",
+        922
+      ]
+    ]
+  },
+  {
+    "lemma": "hetū",
+    "total_freq": 921,
+    "surfaces": [
+      [
+        "hetū",
+        914
+      ],
+      [
+        "hetūpi",
+        7
+      ]
+    ]
+  },
+  {
+    "lemma": "kasmā",
+    "total_freq": 890,
+    "surfaces": [
+      [
+        "kasmā",
+        890
+      ]
+    ]
+  },
+  {
+    "lemma": "navippayutte",
+    "total_freq": 874,
+    "surfaces": [
+      [
+        "navippayutte",
+        872
+      ],
+      [
+        "navippayuttepi",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "hetuṃ",
+    "total_freq": 864,
+    "surfaces": [
+      [
+        "hetuṃ",
+        864
+      ]
+    ]
+  },
+  {
+    "lemma": "class",
+    "total_freq": 847,
+    "surfaces": [
+      [
+        "class",
+        847
+      ]
+    ]
+  },
+  {
+    "lemma": "data",
+    "total_freq": 838,
+    "surfaces": [
+      [
+        "data",
+        838
+      ]
+    ]
+  },
+  {
+    "lemma": "dhātūhi",
+    "total_freq": 832,
+    "surfaces": [
+      [
+        "dhātūhi",
+        832
+      ]
+    ]
+  },
+  {
+    "lemma": "var",
+    "total_freq": 832,
+    "surfaces": [
+      [
+        "var",
+        832
+      ]
+    ]
+  },
+  {
+    "lemma": "nevadassana",
+    "total_freq": 828,
+    "surfaces": [
+      [
+        "nevadassanena",
+        828
+      ]
+    ]
+  },
+  {
+    "lemma": "dvinna",
+    "total_freq": 818,
+    "surfaces": [
+      [
+        "dvinnaṃ",
+        807
+      ],
+      [
+        "dvinna",
+        11
+      ]
+    ]
+  },
+  {
+    "lemma": "napacchājāte",
+    "total_freq": 817,
+    "surfaces": [
+      [
+        "napacchājāte",
+        817
+      ]
+    ]
+  },
+  {
+    "lemma": "tīsu",
+    "total_freq": 813,
+    "surfaces": [
+      [
+        "tīsu",
+        712
+      ],
+      [
+        "tīsupi",
+        101
+      ]
+    ]
+  },
+  {
+    "lemma": "avigatati",
+    "total_freq": 805,
+    "surfaces": [
+      [
+        "avigatanti",
+        805
+      ]
+    ]
+  },
+  {
+    "lemma": "uppajjissat",
+    "total_freq": 801,
+    "surfaces": [
+      [
+        "uppajjissatīti",
+        801
+      ]
+    ]
+  },
+  {
+    "lemma": "kaṭattārūpa",
+    "total_freq": 795,
+    "surfaces": [
+      [
+        "kaṭattārūpaṃ",
+        473
+      ],
+      [
+        "kaṭattārūpānaṃ",
+        294
+      ],
+      [
+        "kaṭattārūpassa",
+        18
+      ],
+      [
+        "kaṭattārūpa",
+        10
+      ]
+    ]
+  },
+  {
+    "lemma": "dvīsu",
+    "total_freq": 793,
+    "surfaces": [
+      [
+        "dvīsu",
+        763
+      ],
+      [
+        "dvīsupi",
+        30
+      ]
+    ]
+  },
+  {
+    "lemma": "tāni",
+    "total_freq": 790,
+    "surfaces": [
+      [
+        "tāni",
+        762
+      ],
+      [
+        "tānipi",
+        28
+      ]
+    ]
+  },
+  {
+    "lemma": "pakatūpanissayo",
+    "total_freq": 789,
+    "surfaces": [
+      [
+        "pakatūpanissayo",
+        789
+      ]
+    ]
+  },
+  {
+    "lemma": "naāsevane",
+    "total_freq": 782,
+    "surfaces": [
+      [
+        "naāsevane",
+        781
+      ],
+      [
+        "naāsevanepi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "napurejāte",
+    "total_freq": 780,
+    "surfaces": [
+      [
+        "napurejāte",
+        780
+      ]
+    ]
+  },
+  {
+    "lemma": "nakamme",
+    "total_freq": 778,
+    "surfaces": [
+      [
+        "nakamme",
+        778
+      ]
+    ]
+  },
+  {
+    "lemma": "kāmadhātuyā",
+    "total_freq": 767,
+    "surfaces": [
+      [
+        "kāmadhātuyā",
+        767
+      ]
+    ]
+  },
+  {
+    "lemma": "dukkhā",
+    "total_freq": 767,
+    "surfaces": [
+      [
+        "dukkhāya",
+        764
+      ],
+      [
+        "dukkhāpi",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "hetussa",
+    "total_freq": 758,
+    "surfaces": [
+      [
+        "hetussa",
+        758
+      ]
+    ]
+  },
+  {
+    "lemma": "conditions",
+    "total_freq": 758,
+    "surfaces": [
+      [
+        "conditions",
+        758
+      ]
+    ]
+  },
+  {
+    "lemma": "navipāke",
+    "total_freq": 755,
+    "surfaces": [
+      [
+        "navipāke",
+        753
+      ],
+      [
+        "navipākepi",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "pahātabbahetuka",
+    "total_freq": 741,
+    "surfaces": [
+      [
+        "pahātabbahetukaṃ",
+        442
+      ],
+      [
+        "pahātabbahetukassa",
+        279
+      ],
+      [
+        "pahātabbahetukehi",
+        19
+      ],
+      [
+        "pahātabbahetukesu",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "nakusala",
+    "total_freq": 732,
+    "surfaces": [
+      [
+        "nakusalaṃ",
+        670
+      ],
+      [
+        "nakusalassa",
+        62
+      ]
+    ]
+  },
+  {
+    "lemma": "keci",
+    "total_freq": 725,
+    "surfaces": [
+      [
+        "keci",
+        723
+      ],
+      [
+        "kecipi",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "cittasamuṭṭhānañca",
+    "total_freq": 725,
+    "surfaces": [
+      [
+        "cittasamuṭṭhānañca",
+        723
+      ],
+      [
+        "cittasamuṭṭhānañcassa",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "pahātabbahetuko",
+    "total_freq": 722,
+    "surfaces": [
+      [
+        "pahātabbahetuko",
+        722
+      ]
+    ]
+  },
+  {
+    "lemma": "arahato",
+    "total_freq": 701,
+    "surfaces": [
+      [
+        "arahato",
+        687
+      ],
+      [
+        "arahatopi",
+        14
+      ]
+    ]
+  },
+  {
+    "lemma": "natth",
+    "total_freq": 699,
+    "surfaces": [
+      [
+        "natthīti",
+        662
+      ],
+      [
+        "nattheva",
+        37
+      ]
+    ]
+  },
+  {
+    "lemma": "tassā",
+    "total_freq": 697,
+    "surfaces": [
+      [
+        "tassā",
+        617
+      ],
+      [
+        "tassāpi",
+        80
+      ]
+    ]
+  },
+  {
+    "lemma": "nonatthiyā",
+    "total_freq": 688,
+    "surfaces": [
+      [
+        "nonatthiyā",
+        688
+      ]
+    ]
+  },
+  {
+    "lemma": "rūpadhātuyā",
+    "total_freq": 682,
+    "surfaces": [
+      [
+        "rūpadhātuyā",
+        682
+      ]
+    ]
+  },
+  {
+    "lemma": "uppajjitthāti",
+    "total_freq": 682,
+    "surfaces": [
+      [
+        "uppajjitthāti",
+        682
+      ]
+    ]
+  },
+  {
+    "lemma": "neva",
+    "total_freq": 670,
+    "surfaces": [
+      [
+        "neva",
+        652
+      ],
+      [
+        "nevassa",
+        14
+      ],
+      [
+        "nevaṃ",
+        4
+      ]
+    ]
+  },
+  {
+    "lemma": "evam",
+    "total_freq": 668,
+    "surfaces": [
+      [
+        "evameva",
+        481
+      ],
+      [
+        "evampi",
+        187
+      ]
+    ]
+  },
+  {
+    "lemma": "bhagavatā",
+    "total_freq": 666,
+    "surfaces": [
+      [
+        "bhagavatā",
+        656
+      ],
+      [
+        "bhagavatāpi",
+        10
+      ]
+    ]
+  },
+  {
+    "lemma": "cittasamuṭṭhānānañca",
+    "total_freq": 663,
+    "surfaces": [
+      [
+        "cittasamuṭṭhānānañca",
+        663
+      ]
+    ]
+  },
+  {
+    "lemma": "es",
+    "total_freq": 659,
+    "surfaces": [
+      [
+        "eseva",
+        659
+      ]
+    ]
+  },
+  {
+    "lemma": "dha",
+    "total_freq": 658,
+    "surfaces": [
+      [
+        "dha",
+        657
+      ],
+      [
+        "dhānaṃ",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "arūpadhātuyā",
+    "total_freq": 653,
+    "surfaces": [
+      [
+        "arūpadhātuyā",
+        653
+      ]
+    ]
+  },
+  {
+    "lemma": "sukhā",
+    "total_freq": 650,
+    "surfaces": [
+      [
+        "sukhāya",
+        645
+      ],
+      [
+        "sukhāpi",
+        5
+      ]
+    ]
+  },
+  {
+    "lemma": "pas",
+    "total_freq": 649,
+    "surfaces": [
+      [
+        "pas",
+        649
+      ]
+    ]
+  },
+  {
+    "lemma": "nasampayutte",
+    "total_freq": 645,
+    "surfaces": [
+      [
+        "nasampayutte",
+        645
+      ]
+    ]
+  },
+  {
+    "lemma": "moment",
+    "total_freq": 640,
+    "surfaces": [
+      [
+        "moment",
+        640
+      ]
+    ]
+  },
+  {
+    "lemma": "namagge",
+    "total_freq": 636,
+    "surfaces": [
+      [
+        "namagge",
+        636
+      ]
+    ]
+  },
+  {
+    "lemma": "vuttati",
+    "total_freq": 627,
+    "surfaces": [
+      [
+        "vuttanti",
+        627
+      ]
+    ]
+  },
+  {
+    "lemma": "kāmarāgānusayañca",
+    "total_freq": 625,
+    "surfaces": [
+      [
+        "kāmarāgānusayañca",
+        625
+      ]
+    ]
+  },
+  {
+    "lemma": "purejātapaccaya",
+    "total_freq": 624,
+    "surfaces": [
+      [
+        "purejātapaccayena",
+        618
+      ],
+      [
+        "purejātapaccayaṃ",
+        5
+      ],
+      [
+        "purejātapaccayassa",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "tā",
+    "total_freq": 624,
+    "surfaces": [
+      [
+        "tāya",
+        434
+      ],
+      [
+        "tāsu",
+        131
+      ],
+      [
+        "tāhi",
+        50
+      ],
+      [
+        "tāpi",
+        8
+      ],
+      [
+        "tāyo",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "catūsu",
+    "total_freq": 617,
+    "surfaces": [
+      [
+        "catūsu",
+        549
+      ],
+      [
+        "catūsupi",
+        68
+      ]
+    ]
+  },
+  {
+    "lemma": "kiñci",
+    "total_freq": 604,
+    "surfaces": [
+      [
+        "kiñci",
+        581
+      ],
+      [
+        "kiñcipi",
+        23
+      ]
+    ]
+  },
+  {
+    "lemma": "paṭighānusayañca",
+    "total_freq": 602,
+    "surfaces": [
+      [
+        "paṭighānusayañca",
+        602
+      ]
+    ]
+  },
+  {
+    "lemma": "itaresa",
+    "total_freq": 602,
+    "surfaces": [
+      [
+        "itaresaṃ",
+        588
+      ],
+      [
+        "itaresa",
+        14
+      ]
+    ]
+  },
+  {
+    "lemma": "dhātuyo",
+    "total_freq": 600,
+    "surfaces": [
+      [
+        "dhātuyo",
+        599
+      ],
+      [
+        "dhātuyopi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "arahā",
+    "total_freq": 599,
+    "surfaces": [
+      [
+        "arahā",
+        596
+      ],
+      [
+        "arahāpi",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "naupanissaye",
+    "total_freq": 598,
+    "surfaces": [
+      [
+        "naupanissaye",
+        598
+      ]
+    ]
+  },
+  {
+    "lemma": "upasampajja",
+    "total_freq": 595,
+    "surfaces": [
+      [
+        "upasampajja",
+        595
+      ]
+    ]
+  },
+  {
+    "lemma": "kassaci",
+    "total_freq": 590,
+    "surfaces": [
+      [
+        "kassaci",
+        578
+      ],
+      [
+        "kassacipi",
+        12
+      ]
+    ]
+  },
+  {
+    "lemma": "najhāne",
+    "total_freq": 587,
+    "surfaces": [
+      [
+        "najhāne",
+        587
+      ]
+    ]
+  },
+  {
+    "lemma": "cakkhuṃ",
+    "total_freq": 571,
+    "surfaces": [
+      [
+        "cakkhuṃ",
+        571
+      ]
+    ]
+  },
+  {
+    "lemma": "bhagavā",
+    "total_freq": 569,
+    "surfaces": [
+      [
+        "bhagavā",
+        565
+      ],
+      [
+        "bhagavāpi",
+        4
+      ]
+    ]
+  },
+  {
+    "lemma": "catūhi",
+    "total_freq": 559,
+    "surfaces": [
+      [
+        "catūhi",
+        539
+      ],
+      [
+        "catūhipi",
+        20
+      ]
+    ]
+  },
+  {
+    "lemma": "kehici",
+    "total_freq": 558,
+    "surfaces": [
+      [
+        "kehici",
+        556
+      ],
+      [
+        "kehicipi",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "nakusalo",
+    "total_freq": 557,
+    "surfaces": [
+      [
+        "nakusalo",
+        557
+      ]
+    ]
+  },
+  {
+    "lemma": "naanantare",
+    "total_freq": 556,
+    "surfaces": [
+      [
+        "naanantare",
+        556
+      ]
+    ]
+  },
+  {
+    "lemma": "vatthuñca",
+    "total_freq": 548,
+    "surfaces": [
+      [
+        "vatthuñca",
+        548
+      ]
+    ]
+  },
+  {
+    "lemma": "aniccato",
+    "total_freq": 548,
+    "surfaces": [
+      [
+        "aniccato",
+        545
+      ],
+      [
+        "aniccatopi",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "khandhañca",
+    "total_freq": 544,
+    "surfaces": [
+      [
+        "khandhañca",
+        544
+      ]
+    ]
+  },
+  {
+    "lemma": "nasamanantare",
+    "total_freq": 543,
+    "surfaces": [
+      [
+        "nasamanantare",
+        543
+      ]
+    ]
+  },
+  {
+    "lemma": "realities",
+    "total_freq": 540,
+    "surfaces": [
+      [
+        "realities",
+        540
+      ]
+    ]
+  },
+  {
+    "lemma": "vibha",
+    "total_freq": 528,
+    "surfaces": [
+      [
+        "vibha",
+        528
+      ]
+    ]
+  },
+  {
+    "lemma": "koci",
+    "total_freq": 524,
+    "surfaces": [
+      [
+        "koci",
+        512
+      ],
+      [
+        "kocipi",
+        12
+      ]
+    ]
+  },
+  {
+    "lemma": "their",
+    "total_freq": 523,
+    "surfaces": [
+      [
+        "their",
+        523
+      ]
+    ]
+  },
+  {
+    "lemma": "catunna",
+    "total_freq": 523,
+    "surfaces": [
+      [
+        "catunnaṃ",
+        516
+      ],
+      [
+        "catunna",
+        7
+      ]
+    ]
+  },
+  {
+    "lemma": "people",
+    "total_freq": 520,
+    "surfaces": [
+      [
+        "people",
+        520
+      ]
+    ]
+  },
+  {
+    "lemma": "nahetussa",
+    "total_freq": 516,
+    "surfaces": [
+      [
+        "nahetussa",
+        516
+      ]
+    ]
+  },
+  {
+    "lemma": "away",
+    "total_freq": 515,
+    "surfaces": [
+      [
+        "away",
+        515
+      ]
+    ]
+  },
+  {
+    "lemma": "tass",
+    "total_freq": 505,
+    "surfaces": [
+      [
+        "tasseva",
+        505
+      ]
+    ]
+  },
+  {
+    "lemma": "time",
+    "total_freq": 498,
+    "surfaces": [
+      [
+        "time",
+        498
+      ]
+    ]
+  },
+  {
+    "lemma": "anusenti",
+    "total_freq": 493,
+    "surfaces": [
+      [
+        "anusenti",
+        493
+      ]
+    ]
+  },
+  {
+    "lemma": "them",
+    "total_freq": 489,
+    "surfaces": [
+      [
+        "them",
+        489
+      ]
+    ]
+  },
+  {
+    "lemma": "katihi",
+    "total_freq": 488,
+    "surfaces": [
+      [
+        "katihi",
+        488
+      ]
+    ]
+  },
+  {
+    "lemma": "kenaci",
+    "total_freq": 488,
+    "surfaces": [
+      [
+        "kenaci",
+        477
+      ],
+      [
+        "kenacipi",
+        11
+      ]
+    ]
+  },
+  {
+    "lemma": "atthiyā",
+    "total_freq": 487,
+    "surfaces": [
+      [
+        "atthiyā",
+        487
+      ]
+    ]
+  },
+  {
+    "lemma": "seeing",
+    "total_freq": 486,
+    "surfaces": [
+      [
+        "seeing",
+        486
+      ]
+    ]
+  },
+  {
+    "lemma": "naaññamaññe",
+    "total_freq": 485,
+    "surfaces": [
+      [
+        "naaññamaññe",
+        485
+      ]
+    ]
+  },
+  {
+    "lemma": "adukkhamasukhā",
+    "total_freq": 474,
+    "surfaces": [
+      [
+        "adukkhamasukhāya",
+        472
+      ],
+      [
+        "adukkhamasukhāpi",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "atthato",
+    "total_freq": 474,
+    "surfaces": [
+      [
+        "atthato",
+        467
+      ],
+      [
+        "atthatopi",
+        7
+      ]
+    ]
+  },
+  {
+    "lemma": "yesa",
+    "total_freq": 472,
+    "surfaces": [
+      [
+        "yesaṃ",
+        459
+      ],
+      [
+        "yesa",
+        13
+      ]
+    ]
+  },
+  {
+    "lemma": "arising",
+    "total_freq": 471,
+    "surfaces": [
+      [
+        "arising",
+        471
+      ]
+    ]
+  },
+  {
+    "lemma": "attanā",
+    "total_freq": 465,
+    "surfaces": [
+      [
+        "attanā",
+        457
+      ],
+      [
+        "attanāpi",
+        8
+      ]
+    ]
+  },
+  {
+    "lemma": "bhagavato",
+    "total_freq": 464,
+    "surfaces": [
+      [
+        "bhagavato",
+        463
+      ],
+      [
+        "bhagavatopi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "abhāvato",
+    "total_freq": 463,
+    "surfaces": [
+      [
+        "abhāvato",
+        463
+      ]
+    ]
+  },
+  {
+    "lemma": "imāni",
+    "total_freq": 463,
+    "surfaces": [
+      [
+        "imāni",
+        454
+      ],
+      [
+        "imānipi",
+        9
+      ]
+    ]
+  },
+  {
+    "lemma": "mano",
+    "total_freq": 461,
+    "surfaces": [
+      [
+        "mano",
+        461
+      ]
+    ]
+  },
+  {
+    "lemma": "ito",
+    "total_freq": 457,
+    "surfaces": [
+      [
+        "ito",
+        452
+      ],
+      [
+        "itopi",
+        5
+      ]
+    ]
+  },
+  {
+    "lemma": "tīhi",
+    "total_freq": 451,
+    "surfaces": [
+      [
+        "tīhi",
+        389
+      ],
+      [
+        "tīhipi",
+        62
+      ]
+    ]
+  },
+  {
+    "lemma": "paṭiccavārādi",
+    "total_freq": 450,
+    "surfaces": [
+      [
+        "paṭiccavārādi",
+        450
+      ]
+    ]
+  },
+  {
+    "lemma": "tam",
+    "total_freq": 447,
+    "surfaces": [
+      [
+        "tampi",
+        281
+      ],
+      [
+        "tameva",
+        166
+      ]
+    ]
+  },
+  {
+    "lemma": "parinibbāyissati",
+    "total_freq": 446,
+    "surfaces": [
+      [
+        "parinibbāyissanti",
+        446
+      ]
+    ]
+  },
+  {
+    "lemma": "mānānusayañca",
+    "total_freq": 446,
+    "surfaces": [
+      [
+        "mānānusayañca",
+        446
+      ]
+    ]
+  },
+  {
+    "lemma": "kusalattika",
+    "total_freq": 446,
+    "surfaces": [
+      [
+        "kusalattikaṃ",
+        246
+      ],
+      [
+        "kusalattika",
+        171
+      ],
+      [
+        "kusalattikassa",
+        19
+      ],
+      [
+        "kusalattikena",
+        10
+      ]
+    ]
+  },
+  {
+    "lemma": "nadassana",
+    "total_freq": 445,
+    "surfaces": [
+      [
+        "nadassanena",
+        445
+      ]
+    ]
+  },
+  {
+    "lemma": "naāhāre",
+    "total_freq": 444,
+    "surfaces": [
+      [
+        "naāhāre",
+        444
+      ]
+    ]
+  },
+  {
+    "lemma": "tiṇṇa",
+    "total_freq": 441,
+    "surfaces": [
+      [
+        "tiṇṇaṃ",
+        431
+      ],
+      [
+        "tiṇṇa",
+        8
+      ],
+      [
+        "tiṇṇena",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "nirujjhissat",
+    "total_freq": 440,
+    "surfaces": [
+      [
+        "nirujjhissatīti",
+        439
+      ],
+      [
+        "nirujjhissateva",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "paccayānuloma",
+    "total_freq": 440,
+    "surfaces": [
+      [
+        "paccayānulomaṃ",
+        439
+      ],
+      [
+        "paccayānulomassa",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "paṭṭhā",
+    "total_freq": 439,
+    "surfaces": [
+      [
+        "paṭṭhāya",
+        439
+      ]
+    ]
+  },
+  {
+    "lemma": "hont",
+    "total_freq": 436,
+    "surfaces": [
+      [
+        "hontīti",
+        429
+      ],
+      [
+        "honteva",
+        7
+      ]
+    ]
+  },
+  {
+    "lemma": "ten",
+    "total_freq": 434,
+    "surfaces": [
+      [
+        "teneva",
+        434
+      ]
+    ]
+  },
+  {
+    "lemma": "read",
+    "total_freq": 432,
+    "surfaces": [
+      [
+        "read",
+        432
+      ]
+    ]
+  },
+  {
+    "lemma": "ekenāyatana",
+    "total_freq": 427,
+    "surfaces": [
+      [
+        "ekenāyatanena",
+        427
+      ]
+    ]
+  },
+  {
+    "lemma": "ntiādi",
+    "total_freq": 426,
+    "surfaces": [
+      [
+        "ntiādi",
+        426
+      ]
+    ]
+  },
+  {
+    "lemma": "paccayacatukka",
+    "total_freq": 426,
+    "surfaces": [
+      [
+        "paccayacatukkaṃ",
+        426
+      ]
+    ]
+  },
+  {
+    "lemma": "pacchājātapaccaya",
+    "total_freq": 425,
+    "surfaces": [
+      [
+        "pacchājātapaccayena",
+        421
+      ],
+      [
+        "pacchājātapaccayassa",
+        3
+      ],
+      [
+        "pacchājātapaccayaṃ",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "nasanidassanasappaṭigha",
+    "total_freq": 425,
+    "surfaces": [
+      [
+        "nasanidassanasappaṭighaṃ",
+        412
+      ],
+      [
+        "nasanidassanasappaṭighassa",
+        13
+      ]
+    ]
+  },
+  {
+    "lemma": "naadhipatipaccayā",
+    "total_freq": 420,
+    "surfaces": [
+      [
+        "naadhipatipaccayā",
+        420
+      ]
+    ]
+  },
+  {
+    "lemma": "cannot",
+    "total_freq": 418,
+    "surfaces": [
+      [
+        "cannot",
+        418
+      ]
+    ]
+  },
+  {
+    "lemma": "experience",
+    "total_freq": 417,
+    "surfaces": [
+      [
+        "experience",
+        417
+      ]
+    ]
+  },
+  {
+    "lemma": "naārammaṇapaccayā",
+    "total_freq": 416,
+    "surfaces": [
+      [
+        "naārammaṇapaccayā",
+        416
+      ]
+    ]
+  },
+  {
+    "lemma": "parinibbantā",
+    "total_freq": 416,
+    "surfaces": [
+      [
+        "parinibbantānaṃ",
+        416
+      ]
+    ]
+  },
+  {
+    "lemma": "tiṇṇanna",
+    "total_freq": 414,
+    "surfaces": [
+      [
+        "tiṇṇannaṃ",
+        413
+      ],
+      [
+        "tiṇṇanna",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "naindriye",
+    "total_freq": 412,
+    "surfaces": [
+      [
+        "naindriye",
+        412
+      ]
+    ]
+  },
+  {
+    "lemma": "ekā",
+    "total_freq": 412,
+    "surfaces": [
+      [
+        "ekāya",
+        407
+      ],
+      [
+        "ekāpi",
+        5
+      ]
+    ]
+  },
+  {
+    "lemma": "noupādā",
+    "total_freq": 412,
+    "surfaces": [
+      [
+        "noupādā",
+        376
+      ],
+      [
+        "noupādānaṃ",
+        36
+      ]
+    ]
+  },
+  {
+    "lemma": "manasi",
+    "total_freq": 411,
+    "surfaces": [
+      [
+        "manasi",
+        411
+      ]
+    ]
+  },
+  {
+    "lemma": "tisso",
+    "total_freq": 410,
+    "surfaces": [
+      [
+        "tisso",
+        359
+      ],
+      [
+        "tissopi",
+        51
+      ]
+    ]
+  },
+  {
+    "lemma": "ekato",
+    "total_freq": 408,
+    "surfaces": [
+      [
+        "ekato",
+        405
+      ],
+      [
+        "ekatopi",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "cakkhundriyañca",
+    "total_freq": 402,
+    "surfaces": [
+      [
+        "cakkhundriyañca",
+        402
+      ]
+    ]
+  },
+  {
+    "lemma": "without",
+    "total_freq": 399,
+    "surfaces": [
+      [
+        "without",
+        399
+      ]
+    ]
+  },
+  {
+    "lemma": "aṭṭhakathāya",
+    "total_freq": 398,
+    "surfaces": [
+      [
+        "aṭṭhakathāyaṃ",
+        398
+      ]
+    ]
+  },
+  {
+    "lemma": "dī",
+    "total_freq": 397,
+    "surfaces": [
+      [
+        "dī",
+        396
+      ],
+      [
+        "dīpi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "mindfulness",
+    "total_freq": 395,
+    "surfaces": [
+      [
+        "mindfulness",
+        395
+      ]
+    ]
+  },
+  {
+    "lemma": "dvīhi",
+    "total_freq": 393,
+    "surfaces": [
+      [
+        "dvīhi",
+        376
+      ],
+      [
+        "dvīhipi",
+        17
+      ]
+    ]
+  },
+  {
+    "lemma": "development",
+    "total_freq": 392,
+    "surfaces": [
+      [
+        "development",
+        392
+      ]
+    ]
+  },
+  {
+    "lemma": "dhātuyā",
+    "total_freq": 391,
+    "surfaces": [
+      [
+        "dhātuyā",
+        391
+      ]
+    ]
+  },
+  {
+    "lemma": "cakkhāyatanañca",
+    "total_freq": 388,
+    "surfaces": [
+      [
+        "cakkhāyatanañca",
+        388
+      ]
+    ]
+  },
+  {
+    "lemma": "saṅkhyāvāro",
+    "total_freq": 387,
+    "surfaces": [
+      [
+        "saṅkhyāvāro",
+        387
+      ]
+    ]
+  },
+  {
+    "lemma": "reality",
+    "total_freq": 385,
+    "surfaces": [
+      [
+        "reality",
+        385
+      ]
+    ]
+  },
+  {
+    "lemma": "cakkhunā",
+    "total_freq": 378,
+    "surfaces": [
+      [
+        "cakkhunā",
+        378
+      ]
+    ]
+  },
+  {
+    "lemma": "tāsa",
+    "total_freq": 377,
+    "surfaces": [
+      [
+        "tāsaṃ",
+        375
+      ],
+      [
+        "tāsa",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "anantarūpanissayo",
+    "total_freq": 376,
+    "surfaces": [
+      [
+        "anantarūpanissayo",
+        373
+      ],
+      [
+        "anantarūpanissayopi",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "objects",
+    "total_freq": 374,
+    "surfaces": [
+      [
+        "objects",
+        374
+      ]
+    ]
+  },
+  {
+    "lemma": "vattuṃ",
+    "total_freq": 373,
+    "surfaces": [
+      [
+        "vattuṃ",
+        373
+      ]
+    ]
+  },
+  {
+    "lemma": "tañca",
+    "total_freq": 370,
+    "surfaces": [
+      [
+        "tañca",
+        359
+      ],
+      [
+        "tañcassa",
+        11
+      ]
+    ]
+  },
+  {
+    "lemma": "tad",
+    "total_freq": 365,
+    "surfaces": [
+      [
+        "tadeva",
+        365
+      ]
+    ]
+  },
+  {
+    "lemma": "apica",
+    "total_freq": 364,
+    "surfaces": [
+      [
+        "apica",
+        363
+      ],
+      [
+        "apicassa",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "naakusalo",
+    "total_freq": 363,
+    "surfaces": [
+      [
+        "naakusalo",
+        363
+      ]
+    ]
+  },
+  {
+    "lemma": "chapter",
+    "total_freq": 361,
+    "surfaces": [
+      [
+        "chapter",
+        361
+      ]
+    ]
+  },
+  {
+    "lemma": "indriyapaccaya",
+    "total_freq": 360,
+    "surfaces": [
+      [
+        "indriyapaccayena",
+        350
+      ],
+      [
+        "indriyapaccayaṃ",
+        8
+      ],
+      [
+        "indriyapaccayassa",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "cittāni",
+    "total_freq": 358,
+    "surfaces": [
+      [
+        "cittāni",
+        358
+      ]
+    ]
+  },
+  {
+    "lemma": "bhūmīsu",
+    "total_freq": 356,
+    "surfaces": [
+      [
+        "bhūmīsu",
+        356
+      ]
+    ]
+  },
+  {
+    "lemma": "vacanato",
+    "total_freq": 355,
+    "surfaces": [
+      [
+        "vacanato",
+        355
+      ]
+    ]
+  },
+  {
+    "lemma": "ntiādinā",
+    "total_freq": 355,
+    "surfaces": [
+      [
+        "ntiādinā",
+        355
+      ]
+    ]
+  },
+  {
+    "lemma": "parijānāt",
+    "total_freq": 355,
+    "surfaces": [
+      [
+        "parijānātīti",
+        355
+      ]
+    ]
+  },
+  {
+    "lemma": "vuttāti",
+    "total_freq": 353,
+    "surfaces": [
+      [
+        "vuttāti",
+        352
+      ],
+      [
+        "vuttātipi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "paṭilabhissati",
+    "total_freq": 351,
+    "surfaces": [
+      [
+        "paṭilabhissanti",
+        351
+      ]
+    ]
+  },
+  {
+    "lemma": "nesa",
+    "total_freq": 351,
+    "surfaces": [
+      [
+        "nesaṃ",
+        346
+      ],
+      [
+        "nesa",
+        5
+      ]
+    ]
+  },
+  {
+    "lemma": "natthiyā",
+    "total_freq": 349,
+    "surfaces": [
+      [
+        "natthiyā",
+        349
+      ]
+    ]
+  },
+  {
+    "lemma": "monks",
+    "total_freq": 349,
+    "surfaces": [
+      [
+        "monks",
+        349
+      ]
+    ]
+  },
+  {
+    "lemma": "pāḷiya",
+    "total_freq": 345,
+    "surfaces": [
+      [
+        "pāḷiyaṃ",
+        336
+      ],
+      [
+        "pāḷiya",
+        9
+      ]
+    ]
+  },
+  {
+    "lemma": "jha",
+    "total_freq": 344,
+    "surfaces": [
+      [
+        "jha",
+        344
+      ]
+    ]
+  },
+  {
+    "lemma": "saya",
+    "total_freq": 342,
+    "surfaces": [
+      [
+        "sayaṃ",
+        337
+      ],
+      [
+        "saya",
+        5
+      ]
+    ]
+  },
+  {
+    "lemma": "cittañca",
+    "total_freq": 337,
+    "surfaces": [
+      [
+        "cittañca",
+        336
+      ],
+      [
+        "cittañcassa",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "vibhaṅgavāro",
+    "total_freq": 336,
+    "surfaces": [
+      [
+        "vibhaṅgavāro",
+        336
+      ]
+    ]
+  },
+  {
+    "lemma": "nānākkhaṇikā",
+    "total_freq": 329,
+    "surfaces": [
+      [
+        "nānākkhaṇikā",
+        323
+      ],
+      [
+        "nānākkhaṇikāpi",
+        3
+      ],
+      [
+        "nānākkhaṇikānaṃ",
+        2
+      ],
+      [
+        "nānākkhaṇikāya",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "kusalattike",
+    "total_freq": 329,
+    "surfaces": [
+      [
+        "kusalattike",
+        321
+      ],
+      [
+        "kusalattikepi",
+        8
+      ]
+    ]
+  },
+  {
+    "lemma": "hetuduka",
+    "total_freq": 329,
+    "surfaces": [
+      [
+        "hetudukaṃ",
+        187
+      ],
+      [
+        "hetuduka",
+        130
+      ],
+      [
+        "hetudukena",
+        10
+      ],
+      [
+        "hetudukassa",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "yathāha",
+    "total_freq": 328,
+    "surfaces": [
+      [
+        "yathāha",
+        325
+      ],
+      [
+        "yathāhaṃ",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "think",
+    "total_freq": 327,
+    "surfaces": [
+      [
+        "think",
+        327
+      ]
+    ]
+  },
+  {
+    "lemma": "sabbe",
+    "total_freq": 326,
+    "surfaces": [
+      [
+        "sabbepi",
+        326
+      ]
+    ]
+  },
+  {
+    "lemma": "tatth",
+    "total_freq": 325,
+    "surfaces": [
+      [
+        "tattheva",
+        325
+      ]
+    ]
+  },
+  {
+    "lemma": "imesa",
+    "total_freq": 325,
+    "surfaces": [
+      [
+        "imesaṃ",
+        321
+      ],
+      [
+        "imesa",
+        4
+      ]
+    ]
+  },
+  {
+    "lemma": "conditioned",
+    "total_freq": 324,
+    "surfaces": [
+      [
+        "conditioned",
+        324
+      ]
+    ]
+  },
+  {
+    "lemma": "pañcavokāre",
+    "total_freq": 323,
+    "surfaces": [
+      [
+        "pañcavokāre",
+        323
+      ]
+    ]
+  },
+  {
+    "lemma": "defilements",
+    "total_freq": 323,
+    "surfaces": [
+      [
+        "defilements",
+        323
+      ]
+    ]
+  },
+  {
+    "lemma": "ārammaṇapurejāta",
+    "total_freq": 323,
+    "surfaces": [
+      [
+        "ārammaṇapurejātaṃ",
+        310
+      ],
+      [
+        "ārammaṇapurejātassa",
+        5
+      ],
+      [
+        "ārammaṇapurejāta",
+        4
+      ],
+      [
+        "ārammaṇapurejātena",
+        3
+      ],
+      [
+        "ārammaṇapurejātānaṃ",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "nirujjhat",
+    "total_freq": 322,
+    "surfaces": [
+      [
+        "nirujjhatīti",
+        322
+      ]
+    ]
+  },
+  {
+    "lemma": "saccikaṭṭhaparamattha",
+    "total_freq": 321,
+    "surfaces": [
+      [
+        "saccikaṭṭhaparamatthena",
+        316
+      ],
+      [
+        "saccikaṭṭhaparamatthaṃ",
+        3
+      ],
+      [
+        "saccikaṭṭhaparamatthassa",
+        1
+      ],
+      [
+        "saccikaṭṭhaparamatthesu",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "paccayapaccanīya",
+    "total_freq": 320,
+    "surfaces": [
+      [
+        "paccayapaccanīyaṃ",
+        319
+      ],
+      [
+        "paccayapaccanīyesu",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "vuttāni",
+    "total_freq": 320,
+    "surfaces": [
+      [
+        "vuttāni",
+        318
+      ],
+      [
+        "vuttānipi",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "parijānati",
+    "total_freq": 320,
+    "surfaces": [
+      [
+        "parijānanti",
+        200
+      ],
+      [
+        "parijānittha",
+        88
+      ],
+      [
+        "parijānissati",
+        32
+      ]
+    ]
+  },
+  {
+    "lemma": "sakavādissa",
+    "total_freq": 319,
+    "surfaces": [
+      [
+        "sakavādissa",
+        319
+      ]
+    ]
+  },
+  {
+    "lemma": "vicikicchānusayañca",
+    "total_freq": 318,
+    "surfaces": [
+      [
+        "vicikicchānusayañca",
+        318
+      ]
+    ]
+  },
+  {
+    "lemma": "phenoma",
+    "total_freq": 317,
+    "surfaces": [
+      [
+        "phenomena",
+        317
+      ]
+    ]
+  },
+  {
+    "lemma": "vipassana",
+    "total_freq": 316,
+    "surfaces": [
+      [
+        "vipassanaṃ",
+        178
+      ],
+      [
+        "vipassana",
+        138
+      ]
+    ]
+  },
+  {
+    "lemma": "factors",
+    "total_freq": 313,
+    "surfaces": [
+      [
+        "factors",
+        313
+      ]
+    ]
+  },
+  {
+    "lemma": "ārammaṇūpanissayo",
+    "total_freq": 312,
+    "surfaces": [
+      [
+        "ārammaṇūpanissayo",
+        311
+      ],
+      [
+        "ārammaṇūpanissayopi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "pañcanna",
+    "total_freq": 304,
+    "surfaces": [
+      [
+        "pañcannaṃ",
+        297
+      ],
+      [
+        "pañcanna",
+        7
+      ]
+    ]
+  },
+  {
+    "lemma": "cetasikas",
+    "total_freq": 303,
+    "surfaces": [
+      [
+        "cetasikas",
+        303
+      ]
+    ]
+  },
+  {
+    "lemma": "vuttoti",
+    "total_freq": 302,
+    "surfaces": [
+      [
+        "vuttoti",
+        302
+      ]
+    ]
+  },
+  {
+    "lemma": "parato",
+    "total_freq": 302,
+    "surfaces": [
+      [
+        "parato",
+        293
+      ],
+      [
+        "paratopi",
+        9
+      ]
+    ]
+  },
+  {
+    "lemma": "abhidhamma",
+    "total_freq": 302,
+    "surfaces": [
+      [
+        "abhidhamma",
+        248
+      ],
+      [
+        "abhidhammassa",
+        27
+      ],
+      [
+        "abhidhammaṃ",
+        24
+      ],
+      [
+        "abhidhammasmiṃ",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "anupādinnupādāniya",
+    "total_freq": 302,
+    "surfaces": [
+      [
+        "anupādinnupādāniyassa",
+        177
+      ],
+      [
+        "anupādinnupādāniyaṃ",
+        113
+      ],
+      [
+        "anupādinnupādāniyānaṃ",
+        10
+      ],
+      [
+        "anupādinnupādāniyehi",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "nā",
+    "total_freq": 301,
+    "surfaces": [
+      [
+        "nāpi",
+        301
+      ]
+    ]
+  },
+  {
+    "lemma": "etesa",
+    "total_freq": 300,
+    "surfaces": [
+      [
+        "etesaṃ",
+        283
+      ],
+      [
+        "etesa",
+        17
+      ]
+    ]
+  },
+  {
+    "lemma": "arūpino",
+    "total_freq": 299,
+    "surfaces": [
+      [
+        "arūpino",
+        294
+      ],
+      [
+        "arūpinopi",
+        5
+      ]
+    ]
+  },
+  {
+    "lemma": "experienced",
+    "total_freq": 298,
+    "surfaces": [
+      [
+        "experienced",
+        298
+      ]
+    ]
+  },
+  {
+    "lemma": "vatthupurejāta",
+    "total_freq": 297,
+    "surfaces": [
+      [
+        "vatthupurejātaṃ",
+        295
+      ],
+      [
+        "vatthupurejātassa",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "āsevanapaccaya",
+    "total_freq": 297,
+    "surfaces": [
+      [
+        "āsevanapaccayena",
+        288
+      ],
+      [
+        "āsevanapaccayaṃ",
+        9
+      ]
+    ]
+  },
+  {
+    "lemma": "pleasant",
+    "total_freq": 296,
+    "surfaces": [
+      [
+        "pleasant",
+        296
+      ]
+    ]
+  },
+  {
+    "lemma": "ceta",
+    "total_freq": 296,
+    "surfaces": [
+      [
+        "cetaṃ",
+        256
+      ],
+      [
+        "cetesu",
+        15
+      ],
+      [
+        "cetassa",
+        8
+      ],
+      [
+        "ceta",
+        8
+      ],
+      [
+        "cetehi",
+        4
+      ],
+      [
+        "cetasmiṃ",
+        3
+      ],
+      [
+        "cetena",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "sv",
+    "total_freq": 294,
+    "surfaces": [
+      [
+        "sveva",
+        294
+      ]
+    ]
+  },
+  {
+    "lemma": "develop",
+    "total_freq": 294,
+    "surfaces": [
+      [
+        "develop",
+        294
+      ]
+    ]
+  },
+  {
+    "lemma": "upādinnupādāniya",
+    "total_freq": 294,
+    "surfaces": [
+      [
+        "upādinnupādāniyassa",
+        154
+      ],
+      [
+        "upādinnupādāniyaṃ",
+        139
+      ],
+      [
+        "upādinnupādāniyehi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "natthī",
+    "total_freq": 293,
+    "surfaces": [
+      [
+        "natthī",
+        293
+      ]
+    ]
+  },
+  {
+    "lemma": "enlightenment",
+    "total_freq": 293,
+    "surfaces": [
+      [
+        "enlightenment",
+        293
+      ]
+    ]
+  },
+  {
+    "lemma": "pañcahi",
+    "total_freq": 293,
+    "surfaces": [
+      [
+        "pañcahi",
+        290
+      ],
+      [
+        "pañcahipi",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "process",
+    "total_freq": 291,
+    "surfaces": [
+      [
+        "process",
+        291
+      ]
+    ]
+  },
+  {
+    "lemma": "evañca",
+    "total_freq": 289,
+    "surfaces": [
+      [
+        "evañca",
+        289
+      ]
+    ]
+  },
+  {
+    "lemma": "element",
+    "total_freq": 288,
+    "surfaces": [
+      [
+        "element",
+        288
+      ]
+    ]
+  },
+  {
+    "lemma": "vicikicchāsahagato",
+    "total_freq": 287,
+    "surfaces": [
+      [
+        "vicikicchāsahagato",
+        287
+      ]
+    ]
+  },
+  {
+    "lemma": "elements",
+    "total_freq": 286,
+    "surfaces": [
+      [
+        "elements",
+        286
+      ]
+    ]
+  },
+  {
+    "lemma": "idam",
+    "total_freq": 285,
+    "surfaces": [
+      [
+        "idampi",
+        184
+      ],
+      [
+        "idameva",
+        101
+      ]
+    ]
+  },
+  {
+    "lemma": "vedana",
+    "total_freq": 284,
+    "surfaces": [
+      [
+        "vedanaṃ",
+        259
+      ],
+      [
+        "vedana",
+        25
+      ]
+    ]
+  },
+  {
+    "lemma": "nirujjhissati",
+    "total_freq": 283,
+    "surfaces": [
+      [
+        "nirujjhissanti",
+        283
+      ]
+    ]
+  },
+  {
+    "lemma": "good",
+    "total_freq": 283,
+    "surfaces": [
+      [
+        "good",
+        283
+      ]
+    ]
+  },
+  {
+    "lemma": "āvajjanā",
+    "total_freq": 282,
+    "surfaces": [
+      [
+        "āvajjanāya",
+        273
+      ],
+      [
+        "āvajjanāpi",
+        9
+      ]
+    ]
+  },
+  {
+    "lemma": "upekkhā",
+    "total_freq": 282,
+    "surfaces": [
+      [
+        "upekkhāya",
+        267
+      ],
+      [
+        "upekkhāhi",
+        9
+      ],
+      [
+        "upekkhāpi",
+        3
+      ],
+      [
+        "upekkhāsu",
+        2
+      ],
+      [
+        "upekkhāyo",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "phalasamāpattiyā",
+    "total_freq": 281,
+    "surfaces": [
+      [
+        "phalasamāpattiyā",
+        281
+      ]
+    ]
+  },
+  {
+    "lemma": "ayam",
+    "total_freq": 281,
+    "surfaces": [
+      [
+        "ayampi",
+        169
+      ],
+      [
+        "ayameva",
+        112
+      ]
+    ]
+  },
+  {
+    "lemma": "samāpattiṃ",
+    "total_freq": 280,
+    "surfaces": [
+      [
+        "samāpattiṃ",
+        280
+      ]
+    ]
+  },
+  {
+    "lemma": "rebirth",
+    "total_freq": 280,
+    "surfaces": [
+      [
+        "rebirth",
+        280
+      ]
+    ]
+  },
+  {
+    "lemma": "mayā",
+    "total_freq": 280,
+    "surfaces": [
+      [
+        "mayā",
+        272
+      ],
+      [
+        "mayāpi",
+        8
+      ]
+    ]
+  },
+  {
+    "lemma": "bhante",
+    "total_freq": 279,
+    "surfaces": [
+      [
+        "bhante",
+        279
+      ]
+    ]
+  },
+  {
+    "lemma": "function",
+    "total_freq": 279,
+    "surfaces": [
+      [
+        "function",
+        279
+      ]
+    ]
+  },
+  {
+    "lemma": "pañcavokārā",
+    "total_freq": 278,
+    "surfaces": [
+      [
+        "pañcavokārānaṃ",
+        172
+      ],
+      [
+        "pañcavokārā",
+        106
+      ]
+    ]
+  },
+  {
+    "lemma": "dukkhato",
+    "total_freq": 274,
+    "surfaces": [
+      [
+        "dukkhato",
+        268
+      ],
+      [
+        "dukkhatopi",
+        6
+      ]
+    ]
+  },
+  {
+    "lemma": "pañhāvāre",
+    "total_freq": 274,
+    "surfaces": [
+      [
+        "pañhāvārepi",
+        209
+      ],
+      [
+        "pañhāvāre",
+        65
+      ]
+    ]
+  },
+  {
+    "lemma": "thinking",
+    "total_freq": 273,
+    "surfaces": [
+      [
+        "thinking",
+        273
+      ]
+    ]
+  },
+  {
+    "lemma": "even",
+    "total_freq": 272,
+    "surfaces": [
+      [
+        "even",
+        272
+      ]
+    ]
+  },
+  {
+    "lemma": "katattā",
+    "total_freq": 271,
+    "surfaces": [
+      [
+        "katattā",
+        271
+      ]
+    ]
+  },
+  {
+    "lemma": "tath",
+    "total_freq": 270,
+    "surfaces": [
+      [
+        "tatheva",
+        270
+      ]
+    ]
+  },
+  {
+    "lemma": "pahātabbahetukā",
+    "total_freq": 269,
+    "surfaces": [
+      [
+        "pahātabbahetukā",
+        247
+      ],
+      [
+        "pahātabbahetukānaṃ",
+        22
+      ]
+    ]
+  },
+  {
+    "lemma": "things",
+    "total_freq": 268,
+    "surfaces": [
+      [
+        "things",
+        268
+      ]
+    ]
+  },
+  {
+    "lemma": "deeds",
+    "total_freq": 267,
+    "surfaces": [
+      [
+        "deeds",
+        267
+      ]
+    ]
+  },
+  {
+    "lemma": "daily",
+    "total_freq": 267,
+    "surfaces": [
+      [
+        "daily",
+        267
+      ]
+    ]
+  },
+  {
+    "lemma": "pañhāvāra",
+    "total_freq": 265,
+    "surfaces": [
+      [
+        "pañhāvāraṃ",
+        143
+      ],
+      [
+        "pañhāvārassa",
+        120
+      ],
+      [
+        "pañhāvāresu",
+        1
+      ],
+      [
+        "pañhāvārasmiṃ",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "rūpāyatanañca",
+    "total_freq": 264,
+    "surfaces": [
+      [
+        "rūpāyatanañca",
+        264
+      ]
+    ]
+  },
+  {
+    "lemma": "however",
+    "total_freq": 264,
+    "surfaces": [
+      [
+        "however",
+        264
+      ]
+    ]
+  },
+  {
+    "lemma": "rūpāni",
+    "total_freq": 262,
+    "surfaces": [
+      [
+        "rūpāni",
+        261
+      ],
+      [
+        "rūpānipi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "uppajjatī",
+    "total_freq": 261,
+    "surfaces": [
+      [
+        "uppajjatī",
+        261
+      ]
+    ]
+  },
+  {
+    "lemma": "nirujjhitthāti",
+    "total_freq": 260,
+    "surfaces": [
+      [
+        "nirujjhitthāti",
+        260
+      ]
+    ]
+  },
+  {
+    "lemma": "ahetukapaṭisandhikkhaṇe",
+    "total_freq": 259,
+    "surfaces": [
+      [
+        "ahetukapaṭisandhikkhaṇe",
+        259
+      ]
+    ]
+  },
+  {
+    "lemma": "plane",
+    "total_freq": 259,
+    "surfaces": [
+      [
+        "plane",
+        259
+      ]
+    ]
+  },
+  {
+    "lemma": "bhaveyya",
+    "total_freq": 259,
+    "surfaces": [
+      [
+        "bhaveyya",
+        255
+      ],
+      [
+        "bhaveyyaṃ",
+        4
+      ]
+    ]
+  },
+  {
+    "lemma": "atth",
+    "total_freq": 258,
+    "surfaces": [
+      [
+        "attheva",
+        258
+      ]
+    ]
+  },
+  {
+    "lemma": "upekkhindriyañca",
+    "total_freq": 258,
+    "surfaces": [
+      [
+        "upekkhindriyañca",
+        258
+      ]
+    ]
+  },
+  {
+    "lemma": "wisdom",
+    "total_freq": 254,
+    "surfaces": [
+      [
+        "wisdom",
+        254
+      ]
+    ]
+  },
+  {
+    "lemma": "visible",
+    "total_freq": 254,
+    "surfaces": [
+      [
+        "visible",
+        254
+      ]
+    ]
+  },
+  {
+    "lemma": "eye",
+    "total_freq": 253,
+    "surfaces": [
+      [
+        "eye",
+        253
+      ]
+    ]
+  },
+  {
+    "lemma": "manindriyañca",
+    "total_freq": 252,
+    "surfaces": [
+      [
+        "manindriyañca",
+        252
+      ]
+    ]
+  },
+  {
+    "lemma": "ettāvatā",
+    "total_freq": 252,
+    "surfaces": [
+      [
+        "ettāvatā",
+        246
+      ],
+      [
+        "ettāvatāpi",
+        6
+      ]
+    ]
+  },
+  {
+    "lemma": "evāti",
+    "total_freq": 250,
+    "surfaces": [
+      [
+        "evāti",
+        250
+      ]
+    ]
+  },
+  {
+    "lemma": "purisindriyañca",
+    "total_freq": 250,
+    "surfaces": [
+      [
+        "purisindriyañca",
+        250
+      ]
+    ]
+  },
+  {
+    "lemma": "anattato",
+    "total_freq": 250,
+    "surfaces": [
+      [
+        "anattato",
+        246
+      ],
+      [
+        "anattatopi",
+        4
+      ]
+    ]
+  },
+  {
+    "lemma": "sacakkhuka",
+    "total_freq": 248,
+    "surfaces": [
+      [
+        "sacakkhukānaṃ",
+        248
+      ]
+    ]
+  },
+  {
+    "lemma": "sahajātavāram",
+    "total_freq": 248,
+    "surfaces": [
+      [
+        "sahajātavārampi",
+        248
+      ]
+    ]
+  },
+  {
+    "lemma": "book",
+    "total_freq": 248,
+    "surfaces": [
+      [
+        "book",
+        248
+      ]
+    ]
+  },
+  {
+    "lemma": "sound",
+    "total_freq": 248,
+    "surfaces": [
+      [
+        "sound",
+        248
+      ]
+    ]
+  },
+  {
+    "lemma": "experiences",
+    "total_freq": 248,
+    "surfaces": [
+      [
+        "experiences",
+        248
+      ]
+    ]
+  },
+  {
+    "lemma": "saṅkhārapaccayā",
+    "total_freq": 248,
+    "surfaces": [
+      [
+        "saṅkhārapaccayā",
+        224
+      ],
+      [
+        "saṅkhārapaccayāpi",
+        24
+      ]
+    ]
+  },
+  {
+    "lemma": "again",
+    "total_freq": 247,
+    "surfaces": [
+      [
+        "again",
+        247
+      ]
+    ]
+  },
+  {
+    "lemma": "ghānindriyañca",
+    "total_freq": 247,
+    "surfaces": [
+      [
+        "ghānindriyañca",
+        247
+      ]
+    ]
+  },
+  {
+    "lemma": "pavattat",
+    "total_freq": 247,
+    "surfaces": [
+      [
+        "pavattatīti",
+        242
+      ],
+      [
+        "pavattateva",
+        5
+      ]
+    ]
+  },
+  {
+    "lemma": "developed",
+    "total_freq": 246,
+    "surfaces": [
+      [
+        "developed",
+        246
+      ]
+    ]
+  },
+  {
+    "lemma": "order",
+    "total_freq": 246,
+    "surfaces": [
+      [
+        "order",
+        246
+      ]
+    ]
+  },
+  {
+    "lemma": "hearing",
+    "total_freq": 245,
+    "surfaces": [
+      [
+        "hearing",
+        245
+      ]
+    ]
+  },
+  {
+    "lemma": "hī",
+    "total_freq": 244,
+    "surfaces": [
+      [
+        "hī",
+        244
+      ]
+    ]
+  },
+  {
+    "lemma": "dhammāyatanañca",
+    "total_freq": 244,
+    "surfaces": [
+      [
+        "dhammāyatanañca",
+        244
+      ]
+    ]
+  },
+  {
+    "lemma": "nanahetu",
+    "total_freq": 244,
+    "surfaces": [
+      [
+        "nanahetu",
+        244
+      ]
+    ]
+  },
+  {
+    "lemma": "vipa",
+    "total_freq": 244,
+    "surfaces": [
+      [
+        "vipa",
+        244
+      ]
+    ]
+  },
+  {
+    "lemma": "dukkhapaṭipada",
+    "total_freq": 244,
+    "surfaces": [
+      [
+        "dukkhapaṭipadaṃ",
+        243
+      ],
+      [
+        "dukkhapaṭipada",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "hīna",
+    "total_freq": 244,
+    "surfaces": [
+      [
+        "hīnaṃ",
+        191
+      ],
+      [
+        "hīnassa",
+        36
+      ],
+      [
+        "hīnehi",
+        7
+      ],
+      [
+        "hīna",
+        5
+      ],
+      [
+        "hīnena",
+        2
+      ],
+      [
+        "hīnesu",
+        2
+      ],
+      [
+        "hīnānaṃ",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "sandhāyāha",
+    "total_freq": 243,
+    "surfaces": [
+      [
+        "sandhāyāha",
+        243
+      ]
+    ]
+  },
+  {
+    "lemma": "nuppajjat",
+    "total_freq": 242,
+    "surfaces": [
+      [
+        "nuppajjatīti",
+        240
+      ],
+      [
+        "nuppajjateva",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "catasso",
+    "total_freq": 242,
+    "surfaces": [
+      [
+        "catasso",
+        204
+      ],
+      [
+        "catassopi",
+        38
+      ]
+    ]
+  },
+  {
+    "lemma": "vuttam",
+    "total_freq": 242,
+    "surfaces": [
+      [
+        "vuttameva",
+        130
+      ],
+      [
+        "vuttampi",
+        112
+      ]
+    ]
+  },
+  {
+    "lemma": "saccikaṭṭhaparamatthenā",
+    "total_freq": 240,
+    "surfaces": [
+      [
+        "saccikaṭṭhaparamatthenā",
+        240
+      ]
+    ]
+  },
+  {
+    "lemma": "napurejātapaccayā",
+    "total_freq": 239,
+    "surfaces": [
+      [
+        "napurejātapaccayā",
+        239
+      ]
+    ]
+  },
+  {
+    "lemma": "characteristic",
+    "total_freq": 238,
+    "surfaces": [
+      [
+        "characteristic",
+        238
+      ]
+    ]
+  },
+  {
+    "lemma": "siyāti",
+    "total_freq": 237,
+    "surfaces": [
+      [
+        "siyāti",
+        237
+      ]
+    ]
+  },
+  {
+    "lemma": "anupādinnupādāniyo",
+    "total_freq": 237,
+    "surfaces": [
+      [
+        "anupādinnupādāniyo",
+        237
+      ]
+    ]
+  },
+  {
+    "lemma": "somanassindriyañca",
+    "total_freq": 237,
+    "surfaces": [
+      [
+        "somanassindriyañca",
+        237
+      ]
+    ]
+  },
+  {
+    "lemma": "sahajātavāro",
+    "total_freq": 237,
+    "surfaces": [
+      [
+        "sahajātavāropi",
+        153
+      ],
+      [
+        "sahajātavāro",
+        84
+      ]
+    ]
+  },
+  {
+    "lemma": "attachment",
+    "total_freq": 236,
+    "surfaces": [
+      [
+        "attachment",
+        236
+      ]
+    ]
+  },
+  {
+    "lemma": "pañhāvāro",
+    "total_freq": 236,
+    "surfaces": [
+      [
+        "pañhāvāro",
+        215
+      ],
+      [
+        "pañhāvāropi",
+        21
+      ]
+    ]
+  },
+  {
+    "lemma": "tva",
+    "total_freq": 235,
+    "surfaces": [
+      [
+        "tvaṃ",
+        232
+      ],
+      [
+        "tva",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "diṭṭhiṃ",
+    "total_freq": 233,
+    "surfaces": [
+      [
+        "diṭṭhiṃ",
+        233
+      ]
+    ]
+  },
+  {
+    "lemma": "vicikicchāsahagate",
+    "total_freq": 233,
+    "surfaces": [
+      [
+        "vicikicchāsahagate",
+        233
+      ]
+    ]
+  },
+  {
+    "lemma": "paṭisandhiya",
+    "total_freq": 233,
+    "surfaces": [
+      [
+        "paṭisandhiyaṃ",
+        227
+      ],
+      [
+        "paṭisandhiya",
+        6
+      ]
+    ]
+  },
+  {
+    "lemma": "uppajjissati",
+    "total_freq": 232,
+    "surfaces": [
+      [
+        "uppajjissanti",
+        232
+      ]
+    ]
+  },
+  {
+    "lemma": "nahetuñca",
+    "total_freq": 232,
+    "surfaces": [
+      [
+        "nahetuñca",
+        232
+      ]
+    ]
+  },
+  {
+    "lemma": "nakammapaccayā",
+    "total_freq": 232,
+    "surfaces": [
+      [
+        "nakammapaccayā",
+        232
+      ]
+    ]
+  },
+  {
+    "lemma": "great",
+    "total_freq": 232,
+    "surfaces": [
+      [
+        "great",
+        232
+      ]
+    ]
+  },
+  {
+    "lemma": "sampayuttavāro",
+    "total_freq": 232,
+    "surfaces": [
+      [
+        "sampayuttavāropi",
+        142
+      ],
+      [
+        "sampayuttavāro",
+        90
+      ]
+    ]
+  },
+  {
+    "lemma": "planes",
+    "total_freq": 231,
+    "surfaces": [
+      [
+        "planes",
+        231
+      ]
+    ]
+  },
+  {
+    "lemma": "āvaṭṭanā",
+    "total_freq": 231,
+    "surfaces": [
+      [
+        "āvaṭṭanā",
+        231
+      ]
+    ]
+  },
+  {
+    "lemma": "understand",
+    "total_freq": 230,
+    "surfaces": [
+      [
+        "understand",
+        230
+      ]
+    ]
+  },
+  {
+    "lemma": "ekam",
+    "total_freq": 230,
+    "surfaces": [
+      [
+        "ekameva",
+        136
+      ],
+      [
+        "ekampi",
+        94
+      ]
+    ]
+  },
+  {
+    "lemma": "suṭṭhu",
+    "total_freq": 229,
+    "surfaces": [
+      [
+        "suṭṭhu",
+        229
+      ]
+    ]
+  },
+  {
+    "lemma": "pavattiya",
+    "total_freq": 229,
+    "surfaces": [
+      [
+        "pavattiyaṃ",
+        219
+      ],
+      [
+        "pavattiya",
+        10
+      ]
+    ]
+  },
+  {
+    "lemma": "anāgataṃsañāṇa",
+    "total_freq": 229,
+    "surfaces": [
+      [
+        "anāgataṃsañāṇassa",
+        196
+      ],
+      [
+        "anāgataṃsañāṇaṃ",
+        29
+      ],
+      [
+        "anāgataṃsañāṇena",
+        3
+      ],
+      [
+        "anāgataṃsañāṇa",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "paramatthato",
+    "total_freq": 228,
+    "surfaces": [
+      [
+        "paramatthato",
+        228
+      ]
+    ]
+  },
+  {
+    "lemma": "tañhi",
+    "total_freq": 228,
+    "surfaces": [
+      [
+        "tañhi",
+        228
+      ]
+    ]
+  },
+  {
+    "lemma": "types",
+    "total_freq": 228,
+    "surfaces": [
+      [
+        "types",
+        228
+      ]
+    ]
+  },
+  {
+    "lemma": "moments",
+    "total_freq": 227,
+    "surfaces": [
+      [
+        "moments",
+        227
+      ]
+    ]
+  },
+  {
+    "lemma": "pañcasu",
+    "total_freq": 227,
+    "surfaces": [
+      [
+        "pañcasu",
+        218
+      ],
+      [
+        "pañcasupi",
+        9
+      ]
+    ]
+  },
+  {
+    "lemma": "karot",
+    "total_freq": 224,
+    "surfaces": [
+      [
+        "karotīti",
+        215
+      ],
+      [
+        "karoteva",
+        9
+      ]
+    ]
+  },
+  {
+    "lemma": "pubbenivāsānussatiñāṇa",
+    "total_freq": 223,
+    "surfaces": [
+      [
+        "pubbenivāsānussatiñāṇassa",
+        174
+      ],
+      [
+        "pubbenivāsānussatiñāṇaṃ",
+        36
+      ],
+      [
+        "pubbenivāsānussatiñāṇena",
+        12
+      ],
+      [
+        "pubbenivāsānussatiñāṇa",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "evameta",
+    "total_freq": 223,
+    "surfaces": [
+      [
+        "evametassa",
+        144
+      ],
+      [
+        "evametaṃ",
+        39
+      ],
+      [
+        "evametesu",
+        18
+      ],
+      [
+        "evametasmiṃ",
+        9
+      ],
+      [
+        "evameta",
+        6
+      ],
+      [
+        "evametehi",
+        5
+      ],
+      [
+        "evametena",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "produced",
+    "total_freq": 221,
+    "surfaces": [
+      [
+        "produced",
+        221
+      ]
+    ]
+  },
+  {
+    "lemma": "vāti",
+    "total_freq": 221,
+    "surfaces": [
+      [
+        "vāti",
+        220
+      ],
+      [
+        "vātipi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "āsavavippayutta",
+    "total_freq": 221,
+    "surfaces": [
+      [
+        "āsavavippayuttaṃ",
+        135
+      ],
+      [
+        "āsavavippayuttassa",
+        79
+      ],
+      [
+        "āsavavippayuttehi",
+        7
+      ]
+    ]
+  },
+  {
+    "lemma": "nasukhā",
+    "total_freq": 220,
+    "surfaces": [
+      [
+        "nasukhāya",
+        220
+      ]
+    ]
+  },
+  {
+    "lemma": "dasahāyatana",
+    "total_freq": 220,
+    "surfaces": [
+      [
+        "dasahāyatanehi",
+        220
+      ]
+    ]
+  },
+  {
+    "lemma": "nāmāti",
+    "total_freq": 220,
+    "surfaces": [
+      [
+        "nāmāti",
+        214
+      ],
+      [
+        "nāmātipi",
+        6
+      ]
+    ]
+  },
+  {
+    "lemma": "saṅgaṇhāti",
+    "total_freq": 219,
+    "surfaces": [
+      [
+        "saṅgaṇhāti",
+        219
+      ]
+    ]
+  },
+  {
+    "lemma": "etthā",
+    "total_freq": 219,
+    "surfaces": [
+      [
+        "etthāpi",
+        219
+      ]
+    ]
+  },
+  {
+    "lemma": "saṅkhepato",
+    "total_freq": 219,
+    "surfaces": [
+      [
+        "saṅkhepato",
+        214
+      ],
+      [
+        "saṅkhepatopi",
+        5
+      ]
+    ]
+  },
+  {
+    "lemma": "chasu",
+    "total_freq": 219,
+    "surfaces": [
+      [
+        "chasu",
+        212
+      ],
+      [
+        "chasupi",
+        7
+      ]
+    ]
+  },
+  {
+    "lemma": "viññāṇapaccayā",
+    "total_freq": 219,
+    "surfaces": [
+      [
+        "viññāṇapaccayā",
+        198
+      ],
+      [
+        "viññāṇapaccayāpi",
+        21
+      ]
+    ]
+  },
+  {
+    "lemma": "eten",
+    "total_freq": 218,
+    "surfaces": [
+      [
+        "eteneva",
+        218
+      ]
+    ]
+  },
+  {
+    "lemma": "pacchimacitta",
+    "total_freq": 218,
+    "surfaces": [
+      [
+        "pacchimacittassa",
+        141
+      ],
+      [
+        "pacchimacittaṃ",
+        74
+      ],
+      [
+        "pacchimacitta",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "speech",
+    "total_freq": 217,
+    "surfaces": [
+      [
+        "speech",
+        217
+      ]
+    ]
+  },
+  {
+    "lemma": "yāni",
+    "total_freq": 217,
+    "surfaces": [
+      [
+        "yāni",
+        216
+      ],
+      [
+        "yānipi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "parittārammaṇa",
+    "total_freq": 217,
+    "surfaces": [
+      [
+        "parittārammaṇaṃ",
+        158
+      ],
+      [
+        "parittārammaṇassa",
+        47
+      ],
+      [
+        "parittārammaṇa",
+        6
+      ],
+      [
+        "parittārammaṇehi",
+        4
+      ],
+      [
+        "parittārammaṇesu",
+        1
+      ],
+      [
+        "parittārammaṇena",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "like",
+    "total_freq": 216,
+    "surfaces": [
+      [
+        "like",
+        216
+      ]
+    ]
+  },
+  {
+    "lemma": "ṭhatvā",
+    "total_freq": 216,
+    "surfaces": [
+      [
+        "ṭhatvā",
+        210
+      ],
+      [
+        "ṭhatvāpi",
+        6
+      ]
+    ]
+  },
+  {
+    "lemma": "sabbam",
+    "total_freq": 216,
+    "surfaces": [
+      [
+        "sabbampi",
+        191
+      ],
+      [
+        "sabbameva",
+        25
+      ]
+    ]
+  },
+  {
+    "lemma": "sahajātavāre",
+    "total_freq": 215,
+    "surfaces": [
+      [
+        "sahajātavārepi",
+        213
+      ],
+      [
+        "sahajātavāre",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "pajahat",
+    "total_freq": 214,
+    "surfaces": [
+      [
+        "pajahatīti",
+        214
+      ]
+    ]
+  },
+  {
+    "lemma": "abyākatañca",
+    "total_freq": 214,
+    "surfaces": [
+      [
+        "abyākatañca",
+        214
+      ]
+    ]
+  },
+  {
+    "lemma": "bhavanga",
+    "total_freq": 214,
+    "surfaces": [
+      [
+        "bhavanga",
+        214
+      ]
+    ]
+  },
+  {
+    "lemma": "ga",
+    "total_freq": 214,
+    "surfaces": [
+      [
+        "ga",
+        213
+      ],
+      [
+        "gaṃ",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "siyuṃ",
+    "total_freq": 213,
+    "surfaces": [
+      [
+        "siyuṃ",
+        213
+      ]
+    ]
+  },
+  {
+    "lemma": "jīvitindriyañca",
+    "total_freq": 213,
+    "surfaces": [
+      [
+        "jīvitindriyañca",
+        213
+      ]
+    ]
+  },
+  {
+    "lemma": "bhikkhū",
+    "total_freq": 213,
+    "surfaces": [
+      [
+        "bhikkhū",
+        206
+      ],
+      [
+        "bhikkhūpi",
+        7
+      ]
+    ]
+  },
+  {
+    "lemma": "nasanidassanasappaṭigho",
+    "total_freq": 212,
+    "surfaces": [
+      [
+        "nasanidassanasappaṭigho",
+        212
+      ]
+    ]
+  },
+  {
+    "lemma": "stage",
+    "total_freq": 212,
+    "surfaces": [
+      [
+        "stage",
+        212
+      ]
+    ]
+  },
+  {
+    "lemma": "diṭṭhānusayañca",
+    "total_freq": 212,
+    "surfaces": [
+      [
+        "diṭṭhānusayañca",
+        212
+      ]
+    ]
+  },
+  {
+    "lemma": "upādinnupādāniyo",
+    "total_freq": 211,
+    "surfaces": [
+      [
+        "upādinnupādāniyo",
+        211
+      ]
+    ]
+  },
+  {
+    "lemma": "nānusenti",
+    "total_freq": 211,
+    "surfaces": [
+      [
+        "nānusenti",
+        211
+      ]
+    ]
+  },
+  {
+    "lemma": "naakusala",
+    "total_freq": 211,
+    "surfaces": [
+      [
+        "naakusalaṃ",
+        173
+      ],
+      [
+        "naakusalassa",
+        38
+      ]
+    ]
+  },
+  {
+    "lemma": "idhā",
+    "total_freq": 210,
+    "surfaces": [
+      [
+        "idhāpi",
+        210
+      ]
+    ]
+  },
+  {
+    "lemma": "adhipatipaccayā",
+    "total_freq": 210,
+    "surfaces": [
+      [
+        "adhipatipaccayā",
+        210
+      ]
+    ]
+  },
+  {
+    "lemma": "upalabbhat",
+    "total_freq": 209,
+    "surfaces": [
+      [
+        "upalabbhatīti",
+        209
+      ]
+    ]
+  },
+  {
+    "lemma": "āsavavippayutto",
+    "total_freq": 209,
+    "surfaces": [
+      [
+        "āsavavippayutto",
+        209
+      ]
+    ]
+  },
+  {
+    "lemma": "ayamattho",
+    "total_freq": 209,
+    "surfaces": [
+      [
+        "ayamattho",
+        205
+      ],
+      [
+        "ayamatthopi",
+        4
+      ]
+    ]
+  },
+  {
+    "lemma": "saddha",
+    "total_freq": 209,
+    "surfaces": [
+      [
+        "saddhaṃ",
+        199
+      ],
+      [
+        "saddha",
+        9
+      ],
+      [
+        "saddhena",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "naabyākato",
+    "total_freq": 208,
+    "surfaces": [
+      [
+        "naabyākato",
+        208
+      ]
+    ]
+  },
+  {
+    "lemma": "physical",
+    "total_freq": 208,
+    "surfaces": [
+      [
+        "physical",
+        208
+      ]
+    ]
+  },
+  {
+    "lemma": "saccāni",
+    "total_freq": 208,
+    "surfaces": [
+      [
+        "saccāni",
+        207
+      ],
+      [
+        "saccānipi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "pacceka",
+    "total_freq": 208,
+    "surfaces": [
+      [
+        "paccekaṃ",
+        197
+      ],
+      [
+        "pacceka",
+        8
+      ],
+      [
+        "paccekamhi",
+        2
+      ],
+      [
+        "paccekasmiṃ",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "suttantoti",
+    "total_freq": 207,
+    "surfaces": [
+      [
+        "suttantoti",
+        207
+      ]
+    ]
+  },
+  {
+    "lemma": "nn",
+    "total_freq": 207,
+    "surfaces": [
+      [
+        "nn",
+        207
+      ]
+    ]
+  },
+  {
+    "lemma": "example",
+    "total_freq": 206,
+    "surfaces": [
+      [
+        "example",
+        206
+      ]
+    ]
+  },
+  {
+    "lemma": "kinds",
+    "total_freq": 206,
+    "surfaces": [
+      [
+        "kinds",
+        206
+      ]
+    ]
+  },
+  {
+    "lemma": "where",
+    "total_freq": 205,
+    "surfaces": [
+      [
+        "where",
+        205
+      ]
+    ]
+  },
+  {
+    "lemma": "insight",
+    "total_freq": 205,
+    "surfaces": [
+      [
+        "insight",
+        205
+      ]
+    ]
+  },
+  {
+    "lemma": "ghānāyatanañca",
+    "total_freq": 205,
+    "surfaces": [
+      [
+        "ghānāyatanañca",
+        205
+      ]
+    ]
+  },
+  {
+    "lemma": "itthindriyañca",
+    "total_freq": 205,
+    "surfaces": [
+      [
+        "itthindriyañca",
+        205
+      ]
+    ]
+  },
+  {
+    "lemma": "itthīna",
+    "total_freq": 205,
+    "surfaces": [
+      [
+        "itthīnaṃ",
+        204
+      ],
+      [
+        "itthīna",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "jānati",
+    "total_freq": 205,
+    "surfaces": [
+      [
+        "jānanti",
+        203
+      ],
+      [
+        "jānissati",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "micchā",
+    "total_freq": 204,
+    "surfaces": [
+      [
+        "micchā",
+        204
+      ]
+    ]
+  },
+  {
+    "lemma": "tenevāha",
+    "total_freq": 204,
+    "surfaces": [
+      [
+        "tenevāha",
+        204
+      ]
+    ]
+  },
+  {
+    "lemma": "attained",
+    "total_freq": 204,
+    "surfaces": [
+      [
+        "attained",
+        204
+      ]
+    ]
+  },
+  {
+    "lemma": "calm",
+    "total_freq": 204,
+    "surfaces": [
+      [
+        "calm",
+        204
+      ]
+    ]
+  },
+  {
+    "lemma": "ākiñcaññāyatana",
+    "total_freq": 204,
+    "surfaces": [
+      [
+        "ākiñcaññāyatanaṃ",
+        172
+      ],
+      [
+        "ākiñcaññāyatanassa",
+        21
+      ],
+      [
+        "ākiñcaññāyatana",
+        10
+      ],
+      [
+        "ākiñcaññāyatanena",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "imā",
+    "total_freq": 204,
+    "surfaces": [
+      [
+        "imāya",
+        154
+      ],
+      [
+        "imāsu",
+        31
+      ],
+      [
+        "imāhi",
+        17
+      ],
+      [
+        "imāpi",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "āhārasamuṭṭhā",
+    "total_freq": 203,
+    "surfaces": [
+      [
+        "āhārasamuṭṭhānaṃ",
+        203
+      ]
+    ]
+  },
+  {
+    "lemma": "mā",
+    "total_freq": 203,
+    "surfaces": [
+      [
+        "mā",
+        202
+      ],
+      [
+        "māsu",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "ādito",
+    "total_freq": 203,
+    "surfaces": [
+      [
+        "ādito",
+        201
+      ],
+      [
+        "āditopi",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "vipākapaccaya",
+    "total_freq": 203,
+    "surfaces": [
+      [
+        "vipākapaccayena",
+        197
+      ],
+      [
+        "vipākapaccayaṃ",
+        4
+      ],
+      [
+        "vipākapaccayassa",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "cetaso",
+    "total_freq": 202,
+    "surfaces": [
+      [
+        "cetaso",
+        202
+      ]
+    ]
+  },
+  {
+    "lemma": "phassapaccayā",
+    "total_freq": 202,
+    "surfaces": [
+      [
+        "phassapaccayā",
+        184
+      ],
+      [
+        "phassapaccayāpi",
+        18
+      ]
+    ]
+  },
+  {
+    "lemma": "assa",
+    "total_freq": 202,
+    "surfaces": [
+      [
+        "assa",
+        183
+      ],
+      [
+        "assaṃ",
+        9
+      ],
+      [
+        "assānaṃ",
+        5
+      ],
+      [
+        "assesu",
+        2
+      ],
+      [
+        "assassa",
+        2
+      ],
+      [
+        "assehi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "veditabbāni",
+    "total_freq": 201,
+    "surfaces": [
+      [
+        "veditabbāni",
+        201
+      ]
+    ]
+  },
+  {
+    "lemma": "visesato",
+    "total_freq": 200,
+    "surfaces": [
+      [
+        "visesato",
+        200
+      ]
+    ]
+  },
+  {
+    "lemma": "gotrabhussa",
+    "total_freq": 200,
+    "surfaces": [
+      [
+        "gotrabhussa",
+        200
+      ]
+    ]
+  },
+  {
+    "lemma": "manāyatanañca",
+    "total_freq": 200,
+    "surfaces": [
+      [
+        "manāyatanañca",
+        200
+      ]
+    ]
+  },
+  {
+    "lemma": "kathañca",
+    "total_freq": 200,
+    "surfaces": [
+      [
+        "kathañca",
+        199
+      ],
+      [
+        "kathañcassa",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "pat",
+    "total_freq": 200,
+    "surfaces": [
+      [
+        "pat",
+        197
+      ],
+      [
+        "patīti",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "sabbāni",
+    "total_freq": 200,
+    "surfaces": [
+      [
+        "sabbānipi",
+        105
+      ],
+      [
+        "sabbāni",
+        95
+      ]
+    ]
+  },
+  {
+    "lemma": "viyāti",
+    "total_freq": 199,
+    "surfaces": [
+      [
+        "viyāti",
+        196
+      ],
+      [
+        "viyātipi",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "well",
+    "total_freq": 198,
+    "surfaces": [
+      [
+        "well",
+        198
+      ]
+    ]
+  },
+  {
+    "lemma": "pi",
+    "total_freq": 197,
+    "surfaces": [
+      [
+        "pi",
+        197
+      ]
+    ]
+  },
+  {
+    "lemma": "birth",
+    "total_freq": 196,
+    "surfaces": [
+      [
+        "birth",
+        196
+      ]
+    ]
+  },
+  {
+    "lemma": "view",
+    "total_freq": 196,
+    "surfaces": [
+      [
+        "view",
+        196
+      ]
+    ]
+  },
+  {
+    "lemma": "ntiādīsu",
+    "total_freq": 196,
+    "surfaces": [
+      [
+        "ntiādīsu",
+        169
+      ],
+      [
+        "ntiādīsupi",
+        27
+      ]
+    ]
+  },
+  {
+    "lemma": "nissayavāro",
+    "total_freq": 196,
+    "surfaces": [
+      [
+        "nissayavāropi",
+        120
+      ],
+      [
+        "nissayavāro",
+        76
+      ]
+    ]
+  },
+  {
+    "lemma": "pahānā",
+    "total_freq": 195,
+    "surfaces": [
+      [
+        "pahānāya",
+        195
+      ]
+    ]
+  },
+  {
+    "lemma": "upaṭṭhāti",
+    "total_freq": 195,
+    "surfaces": [
+      [
+        "upaṭṭhāti",
+        195
+      ]
+    ]
+  },
+  {
+    "lemma": "cuta",
+    "total_freq": 195,
+    "surfaces": [
+      [
+        "cutassa",
+        193
+      ],
+      [
+        "cutena",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "cakka",
+    "total_freq": 194,
+    "surfaces": [
+      [
+        "cakkaṃ",
+        185
+      ],
+      [
+        "cakkānaṃ",
+        4
+      ],
+      [
+        "cakka",
+        4
+      ],
+      [
+        "cakkesu",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "visuddhimagga",
+    "total_freq": 194,
+    "surfaces": [
+      [
+        "visuddhimagga",
+        159
+      ],
+      [
+        "visuddhimaggaṃ",
+        20
+      ],
+      [
+        "visuddhimaggassa",
+        12
+      ],
+      [
+        "visuddhimaggena",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "teachings",
+    "total_freq": 193,
+    "surfaces": [
+      [
+        "teachings",
+        193
+      ]
+    ]
+  },
+  {
+    "lemma": "appears",
+    "total_freq": 193,
+    "surfaces": [
+      [
+        "appears",
+        193
+      ]
+    ]
+  },
+  {
+    "lemma": "puṭṭho",
+    "total_freq": 193,
+    "surfaces": [
+      [
+        "puṭṭho",
+        186
+      ],
+      [
+        "puṭṭhopi",
+        7
+      ]
+    ]
+  },
+  {
+    "lemma": "ekavidha",
+    "total_freq": 193,
+    "surfaces": [
+      [
+        "ekavidhena",
+        157
+      ],
+      [
+        "ekavidhaṃ",
+        33
+      ],
+      [
+        "ekavidha",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "dhammadhātu",
+    "total_freq": 192,
+    "surfaces": [
+      [
+        "dhammadhātu",
+        192
+      ]
+    ]
+  },
+  {
+    "lemma": "ādayo",
+    "total_freq": 192,
+    "surfaces": [
+      [
+        "ādayo",
+        192
+      ]
+    ]
+  },
+  {
+    "lemma": "nina",
+    "total_freq": 191,
+    "surfaces": [
+      [
+        "nina",
+        191
+      ]
+    ]
+  },
+  {
+    "lemma": "sabhāvato",
+    "total_freq": 191,
+    "surfaces": [
+      [
+        "sabhāvato",
+        190
+      ],
+      [
+        "sabhāvatopi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "still",
+    "total_freq": 190,
+    "surfaces": [
+      [
+        "still",
+        190
+      ]
+    ]
+  },
+  {
+    "lemma": "ākāsānañcāyatana",
+    "total_freq": 190,
+    "surfaces": [
+      [
+        "ākāsānañcāyatanaṃ",
+        156
+      ],
+      [
+        "ākāsānañcāyatanassa",
+        20
+      ],
+      [
+        "ākāsānañcāyatana",
+        14
+      ]
+    ]
+  },
+  {
+    "lemma": "rūpañca",
+    "total_freq": 189,
+    "surfaces": [
+      [
+        "rūpañca",
+        189
+      ]
+    ]
+  },
+  {
+    "lemma": "santāne",
+    "total_freq": 189,
+    "surfaces": [
+      [
+        "santāne",
+        189
+      ]
+    ]
+  },
+  {
+    "lemma": "aññe",
+    "total_freq": 189,
+    "surfaces": [
+      [
+        "aññepi",
+        189
+      ]
+    ]
+  },
+  {
+    "lemma": "dhammas",
+    "total_freq": 189,
+    "surfaces": [
+      [
+        "dhammas",
+        189
+      ]
+    ]
+  },
+  {
+    "lemma": "suta",
+    "total_freq": 189,
+    "surfaces": [
+      [
+        "sutaṃ",
+        116
+      ],
+      [
+        "sutassa",
+        33
+      ],
+      [
+        "sutena",
+        32
+      ],
+      [
+        "suta",
+        8
+      ]
+    ]
+  },
+  {
+    "lemma": "yā",
+    "total_freq": 188,
+    "surfaces": [
+      [
+        "yāya",
+        167
+      ],
+      [
+        "yāpi",
+        13
+      ],
+      [
+        "yāhi",
+        4
+      ],
+      [
+        "yāsu",
+        4
+      ]
+    ]
+  },
+  {
+    "lemma": "āvuso",
+    "total_freq": 187,
+    "surfaces": [
+      [
+        "āvuso",
+        187
+      ]
+    ]
+  },
+  {
+    "lemma": "maggādhipati",
+    "total_freq": 187,
+    "surfaces": [
+      [
+        "maggādhipati",
+        187
+      ]
+    ]
+  },
+  {
+    "lemma": "labbhat",
+    "total_freq": 187,
+    "surfaces": [
+      [
+        "labbhatīti",
+        148
+      ],
+      [
+        "labbhateva",
+        39
+      ]
+    ]
+  },
+  {
+    "lemma": "akatvā",
+    "total_freq": 186,
+    "surfaces": [
+      [
+        "akatvā",
+        186
+      ]
+    ]
+  },
+  {
+    "lemma": "anuset",
+    "total_freq": 186,
+    "surfaces": [
+      [
+        "anusetīti",
+        186
+      ]
+    ]
+  },
+  {
+    "lemma": "vitthārato",
+    "total_freq": 186,
+    "surfaces": [
+      [
+        "vitthārato",
+        183
+      ],
+      [
+        "vitthāratopi",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "apacayagāmiṃ",
+    "total_freq": 185,
+    "surfaces": [
+      [
+        "apacayagāmiṃ",
+        185
+      ]
+    ]
+  },
+  {
+    "lemma": "aghānakā",
+    "total_freq": 185,
+    "surfaces": [
+      [
+        "aghānakānaṃ",
+        184
+      ],
+      [
+        "aghānakā",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "vedanāpaccayā",
+    "total_freq": 185,
+    "surfaces": [
+      [
+        "vedanāpaccayā",
+        174
+      ],
+      [
+        "vedanāpaccayāpi",
+        11
+      ]
+    ]
+  },
+  {
+    "lemma": "upacayo",
+    "total_freq": 184,
+    "surfaces": [
+      [
+        "upacayo",
+        184
+      ]
+    ]
+  },
+  {
+    "lemma": "imamattha",
+    "total_freq": 184,
+    "surfaces": [
+      [
+        "imamatthaṃ",
+        184
+      ]
+    ]
+  },
+  {
+    "lemma": "nupalabbhati",
+    "total_freq": 184,
+    "surfaces": [
+      [
+        "nupalabbhati",
+        184
+      ]
+    ]
+  },
+  {
+    "lemma": "eightfold",
+    "total_freq": 184,
+    "surfaces": [
+      [
+        "eightfold",
+        184
+      ]
+    ]
+  },
+  {
+    "lemma": "ekavīsa",
+    "total_freq": 184,
+    "surfaces": [
+      [
+        "ekavīsa",
+        183
+      ],
+      [
+        "ekavīsamhi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "nuppajjissat",
+    "total_freq": 183,
+    "surfaces": [
+      [
+        "nuppajjissatīti",
+        183
+      ]
+    ]
+  },
+  {
+    "lemma": "long",
+    "total_freq": 183,
+    "surfaces": [
+      [
+        "long",
+        183
+      ]
+    ]
+  },
+  {
+    "lemma": "vuttañheta",
+    "total_freq": 183,
+    "surfaces": [
+      [
+        "vuttañhetaṃ",
+        166
+      ],
+      [
+        "vuttañheta",
+        17
+      ]
+    ]
+  },
+  {
+    "lemma": "pahā",
+    "total_freq": 182,
+    "surfaces": [
+      [
+        "pahāya",
+        182
+      ]
+    ]
+  },
+  {
+    "lemma": "akusalañca",
+    "total_freq": 182,
+    "surfaces": [
+      [
+        "akusalañca",
+        182
+      ]
+    ]
+  },
+  {
+    "lemma": "jātiyā",
+    "total_freq": 182,
+    "surfaces": [
+      [
+        "jātiyā",
+        178
+      ],
+      [
+        "jātiyāpi",
+        4
+      ]
+    ]
+  },
+  {
+    "lemma": "peta",
+    "total_freq": 182,
+    "surfaces": [
+      [
+        "petaṃ",
+        173
+      ],
+      [
+        "petesu",
+        4
+      ],
+      [
+        "peta",
+        3
+      ],
+      [
+        "petehi",
+        2
+      ]
+    ]
+  },
+  {
+    "lemma": "bhindati",
+    "total_freq": 181,
+    "surfaces": [
+      [
+        "bhindati",
+        178
+      ],
+      [
+        "bhindanti",
+        3
+      ]
+    ]
+  },
+  {
+    "lemma": "paresa",
+    "total_freq": 181,
+    "surfaces": [
+      [
+        "paresaṃ",
+        177
+      ],
+      [
+        "paresa",
+        4
+      ]
+    ]
+  },
+  {
+    "lemma": "dassanattha",
+    "total_freq": 181,
+    "surfaces": [
+      [
+        "dassanatthaṃ",
+        177
+      ],
+      [
+        "dassanattha",
+        4
+      ]
+    ]
+  },
+  {
+    "lemma": "nasaraṇa",
+    "total_freq": 181,
+    "surfaces": [
+      [
+        "nasaraṇaṃ",
+        166
+      ],
+      [
+        "nasaraṇassa",
+        15
+      ]
+    ]
+  },
+  {
+    "lemma": "sobhana",
+    "total_freq": 181,
+    "surfaces": [
+      [
+        "sobhana",
+        156
+      ],
+      [
+        "sobhanaṃ",
+        20
+      ],
+      [
+        "sobhanesu",
+        4
+      ],
+      [
+        "sobhanassa",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "karonti",
+    "total_freq": 180,
+    "surfaces": [
+      [
+        "karonti",
+        180
+      ]
+    ]
+  },
+  {
+    "lemma": "nevācayagāmināpacayagāmī",
+    "total_freq": 180,
+    "surfaces": [
+      [
+        "nevācayagāmināpacayagāmī",
+        180
+      ]
+    ]
+  },
+  {
+    "lemma": "bhavarāgānusayañca",
+    "total_freq": 180,
+    "surfaces": [
+      [
+        "bhavarāgānusayañca",
+        180
+      ]
+    ]
+  },
+  {
+    "lemma": "ñatvā",
+    "total_freq": 180,
+    "surfaces": [
+      [
+        "ñatvā",
+        179
+      ],
+      [
+        "ñatvāpi",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "dati",
+    "total_freq": 180,
+    "surfaces": [
+      [
+        "dissati",
+        179
+      ],
+      [
+        "danti",
+        1
+      ]
+    ]
+  },
+  {
+    "lemma": "sesāni",
+    "total_freq": 180,
+    "surfaces": [
+      [
+        "sesāni",
+        168
+      ],
+      [
+        "sesānipi",
+        12
+      ]
+    ]
+  },
+  {
+    "lemma": "paccayoti",
+    "total_freq": 179,
+    "surfaces": [
+      [
+        "paccayoti",
+        179
+      ]
+    ]
+  },
+  {
+    "lemma": "awareness",
+    "total_freq": 179,
+    "surfaces": [
+      [
+        "awareness",
+        179
+      ]
+    ]
+  },
+  {
+    "lemma": "yañca",
+    "total_freq": 179,
+    "surfaces": [
+      [
+        "yañca",
+        168
+      ],
+      [
+        "yañcassa",
+        11
+      ]
+    ]
+  },
+  {
+    "lemma": "āsavasampayutto",
+    "total_freq": 178,
+    "surfaces": [
+      [
+        "āsavasampayutto",
+        178
+      ]
+    ]
+  },
+  {
+    "lemma": "produce",
+    "total_freq": 178,
+    "surfaces": [
+      [
+        "produce",
+        178
+      ]
+    ]
+  },
+  {
+    "lemma": "sayings",
+    "total_freq": 178,
+    "surfaces": [
+      [
+        "sayings",
+        178
+      ]
+    ]
+  },
+  {
+    "lemma": "naabyākata",
+    "total_freq": 178,
+    "surfaces": [
+      [
+        "naabyākataṃ",
+        159
+      ],
+      [
+        "naabyākatassa",
+        19
+      ]
+    ]
+  },
+  {
+    "lemma": "arahat",
+    "total_freq": 178,
+    "surfaces": [
+      [
+        "arahat",
+        128
+      ],
+      [
+        "arahatīti",
+        50
+      ]
+    ]
+  },
+  {
+    "lemma": "visuddhi",
+    "total_freq": 177,
+    "surfaces": [
+      [
+        "visuddhi",
+        177
+      ]
+    ]
+  }
+]

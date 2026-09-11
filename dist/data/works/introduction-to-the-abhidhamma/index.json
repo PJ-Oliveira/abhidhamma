@@ -1,0 +1,188 @@
+{
+  "id": "introduction-to-the-abhidhamma",
+  "title": "Introduction to the Abhidhamma",
+  "parts": {
+    "texto": {
+      "label": "Text",
+      "files": [
+        "texto__0.json"
+      ],
+      "toc": [
+        {
+          "id": 41,
+          "rend": "chapter",
+          "text": "Chapter 1: Introduction to the Abhidhamma"
+        },
+        {
+          "id": 43,
+          "rend": "chapter",
+          "text": "Chapter 2: Ultimate Truth and Conventional Truth"
+        },
+        {
+          "id": 45,
+          "rend": "chapter",
+          "text": "Chapter 3: Dhamma in Detail"
+        },
+        {
+          "id": 47,
+          "rend": "chapter",
+          "text": "Chapter 4: Abhidhamma in the Sutta"
+        },
+        {
+          "id": 51,
+          "rend": "chapter",
+          "text": "Chapter 5: Citta"
+        },
+        {
+          "id": 53,
+          "rend": "chapter",
+          "text": "Chapter 6: Citta and Cetasikas"
+        },
+        {
+          "id": 57,
+          "rend": "chapter",
+          "text": "Chapter 7: Kamma and result"
+        },
+        {
+          "id": 59,
+          "rend": "chapter",
+          "text": "Chapter 8: Rootless Cittas"
+        },
+        {
+          "id": 61,
+          "rend": "chapter",
+          "text": "Chapter 9: The Experience of Objects through different doorways"
+        },
+        {
+          "id": 66,
+          "rend": "chapter",
+          "text": "Chapter 10: Life-continuum, bhavanga-citta"
+        },
+        {
+          "id": 70,
+          "rend": "chapter",
+          "text": "Chapter 11: Feelings (part 1)"
+        },
+        {
+          "id": 72,
+          "rend": "chapter",
+          "text": "Chapter 12: Feelings (part 2)"
+        },
+        {
+          "id": 74,
+          "rend": "chapter",
+          "text": "Chapter 13: The four Great Elements"
+        },
+        {
+          "id": 76,
+          "rend": "chapter",
+          "text": "Chapter 14: The Eight Inseparable Rūpas"
+        },
+        {
+          "id": 78,
+          "rend": "chapter",
+          "text": "Chapter 15: The Sense organs"
+        },
+        {
+          "id": 80,
+          "rend": "chapter",
+          "text": "Chapter 16: The Five Khandhas"
+        },
+        {
+          "id": 84,
+          "rend": "chapter",
+          "text": "Chapter 17: The World"
+        },
+        {
+          "id": 86,
+          "rend": "chapter",
+          "text": "Chapter 18: Death and Rebirth"
+        },
+        {
+          "id": 91,
+          "rend": "chapter",
+          "text": "Chapter 19: Rebirth in different planes of existence (1)"
+        },
+        {
+          "id": 95,
+          "rend": "chapter",
+          "text": "Chapter 20: Rebirth in different Planes of Existence (2)"
+        },
+        {
+          "id": 100,
+          "rend": "chapter",
+          "text": "Chapter 21: Accumulated inclinations"
+        },
+        {
+          "id": 102,
+          "rend": "chapter",
+          "text": "Chapter 22: Four Planes of Consciousness (part 1)"
+        },
+        {
+          "id": 106,
+          "rend": "chapter",
+          "text": "Chapter 23: The Four Planes of Consciousness (part 2)"
+        },
+        {
+          "id": 110,
+          "rend": "chapter",
+          "text": "Chapter 24: Latent Tendencies"
+        },
+        {
+          "id": 112,
+          "rend": "chapter",
+          "text": "Chapter 25: The Seven Books of the Abhidhamma"
+        },
+        {
+          "id": 114,
+          "rend": "chapter",
+          "text": "Chapter 26: Introduction"
+        },
+        {
+          "id": 116,
+          "rend": "chapter",
+          "text": "Chapter 27: The Dhammasaṅganı̄, the first Book of the Abhidhamma"
+        },
+        {
+          "id": 118,
+          "rend": "chapter",
+          "text": "Chapter 28: The Vibhaṅga, the Second Book of the Abhidhamma"
+        },
+        {
+          "id": 120,
+          "rend": "chapter",
+          "text": "Chapter 29: The Dhātu-Kathā, the Third Book"
+        },
+        {
+          "id": 122,
+          "rend": "chapter",
+          "text": "Chapter 30: Puggalapa~ nn ~atti, the Fourth Book"
+        },
+        {
+          "id": 124,
+          "rend": "chapter",
+          "text": "Chapter 31: Kathāvatthu, the Fifth Book"
+        },
+        {
+          "id": 126,
+          "rend": "chapter",
+          "text": "Chapter 32: Yamaka, the Sixth Book of the Abhidhamma"
+        },
+        {
+          "id": 128,
+          "rend": "chapter",
+          "text": "Chapter 33: The Pat.t.hāna, the seventh book of the Abhidhamma"
+        },
+        {
+          "id": 132,
+          "rend": "chapter",
+          "text": "Chapter 34: Conclusion"
+        }
+      ],
+      "count": 95,
+      "chunkStarts": [
+        1
+      ]
+    }
+  }
+}

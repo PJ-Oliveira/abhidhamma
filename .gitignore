@@ -1,0 +1,10 @@
+*.db
+.DS_Store
+node_modules/
+*.apkg
+__pycache__/
+*.pyc
+pali_word_freq.tsv
+data/dictionary/vocabulary_blocks.md
+.env
+scripts/extracted/

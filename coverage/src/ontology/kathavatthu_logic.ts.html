@@ -1,0 +1,1264 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/ontology/kathavatthu_logic.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/ontology</a> kathavatthu_logic.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">33.54% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>52/155</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">39.66% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>48/121</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>6/6</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">33.11% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>50/151</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a>
+<a name='L373'></a><a href='#L373'>373</a>
+<a name='L374'></a><a href='#L374'>374</a>
+<a name='L375'></a><a href='#L375'>375</a>
+<a name='L376'></a><a href='#L376'>376</a>
+<a name='L377'></a><a href='#L377'>377</a>
+<a name='L378'></a><a href='#L378'>378</a>
+<a name='L379'></a><a href='#L379'>379</a>
+<a name='L380'></a><a href='#L380'>380</a>
+<a name='L381'></a><a href='#L381'>381</a>
+<a name='L382'></a><a href='#L382'>382</a>
+<a name='L383'></a><a href='#L383'>383</a>
+<a name='L384'></a><a href='#L384'>384</a>
+<a name='L385'></a><a href='#L385'>385</a>
+<a name='L386'></a><a href='#L386'>386</a>
+<a name='L387'></a><a href='#L387'>387</a>
+<a name='L388'></a><a href='#L388'>388</a>
+<a name='L389'></a><a href='#L389'>389</a>
+<a name='L390'></a><a href='#L390'>390</a>
+<a name='L391'></a><a href='#L391'>391</a>
+<a name='L392'></a><a href='#L392'>392</a>
+<a name='L393'></a><a href='#L393'>393</a>
+<a name='L394'></a><a href='#L394'>394</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export enum LogicalConnective {
+    IF = 'Sace',
+    THEN = 'Tena vata re vattabbe',
+    AND = 'Ca',
+    NOT = 'Na',
+    IS_EQUAL = 'Tatheva',
+    IS_NOT_EQUAL = 'Añño'
+}
+&nbsp;
+export enum KathavatthuRule {
+    ANULOMA = 'Anuloma (Forward progression)',
+    PATIKAMMA = 'Paṭikamma (Counter-argument)',
+    NIGGAHA = 'Niggaha (Refutation)',
+    UPANAYANA = 'Upanayana (Application)',
+    NITTHANA = 'Niṭṭhāna (Conclusion)',
+    PACCANIKA = 'Paccanīka (Contrary / Inverse)'
+}
+&nbsp;
+export function evaluateCustomClaim(claimText: string): any {
+    const text = claimText.toLowerCase();
+    
+    // Evaluate if it relates to "Self", "Person", "Soul", "I"
+    if (text.includes('self') || text.includes('person') || text.includes('soul') || text.includes('atman') || text.includes('jiva')) {
+        return {
+            verdict: 'Paṭiññāvirodho (Contradicting the Proposition)',
+            history: 'The opponent claims a conventional truth (Sammuti-sacca) exists in an ultimate sense (Paramattha-sacca).',
+            metaLogic: `Applying ${KathavatthuRule.ANULOMA} and ${KathavatthuRule.PATIKAMMA}. Evaluating using Law of Excluded Middle.`,
+            paradox: `&lt;em&gt;"If the Self is identical to the aggregates, it is impermanent. If distinct, it must be apprehendable independently. Neither is true."&lt;/em&gt;`,
+            logic: `
+1. &lt;strong&gt;${KathavatthuRule.ANULOMA}:&lt;/strong&gt; ${LogicalConnective.IF} the Self exists in an ultimate sense, ${LogicalConnective.THEN} it must be found as a distinct Paramattha Dhamma.
+2. &lt;strong&gt;${KathavatthuRule.PATIKAMMA}:&lt;/strong&gt; ${LogicalConnective.NOT} found as Rūpa, Vedanā, Saññā, Saṅkhārā, or Viññāṇa.
+3. &lt;strong&gt;${KathavatthuRule.NIGGAHA}:&lt;/strong&gt; Therefore, the Self is ${LogicalConnective.NOT} an ultimate reality.
+4. &lt;strong&gt;${KathavatthuRule.UPANAYANA}:&lt;/strong&gt; You cannot assert the Self exists ultimately ${LogicalConnective.AND} admit it is not found in the Aggregates.
+5. &lt;strong&gt;${KathavatthuRule.NITTHANA}:&lt;/strong&gt; The proposition is false.
+            `,
+            pedagogicalAnalogy: 'Chariot Analogy (Ratha-vinīta): Just as "chariot" is a concept applied when parts are assembled, "Self" is a label for the 5 Aggregates.',
+            detailedSyllogismBreakdown: 'By applying strict boolean logic, if A (Self) exists, it must map to an element in set B (Aggregates). A ∉ B, therefore A = ∅ (null) in ultimate reality.'
+        };
+    }
+    
+    // Evaluate if it relates to "Time", "Past", "Future"
+    if (text.includes('time') || text.includes('past') || text.includes('future') || text.includes('kala')) {
+        return {
+            verdict: 'Paṭiññāvirodho (Contradicting the Proposition)',
+            history: 'The opponent reifies Time as an absolute entity.',
+            metaLogic: `Applying ${KathavatthuRule.PACCANIKA}. Evaluating Law of Non-Contradiction.`,
+            paradox: `&lt;em&gt;"If the past exists, it has not ceased. But 'past' means that which has ceased."&lt;/em&gt;`,
+            logic: `
+1. &lt;strong&gt;${KathavatthuRule.ANULOMA}:&lt;/strong&gt; ${LogicalConnective.IF} the Past exists, ${LogicalConnective.THEN} it must retain its intrinsic nature (Sabhāva).
+2. &lt;strong&gt;${KathavatthuRule.PATIKAMMA}:&lt;/strong&gt; But the intrinsic nature of the past is that it has ceased.
+3. &lt;strong&gt;${KathavatthuRule.NIGGAHA}:&lt;/strong&gt; It is ${LogicalConnective.NOT} possible for something to exist ${LogicalConnective.AND} have ceased.
+4. &lt;strong&gt;${KathavatthuRule.UPANAYANA}:&lt;/strong&gt; You contradict yourself.
+5. &lt;strong&gt;${KathavatthuRule.NITTHANA}:&lt;/strong&gt; The proposition is false.
+            `,
+            pedagogicalAnalogy: 'Shadow Analogy: Time only exists conceptually because of real phenomena arising and passing away.',
+            detailedSyllogismBreakdown: 'Time is a paññatti (concept). Reifying it leads to a logical contradiction (A = ¬A).'
+        };
+    }
+&nbsp;
+    // Evaluate if it relates to "Citta", "Consciousness", "Transmigration", "Momentary"
+    if ((text.includes('citta') || text.includes('consciousness') || text.includes('mind') || text.includes('vinnana')) &amp;&amp; 
+        (text.includes('transmigrate') || <span class="branch-5 cbranch-no" title="branch not covered" >text.includes('endure') || <span class="branch-6 cbranch-no" title="branch not covered" >t</span>ext.includes('permanent') || <span class="branch-7 cbranch-no" title="branch not covered" >t</span>ext.includes('same') || <span class="branch-8 cbranch-no" title="branch not covered" >t</span>ext.includes('momentary') || <span class="branch-9 cbranch-no" title="branch not covered" >t</span>ext.includes('momentaneo') || <span class="branch-10 cbranch-no" title="branch not covered" >t</span>ext.includes('series'))) {</span>
+        return {
+            verdict: 'Apasiddhantaraṃ (Deviation from Doctrine)',
+            history: 'The opponent (similar to Sāti the fisherman in the Mahātaṇhāsaṅkhaya Sutta) claims that the exact same consciousness transmigrates, denying dependent origination and the momentariness (Khaṇikavāda) of Citta.',
+            metaLogic: `Applying ${KathavatthuRule.PACCANIKA}. Evaluating Law of Dependent Origination (Paṭiccasamuppāda).`,
+            paradox: `&lt;em&gt;"If consciousness is the same entity traversing lives, it must be independent of conditions. If it depends on conditions, it cannot be the same entity."&lt;/em&gt;`,
+            logic: `
+1. &lt;strong&gt;${KathavatthuRule.ANULOMA}:&lt;/strong&gt; ${LogicalConnective.IF} this exact same Citta endures and transmigrates, ${LogicalConnective.THEN} it must arise without causes and conditions.
+2. &lt;strong&gt;${KathavatthuRule.PATIKAMMA}:&lt;/strong&gt; But the Buddha taught that Citta arises strictly dependent on conditions (e.g., Eye + Form = Eye-Consciousness).
+3. &lt;strong&gt;${KathavatthuRule.NIGGAHA}:&lt;/strong&gt; Therefore, it is ${LogicalConnective.NOT} the same Citta enduring.
+4. &lt;strong&gt;${KathavatthuRule.UPANAYANA}:&lt;/strong&gt; You cannot assert Citta is a transmigrating entity ${LogicalConnective.AND} simultaneously accept Paṭiccasamuppāda.
+5. &lt;strong&gt;${KathavatthuRule.NITTHANA}:&lt;/strong&gt; The proposition is false. Citta is a rapid succession of momentary (khaṇika) events.
+            `,
+            pedagogicalAnalogy: 'River Analogy (Nadi-sota): A river looks like a single continuous entity, but it is constantly new water flowing. Citta is a stream of rapidly arising and passing moments, not a single enduring traveler.',
+            detailedSyllogismBreakdown: 'Consciousness (Citta) is a process (vīthi), not an object. The logical contradiction lies in assigning static identity (A = A) to a dynamically conditioned variable (A = function(conditions)).'
+        };
+    }
+&nbsp;
+    // Evaluate if it relates to "Sabhava", "Lakkhana", "Specific vs General Characteristics"
+    if ((text.includes('sabhava') || text.includes('nature') || text.includes('characteristic') || text.includes('lakkhana') || text.includes('own-nature')) &amp;&amp; 
+        (text.includes('specific') || <span class="branch-6 cbranch-no" title="branch not covered" >text.includes('general') || <span class="branch-7 cbranch-no" title="branch not covered" >t</span>ext.includes('form') || <span class="branch-8 cbranch-no" title="branch not covered" >t</span>ext.includes('different') || <span class="branch-9 cbranch-no" title="branch not covered" >t</span>ext.includes('same'))) {</span>
+        return {
+            verdict: 'Paṭiññāntaraṃ (Shifting the Proposition) / Hetvābhāsā (Fallacious Reason)',
+            history: 'The opponent conflates General Characteristics (Sāmañña-lakkhaṇa: anicca, dukkha, anatta) with Specific Characteristics (Sabhāva-lakkhaṇa / Visesa-lakkhaṇa). This argument is a hallmark of Abhidhammika sub-commentarial (Anuṭīkā) dialectics.',
+            metaLogic: `Applying ${KathavatthuRule.NIGGAHA} via Dhammaniyāma (Ontological Law of Specificity).`,
+            paradox: `&lt;em&gt;"If two phenomena share a general characteristic, are they the same entity? If yes, then Earth is Water because both are impermanent. If no, then why conflate them?"&lt;/em&gt;`,
+            logic: `
+1. &lt;strong&gt;${KathavatthuRule.ANULOMA}:&lt;/strong&gt; ${LogicalConnective.IF} two Dhammas share the general characteristic of impermanence, ${LogicalConnective.THEN} they are equivalent in that respect (sāmañña).
+2. &lt;strong&gt;${KathavatthuRule.PATIKAMMA}:&lt;/strong&gt; But the opponent conflates this general equivalence with ontological identity, ignoring that Earth (Pathavī) has the specific characteristic of hardness, while Water (Āpo) has cohesion.
+3. &lt;strong&gt;${KathavatthuRule.NIGGAHA}:&lt;/strong&gt; Therefore, they are ${LogicalConnective.IS_NOT_EQUAL} as entities. One thing is never found with the form (sabhāva) of another.
+4. &lt;strong&gt;${KathavatthuRule.UPANAYANA}:&lt;/strong&gt; You cannot assert identity based on general characteristics ${LogicalConnective.AND} ignore specific characteristics.
+5. &lt;strong&gt;${KathavatthuRule.NITTHANA}:&lt;/strong&gt; The proposition is logically flawed.
+            `,
+            pedagogicalAnalogy: 'Salt and Sugar Analogy: Both salt and sugar are white powders that dissolve in water (general characteristic). But one is salty, the other is sweet (specific characteristic). They can never swap their intrinsic nature (sabhāva).',
+            detailedSyllogismBreakdown: 'In set theory, two elements a and b can belong to the same universal set U (Impermanent things). However, a ≠ b if the property function P(a) ≠ P(b). A general characteristic is a shared set membership; a specific characteristic is the unique identifier.'
+        };
+    }
+&nbsp;
+    // Evaluate if it relates to "Permanent Cause", "Basis of Happiness", "Simultaneous Origination"
+    if ((text.includes('cause') || text.includes('basis') || text.includes('self') || text.includes('atman')) &amp;&amp; 
+        (text.includes('simultaneous') || <span class="branch-5 cbranch-no" title="branch not covered" >text.includes('arise') || <span class="branch-6 cbranch-no" title="branch not covered" >t</span>ext.includes('happiness') || <span class="branch-7 cbranch-no" title="branch not covered" >t</span>ext.includes('independent') || <span class="branch-8 cbranch-no" title="branch not covered" >t</span>ext.includes('origination'))) {</span>
+        return {
+            verdict: 'Asambandhatthaṃ (The Incoherent) / Hetvābhāsā (Fallacious Reason)',
+            history: 'The opponent posits a permanent entity (Self, Īśvara, Creator) as the basis or cause for temporary experiences (like happiness). This classic refutation appears in Theravāda and Buddhist Pramāṇa (epistemology) texts.',
+            metaLogic: `Applying ${KathavatthuRule.UPANAYANA}. Refuting Asaṅkhata-Kāraṇa-Vāda (Unconditioned Cause Theory) via Kāraṇaniyāma.`,
+            paradox: `&lt;em&gt;"If a cause is permanent and independent, it never changes. If it never changes, its effect must be produced continuously and simultaneously. But we observe sequential, temporary effects."&lt;/em&gt;`,
+            logic: `
+1. &lt;strong&gt;${KathavatthuRule.ANULOMA}:&lt;/strong&gt; ${LogicalConnective.IF} a permanent, independent Self is the cause of happiness, ${LogicalConnective.THEN} the cause is always present in its entirety.
+2. &lt;strong&gt;${KathavatthuRule.PATIKAMMA}:&lt;/strong&gt; If the cause is fully present and requires no other conditions, the effect must arise completely and simultaneously at all times.
+3. &lt;strong&gt;${KathavatthuRule.NIGGAHA}:&lt;/strong&gt; But happiness arises and ceases sequentially, depending on contact (phassa).
+4. &lt;strong&gt;${KathavatthuRule.UPANAYANA}:&lt;/strong&gt; You cannot assert a permanent independent cause ${LogicalConnective.AND} account for sequential, temporary effects.
+5. &lt;strong&gt;${KathavatthuRule.NITTHANA}:&lt;/strong&gt; The proposition collapses. The cause must be as momentary and conditioned as the effect.
+            `,
+            pedagogicalAnalogy: 'The Seed and the Sprout: A sprout does not appear instantly just because a seed exists. It requires sequential conditions (water, soil, time). A "permanent" seed that doesn\'t undergo change could never trigger the event of sprouting.',
+            detailedSyllogismBreakdown: 'If Cause C is a constant (C = 1) and independent, then Effect E must also be a constant (E = 1). Since empirical observation shows E is a variable (E(t) over time), C cannot be a constant. Therefore, a permanent basis for temporary phenomena is mathematically impossible.'
+        };
+    }
+&nbsp;
+    // Default fallback
+    return {
+        verdict: 'Aviññātatthaṃ (The Unintelligible)',
+        history: 'Custom arguments are evaluated dynamically using Kathāvatthu principles.',
+        metaLogic: 'Evaluating Hetvābhāsā (Fallacious Reason) and Double Negation parameters...',
+        paradox: '&lt;em&gt;Pending heuristic mapping to specific Abhidhamma categories...&lt;/em&gt;',
+        logic: 'Insufficient ontological keywords to construct formal syllogism (Anuloma/Paṭikamma). Try mentioning "self", "soul", or "time".',
+        pedagogicalAnalogy: 'Waiting for more specific ontological assertions to compare against the Abhidhamma matrices.',
+        detailedSyllogismBreakdown: 'Please provide a clearer proposition (e.g., "The soul transmigrates" or "Time is absolute").'
+    };
+}
+&nbsp;
+import { CanonicalScenarios } from '../ai-feature/debate-scenarios.js';
+import { AtthakathaOntology } from './commentary.js';
+&nbsp;
+export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'): any {
+    const scenario = CanonicalScenarios.find(s =&gt; s.id === scenarioId);
+    if (!scenario) return evaluateCustomClaim("");
+&nbsp;
+    // Helper for extracting potentially localized strings
+    const getL = (obj: any, defaultText: string) =&gt; {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!obj) <span class="cstat-no" title="statement not covered" >return defaultText;</span>
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof obj === 'string') <span class="cstat-no" title="statement not covered" >return obj;</span>
+        return obj[lang] || <span class="branch-1 cbranch-no" title="branch not covered" >obj['en'] || <span class="branch-2 cbranch-no" title="branch not covered" >d</span>efaultText;</span>
+    };
+&nbsp;
+    let verdict = 'Aviññātatthaṃ (The Unintelligible)';
+    
+    // We import t from i18n but since it's an ontology file it's better to avoid UI dependencies.
+    // So we just localize here.
+    const oppLabel = lang === 'pt' ? <span class="branch-0 cbranch-no" title="branch not covered" >'Escola Oponente' : (l</span>ang === 'es' ? <span class="branch-0 cbranch-no" title="branch not covered" >'Escuela Oponente' : '</span>Opponent School');
+    
+    let history = `&lt;strong&gt;${oppLabel}:&lt;/strong&gt; ${getL(scenario.opponentSchool, 'Unknown')}&lt;br&gt;&lt;br&gt;${getL(scenario.commentaryContext, 'Context loaded from Aṭṭhakathā.')}`;
+    let metaLogic = getL(scenario.metaLogic, 'Applying standard binary evaluation (Law of Excluded Middle).');
+    let paradox = 'Pending heuristic evaluation...';
+    let logic = 'Pending formal syllogism structure...';
+    let pedagogicalAnalogy = 'N/A';
+    let detailedSyllogismBreakdown = 'N/A';
+&nbsp;
+    if (scenarioId === 'puggala_vada') {
+        const ctx = AtthakathaOntology['puggala'];
+        verdict = 'Paṭiññāvirodho (Contradicting the Proposition)';
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (lang === 'pt') {
+<span class="cstat-no" title="statement not covered" >            paradox = `&lt;em&gt;"Se a entidade for idêntica aos agregados, é impermanente. Se for distinta, deve ser apreensível de forma independente. Nenhuma das duas opções é verdadeira."&lt;/em&gt;`;</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Paṭiññā (Proposição):&lt;/strong&gt; A Pessoa (Puggala) é conhecida num sentido último.
+2. &lt;strong&gt;Hetu (Razão):&lt;/strong&gt; Porque o Buda usou o termo "Pessoa".
+3. &lt;strong&gt;Udāharaṇa (Exemplo):&lt;/strong&gt; Como o termo "Citta" (Consciência).
+4. &lt;strong&gt;Upanaya (Aplicação):&lt;/strong&gt; Mas a Pessoa não pode ser classificada dentro dos 5 Agregados.
+5. &lt;strong&gt;Niggamana (Conclusão):&lt;/strong&gt; Portanto, a Proposição é falsa.
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = ctx?.pedagogicalAnalogy || 'N/A';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = ctx?.detailedSyllogismBreakdown || 'N/A';</span>
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (lang === 'es') {
+<span class="cstat-no" title="statement not covered" >            paradox = `&lt;em&gt;"Si la entidad es idéntica a los agregados, es impermanente. Si es distinta, debe ser aprehensible de forma independiente. Ninguna de las dos es cierta."&lt;/em&gt;`;</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Paṭiññā (Proposición):&lt;/strong&gt; La Persona (Puggala) se conoce en un sentido último.
+2. &lt;strong&gt;Hetu (Razón):&lt;/strong&gt; Porque el Buda usó el término "Persona".
+3. &lt;strong&gt;Udāharaṇa (Ejemplo):&lt;/strong&gt; Como el término "Citta" (Conciencia).
+4. &lt;strong&gt;Upanaya (Aplicación):&lt;/strong&gt; Pero la Persona no puede ser clasificada dentro de los 5 Agregados.
+5. &lt;strong&gt;Niggamana (Conclusión):&lt;/strong&gt; Por lo tanto, la Proposición es falsa.
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = ctx?.pedagogicalAnalogy || 'N/A';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = ctx?.detailedSyllogismBreakdown || 'N/A';</span>
+        } else {
+            paradox = `&lt;em&gt;"If the entity is identical to the aggregates, it is impermanent. If distinct, it must be apprehendable independently. Neither is true."&lt;/em&gt;`;
+            logic = `
+1. &lt;strong&gt;Paṭiññā (Proposition):&lt;/strong&gt; The Person (Puggala) is known in an ultimate sense.
+2. &lt;strong&gt;Hetu (Reason):&lt;/strong&gt; Because the Buddha used the term "Person".
+3. &lt;strong&gt;Udāharaṇa (Example):&lt;/strong&gt; Like the term "Citta" (Consciousness).
+4. &lt;strong&gt;Upanaya (Application):&lt;/strong&gt; But the Person cannot be classified within the 5 Aggregates.
+5. &lt;strong&gt;Niggamana (Conclusion):&lt;/strong&gt; Therefore, the Proposition is false.
+            `;
+            pedagogicalAnalogy = ctx?.pedagogicalAnalogy || <span class="branch-1 cbranch-no" title="branch not covered" >'N/A';</span>
+            detailedSyllogismBreakdown = ctx?.detailedSyllogismBreakdown || <span class="branch-1 cbranch-no" title="branch not covered" >'N/A';</span>
+        }
+    } 
+    else <span class="cstat-no" title="statement not covered" ><span class="missing-if-branch" title="else path not taken" >E</span>if (scenarioId === 'kāla_vada') {</span>
+        const ctx = <span class="cstat-no" title="statement not covered" >AtthakathaOntology['kāla'];</span>
+<span class="cstat-no" title="statement not covered" >        verdict = 'Paṭiññāvirodho (Contradicting the Proposition)';</span>
+<span class="cstat-no" title="statement not covered" >        if (lang === 'pt') {</span>
+<span class="cstat-no" title="statement not covered" >            paradox = `&lt;em&gt;"Se o passado existe, ele não cessou. Mas 'passado' significa aquilo que cessou."&lt;/em&gt;`;</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Paṭiññā (Proposição):&lt;/strong&gt; O tempo existe num sentido último.
+2. &lt;strong&gt;Hetu (Razão):&lt;/strong&gt; Porque as coisas acontecem no passado, presente e futuro.
+3. &lt;strong&gt;Upanaya (Aplicação):&lt;/strong&gt; Mas se um Dhamma existe no passado e no presente, a sua natureza intrínseca (Sabhāva) mudou.
+4. &lt;strong&gt;Niggamana (Conclusão):&lt;/strong&gt; Portanto, o Tempo é um conceito (Paññatti), não uma realidade última.
+            `;
+        } else <span class="cstat-no" title="statement not covered" >if (lang === 'es') {</span>
+<span class="cstat-no" title="statement not covered" >            paradox = `&lt;em&gt;"Si el pasado existe, no ha cesado. Pero 'pasado' significa aquello que ha cesado."&lt;/em&gt;`;</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Paṭiññā (Proposición):&lt;/strong&gt; El tiempo existe en un sentido último.
+2. &lt;strong&gt;Hetu (Razón):&lt;/strong&gt; Porque las cosas suceden en el pasado, presente y futuro.
+3. &lt;strong&gt;Upanaya (Aplicación):&lt;/strong&gt; Pero si un Dhamma existe en el pasado y en el presente, su naturaleza intrínseca (Sabhāva) ha cambiado.
+4. &lt;strong&gt;Niggamana (Conclusión):&lt;/strong&gt; Por lo tanto, el Tiempo es un concepto (Paññatti), no una realidad última.
+            `;
+        } else {
+<span class="cstat-no" title="statement not covered" >            paradox = `&lt;em&gt;"If the past exists, it has not ceased. But 'past' means that which has ceased."&lt;/em&gt;`;</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Paṭiññā (Proposition):&lt;/strong&gt; Time exists in an ultimate sense.
+2. &lt;strong&gt;Hetu (Reason):&lt;/strong&gt; Because things happen in the past, present, and future.
+3. &lt;strong&gt;Upanaya (Application):&lt;/strong&gt; But if a Dhamma exists in the past and present, its intrinsic nature (Sabhāva) mutated.
+4. &lt;strong&gt;Niggamana (Conclusion):&lt;/strong&gt; Therefore, Time is a concept (Paññatti), not an ultimate reality.
+            `;
+        }
+<span class="cstat-no" title="statement not covered" >        pedagogicalAnalogy = ctx?.pedagogicalAnalogy || 'N/A';</span>
+<span class="cstat-no" title="statement not covered" >        detailedSyllogismBreakdown = ctx?.detailedSyllogismBreakdown || 'N/A';</span>
+    }
+    else <span class="cstat-no" title="statement not covered" >if (scenarioId === 'sassata_vada') {</span>
+<span class="cstat-no" title="statement not covered" >        verdict = 'Apasiddhantaraṃ (Deviation from Doctrine)';</span>
+<span class="cstat-no" title="statement not covered" >        if (lang === 'pt') {</span>
+<span class="cstat-no" title="statement not covered" >            paradox = `&lt;em&gt;"Se a alma é eterna e separada, as ações do corpo não a afetam, anulando o kamma."&lt;/em&gt;`;</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; Se a alma é eterna, ela não muda.
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; Se não muda, não pode experienciar sofrimento ou libertação.
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; Contradiz a lei da Originação Dependente (Paṭiccasamuppāda).
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'Analogia do Fogo: Um fogo depende do combustível. Sem combustível, ele não vai "para algum lugar eterno", ele cessa. O mesmo ocorre com a consciência.';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'Se a Alma = Eterna, então ∆Alma = 0. Mas o Kamma exige ∆. Assim, Kamma = 0. Isso destrói a estrutura ética Budista.';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (lang === 'es') {</span>
+<span class="cstat-no" title="statement not covered" >            paradox = `&lt;em&gt;"Si el alma es eterna y separada, las acciones del cuerpo no pueden afectarla, anulando el kamma."&lt;/em&gt;`;</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; Si el alma es eterna, no cambia.
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; Si no cambia, no puede experimentar sufrimiento o liberación.
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; Contradice la ley de Origen Dependiente (Paṭiccasamuppāda).
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'Analogía del Fuego: Un fuego depende del combustible. Sin combustible, no va "a un lugar eterno", cesa. Lo mismo ocurre con la conciencia.';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'Si Alma = Eterna, entonces ∆Alma = 0. Pero el Kamma requiere ∆. Así, Kamma = 0. Esto destruye el marco ético Budista.';</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            paradox = `&lt;em&gt;"If the soul is eternal and separate, the body's actions cannot affect it, making kamma null."&lt;/em&gt;`;</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; If the soul is eternal, it does not change.
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; If it does not change, it cannot experience suffering or liberation.
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; It contradicts the law of Dependent Origination (Paṭiccasamuppāda).
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'Fire Analogy: A fire depends on fuel. Without fuel, it does not go "somewhere eternal", it ceases. Likewise, consciousness depends on conditions.';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'If Soul = Eternal, then ∆Soul = 0. But Kamma requires ∆. Thus, Kamma = 0. This destroys the Buddhist ethical framework.';</span>
+        }
+    }
+    else <span class="cstat-no" title="statement not covered" >if (scenarioId === 'ekacca_sassata_vada') {</span>
+<span class="cstat-no" title="statement not covered" >        verdict = 'Apasiddhantaraṃ (Deviation from Doctrine)';</span>
+<span class="cstat-no" title="statement not covered" >        if (lang === 'pt') {</span>
+<span class="cstat-no" title="statement not covered" >            paradox = '&lt;em&gt;"Se a Mente é eterna mas o Corpo impermanente, como um observador eterno interage com um objeto momentâneo sem se alterar?"&lt;/em&gt;';</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; Se o Citta (Mente) é eterno, não surge nem cessa.
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; Mas Citta é definido como cognição (ārammaṇacintana). Se o objeto surge e cessa, a cognição também deve.
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; Um Citta eterno não pode cognizar objetos transitórios sem ser ele próprio transitório.
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'O Espelho: Um espelho reflete imagens passageiras. Se o espelho "cogniza", ele muda de estado. No Abhidhamma, cada reflexo é um novo espelho (novo Citta).';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'Se X é incondicionado (Asaṅkhata) e eterno, não pode participar de processos condicionados (Saṅkhata). Cognição é um processo. Citta não pode ser eterno.';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (lang === 'es') {</span>
+<span class="cstat-no" title="statement not covered" >            paradox = '&lt;em&gt;"Si la Mente es eterna pero el Cuerpo impermanente, ¿cómo un observador eterno interactúa con un objeto momentáneo sin alterarse?"&lt;/em&gt;';</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; Si el Citta (Mente) es eterno, no surge ni cesa.
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; Pero Citta se define como la cognición (ārammaṇacintana). Si el objeto surge y cesa, la cognición también debe.
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; Un Citta eterno no puede cognizar objetos transitorios sin ser él mismo transitorio.
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'El Espejo: Un espejo refleja imágenes. Si el espejo "cogniza", cambia de estado. En Abhidhamma, cada reflejo es un nuevo espejo (nuevo Citta).';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'Si X es incondicionado (Asaṅkhata) y eterno, no puede participar en procesos condicionados (Saṅkhata). La cognición es un proceso. Citta no puede ser eterno.';</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            paradox = '&lt;em&gt;"If the Mind is eternal but the Body is impermanent, how can an eternal observer interact with a momentary object without itself changing?"&lt;/em&gt;';</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; If Citta (Mind) is eternal, it does not arise or cease.
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; But Citta is defined as the cognizing of an object (ārammaṇacintana). When objects arise and cease, cognition must arise and cease.
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; An eternal Citta cannot cognize transient objects without being transient itself.
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'The Mirror Analogy: A mirror reflects passing images. If the mirror itself is "cognizing", it changes state with each reflection. In Abhidhamma, each reflection is a new mirror (a new Citta).';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'If X is unconditioned (Asaṅkhata) and eternal, X cannot partake in conditioned processes (Saṅkhata). Cognition is a process. Thus, Citta cannot be eternal.';</span>
+        }
+    }
+    else <span class="cstat-no" title="statement not covered" >if (scenarioId === 'amara_vikkhepa_vada') {</span>
+<span class="cstat-no" title="statement not covered" >        verdict = 'Vikkhepo (Evasion) / Appaṭibhā (Inability to reply)';</span>
+<span class="cstat-no" title="statement not covered" >        if (lang === 'pt') {</span>
+<span class="cstat-no" title="statement not covered" >            paradox = '&lt;em&gt;"Ao recusar tomar posição, ele tenta escapar da verdade, mas num universo finito, recusar (A) e recusar (¬A) viola a Lei do Terceiro Excluído."&lt;/em&gt;';</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; A proposição P é verdadeira? (Não digo que é assim).
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; A proposição P é falsa? (Não digo que é assado).
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; Na ontologia Abhidhamma, todo Dhamma ou possui uma característica (Sabhāva) ou não possui.
+4. &lt;strong&gt;Upanaya:&lt;/strong&gt; Recusar afirmar ou negar destrói a possibilidade de conhecimento (Ñāṇa).
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'O Tribunal: Como uma testemunha que recusa dizer Sim ou Não por medo, a Enguia Cética não pode participar do tribunal da lógica.';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'Lógica Formal: P ∨ ¬P deve ser Verdadeiro (Terceiro Excluído). O oponente afirma ¬P ∧ ¬(¬P), uma contradição direta (Falso) sob a Lei da Não Contradição.';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (lang === 'es') {</span>
+<span class="cstat-no" title="statement not covered" >            paradox = '&lt;em&gt;"Al negarse a tomar posición, intenta escapar de la verdad, pero en un universo finito, rechazar (A) y rechazar (¬A) viola la Ley del Tercero Excluido."&lt;/em&gt;';</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; ¿Es la proposición P verdadera? (No digo que sea así).
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; ¿Es la proposición P falsa? (No digo que sea asado).
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; En la ontología Abhidhamma, todo Dhamma o posee una característica (Sabhāva) o no la posee.
+4. &lt;strong&gt;Upanaya:&lt;/strong&gt; Negarse a afirmar o negar destruye la posibilidad de conocimiento (Ñāṇa).
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'El Tribunal: Como un testigo que se niega a decir Sí o No por miedo, la Anguila no puede participar en el tribunal de la lógica.';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'Lógica Formal: P ∨ ¬P debe ser Verdadero (Tercero Excluido). El oponente afirma ¬P ∧ ¬(¬P), una contradicción directa (Falso) bajo la Ley de No Contradicción.';</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            paradox = '&lt;em&gt;"By refusing to take any position, the Eel-wriggler attempts to escape truth, but in a finite universe, refusing (A) and refusing (¬A) violates the Law of Excluded Middle."&lt;/em&gt;';</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; Is the proposition P true? (I don't say it is thus).
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; Is the proposition P false? (I don't say it is otherwise).
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; In the Abhidhamma ontology, every Dhamma either possesses a specific characteristic (Sabhāva) or it does not.
+4. &lt;strong&gt;Upanaya:&lt;/strong&gt; Refusing to affirm or deny destroys the possibility of knowledge (Ñāṇa) and dialogue.
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'The Courtroom: Like a witness who refuses to say Yes or No to a direct question out of fear of perjury, the Amarāvikkhepika cannot participate in the court of logic.';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'Formal Logic: P ∨ ¬P must be True (Law of Excluded Middle). The opponent asserts ¬P ∧ ¬(¬P), which is a direct contradiction (False) under the Law of Non-Contradiction.';</span>
+        }
+    }
+    else <span class="cstat-no" title="statement not covered" >if (scenarioId === 'adhicca_samuppanna_vada') {</span>
+<span class="cstat-no" title="statement not covered" >        verdict = 'Paṭiññāvirodho (Contradicting the Proposition)';</span>
+<span class="cstat-no" title="statement not covered" >        if (lang === 'pt') {</span>
+<span class="cstat-no" title="statement not covered" >            paradox = '&lt;em&gt;"Se as coisas surgem sem causa, qualquer coisa poderia surgir em qualquer lugar. A ordem do universo é destruída."&lt;/em&gt;';</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; Se o mundo surge por acaso, não há condições (paccaya) para ele.
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; Se não há condições, uma mangueira poderia brotar de semente de maçã.
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; Observamos estrita condicionalidade (Paṭiccasamuppāda).
+4. &lt;strong&gt;Niggamana:&lt;/strong&gt; Portanto, a origem sem causa é empírica e logicamente falsa.
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'A Loteria: Até uma loteria não é "sem causa". Causelessness verdadeira significa mágica sem mágico, impossível na matriz do Paṭṭhāna.';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'Se o Efeito E ocorre sem Causa C, a probabilidade de E ocorrer é uniforme e infinita. Empiricamente, E só ocorre quando C está presente (Kāraṇaniyāma).';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (lang === 'es') {</span>
+<span class="cstat-no" title="statement not covered" >            paradox = '&lt;em&gt;"Si las cosas surgen sin causa, cualquier cosa podría surgir en cualquier lugar. El orden del universo se destruye."&lt;/em&gt;';</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; Si el mundo surge por azar, no hay condiciones (paccaya).
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; Si no hay condiciones, un mango podría brotar de una semilla de manzana.
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; Observamos estricta condicionalidad (Paṭiccasamuppāda).
+4. &lt;strong&gt;Niggamana:&lt;/strong&gt; Por lo tanto, el origen sin causa es empírica y lógicamente falso.
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'La Lotería: Incluso una lotería no es "sin causa". El verdadero azar absoluto significa magia sin mago, imposible en la matriz del Paṭṭhāna.';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'Si el Efecto E ocurre sin Causa C, la probabilidad de que E ocurra es uniforme. Empíricamente, E solo ocurre cuando C está presente (Kāraṇaniyāma).';</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            paradox = '&lt;em&gt;"If things arise without a cause, then anything could arise anywhere at any time. The order of the universe is destroyed."&lt;/em&gt;';</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; If the world arises by chance, there are no conditions (paccaya) for its arising.
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; If there are no conditions, then a mango tree could sprout from an apple seed, or from empty space.
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; We observe strict conditionality (Paṭiccasamuppāda).
+4. &lt;strong&gt;Niggamana:&lt;/strong&gt; Therefore, causeless origin is empirically and logically false.
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'The Lottery: Even a lottery is not "causeless" (it depends on tickets, machines, physics). True causelessness means magic without a magician—an impossibility in the Abhidhamma matrix of 24 Paccayas.';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'If Effect E occurs without Cause C, then the probability of E occurring at any time t is uniform and unbounded. Empirical reality shows E only occurs when C is present (Kāraṇaniyāma).';</span>
+        }
+    }
+&nbsp;
+&nbsp;
+    else <span class="cstat-no" title="statement not covered" >if (scenarioId === 'vipaka_citta') {</span>
+<span class="cstat-no" title="statement not covered" >        verdict = 'Asambandhatthaṃ (The Incoherent)';</span>
+<span class="cstat-no" title="statement not covered" >        if (lang === 'pt') {</span>
+<span class="cstat-no" title="statement not covered" >            paradox = '&lt;em&gt;"Se um resultado (vipāka) produz um resultado, então uma ação causa infinitos resultados eternos."&lt;/em&gt;';</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; Se Vipāka produz Vipāka, o ciclo nunca termina naturalmente.
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; Mas Vipāka é passivo (apenas experiencia), apenas Javana (kamma ativo) produz resultados.
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; Confunde-se o resultado passivo com a geração ativa.
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'Analogia do Eco: Um eco (vipāka) não pode produzir outro eco por si só; ele requer um som original (kamma).';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'No Abhidhamma, as cittas Vipāka não possuem as raízes ativas (Kusala/Akusala Hetu) durante a fase Javana.';</span>
+        } else <span class="cstat-no" title="statement not covered" >if (lang === 'es') {</span>
+<span class="cstat-no" title="statement not covered" >            paradox = '&lt;em&gt;"Si un resultado (vipāka) produce un resultado, entonces una acción causa infinitos resultados eternos."&lt;/em&gt;';</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; Si Vipāka produce Vipāka, el ciclo nunca termina naturalmente.
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; Pero Vipāka es pasivo (solo experimenta), solo Javana (kamma activo) produce resultados.
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; Se confunde el resultado pasivo con la generación activa.
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'Analogía del Eco: Un eco (vipāka) no puede producir otro eco por sí mismo; requiere un sonido original (kamma).';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'En Abhidhamma, las cittas Vipāka carecen de las raíces activas (Kusala/Akusala Hetu) durante la fase Javana.';</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            paradox = '&lt;em&gt;"If a result (vipāka) produces a result, then one action causes infinite eternal results."&lt;/em&gt;';</span>
+<span class="cstat-no" title="statement not covered" >            logic = `</span>
+1. &lt;strong&gt;Anuloma:&lt;/strong&gt; If Vipāka produces Vipāka, the cycle never ends naturally.
+2. &lt;strong&gt;Paṭikamma:&lt;/strong&gt; But Vipāka is passive (it experiences), only Javana (active kamma) produces results.
+3. &lt;strong&gt;Niggaha:&lt;/strong&gt; Confusing the passive result with active generation.
+            `;
+<span class="cstat-no" title="statement not covered" >            pedagogicalAnalogy = 'Echo Analogy: An echo (vipāka) cannot produce another echo by itself; it requires an original sound (kamma).';</span>
+<span class="cstat-no" title="statement not covered" >            detailedSyllogismBreakdown = 'In Abhidhamma, Vipāka cittas lack the active kammic roots (Kusala/Akusala Hetu) during the Javana phase.';</span>
+        }
+    }
+&nbsp;
+    return { verdict, history, metaLogic, paradox, logic, pedagogicalAnalogy, detailedSyllogismBreakdown };
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-09-03T15:23:40.868Z
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    

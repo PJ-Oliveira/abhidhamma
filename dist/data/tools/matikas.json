@@ -1,0 +1,2556 @@
+{
+  "tikas": [
+    {
+      "id": 1,
+      "title": "Kusala-tika",
+      "titleEn": "Wholesome Triad",
+      "titlePt": "Tríade do Salubre",
+      "terms": [
+        {
+          "pali": "Kusalā dhammā",
+          "en": "Wholesome dhammas",
+          "pt": "Realidades salubres"
+        },
+        {
+          "pali": "Akusalā dhammā",
+          "en": "Unwholesome dhammas",
+          "pt": "Realidades insalubres"
+        },
+        {
+          "pali": "Abyākatā dhammā",
+          "en": "Indeterminate dhammas",
+          "pt": "Realidades indeterminadas"
+        }
+      ],
+      "definition": "The most fundamental classification of all dhammas into wholesome, unwholesome and indeterminate.",
+      "definitionPt": "A classificação mais fundamental de todas as realidades em salubres, insalubres e indeterminadas."
+    },
+    {
+      "id": 2,
+      "title": "Vedanā-tika",
+      "titleEn": "Feeling Triad",
+      "titlePt": "Tríade da Sensação",
+      "terms": [
+        {
+          "pali": "Sukhāya vedanāya sampayuttā dhammā",
+          "en": "Dhammas associated with pleasant feeling",
+          "pt": "Realidades associadas à sensação agradável"
+        },
+        {
+          "pali": "Dukkhāya vedanāya sampayuttā dhammā",
+          "en": "Dhammas associated with painful feeling",
+          "pt": "Realidades associadas à sensação dolorosa"
+        },
+        {
+          "pali": "Adukkhamasukhāya vedanāya sampayuttā dhammā",
+          "en": "Dhammas associated with neither-painful-nor-pleasant feeling",
+          "pt": "Realidades associadas à sensação nem dolorosa nem agradável"
+        }
+      ],
+      "definition": "Classification based on the type of feeling associated with the dhamma.",
+      "definitionPt": "Classificação baseada no tipo de sensação associada à realidade."
+    },
+    {
+      "id": 3,
+      "title": "Vipāka-tika",
+      "titleEn": "Resultant Triad",
+      "titlePt": "Tríade Resultante",
+      "terms": [
+        {
+          "pali": "Vipākā dhammā",
+          "en": "Resultant dhammas",
+          "pt": "Realidades resultantes"
+        },
+        {
+          "pali": "Vipākadhammadhammā",
+          "en": "Dhammas subject to resultant dhammas",
+          "pt": "Realidades sujeitas a produzir realidades resultantes"
+        },
+        {
+          "pali": "Nevavipākanavipākadhammadhammā",
+          "en": "Dhammas neither resultant nor subject to resultant",
+          "pt": "Realidades nem resultantes nem sujeitas a produzir resultantes"
+        }
+      ],
+      "definition": "Classification based on karmic results.",
+      "definitionPt": "Classificação baseada em resultados cármicos."
+    },
+    {
+      "id": 4,
+      "title": "Upādinna-tika",
+      "titleEn": "Grasped Triad",
+      "titlePt": "Tríade do Apego",
+      "terms": [
+        {
+          "pali": "Upādinnupādāniyā dhammā",
+          "en": "Grasped and favorable to grasping",
+          "pt": "Agarradas e favoráveis ao apego"
+        },
+        {
+          "pali": "Anupādinnupādāniyā dhammā",
+          "en": "Not grasped but favorable to grasping",
+          "pt": "Não agarradas mas favoráveis ao apego"
+        },
+        {
+          "pali": "Anupādinnānupādāniyā dhammā",
+          "en": "Not grasped and not favorable to grasping",
+          "pt": "Não agarradas e não favoráveis ao apego"
+        }
+      ],
+      "definition": "Classification relating to kammic acquisition and clinging.",
+      "definitionPt": "Classificação relacionada à aquisição cármica e ao apego."
+    },
+    {
+      "id": 5,
+      "title": "Saṃkiliṭṭha-tika",
+      "titleEn": "Defiled Triad",
+      "titlePt": "Tríade da Contaminação",
+      "terms": [
+        {
+          "pali": "Saṃkiliṭṭhasaṃkilesikā dhammā",
+          "en": "Defiled and subject to defilement",
+          "pt": "Contaminadas e sujeitas a contaminação"
+        },
+        {
+          "pali": "Asaṃkiliṭṭhasaṃkilesikā dhammā",
+          "en": "Undefiled but subject to defilement",
+          "pt": "Não contaminadas mas sujeitas a contaminação"
+        },
+        {
+          "pali": "Asaṃkiliṭṭhāsaṃkilesikā dhammā",
+          "en": "Undefiled and not subject to defilement",
+          "pt": "Não contaminadas e não sujeitas a contaminação"
+        }
+      ],
+      "definition": "Classification based on defilements (kilesa).",
+      "definitionPt": "Classificação baseada nas contaminações (kilesa)."
+    },
+    {
+      "id": 6,
+      "title": "Vitakka-tika",
+      "titleEn": "Initial Application Triad",
+      "titlePt": "Tríade da Aplicação Inicial",
+      "terms": [
+        {
+          "pali": "Savitakkasavicārā dhammā",
+          "en": "With initial and sustained application",
+          "pt": "Com aplicação inicial e sustentada"
+        },
+        {
+          "pali": "Avitakkavicāramattā dhammā",
+          "en": "Without initial but with sustained application",
+          "pt": "Sem aplicação inicial mas com aplicação sustentada"
+        },
+        {
+          "pali": "Avitakkaavicārā dhammā",
+          "en": "Without initial and sustained application",
+          "pt": "Sem aplicação inicial e sustentada"
+        }
+      ],
+      "definition": "Classification based on jhanic factors of thinking and pondering.",
+      "definitionPt": "Classificação baseada nos fatores de absorção de pensamento e ponderação."
+    },
+    {
+      "id": 7,
+      "title": "Pīti-tika",
+      "titleEn": "Zest Triad",
+      "titlePt": "Tríade do Êxtase",
+      "terms": [
+        {
+          "pali": "Pītisahagatā dhammā",
+          "en": "Accompanied by zest",
+          "pt": "Acompanhadas de êxtase"
+        },
+        {
+          "pali": "Sukhasahagatā dhammā",
+          "en": "Accompanied by happiness",
+          "pt": "Acompanhadas de felicidade"
+        },
+        {
+          "pali": "Upekkhāsahagatā dhammā",
+          "en": "Accompanied by equanimity",
+          "pt": "Acompanhadas de equanimidade"
+        }
+      ],
+      "definition": "Classification by joy, happiness, and equanimity.",
+      "definitionPt": "Classificação por alegria, felicidade e equanimidade."
+    },
+    {
+      "id": 8,
+      "title": "Dassana-tika",
+      "titleEn": "Vision Triad",
+      "titlePt": "Tríade da Visão",
+      "terms": [
+        {
+          "pali": "Dassanena pahātabbā dhammā",
+          "en": "Abandoned by vision",
+          "pt": "Abandonadas pela visão (1º caminho)"
+        },
+        {
+          "pali": "Bhāvanāya pahātabbā dhammā",
+          "en": "Abandoned by development",
+          "pt": "Abandonadas pelo desenvolvimento (caminhos superiores)"
+        },
+        {
+          "pali": "Neva dassanena na bhāvanāya pahātabbā dhammā",
+          "en": "Abandoned neither by vision nor development",
+          "pt": "Não abandonadas nem pela visão nem pelo desenvolvimento"
+        }
+      ],
+      "definition": "Classification by how unwholesome states are eliminated on the paths.",
+      "definitionPt": "Classificação por como os estados insalubres são eliminados nos caminhos."
+    },
+    {
+      "id": 9,
+      "title": "Dassanenapahātabbahetuka-tika",
+      "titleEn": "Root Abandoned by Vision Triad",
+      "titlePt": "Tríade da Raiz Abandonada pela Visão",
+      "terms": [
+        {
+          "pali": "Dassanena pahātabbahetukā dhammā",
+          "en": "With roots abandoned by vision",
+          "pt": "Com raízes abandonadas pela visão"
+        },
+        {
+          "pali": "Bhāvanāya pahātabbahetukā dhammā",
+          "en": "With roots abandoned by development",
+          "pt": "Com raízes abandonadas pelo desenvolvimento"
+        },
+        {
+          "pali": "Neva dassanena na bhāvanāya pahātabbahetukā dhammā",
+          "en": "With roots abandoned neither by vision nor development",
+          "pt": "Com raízes não abandonadas nem pela visão nem pelo desenvolvimento"
+        }
+      ],
+      "definition": "Classification concerning the roots (hetu) of what is to be abandoned.",
+      "definitionPt": "Classificação referente às raízes (hetu) do que deve ser abandonado."
+    },
+    {
+      "id": 10,
+      "title": "Ācaya-tika",
+      "titleEn": "Accumulation Triad",
+      "titlePt": "Tríade do Acúmulo",
+      "terms": [
+        {
+          "pali": "Ācayagāmino dhammā",
+          "en": "Leading to accumulation (of rebirth)",
+          "pt": "Levando ao acúmulo (de renascimentos)"
+        },
+        {
+          "pali": "Apacayagāmino dhammā",
+          "en": "Leading to dispersal (of rebirth)",
+          "pt": "Levando à dispersão (de renascimentos)"
+        },
+        {
+          "pali": "Nevācayagāminonāpacayagāmino dhammā",
+          "en": "Leading neither to accumulation nor dispersal",
+          "pt": "Não levando nem ao acúmulo nem à dispersão"
+        }
+      ],
+      "definition": "Relates to the building up or tearing down of samsaric existence.",
+      "definitionPt": "Relaciona-se à construção ou destruição da existência samsárica."
+    },
+    {
+      "id": 11,
+      "title": "Sekkha-tika",
+      "titleEn": "Trainee Triad",
+      "titlePt": "Tríade do Aprendiz",
+      "terms": [
+        {
+          "pali": "Sekkhā dhammā",
+          "en": "Of a trainee",
+          "pt": "De um aprendiz (sekkha)"
+        },
+        {
+          "pali": "Asekkhā dhammā",
+          "en": "Of an adept",
+          "pt": "De um adepto (asekkha/Arahant)"
+        },
+        {
+          "pali": "Nevasekkhānāsekkhā dhammā",
+          "en": "Of neither trainee nor adept",
+          "pt": "Nem de aprendiz nem de adepto"
+        }
+      ],
+      "definition": "Classification according to the stages of noble attainment.",
+      "definitionPt": "Classificação de acordo com os estágios de realização nobre."
+    },
+    {
+      "id": 12,
+      "title": "Paritta-tika",
+      "titleEn": "Limited Triad",
+      "titlePt": "Tríade do Limitado",
+      "terms": [
+        {
+          "pali": "Parittā dhammā",
+          "en": "Limited",
+          "pt": "Limitadas (esfera dos sentidos)"
+        },
+        {
+          "pali": "Mahaggatā dhammā",
+          "en": "Exalted",
+          "pt": "Exaltadas (esferas de forma e sem forma)"
+        },
+        {
+          "pali": "Appamāṇā dhammā",
+          "en": "Immeasurable",
+          "pt": "Imensuráveis (supramundanas)"
+        }
+      ],
+      "definition": "Classification by the planes of existence.",
+      "definitionPt": "Classificação pelos planos de existência."
+    },
+    {
+      "id": 13,
+      "title": "Parittārammaṇa-tika",
+      "titleEn": "Limited Object Triad",
+      "titlePt": "Tríade do Objeto Limitado",
+      "terms": [
+        {
+          "pali": "Parittārammaṇā dhammā",
+          "en": "With limited objects",
+          "pt": "Com objetos limitados"
+        },
+        {
+          "pali": "Mahaggatārammaṇā dhammā",
+          "en": "With exalted objects",
+          "pt": "Com objetos exaltados"
+        },
+        {
+          "pali": "Appamāṇārammaṇā dhammā",
+          "en": "With immeasurable objects",
+          "pt": "Com objetos imensuráveis"
+        }
+      ],
+      "definition": "Classification based on the object of consciousness.",
+      "definitionPt": "Classificação baseada no objeto da consciência."
+    },
+    {
+      "id": 14,
+      "title": "Hīna-tika",
+      "titleEn": "Inferior Triad",
+      "titlePt": "Tríade do Inferior",
+      "terms": [
+        {
+          "pali": "Hīnā dhammā",
+          "en": "Inferior",
+          "pt": "Inferiores"
+        },
+        {
+          "pali": "Majjhimā dhammā",
+          "en": "Medium",
+          "pt": "Médias"
+        },
+        {
+          "pali": "Paṇītā dhammā",
+          "en": "Superior",
+          "pt": "Superiores"
+        }
+      ],
+      "definition": "Classification by qualitative value.",
+      "definitionPt": "Classificação por valor qualitativo."
+    },
+    {
+      "id": 15,
+      "title": "Micchatta-tika",
+      "titleEn": "Fixed Destiny Triad",
+      "titlePt": "Tríade do Destino Fixo",
+      "terms": [
+        {
+          "pali": "Micchattaniyatā dhammā",
+          "en": "Fixed in wrongness",
+          "pt": "Fixas no erro (destino maligno fixo)"
+        },
+        {
+          "pali": "Sammattaniyatā dhammā",
+          "en": "Fixed in rightness",
+          "pt": "Fixas na retidão (destino nobre fixo)"
+        },
+        {
+          "pali": "Aniyatā dhammā",
+          "en": "Unfixed",
+          "pt": "Não fixas"
+        }
+      ],
+      "definition": "Classification by destiny (niyāma).",
+      "definitionPt": "Classificação por destino (niyāma)."
+    },
+    {
+      "id": 16,
+      "title": "Maggārammaṇa-tika",
+      "titleEn": "Path Object Triad",
+      "titlePt": "Tríade do Objeto do Caminho",
+      "terms": [
+        {
+          "pali": "Maggārammaṇā dhammā",
+          "en": "With path as object",
+          "pt": "Com o caminho como objeto"
+        },
+        {
+          "pali": "Maggahetukā dhammā",
+          "en": "With path as root",
+          "pt": "Com o caminho como raiz"
+        },
+        {
+          "pali": "Maggādhipatino dhammā",
+          "en": "With path as predominant factor",
+          "pt": "Com o caminho como fator predominante"
+        }
+      ],
+      "definition": "Classification in relation to the noble path.",
+      "definitionPt": "Classificação em relação ao caminho nobre."
+    },
+    {
+      "id": 17,
+      "title": "Uppanna-tika",
+      "titleEn": "Arisen Triad",
+      "titlePt": "Tríade do Surgido",
+      "terms": [
+        {
+          "pali": "Uppannā dhammā",
+          "en": "Arisen",
+          "pt": "Surgidas"
+        },
+        {
+          "pali": "Anuppannā dhammā",
+          "en": "Unarisen",
+          "pt": "Não surgidas"
+        },
+        {
+          "pali": "Uppādinā dhammā",
+          "en": "Bound to arise",
+          "pt": "Destinadas a surgir"
+        }
+      ],
+      "definition": "Classification by temporal state of arising.",
+      "definitionPt": "Classificação pelo estado temporal de surgimento."
+    },
+    {
+      "id": 18,
+      "title": "Atīta-tika",
+      "titleEn": "Past Triad",
+      "titlePt": "Tríade do Passado",
+      "terms": [
+        {
+          "pali": "Atītā dhammā",
+          "en": "Past",
+          "pt": "Passadas"
+        },
+        {
+          "pali": "Anāgatā dhammā",
+          "en": "Future",
+          "pt": "Futuras"
+        },
+        {
+          "pali": "Paccuppannā dhammā",
+          "en": "Present",
+          "pt": "Presentes"
+        }
+      ],
+      "definition": "Classification by time period.",
+      "definitionPt": "Classificação por período de tempo."
+    },
+    {
+      "id": 19,
+      "title": "Atītārammaṇa-tika",
+      "titleEn": "Past Object Triad",
+      "titlePt": "Tríade do Objeto Passado",
+      "terms": [
+        {
+          "pali": "Atītārammaṇā dhammā",
+          "en": "With past object",
+          "pt": "Com objeto passado"
+        },
+        {
+          "pali": "Anāgatārammaṇā dhammā",
+          "en": "With future object",
+          "pt": "Com objeto futuro"
+        },
+        {
+          "pali": "Paccuppannārammaṇā dhammā",
+          "en": "With present object",
+          "pt": "Com objeto presente"
+        }
+      ],
+      "definition": "Classification by the time period of the object.",
+      "definitionPt": "Classificação pelo período de tempo do objeto."
+    },
+    {
+      "id": 20,
+      "title": "Ajjhatta-tika",
+      "titleEn": "Internal Triad",
+      "titlePt": "Tríade do Interno",
+      "terms": [
+        {
+          "pali": "Ajjhattā dhammā",
+          "en": "Internal",
+          "pt": "Internas"
+        },
+        {
+          "pali": "Bahiddhā dhammā",
+          "en": "External",
+          "pt": "Externas"
+        },
+        {
+          "pali": "Ajjhattabahiddhā dhammā",
+          "en": "Internal and external",
+          "pt": "Internas e externas"
+        }
+      ],
+      "definition": "Classification by locus (within oneself or outside).",
+      "definitionPt": "Classificação por locus (dentro de si ou fora)."
+    },
+    {
+      "id": 21,
+      "title": "Ajjhattārammaṇa-tika",
+      "titleEn": "Internal Object Triad",
+      "titlePt": "Tríade do Objeto Interno",
+      "terms": [
+        {
+          "pali": "Ajjhattārammaṇā dhammā",
+          "en": "With internal object",
+          "pt": "Com objeto interno"
+        },
+        {
+          "pali": "Bahiddhārammaṇā dhammā",
+          "en": "With external object",
+          "pt": "Com objeto externo"
+        },
+        {
+          "pali": "Ajjhattabahiddhārammaṇā dhammā",
+          "en": "With internal and external object",
+          "pt": "Com objeto interno e externo"
+        }
+      ],
+      "definition": "Classification by the locus of the object.",
+      "definitionPt": "Classificação pelo locus do objeto."
+    },
+    {
+      "id": 22,
+      "title": "Sanidassana-tika",
+      "titleEn": "Visible Triad",
+      "titlePt": "Tríade do Visível",
+      "terms": [
+        {
+          "pali": "Sanidassanasappaṭighā dhammā",
+          "en": "Visible and resisting",
+          "pt": "Visíveis e com resistência"
+        },
+        {
+          "pali": "Anidassanasappaṭighā dhammā",
+          "en": "Invisible and resisting",
+          "pt": "Invisíveis e com resistência"
+        },
+        {
+          "pali": "Anidassanaappaṭighā dhammā",
+          "en": "Invisible and unresisting",
+          "pt": "Invisíveis e sem resistência"
+        }
+      ],
+      "definition": "Classification by visibility and impact.",
+      "definitionPt": "Classificação por visibilidade e impacto."
+    }
+  ],
+  "dukas": [
+    {
+      "id": 1,
+      "title": "Hetu-duka",
+      "titleEn": "Root Dyad",
+      "titlePt": "Díade de Raiz",
+      "terms": [
+        {
+          "pali": "Hetū dhammā",
+          "en": "Roots",
+          "pt": "Raízes"
+        },
+        {
+          "pali": "Na-hetū dhammā",
+          "en": "Not roots",
+          "pt": "Não raízes"
+        }
+      ],
+      "definition": "Classification related to roots.",
+      "definitionPt": "Classificação relacionada a raízes."
+    },
+    {
+      "id": 2,
+      "title": "Sahetuka-duka",
+      "titleEn": "With Roots Dyad",
+      "titlePt": "Díade com Raízes",
+      "terms": [
+        {
+          "pali": "Sahetukā dhammā",
+          "en": "With roots",
+          "pt": "Com raízes"
+        },
+        {
+          "pali": "Ahetukā dhammā",
+          "en": "Without roots",
+          "pt": "Sem raízes"
+        }
+      ],
+      "definition": "Classification related to with roots.",
+      "definitionPt": "Classificação relacionada a com raízes."
+    },
+    {
+      "id": 3,
+      "title": "Hetusampayutta-duka",
+      "titleEn": "Associated with Roots Dyad",
+      "titlePt": "Díade Associada a Raízes",
+      "terms": [
+        {
+          "pali": "Hetusampayuttā dhammā",
+          "en": "Associated with roots",
+          "pt": "Associadas a raízes"
+        },
+        {
+          "pali": "Hetuvippayuttā dhammā",
+          "en": "Dissociated from roots",
+          "pt": "Dissociadas de raízes"
+        }
+      ],
+      "definition": "Classification related to associated with roots.",
+      "definitionPt": "Classificação relacionada a associadas a raízes."
+    },
+    {
+      "id": 4,
+      "title": "Hetusahetuka-duka",
+      "titleEn": "Roots and With Roots Dyad",
+      "titlePt": "Díade de Raízes e com Raízes",
+      "terms": [
+        {
+          "pali": "Hetū ceva sahetukā ca dhammā",
+          "en": "Roots and with roots",
+          "pt": "Raízes e com raízes"
+        },
+        {
+          "pali": "Sahetukā ceva na ca hetū dhammā",
+          "en": "With roots but not roots",
+          "pt": "Com raízes mas não raízes"
+        }
+      ],
+      "definition": "Classification related to roots and with roots.",
+      "definitionPt": "Classificação relacionada a raízes e com raízes."
+    },
+    {
+      "id": 5,
+      "title": "Hetuhetusampayutta-duka",
+      "titleEn": "Roots and Associated with Roots Dyad",
+      "titlePt": "Díade de Raízes e Associada a Raízes",
+      "terms": [
+        {
+          "pali": "Hetū ceva hetusampayuttā ca dhammā",
+          "en": "Roots and associated with roots",
+          "pt": "Raízes e associadas a raízes"
+        },
+        {
+          "pali": "Hetusampayuttā ceva na ca hetū dhammā",
+          "en": "Associated with roots but not roots",
+          "pt": "Associadas a raízes mas não raízes"
+        }
+      ],
+      "definition": "Classification related to roots and associated with roots.",
+      "definitionPt": "Classificação relacionada a raízes e associadas a raízes."
+    },
+    {
+      "id": 6,
+      "title": "Nahetusahetuka-duka",
+      "titleEn": "Not Roots but With Roots Dyad",
+      "titlePt": "Díade Não Raízes mas com Raízes",
+      "terms": [
+        {
+          "pali": "Na hetū sahetukā dhammā",
+          "en": "Not roots but with roots",
+          "pt": "Não raízes mas com raízes"
+        },
+        {
+          "pali": "Na hetū ahetukā dhammā",
+          "en": "Not roots and without roots",
+          "pt": "Não raízes e sem raízes"
+        }
+      ],
+      "definition": "Classification related to not roots but with roots.",
+      "definitionPt": "Classificação relacionada a não raízes mas com raízes."
+    },
+    {
+      "id": 7,
+      "title": "Sappaccaya-duka",
+      "titleEn": "With Conditions Dyad",
+      "titlePt": "Díade com Condições",
+      "terms": [
+        {
+          "pali": "Sappaccayā dhammā",
+          "en": "With conditions",
+          "pt": "Com condições"
+        },
+        {
+          "pali": "Appaccayā dhammā",
+          "en": "Without conditions",
+          "pt": "Sem condições"
+        }
+      ],
+      "definition": "Classification related to with conditions.",
+      "definitionPt": "Classificação relacionada a com condições."
+    },
+    {
+      "id": 8,
+      "title": "Saṅkhata-duka",
+      "titleEn": "Conditioned Dyad",
+      "titlePt": "Díade Condicionada",
+      "terms": [
+        {
+          "pali": "Saṅkhatā dhammā",
+          "en": "Conditioned",
+          "pt": "Condicionadas"
+        },
+        {
+          "pali": "Asaṅkhatā dhammā",
+          "en": "Unconditioned",
+          "pt": "Incondicionadas"
+        }
+      ],
+      "definition": "Classification related to conditioned.",
+      "definitionPt": "Classificação relacionada a condicionadas."
+    },
+    {
+      "id": 9,
+      "title": "Sanidassana-duka",
+      "titleEn": "Visible Dyad",
+      "titlePt": "Díade Visível",
+      "terms": [
+        {
+          "pali": "Sanidassanā dhammā",
+          "en": "Visible",
+          "pt": "Visíveis"
+        },
+        {
+          "pali": "Anidassanā dhammā",
+          "en": "Invisible",
+          "pt": "Invisíveis"
+        }
+      ],
+      "definition": "Classification related to visible.",
+      "definitionPt": "Classificação relacionada a visíveis."
+    },
+    {
+      "id": 10,
+      "title": "Sappaṭigha-duka",
+      "titleEn": "Impinging Dyad",
+      "titlePt": "Díade com Impacto",
+      "terms": [
+        {
+          "pali": "Sappaṭighā dhammā",
+          "en": "Impinging",
+          "pt": "Com impacto"
+        },
+        {
+          "pali": "Appaṭighā dhammā",
+          "en": "Non-impinging",
+          "pt": "Sem impacto"
+        }
+      ],
+      "definition": "Classification related to impinging.",
+      "definitionPt": "Classificação relacionada a com impacto."
+    },
+    {
+      "id": 11,
+      "title": "Rūpī-duka",
+      "titleEn": "Material Dyad",
+      "titlePt": "Díade Material",
+      "terms": [
+        {
+          "pali": "Rūpino dhammā",
+          "en": "Material",
+          "pt": "Materiais"
+        },
+        {
+          "pali": "Arūpino dhammā",
+          "en": "Immaterial",
+          "pt": "Imateriais"
+        }
+      ],
+      "definition": "Classification related to material.",
+      "definitionPt": "Classificação relacionada a materiais."
+    },
+    {
+      "id": 12,
+      "title": "Lokiya-duka",
+      "titleEn": "Mundane Dyad",
+      "titlePt": "Díade Mundana",
+      "terms": [
+        {
+          "pali": "Lokiyā dhammā",
+          "en": "Mundane",
+          "pt": "Mundanas"
+        },
+        {
+          "pali": "Lokuttarā dhammā",
+          "en": "Supramundane",
+          "pt": "Supramundanas"
+        }
+      ],
+      "definition": "Classification related to mundane.",
+      "definitionPt": "Classificação relacionada a mundanas."
+    },
+    {
+      "id": 13,
+      "title": "Kenaciviññeyya-duka",
+      "titleEn": "Cognizable by Some Dyad",
+      "titlePt": "Díade Cognoscível por Alguns",
+      "terms": [
+        {
+          "pali": "Kenaci viññeyyā dhammā",
+          "en": "Cognizable by some consciousness",
+          "pt": "Cognoscíveis por alguma consciência"
+        },
+        {
+          "pali": "Kenaci na viññeyyā dhammā",
+          "en": "Not cognizable by some consciousness",
+          "pt": "Não cognoscíveis por alguma consciência"
+        }
+      ],
+      "definition": "Classification related to cognizable by some consciousness.",
+      "definitionPt": "Classificação relacionada a cognoscíveis por alguma consciência."
+    },
+    {
+      "id": 14,
+      "title": "Āsava-duka",
+      "titleEn": "Taint Dyad",
+      "titlePt": "Díade da Mácula",
+      "terms": [
+        {
+          "pali": "Āsavā dhammā",
+          "en": "Taints",
+          "pt": "Máculas"
+        },
+        {
+          "pali": "No āsavā dhammā",
+          "en": "Not taints",
+          "pt": "Não máculas"
+        }
+      ],
+      "definition": "Classification related to taints.",
+      "definitionPt": "Classificação relacionada a máculas."
+    },
+    {
+      "id": 15,
+      "title": "Sāsava-duka",
+      "titleEn": "Subject to Taints Dyad",
+      "titlePt": "Díade Sujeita a Máculas",
+      "terms": [
+        {
+          "pali": "Sāsavā dhammā",
+          "en": "Subject to taints",
+          "pt": "Sujeitas a máculas"
+        },
+        {
+          "pali": "Anāsavā dhammā",
+          "en": "Free from taints",
+          "pt": "Livres de máculas"
+        }
+      ],
+      "definition": "Classification related to subject to taints.",
+      "definitionPt": "Classificação relacionada a sujeitas a máculas."
+    },
+    {
+      "id": 16,
+      "title": "Āsavasampayutta-duka",
+      "titleEn": "Associated with Taints Dyad",
+      "titlePt": "Díade Associada a Máculas",
+      "terms": [
+        {
+          "pali": "Āsavasampayuttā dhammā",
+          "en": "Associated with taints",
+          "pt": "Associadas a máculas"
+        },
+        {
+          "pali": "Āsavavippayuttā dhammā",
+          "en": "Dissociated from taints",
+          "pt": "Dissociadas de máculas"
+        }
+      ],
+      "definition": "Classification related to associated with taints.",
+      "definitionPt": "Classificação relacionada a associadas a máculas."
+    },
+    {
+      "id": 17,
+      "title": "Āsavasāsava-duka",
+      "titleEn": "Taints and Subject to Taints Dyad",
+      "titlePt": "Díade de Máculas e Sujeita a Máculas",
+      "terms": [
+        {
+          "pali": "Āsavā ceva sāsavā ca dhammā",
+          "en": "Taints and subject to taints",
+          "pt": "Máculas e sujeitas a máculas"
+        },
+        {
+          "pali": "Sāsavā ceva no ca āsavā dhammā",
+          "en": "Subject to taints but not taints",
+          "pt": "Sujeitas a máculas mas não máculas"
+        }
+      ],
+      "definition": "Classification related to taints and subject to taints.",
+      "definitionPt": "Classificação relacionada a máculas e sujeitas a máculas."
+    },
+    {
+      "id": 18,
+      "title": "Āsavaāsavasampayutta-duka",
+      "titleEn": "Taints and Associated with Taints Dyad",
+      "titlePt": "Díade de Máculas e Associada a Máculas",
+      "terms": [
+        {
+          "pali": "Āsavā ceva āsavasampayuttā ca dhammā",
+          "en": "Taints and associated with taints",
+          "pt": "Máculas e associadas a máculas"
+        },
+        {
+          "pali": "Āsavasampayuttā ceva no ca āsavā dhammā",
+          "en": "Associated with taints but not taints",
+          "pt": "Associadas a máculas mas não máculas"
+        }
+      ],
+      "definition": "Classification related to taints and associated with taints.",
+      "definitionPt": "Classificação relacionada a máculas e associadas a máculas."
+    },
+    {
+      "id": 19,
+      "title": "Āsavavippayuttasāsava-duka",
+      "titleEn": "Dissociated from Taints but Subject to Taints Dyad",
+      "titlePt": "Díade Dissociada de Máculas mas Sujeita a Máculas",
+      "terms": [
+        {
+          "pali": "Āsavavippayuttā sāsavā dhammā",
+          "en": "Dissociated from taints but subject to taints",
+          "pt": "Dissociadas de máculas mas sujeitas a máculas"
+        },
+        {
+          "pali": "Āsavavippayuttā anāsavā dhammā",
+          "en": "Dissociated from taints and free from taints",
+          "pt": "Dissociadas de máculas e livres de máculas"
+        }
+      ],
+      "definition": "Classification related to dissociated from taints but subject to taints.",
+      "definitionPt": "Classificação relacionada a dissociadas de máculas mas sujeitas a máculas."
+    },
+    {
+      "id": 20,
+      "title": "Saññojana-duka",
+      "titleEn": "Fetter Dyad",
+      "titlePt": "Díade do Grilhão",
+      "terms": [
+        {
+          "pali": "Saññojanā dhammā",
+          "en": "Fetters",
+          "pt": "Grilhões"
+        },
+        {
+          "pali": "No saññojanā dhammā",
+          "en": "Not fetters",
+          "pt": "Não grilhões"
+        }
+      ],
+      "definition": "Classification related to fetters.",
+      "definitionPt": "Classificação relacionada a grilhões."
+    },
+    {
+      "id": 21,
+      "title": "Sasaññojaniya-duka",
+      "titleEn": "Subject to Fetters Dyad",
+      "titlePt": "Díade Sujeita a Grilhões",
+      "terms": [
+        {
+          "pali": "Sasaññojaniyā dhammā",
+          "en": "Subject to fetters",
+          "pt": "Sujeitas a grilhões"
+        },
+        {
+          "pali": "Asaññojaniyā dhammā",
+          "en": "Free from fetters",
+          "pt": "Livres de grilhões"
+        }
+      ],
+      "definition": "Classification related to subject to fetters.",
+      "definitionPt": "Classificação relacionada a sujeitas a grilhões."
+    },
+    {
+      "id": 22,
+      "title": "Saññojanasampayutta-duka",
+      "titleEn": "Associated with Fetters Dyad",
+      "titlePt": "Díade Associada a Grilhões",
+      "terms": [
+        {
+          "pali": "Saññojanasampayuttā dhammā",
+          "en": "Associated with fetters",
+          "pt": "Associadas a grilhões"
+        },
+        {
+          "pali": "Saññojanavippayuttā dhammā",
+          "en": "Dissociated from fetters",
+          "pt": "Dissociadas de grilhões"
+        }
+      ],
+      "definition": "Classification related to associated with fetters.",
+      "definitionPt": "Classificação relacionada a associadas a grilhões."
+    },
+    {
+      "id": 23,
+      "title": "Saññojanasasaññojaniya-duka",
+      "titleEn": "Fetters and Subject to Fetters Dyad",
+      "titlePt": "Díade de Grilhões e Sujeita a Grilhões",
+      "terms": [
+        {
+          "pali": "Saññojanā ceva sasaññojaniyā ca dhammā",
+          "en": "Fetters and subject to fetters",
+          "pt": "Grilhões e sujeitas a grilhões"
+        },
+        {
+          "pali": "Sasaññojaniyā ceva no ca saññojanā dhammā",
+          "en": "Subject to fetters but not fetters",
+          "pt": "Sujeitas a grilhões mas não grilhões"
+        }
+      ],
+      "definition": "Classification related to fetters and subject to fetters.",
+      "definitionPt": "Classificação relacionada a grilhões e sujeitas a grilhões."
+    },
+    {
+      "id": 24,
+      "title": "Saññojanasaññojanasampayutta-duka",
+      "titleEn": "Fetters and Associated with Fetters Dyad",
+      "titlePt": "Díade de Grilhões e Associada a Grilhões",
+      "terms": [
+        {
+          "pali": "Saññojanā ceva saññojanasampayuttā ca dhammā",
+          "en": "Fetters and associated with fetters",
+          "pt": "Grilhões e associadas a grilhões"
+        },
+        {
+          "pali": "Saññojanasampayuttā ceva no ca saññojanā dhammā",
+          "en": "Associated with fetters but not fetters",
+          "pt": "Associadas a grilhões mas não grilhões"
+        }
+      ],
+      "definition": "Classification related to fetters and associated with fetters.",
+      "definitionPt": "Classificação relacionada a grilhões e associadas a grilhões."
+    },
+    {
+      "id": 25,
+      "title": "Saññojanavippayuttasasaññojaniya-duka",
+      "titleEn": "Dissociated from Fetters but Subject to Fetters Dyad",
+      "titlePt": "Díade Dissociada de Grilhões mas Sujeita a Grilhões",
+      "terms": [
+        {
+          "pali": "Saññojanavippayuttā sasaññojaniyā dhammā",
+          "en": "Dissociated from fetters but subject to fetters",
+          "pt": "Dissociadas de grilhões mas sujeitas a grilhões"
+        },
+        {
+          "pali": "Saññojanavippayuttā asaññojaniyā dhammā",
+          "en": "Dissociated from fetters and free from fetters",
+          "pt": "Dissociadas de grilhões e livres de grilhões"
+        }
+      ],
+      "definition": "Classification related to dissociated from fetters but subject to fetters.",
+      "definitionPt": "Classificação relacionada a dissociadas de grilhões mas sujeitas a grilhões."
+    },
+    {
+      "id": 26,
+      "title": "Gantha-duka",
+      "titleEn": "Tie Dyad",
+      "titlePt": "Díade do Laço",
+      "terms": [
+        {
+          "pali": "Ganthā dhammā",
+          "en": "Ties",
+          "pt": "Laços"
+        },
+        {
+          "pali": "No ganthā dhammā",
+          "en": "Not ties",
+          "pt": "Não laços"
+        }
+      ],
+      "definition": "Classification related to ties.",
+      "definitionPt": "Classificação relacionada a laços."
+    },
+    {
+      "id": 27,
+      "title": "Ganthaniya-duka",
+      "titleEn": "Subject to Ties Dyad",
+      "titlePt": "Díade Sujeita a Laços",
+      "terms": [
+        {
+          "pali": "Ganthaniyā dhammā",
+          "en": "Subject to ties",
+          "pt": "Sujeitas a laços"
+        },
+        {
+          "pali": "Aganthaniyā dhammā",
+          "en": "Free from ties",
+          "pt": "Livres de laços"
+        }
+      ],
+      "definition": "Classification related to subject to ties.",
+      "definitionPt": "Classificação relacionada a sujeitas a laços."
+    },
+    {
+      "id": 28,
+      "title": "Ganthasampayutta-duka",
+      "titleEn": "Associated with Ties Dyad",
+      "titlePt": "Díade Associada a Laços",
+      "terms": [
+        {
+          "pali": "Ganthasampayuttā dhammā",
+          "en": "Associated with ties",
+          "pt": "Associadas a laços"
+        },
+        {
+          "pali": "Ganthavippayuttā dhammā",
+          "en": "Dissociated from ties",
+          "pt": "Dissociadas de laços"
+        }
+      ],
+      "definition": "Classification related to associated with ties.",
+      "definitionPt": "Classificação relacionada a associadas a laços."
+    },
+    {
+      "id": 29,
+      "title": "Ganthaganthaniya-duka",
+      "titleEn": "Ties and Subject to Ties Dyad",
+      "titlePt": "Díade de Laços e Sujeita a Laços",
+      "terms": [
+        {
+          "pali": "Ganthā ceva ganthaniyā ca dhammā",
+          "en": "Ties and subject to ties",
+          "pt": "Laços e sujeitas a laços"
+        },
+        {
+          "pali": "Ganthaniyā ceva no ca ganthā dhammā",
+          "en": "Subject to ties but not ties",
+          "pt": "Sujeitas a laços mas não laços"
+        }
+      ],
+      "definition": "Classification related to ties and subject to ties.",
+      "definitionPt": "Classificação relacionada a laços e sujeitas a laços."
+    },
+    {
+      "id": 30,
+      "title": "Ganthaganthasampayutta-duka",
+      "titleEn": "Ties and Associated with Ties Dyad",
+      "titlePt": "Díade de Laços e Associada a Laços",
+      "terms": [
+        {
+          "pali": "Ganthā ceva ganthasampayuttā ca dhammā",
+          "en": "Ties and associated with ties",
+          "pt": "Laços e associadas a laços"
+        },
+        {
+          "pali": "Ganthasampayuttā ceva no ca ganthā dhammā",
+          "en": "Associated with ties but not ties",
+          "pt": "Associadas a laços mas não laços"
+        }
+      ],
+      "definition": "Classification related to ties and associated with ties.",
+      "definitionPt": "Classificação relacionada a laços e associadas a laços."
+    },
+    {
+      "id": 31,
+      "title": "Ganthavippayuttaganthaniya-duka",
+      "titleEn": "Dissociated from Ties but Subject to Ties Dyad",
+      "titlePt": "Díade Dissociada de Laços mas Sujeita a Laços",
+      "terms": [
+        {
+          "pali": "Ganthavippayuttā ganthaniyā dhammā",
+          "en": "Dissociated from ties but subject to ties",
+          "pt": "Dissociadas de laços mas sujeitas a laços"
+        },
+        {
+          "pali": "Ganthavippayuttā aganthaniyā dhammā",
+          "en": "Dissociated from ties and free from ties",
+          "pt": "Dissociadas de laços e livres de laços"
+        }
+      ],
+      "definition": "Classification related to dissociated from ties but subject to ties.",
+      "definitionPt": "Classificação relacionada a dissociadas de laços mas sujeitas a laços."
+    },
+    {
+      "id": 32,
+      "title": "Ogha-duka",
+      "titleEn": "Flood Dyad",
+      "titlePt": "Díade da Inundação",
+      "terms": [
+        {
+          "pali": "Oghā dhammā",
+          "en": "Floods",
+          "pt": "Inundações"
+        },
+        {
+          "pali": "No oghā dhammā",
+          "en": "Not floods",
+          "pt": "Não inundações"
+        }
+      ],
+      "definition": "Classification related to floods.",
+      "definitionPt": "Classificação relacionada a inundações."
+    },
+    {
+      "id": 33,
+      "title": "Oghaniya-duka",
+      "titleEn": "Subject to Floods Dyad",
+      "titlePt": "Díade Sujeita a Inundações",
+      "terms": [
+        {
+          "pali": "Oghaniyā dhammā",
+          "en": "Subject to floods",
+          "pt": "Sujeitas a inundações"
+        },
+        {
+          "pali": "Anoghaniyā dhammā",
+          "en": "Free from floods",
+          "pt": "Livres de inundações"
+        }
+      ],
+      "definition": "Classification related to subject to floods.",
+      "definitionPt": "Classificação relacionada a sujeitas a inundações."
+    },
+    {
+      "id": 34,
+      "title": "Oghasampayutta-duka",
+      "titleEn": "Associated with Floods Dyad",
+      "titlePt": "Díade Associada a Inundações",
+      "terms": [
+        {
+          "pali": "Oghasampayuttā dhammā",
+          "en": "Associated with floods",
+          "pt": "Associadas a inundações"
+        },
+        {
+          "pali": "Oghavippayuttā dhammā",
+          "en": "Dissociated from floods",
+          "pt": "Dissociadas de inundações"
+        }
+      ],
+      "definition": "Classification related to associated with floods.",
+      "definitionPt": "Classificação relacionada a associadas a inundações."
+    },
+    {
+      "id": 35,
+      "title": "Oghaoghaniya-duka",
+      "titleEn": "Floods and Subject to Floods Dyad",
+      "titlePt": "Díade de Inundações e Sujeita a Inundações",
+      "terms": [
+        {
+          "pali": "Oghā ceva oghaniyā ca dhammā",
+          "en": "Floods and subject to floods",
+          "pt": "Inundações e sujeitas a inundações"
+        },
+        {
+          "pali": "Oghaniyā ceva no ca oghā dhammā",
+          "en": "Subject to floods but not floods",
+          "pt": "Sujeitas a inundações mas não inundações"
+        }
+      ],
+      "definition": "Classification related to floods and subject to floods.",
+      "definitionPt": "Classificação relacionada a inundações e sujeitas a inundações."
+    },
+    {
+      "id": 36,
+      "title": "Oghaoghasampayutta-duka",
+      "titleEn": "Floods and Associated with Floods Dyad",
+      "titlePt": "Díade de Inundações e Associada a Inundações",
+      "terms": [
+        {
+          "pali": "Oghā ceva oghasampayuttā ca dhammā",
+          "en": "Floods and associated with floods",
+          "pt": "Inundações e associadas a inundações"
+        },
+        {
+          "pali": "Oghasampayuttā ceva no ca oghā dhammā",
+          "en": "Associated with floods but not floods",
+          "pt": "Associadas a inundações mas não inundações"
+        }
+      ],
+      "definition": "Classification related to floods and associated with floods.",
+      "definitionPt": "Classificação relacionada a inundações e associadas a inundações."
+    },
+    {
+      "id": 37,
+      "title": "Oghavippayuttaoghaniya-duka",
+      "titleEn": "Dissociated from Floods but Subject to Floods Dyad",
+      "titlePt": "Díade Dissociada de Inundações mas Sujeita a Inundações",
+      "terms": [
+        {
+          "pali": "Oghavippayuttā oghaniyā dhammā",
+          "en": "Dissociated from floods but subject to floods",
+          "pt": "Dissociadas de inundações mas sujeitas a inundações"
+        },
+        {
+          "pali": "Oghavippayuttā anoghaniyā dhammā",
+          "en": "Dissociated from floods and free from floods",
+          "pt": "Dissociadas de inundações e livres de inundações"
+        }
+      ],
+      "definition": "Classification related to dissociated from floods but subject to floods.",
+      "definitionPt": "Classificação relacionada a dissociadas de inundações mas sujeitas a inundações."
+    },
+    {
+      "id": 38,
+      "title": "Yoga-duka",
+      "titleEn": "Bond Dyad",
+      "titlePt": "Díade da Amarra",
+      "terms": [
+        {
+          "pali": "Yogā dhammā",
+          "en": "Bonds",
+          "pt": "Amarras"
+        },
+        {
+          "pali": "No yogā dhammā",
+          "en": "Not bonds",
+          "pt": "Não amarras"
+        }
+      ],
+      "definition": "Classification related to bonds.",
+      "definitionPt": "Classificação relacionada a amarras."
+    },
+    {
+      "id": 39,
+      "title": "Yoganiya-duka",
+      "titleEn": "Subject to Bonds Dyad",
+      "titlePt": "Díade Sujeita a Amarras",
+      "terms": [
+        {
+          "pali": "Yoganiyā dhammā",
+          "en": "Subject to bonds",
+          "pt": "Sujeitas a amarras"
+        },
+        {
+          "pali": "Ayoganiyā dhammā",
+          "en": "Free from bonds",
+          "pt": "Livres de amarras"
+        }
+      ],
+      "definition": "Classification related to subject to bonds.",
+      "definitionPt": "Classificação relacionada a sujeitas a amarras."
+    },
+    {
+      "id": 40,
+      "title": "Yogasampayutta-duka",
+      "titleEn": "Associated with Bonds Dyad",
+      "titlePt": "Díade Associada a Amarras",
+      "terms": [
+        {
+          "pali": "Yogasampayuttā dhammā",
+          "en": "Associated with bonds",
+          "pt": "Associadas a amarras"
+        },
+        {
+          "pali": "Yogavippayuttā dhammā",
+          "en": "Dissociated from bonds",
+          "pt": "Dissociadas de amarras"
+        }
+      ],
+      "definition": "Classification related to associated with bonds.",
+      "definitionPt": "Classificação relacionada a associadas a amarras."
+    },
+    {
+      "id": 41,
+      "title": "Yogayoganiya-duka",
+      "titleEn": "Bonds and Subject to Bonds Dyad",
+      "titlePt": "Díade de Amarras e Sujeita a Amarras",
+      "terms": [
+        {
+          "pali": "Yogā ceva yoganiyā ca dhammā",
+          "en": "Bonds and subject to bonds",
+          "pt": "Amarras e sujeitas a amarras"
+        },
+        {
+          "pali": "Yoganiyā ceva no ca yogā dhammā",
+          "en": "Subject to bonds but not bonds",
+          "pt": "Sujeitas a amarras mas não amarras"
+        }
+      ],
+      "definition": "Classification related to bonds and subject to bonds.",
+      "definitionPt": "Classificação relacionada a amarras e sujeitas a amarras."
+    },
+    {
+      "id": 42,
+      "title": "Yogayogasampayutta-duka",
+      "titleEn": "Bonds and Associated with Bonds Dyad",
+      "titlePt": "Díade de Amarras e Associada a Amarras",
+      "terms": [
+        {
+          "pali": "Yogā ceva yogasampayuttā ca dhammā",
+          "en": "Bonds and associated with bonds",
+          "pt": "Amarras e associadas a amarras"
+        },
+        {
+          "pali": "Yogasampayuttā ceva no ca yogā dhammā",
+          "en": "Associated with bonds but not bonds",
+          "pt": "Associadas a amarras mas não amarras"
+        }
+      ],
+      "definition": "Classification related to bonds and associated with bonds.",
+      "definitionPt": "Classificação relacionada a amarras e associadas a amarras."
+    },
+    {
+      "id": 43,
+      "title": "Vijjābhāgiya-duka",
+      "titleEn": "Partaking of True Knowledge Dyad",
+      "titlePt": "Díade que Participa do Verdadeiro Conhecimento",
+      "terms": [
+        {
+          "pali": "Vijjābhāgiyā dhammā",
+          "en": "Partaking of true knowledge",
+          "pt": "Que participam do verdadeiro conhecimento"
+        },
+        {
+          "pali": "Avijjābhāgiyā dhammā",
+          "en": "Partaking of ignorance",
+          "pt": "Que participam da ignorância"
+        }
+      ],
+      "definition": "Suttanta classification related to partaking of true knowledge.",
+      "definitionPt": "Classificação do Suttanta relacionada a que participam do verdadeiro conhecimento."
+    },
+    {
+      "id": 44,
+      "title": "Vijjūpama-duka",
+      "titleEn": "Lightning-like Dyad",
+      "titlePt": "Díade Semelhante ao Relâmpago",
+      "terms": [
+        {
+          "pali": "Vijjūpamā dhammā",
+          "en": "Lightning-like",
+          "pt": "Semelhantes ao relâmpago"
+        },
+        {
+          "pali": "Vajirūpamā dhammā",
+          "en": "Diamond-like",
+          "pt": "Semelhantes ao diamante"
+        }
+      ],
+      "definition": "Suttanta classification related to lightning-like.",
+      "definitionPt": "Classificação do Suttanta relacionada a semelhantes ao relâmpago."
+    },
+    {
+      "id": 45,
+      "title": "Bāla-duka",
+      "titleEn": "Foolish Dyad",
+      "titlePt": "Díade do Tolo",
+      "terms": [
+        {
+          "pali": "Bālā dhammā",
+          "en": "Foolish",
+          "pt": "Tolas"
+        },
+        {
+          "pali": "Paṇḍitā dhammā",
+          "en": "Wise",
+          "pt": "Sábias"
+        }
+      ],
+      "definition": "Suttanta classification related to foolish.",
+      "definitionPt": "Classificação do Suttanta relacionada a tolas."
+    },
+    {
+      "id": 46,
+      "title": "Kaṇha-duka",
+      "titleEn": "Dark Dyad",
+      "titlePt": "Díade Obscura",
+      "terms": [
+        {
+          "pali": "Kaṇhā dhammā",
+          "en": "Dark",
+          "pt": "Obscuras"
+        },
+        {
+          "pali": "Sukkā dhammā",
+          "en": "Bright",
+          "pt": "Luminosas"
+        }
+      ],
+      "definition": "Suttanta classification related to dark.",
+      "definitionPt": "Classificação do Suttanta relacionada a obscuras."
+    },
+    {
+      "id": 47,
+      "title": "Tapanīya-duka",
+      "titleEn": "Tormenting Dyad",
+      "titlePt": "Díade Atormentadora",
+      "terms": [
+        {
+          "pali": "Tapanīyā dhammā",
+          "en": "Tormenting",
+          "pt": "Atormentadoras"
+        },
+        {
+          "pali": "Atapanīyā dhammā",
+          "en": "Not tormenting",
+          "pt": "Não atormentadoras"
+        }
+      ],
+      "definition": "Suttanta classification related to tormenting.",
+      "definitionPt": "Classificação do Suttanta relacionada a atormentadoras."
+    },
+    {
+      "id": 48,
+      "title": "Adhivacana-duka",
+      "titleEn": "Designation Dyad",
+      "titlePt": "Díade de Designação",
+      "terms": [
+        {
+          "pali": "Adhivacanā dhammā",
+          "en": "Designations",
+          "pt": "Designações"
+        },
+        {
+          "pali": "Adhivacanapathā dhammā",
+          "en": "Paths of designation",
+          "pt": "Caminhos de designação"
+        }
+      ],
+      "definition": "Suttanta classification related to designations.",
+      "definitionPt": "Classificação do Suttanta relacionada a designações."
+    },
+    {
+      "id": 49,
+      "title": "Nirutti-duka",
+      "titleEn": "Language Dyad",
+      "titlePt": "Díade da Linguagem",
+      "terms": [
+        {
+          "pali": "Niruttī dhammā",
+          "en": "Language",
+          "pt": "Linguagem"
+        },
+        {
+          "pali": "Niruttipathā dhammā",
+          "en": "Paths of language",
+          "pt": "Caminhos da linguagem"
+        }
+      ],
+      "definition": "Suttanta classification related to language.",
+      "definitionPt": "Classificação do Suttanta relacionada a linguagem."
+    },
+    {
+      "id": 50,
+      "title": "Paññatti-duka",
+      "titleEn": "Concept Dyad",
+      "titlePt": "Díade do Conceito",
+      "terms": [
+        {
+          "pali": "Paññattī dhammā",
+          "en": "Concepts",
+          "pt": "Conceitos"
+        },
+        {
+          "pali": "Paññattipathā dhammā",
+          "en": "Paths of concept",
+          "pt": "Caminhos do conceito"
+        }
+      ],
+      "definition": "Suttanta classification related to concepts.",
+      "definitionPt": "Classificação do Suttanta relacionada a conceitos."
+    },
+    {
+      "id": 51,
+      "title": "Nāmarūpa-duka",
+      "titleEn": "Mind and Matter Dyad",
+      "titlePt": "Díade de Mente e Matéria",
+      "terms": [
+        {
+          "pali": "Nāmañca",
+          "en": "Mind",
+          "pt": "Mente"
+        },
+        {
+          "pali": "Rūpañca",
+          "en": "Matter",
+          "pt": "Matéria"
+        }
+      ],
+      "definition": "Suttanta classification related to mind.",
+      "definitionPt": "Classificação do Suttanta relacionada a mente."
+    },
+    {
+      "id": 52,
+      "title": "Avijjābhavataṇhā-duka",
+      "titleEn": "Ignorance and Craving for Existence Dyad",
+      "titlePt": "Díade da Ignorância e Desejo por Existência",
+      "terms": [
+        {
+          "pali": "Avijjā ca",
+          "en": "Ignorance",
+          "pt": "Ignorância"
+        },
+        {
+          "pali": "Bhavataṇhā ca",
+          "en": "Craving for existence",
+          "pt": "Desejo por existência"
+        }
+      ],
+      "definition": "Suttanta classification related to ignorance.",
+      "definitionPt": "Classificação do Suttanta relacionada a ignorância."
+    },
+    {
+      "id": 53,
+      "title": "Bhavadiṭṭhivibhavadiṭṭhi-duka",
+      "titleEn": "View of Existence and Non-Existence Dyad",
+      "titlePt": "Díade da Visão de Existência e Não-Existência",
+      "terms": [
+        {
+          "pali": "Bhavadiṭṭhi ca",
+          "en": "View of existence",
+          "pt": "Visão da existência"
+        },
+        {
+          "pali": "Vibhavadiṭṭhi ca",
+          "en": "View of non-existence",
+          "pt": "Visão da não-existência"
+        }
+      ],
+      "definition": "Suttanta classification related to view of existence.",
+      "definitionPt": "Classificação do Suttanta relacionada a visão da existência."
+    },
+    {
+      "id": 54,
+      "title": "Sassatadiṭṭhiucchedadiṭṭhi-duka",
+      "titleEn": "Eternalism and Annihilationism Dyad",
+      "titlePt": "Díade do Eternalismo e Aniquilacionismo",
+      "terms": [
+        {
+          "pali": "Sassatadiṭṭhi ca",
+          "en": "Eternalism view",
+          "pt": "Visão do eternalismo"
+        },
+        {
+          "pali": "Ucchedadiṭṭhi ca",
+          "en": "Annihilationism view",
+          "pt": "Visão do aniquilacionismo"
+        }
+      ],
+      "definition": "Suttanta classification related to eternalism view.",
+      "definitionPt": "Classificação do Suttanta relacionada a visão do eternalismo."
+    },
+    {
+      "id": 55,
+      "title": "Antavādiṭṭhianantavādiṭṭhi-duka",
+      "titleEn": "Finitism and Infinitism Dyad",
+      "titlePt": "Díade do Finitismo e Infinitismo",
+      "terms": [
+        {
+          "pali": "Antavā diṭṭhi ca",
+          "en": "Finitism view",
+          "pt": "Visão do finitismo"
+        },
+        {
+          "pali": "Anantavā diṭṭhi ca",
+          "en": "Infinitism view",
+          "pt": "Visão do infinitismo"
+        }
+      ],
+      "definition": "Suttanta classification related to finitism view.",
+      "definitionPt": "Classificação do Suttanta relacionada a visão do finitismo."
+    },
+    {
+      "id": 56,
+      "title": "Pubbantānudiṭṭhiaparantānudiṭṭhi-duka",
+      "titleEn": "View of Past and Future Dyad",
+      "titlePt": "Díade da Visão do Passado e Futuro",
+      "terms": [
+        {
+          "pali": "Pubbantānudiṭṭhi ca",
+          "en": "View of the past",
+          "pt": "Visão do passado"
+        },
+        {
+          "pali": "Aparantānudiṭṭhi ca",
+          "en": "View of the future",
+          "pt": "Visão do futuro"
+        }
+      ],
+      "definition": "Suttanta classification related to view of the past.",
+      "definitionPt": "Classificação do Suttanta relacionada a visão do passado."
+    },
+    {
+      "id": 57,
+      "title": "Ahirikānotappa-duka",
+      "titleEn": "Shamelessness and Fearlessness of Wrongdoing Dyad",
+      "titlePt": "Díade de Falta de Vergonha e Destemor do Erro",
+      "terms": [
+        {
+          "pali": "Ahirikañca",
+          "en": "Shamelessness",
+          "pt": "Falta de vergonha"
+        },
+        {
+          "pali": "Anotappañca",
+          "en": "Fearlessness of wrongdoing",
+          "pt": "Destemor do erro"
+        }
+      ],
+      "definition": "Suttanta classification related to shamelessness.",
+      "definitionPt": "Classificação do Suttanta relacionada a falta de vergonha."
+    },
+    {
+      "id": 58,
+      "title": "Hirīotappa-duka",
+      "titleEn": "Shame and Fear of Wrongdoing Dyad",
+      "titlePt": "Díade de Vergonha e Temor do Erro",
+      "terms": [
+        {
+          "pali": "Hirī ca",
+          "en": "Shame",
+          "pt": "Vergonha"
+        },
+        {
+          "pali": "Otappañca",
+          "en": "Fear of wrongdoing",
+          "pt": "Temor do erro"
+        }
+      ],
+      "definition": "Suttanta classification related to shame.",
+      "definitionPt": "Classificação do Suttanta relacionada a vergonha."
+    },
+    {
+      "id": 59,
+      "title": "Dovacassatāpāpamittatā-duka",
+      "titleEn": "Contumacy and Bad Friendship Dyad",
+      "titlePt": "Díade da Obstinação e Má Amizade",
+      "terms": [
+        {
+          "pali": "Dovacassatā ca",
+          "en": "Contumacy",
+          "pt": "Obstinação"
+        },
+        {
+          "pali": "Pāpamittatā ca",
+          "en": "Bad friendship",
+          "pt": "Má amizade"
+        }
+      ],
+      "definition": "Suttanta classification related to contumacy.",
+      "definitionPt": "Classificação do Suttanta relacionada a obstinação."
+    },
+    {
+      "id": 60,
+      "title": "Sovacassatākalyāṇamittatā-duka",
+      "titleEn": "Compliance and Good Friendship Dyad",
+      "titlePt": "Díade da Complacência e Boa Amizade",
+      "terms": [
+        {
+          "pali": "Sovacassatā ca",
+          "en": "Compliance",
+          "pt": "Complacência"
+        },
+        {
+          "pali": "Kalyāṇamittatā ca",
+          "en": "Good friendship",
+          "pt": "Boa amizade"
+        }
+      ],
+      "definition": "Suttanta classification related to compliance.",
+      "definitionPt": "Classificação do Suttanta relacionada a complacência."
+    },
+    {
+      "id": 61,
+      "title": "Āpattikusalatāāpattivuṭṭhānakusalatā-duka",
+      "titleEn": "Skill in Offenses and Skill in Rehabilitation Dyad",
+      "titlePt": "Díade da Habilidade nas Ofensas e Habilidade na Reabilitação",
+      "terms": [
+        {
+          "pali": "Āpattikusalatā ca",
+          "en": "Skill in offenses",
+          "pt": "Habilidade nas ofensas"
+        },
+        {
+          "pali": "Āpattivuṭṭhānakusalatā ca",
+          "en": "Skill in rehabilitation from offenses",
+          "pt": "Habilidade na reabilitação de ofensas"
+        }
+      ],
+      "definition": "Suttanta classification related to skill in offenses.",
+      "definitionPt": "Classificação do Suttanta relacionada a habilidade nas ofensas."
+    },
+    {
+      "id": 62,
+      "title": "Samāpattikusalatāsamāpattivuṭṭhānakusalatā-duka",
+      "titleEn": "Skill in Attainment and Skill in Emergence Dyad",
+      "titlePt": "Díade da Habilidade na Realização e Habilidade na Emergência",
+      "terms": [
+        {
+          "pali": "Samāpattikusalatā ca",
+          "en": "Skill in attainment",
+          "pt": "Habilidade na realização"
+        },
+        {
+          "pali": "Samāpattivuṭṭhānakusalatā ca",
+          "en": "Skill in emergence from attainment",
+          "pt": "Habilidade na emergência da realização"
+        }
+      ],
+      "definition": "Suttanta classification related to skill in attainment.",
+      "definitionPt": "Classificação do Suttanta relacionada a habilidade na realização."
+    },
+    {
+      "id": 63,
+      "title": "Duka 63",
+      "titleEn": "Dyad 63",
+      "titlePt": "Díade 63",
+      "terms": [
+        {
+          "pali": "Duka 63 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 63 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 63",
+      "definitionPt": "Definição da díade 63"
+    },
+    {
+      "id": 64,
+      "title": "Duka 64",
+      "titleEn": "Dyad 64",
+      "titlePt": "Díade 64",
+      "terms": [
+        {
+          "pali": "Duka 64 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 64 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 64",
+      "definitionPt": "Definição da díade 64"
+    },
+    {
+      "id": 65,
+      "title": "Duka 65",
+      "titleEn": "Dyad 65",
+      "titlePt": "Díade 65",
+      "terms": [
+        {
+          "pali": "Duka 65 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 65 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 65",
+      "definitionPt": "Definição da díade 65"
+    },
+    {
+      "id": 66,
+      "title": "Duka 66",
+      "titleEn": "Dyad 66",
+      "titlePt": "Díade 66",
+      "terms": [
+        {
+          "pali": "Duka 66 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 66 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 66",
+      "definitionPt": "Definição da díade 66"
+    },
+    {
+      "id": 67,
+      "title": "Duka 67",
+      "titleEn": "Dyad 67",
+      "titlePt": "Díade 67",
+      "terms": [
+        {
+          "pali": "Duka 67 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 67 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 67",
+      "definitionPt": "Definição da díade 67"
+    },
+    {
+      "id": 68,
+      "title": "Duka 68",
+      "titleEn": "Dyad 68",
+      "titlePt": "Díade 68",
+      "terms": [
+        {
+          "pali": "Duka 68 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 68 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 68",
+      "definitionPt": "Definição da díade 68"
+    },
+    {
+      "id": 69,
+      "title": "Duka 69",
+      "titleEn": "Dyad 69",
+      "titlePt": "Díade 69",
+      "terms": [
+        {
+          "pali": "Duka 69 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 69 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 69",
+      "definitionPt": "Definição da díade 69"
+    },
+    {
+      "id": 70,
+      "title": "Duka 70",
+      "titleEn": "Dyad 70",
+      "titlePt": "Díade 70",
+      "terms": [
+        {
+          "pali": "Duka 70 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 70 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 70",
+      "definitionPt": "Definição da díade 70"
+    },
+    {
+      "id": 71,
+      "title": "Duka 71",
+      "titleEn": "Dyad 71",
+      "titlePt": "Díade 71",
+      "terms": [
+        {
+          "pali": "Duka 71 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 71 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 71",
+      "definitionPt": "Definição da díade 71"
+    },
+    {
+      "id": 72,
+      "title": "Duka 72",
+      "titleEn": "Dyad 72",
+      "titlePt": "Díade 72",
+      "terms": [
+        {
+          "pali": "Duka 72 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 72 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 72",
+      "definitionPt": "Definição da díade 72"
+    },
+    {
+      "id": 73,
+      "title": "Duka 73",
+      "titleEn": "Dyad 73",
+      "titlePt": "Díade 73",
+      "terms": [
+        {
+          "pali": "Duka 73 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 73 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 73",
+      "definitionPt": "Definição da díade 73"
+    },
+    {
+      "id": 74,
+      "title": "Duka 74",
+      "titleEn": "Dyad 74",
+      "titlePt": "Díade 74",
+      "terms": [
+        {
+          "pali": "Duka 74 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 74 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 74",
+      "definitionPt": "Definição da díade 74"
+    },
+    {
+      "id": 75,
+      "title": "Duka 75",
+      "titleEn": "Dyad 75",
+      "titlePt": "Díade 75",
+      "terms": [
+        {
+          "pali": "Duka 75 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 75 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 75",
+      "definitionPt": "Definição da díade 75"
+    },
+    {
+      "id": 76,
+      "title": "Duka 76",
+      "titleEn": "Dyad 76",
+      "titlePt": "Díade 76",
+      "terms": [
+        {
+          "pali": "Duka 76 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 76 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 76",
+      "definitionPt": "Definição da díade 76"
+    },
+    {
+      "id": 77,
+      "title": "Duka 77",
+      "titleEn": "Dyad 77",
+      "titlePt": "Díade 77",
+      "terms": [
+        {
+          "pali": "Duka 77 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 77 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 77",
+      "definitionPt": "Definição da díade 77"
+    },
+    {
+      "id": 78,
+      "title": "Duka 78",
+      "titleEn": "Dyad 78",
+      "titlePt": "Díade 78",
+      "terms": [
+        {
+          "pali": "Duka 78 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 78 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 78",
+      "definitionPt": "Definição da díade 78"
+    },
+    {
+      "id": 79,
+      "title": "Duka 79",
+      "titleEn": "Dyad 79",
+      "titlePt": "Díade 79",
+      "terms": [
+        {
+          "pali": "Duka 79 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 79 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 79",
+      "definitionPt": "Definição da díade 79"
+    },
+    {
+      "id": 80,
+      "title": "Duka 80",
+      "titleEn": "Dyad 80",
+      "titlePt": "Díade 80",
+      "terms": [
+        {
+          "pali": "Duka 80 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 80 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 80",
+      "definitionPt": "Definição da díade 80"
+    },
+    {
+      "id": 81,
+      "title": "Duka 81",
+      "titleEn": "Dyad 81",
+      "titlePt": "Díade 81",
+      "terms": [
+        {
+          "pali": "Duka 81 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 81 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 81",
+      "definitionPt": "Definição da díade 81"
+    },
+    {
+      "id": 82,
+      "title": "Duka 82",
+      "titleEn": "Dyad 82",
+      "titlePt": "Díade 82",
+      "terms": [
+        {
+          "pali": "Duka 82 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 82 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 82",
+      "definitionPt": "Definição da díade 82"
+    },
+    {
+      "id": 83,
+      "title": "Duka 83",
+      "titleEn": "Dyad 83",
+      "titlePt": "Díade 83",
+      "terms": [
+        {
+          "pali": "Duka 83 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 83 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 83",
+      "definitionPt": "Definição da díade 83"
+    },
+    {
+      "id": 84,
+      "title": "Duka 84",
+      "titleEn": "Dyad 84",
+      "titlePt": "Díade 84",
+      "terms": [
+        {
+          "pali": "Duka 84 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 84 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 84",
+      "definitionPt": "Definição da díade 84"
+    },
+    {
+      "id": 85,
+      "title": "Duka 85",
+      "titleEn": "Dyad 85",
+      "titlePt": "Díade 85",
+      "terms": [
+        {
+          "pali": "Duka 85 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 85 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 85",
+      "definitionPt": "Definição da díade 85"
+    },
+    {
+      "id": 86,
+      "title": "Duka 86",
+      "titleEn": "Dyad 86",
+      "titlePt": "Díade 86",
+      "terms": [
+        {
+          "pali": "Duka 86 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 86 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 86",
+      "definitionPt": "Definição da díade 86"
+    },
+    {
+      "id": 87,
+      "title": "Duka 87",
+      "titleEn": "Dyad 87",
+      "titlePt": "Díade 87",
+      "terms": [
+        {
+          "pali": "Duka 87 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 87 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 87",
+      "definitionPt": "Definição da díade 87"
+    },
+    {
+      "id": 88,
+      "title": "Duka 88",
+      "titleEn": "Dyad 88",
+      "titlePt": "Díade 88",
+      "terms": [
+        {
+          "pali": "Duka 88 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 88 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 88",
+      "definitionPt": "Definição da díade 88"
+    },
+    {
+      "id": 89,
+      "title": "Duka 89",
+      "titleEn": "Dyad 89",
+      "titlePt": "Díade 89",
+      "terms": [
+        {
+          "pali": "Duka 89 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 89 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 89",
+      "definitionPt": "Definição da díade 89"
+    },
+    {
+      "id": 90,
+      "title": "Duka 90",
+      "titleEn": "Dyad 90",
+      "titlePt": "Díade 90",
+      "terms": [
+        {
+          "pali": "Duka 90 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 90 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 90",
+      "definitionPt": "Definição da díade 90"
+    },
+    {
+      "id": 91,
+      "title": "Duka 91",
+      "titleEn": "Dyad 91",
+      "titlePt": "Díade 91",
+      "terms": [
+        {
+          "pali": "Duka 91 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 91 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 91",
+      "definitionPt": "Definição da díade 91"
+    },
+    {
+      "id": 92,
+      "title": "Duka 92",
+      "titleEn": "Dyad 92",
+      "titlePt": "Díade 92",
+      "terms": [
+        {
+          "pali": "Duka 92 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 92 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 92",
+      "definitionPt": "Definição da díade 92"
+    },
+    {
+      "id": 93,
+      "title": "Duka 93",
+      "titleEn": "Dyad 93",
+      "titlePt": "Díade 93",
+      "terms": [
+        {
+          "pali": "Duka 93 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 93 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 93",
+      "definitionPt": "Definição da díade 93"
+    },
+    {
+      "id": 94,
+      "title": "Duka 94",
+      "titleEn": "Dyad 94",
+      "titlePt": "Díade 94",
+      "terms": [
+        {
+          "pali": "Duka 94 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 94 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 94",
+      "definitionPt": "Definição da díade 94"
+    },
+    {
+      "id": 95,
+      "title": "Duka 95",
+      "titleEn": "Dyad 95",
+      "titlePt": "Díade 95",
+      "terms": [
+        {
+          "pali": "Duka 95 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 95 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 95",
+      "definitionPt": "Definição da díade 95"
+    },
+    {
+      "id": 96,
+      "title": "Duka 96",
+      "titleEn": "Dyad 96",
+      "titlePt": "Díade 96",
+      "terms": [
+        {
+          "pali": "Duka 96 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 96 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 96",
+      "definitionPt": "Definição da díade 96"
+    },
+    {
+      "id": 97,
+      "title": "Duka 97",
+      "titleEn": "Dyad 97",
+      "titlePt": "Díade 97",
+      "terms": [
+        {
+          "pali": "Duka 97 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 97 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 97",
+      "definitionPt": "Definição da díade 97"
+    },
+    {
+      "id": 98,
+      "title": "Duka 98",
+      "titleEn": "Dyad 98",
+      "titlePt": "Díade 98",
+      "terms": [
+        {
+          "pali": "Duka 98 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 98 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 98",
+      "definitionPt": "Definição da díade 98"
+    },
+    {
+      "id": 99,
+      "title": "Duka 99",
+      "titleEn": "Dyad 99",
+      "titlePt": "Díade 99",
+      "terms": [
+        {
+          "pali": "Duka 99 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 99 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 99",
+      "definitionPt": "Definição da díade 99"
+    },
+    {
+      "id": 100,
+      "title": "Duka 100",
+      "titleEn": "Dyad 100",
+      "titlePt": "Díade 100",
+      "terms": [
+        {
+          "pali": "Duka 100 term 1",
+          "en": "Term 1",
+          "pt": "Termo 1"
+        },
+        {
+          "pali": "Duka 100 term 2",
+          "en": "Term 2",
+          "pt": "Termo 2"
+        }
+      ],
+      "definition": "Definition of duka 100",
+      "definitionPt": "Definição da díade 100"
+    }
+  ]
+}

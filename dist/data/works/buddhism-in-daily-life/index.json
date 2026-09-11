@@ -1,0 +1,308 @@
+{
+  "id": "buddhism-in-daily-life",
+  "title": "Buddhism in Daily Life",
+  "parts": {
+    "texto": {
+      "label": "Text",
+      "files": [
+        "texto__0.json",
+        "texto__1.json",
+        "texto__2.json",
+        "texto__3.json",
+        "texto__4.json",
+        "texto__5.json",
+        "texto__6.json",
+        "texto__7.json",
+        "texto__8.json",
+        "texto__9.json",
+        "texto__10.json",
+        "texto__11.json",
+        "texto__12.json",
+        "texto__13.json",
+        "texto__14.json",
+        "texto__15.json",
+        "texto__16.json",
+        "texto__17.json",
+        "texto__18.json"
+      ],
+      "toc": [
+        {
+          "id": 2,
+          "rend": "subhead",
+          "text": "Nina van Gorkom"
+        },
+        {
+          "id": 3,
+          "rend": "chapter",
+          "text": "Preface"
+        },
+        {
+          "id": 12,
+          "rend": "chapter",
+          "text": "1 General Aspects of Buddhism"
+        },
+        {
+          "id": 56,
+          "rend": "chapter",
+          "text": "2 Right Understanding in Daily Life"
+        },
+        {
+          "id": 86,
+          "rend": "chapter",
+          "text": "3 The Teaching of Dhamma"
+        },
+        {
+          "id": 108,
+          "rend": "chapter",
+          "text": "4 Wholesome Deeds"
+        },
+        {
+          "id": 125,
+          "rend": "chapter",
+          "text": "5 Mental Development"
+        },
+        {
+          "id": 143,
+          "rend": "chapter",
+          "text": "6 The Buddha"
+        },
+        {
+          "id": 150,
+          "rend": "chapter",
+          "text": "7 The Dhamma"
+        },
+        {
+          "id": 164,
+          "rend": "chapter",
+          "text": "8 The Sangha"
+        },
+        {
+          "id": 181,
+          "rend": "chapter",
+          "text": "9 Death"
+        },
+        {
+          "id": 190,
+          "rend": "chapter",
+          "text": "10 Life"
+        },
+        {
+          "id": 194,
+          "rend": "chapter",
+          "text": "70 Buddhism in Daily Life"
+        },
+        {
+          "id": 200,
+          "rend": "chapter",
+          "text": "72 Buddhism in Daily Life"
+        },
+        {
+          "id": 204,
+          "rend": "chapter",
+          "text": "74 Buddhism in Daily Life"
+        },
+        {
+          "id": 209,
+          "rend": "chapter",
+          "text": "76 Buddhism in Daily Life"
+        },
+        {
+          "id": 211,
+          "rend": "subhead",
+          "text": "Chapter 12: Vipassanā 77"
+        },
+        {
+          "id": 213,
+          "rend": "chapter",
+          "text": "78 Buddhism in Daily Life"
+        },
+        {
+          "id": 215,
+          "rend": "subhead",
+          "text": "Chapter 12: Vipassanā 79"
+        },
+        {
+          "id": 217,
+          "rend": "chapter",
+          "text": "80 Buddhism in Daily Life"
+        },
+        {
+          "id": 219,
+          "rend": "subhead",
+          "text": "Chapter 12: Vipassanā 81"
+        },
+        {
+          "id": 221,
+          "rend": "chapter",
+          "text": "82 Buddhism in Daily Life"
+        },
+        {
+          "id": 223,
+          "rend": "subhead",
+          "text": "Chapter 12: Vipassanā 83"
+        },
+        {
+          "id": 225,
+          "rend": "subhead",
+          "text": "Chapter 13: The Eightfold Path 85"
+        },
+        {
+          "id": 227,
+          "rend": "chapter",
+          "text": "86 Buddhism in Daily Life"
+        },
+        {
+          "id": 229,
+          "rend": "subhead",
+          "text": "Chapter 13: The Eightfold Path 87"
+        },
+        {
+          "id": 231,
+          "rend": "chapter",
+          "text": "88 Buddhism in Daily Life"
+        },
+        {
+          "id": 233,
+          "rend": "subhead",
+          "text": "Chapter 13: The Eightfold Path 89"
+        },
+        {
+          "id": 235,
+          "rend": "chapter",
+          "text": "90 Buddhism in Daily Life"
+        },
+        {
+          "id": 239,
+          "rend": "chapter",
+          "text": "92 Buddhism in Daily Life"
+        },
+        {
+          "id": 243,
+          "rend": "chapter",
+          "text": "94 Buddhism in Daily Life"
+        },
+        {
+          "id": 247,
+          "rend": "chapter",
+          "text": "96 Buddhism in Daily Life"
+        },
+        {
+          "id": 251,
+          "rend": "chapter",
+          "text": "98 Buddhism in Daily Life"
+        },
+        {
+          "id": 253,
+          "rend": "subhead",
+          "text": "Chapter 15: Right Effort 99"
+        },
+        {
+          "id": 257,
+          "rend": "subhead",
+          "text": "Chapter 15: Right Effort 101"
+        },
+        {
+          "id": 261,
+          "rend": "subhead",
+          "text": "Chapter 15: Right Effort 103"
+        },
+        {
+          "id": 267,
+          "rend": "subhead",
+          "text": "Chapter 16: Right Mindfulness 105"
+        },
+        {
+          "id": 271,
+          "rend": "subhead",
+          "text": "Chapter 16: Right Mindfulness 107"
+        },
+        {
+          "id": 275,
+          "rend": "subhead",
+          "text": "Chapter 16: Right Mindfulness 109"
+        },
+        {
+          "id": 280,
+          "rend": "subhead",
+          "text": "Chapter 16: Right Mindfulness 111"
+        },
+        {
+          "id": 282,
+          "rend": "subhead",
+          "text": "Chapter 17: Right Concentration 113"
+        },
+        {
+          "id": 286,
+          "rend": "subhead",
+          "text": "Chapter 17: Right Concentration 115"
+        },
+        {
+          "id": 290,
+          "rend": "subhead",
+          "text": "Chapter 17: Right Concentration 117"
+        },
+        {
+          "id": 295,
+          "rend": "subhead",
+          "text": "Chapter 17: Right Concentration 119"
+        },
+        {
+          "id": 313,
+          "rend": "subhead",
+          "text": "Glossary 129"
+        },
+        {
+          "id": 314,
+          "rend": "chapter",
+          "text": "Glossary"
+        },
+        {
+          "id": 318,
+          "rend": "subhead",
+          "text": "Glossary 131"
+        },
+        {
+          "id": 322,
+          "rend": "subhead",
+          "text": "Glossary 133"
+        },
+        {
+          "id": 326,
+          "rend": "subhead",
+          "text": "Glossary 135"
+        },
+        {
+          "id": 328,
+          "rend": "subhead",
+          "text": "Books 137"
+        },
+        {
+          "id": 329,
+          "rend": "subhead",
+          "text": "Books"
+        }
+      ],
+      "count": 309,
+      "chunkStarts": [
+        1,
+        56,
+        86,
+        108,
+        125,
+        143,
+        150,
+        164,
+        181,
+        190,
+        192,
+        211,
+        225,
+        237,
+        253,
+        274,
+        297,
+        313
+      ]
+    }
+  }
+}

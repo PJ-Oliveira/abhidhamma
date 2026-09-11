@@ -1,0 +1,351 @@
+{
+  "id": "the-buddhas-path",
+  "title": "The Buddha's Path",
+  "parts": {
+    "texto": {
+      "label": "Text",
+      "files": [
+        "texto__0.json",
+        "texto__1.json",
+        "texto__2.json",
+        "texto__3.json"
+      ],
+      "toc": [
+        {
+          "id": 2,
+          "rend": "subhead",
+          "text": "Nina van Gorkom"
+        },
+        {
+          "id": 17,
+          "rend": "chapter",
+          "text": "Preface"
+        },
+        {
+          "id": 25,
+          "rend": "subhead",
+          "text": "Chapter 1"
+        },
+        {
+          "id": 26,
+          "rend": "chapter",
+          "text": "Introduction"
+        },
+        {
+          "id": 29,
+          "rend": "chapter",
+          "text": "2 CHAPTER 1. INTRODUCTION"
+        },
+        {
+          "id": 36,
+          "rend": "chapter",
+          "text": "4 CHAPTER 1. INTRODUCTION"
+        },
+        {
+          "id": 41,
+          "rend": "chapter",
+          "text": "6 CHAPTER 1. INTRODUCTION"
+        },
+        {
+          "id": 45,
+          "rend": "chapter",
+          "text": "8 CHAPTER 1. INTRODUCTION"
+        },
+        {
+          "id": 50,
+          "rend": "chapter",
+          "text": "10 CHAPTER 1. INTRODUCTION"
+        },
+        {
+          "id": 55,
+          "rend": "chapter",
+          "text": "12 CHAPTER 1. INTRODUCTION"
+        },
+        {
+          "id": 56,
+          "rend": "subhead",
+          "text": "Chapter 2"
+        },
+        {
+          "id": 60,
+          "rend": "chapter",
+          "text": "14 CHAPTER 2. THE TRUTH OF SUFFERING"
+        },
+        {
+          "id": 64,
+          "rend": "chapter",
+          "text": "16 CHAPTER 2. THE TRUTH OF SUFFERING"
+        },
+        {
+          "id": 68,
+          "rend": "chapter",
+          "text": "18 CHAPTER 2. THE TRUTH OF SUFFERING"
+        },
+        {
+          "id": 79,
+          "rend": "chapter",
+          "text": "20 CHAPTER 2. THE TRUTH OF SUFFERING"
+        },
+        {
+          "id": 83,
+          "rend": "chapter",
+          "text": "22 CHAPTER 2. THE TRUTH OF SUFFERING"
+        },
+        {
+          "id": 85,
+          "rend": "subhead",
+          "text": "Chapter 3"
+        },
+        {
+          "id": 89,
+          "rend": "chapter",
+          "text": "24 CHAPTER 3. THE TRUTH OF NON-SELF"
+        },
+        {
+          "id": 94,
+          "rend": "chapter",
+          "text": "26 CHAPTER 3. THE TRUTH OF NON-SELF"
+        },
+        {
+          "id": 103,
+          "rend": "chapter",
+          "text": "28 CHAPTER 3. THE TRUTH OF NON-SELF"
+        },
+        {
+          "id": 109,
+          "rend": "chapter",
+          "text": "30 CHAPTER 3. THE TRUTH OF NON-SELF"
+        },
+        {
+          "id": 112,
+          "rend": "chapter",
+          "text": "32 CHAPTER 3. THE TRUTH OF NON-SELF"
+        },
+        {
+          "id": 116,
+          "rend": "chapter",
+          "text": "34 CHAPTER 3. THE TRUTH OF NON-SELF"
+        },
+        {
+          "id": 121,
+          "rend": "chapter",
+          "text": "36 CHAPTER 3. THE TRUTH OF NON-SELF"
+        },
+        {
+          "id": 122,
+          "rend": "subhead",
+          "text": "Chapter 4"
+        },
+        {
+          "id": 125,
+          "rend": "chapter",
+          "text": "38 CHAPTER 4. THE MIND"
+        },
+        {
+          "id": 128,
+          "rend": "chapter",
+          "text": "40 CHAPTER 4. THE MIND"
+        },
+        {
+          "id": 133,
+          "rend": "chapter",
+          "text": "42 CHAPTER 4. THE MIND"
+        },
+        {
+          "id": 137,
+          "rend": "chapter",
+          "text": "44 CHAPTER 4. THE MIND"
+        },
+        {
+          "id": 141,
+          "rend": "chapter",
+          "text": "46 CHAPTER 4. THE MIND"
+        },
+        {
+          "id": 145,
+          "rend": "chapter",
+          "text": "48 CHAPTER 4. THE MIND"
+        },
+        {
+          "id": 148,
+          "rend": "subhead",
+          "text": "Chapter 5"
+        },
+        {
+          "id": 152,
+          "rend": "chapter",
+          "text": "50 CHAPTER 5. DEEDS AND THEIR RESULTS"
+        },
+        {
+          "id": 157,
+          "rend": "chapter",
+          "text": "52 CHAPTER 5. DEEDS AND THEIR RESULTS"
+        },
+        {
+          "id": 162,
+          "rend": "chapter",
+          "text": "54 CHAPTER 5. DEEDS AND THEIR RESULTS"
+        },
+        {
+          "id": 167,
+          "rend": "chapter",
+          "text": "56 CHAPTER 5. DEEDS AND THEIR RESULTS"
+        },
+        {
+          "id": 172,
+          "rend": "chapter",
+          "text": "58 CHAPTER 5. DEEDS AND THEIR RESULTS"
+        },
+        {
+          "id": 175,
+          "rend": "chapter",
+          "text": "60 CHAPTER 5. DEEDS AND THEIR RESULTS"
+        },
+        {
+          "id": 181,
+          "rend": "chapter",
+          "text": "62 CHAPTER 5. DEEDS AND THEIR RESULTS"
+        },
+        {
+          "id": 182,
+          "rend": "subhead",
+          "text": "Chapter 6"
+        },
+        {
+          "id": 186,
+          "rend": "chapter",
+          "text": "64 CHAPTER 6. GOOD DEEDS AND A WHOLESOME LIFE"
+        },
+        {
+          "id": 189,
+          "rend": "chapter",
+          "text": "66 CHAPTER 6. GOOD DEEDS AND A WHOLESOME LIFE"
+        },
+        {
+          "id": 194,
+          "rend": "chapter",
+          "text": "68 CHAPTER 6. GOOD DEEDS AND A WHOLESOME LIFE"
+        },
+        {
+          "id": 197,
+          "rend": "chapter",
+          "text": "70 CHAPTER 6. GOOD DEEDS AND A WHOLESOME LIFE"
+        },
+        {
+          "id": 202,
+          "rend": "chapter",
+          "text": "72 CHAPTER 6. GOOD DEEDS AND A WHOLESOME LIFE"
+        },
+        {
+          "id": 209,
+          "rend": "chapter",
+          "text": "74 CHAPTER 6. GOOD DEEDS AND A WHOLESOME LIFE"
+        },
+        {
+          "id": 216,
+          "rend": "chapter",
+          "text": "76 CHAPTER 6. GOOD DEEDS AND A WHOLESOME LIFE"
+        },
+        {
+          "id": 225,
+          "rend": "chapter",
+          "text": "78 CHAPTER 6. GOOD DEEDS AND A WHOLESOME LIFE"
+        },
+        {
+          "id": 229,
+          "rend": "subhead",
+          "text": "Chapter 7"
+        },
+        {
+          "id": 230,
+          "rend": "subhead",
+          "text": "Mental development"
+        },
+        {
+          "id": 232,
+          "rend": "chapter",
+          "text": "80 CHAPTER 7. MENTAL DEVELOPMENT"
+        },
+        {
+          "id": 235,
+          "rend": "chapter",
+          "text": "82 CHAPTER 7. MENTAL DEVELOPMENT"
+        },
+        {
+          "id": 239,
+          "rend": "subhead",
+          "text": "We read further on (VIII, 211):"
+        },
+        {
+          "id": 243,
+          "rend": "chapter",
+          "text": "84 CHAPTER 7. MENTAL DEVELOPMENT"
+        },
+        {
+          "id": 246,
+          "rend": "chapter",
+          "text": "86 CHAPTER 7. MENTAL DEVELOPMENT"
+        },
+        {
+          "id": 249,
+          "rend": "chapter",
+          "text": "88 CHAPTER 7. MENTAL DEVELOPMENT"
+        },
+        {
+          "id": 252,
+          "rend": "chapter",
+          "text": "90 CHAPTER 7. MENTAL DEVELOPMENT"
+        },
+        {
+          "id": 255,
+          "rend": "chapter",
+          "text": "92 CHAPTER 7. MENTAL DEVELOPMENT"
+        },
+        {
+          "id": 260,
+          "rend": "chapter",
+          "text": "94 CHAPTER 7. MENTAL DEVELOPMENT"
+        },
+        {
+          "id": 261,
+          "rend": "subhead",
+          "text": "Chapter 8"
+        },
+        {
+          "id": 265,
+          "rend": "chapter",
+          "text": "96 CHAPTER 8. THE EIGHTFOLD PATH"
+        },
+        {
+          "id": 278,
+          "rend": "chapter",
+          "text": "98 CHAPTER 8. THE EIGHTFOLD PATH"
+        },
+        {
+          "id": 311,
+          "rend": "subhead",
+          "text": "Chapter 9"
+        },
+        {
+          "id": 312,
+          "rend": "subhead",
+          "text": "Pāli Glossary"
+        },
+        {
+          "id": 324,
+          "rend": "subhead",
+          "text": "112 CHAPTER 9. PĀLI GLOSSARY"
+        },
+        {
+          "id": 338,
+          "rend": "subhead",
+          "text": "9.2. BOOKS TRANSLATED BY NINA VAN GORKOM 113"
+        }
+      ],
+      "count": 343,
+      "chunkStarts": [
+        1
+      ]
+    }
+  }
+}
