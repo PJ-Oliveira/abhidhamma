@@ -92,6 +92,8 @@ O projeto é estruturalmente otimizado para o **GitHub Pages**. Basta fazer push
 
 ## 🤝 Feedback e Agradecimentos
 
-Por gentileza, se notar algum erro, erro de digitação (typo) ou algo análogo, por favor, entre em contato comigo para que eu possa corrigir. Ainda faltam realizar algumas atualizações na versão em espanhol, o que espero fazer em breve. Além disso, espero estar sempre revisando o projeto e recebendo feedbacks para poder tornar essa ferramenta cada vez melhor, mais acessível e conceitualmente mais rigorosa.
+Por gentileza, se notar algum erro, erro de digitação (typo) ou algo análogo, por favor, entre em contato comigo para que eu possa corrigir. Ainda faltam realizar algumas atualizações na versão em espanhol, o que espero fazer em breve. 
+
+Essas traduções serão continuamente revistas e retrabalhadas, sempre com o objetivo de aprimoramento. Este projeto só foi possível pelo incentivo e pelos estudos com meu professor de Abhidhamma e Vipassanā Theravāda, Robert Kirk. O projeto é open source pois visa que mais pessoas possam estudar, refletir e desenvolver mais discernimento (*paññā*).
 
 Agradeço profundamente aos meus professores e ao Open Tipitaka.
