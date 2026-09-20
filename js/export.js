@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=6379fc71";
-import { settings } from "./state.js?v=6379fc71";
-import { createLogger } from "./logger.js?v=6379fc71";
+import { t } from "./i18n.js";
+import { settings } from "./state.js";
+import { createLogger } from "./logger.js";
 const log = createLogger("export");
 let glossaryData = null;
 async function loadGlossary() {
@@ -62,6 +62,24 @@ export function buildGlossaryHtml(terms, langMode) {
 <h2 class="chapter" style="page-break-before:always;">Pāḷi Glossary / Glossário Pāḷi</h2>
 ${rows.join("\n")}
 </div>`;
+}
+const GROUP_AUTHORS = {
+    abhidhamma: "Buddha",
+    visuddhimagga: "Buddhaghosa",
+    outros: "Buddhaghosa",
+    comentarios: "Nina van Gorkom",
+};
+const WORK_AUTHORS = {
+    "the-buddhas-path": "Nina van Gorkom",
+    "introduction-to-the-abhidhamma": "Nina van Gorkom",
+    "buddhism-in-daily-life": "Nina van Gorkom",
+    "abhidhamma-in-daily-life": "Nina van Gorkom",
+    "the-conditionality-of-life": "Nina van Gorkom",
+    "the-buddhist-teaching-on-physical-phenomena": "Nina van Gorkom",
+    "path-without-ownership": "Robert Gillam Gillam",
+};
+function getAuthor(workId, group) {
+    return WORK_AUTHORS[workId] ?? GROUP_AUTHORS[group] ?? "Buddha";
 }
 const CRC_TABLE = (() => {
     const t = new Uint32Array(256);
@@ -300,17 +318,20 @@ h2.chapter{string-set:bookTitle content();}
 .glossary-entry strong{color:#333;}
 .glossary-entry em{color:#666;font-size:.9em;}
 `;
-export function buildPrintHtml(segs, title, langMode, glossaryHtml) {
+export function buildPrintHtml(segs, title, langMode, glossaryHtml, workId, group) {
+    const author = getAuthor(workId ?? "", group ?? "");
     const bodyParts = segs.map((s) => segToHtml(s, langMode)).filter(Boolean);
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
+<meta name="author" content="${escHtml(author)}"/>
 <title>${escHtml(title)}</title>
 <style>${PRINT_CSS}</style>
 </head>
 <body>
 <h1 style="font-size:1.8em;border-bottom:2px solid #333;padding-bottom:.5em;">${escHtml(title)}</h1>
+<p style="text-align:center;font-size:.95em;color:#555;margin-top:-.5em;margin-bottom:1.5em;">${escHtml(author)}</p>
 ${bodyParts.join("\n")}
 ${glossaryHtml}
 <script>window.addEventListener("load",function(){setTimeout(function(){window.print();},600);});<\/script>
@@ -376,8 +397,9 @@ blockquote { margin: 1em 5%; font-style: italic; }
 .toc-short li, .toc-mid li { margin-bottom: 0.5em; }
 .toc-mid ol { list-style-type: disc; padding-left: 1.5em; margin-top: 0.3em; }
 `;
-export function buildEpub(segs, title, langMode, glossaryHtml) {
+export function buildEpub(segs, title, langMode, glossaryHtml, workId, group) {
     const enc = new TextEncoder();
+    const author = getAuthor(workId ?? "", group ?? "");
     const bodyParts = segs.map((s) => segToHtml(s, langMode)).filter(Boolean);
     const contentHtml = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
@@ -397,6 +419,7 @@ ${glossaryHtml}
 <package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uid" version="3.0">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
   <dc:title>${escHtml(title)}</dc:title>
+  <dc:creator>${escHtml(author)}</dc:creator>
   <dc:language>pi</dc:language>
   <dc:identifier id="uid">abhidhamma-export-${Date.now()}</dc:identifier>
 </metadata>
@@ -546,6 +569,7 @@ ${glossaryRows}
 <package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uid" version="3.0">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
   <dc:title>Abhidhamma Piṭaka — Coleção Completa</dc:title>
+  <dc:creator>Buddha; Buddhaghosa; Nina van Gorkom</dc:creator>
   <dc:language>pi</dc:language>
   <dc:identifier id="uid">abhidhamma-full-${Date.now()}</dc:identifier>
 </metadata>
@@ -925,11 +949,13 @@ export function initExportPanel(manifest, container, getCurrentWorkId) {
             const usedTerms = collectUsedTerms(allSegs, glossary);
             const glossaryHtml = buildGlossaryHtml(usedTerms, langMode);
             if (format === "pdf") {
-                const html = buildPrintHtml(allSegs, title, langMode, glossaryHtml);
+                const workGroup = allWorks.find((w) => w.work.id === work.id)?.group ?? "";
+                const html = buildPrintHtml(allSegs, title, langMode, glossaryHtml, work.id, workGroup);
                 openPrintWindow(html, title);
             }
             else {
-                const bytes = buildEpub(allSegs, title, langMode, glossaryHtml);
+                const workGroup = allWorks.find((w) => w.work.id === work.id)?.group ?? "";
+                const bytes = buildEpub(allSegs, title, langMode, glossaryHtml, work.id, workGroup);
                 const slug = work.id.replace(/[^a-z0-9]/gi, "-");
                 downloadBlob(bytes, `${slug}.epub`, "application/epub+zip");
             }
