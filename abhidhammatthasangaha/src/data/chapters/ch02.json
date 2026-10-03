@@ -1,0 +1,902 @@
+[
+  {
+    "id": "abhm-2.1",
+    "pali": "2. Cetasikaparicchedo",
+    "translations": {
+      "en": "2. The Chapter on Mental Factors",
+      "pt": "2. Capítulo dos Fatores Mentais",
+      "es": "2.  Capítulo sobre los Factores Mentales"
+    }
+  },
+  {
+    "id": "abhm-2.2",
+    "pali": "Sampayogalakkhaṇaṃ",
+    "translations": {
+      "en": "The Characteristic of Association",
+      "pt": "Características de Associação",
+      "es": "Característica de la asociación"
+    }
+  },
+  {
+    "id": "abhm-2.3",
+    "pali": "Ekuppādanirodhā ca, ekālambaṇavatthukā.",
+    "translations": {
+      "en": "1. Having a common arising and ceasing, a common object and a common basis.",
+      "pt": "1. Surgindo e cessando juntos, tendo o mesmo objeto e base,",
+      "es": "1.  Con surgimiento y cese comunes, y con un mismo objeto y base,"
+    }
+  },
+  {
+    "id": "abhm-2.4",
+    "pali": "Cetoyuttā dvipaññāsa, dhammā cetasikā matā.",
+    "translations": {
+      "en": "The fifty-two states associated with consciousness are regarded as mental factors.",
+      "pt": "associados com a mente, cinquenta e dois dhammas são conhecidos como fatores mentais.",
+      "es": "los cincuenta y dos estados asociados con la mente son conocidos como factores mentales."
+    }
+  },
+  {
+    "id": "abhm-2.5",
+    "pali": "Aññasamānacetasikaṃ",
+    "translations": {
+      "en": "The Ethically Variable Mental Factors",
+      "pt": "Fatores Mentais Comuns a Outros",
+      "es": "Factores mentales éticamente variables"
+    }
+  },
+  {
+    "id": "abhm-2.6",
+    "pali": "Kathaṃ? Phasso vedanā saññā cetanā ekaggatā jīvitindriyaṃ manasikāro ceti sattime cetasikā <b>sabbacittasādhāraṇā</b> nāma.",
+    "translations": {
+      "en": "2. How? Contact, feeling, perception, volition, one-pointedness, the life faculty, and attention—these seven mental factors are called the universals.",
+      "pt": "2. Como? Contato, sensação, percepção, volição, unificação mental, faculdade da vida e atenção — estes sete fatores mentais são chamados universais (comuns a todas as consciências).",
+      "es": "2.  ¿Cuáles son? El contacto, la sensación, la percepción, la volición, la unificación, la facultad vital y la atención: estos siete factores mentales son los llamados universales comunes a toda conciencia."
+    }
+  },
+  {
+    "id": "abhm-2.7",
+    "pali": "Vitakko vicāro adhimokkho vīriyaṃ pīti chando cāti cha ime cetasikā <b>pakiṇṇakā</b> nāma.",
+    "translations": {
+      "en": "3. Initial application, sustained application, decision, energy, rapture, and desire—these six mental factors are called the particulars.",
+      "pt": "3. Aplicação inicial, aplicação sustentada, decisão, energia, entusiasmo e desejo — estes seis fatores mentais são chamados ocasionais.",
+      "es": "3.  La aplicación inicial, la aplicación sostenida, la decisión, la energía, la alegría y el deseo de actuar: estos seis factores mentales son los llamados ocasionales."
+    }
+  },
+  {
+    "id": "abhm-2.8",
+    "pali": "Evamete terasa cetasikā <b>aññasamānā</b>ti veditabbā.",
+    "translations": {
+      "en": "4. Thus these thirteen mental factors are to be understood as ethically variable.",
+      "pt": "4. Assim, deve-se entender que estes treze fatores mentais são comuns a outros.",
+      "es": "4.  Así, debe entenderse que estos trece factores mentales son éticamente variables."
+    }
+  },
+  {
+    "id": "abhm-2.9",
+    "pali": "Akusalacetasikaṃ",
+    "translations": {
+      "en": "The Unwholesome Mental Factors",
+      "pt": "Fatores Mentais Insalubres",
+      "es": "Factores mentales insanos"
+    }
+  },
+  {
+    "id": "abhm-2.10",
+    "pali": "Moho ahirikaṃ anottappaṃ uddhaccaṃ lobho diṭṭhi māno doso issā macchariyaṃ kukkuccaṃ thinaṃ middhaṃ vicikicchā ceti cuddasime cetasikā <b>akusalā</b> nāma.",
+    "translations": {
+      "en": "5. Delusion, shamelessness, fearlessness of wrongdoing, restlessness, greed, wrong view, conceit, hatred, envy, stinginess, remorse, sloth, torpor, and doubt—these fourteen mental factors are called the unwholesome.",
+      "pt": "5. Delusão, ausência de vergonha moral, ausência de temor moral, agitação, apego, visão incorreta, presunção, aversão, inveja, avareza, remorso, preguiça, torpor e dúvida — estes quatorze fatores mentais são chamados insalubres.",
+      "es": "5.  El engaño, la falta de vergüenza moral, la falta de temor moral, la inquietud, la codicia, la visión errónea, la presunción, el odio, la envidia, la avaricia, el remordimiento, la pereza, el torpor y la duda: estos catorce factores mentales son los llamados insanos."
+    }
+  },
+  {
+    "id": "abhm-2.11",
+    "pali": "Sobhanacetasikaṃ",
+    "translations": {
+      "en": "The Beautiful Mental Factors",
+      "pt": "Fatores Mentais Belos",
+      "es": "Factores mentales bellos"
+    }
+  },
+  {
+    "id": "abhm-2.12",
+    "pali": "Saddhā sati hirī ottappaṃ alobho adoso tatramajjhattatā kāyapassaddhi cittapassaddhi kāyalahutā cittalahutā kāyamudutā cittamudutā kāyakammaññatā cittakammaññatā kāyapāguññatā cittapāguññatā kāyujukatā cittujukatā ceti ekūnavīsatime cetasikā <b>sobhanasādhāraṇā</b> nāma.",
+    "translations": {
+      "en": "6. Faith, mindfulness, shame, fear of wrongdoing, non-greed, non-hatred, neutrality of mind, tranquility of the mental body, tranquility of consciousness, lightness of the mental body, lightness of consciousness, malleability of the mental body, malleability of consciousness, wieldiness of the mental body, wieldiness of consciousness, proficiency of the mental body, proficiency of consciousness, rectitude of the mental body, and rectitude of consciousness—these nineteen mental factors are called the beautiful-universals.",
+      "pt": "6. Fé, atenção plena, vergonha moral, temor moral, desapego, não aversão, neutralidade mental, tranquilidade do corpo mental, tranquilidade da consciência, leveza do corpo mental, leveza da consciência, maleabilidade do corpo mental, maleabilidade da consciência, adaptabilidade do corpo mental, adaptabilidade da consciência, proficiência do corpo mental, proficiência da consciência, retidão do corpo mental e retidão da consciência — estes dezenove fatores mentais são chamados comuns aos belos.",
+      "es": "6.  La fe, la atención plena, la vergüenza moral, el temor moral, la no codicia, el no odio, la ecuanimidad, la tranquilidad del cuerpo [de los factores mentales], la tranquilidad de la conciencia, la ligereza del cuerpo, la ligereza de la conciencia, la maleabilidad del cuerpo, la maleabilidad de la conciencia, la adaptabilidad del cuerpo, la adaptabilidad de la conciencia, la competencia del cuerpo, la competencia de la conciencia, la rectitud del cuerpo y la rectitud de la conciencia: estos diecinueve factores mentales son los llamados universales bellos."
+    }
+  },
+  {
+    "id": "abhm-2.13",
+    "pali": "Sammāvācā sammākammanto sammāājīvo ceti tisso <b>viratiyo</b> nāma.",
+    "translations": {
+      "en": "7. Right speech, right action, and right livelihood—these three are called the abstinences.",
+      "pt": "7. Linguagem correta, ação correta e meio de vida correto — estas três são chamadas abstenções.",
+      "es": "7.  La recta palabra, la recta acción y el recto medio de vida: estas tres son las llamadas abstinencias."
+    }
+  },
+  {
+    "id": "abhm-2.14",
+    "pali": "Karuṇā muditā <b>appamaññāyo</b> nāmāti sabbathāpi paññindriyena saddhiṃ pañcavīsatime cetasikā <b>sobhanā</b>ti veditabbā.",
+    "translations": {
+      "en": "8. Compassion and sympathetic joy are called the illimitables. Altogether, with the faculty of wisdom, these twenty-five mental factors are to be known as the beautiful.",
+      "pt": "8. Compaixão e alegria altruísta são chamadas imensuráveis. Assim, em todos os aspectos, junto com a faculdade da sabedoria, estes vinte e cinco fatores mentais devem ser entendidos como belos.",
+      "es": "8.  La compasión (karuṇā) y el regocijo altruista (muditā) son denominados los ilimitados (appamaññā); junto con la facultad de la sabiduría (paññindriya), estos veinticinco factores mentales deben conocerse como hermosos (sobhana) en todo sentido."
+    }
+  },
+  {
+    "id": "abhm-2.15",
+    "pali": "Ettāvatā ca –",
+    "translations": {
+      "en": "9. And thus far:",
+      "pt": "9. E até aqui:",
+      "es": "9.  Y hasta aquí:"
+    }
+  },
+  {
+    "id": "abhm-2.16",
+    "pali": "Terasaññasamānā ca, cuddasākusalā tathā;</p><p rend=\"gathalast\">Sobhanā pañcavīsāti, dvipaññāsa pavuccare.",
+    "translations": {
+      "en": "Thirteen are ethically variable, and fourteen are likewise unwholesome; twenty-five are beautiful. Thus fifty-two are declared.",
+      "pt": "Treze comuns a outros, e da mesma forma quatorze insalubres; vinte e cinco belos — assim, diz-se que são cinquenta e dois.",
+      "es": "Se dice que hay cincuenta y dos [factores mentales]: trece comunes a los otros, catorce perjudiciales y veinticinco hermosos."
+    }
+  },
+  {
+    "id": "abhm-2.17",
+    "pali": "Sampayoganayo",
+    "translations": {
+      "en": "The Method of Association",
+      "pt": "O Método de Associação",
+      "es": "El Método de Asociación (Sampayoganaya)"
+    }
+  },
+  {
+    "id": "abhm-2.18",
+    "pali": "Tesaṃ cittāviyuttānaṃ, yathāyogamito paraṃ.",
+    "translations": {
+      "en": "10. Of those mental factors inseparable from consciousness, hereafter according to their application,",
+      "pt": "10. Daqui em diante, a associação de cada um desses fatores inseparáveis da mente,",
+      "es": "10.  En adelante se describe la asociación de estos [factores mentales] inseparables de la conciencia, según corresponda,"
+    }
+  },
+  {
+    "id": "abhm-2.19",
+    "pali": "Cittuppādesu paccekaṃ, sampayogo pavuccati.",
+    "translations": {
+      "en": "the association with each type of consciousness will be stated.",
+      "pt": "nos surgimentos de consciência, será declarada conforme apropriado.",
+      "es": "individualmente en cada surgimiento de conciencia (cittuppāda)."
+    }
+  },
+  {
+    "id": "abhm-2.20",
+    "pali": "Satta sabbattha yujjanti, yathāyogaṃ pakiṇṇakā.",
+    "translations": {
+      "en": "11. Seven are associated with all; the particulars, according to their application.",
+      "pt": "11. Sete associam-se em toda parte; os ocasionais, conforme apropriado.",
+      "es": "11.  Siete están asociados con toda [conciencia]; los ocasionales (pakiṇṇakā) se asocian según corresponda."
+    }
+  },
+  {
+    "id": "abhm-2.21",
+    "pali": "Cuddasākusalesveva, sobhanesveva sobhanā.",
+    "translations": {
+      "en": "The fourteen are found only in the unwholesome states, the beautiful only in the beautiful states.",
+      "pt": "Os quatorze apenas nos insalubres; os belos apenas nos belos.",
+      "es": "Catorce se asocian solo con las perjudiciales, y los hermosos solo con las hermosas."
+    }
+  },
+  {
+    "id": "abhm-2.22",
+    "pali": "Aññasamānacetasikasampayoganayo",
+    "translations": {
+      "en": "The Method of Association for the Ethically Variable Mental Factors",
+      "pt": "O Método de Associação dos Fatores Mentais Comuns a Outros",
+      "es": "Método de asociación de los factores mentales comunes a los otros (Aññasamāna)"
+    }
+  },
+  {
+    "id": "abhm-2.23",
+    "pali": "Kathaṃ? <b>Sabbacittasādhāraṇā</b> tāva sattime cetasikā sabbesupi ekūnanavuticittuppādesu labbhanti.",
+    "translations": {
+      "en": "12. How? To begin with, these seven universal mental factors are found in all eighty-nine types of consciousness.",
+      "pt": "12. Como? Primeiramente, estes sete fatores mentais comuns a todas as consciências são encontrados em todos os oitenta e nove surgimentos de consciência.",
+      "es": "12.  ¿Cómo? Primero, estos siete factores mentales universales para toda conciencia se encuentran en los ochenta y nueve tipos de surgimiento de conciencia."
+    }
+  },
+  {
+    "id": "abhm-2.24",
+    "pali": "<b>Pakiṇṇakesu</b> pana vitakko tāva dvipañcaviññāṇavajjitakāmāvacaracittesu ceva ekādasasu paṭhamajjhānacittesu ceti pañcapaññāsacittesu uppajjati.",
+    "translations": {
+      "en": "13. Among the particulars, initial application arises in fifty-five types of consciousness: that is, in the sense-sphere consciousnesses apart from the ten sense-consciousnesses, and in the eleven first-jhāna consciousnesses.",
+      "pt": "13. Entre os ocasionais, primeiramente, a aplicação inicial surge em cinquenta e cinco consciências, a saber: nas consciências da esfera dos sentidos, exceto os dois conjuntos de cinco consciências sensoriais, e nas onze consciências do primeiro jhāna.",
+      "es": "13.  Entre los ocasionales (pakiṇṇakā), el pensamiento aplicado (vitakka) surge en cincuenta y cinco tipos de conciencia: en las conciencias de la esfera de los sentidos —excepto en las dos series de cinco conciencias sensoriales— y en las once conciencias del primer jhána."
+    }
+  },
+  {
+    "id": "abhm-2.25",
+    "pali": "Vicāro pana tesu ceva ekādasasu dutiyajjhānacittesu cāti chasaṭṭhicittesu.",
+    "translations": {
+      "en": "14. Sustained application, however, arises in those fifty-five and also in the eleven second-jhāna consciousnesses, thus in sixty-six types of consciousness.",
+      "pt": "14. A aplicação sustentada, por sua vez, surge em sessenta e seis consciências, a saber: naquelas mesmas e nas onze consciências do segundo jhāna.",
+      "es": "14.  El pensamiento sostenido (vicāra) surge en sesenta y seis tipos de conciencia: en las [cincuenta y cinco] mencionadas y en las once conciencias del segundo jhána."
+    }
+  },
+  {
+    "id": "abhm-2.26",
+    "pali": "Adhimokkho dvipañcaviññāṇavicikicchāsahagatavajjitacittesu.",
+    "translations": {
+      "en": "15. Decision arises in all types of consciousness except the ten sense-consciousnesses and the consciousness accompanied by doubt.",
+      "pt": "15. A decisão surge nas consciências, exceto nos dois conjuntos de cinco consciências sensoriais e na consciência acompanhada de dúvida.",
+      "es": "15.  La determinación (adhimokkha) surge en todas las conciencias excepto en las dos series de cinco conciencias sensoriales y en la conciencia acompañada de duda."
+    }
+  },
+  {
+    "id": "abhm-2.27",
+    "pali": "Vīriyaṃ pañcadvārāvajjanadvipañcaviññāṇasampaṭicchanasantīraṇavajjitacittesu.",
+    "translations": {
+      "en": "16. Energy arises in all types of consciousness except the five-door-adverting consciousness, the ten sense-consciousnesses, the two receiving consciousnesses, and the three investigating consciousnesses.",
+      "pt": "16. A energia surge nas consciências, exceto no direcionamento para as cinco portas, nos dois conjuntos de cinco consciências sensoriais, na recepção e na investigação.",
+      "es": "16.  La energía (vīriya) surge en todas las conciencias excepto en la advertencia por la puerta de los cinco sentidos, las dos series de cinco conciencias sensoriales, la conciencia receptiva y la conciencia de investigación."
+    }
+  },
+  {
+    "id": "abhm-2.28",
+    "pali": "Pīti domanassupekkhāsahagatakāyaviññāṇacatutthajjhānavajjitacittesu.",
+    "translations": {
+      "en": "17. Rapture arises in all types of consciousness except those accompanied by displeasure and equanimity, the two types of body-consciousness, and the fourth-jhāna consciousnesses.",
+      "pt": "17. O entusiasmo surge nas consciências, exceto naquelas acompanhadas de desprazer, equanimidade, consciência corporal e no quarto jhāna.",
+      "es": "17.  El gozo (pīti) surge en todas las conciencias excepto en aquellas acompañadas de desagrado mental, las acompañadas de ecuanimidad, la conciencia sensorial del cuerpo y el cuarto jhána."
+    }
+  },
+  {
+    "id": "abhm-2.29",
+    "pali": "Chando ahetukamomūhavajjitacittesūti.",
+    "translations": {
+      "en": "18. Desire-to-do arises in all types of consciousness except the rootless consciousnesses and the two consciousnesses rooted in delusion.",
+      "pt": "18. O desejo surge nas consciências, exceto nas sem raízes e naquelas acompanhadas de delusão.",
+      "es": "18.  El deseo de actuar (chanda) surge en todas las conciencias excepto en las conciencias sin causas y en las dos acompañadas de engaño."
+    }
+  },
+  {
+    "id": "abhm-2.30",
+    "pali": "Te pana cittuppādā yathākkamaṃ –",
+    "translations": {
+      "en": "19. Those types of consciousness, in due order, are:",
+      "pt": "19. Esses surgimentos de consciência, em ordem, são:",
+      "es": "19.  Aquellos surgimientos de conciencia son, en orden:"
+    }
+  },
+  {
+    "id": "abhm-2.31",
+    "pali": "Chasaṭṭhi pañcapaññāsa, ekādasa ca soḷasa;</p><p rend=\"gathalast\">Sattati vīsati ceva, pakiṇṇakavivajjitā.",
+    "translations": {
+      "en": "Sixty-six, fifty-five, eleven, and sixteen; seventy and twenty, are the consciousnesses devoid of the respective particulars.",
+      "pt": "Sessenta e seis, cinquenta e cinco, onze, dezesseis, setenta e vinte, respectivamente, são desprovidos dos ocasionais.",
+      "es": "Sesenta y seis, cincuenta y cinco, once, dieciséis, setenta y veinte son [los tipos de conciencia] desprovistos de los factores ocasionales."
+    }
+  },
+  {
+    "id": "abhm-2.32",
+    "pali": "Pañcapaññāsa chasaṭṭhiṭṭhasattati tisattati;</p><p rend=\"gathalast\">Ekapaññāsa cekūnasattati sapakiṇṇakā.",
+    "translations": {
+      "en": "Fifty-five, sixty-six, seventy-eight, seventy-three; fifty-one, and sixty-nine are the consciousnesses accompanied by the respective particulars.",
+      "pt": "Cinquenta e cinco, sessenta e seis, setenta e oito, setenta e três, opiniões de cinquenta e um e sessenta e nove, respectivamente, são associados com os ocasionais.",
+      "es": "Cincuenta y cinco, sesenta y seis, setenta y ocho, setenta y tres, cincuenta y uno y sesenta y nueve son [las conciencias] que poseen los ocasionales."
+    }
+  },
+  {
+    "id": "abhm-2.33",
+    "pali": "Akusalacetasikasampayoganayo",
+    "translations": {
+      "en": "The Method of Association for the Unwholesome Mental Factors",
+      "pt": "O Método de Associação dos Fatores Mentais Insalubres",
+      "es": "Método de asociación de los factores mentales perjudiciales (Akusala)"
+    }
+  },
+  {
+    "id": "abhm-2.34",
+    "pali": "<b>Akusalesu</b> pana moho ahirikaṃ anottappaṃ uddhaccañcāti cattārome cetasikā sabbākusalasādhāraṇā nāma, sabbesupi dvādasā kusalesu labbhanti.",
+    "translations": {
+      "en": "20. Among the unwholesome, four mental factors—delusion, shamelessness, fearlessness of wrongdoing, and restlessness—are called the unwholesome-universals; they are found in all twelve unwholesome types of consciousness.",
+      "pt": "20. Entre os insalubres, a delusão, a ausência de vergonha moral, a ausência de temor moral e a agitação — estes quatro fatores mentais são chamados comuns a todos os insalubres; eles são encontrados em todas as doze consciências insalubres.",
+      "es": "20.  Entre los perjudiciales, estos cuatro factores mentales —delusión (moha), falta de vergüenza moral (ahirika), falta de temor moral (anottappa) y agitación (uddhacca)— son llamados universales perjudiciales y se encuentran en todas las doce conciencias perjudiciales."
+    }
+  },
+  {
+    "id": "abhm-2.35",
+    "pali": "Lobho aṭṭhasu lobhasahagatacittesveva labbhati.",
+    "translations": {
+      "en": "21. Greed is found only in the eight types of consciousness accompanied by greed.",
+      "pt": "21. O apego é encontrado apenas nas oito consciências acompanhadas de apego.",
+      "es": "21.  La codicia (lobha) se encuentra solo en las ocho conciencias acompañadas de codicia."
+    }
+  },
+  {
+    "id": "abhm-2.36",
+    "pali": "Diṭṭhi catūsu diṭṭhigatasampayuttesu.",
+    "translations": {
+      "en": "22. Wrong view is found in the four types of consciousness associated with wrong view.",
+      "pt": "22. A visão incorreta, nas quatro associadas com visão incorreta.",
+      "es": "22.  El punto de vista erróneo (diṭṭhi) se encuentra en las cuatro conciencias asociadas con puntos de vista erróneos."
+    }
+  },
+  {
+    "id": "abhm-2.37",
+    "pali": "Māno catūsu diṭṭhigatavippayuttesu.",
+    "translations": {
+      "en": "23. Conceit is found in the four types of consciousness dissociated from wrong view.",
+      "pt": "23. A presunção, nas quatro dissociadas de visão incorreta.",
+      "es": "23.  El orgullo (māna) se encuentra en las cuatro conciencias disociadas de puntos de vista erróneos."
+    }
+  },
+  {
+    "id": "abhm-2.38",
+    "pali": "Doso issā macchariyaṃ kukkuccañcāti dvīsu paṭighasampayuttacittesu.",
+    "translations": {
+      "en": "24. Hatred, envy, stinginess, and remorse are found in the two types of consciousness associated with aversion.",
+      "pt": "24. A aversão, a inveja, a avareza e o remorso, nas duas consciências associadas com aversão.",
+      "es": "24.  El odio (dosa), la envidia (issā), la avaricia (macchariya) y el remordimiento (kukkucca) se encuentran en las dos conciencias asociadas con la aversión."
+    }
+  },
+  {
+    "id": "abhm-2.39",
+    "pali": "Thinamiddhaṃ pañcasu sasaṅkhārikacittesu.",
+    "translations": {
+      "en": "25. Sloth and torpor are found in the five types of prompted consciousness.",
+      "pt": "25. A preguiça e o torpor, nas cinco consciências induzidas.",
+      "es": "25.  La pereza y el letargo (thīna-middha) se encuentran en las cinco conciencias instigadas."
+    }
+  },
+  {
+    "id": "abhm-2.40",
+    "pali": "Vicikicchā vicikicchāsahagatacitteyevāti.",
+    "translations": {
+      "en": "26. Doubt is found only in the consciousness accompanied by doubt.",
+      "pt": "26. A dúvida, apenas na consciência acompanhada de dúvida.",
+      "es": "26.  La duda (vicikicchā) se encuentra solo en la conciencia acompañada de duda."
+    }
+  },
+  {
+    "id": "abhm-2.41",
+    "pali": "Sabbāpuññesu cattāro,",
+    "translations": {
+      "en": "27. Four are in all demeritorious states,",
+      "pt": "27. Quatro em todos os dhammas prejudiciais,",
+      "es": "27.  Cuatro se encuentran en todas las conciencias no meritorias (perjudiciales),"
+    }
+  },
+  {
+    "id": "abhm-2.42",
+    "pali": "Lobhamūle tayo gatā;</p><p rend=\"gatha3\">Dosamūlesu cattāro,</p><p rend=\"gathalast\">Sasaṅkhāre dvayaṃ tathā.",
+    "translations": {
+      "en": "three in the greed-rooted; four in the aversion-rooted; and likewise two in the prompted.",
+      "pt": "três são encontrados naqueles com raiz no apego; quatro naqueles com raiz na aversão, e da mesma forma dois nos induzidos.",
+      "es": "tres en las de raíz en la codicia, cuatro en las de raíz en el odio, e igualmente el par [pereza y letargo] en las instigadas."
+    }
+  },
+  {
+    "id": "abhm-2.43",
+    "pali": "Vicikicchā vicikicchā-citte cāti catuddasa;</p><p rend=\"gathalast\">Dvādasākulesveva, sampayujjanti pañcadhā.",
+    "translations": {
+      "en": "and doubt in the doubt-consciousness. Thus the fourteen are associated in five ways only in the twelve unwholesome states.",
+      "pt": "A dúvida na consciência de dúvida — assim, os quatorze associam-se de cinco maneiras apenas nas doze consciências insalubres.",
+      "es": "Y la duda en la conciencia de duda. Así, estos catorce se asocian de cinco maneras solo con las doce conciencias perjudiciales."
+    }
+  },
+  {
+    "id": "abhm-2.44",
+    "pali": "Sobhanacetasikasampayoganayo",
+    "translations": {
+      "en": "The Method of Association for the Beautiful Mental Factors",
+      "pt": "O método de associação dos fatores mentais belos",
+      "es": "Método de asociación de los factores mentales hermosos."
+    }
+  },
+  {
+    "id": "abhm-2.45",
+    "pali": "<b>Sobhanesu</b> pana sobhanasādhāraṇā tāva ekūnavīsatime cetasikā sabbesupi ekūnasaṭṭhisobhanacittesu saṃvijjanti.",
+    "translations": {
+      "en": "28. Among the beautiful, to begin with, the nineteen beautiful-universal mental factors are present in all fifty-nine beautiful types of consciousness.",
+      "pt": "28. Entre as consciências belas, primeiramente, os dezenove fatores mentais comuns aos belos encontram-se em todas as cinquenta e nove consciências belas.",
+      "es": "28.  Entre los estados hermosos, en primer lugar, estos diecinueve factores mentales comunes a lo hermoso se encuentran en todas las cincuenta y nueve conciencias hermosas."
+    }
+  },
+  {
+    "id": "abhm-2.46",
+    "pali": "Viratiyo pana tissopi lokuttaracittesu sabbathāpi niyatā ekatova labbhanti, lokiyesu pana kāmāvacarakusalesveva kadāci sandissanti visuṃ visuṃ.",
+    "translations": {
+      "en": "29. The three abstinences, however, are invariably found together in all supramundane types of consciousness; but in the mundane sphere, they are found only occasionally and separately in the wholesome sense-sphere types of consciousness.",
+      "pt": "29. As três abstinências, no entanto, são sempre fixas e obtidas em conjunto nas consciências supramundanas; mas nas consciências salutares mundanas da esfera sensorial, elas aparecem apenas ocasionalmente e individualmente.",
+      "es": "29.  Las tres abstinencias se encuentran invariablemente juntas en todas las conciencias supramundanas; sin embargo, en las conciencias saludables de la esfera de los sentidos mundanos, aparecen solo ocasionalmente y por separado."
+    }
+  },
+  {
+    "id": "abhm-2.47",
+    "pali": "Appamaññāyo pana dvādasasu pañcamajjhānavajjitamahaggatacittesu ceva kāmāvacarakusalesu ca sahetukakāmāvacarakiriyacittesu cāti aṭṭhavīsaticittesveva kadāci nānā hutvā jāyanti, upekkhāsahagatesu panettha karuṇāmuditā na santīti keci vadanti.",
+    "translations": {
+      "en": "30. The illimitables, however, arise occasionally and separately in twenty-eight types of consciousness: that is, in the twelve sublime consciousnesses (excluding those of the fifth jhāna), in the wholesome sense-sphere consciousnesses, and in the rooted functional sense-sphere consciousnesses. Some, however, say that compassion and sympathetic joy are not present in those accompanied by equanimity.",
+      "pt": "30. Os incomensuráveis, contudo, surgem apenas ocasionalmente e separadamente em vinte e oito consciências — a saber, nas doze consciências sublimes excluindo o quinto jhāna, nas [oito] consciências salutares da esfera sensorial e nas [oito] consciências funcionais com causa da esfera sensorial. Alguns, no entanto, dizem que a compaixão e a alegria altruísta não estão presentes naquelas acompanhadas de equanimidade.",
+      "es": "30.  Los ilimitados surgen ocasionalmente y de forma separada en solo veintiocho conciencias: a saber, las doce conciencias sublimes excluyendo los quintos jhanas, las conciencias saludables de la esfera de los sentidos y las conciencias funcionales de la esfera de los sentidos con raíces. Algunos dicen, no obstante, que la compasión y el regocijo altruista no están presentes en las conciencias acompañadas de ecuanimidad."
+    }
+  },
+  {
+    "id": "abhm-2.48",
+    "pali": "Paññā pana dvādasasu ñāṇasampayuttakāmāvacaracittesu ceva sabbesupi pañcatiṃsamahaggatalokuttaracittesu cāti sattacattālīsacittesu sampayogaṃ gacchatīti.",
+    "translations": {
+      "en": "31. Wisdom, however, is associated with forty-seven types of consciousness: the twelve sense-sphere types of consciousness accompanied by knowledge, and all thirty-five sublime and supramundane types of consciousness.",
+      "pt": "31. A sabedoria, por sua vez, associa-se com quarenta e sete consciências — a saber, as doze consciências da esfera sensorial associadas ao conhecimento e todas as trinta e cinco consciências sublimes e supramundanas.",
+      "es": "31.  La sabiduría, por otro lado, entra en asociación con cuarenta y siete conciencias: las doce conciencias de la esfera de los sentidos asociadas con el conocimiento y todas las treinta y cinco conciencias sublimes y supramundanas."
+    }
+  },
+  {
+    "id": "abhm-2.49",
+    "pali": "Ekūnavīsati dhammā, jāyantekūnasaṭṭhisu.",
+    "translations": {
+      "en": "32. Nineteen factors arise in fifty-nine.",
+      "pt": "32. Dezenove dhammas surgem em cinquenta e nove [consciências].",
+      "es": "32.  Diecinueve estados surgen en las cincuenta y nueve conciencias."
+    }
+  },
+  {
+    "id": "abhm-2.50",
+    "pali": "Tayo soḷasacittesu, aṭṭhavīsatiyaṃ dvayaṃ.",
+    "translations": {
+      "en": "Three in sixteen types of consciousness, two in twenty-eight.",
+      "pt": "Três em dezesseis consciências, dois em vinte e oito.",
+      "es": "Tres surgen en dieciséis conciencias; dos en veintiocho."
+    }
+  },
+  {
+    "id": "abhm-2.51",
+    "pali": "Paññā pakāsitā, sattacattālīsavidhesupi;</p><p rend=\"gathalast\">Sampayuttā catudhevaṃ, sobhanesveva sobhanā.",
+    "translations": {
+      "en": "Wisdom is declared in forty-seven types. Thus the beautiful factors, associated in four ways, are found only in the beautiful states.",
+      "pt": "A sabedoria é declarada estar em quarenta e sete tipos. Assim, os [fatores] belos associam-se de quatro maneiras apenas com as [consciências] belas.",
+      "es": "La sabiduría se declara presente en cuarenta y siete clases de conciencias. Así, de cuatro maneras, los factores mentales hermosos se asocian solo con las conciencias hermosas."
+    }
+  },
+  {
+    "id": "abhm-2.52",
+    "pali": "Issāmaccherakukkucca-viratikaruṇādayo.",
+    "translations": {
+      "en": "33. Envy, avarice, remorse, the abstinences, compassion, and so on,",
+      "pt": "33. Inveja, avareza, remorso, as abstinências, a compaixão e assim por diante,",
+      "es": "33.  Envidia, avaricia, preocupación, las abstinencias, la compasión y los demás ilimitados."
+    }
+  },
+  {
+    "id": "abhm-2.53",
+    "pali": "Nānā kadāci māno ca, thina middhaṃ tathā saha.",
+    "translations": {
+      "en": "arise separately and occasionally; also conceit, and likewise sloth and torpor together.",
+      "pt": "surgem separadamente e ocasionalmente; assim também o orgulho, e a preguiça e o torpor em conjunto.",
+      "es": "El orgullo surge ocasionalmente y por separado, al igual que la pereza y el torpor juntos."
+    }
+  },
+  {
+    "id": "abhm-2.54",
+    "pali": "Yathāvuttānusārena, sesā <b>niyatayogino</b>.",
+    "translations": {
+      "en": "34. In accordance with what has been said, the remaining factors have a fixed association.",
+      "pt": "34. De acordo com a maneira declarada, os demais são de associação fixa.",
+      "es": "34.  De acuerdo con lo que se ha dicho anteriormente, los restantes son de asociación fija."
+    }
+  },
+  {
+    "id": "abhm-2.55",
+    "pali": "<b>Saṅgahañca</b> pavakkhāmi, tesaṃ dāni yathārahaṃ.",
+    "translations": {
+      "en": "Now I shall explain the summary of them as is appropriate.",
+      "pt": "Agora falarei sobre a combinação deles, conforme apropriado.",
+      "es": "Ahora explicaré su combinación de la manera que corresponda."
+    }
+  },
+  {
+    "id": "abhm-2.56",
+    "pali": "Saṅgahanayo",
+    "translations": {
+      "en": "The Method of Inclusion",
+      "pt": "O método de combinação",
+      "es": "El método de combinación."
+    }
+  },
+  {
+    "id": "abhm-2.57",
+    "pali": "Chattiṃsānuttare dhammā, pañcatiṃsa mahaggate.",
+    "translations": {
+      "en": "35. Thirty-six factors in the supramundane, thirty-five in the sublime.",
+      "pt": "35. Trinta e seis dhammas são encontrados na supramundana, trinta e cinco na sublime.",
+      "es": "35.  Treinta y seis estados se encuentran en las supramundanas; treinta y cinco en las sublimes."
+    }
+  },
+  {
+    "id": "abhm-2.58",
+    "pali": "Aṭṭhatiṃsāpi labbhanti, kāmāvacarasobhane.",
+    "translations": {
+      "en": "Thirty-eight are also found in the beautiful sense-sphere consciousness.",
+      "pt": "Trinta e oito também são obtidos nas belas da esfera sensorial.",
+      "es": "Treinta y ocho se encuentran en las hermosas de la esfera de los sentidos."
+    }
+  },
+  {
+    "id": "abhm-2.59",
+    "pali": "Sattavīsatipuññamhi, dvādasāhetuketi ca;</p><p rend=\"gathalast\">Yathāsambhavayogena, pañcadhā tattha saṅgaho.",
+    "translations": {
+      "en": "Twenty-seven in the meritorious, and twelve in the rootless; according to their possible combination, the inclusion there is fivefold.",
+      "pt": "Vinte e sete na prejudicial, e doze na sem causa. De acordo com a sua associação cabível, a combinação ali é de cinco tipos.",
+      "es": "Veintisiete en las meritorias y doce en las sin raíces. De acuerdo con su asociación posible, allí la combinación es de cinco tipos."
+    }
+  },
+  {
+    "id": "abhm-2.60",
+    "pali": "Lokuttaracittasaṅgahanayo",
+    "translations": {
+      "en": "The Method of Inclusion in Supramundane Consciousness",
+      "pt": "O método de combinação nas consciências supramundanas",
+      "es": "Método de combinación de las conciencias supramundanas."
+    }
+  },
+  {
+    "id": "abhm-2.61",
+    "pali": "Kathaṃ? <b>Lokuttaresu</b> tāva aṭṭhasu paṭhamajjhānikacittesu aññasamānā terasa cetasikā, appamaññāvajjitā tevīsati sobhanacetasikā ceti chattiṃsa dhammā saṅgahaṃ gacchanti, tathā dutiyajjhānikacittesu vitakkavajjā, tatiyajjhānikacittesu vitakkavicāravajjā, catutthajjhānikacittesu vitakkavicārapītivajjā, pañcamajjhānikacittesupi upekkhāsahagatā te eva saṅgayhantīti sabbathāpi aṭṭhasu lokuttaracittesu pañcakajjhānavasena pañcadhāva saṅgaho hotīti.",
+    "translations": {
+      "en": "36. How? To begin with, in the eight first-jhāna supramundane consciousnesses, thirty-six factors are included: the thirteen mental factors common to others and the twenty-three beautiful mental factors excluding the illimitables. Similarly, in the second-jhāna consciousnesses, the same factors are included excluding initial application; in the third-jhāna consciousnesses, excluding initial application and sustained application; in the fourth-jhāna consciousnesses, excluding initial application, sustained application, and joy; and in the fifth-jhāna consciousnesses, which are accompanied by equanimity, those same factors are included. Thus, in all eight supramundane consciousnesses, the inclusion is fivefold by way of the five jhānas.",
+      "pt": "36. Como? Primeiramente, nas oito consciências supramundanas pertencentes ao primeiro jhāna, trinta e seis dhammas entram em combinação — a saber, treze fatores mentais comuns a outras consciências e vinte e três fatores mentais belos, excluindo os incomensuráveis. Da mesma forma, nas consciências do segundo jhāna, os mesmos são combinados, excluindo a aplicação inicial (vitakka); nas consciências do terceiro jhāna, excluindo a aplicação inicial e a aplicação sustentada (vicāra); nas consciências do quarto jhāna, excluindo a aplicação inicial, a aplicação sustentada e o contentamento (pīti); e nas consciências do quinto jhāna, que são acompanhadas de equanimidade, os mesmos são combinados. Assim, de todas as maneiras, para as oito consciências supramundanas, a combinação é de cinco tipos por meio dos cinco jhanas.",
+      "es": "36.  ¿Cómo? En primer lugar, en las ocho conciencias supramundanas pertenecientes al primer jhana, se combinan treinta y seis estados: trece factores mentales comunes a otros y veintitrés factores mentales hermosos, excluyendo los ilimitados. Del mismo modo, en las conciencias del segundo jhana se combinan los mismos excluyendo el pensamiento aplicado; en las del tercer jhana, excluyendo el pensamiento aplicado y el sostenido; en las del cuarto jhana, excluyendo el pensamiento aplicado, el sostenido y el gozo; y en las conciencias del quinto jhana, acompañadas de ecuanimidad, se combinan esos mismos. Así, en las ocho conciencias supramundanas, hay una quíntuple combinación por medio de los cinco jhanas."
+    }
+  },
+  {
+    "id": "abhm-2.62",
+    "pali": "Chattiṃsa pañcatiṃsa ca, catuttiṃsa yathākkamaṃ.",
+    "translations": {
+      "en": "37. Thirty-six, thirty-five, and thirty-four, respectively.",
+      "pt": "37. Trinta e seis, trinta e cinco e trinta e quatro, em ordem.",
+      "es": "37.  Treinta y seis, treinta y cinco y treinta y cuatro respectivamente."
+    }
+  },
+  {
+    "id": "abhm-2.63",
+    "pali": "Tettiṃsadvayamiccevaṃ, pañcadhānuttare ṭhitā.",
+    "translations": {
+      "en": "And a pair with thirty-three each; thus they are established fivefold in the supramundane.",
+      "pt": "E duas vezes trinta e três — assim eles se apresentam de cinco maneiras na supramundana.",
+      "es": "Dos veces treinta y tres: así la combinación es de cinco tipos en las supramundanas."
+    }
+  },
+  {
+    "id": "abhm-2.64",
+    "pali": "Mahaggatacittasaṅgahanayo",
+    "translations": {
+      "en": "The Method of Inclusion in Sublime Consciousness",
+      "pt": "O método de combinação nas consciências sublimes",
+      "es": "Método de combinación de las conciencias sublimes."
+    }
+  },
+  {
+    "id": "abhm-2.65",
+    "pali": "<b>Mahaggatesu</b> pana tīsu paṭhamajjhānikacittesu tāva aññasamānā terasa cetasikā, viratittayavajjitā dvāvīsati sobhanacetasikā ceti pañcatiṃsa dhammā saṅgahaṃ gacchanti, karuṇāmuditā panettha paccekameva yojetabbā, tathā dutiyajjhānikacittesu vitakkavajjā, tatiyajjhānikacittesu vitakkavicāravajjā, catutthajjhānikacittesu vitakkavicārapītivajjā, pañcamajjhānikacittesu pana pannarasasu appamaññāyo na labbhantīti sabbathāpi sattavīsatimahaggatacittesu pañcakajjhānavasena pañcadhāva saṅgaho hotīti.",
+    "translations": {
+      "en": "38. Now, in the sublime consciousnesses, to begin with, in the three first-jhāna consciousnesses, thirty-five factors are included: the thirteen mental factors common to others and the twenty-two beautiful mental factors excluding the three abstinences. Here, compassion and appreciative joy are to be combined one at a time. Similarly, in the second-jhāna consciousnesses, the same factors are included excluding initial application; in the third-jhāna consciousnesses, excluding initial application and sustained application; in the fourth-jhāna consciousnesses, excluding initial application, sustained application, and joy. However, in the fifteen fifth-jhāna consciousnesses, the illimitables are not found. Thus, in all twenty-seven sublime consciousnesses, the inclusion is fivefold by way of the five jhānas.",
+      "pt": "38. Nas sublimes, contudo, primeiramente nas três consciências do primeiro jhāna, trinta e cinco dhammas entram em combinação — a saber, treze fatores mentais comuns a outras consciências e vinte e dois fatores mentais belos, excluindo as três abstinências. Aqui, a compaixão e a alegria altruísta devem ser associadas individualmente. Da mesma forma, nas consciências do segundo jhāna, excluindo a aplicação inicial; nas consciências do terceiro jhāna, excluindo a aplicação inicial e a aplicação sustentada; nas consciências do quarto jhāna, excluindo a aplicação inicial, a aplicação sustentada e o contentamento; mas nas quinze consciências do quinto jhāna, os incomensuráveis não são obtidos. Assim, de todas as maneiras, para as vinte e sete consciências sublimes, a combinação é de cinco tipos por meio dos cinco jhanas.",
+      "es": "38.  Entre las sublimes, primero en las tres conciencias del primer jhana, se combinan treinta y cinco estados: trece factores mentales comunes a otros y veintidós factores mentales hermosos, excluyendo las tres abstinencias. Aquí, la compasión y el regocijo altruista deben incluirse por separado. Del mismo modo, en las conciencias del segundo jhana, excluyendo el pensamiento aplicado; en las del tercer jhana, excluyendo el pensamiento aplicado y el sostenido; en las del cuarto jhana, excluyendo el pensamiento aplicado, el sostenido y el gozo. En las quince conciencias del quinto jhana, sin embargo, no se obtienen los ilimitados. Así, en todas las veintisiete conciencias sublimes, hay una quíntuple combinación por medio de los cinco jhanas."
+    }
+  },
+  {
+    "id": "abhm-2.66",
+    "pali": "Pañcatiṃsa catuttiṃsa, tettiṃsa ca yathākkamaṃ.",
+    "translations": {
+      "en": "39. Thirty-five, thirty-four, and thirty-three, respectively.",
+      "pt": "39. Trinta e seis, trinta e cinco e trinta e quatro, em ordem.",
+      "es": "39.  Treinta y cinco, treinta y cuatro y treinta y tres respectivamente."
+    }
+  },
+  {
+    "id": "abhm-2.67",
+    "pali": "Bāttiṃsa ceva tiṃseti, pañcadhāva mahaggate.",
+    "translations": {
+      "en": "And thirty-two and thirty; thus it is fivefold in the sublime.",
+      "pt": "Trinta e dois e trinta — assim, de cinco maneiras na sublime.",
+      "es": "Treinta y dos y treinta: así la combinación es de cinco tipos en las sublimes."
+    }
+  },
+  {
+    "id": "abhm-2.68",
+    "pali": "Kāmāvacarasobhanacittasaṅgahanayo",
+    "translations": {
+      "en": "The Method of Inclusion in Beautiful Sense-Sphere Consciousness",
+      "pt": "O método de combinação nas consciências belas da esfera sensorial",
+      "es": "Método de combinación de las conciencias hermosas de la esfera de los sentidos."
+    }
+  },
+  {
+    "id": "abhm-2.69",
+    "pali": "<b>Kāmāvacarasobhanesu</b> pana kusalesu tāva paṭhamadvaye aññasamānā terasa cetasikā, pañcavīsati sobhanacetasikā ceti aṭṭhatiṃsa dhammā saṅgahaṃ gacchanti, appamaññāviratiyo panettha pañcapi paccekameva yojetabbā, tathā dutiyadvaye ñāṇavajjitā, tatiyadvaye ñāṇasampayuttā pītivajjitā, catutthadvaye ñāṇapītivajjitā te eva saṅgayhanti. Kiriyacittesupi virativajjitā tatheva catūsupi dukesu catudhāva saṅgayhanti. Tathā vipākesu ca appamaññāvirativajjitā te eva saṅgayhantīti sabbathāpi catuvīsatikāmāvacarasobhanacittesu dukavasena dvādasadhāva saṅgaho hotīti.",
+    "translations": {
+      "en": "40. Now, in the beautiful sense-sphere consciousnesses, to begin with, in the wholesome ones, in the first pair, thirty-eight factors are included: the thirteen mental factors common to others and the twenty-five beautiful mental factors. Here, the five—the illimitables and the abstinences—are to be combined one at a time. Similarly, in the second pair, the same factors are included excluding wisdom; in the third pair, associated with wisdom but excluding joy; in the fourth pair, excluding wisdom and joy, those same factors are included. In the functional consciousnesses too, excluding the abstinences, they are included in the same way, fourfold in the four pairs. Likewise, in the resultant consciousnesses, excluding the illimitables and the abstinences, those same factors are included. Thus, in all twenty-four beautiful sense-sphere consciousnesses, the inclusion is twelvefold by way of the pairs.",
+      "pt": "40. Entre as belas da esfera sensorial, contudo, primeiramente no primeiro par de consciências salutares, trinta e oito dhammas entram em combinação — a saber, treze fatores mentais comuns a outras consciências e vinte e cinco fatores mentais belos. Aqui, os cinco — os incomensuráveis e as abstinências — devem ser associados individualmente. Da mesma forma, no segundo par, os mesmos são combinados, excluindo o conhecimento; no terceiro par, associados ao conhecimento, excluindo o contentamento; no quarto par, excluindo tanto o conhecimento quanto o contentamento. Nas consciências funcionais também, os mesmos são combinados de quatro maneiras nos quatro pares, excluindo as abstinências. Da mesma forma, nas consciências resultantes, os mesmos são combinados, excluindo tanto os incomensuráveis quanto as abstinências. Assim, de todas as maneiras, para as vinte e quatro consciências belas da esfera sensorial, a combinação é de doze tipos por meio de pares.",
+      "es": "40.  En las hermosas de la esfera de los sentidos, primero en el primer par de las saludables, se combinan treinta y ocho estados: trece factores mentales comunes a otros y veinticinco factores mentales hermosos. Aquí, los cinco factores, es decir, los ilimitados y las abstinencias, deben incluirse por separado. Del mismo modo, en el segundo par, excluyendo el conocimiento; en el tercer par, asociado con el conocimiento pero excluyendo el gozo; en el cuarto par, excluyendo el conocimiento y el gozo, se combinan esos mismos. En las conciencias funcionales también, excluyendo las abstinencias, se combinan de cuatro maneras en los cuatro pares de la misma forma. Así también en las resultantes, excluyendo los ilimitados y las abstinencias, se combinan esos mismos. De este modo, en todas las veinticuatro conciencias hermosas de la esfera de los sentidos, hay una combinación de doce tipos mediante los pares."
+    }
+  },
+  {
+    "id": "abhm-2.70",
+    "pali": "Aṭṭhatiṃsa sattatiṃsa, dvayaṃ chattiṃsakaṃ subhe.",
+    "translations": {
+      "en": "41. Thirty-eight, thirty-seven, and a pair with thirty-six each in the beautiful.",
+      "pt": "41. Trinta e oito, trinta e sete, duas vezes trinta e seis na salutar.",
+      "es": "41.  Treinta y ocho, treinta y siete y dos veces treinta y seis en las saludables."
+    }
+  },
+  {
+    "id": "abhm-2.71",
+    "pali": "Pañcatiṃsa catuttiṃsa, dvayaṃ tettiṃsakaṃ kriye;</p><p rend=\"gatha3\">Tettiṃsa pāke bāttiṃsa, dvayekatiṃsakaṃ bhave;</p><p rend=\"gathalast\">Sahetukāmāvacarapuñña-pākakriyāmane.",
+    "translations": {
+      "en": "In the functional: thirty-five, thirty-four, and a pair with thirty-three each. In the resultant: thirty-three, thirty-two, and a pair with thirty-one each may be. This is in the rooted sense-sphere meritorious, resultant, and functional consciousness.",
+      "pt": "Trinta e cinco, trinta e quatro, duas vezes trinta e três na funcional; trinta e três, trinta e dois, duas vezes trinta e um na resultante; estes ocorrem nas mentes salutares, resultantes e funcionais com causa da esfera sensorial.",
+      "es": "Treinta y cinco, treinta y cuatro y dos veces treinta y tres en las funcionales; treinta y tres, treinta y dos y dos veces treinta y uno en las resultantes; esto ocurre en las conciencias saludables, resultantes y funcionales de la esfera de los sentidos con raíces."
+    }
+  },
+  {
+    "id": "abhm-2.72",
+    "pali": "Navijjantettha viratī, kriyesu ca mahaggate.",
+    "translations": {
+      "en": "42. The abstinences are not found in the functional and in the sublime.",
+      "pt": "42. Aqui, as abstinências não são encontradas nas funcionais e na sublime.",
+      "es": "42.  Aquí no se encuentran las abstinencias ni en las funcionales ni en las sublimes."
+    }
+  },
+  {
+    "id": "abhm-2.73",
+    "pali": "Anuttare appamaññā, kāmapāke dvayaṃ tathā;</p><p rend=\"gatha3\">Anuttare jhānadhammā, appamaññā ca majjhime;</p><p rend=\"gathalast\">Viratī ñāṇapītī ca, parittesu visesakā.",
+    "translations": {
+      "en": "The illimitables are absent in the supramundane, and likewise the two (illimitables and abstinences) in the sense-sphere resultants; the jhāna factors in the supramundane, and the illimitables in the middle (i.e., sublime); the abstinences, wisdom, and joy are the distinguishing factors in the lesser (i.e., sense-sphere) consciousness.",
+      "pt": "Na supramundana, os incomensuráveis não são encontrados; assim também ambos nas resultantes da esfera sensorial. Na supramundana, os fatores de jhāna são os elementos distintivos; na intermediária (sublime), os incomensuráveis; na limitada (esfera sensorial), as abstinências, o conhecimento e o contentamento.",
+      "es": "Tampoco los ilimitados en las supramundanas, ni tampoco ambos en las resultantes de la esfera de los sentidos. Los factores de jhana en las supramundanas, los ilimitados en las intermedias; las abstinencias, el conocimiento y el gozo son los factores distintivos en las limitadas."
+    }
+  },
+  {
+    "id": "abhm-2.74",
+    "pali": "Akusalacittasaṅgahanayo",
+    "translations": {
+      "en": "The Method of Inclusion in Unwholesome Consciousness",
+      "pt": "O método de combinação nas consciências prejudiciais",
+      "es": "El método de síntesis de las conciencias insalubres."
+    }
+  },
+  {
+    "id": "abhm-2.75",
+    "pali": "<b>Akusalesu</b> pana lobhamūlesu tāva paṭhame asaṅkhārike aññasamānā terasa cetasikā, akusalasādhāraṇā cattāro cāti sattarasa lobhadiṭṭhīhi saddhiṃ ekūnavīsati dhammā saṅgahaṃ gacchanti.",
+    "translations": {
+      "en": "43. Now, in the unwholesome consciousnesses, to begin with, in the greed-rooted, in the first unprompted one, nineteen factors are included: the thirteen mental factors common to others and the four common to the unwholesome—thus seventeen—together with greed and wrong view.",
+      "pt": "43. Entre as prejudiciais, primeiramente, na primeira consciência não instigada enraizada na ganância, dezenove dhammas entram em combinação — a saber, treze fatores mentais comuns a outras consciências e quatro comuns aos prejudiciais, totalizando dezessete, junto com a ganância e a visão incorreta.",
+      "es": "43.  En cuanto a las conciencias insalubres, en la primera (conciencia) no instigada con raíz en la codicia, trece factores mentales comunes a otros y cuatro factores mentales universales insalubres, sumando diecisiete, junto con la codicia y la visión errónea, constituyen una síntesis de diecinueve estados."
+    }
+  },
+  {
+    "id": "abhm-2.76",
+    "pali": "Tatheva dutiye asaṅkhārike lobhamānena.",
+    "translations": {
+      "en": "44. Similarly, in the second unprompted one, with greed and conceit.",
+      "pt": "44. Da mesma forma, na segunda consciência não instigada, com a ganância e o orgulho.",
+      "es": "44.  Del mismo modo en la segunda (conciencia) no instigada, con la codicia y el engreimiento."
+    }
+  },
+  {
+    "id": "abhm-2.77",
+    "pali": "Tatiye tatheva pītivajjitā lobhadiṭṭhīhi saha aṭṭhārasa.",
+    "translations": {
+      "en": "45. Similarly, in the third, eighteen factors, excluding joy, together with greed and wrong view.",
+      "pt": "45. Na terceira, da mesma forma, dezoito dhammas, excluindo o contentamento, junto com a ganância e a visão incorreta.",
+      "es": "45.  En la tercera, del mismo modo, excluyendo el júbilo, junto con la codicia y la visión errónea, son dieciocho."
+    }
+  },
+  {
+    "id": "abhm-2.78",
+    "pali": "Catutthe tatheva lobhamānena.",
+    "translations": {
+      "en": "46. Similarly, in the fourth, with greed and conceit.",
+      "pt": "46. Na quarta, da mesma forma, com a ganância e o orgulho.",
+      "es": "46.  En la cuarta, del mismo modo, con la codicia y el engreimiento."
+    }
+  },
+  {
+    "id": "abhm-2.79",
+    "pali": "Pañcame pana paṭighasampayutte asaṅkhārike doso issā macchariyaṃ kukkuccañcāti catūhi saddhiṃ pītivajjitā te eva vīsati dhammā saṅgayhanti, issāmacchariyakukkuccāni panettha paccekameva yojetabbāni.",
+    "translations": {
+      "en": "47. Now, in the fifth, the unprompted one associated with aversion, twenty factors are included: the base factors excluding joy, together with the four—hatred, envy, stinginess, and worry. Here, envy, stinginess, and worry are to be combined one at a time.",
+      "pt": "47. Na quinta consciência não instigada, contudo, que é associada à aversão, vinte dhammas são combinados, excluindo o contentamento, junto com quatro — a saber, aversão, inveja, avareza e remorso. Aqui, a inveja, a avareza e o remorso devem ser associados individualmente.",
+      "es": "47.  En la quinta (conciencia) no instigada asociada con la aversión, junto con cuatro factores: odio, envidia, avaricia y remordimiento, excluyendo el júbilo, se incluyen esos mismos veinte estados; pero aquí la envidia, la avaricia y el remordimiento deben asociarse individualmente."
+    }
+  },
+  {
+    "id": "abhm-2.80",
+    "pali": "Sasaṅkhārikapañcakepi tatheva thinamiddhena visesetvā yojetabbā.",
+    "translations": {
+      "en": "48. In the five prompted consciousnesses, too, they are to be combined in the same way, with the distinction of sloth and torpor.",
+      "pt": "48. Nos cinco pares de consciências instigadas também, os mesmos devem ser associados, com a distinção da preguiça e do torpor.",
+      "es": "48.  En el grupo de las cinco (conciencias) instigadas, se debe asociar del mismo modo, distinguiéndolas por la adición de la pereza y el torpor."
+    }
+  },
+  {
+    "id": "abhm-2.81",
+    "pali": "Chandapītivajjitā pana aññasamānā ekādasa, akusalasādhāraṇā cattāro cāti pannarasa dhammā uddhaccasahagate sampayujjanti.",
+    "translations": {
+      "en": "49. Now, with the consciousness accompanied by restlessness, fifteen factors are associated: the eleven mental factors common to others, excluding desire and joy, and the four common to the unwholesome.",
+      "pt": "49. Na consciência acompanhada de agitação, contudo, quinze dhammas são associados — a saber, onze fatores mentais comuns a outras consciências, excluindo o desejo e o contentamento, e quatro comuns aos prejudiciais.",
+      "es": "49.  Pero excluyendo el deseo y el júbilo, once factores comunes a otros y cuatro universales insalubres, totalizando quince estados, se asocian con la conciencia acompañada de agitación."
+    }
+  },
+  {
+    "id": "abhm-2.82",
+    "pali": "Vicikicchāsahagatacitte ca adhimokkhavirahitā vicikicchāsahagatā tatheva pannarasa dhammā samupalabbhantīti sabbathāpi dvādasākusalacittuppādesu paccekaṃ yojiyamānāpi gaṇanavasena sattadhāva saṅgahitā bhavantīti.",
+    "translations": {
+      "en": "50. And in the consciousness accompanied by doubt, fifteen factors, devoid of decision and accompanied by doubt, are likewise found. Thus, although they are applied individually to the twelve types of unwholesome consciousness, in terms of enumeration they are included as sevenfold.",
+      "pt": "50. E na consciência acompanhada de dúvida, da mesma forma quinze dhammas são encontrados, acompanhados de dúvida e desprovidos de decisão. Assim, de todas as maneiras, embora sejam associados individualmente com os doze surgimentos de consciência prejudiciais, por meio de cálculo eles são combinados de sete maneiras.",
+      "es": "50.  Y en la conciencia acompañada de duda, desprovista de determinación, se encuentran del mismo modo quince estados acompañados de duda. Así, en todos los aspectos, aunque se apliquen individualmente a los doce procesos de conciencia insalubre, mediante el conteo se incluyen en siete formas."
+    }
+  },
+  {
+    "id": "abhm-2.83",
+    "pali": "Ekūnavīsāṭṭhārasa, vīsekavīsa vīsati.",
+    "translations": {
+      "en": "51. Nineteen, eighteen, twenty, twenty-one, twenty.",
+      "pt": "51. Dezenove, dezoito, vinte, vinte e um, vinte,",
+      "es": "51.  Diecinueve, dieciocho, veinte, veintiuno, veinte,"
+    }
+  },
+  {
+    "id": "abhm-2.84",
+    "pali": "Dvāvīsa pannaraseti, sattadhā kusaleṭhitā.",
+    "translations": {
+      "en": "Twenty-two, and fifteen; thus established sevenfold in the unwholesome.",
+      "pt": "vinte e dois e quinze — assim eles se apresentam de sete maneiras na prejudicial.",
+      "es": "veintidós y quince; así se establecen en siete formas en las (conciencias) insalubres."
+    }
+  },
+  {
+    "id": "abhm-2.85",
+    "pali": "Sādhāraṇā ca cattāro, samānā ca dasāpare.",
+    "translations": {
+      "en": "52. The four common factors and the other ten common-to-others.",
+      "pt": "52. Os quatro comuns [aos prejudiciais] e outros dez comuns [a outras consciências] —",
+      "es": "52.  Y los cuatro universales, y otros diez comunes,"
+    }
+  },
+  {
+    "id": "abhm-2.86",
+    "pali": "Cuddasete pavuccanti, <b>sabbākusalayogino</b>.",
+    "translations": {
+      "en": "These fourteen are said to be associated with all unwholesome consciousnesses.",
+      "pt": "estes quatorze são ditos estarem associados com todas as [consciências] prejudiciais.",
+      "es": "se dice que estos catorce se asocian con todo lo insalubre."
+    }
+  },
+  {
+    "id": "abhm-2.87",
+    "pali": "Ahetukacittasaṅgahanayo",
+    "translations": {
+      "en": "The Method of Compiling the Rootless Consciousnesses",
+      "pt": "O método de combinação nas consciências sem causa",
+      "es": "El método de síntesis de las conciencias sin causa (ahetuka)."
+    }
+  },
+  {
+    "id": "abhm-2.88",
+    "pali": "<b>Ahetukesu</b> pana hasanacitte tāva chandavajjitā aññasamānā dvādasa dhammā saṅgahaṃ gacchanti.",
+    "translations": {
+      "en": "53. Now, among the rootless consciousnesses, to begin with, in the laughter-producing consciousness, twelve mental factors common to others, excluding desire, are included.",
+      "pt": "53. Entre as sem causa, primeiramente, na consciência do sorriso, doze dhammas entram em combinação — a saber, os fatores mentais comuns a outras consciências, excluindo o desejo.",
+      "es": "53.  Entre las conciencias sin causa, en la conciencia del surgimiento de la sonrisa, se incluyen doce estados comunes a otros, excluyendo el deseo."
+    }
+  },
+  {
+    "id": "abhm-2.89",
+    "pali": "Tathā voṭṭhabbane chandapītivajjitā.",
+    "translations": {
+      "en": "54. Likewise, in the determining consciousness, they are exclusive of desire and joy.",
+      "pt": "54. Da mesma forma, na determinação, excluindo o desejo e o contentamento.",
+      "es": "54.  Del mismo modo en la determinación, excluyendo el deseo y el júbilo."
+    }
+  },
+  {
+    "id": "abhm-2.90",
+    "pali": "Sukhasantīraṇe chandavīriyavajjitā.",
+    "translations": {
+      "en": "55. In the investigating consciousness accompanied by pleasure, they are exclusive of desire and energy.",
+      "pt": "55. Na investigação acompanhada de prazer, excluindo o desejo e a energia.",
+      "es": "55.  En la investigación placentera, excluyendo el deseo y la energía."
+    }
+  },
+  {
+    "id": "abhm-2.91",
+    "pali": "Manodhātuttikāhetukapaṭisandhiyugaḷe chandapītivīriyavajjitā.",
+    "translations": {
+      "en": "56. In the triad of mind-element and in the pair of rootless rebirth-linking consciousnesses, they are exclusive of desire, joy, and energy.",
+      "pt": "56. No tríplice elemento da mente e no par de consciências de renascimento sem causa, excluindo o desejo, o contentamento e a energia.",
+      "es": "56.  En la tríada del elemento mental y en el par de renacimientos sin causa, excluyendo el deseo, el júbilo y la energía."
+    }
+  },
+  {
+    "id": "abhm-2.92",
+    "pali": "Dvipañcaviññāṇe pakiṇṇakavajjitā teyeva saṅgayhantīti sabbathāpi aṭṭhārasasu ahetukesu gaṇanavasena catudhāva saṅgaho hotīti.",
+    "translations": {
+      "en": "57. In the two sets of fivefold sense consciousness, only the seven universal mental factors, excluding the particulars, are included. Thus, in all eighteen rootless consciousnesses, the compilation is fourfold by way of enumeration.",
+      "pt": "57. No duplo conjunto de cinco consciências sensoriais, os mesmos são combinados, excluindo os particulares. Assim, de todas as maneiras, para as dezoito consciências sem causa, a combinação é de quatro tipos por meio de cálculo.",
+      "es": "57.  En la doble quíntupla conciencia sensorial, excluyendo los particulares, se incluyen solo ellos (los universales). Así, en todos los aspectos, en las dieciocho conciencias sin causa, mediante el conteo, hay una síntesis de solo cuatro tipos."
+    }
+  },
+  {
+    "id": "abhm-2.93",
+    "pali": "Dvādasekādasa dasa, satta cāti catubbidho.",
+    "translations": {
+      "en": "58. Twelve, eleven, ten, and seven—thus it is fourfold.",
+      "pt": "58. Doze, onze, dez e sete — assim, de quatro tipos",
+      "es": "58.  Doce, once, diez y siete; así es de cuatro tipos."
+    }
+  },
+  {
+    "id": "abhm-2.94",
+    "pali": "Aṭṭhārasāhetukesu, cittuppādesu saṅgaho.",
+    "translations": {
+      "en": "The compilation in the eighteen rootless arisings of consciousness.",
+      "pt": "é a combinação nos dezoito surgimentos de consciência sem causa.",
+      "es": "La síntesis en los dieciocho surgimientos de conciencia sin causa."
+    }
+  },
+  {
+    "id": "abhm-2.95",
+    "pali": "Ahetukesu sabbattha, satta sesā yathārahaṃ.",
+    "translations": {
+      "en": "59. In all the rootless consciousnesses, seven universals are found, and the others as is appropriate.",
+      "pt": "59. Em todas as consciências sem causa, os sete restantes são encontrados conforme apropriado.",
+      "es": "59.  En todas las conciencias sin causa, los siete restantes permanecen según corresponda."
+    }
+  },
+  {
+    "id": "abhm-2.96",
+    "pali": "Iti vitthārato vutto, tettiṃsavidhasaṅgaho.",
+    "translations": {
+      "en": "Thus has the thirty-threefold compilation been stated in detail.",
+      "pt": "Assim, detalhadamente, a combinação de trinta e três tipos foi declarada.",
+      "es": "Así se ha expuesto en detalle la síntesis de treinta y tres tipos."
+    }
+  },
+  {
+    "id": "abhm-2.97",
+    "pali": "Itthaṃ cittāviyuttānaṃ, sampayogañca saṅgahaṃ.",
+    "translations": {
+      "en": "60. Thus, the association and compilation of the factors associated with consciousness.",
+      "pt": "60. Tendo assim compreendido a associação e a combinação daqueles inseparáveis da consciência,",
+      "es": "60.  De esta manera, habiendo conocido la asociación y la síntesis de aquellos inseparables de la conciencia,"
+    }
+  },
+  {
+    "id": "abhm-2.98",
+    "pali": "Ñatvā bhedaṃ yathāyogaṃ, cittena samamuddise.",
+    "translations": {
+      "en": "Having understood the distinctions as they apply, one should point them out together with the consciousness.",
+      "pt": "que se explique a sua classificação conforme apropriado, juntamente com a consciência.",
+      "es": "habiendo conocido la distinción según corresponda, uno debe indicarla junto con la conciencia."
+    }
+  },
+  {
+    "id": "abhm-2.99",
+    "pali": "Iti abhidhammatthasaṅgahe cetasikasaṅgahavibhāgo nāma",
+    "translations": {
+      "en": "Thus in the Abhidhammattha Saṅgaha ends the section named the Compilation of Mental Factors.",
+      "pt": "Assim termina, no Abhidhammatthasaṅgaha, a seção sobre a compilação dos fatores mentais,",
+      "es": "Así, en el Compendio del Abhidhamma, el capítulo llamado el Análisis de la Síntesis de los Factores Mentales."
+    }
+  },
+  {
+    "id": "abhm-2.100",
+    "pali": "Dutiyo paricchedo.",
+    "translations": {
+      "en": "The Second Chapter.",
+      "pt": "O segundo capítulo.",
+      "es": "Segundo capítulo."
+    }
+  }
+]

@@ -1,0 +1,902 @@
+[
+  {
+    "pali": "sabhūmikusaleheva",
+    "meaning": {
+      "en": "with the wholesome states of their own planes indeed",
+      "pt": "com os estados benéficos de seus próprios planos de fato",
+      "es": "con los estados beneficiosos de sus propios planos de hecho"
+    },
+    "grammar": "compound, instrumental plural"
+  },
+  {
+    "pali": "sabhāvaṃ",
+    "meaning": {
+      "en": "intrinsic nature",
+      "pt": "natureza intrínseca",
+      "es": "naturaleza intrínseca"
+    },
+    "grammar": "noun, accusative singular"
+  },
+  {
+    "pali": "sabbāsu",
+    "meaning": {
+      "en": "in all",
+      "pt": "em todas",
+      "es": "en todas"
+    },
+    "grammar": "pronominal adjective, locative plural, feminine"
+  },
+  {
+    "pali": "sabbeva",
+    "meaning": {
+      "en": "all indeed",
+      "pt": "todos de fato",
+      "es": "todos de hecho"
+    },
+    "grammar": "pronominal adjective + particle"
+  },
+  {
+    "pali": "sabbassa",
+    "meaning": {
+      "en": "of all",
+      "pt": "de tudo",
+      "es": "de todo"
+    },
+    "grammar": "pronominal adjective, genitive singular"
+  },
+  {
+    "pali": "sabbasaṅgaho",
+    "meaning": {
+      "en": "inclusion of all",
+      "pt": "inclusão de todos",
+      "es": "inclusión de todos"
+    },
+    "grammar": "compound noun, nominative singular"
+  },
+  {
+    "pali": "sabbasattānaṃ",
+    "meaning": {
+      "en": "of all beings",
+      "pt": "de todos os seres",
+      "es": "de todos los seres"
+    },
+    "grammar": "compound noun, genitive plural"
+  },
+  {
+    "pali": "sabbappakārena",
+    "meaning": {
+      "en": "in all ways",
+      "pt": "de todas as maneiras",
+      "es": "de todas las maneras"
+    },
+    "grammar": "compound noun, instrumental singular"
+  },
+  {
+    "pali": "sabbacittasādhāraṇā",
+    "meaning": {
+      "en": "universal to all consciousnesses",
+      "pt": "universais a todas as consciências",
+      "es": "universales a todas las conciencias"
+    },
+    "grammar": "compound adjective, nominative plural"
+  },
+  {
+    "pali": "rūpāyatanaṃ",
+    "meaning": {
+      "en": "form base",
+      "pt": "base da forma",
+      "es": "base de la forma"
+    },
+    "grammar": "compound noun, nominative singular"
+  },
+  {
+    "pali": "rūpāvacaravipākacittāni",
+    "meaning": {
+      "en": "fine-material sphere resultant consciousnesses",
+      "pt": "consciências resultantes da esfera da matéria fina",
+      "es": "conciencias resultantes de la esfera de la materia fina"
+    },
+    "grammar": "compound noun, nominative plural"
+  },
+  {
+    "pali": "rūpāvacarakiriyacittāni",
+    "meaning": {
+      "en": "fine-material sphere functional consciousnesses",
+      "pt": "consciências funcionais da esfera da matéria fina",
+      "es": "conciencias funcionales de la esfera de la materia fina"
+    },
+    "grammar": "compound noun, nominative plural"
+  },
+  {
+    "pali": "rūpārūpesu",
+    "meaning": {
+      "en": "in form and formless realms",
+      "pt": "nos reinos da forma e sem forma",
+      "es": "en los reinos de la forma y sin forma"
+    },
+    "grammar": "compound noun, locative plural"
+  },
+  {
+    "pali": "rūpārūpamattaṃ",
+    "meaning": {
+      "en": "merely form and formless",
+      "pt": "meramente forma e sem forma",
+      "es": "meramente forma y sin forma"
+    },
+    "grammar": "compound noun, accusative singular"
+  },
+  {
+    "pali": "rūpārūpabhavesupi",
+    "meaning": {
+      "en": "even in form and formless existences",
+      "pt": "mesmo nas existências da forma e sem forma",
+      "es": "incluso en las existencias de la forma y sin forma"
+    },
+    "grammar": "compound noun, locative plural + api"
+  },
+  {
+    "pali": "rūpārūpabhavadvaye",
+    "meaning": {
+      "en": "in the twofold form and formless existences",
+      "pt": "nas duas existências, da forma e sem forma",
+      "es": "en las dos existencias, de la forma y sin forma"
+    },
+    "grammar": "compound noun, locative singular"
+  },
+  {
+    "pali": "rūpādichaparittāni",
+    "meaning": {
+      "en": "the six small ones starting with form",
+      "pt": "os seis pequenos começando com a forma",
+      "es": "los seis pequeños comenzando con la forma"
+    },
+    "grammar": "compound noun, nominative plural"
+  },
+  {
+    "pali": "rūpasamudayo",
+    "meaning": {
+      "en": "origin of form",
+      "pt": "origem da forma",
+      "es": "origen de la forma"
+    },
+    "grammar": "compound noun, nominative singular"
+  },
+  {
+    "pali": "rūpanti",
+    "meaning": {
+      "en": "form (quote)",
+      "pt": "forma (citação)",
+      "es": "forma (citaura)"
+    },
+    "grammar": "noun, nominative singular + iti"
+  },
+  {
+    "pali": "rūpakāye",
+    "meaning": {
+      "en": "in the physical body",
+      "pt": "no corpo físico",
+      "es": "en el cuerpo físico"
+    },
+    "grammar": "compound noun, locative singular"
+  },
+  {
+    "pali": "rūpakkhandhova",
+    "meaning": {
+      "en": "the aggregate of form indeed",
+      "pt": "o agregado da forma de fato",
+      "es": "el agregado de la forma de hecho"
+    },
+    "grammar": "compound noun, nominative singular + eva"
+  },
+  {
+    "pali": "rūpabhaveyeva",
+    "meaning": {
+      "en": "in the fine-material existence indeed",
+      "pt": "na existência da matéria fina de fato",
+      "es": "en la existencia de la materia fina de hecho"
+    },
+    "grammar": "compound noun, locative singular + eva"
+  },
+  {
+    "pali": "rāsīnametesaṃ",
+    "meaning": {
+      "en": "of these groups",
+      "pt": "destes grupos",
+      "es": "de estos grupos"
+    },
+    "grammar": "noun, genitive plural + pronoun"
+  },
+  {
+    "pali": "rāsiṃ",
+    "meaning": {
+      "en": "group / heap",
+      "pt": "grupo / montante",
+      "es": "grupo / montón"
+    },
+    "grammar": "noun, accusative singular"
+  },
+  {
+    "pali": "rāgo",
+    "meaning": {
+      "en": "lust",
+      "pt": "cobiça",
+      "es": "lujuria"
+    },
+    "grammar": "noun, nominative singular"
+  },
+  {
+    "pali": "rāgadosamohānaṃ",
+    "meaning": {
+      "en": "of lust, hatred, and delusion",
+      "pt": "de cobiça, ódio e ilusão",
+      "es": "de lujuria, odio e ilusión"
+    },
+    "grammar": "compound noun, genitive plural"
+  },
+  {
+    "pali": "ruppatīti",
+    "meaning": {
+      "en": "is oppressed (quote)",
+      "pt": "é oprimido (citação)",
+      "es": "es oprimido (cita)"
+    },
+    "grammar": "verb, 3rd person singular present passive + iti"
+  },
+  {
+    "pali": "ruppati",
+    "meaning": {
+      "en": "is oppressed",
+      "pt": "é oprimido",
+      "es": "es oprimido"
+    },
+    "grammar": "verb, 3rd person singular present passive"
+  },
+  {
+    "pali": "rasoti",
+    "meaning": {
+      "en": "taste / function (quote)",
+      "pt": "sabor / função (citação)",
+      "es": "sabor / función (cita)"
+    },
+    "grammar": "noun, nominative singular + iti"
+  },
+  {
+    "pali": "rasamānā",
+    "meaning": {
+      "en": "tasting",
+      "pt": "saboreando",
+      "es": "saboreando"
+    },
+    "grammar": "participle, nominative plural"
+  },
+  {
+    "pali": "pītiyā",
+    "meaning": {
+      "en": "with joy",
+      "pt": "com alegria",
+      "es": "con alegría"
+    },
+    "grammar": "noun, instrumental singular, feminine"
+  },
+  {
+    "pali": "pītivajjitā",
+    "meaning": {
+      "en": "devoid of joy",
+      "pt": "desprovido de alegria",
+      "es": "desprovisto de alegría"
+    },
+    "grammar": "compound adjective, nominative plural"
+  },
+  {
+    "pali": "pītisukhacittekaggatāsampayuttaṃ",
+    "meaning": {
+      "en": "associated with joy, happiness, and one-pointedness of mind",
+      "pt": "associado à alegria, felicidade e unificação mental",
+      "es": "asociado con la alegría, felicidad y unificación mental"
+    },
+    "grammar": "compound adjective, nominative singular"
+  },
+  {
+    "pali": "pāṭavatthino",
+    "meaning": {
+      "en": "of skillfulness",
+      "pt": "de habilidade",
+      "es": "de habilidad"
+    },
+    "grammar": "noun, genitive singular"
+  },
+  {
+    "pali": "pāṇātipātādīsu",
+    "meaning": {
+      "en": "in things like taking life",
+      "pt": "em coisas como tirar a vida",
+      "es": "en cosas como quitar la vida"
+    },
+    "grammar": "compound noun, locative plural"
+  },
+  {
+    "pali": "pātubhavanti",
+    "meaning": {
+      "en": "they manifest",
+      "pt": "eles se manifestam",
+      "es": "ellos se manifiestan"
+    },
+    "grammar": "verb, 3rd person plural present"
+  },
+  {
+    "pali": "pārā",
+    "meaning": {
+      "en": "beyond",
+      "pt": "além",
+      "es": "más allá"
+    },
+    "grammar": "adverb/adjective"
+  },
+  {
+    "pali": "pāraṃ",
+    "meaning": {
+      "en": "to the further shore",
+      "pt": "para a outra margem",
+      "es": "a la otra orilla"
+    },
+    "grammar": "noun, accusative singular"
+  },
+  {
+    "pali": "pāpato",
+    "meaning": {
+      "en": "from evil",
+      "pt": "do mal",
+      "es": "del mal"
+    },
+    "grammar": "noun, ablative singular"
+  },
+  {
+    "pali": "pāpadhamme",
+    "meaning": {
+      "en": "evil states",
+      "pt": "estados malignos",
+      "es": "estados malignos"
+    },
+    "grammar": "compound noun, accusative plural"
+  },
+  {
+    "pali": "pākaṭaṃ",
+    "meaning": {
+      "en": "manifest",
+      "pt": "manifesto",
+      "es": "manifiesto"
+    },
+    "grammar": "adjective, nominative singular"
+  },
+  {
+    "pali": "pākaṭabhāvaṃ",
+    "meaning": {
+      "en": "state of being manifest",
+      "pt": "estado de ser manifesto",
+      "es": "estado de ser manifiesto"
+    },
+    "grammar": "compound noun, accusative singular"
+  },
+  {
+    "pali": "pākabhedā",
+    "meaning": {
+      "en": "divisions of result",
+      "pt": "divisões de resultado",
+      "es": "divisiones de resultado"
+    },
+    "grammar": "compound noun, nominative plural"
+  },
+  {
+    "pali": "puññābhisaṅkhārasaññitā",
+    "meaning": {
+      "en": "designated as meritorious volitional formations",
+      "pt": "designadas como formações volitivas meritórias",
+      "es": "designadas como formaciones volitivas meritorias"
+    },
+    "grammar": "compound adjective, nominative plural, feminine"
+  },
+  {
+    "pali": "puññesu",
+    "meaning": {
+      "en": "in merits",
+      "pt": "nos méritos",
+      "es": "en los méritos"
+    },
+    "grammar": "noun, locative plural"
+  },
+  {
+    "pali": "puññavatthuppabhedo",
+    "meaning": {
+      "en": "division of the bases of merit",
+      "pt": "divisão das bases do mérito",
+      "es": "división de las bases del mérito"
+    },
+    "grammar": "compound noun, nominative singular"
+  },
+  {
+    "pali": "puññajāni",
+    "meaning": {
+      "en": "born of merit",
+      "pt": "nascido do mérito",
+      "es": "nacido del mérito"
+    },
+    "grammar": "compound adjective, nominative plural, neuter"
+  },
+  {
+    "pali": "puññacittena",
+    "meaning": {
+      "en": "with a meritorious mind",
+      "pt": "com uma mente meritória",
+      "es": "con una mente meritoria"
+    },
+    "grammar": "compound noun, instrumental singular"
+  },
+  {
+    "pali": "puthujjanānaṃ",
+    "meaning": {
+      "en": "of ordinary people",
+      "pt": "das pessoas comuns",
+      "es": "de las personas comunes"
+    },
+    "grammar": "noun, genitive plural"
+  },
+  {
+    "pali": "puthujjanānañca",
+    "meaning": {
+      "en": "and of ordinary people",
+      "pt": "e das pessoas comuns",
+      "es": "y de las personas comunes"
+    },
+    "grammar": "noun, genitive plural + ca"
+  },
+  {
+    "pali": "puthujjanakālasmiṃ",
+    "meaning": {
+      "en": "in the time of being an ordinary person",
+      "pt": "no tempo de ser uma pessoa comum",
+      "es": "en el tiempo de ser una persona común"
+    },
+    "grammar": "compound noun, locative singular"
+  },
+  {
+    "pali": "purisā",
+    "meaning": {
+      "en": "men",
+      "pt": "homens",
+      "es": "hombres"
+    },
+    "grammar": "noun, nominative plural"
+  },
+  {
+    "pali": "pubbāparakkamo",
+    "meaning": {
+      "en": "succession of before and after",
+      "pt": "sucessão do antes e depois",
+      "es": "sucesión del antes y después"
+    },
+    "grammar": "compound noun, nominative singular"
+  },
+  {
+    "pali": "piṭṭhibhavaṅgāni",
+    "meaning": {
+      "en": "subsequent life-continuums",
+      "pt": "continuums de vida subsequentes",
+      "es": "continuums de vida subsiguientes"
+    },
+    "grammar": "compound noun, nominative plural"
+  },
+  {
+    "pali": "piṭakesu",
+    "meaning": {
+      "en": "in the baskets",
+      "pt": "nas cestas",
+      "es": "en las canastas"
+    },
+    "grammar": "noun, locative plural"
+  },
+  {
+    "pali": "piṭakaṃ",
+    "meaning": {
+      "en": "basket",
+      "pt": "cesta",
+      "es": "canasta"
+    },
+    "grammar": "noun, nominative singular"
+  },
+  {
+    "pali": "pinayatīti",
+    "meaning": {
+      "en": "it refreshes (quote)",
+      "pt": "ele refresca (citação)",
+      "es": "él refresca (cita)"
+    },
+    "grammar": "verb, 3rd person singular present + iti"
+  },
+  {
+    "pali": "picupiṇḍakaṃ",
+    "meaning": {
+      "en": "ball of cotton",
+      "pt": "bola de algodão",
+      "es": "bola de algodón"
+    },
+    "grammar": "compound noun, accusative singular"
+  },
+  {
+    "pali": "phusīyatīti",
+    "meaning": {
+      "en": "is touched (quote)",
+      "pt": "é tocado (citação)",
+      "es": "es tocado (cita)"
+    },
+    "grammar": "verb, 3rd person singular present passive + iti"
+  },
+  {
+    "pali": "phusitvā",
+    "meaning": {
+      "en": "having touched",
+      "pt": "tendo tocado",
+      "es": "habiendo tocado"
+    },
+    "grammar": "gerund"
+  },
+  {
+    "pali": "phoṭṭhabbārammaṇaṃ",
+    "meaning": {
+      "en": "tangible object",
+      "pt": "objeto tangível",
+      "es": "objeto tangible"
+    },
+    "grammar": "compound noun, nominative singular"
+  },
+  {
+    "pali": "phassena",
+    "meaning": {
+      "en": "by contact",
+      "pt": "pelo contato",
+      "es": "por el contacto"
+    },
+    "grammar": "noun, instrumental singular"
+  },
+  {
+    "pali": "phalañca",
+    "meaning": {
+      "en": "and the fruit",
+      "pt": "e o fruto",
+      "es": "y el fruto"
+    },
+    "grammar": "noun, nominative singular + ca"
+  },
+  {
+    "pali": "phalasampadā",
+    "meaning": {
+      "en": "attainment of the fruit",
+      "pt": "realização do fruto",
+      "es": "logro del fruto"
+    },
+    "grammar": "compound noun, nominative singular"
+  },
+  {
+    "pali": "phalacittāni",
+    "meaning": {
+      "en": "fruition consciousnesses",
+      "pt": "consciências de fruição",
+      "es": "conciencias de fruición"
+    },
+    "grammar": "compound noun, nominative plural"
+  },
+  {
+    "pali": "paṭivijjhatīti",
+    "meaning": {
+      "en": "penetrates (quote)",
+      "pt": "penetra (citação)",
+      "es": "penetra (cita)"
+    },
+    "grammar": "verb, 3rd person singular present + iti"
+  },
+  {
+    "pali": "paṭisandhipavattīsu",
+    "meaning": {
+      "en": "in rebirth-linking and continuity",
+      "pt": "na interligação do renascimento e continuidade",
+      "es": "en la interconexión del renacimiento y continuidad"
+    },
+    "grammar": "compound noun, locative plural"
+  },
+  {
+    "pali": "paṭisandhimupādāya",
+    "meaning": {
+      "en": "clinging to rebirth-linking",
+      "pt": "apegando-se à interligação do renascimento",
+      "es": "aferrándose a la interconexión del renacimiento"
+    },
+    "grammar": "compound noun, accusative + gerund"
+  },
+  {
+    "pali": "paṭisandhikkamaṃ",
+    "meaning": {
+      "en": "sequence of rebirth-linking",
+      "pt": "sequência da interligação do renascimento",
+      "es": "secuencia de la interconexión del renacimiento"
+    },
+    "grammar": "compound noun, accusative singular"
+  },
+  {
+    "pali": "paṭisandhicittassa",
+    "meaning": {
+      "en": "of rebirth-linking consciousness",
+      "pt": "da consciência de interligação do renascimento",
+      "es": "de la conciencia de interconexión del renacimiento"
+    },
+    "grammar": "compound noun, genitive singular"
+  },
+  {
+    "pali": "paṭisandhibhavaṅgacutitadārammaṇavasena",
+    "meaning": {
+      "en": "by way of rebirth-linking, life-continuum, death, and registration",
+      "pt": "por meio da interligação do renascimento, continuum de vida, morte e registro",
+      "es": "por medio de la interconexión del renacimiento, continuum de vida, muerte y registro"
+    },
+    "grammar": "compound noun, instrumental singular"
+  },
+  {
+    "pali": "paṭipattidassanena",
+    "meaning": {
+      "en": "by seeing the practice",
+      "pt": "por ver a prática",
+      "es": "por ver la práctica"
+    },
+    "grammar": "compound noun, instrumental singular"
+  },
+  {
+    "pali": "paṭihaññati",
+    "meaning": {
+      "en": "strikes against",
+      "pt": "bate contra",
+      "es": "golpea contra"
+    },
+    "grammar": "verb, 3rd person singular present passive"
+  },
+  {
+    "pali": "paṭhamāya",
+    "meaning": {
+      "en": "for the first",
+      "pt": "para o primeiro",
+      "es": "para el primero"
+    },
+    "grammar": "adjective, dative/genitive/locative singular, feminine"
+  },
+  {
+    "pali": "paṭhamāruppapāko",
+    "meaning": {
+      "en": "result of the first formless",
+      "pt": "resultado do primeiro estado sem forma",
+      "es": "resultado del primer estado sin forma"
+    },
+    "grammar": "compound noun, nominative singular"
+  },
+  {
+    "pali": "paṭhamuppanno",
+    "meaning": {
+      "en": "first arisen",
+      "pt": "primeiro surgido",
+      "es": "primero surgido"
+    },
+    "grammar": "compound adjective, nominative singular"
+  },
+  {
+    "pali": "paṭhamajjhānacittesu",
+    "meaning": {
+      "en": "in first jhana consciousnesses",
+      "pt": "nas consciências do primeiro jhana",
+      "es": "en las conciencias del primer jhana"
+    },
+    "grammar": "compound noun, locative plural"
+  },
+  {
+    "pali": "paṇḍitānaṃ",
+    "meaning": {
+      "en": "of the wise",
+      "pt": "dos sábios",
+      "es": "de los sabios"
+    },
+    "grammar": "noun, genitive plural"
+  },
+  {
+    "pali": "paṇāmamārabhanto",
+    "meaning": {
+      "en": "beginning the veneration",
+      "pt": "começando a veneração",
+      "es": "comenzando la veneración"
+    },
+    "grammar": "compound noun/participle, nominative singular"
+  },
+  {
+    "pali": "paññāpenti",
+    "meaning": {
+      "en": "they designate",
+      "pt": "eles designam",
+      "es": "ellos designan"
+    },
+    "grammar": "verb, 3rd person plural present"
+  },
+  {
+    "pali": "paññattīti",
+    "meaning": {
+      "en": "concept (quote)",
+      "pt": "conceito (citação)",
+      "es": "concepto (cita)"
+    },
+    "grammar": "noun, nominative singular + iti"
+  },
+  {
+    "pali": "paññattārammaṇaṃ",
+    "meaning": {
+      "en": "having a concept as object",
+      "pt": "tendo um conceito como objeto",
+      "es": "teniendo un concepto como objeto"
+    },
+    "grammar": "compound adjective, nominative singular"
+  },
+  {
+    "pali": "paññattiṃ",
+    "meaning": {
+      "en": "concept",
+      "pt": "conceito",
+      "es": "concepto"
+    },
+    "grammar": "noun, accusative singular"
+  },
+  {
+    "pali": "pañcārammaṇāni",
+    "meaning": {
+      "en": "five objects",
+      "pt": "cinco objetos",
+      "es": "cinco objetos"
+    },
+    "grammar": "compound noun, nominative plural"
+  },
+  {
+    "pali": "pañcuttarasate",
+    "meaning": {
+      "en": "in a hundred and five",
+      "pt": "em cento e cinco",
+      "es": "en ciento cinco"
+    },
+    "grammar": "compound numeral, locative"
+  },
+  {
+    "pali": "pañcaṅgiko",
+    "meaning": {
+      "en": "having five factors",
+      "pt": "tendo cinco fatores",
+      "es": "teniendo cinco factores"
+    },
+    "grammar": "adjective, nominative singular"
+  },
+  {
+    "pali": "pañcavīsatibhūmisu",
+    "meaning": {
+      "en": "in twenty-five planes",
+      "pt": "em vinte e cinco planos",
+      "es": "en veinticinco planos"
+    },
+    "grammar": "compound noun, locative plural"
+  },
+  {
+    "pali": "pañcavidhampi",
+    "meaning": {
+      "en": "even fivefold",
+      "pt": "mesmo quíntuplo",
+      "es": "incluso quíntuple"
+    },
+    "grammar": "adjective, nominative singular + api"
+  },
+  {
+    "pali": "pañcamī",
+    "meaning": {
+      "en": "fifth",
+      "pt": "quinto",
+      "es": "quinto"
+    },
+    "grammar": "numeral adjective, feminine, nominative singular"
+  },
+  {
+    "pali": "pañcamarūpakiriyassa",
+    "meaning": {
+      "en": "of the fifth fine-material functional",
+      "pt": "da quinta [consciência] funcional da matéria fina",
+      "es": "de la quinta [conciencia] funcional de la materia fina"
+    },
+    "grammar": "compound noun, genitive singular"
+  },
+  {
+    "pali": "pañcamanti",
+    "meaning": {
+      "en": "fifth (quote)",
+      "pt": "quinto (citação)",
+      "es": "quinto (cita)"
+    },
+    "grammar": "numeral adjective, nominative singular + iti"
+  },
+  {
+    "pali": "pañcadvāresu",
+    "meaning": {
+      "en": "in the five doors",
+      "pt": "nas cinco portas",
+      "es": "en las cinco puertas"
+    },
+    "grammar": "compound noun, locative plural"
+  },
+  {
+    "pali": "pañcadhāva",
+    "meaning": {
+      "en": "fivefold indeed",
+      "pt": "quíntuplo de fato",
+      "es": "quíntuple de hecho"
+    },
+    "grammar": "adverb + eva"
+  },
+  {
+    "pali": "pañcaddasasu",
+    "meaning": {
+      "en": "in fifteen",
+      "pt": "em quinze",
+      "es": "en quince"
+    },
+    "grammar": "numeral, locative plural"
+  },
+  {
+    "pali": "pañcadasa",
+    "meaning": {
+      "en": "fifteen",
+      "pt": "quinze",
+      "es": "quince"
+    },
+    "grammar": "numeral, nominative"
+  },
+  {
+    "pali": "payojanaṃ",
+    "meaning": {
+      "en": "purpose / use",
+      "pt": "propósito / uso",
+      "es": "propósito / uso"
+    },
+    "grammar": "noun, nominative/accusative singular"
+  },
+  {
+    "pali": "pavattāni",
+    "meaning": {
+      "en": "proceeded / occurred",
+      "pt": "procedidos / ocorridos",
+      "es": "procedidos / ocurridos"
+    },
+    "grammar": "past participle, nominative plural, neuter"
+  },
+  {
+    "pali": "pavattikkhaṇato",
+    "meaning": {
+      "en": "from the moment of occurrence",
+      "pt": "desde o momento da ocorrência",
+      "es": "desde el momento de la ocurrencia"
+    },
+    "grammar": "compound noun, ablative singular"
+  },
+  {
+    "pali": "pavattantīti",
+    "meaning": {
+      "en": "they proceed (quote)",
+      "pt": "eles procedem (citação)",
+      "es": "ellos proceden (cita)"
+    },
+    "grammar": "verb, 3rd person plural present + iti"
+  },
+  {
+    "pali": "patvā",
+    "meaning": {
+      "en": "having attained",
+      "pt": "tendo alcançado",
+      "es": "habiendo alcanzado"
+    },
+    "grammar": "gerund"
+  }
+]

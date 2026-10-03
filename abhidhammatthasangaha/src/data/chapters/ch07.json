@@ -1,0 +1,668 @@
+[
+  {
+    "id": "abhm-7.1",
+    "pali": "7. Samuccayaparicchedo",
+    "translations": {
+      "en": "7. The Chapter of Summaries",
+      "pt": "7. O Capítulo do Compêndio de Categorias",
+      "es": "7.  Capítulo sobre el Compendio de Categorías"
+    }
+  },
+  {
+    "id": "abhm-7.2",
+    "pali": "Dvāsattatividhā vuttā, vatthudhammā salakkhaṇā.",
+    "translations": {
+      "en": "1. Seventy-two kinds of real things have been described with their characteristics.",
+      "pt": "1. Setenta e duas espécies de entidades (vatthudhamma) com suas próprias características foram declaradas.",
+      "es": "1.  Se han descrito setenta y dos tipos de entidades que poseen su propia característica."
+    }
+  },
+  {
+    "id": "abhm-7.3",
+    "pali": "Tesaṃ dāni yathāyogaṃ, pavakkhāmi samuccayaṃ.",
+    "translations": {
+      "en": "Now I will explain the summary of them, as is appropriate.",
+      "pt": "Agora explicarei o seu compêndio de acordo com suas combinações apropriadas.",
+      "es": "Ahora explicaré su compendio según corresponda."
+    }
+  },
+  {
+    "id": "abhm-7.4",
+    "pali": "Akusalasaṅgaho missakasaṅgaho bodhipakkhiyasaṅgaho sabbasaṅgaho ceti samuccayasaṅgaho catubbidho veditabbo.",
+    "translations": {
+      "en": "2. The compendium of summaries should be understood as fourfold: the compendium of the unwholesome, the compendium of the miscellaneous, the compendium of the requisites of enlightenment, and the compendium of all.",
+      "pt": "2. O compêndio de categorias deve ser entendido como sendo de quatro tipos: o compêndio de categorias prejudiciais (akusalasaṅgaho), o compêndio de categorias mistas (missakasaṅgaho), o compêndio de categorias que levam à iluminação (bodhipakkhiyasaṅgaho) e o compêndio de todas as categorias (sabbasaṅgaho).",
+      "es": "2.  El compendio de categorías debe entenderse de cuatro formas: el compendio de lo perjudicial, el compendio mixto, el compendio de los factores que conducen a la iluminación y el compendio de todo."
+    }
+  },
+  {
+    "id": "abhm-7.5",
+    "pali": "Akusalasaṅgaho",
+    "translations": {
+      "en": "The Compendium of the Unwholesome",
+      "pt": "Compêndio de Categorias Prejudiciais",
+      "es": "Compendio de lo Perjudicial"
+    }
+  },
+  {
+    "id": "abhm-7.6",
+    "pali": "Kathaṃ? <b>Akusalasaṅgahe</b> tāva cattāro āsavā – kāmāsavo bhavāsavo diṭṭhāsavo avijjāsavo.",
+    "translations": {
+      "en": "3. How? First, in the compendium of the unwholesome, there are four taints: the taint of sensual pleasure, the taint of existence, the taint of views, and the taint of ignorance.",
+      "pt": "3. Como? No compêndio de categorias prejudiciais, primeiramente, há quatro eflúvios (āsava): o eflúvio do desejo sensorial (kāmāsava), o eflúvio da existência (bhavāsava), o eflúvio das visões (diṭṭhāsava) e o eflúvio da ignorância (avijjāsava).",
+      "es": "3.  ¿Cómo? En el compendio de lo perjudicial, primero hay cuatro efluvios: el efluvio del deseo sensorial, el efluvio de la existencia, el efluvio de las visiones erróneas y el efluvio de la ignorancia."
+    }
+  },
+  {
+    "id": "abhm-7.7",
+    "pali": "Cattāro oghā – kāmogho bhavogho diṭṭhogho avijjogho.",
+    "translations": {
+      "en": "4. Four floods: the flood of sensual pleasure, the flood of existence, the flood of views, and the flood of ignorance.",
+      "pt": "4. Quatro torrentes (ogha): a torrente do desejo sensorial (kāmogha), a torrente da existência (bhavogha), a torrente das visões (diṭṭhogha) e a torrente da ignorância (avijjogha).",
+      "es": "4.  Cuatro inundaciones: la inundación del deseo sensorial, la inundación de la existencia, la inundación de las visiones erróneas y la inundación de la ignorancia."
+    }
+  },
+  {
+    "id": "abhm-7.8",
+    "pali": "Cattāro yogā – kāmayogo bhavayogo diṭṭhiyogo avijjāyogo.",
+    "translations": {
+      "en": "5. Four yokes: the yoke of sensual pleasure, the yoke of existence, the yoke of views, and the yoke of ignorance.",
+      "pt": "5. Quatro jugos (yoga): o jugo do desejo sensorial (kāmayoga), o jugo da existência (bhavayoga), o jugo das visões (diṭṭhiyoga) e o jugo da ignorância (avijjāyoga).",
+      "es": "5.  Cuatro vínculos: el vínculo del deseo sensorial, el vínculo de la existencia, el vínculo de las visiones erróneas y el vínculo de la ignorancia."
+    }
+  },
+  {
+    "id": "abhm-7.9",
+    "pali": "Cattāro ganthā – abhijjhākāyagantho, byāpādo kāyagantho, sīlabbataparāmāso kāyagantho, idaṃsaccābhiniveso kāyagantho.",
+    "translations": {
+      "en": "6. Four knots: the bodily knot of covetousness, the bodily knot of ill will, the bodily knot of adherence to rules and observances, and the bodily knot of dogmatic insistence that 'this alone is the truth'.",
+      "pt": "6. Quatro nós corporais (gantha): o nó corporal da cobiça (abhijjhākāyagantha), o nó corporal da má vontade (byāpādakāyagantha), o nó corporal do apego a regras e rituais (sīlabbataparāmāsakāyagantha) e o nó corporal da insistência dogmática de que 'esta é a verdade' (idaṃsaccābhinivesakāyagantha).",
+      "es": "6.  Cuatro nudos: el nudo corporal de la codicia, el nudo corporal de la malevolencia, el nudo corporal de la adherencia a ritos y ceremonias, y el nudo corporal de la creencia dogmática de que «solo esto es la verdad»."
+    }
+  },
+  {
+    "id": "abhm-7.10",
+    "pali": "Cattāro upādānā – kāmupādānaṃ diṭṭhupādānaṃ sīlabbatupādānaṃ attavādupādānaṃ.",
+    "translations": {
+      "en": "7. Four kinds of clinging: clinging to sensual pleasures, clinging to views, clinging to rules and observances, and clinging to a doctrine of self.",
+      "pt": "7. Quatro apegos (upādāna): o apego aos prazeres sensoriais (kāmupādāna), o apego a visões (diṭṭhupādāna), o apego a regras e rituais (sīlabbatupādāna) e o apego a uma doutrina do eu (attavādupādāna).",
+      "es": "7.  Cuatro apegos: el apego a los placeres sensoriales, el apego a las visiones erróneas, el apego a ritos y ceremonias, y el apego a la doctrina del yo."
+    }
+  },
+  {
+    "id": "abhm-7.11",
+    "pali": "Cha nīvaraṇāni – kāmacchandanīvaraṇaṃ byāpādanīvaraṇaṃ thinamiddhanīvaraṇaṃ uddhaccakukkuccanīvaraṇaṃ vicikicchānīvaraṇaṃ avijjānīvaraṇaṃ.",
+    "translations": {
+      "en": "8. Six hindrances: the hindrance of sensual desire, the hindrance of ill will, the hindrance of sloth and torpor, the hindrance of restlessness and remorse, the hindrance of doubt, and the hindrance of ignorance.",
+      "pt": "8. Seis obstáculos (nīvaraṇa): o obstáculo do desejo sensorial (kāmacchandanīvaraṇa), o obstáculo da má vontade (byāpādanīvaraṇa), o obstáculo da preguiça e torpor (thinamiddhanīvaraṇa), o obstáculo da agitação e remorso (uddhaccakukkuccanīvaraṇa), o obstáculo da dúvida (vicikicchānīvaraṇa) e o obstáculo da ignorância (avijjānīvaraṇa).",
+      "es": "8.  Seis obstáculos: el obstáculo del deseo sensorial, el obstáculo de la malevolencia, el obstáculo de la pereza y el letargo, el obstáculo de la agitación y la preocupación, el obstáculo de la duda y el obstáculo de la ignorancia."
+    }
+  },
+  {
+    "id": "abhm-7.12",
+    "pali": "Satta anusayā – kāmarāgānusayo bhavarāgānusayo paṭighānusayo mānānusayo diṭṭhānusayo vicikicchānusayo avijjānusayo.",
+    "translations": {
+      "en": "9. Seven underlying tendencies: the underlying tendency to sensual lust, the underlying tendency to lust for existence, the underlying tendency to aversion, the underlying tendency to conceit, the underlying tendency to views, the underlying tendency to doubt, and the underlying tendency to ignorance.",
+      "pt": "9. Sete tendências latentes (anusaya): a tendência latente à luxúria sensorial (kāmarāgānusaya), a tendência latente à luxúria pela existência (bhavarāgānusaya), a tendência latente à aversão (paṭighānusaya), a tendência latente ao orgulho (mānānusaya), a tendência latente a visões (diṭṭhānusaya), a tendência latente à dúvida (vicikicchānusaya) e a tendência latente à ignorância (avijjānusaya).",
+      "es": "9.  Siete tendencias latentes: la tendencia latente a la lujuria sensorial, la tendencia latente a la lujuria por la existencia, la tendencia latente a la aversión, la tendencia latente al engreimiento, la tendencia latente a las visiones erróneas, la tendencia latente a la duda y la tendencia latente a la ignorancia."
+    }
+  },
+  {
+    "id": "abhm-7.13",
+    "pali": "Dasa saṃyojanāni – kāmarāgasaṃyojanaṃ rūparāgasaṃyojanaṃ arūparāgasaṃyojanaṃ paṭighasaṃyojanaṃ mānasaṃyojanaṃ diṭṭhisaṃyojanaṃ sīlabbataparāmāsasaṃyojanaṃ vicikicchāsaṃyojanaṃ uddhaccasaṃyojanaṃ avijjāsaṃyojanaṃ suttante.",
+    "translations": {
+      "en": "10. Ten fetters (in the Suttanta method): the fetter of sensual lust, the fetter of lust for fine-material form, the fetter of lust for formless existence, the fetter of aversion, the fetter of conceit, the fetter of views, the fetter of adherence to rules and observances, the fetter of doubt, the fetter of restlessness, and the fetter of ignorance.",
+      "pt": "10. Dez grilhões (saṃyojana) de acordo com o Suttanta: o grilhão da luxúria sensorial (kāmarāgasaṃyojana), o grilhão da luxúria pela matéria sutil (rūparāgasaṃyojana), o grilhão da luxúria pelo imaterial (arūparāgasaṃyojana), o grilhão da aversão (paṭighasaṃyojana), o grilhão do orgulho (mānasaṃyojana), o grilhão de visões (diṭṭhisaṃyojana), o grilhão do apego a regras e rituais (sīlabbataparāmāsasaṃyojana), o grilhão da dúvida (vicikicchāsaṃyojana), o grilhão da agitação (uddhaccasaṃyojana) e o grilhão da ignorância (avijjāsaṃyojana).",
+      "es": "10.  Diez grilletes en los Suttas: el grillete de la lujuria sensorial, el grillete de la lujuria por la existencia material fina, el grillete de la lujuria por la existencia inmaterial, el grillete de la aversión, el grillete del engreimiento, el grillete de las visiones erróneas, el grillete de la adherencia a ritos y ceremonias, el grillete de la duda, el grillete de la agitación y el grillete de la ignorancia."
+    }
+  },
+  {
+    "id": "abhm-7.14",
+    "pali": "Aparānipi dasa saṃyojanāni – kāmarāgasaṃyojanaṃ bhavarāgasaṃyojanaṃ paṭighasaṃyojanaṃ mānasaṃyojanaṃ diṭṭhisaṃyojanaṃ sīlabbataparāmāsasaṃyojanaṃ vicikicchāsaṃyojanaṃ issāsaṃyojanaṃ macchariyasaṃyojanaṃ avijjāsaṃyojanaṃ abhidhamme (vibha. 969).",
+    "translations": {
+      "en": "11. Another ten fetters (in the Abhidhamma method): the fetter of sensual lust, the fetter of lust for existence, the fetter of aversion, the fetter of conceit, the fetter of views, the fetter of adherence to rules and observances, the fetter of doubt, the fetter of envy, the fetter of stinginess, and the fetter of ignorance.",
+      "pt": "11. Outros dez grilhões de acordo com o Abhidhamma: o grilhão da luxúria sensorial, o grilhão da luxúria pela existência (bhavarāgasaṃyojana), o grilhão da aversão, o grilhão do orgulho, o grilhão de visões, o grilhão do apego a regras e rituais, o grilhão da dúvida, o grilhão da inveja (issāsaṃyojana), o grilhão da avareza (macchariyasaṃyojana) e o grilhão da ignorância.",
+      "es": "11.  Otros diez grilletes en el Abhidhamma: el grillete de la lujuria sensorial, el grillete de la lujuria por la existencia, el grillete de la aversión, el grillete del engreimiento, el grillete de las visiones erróneas, el grillete de la adherencia a ritos y ceremonias, el grillete de la duda, el grillete de la envidia, el grillete de la avaricia y el grillete de la ignorancia."
+    }
+  },
+  {
+    "id": "abhm-7.15",
+    "pali": "Dasa kilesā – lobho doso moho māno diṭṭhi vicikicchā thinaṃ uddhaccaṃ ahirikaṃ anottappaṃ.",
+    "translations": {
+      "en": "12. Ten defilements: greed, hatred, delusion, conceit, views, doubt, sloth, restlessness, shamelessness, and fearlessness of wrongdoing.",
+      "pt": "12. Dez impurezas (kilesa): ganância (lobha), ódio (dosa), ilusão (moha), orgulho (māna), visões (diṭṭhi), dúvida (vicikicchā), preguiça (thina), agitação (uddhacca), falta de vergonha moral (ahirika) e destemor do erro (anottappa).",
+      "es": "12.  Diez impurezas: codicia, odio, engaño, engreimiento, visiones erróneas, duda, pereza, agitación, falta de vergüenza moral y falta de temor moral."
+    }
+  },
+  {
+    "id": "abhm-7.16",
+    "pali": "Āsavādīsu panettha kāmabhavanāmena tabbatthukā taṇhā adhippetā, sīlabbataparāmāso idaṃsaccābhiniveso attavādupādo ca tathāpavattaṃ diṭṭhigatameva pavuccati.",
+    "translations": {
+      "en": "13. Here, in the categories of the taints and so forth, by the terms 'sensual pleasure' and 'existence' is meant the craving that has them as its object. Adherence to rules and observances, dogmatic insistence that 'this alone is the truth,' and clinging to a doctrine of self, when occurring as such, are simply called 'view'.",
+      "pt": "13. Aqui, entre os eflúvios, etc., sob os nomes de 'desejo sensorial' (kāma) e 'existência' (bhava), entende-se a cobiça (taṇhā) baseada neles. O apego a regras e rituais, a insistência dogmática de que 'esta é a verdade' e o apego a uma doutrina do eu são chamados simplesmente de visão incorreta (diṭṭhi) ocorrendo de tais maneiras.",
+      "es": "13.  Aquí, entre los efluvios y demás, por los nombres de «deseo sensorial» y «existencia» se entiende el deseo basado en ellos. La adherencia a ritos y ceremonias, la creencia dogmática de que «solo esto es la verdad» y el apego a la doctrina del yo se denominan simplemente visiones erróneas manifestadas de esas formas."
+    }
+  },
+  {
+    "id": "abhm-7.17",
+    "pali": "Āsavoghā ca yogā ca,",
+    "translations": {
+      "en": "14. The taints, the floods, and the yokes,",
+      "pt": "14. Eflúvios, torrentes e jugos,",
+      "es": "14.  Los efluvios, las inundaciones y los vínculos,"
+    }
+  },
+  {
+    "id": "abhm-7.18",
+    "pali": "Tayo ganthā ca vatthuto;</p><p rend=\"gatha3\">Upādānā duve vuttā,</p><p rend=\"gathalast\">Aṭṭha nīvaraṇā siyuṃ.",
+    "translations": {
+      "en": "and three knots in substance; two clingings are stated; there are eight hindrances.",
+      "pt": "são três em termos de entidade; os apegos são declarados como dois; e haveria oito obstáculos.",
+      "es": "Y los nudos son tres en esencia; los apegos se dice que son dos, y los obstáculos ocho."
+    }
+  },
+  {
+    "id": "abhm-7.19",
+    "pali": "Chaḷevānusayā honti, nava saṃyojanā matā;</p><p rend=\"gathalast\">Kilesā dasa vuttoyaṃ, navadhā pāpasaṅgaho.",
+    "translations": {
+      "en": "There are six underlying tendencies, nine fetters are held, and ten defilements. This compendium of evil is stated in nine ways.",
+      "pt": "As tendências latentes são seis; os grilhões são conhecidos como nove; as impurezas são dez. Assim é declarado o compêndio do mal em nove partes.",
+      "es": "Se sabe que las tendencias latentes son seis, y los grilletes nueve; las impurezas se dice que son diez; así es el compendio de lo perjudicial en nueve formas."
+    }
+  },
+  {
+    "id": "abhm-7.20",
+    "pali": "Missakasaṅgaho",
+    "translations": {
+      "en": "The Miscellaneous Compendium",
+      "pt": "Compêndio de Categorias Mistas",
+      "es": "Compendio Mixto"
+    }
+  },
+  {
+    "id": "abhm-7.21",
+    "pali": "<b>Missakasaṅgahe</b> cha hetū – lobho doso moho alobho adoso amoho.",
+    "translations": {
+      "en": "15. In the Miscellaneous Compendium, there are six roots: greed, hatred, delusion, non-greed, non-hatred, and non-delusion.",
+      "pt": "15. No compêndio de categorias mistas, há seis raízes (hetu): ganância (lobha), ódio (dosa), ilusão (moha), não-ganância (alobha), não-ódio (adosa) e não-ilusão (amoha).",
+      "es": "15.  En el compendio mixto hay seis raíces: codicia, odio, engaño, no-codicia, no-odio y no-engaño."
+    }
+  },
+  {
+    "id": "abhm-7.22",
+    "pali": "Satta jhānaṅgāni – vitakko vicāro pīti ekaggatā somanassaṃ domanassaṃ upekkhā.",
+    "translations": {
+      "en": "16. Seven jhāna factors: initial application, sustained application, rapture, one-pointedness, joy, displeasure, and equanimity.",
+      "pt": "16. Sete fatores de jhāna (jhānaṅga): pensamento aplicado (vitakka), pensamento sustentado (vicāra), êxtase (pīti), unifocalidade (ekaggatā), alegria (somanassa), desagrado (domanassa) e equanimidade (upekkhā).",
+      "es": "16.  Siete factores de absorción: aplicación inicial, aplicación sostenida, alegría, unificación de la mente, felicidad, dolor y ecuanimidad."
+    }
+  },
+  {
+    "id": "abhm-7.23",
+    "pali": "Dvādasa maggaṅgāni – sammādiṭṭhi sammāsaṅkappo sammāvācā sammākammanto sammāājīvo sammāvāyāmo sammāsati sammāsamādhi micchādiṭṭhi micchāsaṅkappo micchāvāyāmo micchāsamādhi.",
+    "translations": {
+      "en": "17. Twelve path factors: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration, wrong view, wrong resolve, wrong effort, and wrong concentration.",
+      "pt": "17. Doze fatores do caminho (maggaṅga): visão correta (sammādiṭṭhi), intenção correta (sammāsaṅkappa), linguagem correta (sammāvācā), ação correta (sammākammanta), meio de vida correto (sammāājīva), esforço correto (sammāvāyāma), atenção plena correta (sammāsati), concentração correta (sammāsamādhi), visão incorreta (micchādiṭṭhi), intenção incorreta (micchāsaṅkappa), esforço incorreto (micchāvāyāma) e concentração incorreta (micchāsamādhi).",
+      "es": "17.  Doce factores del camino: visión correcta, intención correcta, habla correcta, acción correcta, modo de vida correcto, esfuerzo correcto, atención plena correcta, concentración correcta, visión errónea, intención errónea, esfuerzo erróneo y concentración errónea."
+    }
+  },
+  {
+    "id": "abhm-7.24",
+    "pali": "Bāvīsatindriyāni – cakkhundriyaṃ sotindriyaṃ ghānindriyaṃ jivhindriyaṃ kāyindriyaṃ itthindriyaṃ purisindriyaṃ jīvitindriyaṃ manindriyaṃ sukhindriyaṃ dukkhindriyaṃ somanassindriyaṃ domanassindriyaṃ upekkhindriyaṃ saddhindriyaṃ vīriyindriyaṃ satindriyaṃ samādhindriyaṃ paññindriyaṃ anaññātaññassāmītindriyaṃ aññindriyaṃ aññātāvindriyaṃ.",
+    "translations": {
+      "en": "18. Twenty-two faculties: the eye faculty, the ear faculty, the nose faculty, the tongue faculty, the body faculty, the female faculty, the male faculty, the life faculty, the mind faculty, the pleasure faculty, the pain faculty, the joy faculty, the displeasure faculty, the equanimity faculty, the faith faculty, the energy faculty, the mindfulness faculty, the concentration faculty, the wisdom faculty, the faculty 'I shall come to know the unknown,' the faculty of final knowledge, and the faculty of one who has final knowledge.",
+      "pt": "18. Vinte e duas faculdades (indriya): faculdade do olho (cakkhundriya), faculdade do ouvido (sotindriya), faculdade do nariz (ghānindriya), faculdade da língua (jivhindriya), faculdade do corpo (kāyindriya), faculdade feminina (itthindriya), faculdade masculina (purisindriya), faculdade da vida (jīvitindriya), faculdade da mente (manindriya), faculdade do prazer físico (sukhindriya), faculdade da dor física (dukkhindriya), faculdade da alegria mental (somanassindriya), faculdade do desagrado mental (domanassindriya), faculdade da equanimidade (upekkhindriya), faculdade da fé (saddhindriya), faculdade da energia (vīriyindriya), faculdade da atenção plena (satindriya), faculdade da concentração (samādhindriya), faculdade da sabedoria (paññindriya), faculdade 'saberei o que é desconhecido' (anaññātaññassāmītindriya), faculdade do conhecimento final (aññindriya) e faculdade daquele que já conhece (aññātāvindriya).",
+      "es": "18.  Veintidós facultades: la facultad del ojo, la facultad del oído, la facultad de la nariz, la facultad de la lengua, la facultad del cuerpo, la facultad de la feminidad, la facultad de la masculinidad, la facultad de la vida, la facultad de la mente, la facultad del placer, la facultad del dolor, la facultad de la felicidad, la facultad del descontento, la facultad de la ecuanimidad, la facultad de la fe, la facultad de la energía, la facultad de la atención plena, la facultad de la concentración, la facultad de la sabiduría, la facultad de «conoceré lo desconocido», la facultad del conocimiento perfecto y la facultad de aquel que posee el conocimiento perfecto."
+    }
+  },
+  {
+    "id": "abhm-7.25",
+    "pali": "Nava balāni – saddhābalaṃ vīriyabalaṃ satibalaṃ samādhibalaṃ paññābalaṃ hiribalaṃ ottappabalaṃ ahirikabalaṃ anottappabalaṃ.",
+    "translations": {
+      "en": "19. Nine powers: the power of faith, the power of energy, the power of mindfulness, the power of concentration, the power of wisdom, the power of moral shame, the power of moral dread, the power of shamelessness, and the power of fearlessness of wrongdoing.",
+      "pt": "19. Nove poderes: o poder da fé, o poder da energia, o poder da atenção plena, o poder da concentração, o poder da sabedoria, o poder da vergonha moral, o poder do temor moral, o poder da desavergonha moral, o poder do destemor moral.",
+      "es": "19.  Nueve poderes: el poder de la fe, el poder de la energía, el poder de la atención, el poder de la concentración, el poder de la sabiduría, el poder de la vergüenza moral, el poder del temor moral, el poder de la falta de vergüenza moral y el poder de la falta de temor moral."
+    }
+  },
+  {
+    "id": "abhm-7.26",
+    "pali": "Cattāro adhipatī – chandādhipati vīriyādhipati cittādhipati vīmaṃsādhipati.",
+    "translations": {
+      "en": "20. Four predominances: predominance of zeal, predominance of energy, predominance of consciousness, and predominance of investigation.",
+      "pt": "20. Quatro predominâncias: a predominância do desejo, a predominância da energia, a predominância da consciência, a predominância da investigação.",
+      "es": "20.  Cuatro predominantes: el predominio del deseo, el predominio de la energía, el predominio de la conciencia y el predominio de la investigación."
+    }
+  },
+  {
+    "id": "abhm-7.27",
+    "pali": "Cattāro āhārā – kabaḷīkāro āhāro, phasso dutiyo, manosañcetanā tatiyā, viññāṇaṃ catutthaṃ.",
+    "translations": {
+      "en": "21. Four nutriments: material food, contact as the second, mental volition as the third, and consciousness as the fourth.",
+      "pt": "21. Quatro alimentos: o alimento material, o contato como o segundo, a volição mental como o terceiro, a consciência como o quarto.",
+      "es": "21.  Cuatro nutrientes: el nutriente de la comida material es el primero, el contacto es el segundo, la volición mental es el tercero y la conciencia es el cuarto."
+    }
+  },
+  {
+    "id": "abhm-7.28",
+    "pali": "Indriyesu panettha sotāpattimaggañāṇaṃ anaññātaññassāmītindriyaṃ.",
+    "translations": {
+      "en": "22. Here, among these faculties, the knowledge of the path of stream-entry is the faculty, 'I shall come to know the unknown.'",
+      "pt": "22. Aqui, entre as faculdades, o conhecimento do caminho da entrada na corrente é a faculdade 'saberei o que ainda não é conhecido'.",
+      "es": "22.  Entre las facultades, sin embargo, el conocimiento del camino de la entrada en la corriente es la facultad de 'conoceré lo desconocido'."
+    }
+  },
+  {
+    "id": "abhm-7.29",
+    "pali": "Arahattaphalañāṇaṃ aññātāvindriyaṃ.",
+    "translations": {
+      "en": "23. The knowledge of the fruit of arahantship is the faculty of one who has final knowledge.",
+      "pt": "23. O conhecimento do fruto do estado de Arahant é a faculdade 'daquele que conheceu'.",
+      "es": "23.  El conocimiento del fruto del Arhat es la facultad de 'quien ha conocido'."
+    }
+  },
+  {
+    "id": "abhm-7.30",
+    "pali": "Majjhe cha ñāṇāni aññindriyānīti pavuccanti.",
+    "translations": {
+      "en": "24. The six kinds of knowledge in between are called the faculty of final knowledge.",
+      "pt": "24. Os seis conhecimentos intermediários são chamados de faculdade do conhecimento supremo.",
+      "es": "24.  Los seis conocimientos intermedios se denominan la facultad del 'conocimiento final'."
+    }
+  },
+  {
+    "id": "abhm-7.31",
+    "pali": "Jīvitindriyañca rūpārūpavasena duvidhaṃ hoti.",
+    "translations": {
+      "en": "25. And the life faculty is twofold, by way of the material and the immaterial.",
+      "pt": "25. E a faculdade da vida é de dois tipos, por meio do material e do imaterial.",
+      "es": "25.  La facultad de la vida es de dos tipos: según sea física o mental."
+    }
+  },
+  {
+    "id": "abhm-7.32",
+    "pali": "Pañcaviññāṇesu jhānaṅgāni, avīriyesu balāni, ahetukesu maggaṅgāni na labbhanti.",
+    "translations": {
+      "en": "26. The jhāna factors are not found in the five sense-consciousnesses; the powers are not found in states devoid of energy; the path factors are not found in rootless states.",
+      "pt": "26. Nas cinco consciências sensoriais, os fatores de jhāna não são encontrados; naquelas sem energia, os poderes não são encontrados; naquelas sem causas raízes, os fatores do caminho não são encontrados.",
+      "es": "26.  En las cinco clases de conciencia no se encuentran los factores de jhāna; en las conciencias carentes de energía, los poderes; y en las conciencias sin raíces, los factores del camino."
+    }
+  },
+  {
+    "id": "abhm-7.33",
+    "pali": "Tathā vicikicchācitte ekaggatā maggindriyabalabhāvaṃ na gacchati.",
+    "translations": {
+      "en": "27. Similarly, in a consciousness accompanied by doubt, one-pointedness does not attain the status of a path factor, a faculty, or a power.",
+      "pt": "27. Da mesma forma, na consciência associada à dúvida, a unifocalização não alcança o estado de fator do caminho, faculdade ou poder.",
+      "es": "27.  Del mismo modo, en la conciencia acompañada de duda, la unificación de la mente no alcanza el estado de factor del camino, ni de facultad, ni de poder."
+    }
+  },
+  {
+    "id": "abhm-7.34",
+    "pali": "Dvihetukatihetukajavanesveva yathāsambhavaṃ adhipati ekova labbhatīti.",
+    "translations": {
+      "en": "28. Only in two-rooted and three-rooted javanas is just one predominance obtained, as may be possible.",
+      "pt": "28. Apenas nos javanas com duas ou três causas raízes, conforme o caso, obtém-se apenas uma única predominância.",
+      "es": "28.  Solo en las conciencias impulsivas de dos raíces y de tres raíces, según sea posible, se obtiene un único predominante."
+    }
+  },
+  {
+    "id": "abhm-7.35",
+    "pali": "Cha hetū pañca jhānaṅgā, maggaṅgā nava vatthuto.",
+    "translations": {
+      "en": "29. Six roots, five jhāna factors, nine path factors in substance;",
+      "pt": "29. Seis causas raízes, cinco fatores de jhāna, nove fatores do caminho por sua natureza essencial.",
+      "es": "29.  Seis raíces, cinco factores de jhāna y nueve factores del camino en esencia."
+    }
+  },
+  {
+    "id": "abhm-7.36",
+    "pali": "Soḷasindriyadhammā ca, baladhammā naveritā.",
+    "translations": {
+      "en": "sixteen faculty-dhammas and nine power-dhammas have been declared.",
+      "pt": "Dezesseis dhammas de faculdade e nove dhammas de poder são declarados.",
+      "es": "Se enuncian dieciséis fealidades de las facultades y nueve fealidades de los poderes."
+    }
+  },
+  {
+    "id": "abhm-7.37",
+    "pali": "Cattārodhipati vuttā, tathāhārāti sattadhā;</p><p rend=\"gathalast\">Kusalādisamākiṇṇo, vuttomissakasaṅgaho.",
+    "translations": {
+      "en": "Four predominances are taught, and likewise the nutriments. Thus in seven ways, intermingled with the wholesome and so on, the Miscellaneous Compendium has been taught.",
+      "pt": "Quatro predominâncias são declaradas, e da mesma forma os alimentos; assim, de sete maneiras, mesclado com o que é salutar e assim por diante, é exposto o Compêndio Misto.",
+      "es": "Se han expuesto cuatro predominantes y del mismo modo los nutrientes; en siete categorías. Mezclado con lo saludable y otros estados, se ha expuesto el Compendio de Mezcla."
+    }
+  },
+  {
+    "id": "abhm-7.38",
+    "pali": "Bodhipakkhiyasaṅgaho",
+    "translations": {
+      "en": "The Compendium of Requisites for Enlightenment",
+      "pt": "Compêndio dos Fatores do Despertar",
+      "es": "Compendio de los Factores de la Iluminación"
+    }
+  },
+  {
+    "id": "abhm-7.39",
+    "pali": "<b>Bodhipakkhiyasaṅgahe</b> cattāro satipaṭṭhānā kāyānupassanāsatipaṭṭhānaṃ vedanānupassanāsatipaṭṭhānaṃ cittānupassanāsatipaṭṭhānaṃ dhammānupassanāsatipaṭṭhānaṃ.",
+    "translations": {
+      "en": "30. In the Compendium of Requisites for Enlightenment, there are four foundations of mindfulness: the foundation of mindfulness which is the contemplation of the body, the foundation of mindfulness which is the contemplation of feelings, the foundation of mindfulness which is the contemplation of consciousness, and the foundation of mindfulness which is the contemplation of dhammas.",
+      "pt": "30. No Compêndio dos Fatores do Despertar, há quatro estabelecimentos da atenção plena: o estabelecimento da atenção plena na contemplação do corpo, o estabelecimento da atenção plena na contemplação das sensações, o estabelecimento da atenção plena na contemplação da mente, o estabelecimento da atenção plena na contemplação dos dhammas.",
+      "es": "30.  En el Compendio de los Factores de la Iluminación hay cuatro fundamentos de la atención: el fundamento de la atención en la observación del cuerpo, el fundamento de la atención en la observación de las sensaciones, el fundamento de la atención en la observación de la mente y el fundamento de la atención en la observación de los objetos mentales."
+    }
+  },
+  {
+    "id": "abhm-7.40",
+    "pali": "Cattāro sammappadhānā uppannānaṃ pāpakānaṃ pahānāya vāyāmo, anuppannānaṃ pāpakānaṃ anuppādāya vāyāmo, anuppannānaṃ kusalānaṃ uppādāya vāyāmo, uppannānaṃ kusalānaṃ bhiyyobhāvāya vāyāmo.",
+    "translations": {
+      "en": "31. Four right strivings: the effort for the abandoning of arisen unwholesome states, the effort for the non-arising of unarisen unwholesome states, the effort for the arising of unarisen wholesome states, and the effort for the development of arisen wholesome states.",
+      "pt": "31. Quatro supremos esforços: o esforço para abandonar os dhammas prejudiciais surgidos, o esforço para evitar o surgimento de dhammas prejudiciais não surgidos, o esforço para fazer surgir dhammas salutares não surgidos, o esforço para o crescimento dos dhammas salutares surgidos.",
+      "es": "31.  Cuatro esfuerzos correctos: el esfuerzo por abandonar los estados perjudiciales ya surgidos, el esfuerzo por evitar el surgimiento de estados perjudiciales aún no surgidos, el esfuerzo por hacer surgir estados saludables aún no surgidos y el esfuerzo por el incremento de los estados saludables ya surgidos."
+    }
+  },
+  {
+    "id": "abhm-7.41",
+    "pali": "Cattāro iddhipādā – chandiddhipādo vīriyiddhipādo cittiddhipādo vīmaṃsiddhipādo.",
+    "translations": {
+      "en": "32. Four bases for spiritual power: the base for spiritual power of zeal, the base for spiritual power of energy, the base for spiritual power of consciousness, and the base for spiritual power of investigation.",
+      "pt": "32. Quatro bases do poder espiritual: a base do poder do desejo, a base do poder da energia, a base do poder da consciência, a base do poder da investigação.",
+      "es": "32.  Cuatro bases del poder psíquico: la base del poder del deseo, la base del poder de la energía, la base del poder de la conciencia y la base del poder de la investigación."
+    }
+  },
+  {
+    "id": "abhm-7.42",
+    "pali": "Pañcindriyāni – saddhindriyaṃ vīriyindriyaṃ satindriyaṃ samādhindriyaṃ paññindriyaṃ.",
+    "translations": {
+      "en": "33. Five faculties: the faculty of faith, the faculty of energy, the faculty of mindfulness, the faculty of concentration, and the faculty of wisdom.",
+      "pt": "33. Cinco faculdades: a faculdade da fé, a faculdade da energia, a faculdade da atenção plena, a faculdade da concentração, a faculdade da sabedoria.",
+      "es": "33.  Cinco facultades: la facultad de la fe, la facultad de la energía, la facultad de la atención, la facultad de la concentración y la facultad de la sabiduría."
+    }
+  },
+  {
+    "id": "abhm-7.43",
+    "pali": "Pañca balāni – saddhābalaṃ vīriyabalaṃ satibalaṃ samādhibalaṃ paññābalaṃ.",
+    "translations": {
+      "en": "34. Five powers: the power of faith, the power of energy, the power of mindfulness, the power of concentration, and the power of wisdom.",
+      "pt": "34. Cinco poderes: o poder da fé, o poder da energia, o poder da atenção plena, o poder da concentração, o poder da sabedoria.",
+      "es": "34.  Cinco poderes: el poder de la fe, el poder de la energía, el poder de la atención, el poder de la concentración y el poder de la sabiduría."
+    }
+  },
+  {
+    "id": "abhm-7.44",
+    "pali": "Satta bojjhaṅgā – satisambojjhaṅgo dhammavicayasambojjhaṅgo vīriyasambojjhaṅgo pītisambojjhaṅgo passaddhisambojjhaṅgo samādhisambojjhaṅgo upekkhāsambojjhaṅgo.",
+    "translations": {
+      "en": "35. Seven enlightenment factors: the enlightenment factor of mindfulness, the enlightenment factor of investigation of dhammas, the enlightenment factor of energy, the enlightenment factor of rapture, the enlightenment factor of tranquility, the enlightenment factor of concentration, and the enlightenment factor of equanimity.",
+      "pt": "35. Sete fatores do despertar: o fator do despertar da atenção plena, o fator do despertar da investigação dos dhammas, o fator do despertar da energia, o fator do despertar do êxtase, o fator do despertar da tranquilidade, o fator do despertar da concentração, o fator do despertar da equanimidade.",
+      "es": "35.  Siete factores de la iluminación: el factor de iluminación de la atención, el factor de iluminación de la investigación de los fealidades, el factor de iluminación de la energía, el factor de iluminación del arrobamiento, el factor de iluminación de la tranquilidad, el factor de iluminación de la concentración y el factor de iluminación de la ecuanimidad."
+    }
+  },
+  {
+    "id": "abhm-7.45",
+    "pali": "Aṭṭha maggaṅgāni – sammādiṭṭhi sammāsaṅkappo sammāvācā sammākammanto sammāājīvo sammāvāyāmo sammāsati sammāsamādhi.",
+    "translations": {
+      "en": "36. Eight path factors: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, and right concentration.",
+      "pt": "36. Oito fatores do caminho: visão correta, intenção correta, linguagem correta, ação correta, meio de vida correto, esforço correto, atenção plena correta, concentração correta.",
+      "es": "36.  Ocho factores del camino: visión correcta, intención correcta, palabra correcta, acción correcta, medio de vida correcto, esfuerzo correcto, atención correcta y concentración correcta."
+    }
+  },
+  {
+    "id": "abhm-7.46",
+    "pali": "Ettha pana cattāro satipaṭṭhānāti sammāsati ekāva pavuccati.",
+    "translations": {
+      "en": "37. Here, however, the four foundations of mindfulness are said to be just right mindfulness alone.",
+      "pt": "37. Aqui, contudo, sob o nome de 'quatro estabelecimentos da atenção plena', refere-se apenas à atenção plena correta.",
+      "es": "37.  Aquí, sin embargo, los cuatro fundamentos de la atención se mencionan como uno solo: la atención correcta."
+    }
+  },
+  {
+    "id": "abhm-7.47",
+    "pali": "Tathā cattāro sammappadhānāti ca sammāvāyāmo.",
+    "translations": {
+      "en": "38. Similarly, the four right strivings are right effort.",
+      "pt": "38. Da mesma forma, sob o nome de 'quatro supremos esforços', refere-se ao esforço correto.",
+      "es": "38.  Del mismo modo, los cuatro esfuerzos correctos son el esfuerzo correcto."
+    }
+  },
+  {
+    "id": "abhm-7.48",
+    "pali": "Chando cittamupekkhā ca, saddhāpassaddhipītiyo.",
+    "translations": {
+      "en": "39. Zeal, consciousness, and equanimity; faith, tranquility, and rapture;",
+      "pt": "39. Desejo, consciência e equanimidade, fé, tranquilidade e êxtase,",
+      "es": "39.  El deseo, la conciencia y la ecuanimidad; la fe, la tranquilidad y el arrobamiento;"
+    }
+  },
+  {
+    "id": "abhm-7.49",
+    "pali": "Sammādiṭṭhi ca saṅkappo, vāyāmo viratittayaṃ.",
+    "translations": {
+      "en": "right view and resolve, effort, and the three abstinences;",
+      "pt": "Visão correta e intenção, esforço e as três abstenções,",
+      "es": "la visión correcta, la intención, el esfuerzo y las tres abstinencias;"
+    }
+  },
+  {
+    "id": "abhm-7.50",
+    "pali": "Sammāsati samādhīti, cuddasete sabhāvato;</p><p rend=\"gathalast\">Sattatiṃsappabhedena, sattadhā tattha saṅgaho.",
+    "translations": {
+      "en": "right mindfulness and concentration—these are fourteen in their intrinsic nature. The collection here is sevenfold, with a division into thirty-seven factors.",
+      "pt": "Atenção plena correta e concentração: estes quatorze, por sua natureza intrínseca, dividem-se em trinta e sete fatores, agrupados ali de sete maneiras.",
+      "es": "la atención correcta y la concentración: estos son catorce en esencia. Con treinta y siete variedades, en siete categorías se encuentra allí el compendio."
+    }
+  },
+  {
+    "id": "abhm-7.51",
+    "pali": "Saṅkappapassaddhi ca pītupekkhā,",
+    "translations": {
+      "en": "40. Resolve and tranquility, rapture and equanimity,",
+      "pt": "40. Intenção, tranquilidade, êxtase, equanimidade,",
+      "es": "40.  La intención, la tranquilidad, el arrobamiento y la ecuanimidad,"
+    }
+  },
+  {
+    "id": "abhm-7.52",
+    "pali": "Chando ca cittaṃ viratittayañca;</p><p rend=\"gatha3\">Navekaṭhānā viriyaṃ navaṭṭha,</p><p rend=\"gatha2\">Satī samādhī catu pañca paññā;</p><p rend=\"gatha3\">Saddhā duṭhānuttamasattatiṃsa-</p><p rend=\"gathalast\">Dhammānameso pavaro vibhāgo.",
+    "translations": {
+      "en": "zeal, consciousness, and the three abstinences—these nine occur in one place each. Energy occurs in nine places, mindfulness in eight, concentration in four, wisdom in five, and faith in two. This is the supreme analysis of these thirty-seven supreme dhammas.",
+      "pt": "Desejo, consciência e as três abstenções: estes nove ocorrem em um único lugar cada. A energia ocorre em nove lugares, a atenção plena em oito, a concentração em quatro, a sabedoria em cinco, a fé em dois lugares. Esta é a excelente classificação dos trinta e sete dhammas supremos.",
+      "es": "el deseo, la conciencia y las tres abstinencias cada uno se encuentra en un solo lugar. La energía se encuentra en nueve, la atención en ocho, la concentración en cuatro, la sabiduría en cinco y la fe en dos lugares. Esta es la excelente clasificación de estos treinta y siete estados."
+    }
+  },
+  {
+    "id": "abhm-7.53",
+    "pali": "Sabbe lokuttare honti, na vā saṅkappapītiyo.",
+    "translations": {
+      "en": "41. All are present in the supramundane, but resolve and rapture may or may not be.",
+      "pt": "41. Todos eles ocorrem no supramundano, embora às vezes sem intenção e êxtase.",
+      "es": "41.  Todos ellos están presentes en lo supramundano, excepto a veces la intención y el arrobamiento."
+    }
+  },
+  {
+    "id": "abhm-7.54",
+    "pali": "Lokiyepi yathāyogaṃ, chabbisuddhipavattiyaṃ.",
+    "translations": {
+      "en": "In the mundane sphere, too, they arise as is appropriate during the course of the six purifications.",
+      "pt": "No mundano também, conforme apropriado, no decorrer das seis purificações.",
+      "es": "También en lo mundano, según corresponda, durante el progreso de las seis purificaciones."
+    }
+  },
+  {
+    "id": "abhm-7.55",
+    "pali": "Sabbasaṅgaho",
+    "translations": {
+      "en": "The Compendium of All",
+      "pt": "Compêndio de Tudo",
+      "es": "El Compendio de Todo"
+    }
+  },
+  {
+    "id": "abhm-7.56",
+    "pali": "<b>Sabbasaṅgahe</b> pañcakkhandhā – rūpakkhandho vedanākkhandho saññākkhandho saṅkhārakkhandho viññāṇakkhandho.",
+    "translations": {
+      "en": "42. In the Compendium of All, there are five aggregates: the aggregate of form, the aggregate of feeling, the aggregate of perception, the aggregate of formations, and the aggregate of consciousness.",
+      "pt": "42. No Compêndio de Tudo, há cinco agregados: o agregado da matéria, o agregado da sensação, o agregado da percepção, o agregado das formações mentais, o agregado da consciência.",
+      "es": "42.  En el Compendio de Todo, los cinco agregados son: el agregado de la forma, el agregado de la sensación, el agregado de la percepción, el agregado de las formaciones mentales y el agregado de la conciencia."
+    }
+  },
+  {
+    "id": "abhm-7.57",
+    "pali": "Pañcupādānakkhandhā – rūpupādānakkhandho vedanupādānakkhandho saññupādānakkhandho saṅkhārupādānakkhandho viññāṇupādānakkhandho.",
+    "translations": {
+      "en": "43. Five aggregates of clinging: the aggregate of form subject to clinging, the aggregate of feeling subject to clinging, the aggregate of perception subject to clinging, the aggregate of formations subject to clinging, and the aggregate of consciousness subject to clinging.",
+      "pt": "43. Cinco agregados de apego: o agregado de apego à matéria, o agregado de apego à sensação, o agregado de apego à percepção, o agregado de apego às formações mentais, o agregado de apego à consciência.",
+      "es": "43.  Los cinco agregados del aferramiento son: el agregado del aferramiento a la forma, el agregado del aferramiento a la sensación, el agregado del aferramiento a la percepción, el agregado del aferramiento a las formaciones mentales y el agregado del aferramiento a la conciencia."
+    }
+  },
+  {
+    "id": "abhm-7.58",
+    "pali": "Dvādasāyatanāni – cakkhāyatanaṃ sotāyatanaṃ ghānāyatanaṃ jivhāyatanaṃ kāyāyatanaṃ manāyatanaṃ rūpāyatanaṃ saddāyatanaṃ gandhāyatanaṃ rasāyatanaṃ phoṭṭhabbāyatanaṃ dhammāyatanaṃ.",
+    "translations": {
+      "en": "44. Twelve bases: the eye-base, the ear-base, the nose-base, the tongue-base, the body-base, the mind-base, the form-base, the sound-base, the odor-base, the taste-base, the tangible-base, and the dhamma-base.",
+      "pt": "44. Doze bases dos sentidos: a base do olho, a base do ouvido, a base do nariz, a base da língua, a base do corpo, a base da mente, a base da forma, a base do som, a base do aroma, a base do sabor, a base do toque, a base dos dhammas mentais.",
+      "es": "44.  Las doce bases son: la base del ojo, la base del oído, la base de la nariz, la base de la lengua, la base del cuerpo, la base de la mente, la base de la forma (visible), la base del sonido, la base del olor, la base del sabor, la base de lo tangible y la base de los objetos mentales."
+    }
+  },
+  {
+    "id": "abhm-7.59",
+    "pali": "Aṭṭhārasa dhātuyo – cakkhudhātu sotadhātu ghānadhātu jivhādhātu kāyadhātu rūpadhātu saddadhātu gandhadhātu rasadhātu phoṭṭhabbadhātu cakkhuviññāṇadhātu sotaviññāṇadhātu ghānaviññāṇadhātu jivhāviññāṇadhātu kāyaviññāṇadhātu manodhātu dhammadhātu manoviññāṇadhātu.",
+    "translations": {
+      "en": "45. Eighteen elements: the eye-element, the ear-element, the nose-element, the tongue-element, the body-element, the form-element, the sound-element, the odor-element, the taste-element, the tangible-element, the eye-consciousness-element, the ear-consciousness-element, the nose-consciousness-element, the tongue-consciousness-element, the body-consciousness-element, the mind-element, the dhamma-element, and the mind-consciousness-element.",
+      "pt": "45. Dezoito elementos: o elemento do olho, o elemento do ouvido, o elemento do nariz, o elemento da língua, o elemento do corpo, o elemento da forma, o elemento do som, o elemento do aroma, o elemento do sabor, o elemento do toque, o elemento da consciência do olho, o elemento da consciência do ouvido, o elemento da consciência do nariz, o elemento da consciência da língua, o elemento da consciência do corpo, o elemento da mente, o dhamma-dhātu, o elemento da consciência da mente.",
+      "es": "45.  Los dieciocho elementos son: el elemento del ojo, el elemento del oído, el elemento de la nariz, el elemento de la lengua, el elemento del cuerpo, el elemento de la forma, el elemento del sonido, el elemento del olor, el elemento del sabor, el elemento de lo tangible, el elemento de la conciencia del ojo, el elemento de la conciencia del oído, el elemento de la conciencia de la nariz, el elemento de la conciencia de la lengua, el elemento de la conciencia del cuerpo, el elemento de la mente, el elemento de los objetos mentales y el elemento de la conciencia de la mente."
+    }
+  },
+  {
+    "id": "abhm-7.60",
+    "pali": "Cattāri ariyasaccāni – dukkhaṃ ariyasaccaṃ, dukkhasamudayo ariyasaccaṃ, dukkhanirodho ariyasaccaṃ, dukkhanirodhagāminī paṭipadā ariyasaccaṃ.",
+    "translations": {
+      "en": "46. Four Noble Truths: the noble truth of suffering, the noble truth of the origin of suffering, the noble truth of the cessation of suffering, and the noble truth of the path leading to the cessation of suffering.",
+      "pt": "46. Quatro Nobres Verdades: a nobre verdade do sofrimento, a nobre verdade da origem do sofrimento, a nobre verdade da cessação do sofrimento, a nobre verdade do caminho que leva à cessação do sofrimento.",
+      "es": "46.  Las cuatro Nobles Verdades son: la Noble Verdad del Sufrimiento, la Noble Verdad del Origen del Sufrimiento, la Noble Verdad del Cese del Sufrimiento y la Noble Verdad del Sendero que conduce al Cese del Sufrimiento."
+    }
+  },
+  {
+    "id": "abhm-7.61",
+    "pali": "Ettha pana cetasikasukhumarūpanibbānavasena ekūnasattati dhammā dhammāyatanadhammadhātūti saṅkhaṃ gacchanti.",
+    "translations": {
+      "en": "47. Here, however, by way of mental factors, subtle form, and Nibbāna, sixty-nine dhammas are reckoned as the dhamma-base and the dhamma-element.",
+      "pt": "47. Aqui, contudo, sessenta e nove dhammas — a saber, os fatores mentais, a matéria sutil e o Nibbāna — são classificados como a base dos dhammas mentais e o dhamma-dhātu.",
+      "es": "47.  Aquí, por medio de los factores mentales, la forma sutil y el Nibbāna, sesenta y nueve estados se clasifican como la base de los objetos mentales y el elemento de los objetos mentales."
+    }
+  },
+  {
+    "id": "abhm-7.62",
+    "pali": "Manāyatanameva sattaviññāṇadhātuvasena bhijjati.",
+    "translations": {
+      "en": "48. The mind-base itself is divided by way of the seven consciousness-elements.",
+      "pt": "48. A própria base da mente divide-se em sete elementos de consciência.",
+      "es": "48.  Solo la base de la mente se divide en siete elementos de conciencia."
+    }
+  },
+  {
+    "id": "abhm-7.63",
+    "pali": "Rūpañca vedanā saññā, sesacetasikā tathā.",
+    "translations": {
+      "en": "49. Form, feeling, perception, and likewise the remaining mental factors,",
+      "pt": "49. A matéria, a sensação, a percepção e também os demais fatores mentais,",
+      "es": "49.  La forma, la sensación, la percepción y asimismo los restantes factores mentales,"
+    }
+  },
+  {
+    "id": "abhm-7.64",
+    "pali": "Viññāṇamiti pañcete, pañcakkhandhāti bhāsitā.",
+    "translations": {
+      "en": "and consciousness—these five are called the five aggregates.",
+      "pt": "e a consciência: estes cinco são declarados como os cinco agregados.",
+      "es": "y la conciencia; estos cinco son llamados los cinco agregados."
+    }
+  },
+  {
+    "id": "abhm-7.65",
+    "pali": "Pañcupādānakkhandhāti, tathā tebhūmakā matā.",
+    "translations": {
+      "en": "50. Likewise, the five aggregates of clinging are considered to belong to the three planes.",
+      "pt": "50. Da mesma forma, aqueles pertencentes aos três planos de existência são conhecidos como os cinco agregados de apego.",
+      "es": "50.  Se consideran como los cinco agregados del aferramiento cuando pertenecen a los tres planos de existencia."
+    }
+  },
+  {
+    "id": "abhm-7.66",
+    "pali": "Bhedābhāvena nibbānaṃ, khandhasaṅgahanissaṭaṃ.",
+    "translations": {
+      "en": "Nibbāna, because of its indivisible nature, is excluded from the collection of aggregates.",
+      "pt": "Por ser livre de divisões, o Nibbāna está excluído da classificação dos agregados.",
+      "es": "Debido a la ausencia de distinciones, el Nibbāna está excluido de la clasificación de los agregados."
+    }
+  },
+  {
+    "id": "abhm-7.67",
+    "pali": "Dvārārammaṇabhedena, bhavantāyatanāni ca.",
+    "translations": {
+      "en": "51. And the bases come to be through the distinction between doors and objects.",
+      "pt": "51. As bases dos sentidos existem por meio da divisão de portas e objetos.",
+      "es": "51.  Las bases existen por medio de la distinción entre puertas y objetos."
+    }
+  },
+  {
+    "id": "abhm-7.68",
+    "pali": "Dvārālambataduppanna-pariyāyena dhātuyo.",
+    "translations": {
+      "en": "The elements are understood by way of the door, the object, and that which arises from them.",
+      "pt": "Os elementos são classificados por meio das portas, dos objetos e da consciência que deles surge.",
+      "es": "Los elementos se establecen de acuerdo con el método de las puertas, los objetos y la conciencia que surge de ellos."
+    }
+  },
+  {
+    "id": "abhm-7.69",
+    "pali": "Dukkhaṃ tebhūmakaṃ vaṭṭaṃ, taṇhā samudayo bhave.",
+    "translations": {
+      "en": "52. The round of existence in the three planes is suffering; craving is its origin.",
+      "pt": "52. O sofrimento é o ciclo de existências nos três planos; o desejo ardente é a sua origem.",
+      "es": "52.  El sufrimiento es el ciclo de existencia en los tres planos; el deseo es el origen."
+    }
+  },
+  {
+    "id": "abhm-7.70",
+    "pali": "Nirodho nāma nibbānaṃ, maggo lokuttaro mato.",
+    "translations": {
+      "en": "Cessation is Nibbāna; the path is considered supramundane.",
+      "pt": "A cessação é o Nibbāna; o Caminho é conhecido como supramundano.",
+      "es": "El cese es el Nibbāna; el sendero se considera como lo supramundano."
+    }
+  },
+  {
+    "id": "abhm-7.71",
+    "pali": "Maggayuttā phalā ceva, catusaccavinissaṭā.",
+    "translations": {
+      "en": "53. Those dhammas associated with the path, and the fruits as well, are excluded from the four truths.",
+      "pt": "53. Os dhammas associados ao Caminho e também os Frutos estão excluídos das quatro verdades.",
+      "es": "53.  Los frutos y aquellos factores asociados con el sendero están excluidos de las cuatro verdades."
+    }
+  },
+  {
+    "id": "abhm-7.72",
+    "pali": "Iti pañcappabhedena, pavutto sabbasaṅgaho.",
+    "translations": {
+      "en": "Thus, with its fivefold division, the Compendium of All has been explained.",
+      "pt": "Assim, de cinco maneiras, é exposto o Compêndio de Tudo.",
+      "es": "Así se ha expuesto el Compendio de Todo bajo cinco categorías."
+    }
+  },
+  {
+    "id": "abhm-7.73",
+    "pali": "Iti abhidhammatthasaṅgahe samuccayasaṅgahavibhāgo nāma",
+    "translations": {
+      "en": "Thus ends the chapter in the Abhidhammattha Saṅgaha named the Compendium of Categories.",
+      "pt": "Assim termina, no Abhidhammatthasaṅgaha, o capítulo intitulado Compêndio das Categorias Mistas,",
+      "es": "Así termina en el Compendio del Significado del Abhidhamma el capítulo titulado Compendio de Categorías Mixtas,"
+    }
+  },
+  {
+    "id": "abhm-7.74",
+    "pali": "Sattamo paricchedo.",
+    "translations": {
+      "en": "The Seventh Chapter.",
+      "pt": "o Sétimo Capítulo.",
+      "es": "el séptimo capítulo."
+    }
+  }
+]

@@ -1,0 +1,902 @@
+[
+  {
+    "pali": "loko",
+    "meaning": {
+      "en": "world",
+      "pt": "mundo",
+      "es": "mundo"
+    },
+    "grammar": "masculine noun"
+  },
+  {
+    "pali": "lavanena",
+    "meaning": {
+      "en": "by cutting, by reaping",
+      "pt": "pelo corte, pela colheita",
+      "es": "por el corte, por la cosecha"
+    },
+    "grammar": "neuter noun, instrumental"
+  },
+  {
+    "pali": "lakkhīyati",
+    "meaning": {
+      "en": "is characterized, is marked",
+      "pt": "é caracterizado, é marcado",
+      "es": "es caracterizado, es marcado"
+    },
+    "grammar": "verb, passive"
+  },
+  {
+    "pali": "lakkhitabbaṃ",
+    "meaning": {
+      "en": "to be characterized, to be noted",
+      "pt": "a ser caracterizado, a ser notado",
+      "es": "para ser caracterizado, para ser notado"
+    },
+    "grammar": "gerundive"
+  },
+  {
+    "pali": "lakkhaṇattayaṃ",
+    "meaning": {
+      "en": "three characteristics",
+      "pt": "três características",
+      "es": "tres características"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "lakkhaṇato",
+    "meaning": {
+      "en": "by characteristic",
+      "pt": "por característica",
+      "es": "por característica"
+    },
+    "grammar": "noun, ablative"
+  },
+  {
+    "pali": "lakkhaṇanti",
+    "meaning": {
+      "en": "characteristic (lakkhaṇaṃ + iti)",
+      "pt": "característica (lakkhaṇaṃ + iti)",
+      "es": "característica (lakkhaṇaṃ + iti)"
+    },
+    "grammar": "neuter noun + particle"
+  },
+  {
+    "pali": "lahutādittayaṃ",
+    "meaning": {
+      "en": "the three beginning with lightness",
+      "pt": "as três começando com leveza",
+      "es": "las tres empezando con ligereza"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "laddhapaccayaṃ",
+    "meaning": {
+      "en": "received condition, obtained condition",
+      "pt": "condição recebida, condição obtida",
+      "es": "condición recibida, condición obtenida"
+    },
+    "grammar": "masculine noun, accusative"
+  },
+  {
+    "pali": "kāyaṃ",
+    "meaning": {
+      "en": "body",
+      "pt": "corpo",
+      "es": "cuerpo"
+    },
+    "grammar": "masculine noun, accusative"
+  },
+  {
+    "pali": "kāyaviññāṇe",
+    "meaning": {
+      "en": "in body consciousness",
+      "pt": "na consciência do corpo",
+      "es": "en la conciencia del cuerpo"
+    },
+    "grammar": "neuter noun, locative"
+  },
+  {
+    "pali": "kāyakammaṃ",
+    "meaning": {
+      "en": "bodily action",
+      "pt": "ação corporal",
+      "es": "acción corporal"
+    },
+    "grammar": "neuter noun, nominative/accusative"
+  },
+  {
+    "pali": "kāyagantho",
+    "meaning": {
+      "en": "bodily tie, bodily knot",
+      "pt": "nó corporal, amarra corporal",
+      "es": "nudo corporal, atadura corporal"
+    },
+    "grammar": "masculine noun, nominative"
+  },
+  {
+    "pali": "kāyaduccaritādīhi",
+    "meaning": {
+      "en": "by bodily misconduct and so on",
+      "pt": "pela má conduta corporal e assim por diante",
+      "es": "por la mala conducta corporal y así sucesivamente"
+    },
+    "grammar": "neuter noun, instrumental plural"
+  },
+  {
+    "pali": "kāruṇikena",
+    "meaning": {
+      "en": "by the compassionate one",
+      "pt": "pelo compassivo",
+      "es": "por el compasivo"
+    },
+    "grammar": "adjective/noun, instrumental"
+  },
+  {
+    "pali": "kārakadvaye",
+    "meaning": {
+      "en": "in the two factors, in the two makers",
+      "pt": "nos dois fatores, nos dois agentes",
+      "es": "en los dos factores, en los dos agentes"
+    },
+    "grammar": "neuter noun, locative"
+  },
+  {
+    "pali": "kāmīyatīti",
+    "meaning": {
+      "en": "is desired (kāmīyati + iti)",
+      "pt": "é desejado (kāmīyati + iti)",
+      "es": "es deseado (kāmīyati + iti)"
+    },
+    "grammar": "verb, passive + particle"
+  },
+  {
+    "pali": "kāmāvacarāni",
+    "meaning": {
+      "en": "pertaining to the sense sphere",
+      "pt": "pertencentes à esfera sensorial",
+      "es": "pertenecientes a la esfera sensorial"
+    },
+    "grammar": "adjective, neuter plural"
+  },
+  {
+    "pali": "kāmāvacaravipākānaṃ",
+    "meaning": {
+      "en": "of the sense-sphere resultants",
+      "pt": "dos resultantes da esfera sensorial",
+      "es": "de los resultantes de la esfera sensorial"
+    },
+    "grammar": "neuter noun, genitive plural"
+  },
+  {
+    "pali": "kāmāvacaravasenapi",
+    "meaning": {
+      "en": "even by way of the sense sphere",
+      "pt": "mesmo por meio da esfera sensorial",
+      "es": "incluso por medio de la esfera sensorial"
+    },
+    "grammar": "masculine noun, instrumental + particle"
+  },
+  {
+    "pali": "kāmāvacarato",
+    "meaning": {
+      "en": "from the sense sphere, by the sense sphere",
+      "pt": "da esfera sensorial, pela esfera sensorial",
+      "es": "de la esfera sensorial, por la esfera sensorial"
+    },
+    "grammar": "noun, ablative"
+  },
+  {
+    "pali": "kāmāvacarasaññito",
+    "meaning": {
+      "en": "named as sense sphere, characterized as sense sphere",
+      "pt": "nomeado como esfera sensorial",
+      "es": "nombrado como esfera sensorial"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "kāmāvacarapākānaṃ",
+    "meaning": {
+      "en": "of the sense-sphere resultants",
+      "pt": "dos resultantes da esfera sensorial",
+      "es": "de los resultantes de la esfera sensorial"
+    },
+    "grammar": "masculine noun, genitive plural"
+  },
+  {
+    "pali": "kāmāvacaramicceva",
+    "meaning": {
+      "en": "sense sphere thus (kāmāvacaraṃ + iti + eva)",
+      "pt": "esfera sensorial assim (kāmāvacaraṃ + iti + eva)",
+      "es": "esfera sensorial así (kāmāvacaraṃ + iti + eva)"
+    },
+    "grammar": "neuter noun + particles"
+  },
+  {
+    "pali": "kāmāvacaramahākusalacetanā",
+    "meaning": {
+      "en": "sense-sphere great wholesome volition",
+      "pt": "grande volição benéfica da esfera sensorial",
+      "es": "gran volición provechosa de la esfera sensorial"
+    },
+    "grammar": "feminine noun"
+  },
+  {
+    "pali": "kāmāvacarakusalesu",
+    "meaning": {
+      "en": "in sense-sphere wholesome (states)",
+      "pt": "nos (estados) benéficos da esfera sensorial",
+      "es": "en los (estados) provechosos de la esfera sensorial"
+    },
+    "grammar": "neuter noun, locative plural"
+  },
+  {
+    "pali": "kāmāvacarakusalacittaṃ",
+    "meaning": {
+      "en": "sense-sphere wholesome consciousness",
+      "pt": "consciência benéfica da esfera sensorial",
+      "es": "conciencia provechosa de la esfera sensorial"
+    },
+    "grammar": "neuter noun, nominative/accusative"
+  },
+  {
+    "pali": "kāmāvacaracittena",
+    "meaning": {
+      "en": "by sense-sphere consciousness",
+      "pt": "pela consciência da esfera sensorial",
+      "es": "por la conciencia de la esfera sensorial"
+    },
+    "grammar": "neuter noun, instrumental"
+  },
+  {
+    "pali": "kāmesu",
+    "meaning": {
+      "en": "in sensual pleasures",
+      "pt": "nos prazeres sensuais",
+      "es": "en los placeres sensuales"
+    },
+    "grammar": "masculine noun, locative plural"
+  },
+  {
+    "pali": "kāmataṇhā",
+    "meaning": {
+      "en": "sensual craving",
+      "pt": "desejo sensual",
+      "es": "anhelo sensual"
+    },
+    "grammar": "feminine noun, nominative"
+  },
+  {
+    "pali": "kāmarūpāvacarato",
+    "meaning": {
+      "en": "from sense-sphere and fine-material-sphere",
+      "pt": "das esferas sensorial e da matéria fina",
+      "es": "de las esferas sensorial y de la materia fina"
+    },
+    "grammar": "noun, ablative"
+  },
+  {
+    "pali": "kāmarūpabhavesveva",
+    "meaning": {
+      "en": "only in sense and fine-material existences",
+      "pt": "apenas nas existências sensorial e da matéria fina",
+      "es": "solo en las existencias sensorial y de la materia fina"
+    },
+    "grammar": "masculine noun, locative plural + particle"
+  },
+  {
+    "pali": "kāmaghātinā",
+    "meaning": {
+      "en": "by the destroyer of sensual pleasure",
+      "pt": "pelo destruidor do prazer sensual",
+      "es": "por el destructor del placer sensual"
+    },
+    "grammar": "masculine noun, instrumental"
+  },
+  {
+    "pali": "kāmabhave",
+    "meaning": {
+      "en": "in sense existence",
+      "pt": "na existência sensorial",
+      "es": "en la existencia sensorial"
+    },
+    "grammar": "masculine noun, locative"
+  },
+  {
+    "pali": "kālaṃ",
+    "meaning": {
+      "en": "time",
+      "pt": "tempo",
+      "es": "tiempo"
+    },
+    "grammar": "masculine noun, accusative"
+  },
+  {
+    "pali": "kālantare",
+    "meaning": {
+      "en": "in another time, in time intervals",
+      "pt": "em outro tempo, em intervalos de tempo",
+      "es": "en otro tiempo, en intervalos de tiempo"
+    },
+    "grammar": "neuter noun, locative"
+  },
+  {
+    "pali": "kuṃ",
+    "meaning": {
+      "en": "bad, earth",
+      "pt": "ruim, terra",
+      "es": "malo, tierra"
+    },
+    "grammar": "prefix/noun"
+  },
+  {
+    "pali": "kuto",
+    "meaning": {
+      "en": "whence, from where",
+      "pt": "de onde",
+      "es": "de dónde"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "kusalānekavīsati",
+    "meaning": {
+      "en": "twenty-one wholesome (states)",
+      "pt": "vinte e um (estados) benéficos",
+      "es": "veintiún (estados) provechosos"
+    },
+    "grammar": "adjective, nominative"
+  },
+  {
+    "pali": "kusalākusalāni",
+    "meaning": {
+      "en": "wholesome and unwholesome (states)",
+      "pt": "(estados) benéficos e não benéficos",
+      "es": "(estados) provechosos y no provechosos"
+    },
+    "grammar": "adjective, neuter plural"
+  },
+  {
+    "pali": "kusalañhi",
+    "meaning": {
+      "en": "wholesome indeed (kusalaṃ + hi)",
+      "pt": "benéfico de fato (kusalaṃ + hi)",
+      "es": "provechoso de hecho (kusalaṃ + hi)"
+    },
+    "grammar": "neuter noun + particle"
+  },
+  {
+    "pali": "kusalavipākāni",
+    "meaning": {
+      "en": "wholesome resultants",
+      "pt": "resultantes benéficos",
+      "es": "resultantes provechosos"
+    },
+    "grammar": "neuter noun, nominative plural"
+  },
+  {
+    "pali": "kusalavipākānaṃ",
+    "meaning": {
+      "en": "of wholesome resultants",
+      "pt": "dos resultantes benéficos",
+      "es": "de los resultantes provechosos"
+    },
+    "grammar": "neuter noun, genitive plural"
+  },
+  {
+    "pali": "kusalavipākāhetukacittāni",
+    "meaning": {
+      "en": "wholesome-resultant rootless consciousnesses",
+      "pt": "consciências sem raiz resultantes benéficas",
+      "es": "conciencias sin raíz resultantes provechosas"
+    },
+    "grammar": "neuter noun, nominative plural"
+  },
+  {
+    "pali": "kusalavipākā",
+    "meaning": {
+      "en": "wholesome resultants",
+      "pt": "resultantes benéficos",
+      "es": "resultantes provechosos"
+    },
+    "grammar": "masculine noun, nominative plural"
+  },
+  {
+    "pali": "kumāraṃ",
+    "meaning": {
+      "en": "boy, young man",
+      "pt": "menino, jovem",
+      "es": "niño, joven"
+    },
+    "grammar": "masculine noun, accusative"
+  },
+  {
+    "pali": "kucchite",
+    "meaning": {
+      "en": "in the contemptible",
+      "pt": "no desprezível",
+      "es": "en lo despreciable"
+    },
+    "grammar": "adjective, locative"
+  },
+  {
+    "pali": "kriyaṃ",
+    "meaning": {
+      "en": "functional, inoperative",
+      "pt": "funcional, inoperante",
+      "es": "funcional, inoperante"
+    },
+    "grammar": "feminine noun, accusative"
+  },
+  {
+    "pali": "kriyassārammaṇaṃ",
+    "meaning": {
+      "en": "object of functional (kriyassa + ārammaṇaṃ)",
+      "pt": "objeto funcional",
+      "es": "objeto funcional"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "kiñcipi",
+    "meaning": {
+      "en": "whatever, any",
+      "pt": "qualquer",
+      "es": "cualquier"
+    },
+    "grammar": "pronoun"
+  },
+  {
+    "pali": "kiñca",
+    "meaning": {
+      "en": "and what, whatever",
+      "pt": "e o que, qualquer que",
+      "es": "y qué, cualquiera que"
+    },
+    "grammar": "pronoun + particle"
+  },
+  {
+    "pali": "kiriyāmanodhātu",
+    "meaning": {
+      "en": "functional mind element",
+      "pt": "elemento mental funcional",
+      "es": "elemento mental funcional"
+    },
+    "grammar": "feminine noun, nominative"
+  },
+  {
+    "pali": "kiriyaṃ",
+    "meaning": {
+      "en": "functional, inoperative",
+      "pt": "funcional, inoperante",
+      "es": "funcional, inoperante"
+    },
+    "grammar": "feminine noun, accusative"
+  },
+  {
+    "pali": "kileso",
+    "meaning": {
+      "en": "defilement",
+      "pt": "contaminação",
+      "es": "contaminación"
+    },
+    "grammar": "masculine noun, nominative"
+  },
+  {
+    "pali": "kiccabhedena",
+    "meaning": {
+      "en": "by division of functions",
+      "pt": "por divisão de funções",
+      "es": "por división de funciones"
+    },
+    "grammar": "masculine noun, instrumental"
+  },
+  {
+    "pali": "khīṇāsavānaṃyeva",
+    "meaning": {
+      "en": "of those with destroyed taints only",
+      "pt": "daqueles com corrupções destruídas apenas",
+      "es": "de aquellos con corrupciones destruidas solamente"
+    },
+    "grammar": "masculine noun, genitive plural + particle"
+  },
+  {
+    "pali": "khaṇādikaṃ",
+    "meaning": {
+      "en": "moment and so on",
+      "pt": "momento e assim por diante",
+      "es": "momento y así sucesivamente"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "khaṇavatthuparittattā",
+    "meaning": {
+      "en": "due to the limitedness of moment and physical basis",
+      "pt": "devido à limitação do momento e da base física",
+      "es": "debido a la limitación del momento y de la base física"
+    },
+    "grammar": "masculine noun, ablative"
+  },
+  {
+    "pali": "kha",
+    "meaning": {
+      "en": "sky, empty space",
+      "pt": "céu, espaço vazio",
+      "es": "cielo, espacio vacío"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "kattari",
+    "meaning": {
+      "en": "in the agent, in the maker",
+      "pt": "no agente, no criador",
+      "es": "en el agente, en el creador"
+    },
+    "grammar": "masculine noun, locative"
+  },
+  {
+    "pali": "kammānaṃ",
+    "meaning": {
+      "en": "of actions, of kammas",
+      "pt": "das ações, dos kammas",
+      "es": "de las acciones, de los kammas"
+    },
+    "grammar": "neuter noun, genitive plural"
+  },
+  {
+    "pali": "kammaṭṭhānāni",
+    "meaning": {
+      "en": "meditation subjects",
+      "pt": "temas de meditação",
+      "es": "temas de meditación"
+    },
+    "grammar": "neuter noun, nominative plural"
+  },
+  {
+    "pali": "kammavasena",
+    "meaning": {
+      "en": "by power of kamma",
+      "pt": "pelo poder do kamma",
+      "es": "por el poder del kamma"
+    },
+    "grammar": "masculine noun, instrumental"
+  },
+  {
+    "pali": "kammaniyāmatā",
+    "meaning": {
+      "en": "law of kamma, order of kamma",
+      "pt": "lei do kamma, ordem do kamma",
+      "es": "ley del kamma, orden del kamma"
+    },
+    "grammar": "feminine noun"
+  },
+  {
+    "pali": "kammadvāraṃ",
+    "meaning": {
+      "en": "door of action, kamma door",
+      "pt": "porta da ação, porta do kamma",
+      "es": "puerta de la acción, puerta del kamma"
+    },
+    "grammar": "neuter noun, nominative/accusative"
+  },
+  {
+    "pali": "kammadvāravasena",
+    "meaning": {
+      "en": "by way of the door of action",
+      "pt": "por meio da porta da ação",
+      "es": "por medio de la puerta de la acción"
+    },
+    "grammar": "masculine noun, instrumental"
+  },
+  {
+    "pali": "kaccāna",
+    "meaning": {
+      "en": "Kaccāna (proper name)",
+      "pt": "Kaccāna (nome próprio)",
+      "es": "Kaccāna (nombre propio)"
+    },
+    "grammar": "masculine noun"
+  },
+  {
+    "pali": "jāyatu",
+    "meaning": {
+      "en": "let it arise",
+      "pt": "que surja",
+      "es": "que surja"
+    },
+    "grammar": "verb, imperative"
+  },
+  {
+    "pali": "jātiniddhāraṇaṃ",
+    "meaning": {
+      "en": "specification of birth/kind",
+      "pt": "especificação de nascimento/tipo",
+      "es": "especificación de nacimiento/tipo"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "jātaparicayā",
+    "meaning": {
+      "en": "produced familiarity",
+      "pt": "familiaridade produzida",
+      "es": "familiaridad producida"
+    },
+    "grammar": "masculine noun, nominative plural"
+  },
+  {
+    "pali": "jānātīti",
+    "meaning": {
+      "en": "knows (jānāti + iti)",
+      "pt": "sabe (jānāti + iti)",
+      "es": "sabe (jānāti + iti)"
+    },
+    "grammar": "verb + particle"
+  },
+  {
+    "pali": "jānitabbā",
+    "meaning": {
+      "en": "should be known",
+      "pt": "deve ser conhecido",
+      "es": "debe ser conocido"
+    },
+    "grammar": "gerundive"
+  },
+  {
+    "pali": "jivhāya",
+    "meaning": {
+      "en": "by the tongue",
+      "pt": "pela língua",
+      "es": "por la lengua"
+    },
+    "grammar": "feminine noun, instrumental"
+  },
+  {
+    "pali": "jhānaṅgayogabhedena",
+    "meaning": {
+      "en": "by division of association with jhana factors",
+      "pt": "por divisão de associação com os fatores de jhana",
+      "es": "por división de asociación con los factores de jhana"
+    },
+    "grammar": "masculine noun, instrumental"
+  },
+  {
+    "pali": "javanti",
+    "meaning": {
+      "en": "they run, they impel",
+      "pt": "eles correm, eles impelem",
+      "es": "corren, impelen"
+    },
+    "grammar": "verb, present"
+  },
+  {
+    "pali": "javanesu",
+    "meaning": {
+      "en": "in the impulsions, in javanas",
+      "pt": "nas impulsões, nos javanas",
+      "es": "en las impulsiones, en los javanas"
+    },
+    "grammar": "neuter noun, locative plural"
+  },
+  {
+    "pali": "javanehi",
+    "meaning": {
+      "en": "by the impulsions, by javanas",
+      "pt": "pelas impulsões, pelos javanas",
+      "es": "por las impulsiones, por los javanas"
+    },
+    "grammar": "neuter noun, instrumental plural"
+  },
+  {
+    "pali": "javanacittaṃ",
+    "meaning": {
+      "en": "impulsion consciousness",
+      "pt": "consciência de impulsão",
+      "es": "conciencia de impulsión"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "jarāmaraṇaṃ",
+    "meaning": {
+      "en": "aging and death",
+      "pt": "envelhecimento e morte",
+      "es": "envejecimiento y muerte"
+    },
+    "grammar": "neuter noun, nominative/accusative"
+  },
+  {
+    "pali": "jano",
+    "meaning": {
+      "en": "person, people",
+      "pt": "pessoa, povo",
+      "es": "persona, gente"
+    },
+    "grammar": "masculine noun, nominative"
+  },
+  {
+    "pali": "janassa",
+    "meaning": {
+      "en": "of the person",
+      "pt": "da pessoa",
+      "es": "de la persona"
+    },
+    "grammar": "masculine noun, genitive"
+  },
+  {
+    "pali": "iṭṭhārammaṇayogasmiṃ",
+    "meaning": {
+      "en": "in association with a desirable object",
+      "pt": "em associação com um objeto desejável",
+      "es": "en asociación con un objeto deseable"
+    },
+    "grammar": "masculine noun, locative"
+  },
+  {
+    "pali": "iṭṭhavipākaṃ",
+    "meaning": {
+      "en": "desirable resultant",
+      "pt": "resultante desejável",
+      "es": "resultante deseable"
+    },
+    "grammar": "masculine/neuter noun, accusative/nominative"
+  },
+  {
+    "pali": "iṭṭhavipākapaccupaṭṭhānaṃ",
+    "meaning": {
+      "en": "manifestation as desirable result",
+      "pt": "manifestação como resultado desejável",
+      "es": "manifestación como resultado deseable"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "iṭṭhamajjhattārammaṇaṃ",
+    "meaning": {
+      "en": "desirable-neutral object",
+      "pt": "objeto neutro-desejável",
+      "es": "objeto neutro-deseable"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "iṭṭhamajjhatte",
+    "meaning": {
+      "en": "in desirable-neutral",
+      "pt": "no neutro-desejável",
+      "es": "en lo neutro-deseable"
+    },
+    "grammar": "adjective, locative"
+  },
+  {
+    "pali": "itarāni",
+    "meaning": {
+      "en": "the others",
+      "pt": "os outros",
+      "es": "los otros"
+    },
+    "grammar": "adjective, neuter plural"
+  },
+  {
+    "pali": "itaresu",
+    "meaning": {
+      "en": "in the others",
+      "pt": "nos outros",
+      "es": "en los otros"
+    },
+    "grammar": "adjective, locative plural"
+  },
+  {
+    "pali": "indriyānaṃ",
+    "meaning": {
+      "en": "of faculties",
+      "pt": "das faculdades",
+      "es": "de las facultades"
+    },
+    "grammar": "neuter noun, genitive plural"
+  },
+  {
+    "pali": "imassāti",
+    "meaning": {
+      "en": "of this (imassa + iti)",
+      "pt": "deste (imassa + iti)",
+      "es": "de este (imassa + iti)"
+    },
+    "grammar": "pronoun, genitive + particle"
+  },
+  {
+    "pali": "hīnādīnaṃ",
+    "meaning": {
+      "en": "of the inferior and so on",
+      "pt": "do inferior e assim por diante",
+      "es": "de lo inferior y así sucesivamente"
+    },
+    "grammar": "adjective, genitive plural"
+  },
+  {
+    "pali": "hirottappaṃ",
+    "meaning": {
+      "en": "shame and fear of wrongdoing",
+      "pt": "vergonha e medo de errar",
+      "es": "vergüenza y miedo a obrar mal"
+    },
+    "grammar": "neuter noun, nominative/accusative"
+  },
+  {
+    "pali": "heṭṭhimānaṃ",
+    "meaning": {
+      "en": "of the lower ones",
+      "pt": "dos inferiores",
+      "es": "de los inferiores"
+    },
+    "grammar": "adjective, genitive plural"
+  },
+  {
+    "pali": "heṭṭhimassa",
+    "meaning": {
+      "en": "of the lower one",
+      "pt": "do inferior",
+      "es": "del inferior"
+    },
+    "grammar": "adjective, genitive"
+  },
+  {
+    "pali": "hetūnaṃ",
+    "meaning": {
+      "en": "of the roots, of the causes",
+      "pt": "das raízes, das causas",
+      "es": "de las raíces, de las causas"
+    },
+    "grammar": "masculine noun, genitive plural"
+  },
+  {
+    "pali": "hetuyo",
+    "meaning": {
+      "en": "roots, causes",
+      "pt": "raízes, causas",
+      "es": "raíces, causas"
+    },
+    "grammar": "masculine noun, nominative plural"
+  },
+  {
+    "pali": "hesā",
+    "meaning": {
+      "en": "indeed this (hi + esā)",
+      "pt": "de fato esta (hi + esā)",
+      "es": "de hecho esta (hi + esā)"
+    },
+    "grammar": "particle + pronoun"
+  },
+  {
+    "pali": "hatthe",
+    "meaning": {
+      "en": "in the hand",
+      "pt": "na mão",
+      "es": "en la mano"
+    },
+    "grammar": "masculine noun, locative"
+  },
+  {
+    "pali": "hatthagataṃ",
+    "meaning": {
+      "en": "come to hand, attained",
+      "pt": "chegou às mãos, alcançado",
+      "es": "llegado a las manos, alcanzado"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "harati",
+    "meaning": {
+      "en": "carries, takes away",
+      "pt": "carrega, leva embora",
+      "es": "lleva, quita"
+    },
+    "grammar": "verb, present"
+  }
+]

@@ -1,0 +1,902 @@
+[
+  {
+    "pali": "āgatoti",
+    "meaning": {
+      "en": "come (thus)",
+      "pt": "veio (assim)",
+      "es": "vino (así)"
+    },
+    "grammar": "participle + particle"
+  },
+  {
+    "pali": "ācariyā",
+    "meaning": {
+      "en": "teachers",
+      "pt": "professores",
+      "es": "maestros"
+    },
+    "grammar": "noun, masculine, plural"
+  },
+  {
+    "pali": "ñāṇasaṃyuttā",
+    "meaning": {
+      "en": "associated with knowledge",
+      "pt": "associado ao conhecimento",
+      "es": "asociado con el conocimiento"
+    },
+    "grammar": "adjective, plural"
+  },
+  {
+    "pali": "vutte",
+    "meaning": {
+      "en": "when it is said",
+      "pt": "quando é dito",
+      "es": "cuando se dice"
+    },
+    "grammar": "participle, locative"
+  },
+  {
+    "pali": "vuttattā",
+    "meaning": {
+      "en": "because of what was said",
+      "pt": "por causa do que foi dito",
+      "es": "por lo que se dijo"
+    },
+    "grammar": "noun, ablative"
+  },
+  {
+    "pali": "voṭṭhabbañcāpi",
+    "meaning": {
+      "en": "and also determining",
+      "pt": "e também a determinação",
+      "es": "y también la determinación"
+    },
+    "grammar": "noun + particles"
+  },
+  {
+    "pali": "vicittaṃ",
+    "meaning": {
+      "en": "variegated / manifold",
+      "pt": "variado / múltiplo",
+      "es": "variado / múltiple"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "veditabbāni",
+    "meaning": {
+      "en": "should be known",
+      "pt": "deve ser conhecido",
+      "es": "debe ser conocido"
+    },
+    "grammar": "gerundive, neuter, plural"
+  },
+  {
+    "pali": "vatthūni",
+    "meaning": {
+      "en": "bases / objects",
+      "pt": "bases / objetos",
+      "es": "bases / objetos"
+    },
+    "grammar": "noun, neuter, plural"
+  },
+  {
+    "pali": "vada",
+    "meaning": {
+      "en": "say / speak",
+      "pt": "diga / fale",
+      "es": "di / habla"
+    },
+    "grammar": "verb, imperative"
+  },
+  {
+    "pali": "vacane",
+    "meaning": {
+      "en": "in the word",
+      "pt": "na palavra",
+      "es": "en la palabra"
+    },
+    "grammar": "noun, neuter, locative"
+  },
+  {
+    "pali": "uppajjanato",
+    "meaning": {
+      "en": "from arising",
+      "pt": "do surgimento",
+      "es": "del surgimiento"
+    },
+    "grammar": "noun, ablative"
+  },
+  {
+    "pali": "uddhaṃ",
+    "meaning": {
+      "en": "above / upwards",
+      "pt": "acima / para cima",
+      "es": "arriba / hacia arriba"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "tihetukā",
+    "meaning": {
+      "en": "with three roots",
+      "pt": "com três raízes",
+      "es": "con tres raíces"
+    },
+    "grammar": "adjective, plural"
+  },
+  {
+    "pali": "tesañca",
+    "meaning": {
+      "en": "and of them",
+      "pt": "e deles",
+      "es": "y de ellos"
+    },
+    "grammar": "pronoun, genitive, plural + particle"
+  },
+  {
+    "pali": "tadāssa",
+    "meaning": {
+      "en": "then of him",
+      "pt": "então dele",
+      "es": "entonces de él"
+    },
+    "grammar": "adverb + pronoun"
+  },
+  {
+    "pali": "suddhāvāse",
+    "meaning": {
+      "en": "in the Pure Abodes",
+      "pt": "nas Moradas Puras",
+      "es": "en las Moradas Puras"
+    },
+    "grammar": "noun, locative"
+  },
+  {
+    "pali": "saṅkhārā",
+    "meaning": {
+      "en": "formations / volitional formations",
+      "pt": "formações / formações volitivas",
+      "es": "formaciones / formaciones volitivas"
+    },
+    "grammar": "noun, masculine, plural"
+  },
+  {
+    "pali": "sattannaṃ",
+    "meaning": {
+      "en": "of the seven",
+      "pt": "dos sete",
+      "es": "de los siete"
+    },
+    "grammar": "numeral, genitive"
+  },
+  {
+    "pali": "sampayuttā",
+    "meaning": {
+      "en": "associated with",
+      "pt": "associado a",
+      "es": "asociado con"
+    },
+    "grammar": "participle, plural"
+  },
+  {
+    "pali": "sambandho",
+    "meaning": {
+      "en": "connection",
+      "pt": "conexão",
+      "es": "conexión"
+    },
+    "grammar": "noun, masculine"
+  },
+  {
+    "pali": "sahassāni",
+    "meaning": {
+      "en": "thousands",
+      "pt": "milhares",
+      "es": "miles"
+    },
+    "grammar": "numeral, neuter, plural"
+  },
+  {
+    "pali": "sabbesampi",
+    "meaning": {
+      "en": "even of all",
+      "pt": "mesmo de todos",
+      "es": "incluso de todos"
+    },
+    "grammar": "pronoun, genitive, plural + particle"
+  },
+  {
+    "pali": "sabbaso",
+    "meaning": {
+      "en": "completely / in every way",
+      "pt": "completamente / de todas as formas",
+      "es": "completamente / de todas las formas"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "sabbadā",
+    "meaning": {
+      "en": "always",
+      "pt": "sempre",
+      "es": "siempre"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "rūpāvacare",
+    "meaning": {
+      "en": "in the fine-material sphere",
+      "pt": "na esfera da matéria sutil",
+      "es": "en la esfera de la materia sutil"
+    },
+    "grammar": "noun, locative"
+  },
+  {
+    "pali": "rūpakusalassa",
+    "meaning": {
+      "en": "of fine-material wholesome (consciousness)",
+      "pt": "do (momento de consciência) benéfico da matéria sutil",
+      "es": "del (momento de conciencia) beneficioso de la materia sutil"
+    },
+    "grammar": "noun, genitive"
+  },
+  {
+    "pali": "raso",
+    "meaning": {
+      "en": "taste / function",
+      "pt": "sabor / função",
+      "es": "sabor / función"
+    },
+    "grammar": "noun, masculine"
+  },
+  {
+    "pali": "pāṭavatthāya",
+    "meaning": {
+      "en": "for sharpness",
+      "pt": "para a agudeza",
+      "es": "para la agudeza"
+    },
+    "grammar": "noun, dative"
+  },
+  {
+    "pali": "pākāni",
+    "meaning": {
+      "en": "resultants",
+      "pt": "resultantes",
+      "es": "resultantes"
+    },
+    "grammar": "noun, neuter, plural"
+  },
+  {
+    "pali": "pākacittānaṃ",
+    "meaning": {
+      "en": "of resultant consciousnesses",
+      "pt": "das consciências resultantes",
+      "es": "de las conciencias resultantes"
+    },
+    "grammar": "noun, genitive, plural"
+  },
+  {
+    "pali": "puññābhisaṅkhāro",
+    "meaning": {
+      "en": "meritorious volitional formation",
+      "pt": "formação volitiva meritória",
+      "es": "formación volitiva meritoria"
+    },
+    "grammar": "noun, masculine"
+  },
+  {
+    "pali": "purakkhatvā",
+    "meaning": {
+      "en": "having put in front / having honored",
+      "pt": "tendo colocado à frente / tendo honrado",
+      "es": "habiendo puesto al frente / habiendo honrado"
+    },
+    "grammar": "gerund"
+  },
+  {
+    "pali": "phoṭṭhabbaṃ",
+    "meaning": {
+      "en": "tangible object",
+      "pt": "objeto tangível",
+      "es": "objeto tangible"
+    },
+    "grammar": "noun, neuter"
+  },
+  {
+    "pali": "phalaṭṭhānaṃ",
+    "meaning": {
+      "en": "of those standing in the fruit",
+      "pt": "daqueles estabelecidos no fruto",
+      "es": "de aquellos establecidos en el fruto"
+    },
+    "grammar": "noun, genitive, plural"
+  },
+  {
+    "pali": "phalassa",
+    "meaning": {
+      "en": "of the fruit",
+      "pt": "do fruto",
+      "es": "del fruto"
+    },
+    "grammar": "noun, neuter, genitive"
+  },
+  {
+    "pali": "paṭipāṭiyā",
+    "meaning": {
+      "en": "in order / successively",
+      "pt": "em ordem / sucessivamente",
+      "es": "en orden / sucesivamente"
+    },
+    "grammar": "noun, instrumental"
+  },
+  {
+    "pali": "paṭhamāruppakusalaṃ",
+    "meaning": {
+      "en": "first immaterial wholesome (consciousness)",
+      "pt": "primeiro (momento de consciência) benéfico imaterial",
+      "es": "primer (momento de conciencia) beneficioso inmaterial"
+    },
+    "grammar": "noun, neuter"
+  },
+  {
+    "pali": "parikammaṃ",
+    "meaning": {
+      "en": "preliminary (work)",
+      "pt": "preliminar / trabalho preliminar",
+      "es": "preliminar / trabajo preliminar"
+    },
+    "grammar": "noun, neuter"
+  },
+  {
+    "pali": "padese",
+    "meaning": {
+      "en": "in the region / in the place",
+      "pt": "na região / no lugar",
+      "es": "en la región / en el lugar"
+    },
+    "grammar": "noun, masculine, locative"
+  },
+  {
+    "pali": "paccayena",
+    "meaning": {
+      "en": "by the condition",
+      "pt": "pela condição",
+      "es": "por la condición"
+    },
+    "grammar": "noun, masculine, instrumental"
+  },
+  {
+    "pali": "ottappaṃ",
+    "meaning": {
+      "en": "moral dread / fear of wrongdoing",
+      "pt": "temor moral / medo de errar",
+      "es": "temor moral / miedo a hacer el mal"
+    },
+    "grammar": "noun, neuter"
+  },
+  {
+    "pali": "nāmāni",
+    "meaning": {
+      "en": "names",
+      "pt": "nomes",
+      "es": "nombres"
+    },
+    "grammar": "noun, neuter, plural"
+  },
+  {
+    "pali": "middhaṃ",
+    "meaning": {
+      "en": "torpor",
+      "pt": "torpor",
+      "es": "letargo / torpor"
+    },
+    "grammar": "noun, neuter"
+  },
+  {
+    "pali": "mahaggataṃ",
+    "meaning": {
+      "en": "exalted / enlarged",
+      "pt": "exaltado / engrandecido",
+      "es": "exaltado / engrandecido"
+    },
+    "grammar": "adjective, neuter"
+  },
+  {
+    "pali": "maggassa",
+    "meaning": {
+      "en": "of the path",
+      "pt": "do caminho",
+      "es": "del camino"
+    },
+    "grammar": "noun, masculine, genitive"
+  },
+  {
+    "pali": "lokuttarāni",
+    "meaning": {
+      "en": "supramundane",
+      "pt": "supramundano",
+      "es": "supramundano"
+    },
+    "grammar": "adjective, neuter, plural"
+  },
+  {
+    "pali": "lokaṃ",
+    "meaning": {
+      "en": "world",
+      "pt": "mundo",
+      "es": "mundo"
+    },
+    "grammar": "noun, masculine, accusative"
+  },
+  {
+    "pali": "kāmasugatiyaṃ",
+    "meaning": {
+      "en": "in the sensuous blissful plane",
+      "pt": "no plano feliz sensual",
+      "es": "en el plano feliz sensual"
+    },
+    "grammar": "noun, feminine, locative"
+  },
+  {
+    "pali": "kusalavipākaṃ",
+    "meaning": {
+      "en": "wholesome resultant",
+      "pt": "resultante benéfico",
+      "es": "resultante beneficioso"
+    },
+    "grammar": "noun, neuter"
+  },
+  {
+    "pali": "kriyato",
+    "meaning": {
+      "en": "from functional (action)",
+      "pt": "da funcional",
+      "es": "de lo funcional"
+    },
+    "grammar": "noun, ablative"
+  },
+  {
+    "pali": "kena",
+    "meaning": {
+      "en": "by what / why",
+      "pt": "pelo que / por que",
+      "es": "por qué / con qué"
+    },
+    "grammar": "pronoun, instrumental"
+  },
+  {
+    "pali": "kati",
+    "meaning": {
+      "en": "how many",
+      "pt": "quantos",
+      "es": "cuántos"
+    },
+    "grammar": "pronoun"
+  },
+  {
+    "pali": "karontassa",
+    "meaning": {
+      "en": "of the one doing",
+      "pt": "daquele que faz",
+      "es": "del que hace"
+    },
+    "grammar": "participle, genitive"
+  },
+  {
+    "pali": "janehi",
+    "meaning": {
+      "en": "by people",
+      "pt": "pelas pessoas",
+      "es": "por las personas"
+    },
+    "grammar": "noun, masculine, instrumental, plural"
+  },
+  {
+    "pali": "gahetabbaṃ",
+    "meaning": {
+      "en": "should be taken",
+      "pt": "deve ser tomado",
+      "es": "debe ser tomado"
+    },
+    "grammar": "gerundive, neuter"
+  },
+  {
+    "pali": "etehi",
+    "meaning": {
+      "en": "by these",
+      "pt": "por estes",
+      "es": "por estos"
+    },
+    "grammar": "pronoun, instrumental, plural"
+  },
+  {
+    "pali": "ekā",
+    "meaning": {
+      "en": "one",
+      "pt": "uma",
+      "es": "una"
+    },
+    "grammar": "numeral, feminine"
+  },
+  {
+    "pali": "ekavīsati",
+    "meaning": {
+      "en": "twenty-one",
+      "pt": "vinte e um",
+      "es": "veintiuno"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "ekassa",
+    "meaning": {
+      "en": "of one",
+      "pt": "de um",
+      "es": "de uno"
+    },
+    "grammar": "numeral, genitive"
+  },
+  {
+    "pali": "dvādasadhā",
+    "meaning": {
+      "en": "twelvefold",
+      "pt": "doze vezes",
+      "es": "doce veces"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "dassento",
+    "meaning": {
+      "en": "showing",
+      "pt": "mostrando",
+      "es": "mostrando"
+    },
+    "grammar": "participle, masculine"
+  },
+  {
+    "pali": "cetasikaṃ",
+    "meaning": {
+      "en": "mental factor",
+      "pt": "fator mental",
+      "es": "factor mental"
+    },
+    "grammar": "noun, neuter"
+  },
+  {
+    "pali": "catunnampi",
+    "meaning": {
+      "en": "even of the four",
+      "pt": "mesmo dos quatro",
+      "es": "incluso de los cuatro"
+    },
+    "grammar": "numeral, genitive, plural + particle"
+  },
+  {
+    "pali": "bhavaṅgapātova",
+    "meaning": {
+      "en": "just the fall into life-continuum",
+      "pt": "apenas a queda no contínuo vital",
+      "es": "solo la caída en el continuo vital"
+    },
+    "grammar": "noun, masculine + particle"
+  },
+  {
+    "pali": "bhavaṃ",
+    "meaning": {
+      "en": "becoming / existence",
+      "pt": "devir / existência",
+      "es": "devenir / existencia"
+    },
+    "grammar": "noun, masculine, accusative"
+  },
+  {
+    "pali": "añño",
+    "meaning": {
+      "en": "another",
+      "pt": "outro",
+      "es": "otro"
+    },
+    "grammar": "pronoun, masculine"
+  },
+  {
+    "pali": "aññesu",
+    "meaning": {
+      "en": "in others",
+      "pt": "nos outros",
+      "es": "en otros"
+    },
+    "grammar": "pronoun, locative, plural"
+  },
+  {
+    "pali": "aññesaṃ",
+    "meaning": {
+      "en": "of others",
+      "pt": "dos outros",
+      "es": "de otros"
+    },
+    "grammar": "pronoun, genitive, plural"
+  },
+  {
+    "pali": "ayameva",
+    "meaning": {
+      "en": "just this",
+      "pt": "apenas isto",
+      "es": "solo esto"
+    },
+    "grammar": "pronoun + particle"
+  },
+  {
+    "pali": "ayametthādhippāyo",
+    "meaning": {
+      "en": "this is the intention here",
+      "pt": "esta é a intenção aqui",
+      "es": "esta es la intención aquí"
+    },
+    "grammar": "phrase (pronoun + adverb + noun)"
+  },
+  {
+    "pali": "avacarati",
+    "meaning": {
+      "en": "moves in / frequents",
+      "pt": "move-se em / frequenta",
+      "es": "se mueve en / frecuenta"
+    },
+    "grammar": "verb, present, 3rd person singular"
+  },
+  {
+    "pali": "asaṅkhāraṃ",
+    "meaning": {
+      "en": "unprompted",
+      "pt": "não instigado",
+      "es": "no instigado"
+    },
+    "grammar": "adjective, neuter"
+  },
+  {
+    "pali": "arahantassa",
+    "meaning": {
+      "en": "of an Arahant",
+      "pt": "de um Arahant",
+      "es": "de un Arahant"
+    },
+    "grammar": "noun, masculine, genitive"
+  },
+  {
+    "pali": "aniyatā",
+    "meaning": {
+      "en": "uncertain / unfixed",
+      "pt": "incerto / não fixo",
+      "es": "incierto / no fijo"
+    },
+    "grammar": "adjective, plural"
+  },
+  {
+    "pali": "alobho",
+    "meaning": {
+      "en": "non-greed",
+      "pt": "não cobiça",
+      "es": "no codicia"
+    },
+    "grammar": "noun, masculine"
+  },
+  {
+    "pali": "adoso",
+    "meaning": {
+      "en": "non-hatred",
+      "pt": "não ódio",
+      "es": "no odio"
+    },
+    "grammar": "noun, masculine"
+  },
+  {
+    "pali": "abhāvo",
+    "meaning": {
+      "en": "absence / non-existence",
+      "pt": "ausência / não existência",
+      "es": "ausencia / no existencia"
+    },
+    "grammar": "noun, masculine"
+  },
+  {
+    "pali": "ṭhānesu",
+    "meaning": {
+      "en": "in places / in cases",
+      "pt": "nos lugares / nos casos",
+      "es": "en los lugares / en los casos"
+    },
+    "grammar": "noun, neuter, locative, plural"
+  },
+  {
+    "pali": "ṭhatvā",
+    "meaning": {
+      "en": "having stood",
+      "pt": "tendo permanecido",
+      "es": "habiendo permanecido"
+    },
+    "grammar": "gerund"
+  },
+  {
+    "pali": "ārammaṇāni",
+    "meaning": {
+      "en": "objects",
+      "pt": "objetos",
+      "es": "objetos"
+    },
+    "grammar": "noun, neuter, plural"
+  },
+  {
+    "pali": "ābhidhammikabhikkhūnaṃ",
+    "meaning": {
+      "en": "of the Abhidhammika monks",
+      "pt": "dos monges Abhidhammikas",
+      "es": "de los monjes Abhidhammikas"
+    },
+    "grammar": "noun, masculine, genitive, plural"
+  },
+  {
+    "pali": "ñāṇasampayuttā",
+    "meaning": {
+      "en": "associated with knowledge",
+      "pt": "associado ao conhecimento",
+      "es": "asociado con el conocimiento"
+    },
+    "grammar": "adjective, plural"
+  },
+  {
+    "pali": "yevāpanā",
+    "meaning": {
+      "en": "or whatever else",
+      "pt": "ou quaisquer outros",
+      "es": "o cualesquiera otros"
+    },
+    "grammar": "phrase / particles"
+  },
+  {
+    "pali": "yathāvuttanayena",
+    "meaning": {
+      "en": "by the method stated above",
+      "pt": "pelo método dito acima",
+      "es": "por el método expuesto arriba"
+    },
+    "grammar": "noun, instrumental"
+  },
+  {
+    "pali": "viññeyyaṃ",
+    "meaning": {
+      "en": "should be known / cognizable",
+      "pt": "deve ser conhecido / cognoscível",
+      "es": "debe ser conocido / cognoscible"
+    },
+    "grammar": "gerundive, neuter"
+  },
+  {
+    "pali": "visesato",
+    "meaning": {
+      "en": "especially / in particular",
+      "pt": "especialmente / em particular",
+      "es": "especialmente / en particular"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "vipākacittāni",
+    "meaning": {
+      "en": "resultant consciousnesses",
+      "pt": "consciências resultantes",
+      "es": "conciencias resultantes"
+    },
+    "grammar": "noun, neuter, plural"
+  },
+  {
+    "pali": "vipākacittaṃ",
+    "meaning": {
+      "en": "resultant consciousness",
+      "pt": "consciência resultante",
+      "es": "conciencia resultante"
+    },
+    "grammar": "noun, neuter"
+  },
+  {
+    "pali": "upekkhāsahagatāni",
+    "meaning": {
+      "en": "accompanied by equanimity",
+      "pt": "acompanhado pela equanimidade",
+      "es": "acompañado por ecuanimidad"
+    },
+    "grammar": "adjective, neuter, plural"
+  },
+  {
+    "pali": "upekkhāsahagatā",
+    "meaning": {
+      "en": "accompanied by equanimity",
+      "pt": "acompanhado pela equanimidade",
+      "es": "acompañado por ecuanimidad"
+    },
+    "grammar": "adjective, plural"
+  },
+  {
+    "pali": "uddhaṭā",
+    "meaning": {
+      "en": "lifted out / removed",
+      "pt": "removido",
+      "es": "removido"
+    },
+    "grammar": "participle, plural"
+  },
+  {
+    "pali": "ubhinnaṃ",
+    "meaning": {
+      "en": "of both",
+      "pt": "de ambos",
+      "es": "de ambos"
+    },
+    "grammar": "pronoun, genitive, plural"
+  },
+  {
+    "pali": "tīsveva",
+    "meaning": {
+      "en": "only in three",
+      "pt": "apenas em três",
+      "es": "solo en tres"
+    },
+    "grammar": "numeral, locative, plural + particle"
+  },
+  {
+    "pali": "thinaṃ",
+    "meaning": {
+      "en": "sloth",
+      "pt": "preguiça",
+      "es": "pereza"
+    },
+    "grammar": "noun, neuter"
+  },
+  {
+    "pali": "teneva",
+    "meaning": {
+      "en": "just by that",
+      "pt": "apenas por isso",
+      "es": "solo por eso"
+    },
+    "grammar": "pronoun, instrumental + particle"
+  },
+  {
+    "pali": "tatiyo",
+    "meaning": {
+      "en": "third",
+      "pt": "terceiro",
+      "es": "tercero"
+    },
+    "grammar": "numeral, masculine"
+  },
+  {
+    "pali": "tasseva",
+    "meaning": {
+      "en": "just of that",
+      "pt": "apenas disso",
+      "es": "solo de eso"
+    },
+    "grammar": "pronoun, genitive + particle"
+  },
+  {
+    "pali": "svāyaṃ",
+    "meaning": {
+      "en": "this one",
+      "pt": "este aqui",
+      "es": "este"
+    },
+    "grammar": "pronoun"
+  },
+  {
+    "pali": "suṇātha",
+    "meaning": {
+      "en": "listen",
+      "pt": "ouçam",
+      "es": "escuchen"
+    },
+    "grammar": "verb, imperative, plural"
+  }
+]

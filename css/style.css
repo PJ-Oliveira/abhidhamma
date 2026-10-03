@@ -304,6 +304,7 @@ main#reader { display: flex; flex-direction: column; min-width: 0; position: rel
 
 .seg { margin: 0 auto 14px auto; max-width: min(900px, 100%); transition: background 1.4s ease; border-radius: 4px; }
 .seg .pali-line {
+  font-family: "Gentium Book Plus", Georgia, serif;
   line-height: 1.7;
 }
 .seg .paranum-badge {

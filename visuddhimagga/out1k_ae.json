@@ -1,0 +1,902 @@
+[
+  {
+    "pali": "etāyāti",
+    "meaning": {
+      "en": "by this (etāya + iti)",
+      "pt": "por isso (etāya + iti)",
+      "es": "por esto (etāya + iti)"
+    },
+    "grammar": "pronoun + particle"
+  },
+  {
+    "pali": "ekūnāsītiyā",
+    "meaning": {
+      "en": "seventy-nine",
+      "pt": "setenta e nove",
+      "es": "setenta y nueve"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "ekībhāvaṃ",
+    "meaning": {
+      "en": "singleness, unity",
+      "pt": "unicidade, unidade",
+      "es": "singularidad, unidad"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "ekādasavidho",
+    "meaning": {
+      "en": "elevenfold, of eleven kinds",
+      "pt": "onze vezes, de onze tipos",
+      "es": "once veces, de once tipos"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "ekena",
+    "meaning": {
+      "en": "by one",
+      "pt": "por um",
+      "es": "por uno"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "ekavīsasataṃ",
+    "meaning": {
+      "en": "one hundred and twenty-one",
+      "pt": "cento e vinte e um",
+      "es": "ciento veintiuno"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "ekatiṃseva",
+    "meaning": {
+      "en": "thirty-one only",
+      "pt": "apenas trinta e um",
+      "es": "solo treinta y uno"
+    },
+    "grammar": "numeral + particle"
+  },
+  {
+    "pali": "dvepañcaviññāṇā",
+    "meaning": {
+      "en": "two sets of fivefold consciousness",
+      "pt": "dois conjuntos de quíntupla consciência",
+      "es": "dos conjuntos de quíntuple conciencia"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "domanassaṃ",
+    "meaning": {
+      "en": "displeasure, grief",
+      "pt": "descontentamento, desgosto",
+      "es": "disgusto, dolor"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "domanassadvayaṃ",
+    "meaning": {
+      "en": "two kinds of displeasure",
+      "pt": "dois tipos de descontentamento",
+      "es": "dos tipos de disgusto"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "dhammārammaṇaṃ",
+    "meaning": {
+      "en": "mind-object",
+      "pt": "objeto mental",
+      "es": "objeto mental"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "devā",
+    "meaning": {
+      "en": "gods, deities",
+      "pt": "deuses, divindades",
+      "es": "dioses, deidades"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "dehino",
+    "meaning": {
+      "en": "to the embodied ones, living beings",
+      "pt": "aos seres encarnados, seres vivos",
+      "es": "a los seres encarnados, seres vivos"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "dasadhā",
+    "meaning": {
+      "en": "in ten ways",
+      "pt": "de dez maneiras",
+      "es": "de diez maneras"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "citteneva",
+    "meaning": {
+      "en": "by the mind only",
+      "pt": "apenas pela mente",
+      "es": "solo por la mente"
+    },
+    "grammar": "noun + particle"
+  },
+  {
+    "pali": "chattiṃsa",
+    "meaning": {
+      "en": "thirty-six",
+      "pt": "trinta e seis",
+      "es": "treinta y seis"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "catuttiṃsa",
+    "meaning": {
+      "en": "thirty-four",
+      "pt": "trinta e quatro",
+      "es": "treinta y cuatro"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "catutthāruppabhūmiyaṃ",
+    "meaning": {
+      "en": "in the fourth immaterial plane",
+      "pt": "no quarto plano imaterial",
+      "es": "en el cuarto plano inmaterial"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "cattāripi",
+    "meaning": {
+      "en": "all four",
+      "pt": "todos os quatro",
+      "es": "los cuatro"
+    },
+    "grammar": "numeral + particle"
+  },
+  {
+    "pali": "cattālīsaṃ",
+    "meaning": {
+      "en": "forty",
+      "pt": "quarenta",
+      "es": "cuarenta"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "buddho",
+    "meaning": {
+      "en": "the Awakened One, Buddha",
+      "pt": "o Desperto, Buda",
+      "es": "el Despierto, Buda"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "bhavādīsu",
+    "meaning": {
+      "en": "in existence, etc.",
+      "pt": "na existência, etc.",
+      "es": "en la existencia, etc."
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "bhaveyyuṃ",
+    "meaning": {
+      "en": "they would be",
+      "pt": "eles seriam",
+      "es": "ellos serían"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "bhavaṅgapāto",
+    "meaning": {
+      "en": "fall into the life-continuum",
+      "pt": "queda no contínuo vital",
+      "es": "caída en el continuo vital"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "balavataraṃ",
+    "meaning": {
+      "en": "stronger, more powerful",
+      "pt": "mais forte, mais poderoso",
+      "es": "más fuerte, más poderoso"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "aṭṭhapi",
+    "meaning": {
+      "en": "all eight",
+      "pt": "todos os oito",
+      "es": "los ocho"
+    },
+    "grammar": "numeral + particle"
+  },
+  {
+    "pali": "aṭṭhahi",
+    "meaning": {
+      "en": "with eight, by eight",
+      "pt": "com oito, por oito",
+      "es": "con ocho, por ocho"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "aṭṭhadhā",
+    "meaning": {
+      "en": "in eight ways",
+      "pt": "de oito maneiras",
+      "es": "de ocho maneras"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "aññasmiṃ",
+    "meaning": {
+      "en": "in another",
+      "pt": "em outro",
+      "es": "en otro"
+    },
+    "grammar": "pronoun"
+  },
+  {
+    "pali": "avacaratīti",
+    "meaning": {
+      "en": "moves, frequents",
+      "pt": "move-se, frequenta",
+      "es": "se mueve, frecuenta"
+    },
+    "grammar": "verb + particle"
+  },
+  {
+    "pali": "atthato",
+    "meaning": {
+      "en": "according to the meaning",
+      "pt": "de acordo com o significado",
+      "es": "de acuerdo con el significado"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "attasantānaṃ",
+    "meaning": {
+      "en": "one's own continuum",
+      "pt": "próprio contínuo (mental)",
+      "es": "propio continuo (mental)"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "asambhedena",
+    "meaning": {
+      "en": "without distinction, indivisibly",
+      "pt": "sem distinção, indivisivelmente",
+      "es": "sin distinción, indivisiblemente"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "arūpāvacaraṃ",
+    "meaning": {
+      "en": "immaterial sphere",
+      "pt": "esfera imaterial",
+      "es": "esfera inmaterial"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "apāyesu",
+    "meaning": {
+      "en": "in the woeful states",
+      "pt": "nos estados de infortúnio",
+      "es": "en los estados de infortunio"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "apāyabhūmiyo",
+    "meaning": {
+      "en": "woeful planes",
+      "pt": "planos de infortúnio",
+      "es": "planos de infortunio"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "apuññajā",
+    "meaning": {
+      "en": "born of demerit",
+      "pt": "nascido de demérito",
+      "es": "nacido de demérito"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "appamaññāyo",
+    "meaning": {
+      "en": "illimitables, immeasurables",
+      "pt": "ilimitáveis, incomensuráveis",
+      "es": "ilimitables, inconmensurables"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "aparāni",
+    "meaning": {
+      "en": "others",
+      "pt": "outros",
+      "es": "otros"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "anāsavā",
+    "meaning": {
+      "en": "free from taints, uncorrupted",
+      "pt": "livre de impurezas, incorrupto",
+      "es": "libre de impurezas, incorrupto"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "anupāleti",
+    "meaning": {
+      "en": "maintains, protects",
+      "pt": "mantém, protege",
+      "es": "mantiene, protege"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "anena",
+    "meaning": {
+      "en": "by this",
+      "pt": "por isso",
+      "es": "por esto"
+    },
+    "grammar": "pronoun"
+  },
+  {
+    "pali": "anavajjaiṭṭhavipākalakkhaṇaṃ",
+    "meaning": {
+      "en": "characteristic of blameless and desirable result",
+      "pt": "característica de resultado irrepreensível e desejável",
+      "es": "característica de resultado irreprochable y deseable"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "ahetukesu",
+    "meaning": {
+      "en": "among the rootless",
+      "pt": "entre os sem raiz",
+      "es": "entre los sin raíz"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "abhidhamme",
+    "meaning": {
+      "en": "in the Abhidhamma",
+      "pt": "no Abhidhamma",
+      "es": "en el Abhidhamma"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "ṭhitaṃ",
+    "meaning": {
+      "en": "stood, established",
+      "pt": "estabelecido",
+      "es": "establecido"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "īritaṃ",
+    "meaning": {
+      "en": "uttered, declared",
+      "pt": "proferido, declarado",
+      "es": "proferido, declarado"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "āpāthamāgate",
+    "meaning": {
+      "en": "come into the avenue (of senses)",
+      "pt": "chegado à via (dos sentidos)",
+      "es": "llegado a la vía (de los sentidos)"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "āpāthagamanena",
+    "meaning": {
+      "en": "by coming into the avenue (of senses)",
+      "pt": "por chegar à via (dos sentidos)",
+      "es": "por llegar a la vía (de los sentidos)"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "āgatanayena",
+    "meaning": {
+      "en": "according to the method given",
+      "pt": "de acordo com o método dado",
+      "es": "de acuerdo con el método dado"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "āgantukabhavaṅganti",
+    "meaning": {
+      "en": "the adventitious life-continuum",
+      "pt": "o contínuo vital adventício",
+      "es": "el continuo vital adventicio"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "ācariyānaṃ",
+    "meaning": {
+      "en": "to the teachers",
+      "pt": "aos professores",
+      "es": "a los maestros"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "ñāpanatthaṃ",
+    "meaning": {
+      "en": "for the purpose of making known",
+      "pt": "com o propósito de tornar conhecido",
+      "es": "con el propósito de dar a conocer"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "yātā",
+    "meaning": {
+      "en": "gone",
+      "pt": "ido",
+      "es": "ido"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "yujjati",
+    "meaning": {
+      "en": "is proper, is fitting",
+      "pt": "é adequado, é apropriado",
+      "es": "es adecuado, es apropiado"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "yevāpanakā",
+    "meaning": {
+      "en": "(those) or whatever else",
+      "pt": "(aqueles) ou quaisquer outros",
+      "es": "(esos) o cualesquiera otros"
+    },
+    "grammar": "pronoun"
+  },
+  {
+    "pali": "yathāyogaṃ",
+    "meaning": {
+      "en": "according to fitness",
+      "pt": "de acordo com a adequação",
+      "es": "de acuerdo con la adecuación"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "yathāsambhavaṃ",
+    "meaning": {
+      "en": "as far as possible, according to possibility",
+      "pt": "tanto quanto possível, de acordo com a possibilidade",
+      "es": "en la medida de lo posible, según la posibilidad"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "vāyāmo",
+    "meaning": {
+      "en": "effort",
+      "pt": "esforço",
+      "es": "esfuerzo"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vuttato",
+    "meaning": {
+      "en": "because of what was said",
+      "pt": "por causa do que foi dito",
+      "es": "a causa de lo que se dijo"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "vuttanayameva",
+    "meaning": {
+      "en": "exactly the method stated",
+      "pt": "exatamente o método declarado",
+      "es": "exactamente el método declarado"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vuccatīti",
+    "meaning": {
+      "en": "is called",
+      "pt": "é chamado",
+      "es": "se llama"
+    },
+    "grammar": "verb + particle"
+  },
+  {
+    "pali": "viññāṇassa",
+    "meaning": {
+      "en": "of consciousness",
+      "pt": "da consciência",
+      "es": "de la conciencia"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vitakkavicārapītisukhekaggatāsahitaṃ",
+    "meaning": {
+      "en": "accompanied by initial application, sustained application, joy, happiness, and one-pointedness",
+      "pt": "acompanhado de aplicação inicial, aplicação sustentada, alegria, felicidade e unificação mental",
+      "es": "acompañado de aplicación inicial, aplicación sostenida, alegría, felicidad y unificación mental"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "vipākārammaṇaṃ",
+    "meaning": {
+      "en": "resultant object",
+      "pt": "objeto resultante",
+      "es": "objeto resultante"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vipāke",
+    "meaning": {
+      "en": "in result",
+      "pt": "em resultado",
+      "es": "en resultado"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vipākacittattā",
+    "meaning": {
+      "en": "because of being resultant consciousness",
+      "pt": "por ser consciência resultante",
+      "es": "por ser conciencia resultante"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vippayuttāni",
+    "meaning": {
+      "en": "dissociated from",
+      "pt": "dissociado de",
+      "es": "disociado de"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "vikappesu",
+    "meaning": {
+      "en": "in alternatives, options",
+      "pt": "em alternativas, opções",
+      "es": "en alternativas, opciones"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vijjamānesupi",
+    "meaning": {
+      "en": "even when existing",
+      "pt": "mesmo quando existente",
+      "es": "incluso cuando existe"
+    },
+    "grammar": "verb + particle"
+  },
+  {
+    "pali": "vicittakaraṇā",
+    "meaning": {
+      "en": "because of making various",
+      "pt": "por tornar variado",
+      "es": "por hacer variado"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vicittakaraṇaṃ",
+    "meaning": {
+      "en": "making various",
+      "pt": "tornando variado",
+      "es": "haciendo variado"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vicikicchāyutampi",
+    "meaning": {
+      "en": "also associated with doubt",
+      "pt": "também associado à dúvida",
+      "es": "también asociado a la duda"
+    },
+    "grammar": "adjective + particle"
+  },
+  {
+    "pali": "vatthukāmo",
+    "meaning": {
+      "en": "sensual objective",
+      "pt": "objetivo sensual",
+      "es": "objetivo sensual"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vanditvā",
+    "meaning": {
+      "en": "having paid homage",
+      "pt": "tendo prestado homenagem",
+      "es": "habiendo rendido homenaje"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "vakkhati",
+    "meaning": {
+      "en": "he will say",
+      "pt": "ele dirá",
+      "es": "él dirá"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "vacanattho",
+    "meaning": {
+      "en": "meaning of the word",
+      "pt": "significado da palavra",
+      "es": "significado de la palabra"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "uttaraṃ",
+    "meaning": {
+      "en": "higher, further",
+      "pt": "superior, além",
+      "es": "superior, más allá"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "ussāhito",
+    "meaning": {
+      "en": "encouraged, exhorted",
+      "pt": "encorajado, exortado",
+      "es": "animado, exhortado"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "uppannaṃ",
+    "meaning": {
+      "en": "arisen",
+      "pt": "surgido",
+      "es": "surgido"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "uppajjatīti",
+    "meaning": {
+      "en": "arises",
+      "pt": "surge",
+      "es": "surge"
+    },
+    "grammar": "verb + particle"
+  },
+  {
+    "pali": "uppajjantīti",
+    "meaning": {
+      "en": "arise",
+      "pt": "surgem",
+      "es": "surgen"
+    },
+    "grammar": "verb + particle"
+  },
+  {
+    "pali": "upekkhāsahagatāneva",
+    "meaning": {
+      "en": "only those accompanied by equanimity",
+      "pt": "apenas os acompanhados de equanimidade",
+      "es": "solo los acompañados de ecuanimidad"
+    },
+    "grammar": "adjective + particle"
+  },
+  {
+    "pali": "upari",
+    "meaning": {
+      "en": "above, over, further",
+      "pt": "acima, sobre, além",
+      "es": "arriba, sobre, más allá"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "udīrito",
+    "meaning": {
+      "en": "uttered, declared",
+      "pt": "proferido, declarado",
+      "es": "proferido, declarado"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "udīritaṃ",
+    "meaning": {
+      "en": "uttered, declared",
+      "pt": "proferido, declarado",
+      "es": "proferido, declarado"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "uddānato",
+    "meaning": {
+      "en": "by way of summary",
+      "pt": "por meio de resumo",
+      "es": "a modo de resumen"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "uddharitvā",
+    "meaning": {
+      "en": "having drawn out, having lifted up",
+      "pt": "tendo puxado para fora, tendo levantado",
+      "es": "habiendo sacado, habiendo levantado"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "ubho",
+    "meaning": {
+      "en": "both",
+      "pt": "ambos",
+      "es": "ambos"
+    },
+    "grammar": "pronoun"
+  },
+  {
+    "pali": "ubhayampi",
+    "meaning": {
+      "en": "both also",
+      "pt": "ambos também",
+      "es": "ambos también"
+    },
+    "grammar": "pronoun + particle"
+  },
+  {
+    "pali": "tyādi",
+    "meaning": {
+      "en": "etc.",
+      "pt": "etc.",
+      "es": "etc."
+    },
+    "grammar": "particle"
+  },
+  {
+    "pali": "tiguṇitāni",
+    "meaning": {
+      "en": "multiplied by three, threefold",
+      "pt": "multiplicado por três, triplo",
+      "es": "multiplicado por tres, triple"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "thomanā",
+    "meaning": {
+      "en": "praise",
+      "pt": "louvor",
+      "es": "alabanza"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "thinamiddhaṃ",
+    "meaning": {
+      "en": "sloth and torpor",
+      "pt": "preguiça e torpor",
+      "es": "pereza y letargo"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "tevīsati",
+    "meaning": {
+      "en": "twenty-three",
+      "pt": "vinte e três",
+      "es": "veintitrés"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "tevīsa",
+    "meaning": {
+      "en": "twenty-three",
+      "pt": "vinte e três",
+      "es": "veintitrés"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "tenāha",
+    "meaning": {
+      "en": "therefore he said",
+      "pt": "portanto ele disse",
+      "es": "por lo tanto él dijo"
+    },
+    "grammar": "adverb + verb"
+  },
+  {
+    "pali": "taṇhāya",
+    "meaning": {
+      "en": "by craving, of craving",
+      "pt": "pelo anseio, do anseio",
+      "es": "por el anhelo, del anhelo"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "tava",
+    "meaning": {
+      "en": "your",
+      "pt": "teu, seu",
+      "es": "tu, tuyo"
+    },
+    "grammar": "pronoun"
+  },
+  {
+    "pali": "tanti",
+    "meaning": {
+      "en": "text, tradition, thread",
+      "pt": "texto, tradição, fio",
+      "es": "texto, tradición, hilo"
+    },
+    "grammar": "noun"
+  }
+]

@@ -1,0 +1,902 @@
+[
+  {
+    "pali": "tathārūpe",
+    "meaning": {
+      "en": "such, of such sort",
+      "pt": "tal, desse tipo",
+      "es": "tal, de tal tipo"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "tathākāritāya",
+    "meaning": {
+      "en": "by acting thus, by doing so",
+      "pt": "por agir assim, por fazer assim",
+      "es": "por actuar así, por hacer así"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "tathāgataṃ",
+    "meaning": {
+      "en": "the Tathagata",
+      "pt": "o Tathagata",
+      "es": "el Tathagata"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "tatho",
+    "meaning": {
+      "en": "real, true",
+      "pt": "real, verdadeiro",
+      "es": "real, verdadero"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "tathekakaṃ",
+    "meaning": {
+      "en": "thus one by one",
+      "pt": "assim um a um",
+      "es": "así uno por uno"
+    },
+    "grammar": "adv."
+  },
+  {
+    "pali": "tathavāditāya",
+    "meaning": {
+      "en": "by speaking thus",
+      "pt": "por falar assim",
+      "es": "por hablar así"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "tathadhamme",
+    "meaning": {
+      "en": "in the real Dhamma",
+      "pt": "no Dhamma real",
+      "es": "en el verdadero Dhamma"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "tathadassitāya",
+    "meaning": {
+      "en": "by seeing thus",
+      "pt": "por ver assim",
+      "es": "por ver así"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "tassāpi",
+    "meaning": {
+      "en": "even of that",
+      "pt": "mesmo disso",
+      "es": "incluso de eso"
+    },
+    "grammar": "pron."
+  },
+  {
+    "pali": "tadārammaṇampi",
+    "meaning": {
+      "en": "even the registration, even that object",
+      "pt": "mesmo o registro, mesmo esse objeto",
+      "es": "incluso el registro, incluso ese objeto"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "tadārammaṇakaṃ",
+    "meaning": {
+      "en": "having that as object",
+      "pt": "tendo aquilo como objeto",
+      "es": "teniendo eso como objeto"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "tadubhayaviparītalakkhaṇaṃ",
+    "meaning": {
+      "en": "having the characteristic opposite to both of them",
+      "pt": "tendo a característica oposta a ambos",
+      "es": "teniendo la característica opuesta a ambos"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "tadabhāvato",
+    "meaning": {
+      "en": "from its absence",
+      "pt": "da sua ausência",
+      "es": "de su ausencia"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sāsane",
+    "meaning": {
+      "en": "in the dispensation, in the teaching",
+      "pt": "na dispensação, no ensinamento",
+      "es": "en la dispensación, en la enseñanza"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sānato",
+    "meaning": {
+      "en": "from the dog",
+      "pt": "do cachorro",
+      "es": "del perro"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sādhugaṇo",
+    "meaning": {
+      "en": "group of good people",
+      "pt": "grupo de pessoas boas",
+      "es": "grupo de personas buenas"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sādheti",
+    "meaning": {
+      "en": "accomplishes, effects",
+      "pt": "realiza, efetua",
+      "es": "realiza, efectúa"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "suññato",
+    "meaning": {
+      "en": "void, empty",
+      "pt": "vazio",
+      "es": "vacío"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sutaṃ",
+    "meaning": {
+      "en": "heard",
+      "pt": "ouvido",
+      "es": "escuchado"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "susāraṃ",
+    "meaning": {
+      "en": "thoroughly essential, good essence",
+      "pt": "totalmente essencial, boa essência",
+      "es": "totalmente esencial, buena esencia"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sundaraṃ",
+    "meaning": {
+      "en": "beautiful, good",
+      "pt": "belo, bom",
+      "es": "hermoso, bueno"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sumano",
+    "meaning": {
+      "en": "glad-minded, happy",
+      "pt": "de mente alegre, feliz",
+      "es": "de mente alegre, feliz"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sukhādittayayuttā",
+    "meaning": {
+      "en": "endowed with the triad of happiness, etc.",
+      "pt": "dotado com a tríade de felicidade, etc.",
+      "es": "dotado de la tríada de felicidad, etc."
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sukhindriyaṃ",
+    "meaning": {
+      "en": "the faculty of pleasure",
+      "pt": "a faculdade do prazer",
+      "es": "la facultad del placer"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sukhacittekaggatāsampayuttaṃ",
+    "meaning": {
+      "en": "associated with happiness and one-pointedness of mind",
+      "pt": "associado à felicidade e unificação mental",
+      "es": "asociado con la felicidad y la unificación de la mente"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sugatena",
+    "meaning": {
+      "en": "by the Fortunate One",
+      "pt": "pelo Afortunado",
+      "es": "por el Afortunado"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "suddhāvāsesu",
+    "meaning": {
+      "en": "in the Pure Abodes",
+      "pt": "nas Moradas Puras",
+      "es": "en las Moradas Puras"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "soḷasacittesu",
+    "meaning": {
+      "en": "in the sixteen consciousnesses",
+      "pt": "nas dezesseis consciências",
+      "es": "en las dieciséis conciencias"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sotāpattimaggo",
+    "meaning": {
+      "en": "the path of stream-entry",
+      "pt": "o caminho da entrada na correnteza",
+      "es": "el camino de la entrada en la corriente"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sotāpattimaggena",
+    "meaning": {
+      "en": "by the path of stream-entry",
+      "pt": "pelo caminho da entrada na correnteza",
+      "es": "por el camino de la entrada en la corriente"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sotāpattimaggacittaṃ",
+    "meaning": {
+      "en": "consciousness of the path of stream-entry",
+      "pt": "consciência do caminho da entrada na correnteza",
+      "es": "conciencia del camino de la entrada en la corriente"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sotāpanno",
+    "meaning": {
+      "en": "a stream-enterer",
+      "pt": "quem entra na correnteza",
+      "es": "un entrador en la corriente"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sotaṃ",
+    "meaning": {
+      "en": "stream, ear",
+      "pt": "correnteza, ouvido",
+      "es": "corriente, oído"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "somanassindriyaṃ",
+    "meaning": {
+      "en": "the faculty of joy",
+      "pt": "a faculdade da alegria",
+      "es": "la facultad de la alegría"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "somanassena",
+    "meaning": {
+      "en": "with joy",
+      "pt": "com alegria",
+      "es": "con alegría"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "somanassaṭṭhāne",
+    "meaning": {
+      "en": "in the place of joy",
+      "pt": "no lugar da alegria",
+      "es": "en el lugar de la alegría"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "somanassayutte",
+    "meaning": {
+      "en": "in that associated with joy",
+      "pt": "naquele associado à alegria",
+      "es": "en aquel asociado con la alegría"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "somanassayute",
+    "meaning": {
+      "en": "in that associated with joy",
+      "pt": "naquele associado à alegria",
+      "es": "en aquel asociado con la alegría"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "somanassayutaṃ",
+    "meaning": {
+      "en": "associated with joy",
+      "pt": "associado à alegria",
+      "es": "asociado con la alegría"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "somanassasahagatehi",
+    "meaning": {
+      "en": "with those accompanied by joy",
+      "pt": "com aqueles acompanhados por alegria",
+      "es": "con aquellos acompañados de alegría"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "somanassasahagata",
+    "meaning": {
+      "en": "accompanied by joy",
+      "pt": "acompanhado por alegria",
+      "es": "acompañado de alegría"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "somanassajātā",
+    "meaning": {
+      "en": "born of joy",
+      "pt": "nascido da alegria",
+      "es": "nacido de la alegría"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sobhanacetasikā",
+    "meaning": {
+      "en": "beautiful mental factors",
+      "pt": "fatores mentais belos",
+      "es": "factores mentales hermosos"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sirasā",
+    "meaning": {
+      "en": "with the head",
+      "pt": "com a cabeça",
+      "es": "con la cabeza"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sikkhāpadā",
+    "meaning": {
+      "en": "training steps, precepts",
+      "pt": "passos de treinamento, preceitos",
+      "es": "pasos de entrenamiento, preceptos"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sikkhitabbo",
+    "meaning": {
+      "en": "should be trained",
+      "pt": "deve ser treinado",
+      "es": "debe ser entrenado"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "sekkhā",
+    "meaning": {
+      "en": "learners",
+      "pt": "aprendizes",
+      "es": "aprendices"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sekhā",
+    "meaning": {
+      "en": "learners",
+      "pt": "aprendizes",
+      "es": "aprendices"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "saṅkhārena",
+    "meaning": {
+      "en": "with prompting, with formation",
+      "pt": "com instigação, com formação",
+      "es": "con instigación, con formación"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "saṅkhārabhedato",
+    "meaning": {
+      "en": "by way of the division of prompting",
+      "pt": "por meio da divisão de instigação",
+      "es": "por medio de la división de instigación"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "saṅgaṇhāti",
+    "meaning": {
+      "en": "comprises, includes",
+      "pt": "compreende, inclui",
+      "es": "comprende, incluye"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "saṃsuti",
+    "meaning": {
+      "en": "hearing, tradition",
+      "pt": "audição, tradição",
+      "es": "audición, tradición"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "saññāya",
+    "meaning": {
+      "en": "with perception",
+      "pt": "com percepção",
+      "es": "con percepción"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sattāvāse",
+    "meaning": {
+      "en": "in the abode of beings",
+      "pt": "na morada dos seres",
+      "es": "en la morada de los seres"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sattā",
+    "meaning": {
+      "en": "beings",
+      "pt": "seres",
+      "es": "seres"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sattoti",
+    "meaning": {
+      "en": "(the word) being",
+      "pt": "(a palavra) ser",
+      "es": "(la palabra) ser"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sattena",
+    "meaning": {
+      "en": "by a being",
+      "pt": "por um ser",
+      "es": "por un ser"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sattatiṃseva",
+    "meaning": {
+      "en": "exactly thirty-seven",
+      "pt": "exatamente trinta e sete",
+      "es": "exactamente treinta y siete"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sattannampi",
+    "meaning": {
+      "en": "even of the seven",
+      "pt": "mesmo dos sete",
+      "es": "incluso de los siete"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sattamaṃ",
+    "meaning": {
+      "en": "seventh",
+      "pt": "sétimo",
+      "es": "séptimo"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "satisampannena",
+    "meaning": {
+      "en": "by one endowed with mindfulness",
+      "pt": "por um dotado de atenção plena",
+      "es": "por uno dotado de atención plena"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sasaddhammagaṇuttamaṃ",
+    "meaning": {
+      "en": "with the true Dhamma and the supreme Sangha",
+      "pt": "com o verdadeiro Dhamma e a suprema Sangha",
+      "es": "con el verdadero Dhamma y la suprema Sangha"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sarūpato",
+    "meaning": {
+      "en": "according to its own nature",
+      "pt": "de acordo com sua própria natureza",
+      "es": "de acuerdo con su propia naturaleza"
+    },
+    "grammar": "adv."
+  },
+  {
+    "pali": "saraṇagamanaṃ",
+    "meaning": {
+      "en": "going for refuge",
+      "pt": "toma de refúgio",
+      "es": "toma de refugio"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "santīraṇāni",
+    "meaning": {
+      "en": "investigating consciousnesses",
+      "pt": "consciências de investigação",
+      "es": "conciencias de investigación"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "santīraṇakiccaṃ",
+    "meaning": {
+      "en": "function of investigation",
+      "pt": "função de investigação",
+      "es": "función de investigación"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sannissitaṃ",
+    "meaning": {
+      "en": "dependent on",
+      "pt": "dependente de",
+      "es": "dependiente de"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sandhi",
+    "meaning": {
+      "en": "junction, union",
+      "pt": "junção, união",
+      "es": "unión, juntura"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "samānaṃ",
+    "meaning": {
+      "en": "equal, same, being",
+      "pt": "igual, mesmo, sendo",
+      "es": "igual, mismo, siendo"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "samāhitā",
+    "meaning": {
+      "en": "concentrated",
+      "pt": "concentrados",
+      "es": "concentrados"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "samādiyantassa",
+    "meaning": {
+      "en": "of one undertaking",
+      "pt": "daquele que assume",
+      "es": "de aquel que asume"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "samādhiyati",
+    "meaning": {
+      "en": "becomes concentrated",
+      "pt": "torna-se concentrado",
+      "es": "se vuelve concentrado"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "samādhindriyaṃ",
+    "meaning": {
+      "en": "the faculty of concentration",
+      "pt": "a faculdade da concentração",
+      "es": "la facultad de la concentración"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "samudīritaṃ",
+    "meaning": {
+      "en": "uttered, declared",
+      "pt": "proferido, declarado",
+      "es": "pronunciado, declarado"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "samuddiṭṭho",
+    "meaning": {
+      "en": "pointed out, illustrated",
+      "pt": "apontado, ilustrado",
+      "es": "señalado, ilustrado"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "samudayo",
+    "meaning": {
+      "en": "origin, arising",
+      "pt": "origem, surgimento",
+      "es": "origen, surgimiento"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sampaṭicchanacittaṃ",
+    "meaning": {
+      "en": "receiving consciousness",
+      "pt": "consciência de recepção",
+      "es": "conciencia de recepción"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sampayuttadhammānañca",
+    "meaning": {
+      "en": "and of the associated states",
+      "pt": "e dos estados associados",
+      "es": "y de los estados asociados"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sampayuttadhammesu",
+    "meaning": {
+      "en": "among the associated states",
+      "pt": "entre os estados associados",
+      "es": "entre los estados asociados"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sampayuttadhamme",
+    "meaning": {
+      "en": "the associated states",
+      "pt": "os estados associados",
+      "es": "los estados asociados"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sampavattati",
+    "meaning": {
+      "en": "proceeds, occurs",
+      "pt": "procede, ocorre",
+      "es": "procede, ocurre"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "samodhānaṃ",
+    "meaning": {
+      "en": "combination, collocation",
+      "pt": "combinação, colocação",
+      "es": "combinación, colocación"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sammito",
+    "meaning": {
+      "en": "agreed, considered",
+      "pt": "acordado, considerado",
+      "es": "acordado, considerado"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sambuddho",
+    "meaning": {
+      "en": "perfectly awakened one",
+      "pt": "perfeitamente desperto",
+      "es": "perfectamente despierto"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sambhūtaṃ",
+    "meaning": {
+      "en": "arisen, produced",
+      "pt": "surgido, produzido",
+      "es": "surgido, producido"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sambhavā",
+    "meaning": {
+      "en": "arising, origin",
+      "pt": "surgimento, origem",
+      "es": "surgimiento, origen"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sambhave",
+    "meaning": {
+      "en": "in origin, in arising",
+      "pt": "na origem, no surgimento",
+      "es": "en el origen, en el surgimiento"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "samannāgatattā",
+    "meaning": {
+      "en": "because of being endowed with",
+      "pt": "por causa de ser dotado de",
+      "es": "a causa de estar dotado de"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sakkaccaṃ",
+    "meaning": {
+      "en": "carefully, respectfully",
+      "pt": "cuidadosamente, respeitosamente",
+      "es": "cuidadosamente, respetuosamente"
+    },
+    "grammar": "adv."
+  },
+  {
+    "pali": "sakalaṃ",
+    "meaning": {
+      "en": "whole, entire",
+      "pt": "todo, inteiro",
+      "es": "todo, entero"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sakadāgāmimaggacittaṃ",
+    "meaning": {
+      "en": "the once-returner path consciousness",
+      "pt": "consciência do caminho de quem retorna uma vez",
+      "es": "conciencia del camino del que retorna una vez"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sahitaṃ",
+    "meaning": {
+      "en": "united, accompanied",
+      "pt": "unido, acompanhado",
+      "es": "unido, acompañado"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "saheva",
+    "meaning": {
+      "en": "together with indeed",
+      "pt": "junto com de fato",
+      "es": "junto con en verdad"
+    },
+    "grammar": "adv."
+  },
+  {
+    "pali": "sahajātavasena",
+    "meaning": {
+      "en": "by way of conascence",
+      "pt": "por meio do conascimento",
+      "es": "por medio de conacimiento"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sadisā",
+    "meaning": {
+      "en": "similar",
+      "pt": "similar",
+      "es": "similar"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "sadisena",
+    "meaning": {
+      "en": "by the similar",
+      "pt": "pelo similar",
+      "es": "por lo similar"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "saddādigocarā",
+    "meaning": {
+      "en": "whose domains are sounds etc.",
+      "pt": "cujos domínios são sons etc.",
+      "es": "cuyos dominios son sonidos etc."
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "saddādayo",
+    "meaning": {
+      "en": "sounds etc.",
+      "pt": "sons etc.",
+      "es": "sonidos etc."
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "saddaṃ",
+    "meaning": {
+      "en": "sound",
+      "pt": "som",
+      "es": "sonido"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "saddahanti",
+    "meaning": {
+      "en": "they believe, they have faith",
+      "pt": "eles acreditam, eles têm fé",
+      "es": "ellos creen, ellos tienen fe"
+    },
+    "grammar": "verb"
+  }
+]

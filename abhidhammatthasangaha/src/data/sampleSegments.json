@@ -1,0 +1,47 @@
+[
+  {
+    "id": "vism-1.1",
+    "pali": "Sīle patiṭṭhāya naro sapañño, cittaṃ paññañca bhāvayaṃ.",
+    "translations": {
+      "en": "When a wise man, established well in virtue, develops consciousness and understanding.",
+      "pt": "Quando um homem sábio, bem estabelecido na virtude, desenvolve a consciência e o entendimento.",
+      "es": "Cuando un hombre sabio, bien establecido en la virtud, desarrolla la conciencia y el entendimiento."
+    }
+  },
+  {
+    "id": "vism-1.2",
+    "pali": "Ātāpī nipako bhikkhu, so imaṃ vijaṭaye jaṭaṃ.",
+    "translations": {
+      "en": "A bhikkhu, ardent and sagacious — he can disentangle this tangle.",
+      "pt": "Um bhikkhu, ardente e sagaz — ele pode desembaraçar esse emaranhado.",
+      "es": "Un bhikkhu, ardiente y sagaz — él puede desenredar este enredo."
+    }
+  },
+  {
+    "id": "vism-1.3",
+    "pali": "Idha sīlanti, ettha kā sīlassa atthadesanā, kaṃ sīlaṃ, kena atthena sīlaṃ.",
+    "translations": {
+      "en": "Herein, 'virtue': what is the meaning intended by 'virtue'? What is virtue? In what sense is it virtue?",
+      "pt": "Aqui, 'virtude': qual é o significado pretendido por 'virtude'? O que é virtude? Em que sentido é virtude?",
+      "es": "Aquí, 'virtud': ¿cuál es el significado pretendido por 'virtud'? ¿Qué es la virtud? ¿En qué sentido es virtud?"
+    }
+  },
+  {
+    "id": "vism-1.4",
+    "pali": "Sīlanaṭṭhena sīlaṃ. Kiṃ taṃ sīlanaṃ? Samādhānaṃ.",
+    "translations": {
+      "en": "It is virtue (sīla) in the sense of composing (sīlana). What is that composing? It is coordination.",
+      "pt": "É virtude (sīla) no sentido de compor (sīlana). O que é essa composição? É coordenação.",
+      "es": "Es virtud (sīla) en el sentido de componer (sīlana). ¿Qué es esa composición? Es coordinación."
+    }
+  },
+  {
+    "id": "vism-1.5",
+    "pali": "Upadhāraṇaṭṭhena vā sīlaṃ. Sīlaṃ hi kusalānaṃ dhammānaṃ ādhāraṃ.",
+    "translations": {
+      "en": "Or it is virtue in the sense of upholding (upadhāraṇa). For virtue is the foundation of wholesome states.",
+      "pt": "Ou é virtude no sentido de sustentar (upadhāraṇa). Pois a virtude é a base dos estados saudáveis.",
+      "es": "O es virtud en el sentido de sostener (upadhāraṇa). Pues la virtud es la base de los estados saludables."
+    }
+  }
+]

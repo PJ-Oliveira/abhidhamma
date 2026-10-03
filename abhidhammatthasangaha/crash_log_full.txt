@@ -1,0 +1,11 @@
+09-28 19:03:32.092   809   809 D MediaPlayerList: Name of package changed: com.dhamma.visuddhimaggareader
+09-28 19:03:32.124   877   877 D ImsResolver: maybeAddedImsService, packageName: com.dhamma.visuddhimaggareader
+09-28 19:03:32.142   877   877 D CarrierSvcBindHelper: onPackageModified: com.dhamma.visuddhimaggareader
+09-28 19:03:32.146   877   877 D ImsResolver: maybeAddedImsService, packageName: com.dhamma.visuddhimaggareader
+09-28 19:03:32.193 25364 27808 I ProximityAuth: [RecentAppsMediator] Package added: (user=UserHandle{0}) com.dhamma.visuddhimaggareader
+09-28 19:03:32.239 25486 27832 I BlockstoreStorage: Clearing Blockstore Data for package com.dhamma.visuddhimaggareader [CONTEXT service_id=258 ]
+09-28 19:03:32.404   511   566 E VerityUtils: Failed to measure fs-verity, errno 1: /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk
+09-28 19:03:32.747  1506  1506 I AiAiEcho: EchoSearch: AppFetcherImpl is initialized with [20] apps [time=7, reason=com.dhamma.visuddhimaggareader is added]
+09-28 19:03:32.864 27843 27843 W Monkey  : args: [-p, com.dhamma.visuddhimaggareader, -c, android.intent.category.LAUNCHER, 1]
+09-28 19:03:32.864 27843 27843 W Monkey  :  arg: "com.dhamma.visuddhimaggareader"
+09-28 19:03:32.864 27843 27843 W Monkey  : data="com.dhamma.visuddhimaggareader"

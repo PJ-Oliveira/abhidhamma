@@ -1,7 +1,19 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { loadStats, saveStats, sm2 } from '../../src/srs.js';
 
 describe('SRS Logic (Spaced Repetition)', () => {
+
+  beforeEach(() => {
+    vi.stubGlobal('fetch', vi.fn().mockImplementation((url: string) => {
+      if (url.includes('vocabulary.json')) {
+        return Promise.resolve({ ok: true, json: () => Promise.resolve([
+          { id: "1", h: "Citta", en: "Mind", pt: "Mente", es: "Mente" }
+        ]) });
+      }
+      return Promise.resolve({ ok: false, status: 404 });
+    }));
+  });
+
   beforeEach(() => {
     localStorage.clear();
   });
@@ -60,3 +72,19 @@ describe('SRS Logic (Spaced Repetition)', () => {
     expect(next.easeFactor).toBeLessThan(2.5); // EF should decrease
   });
 });
+
+  it('should initialize SRS panel and show daily limits', async () => {
+    // Add mock dictionary cards so it doesn't wait indefinitely
+    (window as any)._srsCards = [
+      { id: "1", pali: "Citta", en: "Mind", pt: "Mente", es: "Mente", pos: "n", interval: 0, repetitions: 0, easeFactor: 2.5, nextReview: 0, lastReview: 0 }
+    ];
+
+    const { initSrsPanel } = await import('../../src/srs');
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+
+    initSrsPanel(container);
+    await new Promise(r => setTimeout(r, 10)); // let it render
+
+    expect(container.innerHTML).toContain('srs-summary');
+  });

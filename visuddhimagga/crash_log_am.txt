@@ -1,0 +1,214 @@
+--------- beginning of main
+09-28 19:04:05.947 27955 27955 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10203; state: ENABLED
+09-28 19:04:05.961   712   968 E OpenGLRenderer: Unable to match the desired swap behavior.
+09-28 19:04:05.980 27955 27955 D nativeloader: Configuring classloader-namespace for other apk /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64:/data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.dhamma.visuddhimaggareader
+09-28 19:04:06.012 27955 27955 V GraphicsEnvironment: ANGLE Developer option for 'com.dhamma.visuddhimaggareader' set to: 'default'
+09-28 19:04:06.013 27955 27955 V GraphicsEnvironment: ANGLE GameManagerService for com.dhamma.visuddhimaggareader: false
+09-28 19:04:06.014 27955 27955 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+09-28 19:04:06.025 27955 27955 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+09-28 19:04:06.025 27955 27955 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+09-28 19:04:06.061   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.061   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.061   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.061   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.077 27955 27955 V SoLoader: Init SoLoader delegate
+09-28 19:04:06.091 27955 27955 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+09-28 19:04:06.124 27955 27979 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+09-28 19:04:06.125 27955 27955 V SoLoader: libjscexecutor.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.127 27955 27979 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+09-28 19:04:06.129 27955 27979 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+09-28 19:04:06.130 27955 27955 V SoLoader: libreactnativejni.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.130 27955 27955 V SoLoader: libandroid.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.130 27955 27955 V SoLoader: libandroid.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.131 27955 27955 D SoLoader: libandroid.so found on /system/lib64
+09-28 19:04:06.131 27955 27955 D SoLoader: libandroid.so loaded implicitly
+09-28 19:04:06.131 27955 27955 V SoLoader: libyoga.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.131 27955 27955 V SoLoader: libfbjni.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.132 27955 27955 V SoLoader: liblog.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.132 27955 27955 V SoLoader: liblog.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.132 27955 27955 D SoLoader: liblog.so found on /system/lib64
+09-28 19:04:06.132 27955 27955 D SoLoader: liblog.so loaded implicitly
+09-28 19:04:06.132 27955 27955 V SoLoader: libm.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.132 27955 27955 V SoLoader: libm.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.132 27955 27955 D SoLoader: libm.so found on /system/lib64
+09-28 19:04:06.132 27955 27955 D SoLoader: libm.so loaded implicitly
+09-28 19:04:06.132 27955 27955 V SoLoader: libc++_shared.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.132 27955 27955 V SoLoader: libc.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.132 27955 27955 V SoLoader: libc.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.132 27955 27955 D SoLoader: libc.so found on /system/lib64
+09-28 19:04:06.132 27955 27955 D SoLoader: libc.so loaded implicitly
+09-28 19:04:06.132 27955 27955 V SoLoader: libdl.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.132 27955 27955 V SoLoader: libdl.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.132 27955 27955 D SoLoader: libdl.so found on /system/lib64
+09-28 19:04:06.132 27955 27955 D SoLoader: libdl.so loaded implicitly
+09-28 19:04:06.143 27955 27955 D SoLoader: libc++_shared.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.144 27955 27955 D SoLoader: libfbjni.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.145 27955 27955 D SoLoader: libyoga.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.145 27955 27955 V SoLoader: libreactperfloggerjni.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.147 27955 27955 D SoLoader: libreactperfloggerjni.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.147 27955 27955 V SoLoader: libreact_render_core.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.148 27955 27955 V SoLoader: libreact_render_debug.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.148 27955 27955 V SoLoader: libfolly_runtime.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.149 27955 27955 V SoLoader: libglog.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.157 27955 27955 D SoLoader: libglog.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.158 27955 27955 D SoLoader: libfolly_runtime.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.158 27955 27955 D SoLoader: libreact_render_debug.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.158 27955 27955 V SoLoader: libreact_render_graphics.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.160 27955 27955 V SoLoader: libreact_utils.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.161 27955 27955 V SoLoader: libreact_debug.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.161 27955 27955 D SoLoader: libreact_debug.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.161 27955 27955 V SoLoader: libjsinspector.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.162 27955 27955 V SoLoader: libreact_featureflags.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.163 27955 27955 D SoLoader: libreact_featureflags.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.163 27955 27955 V SoLoader: libruntimeexecutor.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.163 27955 27955 V SoLoader: libjsi.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.163 27955 27955 D SoLoader: libjsi.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.164 27955 27955 D SoLoader: libruntimeexecutor.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.165 27955 27955 D SoLoader: libjsinspector.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.165 27955 27955 D SoLoader: libreact_utils.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.166 27955 27955 D SoLoader: libreact_render_graphics.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.166 27955 27955 V SoLoader: libreact_render_mapbuffer.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.167 27955 27955 D SoLoader: libreact_render_mapbuffer.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.167 27955 27955 D SoLoader: libreact_render_core.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.170 27955 27955 D SoLoader: libreactnativejni.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.170 27955 27955 V SoLoader: libjsc.so not found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/lib/arm64
+09-28 19:04:06.171 27955 27955 D JavaScriptCore.Version: 250231.0.0
+09-28 19:04:06.171 27955 27955 D SoLoader: libjsc.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.172 27955 27955 D SoLoader: libjscexecutor.so found on /data/app/~~9ARfvueUibjEIZiYjkxewQ==/com.dhamma.visuddhimaggareader-R2Ee-LgVL6ddgqzZcDHJag==/base.apk!/lib/arm64-v8a
+09-28 19:04:06.197 27955 27980 I ExpoModulesCore: ✅ AppContext was initialized
+09-28 19:04:06.203 27955 27955 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10203; state: DISABLED
+09-28 19:04:06.209 27955 27977 W Parcel  : Expecting binder but got null!
+--------- beginning of system
+09-28 19:04:06.212   511  1889 D CoreBackPreview: Window{a89329a u0 com.dhamma.visuddhimaggareader/com.dhamma.visuddhimaggareader.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@8067ba8, mPriority=0}
+09-28 19:04:06.230 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.drawer.ReactDrawerLayoutManager
+09-28 19:04:06.232   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.232   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.232   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.232   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.232 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.uimanager.LayoutShadowNode
+09-28 19:04:06.232 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollViewManager
+09-28 19:04:06.233 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollContainerViewManager
+09-28 19:04:06.233 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ReactProgressBarViewManager
+09-28 19:04:06.233 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ProgressBarShadowNode
+09-28 19:04:06.233 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactScrollViewManager
+09-28 19:04:06.234 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager
+09-28 19:04:06.237 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager$ReactSwitchShadowNode
+09-28 19:04:06.237 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.swiperefresh.SwipeRefreshLayoutManager
+09-28 19:04:06.238 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageViewManager
+09-28 19:04:06.238 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageShadowNode
+09-28 19:04:06.238 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.image.ReactImageManager
+09-28 19:04:06.239 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.modal.ReactModalHostManager
+09-28 19:04:06.239 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.modal.ModalHostShadowNode
+09-28 19:04:06.239 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextManager
+09-28 19:04:06.239 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextShadowNode
+09-28 19:04:06.240 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputManager
+09-28 19:04:06.240 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputShadowNode
+09-28 19:04:06.241 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextViewManager
+09-28 19:04:06.241 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextShadowNode
+09-28 19:04:06.241 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.view.ReactViewManager
+09-28 19:04:06.241 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextViewManager
+09-28 19:04:06.241 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextShadowNode
+09-28 19:04:06.241 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.unimplementedview.ReactUnimplementedViewManager
+09-28 19:04:06.241 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.gesturehandler.react.RNGestureHandlerRootViewManager
+09-28 19:04:06.242 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.gesturehandler.react.RNGestureHandlerButtonViewManager
+--------- beginning of crash
+09-28 19:04:06.242 27955 27986 E AndroidRuntime: FATAL EXCEPTION: mqt_js
+09-28 19:04:06.242 27955 27986 E AndroidRuntime: Process: com.dhamma.visuddhimaggareader, PID: 27955
+09-28 19:04:06.242 27955 27986 E AndroidRuntime: com.facebook.react.common.JavascriptException: Unexpected token '?', stack:
+09-28 19:04:06.242 27955 27986 E AndroidRuntime: no stack
+09-28 19:04:06.242 27955 27986 E AndroidRuntime: 	at com.facebook.jni.NativeRunnable.run(Native Method)
+09-28 19:04:06.242 27955 27986 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:942)
+09-28 19:04:06.242 27955 27986 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+09-28 19:04:06.242 27955 27986 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadHandler.dispatchMessage(MessageQueueThreadHandler.java:27)
+09-28 19:04:06.242 27955 27986 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:201)
+09-28 19:04:06.242 27955 27986 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:288)
+09-28 19:04:06.242 27955 27986 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadImpl$4.run(MessageQueueThreadImpl.java:233)
+09-28 19:04:06.242 27955 27986 E AndroidRuntime: 	at java.lang.Thread.run(Thread.java:1012)
+09-28 19:04:06.243 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaProviderManager
+09-28 19:04:06.243 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewManager
+09-28 19:04:06.243 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewShadowNode
+09-28 19:04:06.243 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenContainerViewManager
+09-28 19:04:06.243 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenViewManager
+09-28 19:04:06.244 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ModalScreenViewManager
+09-28 19:04:06.244 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackViewManager
+09-28 19:04:06.244 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderConfigViewManager
+09-28 19:04:06.244 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderSubviewManager
+09-28 19:04:06.244 27955 27987 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.SearchBarManager
+09-28 19:04:06.251   345   707 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10203 pid=27955
+09-28 19:04:06.251   345   707 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10203 => denied (141 us)
+09-28 19:04:06.253   345   707 W ServiceManager: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10203 pid=27955
+09-28 19:04:06.253   345   707 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10203 => denied (1570 us)
+09-28 19:04:06.253   345   707 W ServiceManager: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10203 pid=27955
+09-28 19:04:06.253   345   707 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10203 => denied (112 us)
+09-28 19:04:06.255   345   706 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10203 pid=0
+09-28 19:04:06.255   345   706 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10203 => denied (4025 us)
+09-28 19:04:06.256   712   968 D EGL_emulation: app_time_stats: avg=61489904.00ms min=61489904.00ms max=61489904.00ms count=1
+09-28 19:04:06.273   345   447 W TransactionTracing: Could not find layer handle 0xb400007105a84370
+09-28 19:04:06.273   345   447 W TransactionTracing: Could not find layer handle 0xb400007105a7f870
+09-28 19:04:06.280 27955 27977 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+09-28 19:04:06.285 27955 27977 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+09-28 19:04:06.286 27955 27977 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-28 19:04:06.287 27955 27977 D EGL_emulation: eglCreateContext: 0xb400006e3a788ed0: maj 3 min 1 rcv 4
+09-28 19:04:06.290 27955 27977 D EGL_emulation: eglMakeCurrent: 0xb400006e3a788ed0: ver 3 1 (tinfo 0x70561c6080) (first time)
+09-28 19:04:06.330   511 27993 I DropBoxManagerService: add tag=data_app_crash isTagEnabled=true flags=0x2
+09-28 19:04:06.335   511   542 W BroadcastQueue: Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver
+09-28 19:04:06.335   511   542 W BroadcastQueue: Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+09-28 19:04:06.394   511  1889 W ActivityTaskManager:   Force finishing activity com.dhamma.visuddhimaggareader/.MainActivity
+09-28 19:04:06.422   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.422   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.422   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.422   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.454   151   151 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+09-28 19:04:06.454 27955 27977 I Gralloc4: mapper 4.x is not supported
+09-28 19:04:06.476   151   151 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device VINTF manifest.
+09-28 19:04:06.478 27955 27986 I Process : Sending signal. PID: 27955 SIG: 9
+09-28 19:04:06.480   149   149 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+09-28 19:04:06.497   511  2601 I ActivityManager: Process com.dhamma.visuddhimaggareader (pid 27955) has died: fg  TOP 
+09-28 19:04:06.497   511   544 I libprocessgroup: Successfully killed process cgroup uid 10203 pid 27955 in 0ms
+09-28 19:04:06.498   299   299 I Zygote  : Process 27955 exited due to signal 9 (Killed)
+--------- beginning of kernel
+09-28 19:04:06.501    42    42 I binder  : undelivered TRANSACTION_COMPLETE
+09-28 19:04:06.501    42    42 I binder  : undelivered transaction 2385526, process died.
+09-28 19:04:06.499   511  2146 I WindowManager: WIN DEATH: Window{a89329a u0 com.dhamma.visuddhimaggareader/com.dhamma.visuddhimaggareader.MainActivity}
+09-28 19:04:06.504   511  2146 W InputManager-JNI: Input channel object 'a89329a com.dhamma.visuddhimaggareader/com.dhamma.visuddhimaggareader.MainActivity (client)' was disposed without first being removed with the input manager!
+09-28 19:04:06.514   345   447 W TransactionTracing: Could not find layer handle 0xb400007105a7dfb0
+09-28 19:04:06.514   345   447 W TransactionTracing: Could not find layer handle 0xb400007105a84910
+09-28 19:04:06.514   345   447 W TransactionTracing: Could not find layer handle 0xb400007105a7c9f0
+09-28 19:04:06.514   345   447 W TransactionTracing: Could not find layer handle 0xb400007105a880f0
+09-28 19:04:06.536  1506  1506 I AiAi    : onTrimMemory() with level 5
+09-28 19:04:06.539   511  2601 D ActivityManager: sync unfroze 27510 com.google.android.gms.unstable
+09-28 19:04:06.547   511   534 W InputManager-JNI: Input channel object 'de407c7 Splash Screen com.dhamma.visuddhimaggareader (client)' was disposed without first being removed with the input manager!
+09-28 19:04:06.567   511   533 W ActivityManager: setHasOverlayUi called on unknown pid: 27955
+09-28 19:04:06.578  1443  1443 I AppBase : AppBase.onTrimMemory():497 onTrimMemory(): 5
+09-28 19:04:06.579   345   447 W TransactionTracing: Could not find layer handle 0xb400007105a8a250
+09-28 19:04:06.579   345   447 W TransactionTracing: Could not find layer handle 0xb400007105a8a2b0
+09-28 19:04:06.580   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.580   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.580   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.580   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.580   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:06.592  1443  1443 I GoogleInputMethodService: GoogleInputMethodService.onTrimMemory():4406 onTrimMemory(): 5
+09-28 19:04:06.598  1443  1443 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227 
+09-28 19:04:06.604  1443  1443 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+09-28 19:04:06.604  1443  1443 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.example.rhaipps fieldId=-1 fieldName=null extras=null}, false)
+09-28 19:04:06.604  1443  1443 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+09-28 19:04:06.604  1443  1443 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+09-28 19:04:06.615   345   447 W TransactionTracing: Could not find layer handle 0xb400007105a81010
+09-28 19:04:06.615   345   447 W TransactionTracing: Could not find layer handle 0xb400007105a828d0
+09-28 19:04:06.631   511  3433 W WindowManager: Failed looking up window session=Session{5849836 712:u0a10157} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6050 com.android.server.wm.WindowManagerService.relayoutWindow:2293 com.android.server.wm.Session.relayout:253 
+09-28 19:04:06.645   511  3433 W WindowManager: Failed looking up window session=Session{5849836 712:u0a10157} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6050 com.android.server.wm.Session.setOnBackInvokedCallbackInfo:943 android.view.IWindowSession$Stub.onTransact:1180 
+09-28 19:04:06.645   511  3433 E WindowManager: setOnBackInvokedCallback(): No window state for package:com.android.systemui
+09-28 19:04:06.647   511  1889 W WindowManager: Failed looking up window session=Session{5849836 712:u0a10157} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6050 com.android.server.wm.WindowManagerService.removeWindow:2076 com.android.server.wm.Session.remove:230 
+09-28 19:04:06.660   511  1259 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+09-28 19:04:06.663   511  1259 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+09-28 19:04:06.664   511  1259 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-28 19:04:06.664   511  1259 D EGL_emulation: eglCreateContext: 0xb400006e3a7a8a90: maj 3 min 1 rcv 4
+09-28 19:04:06.667   511  1259 D EGL_emulation: eglMakeCurrent: 0xb400006e3a7a8a90: ver 3 1 (tinfo 0x7061c12080) (first time)
+09-28 19:04:06.899   511   533 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{fcbe8a9 u0 com.dhamma.visuddhimaggareader/.MainActivity} t-1 f}}
+09-28 19:04:06.997   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:07.258   712   968 D EGL_emulation: app_time_stats: avg=11.61ms min=0.96ms max=39.07ms count=46
+09-28 19:04:07.863   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:07.863   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:08.181   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:08.182   345   447 W TransactionTracing: Could not find layer id -1
+09-28 19:04:08.182   345   447 W TransactionTracing: Could not find layer id -1

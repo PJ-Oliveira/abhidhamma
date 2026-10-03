@@ -1,0 +1,902 @@
+[
+  {
+    "pali": "appahontātītakamāpāthamāgataṃ",
+    "meaning": {
+      "en": "having come into the focus of an incapable past process",
+      "pt": "tendo entrado no foco de um processo passado incapaz",
+      "es": "habiendo entrado en el foco de un proceso pasado incapaz"
+    },
+    "grammar": "adjective / compound"
+  },
+  {
+    "pali": "aparabhāge",
+    "meaning": {
+      "en": "in the later stage; subsequently",
+      "pt": "no estágio posterior; subsequentemente",
+      "es": "en la etapa posterior; posteriormente"
+    },
+    "grammar": "noun, locative / adverb"
+  },
+  {
+    "pali": "apagamapadaṭṭhānaṃ",
+    "meaning": {
+      "en": "having departure as its proximate cause",
+      "pt": "tendo o afastamento como causa próxima",
+      "es": "teniendo el alejamiento como causa próxima"
+    },
+    "grammar": "neuter noun / compound"
+  },
+  {
+    "pali": "anāse",
+    "meaning": {
+      "en": "without association; free from desire",
+      "pt": "sem associação; livre de desejos",
+      "es": "sin asociación; libre de deseos"
+    },
+    "grammar": "adjective, locative"
+  },
+  {
+    "pali": "anāgāmiphalādayo",
+    "meaning": {
+      "en": "the fruit of non-returning, etc.",
+      "pt": "o fruto do não retorno, etc.",
+      "es": "el fruto del no retorno, etc."
+    },
+    "grammar": "masculine noun, plural / compound"
+  },
+  {
+    "pali": "anusayā",
+    "meaning": {
+      "en": "latent tendencies",
+      "pt": "tendências latentes",
+      "es": "tendencias latentes"
+    },
+    "grammar": "masculine noun, plural"
+  },
+  {
+    "pali": "anupālanalakkhaṇādimhi",
+    "meaning": {
+      "en": "in the characteristic of maintenance, etc.",
+      "pt": "na característica de manutenção, etc.",
+      "es": "en la característica de mantenimiento, etc."
+    },
+    "grammar": "locative / compound"
+  },
+  {
+    "pali": "anuppannānaṃ",
+    "meaning": {
+      "en": "of the unarisen",
+      "pt": "do não surgido",
+      "es": "de lo no surgido"
+    },
+    "grammar": "adjective, genitive plural"
+  },
+  {
+    "pali": "anulomato",
+    "meaning": {
+      "en": "in conformity with; in forward order",
+      "pt": "em conformidade; em ordem direta",
+      "es": "en conformidad; en orden directo"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "anubalappadānavasena",
+    "meaning": {
+      "en": "by way of providing supporting power",
+      "pt": "por meio do fornecimento de poder de apoio",
+      "es": "por medio de proporcionar poder de apoyo"
+    },
+    "grammar": "instrumental / compound"
+  },
+  {
+    "pali": "antogadhaṃ",
+    "meaning": {
+      "en": "included; contained within",
+      "pt": "incluído; contido dentro",
+      "es": "incluido; contenido dentro"
+    },
+    "grammar": "neuter adjective"
+  },
+  {
+    "pali": "anenāti",
+    "meaning": {
+      "en": "by this (anena + iti)",
+      "pt": "por este (anena + iti)",
+      "es": "por este (anena + iti)"
+    },
+    "grammar": "pronoun + indeclinable"
+  },
+  {
+    "pali": "anavajjādike",
+    "meaning": {
+      "en": "in the blameless, etc.",
+      "pt": "no irrepreensível, etc.",
+      "es": "en lo irreprochable, etc."
+    },
+    "grammar": "adjective, locative"
+  },
+  {
+    "pali": "anantañāṇena",
+    "meaning": {
+      "en": "by infinite knowledge",
+      "pt": "por conhecimento infinito",
+      "es": "por conocimiento infinito"
+    },
+    "grammar": "instrumental / compound"
+  },
+  {
+    "pali": "amoho",
+    "meaning": {
+      "en": "non-delusion",
+      "pt": "não delusão",
+      "es": "no delusión"
+    },
+    "grammar": "masculine noun"
+  },
+  {
+    "pali": "amaggaṅgāni",
+    "meaning": {
+      "en": "non-path factors",
+      "pt": "fatores que não são do caminho",
+      "es": "factores que no son del camino"
+    },
+    "grammar": "neuter noun, plural / compound"
+  },
+  {
+    "pali": "akusale",
+    "meaning": {
+      "en": "in the unwholesome",
+      "pt": "no não benéfico",
+      "es": "en lo perjudicial"
+    },
+    "grammar": "adjective, locative"
+  },
+  {
+    "pali": "akusalavipākacittāni",
+    "meaning": {
+      "en": "unwholesome resultant consciousnesses",
+      "pt": "consciências resultantes não benéficas",
+      "es": "conciencias resultantes perjudiciales"
+    },
+    "grammar": "neuter noun, plural / compound"
+  },
+  {
+    "pali": "akusalaviddhaṃsanarasaṃ",
+    "meaning": {
+      "en": "having the function of destroying the unwholesome",
+      "pt": "tendo a função de destruir o não benéfico",
+      "es": "teniendo la función de destruir lo perjudicial"
+    },
+    "grammar": "neuter adjective / compound"
+  },
+  {
+    "pali": "akusalacittesu",
+    "meaning": {
+      "en": "in unwholesome consciousnesses",
+      "pt": "nas consciências não benéficas",
+      "es": "en las conciencias perjudiciales"
+    },
+    "grammar": "locative plural / compound"
+  },
+  {
+    "pali": "akriyaṃ",
+    "meaning": {
+      "en": "functional; inoperative",
+      "pt": "funcional; inoperante",
+      "es": "funcional; inoperante"
+    },
+    "grammar": "neuter adjective"
+  },
+  {
+    "pali": "ajjhattañca",
+    "meaning": {
+      "en": "and internal",
+      "pt": "e interno",
+      "es": "e interno"
+    },
+    "grammar": "adjective + indeclinable"
+  },
+  {
+    "pali": "ahetukāpi",
+    "meaning": {
+      "en": "even the rootless",
+      "pt": "mesmo as sem raiz",
+      "es": "incluso las sin raíz"
+    },
+    "grammar": "adjective + indeclinable"
+  },
+  {
+    "pali": "ahetukavipākacittaṃ",
+    "meaning": {
+      "en": "rootless resultant consciousness",
+      "pt": "consciência resultante sem raiz",
+      "es": "conciencia resultante sin raíz"
+    },
+    "grammar": "neuter noun / compound"
+  },
+  {
+    "pali": "ahetukamanoviññāṇadhātuyo",
+    "meaning": {
+      "en": "rootless mind-consciousness elements",
+      "pt": "elementos da consciência mental sem raiz",
+      "es": "elementos de la conciencia mental sin raíz"
+    },
+    "grammar": "feminine noun, plural / compound"
+  },
+  {
+    "pali": "ahanti",
+    "meaning": {
+      "en": "'I am' (ahaṃ + iti)",
+      "pt": "'Eu sou' (ahaṃ + iti)",
+      "es": "'Yo soy' (ahaṃ + iti)"
+    },
+    "grammar": "pronoun + indeclinable"
+  },
+  {
+    "pali": "agocaraṃ",
+    "meaning": {
+      "en": "improper resort; non-domain",
+      "pt": "domínio inadequado; não domínio",
+      "es": "dominio inadecuado; no dominio"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "agado",
+    "meaning": {
+      "en": "medicine; antidote",
+      "pt": "remédio; antídoto",
+      "es": "medicina; antídoto"
+    },
+    "grammar": "masculine noun"
+  },
+  {
+    "pali": "adhikāravasena",
+    "meaning": {
+      "en": "by way of chapter/competence",
+      "pt": "por meio do capítulo/competência",
+      "es": "por medio de capítulo/competencia"
+    },
+    "grammar": "instrumental / compound"
+  },
+  {
+    "pali": "acittakā",
+    "meaning": {
+      "en": "without consciousness",
+      "pt": "sem consciência",
+      "es": "sin conciencia"
+    },
+    "grammar": "adjective, plural"
+  },
+  {
+    "pali": "acarimaṃ",
+    "meaning": {
+      "en": "not last; non-final",
+      "pt": "não último; não final",
+      "es": "no último; no final"
+    },
+    "grammar": "neuter adjective"
+  },
+  {
+    "pali": "abyāpādena",
+    "meaning": {
+      "en": "by non-ill-will",
+      "pt": "pela não má vontade",
+      "es": "por la no mala voluntad"
+    },
+    "grammar": "instrumental noun"
+  },
+  {
+    "pali": "abyākatā",
+    "meaning": {
+      "en": "undetermined; karmically neutral",
+      "pt": "indeterminado; karmicamente neutro",
+      "es": "indeterminado; kármicamente neutro"
+    },
+    "grammar": "adjective, plural"
+  },
+  {
+    "pali": "abujjhi",
+    "meaning": {
+      "en": "understood; awakened",
+      "pt": "compreendeu; despertou",
+      "es": "comprendió; despertó"
+    },
+    "grammar": "verb, aorist"
+  },
+  {
+    "pali": "abhāvaṃ",
+    "meaning": {
+      "en": "absence; non-existence",
+      "pt": "ausência; não existência",
+      "es": "ausencia; no existencia"
+    },
+    "grammar": "accusative noun"
+  },
+  {
+    "pali": "abhiññāya",
+    "meaning": {
+      "en": "having directly known; for direct knowledge",
+      "pt": "tendo conhecido diretamente; para conhecimento direto",
+      "es": "habiendo conocido directamente; para conocimiento directo"
+    },
+    "grammar": "verb, absolutive / dative noun"
+  },
+  {
+    "pali": "abhiññāpādakaṃ",
+    "meaning": {
+      "en": "basis for direct knowledge",
+      "pt": "base para conhecimento direto",
+      "es": "base para conocimiento directo"
+    },
+    "grammar": "neuter noun / compound"
+  },
+  {
+    "pali": "abhiññāmānasaṃ",
+    "meaning": {
+      "en": "direct knowledge consciousness",
+      "pt": "consciência do conhecimento direto",
+      "es": "conciencia del conocimiento directo"
+    },
+    "grammar": "neuter noun / compound"
+  },
+  {
+    "pali": "abhiññākiccavasena",
+    "meaning": {
+      "en": "by way of the function of direct knowledge",
+      "pt": "por meio da função de conhecimento direto",
+      "es": "por medio de la función de conocimiento directo"
+    },
+    "grammar": "instrumental / compound"
+  },
+  {
+    "pali": "abhinibbattitā",
+    "meaning": {
+      "en": "produced; born",
+      "pt": "produzida; nascida",
+      "es": "producida; nacida"
+    },
+    "grammar": "adjective / participle, feminine"
+  },
+  {
+    "pali": "abhinibbattisammutiṃ",
+    "meaning": {
+      "en": "convention of arising/production",
+      "pt": "convenção de surgimento/produção",
+      "es": "convención de surgimiento/producción"
+    },
+    "grammar": "accusative / compound"
+  },
+  {
+    "pali": "abhidhammo",
+    "meaning": {
+      "en": "higher teaching; Abhidhamma",
+      "pt": "ensinamento superior; Abhidhamma",
+      "es": "enseñanza superior; Abhidhamma"
+    },
+    "grammar": "masculine noun"
+  },
+  {
+    "pali": "abhidhammasmiṃ",
+    "meaning": {
+      "en": "in the Abhidhamma",
+      "pt": "no Abhidhamma",
+      "es": "en el Abhidhamma"
+    },
+    "grammar": "locative noun"
+  },
+  {
+    "pali": "abhidhammapiṭake",
+    "meaning": {
+      "en": "in the Abhidhamma Pitaka",
+      "pt": "no Abhidhamma Pitaka",
+      "es": "en el Abhidhamma Pitaka"
+    },
+    "grammar": "locative / compound"
+  },
+  {
+    "pali": "abhidhammamahodadhiṃ",
+    "meaning": {
+      "en": "the great ocean of Abhidhamma",
+      "pt": "o grande oceano do Abhidhamma",
+      "es": "el gran océano del Abhidhamma"
+    },
+    "grammar": "accusative / compound"
+  },
+  {
+    "pali": "abhibhuyya",
+    "meaning": {
+      "en": "having overcome",
+      "pt": "tendo superado",
+      "es": "habiendo superado"
+    },
+    "grammar": "verb, absolutive"
+  },
+  {
+    "pali": "ṭhānūpacārato",
+    "meaning": {
+      "en": "from the metaphorical use of place",
+      "pt": "pelo uso metafórico de lugar",
+      "es": "por el uso metafórico de lugar"
+    },
+    "grammar": "ablative / compound"
+  },
+  {
+    "pali": "ṭhānaṃ",
+    "meaning": {
+      "en": "place; state; cause",
+      "pt": "lugar; estado; causa",
+      "es": "lugar; estado; causa"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "ṭhānabhedato",
+    "meaning": {
+      "en": "by way of difference in state/place",
+      "pt": "por causa da diferença de estado/lugar",
+      "es": "por medio de diferencia de estado/lugar"
+    },
+    "grammar": "ablative / compound"
+  },
+  {
+    "pali": "ṭhitiyo",
+    "meaning": {
+      "en": "stations; persistences",
+      "pt": "estações; persistências",
+      "es": "estaciones; persistencias"
+    },
+    "grammar": "feminine noun, plural"
+  },
+  {
+    "pali": "ṭhitikālamupādāya",
+    "meaning": {
+      "en": "dependent on the time of persistence",
+      "pt": "dependente do tempo de persistência",
+      "es": "dependiente del tiempo de persistencia"
+    },
+    "grammar": "phrase / compound"
+  },
+  {
+    "pali": "ṭhapetvāvajjanadvayaṃ",
+    "meaning": {
+      "en": "except the two adverting consciousnesses",
+      "pt": "exceto as duas consciências de advertência",
+      "es": "excepto las dos conciencias de advertencia"
+    },
+    "grammar": "phrase"
+  },
+  {
+    "pali": "ṭhapetvāti",
+    "meaning": {
+      "en": "having kept aside (ṭhapetvā + iti)",
+      "pt": "tendo deixado de lado (ṭhapetvā + iti)",
+      "es": "habiendo dejado de lado (ṭhapetvā + iti)"
+    },
+    "grammar": "verb, absolutive + indeclinable"
+  },
+  {
+    "pali": "ṭhapetvāpāyabhūmiyo",
+    "meaning": {
+      "en": "except the planes of deprivation",
+      "pt": "exceto os planos de privação",
+      "es": "excepto los planos de privación"
+    },
+    "grammar": "phrase"
+  },
+  {
+    "pali": "ṭhapetvāpuññapañcakaṃ",
+    "meaning": {
+      "en": "except the pentad of merit",
+      "pt": "exceto a pêntada do mérito",
+      "es": "excepto la péntada de mérito"
+    },
+    "grammar": "phrase"
+  },
+  {
+    "pali": "ṭhapetvāna",
+    "meaning": {
+      "en": "having kept aside; having placed",
+      "pt": "tendo deixado de lado; tendo colocado",
+      "es": "habiendo dejado de lado; habiendo colocado"
+    },
+    "grammar": "verb, absolutive"
+  },
+  {
+    "pali": "ṭhapeti",
+    "meaning": {
+      "en": "sets aside; places",
+      "pt": "deixa de lado; coloca",
+      "es": "deja de lado; coloca"
+    },
+    "grammar": "verb, present"
+  },
+  {
+    "pali": "āyūhanarasā",
+    "meaning": {
+      "en": "having the function of accumulation",
+      "pt": "tendo a função de acumulação",
+      "es": "teniendo la función de acumulación"
+    },
+    "grammar": "adjective, plural / compound"
+  },
+  {
+    "pali": "āyācito",
+    "meaning": {
+      "en": "requested; asked",
+      "pt": "solicitado; pedido",
+      "es": "solicitado; pedido"
+    },
+    "grammar": "verb, past participle"
+  },
+  {
+    "pali": "āyatiṃ",
+    "meaning": {
+      "en": "in the future",
+      "pt": "no futuro",
+      "es": "en el futuro"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "āyatiñca",
+    "meaning": {
+      "en": "and in the future",
+      "pt": "e no futuro",
+      "es": "y en el futuro"
+    },
+    "grammar": "adverb + indeclinable"
+  },
+  {
+    "pali": "āvaṭṭite",
+    "meaning": {
+      "en": "adverted; turned towards",
+      "pt": "advertido; voltado para",
+      "es": "advertido; vuelto hacia"
+    },
+    "grammar": "participle, locative"
+  },
+  {
+    "pali": "āvajjeti",
+    "meaning": {
+      "en": "adverts; reflects",
+      "pt": "adverte; reflete",
+      "es": "advierte; reflexiona"
+    },
+    "grammar": "verb, present"
+  },
+  {
+    "pali": "āvajjati",
+    "meaning": {
+      "en": "adverts; reflects",
+      "pt": "adverte; reflete",
+      "es": "advierte; reflexiona"
+    },
+    "grammar": "verb, present"
+  },
+  {
+    "pali": "āvajjanenāpi",
+    "meaning": {
+      "en": "even by adverting",
+      "pt": "mesmo por advertência",
+      "es": "incluso por advertencia"
+    },
+    "grammar": "instrumental noun + indeclinable"
+  },
+  {
+    "pali": "āvajjanena",
+    "meaning": {
+      "en": "by adverting",
+      "pt": "por advertência",
+      "es": "por advertencia"
+    },
+    "grammar": "instrumental noun"
+  },
+  {
+    "pali": "āvajjanajavanānaṃ",
+    "meaning": {
+      "en": "of adverting and impulsion",
+      "pt": "de advertência e impulsão",
+      "es": "de advertencia e impulsión"
+    },
+    "grammar": "genitive plural / compound"
+  },
+  {
+    "pali": "āvajjanadvayañceva",
+    "meaning": {
+      "en": "and the two advertings",
+      "pt": "e as duas advertências",
+      "es": "y las dos advertencias"
+    },
+    "grammar": "compound + indeclinables"
+  },
+  {
+    "pali": "āsevanapaccayo",
+    "meaning": {
+      "en": "repetition condition",
+      "pt": "condição de repetição",
+      "es": "condición de repetición"
+    },
+    "grammar": "masculine noun / compound"
+  },
+  {
+    "pali": "āsavā",
+    "meaning": {
+      "en": "taints; cankers",
+      "pt": "contaminações; máculas",
+      "es": "contaminaciones; corrupciones"
+    },
+    "grammar": "masculine noun, plural"
+  },
+  {
+    "pali": "āsannamaraṇassa",
+    "meaning": {
+      "en": "of one near death",
+      "pt": "daquele que está próximo à morte",
+      "es": "de aquel cercano a la muerte"
+    },
+    "grammar": "genitive / compound"
+  },
+  {
+    "pali": "āsannakāraṇanti",
+    "meaning": {
+      "en": "proximate cause (āsannakāraṇaṃ + iti)",
+      "pt": "causa próxima (āsannakāraṇaṃ + iti)",
+      "es": "causa próxima (āsannakāraṇaṃ + iti)"
+    },
+    "grammar": "neuter noun / compound + indeclinable"
+  },
+  {
+    "pali": "āruppesu",
+    "meaning": {
+      "en": "in the formless realms",
+      "pt": "nos reinos sem forma",
+      "es": "en los reinos sin forma"
+    },
+    "grammar": "locative plural"
+  },
+  {
+    "pali": "āruppapākā",
+    "meaning": {
+      "en": "formless resultants",
+      "pt": "resultantes sem forma",
+      "es": "resultantes sin forma"
+    },
+    "grammar": "masculine noun, plural / compound"
+  },
+  {
+    "pali": "āruppakusalañcāpi",
+    "meaning": {
+      "en": "and also formless wholesome",
+      "pt": "e também o benéfico sem forma",
+      "es": "y también lo beneficioso sin forma"
+    },
+    "grammar": "compound + indeclinables"
+  },
+  {
+    "pali": "ārogye",
+    "meaning": {
+      "en": "in health",
+      "pt": "na saúde",
+      "es": "en la salud"
+    },
+    "grammar": "locative noun"
+  },
+  {
+    "pali": "ārogyaṃ",
+    "meaning": {
+      "en": "health",
+      "pt": "saúde",
+      "es": "salud"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "ārammaṇūpanissayo",
+    "meaning": {
+      "en": "object decisive support condition",
+      "pt": "condição de suporte decisivo do objeto",
+      "es": "condición de soporte decisivo del objeto"
+    },
+    "grammar": "masculine noun / compound"
+  },
+  {
+    "pali": "ārammaṇānumajjanalakkhaṇo",
+    "meaning": {
+      "en": "having the characteristic of stroking the object",
+      "pt": "tendo a característica de acariciar o objeto",
+      "es": "teniendo la característica de acariciar el objeto"
+    },
+    "grammar": "masculine adjective / compound"
+  },
+  {
+    "pali": "ārammaṇavibhāgavaṇṇanā",
+    "meaning": {
+      "en": "description of the classification of objects",
+      "pt": "descrição da classificação dos objetos",
+      "es": "descripción de la clasificación de los objetos"
+    },
+    "grammar": "feminine noun / compound"
+  },
+  {
+    "pali": "ārammaṇato",
+    "meaning": {
+      "en": "from the object; by way of object",
+      "pt": "do objeto; através do objeto",
+      "es": "del objeto; por medio del objeto"
+    },
+    "grammar": "ablative noun"
+  },
+  {
+    "pali": "ārammaṇapaṭipādako",
+    "meaning": {
+      "en": "presenter of the object",
+      "pt": "apresentador do objeto",
+      "es": "presentador del objeto"
+    },
+    "grammar": "masculine noun / compound"
+  },
+  {
+    "pali": "ārammaṇamito",
+    "meaning": {
+      "en": "object from here",
+      "pt": "objeto daqui",
+      "es": "objeto desde aquí"
+    },
+    "grammar": "phrase"
+  },
+  {
+    "pali": "āpāthamāgacchati",
+    "meaning": {
+      "en": "comes into focus; enters the avenue",
+      "pt": "entra no foco; entra na avenida",
+      "es": "entra en foco; entra en la avenida"
+    },
+    "grammar": "phrase"
+  },
+  {
+    "pali": "āpādīyatīti",
+    "meaning": {
+      "en": "is produced; is entered upon (āpādīyati + iti)",
+      "pt": "é produzido (āpādīyati + iti)",
+      "es": "es producido (āpādīyati + iti)"
+    },
+    "grammar": "verb, passive + indeclinable"
+  },
+  {
+    "pali": "āpajjeyya",
+    "meaning": {
+      "en": "would fall into; would incur",
+      "pt": "cairia em; incorreria",
+      "es": "caería en; incurriría"
+    },
+    "grammar": "verb, optative"
+  },
+  {
+    "pali": "ānāpānaṃ",
+    "meaning": {
+      "en": "in-and-out breathing",
+      "pt": "respiração de inspiração e expiração",
+      "es": "respiración de inhalación y exhalación"
+    },
+    "grammar": "neuter noun"
+  },
+  {
+    "pali": "ānisaṃsānaṃ",
+    "meaning": {
+      "en": "of benefits; of advantages",
+      "pt": "de benefícios; de vantagens",
+      "es": "de beneficios; de ventajas"
+    },
+    "grammar": "genitive plural"
+  },
+  {
+    "pali": "ālokopi",
+    "meaning": {
+      "en": "even light",
+      "pt": "mesmo a luz",
+      "es": "incluso la luz"
+    },
+    "grammar": "noun + indeclinable"
+  },
+  {
+    "pali": "ālokandhakārānaṃ",
+    "meaning": {
+      "en": "of light and darkness",
+      "pt": "da luz e da escuridão",
+      "es": "de la luz y la oscuridad"
+    },
+    "grammar": "genitive plural / compound"
+  },
+  {
+    "pali": "ālambitvā",
+    "meaning": {
+      "en": "having taken as object",
+      "pt": "tendo tomado como objeto",
+      "es": "habiendo tomado como objeto"
+    },
+    "grammar": "verb, absolutive"
+  },
+  {
+    "pali": "ākāsānañcāyatanassa",
+    "meaning": {
+      "en": "of the base of infinite space",
+      "pt": "da base do espaço infinito",
+      "es": "de la base del espacio infinito"
+    },
+    "grammar": "genitive / compound"
+  },
+  {
+    "pali": "ākāsānañcāyatanabhūmi",
+    "meaning": {
+      "en": "the plane of the base of infinite space",
+      "pt": "o plano da base do espaço infinito",
+      "es": "el plano de la base del espacio infinito"
+    },
+    "grammar": "feminine noun / compound"
+  },
+  {
+    "pali": "ākāso",
+    "meaning": {
+      "en": "space",
+      "pt": "espaço",
+      "es": "espacio"
+    },
+    "grammar": "masculine noun"
+  },
+  {
+    "pali": "ākāsadhātu",
+    "meaning": {
+      "en": "space element",
+      "pt": "elemento espaço",
+      "es": "elemento espacio"
+    },
+    "grammar": "feminine noun / compound"
+  },
+  {
+    "pali": "ākārehi",
+    "meaning": {
+      "en": "by aspects; by modes; by reasons",
+      "pt": "por aspectos; por modos; por razões",
+      "es": "por aspectos; por modos; por razones"
+    },
+    "grammar": "instrumental plural"
+  },
+  {
+    "pali": "ākiñcaññāyatanaṃ",
+    "meaning": {
+      "en": "the base of nothingness",
+      "pt": "a base da nulidade",
+      "es": "la base de la nada"
+    },
+    "grammar": "neuter noun / compound"
+  },
+  {
+    "pali": "āhārā",
+    "meaning": {
+      "en": "nutriments; foods",
+      "pt": "nutrientes; alimentos",
+      "es": "nutrientes; alimentos"
+    },
+    "grammar": "masculine noun, plural"
+  },
+  {
+    "pali": "āhārapaccayo",
+    "meaning": {
+      "en": "nutriment condition",
+      "pt": "condição de nutriente",
+      "es": "condición de nutrimento"
+    },
+    "grammar": "masculine noun / compound"
+  },
+  {
+    "pali": "āhananapariyāhananaraso",
+    "meaning": {
+      "en": "having the function of striking and restriking",
+      "pt": "tendo a função de golpear e regotear",
+      "es": "teniendo la función de golpear y volver a golpear"
+    },
+    "grammar": "masculine adjective / compound"
+  }
+]

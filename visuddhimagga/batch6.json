@@ -1,0 +1,803 @@
+[
+  {
+    "pali": "bhikkhū",
+    "meaning": {
+      "en": "monks",
+      "pt": "monges",
+      "es": "monjes"
+    },
+    "grammar": "noun, masculine, nominative plural"
+  },
+  {
+    "pali": "athassa",
+    "meaning": {
+      "en": "then to him / then for him",
+      "pt": "então para ele",
+      "es": "entonces para él"
+    },
+    "grammar": "compound: indeclinable + pronoun, dative singular"
+  },
+  {
+    "pali": "yasmiṃ",
+    "meaning": {
+      "en": "in which / when",
+      "pt": "no qual / quando",
+      "es": "en el cual / cuando"
+    },
+    "grammar": "pronoun, masculine/neuter, locative singular"
+  },
+  {
+    "pali": "kira",
+    "meaning": {
+      "en": "really / truly / it is said",
+      "pt": "realmente / verdadeiramente / diz-se",
+      "es": "realmente / verdaderamente / se dice"
+    },
+    "grammar": "indeclinable, enclitic particle"
+  },
+  {
+    "pali": "cassa",
+    "meaning": {
+      "en": "and to him / and for him",
+      "pt": "e para ele",
+      "es": "y para él"
+    },
+    "grammar": "compound: indeclinable + pronoun, dative singular"
+  },
+  {
+    "pali": "sesaṃ",
+    "meaning": {
+      "en": "the remaining / the rest",
+      "pt": "o restante / o resto",
+      "es": "el resto / lo restante"
+    },
+    "grammar": "adjective, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "naṃ",
+    "meaning": {
+      "en": "him / her / it",
+      "pt": "o / a / ele / ela",
+      "es": "lo / la / a él / a ella"
+    },
+    "grammar": "pronoun, accusative singular"
+  },
+  {
+    "pali": "senāsanaṃ",
+    "meaning": {
+      "en": "dwelling / lodging",
+      "pt": "morada / alojamento",
+      "es": "morada / alojamiento"
+    },
+    "grammar": "noun, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "yāva",
+    "meaning": {
+      "en": "up to / as far as / until",
+      "pt": "até / na medida em que",
+      "es": "hasta / en la medida en que"
+    },
+    "grammar": "indeclinable, adverb"
+  },
+  {
+    "pali": "saṃvattanti",
+    "meaning": {
+      "en": "they lead to / they conduce",
+      "pt": "eles conduzem a",
+      "es": "ellos conducen a"
+    },
+    "grammar": "verb, 3rd person plural, present"
+  },
+  {
+    "pali": "bhāvanāya",
+    "meaning": {
+      "en": "for development / through meditation",
+      "pt": "para o desenvolvimento / através da meditação",
+      "es": "para el desarrollo / mediante la meditación"
+    },
+    "grammar": "noun, feminine, dative/instrumental singular"
+  },
+  {
+    "pali": "imāni",
+    "meaning": {
+      "en": "these",
+      "pt": "estes / estas",
+      "es": "estos / estas"
+    },
+    "grammar": "pronoun, neuter, nominative/accusative plural"
+  },
+  {
+    "pali": "puriso",
+    "meaning": {
+      "en": "man / person",
+      "pt": "homem / pessoa",
+      "es": "hombre / persona"
+    },
+    "grammar": "noun, masculine, nominative singular"
+  },
+  {
+    "pali": "idhekacco",
+    "meaning": {
+      "en": "here someone / a certain person here",
+      "pt": "aqui alguém / uma certa pessoa aqui",
+      "es": "aquí alguien / una cierta persona aquí"
+    },
+    "grammar": "compound: indeclinable + pronoun, nominative singular"
+  },
+  {
+    "pali": "tividho",
+    "meaning": {
+      "en": "threefold",
+      "pt": "tríplice",
+      "es": "triple"
+    },
+    "grammar": "adjective, masculine, nominative singular"
+  },
+  {
+    "pali": "paññāya",
+    "meaning": {
+      "en": "through wisdom / with wisdom",
+      "pt": "pela sabedoria / com sabedoria",
+      "es": "por la sabiduría / con sabiduría"
+    },
+    "grammar": "noun, feminine, instrumental singular"
+  },
+  {
+    "pali": "vihāre",
+    "meaning": {
+      "en": "in the dwelling / in the monastery",
+      "pt": "na morada / no mosteiro",
+      "es": "en la morada / en el monasterio"
+    },
+    "grammar": "noun, masculine, locative singular"
+  },
+  {
+    "pali": "samaṇo",
+    "meaning": {
+      "en": "ascetic / recluse",
+      "pt": "asceta / recluso",
+      "es": "asceta / recluso"
+    },
+    "grammar": "noun, masculine, nominative singular"
+  },
+  {
+    "pali": "cittassa",
+    "meaning": {
+      "en": "of the mind",
+      "pt": "da mente",
+      "es": "de la mente"
+    },
+    "grammar": "noun, neuter, genitive singular"
+  },
+  {
+    "pali": "manussā",
+    "meaning": {
+      "en": "men / human beings",
+      "pt": "homens / seres humanos",
+      "es": "hombres / seres humanos"
+    },
+    "grammar": "noun, masculine, nominative plural"
+  },
+  {
+    "pali": "upasampajja",
+    "meaning": {
+      "en": "having attained / having entered upon",
+      "pt": "tendo alcançado / tendo ingressado",
+      "es": "habiendo alcanzado / habiendo ingresado"
+    },
+    "grammar": "gerund"
+  },
+  {
+    "pali": "ayamettha",
+    "meaning": {
+      "en": "this here / in this case this",
+      "pt": "este aqui / neste caso este",
+      "es": "este aquí / en este caso este"
+    },
+    "grammar": "compound: pronoun + indeclinable"
+  },
+  {
+    "pali": "vutto",
+    "meaning": {
+      "en": "said / spoken",
+      "pt": "dito / falado",
+      "es": "dicho / hablado"
+    },
+    "grammar": "past participle, masculine, nominative singular"
+  },
+  {
+    "pali": "therassa",
+    "meaning": {
+      "en": "of the elder",
+      "pt": "do ancião",
+      "es": "del anciano"
+    },
+    "grammar": "noun, masculine, genitive singular"
+  },
+  {
+    "pali": "tīṇi",
+    "meaning": {
+      "en": "three",
+      "pt": "três",
+      "es": "tres"
+    },
+    "grammar": "numeral, neuter, nominative/accusative plural"
+  },
+  {
+    "pali": "yadā",
+    "meaning": {
+      "en": "when / whenever",
+      "pt": "quando / sempre que",
+      "es": "cuando / siempre que"
+    },
+    "grammar": "indeclinable, relative adverb"
+  },
+  {
+    "pali": "tatrāyaṃ",
+    "meaning": {
+      "en": "there this / herein this",
+      "pt": "aí este / nisto este",
+      "es": "ahí este / en esto este"
+    },
+    "grammar": "compound: indeclinable + pronoun, nominative singular"
+  },
+  {
+    "pali": "ettāvatā",
+    "meaning": {
+      "en": "so far / to that extent",
+      "pt": "até aí / nessa medida",
+      "es": "hasta ahí / en esa medida"
+    },
+    "grammar": "indeclinable, adverb"
+  },
+  {
+    "pali": "cetaṃ",
+    "meaning": {
+      "en": "and this",
+      "pt": "e este / e isto",
+      "es": "y este / y esto"
+    },
+    "grammar": "compound: indeclinable + pronoun, neuter nominative/accusative singular"
+  },
+  {
+    "pali": "viharati",
+    "meaning": {
+      "en": "dwells / lives / abides",
+      "pt": "reside / vive / permanece",
+      "es": "reside / vive / permanece"
+    },
+    "grammar": "verb, 3rd person singular, present"
+  },
+  {
+    "pali": "aṅgaṃ",
+    "meaning": {
+      "en": "factor / constituent / limb",
+      "pt": "fator / constituinte / membro",
+      "es": "factor / constituyente / miembro"
+    },
+    "grammar": "noun, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "hotīti",
+    "meaning": {
+      "en": "is (with quotation mark)",
+      "pt": "é (com marca de citação)",
+      "es": "es (con marca de cita)"
+    },
+    "grammar": "compound: verb + indeclinable"
+  },
+  {
+    "pali": "bhijjati",
+    "meaning": {
+      "en": "is broken / is destroyed",
+      "pt": "é quebrado / é destruído",
+      "es": "es roto / es destruido"
+    },
+    "grammar": "verb, 3rd person singular, passive"
+  },
+  {
+    "pali": "vattaṃ",
+    "meaning": {
+      "en": "duty / observance / practice",
+      "pt": "dever / observância / prática",
+      "es": "deber / observancia / práctica"
+    },
+    "grammar": "noun, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "vitakko",
+    "meaning": {
+      "en": "initial application of mind / thought",
+      "pt": "aplicação inicial da mente / pensamento",
+      "es": "aplicación inicial de la mente / pensamiento"
+    },
+    "grammar": "noun, masculine, nominative singular"
+  },
+  {
+    "pali": "esa",
+    "meaning": {
+      "en": "this",
+      "pt": "este / esta",
+      "es": "este / esta"
+    },
+    "grammar": "pronoun, masculine/feminine, nominative singular"
+  },
+  {
+    "pali": "paraṃ",
+    "meaning": {
+      "en": "beyond / after / another",
+      "pt": "além / depois / outro",
+      "es": "más allá / después / otro"
+    },
+    "grammar": "adjective/adverb, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "duvidhaṃ",
+    "meaning": {
+      "en": "twofold",
+      "pt": "dúplice",
+      "es": "doble"
+    },
+    "grammar": "adjective, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "cīvaraṃ",
+    "meaning": {
+      "en": "robe",
+      "pt": "manto",
+      "es": "túnica / manto"
+    },
+    "grammar": "noun, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "arahattaṃ",
+    "meaning": {
+      "en": "arahantship / final emancipation",
+      "pt": "estado de arahant / emancipação final",
+      "es": "estado de arahant / emancipación final"
+    },
+    "grammar": "noun, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "kiñci",
+    "meaning": {
+      "en": "something / anything",
+      "pt": "algo / qualquer coisa",
+      "es": "algo / cualquier cosa"
+    },
+    "grammar": "pronoun, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "vihāraṃ",
+    "meaning": {
+      "en": "dwelling / monastery",
+      "pt": "morada / mosteiro",
+      "es": "morada / monasterio"
+    },
+    "grammar": "noun, masculine, accusative singular"
+  },
+  {
+    "pali": "napi",
+    "meaning": {
+      "en": "not even / neither",
+      "pt": "nem mesmo / tampouco",
+      "es": "ni siquiera / tampoco"
+    },
+    "grammar": "compound: indeclinable + indeclinable"
+  },
+  {
+    "pali": "evañhi",
+    "meaning": {
+      "en": "for thus / exactly so",
+      "pt": "pois assim / exatamente assim",
+      "es": "pues así / exactamente así"
+    },
+    "grammar": "compound: indeclinable + indeclinable"
+  },
+  {
+    "pali": "idamassa",
+    "meaning": {
+      "en": "this of his / this for him",
+      "pt": "isto dele / isto para ele",
+      "es": "esto de él / esto para él"
+    },
+    "grammar": "compound: pronoun + pronoun"
+  },
+  {
+    "pali": "catutthaṃ",
+    "meaning": {
+      "en": "fourth",
+      "pt": "quarto",
+      "es": "cuarto"
+    },
+    "grammar": "adjective, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "dhuto",
+    "meaning": {
+      "en": "shaken off / ascetic",
+      "pt": "sacudido / asceta",
+      "es": "sacudido / asceta"
+    },
+    "grammar": "past participle, masculine, nominative singular"
+  },
+  {
+    "pali": "dutiyaṃ",
+    "meaning": {
+      "en": "second",
+      "pt": "segundo",
+      "es": "segundo"
+    },
+    "grammar": "adjective, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "vibhaṅge",
+    "meaning": {
+      "en": "in the analysis / in the Vibhaṅga",
+      "pt": "na análise / no Vibhaṅga",
+      "es": "en el análisis / en el Vibhaṅga"
+    },
+    "grammar": "noun, masculine, locative singular"
+  },
+  {
+    "pali": "palibodho",
+    "meaning": {
+      "en": "impediment / obstacle",
+      "pt": "impedimento / obstáculo",
+      "es": "impedimento / obstáculo"
+    },
+    "grammar": "noun, masculine, nominative singular"
+  },
+  {
+    "pali": "sīlena",
+    "meaning": {
+      "en": "by virtue / with morality",
+      "pt": "pela virtude / com moralidade",
+      "es": "por la virtud / con moralidad"
+    },
+    "grammar": "noun, neuter, instrumental singular"
+  },
+  {
+    "pali": "yāni",
+    "meaning": {
+      "en": "which / whichever",
+      "pt": "quais / quaisquer",
+      "es": "cuales / cualesquiera"
+    },
+    "grammar": "pronoun, neuter, nominative/accusative plural"
+  },
+  {
+    "pali": "vuttampi",
+    "meaning": {
+      "en": "even what is said / also spoken",
+      "pt": "mesmo o que é dito / também falado",
+      "es": "incluso lo que se dice / también hablado"
+    },
+    "grammar": "compound: past participle + indeclinable"
+  },
+  {
+    "pali": "tañhi",
+    "meaning": {
+      "en": "for that / because that",
+      "pt": "pois isso / porque aquilo",
+      "es": "pues eso / porque aquello"
+    },
+    "grammar": "compound: pronoun + indeclinable"
+  },
+  {
+    "pali": "ayaṃ",
+    "meaning": {
+      "en": "this",
+      "pt": "este / esta",
+      "es": "este / esta"
+    },
+    "grammar": "pronoun, masculine/feminine, nominative singular"
+  },
+  {
+    "pali": "laddhaṃ",
+    "meaning": {
+      "en": "obtained / received",
+      "pt": "obtido / recebido",
+      "es": "obtenido / recibido"
+    },
+    "grammar": "past participle, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "sakkā",
+    "meaning": {
+      "en": "it is possible",
+      "pt": "é possível",
+      "es": "es posible"
+    },
+    "grammar": "indeclinable, particle"
+  },
+  {
+    "pali": "cetaso",
+    "meaning": {
+      "en": "of the mind / of the heart",
+      "pt": "da mente / do coração",
+      "es": "de la mente / del corazón"
+    },
+    "grammar": "noun, neuter, genitive singular"
+  },
+  {
+    "pali": "aññataraṃ",
+    "meaning": {
+      "en": "one of a certain / a certain",
+      "pt": "um de um certo / um certo",
+      "es": "uno de un cierto / un cierto"
+    },
+    "grammar": "adjective/pronoun, neuter/masculine accusative singular"
+  },
+  {
+    "pali": "samādiyāmi",
+    "meaning": {
+      "en": "I undertake",
+      "pt": "eu assumo / eu me comprometo",
+      "es": "yo emprendo / yo me comprometo"
+    },
+    "grammar": "verb, 1st person singular, present"
+  },
+  {
+    "pali": "kātuṃ",
+    "meaning": {
+      "en": "to do / to make",
+      "pt": "fazer / realizar",
+      "es": "hacer / realizar"
+    },
+    "grammar": "infinitive"
+  },
+  {
+    "pali": "ayampi",
+    "meaning": {
+      "en": "this also / even this",
+      "pt": "isto também / até isto",
+      "es": "esto también / incluso esto"
+    },
+    "grammar": "compound: pronoun + indeclinable"
+  },
+  {
+    "pali": "vasitabbaṃ",
+    "meaning": {
+      "en": "should be lived / to be dwelt",
+      "pt": "deve ser vivido / a ser habitado",
+      "es": "debe ser vivido / a ser habitado"
+    },
+    "grammar": "future passive participle, neuter, nominative singular"
+  },
+  {
+    "pali": "uppādāya",
+    "meaning": {
+      "en": "having arisen / for the arising",
+      "pt": "tendo surgido / para o surgimento",
+      "es": "habiendo surgido / para el surgimiento"
+    },
+    "grammar": "gerund / noun, dative singular"
+  },
+  {
+    "pali": "vuṭṭhāya",
+    "meaning": {
+      "en": "having arisen / having emerged",
+      "pt": "tendo se levantado / tendo emergido",
+      "es": "habiéndose levantado / habiendo emergido"
+    },
+    "grammar": "gerund"
+  },
+  {
+    "pali": "pathavīkasiṇaṃ",
+    "meaning": {
+      "en": "earth kasiṇa / earth totality",
+      "pt": "kasiṇa da terra / totalidade da terra",
+      "es": "kasiṇa de tierra / totalidad de tierra"
+    },
+    "grammar": "noun, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "ajjhupekkhati",
+    "meaning": {
+      "en": "looks on with equanimity / ignores",
+      "pt": "observa com equanimidade / ignora",
+      "es": "observa con ecuanimidad / ignora"
+    },
+    "grammar": "verb, 3rd person singular, present"
+  },
+  {
+    "pali": "kiṃ",
+    "meaning": {
+      "en": "what / why",
+      "pt": "o que / por que",
+      "es": "qué / por qué"
+    },
+    "grammar": "pronoun, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "samaṃ",
+    "meaning": {
+      "en": "equal / even / calmly",
+      "pt": "igual / nivelado / calmamente",
+      "es": "igual / nivelado / tranquilamente"
+    },
+    "grammar": "adjective/adverb, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "katamaṃ",
+    "meaning": {
+      "en": "which",
+      "pt": "qual",
+      "es": "cuál"
+    },
+    "grammar": "pronoun, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "theraṃ",
+    "meaning": {
+      "en": "elder",
+      "pt": "ancião",
+      "es": "anciano"
+    },
+    "grammar": "noun, masculine, accusative singular"
+  },
+  {
+    "pali": "nikkhamitvā",
+    "meaning": {
+      "en": "having departed / having gone out",
+      "pt": "tendo partido / tendo saído",
+      "es": "habiendo partido / habiendo salido"
+    },
+    "grammar": "gerund"
+  },
+  {
+    "pali": "kiñcāpi",
+    "meaning": {
+      "en": "whatever / although",
+      "pt": "o que quer que seja / embora",
+      "es": "lo que sea / aunque"
+    },
+    "grammar": "indeclinable"
+  },
+  {
+    "pali": "tadā",
+    "meaning": {
+      "en": "then / at that time",
+      "pt": "então / naquela época",
+      "es": "entonces / en ese momento"
+    },
+    "grammar": "indeclinable, adverb"
+  },
+  {
+    "pali": "pattaṃ",
+    "meaning": {
+      "en": "bowl / attained",
+      "pt": "tigela / alcançado",
+      "es": "cuenco / alcanzado"
+    },
+    "grammar": "noun, masculine, accusative singular / past participle, neuter"
+  },
+  {
+    "pali": "vadanti",
+    "meaning": {
+      "en": "they say / they declare",
+      "pt": "eles dizem / eles declaram",
+      "es": "ellos dicen / ellos declaran"
+    },
+    "grammar": "verb, 3rd person plural, present"
+  },
+  {
+    "pali": "kassaci",
+    "meaning": {
+      "en": "of anyone / to anyone",
+      "pt": "de qualquer um / para qualquer um",
+      "es": "de cualquiera / a cualquiera"
+    },
+    "grammar": "pronoun, genitive/dative singular"
+  },
+  {
+    "pali": "vatvā",
+    "meaning": {
+      "en": "having said / having spoken",
+      "pt": "tendo dito / tendo falado",
+      "es": "habiendo dicho / habiendo hablado"
+    },
+    "grammar": "gerund"
+  },
+  {
+    "pali": "tesu",
+    "meaning": {
+      "en": "in them / among them",
+      "pt": "neles / entre eles",
+      "es": "en ellos / entre ellos"
+    },
+    "grammar": "pronoun, masculine/neuter, locative plural"
+  },
+  {
+    "pali": "samādānavidhānappabhedabhedānisaṃsavaṇṇanā",
+    "meaning": {
+      "en": "explanation of the differences in methods of undertaking and their benefits",
+      "pt": "explicação das diferenças nos métodos de assunção e seus benefícios",
+      "es": "explicación de las diferencias en los métodos de asunción y sus beneficios"
+    },
+    "grammar": "noun, feminine, nominative singular"
+  },
+  {
+    "pali": "tiṇṇampi",
+    "meaning": {
+      "en": "even of the three",
+      "pt": "mesmo dos três",
+      "es": "incluso de los tres"
+    },
+    "grammar": "compound: numeral + indeclinable"
+  },
+  {
+    "pali": "sesāni",
+    "meaning": {
+      "en": "the remaining / the rest",
+      "pt": "os restantes / o resto",
+      "es": "los restantes / el resto"
+    },
+    "grammar": "adjective, neuter, nominative/accusative plural"
+  },
+  {
+    "pali": "ācariyassa",
+    "meaning": {
+      "en": "of the teacher",
+      "pt": "do professor",
+      "es": "del maestro"
+    },
+    "grammar": "noun, masculine, genitive singular"
+  },
+  {
+    "pali": "rāgacarito",
+    "meaning": {
+      "en": "one of greedy temperament",
+      "pt": "alguém de temperamento cobiçoso",
+      "es": "alguien de temperamento codicioso"
+    },
+    "grammar": "noun/adjective, masculine, nominative singular"
+  },
+  {
+    "pali": "panetaṃ",
+    "meaning": {
+      "en": "but this / however this",
+      "pt": "mas este / contudo este",
+      "es": "pero este / sin embargo este"
+    },
+    "grammar": "compound: indeclinable + pronoun"
+  },
+  {
+    "pali": "samādhinā",
+    "meaning": {
+      "en": "by concentration",
+      "pt": "pela concentração",
+      "es": "por la concentración"
+    },
+    "grammar": "noun, masculine, instrumental singular"
+  },
+  {
+    "pali": "dhammaṃ",
+    "meaning": {
+      "en": "Dhamma / teaching / phenomenon",
+      "pt": "Dhamma / ensinamento / fenômeno",
+      "es": "Dhamma / enseñanza / fenómeno"
+    },
+    "grammar": "noun, masculine, accusative singular"
+  },
+  {
+    "pali": "pavattitaṃ",
+    "meaning": {
+      "en": "set in motion / proceeded",
+      "pt": "posto em movimento / prosseguido",
+      "es": "puesto en movimiento / proseguido"
+    },
+    "grammar": "past participle, neuter, nominative/accusative singular"
+  },
+  {
+    "pali": "sandhāya",
+    "meaning": {
+      "en": "referring to / in connection with",
+      "pt": "referindo-se a / em conexão com",
+      "es": "refiriéndose a / en conexión con"
+    },
+    "grammar": "gerund"
+  }
+]

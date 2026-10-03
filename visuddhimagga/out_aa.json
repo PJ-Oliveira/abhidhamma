@@ -1,0 +1,1001 @@
+[
+  {
+    "pali": "cittāni",
+    "meaning": {
+      "en": "minds / consciousnesses",
+      "pt": "mentes / consciências",
+      "es": "mentes / conciencias"
+    },
+    "grammar": "noun (neuter, nominative/accusative plural)"
+  },
+  {
+    "pali": "mayā",
+    "meaning": {
+      "en": "by me",
+      "pt": "por mim",
+      "es": "por mí"
+    },
+    "grammar": "pronoun (first person, instrumental singular)"
+  },
+  {
+    "pali": "jāyanti",
+    "meaning": {
+      "en": "they are born / arise",
+      "pt": "nascem / surgem",
+      "es": "nacen / surgen"
+    },
+    "grammar": "verb (present, 3rd person plural)"
+  },
+  {
+    "pali": "saha",
+    "meaning": {
+      "en": "with / accompanied by",
+      "pt": "com / acompanhado por",
+      "es": "con / acompañado por"
+    },
+    "grammar": "indeclinable"
+  },
+  {
+    "pali": "kāme",
+    "meaning": {
+      "en": "in sensuality / sensual desires",
+      "pt": "na sensualidade / desejos sensuais",
+      "es": "en la sensualidad / deseos sensuales"
+    },
+    "grammar": "noun (masculine, locative singular or accusative plural)"
+  },
+  {
+    "pali": "vacanaṃ",
+    "meaning": {
+      "en": "word / speech",
+      "pt": "palavra / fala",
+      "es": "palabra / habla"
+    },
+    "grammar": "noun (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "paricchedo",
+    "meaning": {
+      "en": "boundary / limit / chapter",
+      "pt": "limite / fronteira / capítulo",
+      "es": "límite / frontera / capítulo"
+    },
+    "grammar": "noun (masculine, nominative singular)"
+  },
+  {
+    "pali": "ceti",
+    "meaning": {
+      "en": "and thus",
+      "pt": "e assim",
+      "es": "y así"
+    },
+    "grammar": "compound (ca + iti)"
+  },
+  {
+    "pali": "bhavanti",
+    "meaning": {
+      "en": "they become / are",
+      "pt": "eles se tornam / são",
+      "es": "ellos llegan a ser / son"
+    },
+    "grammar": "verb (present, 3rd person plural)"
+  },
+  {
+    "pali": "kusalaṃ",
+    "meaning": {
+      "en": "wholesome / skillful",
+      "pt": "benéfico / hábil",
+      "es": "beneficioso / hábil"
+    },
+    "grammar": "adjective/noun (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "cittesu",
+    "meaning": {
+      "en": "in the minds",
+      "pt": "nas mentes",
+      "es": "en las mentes"
+    },
+    "grammar": "noun (neuter, locative plural)"
+  },
+  {
+    "pali": "jāyati",
+    "meaning": {
+      "en": "is born / arises",
+      "pt": "nasce / surge",
+      "es": "nace / surge"
+    },
+    "grammar": "verb (present, 3rd person singular)"
+  },
+  {
+    "pali": "cha",
+    "meaning": {
+      "en": "six",
+      "pt": "seis",
+      "es": "seis"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "kusalassa",
+    "meaning": {
+      "en": "of the wholesome",
+      "pt": "do benéfico",
+      "es": "de lo beneficioso"
+    },
+    "grammar": "adjective/noun (neuter, genitive singular)"
+  },
+  {
+    "pali": "tīsu",
+    "meaning": {
+      "en": "in three",
+      "pt": "em três",
+      "es": "en tres"
+    },
+    "grammar": "numeral (locative plural)"
+  },
+  {
+    "pali": "upekkhāsahagataṃ",
+    "meaning": {
+      "en": "accompanied by equanimity",
+      "pt": "acompanhado por equanimidade",
+      "es": "acompañado por ecuanimidad"
+    },
+    "grammar": "adjective (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "sabbe",
+    "meaning": {
+      "en": "all",
+      "pt": "todos",
+      "es": "todos"
+    },
+    "grammar": "adjective/pronoun (masculine, nominative plural)"
+  },
+  {
+    "pali": "citte",
+    "meaning": {
+      "en": "in the mind",
+      "pt": "na mente",
+      "es": "en la mente"
+    },
+    "grammar": "noun (neuter, locative singular)"
+  },
+  {
+    "pali": "vuttappakārena",
+    "meaning": {
+      "en": "in the manner spoken / by the way described",
+      "pt": "da maneira descrita",
+      "es": "de la manera descrita"
+    },
+    "grammar": "compound noun (instrumental singular)"
+  },
+  {
+    "pali": "bhave",
+    "meaning": {
+      "en": "in existence / in becoming",
+      "pt": "na existência / no vir a ser",
+      "es": "en la existencia / en el llegar a ser"
+    },
+    "grammar": "noun (masculine, locative singular)"
+  },
+  {
+    "pali": "vinā",
+    "meaning": {
+      "en": "without",
+      "pt": "sem",
+      "es": "sin"
+    },
+    "grammar": "indeclinable"
+  },
+  {
+    "pali": "sattassa",
+    "meaning": {
+      "en": "of the being",
+      "pt": "do ser",
+      "es": "del ser"
+    },
+    "grammar": "noun (masculine, genitive singular)"
+  },
+  {
+    "pali": "kammaṃ",
+    "meaning": {
+      "en": "action / karma",
+      "pt": "ação / carma",
+      "es": "acción / karma"
+    },
+    "grammar": "noun (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "mānasaṃ",
+    "meaning": {
+      "en": "mind / intention",
+      "pt": "mente / intenção",
+      "es": "mente / intención"
+    },
+    "grammar": "noun (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "cittuppādā",
+    "meaning": {
+      "en": "arisings of consciousness",
+      "pt": "surgimentos da consciência",
+      "es": "surgimientos de la conciencia"
+    },
+    "grammar": "compound noun (masculine, nominative plural)"
+  },
+  {
+    "pali": "jāyare",
+    "meaning": {
+      "en": "they are born / arise",
+      "pt": "nascem / surgem",
+      "es": "nacen / surgen"
+    },
+    "grammar": "verb (present middle, 3rd person plural)"
+  },
+  {
+    "pali": "nava",
+    "meaning": {
+      "en": "nine",
+      "pt": "nove",
+      "es": "nueve"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "mānasā",
+    "meaning": {
+      "en": "by mind / minds",
+      "pt": "pela mente / mentes",
+      "es": "por la mente / mentes"
+    },
+    "grammar": "noun (neuter, instrumental singular or ablative/plural)"
+  },
+  {
+    "pali": "dvādasa",
+    "meaning": {
+      "en": "twelve",
+      "pt": "doze",
+      "es": "doce"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "yadi",
+    "meaning": {
+      "en": "if",
+      "pt": "se",
+      "es": "si"
+    },
+    "grammar": "indeclinable"
+  },
+  {
+    "pali": "siyuṃ",
+    "meaning": {
+      "en": "they may be / would be",
+      "pt": "eles podem ser / seriam",
+      "es": "ellos pueden ser / serían"
+    },
+    "grammar": "verb (optative, 3rd person plural)"
+  },
+  {
+    "pali": "labbhanti",
+    "meaning": {
+      "en": "they are obtained / found",
+      "pt": "são obtidos / encontrados",
+      "es": "son obtenidos / encontrados"
+    },
+    "grammar": "verb (present passive, 3rd person plural)"
+  },
+  {
+    "pali": "vibhāvinā",
+    "meaning": {
+      "en": "by the wise one",
+      "pt": "pelo sábio",
+      "es": "por el sabio"
+    },
+    "grammar": "noun/adjective (masculine, instrumental singular)"
+  },
+  {
+    "pali": "pākā",
+    "meaning": {
+      "en": "results / ripenings",
+      "pt": "resultados / amadurecimentos",
+      "es": "resultados / maduraciones"
+    },
+    "grammar": "noun (masculine, nominative plural)"
+  },
+  {
+    "pali": "niṭṭhitā",
+    "meaning": {
+      "en": "finished / completed",
+      "pt": "concluídos / terminados",
+      "es": "concluidos / terminados"
+    },
+    "grammar": "adjective/past participle (nominative plural)"
+  },
+  {
+    "pali": "ārammaṇe",
+    "meaning": {
+      "en": "in the object / sense object",
+      "pt": "no objeto / objeto dos sentidos",
+      "es": "en el objeto / objeto de los sentidos"
+    },
+    "grammar": "noun (neuter, locative singular)"
+  },
+  {
+    "pali": "tayo",
+    "meaning": {
+      "en": "three",
+      "pt": "três",
+      "es": "tres"
+    },
+    "grammar": "numeral (masculine, nominative/accusative plural)"
+  },
+  {
+    "pali": "paṇḍitena",
+    "meaning": {
+      "en": "by the wise person",
+      "pt": "pela pessoa sábia",
+      "es": "por la persona sabia"
+    },
+    "grammar": "noun (masculine, instrumental singular)"
+  },
+  {
+    "pali": "hitvā",
+    "meaning": {
+      "en": "having abandoned / having left",
+      "pt": "tendo abandonado / tendo deixado",
+      "es": "habiendo abandonado / habiendo dejado"
+    },
+    "grammar": "absolutive / gerund"
+  },
+  {
+    "pali": "daṭṭhabbaṃ",
+    "meaning": {
+      "en": "to be seen / should be regarded",
+      "pt": "a ser visto / deve ser considerado",
+      "es": "para ser visto / debe ser considerado"
+    },
+    "grammar": "future passive participle (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "cittānaṃ",
+    "meaning": {
+      "en": "of the minds",
+      "pt": "das mentes",
+      "es": "de las mentes"
+    },
+    "grammar": "noun (neuter, genitive plural)"
+  },
+  {
+    "pali": "cetasikā",
+    "meaning": {
+      "en": "mental factors",
+      "pt": "fatores mentais",
+      "es": "factores mentales"
+    },
+    "grammar": "noun (masculine, nominative plural)"
+  },
+  {
+    "pali": "tathāgato",
+    "meaning": {
+      "en": "the Tathagata / Thus Gone One",
+      "pt": "o Tathagata / Aquele Que Assim Foi",
+      "es": "el Tathagata / Aquel Que Así Se Fue"
+    },
+    "grammar": "noun (masculine, nominative singular)"
+  },
+  {
+    "pali": "tehi",
+    "meaning": {
+      "en": "by them / from them",
+      "pt": "por eles / a partir deles",
+      "es": "por ellos / a partir de ellos"
+    },
+    "grammar": "pronoun (instrumental/ablative plural)"
+  },
+  {
+    "pali": "sotāpannassa",
+    "meaning": {
+      "en": "of the stream-enterer",
+      "pt": "do que entrou na correnteza / sotapanna",
+      "es": "del que entró en la corriente / sotapanna"
+    },
+    "grammar": "noun (masculine, genitive singular)"
+  },
+  {
+    "pali": "dhīro",
+    "meaning": {
+      "en": "the wise one",
+      "pt": "o sábio",
+      "es": "el sabio"
+    },
+    "grammar": "noun/adjective (masculine, nominative singular)"
+  },
+  {
+    "pali": "bhaveyya",
+    "meaning": {
+      "en": "it would be / may be",
+      "pt": "seria / possa ser",
+      "es": "sería / pueda ser"
+    },
+    "grammar": "verb (optative, 3rd person singular)"
+  },
+  {
+    "pali": "yathārahaṃ",
+    "meaning": {
+      "en": "according to suitability / properly",
+      "pt": "de acordo com a adequação / apropriadamente",
+      "es": "de acuerdo con la idoneidad / apropiadamente"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "vīsati",
+    "meaning": {
+      "en": "twenty",
+      "pt": "vinte",
+      "es": "veinte"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "vipākā",
+    "meaning": {
+      "en": "results / karmic fruits",
+      "pt": "resultados / frutos cármicos",
+      "es": "resultados / frutos kármicos"
+    },
+    "grammar": "noun (masculine, nominative plural)"
+  },
+  {
+    "pali": "etassāti",
+    "meaning": {
+      "en": "of this (plus quotation marker 'iti')",
+      "pt": "disto (mais marcador de citação 'iti')",
+      "es": "de esto (más marcador de cita 'iti')"
+    },
+    "grammar": "compound (etassa + iti)"
+  },
+  {
+    "pali": "catunnaṃ",
+    "meaning": {
+      "en": "of the four",
+      "pt": "dos quatro",
+      "es": "de los cuatro"
+    },
+    "grammar": "numeral (genitive plural)"
+  },
+  {
+    "pali": "bhūmīsu",
+    "meaning": {
+      "en": "in the planes / levels",
+      "pt": "nos planos / níveis",
+      "es": "en los planos / niveles"
+    },
+    "grammar": "noun (feminine, locative plural)"
+  },
+  {
+    "pali": "viññāṇaṃ",
+    "meaning": {
+      "en": "consciousness",
+      "pt": "consciência",
+      "es": "conciencia"
+    },
+    "grammar": "noun (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "vipākāni",
+    "meaning": {
+      "en": "results / karmic fruits",
+      "pt": "resultados / frutos cármicos",
+      "es": "resultados / frutos kármicos"
+    },
+    "grammar": "noun (neuter, nominative/accusative plural)"
+  },
+  {
+    "pali": "sabbesaṃ",
+    "meaning": {
+      "en": "of all",
+      "pt": "de todos",
+      "es": "de todos"
+    },
+    "grammar": "pronoun/adjective (genitive plural)"
+  },
+  {
+    "pali": "kriyā",
+    "meaning": {
+      "en": "action / functional (consciousness)",
+      "pt": "ação / (consciência) funcional",
+      "es": "acción / (conciencia) funcional"
+    },
+    "grammar": "noun (feminine, nominative singular/plural)"
+  },
+  {
+    "pali": "jāyate",
+    "meaning": {
+      "en": "is born / arises",
+      "pt": "nasce / surge",
+      "es": "nace / surge"
+    },
+    "grammar": "verb (present middle, 3rd person singular)"
+  },
+  {
+    "pali": "yathākkamaṃ",
+    "meaning": {
+      "en": "in due order / successively",
+      "pt": "em devida ordem / sucessivamente",
+      "es": "en su debido orden / sucesivamente"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "sabbathāpi",
+    "meaning": {
+      "en": "in every way altogether",
+      "pt": "de todas as maneiras",
+      "es": "de todas las maneras"
+    },
+    "grammar": "adverb (sabbathā + api)"
+  },
+  {
+    "pali": "puthujjanassa",
+    "meaning": {
+      "en": "of the worldling / common person",
+      "pt": "da pessoa comum / mundano",
+      "es": "de la persona común / mundano"
+    },
+    "grammar": "noun (masculine, genitive singular)"
+  },
+  {
+    "pali": "pavattā",
+    "meaning": {
+      "en": "proceeded / set in motion",
+      "pt": "procedidos / colocados em movimento",
+      "es": "procedidos / puestos en movimiento"
+    },
+    "grammar": "past participle (nominative plural)"
+  },
+  {
+    "pali": "aṭṭhārasa",
+    "meaning": {
+      "en": "eighteen",
+      "pt": "dezoito",
+      "es": "dieciocho"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "attanā",
+    "meaning": {
+      "en": "by oneself",
+      "pt": "por si mesmo",
+      "es": "por uno mismo"
+    },
+    "grammar": "pronoun (instrumental singular)"
+  },
+  {
+    "pali": "ahetukā",
+    "meaning": {
+      "en": "rootless (without roots)",
+      "pt": "sem raízes (causais)",
+      "es": "sin raíces (causales)"
+    },
+    "grammar": "adjective (nominative plural)"
+  },
+  {
+    "pali": "viseso",
+    "meaning": {
+      "en": "distinction / difference",
+      "pt": "distinção / diferença",
+      "es": "distinción / diferencia"
+    },
+    "grammar": "noun (masculine, nominative singular)"
+  },
+  {
+    "pali": "uppajjanti",
+    "meaning": {
+      "en": "they arise",
+      "pt": "surgem",
+      "es": "surgen"
+    },
+    "grammar": "verb (present, 3rd person plural)"
+  },
+  {
+    "pali": "rūpe",
+    "meaning": {
+      "en": "in form / fine-material sphere",
+      "pt": "na forma / esfera da matéria sutil",
+      "es": "en la forma / esfera de la materia sutil"
+    },
+    "grammar": "noun (neuter, locative singular)"
+  },
+  {
+    "pali": "pavattiyaṃ",
+    "meaning": {
+      "en": "in the course of existence / process",
+      "pt": "no curso da existência / processo",
+      "es": "en el curso de la existencia / proceso"
+    },
+    "grammar": "noun (feminine, locative singular)"
+  },
+  {
+    "pali": "kāmo",
+    "meaning": {
+      "en": "sensual desire",
+      "pt": "desejo sensual",
+      "es": "deseo sensual"
+    },
+    "grammar": "noun (masculine, nominative singular)"
+  },
+  {
+    "pali": "dhammānaṃ",
+    "meaning": {
+      "en": "of the phenomena / states",
+      "pt": "dos fenômenos / estados",
+      "es": "de los fenómenos / estados"
+    },
+    "grammar": "noun (masculine, genitive plural)"
+  },
+  {
+    "pali": "dassetuṃ",
+    "meaning": {
+      "en": "to show / to demonstrate",
+      "pt": "para mostrar / para demonstrar",
+      "es": "para mostrar / para demostrar"
+    },
+    "grammar": "infinitive"
+  },
+  {
+    "pali": "channaṃ",
+    "meaning": {
+      "en": "of the six",
+      "pt": "dos seis",
+      "es": "de los seis"
+    },
+    "grammar": "numeral (genitive plural)"
+  },
+  {
+    "pali": "asaṅkhārikamekaṃ",
+    "meaning": {
+      "en": "one unprompted",
+      "pt": "um não instigado",
+      "es": "uno no instigado"
+    },
+    "grammar": "compound (asaṅkhārikaṃ + ekaṃ)"
+  },
+  {
+    "pali": "vipākaṃ",
+    "meaning": {
+      "en": "result / fruit",
+      "pt": "resultado / fruto",
+      "es": "resultado / fruto"
+    },
+    "grammar": "noun (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "tividhaṃ",
+    "meaning": {
+      "en": "threefold",
+      "pt": "triplo / tríplice",
+      "es": "triple"
+    },
+    "grammar": "adjective (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "tadārammaṇaṃ",
+    "meaning": {
+      "en": "registering consciousness / that-object",
+      "pt": "consciência de registro / esse objeto",
+      "es": "conciencia de registro / ese objeto"
+    },
+    "grammar": "noun (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "saṅgahaṃ",
+    "meaning": {
+      "en": "compendium / summary / inclusion",
+      "pt": "compêndio / resumo / inclusão",
+      "es": "compendio / resumen / inclusión"
+    },
+    "grammar": "noun (masculine, accusative singular)"
+  },
+  {
+    "pali": "pavuccati",
+    "meaning": {
+      "en": "is called / is said to be",
+      "pt": "é chamado / diz-se ser",
+      "es": "es llamado / se dice ser"
+    },
+    "grammar": "verb (passive, 3rd person singular)"
+  },
+  {
+    "pali": "pavatte",
+    "meaning": {
+      "en": "in the process / during life",
+      "pt": "no processo / durante a vida",
+      "es": "en el proceso / durante la vida"
+    },
+    "grammar": "noun (neuter, locative singular)"
+  },
+  {
+    "pali": "pakārena",
+    "meaning": {
+      "en": "by mode / by way of",
+      "pt": "por modo / por meio de",
+      "es": "por modo / por medio de"
+    },
+    "grammar": "noun (masculine, instrumental singular)"
+  },
+  {
+    "pali": "khīṇāsavassa",
+    "meaning": {
+      "en": "of the one whose taints are destroyed (Arahant)",
+      "pt": "daquele cujas corrupções foram destruídas (Arahant)",
+      "es": "de aquel cuyas corrupciones fueron destruidas (Arahant)"
+    },
+    "grammar": "noun/adjective (masculine, genitive singular)"
+  },
+  {
+    "pali": "jātassa",
+    "meaning": {
+      "en": "of the born / arisen",
+      "pt": "do nascido / surgido",
+      "es": "del nacido / surgido"
+    },
+    "grammar": "past participle (masculine/neuter, genitive singular)"
+  },
+  {
+    "pali": "etesaṃ",
+    "meaning": {
+      "en": "of these",
+      "pt": "destes",
+      "es": "de estos"
+    },
+    "grammar": "pronoun (genitive plural)"
+  },
+  {
+    "pali": "dvīsu",
+    "meaning": {
+      "en": "in two",
+      "pt": "em dois",
+      "es": "en dos"
+    },
+    "grammar": "numeral (locative plural)"
+  },
+  {
+    "pali": "cakkhudvāre",
+    "meaning": {
+      "en": "at the eye-door",
+      "pt": "na porta do olho",
+      "es": "en la puerta del ojo"
+    },
+    "grammar": "compound noun (neuter, locative singular)"
+  },
+  {
+    "pali": "abhidhammāvatāraṭīkāya",
+    "meaning": {
+      "en": "in the Abhidhammavatara Sub-commentary",
+      "pt": "no Subcomentário do Abhidhammavatara",
+      "es": "en el Subcomentario del Abhidhammavatara"
+    },
+    "grammar": "proper noun (feminine, locative singular)"
+  },
+  {
+    "pali": "yena",
+    "meaning": {
+      "en": "by which",
+      "pt": "pelo qual",
+      "es": "por el cual"
+    },
+    "grammar": "pronoun (instrumental singular)"
+  },
+  {
+    "pali": "vuttesu",
+    "meaning": {
+      "en": "in what was said / stated",
+      "pt": "no que foi dito / declarado",
+      "es": "en lo que fue dicho / declarado"
+    },
+    "grammar": "past participle (locative plural)"
+  },
+  {
+    "pali": "puggalānaṃ",
+    "meaning": {
+      "en": "of the individuals / persons",
+      "pt": "dos indivíduos / pessoas",
+      "es": "de los individuos / personas"
+    },
+    "grammar": "noun (masculine, genitive plural)"
+  },
+  {
+    "pali": "kāmāvacaraṃ",
+    "meaning": {
+      "en": "belonging to the sense-sphere",
+      "pt": "pertencente à esfera dos sentidos",
+      "es": "perteneciente a la esfera de los sentidos"
+    },
+    "grammar": "adjective (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "aṭṭhavidhaṃ",
+    "meaning": {
+      "en": "eightfold",
+      "pt": "oito vezes / óctuplo",
+      "es": "ocho veces / óctuple"
+    },
+    "grammar": "adjective (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "somanassasahagataṃ",
+    "meaning": {
+      "en": "accompanied by joy",
+      "pt": "acompanhado por alegria",
+      "es": "acompañado por alegría"
+    },
+    "grammar": "adjective (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "jāyante",
+    "meaning": {
+      "en": "they are born / arise",
+      "pt": "nascem / surgem",
+      "es": "nacen / surgen"
+    },
+    "grammar": "verb (present middle, 3rd person plural)"
+  },
+  {
+    "pali": "gocaraṃ",
+    "meaning": {
+      "en": "domain / object / resort",
+      "pt": "domínio / objeto / refúgio",
+      "es": "dominio / objeto / refugio"
+    },
+    "grammar": "noun (masculine, accusative singular)"
+  },
+  {
+    "pali": "ekantena",
+    "meaning": {
+      "en": "absolutely / certainly / exclusively",
+      "pt": "absolutamente / certamente / exclusivamente",
+      "es": "absolutamente / ciertamente / exclusivamente"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "aṭṭheva",
+    "meaning": {
+      "en": "just eight",
+      "pt": "apenas oito",
+      "es": "solo ocho"
+    },
+    "grammar": "compound (aṭṭha + eva)"
+  },
+  {
+    "pali": "ñāṇasampayuttaṃ",
+    "meaning": {
+      "en": "associated with knowledge",
+      "pt": "associado ao conhecimento",
+      "es": "asociado al conocimiento"
+    },
+    "grammar": "adjective (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "tisso",
+    "meaning": {
+      "en": "three",
+      "pt": "três",
+      "es": "tres"
+    },
+    "grammar": "numeral (feminine, nominative/accusative plural)"
+  },
+  {
+    "pali": "paṭisandhiṃ",
+    "meaning": {
+      "en": "rebirth-linking",
+      "pt": "vinculação ao renascimento",
+      "es": "vinculación al renacimiento"
+    },
+    "grammar": "noun (feminine, accusative singular)"
+  },
+  {
+    "pali": "pavattanti",
+    "meaning": {
+      "en": "they proceed / set rolling",
+      "pt": "procedem / colocam em movimento",
+      "es": "proceden / ponen en movimiento"
+    },
+    "grammar": "verb (present, 3rd person plural)"
+  },
+  {
+    "pali": "nanu",
+    "meaning": {
+      "en": "isn't it? / surely",
+      "pt": "não é? / certamente",
+      "es": "¿no es así? / ciertamente"
+    },
+    "grammar": "particle"
+  },
+  {
+    "pali": "lacchati",
+    "meaning": {
+      "en": "he/she will get / obtain",
+      "pt": "ele/ela obterá",
+      "es": "él/ella obtendrá"
+    },
+    "grammar": "verb (future, 3rd person singular)"
+  },
+  {
+    "pali": "labbhati",
+    "meaning": {
+      "en": "is obtained / found",
+      "pt": "é obtido / encontrado",
+      "es": "es obtenido / encontrado"
+    },
+    "grammar": "verb (present passive, 3rd person singular)"
+  },
+  {
+    "pali": "kāyacittānaṃ",
+    "meaning": {
+      "en": "of body and mind",
+      "pt": "do corpo e da mente",
+      "es": "del cuerpo y de la mente"
+    },
+    "grammar": "compound noun (neuter, genitive plural)"
+  },
+  {
+    "pali": "kāraṇaṃ",
+    "meaning": {
+      "en": "reason / cause",
+      "pt": "razão / causa",
+      "es": "razón / causa"
+    },
+    "grammar": "noun (neuter, nominative/accusative singular)"
+  },
+  {
+    "pali": "gacchanti",
+    "meaning": {
+      "en": "they go",
+      "pt": "eles vão",
+      "es": "ellos van"
+    },
+    "grammar": "verb (present, 3rd person plural)"
+  },
+  {
+    "pali": "doso",
+    "meaning": {
+      "en": "hatred / aversion / flaw",
+      "pt": "ódio / aversão / falha",
+      "es": "odio / aversión / defecto"
+    },
+    "grammar": "noun (masculine, nominative singular)"
+  },
+  {
+    "pali": "vicāro",
+    "meaning": {
+      "en": "sustained thought / discursive thinking",
+      "pt": "pensamento sustentado / pensamento discursivo",
+      "es": "pensamiento sostenido / pensamiento discursivo"
+    },
+    "grammar": "noun (masculine, nominative singular)"
+  },
+  {
+    "pali": "tatheva",
+    "meaning": {
+      "en": "just so / likewise",
+      "pt": "assim mesmo / da mesma forma",
+      "es": "así mismo / de la misma manera"
+    },
+    "grammar": "compound (tathā + eva)"
+  },
+  {
+    "pali": "soḷasa",
+    "meaning": {
+      "en": "sixteen",
+      "pt": "dezesseis",
+      "es": "dieciséis"
+    },
+    "grammar": "numeral"
+  }
+]

@@ -1,0 +1,999 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26BF0533306B0DCA00B46E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF0532306B0DCA00B46E8A /* AppDelegate.swift */; };
+		26BF0535306B0DCA00B46E8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF0534306B0DCA00B46E8A /* SceneDelegate.swift */; };
+		26BF0538306B0DCA00B46E8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0536306B0DCA00B46E8A /* LaunchScreen.storyboard */; };
+		26BF053B306B0DCA00B46E8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0539306B0DCA00B46E8A /* Main.storyboard */; };
+		26BF0544306B0DCA00B46E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF0543306B0DCA00B46E8A /* AppDelegate.swift */; };
+		26BF0547306B0DCA00B46E8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0545306B0DCA00B46E8A /* Main.storyboard */; };
+		26BF054E306B0DCA00B46E8A /* Visuddhimagga Reader Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 26BF054D306B0DCA00B46E8A /* Visuddhimagga Reader Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		26BF0558306B0DCA00B46E8A /* Visuddhimagga Reader Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 26BF0557306B0DCA00B46E8A /* Visuddhimagga Reader Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		26BF055D306B0DCA00B46E8A /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0522306B0DC700B46E8A /* Main.html */; };
+		26BF055E306B0DCA00B46E8A /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0522306B0DC700B46E8A /* Main.html */; };
+		26BF055F306B0DCA00B46E8A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0524306B0DC700B46E8A /* Icon.png */; };
+		26BF0560306B0DCA00B46E8A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0524306B0DC700B46E8A /* Icon.png */; };
+		26BF0561306B0DCA00B46E8A /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0525306B0DC700B46E8A /* Style.css */; };
+		26BF0562306B0DCA00B46E8A /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0525306B0DC700B46E8A /* Style.css */; };
+		26BF0563306B0DCA00B46E8A /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0526306B0DC700B46E8A /* Script.js */; };
+		26BF0564306B0DCA00B46E8A /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0526306B0DC700B46E8A /* Script.js */; };
+		26BF0565306B0DCA00B46E8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF0527306B0DC700B46E8A /* ViewController.swift */; };
+		26BF0566306B0DCA00B46E8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF0527306B0DC700B46E8A /* ViewController.swift */; };
+		26BF0567306B0DCA00B46E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0528306B0DCA00B46E8A /* Assets.xcassets */; };
+		26BF0568306B0DCA00B46E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0528306B0DCA00B46E8A /* Assets.xcassets */; };
+		26BF0569306B0DCA00B46E8A /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF052A306B0DCA00B46E8A /* SafariWebExtensionHandler.swift */; };
+		26BF056A306B0DCA00B46E8A /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF052A306B0DCA00B46E8A /* SafariWebExtensionHandler.swift */; };
+		26BF0583306B0DCC00B46E8A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26BF057C306B0DCC00B46E8A /* icon.png */; };
+		26BF0584306B0DCC00B46E8A /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 26BF057D306B0DCC00B46E8A /* favicon.ico */; };
+		26BF0585306B0DCC00B46E8A /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 26BF057E306B0DCC00B46E8A /* index.html */; };
+		26BF0586306B0DCC00B46E8A /* metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 26BF057F306B0DCC00B46E8A /* metadata.json */; };
+		26BF0587306B0DCC00B46E8A /* _expo in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0580306B0DCC00B46E8A /* _expo */; };
+		26BF0588306B0DCC00B46E8A /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0581306B0DCC00B46E8A /* manifest.json */; };
+		26BF0589306B0DCC00B46E8A /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0582306B0DCC00B46E8A /* assets */; };
+		26BF058A306B0DCC00B46E8A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26BF057C306B0DCC00B46E8A /* icon.png */; };
+		26BF058B306B0DCC00B46E8A /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 26BF057D306B0DCC00B46E8A /* favicon.ico */; };
+		26BF058C306B0DCC00B46E8A /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 26BF057E306B0DCC00B46E8A /* index.html */; };
+		26BF058D306B0DCC00B46E8A /* metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 26BF057F306B0DCC00B46E8A /* metadata.json */; };
+		26BF058E306B0DCC00B46E8A /* _expo in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0580306B0DCC00B46E8A /* _expo */; };
+		26BF058F306B0DCC00B46E8A /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0581306B0DCC00B46E8A /* manifest.json */; };
+		26BF0590306B0DCC00B46E8A /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 26BF0582306B0DCC00B46E8A /* assets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26BF054F306B0DCA00B46E8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26BF051C306B0DC700B46E8A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26BF054C306B0DCA00B46E8A;
+			remoteInfo = "Visuddhimagga Reader Extension (iOS)";
+		};
+		26BF0559306B0DCA00B46E8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26BF051C306B0DC700B46E8A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26BF0556306B0DCA00B46E8A;
+			remoteInfo = "Visuddhimagga Reader Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		26BF0570306B0DCA00B46E8A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				26BF054E306B0DCA00B46E8A /* Visuddhimagga Reader Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26BF0577306B0DCA00B46E8A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				26BF0558306B0DCA00B46E8A /* Visuddhimagga Reader Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		26BF0523306B0DC700B46E8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		26BF0524306B0DC700B46E8A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		26BF0525306B0DC700B46E8A /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		26BF0526306B0DC700B46E8A /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		26BF0527306B0DC700B46E8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		26BF0528306B0DCA00B46E8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26BF052A306B0DCA00B46E8A /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		26BF052F306B0DCA00B46E8A /* Visuddhimagga Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Visuddhimagga Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26BF0532306B0DCA00B46E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26BF0534306B0DCA00B46E8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		26BF0537306B0DCA00B46E8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		26BF053A306B0DCA00B46E8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		26BF053C306B0DCA00B46E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26BF0541306B0DCA00B46E8A /* Visuddhimagga Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Visuddhimagga Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26BF0543306B0DCA00B46E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26BF0546306B0DCA00B46E8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		26BF0548306B0DCA00B46E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26BF054D306B0DCA00B46E8A /* Visuddhimagga Reader Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Visuddhimagga Reader Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26BF0552306B0DCA00B46E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26BF0557306B0DCA00B46E8A /* Visuddhimagga Reader Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Visuddhimagga Reader Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26BF055C306B0DCA00B46E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26BF057C306B0DCC00B46E8A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../../dist/icon.png; sourceTree = "<group>"; };
+		26BF057D306B0DCC00B46E8A /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = favicon.ico; path = ../../../dist/favicon.ico; sourceTree = "<group>"; };
+		26BF057E306B0DCC00B46E8A /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = index.html; path = ../../../dist/index.html; sourceTree = "<group>"; };
+		26BF057F306B0DCC00B46E8A /* metadata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = metadata.json; path = ../../../dist/metadata.json; sourceTree = "<group>"; };
+		26BF0580306B0DCC00B46E8A /* _expo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _expo; path = ../../../dist/_expo; sourceTree = "<group>"; };
+		26BF0581306B0DCC00B46E8A /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../dist/manifest.json; sourceTree = "<group>"; };
+		26BF0582306B0DCC00B46E8A /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../../dist/assets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26BF052C306B0DCA00B46E8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26BF053E306B0DCA00B46E8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26BF054A306B0DCA00B46E8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26BF0554306B0DCA00B46E8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26BF051B306B0DC700B46E8A = {
+			isa = PBXGroup;
+			children = (
+				26BF0520306B0DC700B46E8A /* Shared (App) */,
+				26BF0529306B0DCA00B46E8A /* Shared (Extension) */,
+				26BF0531306B0DCA00B46E8A /* iOS (App) */,
+				26BF0542306B0DCA00B46E8A /* macOS (App) */,
+				26BF0551306B0DCA00B46E8A /* iOS (Extension) */,
+				26BF055B306B0DCA00B46E8A /* macOS (Extension) */,
+				26BF0530306B0DCA00B46E8A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26BF0520306B0DC700B46E8A /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				26BF0527306B0DC700B46E8A /* ViewController.swift */,
+				26BF0528306B0DCA00B46E8A /* Assets.xcassets */,
+				26BF0521306B0DC700B46E8A /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		26BF0521306B0DC700B46E8A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				26BF0522306B0DC700B46E8A /* Main.html */,
+				26BF0524306B0DC700B46E8A /* Icon.png */,
+				26BF0525306B0DC700B46E8A /* Style.css */,
+				26BF0526306B0DC700B46E8A /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		26BF0529306B0DCA00B46E8A /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				26BF057B306B0DCC00B46E8A /* Resources */,
+				26BF052A306B0DCA00B46E8A /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		26BF0530306B0DCA00B46E8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26BF052F306B0DCA00B46E8A /* Visuddhimagga Reader.app */,
+				26BF0541306B0DCA00B46E8A /* Visuddhimagga Reader.app */,
+				26BF054D306B0DCA00B46E8A /* Visuddhimagga Reader Extension.appex */,
+				26BF0557306B0DCA00B46E8A /* Visuddhimagga Reader Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26BF0531306B0DCA00B46E8A /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				26BF0532306B0DCA00B46E8A /* AppDelegate.swift */,
+				26BF0534306B0DCA00B46E8A /* SceneDelegate.swift */,
+				26BF0536306B0DCA00B46E8A /* LaunchScreen.storyboard */,
+				26BF0539306B0DCA00B46E8A /* Main.storyboard */,
+				26BF053C306B0DCA00B46E8A /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		26BF0542306B0DCA00B46E8A /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				26BF0543306B0DCA00B46E8A /* AppDelegate.swift */,
+				26BF0545306B0DCA00B46E8A /* Main.storyboard */,
+				26BF0548306B0DCA00B46E8A /* Info.plist */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		26BF0551306B0DCA00B46E8A /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				26BF0552306B0DCA00B46E8A /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		26BF055B306B0DCA00B46E8A /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				26BF055C306B0DCA00B46E8A /* Info.plist */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		26BF057B306B0DCC00B46E8A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				26BF057C306B0DCC00B46E8A /* icon.png */,
+				26BF057D306B0DCC00B46E8A /* favicon.ico */,
+				26BF057E306B0DCC00B46E8A /* index.html */,
+				26BF057F306B0DCC00B46E8A /* metadata.json */,
+				26BF0580306B0DCC00B46E8A /* _expo */,
+				26BF0581306B0DCC00B46E8A /* manifest.json */,
+				26BF0582306B0DCC00B46E8A /* assets */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26BF052E306B0DCA00B46E8A /* Visuddhimagga Reader (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26BF0571306B0DCA00B46E8A /* Build configuration list for PBXNativeTarget "Visuddhimagga Reader (iOS)" */;
+			buildPhases = (
+				26BF052B306B0DCA00B46E8A /* Sources */,
+				26BF052C306B0DCA00B46E8A /* Frameworks */,
+				26BF052D306B0DCA00B46E8A /* Resources */,
+				26BF0570306B0DCA00B46E8A /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26BF0550306B0DCA00B46E8A /* PBXTargetDependency */,
+			);
+			name = "Visuddhimagga Reader (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Visuddhimagga Reader (iOS)";
+			productReference = 26BF052F306B0DCA00B46E8A /* Visuddhimagga Reader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26BF0540306B0DCA00B46E8A /* Visuddhimagga Reader (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26BF0578306B0DCA00B46E8A /* Build configuration list for PBXNativeTarget "Visuddhimagga Reader (macOS)" */;
+			buildPhases = (
+				26BF053D306B0DCA00B46E8A /* Sources */,
+				26BF053E306B0DCA00B46E8A /* Frameworks */,
+				26BF053F306B0DCA00B46E8A /* Resources */,
+				26BF0577306B0DCA00B46E8A /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26BF055A306B0DCA00B46E8A /* PBXTargetDependency */,
+			);
+			name = "Visuddhimagga Reader (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Visuddhimagga Reader (macOS)";
+			productReference = 26BF0541306B0DCA00B46E8A /* Visuddhimagga Reader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26BF054C306B0DCA00B46E8A /* Visuddhimagga Reader Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26BF056D306B0DCA00B46E8A /* Build configuration list for PBXNativeTarget "Visuddhimagga Reader Extension (iOS)" */;
+			buildPhases = (
+				26BF0549306B0DCA00B46E8A /* Sources */,
+				26BF054A306B0DCA00B46E8A /* Frameworks */,
+				26BF054B306B0DCA00B46E8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Visuddhimagga Reader Extension (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Visuddhimagga Reader Extension (iOS)";
+			productReference = 26BF054D306B0DCA00B46E8A /* Visuddhimagga Reader Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		26BF0556306B0DCA00B46E8A /* Visuddhimagga Reader Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26BF0574306B0DCA00B46E8A /* Build configuration list for PBXNativeTarget "Visuddhimagga Reader Extension (macOS)" */;
+			buildPhases = (
+				26BF0553306B0DCA00B46E8A /* Sources */,
+				26BF0554306B0DCA00B46E8A /* Frameworks */,
+				26BF0555306B0DCA00B46E8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Visuddhimagga Reader Extension (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Visuddhimagga Reader Extension (macOS)";
+			productReference = 26BF0557306B0DCA00B46E8A /* Visuddhimagga Reader Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26BF051C306B0DC700B46E8A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					26BF052E306B0DCA00B46E8A = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					26BF0540306B0DCA00B46E8A = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					26BF054C306B0DCA00B46E8A = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					26BF0556306B0DCA00B46E8A = {
+						CreatedOnToolsVersion = 26.6;
+					};
+				};
+			};
+			buildConfigurationList = 26BF051F306B0DC700B46E8A /* Build configuration list for PBXProject "Visuddhimagga Reader" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26BF051B306B0DC700B46E8A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 26BF0530306B0DCA00B46E8A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26BF052E306B0DCA00B46E8A /* Visuddhimagga Reader (iOS) */,
+				26BF0540306B0DCA00B46E8A /* Visuddhimagga Reader (macOS) */,
+				26BF054C306B0DCA00B46E8A /* Visuddhimagga Reader Extension (iOS) */,
+				26BF0556306B0DCA00B46E8A /* Visuddhimagga Reader Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26BF052D306B0DCA00B46E8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26BF055F306B0DCA00B46E8A /* Icon.png in Resources */,
+				26BF0538306B0DCA00B46E8A /* LaunchScreen.storyboard in Resources */,
+				26BF055D306B0DCA00B46E8A /* Main.html in Resources */,
+				26BF0563306B0DCA00B46E8A /* Script.js in Resources */,
+				26BF0567306B0DCA00B46E8A /* Assets.xcassets in Resources */,
+				26BF053B306B0DCA00B46E8A /* Main.storyboard in Resources */,
+				26BF0561306B0DCA00B46E8A /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26BF053F306B0DCA00B46E8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26BF0560306B0DCA00B46E8A /* Icon.png in Resources */,
+				26BF0562306B0DCA00B46E8A /* Style.css in Resources */,
+				26BF0547306B0DCA00B46E8A /* Main.storyboard in Resources */,
+				26BF0564306B0DCA00B46E8A /* Script.js in Resources */,
+				26BF0568306B0DCA00B46E8A /* Assets.xcassets in Resources */,
+				26BF055E306B0DCA00B46E8A /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26BF054B306B0DCA00B46E8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26BF058C306B0DCC00B46E8A /* index.html in Resources */,
+				26BF058B306B0DCC00B46E8A /* favicon.ico in Resources */,
+				26BF0590306B0DCC00B46E8A /* assets in Resources */,
+				26BF058D306B0DCC00B46E8A /* metadata.json in Resources */,
+				26BF058A306B0DCC00B46E8A /* icon.png in Resources */,
+				26BF058F306B0DCC00B46E8A /* manifest.json in Resources */,
+				26BF058E306B0DCC00B46E8A /* _expo in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26BF0555306B0DCA00B46E8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26BF0585306B0DCC00B46E8A /* index.html in Resources */,
+				26BF0584306B0DCC00B46E8A /* favicon.ico in Resources */,
+				26BF0589306B0DCC00B46E8A /* assets in Resources */,
+				26BF0586306B0DCC00B46E8A /* metadata.json in Resources */,
+				26BF0583306B0DCC00B46E8A /* icon.png in Resources */,
+				26BF0588306B0DCC00B46E8A /* manifest.json in Resources */,
+				26BF0587306B0DCC00B46E8A /* _expo in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26BF052B306B0DCA00B46E8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26BF0565306B0DCA00B46E8A /* ViewController.swift in Sources */,
+				26BF0533306B0DCA00B46E8A /* AppDelegate.swift in Sources */,
+				26BF0535306B0DCA00B46E8A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26BF053D306B0DCA00B46E8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26BF0566306B0DCA00B46E8A /* ViewController.swift in Sources */,
+				26BF0544306B0DCA00B46E8A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26BF0549306B0DCA00B46E8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26BF0569306B0DCA00B46E8A /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26BF0553306B0DCA00B46E8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26BF056A306B0DCA00B46E8A /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26BF0550306B0DCA00B46E8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26BF054C306B0DCA00B46E8A /* Visuddhimagga Reader Extension (iOS) */;
+			targetProxy = 26BF054F306B0DCA00B46E8A /* PBXContainerItemProxy */;
+		};
+		26BF055A306B0DCA00B46E8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26BF0556306B0DCA00B46E8A /* Visuddhimagga Reader Extension (macOS) */;
+			targetProxy = 26BF0559306B0DCA00B46E8A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		26BF0522306B0DC700B46E8A /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26BF0523306B0DC700B46E8A /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		26BF0536306B0DCA00B46E8A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26BF0537306B0DCA00B46E8A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		26BF0539306B0DCA00B46E8A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26BF053A306B0DCA00B46E8A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		26BF0545306B0DCA00B46E8A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26BF0546306B0DCA00B46E8A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26BF056B306B0DCA00B46E8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		26BF056C306B0DCA00B46E8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		26BF056E306B0DCA00B46E8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Visuddhimagga Reader Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Visuddhimagga-Reader.Extension";
+				PRODUCT_NAME = "Visuddhimagga Reader Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26BF056F306B0DCA00B46E8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Visuddhimagga Reader Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Visuddhimagga-Reader.Extension";
+				PRODUCT_NAME = "Visuddhimagga Reader Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26BF0572306B0DCA00B46E8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Visuddhimagga Reader";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Visuddhimagga-Reader";
+				PRODUCT_NAME = "Visuddhimagga Reader";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26BF0573306B0DCA00B46E8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Visuddhimagga Reader";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Visuddhimagga-Reader";
+				PRODUCT_NAME = "Visuddhimagga Reader";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26BF0575306B0DCA00B46E8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Visuddhimagga Reader Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Visuddhimagga-Reader.Extension";
+				PRODUCT_NAME = "Visuddhimagga Reader Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		26BF0576306B0DCA00B46E8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Visuddhimagga Reader Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Visuddhimagga-Reader.Extension";
+				PRODUCT_NAME = "Visuddhimagga Reader Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		26BF0579306B0DCA00B46E8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Visuddhimagga Reader";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Visuddhimagga-Reader";
+				PRODUCT_NAME = "Visuddhimagga Reader";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		26BF057A306B0DCA00B46E8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Visuddhimagga Reader";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Visuddhimagga-Reader";
+				PRODUCT_NAME = "Visuddhimagga Reader";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26BF051F306B0DC700B46E8A /* Build configuration list for PBXProject "Visuddhimagga Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26BF056B306B0DCA00B46E8A /* Debug */,
+				26BF056C306B0DCA00B46E8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26BF056D306B0DCA00B46E8A /* Build configuration list for PBXNativeTarget "Visuddhimagga Reader Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26BF056E306B0DCA00B46E8A /* Debug */,
+				26BF056F306B0DCA00B46E8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26BF0571306B0DCA00B46E8A /* Build configuration list for PBXNativeTarget "Visuddhimagga Reader (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26BF0572306B0DCA00B46E8A /* Debug */,
+				26BF0573306B0DCA00B46E8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26BF0574306B0DCA00B46E8A /* Build configuration list for PBXNativeTarget "Visuddhimagga Reader Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26BF0575306B0DCA00B46E8A /* Debug */,
+				26BF0576306B0DCA00B46E8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26BF0578306B0DCA00B46E8A /* Build configuration list for PBXNativeTarget "Visuddhimagga Reader (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26BF0579306B0DCA00B46E8A /* Debug */,
+				26BF057A306B0DCA00B46E8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26BF051C306B0DC700B46E8A /* Project object */;
+}

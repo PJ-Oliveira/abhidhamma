@@ -55,23 +55,25 @@ export function collectUsedTerms(segs: Segment[], glossary: GlossEntry[]): Gloss
     .sort((a, b) => a.h.localeCompare(b.h, "pi"));
 }
 
-export function buildGlossaryHtml(terms: GlossEntry[], langMode: LangMode): string {
+export function buildGlossaryHtml(terms: GlossEntry[], langMode: LangMode, termsMap: Map<string, string>): string {
   if (terms.length === 0) return "";
   const mode = langMode as string;
   const showEn = mode.includes("en");
   const showPt = mode.includes("pt");
   const showEs = mode.includes("es");
   const rows = terms.map((term) => {
+    const headwordBase = term.h.split(" / ")[0]!.split(" ")[0]!.toLowerCase();
+    const tId = termsMap.get(headwordBase) || "unk";
     const parts: string[] = [`<strong>${escHtml(term.h)}</strong>`];
     if (term.pos) parts.push(`<em>(${escHtml(term.pos)})</em>`);
     if (showEn || (!showPt && !showEs)) parts.push(escHtml(term.en));
     if (showPt) parts.push(escHtml(term.pt));
     if (showEs && term.es) parts.push(escHtml(term.es));
-    return `<p class="glossary-entry">${parts.join(" — ")}</p>`;
+    return `<p class="glossary-entry" id="dict_${tId}">${parts.join(" — ")}</p>`;
   });
   return `
 <div class="glossary-appendix">
-<h2 class="chapter" style="page-break-before:always;">Pāḷi Glossary / Glossário Pāḷi</h2>
+<h2 class="chapter" style="page-break-before:always;" id="glossary_title">Pāḷi Glossary / Glossário Pāḷi</h2>
 ${rows.join("\n")}
 </div>`;
 }
@@ -230,7 +232,7 @@ export function escHtml(s: string): string {
 // Converts <b>/<i>/<sup> to their semantic equivalents,
 // converts <p rend="..."> verse markers to <br> + class spans,
 // and strips any unknown tags (keeping their text content).
-export function linkifyText(text: string, termsMap?: Map<string, string>): string {
+export function linkifyText(text: string, termsMap?: Map<string, string>, linkPrefix: string = "glossary.xhtml"): string {
   if (!text) return "";
   if (!termsMap || termsMap.size === 0) return escHtml(text);
   
@@ -245,7 +247,7 @@ export function linkifyText(text: string, termsMap?: Map<string, string>): strin
       const lower = word.toLowerCase();
       const termId = termsMap.get(lower);
       if (termId) {
-        out += `<a epub:type="glossref" href="glossary.xhtml#dict_${termId}">${escHtml(word)}</a>`;
+        out += `<a epub:type="glossref" href="${linkPrefix}#dict_${termId}">${escHtml(word)}</a>`;
       } else {
         out += escHtml(word);
       }
@@ -254,12 +256,12 @@ export function linkifyText(text: string, termsMap?: Map<string, string>): strin
   return out;
 }
 
-export function walkNode(node: Node, termsMap?: Map<string, string>): string {
-  if (node.nodeType === Node.TEXT_NODE) return linkifyText(node.textContent ?? "", termsMap);
+export function walkNode(node: Node, termsMap?: Map<string, string>, linkPrefix: string = "glossary.xhtml"): string {
+  if (node.nodeType === Node.TEXT_NODE) return linkifyText(node.textContent ?? "", termsMap, linkPrefix);
   if (node.nodeType !== Node.ELEMENT_NODE) return "";
   const el = node as Element;
   const tag = el.tagName.toLowerCase();
-  const inner = Array.from(el.childNodes).map(n => walkNode(n, termsMap)).join("");
+  const inner = Array.from(el.childNodes).map(n => walkNode(n, termsMap, linkPrefix)).join("");
   if (tag === "b" || tag === "strong") return `<strong>${inner}</strong>`;
   if (tag === "i" || tag === "em") return `<em>${inner}</em>`;
   if (tag === "sup") return `<sup>${inner}</sup>`;
@@ -273,15 +275,15 @@ export function walkNode(node: Node, termsMap?: Map<string, string>): string {
 }
 
 // Convert a segment field value (which may contain inline HTML) to safe export HTML.
-export function fieldHtml(raw: string, termsMap?: Map<string, string>): string {
+export function fieldHtml(raw: string, termsMap?: Map<string, string>, linkPrefix: string = "glossary.xhtml"): string {
   if (!raw) return "";
   if (!raw.includes("<")) return linkifyText(raw, termsMap);
   const parser = new DOMParser();
   const doc = parser.parseFromString(`<body>${raw}</body>`, "text/html");
-  return walkNode(doc.body, termsMap);
+  return walkNode(doc.body, termsMap, linkPrefix);
 }
 
-export function segToHtml(seg: Segment, langMode: LangMode, termsMap?: Map<string, string>): string {
+export function segToHtml(seg: Segment, langMode: LangMode, termsMap?: Map<string, string>, linkPrefix: string = "glossary.xhtml"): string {
   const rend = seg.rend;
   const paliText = seg.pali ?? "";
   const enText = seg.en ?? "";
@@ -308,11 +310,11 @@ export function segToHtml(seg: Segment, langMode: LangMode, termsMap?: Map<strin
   }
 
   if (showPt && ptText) {
-    inner += `<div class="line pt">${fieldHtml(ptText, termsMap)}</div>`;
+    inner += `<div class="line pt">${fieldHtml(ptText, termsMap, linkPrefix)}</div>`;
   }
 
   if (showEs && esText) {
-    inner += `<div class="line es">${fieldHtml(esText, termsMap)}</div>`;
+    inner += `<div class="line es">${fieldHtml(esText, termsMap, linkPrefix)}</div>`;
   }
 
 
@@ -367,9 +369,9 @@ h2.chapter{string-set:bookTitle content();}
 .glossary-entry em{color:#666;font-size:.9em;}
 `;
 
-export function buildPrintHtml(segs: Segment[], title: string, langMode: LangMode, glossaryHtml: string, workId?: string, group?: string): string {
+export function buildPrintHtml(segs: Segment[], title: string, langMode: LangMode, glossaryHtml: string, termsMap: Map<string, string>, workId?: string, group?: string): string {
   const author = getAuthor(workId ?? "", group ?? "");
-  const bodyParts = segs.map((s) => segToHtml(s, langMode)).filter(Boolean);
+  const bodyParts = segs.map((s) => segToHtml(s, langMode, termsMap, "")).filter(Boolean);
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -454,10 +456,28 @@ blockquote { margin: 1em 5%; font-style: italic; }
 .toc-mid ol { list-style-type: disc; padding-left: 1.5em; margin-top: 0.3em; }
 `;
 
-export function buildEpub(segs: Segment[], title: string, langMode: LangMode, glossaryHtml: string, workId?: string, group?: string): Uint8Array {
+export function buildEpub(segs: Segment[], title: string, langMode: LangMode, glossaryHtml: string, termsMap: Map<string, string>, fontReg: Uint8Array, fontIta: Uint8Array, workId?: string, group?: string): Uint8Array {
   const enc = new TextEncoder();
   const author = getAuthor(workId ?? "", group ?? "");
-  const bodyParts = segs.map((s) => segToHtml(s, langMode)).filter(Boolean);
+  
+  const anchors: Array<{ id: string; label: string }> = [];
+  let chIdx = 0;
+  const bodyParts: string[] = [];
+  for (const seg of segs) {
+    const html = segToHtml(seg, langMode, termsMap, "glossary.xhtml");
+    if (!html) continue;
+    const rend = seg.rend;
+    if (rend === "chapter" || rend === "book" || rend === "title" || rend === "nikaya") {
+      chIdx++;
+      const anchorId = `ch${chIdx}`;
+      const label = (seg.pali || seg.en || seg.pt || "").replace(/<[^>]*>/g, "").slice(0, 80);
+      if (label) anchors.push({ id: anchorId, label });
+      bodyParts.push(html.replace(/^<h([1-4])/, `<h$1 id="${anchorId}"`));
+    } else {
+      bodyParts.push(html);
+    }
+  }
+
   const contentHtml = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="en">
@@ -467,8 +487,20 @@ export function buildEpub(segs: Segment[], title: string, langMode: LangMode, gl
 <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-<h1>${escHtml(title)}</h1>
+<h1 id="title_header">${escHtml(title)}</h1>
 ${bodyParts.join("\n")}
+</body>
+</html>`;
+
+  const glossaryXhtml = `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Glossary</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
 ${glossaryHtml}
 </body>
 </html>`;
@@ -484,15 +516,27 @@ ${glossaryHtml}
 <manifest>
   <item id="font-reg" href="fonts/GentiumBookPlus-Regular.ttf" media-type="application/font-sfnt"/>
   <item id="font-ita" href="fonts/GentiumBookPlus-Italic.ttf" media-type="application/font-sfnt"/>
-  <item id="content" href="content.html" media-type="application/xhtml+xml"/>
+  <item id="content" href="content.xhtml" media-type="application/xhtml+xml"/>
+  <item id="glossary" href="glossary.xhtml" media-type="application/xhtml+xml"/>
   <item id="css" href="style.css" media-type="text/css"/>
   <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
 </manifest>
 <spine toc="ncx">
   <itemref idref="content"/>
+  <itemref idref="glossary"/>
 </spine>
 </package>`;
 
+  let playOrder = 0;
+  const navPoints = anchors.map((a) => {
+    playOrder++;
+    return `    <navPoint id="${a.id}" playOrder="${playOrder}">
+      <navLabel><text>${escHtml(a.label)}</text></navLabel>
+      <content src="content.xhtml#${a.id}"/>
+    </navPoint>`;
+  }).join("\n");
+
+  playOrder++;
   const ncx = `<?xml version="1.0" encoding="UTF-8"?>
 <ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
 <head><meta name="dtb:uid" content="abhidhamma-export"/></head>
@@ -500,7 +544,12 @@ ${glossaryHtml}
 <navMap>
   <navPoint id="content" playOrder="1">
     <navLabel><text>${escHtml(title)}</text></navLabel>
-    <content src="content.html"/>
+    <content src="content.xhtml"/>
+${navPoints}
+  </navPoint>
+  <navPoint id="glossary" playOrder="${playOrder + 1}">
+    <navLabel><text>Glossário Pāḷi</text></navLabel>
+    <content src="glossary.xhtml"/>
   </navPoint>
 </navMap>
 </ncx>`;
@@ -512,14 +561,19 @@ ${glossaryHtml}
 </rootfiles>
 </container>`;
 
-  return buildZip([
+  const zipEntries: ZipEntry[] = [
     { name: "mimetype", data: enc.encode("application/epub+zip") },
     { name: "META-INF/container.xml", data: enc.encode(container) },
     { name: "OEBPS/content.opf", data: enc.encode(opf) },
     { name: "OEBPS/toc.ncx", data: enc.encode(ncx) },
     { name: "OEBPS/style.css", data: enc.encode(EPUB_CSS) },
-    { name: "OEBPS/content.html", data: enc.encode(contentHtml) },
-  ]);
+    { name: "OEBPS/content.xhtml", data: enc.encode(contentHtml) },
+    { name: "OEBPS/glossary.xhtml", data: enc.encode(glossaryXhtml) },
+  ];
+  if (fontReg.length > 0) zipEntries.push({ name: "OEBPS/fonts/GentiumBookPlus-Regular.ttf", data: fontReg });
+  if (fontIta.length > 0) zipEntries.push({ name: "OEBPS/fonts/GentiumBookPlus-Italic.ttf", data: fontIta });
+
+  return buildZip(zipEntries);
 }
 
 function downloadBlob(bytes: Uint8Array, filename: string, mimeType: string): void {
@@ -1127,15 +1181,32 @@ export function initExportPanel(
       // Load glossary and build appendix
       const glossary = await loadGlossary();
       const usedTerms = collectUsedTerms(allSegs, glossary);
-      const glossaryHtml = buildGlossaryHtml(usedTerms, langMode);
+      const termsMap = new Map<string, string>();
+      usedTerms.forEach((entry, idx) => {
+        const headword = entry.h.split(" / ")[0]!.split(" ")[0]!.toLowerCase();
+        termsMap.set(headword, String(idx));
+      });
+      const glossaryHtml = buildGlossaryHtml(usedTerms, langMode, termsMap);
 
       if (format === "pdf") {
         const workGroup = allWorks.find((w) => w.work.id === work.id)?.group ?? "";
-        const html = buildPrintHtml(allSegs, title, langMode, glossaryHtml, work.id, workGroup);
+        const html = buildPrintHtml(allSegs, title, langMode, glossaryHtml, termsMap, work.id, workGroup);
         openPrintWindow(html, title);
       } else {
+        statusDiv.textContent = "Baixando fontes...";
+        let fontReg = new Uint8Array();
+        let fontIta = new Uint8Array();
+        try {
+          const regRes = await fetch("fonts/GentiumBookPlus-Regular.ttf");
+          if (regRes.ok) fontReg = new Uint8Array(await regRes.arrayBuffer());
+          const itaRes = await fetch("fonts/GentiumBookPlus-Italic.ttf");
+          if (itaRes.ok) fontIta = new Uint8Array(await itaRes.arrayBuffer());
+        } catch (e) {
+          console.warn("Fonts not found", e);
+        }
+        statusDiv.textContent = "Gerando EPUB...";
         const workGroup = allWorks.find((w) => w.work.id === work.id)?.group ?? "";
-        const bytes = buildEpub(allSegs, title, langMode, glossaryHtml, work.id, workGroup);
+        const bytes = buildEpub(allSegs, title, langMode, glossaryHtml, termsMap, fontReg, fontIta, work.id, workGroup);
         const slug = work.id.replace(/[^a-z0-9]/gi, "-");
         downloadBlob(bytes, `${slug}.epub`, "application/epub+zip");
       }

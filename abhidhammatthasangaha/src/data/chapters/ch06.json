@@ -1,0 +1,839 @@
+[
+  {
+    "id": "abhm-6.1",
+    "pali": "6. Rūpaparicchedo",
+    "translations": {
+      "en": "6. The Chapter on Materiality",
+      "pt": "6. Análise da Matéria",
+      "es": "6.  Compendio de la Materia"
+    }
+  },
+  {
+    "id": "abhm-6.2",
+    "pali": "Ettāvatā vibhattā hi, sappabhedappavattikā.",
+    "translations": {
+      "en": "1. Thus far have been analyzed, together with their classifications and process of occurrence,",
+      "pt": "1. Até aqui foram analisados, com suas classificações e ocorrências,",
+      "es": "1.  Hasta aquí han sido analizados, con sus clasificaciones y modos de ocurrencia,"
+    }
+  },
+  {
+    "id": "abhm-6.3",
+    "pali": "Cittacetasikā dhammā, rūpaṃ dāni pavuccati.",
+    "translations": {
+      "en": "the phenomena of consciousness and mental factors; now materiality will be spoken of.",
+      "pt": "os dhammas da mente e dos fatores mentais. Agora, a matéria será exposta.",
+      "es": "los estados de la conciencia (citta) y los factores mentales (cetasika). Ahora se explicará la materia (rūpa)."
+    }
+  },
+  {
+    "id": "abhm-6.4",
+    "pali": "Samuddesā vibhāgā ca, samuṭṭhānā kalāpato.",
+    "translations": {
+      "en": "2. By way of summary, analysis, origin, and groups,",
+      "pt": "2. Por meio da enumeração, classificação, originação, agrupamento,",
+      "es": "2.  Enumeración, clasificación, origen, grupos,"
+    }
+  },
+  {
+    "id": "abhm-6.5",
+    "pali": "Pavattikkamato ceti, pañcadhā tattha saṅgaho.",
+    "translations": {
+      "en": "and by way of the process of occurrence—thus the compendium here is fivefold.",
+      "pt": "e da ordem de ocorrência; de cinco maneiras a compilação é aqui apresentada.",
+      "es": "y el orden de ocurrencia: en estos cinco aspectos se presenta su compendio."
+    }
+  },
+  {
+    "id": "abhm-6.6",
+    "pali": "Rūpasamuddeso",
+    "translations": {
+      "en": "Summary of Materiality",
+      "pt": "Enumeração da Matéria",
+      "es": "Enumeración de la Materia"
+    }
+  },
+  {
+    "id": "abhm-6.7",
+    "pali": "Cattāri mahābhūtāni, catunnañca mahābhūtānaṃ upādāyarūpanti <b>duvidhampetaṃ rūpaṃ</b> ekādasavidhena saṅgahaṃ gacchati.",
+    "translations": {
+      "en": "3. The four great elements and the materiality derived from the four great elements—this materiality, being twofold, is comprised under eleven headings.",
+      "pt": "3. A matéria é de dois tipos: os quatro grandes elementos e a matéria derivada que depende dos quatro grandes elementos. Ela é classificada em onze categorias.",
+      "es": "3.  Los cuatro grandes elementos y la materia derivada de los cuatro grandes elementos: esta materia de dos tipos se incluye bajo once categorías."
+    }
+  },
+  {
+    "id": "abhm-6.8",
+    "pali": "Kathaṃ? Pathavīdhātu āpodhātu tejodhātu vāyodhātu <b>bhūtarūpaṃ</b> nāma.",
+    "translations": {
+      "en": "4. How? The earth element, the water element, the fire element, and the air element are called primary materiality.",
+      "pt": "4. Como? O elemento terra, o elemento água, o elemento fogo e o elemento ar são chamados de matéria elemental.",
+      "es": "4.  ¿Cómo? El elemento tierra, el elemento agua, el elemento fuego y el elemento aire se denominan materia elemental."
+    }
+  },
+  {
+    "id": "abhm-6.9",
+    "pali": "Cakkhu sotaṃ ghānaṃ jivhā kāyo <b>pasādarūpaṃ</b> nāma.",
+    "translations": {
+      "en": "5. The eye, ear, nose, tongue, and body are called sensitive materiality.",
+      "pt": "5. O olho, o ouvido, o nariz, a língua e o corpo são chamados de matéria sensível.",
+      "es": "5.  El ojo, el oído, la nariz, la lengua y el cuerpo se denominan materia sensible (pasāda)."
+    }
+  },
+  {
+    "id": "abhm-6.10",
+    "pali": "Rūpaṃ saddo gandho raso āpodhātuvivajjitaṃ bhūtattayasaṅkhātaṃ phoṭṭhabbaṃ <b>gocararūpaṃ</b> nāma.",
+    "translations": {
+      "en": "6. Visible form, sound, odor, taste, and the tangible—which is designated as the three primary elements, excluding the water element—are called objective materiality.",
+      "pt": "6. A forma visível, o som, o odor, o sabor e o objeto tangível — que consiste nos três grandes elementos, excluindo o elemento água — são chamados de matéria objetiva.",
+      "es": "6.  La forma, el sonido, el olor, el sabor y lo tangible —que consiste en los tres elementos primarios excluyendo el elemento agua— se denominan materia de objeto (gocara)."
+    }
+  },
+  {
+    "id": "abhm-6.11",
+    "pali": "Itthattaṃ purisattaṃ <b>bhāvarūpaṃ</b> nāma.",
+    "translations": {
+      "en": "7. Femaleness and maleness are called sex materiality.",
+      "pt": "7. A feminilidade e a masculinidade são chamadas de matéria de gênero.",
+      "es": "7.  La feminidad y la masculinidad se denominan materia de facultad (bhāva)."
+    }
+  },
+  {
+    "id": "abhm-6.12",
+    "pali": "Hadayavatthu <b>hadayarūpaṃ</b> nāma.",
+    "translations": {
+      "en": "8. The heart-base is called heart-materiality.",
+      "pt": "8. A base do coração é chamada de matéria do coração.",
+      "es": "8.  La base del corazón se denomina materia del corazón."
+    }
+  },
+  {
+    "id": "abhm-6.13",
+    "pali": "Jīvitindriyaṃ <b>jīvitarūpaṃ</b> nāma.",
+    "translations": {
+      "en": "9. The life faculty is called life materiality.",
+      "pt": "9. A faculdade da vida é chamada de matéria vital.",
+      "es": "9.  La facultad de la vida se denomina materia de vida."
+    }
+  },
+  {
+    "id": "abhm-6.14",
+    "pali": "Kabaḷīkāro āhāro <b>āhārarūpaṃ</b> nāma.",
+    "translations": {
+      "en": "10. Edible food is called nutritive materiality.",
+      "pt": "10. O alimento comestível é chamado de matéria nutricional.",
+      "es": "10.  El alimento comestible se denomina materia de nutrición."
+    }
+  },
+  {
+    "id": "abhm-6.15",
+    "pali": "Iti ca aṭṭhārasavidhampetaṃ rūpaṃ sabhāvarūpaṃ salakkhaṇarūpaṃ nipphannarūpaṃ rūparūpaṃ sammasanarūpanti ca saṅgahaṃ gacchati.",
+    "translations": {
+      "en": "11. Thus, these eighteen kinds of materiality are also classified as: materiality with intrinsic nature, materiality with specific characteristics, produced materiality, materiality-as-materiality, and materiality for contemplation.",
+      "pt": "11. Assim, estes dezoito tipos de matéria são classificados como: matéria com natureza intrínseca, matéria com características, matéria produzida, matéria propriamente dita e matéria para contemplação.",
+      "es": "11.  Así, estos dieciocho tipos de materia se clasifican como materia con naturaleza propia (sabhāva-rūpa), materia con características propias, materia concretamente producida (nipphanna-rūpa), materia como materia (rūpa-rūpa) y materia para la contemplación."
+    }
+  },
+  {
+    "id": "abhm-6.16",
+    "pali": "Ākāsadhātu <b>paricchedarūpaṃ</b> nāma.",
+    "translations": {
+      "en": "12. The space element is called limiting materiality.",
+      "pt": "12. O elemento espaço é chamado de matéria delimitadora.",
+      "es": "12.  El elemento espacio se denomina materia delimitadora."
+    }
+  },
+  {
+    "id": "abhm-6.17",
+    "pali": "Kāyaviññatti vacīviññatti <b>viññattirūpaṃ</b> nāma.",
+    "translations": {
+      "en": "13. Bodily intimation and verbal intimation are called intimation materiality.",
+      "pt": "13. A expressão corporal e a expressão verbal são chamadas de matéria de expressão.",
+      "es": "13.  La comunicación corporal y la comunicación verbal se denominan materia de comunicación (viññatti)."
+    }
+  },
+  {
+    "id": "abhm-6.18",
+    "pali": "Rūpassa lahutā mudutā kammaññatā viññattidvayaṃ <b>vikārarūpaṃ</b> nāma.",
+    "translations": {
+      "en": "14. The lightness, softness, and adaptability of materiality, and the two intimations, are called alterable materiality.",
+      "pt": "14. A leveza, a maleabilidade e a adaptabilidade da matéria, junto com as duas formas de expressão, são chamadas de matéria mutável.",
+      "es": "14.  La ligereza, la maleabilidad y la adaptabilidad de la materia, junto con los dos tipos de comunicación, se denominan materia de mutabilidad (vikāra)."
+    }
+  },
+  {
+    "id": "abhm-6.19",
+    "pali": "Rūpassa upacayo santati jaratā aniccatā <b>lakkhaṇarūpaṃ</b> nāma.",
+    "translations": {
+      "en": "15. The production, continuity, decay, and impermanence of materiality are called characteristic materiality.",
+      "pt": "15. O acúmulo, a continuidade, o envelhecimento e a impermanência da matéria são chamados de matéria de características.",
+      "es": "15.  La acumulación, la continuidad, la vejez y la impermanencia de la materia se denominan materia de características."
+    }
+  },
+  {
+    "id": "abhm-6.20",
+    "pali": "Jātirūpameva panettha upacayasantatināmena pavuccatīti ekādasavidhampetaṃ rūpaṃ aṭṭhavīsatividhaṃ hoti sarūpavasena.",
+    "translations": {
+      "en": "16. Herein, production-materiality itself is spoken of by the names 'accumulation' and 'continuity'; thus these eleven kinds of materiality become twenty-eightfold by way of their own nature.",
+      "pt": "16. Aqui, a própria matéria do nascimento é referida pelos nomes de acúmulo e continuidade. Assim, esta matéria de onze categorias torna-se de vinte e oito tipos de acordo com suas propriedades individuais.",
+      "es": "16.  Aquí, la materia de nacimiento se describe mediante los nombres de acumulación y continuidad; así, estas once categorías de materia comprenden veintiocho tipos según sus propiedades específicas."
+    }
+  },
+  {
+    "id": "abhm-6.21",
+    "pali": "Kathaṃ –",
+    "translations": {
+      "en": "17. How?",
+      "pt": "17. Como?",
+      "es": "17.  ¿Cómo?"
+    }
+  },
+  {
+    "id": "abhm-6.22",
+    "pali": "Bhūtappasādavisayā, bhāvo hadayamiccapi;</p><p rend=\"gathalast\">Jīvitāhārarūpehi, aṭṭhārasavidhaṃ tathā.",
+    "translations": {
+      "en": "Primary elements, sensitivities, objects, sex, and the heart, as well as life and nutritive materiality—thus there are eighteen kinds.",
+      "pt": "Elementos, órgãos sensíveis, objetos, gênero, coração, junto com a matéria vital e nutricional, perfazem dezoito tipos.",
+      "es": "Los elementos, la sensibilidad, los objetos, la facultad, el corazón, junto con la vida y la materia de nutrición, conforman dieciocho tipos de esta manera."
+    }
+  },
+  {
+    "id": "abhm-6.23",
+    "pali": "Paricchedo ca viññatti, vikāro lakkhaṇanti ca;</p><p rend=\"gathalast\">Anipphannā dasa ceti, aṭṭhavīsavidhaṃ bhave.",
+    "translations": {
+      "en": "Limitation, intimation, alterability, and the characteristics—these are the ten unproduced. Thus there are twenty-eight kinds in all.",
+      "pt": "A delimitação, a expressão, a mutabilidade e as características — estes dez são a matéria não produzida. Assim, há vinte e oito tipos no total.",
+      "es": "La delimitación, la comunicación, la mutabilidad y las características son los diez tipos de materia no producida concretamente; así, en total hay veintiocho tipos."
+    }
+  },
+  {
+    "id": "abhm-6.24",
+    "pali": "Ayamettha rūpasamuddeso.",
+    "translations": {
+      "en": "This here is the summary of materiality.",
+      "pt": "Aqui termina a enumeração da matéria.",
+      "es": "Aquí concluye la enumeración de la materia."
+    }
+  },
+  {
+    "id": "abhm-6.25",
+    "pali": "Rūpavibhāgo",
+    "translations": {
+      "en": "The Analysis of Materiality",
+      "pt": "Classificação da Matéria",
+      "es": "Clasificación de la Materia"
+    }
+  },
+  {
+    "id": "abhm-6.26",
+    "pali": "Sabbañca panetaṃ rūpaṃ ahetukaṃ sappaccayaṃ sāsavaṃ saṅkhataṃ lokiyaṃ kāmāvacaraṃ anārammaṇaṃ appahātabbamevāti ekavidhampi ajjhattikabāhirādivasena bahudhā bhedaṃ gacchati.",
+    "translations": {
+      "en": "18. All this materiality is rootless, conditioned by causes, tainted, constructed, worldly, belonging to the sense-sphere, without an object, and not to be abandoned. Thus, though onefold, it undergoes manifold division by way of internal, external, and so on.",
+      "pt": "18. Toda esta matéria é sem causa, condicionada, associada às máculas, condicionada, mundana, pertencente à esfera dos sentidos, sem objeto e não passível de ser abandonada. Embora seja de um único tipo dessa maneira, ela se divide de muitas formas como interna, externa, etc.",
+      "es": "18.  Toda esta materia es sin causa (ahetuka), con condiciones, con influjos (sāsava), condicionada, mundana, perteneciente a la esfera del deseo, sin objeto y no debe ser abandonada. Aunque es de un solo tipo [en estas características], se clasifica de múltiples formas como interna, externa, etc."
+    }
+  },
+  {
+    "id": "abhm-6.27",
+    "pali": "Kathaṃ? Pasādasaṅkhātaṃ pañcavidhampi <b>ajjhattikarūpaṃ</b> nāma, itaraṃ <b>bāhirarūpaṃ</b>.",
+    "translations": {
+      "en": "19. How? The five kinds of materiality designated as sensitivity are called internal materiality; the rest is external materiality.",
+      "pt": "19. Como? O grupo de cinco tipos conhecido como matéria sensível é chamado de matéria interna; o restante é matéria externa.",
+      "es": "19.  ¿Cómo? Los cinco tipos conocidos como sensibilidad se denominan materia interna; el resto es materia externa."
+    }
+  },
+  {
+    "id": "abhm-6.28",
+    "pali": "Pasādahadayasaṅkhātaṃ chabbidhampi <b>vatthurūpaṃ</b> nāma, itaraṃ <b>avatthurūpaṃ</b>.",
+    "translations": {
+      "en": "20. The six kinds of materiality designated as the sensitivities and the heart-base are called base-materiality; the rest is non-base-materiality.",
+      "pt": "20. O grupo de seis tipos conhecido como matéria sensível e o coração é chamado de matéria de base; o restante é matéria sem base.",
+      "es": "20.  Los seis tipos de materia, conocidos como sensibilidad y la base del corazón, se denominan materia de base; el resto es materia no de base."
+    }
+  },
+  {
+    "id": "abhm-6.29",
+    "pali": "Pasādaviññattisaṅkhātaṃ sattavidhampi <b>dvārarūpaṃ</b> nāma, itaraṃ advārarūpaṃ.",
+    "translations": {
+      "en": "21. The seven kinds of materiality designated as sensitivity and intimation are called door-materiality; the rest is non-door-materiality.",
+      "pt": "21. O grupo de sete tipos conhecido como matéria sensível e expressões é chamado de matéria de porta; o restante é matéria sem porta.",
+      "es": "21.  Los siete tipos de materia, conocidos como sensibilidad e intimación, se denominan materia de puerta; el resto es materia que no es de puerta."
+    }
+  },
+  {
+    "id": "abhm-6.30",
+    "pali": "Pasādabhāvajīvitasaṅkhātaṃ aṭṭhavidhampi <b>indriyarūpaṃ</b> nāma, itaraṃ <b>anindriyarūpaṃ</b>.",
+    "translations": {
+      "en": "22. The eight kinds of materiality designated as sensitivity, sex, and life are called faculty-materiality; the rest is non-faculty-materiality.",
+      "pt": "22. O grupo de oito tipos conhecido como matéria sensível, gênero e faculdade vital é chamado de matéria de faculdade; o restante é matéria sem faculdade.",
+      "es": "22.  Los ocho tipos de materia, conocidos como sensibilidad, sexo y facultad vital, se denominan materia de facultad; el resto es materia que no es de facultad."
+    }
+  },
+  {
+    "id": "abhm-6.31",
+    "pali": "Pasādavisayasaṅkhātaṃ dvādasavidhampi <b>oḷārikarūpaṃ santikerūpaṃ, sappaṭigharūpañca,</b> itaraṃ <b>sukhumarūpaṃ dūrerūpaṃ appaṭigharūpañca</b>.",
+    "translations": {
+      "en": "23. The twelve kinds of materiality designated as sensitivity and sense-objects are gross materiality, near materiality, and materiality with resistance; the rest are subtle materiality, distant materiality, and materiality without resistance.",
+      "pt": "23. O grupo de doze tipos conhecido como matéria sensível e objetos é chamado de matéria grosseira, matéria próxima e matéria de impacto; o restante é matéria sutil, matéria distante e matéria sem impacto.",
+      "es": "23.  Los doce tipos de materia, conocidos como sensibilidad y objetos, se denominan materia densa, materia cercana y materia con impacto; el resto es materia sutil, materia lejana y materia sin impacto."
+    }
+  },
+  {
+    "id": "abhm-6.32",
+    "pali": "Kammajaṃ <b>upādinnarūpaṃ,</b> itaraṃ <b>anupādinnarūpaṃ</b>.",
+    "translations": {
+      "en": "24. Kamma-born materiality is grasped materiality; the rest is ungrasped materiality.",
+      "pt": "24. A matéria nascida do kamma é chamada de matéria apropriada; o restante é matéria não apropriada.",
+      "es": "24.  La materia nacida del kamma se denomina materia asida; el resto es materia no asida."
+    }
+  },
+  {
+    "id": "abhm-6.33",
+    "pali": "Rūpāyatanaṃ <b>sanidassanarūpaṃ,</b> itaraṃ <b>anidassanarūpaṃ</b>.",
+    "translations": {
+      "en": "25. The form-base is visible materiality; the rest is invisible materiality.",
+      "pt": "25. A esfera da forma visível é chamada de matéria visível; o restante é matéria invisível.",
+      "es": "25.  La base del objeto visible se denomina materia visible; el resto es materia no visible."
+    }
+  },
+  {
+    "id": "abhm-6.34",
+    "pali": "Cakkhādidvayaṃ asampattavasena, ghānādittayaṃ sampattavasenāti pañcavidhampi <b>gocaraggāhikarūpaṃ,</b> itaraṃ <b>agocaraggāhikarūpaṃ</b>.",
+    "translations": {
+      "en": "26. The pair, the eye and ear, grasp their objects without direct contact, while the trio, the nose, tongue, and body, grasp their objects through direct contact. Thus these five kinds are object-grasping materiality; the rest is non-object-grasping materiality.",
+      "pt": "26. Os dois primeiros, começando com o olho, por meio do não contato, e os três seguintes, começando com o nariz, por meio do contato — estes cinco são chamados de matéria que apreende o objeto; o restante é matéria que não apreende o objeto.",
+      "es": "26.  Los dos tipos de materia, el ojo y el oído, debido a que no entran en contacto directo, y los tres tipos, la nariz, la lengua y el cuerpo, debido a que entran en contacto directo, estos cinco se denominan materia que aprehende objetos; el resto es materia que no aprehende objetos."
+    }
+  },
+  {
+    "id": "abhm-6.35",
+    "pali": "Vaṇṇo gandho raso ojā bhūtacatukkañceti aṭṭhavidhampi <b>avinibbhogarūpaṃ,</b> itaraṃ <b>vinibbhogarūpaṃ</b>.",
+    "translations": {
+      "en": "27. Color, odor, taste, nutritive essence, and the four great elements—these eight kinds are inseparable materiality; the rest is separable materiality.",
+      "pt": "27. A cor, o odor, o sabor, a essência nutritiva e os quatro grandes elementos — estes oito são chamados de matéria inseparável; o restante é matéria separável.",
+      "es": "27.  El color, el olor, el sabor, el nutriente y los cuatro grandes elementos, estos ocho tipos se denominan materia inseparable; el resto es materia separable."
+    }
+  },
+  {
+    "id": "abhm-6.36",
+    "pali": "Iccevamaṭṭhavīsati-vidhampi ca vicakkhaṇā.",
+    "translations": {
+      "en": "28. Thus the wise analyze these twenty-eight kinds of materiality,",
+      "pt": "28. Assim, os sábios classificam estes vinte e oito tipos de matéria,",
+      "es": "28.  De esta manera, los sabios clasifican los veintiocho tipos de materia."
+    }
+  },
+  {
+    "id": "abhm-6.37",
+    "pali": "Ajjhattikādibhedena, vibhajanti yathārahaṃ.",
+    "translations": {
+      "en": "according to the divisions of internal and so on, as is appropriate.",
+      "pt": "apropriadamente, por meio das distinções de interna e assim por diante.",
+      "es": "Los analizan apropiadamente según las divisiones de interna y demás."
+    }
+  },
+  {
+    "id": "abhm-6.38",
+    "pali": "Ayamettha rūpavibhāgo.",
+    "translations": {
+      "en": "This is the analysis of materiality.",
+      "pt": "Aqui termina a classificação da matéria.",
+      "es": "Aquí concluye el análisis de la materia."
+    }
+  },
+  {
+    "id": "abhm-6.39",
+    "pali": "Rūpasamuṭṭhānanayo",
+    "translations": {
+      "en": "The Method of the Origin of Materiality",
+      "pt": "O Método de Originação da Matéria",
+      "es": "El método del origen de la materia"
+    }
+  },
+  {
+    "id": "abhm-6.40",
+    "pali": "Kammaṃ cittaṃ utu āhāro ceti <b>cattāri rūpasamuṭṭhānāni</b> nāma.",
+    "translations": {
+      "en": "29. Kamma, consciousness, temperature, and nutriment: these are called the four origins of materiality.",
+      "pt": "29. O kamma, a mente, a temperatura e o alimento são as quatro origens da matéria.",
+      "es": "29.  El kamma, la conciencia, la temperatura y el nutriente son los cuatro orígenes de la materia."
+    }
+  },
+  {
+    "id": "abhm-6.41",
+    "pali": "Tattha kāmāvacaraṃ rūpāvacarañceti pañcavīsatividhampi kusalākusalakammamabhisaṅkhataṃ ajjhattikasantāne kammasamuṭṭhānarūpaṃ paṭisandhimupādāya khaṇe khaṇe samuṭṭhāpeti.",
+    "translations": {
+      "en": "30. Therein, the twenty-five kinds of wholesome and unwholesome kamma belonging to the sense sphere and the fine-material sphere, having been volitionally formed, produce kamma-originated materiality in the internal continuity at every moment, beginning with rebirth-linking.",
+      "pt": "30. Entre eles, os vinte e cinco tipos de kamma benéfico e prejudicial pertencentes à esfera dos sentidos e à esfera da matéria sutil, acumulados no fluxo de continuidade interna, produzem a matéria nascida do kamma momento a momento, a partir do momento do renascimento.",
+      "es": "30.  De ellos, el kamma saludable y no saludable de la esfera de los sentidos y de la esfera de la materia fina, que comprende veinticinco tipos, origina momento tras momento en el continuo interno la materia originada por el kamma, comenzando desde el momento del renacimiento."
+    }
+  },
+  {
+    "id": "abhm-6.42",
+    "pali": "Arūpavipākadvipañcaviññāṇavajjitaṃ pañcasattatividhampi cittaṃ cittasamuṭṭhānarūpaṃ paṭhamabhavaṅgamupādāya jāyantameva samuṭṭhāpeti.",
+    "translations": {
+      "en": "31. The seventy-five kinds of consciousness—excluding the formless resultants and the two sets of fivefold consciousness—produce mind-originated materiality from the moment of their own arising, beginning with the first life-continuum.",
+      "pt": "31. Os setenta e cinco tipos de consciência, excluindo os resultantes da esfera imaterial e as duas vezes cinco consciências sensoriais, produzem a matéria nascida da mente no exato momento de seu surgimento, a partir do primeiro fluxo do contínuo vital (bhavaṅga).",
+      "es": "31.  Los setenta y cinco tipos de conciencia, excluyendo los resultados de la esfera inmaterial y los dos conjuntos de quíntuple conciencia, originan la materia originada por la conciencia en el mismo momento de su surgimiento, comenzando desde el primer momento del continuo de la vida (bhavanga)."
+    }
+  },
+  {
+    "id": "abhm-6.43",
+    "pali": "Tattha appanājavanaṃ iriyāpathampi sannāmeti.",
+    "translations": {
+      "en": "32. Therein, absorption impulsion also composes the postures.",
+      "pt": "32. Entre eles, o impulso de absorção (appanā-javana) também sustenta as posturas corporais.",
+      "es": "32.  En ese contexto, el impulso de absorción también sostiene las posturas corporales."
+    }
+  },
+  {
+    "id": "abhm-6.44",
+    "pali": "Voṭṭhabbanakāmāvacarajavanābhiññā pana viññattimpi samuṭṭhāpenti.",
+    "translations": {
+      "en": "33. However, determining consciousness, sense-sphere impulsions, and direct-knowledge consciousness also produce intimation.",
+      "pt": "33. A determinação, os impulsos da esfera dos sentidos e o conhecimento direto, por sua vez, também produzem a expressão.",
+      "es": "33.  Sin embargo, la conciencia determinante, los impulsos de la esfera de los sentidos y el conocimiento directo también originan la intimación."
+    }
+  },
+  {
+    "id": "abhm-6.45",
+    "pali": "Somanassajavanāni panettha terasa hasanampi janenti.",
+    "translations": {
+      "en": "34. Herein, the thirteen impulsions accompanied by joy also produce laughter.",
+      "pt": "34. Dentre estes, treze impulsos acompanhados de alegria também geram o riso.",
+      "es": "34.  Trece de estos impulsos acompañados de alegría también producen la risa."
+    }
+  },
+  {
+    "id": "abhm-6.46",
+    "pali": "Sītuṇhotusamaññātā tejodhātu ṭhitippattāva utusamuṭṭhānarūpaṃ ajjhattañca bahiddhā ca yathārahaṃ samuṭṭhāpeti.",
+    "translations": {
+      "en": "35. The heat element, known as cold and heat, upon reaching its static phase, produces temperature-originated materiality both internally and externally, as is appropriate.",
+      "pt": "35. O elemento fogo, conhecido como frio e calor, ao atingir a fase de permanência, produz a matéria nascida da temperatura, tanto interna quanto externamente, conforme o caso.",
+      "es": "35.  El elemento fuego, conocido como temperatura —frío o calor—, al alcanzar su etapa de presencia, origina la materia originada por la temperatura tanto interna como externamente, según corresponda."
+    }
+  },
+  {
+    "id": "abhm-6.47",
+    "pali": "Ojāsaṅkhāto āhāro āhārasamuṭṭhānarūpaṃ ajjhoharaṇakāle ṭhānappattova samuṭṭhāpeti.",
+    "translations": {
+      "en": "36. Nutriment, designated as nutritive essence, produces nutriment-originated materiality as soon as it reaches its place at the time of ingestion.",
+      "pt": "36. O alimento, conhecido como essência nutritiva, ao atingir a fase de permanência no momento da ingestão, produz a matéria nascida do alimento.",
+      "es": "36.  El alimento conocido como nutriente origina la materia originada por el nutriente cuando, una vez ingerido, alcanza su etapa de presencia."
+    }
+  },
+  {
+    "id": "abhm-6.48",
+    "pali": "Tattha hadayaindriyarūpāni kammajāneva.",
+    "translations": {
+      "en": "37. Therein, the heart-base and the faculty-materialities are born only of kamma.",
+      "pt": "37. Entre estes, a matéria do coração e as faculdades são nascidas apenas do kamma.",
+      "es": "37.  De estos, la base del corazón y la materia de facultad son nacidas exclusivamente del kamma."
+    }
+  },
+  {
+    "id": "abhm-6.49",
+    "pali": "Viññattidvayaṃ cittajameva.",
+    "translations": {
+      "en": "38. The two intimations are born only of consciousness.",
+      "pt": "38. As duas formas de expressão são nascidas apenas da mente.",
+      "es": "38.  Los dos tipos de intimación son nacidos exclusivamente de la conciencia."
+    }
+  },
+  {
+    "id": "abhm-6.50",
+    "pali": "Saddo cittotujo.",
+    "translations": {
+      "en": "39. Sound is born of consciousness and temperature.",
+      "pt": "39. O som é nascido da mente e da temperatura.",
+      "es": "39.  El sonido nace de la conciencia y de la temperatura."
+    }
+  },
+  {
+    "id": "abhm-6.51",
+    "pali": "Lahutādittayaṃ utucittāhārehi sambhoti.",
+    "translations": {
+      "en": "40. The triad of lightness, pliancy, and wieldiness arises from temperature, consciousness, and nutriment.",
+      "pt": "40. A tríade da leveza, etc., surge a partir da temperatura, da mente e do alimento.",
+      "es": "40.  La tríada que comienza con la ligereza se produce a partir de la temperatura, la conciencia y el nutriente."
+    }
+  },
+  {
+    "id": "abhm-6.52",
+    "pali": "Avinibbhogarūpāni ceva ākāsadhātu ca. Catūhi sambhūtāni.",
+    "translations": {
+      "en": "41. The inseparable materialities and the space element arise from the four origins.",
+      "pt": "41. A matéria inseparável e o elemento espaço são gerados pelas quatro origens.",
+      "es": "41.  La materia inseparable y el elemento espacio se producen a partir de las cuatro causas."
+    }
+  },
+  {
+    "id": "abhm-6.53",
+    "pali": "Lakkhaṇarūpāni na kutoci jāyanti.",
+    "translations": {
+      "en": "42. The characteristic-materialities do not arise from any origin.",
+      "pt": "42. A matéria de características não nasce de nenhuma origem.",
+      "es": "42.  La materia de las características no nace de ninguna causa."
+    }
+  },
+  {
+    "id": "abhm-6.54",
+    "pali": "Aṭṭhārasa pannarasa, terasa dvādasāti ca.",
+    "translations": {
+      "en": "43. Eighteen, fifteen, thirteen, and twelve:",
+      "pt": "43. Dezoito, quinze, treze e doze,",
+      "es": "43.  Dieciocho, quince, trece y doce, respectivamente,"
+    }
+  },
+  {
+    "id": "abhm-6.55",
+    "pali": "Kammacittotukāhāra-jāni honti yathākkamaṃ.",
+    "translations": {
+      "en": "Such are the counts of materialities born respectively of kamma, consciousness, temperature, and nutriment.",
+      "pt": "são nascidos do kamma, da mente, da temperatura e do alimento, respectivamente.",
+      "es": "son los tipos de materia nacidos del kamma, de la conciencia, de la temperatura y del nutriente."
+    }
+  },
+  {
+    "id": "abhm-6.56",
+    "pali": "Jāyamānādirūpānaṃ, sabhāvattā hi kevalaṃ.",
+    "translations": {
+      "en": "44. Being merely the intrinsic nature of materialities that are arising and so forth,",
+      "pt": "44. Pois, sendo meramente a própria natureza da matéria que surge e assim por diante,",
+      "es": "44.  Debido a que son simplemente la naturaleza intrínseca de la materia que está surgiendo y demás,"
+    }
+  },
+  {
+    "id": "abhm-6.57",
+    "pali": "Lakkhaṇāni na jāyanti, kehicīti pakāsitaṃ.",
+    "translations": {
+      "en": "the characteristics, it is declared, are not produced by any of the origins.",
+      "pt": "as características são declaradas como não sendo geradas por causa alguma.",
+      "es": "se declara que las características no son originadas por ninguna causa."
+    }
+  },
+  {
+    "id": "abhm-6.58",
+    "pali": "Ayamettha rūpasamuṭṭhānanayo.",
+    "translations": {
+      "en": "This is the method of the origin of materiality.",
+      "pt": "Este é, aqui, o método de originação da matéria.",
+      "es": "Este es el método de originación de la materia."
+    }
+  },
+  {
+    "id": "abhm-6.59",
+    "pali": "Kalāpayojanā",
+    "translations": {
+      "en": "The Composition of Material Groups",
+      "pt": "O Agrupamento de Matéria",
+      "es": "La combinación de los grupos (kalāpas)."
+    }
+  },
+  {
+    "id": "abhm-6.60",
+    "pali": "Ekuppādā ekanirodhā ekanissayā sahavuttino <b>ekavīsati rūpakalāpā</b> nāma.",
+    "translations": {
+      "en": "45. There are twenty-one material groups, so called because they have the same arising, the same cessation, the same physical basis, and coexist.",
+      "pt": "45. Os chamados vinte e um grupos de matéria (rūpakalāpas) surgem juntos, cessam juntos, têm uma dependência comum e coexistem.",
+      "es": "45.  Los llamados veintiún grupos materiales (rūpakalāpas) surgen juntos, cesan juntos, tienen una base común y coexisten."
+    }
+  },
+  {
+    "id": "abhm-6.61",
+    "pali": "Tattha jīvitaṃ avinibbhogarūpañca cakkhunā saha cakkhudasakanti pavuccati. Tathā sotādīhi saddhiṃ sotadasakaṃ ghānadasakaṃ jivhādasakaṃ kāyadasakaṃ itthibhāvadasakaṃ pumbhāvadasakaṃ vatthudasakañceti yathākkamaṃ yojetabbaṃ. Avinibbhogarūpameva jīvitena saha jīvitanavakanti pavuccati. Ime <b>nava kammasamuṭṭhānakalāpā</b>.",
+    "translations": {
+      "en": "46. Therein, life and inseparable materiality together with the eye-sensitivity is called the eye-decad. Similarly, combination should be made respectively with the ear, etc., as the ear-decad, nose-decad, tongue-decad, body-decad, femininity-decad, masculinity-decad, and heart-base-decad. Inseparable materiality alone, together with life, is called the life-nonad. These are the nine kamma-originated material groups.",
+      "pt": "46. Dentre eles, a vida e a matéria inseparável, juntamente com o olho, são chamados de 'década do olho'. Da mesma forma, com o ouvido, etc., devem ser combinados respectivamente a década do ouvido, a década do nariz, a década da língua, a década do corpo, a década do sexo feminino, a década do sexo masculino e a década do coração. A própria matéria inseparável, juntamente com a vida, é chamada de 'nônada da vida'. Estes são os nove grupos originados pelo kamma.",
+      "es": "46.  Allí, la facultad de la vida y la materia inseparable junto con el ojo se denominan el 'decenio del ojo'. Del mismo modo, deben combinarse en orden con el oído y los demás: el decenio del oído, el decenio de la nariz, el decenio de la lengua, el decenio del cuerpo, el decenio de la feminidad, el decenio de la masculinidad y el decenio de la base del corazón. La materia inseparable junto con la facultad de la vida sola se denomina el 'novenario de la vida'. Estos son los nueve grupos originados por el kamma."
+    }
+  },
+  {
+    "id": "abhm-6.62",
+    "pali": "Avinibbhogarūpaṃ pana suddhaṭṭhakaṃ, tadeva kāyaviññattiyā saha kāyaviññattinavakaṃ, vacīviññattisaddehi saha vacīviññattidasakaṃ, lahutādīhi saddhiṃ lahutādekādasakaṃ, kāyaviññattilahutādidvādasakaṃ, vacīviññattisaddalahutāditerasakañceti <b>cha cittasamuṭṭhānakalāpā</b>.",
+    "translations": {
+      "en": "47. Inseparable materiality by itself is the bare octad. That same octad together with bodily intimation is the bodily-intimation-nonad; with verbal intimation and sound, the verbal-intimation-decad; with lightness, etc., the lightness-undecad; with bodily intimation and lightness, etc., the bodily-intimation-duodecad; with verbal intimation, sound, and lightness, etc., the verbal-intimation-terdecad. These are the six consciousness-originated material groups.",
+      "pt": "47. A matéria inseparável isolada é a 'óctada pura'. Esta mesma, juntamente com a intimação corporal, é a 'nônada da intimação corporal'; com a intimação vocal e o som, é a 'década da intimação vocal'; com a leveza, etc., é a 'undécada da leveza'; com a intimação corporal e a leveza, etc., é a 'duodécada'; com a intimação vocal, o som e a leveza, etc., é a 'tridécada'. Estes são os seis grupos originados pela mente.",
+      "es": "47.  La materia inseparable es el 'octeto puro'; esa misma con la intimación corporal es el 'novenario de la intimación corporal'; con la intimación verbal y el sonido es el 'decenio de la intimación verbal'; con la ligereza y demás es el 'undecenario de la ligereza'; con la intimación corporal y la ligereza y demás es el 'duodecenario'; con la intimación verbal, el sonido y la ligereza y demás es el 'tredecenario'. Estos son los seis grupos originados por la conciencia."
+    }
+  },
+  {
+    "id": "abhm-6.63",
+    "pali": "Suddhaṭṭhakaṃ saddanavakaṃ lahutādekādasakaṃ saddalahutādidvādasakañceti <b>cattāro utusamuṭṭhānakalāpā</b>.",
+    "translations": {
+      "en": "48. The bare octad, the sound-nonad, the lightness-undecad, and the sound-and-lightness-duodecad: these are the four temperature-originated material groups.",
+      "pt": "48. A óctada pura, a nônada do som, a undécada da leveza e a duodécada do som e da leveza são os quatro grupos originados pela temperatura.",
+      "es": "48.  El octeto puro, el novenario del sonido, el undecenario de la ligereza y demás, y el duodecenario del sonido, la ligereza y demás son los cuatro grupos originados por la temperatura."
+    }
+  },
+  {
+    "id": "abhm-6.64",
+    "pali": "Suddhaṭṭhakaṃ lahutādekādasakañceti <b>dveāhārasamuṭṭhānakalāpā</b>.",
+    "translations": {
+      "en": "49. The bare octad and the lightness-undecad: these are the two nutriment-originated material groups.",
+      "pt": "49. A óctada pura e a undécada da leveza são os dois grupos originados pelo nutriente.",
+      "es": "49.  El octeto puro y el undecenario de la ligereza y demás son los dos grupos originados por el nutrimento."
+    }
+  },
+  {
+    "id": "abhm-6.65",
+    "pali": "Tattha suddhaṭṭhakaṃ saddanavakañceti dve utusamuṭṭhānakalāpā bahiddhāpi labbhanti, avasesā pana sabbepi ajjhattikamevāti.",
+    "translations": {
+      "en": "50. Therein, two temperature-originated groups—the bare octad and the sound-nonad—are also found externally. All the remaining groups, however, are exclusively internal.",
+      "pt": "50. Dentre eles, a óctada pura e a nônada do som, estes dois grupos originados pela temperatura, também são encontrados externamente; todos os demais, porém, são estritamente internos.",
+      "es": "50.  De estos, el octeto puro y el novenario del sonido, que son los dos grupos originados por la temperatura, también se encuentran externamente; pero todos los restantes son solo internos."
+    }
+  },
+  {
+    "id": "abhm-6.66",
+    "pali": "Kammacittotukāhāra-samuṭṭhānā yathākkamaṃ.",
+    "translations": {
+      "en": "51. Originated from kamma, consciousness, temperature, and nutriment, respectively,",
+      "pt": "51. Originados pelo kamma, pela mente, pela temperatura e pelo nutriente, respectivamente,",
+      "es": "51.  Originados por el kamma, la conciencia, la temperatura y el nutrimento, respectivamente,"
+    }
+  },
+  {
+    "id": "abhm-6.67",
+    "pali": "Nava cha caturo dveti, kalāpā ekavīsati.",
+    "translations": {
+      "en": "Are nine, six, four, and two groups, making twenty-one material groups in all.",
+      "pt": "Nove, seis, quatro e dois: os grupos são vinte e um.",
+      "es": "hay nueve, seis, cuatro y dos; así, los grupos son veintiuno."
+    }
+  },
+  {
+    "id": "abhm-6.68",
+    "pali": "Kalāpānaṃ pariccheda-lakkhaṇattā vicakkhaṇā;</p><p rend=\"gathalast\">Na kalāpaṅgamiccāhu, ākāsaṃ lakkhaṇāni ca.",
+    "translations": {
+      "en": "Because they serve as the delimitation of the groups, the wise say that space and the characteristics are not constituents of the material groups.",
+      "pt": "Por serem os limites definidores e as características dos grupos, os sábios não dizem que o espaço e as características sejam membros dos grupos.",
+      "es": "Debido a que el elemento espacio y las características definen los límites de los grupos, los sabios dicen que no son factores constituyentes de los grupos."
+    }
+  },
+  {
+    "id": "abhm-6.69",
+    "pali": "Ayamettha kalāpayojanā.",
+    "translations": {
+      "en": "This is the composition of material groups.",
+      "pt": "Este é, aqui, o agrupamento de matéria.",
+      "es": "Este es el método de combinación de los grupos."
+    }
+  },
+  {
+    "id": "abhm-6.70",
+    "pali": "Rūpapavattikkamo",
+    "translations": {
+      "en": "The Course of Materiality",
+      "pt": "O Modo de Ocorrência da Matéria",
+      "es": "El orden del proceso de la materia."
+    }
+  },
+  {
+    "id": "abhm-6.71",
+    "pali": "Sabbānipi panetāni rūpāni kāmaloke yathārahaṃ anūnāni pavattiyaṃ upalabbhanti.",
+    "translations": {
+      "en": "52. Now, all these material forms are found undiminished in the course of existence in the sense-sphere realm, as is appropriate.",
+      "pt": "52. Todas estas matérias, sem deficiência, são encontradas conforme o caso durante o curso da existência no reino do desejo (kāmaloka).",
+      "es": "52.  Todas estas formas materiales se encuentran plenamente, según corresponda, durante el curso de la existencia en el mundo del deseo."
+    }
+  },
+  {
+    "id": "abhm-6.72",
+    "pali": "Paṭisandhiyaṃ pana saṃsedajānañceva opapātikānañca cakkhusotaghānajivhākāyabhāvavatthudasakasaṅkhātāni satta dasakāni pātubhavanti ukkaṭṭhavasena, omakavasena pana cakkhusotaghānabhāvadasakāni kadācipi na labbhanti, tasmā tesaṃ vasena kalāpahāni veditabbā.",
+    "translations": {
+      "en": "53. But at rebirth-linking, for moisture-born and spontaneously arisen beings, seven decads—namely, the eye, ear, nose, tongue, body, sex, and heart-base decads—arise in the maximum case. In the minimum case, however, the eye, ear, nose, and sex decads are sometimes not obtained. Therefore, a deficiency of groups should be understood in their case.",
+      "pt": "53. No renascimento, porém, para os seres nascidos da umidade e os de nascimento espontâneo, surgem no máximo sete décadas — a saber, as décadas do olho, do ouvido, do nariz, da língua, do corpo, do sexo e do coração. No mínimo, as décadas do olho, do ouvido, do nariz e do sexo às vezes não são obtidas; portanto, deve-se entender uma redução de grupos em relação a eles.",
+      "es": "53.  En el renacimiento de los seres nacidos de la humedad y de nacimiento espontáneo, aparecen, en el caso máximo, siete decenios denominados los decenios del ojo, el oído, la nariz, la lengua, el cuerpo, el sexo y la base; en el caso mínimo, a veces no se obtienen los decenios del ojo, el oído, la nariz y el sexo; por lo tanto, debe entenderse la disminución de los grupos según sea el caso."
+    }
+  },
+  {
+    "id": "abhm-6.73",
+    "pali": "Gabbhaseyyakasattānaṃ pana kāyabhāvavatthudasakasaṅkhātāni tīṇi dasakāni pātubhavanti, tatthāpi bhāvadasakaṃ kadāci na labbhati, tato paraṃ pavattikāle kamena cakkhudasakādīni ca pātubhavanti.",
+    "translations": {
+      "en": "54. For womb-born beings, however, three decads arise: the body, sex, and heart-base decads. Among these, the sex-decad is sometimes not obtained. Thereafter, during the course of existence, the eye-decad and the others arise in sequence.",
+      "pt": "54. Para os seres nascidos do útero, porém, surgem três décadas — a saber, as décadas do corpo, do sexo e do coração. Mesmo aí, a década do sexo às vezes não é obtida. Depois disso, durante o curso da existência, surgem gradualmente a década do olho, etc.",
+      "es": "54.  Para los seres que yacen en el útero, aparecen tres decenios denominados los decenios del cuerpo, el sexo y la base. Incluso allí, el decenio del sexo a veces no se obtiene. A partir de entonces, durante el curso de la existencia, aparecen gradualmente el decenio del ojo y los demás."
+    }
+  },
+  {
+    "id": "abhm-6.74",
+    "pali": "Iccevaṃ paṭisandhimupādāya kammasamuṭṭhānā, dutiyacittamupādāya cittasamuṭṭhānā, ṭhitikālamupādāya utusamuṭṭhānā, ojāpharaṇamupādāya āhārasamuṭṭhānā ceti catusamuṭṭhānarūpakalāpasantati kāmaloke dīpajālā viya, nadīsoto viya ca yāvatāyukamabbocchinnā pavattati.",
+    "translations": {
+      "en": "55. Thus, kamma-generated from rebirth-linking onwards, consciousness-generated from the second consciousness onwards, temperature-generated from the static phase onwards, and nutriment-generated from the diffusion of nutritive essence onwards—this continuum of material groups with four origins proceeds unbroken in the sense-sphere realm for as long as the life-span lasts, like the flame of a lamp and the current of a river.",
+      "pt": "55. Assim, a partir do renascimento, os grupos originados pelo kamma; a partir do segundo momento mental, os originados pela mente; a partir do momento de presença, os originados pela temperatura; e a partir da difusão da essência nutritiva, os originados pelo nutriente — esta continuidade de grupos de matéria de quádrupla originação flui ininterruptamente no reino do desejo até o fim da vida, como a chama de uma lâmpada ou a correnteza de um rio.",
+      "es": "55.  De este modo, a partir del renacimiento surge la materia originada por el kamma; a partir de la segunda conciencia, la materia originada por la conciencia; a partir del momento de duración, la materia originada por la temperatura; a partir de la difusión de la esencia nutritiva, la materia originada por el nutrimento. Así, la continuidad de los grupos materiales de cuádruple origen fluye ininterrumpidamente en el mundo del deseo mientras dure la vida, como la llama de una lámpara o el fluir de un río."
+    }
+  },
+  {
+    "id": "abhm-6.75",
+    "pali": "Maraṇakāle pana cuticittoparisattarasamacittassa ṭhitikālamupādāya kammajarūpāni na uppajjanti, puretaramuppannāni ca kammajarūpāni cuticittasamakālameva pavattitvā nirujjhanti, tato paraṃ cittajāhārajarūpañca vocchijjati, tato paraṃ utusamuṭṭhānarūpaparamparā yāva matakaḷevarasaṅkhātā pavattanti.",
+    "translations": {
+      "en": "56. At the time of death, however, kamma-generated materiality ceases to arise from the static phase of the seventeenth consciousness preceding the death-consciousness. The kamma-generated materiality that had arisen previously continues until the death-consciousness and ceases simultaneously with it. Thereafter, consciousness-generated and nutriment-generated materiality are cut off. Then a series of temperature-generated materiality continues for as long as what is called the corpse lasts.",
+      "pt": "56. No momento da morte, a partir do momento de presença da décima sétima mente que precede a consciência de morte (cuticitta), as matérias nascidas do kamma não mais surgem. As matérias nascidas do kamma que surgiram anteriormente, tendo persistido, cessam simultaneamente com a consciência de morte. Depois disso, as matérias nascidas da mente e do nutriente são cortadas. A partir de então, a sucessão de matérias originadas pela temperatura continua enquanto durar o que é chamado de cadáver.",
+      "es": "56.  Sin embargo, en el momento de la muerte, a partir del momento de duración de la decimoséptima conciencia anterior a la conciencia de muerte, ya no surgen materias nacidas del kamma. Las materias nacidas del kamma que surgieron anteriormente, habiendo continuado, cesan simultáneamente con la conciencia de muerte. Después de eso, la materia nacida de la conciencia y la nacida del nutrimento se interrumpen. A partir de entonces, la sucesión de materia originada por la temperatura continúa mientras persista lo que se denomina el cadáver."
+    }
+  },
+  {
+    "id": "abhm-6.76",
+    "pali": "Iccevaṃ matasattānaṃ, punadeva bhavantare.",
+    "translations": {
+      "en": "57. Thus for beings who have died, again in another existence,",
+      "pt": "57. Assim, para os seres que morreram, novamente em outra existência,",
+      "es": "57.  Así, para los seres que han muerto, de nuevo en otra existencia,"
+    }
+  },
+  {
+    "id": "abhm-6.77",
+    "pali": "Paṭisandhimupādāya, tathā rūpaṃ pavattati.",
+    "translations": {
+      "en": "from rebirth-linking onwards, materiality thus proceeds.",
+      "pt": "a partir do renascimento, a matéria ocorre da mesma forma.",
+      "es": "a partir del renacimiento, la materia procede de la misma manera."
+    }
+  },
+  {
+    "id": "abhm-6.78",
+    "pali": "Rūpaloke pana ghānajivhākāyabhāvadasakāni ca āhārajakalāpāni ca na labbhanti, tasmā tesaṃ paṭisandhikāle cakkhusotavatthuvasena tīṇi dasakāni jīvitanavakañceti cattāro kammasamuṭṭhānakalāpā, pavattiyaṃ cittotusamuṭṭhānā ca labbhanti.",
+    "translations": {
+      "en": "58. In the fine-material realm, however, the nose, tongue, body, and sex decads, and nutriment-generated groups, are not found. Therefore, at their rebirth-linking, there are four kamma-generated groups: three decads—eye, ear, and heart-base—and the life-nonad. In the course of existence, consciousness-generated and temperature-generated groups are also obtained.",
+      "pt": "58. No reino da matéria sutil (rūpaloka), porém, as décadas do nariz, da língua, do corpo e do sexo, bem como os grupos originados pelo nutriente, não são obtidos. Portanto, no momento do seu renascimento, surgem quatro grupos originados pelo kamma — a saber, três décadas (olho, ouvido e base do coração) e a nônada da vida. Durante o curso da existência, os grupos originados pela mente e pela temperatura também são obtidos.",
+      "es": "58.  En el mundo de la materia sutil, no se encuentran los decenios de la nariz, la lengua, el cuerpo y el sexo, ni los grupos originados por el nutrimento. Por lo tanto, en el momento de su renacimiento, surgen cuatro grupos originados por el kamma: los tres decenios del ojo, el oído y la base, y el novenario de la vida. Durante el curso de la existencia, también se encuentran los originados por la conciencia y por la temperatura."
+    }
+  },
+  {
+    "id": "abhm-6.79",
+    "pali": "Asaññasattānaṃ pana cakkhusotavatthusaddāpi na labbhanti, tathā sabbānipi cittajarūpāni, tasmā tesaṃ paṭisandhikāle jīvitanavakameva, pavattiyañca saddavajjitaṃ utusamuṭṭhānarūpaṃ atiricchati.",
+    "translations": {
+      "en": "59. For non-percipient beings, however, the eye, ear, heart-base, and sound are not obtained, and likewise all consciousness-generated materiality. Therefore, at their rebirth-linking there is only the life-nonad; and in the course of their existence, temperature-generated materiality, excluding sound, also occurs.",
+      "pt": "59. Para os seres não-percipientes (asaññasattā), porém, o olho, o ouvido, a base do coração e o som também não são obtidos; da mesma forma, todas as matérias nascidas da mente. Portanto, no momento do seu renascimento, surge apenas a nônada da vida, e durante o curso da existência, a matéria originada pela temperatura, excluindo o som, continua.",
+      "es": "59.  Para los seres no perceptivos, tampoco se encuentran el ojo, el oído, la base ni el sonido, ni ninguna materia originada por la conciencia. Por lo tanto, en el momento de su renacimiento, solo poseen el novenario de la vida, y durante el curso de la existencia, persiste la materia originada por la temperatura, exceptuando el sonido."
+    }
+  },
+  {
+    "id": "abhm-6.80",
+    "pali": "Iccevaṃ kāmarūpāsaññīsaṅkhātesu tīsu ṭhānesu paṭisandhipavattivasena duvidhā rūpappavatti veditabbā.",
+    "translations": {
+      "en": "60. Thus, the process of materiality should be understood as twofold—by way of rebirth-linking and the course of existence—in the three planes designated as the sense-sphere, the fine-material sphere, and the non-percipient sphere.",
+      "pt": "60. Assim, nos três planos conhecidos como o do desejo, o da matéria sutil e o dos não-percipientes, a ocorrência da matéria deve ser entendida de duas maneiras: por meio do renascimento e por meio do curso da existência.",
+      "es": "60.  De este modo, debe entenderse el doble proceso de la materia (en el renacimiento y durante el curso de la vida) en los tres planos denominados: del deseo, de la materia sutil y de los seres no perceptivos."
+    }
+  },
+  {
+    "id": "abhm-6.81",
+    "pali": "Aṭṭhavīsati kāmesu, honti tevīsa rūpisu.",
+    "translations": {
+      "en": "61. Twenty-eight types of materiality are in the sense-sphere; twenty-three in the fine-material sphere.",
+      "pt": "61. Vinte e oito matérias são encontradas no reino do desejo, vinte e três no reino da matéria sutil.",
+      "es": "61.  Hay veintiocho tipos de materia en el plano del deseo y veintitrés en el plano de la materia sutil."
+    }
+  },
+  {
+    "id": "abhm-6.82",
+    "pali": "Sattaraseva saññīnaṃ, arūpe natthi kiñcipi.",
+    "translations": {
+      "en": "Seventeen for the non-percipient; in the formless realm there is nothing at all.",
+      "pt": "Apenas dezessete para os não-percipientes, e no reino imaterial não há nenhuma.",
+      "es": "Hay solo diecisiete para los seres no perceptivos, y en el plano inmaterial no hay ninguna."
+    }
+  },
+  {
+    "id": "abhm-6.83",
+    "pali": "Saddo vikāro jaratā, maraṇañcopapattiyaṃ;</p><p rend=\"gathalast\">Na labbhanti pavatte tu, na kiñcipi na labbhati.",
+    "translations": {
+      "en": "Sound, alteration, aging, and death are not obtained at rebirth; but in the course of existence, there is nothing that is not obtained.",
+      "pt": "O som, a mutabilidade, a decadência e a morte não são obtidos no renascimento; mas durante o curso da existência, não há nada que não seja obtido.",
+      "es": "El sonido, la materia de alteración, la vejez y la muerte no se encuentran en el momento del renacimiento; sin embargo, durante el curso de la existencia, no hay nada que no se encuentre."
+    }
+  },
+  {
+    "id": "abhm-6.84",
+    "pali": "Ayamettha rūpapavattikkamo.",
+    "translations": {
+      "en": "This is the course of materiality.",
+      "pt": "Este é, aqui, o modo de ocorrência da matéria.",
+      "es": "Este es el orden del proceso de la materia."
+    }
+  },
+  {
+    "id": "abhm-6.85",
+    "pali": "Nibbānabhedo",
+    "translations": {
+      "en": "The Kinds of Nibbāna",
+      "pt": "A Classificação do Nibbāna",
+      "es": "La clasificación del Nibbāna."
+    }
+  },
+  {
+    "id": "abhm-6.86",
+    "pali": "<b>Nibbānaṃ</b> pana lokuttarasaṅkhātaṃ catumaggañāṇena sacchikātabbaṃ maggaphalānamārammaṇabhūtaṃ vānasaṅkhātāya taṇhāya nikkhantattā nibbānanti pavuccati.",
+    "translations": {
+      "en": "62. Nibbāna, however, is designated as supramundane. It is to be realized by the knowledge of the four paths and serves as the object for the paths and their fruits. It is called Nibbāna because it is a departure from craving, which is called 'vāna'.",
+      "pt": "62. O Nibbāna, que é denominado supramundano (lokuttara), deve ser realizado pelo conhecimento dos quatro caminhos; ele é o objeto dos caminhos e frutos, e é chamado de Nibbāna por ser a saída (nikkhanta) do desejo ardente (taṇhā), que é denominado 'vāna' (tecedura).",
+      "es": "62.  El Nibbāna, que es denominado supramundano, debe ser realizado mediante el conocimiento de los cuatro senderos; es el objeto de los senderos y sus frutos, y se llama Nibbāna porque se ha alejado del deseo que se denomina 'vāna' (atadura)."
+    }
+  },
+  {
+    "id": "abhm-6.87",
+    "pali": "Tadetaṃ sabhāvato ekavidhampi saupādisesanibbānadhātu anupādisesanibbānadhātu ceti duvidhaṃ hoti kāraṇapariyāyena.",
+    "translations": {
+      "en": "63. This Nibbāna, though one in its intrinsic nature, becomes twofold by way of a conditional distinction: the Nibbāna-element with residue remaining and the Nibbāna-element without residue remaining.",
+      "pt": "63. Embora seja de uma única natureza intrínseca (sabhāva), ele é de dois tipos de acordo com a maneira como é tratado: o elemento do Nibbāna com resíduo (saupādisesanibbānadhātu) e o elemento do Nibbāna sem resíduo (anupādisesanibbānadhātu).",
+      "es": "63.  Aunque es de un solo tipo por su propia naturaleza, se divide en dos según el modo de su causa: el elemento Nibbāna con residuo de apego y el elemento Nibbāna sin residuo de apego."
+    }
+  },
+  {
+    "id": "abhm-6.88",
+    "pali": "Tathā suññataṃ animittaṃ appaṇihitañceti tividhaṃ hoti ākārabhedena.",
+    "translations": {
+      "en": "64. Similarly, it is threefold by difference in aspect: as emptiness, the signless, and the undirected.",
+      "pt": "64. Da mesma forma, é de três tipos de acordo com os seus aspectos: vazio (suññata), sem sinal (animitta) e sem desejos (appaṇihita).",
+      "es": "64.  Asimismo, es de tres tipos según la distinción de sus aspectos: vacío, sin señales y sin anhelo."
+    }
+  },
+  {
+    "id": "abhm-6.89",
+    "pali": "Padamaccutamaccantaṃ, asaṅkhatamanuttaraṃ.",
+    "translations": {
+      "en": "65. The unshakable state, the ultimate, the unconditioned, the unsurpassed—",
+      "pt": "65. O estado que é imortal, absoluto, incondicionado e supremo...",
+      "es": "65.  El estado imperecedero y absoluto, lo incondicionado y supremo."
+    }
+  },
+  {
+    "id": "abhm-6.90",
+    "pali": "Nibbānamiti bhāsanti, vānamuttā mahesayo.",
+    "translations": {
+      "en": "so the great seers, freed from craving, declare it to be Nibbāna.",
+      "pt": "...es chamado de Nibbāna pelos grandes sábios libertos do desejo ardente (vāna).",
+      "es": "Los grandes sabios, liberados del deseo, lo llaman Nibbāna."
+    }
+  },
+  {
+    "id": "abhm-6.91",
+    "pali": "Iti cittaṃ cetasikaṃ, rūpaṃ nibbānamiccapi;</p><p rend=\"gathalast\">Paramatthaṃ pakāsenti, catudhāva tathāgatā.",
+    "translations": {
+      "en": "Thus consciousness, mental factors, materiality, and Nibbāna too—the Tathāgatas have proclaimed these four as the ultimate realities.",
+      "pt": "Assim, os Tathāgatas declaram que a realidade última (paramattha) é de quatro tipos: consciência (citta), fatores mentais (cetasika), matéria (rūpa) e Nibbāna.",
+      "es": "Así, los Tathāgatas declaran que la realidad última es de cuatro tipos: conciencia, factores mentales, materia y también Nibbāna."
+    }
+  },
+  {
+    "id": "abhm-6.92",
+    "pali": "Iti abhidhammatthasaṅgahe rūpasaṅgahavibhāgo nāma",
+    "translations": {
+      "en": "Thus ends the chapter in the Manual of Abhidhamma named the Analysis of the Compendium of Materiality.",
+      "pt": "Assim termina, no Abhidhammatthasaṅgaha, o capítulo intitulado Compêndio da Matéria.",
+      "es": "Así concluye, en el Compendio del Abhidhamma, el capítulo titulado Análisis del Compendio de la Materia."
+    }
+  },
+  {
+    "id": "abhm-6.93",
+    "pali": "Chaṭṭho paricchedo.",
+    "translations": {
+      "en": "The Sixth Chapter.",
+      "pt": "Sexto Capítulo.",
+      "es": "Sexto capítulo."
+    }
+  }
+]

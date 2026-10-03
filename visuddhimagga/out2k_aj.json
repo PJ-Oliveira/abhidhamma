@@ -1,0 +1,902 @@
+[
+  {
+    "pali": "āgate",
+    "meaning": {
+      "en": "come; arrived",
+      "pt": "chegado; vindo",
+      "es": "llegado; venido"
+    },
+    "grammar": "verb (past participle, locative)"
+  },
+  {
+    "pali": "āgataṭṭhena",
+    "meaning": {
+      "en": "by the meaning of having come",
+      "pt": "pelo significado de ter vindo",
+      "es": "por el significado de haber venido"
+    },
+    "grammar": "noun (instrumental)"
+  },
+  {
+    "pali": "āgantukabhavaṅgaṃ",
+    "meaning": {
+      "en": "adventitious life-continuum",
+      "pt": "contínuo-vital adventício",
+      "es": "continuo vital adventicio"
+    },
+    "grammar": "noun (neuter, nominative)"
+  },
+  {
+    "pali": "āgammā",
+    "meaning": {
+      "en": "having come; owing to",
+      "pt": "tendo chegado; devido a",
+      "es": "habiendo venido; debido a"
+    },
+    "grammar": "verb (absolutive)"
+  },
+  {
+    "pali": "ādāsatalādīsu",
+    "meaning": {
+      "en": "on the surface of a mirror, etc.",
+      "pt": "na superfície de um espelho, etc.",
+      "es": "en la superficie de un espejo, etc."
+    },
+    "grammar": "noun (locative, plural)"
+  },
+  {
+    "pali": "ādiṃ",
+    "meaning": {
+      "en": "beginning; starting with",
+      "pt": "início; começando com",
+      "es": "inicio; empezando con"
+    },
+    "grammar": "noun (accusative)"
+  },
+  {
+    "pali": "ādikammikassa",
+    "meaning": {
+      "en": "of the beginner",
+      "pt": "do iniciante",
+      "es": "del principiante"
+    },
+    "grammar": "noun (genitive/dative)"
+  },
+  {
+    "pali": "ādiccabandhunā",
+    "meaning": {
+      "en": "by the kinsman of the sun",
+      "pt": "pelo parente do sol",
+      "es": "por el pariente del sol"
+    },
+    "grammar": "noun (instrumental)"
+  },
+  {
+    "pali": "ādhipaccaṃ",
+    "meaning": {
+      "en": "lordship; dominance",
+      "pt": "domínio; supremacia",
+      "es": "dominio; supremacía"
+    },
+    "grammar": "noun (neuter, nominative/accusative)"
+  },
+  {
+    "pali": "ādarena",
+    "meaning": {
+      "en": "with care; with affection",
+      "pt": "com cuidado; com afeto",
+      "es": "con cuidado; con afecto"
+    },
+    "grammar": "noun (instrumental)"
+  },
+  {
+    "pali": "ābhogo",
+    "meaning": {
+      "en": "attention; adverting",
+      "pt": "atenção; direcionamento mental",
+      "es": "atención; advertencia"
+    },
+    "grammar": "noun (masculine, nominative)"
+  },
+  {
+    "pali": "ābhidhammika",
+    "meaning": {
+      "en": "student of the Abhidhamma",
+      "pt": "estudante do Abhidhamma",
+      "es": "estudiante del Abhidhamma"
+    },
+    "grammar": "noun / adjective"
+  },
+  {
+    "pali": "ñāṇesu",
+    "meaning": {
+      "en": "in knowledges",
+      "pt": "nos conhecimentos",
+      "es": "en los conocimientos"
+    },
+    "grammar": "noun (neuter, locative plural)"
+  },
+  {
+    "pali": "ñāṇasampayuttāni",
+    "meaning": {
+      "en": "associated with knowledge",
+      "pt": "associados ao conhecimento",
+      "es": "asociados con el conocimiento"
+    },
+    "grammar": "adjective (neuter, nominative/accusative plural)"
+  },
+  {
+    "pali": "ñāṇappayogabhedo",
+    "meaning": {
+      "en": "difference in the application of knowledge",
+      "pt": "diferença na aplicação do conhecimento",
+      "es": "diferencia en la aplicación del conocimiento"
+    },
+    "grammar": "noun (masculine, nominative)"
+  },
+  {
+    "pali": "ñāṇahīne",
+    "meaning": {
+      "en": "inferior in knowledge",
+      "pt": "inferior em conhecimento",
+      "es": "inferior en conocimiento"
+    },
+    "grammar": "adjective (locative/accusative plural)"
+  },
+  {
+    "pali": "ñāṇadassanavisuddhiniddesavaṇṇanā",
+    "meaning": {
+      "en": "description of the exposition of the purification by knowledge and vision",
+      "pt": "descrição da exposição da purificação do conhecimento e visão",
+      "es": "descripción de la exposición de la purificación del conocimiento y visión"
+    },
+    "grammar": "noun (feminine, nominative)"
+  },
+  {
+    "pali": "ñāṇadassanavisuddhi",
+    "meaning": {
+      "en": "purification by knowledge and vision",
+      "pt": "purificação do conhecimento e visão",
+      "es": "purificación del conocimiento y visión"
+    },
+    "grammar": "noun (feminine, nominative)"
+  },
+  {
+    "pali": "ñāṇabhedato",
+    "meaning": {
+      "en": "by the difference in knowledge",
+      "pt": "pela diferença no conhecimento",
+      "es": "por la diferencia en el conocimiento"
+    },
+    "grammar": "noun (ablative)"
+  },
+  {
+    "pali": "ñātijanassa",
+    "meaning": {
+      "en": "of relatives; of kinsmen",
+      "pt": "dos parentes",
+      "es": "de los parientes"
+    },
+    "grammar": "noun (genitive)"
+  },
+  {
+    "pali": "yāvatāyukamabbocchinnā",
+    "meaning": {
+      "en": "uninterrupted for the duration of life",
+      "pt": "ininterrupto pela duração da vida",
+      "es": "ininterrumpido por la duración de la vida"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "yānattayamukhena",
+    "meaning": {
+      "en": "by means of the three vehicles",
+      "pt": "por meio dos três veículos",
+      "es": "por medio de los tres vehículos"
+    },
+    "grammar": "noun (instrumental)"
+  },
+  {
+    "pali": "yutto",
+    "meaning": {
+      "en": "endowed; associated",
+      "pt": "dotado; associado",
+      "es": "dotado; asociado"
+    },
+    "grammar": "adjective (masculine, nominative)"
+  },
+  {
+    "pali": "yuttito",
+    "meaning": {
+      "en": "by reason; logically",
+      "pt": "por razão; logicamente",
+      "es": "por razón; lógicamente"
+    },
+    "grammar": "adverb / noun (ablative)"
+  },
+  {
+    "pali": "yugaḷāni",
+    "meaning": {
+      "en": "pairs",
+      "pt": "pares",
+      "es": "pares"
+    },
+    "grammar": "noun (neuter, nominative/accusative plural)"
+  },
+  {
+    "pali": "yugaḷā",
+    "meaning": {
+      "en": "pairs",
+      "pt": "pares",
+      "es": "pares"
+    },
+    "grammar": "noun (plural)"
+  },
+  {
+    "pali": "yoniyo",
+    "meaning": {
+      "en": "wombs; modes of generation",
+      "pt": "ventres; modos de geração",
+      "es": "vientres; modos de generación"
+    },
+    "grammar": "noun (feminine, plural)"
+  },
+  {
+    "pali": "yojanā",
+    "meaning": {
+      "en": "league; explanation",
+      "pt": "légua; explicação",
+      "es": "legua; explicación"
+    },
+    "grammar": "noun (feminine, nominative)"
+  },
+  {
+    "pali": "yogato",
+    "meaning": {
+      "en": "from application; from union",
+      "pt": "da aplicação; da união",
+      "es": "de la aplicación; de la unión"
+    },
+    "grammar": "noun (ablative)"
+  },
+  {
+    "pali": "yevāpanakadhammesu",
+    "meaning": {
+      "en": "in the 'or-whatever' states",
+      "pt": "nos estados 'ou o que quer que'",
+      "es": "en los estados 'o lo que sea'"
+    },
+    "grammar": "noun (locative, plural)"
+  },
+  {
+    "pali": "yaṃkiñci",
+    "meaning": {
+      "en": "whatever",
+      "pt": "o que quer que",
+      "es": "lo que sea"
+    },
+    "grammar": "pronoun"
+  },
+  {
+    "pali": "yattakaṃ",
+    "meaning": {
+      "en": "however much",
+      "pt": "por muito que; tanto quanto",
+      "es": "por mucho que; tanto como"
+    },
+    "grammar": "adjective / pronoun"
+  },
+  {
+    "pali": "yathāvuttānusārena",
+    "meaning": {
+      "en": "according to what has been said",
+      "pt": "de acordo com o que foi dito",
+      "es": "según lo que se ha dicho"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "yathāvuttavasenevāti",
+    "meaning": {
+      "en": "just as has been said",
+      "pt": "exatamente como foi dito",
+      "es": "justamente como se ha dicho"
+    },
+    "grammar": "phrase"
+  },
+  {
+    "pali": "yathārahamārammaṇaṃ",
+    "meaning": {
+      "en": "appropriate object",
+      "pt": "objeto apropriado",
+      "es": "objeto apropiado"
+    },
+    "grammar": "noun phrase"
+  },
+  {
+    "pali": "yathāladdhasampattinimittakassa",
+    "meaning": {
+      "en": "of what has the sign of success as obtained",
+      "pt": "do que tem o sinal de sucesso como obtido",
+      "es": "de lo que tiene el signo de éxito como obtenido"
+    },
+    "grammar": "noun (genitive)"
+  },
+  {
+    "pali": "yathāhu",
+    "meaning": {
+      "en": "as they say",
+      "pt": "como dizem",
+      "es": "como dicen"
+    },
+    "grammar": "verb phrase"
+  },
+  {
+    "pali": "yathādhippetasiddhivibandhakānaṃ",
+    "meaning": {
+      "en": "of those that obstruct the success as intended",
+      "pt": "daqueles que obstruem o sucesso como pretendido",
+      "es": "de aquellos que obstruyen el éxito como pretendido"
+    },
+    "grammar": "noun (genitive, plural)"
+  },
+  {
+    "pali": "yathābhūtañca",
+    "meaning": {
+      "en": "and according to reality",
+      "pt": "e de acordo com a realidade",
+      "es": "y según la realidad"
+    },
+    "grammar": "adverb + particle"
+  },
+  {
+    "pali": "yathicchitanipphādane",
+    "meaning": {
+      "en": "in producing as desired",
+      "pt": "na produção conforme desejado",
+      "es": "en la producción como se desea"
+    },
+    "grammar": "noun (locative)"
+  },
+  {
+    "pali": "yatheva",
+    "meaning": {
+      "en": "just as",
+      "pt": "assim como",
+      "es": "así como"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "vītivattāya",
+    "meaning": {
+      "en": "for overcoming; having overcome",
+      "pt": "para superar; tendo superado",
+      "es": "para superar; habiendo superado"
+    },
+    "grammar": "verb / noun (dative)"
+  },
+  {
+    "pali": "vīthipaṭipādako",
+    "meaning": {
+      "en": "providing the cognitive series",
+      "pt": "fornecendo a série cognitiva",
+      "es": "proporcionando la serie cognitiva"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "vīthicittānaṃ",
+    "meaning": {
+      "en": "of cognitive-process consciousnesses",
+      "pt": "das consciências de processo cognitivo",
+      "es": "de las conciencias de proceso cognitivo"
+    },
+    "grammar": "noun (genitive, plural)"
+  },
+  {
+    "pali": "vīthicittappavattinayo",
+    "meaning": {
+      "en": "method of the occurrence of cognitive-process consciousnesses",
+      "pt": "método da ocorrência das consciências de processo cognitivo",
+      "es": "método de la ocurrencia de las conciencias de proceso cognitivo"
+    },
+    "grammar": "noun (masculine, nominative)"
+  },
+  {
+    "pali": "vīsādhikāni",
+    "meaning": {
+      "en": "exceeding twenty",
+      "pt": "excedendo vinte",
+      "es": "excediendo veinte"
+    },
+    "grammar": "adjective (neuter, nominative/accusative plural)"
+  },
+  {
+    "pali": "vīsatākārā",
+    "meaning": {
+      "en": "twenty modes",
+      "pt": "vinte modos",
+      "es": "veinte modos"
+    },
+    "grammar": "noun (masculine, plural)"
+  },
+  {
+    "pali": "vīsatimo",
+    "meaning": {
+      "en": "twentieth",
+      "pt": "vigésimo",
+      "es": "vigésimo"
+    },
+    "grammar": "adjective (masculine, nominative)"
+  },
+  {
+    "pali": "vīriyādhipateyyaṃ",
+    "meaning": {
+      "en": "dominance of energy",
+      "pt": "predominância da energia",
+      "es": "predominio de la energía"
+    },
+    "grammar": "noun (neuter, nominative)"
+  },
+  {
+    "pali": "vīriyabalaṃ",
+    "meaning": {
+      "en": "power of energy",
+      "pt": "poder da energia",
+      "es": "poder de la energía"
+    },
+    "grammar": "noun (neuter, nominative)"
+  },
+  {
+    "pali": "vātiādinā",
+    "meaning": {
+      "en": "beginning with 'or'",
+      "pt": "começando com 'ou'",
+      "es": "empezando con 'o'"
+    },
+    "grammar": "phrase"
+  },
+  {
+    "pali": "vāpuññapañcakaṃ",
+    "meaning": {
+      "en": "or the pentad of merit",
+      "pt": "ou o grupo de cinco méritos",
+      "es": "o la péntada de mérito"
+    },
+    "grammar": "noun (neuter, nominative/accusative)"
+  },
+  {
+    "pali": "vānasaṅkhātāya",
+    "meaning": {
+      "en": "reckoned as craving",
+      "pt": "considerado como anseio",
+      "es": "considerado como ansia"
+    },
+    "grammar": "adjective (feminine, dative/locative)"
+  },
+  {
+    "pali": "vuṭṭhānaṃ",
+    "meaning": {
+      "en": "emergence",
+      "pt": "emergência",
+      "es": "emergencia"
+    },
+    "grammar": "noun (neuter, nominative/accusative)"
+  },
+  {
+    "pali": "vuṭṭhānakāle",
+    "meaning": {
+      "en": "at the time of emergence",
+      "pt": "no momento da emergência",
+      "es": "en el momento de la emergencia"
+    },
+    "grammar": "noun (locative)"
+  },
+  {
+    "pali": "vuḍḍhimanto",
+    "meaning": {
+      "en": "those having growth",
+      "pt": "aqueles que têm crescimento",
+      "es": "aquellos que tienen crecimiento"
+    },
+    "grammar": "adjective (masculine, nominative plural)"
+  },
+  {
+    "pali": "vuttāvasesāni",
+    "meaning": {
+      "en": "the remaining said things",
+      "pt": "as restantes coisas ditas",
+      "es": "las cosas dichas restantes"
+    },
+    "grammar": "adjective (neuter, nominative/accusative plural)"
+  },
+  {
+    "pali": "vuttāti",
+    "meaning": {
+      "en": "'said' (vuttā + iti)",
+      "pt": "'dito' (vuttā + iti)",
+      "es": "'dicho' (vuttā + iti)"
+    },
+    "grammar": "verb (past participle) + particle"
+  },
+  {
+    "pali": "vuttānusārena",
+    "meaning": {
+      "en": "according to what was said",
+      "pt": "de acordo com o que foi dito",
+      "es": "según lo que se dijo"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "vuttehi",
+    "meaning": {
+      "en": "by the said",
+      "pt": "pelos ditos",
+      "es": "por los dichos"
+    },
+    "grammar": "adjective (instrumental plural)"
+  },
+  {
+    "pali": "vuttañhi",
+    "meaning": {
+      "en": "for it was said",
+      "pt": "pois foi dito",
+      "es": "pues se dijo"
+    },
+    "grammar": "verb + particle"
+  },
+  {
+    "pali": "vuttañcāhetukaṭṭhakaṃ",
+    "meaning": {
+      "en": "and the rootless octad was said",
+      "pt": "e a oitava sem raiz foi dita",
+      "es": "y la octava sin raíz fue dicha"
+    },
+    "grammar": "phrase"
+  },
+  {
+    "pali": "vuttañceva",
+    "meaning": {
+      "en": "and it was said",
+      "pt": "e foi dito",
+      "es": "y se dijo"
+    },
+    "grammar": "phrase"
+  },
+  {
+    "pali": "vuttassa",
+    "meaning": {
+      "en": "of the said",
+      "pt": "do dito",
+      "es": "del dicho"
+    },
+    "grammar": "adjective (genitive)"
+  },
+  {
+    "pali": "vuttappakārāva",
+    "meaning": {
+      "en": "only of the said kind",
+      "pt": "apenas do tipo dito",
+      "es": "sólo del tipo dicho"
+    },
+    "grammar": "adjective + particle"
+  },
+  {
+    "pali": "vuttappakāraṃ",
+    "meaning": {
+      "en": "of the said kind",
+      "pt": "do tipo dito",
+      "es": "del tipo dicho"
+    },
+    "grammar": "adjective (neuter, nominative/accusative)"
+  },
+  {
+    "pali": "vuttappakārato",
+    "meaning": {
+      "en": "from the said kind",
+      "pt": "do tipo dito",
+      "es": "del tipo dicho"
+    },
+    "grammar": "noun (ablative)"
+  },
+  {
+    "pali": "vuttanayānusārena",
+    "meaning": {
+      "en": "according to the method said",
+      "pt": "de acordo com o método dito",
+      "es": "según el método dicho"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "vuttanayā",
+    "meaning": {
+      "en": "the method said",
+      "pt": "o método dito",
+      "es": "el método dicho"
+    },
+    "grammar": "noun (plural)"
+  },
+  {
+    "pali": "vuttameva",
+    "meaning": {
+      "en": "just said",
+      "pt": "apenas dito",
+      "es": "recién dicho"
+    },
+    "grammar": "verb + particle"
+  },
+  {
+    "pali": "vuttadosato",
+    "meaning": {
+      "en": "from the said fault",
+      "pt": "da falha dita",
+      "es": "de la falla dicha"
+    },
+    "grammar": "noun (ablative)"
+  },
+  {
+    "pali": "vuddhiyā",
+    "meaning": {
+      "en": "for increase; for growth",
+      "pt": "para o aumento; para o crescimento",
+      "es": "para el aumento; para el crecimiento"
+    },
+    "grammar": "noun (dative/locative)"
+  },
+  {
+    "pali": "vuccare",
+    "meaning": {
+      "en": "are called",
+      "pt": "são chamados",
+      "es": "son llamados"
+    },
+    "grammar": "verb (present passive, 3rd plural)"
+  },
+  {
+    "pali": "vuccante",
+    "meaning": {
+      "en": "are called",
+      "pt": "são chamados",
+      "es": "son llamados"
+    },
+    "grammar": "verb (present participle, locative)"
+  },
+  {
+    "pali": "voṭṭhabbanena",
+    "meaning": {
+      "en": "by determining",
+      "pt": "por determinação",
+      "es": "por determinación"
+    },
+    "grammar": "noun (instrumental)"
+  },
+  {
+    "pali": "voṭṭhabbane",
+    "meaning": {
+      "en": "in determining",
+      "pt": "na determinação",
+      "es": "en la determinación"
+    },
+    "grammar": "noun (locative)"
+  },
+  {
+    "pali": "voṭṭhabbanañāṇasampayuttamahākiriyassa",
+    "meaning": {
+      "en": "of the determining great functional associated with knowledge",
+      "pt": "do grande funcional de determinação associado ao conhecimento",
+      "es": "del gran funcional de determinación asociado con el conocimiento"
+    },
+    "grammar": "noun (genitive)"
+  },
+  {
+    "pali": "voṭṭhabbanamahākiriyassa",
+    "meaning": {
+      "en": "of the determining great functional",
+      "pt": "do grande funcional de determinação",
+      "es": "del gran funcional de determinación"
+    },
+    "grammar": "noun (genitive)"
+  },
+  {
+    "pali": "vohārikaṃ",
+    "meaning": {
+      "en": "conventional",
+      "pt": "convencional",
+      "es": "convencional"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "vohāre",
+    "meaning": {
+      "en": "in convention; in usage",
+      "pt": "na convenção; no uso",
+      "es": "en convención; en uso"
+    },
+    "grammar": "noun (locative)"
+  },
+  {
+    "pali": "vodānabhāvasampattikaṃ",
+    "meaning": {
+      "en": "having the success of the state of purification",
+      "pt": "tendo o sucesso do estado de purificação",
+      "es": "teniendo el éxito del estado de purificación"
+    },
+    "grammar": "adjective (neuter, nominative/accusative)"
+  },
+  {
+    "pali": "vodānabhāvarasaṃ",
+    "meaning": {
+      "en": "having the function of the state of purification",
+      "pt": "tendo a função do estado de purificação",
+      "es": "teniendo la función del estado de purificación"
+    },
+    "grammar": "adjective (neuter, nominative/accusative)"
+  },
+  {
+    "pali": "vocchinditvā",
+    "meaning": {
+      "en": "having cut off",
+      "pt": "tendo cortado",
+      "es": "habiendo cortado"
+    },
+    "grammar": "verb (absolutive)"
+  },
+  {
+    "pali": "viññūhi",
+    "meaning": {
+      "en": "by the wise",
+      "pt": "pelos sábios",
+      "es": "por los sabios"
+    },
+    "grammar": "noun / adjective (instrumental plural)"
+  },
+  {
+    "pali": "viññāṇādhiṭṭhitaṃ",
+    "meaning": {
+      "en": "directed by consciousness",
+      "pt": "dirigido pela consciência",
+      "es": "dirigido por la conciencia"
+    },
+    "grammar": "adjective (neuter, nominative/accusative)"
+  },
+  {
+    "pali": "viññāṇañcāyatanabhūmi",
+    "meaning": {
+      "en": "plane of the base of infinite consciousness",
+      "pt": "plano da base da consciência infinita",
+      "es": "plano de la base de la conciencia infinita"
+    },
+    "grammar": "noun (feminine, nominative)"
+  },
+  {
+    "pali": "viññāṇattayaṃ",
+    "meaning": {
+      "en": "triad of consciousness",
+      "pt": "tríade da consciência",
+      "es": "tríada de la conciencia"
+    },
+    "grammar": "noun (neuter, nominative/accusative)"
+  },
+  {
+    "pali": "viññāṇapañcakaṃ",
+    "meaning": {
+      "en": "pentad of consciousness",
+      "pt": "grupo de cinco consciências",
+      "es": "péntada de la conciencia"
+    },
+    "grammar": "noun (neuter, nominative/accusative)"
+  },
+  {
+    "pali": "viññāṇakkhandho",
+    "meaning": {
+      "en": "aggregate of consciousness",
+      "pt": "agregado da consciência",
+      "es": "agregado de la conciencia"
+    },
+    "grammar": "noun (masculine, nominative)"
+  },
+  {
+    "pali": "viññāṇadhātūnaṃ",
+    "meaning": {
+      "en": "of consciousness elements",
+      "pt": "dos elementos de consciência",
+      "es": "de los elementos de la conciencia"
+    },
+    "grammar": "noun (genitive plural)"
+  },
+  {
+    "pali": "viññātabbā",
+    "meaning": {
+      "en": "to be understood",
+      "pt": "a ser entendido",
+      "es": "a ser entendido"
+    },
+    "grammar": "verb (future passive participle, feminine nominative / masculine plural)"
+  },
+  {
+    "pali": "viññātabbo",
+    "meaning": {
+      "en": "to be understood",
+      "pt": "a ser entendido",
+      "es": "a ser entendido"
+    },
+    "grammar": "verb (future passive participle, masculine nominative)"
+  },
+  {
+    "pali": "viññattiyā",
+    "meaning": {
+      "en": "by intimation",
+      "pt": "por intimação",
+      "es": "por intimación"
+    },
+    "grammar": "noun (instrumental/dative)"
+  },
+  {
+    "pali": "viññattijanā",
+    "meaning": {
+      "en": "producing intimation",
+      "pt": "produzindo intimação",
+      "es": "produciendo intimación"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "viññattidvayaṃ",
+    "meaning": {
+      "en": "dyad of intimation",
+      "pt": "díade de intimação",
+      "es": "díada de intimación"
+    },
+    "grammar": "noun (neuter, nominative)"
+  },
+  {
+    "pali": "viyā",
+    "meaning": {
+      "en": "like; as",
+      "pt": "como",
+      "es": "como"
+    },
+    "grammar": "particle"
+  },
+  {
+    "pali": "viyuttāni",
+    "meaning": {
+      "en": "separated",
+      "pt": "separados",
+      "es": "separados"
+    },
+    "grammar": "adjective (neuter, nominative/accusative plural)"
+  },
+  {
+    "pali": "vividhesu",
+    "meaning": {
+      "en": "in various",
+      "pt": "em vários",
+      "es": "en varios"
+    },
+    "grammar": "adjective (locative plural)"
+  },
+  {
+    "pali": "vividhaṃ",
+    "meaning": {
+      "en": "various",
+      "pt": "vários",
+      "es": "varios"
+    },
+    "grammar": "adjective (neuter, nominative/accusative)"
+  },
+  {
+    "pali": "vivajjetvā",
+    "meaning": {
+      "en": "having abandoned; having avoided",
+      "pt": "tendo abandonado; tendo evitado",
+      "es": "habiendo abandonado; habiendo evitado"
+    },
+    "grammar": "verb (absolutive)"
+  }
+]

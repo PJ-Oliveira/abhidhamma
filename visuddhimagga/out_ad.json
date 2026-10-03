@@ -1,0 +1,182 @@
+[
+  {
+    "pali": "balavārammaṇe",
+    "meaning": {
+      "en": "strong object",
+      "pt": "objeto forte",
+      "es": "objeto fuerte"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "arahattaphalaṃ",
+    "meaning": {
+      "en": "fruit of arahantship",
+      "pt": "fruto do arahant",
+      "es": "fruto del arahant"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "anāgāmissa",
+    "meaning": {
+      "en": "non-returner",
+      "pt": "não-retornador",
+      "es": "no-retornador"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "akusalassa",
+    "meaning": {
+      "en": "unwholesome",
+      "pt": "não benéfico",
+      "es": "perjudicial"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "ṭhāne",
+    "meaning": {
+      "en": "place, cause",
+      "pt": "lugar, causa",
+      "es": "lugar, causa"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "āvajjanaṃ",
+    "meaning": {
+      "en": "adverting",
+      "pt": "advertência",
+      "es": "advertencia"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "āgato",
+    "meaning": {
+      "en": "come, arrived",
+      "pt": "vindo, chegado",
+      "es": "venido, llegado"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "vuttāni",
+    "meaning": {
+      "en": "said, spoken",
+      "pt": "dito, falado",
+      "es": "dicho, hablado"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "viratiyo",
+    "meaning": {
+      "en": "abstinence",
+      "pt": "abstinência",
+      "es": "abstinencia"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vijjati",
+    "meaning": {
+      "en": "exists, is found",
+      "pt": "existe, é encontrado",
+      "es": "existe, se encuentra"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "tīhi",
+    "meaning": {
+      "en": "three",
+      "pt": "três",
+      "es": "tres"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "tāya",
+    "meaning": {
+      "en": "that, this",
+      "pt": "esse, isso",
+      "es": "ese, eso"
+    },
+    "grammar": "pronoun"
+  },
+  {
+    "pali": "tañca",
+    "meaning": {
+      "en": "and that",
+      "pt": "e isso",
+      "es": "y eso"
+    },
+    "grammar": "pronoun"
+  },
+  {
+    "pali": "somanassaṃ",
+    "meaning": {
+      "en": "joy, mental pleasure",
+      "pt": "alegria, prazer mental",
+      "es": "alegría, placer mental"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sesāsu",
+    "meaning": {
+      "en": "remaining",
+      "pt": "restante",
+      "es": "restante"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "sahajātānaṃ",
+    "meaning": {
+      "en": "conascent",
+      "pt": "conascente",
+      "es": "conascente"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "sabbepi",
+    "meaning": {
+      "en": "even all",
+      "pt": "mesmo todos",
+      "es": "incluso todos"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "rūpādayo",
+    "meaning": {
+      "en": "form and so on",
+      "pt": "forma e assim por diante",
+      "es": "forma y así sucesivamente"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "pākaṃ",
+    "meaning": {
+      "en": "result",
+      "pt": "resultado",
+      "es": "resultado"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "puññāni",
+    "meaning": {
+      "en": "merit",
+      "pt": "mérito",
+      "es": "mérito"
+    },
+    "grammar": "noun"
+  }
+]

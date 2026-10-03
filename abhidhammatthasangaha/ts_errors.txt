@@ -1,0 +1,24 @@
+src/__tests__/components/HomeScreen.test.tsx(6,10): error TS2614: Module '"../../components/HomeScreen"' has no exported member 'HomeScreen'. Did you mean to use 'import HomeScreen from "../../components/HomeScreen"' instead?
+src/__tests__/store/readingSlice.test.ts(28,28): error TS2345: Argument of type '{ languages: string[]; boldPali: boolean; searchQuery: string; searchResults: never[]; dictionaryWord: null; visibleSegmentIds: never[]; currentChapterId: string; sidebarOpen: boolean; }' is not assignable to parameter of type 'ReadingState'.
+  Types of property 'languages' are incompatible.
+    Type 'string[]' is not assignable to type 'Language[]'.
+      Type 'string' is not assignable to type 'Language'.
+src/__tests__/store/readingSlice.test.ts(33,28): error TS2345: Argument of type '{ languages: string[]; boldPali: boolean; searchQuery: string; searchResults: never[]; dictionaryWord: null; visibleSegmentIds: never[]; currentChapterId: string; sidebarOpen: boolean; }' is not assignable to parameter of type 'ReadingState'.
+  Types of property 'languages' are incompatible.
+    Type 'string[]' is not assignable to type 'Language[]'.
+      Type 'string' is not assignable to type 'Language'.
+src/__tests__/store/readingSlice.test.ts(38,28): error TS2345: Argument of type '{ languages: string[]; boldPali: boolean; searchQuery: string; searchResults: never[]; dictionaryWord: null; visibleSegmentIds: never[]; currentChapterId: string; sidebarOpen: boolean; }' is not assignable to parameter of type 'ReadingState'.
+  Types of property 'languages' are incompatible.
+    Type 'string[]' is not assignable to type 'Language[]'.
+      Type 'string' is not assignable to type 'Language'.
+src/__tests__/store/readingSlice.test.ts(44,28): error TS2345: Argument of type '{ languages: string[]; boldPali: boolean; searchQuery: string; searchResults: never[]; dictionaryWord: null; visibleSegmentIds: never[]; currentChapterId: string; sidebarOpen: boolean; }' is not assignable to parameter of type 'ReadingState'.
+  Types of property 'languages' are incompatible.
+    Type 'string[]' is not assignable to type 'Language[]'.
+      Type 'string' is not assignable to type 'Language'.
+src/components/Dictionary/DictionaryPanel.tsx(43,26): error TS2352: Conversion of type 'DictionaryEntry[]' to type 'Promise<DictionaryEntry[]>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'DictionaryEntry[]' is missing the following properties from type 'Promise<DictionaryEntry[]>': then, catch, finally, [Symbol.toStringTag]
+src/components/Dictionary/DictionaryPanel.tsx(44,10): error TS2352: Conversion of type 'DictionaryEntry[]' to type 'Promise<DictionaryEntry[]>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'DictionaryEntry[]' is missing the following properties from type 'Promise<DictionaryEntry[]>': then, catch, finally, [Symbol.toStringTag]
+src/components/Reader/Reader.tsx(55,36): error TS2322: Type 'false | { fontWeight: "bold"; }' is not assignable to type 'TextStyle'.
+  Type 'false' has no properties in common with type 'TextStyle'.
+src/services/textSearch.ts(2,10): error TS2724: '"../data/chapters/chapterIndex"' has no exported member named 'CHAPTER_LIST'. Did you mean 'CHAPTERS'?

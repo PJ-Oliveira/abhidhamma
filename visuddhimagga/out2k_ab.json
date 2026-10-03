@@ -1,0 +1,884 @@
+[
+  {
+    "pali": "yogā",
+    "meaning": {
+      "en": "bonds; practices",
+      "pt": "vínculos; práticas",
+      "es": "vínculos; prácticas"
+    },
+    "grammar": "noun (masculine, nominative, plural)"
+  },
+  {
+    "pali": "yoginā",
+    "meaning": {
+      "en": "by the meditator",
+      "pt": "pelo meditador",
+      "es": "por el meditador"
+    },
+    "grammar": "noun (masculine, instrumental, singular)"
+  },
+  {
+    "pali": "yesu",
+    "meaning": {
+      "en": "in which; among which",
+      "pt": "nos quais; entre os quais",
+      "es": "en los cuales; entre los cuales"
+    },
+    "grammar": "pronoun (masculine/neuter, locative, plural)"
+  },
+  {
+    "pali": "yathāvuttānaṃ",
+    "meaning": {
+      "en": "of those previously stated",
+      "pt": "daqueles previamente declarados",
+      "es": "de los previamente declarados"
+    },
+    "grammar": "adjective (genitive, plural)"
+  },
+  {
+    "pali": "yathāsabhāvaṃ",
+    "meaning": {
+      "en": "according to their true nature",
+      "pt": "de acordo com sua verdadeira natureza",
+      "es": "según su verdadera naturaleza"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "yanti",
+    "meaning": {
+      "en": "they go",
+      "pt": "eles vão",
+      "es": "ellos van"
+    },
+    "grammar": "verb (present, 3rd person, plural)"
+  },
+  {
+    "pali": "vīsatividhaṃ",
+    "meaning": {
+      "en": "twentyfold",
+      "pt": "vínte vezes; de vinte formas",
+      "es": "veinte veces; de veinte formas"
+    },
+    "grammar": "adjective (accusative, singular)"
+  },
+  {
+    "pali": "vīriyindriyaṃ",
+    "meaning": {
+      "en": "faculty of energy",
+      "pt": "faculdade da energia",
+      "es": "facultad de la energía"
+    },
+    "grammar": "noun (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "vāyuñca",
+    "meaning": {
+      "en": "and the wind element",
+      "pt": "e o elemento ar",
+      "es": "y el elemento aire"
+    },
+    "grammar": "noun (masculine, accusative, singular) + ca"
+  },
+  {
+    "pali": "vuṭṭhahantassa",
+    "meaning": {
+      "en": "of one emerging",
+      "pt": "daquele que emerge",
+      "es": "de aquel que emerge"
+    },
+    "grammar": "present participle (masculine, genitive/dative, singular)"
+  },
+  {
+    "pali": "vuttoti",
+    "meaning": {
+      "en": "is called (vutto + iti)",
+      "pt": "é chamado (vutto + iti)",
+      "es": "es llamado (vutto + iti)"
+    },
+    "grammar": "past participle (masculine, nominative, singular) + particle"
+  },
+  {
+    "pali": "voṭṭhabbaṃ",
+    "meaning": {
+      "en": "determining",
+      "pt": "determinante",
+      "es": "determinante"
+    },
+    "grammar": "noun (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "voṭṭhabbanampi",
+    "meaning": {
+      "en": "determining too",
+      "pt": "determinante também",
+      "es": "determinante también"
+    },
+    "grammar": "noun (neuter, nominative/accusative, singular) + api"
+  },
+  {
+    "pali": "vodānapaccupaṭṭhānaṃ",
+    "meaning": {
+      "en": "manifestation of purification",
+      "pt": "manifestação da purificação",
+      "es": "manifestación de la purificación"
+    },
+    "grammar": "noun (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "vocchijjati",
+    "meaning": {
+      "en": "is cut off",
+      "pt": "é cortado",
+      "es": "es cortado"
+    },
+    "grammar": "verb (passive, present, 3rd person, singular)"
+  },
+  {
+    "pali": "viññāṇesu",
+    "meaning": {
+      "en": "in consciousnesses",
+      "pt": "nas consciências",
+      "es": "en las conciencias"
+    },
+    "grammar": "noun (neuter, locative, plural)"
+  },
+  {
+    "pali": "viññāṇañcāyatanasaññāsahagataṃ",
+    "meaning": {
+      "en": "accompanied by the perception of the base of infinite consciousness",
+      "pt": "acompanhado pela percepção da base da consciência infinita",
+      "es": "acompañado por la percepción de la base de la conciencia infinita"
+    },
+    "grammar": "adjective (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "viññāṇanti",
+    "meaning": {
+      "en": "consciousness (viññāṇaṃ + iti)",
+      "pt": "consciência (viññāṇaṃ + iti)",
+      "es": "conciencia (viññāṇaṃ + iti)"
+    },
+    "grammar": "noun (neuter, nominative/accusative, singular) + particle"
+  },
+  {
+    "pali": "viññāyati",
+    "meaning": {
+      "en": "is cognized; is known",
+      "pt": "é conhecido; é compreendido",
+      "es": "es conocido; es comprendido"
+    },
+    "grammar": "verb (passive, present, 3rd person, singular)"
+  },
+  {
+    "pali": "viññeyyā",
+    "meaning": {
+      "en": "to be cognized",
+      "pt": "a serem conhecidos",
+      "es": "a ser conocidos"
+    },
+    "grammar": "future passive participle (masculine, nominative, plural; or feminine, nominative, singular/plural)"
+  },
+  {
+    "pali": "viññeyyo",
+    "meaning": {
+      "en": "to be cognized",
+      "pt": "a ser conhecido",
+      "es": "a ser conocido"
+    },
+    "grammar": "future passive participle (masculine, nominative, singular)"
+  },
+  {
+    "pali": "viññattiṃ",
+    "meaning": {
+      "en": "intimation",
+      "pt": "intimação; expressão",
+      "es": "intimación; expresión"
+    },
+    "grammar": "noun (feminine, accusative, singular)"
+  },
+  {
+    "pali": "viññatti",
+    "meaning": {
+      "en": "intimation",
+      "pt": "intimação; expressão",
+      "es": "intimación; expresión"
+    },
+    "grammar": "noun (feminine, nominative, singular)"
+  },
+  {
+    "pali": "vitakkavicārapītisukhacittekaggatāsampayuttaṃ",
+    "meaning": {
+      "en": "associated with initial application, sustained application, joy, happiness, and one-pointedness of mind",
+      "pt": "associado à aplicação inicial, aplicação sustentada, alegria, felicidade e unificação mental",
+      "es": "asociado con la aplicación inicial, aplicación sostenida, alegría, felicidad y unificación mental"
+    },
+    "grammar": "adjective (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "vitakkavajjā",
+    "meaning": {
+      "en": "free from initial application",
+      "pt": "livre de aplicação inicial",
+      "es": "libre de aplicación inicial"
+    },
+    "grammar": "adjective (feminine, nominative, singular/plural; or masculine, nominative, plural)"
+  },
+  {
+    "pali": "visayavijānanaṃ",
+    "meaning": {
+      "en": "cognizing the object",
+      "pt": "conhecendo o objeto",
+      "es": "conociendo el objeto"
+    },
+    "grammar": "noun (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "visayappavatti",
+    "meaning": {
+      "en": "occurrence concerning the object",
+      "pt": "ocorrência em relação ao objeto",
+      "es": "ocurrencia en relación con el objeto"
+    },
+    "grammar": "noun (feminine, nominative, singular)"
+  },
+  {
+    "pali": "viratittayañca",
+    "meaning": {
+      "en": "and the triad of abstinences",
+      "pt": "e a tríade das abstenções",
+      "es": "y la tríada de las abstenciones"
+    },
+    "grammar": "noun (neuter, nominative/accusative, singular) + ca"
+  },
+  {
+    "pali": "vipākuppādanasabhāve",
+    "meaning": {
+      "en": "in the nature of producing results",
+      "pt": "na natureza de produzir resultados",
+      "es": "en la naturaleza de producir resultados"
+    },
+    "grammar": "noun (masculine/neuter, locative, singular)"
+  },
+  {
+    "pali": "vipākena",
+    "meaning": {
+      "en": "by result; as a result",
+      "pt": "por resultado; como resultado",
+      "es": "por resultado; como resultado"
+    },
+    "grammar": "noun (masculine, instrumental, singular)"
+  },
+  {
+    "pali": "vipākehi",
+    "meaning": {
+      "en": "by results",
+      "pt": "por resultados",
+      "es": "por resultados"
+    },
+    "grammar": "noun (masculine, instrumental, plural)"
+  },
+  {
+    "pali": "vipākakiriyabhedato",
+    "meaning": {
+      "en": "by way of the difference between resultant and functional",
+      "pt": "através da diferença entre resultante e funcional",
+      "es": "a través de la diferencia entre resultante y funcional"
+    },
+    "grammar": "noun (masculine, ablative, singular)"
+  },
+  {
+    "pali": "vipākacittappabhavaṃ",
+    "meaning": {
+      "en": "produced by resultant consciousness",
+      "pt": "produzido pela consciência resultante",
+      "es": "producido por la conciencia resultante"
+    },
+    "grammar": "adjective (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "vipassati",
+    "meaning": {
+      "en": "sees clearly; has insight",
+      "pt": "vê claramente; tem insight",
+      "es": "ve claramente; tiene visión profunda"
+    },
+    "grammar": "verb (present, 3rd person, singular)"
+  },
+  {
+    "pali": "viparīto",
+    "meaning": {
+      "en": "reversed; changed; contrary",
+      "pt": "revertido; alterado; contrário",
+      "es": "revertido; alterado; contrario"
+    },
+    "grammar": "adjective (masculine, nominative, singular)"
+  },
+  {
+    "pali": "vinanato",
+    "meaning": {
+      "en": "from bending",
+      "pt": "por curvar-se",
+      "es": "por inclinarse"
+    },
+    "grammar": "noun (neuter, ablative, singular)"
+  },
+  {
+    "pali": "vikāramāpajjati",
+    "meaning": {
+      "en": "undergoes alteration",
+      "pt": "sofre alteração",
+      "es": "sufre alteración"
+    },
+    "grammar": "verb phrase (accusative + verb present, 3rd person, singular)"
+  },
+  {
+    "pali": "vikkamo",
+    "meaning": {
+      "en": "step; exertion",
+      "pt": "esforço; passo",
+      "es": "esfuerzo; paso"
+    },
+    "grammar": "noun (masculine, nominative, singular)"
+  },
+  {
+    "pali": "vijānātīti",
+    "meaning": {
+      "en": "cognizes (vijānāti + iti)",
+      "pt": "conhece (vijānāti + iti)",
+      "es": "conoce (vijānāti + iti)"
+    },
+    "grammar": "verb (present, 3rd person, singular) + particle"
+  },
+  {
+    "pali": "vijānatā",
+    "meaning": {
+      "en": "by one who cognizes",
+      "pt": "por aquele que conhece",
+      "es": "por aquel que conoce"
+    },
+    "grammar": "present participle (masculine, instrumental, singular)"
+  },
+  {
+    "pali": "vijānanaṃ",
+    "meaning": {
+      "en": "cognizing",
+      "pt": "ato de conhecer",
+      "es": "acto de conocer"
+    },
+    "grammar": "noun (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "vijānanasabhāvato",
+    "meaning": {
+      "en": "by the nature of cognizing",
+      "pt": "pela natureza do conhecer",
+      "es": "por la naturaleza de conocer"
+    },
+    "grammar": "noun (masculine, ablative, singular)"
+  },
+  {
+    "pali": "vijjamānaṃ",
+    "meaning": {
+      "en": "existing; being found",
+      "pt": "existente; sendo encontrado",
+      "es": "existente; siendo encontrado"
+    },
+    "grammar": "present participle (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "viharāmi",
+    "meaning": {
+      "en": "I dwell",
+      "pt": "eu vivo; eu habito",
+      "es": "yo vivo; yo habito"
+    },
+    "grammar": "verb (present, 1st person, singular)"
+  },
+  {
+    "pali": "vigato",
+    "meaning": {
+      "en": "departed; gone away",
+      "pt": "partiu; foi embora",
+      "es": "partido; ido"
+    },
+    "grammar": "past participle (masculine, nominative, singular)"
+  },
+  {
+    "pali": "vidhāne",
+    "meaning": {
+      "en": "in the arrangement; in the procedure",
+      "pt": "no arranjo; no procedimento",
+      "es": "en el arreglo; en el procedimiento"
+    },
+    "grammar": "noun (neuter, locative, singular)"
+  },
+  {
+    "pali": "viddhaṃsanaṃ",
+    "meaning": {
+      "en": "destruction",
+      "pt": "destruição",
+      "es": "destrucción"
+    },
+    "grammar": "noun (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "vicārapītisukhacittekaggatāsampayuttaṃ",
+    "meaning": {
+      "en": "associated with sustained application, joy, happiness, and one-pointedness of mind",
+      "pt": "associado à aplicação sustentada, alegria, felicidade e unificação mental",
+      "es": "asociado con la aplicación sostenida, alegría, felicidad y unificación mental"
+    },
+    "grammar": "adjective (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "vicikicchāsahagatacitte",
+    "meaning": {
+      "en": "in consciousness accompanied by doubt",
+      "pt": "na consciência acompanhada por dúvida",
+      "es": "en la conciencia acompañada por la duda"
+    },
+    "grammar": "noun (neuter, locative, singular)"
+  },
+  {
+    "pali": "vicaratīti",
+    "meaning": {
+      "en": "moves about (vicarati + iti)",
+      "pt": "move-se (vicarati + iti)",
+      "es": "se mueve (vicarati + iti)"
+    },
+    "grammar": "verb (present, 3rd person, singular) + particle"
+  },
+  {
+    "pali": "vicakkhaṇā",
+    "meaning": {
+      "en": "wise ones",
+      "pt": "os sábios",
+      "es": "los sabios"
+    },
+    "grammar": "noun (masculine, nominative, plural)"
+  },
+  {
+    "pali": "vibhāgo",
+    "meaning": {
+      "en": "division; classification",
+      "pt": "divisão; classificação",
+      "es": "división; clasificación"
+    },
+    "grammar": "noun (masculine, nominative, singular)"
+  },
+  {
+    "pali": "vibhāgena",
+    "meaning": {
+      "en": "by division; by classification",
+      "pt": "por divisão; por classificação",
+      "es": "por división; por clasificación"
+    },
+    "grammar": "noun (masculine, instrumental, singular)"
+  },
+  {
+    "pali": "vibhāgaṃ",
+    "meaning": {
+      "en": "division; classification",
+      "pt": "divisão; classificação",
+      "es": "división; clasificación"
+    },
+    "grammar": "noun (masculine, accusative, singular)"
+  },
+  {
+    "pali": "vibhajitvā",
+    "meaning": {
+      "en": "having divided; having classified",
+      "pt": "tendo dividido; tendo classificado",
+      "es": "habiendo dividido; habiendo clasificado"
+    },
+    "grammar": "gerund"
+  },
+  {
+    "pali": "veyyāvaccāpacāyanā",
+    "meaning": {
+      "en": "service and reverence",
+      "pt": "serviço e reverência",
+      "es": "servicio y reverencia"
+    },
+    "grammar": "noun (feminine, nominative, plural)"
+  },
+  {
+    "pali": "vedanāñāṇasaṅkhārabhedena",
+    "meaning": {
+      "en": "by way of the difference of feeling, knowledge, and volitional formations",
+      "pt": "pela diferença de sentimento, conhecimento e formações volitivas",
+      "es": "por medio de la diferencia de sentimiento, conocimiento y formaciones volitivas"
+    },
+    "grammar": "noun (masculine, instrumental, singular)"
+  },
+  {
+    "pali": "vedanāya",
+    "meaning": {
+      "en": "by feeling; of feeling",
+      "pt": "pelo sentimento; do sentimento",
+      "es": "por el sentimiento; del sentimiento"
+    },
+    "grammar": "noun (feminine, instrumental/genitive/dative/ablative, singular)"
+  },
+  {
+    "pali": "vedanākkhandho",
+    "meaning": {
+      "en": "aggregate of feeling",
+      "pt": "agregado do sentimento",
+      "es": "agregado del sentimiento"
+    },
+    "grammar": "noun (masculine, nominative, singular)"
+  },
+  {
+    "pali": "vedanādayo",
+    "meaning": {
+      "en": "feeling and the rest",
+      "pt": "sentimento e os demais",
+      "es": "sentimiento y los demás"
+    },
+    "grammar": "noun (masculine, nominative, plural)"
+  },
+  {
+    "pali": "vattuṃ",
+    "meaning": {
+      "en": "to speak; to say",
+      "pt": "falar; dizer",
+      "es": "hablar; decir"
+    },
+    "grammar": "infinitive"
+  },
+  {
+    "pali": "vattunti",
+    "meaning": {
+      "en": "to speak (vattuṃ + iti)",
+      "pt": "falar (vattuṃ + iti)",
+      "es": "hablar (vattuṃ + iti)"
+    },
+    "grammar": "infinitive + particle"
+  },
+  {
+    "pali": "vatthuto",
+    "meaning": {
+      "en": "by way of physical base; structurally",
+      "pt": "pela base física",
+      "es": "por la base física"
+    },
+    "grammar": "noun (neuter, ablative, singular)"
+  },
+  {
+    "pali": "vatthukāmoti",
+    "meaning": {
+      "en": "objective sensual pleasure (vatthukāmo + iti)",
+      "pt": "prazer sensual objetivo (vatthukāmo + iti)",
+      "es": "placer sensual objetivo (vatthukāmo + iti)"
+    },
+    "grammar": "noun (masculine, nominative, singular) + particle"
+  },
+  {
+    "pali": "vattabbā",
+    "meaning": {
+      "en": "should be said",
+      "pt": "deve ser dito",
+      "es": "debería ser dicho"
+    },
+    "grammar": "future passive participle (feminine, nominative, singular/plural; or masculine, nominative, plural)"
+  },
+  {
+    "pali": "vassati",
+    "meaning": {
+      "en": "it rains",
+      "pt": "chove",
+      "es": "llueve"
+    },
+    "grammar": "verb (present, 3rd person, singular)"
+  },
+  {
+    "pali": "varaṃ",
+    "meaning": {
+      "en": "excellent; noble",
+      "pt": "excelente; nobre",
+      "es": "excelente; noble"
+    },
+    "grammar": "adjective (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "vandanti",
+    "meaning": {
+      "en": "they pay homage",
+      "pt": "eles prestam homenagem",
+      "es": "ellos rinden homenaje"
+    },
+    "grammar": "verb (present, 3rd person, plural)"
+  },
+  {
+    "pali": "vajanti",
+    "meaning": {
+      "en": "they go; they proceed",
+      "pt": "eles vão; eles procedem",
+      "es": "ellos van; ellos proceden"
+    },
+    "grammar": "verb (present, 3rd person, plural)"
+  },
+  {
+    "pali": "vacīkammaṃ",
+    "meaning": {
+      "en": "verbal action",
+      "pt": "ação verbal",
+      "es": "acción verbal"
+    },
+    "grammar": "noun (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "vacanatthalakkhaṇādīhi",
+    "meaning": {
+      "en": "by means of the meaning of the word, characteristics, etc.",
+      "pt": "por meio do significado da palavra, características, etc.",
+      "es": "por medio del significado de la palabra, características, etc."
+    },
+    "grammar": "noun (neuter, instrumental, plural)"
+  },
+  {
+    "pali": "vacanassa",
+    "meaning": {
+      "en": "of the word",
+      "pt": "da palavra",
+      "es": "de la palabra"
+    },
+    "grammar": "noun (neuter, genitive/dative, singular)"
+  },
+  {
+    "pali": "uttarati",
+    "meaning": {
+      "en": "crosses over",
+      "pt": "atravessa",
+      "es": "cruza"
+    },
+    "grammar": "verb (present, 3rd person, singular)"
+  },
+  {
+    "pali": "upeti",
+    "meaning": {
+      "en": "approaches",
+      "pt": "aproxima-se",
+      "es": "se acerca"
+    },
+    "grammar": "verb (present, 3rd person, singular)"
+  },
+  {
+    "pali": "upekkhāsahagata",
+    "meaning": {
+      "en": "accompanied by equanimity",
+      "pt": "acompanhado pela equanimidade",
+      "es": "acompañado por la ecuanimidad"
+    },
+    "grammar": "adjective"
+  },
+  {
+    "pali": "upekkhācittekaggatāsampayuttaṃ",
+    "meaning": {
+      "en": "associated with equanimity and one-pointedness of mind",
+      "pt": "associado à equanimidade e unificação mental",
+      "es": "asociado con la ecuanimidad y unificación mental"
+    },
+    "grammar": "adjective (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "upasamānussati",
+    "meaning": {
+      "en": "recollection of peace",
+      "pt": "lembrança da paz",
+      "es": "recuerdo de la paz"
+    },
+    "grammar": "noun (feminine, nominative, singular)"
+  },
+  {
+    "pali": "upapattiyā",
+    "meaning": {
+      "en": "by rebirth",
+      "pt": "por renascimento",
+      "es": "por renacimiento"
+    },
+    "grammar": "noun (feminine, instrumental/genitive/dative/ablative, singular)"
+  },
+  {
+    "pali": "upapattidevā",
+    "meaning": {
+      "en": "gods by rebirth",
+      "pt": "deuses por renascimento",
+      "es": "dioses por renacimiento"
+    },
+    "grammar": "noun (masculine, nominative, plural)"
+  },
+  {
+    "pali": "upalabbhati",
+    "meaning": {
+      "en": "is found; is apprehended",
+      "pt": "é encontrado; é apreendido",
+      "es": "se encuentra; es aprehendido"
+    },
+    "grammar": "verb (passive, present, 3rd person, singular)"
+  },
+  {
+    "pali": "upakārako",
+    "meaning": {
+      "en": "helper; beneficial",
+      "pt": "ajudante; benéfico",
+      "es": "ayudante; beneficioso"
+    },
+    "grammar": "adjective/noun (masculine, nominative, singular)"
+  },
+  {
+    "pali": "ukkuṭṭhiṃ",
+    "meaning": {
+      "en": "shouting; cheering",
+      "pt": "grito; aplauso",
+      "es": "grito; aclamación"
+    },
+    "grammar": "noun (feminine, accusative, singular)"
+  },
+  {
+    "pali": "uddhatassa",
+    "meaning": {
+      "en": "of the restless one",
+      "pt": "daquele que é inquieto",
+      "es": "del inquieto"
+    },
+    "grammar": "past participle/noun (masculine, genitive/dative, singular)"
+  },
+  {
+    "pali": "uddhaccasahitaṃ",
+    "meaning": {
+      "en": "accompanied by restlessness",
+      "pt": "acompanhado pela inquietação",
+      "es": "acompañado por la inquietud"
+    },
+    "grammar": "adjective (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "tīṇiyeva",
+    "meaning": {
+      "en": "just three (tīṇi + eva)",
+      "pt": "apenas três (tīṇi + eva)",
+      "es": "sólo tres (tīṇi + eva)"
+    },
+    "grammar": "numeral (neuter, nominative/accusative, plural) + particle"
+  },
+  {
+    "pali": "tīṇeva",
+    "meaning": {
+      "en": "just three (tīṇi + eva)",
+      "pt": "apenas três (tīṇi + eva)",
+      "es": "sólo tres (tīṇi + eva)"
+    },
+    "grammar": "numeral (neuter, nominative/accusative, plural) + particle"
+  },
+  {
+    "pali": "tādinā",
+    "meaning": {
+      "en": "by such a one",
+      "pt": "por tal pessoa",
+      "es": "por tal persona"
+    },
+    "grammar": "pronoun/adjective (masculine, instrumental, singular)"
+  },
+  {
+    "pali": "tulāya",
+    "meaning": {
+      "en": "with a scale; with a balance",
+      "pt": "com uma balança",
+      "es": "con una balanza"
+    },
+    "grammar": "noun (feminine, instrumental/dative/genitive/locative, singular)"
+  },
+  {
+    "pali": "tulyo",
+    "meaning": {
+      "en": "equal; similar",
+      "pt": "igual; similar",
+      "es": "igual; similar"
+    },
+    "grammar": "adjective (masculine, nominative, singular)"
+  },
+  {
+    "pali": "tikālikā",
+    "meaning": {
+      "en": "belonging to the three times",
+      "pt": "pertencente aos três tempos",
+      "es": "perteneciente a los tres tiempos"
+    },
+    "grammar": "adjective (masculine, nominative, plural; or feminine, nominative, plural)"
+  },
+  {
+    "pali": "tikamātikā",
+    "meaning": {
+      "en": "matrix of triads",
+      "pt": "matriz de tríades",
+      "es": "matriz de tríadas"
+    },
+    "grammar": "noun (feminine, nominative, singular/plural)"
+  },
+  {
+    "pali": "tihetupaṭisandhino",
+    "meaning": {
+      "en": "of one with a three-root rebirth",
+      "pt": "daquele com um renascimento de três raízes",
+      "es": "de aquel con un renacimiento de tres raíces"
+    },
+    "grammar": "noun (masculine, genitive/dative, singular/plural)"
+  },
+  {
+    "pali": "thinamiddhassa",
+    "meaning": {
+      "en": "of sloth and torpor",
+      "pt": "da preguiça e torpor",
+      "es": "de la pereza y el letargo"
+    },
+    "grammar": "noun (neuter, genitive/dative, singular)"
+  },
+  {
+    "pali": "thinamiddhanīvaraṇaṃ",
+    "meaning": {
+      "en": "hindrance of sloth and torpor",
+      "pt": "obstáculo da preguiça e torpor",
+      "es": "obstáculo de la pereza y el letargo"
+    },
+    "grammar": "noun (neuter, nominative/accusative, singular)"
+  },
+  {
+    "pali": "tepi",
+    "meaning": {
+      "en": "they too (te + api)",
+      "pt": "eles também (te + api)",
+      "es": "ellos también (te + api)"
+    },
+    "grammar": "pronoun (masculine, nominative, plural) + api"
+  },
+  {
+    "pali": "tejodhātu",
+    "meaning": {
+      "en": "fire element",
+      "pt": "elemento fogo",
+      "es": "elemento fuego"
+    },
+    "grammar": "noun (feminine, nominative, singular)"
+  },
+  {
+    "pali": "taṃvasenettha",
+    "meaning": {
+      "en": "by means of that here (taṃ-vasena + ettha)",
+      "pt": "por meio disso aqui (taṃ-vasena + ettha)",
+      "es": "por medio de eso aquí (taṃ-vasena + ettha)"
+    },
+    "grammar": "adverbial phrase"
+  },
+  {
+    "pali": "tatiyena",
+    "meaning": {
+      "en": "by the third",
+      "pt": "pelo terceiro",
+      "es": "por el tercero"
+    },
+    "grammar": "adjective (masculine/neuter, instrumental, singular)"
+  }
+]

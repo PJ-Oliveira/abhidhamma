@@ -1,0 +1,902 @@
+[
+  {
+    "pali": "chattiṃseva",
+    "meaning": {
+      "en": "just thirty-six",
+      "pt": "apenas trinta e seis",
+      "es": "solo treinta y seis"
+    },
+    "grammar": "num. + part."
+  },
+  {
+    "pali": "chandādīni",
+    "meaning": {
+      "en": "desire and so on",
+      "pt": "desejo e assim por diante",
+      "es": "deseo y así sucesivamente"
+    },
+    "grammar": "n."
+  },
+  {
+    "pali": "chandaṃ",
+    "meaning": {
+      "en": "desire",
+      "pt": "desejo",
+      "es": "deseo"
+    },
+    "grammar": "n. acc. sg."
+  },
+  {
+    "pali": "chakkaṃ",
+    "meaning": {
+      "en": "group of six",
+      "pt": "grupo de seis",
+      "es": "grupo de seis"
+    },
+    "grammar": "n."
+  },
+  {
+    "pali": "chadvāre",
+    "meaning": {
+      "en": "at the six doors",
+      "pt": "nas seis portas",
+      "es": "en las seis puertas"
+    },
+    "grammar": "n. loc. pl."
+  },
+  {
+    "pali": "chacattālīsa",
+    "meaning": {
+      "en": "forty-six",
+      "pt": "quarenta e seis",
+      "es": "cuarenta y seis"
+    },
+    "grammar": "num."
+  },
+  {
+    "pali": "chabbīsati",
+    "meaning": {
+      "en": "twenty-six",
+      "pt": "vinte e seis",
+      "es": "veintiséis"
+    },
+    "grammar": "num."
+  },
+  {
+    "pali": "chabbidhāni",
+    "meaning": {
+      "en": "sixfold",
+      "pt": "sêxtuplo",
+      "es": "séxtuple"
+    },
+    "grammar": "adj. nom. pl."
+  },
+  {
+    "pali": "chabbidhā",
+    "meaning": {
+      "en": "sixfold",
+      "pt": "sêxtuplo",
+      "es": "séxtuple"
+    },
+    "grammar": "adj."
+  },
+  {
+    "pali": "chabbidhampi",
+    "meaning": {
+      "en": "even sixfold",
+      "pt": "até mesmo sêxtuplo",
+      "es": "incluso séxtuple"
+    },
+    "grammar": "adj. + part."
+  },
+  {
+    "pali": "cetasi",
+    "meaning": {
+      "en": "in the mind",
+      "pt": "na mente",
+      "es": "en la mente"
+    },
+    "grammar": "n. loc. sg."
+  },
+  {
+    "pali": "catutthāruppacetaso",
+    "meaning": {
+      "en": "of the mind of the fourth formless state",
+      "pt": "da mente do quarto estado sem forma",
+      "es": "de la mente del cuarto estado sin forma"
+    },
+    "grammar": "n. gen. sg."
+  },
+  {
+    "pali": "catuttarasate",
+    "meaning": {
+      "en": "in the one hundred and four",
+      "pt": "no cento e quatro",
+      "es": "en el ciento cuatro"
+    },
+    "grammar": "num. loc."
+  },
+  {
+    "pali": "catusamuṭṭhāno",
+    "meaning": {
+      "en": "having four origins",
+      "pt": "tendo quatro origens",
+      "es": "teniendo cuatro orígenes"
+    },
+    "grammar": "adj. nom. sg."
+  },
+  {
+    "pali": "caturaṅgiko",
+    "meaning": {
+      "en": "having four factors",
+      "pt": "tendo quatro fatores",
+      "es": "teniendo cuatro factores"
+    },
+    "grammar": "adj. nom. sg."
+  },
+  {
+    "pali": "catupaññāsadhā",
+    "meaning": {
+      "en": "in fifty-four ways",
+      "pt": "de cinquenta e quatro maneiras",
+      "es": "de cincuenta y cuatro maneras"
+    },
+    "grammar": "adv."
+  },
+  {
+    "pali": "catudhāva",
+    "meaning": {
+      "en": "just in four ways",
+      "pt": "apenas de quatro maneiras",
+      "es": "solo de cuatro maneras"
+    },
+    "grammar": "adv. + part."
+  },
+  {
+    "pali": "catubbidho",
+    "meaning": {
+      "en": "fourfold",
+      "pt": "quádruplo",
+      "es": "cuádruple"
+    },
+    "grammar": "adj. nom. sg."
+  },
+  {
+    "pali": "catubbidhe",
+    "meaning": {
+      "en": "in the fourfold",
+      "pt": "no quádruplo",
+      "es": "en lo cuádruple"
+    },
+    "grammar": "adj. loc."
+  },
+  {
+    "pali": "cattārīti",
+    "meaning": {
+      "en": "four, thus",
+      "pt": "quatro, assim",
+      "es": "cuatro, así"
+    },
+    "grammar": "num. + part."
+  },
+  {
+    "pali": "cattāreva",
+    "meaning": {
+      "en": "only four",
+      "pt": "apenas quatro",
+      "es": "solo cuatro"
+    },
+    "grammar": "num. + part."
+  },
+  {
+    "pali": "cattālīsamanesu",
+    "meaning": {
+      "en": "in the forty minds",
+      "pt": "nas quarenta mentes",
+      "es": "en las cuarenta mentes"
+    },
+    "grammar": "n. loc. pl."
+  },
+  {
+    "pali": "catassopi",
+    "meaning": {
+      "en": "even the four",
+      "pt": "mesmo as quatro",
+      "es": "incluso las cuatro"
+    },
+    "grammar": "num. + part."
+  },
+  {
+    "pali": "caraṇaṃ",
+    "meaning": {
+      "en": "conduct",
+      "pt": "conduta",
+      "es": "conducta"
+    },
+    "grammar": "n. nom./acc. sg."
+  },
+  {
+    "pali": "caranti",
+    "meaning": {
+      "en": "they move about",
+      "pt": "eles se movem",
+      "es": "ellos se mueven"
+    },
+    "grammar": "v. 3rd pl."
+  },
+  {
+    "pali": "calite",
+    "meaning": {
+      "en": "when moved",
+      "pt": "quando movido",
+      "es": "cuando se mueve"
+    },
+    "grammar": "adj. loc. sg."
+  },
+  {
+    "pali": "cakkhādīni",
+    "meaning": {
+      "en": "eye and so on",
+      "pt": "olho e assim por diante",
+      "es": "ojo y así sucesivamente"
+    },
+    "grammar": "n. nom./acc. pl."
+  },
+  {
+    "pali": "cakkhuviññāṇādīnaṃ",
+    "meaning": {
+      "en": "of eye-consciousness and so on",
+      "pt": "da consciência do olho e assim por diante",
+      "es": "de la conciencia del ojo y así sucesivamente"
+    },
+    "grammar": "n. gen. pl."
+  },
+  {
+    "pali": "cakkhuviññāṇena",
+    "meaning": {
+      "en": "by eye-consciousness",
+      "pt": "pela consciência do olho",
+      "es": "por la conciencia del ojo"
+    },
+    "grammar": "n. inst. sg."
+  },
+  {
+    "pali": "cakkhuviññāṇakādīni",
+    "meaning": {
+      "en": "eye-consciousness and so on",
+      "pt": "consciência do olho e assim por diante",
+      "es": "conciencia del ojo y así sucesivamente"
+    },
+    "grammar": "n. nom./acc. pl."
+  },
+  {
+    "pali": "cakkhuviññāṇakādisu",
+    "meaning": {
+      "en": "in eye-consciousness and so on",
+      "pt": "na consciência do olho e assim por diante",
+      "es": "en la conciencia del ojo y así sucesivamente"
+    },
+    "grammar": "n. loc. pl."
+  },
+  {
+    "pali": "cakkhusotānaṃ",
+    "meaning": {
+      "en": "of the eye and ear",
+      "pt": "do olho e ouvido",
+      "es": "del ojo y oído"
+    },
+    "grammar": "n. gen. pl."
+  },
+  {
+    "pali": "bījassa",
+    "meaning": {
+      "en": "of the seed",
+      "pt": "da semente",
+      "es": "de la semilla"
+    },
+    "grammar": "n. gen. sg."
+  },
+  {
+    "pali": "bālānaṃ",
+    "meaning": {
+      "en": "of fools",
+      "pt": "dos tolos",
+      "es": "de los necios"
+    },
+    "grammar": "n. gen. pl."
+  },
+  {
+    "pali": "byāpādo",
+    "meaning": {
+      "en": "ill will",
+      "pt": "má vontade",
+      "es": "mala voluntad"
+    },
+    "grammar": "n. nom. sg."
+  },
+  {
+    "pali": "budho",
+    "meaning": {
+      "en": "wise person",
+      "pt": "pessoa sábia",
+      "es": "persona sabia"
+    },
+    "grammar": "n. nom. sg."
+  },
+  {
+    "pali": "buddhivuddhikaraṃ",
+    "meaning": {
+      "en": "causing the growth of intelligence",
+      "pt": "causando o crescimento da inteligência",
+      "es": "causando el crecimiento de la inteligencia"
+    },
+    "grammar": "adj. acc. sg."
+  },
+  {
+    "pali": "buddhena",
+    "meaning": {
+      "en": "by the Buddha",
+      "pt": "pelo Buddha",
+      "es": "por el Buddha"
+    },
+    "grammar": "n. inst. sg."
+  },
+  {
+    "pali": "buddhaṃ",
+    "meaning": {
+      "en": "the Buddha",
+      "pt": "o Buddha",
+      "es": "al Buddha"
+    },
+    "grammar": "n. acc. sg."
+  },
+  {
+    "pali": "buddhasaddena",
+    "meaning": {
+      "en": "by the word Buddha",
+      "pt": "pela palavra Buddha",
+      "es": "por la palabra Buddha"
+    },
+    "grammar": "n. inst. sg."
+  },
+  {
+    "pali": "brahmānaṃ",
+    "meaning": {
+      "en": "of the Brahmas",
+      "pt": "dos Brahmas",
+      "es": "de los Brahmas"
+    },
+    "grammar": "n. gen. pl."
+  },
+  {
+    "pali": "bhūri",
+    "meaning": {
+      "en": "extensive wisdom",
+      "pt": "vasta sabedoria",
+      "es": "vasta sabiduría"
+    },
+    "grammar": "n. nom. sg."
+  },
+  {
+    "pali": "bhūmivasena",
+    "meaning": {
+      "en": "by way of plane",
+      "pt": "por via de plano",
+      "es": "por vía de plano"
+    },
+    "grammar": "n. inst. sg."
+  },
+  {
+    "pali": "bhūmipuggalabhedato",
+    "meaning": {
+      "en": "by the division of plane and person",
+      "pt": "pela divisão de plano e pessoa",
+      "es": "por la división de plano y persona"
+    },
+    "grammar": "n. abl. sg."
+  },
+  {
+    "pali": "bhāvanābhedo",
+    "meaning": {
+      "en": "division of development",
+      "pt": "divisão de desenvolvimento",
+      "es": "división de desarrollo"
+    },
+    "grammar": "n. nom. sg."
+  },
+  {
+    "pali": "bhogo",
+    "meaning": {
+      "en": "wealth",
+      "pt": "riqueza",
+      "es": "riqueza"
+    },
+    "grammar": "n. nom. sg."
+  },
+  {
+    "pali": "bhavābhavaṃ",
+    "meaning": {
+      "en": "various existences",
+      "pt": "várias existências",
+      "es": "varias existencias"
+    },
+    "grammar": "n. acc. sg."
+  },
+  {
+    "pali": "bhavitabbaṃ",
+    "meaning": {
+      "en": "should become",
+      "pt": "deve se tornar",
+      "es": "debe convertirse"
+    },
+    "grammar": "ptc. nom. sg."
+  },
+  {
+    "pali": "bhavesupi",
+    "meaning": {
+      "en": "even in existences",
+      "pt": "mesmo em existências",
+      "es": "incluso en existencias"
+    },
+    "grammar": "n. loc. pl. + part."
+  },
+  {
+    "pali": "bhavaṅgāni",
+    "meaning": {
+      "en": "life-continuums",
+      "pt": "continuidades da vida",
+      "es": "continuidades de la vida"
+    },
+    "grammar": "n. nom./acc. pl."
+  },
+  {
+    "pali": "bhavaṅgacittaṃ",
+    "meaning": {
+      "en": "life-continuum consciousness",
+      "pt": "consciência da continuidade da vida",
+      "es": "conciencia de la continuidad de la vida"
+    },
+    "grammar": "n. nom./acc. sg."
+  },
+  {
+    "pali": "bhavato",
+    "meaning": {
+      "en": "from existence",
+      "pt": "da existência",
+      "es": "de la existencia"
+    },
+    "grammar": "n. abl. sg."
+  },
+  {
+    "pali": "bhavantime",
+    "meaning": {
+      "en": "these exist",
+      "pt": "estes existem",
+      "es": "estos existen"
+    },
+    "grammar": "v. + pron."
+  },
+  {
+    "pali": "bhagavanto",
+    "meaning": {
+      "en": "the Blessed Ones",
+      "pt": "os Abençoados",
+      "es": "los Benditos"
+    },
+    "grammar": "n. nom. pl."
+  },
+  {
+    "pali": "balavā",
+    "meaning": {
+      "en": "strong",
+      "pt": "forte",
+      "es": "fuerte"
+    },
+    "grammar": "adj. nom. sg."
+  },
+  {
+    "pali": "balavaṃ",
+    "meaning": {
+      "en": "strong",
+      "pt": "forte",
+      "es": "fuerte"
+    },
+    "grammar": "adj. acc. sg."
+  },
+  {
+    "pali": "aṭṭhavīsatiyā",
+    "meaning": {
+      "en": "of twenty-eight",
+      "pt": "de vinte e oito",
+      "es": "de veintiocho"
+    },
+    "grammar": "num. gen."
+  },
+  {
+    "pali": "aṭṭhavidhampi",
+    "meaning": {
+      "en": "even eightfold",
+      "pt": "até mesmo óctuplo",
+      "es": "incluso óctuple"
+    },
+    "grammar": "adj. nom./acc. sg. + part."
+  },
+  {
+    "pali": "aṭṭhasaṭṭhi",
+    "meaning": {
+      "en": "sixty-eight",
+      "pt": "sessenta e oito",
+      "es": "sesenta y ocho"
+    },
+    "grammar": "num."
+  },
+  {
+    "pali": "aṭṭhamo",
+    "meaning": {
+      "en": "eighth",
+      "pt": "oitavo",
+      "es": "octavo"
+    },
+    "grammar": "num. nom. sg."
+  },
+  {
+    "pali": "aṇḍajādīsu",
+    "meaning": {
+      "en": "among those born from eggs and so on",
+      "pt": "entre os nascidos de ovos e assim por diante",
+      "es": "entre los nacidos de huevos y así sucesivamente"
+    },
+    "grammar": "n. loc. pl."
+  },
+  {
+    "pali": "aññatra",
+    "meaning": {
+      "en": "except",
+      "pt": "exceto",
+      "es": "excepto"
+    },
+    "grammar": "indec."
+  },
+  {
+    "pali": "ayuttaṃ",
+    "meaning": {
+      "en": "improper",
+      "pt": "impróprio",
+      "es": "impropio"
+    },
+    "grammar": "adj. nom./acc. sg."
+  },
+  {
+    "pali": "ayonisomanasikārapadaṭṭhānaṃ",
+    "meaning": {
+      "en": "having unwise attention as proximate cause",
+      "pt": "tendo atenção não sábia como causa próxima",
+      "es": "teniendo atención no sabia como causa próxima"
+    },
+    "grammar": "n. nom./acc. sg."
+  },
+  {
+    "pali": "avoca",
+    "meaning": {
+      "en": "said",
+      "pt": "disse",
+      "es": "dijo"
+    },
+    "grammar": "v. 3rd sg. aor."
+  },
+  {
+    "pali": "aviññāṇakasaddo",
+    "meaning": {
+      "en": "sound without consciousness",
+      "pt": "som sem consciência",
+      "es": "sonido sin conciencia"
+    },
+    "grammar": "n. nom. sg."
+  },
+  {
+    "pali": "aviññattijanattā",
+    "meaning": {
+      "en": "because of producing non-intimation",
+      "pt": "por causa de produzir não-intimação",
+      "es": "por causar la no-intimación"
+    },
+    "grammar": "n. abl. sg."
+  },
+  {
+    "pali": "avipākasabhāvato",
+    "meaning": {
+      "en": "from the nature of being non-resultant",
+      "pt": "pela natureza de ser não-resultante",
+      "es": "por la naturaleza de ser no resultante"
+    },
+    "grammar": "n. abl. sg."
+  },
+  {
+    "pali": "aviparīto",
+    "meaning": {
+      "en": "undistorted",
+      "pt": "não distorcido",
+      "es": "no distorsionado"
+    },
+    "grammar": "adj. nom. sg."
+  },
+  {
+    "pali": "avijjamānapaññatti",
+    "meaning": {
+      "en": "concept of the non-existent",
+      "pt": "conceito do inexistente",
+      "es": "concepto de lo inexistente"
+    },
+    "grammar": "n. nom. sg."
+  },
+  {
+    "pali": "avatthukaṃ",
+    "meaning": {
+      "en": "without physical basis",
+      "pt": "sem base física",
+      "es": "sin base física"
+    },
+    "grammar": "adj. nom./acc. sg."
+  },
+  {
+    "pali": "avassaṃ",
+    "meaning": {
+      "en": "inevitably",
+      "pt": "inevitavelmente",
+      "es": "inevitablemente"
+    },
+    "grammar": "adv."
+  },
+  {
+    "pali": "avasesesu",
+    "meaning": {
+      "en": "in the remaining",
+      "pt": "nos restantes",
+      "es": "en los restantes"
+    },
+    "grammar": "adj. loc. pl."
+  },
+  {
+    "pali": "avacārayatīti",
+    "meaning": {
+      "en": "causes to move about, thus",
+      "pt": "faz mover-se, assim",
+      "es": "hace moverse, así"
+    },
+    "grammar": "v. 3rd sg. + part."
+  },
+  {
+    "pali": "avacaraṇato",
+    "meaning": {
+      "en": "from moving about",
+      "pt": "por mover-se",
+      "es": "por moverse"
+    },
+    "grammar": "n. abl. sg."
+  },
+  {
+    "pali": "avacarantampi",
+    "meaning": {
+      "en": "even moving about",
+      "pt": "mesmo movendo-se",
+      "es": "incluso moviéndose"
+    },
+    "grammar": "ptc. acc. sg. + part."
+  },
+  {
+    "pali": "atītaṃ",
+    "meaning": {
+      "en": "past",
+      "pt": "passado",
+      "es": "pasado"
+    },
+    "grammar": "adj. acc. sg."
+  },
+  {
+    "pali": "atulo",
+    "meaning": {
+      "en": "incomparable",
+      "pt": "incomparável",
+      "es": "incomparable"
+    },
+    "grammar": "adj. nom. sg."
+  },
+  {
+    "pali": "atulavikkamo",
+    "meaning": {
+      "en": "of incomparable prowess",
+      "pt": "de coragem incomparável",
+      "es": "de destreza incomparable"
+    },
+    "grammar": "adj. nom. sg."
+  },
+  {
+    "pali": "atthikkhaṇeyeva",
+    "meaning": {
+      "en": "only at the moment of existence",
+      "pt": "apenas no momento da existência",
+      "es": "solo en el momento de la existencia"
+    },
+    "grammar": "n. loc. sg. + part."
+  },
+  {
+    "pali": "atthassa",
+    "meaning": {
+      "en": "of meaning",
+      "pt": "de significado",
+      "es": "de significado"
+    },
+    "grammar": "n. gen. sg."
+  },
+  {
+    "pali": "attani",
+    "meaning": {
+      "en": "in oneself",
+      "pt": "em si mesmo",
+      "es": "en uno mismo"
+    },
+    "grammar": "pron. loc. sg."
+  },
+  {
+    "pali": "asaṅkhāro",
+    "meaning": {
+      "en": "unprompted",
+      "pt": "não instigado",
+      "es": "no instigado"
+    },
+    "grammar": "adj. nom. sg."
+  },
+  {
+    "pali": "asaṅkhārikena",
+    "meaning": {
+      "en": "by the unprompted",
+      "pt": "pelo não instigado",
+      "es": "por lo no instigado"
+    },
+    "grammar": "adj. inst. sg."
+  },
+  {
+    "pali": "asaṅkhārike",
+    "meaning": {
+      "en": "in the unprompted",
+      "pt": "no não instigado",
+      "es": "en lo no instigado"
+    },
+    "grammar": "adj. loc. sg."
+  },
+  {
+    "pali": "asaṅkhārikanti",
+    "meaning": {
+      "en": "unprompted, thus",
+      "pt": "não instigado, assim",
+      "es": "no instigado, así"
+    },
+    "grammar": "adj. + part."
+  },
+  {
+    "pali": "asaṅkhārasasaṅkhāravidhānaṃ",
+    "meaning": {
+      "en": "arrangement of unprompted and prompted",
+      "pt": "arranjo de não instigado e instigado",
+      "es": "arreglo de no instigado e instigado"
+    },
+    "grammar": "n. nom./acc. sg."
+  },
+  {
+    "pali": "asambhinnaṃ",
+    "meaning": {
+      "en": "unbroken",
+      "pt": "inquebrável",
+      "es": "inquebrantable"
+    },
+    "grammar": "adj. nom./acc. sg."
+  },
+  {
+    "pali": "asamatthaṃ",
+    "meaning": {
+      "en": "unable",
+      "pt": "incapaz",
+      "es": "incapaz"
+    },
+    "grammar": "adj. nom./acc. sg."
+  },
+  {
+    "pali": "arūpīnaṃ",
+    "meaning": {
+      "en": "of formless ones",
+      "pt": "dos sem forma",
+      "es": "de los sin forma"
+    },
+    "grammar": "adj. gen. pl."
+  },
+  {
+    "pali": "arūpāvacaravipākacittāni",
+    "meaning": {
+      "en": "formless-sphere resultant consciousnesses",
+      "pt": "consciências resultantes da esfera sem forma",
+      "es": "conciencias resultantes de la esfera sin forma"
+    },
+    "grammar": "n. nom./acc. pl."
+  },
+  {
+    "pali": "arūpāvacarakusalacittaṃ",
+    "meaning": {
+      "en": "formless-sphere wholesome consciousness",
+      "pt": "consciência benéfica da esfera sem forma",
+      "es": "conciencia benéfica de la esfera sin forma"
+    },
+    "grammar": "n. nom./acc. sg."
+  },
+  {
+    "pali": "arūpāvacarakiriyacittāni",
+    "meaning": {
+      "en": "formless-sphere functional consciousnesses",
+      "pt": "consciências funcionais da esfera sem forma",
+      "es": "conciencias funcionales de la esfera sin forma"
+    },
+    "grammar": "n. nom./acc. pl."
+  },
+  {
+    "pali": "arūpepi",
+    "meaning": {
+      "en": "even in the formless",
+      "pt": "mesmo no sem forma",
+      "es": "incluso en lo sin forma"
+    },
+    "grammar": "n. loc. sg. + part."
+  },
+  {
+    "pali": "arūpabhave",
+    "meaning": {
+      "en": "in formless existence",
+      "pt": "na existência sem forma",
+      "es": "en la existencia sin forma"
+    },
+    "grammar": "n. loc. sg."
+  },
+  {
+    "pali": "ariyānaṃ",
+    "meaning": {
+      "en": "of the noble ones",
+      "pt": "dos nobres",
+      "es": "de los nobles"
+    },
+    "grammar": "n. gen. pl."
+  },
+  {
+    "pali": "arahattaphalañcāti",
+    "meaning": {
+      "en": "and the fruition of arahantship, thus",
+      "pt": "e a fruição do estado de arahant, assim",
+      "es": "y la fruición de la etapa de arahant, así"
+    },
+    "grammar": "n. nom. sg. + part."
+  },
+  {
+    "pali": "arahattamaggaṃ",
+    "meaning": {
+      "en": "path of arahantship",
+      "pt": "caminho do estado de arahant",
+      "es": "camino de la etapa de arahant"
+    },
+    "grammar": "n. acc. sg."
+  },
+  {
+    "pali": "apubbaṃ",
+    "meaning": {
+      "en": "not before",
+      "pt": "sem precedente",
+      "es": "sin precedente"
+    },
+    "grammar": "adj. acc. sg."
+  },
+  {
+    "pali": "appamaññā",
+    "meaning": {
+      "en": "immeasurables",
+      "pt": "imensuráveis",
+      "es": "inconmensurables"
+    },
+    "grammar": "n. nom. pl."
+  }
+]

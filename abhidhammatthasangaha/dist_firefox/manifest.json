@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Visuddhimagga Reader",
+  "version": "1.0.0",
+  "description": "Leitor Trilingue Completo do Visuddhimagga (Pali, Inglês, Português, Espanhol)",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Visuddhimagga Reader"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "visuddhimagga@abhidhamma.org"
+    }
+  }
+}

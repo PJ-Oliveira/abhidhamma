@@ -1,0 +1,902 @@
+[
+  {
+    "pali": "guṇesinā",
+    "meaning": {
+      "en": "by the seeker of virtue",
+      "pt": "pelo buscador de virtude",
+      "es": "por el buscador de virtud"
+    },
+    "grammar": "masculine noun, instrumental, singular"
+  },
+  {
+    "pali": "guṇena",
+    "meaning": {
+      "en": "by virtue",
+      "pt": "pela virtude",
+      "es": "por la virtud"
+    },
+    "grammar": "masculine noun, instrumental, singular"
+  },
+  {
+    "pali": "gotrabhu",
+    "meaning": {
+      "en": "change of lineage",
+      "pt": "mudança de linhagem",
+      "es": "cambio de linaje"
+    },
+    "grammar": "masculine noun, nominative, singular"
+  },
+  {
+    "pali": "ghānādiviññāṇattayaṃ",
+    "meaning": {
+      "en": "the triad of consciousnesses beginning with nose-consciousness",
+      "pt": "a tríade de consciências começando com a consciência do nariz",
+      "es": "la tríada de conciencias que comienza con la conciencia de la nariz"
+    },
+    "grammar": "neuter noun, nominative, singular, compound"
+  },
+  {
+    "pali": "ghaṭṭanāya",
+    "meaning": {
+      "en": "for striking; by striking",
+      "pt": "para bater; por bater",
+      "es": "para golpear; por golpear"
+    },
+    "grammar": "feminine noun, dative/instrumental, singular"
+  },
+  {
+    "pali": "gatoti",
+    "meaning": {
+      "en": "gone (gato + iti)",
+      "pt": "ido (gato + iti)",
+      "es": "ido (gato + iti)"
+    },
+    "grammar": "adjective, masculine, nominative, singular + particle"
+  },
+  {
+    "pali": "gatinimittaṃ",
+    "meaning": {
+      "en": "sign of destiny",
+      "pt": "sinal de destino",
+      "es": "signo de destino"
+    },
+    "grammar": "neuter noun, nominative/accusative, singular, compound"
+  },
+  {
+    "pali": "ganthārambhakathāvaṇṇanā",
+    "meaning": {
+      "en": "explanation of the introductory talk of the book",
+      "pt": "explicação da palestra introdutória do livro",
+      "es": "explicación de la charla introductoria del libro"
+    },
+    "grammar": "feminine noun, nominative, singular, compound"
+  },
+  {
+    "pali": "gahitāti",
+    "meaning": {
+      "en": "taken (gahitā + iti)",
+      "pt": "tomado (gahitā + iti)",
+      "es": "tomado (gahitā + iti)"
+    },
+    "grammar": "adjective, feminine, nominative, plural + particle"
+  },
+  {
+    "pali": "gahitāggahaṇenettha",
+    "meaning": {
+      "en": "by taking what has been taken here",
+      "pt": "por tomar o que foi tomado aqui",
+      "es": "por tomar lo que se ha tomado aquí"
+    },
+    "grammar": "compound"
+  },
+  {
+    "pali": "gahitāgahaṇenettha",
+    "meaning": {
+      "en": "by taking what has been taken here",
+      "pt": "por tomar o que foi tomado aqui",
+      "es": "por tomar lo que se ha tomado aquí"
+    },
+    "grammar": "compound"
+  },
+  {
+    "pali": "gahito",
+    "meaning": {
+      "en": "taken",
+      "pt": "tomado",
+      "es": "tomado"
+    },
+    "grammar": "adjective, masculine, nominative, singular"
+  },
+  {
+    "pali": "gahitaṃ",
+    "meaning": {
+      "en": "taken",
+      "pt": "tomado",
+      "es": "tomado"
+    },
+    "grammar": "adjective, neuter, nominative/accusative, singular"
+  },
+  {
+    "pali": "gahitattā",
+    "meaning": {
+      "en": "because of being taken",
+      "pt": "por causa de ser tomado",
+      "es": "por ser tomado"
+    },
+    "grammar": "neuter noun, ablative, singular"
+  },
+  {
+    "pali": "evāti",
+    "meaning": {
+      "en": "thus (eva + iti)",
+      "pt": "assim (eva + iti)",
+      "es": "así (eva + iti)"
+    },
+    "grammar": "indeclinable + particle"
+  },
+  {
+    "pali": "evamidaṃ",
+    "meaning": {
+      "en": "thus this",
+      "pt": "assim isto",
+      "es": "así esto"
+    },
+    "grammar": "indeclinable + pronoun"
+  },
+  {
+    "pali": "evamidampi",
+    "meaning": {
+      "en": "thus this too",
+      "pt": "assim isto também",
+      "es": "así esto también"
+    },
+    "grammar": "indeclinable + pronoun + particle"
+  },
+  {
+    "pali": "etāsu",
+    "meaning": {
+      "en": "in these",
+      "pt": "nestas",
+      "es": "en estas"
+    },
+    "grammar": "demonstrative pronoun, feminine, locative, plural"
+  },
+  {
+    "pali": "etissāti",
+    "meaning": {
+      "en": "of this (etissā + iti)",
+      "pt": "desta (etissā + iti)",
+      "es": "de esta (etissā + iti)"
+    },
+    "grammar": "demonstrative pronoun, feminine, genitive, singular + particle"
+  },
+  {
+    "pali": "etissaṃ",
+    "meaning": {
+      "en": "in this",
+      "pt": "nesta",
+      "es": "en esta"
+    },
+    "grammar": "demonstrative pronoun, feminine, locative, singular"
+  },
+  {
+    "pali": "esāti",
+    "meaning": {
+      "en": "this (esā + iti)",
+      "pt": "esta (esā + iti)",
+      "es": "esta (esā + iti)"
+    },
+    "grammar": "demonstrative pronoun, feminine, nominative, singular + particle"
+  },
+  {
+    "pali": "ekūnatiṃsacittesu",
+    "meaning": {
+      "en": "in the twenty-nine consciousnesses",
+      "pt": "nas vinte e nove consciências",
+      "es": "en las veintinueve conciencias"
+    },
+    "grammar": "neuter noun, locative, plural, compound"
+  },
+  {
+    "pali": "ekūnanavuti",
+    "meaning": {
+      "en": "eighty-nine",
+      "pt": "oitenta e nove",
+      "es": "ochenta y nueve"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "ekādasavidhe",
+    "meaning": {
+      "en": "in the elevenfold",
+      "pt": "no undécuplo",
+      "es": "en el undécuplo"
+    },
+    "grammar": "adjective, locative, singular"
+  },
+  {
+    "pali": "ekādasannaṃ",
+    "meaning": {
+      "en": "of the eleven",
+      "pt": "dos onze",
+      "es": "de los once"
+    },
+    "grammar": "numeral, genitive, plural"
+  },
+  {
+    "pali": "ekuppādā",
+    "meaning": {
+      "en": "arising together; having a single arising",
+      "pt": "surgindo juntos; tendo um único surgimento",
+      "es": "surgiendo juntos; teniendo un solo surgimiento"
+    },
+    "grammar": "adjective, nominative, plural, compound"
+  },
+  {
+    "pali": "ekissā",
+    "meaning": {
+      "en": "of one",
+      "pt": "de uma",
+      "es": "de una"
+    },
+    "grammar": "numeral, feminine, genitive, singular"
+  },
+  {
+    "pali": "ekenūnesu",
+    "meaning": {
+      "en": "in those less by one",
+      "pt": "naqueles menos um",
+      "es": "en aquellos menos uno"
+    },
+    "grammar": "adjective, locative, plural, compound"
+  },
+  {
+    "pali": "ekavīsāsu",
+    "meaning": {
+      "en": "in twenty-one",
+      "pt": "em vinte e um",
+      "es": "en veintiuno"
+    },
+    "grammar": "numeral, locative, plural"
+  },
+  {
+    "pali": "ekavīsatividhaṃ",
+    "meaning": {
+      "en": "twenty-one-fold",
+      "pt": "vinte e um vezes",
+      "es": "veintiún veces"
+    },
+    "grammar": "adjective, neuter, nominative/accusative, singular"
+  },
+  {
+    "pali": "ekavārameva",
+    "meaning": {
+      "en": "only one time",
+      "pt": "apenas uma vez",
+      "es": "solo una vez"
+    },
+    "grammar": "adverbial compound"
+  },
+  {
+    "pali": "ekasattati",
+    "meaning": {
+      "en": "seventy-one",
+      "pt": "setenta e um",
+      "es": "setenta y uno"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "ekapaññāsacittesu",
+    "meaning": {
+      "en": "in the fifty-one consciousnesses",
+      "pt": "nas cinquenta e uma consciências",
+      "es": "en las cincuenta y una conciencias"
+    },
+    "grammar": "neuter noun, locative, plural, compound"
+  },
+  {
+    "pali": "ekapaññāsa",
+    "meaning": {
+      "en": "fifty-one",
+      "pt": "cinquenta e um",
+      "es": "cincuenta y uno"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "ekantato",
+    "meaning": {
+      "en": "absolutely; certainly",
+      "pt": "absolutamente; certamente",
+      "es": "absolutamente; ciertamente"
+    },
+    "grammar": "adverb"
+  },
+  {
+    "pali": "ekanavutiyā",
+    "meaning": {
+      "en": "by ninety-one",
+      "pt": "por noventa e um",
+      "es": "por noventa y uno"
+    },
+    "grammar": "numeral, instrumental, singular"
+  },
+  {
+    "pali": "ekacittakkhaṇā",
+    "meaning": {
+      "en": "one mind-moment",
+      "pt": "um momento mental",
+      "es": "un momento mental"
+    },
+    "grammar": "masculine noun, nominative, plural, compound"
+  },
+  {
+    "pali": "ekaccānaṃ",
+    "meaning": {
+      "en": "of some",
+      "pt": "de alguns",
+      "es": "de algunos"
+    },
+    "grammar": "pronoun, genitive, plural"
+  },
+  {
+    "pali": "dīpitaṃ",
+    "meaning": {
+      "en": "explained; illustrated",
+      "pt": "explicado; ilustrado",
+      "es": "explicado; ilustrado"
+    },
+    "grammar": "past participle, neuter, nominative/accusative, singular"
+  },
+  {
+    "pali": "dīpaṃ",
+    "meaning": {
+      "en": "island; lamp",
+      "pt": "ilha; lâmpada",
+      "es": "isla; lámpara"
+    },
+    "grammar": "masculine/neuter noun, accusative, singular"
+  },
+  {
+    "pali": "dānādīsu",
+    "meaning": {
+      "en": "in giving, etc.",
+      "pt": "em dar, etc.",
+      "es": "en dar, etc."
+    },
+    "grammar": "neuter noun, locative, plural, compound"
+  },
+  {
+    "pali": "dānamaye",
+    "meaning": {
+      "en": "consisting in giving",
+      "pt": "consistindo em dar",
+      "es": "que consiste en dar"
+    },
+    "grammar": "adjective, locative, singular"
+  },
+  {
+    "pali": "dānamayapuññakiriyavatthu",
+    "meaning": {
+      "en": "basis of meritorious action consisting in giving",
+      "pt": "base de ação meritória consistindo em dar",
+      "es": "base de acción meritoria que consiste en dar"
+    },
+    "grammar": "neuter noun, nominative/accusative, singular, compound"
+  },
+  {
+    "pali": "dvāvīsati",
+    "meaning": {
+      "en": "twenty-two",
+      "pt": "vinte e dois",
+      "es": "veintidós"
+    },
+    "grammar": "numeral"
+  },
+  {
+    "pali": "dvāsaṭṭhicittesu",
+    "meaning": {
+      "en": "in the sixty-two consciousnesses",
+      "pt": "nas sessenta e duas consciências",
+      "es": "en las sesenta y dos conciencias"
+    },
+    "grammar": "neuter noun, locative, plural, compound"
+  },
+  {
+    "pali": "dvādasākusalāni",
+    "meaning": {
+      "en": "twelve unwholesome (consciousnesses)",
+      "pt": "doze (consciências) não benéficas",
+      "es": "doce (conciencias) perjudiciales"
+    },
+    "grammar": "neuter noun, nominative, plural, compound"
+  },
+  {
+    "pali": "dvādasākusalā",
+    "meaning": {
+      "en": "twelve unwholesome",
+      "pt": "doze não benéficas",
+      "es": "doce perjudiciales"
+    },
+    "grammar": "adjective/noun, nominative, plural, compound"
+  },
+  {
+    "pali": "dvādasacittesu",
+    "meaning": {
+      "en": "in the twelve consciousnesses",
+      "pt": "nas doze consciências",
+      "es": "en las doce conciencias"
+    },
+    "grammar": "neuter noun, locative, plural, compound"
+  },
+  {
+    "pali": "dvipañcaviññāṇānaṃ",
+    "meaning": {
+      "en": "of the two sets of fivefold consciousnesses",
+      "pt": "dos dois conjuntos de cinco consciências",
+      "es": "de los dos conjuntos de cinco conciencias"
+    },
+    "grammar": "neuter noun, genitive, plural, compound"
+  },
+  {
+    "pali": "dvipañcaviññāṇesu",
+    "meaning": {
+      "en": "in the two sets of fivefold consciousnesses",
+      "pt": "nos dois conjuntos de cinco consciências",
+      "es": "en los dos conjuntos de cinco conciencias"
+    },
+    "grammar": "neuter noun, locative, plural, compound"
+  },
+  {
+    "pali": "dvikiccā",
+    "meaning": {
+      "en": "having two functions",
+      "pt": "tendo duas funções",
+      "es": "que tiene dos funciones"
+    },
+    "grammar": "adjective, nominative, plural, compound"
+  },
+  {
+    "pali": "dveti",
+    "meaning": {
+      "en": "two (dve + iti)",
+      "pt": "dois (dve + iti)",
+      "es": "dos (dve + iti)"
+    },
+    "grammar": "numeral + particle"
+  },
+  {
+    "pali": "dvepaññāsāvasesāni",
+    "meaning": {
+      "en": "fifty-two remaining",
+      "pt": "cinquenta e dois restantes",
+      "es": "cincuenta y dos restantes"
+    },
+    "grammar": "adjective, neuter, nominative, plural, compound"
+  },
+  {
+    "pali": "dvattiṃsacittesu",
+    "meaning": {
+      "en": "in the thirty-two consciousnesses",
+      "pt": "nas trinta e duas consciências",
+      "es": "en las treinta y dos conciencias"
+    },
+    "grammar": "neuter noun, locative, plural, compound"
+  },
+  {
+    "pali": "dutiyajjhānatatiyajjhānapākato",
+    "meaning": {
+      "en": "from the result of the second and third jhanas",
+      "pt": "do resultado do segundo e terceiro jhanas",
+      "es": "del resultado del segundo y tercer jhanas"
+    },
+    "grammar": "neuter noun, ablative, singular, compound"
+  },
+  {
+    "pali": "dumaggaṅgaṃ",
+    "meaning": {
+      "en": "two path factors",
+      "pt": "dois fatores do caminho",
+      "es": "dos factores del sendero"
+    },
+    "grammar": "neuter noun, nominative/accusative, singular, compound"
+  },
+  {
+    "pali": "dukkhindriyaṃ",
+    "meaning": {
+      "en": "faculty of pain",
+      "pt": "faculdade da dor",
+      "es": "facultad del dolor"
+    },
+    "grammar": "neuter noun, nominative/accusative, singular, compound"
+  },
+  {
+    "pali": "dukkhanirodhagāminī",
+    "meaning": {
+      "en": "leading to the cessation of suffering",
+      "pt": "conduzindo à cessação do sofrimento",
+      "es": "que conduce a la cesación del sufrimiento"
+    },
+    "grammar": "adjective, feminine, nominative, singular, compound"
+  },
+  {
+    "pali": "duhetūnaṃ",
+    "meaning": {
+      "en": "of the two roots",
+      "pt": "das duas raízes",
+      "es": "de las dos raíces"
+    },
+    "grammar": "masculine noun, genitive, plural, compound"
+  },
+  {
+    "pali": "duhetuno",
+    "meaning": {
+      "en": "of the two roots",
+      "pt": "das duas raízes",
+      "es": "de las dos raíces"
+    },
+    "grammar": "masculine noun, genitive, singular/plural, compound"
+  },
+  {
+    "pali": "duhetuke",
+    "meaning": {
+      "en": "in the two-rooted",
+      "pt": "nos de duas raízes",
+      "es": "en los de dos raíces"
+    },
+    "grammar": "adjective, locative, singular, compound"
+  },
+  {
+    "pali": "duhetukattayenāpi",
+    "meaning": {
+      "en": "even by the triad of two-rooted",
+      "pt": "mesmo pela tríade dos de duas raízes",
+      "es": "incluso por la tríada de los de dos raíces"
+    },
+    "grammar": "neuter noun, instrumental, singular, compound + particle"
+  },
+  {
+    "pali": "duggatiyaṃ",
+    "meaning": {
+      "en": "in a bad destination",
+      "pt": "em um mau destino",
+      "es": "en un mal destino"
+    },
+    "grammar": "feminine noun, locative, singular"
+  },
+  {
+    "pali": "dosamūlāni",
+    "meaning": {
+      "en": "rooted in hatred",
+      "pt": "enraizado no ódio",
+      "es": "arraigado en el odio"
+    },
+    "grammar": "adjective, neuter, nominative, plural, compound"
+  },
+  {
+    "pali": "dosamūlesu",
+    "meaning": {
+      "en": "in those rooted in hatred",
+      "pt": "naqueles enraizados no ódio",
+      "es": "en aquellos arraigados en el odio"
+    },
+    "grammar": "adjective, locative, plural, compound"
+  },
+  {
+    "pali": "diṭṭhisaṃyuttā",
+    "meaning": {
+      "en": "associated with wrong view",
+      "pt": "associado à visão errônea",
+      "es": "asociado a la visión errónea"
+    },
+    "grammar": "adjective, nominative, plural, compound"
+  },
+  {
+    "pali": "diṭṭhigataṃ",
+    "meaning": {
+      "en": "resort to views; wrong view",
+      "pt": "recurso a visões; visão errônea",
+      "es": "recurso a visiones; visión errónea"
+    },
+    "grammar": "neuter noun, nominative/accusative, singular, compound"
+  },
+  {
+    "pali": "diṭṭhaṃ",
+    "meaning": {
+      "en": "seen",
+      "pt": "visto",
+      "es": "visto"
+    },
+    "grammar": "past participle, neuter, nominative/accusative, singular"
+  },
+  {
+    "pali": "disāya",
+    "meaning": {
+      "en": "in a direction",
+      "pt": "em uma direção",
+      "es": "en una dirección"
+    },
+    "grammar": "feminine noun, locative/dative/genitive, singular"
+  },
+  {
+    "pali": "dissamānena",
+    "meaning": {
+      "en": "by being seen",
+      "pt": "por ser visto",
+      "es": "al ser visto"
+    },
+    "grammar": "present participle, passive, instrumental, singular"
+  },
+  {
+    "pali": "dibbacakkhādiñāṇānaṃ",
+    "meaning": {
+      "en": "of the knowledges like the divine eye",
+      "pt": "dos conhecimentos como o olho divino",
+      "es": "de los conocimientos como el ojo divino"
+    },
+    "grammar": "neuter noun, genitive, plural, compound"
+  },
+  {
+    "pali": "dhammena",
+    "meaning": {
+      "en": "by dhamma; rightfully",
+      "pt": "pelo dhamma; retamente",
+      "es": "por el dhamma; rectamente"
+    },
+    "grammar": "masculine/neuter noun, instrumental, singular"
+  },
+  {
+    "pali": "deyyadhammaṃ",
+    "meaning": {
+      "en": "gift; object to be given",
+      "pt": "presente; objeto a ser dado",
+      "es": "regalo; objeto para dar"
+    },
+    "grammar": "masculine noun, accusative, singular, compound"
+  },
+  {
+    "pali": "deyyadhammapaṭiggāhakādisampattiṃ",
+    "meaning": {
+      "en": "success of the gift and recipient, etc.",
+      "pt": "sucesso do presente e do recipiente, etc.",
+      "es": "éxito del regalo y del recipiente, etc."
+    },
+    "grammar": "feminine noun, accusative, singular, compound"
+  },
+  {
+    "pali": "devo",
+    "meaning": {
+      "en": "god; deity",
+      "pt": "deus; divindade",
+      "es": "dios; deidad"
+    },
+    "grammar": "masculine noun, nominative, singular"
+  },
+  {
+    "pali": "devarājassa",
+    "meaning": {
+      "en": "of the king of gods",
+      "pt": "do rei dos deuses",
+      "es": "del rey de los dioses"
+    },
+    "grammar": "masculine noun, genitive, singular, compound"
+  },
+  {
+    "pali": "devapurakkhato",
+    "meaning": {
+      "en": "surrounded by gods",
+      "pt": "cercado por deuses",
+      "es": "rodeado de dioses"
+    },
+    "grammar": "adjective, masculine, nominative, singular, compound"
+  },
+  {
+    "pali": "desanākkamato",
+    "meaning": {
+      "en": "according to the sequence of teaching",
+      "pt": "de acordo com a sequência de ensino",
+      "es": "según la secuencia de enseñanza"
+    },
+    "grammar": "adverbial compound"
+  },
+  {
+    "pali": "dassayissāmi",
+    "meaning": {
+      "en": "I will show",
+      "pt": "eu mostrarei",
+      "es": "mostraré"
+    },
+    "grammar": "verb, 1st person, singular, future tense"
+  },
+  {
+    "pali": "dassane",
+    "meaning": {
+      "en": "in seeing",
+      "pt": "no ver",
+      "es": "en el ver"
+    },
+    "grammar": "neuter noun, locative, singular"
+  },
+  {
+    "pali": "dassanatthaṃ",
+    "meaning": {
+      "en": "for the purpose of seeing",
+      "pt": "com o propósito de ver",
+      "es": "con el propósito de ver"
+    },
+    "grammar": "adverbial compound"
+  },
+  {
+    "pali": "dasasu",
+    "meaning": {
+      "en": "in ten",
+      "pt": "em dez",
+      "es": "en diez"
+    },
+    "grammar": "numeral, locative, plural"
+  },
+  {
+    "pali": "dasapuññakiriyavatthūni",
+    "meaning": {
+      "en": "ten bases of meritorious action",
+      "pt": "dez bases de ação meritória",
+      "es": "diez bases de acción meritoria"
+    },
+    "grammar": "neuter noun, nominative, plural, compound"
+  },
+  {
+    "pali": "dasapuññakiriyavatthuvaseneva",
+    "meaning": {
+      "en": "only by way of the ten bases of meritorious action",
+      "pt": "apenas por meio das dez bases de ação meritória",
+      "es": "solo mediante las diez bases de acción meritoria"
+    },
+    "grammar": "instrumental compound + particle"
+  },
+  {
+    "pali": "dasakāni",
+    "meaning": {
+      "en": "decades; groups of ten",
+      "pt": "décadas; grupos de dez",
+      "es": "décadas; grupos de diez"
+    },
+    "grammar": "neuter noun, nominative, plural"
+  },
+  {
+    "pali": "dadhissa",
+    "meaning": {
+      "en": "of curds",
+      "pt": "de coalhada",
+      "es": "de cuajada"
+    },
+    "grammar": "neuter noun, genitive, singular"
+  },
+  {
+    "pali": "dadato",
+    "meaning": {
+      "en": "of the one giving",
+      "pt": "daquele que dá",
+      "es": "del que da"
+    },
+    "grammar": "present participle, genitive, singular"
+  },
+  {
+    "pali": "dadanti",
+    "meaning": {
+      "en": "they give",
+      "pt": "eles dão",
+      "es": "ellos dan"
+    },
+    "grammar": "verb, 3rd person, plural, present tense"
+  },
+  {
+    "pali": "cittotusambhavo",
+    "meaning": {
+      "en": "originating from mind and temperature",
+      "pt": "originado da mente e temperatura",
+      "es": "originado de la mente y la temperatura"
+    },
+    "grammar": "adjective, masculine, nominative, singular, compound"
+  },
+  {
+    "pali": "cittasaddassa",
+    "meaning": {
+      "en": "of the word 'mind'",
+      "pt": "da palavra 'mente'",
+      "es": "de la palabra 'mente'"
+    },
+    "grammar": "masculine noun, genitive, singular, compound"
+  },
+  {
+    "pali": "cittaniddeso",
+    "meaning": {
+      "en": "description of mind",
+      "pt": "descrição da mente",
+      "es": "descripción de la mente"
+    },
+    "grammar": "masculine noun, nominative, singular, compound"
+  },
+  {
+    "pali": "cittakammake",
+    "meaning": {
+      "en": "in mind and kamma",
+      "pt": "na mente e kamma",
+      "es": "en la mente y el kamma"
+    },
+    "grammar": "adjective, locative, singular, compound"
+  },
+  {
+    "pali": "cittajarūpānaṃ",
+    "meaning": {
+      "en": "of mind-produced matter",
+      "pt": "da matéria produzida pela mente",
+      "es": "de la materia producida por la mente"
+    },
+    "grammar": "neuter noun, genitive, plural, compound"
+  },
+  {
+    "pali": "cittacetasikānaṃ",
+    "meaning": {
+      "en": "of mind and mental factors",
+      "pt": "da mente e fatores mentais",
+      "es": "de la mente y los factores mentales"
+    },
+    "grammar": "neuter/masculine noun, genitive, plural, compound"
+  },
+  {
+    "pali": "cintetīti",
+    "meaning": {
+      "en": "thinks (cinteti + iti)",
+      "pt": "pensa (cinteti + iti)",
+      "es": "piensa (cinteti + iti)"
+    },
+    "grammar": "verb, 3rd person, singular, present tense + particle"
+  },
+  {
+    "pali": "cintentassa",
+    "meaning": {
+      "en": "of the one thinking",
+      "pt": "daquele que pensa",
+      "es": "del que piensa"
+    },
+    "grammar": "present participle, masculine, genitive, singular"
+  },
+  {
+    "pali": "cinoti",
+    "meaning": {
+      "en": "accumulates",
+      "pt": "acumula",
+      "es": "acumula"
+    },
+    "grammar": "verb, 3rd person, singular, present tense"
+  },
+  {
+    "pali": "chāyā",
+    "meaning": {
+      "en": "shadow; reflection",
+      "pt": "sombra; reflexo",
+      "es": "sombra; reflejo"
+    },
+    "grammar": "feminine noun, nominative, singular/plural"
+  },
+  {
+    "pali": "chārammaṇāni",
+    "meaning": {
+      "en": "six objects",
+      "pt": "seis objetos",
+      "es": "seis objetos"
+    },
+    "grammar": "neuter noun, nominative/accusative, plural, compound"
+  },
+  {
+    "pali": "chaḷārammaṇikā",
+    "meaning": {
+      "en": "having six objects",
+      "pt": "tendo seis objetos",
+      "es": "que tiene seis objetos"
+    },
+    "grammar": "adjective, nominative, plural, compound"
+  }
+]

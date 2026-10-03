@@ -1,0 +1,623 @@
+[
+  {
+    "id": "abhm-1.1",
+    "pali": "1. Cittaparicchedo",
+    "translations": {
+      "en": "1. Analysis of Consciousness",
+      "pt": "1. Classificação da Consciência",
+      "es": "1.  Análisis de la Conciencia."
+    }
+  },
+  {
+    "id": "abhm-1.2",
+    "pali": "Bhūmibhedacittaṃ",
+    "translations": {
+      "en": "Consciousness Classified by Plane",
+      "pt": "Consciência Classificada por Planos",
+      "es": "La conciencia clasificada por planos."
+    }
+  },
+  {
+    "id": "abhm-1.3",
+    "pali": "Tattha <b>cittaṃ</b> tāva catubbidhaṃ hoti kāmāvacaraṃ rūpāvacaraṃ arūpāvacaraṃ lokuttarañceti.",
+    "translations": {
+      "en": "3. Among these, consciousness is first of all fourfold: sense-sphere consciousness, fine-material sphere consciousness, immaterial sphere consciousness, and supramundane consciousness.",
+      "pt": "3. Nisso, a consciência é primeiramente de quatro tipos: da esfera sensorial, da esfera da matéria sutil, da esfera imaterial e supramundana.",
+      "es": "3.  En ese sentido, la conciencia es primeramente de cuatro tipos: de la esfera de los sentidos, de la esfera de la materia sutil, de la esfera inmaterial y supramundana."
+    }
+  },
+  {
+    "id": "abhm-1.4",
+    "pali": "Akusalacittaṃ",
+    "translations": {
+      "en": "Unwholesome Consciousness",
+      "pt": "Consciência Inábil",
+      "es": "Conciencia insana."
+    }
+  },
+  {
+    "id": "abhm-1.5",
+    "pali": "Tattha katamaṃ <b>kāmāvacaraṃ</b>? Somanassasahagataṃ diṭṭhigatasampayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekaṃ, somanassasahagataṃ diṭṭhigatavippayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekaṃ, upekkhāsahagataṃ diṭṭhigatasampayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekaṃ, upekkhāsahagataṃ diṭṭhigatavippayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekanti imāni aṭṭhapi lobhasahagatacittāni nāma.",
+    "translations": {
+      "en": "4. Among these, what is sense-sphere consciousness? One consciousness accompanied by joy, associated with wrong view, unprompted; one prompted; one consciousness accompanied by joy, dissociated from wrong view, unprompted; one prompted; one consciousness accompanied by equanimity, associated with wrong view, unprompted; one prompted; one consciousness accompanied by equanimity, dissociated from wrong view, unprompted; one prompted—these eight are called consciousnesses accompanied by greed.",
+      "pt": "4. Nisso, qual é a da esfera sensorial? Uma acompanhada de alegria, associada a visões incorretas, não induzida; uma induzida; uma acompanhada de alegria, dissociada de visões incorretas, não induzida; uma induzida; uma acompanhada de equanimidade, associada a visões incorretas, não induzida; uma induzida; uma acompanhada de equanimidade, dissociada de visões incorretas, não induzida; uma induzida. Essas oito são conhecidas como consciências acompanhadas de cobiça.",
+      "es": "4.  ¿Cuál de estas es de la esfera de los sentidos? Una acompañada de alegría, asociada con visión errónea y no instigada; una instigada. Una acompañada de alegría, disociada de visión errónea y no instigada; una instigada. Una acompañada de ecuanimidad, asociada con visión errónea y no instigada; una instigada. Una acompañada de ecuanimidad, disociada de visión errónea y no instigada; una instigada. Estas son las ocho conciencias acompañadas de codicia."
+    }
+  },
+  {
+    "id": "abhm-1.6",
+    "pali": "Domanassasahagataṃ paṭighasampayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekanti imāni dvepi paṭighasampayuttacittāni nāma.",
+    "translations": {
+      "en": "5. One consciousness, unprompted, accompanied by displeasure, associated with aversion; and one, prompted—these two are called consciousnesses associated with aversion.",
+      "pt": "5. Uma acompanhada de desprazer, associada à aversão, não induzida; uma induzida. Essas duas são conhecidas como consciências associadas à aversão.",
+      "es": "5.  Una acompañada de desagrado, asociada con aversión y no instigada; una instigada. Estas son las dos conciencias asociadas con aversión."
+    }
+  },
+  {
+    "id": "abhm-1.7",
+    "pali": "Upekkhāsahagataṃ vicikicchāsampayuttamekaṃ, upekkhāsahagataṃ uddhaccasampayuttamekanti imāni dvepi momūhacittāni nāma.",
+    "translations": {
+      "en": "6. One consciousness accompanied by equanimity and associated with doubt; and one consciousness accompanied by equanimity and associated with restlessness—these two are called consciousnesses rooted in delusion.",
+      "pt": "6. Uma acompanhada de equanimidade, associada à dúvida; uma acompanhada de equanimidade, associada à agitação. Essas duas são conhecidas como consciências de pura ilusão.",
+      "es": "6.  Una acompañada de ecuanimidad y asociada con duda; una acompañada de ecuanimidad y asociada con agitación. Estas son las dos conciencias de delusión pura."
+    }
+  },
+  {
+    "id": "abhm-1.8",
+    "pali": "Iccevaṃ sabbathāpi <b>dvādasākusalacittāni</b> samattāni.",
+    "translations": {
+      "en": "7. Thus, in all, the twelve unwholesome consciousnesses are complete.",
+      "pt": "7. Assim, em todos os aspectos, completam-se as doze consciências inábeis.",
+      "es": "7.  Así, en todos los sentidos, se completan las doce conciencias insanas."
+    }
+  },
+  {
+    "id": "abhm-1.9",
+    "pali": "Aṭṭhadhā lobhamūlāni, dosamūlāni ca dvidhā.",
+    "translations": {
+      "en": "8. Eight are those rooted in greed, and two those rooted in aversion.",
+      "pt": "8. De oito maneiras são as enraizadas na cobiça, e de duas maneiras as enraizadas na aversão.",
+      "es": "8.  Ocho con raíz en la codicia y dos con raíz en el odio."
+    }
+  },
+  {
+    "id": "abhm-1.10",
+    "pali": "Mohamūlāni ca dveti, dvādasākusalā siyuṃ.",
+    "translations": {
+      "en": "And two rooted in delusion; thus there are twelve unwholesome consciousnesses.",
+      "pt": "E duas são as enraizadas na ilusão; assim, as inábeis seriam doze.",
+      "es": "Y dos con raíz en la delusión; estas serían las doce conciencias insanas."
+    }
+  },
+  {
+    "id": "abhm-1.11",
+    "pali": "Ahetukacittaṃ",
+    "translations": {
+      "en": "Rootless Consciousness",
+      "pt": "Consciência sem Raízes",
+      "es": "Conciencia sin raíces."
+    }
+  },
+  {
+    "id": "abhm-1.12",
+    "pali": "Upekkhāsahagataṃ cakkhuviññāṇaṃ, tathā sotaviññāṇaṃ, ghānaviññāṇaṃ, jivhāviññāṇaṃ, dukkhasahagataṃ kāyaviññāṇaṃ, upekkhāsahagataṃ sampaṭicchanacittaṃ, upekkhāsahagataṃ santīraṇacittañceti imāni sattapi akusalavipākacittāni nāma.",
+    "translations": {
+      "en": "9. Eye-consciousness accompanied by equanimity; similarly ear-consciousness, nose-consciousness, and tongue-consciousness; body-consciousness accompanied by pain; receiving-consciousness accompanied by equanimity; and investigating-consciousness accompanied by equanimity—these seven are called unwholesome-resultant consciousnesses.",
+      "pt": "9. A consciência visual acompanhada de equanimidade, assim como a consciência auditiva, a consciência olfativa, a consciência gustativa; a consciência corporal acompanhada de dor; a consciência de recepção acompanhada de equanimidade; a consciência de investigação acompanhada de equanimidade. Essas sete são conhecidas como consciências resultantes de ações inábeis.",
+      "es": "9.  Conciencia visual acompañada de ecuanimidad, igualmente la conciencia auditiva, la conciencia olfativa, la conciencia gustativa, la conciencia corporal acompañada de dolor, la conciencia de recepción acompañada de ecuanimidad y la conciencia de investigación acompañada de ecuanimidad; estas son las siete conciencias resultantes de lo insano."
+    }
+  },
+  {
+    "id": "abhm-1.13",
+    "pali": "Upekkhāsahagataṃ kusalavipākaṃ cakkhuviññāṇaṃ, tathā sotaviññāṇaṃ, ghānaviññāṇaṃ, jivhāviññāṇaṃ, sukhasahagataṃ kāyaviññāṇaṃ, upekkhāsahagataṃ sampaṭicchanacittaṃ, somanassasahagataṃ santīraṇacittaṃ, upekkhāsahagataṃ santīraṇacittañceti imāni aṭṭhapi kusalavipākāhetukacittāni nāma.",
+    "translations": {
+      "en": "10. Wholesome-resultant eye-consciousness accompanied by equanimity; similarly ear-consciousness, nose-consciousness, and tongue-consciousness; body-consciousness accompanied by pleasure; receiving-consciousness accompanied by equanimity; investigating-consciousness accompanied by joy; and investigating-consciousness accompanied by equanimity—these eight are called wholesome-resultant rootless consciousnesses.",
+      "pt": "10. A consciência visual resultante de ações hábeis acompanhada de equanimidade, assim como a consciência auditiva, a consciência olfativa, a consciência gustativa; a consciência corporal acompanhada de prazer; a consciência de recepção acompanhada de equanimidade; a consciência de investigação acompanhada de alegria; a consciência de investigação acompanhada de equanimidade. Essas oito são conhecidas como consciências sem raízes resultantes de ações hábeis.",
+      "es": "10.  Conciencia visual resultante de lo sano acompañada de ecuanimidad, igualmente la conciencia auditiva, la conciencia olfativa, la conciencia gustativa, la conciencia corporal acompañada de placer, la conciencia de recepción acompañada de ecuanimidad, la conciencia de investigación acompañada de alegría y la conciencia de investigación acompañada de ecuanimidad; estas son las ocho conciencias sin raíces resultantes de lo sano."
+    }
+  },
+  {
+    "id": "abhm-1.14",
+    "pali": "Upekkhāsahagataṃ pañcadvārāvajjanacittaṃ, tathā manodvārāvajjanacittaṃ, somanassasahagataṃ hasituppādacittañceti imāni tīṇipi ahetukakiriyacittāni nāma.",
+    "translations": {
+      "en": "11. Five-door-adverting consciousness accompanied by equanimity; similarly mind-door-adverting consciousness; and smile-producing consciousness accompanied by joy—these three are called rootless functional consciousnesses.",
+      "pt": "11. A consciência de direcionamento de atenção aos cinco portais acompanhada de equanimidade, assim como a consciência de direcionamento de atenção ao portal da mente; a consciência de produção de sorriso acompanhada de alegria. Essas três são conhecidas como consciências funcionais sem raízes.",
+      "es": "11.  Conciencia de advertencia en las cinco puertas acompañada de ecuanimidad, igualmente la conciencia de advertencia en la puerta de la mente y la conciencia de producción de la sonrisa acompañada de alegría; estas son las tres conciencias funcionales sin raíces."
+    }
+  },
+  {
+    "id": "abhm-1.15",
+    "pali": "Icceva sabbathāpi <b>aṭṭhārasāhetukacittāni</b> samattāni.",
+    "translations": {
+      "en": "12. Thus, in all, the eighteen rootless consciousnesses are complete.",
+      "pt": "12. Assim, em todos os aspectos, completam-se as dezoito consciências sem raízes.",
+      "es": "12.  Así, en todos los aspectos, se completan las dieciocho conciencias sin raíces."
+    }
+  },
+  {
+    "id": "abhm-1.16",
+    "pali": "Sattākusalapākāni, puññapākāni aṭṭhadhā.",
+    "translations": {
+      "en": "13. Seven are the unwholesome resultants, and the wholesome resultants are eightfold.",
+      "pt": "13. Sete são as resultantes inábeis, e de oito maneiras são as resultantes de mérito.",
+      "es": "13.  Siete son resultados de lo insano, ocho son resultados de lo meritorio."
+    }
+  },
+  {
+    "id": "abhm-1.17",
+    "pali": "Kriyacittāni tīṇīti, aṭṭhārasa ahetukā.",
+    "translations": {
+      "en": "The functional consciousnesses are three; thus the rootless are eighteen.",
+      "pt": "As consciências funcionais são três; assim, as sem raízes são dezoito.",
+      "es": "Tres son conciencias funcionales; las dieciocho son sin raíces."
+    }
+  },
+  {
+    "id": "abhm-1.18",
+    "pali": "Sobhanacittaṃ",
+    "translations": {
+      "en": "Beautiful Consciousness",
+      "pt": "Consciência Bela",
+      "es": "Conciencia hermosa."
+    }
+  },
+  {
+    "id": "abhm-1.19",
+    "pali": "Pāpāhetukamuttāni, <b>sobhanānī</b>ti vuccare.",
+    "translations": {
+      "en": "14. Those apart from the unwholesome and the rootless are called ‘beautiful’.",
+      "pt": "14. Excluindo as inábeis e as sem raízes, as demais são chamadas de belas.",
+      "es": "14.  Aquellas libres de lo perjudicial y de lo que no tiene raíces son llamadas 'hermosas'."
+    }
+  },
+  {
+    "id": "abhm-1.20",
+    "pali": "Ekūnasaṭṭhi cittāni, athekanavutīpi vā.",
+    "translations": {
+      "en": "They are fifty-nine consciousnesses, or also ninety-one.",
+      "pt": "Estas são cinquenta e nove consciências, ou também noventa e uma.",
+      "es": "Cincuenta y nueve conciencias, o también noventa y una."
+    }
+  },
+  {
+    "id": "abhm-1.21",
+    "pali": "Kāmāvacarasobhanacittaṃ",
+    "translations": {
+      "en": "Sense-Sphere Beautiful Consciousness",
+      "pt": "Consciência Bela da Esfera Sensorial",
+      "es": "Conciencia hermosa de la esfera de los sentidos."
+    }
+  },
+  {
+    "id": "abhm-1.22",
+    "pali": "Somanassasahagataṃ ñāṇasampayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekaṃ, somanassasahagataṃ ñāṇavippayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekaṃ, upekkhāsahagataṃ ñāṇasampayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekaṃ. Upekkhāsahagataṃ ñāṇavippayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekanti imāni aṭṭhapi kāmāvacarakusalacittāni nāma.",
+    "translations": {
+      "en": "15. One consciousness, unprompted, accompanied by joy, associated with knowledge; one, prompted; one consciousness, unprompted, accompanied by joy, dissociated from knowledge; one, prompted; one consciousness, unprompted, accompanied by equanimity, associated with knowledge; one, prompted; one consciousness, unprompted, accompanied by equanimity, dissociated from knowledge; one, prompted—these eight are called wholesome sense-sphere consciousnesses.",
+      "pt": "15. Uma acompanhada de alegria, associada ao conhecimento, não induzida; uma induzida; uma acompanhada de alegria, dissociada do conhecimento, não induzida; uma induzida; uma acompanhada de equanimidade, associada ao conhecimento, não induzida; uma induzida; uma acompanhada de equanimidade, dissociada do conhecimento, não induzida; uma induzida. Essas oito são conhecidas como consciências hábeis da esfera sensorial.",
+      "es": "15.  Una acompañada de alegría, asociada con el conocimiento y no instigada; una instigada. Una acompañada de alegría, disociada del conocimiento y no instigada; una instigada. Una acompañada de ecuanimidad, asociada con el conocimiento y no instigada; una instigada. Una acompañada de ecuanimidad, disociada del conocimiento y no instigada; una instigada. Estas son las ocho conciencias sanas de la esfera de los sentidos."
+    }
+  },
+  {
+    "id": "abhm-1.23",
+    "pali": "Somanassasahagataṃ ñāṇasampayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekaṃ, somanassasahagataṃ ñāṇavippayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekaṃ, upekkhāsahagataṃ ñāṇasampayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekaṃ, upekkhāsahagataṃ ñāṇavippayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekanti imāni aṭṭhapi sahetukakāmāvacaravipākacittāni nāma.",
+    "translations": {
+      "en": "16. One consciousness, unprompted, accompanied by joy, associated with knowledge; one, prompted; one consciousness, unprompted, accompanied by joy, dissociated from knowledge; one, prompted; one consciousness, unprompted, accompanied by equanimity, associated with knowledge; one, prompted; one consciousness, unprompted, accompanied by equanimity, dissociated from knowledge; one, prompted—these eight are called rooted sense-sphere resultant consciousnesses.",
+      "pt": "16. Uma acompanhada de alegria, associada ao conhecimento, não induzida; uma induzida; uma acompanhada de alegria, dissociada do conhecimento, não induzida; uma induzida; uma acompanhada de equanimidade, associada ao conhecimento, não induzida; uma induzida; uma acompanhada de equanimidade, dissociada do conhecimento, não induzida; uma induzida. Essas oito são conhecidas como consciências resultantes com raízes da esfera sensorial.",
+      "es": "16.  Uno acompañado de alegría, asociado con el conocimiento, no instigado; uno instigado; uno acompañado de alegría, disociado del conocimiento, no instigado; uno instigado; uno acompañado de ecuanimidad, asociado con el conocimiento, no instigado; uno instigado; uno acompañado de ecuanimidad, disociado del conocimiento, no instigado; uno instigado. Estas ocho se denominan conciencias resultantes con raíces de la esfera de los sentidos."
+    }
+  },
+  {
+    "id": "abhm-1.24",
+    "pali": "Somassasahagataṃ ñāṇasampayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekaṃ, somanassasahagataṃ ñāṇavippayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekaṃ, upekkhāsahagataṃ ñāṇasampayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekaṃ, upekkhāsahagataṃ ñāṇavippayuttaṃ asaṅkhārikamekaṃ, sasaṅkhārikamekanti imāni aṭṭhapi sahetukakāmāvacarakiriyacittāni nāma.",
+    "translations": {
+      "en": "17. One unprompted consciousness accompanied by joy, associated with knowledge; one prompted; one unprompted consciousness accompanied by joy, dissociated from knowledge; one prompted; one unprompted consciousness accompanied by equanimity, associated with knowledge; one prompted; one unprompted consciousness accompanied by equanimity, dissociated from knowledge; one prompted—these eight are called rooted sense-sphere functional consciousnesses.",
+      "pt": "17. Uma acompanhada de alegria, associada ao conhecimento, não induzida; uma induzida; uma acompanhada de alegria, dissociada do conhecimento, não induzida; uma induzida; uma acompanhada de equanimidade, associada ao conhecimento, não induzida; uma induzida; uma acompanhada de equanimidade, dissociada do conhecimento, não induzida; uma induzida. Essas oito são conhecidas como consciências funcionais com raízes da esfera sensorial.",
+      "es": "17.  Uno acompañado de alegría, asociado con el conocimiento, no instigado; uno instigado; uno acompañado de alegría, disociado del conocimiento, no instigado; uno instigado; uno acompañado de ecuanimidad, asociado con el conocimiento, no instigado; uno instigado; uno acompañado de ecuanimidad, disociado del conocimiento, no instigado; uno instigado. Estas ocho se denominan conciencias funcionales con raíces de la esfera de los sentidos."
+    }
+  },
+  {
+    "id": "abhm-1.25",
+    "pali": "Iccevaṃ sabbathāpi <b>catuvīsati sahetukakāmāvacarakusalavipākakiriyacittāni</b> samattāni.",
+    "translations": {
+      "en": "18. Thus, in all, the twenty-four rooted sense-sphere wholesome, resultant, and functional consciousnesses are complete.",
+      "pt": "18. Assim, em todos os aspectos, completam-se as vinte e quatro consciências hábeis, resultantes e funcionais com raízes da esfera sensorial.",
+      "es": "18.  Así, en total, se completan las veinticuatro conciencias de la esfera de los sentidos con raíces: saludables, resultantes y funcionales."
+    }
+  },
+  {
+    "id": "abhm-1.26",
+    "pali": "Vedanāñāṇasaṅkhārabhedena catuvīsati.",
+    "translations": {
+      "en": "19. Distinguished by way of feeling, knowledge, and prompting, they are twenty-four.",
+      "pt": "19. Pela divisão de sensação, conhecimento e indução, há vinte e quatro.",
+      "es": "19.  Veinticuatro según la distinción de sensación, conocimiento e instigación."
+    }
+  },
+  {
+    "id": "abhm-1.27",
+    "pali": "Sahetukāmāvacarapuññapākakriyā matā.",
+    "translations": {
+      "en": "The rooted, sense-sphere wholesome, resultant, and functional consciousnesses are thus accounted for.",
+      "pt": "São conhecidas as consciências meritórias, resultantes e funcionais com raízes da esfera sensorial.",
+      "es": "Se conocen como acciones meritorias, resultantes y funcionales con raíces de la esfera de los sentidos."
+    }
+  },
+  {
+    "id": "abhm-1.28",
+    "pali": "Kāme tevīsa pākāni, puññāpuññāni vīsati.",
+    "translations": {
+      "en": "20. In the sense sphere there are twenty-three resultants; twenty are wholesome and unwholesome.",
+      "pt": "20. Na esfera sensorial, há vinte e três resultantes, e vinte consciências hábeis e inábeis.",
+      "es": "20.  En la esfera de los sentidos hay veintitrés resultantes; las meritorias y no meritorias son veinte."
+    }
+  },
+  {
+    "id": "abhm-1.29",
+    "pali": "Ekādasa kriyā ceti, catupaññāsa sabbathā.",
+    "translations": {
+      "en": "And there are eleven functional consciousnesses; thus, fifty-four in all.",
+      "pt": "E onze funcionais; assim, são cinquenta e quatro em todos os aspectos.",
+      "es": "Y once son funcionales; cincuenta y cuatro en total."
+    }
+  },
+  {
+    "id": "abhm-1.30",
+    "pali": "Rūpāvacaracittaṃ",
+    "translations": {
+      "en": "Fine-Material-Sphere Consciousness",
+      "pt": "Consciência da Esfera da Matéria Sutil",
+      "es": "Conciencia de la esfera de la materia sutil"
+    }
+  },
+  {
+    "id": "abhm-1.31",
+    "pali": "Vitakkavicārapītisukhekaggatāsahitaṃ paṭhamajjhānakusalacittaṃ, vicārapītisukhekaggatāsahitaṃ dutiyajjhānakusalacittaṃ, pītisukhekaggatāsahitaṃ tatiyajjhānakusalacittaṃ, sukhekaggatāsahitaṃ catutthajjhānakusalacittaṃ, upekkhekaggatāsahitaṃ pañcamajjhānakusalacittañceti imāni pañcapi rūpāvacarakusalacittāni nāma.",
+    "translations": {
+      "en": "21. The first jhāna wholesome consciousness, accompanied by initial application, sustained application, joy, bliss, and one-pointedness; the second jhāna wholesome consciousness, accompanied by sustained application, joy, bliss, and one-pointedness; the third jhāna wholesome consciousness, accompanied by joy, bliss, and one-pointedness; the fourth jhāna wholesome consciousness, accompanied by bliss and one-pointedness; the fifth jhāna wholesome consciousness, accompanied by equanimity and one-pointedness—these five are called wholesome fine-material-sphere consciousnesses.",
+      "pt": "21. A consciência hábil do primeiro jhāna acompanhada de aplicação inicial, aplicação sustentada, êxtase, felicidade e unicidade mental; a consciência hábil do segundo jhāna acompanhada de aplicação sustentada, êxtase, felicidade e unicidade mental; a consciência hábil do terceiro jhāna acompanhada de êxtase, felicidade e unicidade mental; a consciência hábil do quarto jhāna acompanhada de felicidade e unicidade mental; a consciência hábil do quinto jhāna acompanhada de equanimidade e unicidade mental. Essas cinco são conhecidas como consciências hábeis da esfera da matéria sutil.",
+      "es": "21.  Conciencia saludable del primer jhāna acompañada de aplicación inicial, aplicación sostenida, rapto, felicidad y unificación; conciencia saludable del segundo jhāna acompañada de aplicación sostenida, rapto, felicidad y unificación; conciencia saludable del tercer jhāna acompañada de rapto, felicidad y unificación; conciencia saludable del cuarto jhāna acompañada de felicidad y unificación; conciencia saludable del quinto jhāna acompañada de ecuanimidad y unificación. Estas cinco se denominan conciencias saludables de la esfera de la materia sutil."
+    }
+  },
+  {
+    "id": "abhm-1.32",
+    "pali": "Vitakkavicārapītisukhekaggatāsahitaṃ paṭhamajjhānavipākacittaṃ, vicārapītisukhekaggatāsahitaṃ dutiyajjhānavipākacittaṃ, pītisukhekaggatāsahitaṃ tatiyajjhānavipākacittaṃ, sukhekaggatāsahitaṃ catutthajjhānavipākacittaṃ, upekkhekaggatāsahitaṃ pañcamajjhānavipākacittañceti imāni pañcapi rūpāvacaravipākacittāni nāma.",
+    "translations": {
+      "en": "22. The first jhāna resultant consciousness, accompanied by initial application, sustained application, joy, bliss, and one-pointedness; the second jhāna resultant consciousness, accompanied by sustained application, joy, bliss, and one-pointedness; the third jhāna resultant consciousness, accompanied by joy, bliss, and one-pointedness; the fourth jhāna resultant consciousness, accompanied by bliss and one-pointedness; the fifth jhāna resultant consciousness, accompanied by equanimity and one-pointedness—these five are called fine-material-sphere resultant consciousnesses.",
+      "pt": "22. A consciência resultante do primeiro jhāna acompanhada de aplicação inicial, aplicação sustentada, êxtase, felicidade e unicidade mental; a consciência resultante do segundo jhāna acompanhada de aplicação sustentada, êxtase, felicidade e unicidade mental; a consciência resultante do terceiro jhāna acompanhada de êxtase, felicidade e unicidade mental; a consciência resultante do quarto jhāna acompanhada de felicidade e unicidade mental; a consciência resultante do quinto jhāna acompanhada de equanimidade e unicidade mental. Essas cinco são conhecidas como consciências resultantes da esfera da matéria sutil.",
+      "es": "22.  Conciencia resultante del primer jhāna acompañada de aplicación inicial, aplicación sostenida, rapto, felicidad y unificación; conciencia resultante del segundo jhāna acompañada de aplicación sostenida, rapto, felicidad y unificación; conciencia resultante del tercer jhāna acompañada de rapto, felicidad y unificación; conciencia resultante del cuarto jhāna acompañada de felicidad y unificación; conciencia resultante del quinto jhāna acompañada de ecuanimidad y unificación. Estas cinco se denominan conciencias resultantes de la esfera de la materia sutil."
+    }
+  },
+  {
+    "id": "abhm-1.33",
+    "pali": "Vitakkavicārapītisukhekaggatāsahitaṃ paṭhamajjhānakiriyacittaṃ, vicārapītisukhekaggatāsahitaṃ dutiyajjhānakiriyacittaṃ, pītisukhekaggatāsahitaṃ tatiyajjhānakiriyacittaṃ, sukhekaggatāsahitaṃ catutthajjhānakiriyacittaṃ, upekkhekaggatāsahitaṃ pañcamajjhānakiriyacittañceti imāni pañcapi rūpāvacarakiriyacittāni nāma.",
+    "translations": {
+      "en": "23. The first jhāna functional consciousness, accompanied by initial application, sustained application, joy, bliss, and one-pointedness; the second jhāna functional consciousness, accompanied by sustained application, joy, bliss, and one-pointedness; the third jhāna functional consciousness, accompanied by joy, bliss, and one-pointedness; the fourth jhāna functional consciousness, accompanied by bliss and one-pointedness; the fifth jhāna functional consciousness, accompanied by equanimity and one-pointedness—these five are called fine-material-sphere functional consciousnesses.",
+      "pt": "23. A consciência funcional do primeiro jhāna acompanhada de aplicação inicial, aplicação sustentada, êxtase, felicidade e unicidade mental; a consciência funcional do segundo jhāna acompanhada de aplicação sustentada, êxtase, felicidade e unicidade mental; a consciência funcional do terceiro jhāna acompanhada de êxtase, felicidade e unicidade mental; a consciência funcional do quarto jhāna acompanhada de felicidade e unicidade mental; a consciência funcional do quinto jhāna acompanhada de equanimidade e unicidade mental. Essas cinco são conhecidas como consciências funcionais da esfera da matéria sutil.",
+      "es": "23.  Conciencia funcional del primer jhāna acompañada de aplicación inicial, aplicación sostenida, rapto, felicidad y unificación; conciencia funcional del segundo jhāna acompañada de aplicación sostenida, rapto, felicidad y unificación; conciencia funcional del tercer jhāna acompañada de rapto, felicidad y unificación; conciencia funcional del cuarto jhāna acompañada de felicidad y unificación; conciencia funcional del quinto jhāna acompañada de ecuanimidad y unificación. Estas cinco se denominan conciencias funcionales de la esfera de la materia sutil."
+    }
+  },
+  {
+    "id": "abhm-1.34",
+    "pali": "Iccevaṃ sabbathāpi <b>pannarasa rūpāvacarakusalavipākakiriyacittāni</b> samattāni.",
+    "translations": {
+      "en": "24. Thus, in all, the fifteen fine-material-sphere wholesome, resultant, and functional consciousnesses are complete.",
+      "pt": "24. Assim, em todos os aspectos, completam-se as quinze consciências hábeis, resultantes e funcionais da esfera da matéria sutil.",
+      "es": "24.  Así, en total, se completan las quince conciencias de la esfera de la materia sutil: saludables, resultantes y funcionales."
+    }
+  },
+  {
+    "id": "abhm-1.35",
+    "pali": "Pañcadhā jhānabhedena, rūpāvacaramānasaṃ.",
+    "translations": {
+      "en": "25. The fine-material-sphere mind is fivefold by distinction of jhāna.",
+      "pt": "25. De cinco maneiras, pela divisão dos jhanas, é a mente da esfera da matéria sutil.",
+      "es": "25.  De cinco tipos según la distinción de los jhānas es la mente de la esfera de la materia sutil."
+    }
+  },
+  {
+    "id": "abhm-1.36",
+    "pali": "Puññapākakriyābhedā, taṃ pañcadasadhā bhave.",
+    "translations": {
+      "en": "By the distinction of wholesome, resultant, and functional, it becomes fifteenfold.",
+      "pt": "Pela divisão de mérito, resultante e funcional, ela se torna de quinze maneiras.",
+      "es": "Mediante la distinción de meritoria, resultante y funcional, llega a ser de quince tipos."
+    }
+  },
+  {
+    "id": "abhm-1.37",
+    "pali": "Arūpāvacaracittaṃ",
+    "translations": {
+      "en": "Immaterial-Sphere Consciousness",
+      "pt": "Consciência da Esfera Imaterial",
+      "es": "Conciencia de la esfera inmaterial"
+    }
+  },
+  {
+    "id": "abhm-1.38",
+    "pali": "Ākāsānañcāyatanakusalacittaṃ, viññāṇañcāyatanakusalacittaṃ, ākiñcaññāyatanakusalacittaṃ, nevasaññānāsaññāyatanakusalacittañceti imāni cattāripi arūpāvacarakusalacittāni nāma.",
+    "translations": {
+      "en": "26. The wholesome consciousness of the base of infinite space, the wholesome consciousness of the base of infinite consciousness, the wholesome consciousness of the base of nothingness, and the wholesome consciousness of the base of neither-perception-nor-non-perception—these four are called immaterial-sphere wholesome consciousnesses.",
+      "pt": "26. A consciência hábil da esfera do espaço infinito, a consciência hábil da esfera da consciência infinita, a consciência hábil da esfera do nada, a consciência hábil da esfera da nem percepção, nem não-percepção. Essas quatro são conhecidas como consciências hábeis da esfera imaterial.",
+      "es": "26.  Conciencia saludable de la esfera de la infinitud del espacio, conciencia saludable de la esfera de la infinitud de la conciencia, conciencia saludable de la esfera de la nada y conciencia saludable de la esfera de la ni-percepción-ni-no-percepción. Estas cuatro se denominan conciencias saludables de la esfera inmaterial."
+    }
+  },
+  {
+    "id": "abhm-1.39",
+    "pali": "Ākāsānañcāyatanavipākacittaṃ, viññāṇañcāyatanavipākacittaṃ, ākiñcaññāyatanavipākacittaṃ, nevasaññānāsaññāyatanavipākacittañceti imāni cattāripi arūpāvacaravipākacittāni nāma.",
+    "translations": {
+      "en": "27. The resultant consciousness of the base of infinite space, the resultant consciousness of the base of infinite consciousness, the resultant consciousness of the base of nothingness, and the resultant consciousness of the base of neither-perception-nor-non-perception—these four are called immaterial-sphere resultant consciousnesses.",
+      "pt": "27. A consciência resultante da esfera do espaço infinito, a consciência resultante da esfera da consciência infinita, a consciência resultante da esfera do nada, a consciência resultante da esfera da nem percepção, nem não-percepção. Essas quatro são conhecidas como consciências resultantes da esfera imaterial.",
+      "es": "27.  Conciencia resultante de la esfera de la infinitud del espacio, conciencia resultante de la esfera de la infinitud de la conciencia, conciencia resultante de la esfera de la nada y conciencia resultante de la esfera de la ni-percepción-ni-no-percepción. Estas cuatro se denominan conciencias resultantes de la esfera inmaterial."
+    }
+  },
+  {
+    "id": "abhm-1.40",
+    "pali": "Ākāsānañcāyatanakiriyacittaṃ, viññāṇañcāyatanakiriyacittaṃ, ākiñcaññāyatanakiriyacittaṃ, nevasaññānāsaññāyatanakiriyacittañceti imāni cattāripi arūpāvacarakiriyacittāni nāma.",
+    "translations": {
+      "en": "28. The functional consciousness of the base of infinite space, the functional consciousness of the base of infinite consciousness, the functional consciousness of the base of nothingness, and the functional consciousness of the base of neither-perception-nor-non-perception—these four are called immaterial-sphere functional consciousnesses.",
+      "pt": "28. A consciência funcional da esfera do espaço infinito, a consciência funcional da esfera da consciência infinita, a consciência funcional da esfera do nada, a consciência funcional da esfera da nem percepção, nem não-percepção. Essas quatro são conhecidas como consciências funcionais da esfera imaterial.",
+      "es": "28.  Conciencia funcional de la esfera de la infinitud del espacio, conciencia funcional de la esfera de la infinitud de la conciencia, conciencia funcional de la esfera de la nada y conciencia funcional de la esfera de la ni-percepción-ni-no-percepción. Estas cuatro se denominan conciencias funcionales de la esfera inmaterial."
+    }
+  },
+  {
+    "id": "abhm-1.41",
+    "pali": "Iccevaṃ sabbathāpi <b>dvādasa arūpāvacarakusalavipākakiriyacittāni</b> samattāni.",
+    "translations": {
+      "en": "29. Thus, in all, the twelve immaterial-sphere wholesome, resultant, and functional consciousnesses are complete.",
+      "pt": "29. Assim, em todos os aspectos, completam-se as doze consciências hábeis, resultantes e funcionais da esfera imaterial.",
+      "es": "29.  Así, en total, se completan las doce conciencias de la esfera inmaterial: saludables, resultantes y funcionales."
+    }
+  },
+  {
+    "id": "abhm-1.42",
+    "pali": "Ālambaṇappabhedena, catudhāruppamānasaṃ.",
+    "translations": {
+      "en": "30. By distinction of the object, the immaterial mind is fourfold.",
+      "pt": "30. Pela diferença de objeto, a mente imaterial é de quatro tipos.",
+      "es": "30.  Según la distinción de los objetos, la mente inmaterial es de cuatro tipos."
+    }
+  },
+  {
+    "id": "abhm-1.43",
+    "pali": "Puññapākakriyābhedā, puna dvādasadhā ṭhitaṃ.",
+    "translations": {
+      "en": "By the distinction of wholesome, resultant, and functional, it stands again as twelvefold.",
+      "pt": "Pela divisão de mérito, resultante e funcional, ela se estabelece novamente de doze maneiras.",
+      "es": "Mediante la distinción de meritoria, resultante y funcional, se establece nuevamente en doce tipos."
+    }
+  },
+  {
+    "id": "abhm-1.44",
+    "pali": "Lokuttaracittaṃ",
+    "translations": {
+      "en": "Supramundane Consciousness",
+      "pt": "Consciência Supramundana",
+      "es": "Conciencia supramundana"
+    }
+  },
+  {
+    "id": "abhm-1.45",
+    "pali": "Sotāpattimaggacittaṃ, sakadāgāmimaggacittaṃ, anāgāmimaggacittaṃ, arahattamaggacittañceti imāni cattāripi lokuttarakusalacittāni nāma.",
+    "translations": {
+      "en": "31. The path-consciousness of stream-entry, the path-consciousness of the once-returner, the path-consciousness of the non-returner, and the path-consciousness of arahantship—these four are called supramundane wholesome consciousnesses.",
+      "pt": "31. A consciência do caminho de entrada na corrente, a consciência do caminho de retorno único, a consciência do caminho de não-retorno, a consciência do caminho do arahantado. Essas quatro são conhecidas como consciências hábeis supramundanas.",
+      "es": "31.  Conciencia del camino de la entrada en la corriente, conciencia del camino del que retorna una vez, conciencia del camino del que no retorna y conciencia del camino del arahat. Estas cuatro se denominan conciencias saludables supramundanas."
+    }
+  },
+  {
+    "id": "abhm-1.46",
+    "pali": "Sotāpattiphalacittaṃ, sakadāgāmiphalacittaṃ, anāgāmiphalacittaṃ, arahattaphalacittañceti imāni cattāripi lokuttaravipākacittāni nāma.",
+    "translations": {
+      "en": "32. The fruition-consciousness of stream-entry, the fruition-consciousness of the once-returner, the fruition-consciousness of the non-returner, and the fruition-consciousness of arahantship—these four are called supramundane resultant consciousnesses.",
+      "pt": "32. A consciência do fruto de entrada na corrente, a consciência do fruto de retorno único, a consciência do fruto de não-retorno, a consciência do fruto do arahantado. Essas quatro são conhecidas como consciências resultantes supramundanas.",
+      "es": "32.  Conciencia del fruto de la entrada en la corriente, conciencia del fruto del que retorna una vez, conciencia del fruto del que no retorna y conciencia del fruto del arahat. Estas cuatro se denominan conciencias resultantes supramundanas."
+    }
+  },
+  {
+    "id": "abhm-1.47",
+    "pali": "Iccevaṃ sabbathāpi <b>aṭṭha lokuttarakusalavipākacittāni</b> samattāni.",
+    "translations": {
+      "en": "33. Thus, in all, the eight supramundane wholesome and resultant consciousnesses are complete.",
+      "pt": "33. Assim, em todos os aspectos, completam-se as oito consciências hábeis e resultantes supramundanas.",
+      "es": "33.  Así, en total, se completan las ocho conciencias supramundanas: saludables y resultantes."
+    }
+  },
+  {
+    "id": "abhm-1.48",
+    "pali": "Catumaggappabhedena, catudhā kusalaṃ tathā.",
+    "translations": {
+      "en": "34. The wholesome is fourfold by distinction of the four paths;",
+      "pt": "34. Pela divisão dos quatro caminhos, a hábil é de quatro tipos.",
+      "es": "34.  Según la distinción de los cuatro caminos, lo saludable es igualmente de cuatro tipos."
+    }
+  },
+  {
+    "id": "abhm-1.49",
+    "pali": "Pākaṃ tassa phalattāti, aṭṭhadhānuttaraṃ mataṃ.",
+    "translations": {
+      "en": "likewise its result, which is the fruition; thus the supramundane is considered eightfold.",
+      "pt": "E a resultante é de quatro tipos por ser o seu fruto; assim, a insuperável é conhecida como sendo de oito tipos.",
+      "es": "Lo resultante es también de cuatro tipos por ser sus frutos; así, lo que es superior a los mundos se conoce como de ocho tipos."
+    }
+  },
+  {
+    "id": "abhm-1.50",
+    "pali": "Cittagaṇanasaṅgaho",
+    "translations": {
+      "en": "Summary of the Enumeration of Consciousness",
+      "pt": "Resumo da Contagem das Consciências",
+      "es": "Resumen del recuento de conciencias"
+    }
+  },
+  {
+    "id": "abhm-1.51",
+    "pali": "Dvādasākusalānevaṃ, kusalānekavīsati.",
+    "translations": {
+      "en": "35. Thus twelve are unwholesome, twenty-one are wholesome.",
+      "pt": "35. Assim, há doze inábeis, e vinte e uma hábeis.",
+      "es": "35.  Doce son las no saludables, y veintiuna las saludables."
+    }
+  },
+  {
+    "id": "abhm-1.52",
+    "pali": "Chattiṃseva vipākāni, kriyacittāni vīsati.",
+    "translations": {
+      "en": "Thirty-six are the resultants, twenty the functional consciousnesses.",
+      "pt": "Trinta e seis são as resultantes, e as consciências funcionais são vinte.",
+      "es": "Treinta y seis son las resultantes, y veinte las conciencias funcionales."
+    }
+  },
+  {
+    "id": "abhm-1.53",
+    "pali": "Catupaññāsadhā kāme, rūpe pannarasīraye.",
+    "translations": {
+      "en": "36. Fifty-fourfold in the sense sphere; in the fine-material sphere fifteen are declared.",
+      "pt": "36. Cinquenta e quatro na esfera dos sentidos, quinze na esfera da matéria sutil.",
+      "es": "36.  Cincuenta y cuatro son de la esfera de los sentidos, quince se dicen que son de la esfera de la forma."
+    }
+  },
+  {
+    "id": "abhm-1.54",
+    "pali": "Cittāni dvādasāruppe, aṭṭhadhānuttare tathā.",
+    "translations": {
+      "en": "Twelve consciousnesses in the immaterial sphere, and likewise eight in the supramundane.",
+      "pt": "Doze consciências na esfera imaterial, e da mesma forma oito na supramundana.",
+      "es": "Doce conciencias son de la esfera inmaterial, y ocho son de la misma manera supramundanas."
+    }
+  },
+  {
+    "id": "abhm-1.55",
+    "pali": "Itthamekūnanavutipabhedaṃ pana mānasaṃ.",
+    "translations": {
+      "en": "37. Thus the mind has eighty-nine divisions.",
+      "pt": "37. Assim, a mente é dividida em oitenta e nove tipos.",
+      "es": "37.  De esta manera, la mente se divide en ochenta y nueve tipos."
+    }
+  },
+  {
+    "id": "abhm-1.56",
+    "pali": "Ekavīsasataṃ vātha, vibhajanti vicakkhaṇā.",
+    "translations": {
+      "en": "Or the wise divide it into one hundred and twenty-one.",
+      "pt": "Ou, de outra forma, os sábios a dividem em cento e vinte e uma.",
+      "es": "O bien, los sabios la dividen en ciento veintiuno."
+    }
+  },
+  {
+    "id": "abhm-1.57",
+    "pali": "Vitthāragaṇanā",
+    "translations": {
+      "en": "The Detailed Enumeration",
+      "pt": "Cálculo Detalhado",
+      "es": "Enumeración detallada"
+    }
+  },
+  {
+    "id": "abhm-1.58",
+    "pali": "Kathamekūnanavutividhaṃ cittaṃ ekavīsasataṃ hoti? Vitakkavicārapītisukhekaggatāsahitaṃ paṭhamajjhānasotāpattimaggacittaṃ, vicārapītisukhekaggatāsahitaṃ dutiyajjhānasotāpattimaggacittaṃ, pītisukhekaggatāsahitaṃ tatiyajjhānasotāpattimaggacittaṃ, sukhekaggatāsahitaṃ catutthajjhānasotāpattimaggacittaṃ, upekkhekaggatāsahitaṃ pañcamajjhānasotāpattimaggacittañceti imāni pañcapi sotāpattimaggacittāni nāma.",
+    "translations": {
+      "en": "38. How does the eighty-ninefold consciousness become one hundred and twenty-onefold? The first-jhāna path-consciousness of stream-entry, accompanied by initial application, sustained application, joy, bliss, and one-pointedness; the second-jhāna path-consciousness of stream-entry, accompanied by sustained application, joy, bliss, and one-pointedness; the third-jhāna path-consciousness of stream-entry, accompanied by joy, bliss, and one-pointedness; the fourth-jhāna path-consciousness of stream-entry, accompanied by bliss and one-pointedness; and the fifth-jhāna path-consciousness of stream-entry, accompanied by equanimity and one-pointedness—these five are called the path-consciousnesses of stream-entry.",
+      "pt": "38. Como a mente de oitenta e nove tipos torna-se cento e vinte e uma? A consciência do caminho de entrada na corrente do primeiro jhāna acompanhada de aplicação inicial, aplicação sustentada, entusiasmo, felicidade e unificação mental; a consciência do caminho de entrada na corrente do segundo jhāna acompanhada de aplicação sustentada, entusiasmo, felicidade e unificação mental; a consciência do caminho de entrada na corrente do terceiro jhāna acompanhada de entusiasmo, felicidade e unificação mental; a consciência do caminho de entrada na corrente do quarto jhāna acompanhada de felicidade e unificação mental; e a consciência do caminho de entrada na corrente do quinto jhāna acompanhada de equanimidade e unificação mental — estas cinco são chamadas consciências do caminho de entrada na corrente.",
+      "es": "38.  ¿Cómo los ochenta y nueve tipos de conciencia se convierten en ciento veintiuno? La conciencia del camino de la entrada en la corriente asociada con el primer jhāna, que posee aplicación inicial, aplicación sostenida, alegría, felicidad y unificación; la conciencia del camino de la entrada en la corriente asociada con el segundo jhāna, que posee aplicación sostenida, alegría, felicidad y unificación; la conciencia del camino de la entrada en la corriente asociada con el tercer jhāna, que posee alegría, felicidad y unificación; la conciencia del camino de la entrada en la corriente asociada con el cuarto jhāna, que posee felicidad y unificación; y la conciencia del camino de la entrada en la corriente asociada con el quinto jhāna, que posee ecuanimidad y unificación. Estas cinco se denominan conciencias del camino de la entrada en la corriente."
+    }
+  },
+  {
+    "id": "abhm-1.59",
+    "pali": "Tathā sakadāgāmimaggaanāgāmimaggaarahattamaggacittañceti samavīsati maggacittāni.",
+    "translations": {
+      "en": "39. Similarly with the path-consciousnesses of the once-returner, the non-returner, and the Arahant, there are altogether twenty path-consciousnesses.",
+      "pt": "39. Da mesma forma, com as consciências do caminho do retorno único, do não retorno e do estado de arahant, há vinte consciências do caminho.",
+      "es": "39.  Del mismo modo, con las conciencias del camino del que retorna una vez, del camino del que no retorna y del camino del arahat, hay en total veinte conciencias de los caminos."
+    }
+  },
+  {
+    "id": "abhm-1.60",
+    "pali": "Tathā phalacittāni ceti <b>samacattālīsa lokuttaracittāni</b> bhavantīti.",
+    "translations": {
+      "en": "40. And similarly with the fruition-consciousnesses, there are altogether forty supramundane consciousnesses.",
+      "pt": "40. Da mesma forma, com as consciências de fruição, há quarenta consciências supramundanas.",
+      "es": "40.  Del mismo modo, con las conciencias de los frutos, resultan en total cuarenta conciencias supramundanas."
+    }
+  },
+  {
+    "id": "abhm-1.61",
+    "pali": "Jhānaṅgayogabhedena, katvekekantu pañcadhā.",
+    "translations": {
+      "en": "41. By the distinction of the combination of jhāna factors, each one is made fivefold.",
+      "pt": "41. Dividindo cada uma em cinco partes, de acordo com a associação com os fatores do jhāna,",
+      "es": "41.  Mediante la distinción de la asociación con los factores de los jhāna, habiendo hecho cada una de cinco formas,"
+    }
+  },
+  {
+    "id": "abhm-1.62",
+    "pali": "Vuccatānuttaraṃ cittaṃ, cattālīsavidhanti ca.",
+    "translations": {
+      "en": "The supramundane consciousness is said to be of forty kinds.",
+      "pt": "a consciência supramundana é dita ser de quarenta tipos.",
+      "es": "se dice que la conciencia supramundana es de cuarenta tipos."
+    }
+  },
+  {
+    "id": "abhm-1.63",
+    "pali": "Yathā ca rūpāvacaraṃ, gayhatānuttaraṃ tathā.",
+    "translations": {
+      "en": "42. And as the fine-material-sphere consciousness is taken, so too is the supramundane.",
+      "pt": "42. E assim como a esfera da matéria sutil é compreendida, da mesma forma é a supramundana,",
+      "es": "42.  Y así como se entiende la esfera de la forma, de igual modo se entiende lo supramundano."
+    }
+  },
+  {
+    "id": "abhm-1.64",
+    "pali": "Paṭhamādijhānabhede, āruppañcāpi pañcame.",
+    "translations": {
+      "en": "In the division of the first and other jhānas, the immaterial attainments are included in the fifth.",
+      "pt": "nas divisões do primeiro jhāna, etc., e a esfera imaterial também está incluída no quinto.",
+      "es": "En las distinciones desde el primer jhāna en adelante, lo inmaterial se incluye también en el quinto."
+    }
+  },
+  {
+    "id": "abhm-1.65",
+    "pali": "Ekādasavidhaṃ tasmā, paṭhamādikamīritaṃ;</p><p rend=\"gathalast\">Jhānamekekamante tu, tevīsatividhaṃ bhave.",
+    "translations": {
+      "en": "Therefore the first jhāna and so forth are said to be elevenfold; the final one, however, becomes twenty-threefold.",
+      "pt": "Portanto, o primeiro jhāna, etc., são ditos ser de onze tipos; mas o último jhāna torna-se de vinte e três tipos.",
+      "es": "Por lo tanto, se dice que el primero y los demás [jhānas] son de once tipos; mientras que el último jhāna, al final, llega a ser de veintitrés tipos."
+    }
+  },
+  {
+    "id": "abhm-1.66",
+    "pali": "Sattatiṃsavidhaṃ puññaṃ, dvipaññāsavidhaṃ tathā.",
+    "translations": {
+      "en": "43. The wholesome is thirty-sevenfold; the resultant, likewise, fifty-twofold.",
+      "pt": "43. Trinta e sete tipos de dhammas benéficos, e da mesma forma cinquenta e dois tipos",
+      "es": "43.  Treinta y siete tipos de méritos [conciencias hábiles] y de igual modo cincuenta y dos resultantes,"
+    }
+  },
+  {
+    "id": "abhm-1.67",
+    "pali": "Pākamiccāhu cittāni, ekavīsasataṃ budhā.",
+    "translations": {
+      "en": "Thus the wise declare the consciousnesses to be one hundred and twenty-one.",
+      "pt": "de resultantes, dizem os sábios que as consciências são cento e vinte e uma.",
+      "es": "los sabios dicen que [en total] las conciencias son ciento veintiuno."
+    }
+  },
+  {
+    "id": "abhm-1.68",
+    "pali": "Iti abhidhammatthasaṅgahe cittasaṅgahavibhāgo nāma",
+    "translations": {
+      "en": "Thus ends the section named 'Compendium of Consciousness' in the Manual of Abhidhamma.",
+      "pt": "Assim termina, no Abhidhammatthasaṅgaha, a seção do Compêndio da Consciência,",
+      "es": "Así termina, en el Compendio del Abhidhamma, la sección llamada Compendio de la Conciencia."
+    }
+  },
+  {
+    "id": "abhm-1.69",
+    "pali": "Paṭhamo paricchedo.",
+    "translations": {
+      "en": "The First Chapter.",
+      "pt": "o primeiro capítulo.",
+      "es": "Primer Capítulo."
+    }
+  }
+]

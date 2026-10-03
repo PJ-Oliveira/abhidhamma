@@ -1,0 +1,902 @@
+[
+  {
+    "pali": "voṭṭhabbanaṃ",
+    "meaning": {
+      "en": "determining",
+      "pt": "determinação",
+      "es": "determinación"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "voṭṭhabbanassa",
+    "meaning": {
+      "en": "of determining",
+      "pt": "da determinação",
+      "es": "de la determinación"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "viññāṇāni",
+    "meaning": {
+      "en": "consciousnesses",
+      "pt": "consciências",
+      "es": "conciencias"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "viññātabbaṃ",
+    "meaning": {
+      "en": "to be known",
+      "pt": "a ser conhecido",
+      "es": "para ser conocido"
+    },
+    "grammar": "grd"
+  },
+  {
+    "pali": "viññeyyāni",
+    "meaning": {
+      "en": "to be known",
+      "pt": "a serem conhecidos",
+      "es": "para ser conocidos"
+    },
+    "grammar": "grd"
+  },
+  {
+    "pali": "viyāti",
+    "meaning": {
+      "en": "like / as + quote",
+      "pt": "como + citação",
+      "es": "como + cita"
+    },
+    "grammar": "ind + ind"
+  },
+  {
+    "pali": "viratittayaṃ",
+    "meaning": {
+      "en": "the three abstinences",
+      "pt": "as três abstenções",
+      "es": "las tres abstinencias"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vipassanāya",
+    "meaning": {
+      "en": "for insight",
+      "pt": "para insight",
+      "es": "para la visión profunda"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "vattabbe",
+    "meaning": {
+      "en": "to be said",
+      "pt": "a ser dito",
+      "es": "para ser dicho"
+    },
+    "grammar": "grd"
+  },
+  {
+    "pali": "vata",
+    "meaning": {
+      "en": "certainly / indeed",
+      "pt": "certamente / de fato",
+      "es": "ciertamente / de hecho"
+    },
+    "grammar": "ind"
+  },
+  {
+    "pali": "uppajjitvā",
+    "meaning": {
+      "en": "having arisen",
+      "pt": "tendo surgido",
+      "es": "habiendo surgido"
+    },
+    "grammar": "abs"
+  },
+  {
+    "pali": "uparūpari",
+    "meaning": {
+      "en": "higher and higher",
+      "pt": "cada vez mais alto",
+      "es": "más y más alto"
+    },
+    "grammar": "ind"
+  },
+  {
+    "pali": "uddhare",
+    "meaning": {
+      "en": "one should lift / pull out",
+      "pt": "alguém deve levantar / arrancar",
+      "es": "uno debería levantar / sacar"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "tāsaṃ",
+    "meaning": {
+      "en": "of them",
+      "pt": "delas",
+      "es": "de ellas"
+    },
+    "grammar": "pron"
+  },
+  {
+    "pali": "tividhena",
+    "meaning": {
+      "en": "threefold",
+      "pt": "triplo",
+      "es": "triple"
+    },
+    "grammar": "adj"
+  },
+  {
+    "pali": "teyeva",
+    "meaning": {
+      "en": "they themselves",
+      "pt": "eles mesmos",
+      "es": "ellos mismos"
+    },
+    "grammar": "pron"
+  },
+  {
+    "pali": "taṃvasena",
+    "meaning": {
+      "en": "by its power",
+      "pt": "por seu poder",
+      "es": "por su poder"
+    },
+    "grammar": "ind"
+  },
+  {
+    "pali": "tatiyāruppabhūmiyaṃ",
+    "meaning": {
+      "en": "in the third formless plane",
+      "pt": "no terceiro plano sem forma",
+      "es": "en el tercer plano inmaterial"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "tathāgatoti",
+    "meaning": {
+      "en": "the Tathagata (quote)",
+      "pt": "o Tathagata (citação)",
+      "es": "el Tathagata (cita)"
+    },
+    "grammar": "noun + ind"
+  },
+  {
+    "pali": "tathāgatasaddena",
+    "meaning": {
+      "en": "by the word Tathagata",
+      "pt": "pela palavra Tathagata",
+      "es": "por la palabra Tathagata"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "tadārammaṇabhāvena",
+    "meaning": {
+      "en": "as registering",
+      "pt": "como registro",
+      "es": "como registro"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "somanassassa",
+    "meaning": {
+      "en": "of joy",
+      "pt": "da alegria",
+      "es": "de la alegría"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "saṅgayhanti",
+    "meaning": {
+      "en": "they are included",
+      "pt": "são incluídos",
+      "es": "están incluidos"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "savatthukaṃ",
+    "meaning": {
+      "en": "having a physical base",
+      "pt": "tendo uma base física",
+      "es": "teniendo una base física"
+    },
+    "grammar": "adj"
+  },
+  {
+    "pali": "santīraṇadvayaṃ",
+    "meaning": {
+      "en": "the two investigating (consciousnesses)",
+      "pt": "as duas (consciências) investigativas",
+      "es": "las dos (conciencias) investigadoras"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sante",
+    "meaning": {
+      "en": "being",
+      "pt": "sendo",
+      "es": "siendo"
+    },
+    "grammar": "pp"
+  },
+  {
+    "pali": "samāpajjitvā",
+    "meaning": {
+      "en": "having attained",
+      "pt": "tendo alcançado",
+      "es": "habiendo alcanzado"
+    },
+    "grammar": "abs"
+  },
+  {
+    "pali": "samāgamaṃ",
+    "meaning": {
+      "en": "meeting / coming together",
+      "pt": "encontro / reunião",
+      "es": "encuentro / reunión"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sampayogaṃ",
+    "meaning": {
+      "en": "association",
+      "pt": "associação",
+      "es": "asociación"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sametehi",
+    "meaning": {
+      "en": "with the endowed",
+      "pt": "com os dotados",
+      "es": "con los dotados"
+    },
+    "grammar": "adj"
+  },
+  {
+    "pali": "sambhavo",
+    "meaning": {
+      "en": "origin / birth",
+      "pt": "origem / nascimento",
+      "es": "origen / nacimiento"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "samattaṃ",
+    "meaning": {
+      "en": "completed",
+      "pt": "completado",
+      "es": "completado"
+    },
+    "grammar": "pp"
+  },
+  {
+    "pali": "samanakkārahetunā",
+    "meaning": {
+      "en": "due to attention",
+      "pt": "devido à atenção",
+      "es": "debido a la atención"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "sahagatehi",
+    "meaning": {
+      "en": "with the accompanied",
+      "pt": "com os acompanhados",
+      "es": "con los acompañados"
+    },
+    "grammar": "adj"
+  },
+  {
+    "pali": "sabhāvo",
+    "meaning": {
+      "en": "nature",
+      "pt": "natureza",
+      "es": "naturaleza"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "rūpāvacaraṃ",
+    "meaning": {
+      "en": "fine-material sphere",
+      "pt": "esfera da matéria fina",
+      "es": "esfera de la materia sutil"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "rūpāvacarabhūmiyaṃ",
+    "meaning": {
+      "en": "in the fine-material sphere plane",
+      "pt": "no plano da esfera da matéria fina",
+      "es": "en el plano de la esfera de la materia sutil"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "rūpādipañcakaṃ",
+    "meaning": {
+      "en": "the pentad beginning with form",
+      "pt": "a pêntade começando com forma",
+      "es": "la péntada que comienza con la forma"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "puññānaṃ",
+    "meaning": {
+      "en": "of merits",
+      "pt": "dos méritos",
+      "es": "de los méritos"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "puññe",
+    "meaning": {
+      "en": "in merit",
+      "pt": "no mérito",
+      "es": "en el mérito"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "purimaṃ",
+    "meaning": {
+      "en": "earlier / former",
+      "pt": "anterior / primeiro",
+      "es": "anterior / primero"
+    },
+    "grammar": "adj"
+  },
+  {
+    "pali": "paṭhame",
+    "meaning": {
+      "en": "in the first",
+      "pt": "no primeiro",
+      "es": "en el primero"
+    },
+    "grammar": "adj"
+  },
+  {
+    "pali": "paṇḍitehi",
+    "meaning": {
+      "en": "by the wise",
+      "pt": "pelos sábios",
+      "es": "por los sabios"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "pañcapaññāsa",
+    "meaning": {
+      "en": "fifty-five",
+      "pt": "cinquenta e cinco",
+      "es": "cincuenta y cinco"
+    },
+    "grammar": "num"
+  },
+  {
+    "pali": "pañcahi",
+    "meaning": {
+      "en": "by five",
+      "pt": "por cinco",
+      "es": "por cinco"
+    },
+    "grammar": "num"
+  },
+  {
+    "pali": "pavattito",
+    "meaning": {
+      "en": "proceeded / kept going",
+      "pt": "prosseguiu / mantido em andamento",
+      "es": "procedió / mantenido en marcha"
+    },
+    "grammar": "pp"
+  },
+  {
+    "pali": "parittārammaṇaṃ",
+    "meaning": {
+      "en": "limited object",
+      "pt": "objeto limitado",
+      "es": "objeto limitado"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "paresaṃ",
+    "meaning": {
+      "en": "of others",
+      "pt": "dos outros",
+      "es": "de otros"
+    },
+    "grammar": "pron"
+  },
+  {
+    "pali": "paramatthato",
+    "meaning": {
+      "en": "in the ultimate sense",
+      "pt": "no sentido último",
+      "es": "en el sentido último"
+    },
+    "grammar": "ind"
+  },
+  {
+    "pali": "pakaraṇaṃ",
+    "meaning": {
+      "en": "treatise / exposition",
+      "pt": "tratado / exposição",
+      "es": "tratado / exposición"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "nānakkhaṇikakammūpanissayapaccayehi",
+    "meaning": {
+      "en": "by asynchronous kamma and strong dependence conditions",
+      "pt": "pelas condições de kamma assíncrono e dependência forte",
+      "es": "por las condiciones de kamma asíncrono y dependencia fuerte"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "nāmassa",
+    "meaning": {
+      "en": "of name",
+      "pt": "do nome",
+      "es": "del nombre"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "nāmarūpānaṃ",
+    "meaning": {
+      "en": "of mentality-materiality",
+      "pt": "da mentalidade-materialidade",
+      "es": "de la mentalidad-materialidad"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "nippariyāyato",
+    "meaning": {
+      "en": "strictly speaking / without distinction",
+      "pt": "estritamente falando / sem distinção",
+      "es": "estrictamente hablando / sin distinción"
+    },
+    "grammar": "ind"
+  },
+  {
+    "pali": "muninā",
+    "meaning": {
+      "en": "by the sage",
+      "pt": "pelo sábio",
+      "es": "por el sabio"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "manodhātuttayassa",
+    "meaning": {
+      "en": "of the threefold mind-element",
+      "pt": "da tripla mente-elemento",
+      "es": "del triple elemento mental"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "manasā",
+    "meaning": {
+      "en": "by mind",
+      "pt": "pela mente",
+      "es": "por la mente"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "mahākusalassa",
+    "meaning": {
+      "en": "of the great wholesome",
+      "pt": "do grande benéfico",
+      "es": "del gran beneficioso"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "mahaggate",
+    "meaning": {
+      "en": "in the sublime / enlarged",
+      "pt": "no sublime / ampliado",
+      "es": "en lo sublime / ampliado"
+    },
+    "grammar": "adj"
+  },
+  {
+    "pali": "macchariyaṃ",
+    "meaning": {
+      "en": "stinginess",
+      "pt": "mesquinhez",
+      "es": "tacañería"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "lunāti",
+    "meaning": {
+      "en": "cuts / reaps",
+      "pt": "corta / colhe",
+      "es": "corta / cosecha"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "lopaṃ",
+    "meaning": {
+      "en": "elision / cutting off",
+      "pt": "elisão / corte",
+      "es": "elisión / corte"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "labhitvā",
+    "meaning": {
+      "en": "having obtained",
+      "pt": "tendo obtido",
+      "es": "habiendo obtenido"
+    },
+    "grammar": "abs"
+  },
+  {
+    "pali": "kāyo",
+    "meaning": {
+      "en": "body",
+      "pt": "corpo",
+      "es": "cuerpo"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kāyassa",
+    "meaning": {
+      "en": "of the body",
+      "pt": "do corpo",
+      "es": "del cuerpo"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kāmāvacaro",
+    "meaning": {
+      "en": "sense-sphere",
+      "pt": "esfera dos sentidos",
+      "es": "esfera de los sentidos"
+    },
+    "grammar": "adj"
+  },
+  {
+    "pali": "kāmāvacarapuññāni",
+    "meaning": {
+      "en": "sense-sphere merits",
+      "pt": "méritos da esfera dos sentidos",
+      "es": "méritos de la esfera de los sentidos"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kāmānaṃ",
+    "meaning": {
+      "en": "of sensual pleasures",
+      "pt": "dos prazeres sensuais",
+      "es": "de los placeres sensuales"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kāmavipāko",
+    "meaning": {
+      "en": "sense-sphere result",
+      "pt": "resultado da esfera dos sentidos",
+      "es": "resultado de la esfera de los sentidos"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kāmaloke",
+    "meaning": {
+      "en": "in the sense world",
+      "pt": "no mundo dos sentidos",
+      "es": "en el mundo de los sentidos"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kusā",
+    "meaning": {
+      "en": "grass",
+      "pt": "grama",
+      "es": "hierba"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kusalānugataṃ",
+    "meaning": {
+      "en": "followed by the wholesome",
+      "pt": "seguido pelo benéfico",
+      "es": "seguido por lo beneficioso"
+    },
+    "grammar": "adj"
+  },
+  {
+    "pali": "kusalo",
+    "meaning": {
+      "en": "wholesome / skillful",
+      "pt": "benéfico / hábil",
+      "es": "beneficioso / hábil"
+    },
+    "grammar": "adj"
+  },
+  {
+    "pali": "kusalato",
+    "meaning": {
+      "en": "from the wholesome",
+      "pt": "do benéfico",
+      "es": "de lo beneficioso"
+    },
+    "grammar": "ind"
+  },
+  {
+    "pali": "kusalacittaṃ",
+    "meaning": {
+      "en": "wholesome consciousness",
+      "pt": "consciência benéfica",
+      "es": "conciencia beneficiosa"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kukkuccaṃ",
+    "meaning": {
+      "en": "remorse / worry",
+      "pt": "remorso / preocupação",
+      "es": "remordimiento / preocupación"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kucchitānaṃ",
+    "meaning": {
+      "en": "of the contemptible",
+      "pt": "dos desprezíveis",
+      "es": "de los despreciables"
+    },
+    "grammar": "adj"
+  },
+  {
+    "pali": "kriyāpi",
+    "meaning": {
+      "en": "also functional",
+      "pt": "também funcional",
+      "es": "también funcional"
+    },
+    "grammar": "noun + ind"
+  },
+  {
+    "pali": "kriyācittaṃ",
+    "meaning": {
+      "en": "functional consciousness",
+      "pt": "consciência funcional",
+      "es": "conciencia funcional"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kiriyacittaṃ",
+    "meaning": {
+      "en": "functional consciousness",
+      "pt": "consciência funcional",
+      "es": "conciencia funcional"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kilesā",
+    "meaning": {
+      "en": "defilements",
+      "pt": "contaminações",
+      "es": "contaminaciones"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kathitā",
+    "meaning": {
+      "en": "said / spoken",
+      "pt": "dito / falado",
+      "es": "dicho / hablado"
+    },
+    "grammar": "pp"
+  },
+  {
+    "pali": "kammāni",
+    "meaning": {
+      "en": "actions / kamma",
+      "pt": "ações / kamma",
+      "es": "acciones / kamma"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "kammato",
+    "meaning": {
+      "en": "from kamma",
+      "pt": "do kamma",
+      "es": "del kamma"
+    },
+    "grammar": "ind"
+  },
+  {
+    "pali": "jīvitindriyaṃ",
+    "meaning": {
+      "en": "life faculty",
+      "pt": "faculdade da vida",
+      "es": "facultad de la vida"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "jāyantīti",
+    "meaning": {
+      "en": "they arise (quote)",
+      "pt": "eles surgem (citação)",
+      "es": "ellos surgen (cita)"
+    },
+    "grammar": "verb + ind"
+  },
+  {
+    "pali": "jātesu",
+    "meaning": {
+      "en": "in the born / arisen",
+      "pt": "nos nascidos / surgidos",
+      "es": "en los nacidos / surgidos"
+    },
+    "grammar": "pp"
+  },
+  {
+    "pali": "jhānaṅgayogabhedato",
+    "meaning": {
+      "en": "by difference in association with jhana factors",
+      "pt": "pela diferença na associação com fatores de jhana",
+      "es": "por diferencia en asociación con factores de jhana"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "javanakiccavasena",
+    "meaning": {
+      "en": "by way of the javana function",
+      "pt": "por meio da função de javana",
+      "es": "a través de la función de javana"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "hotu",
+    "meaning": {
+      "en": "let it be",
+      "pt": "que seja",
+      "es": "que sea"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "hirī",
+    "meaning": {
+      "en": "shame",
+      "pt": "vergonha",
+      "es": "vergüenza"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "heṭṭhimā",
+    "meaning": {
+      "en": "lower",
+      "pt": "inferior",
+      "es": "inferior"
+    },
+    "grammar": "adj"
+  },
+  {
+    "pali": "hetupaccayā",
+    "meaning": {
+      "en": "root conditions",
+      "pt": "condições raízes",
+      "es": "condiciones raíces"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "hetupaccayataṃ",
+    "meaning": {
+      "en": "root conditionality",
+      "pt": "condicionalidade raiz",
+      "es": "condicionalidad raíz"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "hesa",
+    "meaning": {
+      "en": "hi + esa (indeed this)",
+      "pt": "hi + esa (de fato este)",
+      "es": "hi + esa (de hecho este)"
+    },
+    "grammar": "ind + pron"
+  },
+  {
+    "pali": "hasanti",
+    "meaning": {
+      "en": "they laugh",
+      "pt": "eles riem",
+      "es": "ellos ríen"
+    },
+    "grammar": "verb"
+  },
+  {
+    "pali": "ghānaviññāṇaṃ",
+    "meaning": {
+      "en": "nose-consciousness",
+      "pt": "consciência do nariz",
+      "es": "conciencia de la nariz"
+    },
+    "grammar": "noun"
+  },
+  {
+    "pali": "gato",
+    "meaning": {
+      "en": "gone",
+      "pt": "ido",
+      "es": "ido"
+    },
+    "grammar": "pp"
+  },
+  {
+    "pali": "gate",
+    "meaning": {
+      "en": "in the gone",
+      "pt": "no ido",
+      "es": "en el ido"
+    },
+    "grammar": "pp"
+  },
+  {
+    "pali": "gandho",
+    "meaning": {
+      "en": "smell",
+      "pt": "cheiro",
+      "es": "olor"
+    },
+    "grammar": "noun"
+  }
+]
