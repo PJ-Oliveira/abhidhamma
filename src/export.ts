@@ -343,30 +343,69 @@ export function segToHtml(seg: Segment, langMode: LangMode, termsMap?: Map<strin
 }
 
 const PRINT_CSS = `
-body{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:14pt;line-height:1.6;color:#111;background:#fff;}
-h1.title{text-align:center;font-size:1.8em;border-bottom:2px solid #333;padding-bottom:.5em;margin-bottom:1em;page-break-before:always;}
-h1.title:first-of-type{page-break-before:avoid;}
-h2.chapter{page-break-before:always;font-size:1.5em;border-bottom:1px solid #ccc;padding-bottom:.4em;margin-top:0;}
-h2.chapter:first-of-type{page-break-before:avoid;}
-h3.subhead{font-size:1.1em;margin-top:1.4em;}
-h4.subsubhead{font-size:1em;font-style:italic;margin-top:1em;}
-p.bodytext{margin:.5em 0;}
-blockquote.indent{margin:1em 2em;border-left:3px solid #999;padding-left:1em;font-style:italic;}
-p.hangnum{margin:.4em 0 .4em 1.5em;}
-p.footnote{font-size:.85em;color:#555;margin:.3em 0;}
-p.centre{text-align:center;margin:.5em 0;}
-p.glossary{margin:.5em 0;}
-p.glossary .line.pali{font-weight:700;}
-.line.pali{font-style:italic;color:#444;}
-.line.en,.line.pt,.line.es{margin:.15em 0;}
-span.rend-gathalast{margin-left:2em;}
-span.rend-gatha1,span.rend-gatha2,span.rend-gatha3{margin-left:1em;}
-@page{margin:1.8cm;@top-center{content:string(bookTitle);font-size:9pt;color:#666;}}
-h2.chapter{string-set:bookTitle content();}
-.glossary-appendix{page-break-before:always;}
-.glossary-entry{margin:.3em 0;font-size:.95em;line-height:1.5;}
-.glossary-entry strong{color:#333;}
-.glossary-entry em{color:#666;font-size:.9em;}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Merriweather', 'Noto Serif', 'Georgia', 'Cambria', 'Times New Roman', serif;
+  font-size: 13pt;
+  line-height: 1.65;
+  color: #1a1a1a;
+  background: #fff;
+}
+h1.title {
+  text-align: center;
+  font-size: 2.4em;
+  font-weight: 700;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5em;
+  margin-bottom: 1.5em;
+  page-break-before: always;
+  line-height: 1.3;
+}
+h1.title:first-of-type { page-break-before: avoid; }
+h2.chapter {
+  page-break-before: always;
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #222;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  line-height: 1.4;
+}
+h2.chapter:first-of-type { page-break-before: avoid; margin-top: 0; }
+h3.subhead { font-size: 1.3em; margin-top: 1.8em; font-weight: 700; color: #333; }
+h4.subsubhead { font-size: 1.1em; font-style: italic; margin-top: 1.5em; color: #444; }
+p.bodytext { margin: 0.7em 0; text-align: justify; page-break-inside: avoid; }
+blockquote.indent {
+  margin: 1.2em 2em;
+  border-left: 3px solid #ccc;
+  padding-left: 1.2em;
+  font-style: italic;
+  color: #333;
+  page-break-inside: avoid;
+}
+p.hangnum { margin: 0.5em 0 0.5em 1.5em; text-indent: -1.5em; text-align: justify; page-break-inside: avoid; }
+p.footnote { font-size: 0.85em; color: #555; margin: 0.4em 0; padding-top: 0.2em; page-break-inside: avoid;}
+p.centre { text-align: center; margin: 0.7em 0; page-break-inside: avoid; }
+p.glossary { margin: 0.7em 0; page-break-inside: avoid; }
+p.glossary .line.pali { font-weight: 700; }
+.line { margin-bottom: 0.2em; page-break-inside: avoid; }
+.seg { page-break-inside: avoid; }
+.line.pali { font-style: italic; color: #444; font-family: 'Noto Serif', 'Georgia', serif; font-size: 1.05em; margin-bottom: 0.1em; }
+.line.en, .line.pt, .line.es { margin-top: 0.1em; margin-bottom: 0.8em; text-align: justify; }
+span.rend-gathalast { margin-left: 2em; display: block; }
+span.rend-gatha1, span.rend-gatha2, span.rend-gatha3 { margin-left: 1em; display: block; }
+@page {
+  margin: 2.5cm 2cm 2.5cm 2cm;
+  @bottom-center { content: counter(page); font-size: 9pt; color: #666; font-family: sans-serif; }
+  @top-center { content: string(bookTitle); font-size: 9pt; color: #888; text-transform: uppercase; letter-spacing: 0.05em; font-family: sans-serif; }
+}
+h2.chapter { string-set: bookTitle content(); }
+.glossary-appendix { page-break-before: always; }
+.glossary-entry { margin: 0.5em 0; font-size: 0.95em; line-height: 1.5; }
+.glossary-entry strong { color: #222; }
+.glossary-entry em { color: #666; font-size: 0.9em; }
 `;
 
 export function buildPrintHtml(segs: Segment[], title: string, langMode: LangMode, glossaryHtml: string, termsMap: Map<string, string>, workId?: string, group?: string): string {
