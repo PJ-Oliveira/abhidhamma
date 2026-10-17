@@ -134,5 +134,21 @@ describe('Export Module', () => {
     expect(html).toContain('href="#doc_ch1"');
     expect(html).toContain('href="#doc_sub1"');
   });
+
+  it('should safely handle numeric paranum values in segments without throwing', () => {
+    const numericParanumSeg = {
+      id: 99,
+      rend: "p",
+      paranum: 1 as any,
+      pali: "Dhamma",
+      en: "Phenomena <sup class=\"var-note\" data-note=\"0\">[1]</sup> <b>bold</b>",
+      pt: "Fenômenos"
+    } as any;
+    const html = segToHtml(numericParanumSeg, "pali+en");
+    expect(html).toContain('<span class="paranum-badge">1.</span>');
+    expect(html).toContain("<strong>bold</strong>");
+    expect(html).not.toContain("var-note");
+  });
 });
+
 

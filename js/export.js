@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=1d81ce28";
-import { settings } from "./state.js?v=1d81ce28";
-import { createLogger } from "./logger.js?v=1d81ce28";
+import { t } from "./i18n.js?v=546392a3";
+import { settings } from "./state.js?v=546392a3";
+import { createLogger } from "./logger.js?v=546392a3";
 const log = createLogger("export");
 let glossaryData = null;
 async function loadGlossary() {
@@ -245,7 +245,7 @@ export function buildZip(entries) {
     return out;
 }
 export function escHtml(s) {
-    return s
+    return String(s ?? "")
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
@@ -307,25 +307,77 @@ export function walkNode(node, termsMap, linkPrefix = "glossary.xhtml") {
 export function fieldHtml(raw, termsMap, linkPrefix = "glossary.xhtml") {
     if (!raw)
         return "";
-    if (!raw.includes("<"))
-        return linkifyText(raw, termsMap, linkPrefix);
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(`<body>${raw}</body>`, "text/html");
-    return walkNode(doc.body, termsMap, linkPrefix);
+    const cleaned = String(raw)
+        .replace(/<sup[^>]*class=["']?var-note["']?[^>]*>[\s\S]*?<\/sup>/gi, "")
+        .replace(/<p\s+rend=["'][^"']*["']\s*\/>/gi, "");
+    if (!cleaned.includes("<"))
+        return linkifyText(cleaned, termsMap, linkPrefix);
+    const tokenRegex = /(<\/?[a-zA-Z0-9]+[^>]*>)/g;
+    const tokens = cleaned.split(tokenRegex);
+    let out = "";
+    const openSpanStack = [];
+    for (let i = 0; i < tokens.length; i++) {
+        const tok = tokens[i] || "";
+        if (i % 2 === 0) {
+            out += linkifyText(tok, termsMap, linkPrefix);
+        }
+        else {
+            const lowerTag = tok.toLowerCase();
+            if (lowerTag === "<b>" || lowerTag === "<strong>") {
+                out += "<strong>";
+            }
+            else if (lowerTag === "</b>" || lowerTag === "</strong>") {
+                out += "</strong>";
+            }
+            else if (lowerTag === "<i>" || lowerTag === "<em>") {
+                out += "<em>";
+            }
+            else if (lowerTag === "</i>" || lowerTag === "</em>") {
+                out += "</em>";
+            }
+            else if (lowerTag === "<sup>") {
+                out += "<sup>";
+            }
+            else if (lowerTag === "</sup>") {
+                out += "</sup>";
+            }
+            else if (lowerTag === "<br>" || lowerTag === "<br/>" || lowerTag === "<br />") {
+                out += "<br/>";
+            }
+            else if (lowerTag.startsWith("<p")) {
+                const rendMatch = tok.match(/rend=["']([^"']+)["']/i);
+                const cls = rendMatch ? ` class="rend-${escHtml(rendMatch[1])}"` : "";
+                out += `<br/><span${cls}>`;
+                openSpanStack.push(true);
+            }
+            else if (lowerTag === "</p>") {
+                if (openSpanStack.length > 0) {
+                    openSpanStack.pop();
+                    out += "</span>";
+                }
+            }
+        }
+    }
+    while (openSpanStack.length > 0) {
+        openSpanStack.pop();
+        out += "</span>";
+    }
+    return out;
 }
 function hasMappedTerm(text, termsMap) {
-    if (!text || !termsMap || termsMap.size === 0)
+    if (!text || !termsMap || termsMap.size === 0 || termsMap.size > 10)
         return false;
     const words = text.toLowerCase().normalize("NFC").match(/[\p{L}\p{M}]+/gu) || [];
     return words.some((w) => termsMap.has(w));
 }
 export function segToHtml(seg, langMode, termsMap, linkPrefix = "glossary.xhtml", anchorId) {
     const rend = seg.rend;
-    const paliText = seg.pali ?? "";
-    const enText = seg.en ?? "";
-    const ptText = seg.pt ?? "";
-    const esText = seg.es ?? "";
-    const showPali = langMode.startsWith("pali") || hasMappedTerm(paliText, termsMap);
+    const paliText = seg.pali != null ? String(seg.pali) : "";
+    const enText = seg.en != null ? String(seg.en) : "";
+    const ptText = seg.pt != null ? String(seg.pt) : "";
+    const esText = seg.es != null ? String(seg.es) : "";
+    const forcePaliLinkTest = !langMode.startsWith("pali") && hasMappedTerm(paliText, termsMap);
+    const showPali = langMode.startsWith("pali") || forcePaliLinkTest;
     const showEn = langMode === "en" ||
         langMode === "pali+en" ||
         langMode === "pali+en+pt" ||
@@ -333,11 +385,11 @@ export function segToHtml(seg, langMode, termsMap, linkPrefix = "glossary.xhtml"
     const showPt = langMode === "pali+en+pt" || langMode === "pt" || langMode === "pali+pt";
     const showEs = langMode === "es" || langMode === "pali+es" || langMode === "pali+en+es";
     let inner = "";
-    const paranumPrefix = seg.paranum
+    const paranumPrefix = seg.paranum != null && String(seg.paranum) !== ""
         ? `<span class="paranum-badge">${escHtml(seg.paranum)}.</span> `
         : "";
     if (showPali && paliText) {
-        const linkedPali = fieldHtml(paliText, termsMap, linkPrefix);
+        const linkedPali = fieldHtml(paliText, forcePaliLinkTest ? termsMap : undefined, linkPrefix);
         inner += `<div class="line pali" lang="pi">${paranumPrefix}${linkedPali}</div>`;
     }
     if (showEn) {
@@ -1565,8 +1617,10 @@ function downloadBlob(bytes, filename, mimeType) {
     const a = document.createElement("a");
     a.href = url;
     a.download = filename;
+    document.body.appendChild(a);
     a.click();
-    setTimeout(() => URL.revokeObjectURL(url), 5000);
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 60_000);
 }
 export async function buildFullCorpusEpub(manifest, langMode, onProgress) {
     const enc = new TextEncoder();
