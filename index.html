@@ -6,7 +6,16 @@
 <title>Abhidhamma Piṭaka</title>
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#8b0000" />
-<link rel="stylesheet" href="css/style.css?v=489adbde" />
+<link rel="stylesheet" href="css/style.css?v=d88a8789" />
+<script>
+  window.__deferredPwaPrompt = null;
+  window.addEventListener('beforeinstallprompt', function(e) {
+    e.preventDefault();
+    window.__deferredPwaPrompt = e;
+    var c = document.getElementById('pwa-install-container');
+    if (c) c.style.display = 'block';
+  });
+</script>
 </head>
 <body>
 <div id="app">
@@ -39,7 +48,7 @@
   </nav>
 
   <aside id="side-panel">
-    <div id="pwa-install-container" style="display: none; padding: 12px; background: #e8f5e9; border-bottom: 2px solid #c8e6c9;">
+    <div id="pwa-install-container" style="display: block; padding: 12px; background: #e8f5e9; border-bottom: 2px solid #c8e6c9;">
       <button id="btn-install-pwa" style="width: 100%; padding: 12px; background: #4caf50; color: white; border: none; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
         <span style="font-size: 18px;">📲</span> App Offline
       </button>
@@ -150,6 +159,6 @@
 <div id="interlocutor-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 10000; width: 400px; max-width: 90vw; max-height: 80vh; overflow-y: auto; display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border-radius: 8px; background: white;"></div>
 <button id="btn-toggle-interlocutor" style="position: fixed; bottom: 20px; right: 20px; z-index: 10001; padding: 12px 16px; background-color: #0f172a; color: white; border: none; border-radius: 24px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold;">💬 Debate</button>
 
-<script type="module" src="js/app.js?v=489adbde"></script>
+<script type="module" src="js/app.js?v=d88a8789"></script>
 </body>
 </html>

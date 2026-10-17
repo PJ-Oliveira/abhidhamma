@@ -515,28 +515,105 @@ function rerenderContent(): void {
   setTimeout(() => { content.scrollTop = savedScroll; }, 0);
 }
 
-let deferredPrompt: any;
+let deferredPrompt: any = (window as any).__deferredPwaPrompt ?? null;
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
+  (window as any).__deferredPwaPrompt = e;
   const installContainer = document.getElementById('pwa-install-container');
   if (installContainer) installContainer.style.display = 'block';
 });
 
+window.addEventListener('appinstalled', () => {
+  deferredPrompt = null;
+  (window as any).__deferredPwaPrompt = null;
+  const installContainer = document.getElementById('pwa-install-container');
+  if (installContainer) installContainer.style.display = 'none';
+});
+
+async function cacheAllForOffline(btn: HTMLButtonElement): Promise<void> {
+  if (!('caches' in window)) return;
+  const origHtml = btn.innerHTML;
+  btn.disabled = true;
+  try {
+    const cache = await caches.open('abhidhamma-cache-v12');
+    const urls: string[] = [
+      './',
+      './index.html',
+      './manifest.json',
+      './css/style.css',
+      './data/manifest.json',
+      './data/dictionary/pali_core.json',
+      './data/dictionary/common_pali.json',
+    ];
+    if (state.manifest?.groups) {
+      for (const group of Object.values(state.manifest.groups)) {
+        for (const work of group) {
+          for (const part of Object.values(work.parts || {})) {
+            for (const file of part.files || []) {
+              urls.push(`./data/works/${work.id}/${file}`);
+            }
+          }
+        }
+      }
+    }
+    const total = urls.length;
+    let done = 0;
+    const BATCH = 6;
+    for (let i = 0; i < total; i += BATCH) {
+      const slice = urls.slice(i, i + BATCH);
+      await Promise.all(
+        slice.map(async (u) => {
+          try {
+            const existing = await cache.match(u);
+            if (!existing) {
+              const r = await fetch(u);
+              if (r.ok) await cache.put(u, r.clone());
+            }
+          } catch {
+            // ignore individual fetch errors
+          }
+        })
+      );
+      done = Math.min(total, i + slice.length);
+      const pct = Math.round((done / total) * 100);
+      btn.innerHTML = `<span style="font-size: 16px;">⏳</span> Offline (${pct}%)`;
+    }
+    btn.innerHTML = `<span style="font-size: 18px;">✅</span> Offline 100%`;
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = origHtml;
+    }, 3500);
+  } catch {
+    btn.disabled = false;
+    btn.innerHTML = origHtml;
+  }
+}
+
 function wireSettingsPanel(): void {
-  const installBtn = document.getElementById('btn-install-pwa');
+  const installContainer = document.getElementById('pwa-install-container');
+  const isStandalone =
+    window.matchMedia?.('(display-mode: standalone)')?.matches ||
+    (navigator as any).standalone === true;
+  if (installContainer && isStandalone) {
+    installContainer.style.display = 'none';
+  }
+
+  const installBtn = document.getElementById('btn-install-pwa') as HTMLButtonElement | null;
   if (installBtn) {
     installBtn.addEventListener('click', async () => {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === 'accepted') {
-          console.log('User accepted the install prompt');
-        }
+      const promptEvent = deferredPrompt || (window as any).__deferredPwaPrompt;
+      if (promptEvent) {
+        promptEvent.prompt();
+        const { outcome } = await promptEvent.userChoice;
         deferredPrompt = null;
-        const installContainer = document.getElementById('pwa-install-container');
-        if (installContainer) installContainer.style.display = 'none';
+        (window as any).__deferredPwaPrompt = null;
+        if (outcome === 'accepted') {
+          if (installContainer) installContainer.style.display = 'none';
+          return;
+        }
       }
+      await cacheAllForOffline(installBtn);
     });
   }
   const langSelect = el<HTMLSelectElement>("setting-lang");
@@ -696,23 +773,18 @@ function wireRouting(): void {
 
 async function init(): Promise<void> {
   if ('serviceWorker' in navigator) {
-    const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-    if (isLocal) {
-      navigator.serviceWorker.getRegistrations?.().then((regs) => {
-        for (const r of regs) void r.unregister();
+    if ('caches' in window) {
+      caches.keys().then((keys) => {
+        for (const k of keys) {
+          if (k !== 'abhidhamma-cache-v12') void caches.delete(k);
+        }
       }).catch(() => {});
-      if ('caches' in window) {
-        caches.keys().then((keys) => {
-          for (const k of keys) void caches.delete(k);
-        }).catch(() => {});
-      }
-    } else {
-      navigator.serviceWorker.register('service-worker.js').then((reg) => {
-        void reg.update();
-      }).catch((err) => {
-        console.error('Service Worker registration failed: ', err);
-      });
     }
+    navigator.serviceWorker.register('service-worker.js').then((reg) => {
+      void reg.update();
+    }).catch((err) => {
+      console.error('Service Worker registration failed: ', err);
+    });
   }
 
   try {

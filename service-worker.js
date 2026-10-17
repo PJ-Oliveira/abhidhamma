@@ -1,4 +1,4 @@
-const CACHE_NAME = 'abhidhamma-cache-v11';
+const CACHE_NAME = 'abhidhamma-cache-v12';
 
 // App shell files to cache on install
 const CORE_ASSETS = [
@@ -9,6 +9,8 @@ const CORE_ASSETS = [
   './fonts/GentiumBookPlus-Regular.ttf',
   './fonts/GentiumBookPlus-Italic.ttf',
   './img/logo.png',
+  './img/icon-192.png',
+  './img/icon-512.png',
   './data/manifest.json',
   './data/dictionary/pali_core.json',
   './data/dictionary/common_pali.json',

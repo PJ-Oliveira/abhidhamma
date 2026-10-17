@@ -1,19 +1,19 @@
-import { t } from "./i18n.js?v=489adbde";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=489adbde";
-import { renderTree, markActiveLeaf } from "./tree.js?v=489adbde";
-import { loadChunk, renderSegments } from "./reader.js?v=489adbde";
-import { initDictionaryPanel } from "./dictionary.js?v=489adbde";
-import { initSearchPanel } from "./search.js?v=489adbde";
-import { initExportPanel } from "./export.js?v=489adbde";
-import { initSrsPanel } from "./srs.js?v=489adbde";
-import { initToolsPanel } from "./tools/tools.js?v=489adbde";
-import "./tools/mindmap.js?v=489adbde";
-import "./tools/patthana.js?v=489adbde";
-import "./tools/vithi.js?v=489adbde";
-import "./tools/matikas.js?v=489adbde";
-import "./tools/cetasika.js?v=489adbde";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=489adbde";
-import { createLogger } from "./logger.js?v=489adbde";
+import { t } from "./i18n.js?v=d88a8789";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=d88a8789";
+import { renderTree, markActiveLeaf } from "./tree.js?v=d88a8789";
+import { loadChunk, renderSegments } from "./reader.js?v=d88a8789";
+import { initDictionaryPanel } from "./dictionary.js?v=d88a8789";
+import { initSearchPanel } from "./search.js?v=d88a8789";
+import { initExportPanel } from "./export.js?v=d88a8789";
+import { initSrsPanel } from "./srs.js?v=d88a8789";
+import { initToolsPanel } from "./tools/tools.js?v=d88a8789";
+import "./tools/mindmap.js?v=d88a8789";
+import "./tools/patthana.js?v=d88a8789";
+import "./tools/vithi.js?v=d88a8789";
+import "./tools/matikas.js?v=d88a8789";
+import "./tools/cetasika.js?v=d88a8789";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=d88a8789";
+import { createLogger } from "./logger.js?v=d88a8789";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -464,29 +464,104 @@ function rerenderContent() {
     applyStaticI18n();
     setTimeout(() => { content.scrollTop = savedScroll; }, 0);
 }
-let deferredPrompt;
+let deferredPrompt = window.__deferredPwaPrompt ?? null;
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
+    window.__deferredPwaPrompt = e;
     const installContainer = document.getElementById('pwa-install-container');
     if (installContainer)
         installContainer.style.display = 'block';
 });
+window.addEventListener('appinstalled', () => {
+    deferredPrompt = null;
+    window.__deferredPwaPrompt = null;
+    const installContainer = document.getElementById('pwa-install-container');
+    if (installContainer)
+        installContainer.style.display = 'none';
+});
+async function cacheAllForOffline(btn) {
+    if (!('caches' in window))
+        return;
+    const origHtml = btn.innerHTML;
+    btn.disabled = true;
+    try {
+        const cache = await caches.open('abhidhamma-cache-v12');
+        const urls = [
+            './',
+            './index.html',
+            './manifest.json',
+            './css/style.css',
+            './data/manifest.json',
+            './data/dictionary/pali_core.json',
+            './data/dictionary/common_pali.json',
+        ];
+        if (state.manifest?.groups) {
+            for (const group of Object.values(state.manifest.groups)) {
+                for (const work of group) {
+                    for (const part of Object.values(work.parts || {})) {
+                        for (const file of part.files || []) {
+                            urls.push(`./data/works/${work.id}/${file}`);
+                        }
+                    }
+                }
+            }
+        }
+        const total = urls.length;
+        let done = 0;
+        const BATCH = 6;
+        for (let i = 0; i < total; i += BATCH) {
+            const slice = urls.slice(i, i + BATCH);
+            await Promise.all(slice.map(async (u) => {
+                try {
+                    const existing = await cache.match(u);
+                    if (!existing) {
+                        const r = await fetch(u);
+                        if (r.ok)
+                            await cache.put(u, r.clone());
+                    }
+                }
+                catch {
+                }
+            }));
+            done = Math.min(total, i + slice.length);
+            const pct = Math.round((done / total) * 100);
+            btn.innerHTML = `<span style="font-size: 16px;">⏳</span> Offline (${pct}%)`;
+        }
+        btn.innerHTML = `<span style="font-size: 18px;">✅</span> Offline 100%`;
+        setTimeout(() => {
+            btn.disabled = false;
+            btn.innerHTML = origHtml;
+        }, 3500);
+    }
+    catch {
+        btn.disabled = false;
+        btn.innerHTML = origHtml;
+    }
+}
 function wireSettingsPanel() {
+    const installContainer = document.getElementById('pwa-install-container');
+    const isStandalone = window.matchMedia?.('(display-mode: standalone)')?.matches ||
+        navigator.standalone === true;
+    if (installContainer && isStandalone) {
+        installContainer.style.display = 'none';
+    }
     const installBtn = document.getElementById('btn-install-pwa');
     if (installBtn) {
         installBtn.addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') {
-                    console.log('User accepted the install prompt');
-                }
+            const promptEvent = deferredPrompt || window.__deferredPwaPrompt;
+            if (promptEvent) {
+                promptEvent.prompt();
+                const { outcome } = await promptEvent.userChoice;
                 deferredPrompt = null;
-                const installContainer = document.getElementById('pwa-install-container');
-                if (installContainer)
-                    installContainer.style.display = 'none';
+                window.__deferredPwaPrompt = null;
+                if (outcome === 'accepted') {
+                    if (installContainer)
+                        installContainer.style.display = 'none';
+                    return;
+                }
             }
+            await cacheAllForOffline(installBtn);
         });
     }
     const langSelect = el("setting-lang");
@@ -629,26 +704,19 @@ function wireRouting() {
 }
 async function init() {
     if ('serviceWorker' in navigator) {
-        const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-        if (isLocal) {
-            navigator.serviceWorker.getRegistrations?.().then((regs) => {
-                for (const r of regs)
-                    void r.unregister();
-            }).catch(() => { });
-            if ('caches' in window) {
-                caches.keys().then((keys) => {
-                    for (const k of keys)
+        if ('caches' in window) {
+            caches.keys().then((keys) => {
+                for (const k of keys) {
+                    if (k !== 'abhidhamma-cache-v12')
                         void caches.delete(k);
-                }).catch(() => { });
-            }
+                }
+            }).catch(() => { });
         }
-        else {
-            navigator.serviceWorker.register('service-worker.js').then((reg) => {
-                void reg.update();
-            }).catch((err) => {
-                console.error('Service Worker registration failed: ', err);
-            });
-        }
+        navigator.serviceWorker.register('service-worker.js').then((reg) => {
+            void reg.update();
+        }).catch((err) => {
+            console.error('Service Worker registration failed: ', err);
+        });
     }
     try {
         const res = await fetch("data/manifest.json");
