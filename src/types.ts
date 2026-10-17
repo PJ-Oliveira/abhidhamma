@@ -110,18 +110,25 @@ export interface CoreDictEntry {
 
 export interface CoreDictData {
   meta: {
-    version: number;
-    stage: number;
-    stage_metric: string;
-    pct_target: number;
-    pct_covered: number;
-    total_corpus_tokens: number;
-    language: string[];
-    source: string;
-    count: number;
+    version?: number;
+    stage?: number;
+    stage_metric?: string;
+    pct_target?: number;
+    pct_covered?: number;
+    total_corpus_tokens?: number;
+    language?: string[];
+    source?: string;
+    count?: number;
+    description?: string;
+    corpus_total_tokens?: number;
+    corpus_unique_words?: number;
+    entry_count?: number;
+    root_count?: number;
+    form_count?: number;
   };
   roots: Record<string, DictRootInfo>;
   entries: CoreDictEntry[];
+  forms?: Record<string, string>;
 }
 
 export interface SearchHit {

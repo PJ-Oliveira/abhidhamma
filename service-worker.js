@@ -1,6 +1,6 @@
-const CACHE_NAME = 'abhidhamma-cache-v9';
+const CACHE_NAME = 'abhidhamma-cache-v11';
 
-// App shell files to cache immediately on install
+// App shell files to cache on install
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -29,15 +29,13 @@ const CORE_ASSETS = [
 
 async function precacheAllData() {
   try {
-    // Delay 10 seconds before aggressively fetching 140MB of data
-    // to ensure the user can start reading smoothly without network starvation.
     await new Promise(resolve => setTimeout(resolve, 10000));
-    
+
     const cache = await caches.open(CACHE_NAME);
     const res = await fetch('./data/manifest.json');
     if (!res.ok) return;
     const manifest = await res.json();
-    
+
     const urlsToCache = [];
     if (manifest.groups) {
       for (const group of Object.values(manifest.groups)) {
@@ -54,68 +52,87 @@ async function precacheAllData() {
         }
       }
     }
-    
-    console.log(`[SW] Pre-caching ${urlsToCache.length} data files for offline reading...`);
-    const BATCH_SIZE = 3; // Lower batch size to prevent CPU/Network choking
-    let cached = 0;
+
+    const BATCH_SIZE = 3;
     for (let i = 0; i < urlsToCache.length; i += BATCH_SIZE) {
       const batch = urlsToCache.slice(i, i + BATCH_SIZE);
-      await Promise.all(batch.map(url => 
+      await Promise.all(batch.map(url =>
         cache.match(url).then(existing => {
-          if (existing) return; // already cached
+          if (existing) return;
           return fetch(url).then(r => {
             if (r.ok) cache.put(url, r.clone());
           });
         }).catch(() => {})
       ));
-      cached += batch.length;
-      if (cached % 30 === 0) {
-        console.log(`[SW] Cached ${cached}/${urlsToCache.length} files...`);
-      }
     }
-    console.log('[SW] Finished precaching all books for offline use.');
   } catch (err) {
     console.error('[SW] Precache error:', err);
   }
 }
 
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(CORE_ASSETS);
+      return cache.addAll(CORE_ASSETS).catch(() => {});
     })
   );
-  // Start background precache of all text data (don't block install)
-  event.waitUntil(precacheAllData());
-  self.skipWaiting();
+  // Run background precache without blocking install completion
+  void precacheAllData();
 });
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((name) => {
-          if (name !== CACHE_NAME) {
-            return caches.delete(name);
-          }
-        })
-      );
-    })
-  );
-  self.clients.claim();
+  event.waitUntil((async () => {
+    const cacheNames = await caches.keys();
+    let deletedOld = false;
+    for (const name of cacheNames) {
+      if (name !== CACHE_NAME) {
+        deletedOld = true;
+        await caches.delete(name);
+      }
+    }
+    await self.clients.claim();
+    if (deletedOld) {
+      const windowClients = await self.clients.matchAll({ type: 'window' });
+      for (const client of windowClients) {
+        try {
+          await client.navigate(client.url);
+        } catch {
+          // ignore if navigation not allowed
+        }
+      }
+    }
+  })());
 });
 
 self.addEventListener('fetch', (event) => {
-  // Skip non-GET requests
   if (event.request.method !== 'GET') return;
-  // Skip chrome-extension and other non-http(s)
   if (!event.request.url.startsWith('http')) return;
 
+  const url = new URL(event.request.url);
+  const isLocalhost = url.hostname === 'localhost' || url.hostname === '127.0.0.1';
+
+  // Network-first on localhost or for app code/HTML so updates appear immediately
+  if (isLocalhost || url.pathname.endsWith('.js') || url.pathname.endsWith('.css') || url.pathname.endsWith('.html') || url.pathname === '/') {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse.ok) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseClone);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => caches.match(event.request, { ignoreSearch: true }))
+    );
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request, { ignoreSearch: true }).then((cachedResponse) => {
-      // Return cached version immediately if available
+    caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
-        // Also revalidate in background (stale-while-revalidate)
         fetch(event.request).then((networkResponse) => {
           if (networkResponse.ok) {
             caches.open(CACHE_NAME).then((cache) => {
@@ -126,7 +143,6 @@ self.addEventListener('fetch', (event) => {
         return cachedResponse;
       }
 
-      // Not in cache — fetch from network and cache it
       return fetch(event.request).then((networkResponse) => {
         if (networkResponse.ok) {
           const responseClone = networkResponse.clone();
@@ -136,7 +152,6 @@ self.addEventListener('fetch', (event) => {
         }
         return networkResponse;
       }).catch(() => {
-        // Offline and not cached — return a fallback for HTML requests
         if (event.request.headers.get('accept')?.includes('text/html')) {
           return caches.match('./index.html', { ignoreSearch: true });
         }
@@ -144,3 +159,4 @@ self.addEventListener('fetch', (event) => {
     })
   );
 });
+

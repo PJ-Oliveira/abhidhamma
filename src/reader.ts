@@ -29,6 +29,49 @@ export interface RenderSegmentsOptions {
   effectiveLang?: TranslationLang;
 }
 
+const PALI_WORD_RE = /[A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]+(?:[’'][A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]+)*/g;
+
+function wrapPaliWords(root: HTMLElement): void {
+  const textNodes: Text[] = [];
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  let current = walker.nextNode();
+  while (current) {
+    const parent = current.parentElement;
+    if (!parent || !parent.closest(".var-note")) {
+      textNodes.push(current as Text);
+    }
+    current = walker.nextNode();
+  }
+
+  for (const textNode of textNodes) {
+    const text = textNode.nodeValue;
+    if (!text) continue;
+    PALI_WORD_RE.lastIndex = 0;
+    if (!PALI_WORD_RE.test(text)) continue;
+
+    PALI_WORD_RE.lastIndex = 0;
+    const frag = document.createDocumentFragment();
+    let lastIdx = 0;
+    let match: RegExpExecArray | null;
+    while ((match = PALI_WORD_RE.exec(text)) !== null) {
+      if (match.index > lastIdx) {
+        frag.appendChild(document.createTextNode(text.slice(lastIdx, match.index)));
+      }
+      const word = match[0];
+      const span = document.createElement("span");
+      span.className = "pali-word";
+      span.dataset.word = word;
+      span.textContent = word;
+      frag.appendChild(span);
+      lastIdx = match.index + word.length;
+    }
+    if (lastIdx < text.length) {
+      frag.appendChild(document.createTextNode(text.slice(lastIdx)));
+    }
+    textNode.parentNode?.replaceChild(frag, textNode);
+  }
+}
+
 export function renderSegments(segments: Segment[], container: HTMLElement, options: RenderSegmentsOptions = {}): void {
   const { onNoteHover, onBookmarkToggle, isBookmarked } = options;
   container.innerHTML = "";
@@ -53,6 +96,7 @@ export function renderSegments(segments: Segment[], container: HTMLElement, opti
     }
     const paliText = document.createElement("span");
     paliText.innerHTML = seg.pali || "";
+    wrapPaliWords(paliText);
     paliLine.appendChild(paliText);
 
     const bookmarkBtn = document.createElement("button");

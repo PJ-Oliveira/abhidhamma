@@ -436,7 +436,23 @@ sup.var-note { color: var(--accent); cursor: help; font-size: .7em; }
 #export-panel-body button:hover { opacity: .88; }
 #export-panel-body button:disabled { opacity: .5; cursor: default; }
 
-/* ---- bidirectional selection ---- */
+/* ---- granular pali word selection ---- */
+.pali-line .pali-word {
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0 1px;
+  margin: 0 -1px;
+  transition: background-color 0.14s ease, color 0.14s ease, box-shadow 0.14s ease;
+}
+.pali-line .pali-word:hover {
+  background-color: rgba(179, 102, 63, 0.14);
+}
+.pali-line .pali-word.pali-word-selected {
+  background-color: rgba(179, 102, 63, 0.26);
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
 .selection-counterpart {
   background: rgba(179, 102, 63, 0.10);
   outline: 2px solid var(--accent-soft);

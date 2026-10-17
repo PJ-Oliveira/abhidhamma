@@ -7,9 +7,13 @@ const log = createLogger("dictionary");
 
 let dictData: DictEntry[] = [];
 let coreData: CoreDictEntry[] = [];
+let coreByHeadword = new Map<string, CoreDictEntry>();
+let formsMap: Record<string, string> = {};
 let rootInfo: Record<string, DictRootInfo> = {};
 let dictReady = false;
 let loadPromise: Promise<void> | null = null;
+let activeDictInput: HTMLInputElement | null = null;
+let activeDictRender: (() => void) | null = null;
 
 function altForms(headword: string): string[] {
   return headword.split("/").map((s) => s.trim().toLowerCase());
@@ -20,12 +24,22 @@ async function ensureLoaded(): Promise<void> {
   loadPromise = (async () => {
     const loaded: DictEntry[] = [];
     let core: CoreDictEntry[] = [];
+    const byHead = new Map<string, CoreDictEntry>();
+    let loadedForms: Record<string, string> = {};
     try {
       const res = await fetch("data/dictionary/pali_core.json");
       if (res.ok) {
         const data = (await res.json()) as CoreDictData;
-        core = data.entries;
-        rootInfo = data.roots;
+        core = data.entries ?? [];
+        rootInfo = data.roots ?? {};
+        loadedForms = data.forms ?? {};
+        for (const entry of core) {
+          const hLower = entry.h.toLowerCase();
+          if (!byHead.has(hLower)) byHead.set(hLower, entry);
+          for (const alt of altForms(entry.h)) {
+            if (!byHead.has(alt)) byHead.set(alt, entry);
+          }
+        }
       }
     } catch (err) {
       log.warn("dicionário rigoroso (pali_core.json) não disponível", err);
@@ -34,14 +48,18 @@ async function ensureLoaded(): Promise<void> {
       const res = await fetch("data/dictionary/common_pali.json");
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = (await res.json()) as CommonDictData;
-      const coreHeadwords = new Set(core.map((e) => e.h.toLowerCase()));
-      loaded.push(...data.entries.filter((e) => !altForms(e.h).some((f) => coreHeadwords.has(f))));
+      loaded.push(...data.entries.filter((e) => !altForms(e.h).some((f) => byHead.has(f))));
     } catch (err) {
       log.warn("dicionário de palavras comuns não disponível", err);
     }
     dictData = loaded;
     coreData = core;
+    coreByHeadword = byHead;
+    formsMap = loadedForms;
     dictReady = loaded.length > 0 || core.length > 0;
+    if (!dictReady) {
+      loadPromise = null;
+    }
   })();
   return loadPromise;
 }
@@ -188,40 +206,126 @@ export function normalizePali(token: string): string[] {
   return [...forms];
 }
 
-export async function lookupPali(word: string): Promise<CoreDictEntry | DictEntry | null> {
-  await ensureLoaded();
+function resolveFormTarget(surface: string, target: string): CoreDictEntry | null {
+  if (!target.includes("+")) {
+    return coreByHeadword.get(target.toLowerCase()) ?? null;
+  }
+
+  const parts = target.split("+").filter(Boolean);
+  const partEntries = parts.map((p) => ({
+    part: p,
+    entry: coreByHeadword.get(p.toLowerCase()) ?? null,
+  }));
+
+  const summarize = (lang: "en" | "pt" | "es"): string =>
+    partEntries
+      .map(({ part, entry }) => {
+        const gloss = entry?.senses[0]?.[lang]?.split(";")[0]?.trim();
+        return gloss ? `${part} (${gloss})` : part;
+      })
+      .join(" + ");
+
+  const senses: CoreDictEntry["senses"] = [
+    {
+      id: `${surface}_comp`,
+      pos: "comp.",
+      grammar: parts.join(" + "),
+      en: summarize("en"),
+      pt: summarize("pt"),
+      es: summarize("es"),
+    },
+  ];
+
+  const seenParts = new Set<string>();
+  for (const { part, entry } of partEntries) {
+    const key = part.toLowerCase();
+    if (!entry || seenParts.has(key)) continue;
+    seenParts.add(key);
+    const s0 = entry.senses[0];
+    if (s0) {
+      const compSense: CoreDictEntry["senses"][number] = {
+        id: entry.h,
+        en: s0.en,
+        pt: s0.pt,
+        es: s0.es,
+      };
+      if (s0.pos) compSense.pos = s0.pos;
+      if (s0.grammar) compSense.grammar = s0.grammar;
+      if (s0.root) compSense.root = s0.root;
+      if (s0.syn) compSense.syn = s0.syn;
+      if (s0.ant) compSense.ant = s0.ant;
+      senses.push(compSense);
+    }
+  }
+
+  return {
+    h: surface,
+    freq: 1,
+    pct: 0,
+    senses,
+  };
+}
+
+function lookupPaliSync(word: string): CoreDictEntry | DictEntry | null {
   const raw = word
     .toLowerCase()
     .normalize("NFC")
-    .replace(/[.,;:!?()\[\]"']/g, "")
+    .replace(/[.,;:!?()\[\]"'«»“”‘’—–\-]/g, "")
     .trim();
-  if (!raw || raw.length < 2) return null;
+  if (!raw) return null;
 
-  const candidates = normalizePali(raw);
+  const cleaned = raw.replace(/^[’']+|[’']+$/g, "") || raw;
+  if (cleaned.length < 2) {
+    return coreByHeadword.get(cleaned) ?? null;
+  }
 
-  // Phase 1: exact match across all candidate forms (original first, then normalised)
+  const candidates = normalizePali(cleaned);
+
+  // Phase 1: O(1) exact headword match across candidate forms
   for (const q of candidates) {
-    const exact = coreData.find((e) => e.h.toLowerCase() === q);
+    const exact = coreByHeadword.get(q);
     if (exact) return exact;
   }
 
-  // Phase 2: inflected match across all candidates (query starts with headword, longest wins)
+  // Phase 2: O(1) inflected/compound form mapping from formsMap
   for (const q of candidates) {
-    const inflected = coreData
-      .filter((e) => q.startsWith(e.h.toLowerCase()) && e.h.length >= 3)
-      .sort((a, b) => b.h.length - a.h.length);
-    if (inflected.length > 0) return inflected[0] ?? null;
+    const target = formsMap[q];
+    if (target) {
+      const resolved = resolveFormTarget(cleaned, target);
+      if (resolved) return resolved;
+    }
   }
 
-  // Phase 3: prefix match on original form only (headword starts with raw selection)
-  if (raw.length >= 3) {
-    const prefix = coreData
-      .filter((e) => e.h.toLowerCase().startsWith(raw))
-      .sort((a, b) => b.freq - a.freq);
-    if (prefix.length > 0) return prefix[0] ?? null;
+  // Phase 3: exact match in common_pali.json
+  for (const q of candidates) {
+    const simpleExact = dictData.find((e) => altForms(e.h).includes(q));
+    if (simpleExact) return simpleExact;
   }
 
-  // Phase 4: common dict fallback (all candidate forms)
+  // Phase 4: inflected prefix match across candidates (longest headword >= 4 chars wins)
+  for (const q of candidates) {
+    let best: CoreDictEntry | null = null;
+    for (const e of coreData) {
+      const eh = e.h.toLowerCase();
+      if (eh.length >= 4 && q.startsWith(eh)) {
+        if (!best || eh.length > best.h.length) best = e;
+      }
+    }
+    if (best) return best;
+  }
+
+  // Phase 5: prefix match on original form (headword starts with raw selection)
+  if (cleaned.length >= 3) {
+    let bestPrefix: CoreDictEntry | null = null;
+    for (const e of coreData) {
+      if (e.h.toLowerCase().startsWith(cleaned)) {
+        if (!bestPrefix || e.freq > bestPrefix.freq) bestPrefix = e;
+      }
+    }
+    if (bestPrefix) return bestPrefix;
+  }
+
+  // Phase 6: common dict fallback (all candidate forms)
   for (const q of candidates) {
     const simple = dictData.find((e) =>
       altForms(e.h).some(
@@ -234,7 +338,49 @@ export async function lookupPali(word: string): Promise<CoreDictEntry | DictEntr
   return null;
 }
 
+export async function lookupPali(word: string): Promise<CoreDictEntry | DictEntry | null> {
+  await ensureLoaded();
+  return lookupPaliSync(word);
+}
+
+export function showWordInDictionaryPanel(word: string): void {
+  const cleaned = word
+    .normalize("NFC")
+    .replace(/[.,;:!?()\[\]"'«»“”‘’—–\-]/g, "")
+    .trim();
+  if (!cleaned) return;
+
+  const sidePanel = document.getElementById("side-panel");
+  const collapseBtn = document.getElementById("panel-collapse");
+  if (sidePanel && sidePanel.classList.contains("collapsed")) {
+    const saved = localStorage.getItem("panelW");
+    const w = saved ? Math.max(120, parseInt(saved, 10)) : 280;
+    document.documentElement.style.setProperty("--panel-w", `${w}px`);
+    sidePanel.classList.remove("collapsed");
+    if (collapseBtn) collapseBtn.textContent = "‹";
+  }
+
+  document.querySelectorAll<HTMLElement>(".rail-btn").forEach((b) => {
+    b.classList.toggle("active", b.dataset.panel === "dictionary");
+  });
+  document.querySelectorAll<HTMLElement>(".panel").forEach((p) => {
+    p.classList.toggle("active", p.id === "panel-dictionary");
+  });
+
+  const inputEl = activeDictInput ?? (document.getElementById("dict-search") as HTMLInputElement | null);
+  if (inputEl) {
+    inputEl.value = cleaned;
+    if (activeDictRender) {
+      activeDictRender();
+    } else {
+      inputEl.dispatchEvent(new Event("input", { bubbles: true }));
+    }
+  }
+  if (sidePanel) sidePanel.scrollTop = 0;
+}
+
 export function initDictionaryPanel(inputEl: HTMLInputElement, resultsEl: HTMLElement): void {
+  activeDictInput = inputEl;
   const ready = ensureLoaded();
 
   const renderHint = (key: string) => {
@@ -244,24 +390,31 @@ export function initDictionaryPanel(inputEl: HTMLInputElement, resultsEl: HTMLEl
     p.textContent = t(key, settings.uiLang);
     resultsEl.appendChild(p);
   };
-  
 
   const render = () => {
-    const query = inputEl.value.trim().toLowerCase();
-    
+    const rawInput = inputEl.value.trim();
+    const query = rawInput
+      .toLowerCase()
+      .normalize("NFC")
+      .replace(/[.,;:!?()\[\]"'«»“”‘’—–\-]/g, "")
+      .trim();
+
     // Update URL if dictionary is active panel
     const activeBtn = document.querySelector(".rail-btn.active") as HTMLElement;
     if (activeBtn && activeBtn.dataset.panel === "dictionary") {
-        const hashBase = location.hash.split('?')[0];
-        if (query) {
-            history.replaceState(null, "", `${hashBase}?q=${encodeURIComponent(query)}`);
-        } else if (location.hash.includes('?q=')) {
-            history.replaceState(null, "", hashBase);
-        }
+      const hashBase = location.hash.split("?")[0];
+      if (query) {
+        history.replaceState(null, "", `${hashBase}?q=${encodeURIComponent(query)}`);
+      } else if (location.hash.includes("?q=")) {
+        history.replaceState(null, "", hashBase);
+      }
     }
 
     if (!dictReady) {
       renderHint("dictNotReady");
+      void ensureLoaded().then(() => {
+        if (dictReady) render();
+      });
       return;
     }
     if (!query) {
@@ -269,30 +422,64 @@ export function initDictionaryPanel(inputEl: HTMLInputElement, resultsEl: HTMLEl
       return;
     }
 
+    const resolvedHit = lookupPaliSync(query);
+
     const coreMatches = coreData
       .filter((entry) => entry.h.toLowerCase().startsWith(query))
-      .sort((a, b) => b.freq - a.freq);
+      .sort((a, b) => {
+        const aExact = a.h.toLowerCase() === query ? 1 : 0;
+        const bExact = b.h.toLowerCase() === query ? 1 : 0;
+        if (aExact !== bExact) return bExact - aExact;
+        return b.freq - a.freq;
+      })
+      .slice(0, 60);
 
     const simpleMatches = dictData
       .filter((entry) => altForms(entry.h).some((form) => form.startsWith(query)))
       .sort((a, b) => (b.freq ?? 0) - (a.freq ?? 0))
-      .slice(0, 100);
+      .slice(0, 40);
 
-    if (!coreMatches.length && !simpleMatches.length) {
+    if (!resolvedHit && !coreMatches.length && !simpleMatches.length) {
       renderHint("noResults");
       return;
     }
 
     resultsEl.innerHTML = "";
+    const seenHeadwords = new Set<string>();
+
+    if (resolvedHit) {
+      seenHeadwords.add(resolvedHit.h.toLowerCase());
+      if ("senses" in resolvedHit) {
+        resultsEl.appendChild(renderCoreEntry(resolvedHit));
+      } else {
+        resultsEl.appendChild(renderSimpleEntry(resolvedHit));
+      }
+    }
+
     for (const entry of coreMatches) {
+      const key = entry.h.toLowerCase();
+      if (seenHeadwords.has(key)) continue;
+      seenHeadwords.add(key);
       resultsEl.appendChild(renderCoreEntry(entry));
     }
     for (const entry of simpleMatches) {
+      const key = entry.h.toLowerCase();
+      if (seenHeadwords.has(key)) continue;
+      seenHeadwords.add(key);
       resultsEl.appendChild(renderSimpleEntry(entry));
     }
   };
 
+  activeDictRender = render;
   inputEl.addEventListener("input", render);
+  window.addEventListener("languageChanged", render);
+  window.addEventListener("paliWordSelected", (e: Event) => {
+    const word = (e as CustomEvent<{ word?: string }>).detail?.word;
+    if (word && inputEl.value !== word) {
+      inputEl.value = word;
+    }
+    render();
+  });
   void ready.then(render);
   render();
 }

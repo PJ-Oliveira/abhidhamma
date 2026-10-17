@@ -1,6 +1,6 @@
-import { settings } from "./state.js?v=15451f96";
-import { createLogger } from "./logger.js?v=15451f96";
-import { t } from "./i18n.js?v=15451f96";
+import { settings } from "./state.js?v=489adbde";
+import { createLogger } from "./logger.js?v=489adbde";
+import { t } from "./i18n.js?v=489adbde";
 const log = createLogger("reader");
 const chunkCache = new Map();
 export async function loadChunk(workId, partKey, fileName) {
@@ -16,6 +16,47 @@ export async function loadChunk(workId, partKey, fileName) {
     const data = (await res.json());
     chunkCache.set(cacheKey, data);
     return data;
+}
+const PALI_WORD_RE = /[A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]+(?:[’'][A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]+)*/g;
+function wrapPaliWords(root) {
+    const textNodes = [];
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    let current = walker.nextNode();
+    while (current) {
+        const parent = current.parentElement;
+        if (!parent || !parent.closest(".var-note")) {
+            textNodes.push(current);
+        }
+        current = walker.nextNode();
+    }
+    for (const textNode of textNodes) {
+        const text = textNode.nodeValue;
+        if (!text)
+            continue;
+        PALI_WORD_RE.lastIndex = 0;
+        if (!PALI_WORD_RE.test(text))
+            continue;
+        PALI_WORD_RE.lastIndex = 0;
+        const frag = document.createDocumentFragment();
+        let lastIdx = 0;
+        let match;
+        while ((match = PALI_WORD_RE.exec(text)) !== null) {
+            if (match.index > lastIdx) {
+                frag.appendChild(document.createTextNode(text.slice(lastIdx, match.index)));
+            }
+            const word = match[0];
+            const span = document.createElement("span");
+            span.className = "pali-word";
+            span.dataset.word = word;
+            span.textContent = word;
+            frag.appendChild(span);
+            lastIdx = match.index + word.length;
+        }
+        if (lastIdx < text.length) {
+            frag.appendChild(document.createTextNode(text.slice(lastIdx)));
+        }
+        textNode.parentNode?.replaceChild(frag, textNode);
+    }
 }
 export function renderSegments(segments, container, options = {}) {
     const { onNoteHover, onBookmarkToggle, isBookmarked } = options;
@@ -41,6 +82,7 @@ export function renderSegments(segments, container, options = {}) {
         }
         const paliText = document.createElement("span");
         paliText.innerHTML = seg.pali || "";
+        wrapPaliWords(paliText);
         paliLine.appendChild(paliText);
         const bookmarkBtn = document.createElement("button");
         bookmarkBtn.className = "bookmark-toggle";

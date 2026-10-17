@@ -73,4 +73,54 @@ describe('Selection UI Module', () => {
         expect(popover.classList.contains('hidden')).toBe(true);
     }
   });
+
+  it('should highlight only the isolated .pali-word and activate the Dictionary panel without highlighting the whole paragraph', async () => {
+    document.body.innerHTML = `
+      <button class="rail-btn active" data-panel="tipitaka"></button>
+      <button class="rail-btn" data-panel="dictionary"></button>
+      <aside id="side-panel">
+        <div id="panel-tipitaka" class="panel active"></div>
+        <div id="panel-dictionary" class="panel">
+          <input id="dict-search" type="search" />
+          <div id="dict-results"></div>
+        </div>
+      </aside>
+      <div id="content">
+        <div class="seg" data-seg-id="1">
+          <div class="pali-line">
+            <span class="pali-word" data-word="Tikamātikā">Tikamātikā</span>
+            <span class="pali-word" data-word="kusalā">kusalā</span>
+          </div>
+          <div class="translation-line">Matriz de tríades hábeis</div>
+        </div>
+      </div>
+      <div id="selection-popover" class="selection-popover hidden"></div>
+    `;
+
+    global.window.getSelection = vi.fn().mockReturnValue({
+      isCollapsed: true,
+      rangeCount: 0,
+      toString: () => ""
+    }) as any;
+
+    initSelectionHandler(document.getElementById('content')!);
+
+    const firstWord = document.querySelector('.pali-word[data-word="Tikamātikā"]') as HTMLElement;
+    const secondWord = document.querySelector('.pali-word[data-word="kusalā"]') as HTMLElement;
+    const translLine = document.querySelector('.translation-line') as HTMLElement;
+    const paliLine = document.querySelector('.pali-line') as HTMLElement;
+
+    firstWord.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
+    await new Promise(r => setTimeout(r, 50));
+
+    expect(firstWord.classList.contains('pali-word-selected')).toBe(true);
+    expect(secondWord.classList.contains('pali-word-selected')).toBe(false);
+    expect(translLine.classList.contains('selection-counterpart')).toBe(false);
+    expect(paliLine.classList.contains('selection-counterpart')).toBe(false);
+
+    const dictPanel = document.getElementById('panel-dictionary') as HTMLElement;
+    const dictInput = document.getElementById('dict-search') as HTMLInputElement;
+    expect(dictPanel.classList.contains('active')).toBe(true);
+    expect(dictInput.value).toBe('Tikamātikā');
+  });
 });

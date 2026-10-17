@@ -696,9 +696,23 @@ function wireRouting(): void {
 
 async function init(): Promise<void> {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js').catch((err) => {
-      console.error('Service Worker registration failed: ', err);
-    });
+    const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    if (isLocal) {
+      navigator.serviceWorker.getRegistrations?.().then((regs) => {
+        for (const r of regs) void r.unregister();
+      }).catch(() => {});
+      if ('caches' in window) {
+        caches.keys().then((keys) => {
+          for (const k of keys) void caches.delete(k);
+        }).catch(() => {});
+      }
+    } else {
+      navigator.serviceWorker.register('service-worker.js').then((reg) => {
+        void reg.update();
+      }).catch((err) => {
+        console.error('Service Worker registration failed: ', err);
+      });
+    }
   }
 
   try {

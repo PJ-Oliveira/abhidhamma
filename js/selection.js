@@ -1,7 +1,8 @@
-import { lookupPali } from "./dictionary.js?v=15451f96";
-import { settings } from "./state.js?v=15451f96";
-import { t } from "./i18n.js?v=15451f96";
+import { lookupPali } from "./dictionary.js?v=489adbde";
+import { settings } from "./state.js?v=489adbde";
+import { t } from "./i18n.js?v=489adbde";
 let currentHighlight = null;
+let selectedWordSpans = [];
 let popoverEl = null;
 let contentEl = null;
 export function initSelectionHandler(container) {
@@ -12,7 +13,12 @@ export function initSelectionHandler(container) {
         if (!popoverEl || !contentEl)
             return;
         const target = e.target;
-        if (!popoverEl.contains(target) && !contentEl.contains(target)) {
+        const sidePanel = document.getElementById("side-panel");
+        const iconRail = document.getElementById("icon-rail");
+        if (!popoverEl.contains(target) &&
+            !contentEl.contains(target) &&
+            (!sidePanel || !sidePanel.contains(target)) &&
+            (!iconRail || !iconRail.contains(target))) {
             clearSelection();
         }
     });
@@ -22,16 +28,71 @@ export function clearSelection() {
         currentHighlight.classList.remove("selection-counterpart");
         currentHighlight = null;
     }
+    for (const span of selectedWordSpans) {
+        span.classList.remove("pali-word-selected");
+    }
+    selectedWordSpans = [];
     if (popoverEl)
         popoverEl.classList.add("hidden");
 }
+function highlightPaliWords(words) {
+    for (const span of selectedWordSpans) {
+        span.classList.remove("pali-word-selected");
+    }
+    selectedWordSpans = words;
+    for (const span of selectedWordSpans) {
+        span.classList.add("pali-word-selected");
+    }
+}
+function activateDictionaryTabWithWord(word) {
+    const cleaned = word
+        .normalize("NFC")
+        .replace(/[.,;:!?()\[\]"'«»“”‘’—–\-]/g, "")
+        .trim();
+    if (!cleaned)
+        return;
+    const sidePanel = document.getElementById("side-panel");
+    const collapseBtn = document.getElementById("panel-collapse");
+    if (sidePanel && sidePanel.classList.contains("collapsed")) {
+        const saved = localStorage.getItem("panelW");
+        const w = saved ? Math.max(120, parseInt(saved, 10)) : 280;
+        document.documentElement.style.setProperty("--panel-w", `${w}px`);
+        sidePanel.classList.remove("collapsed");
+        if (collapseBtn)
+            collapseBtn.textContent = "‹";
+    }
+    document.querySelectorAll(".rail-btn").forEach((b) => {
+        b.classList.toggle("active", b.dataset.panel === "dictionary");
+    });
+    document.querySelectorAll(".panel").forEach((p) => {
+        p.classList.toggle("active", p.id === "panel-dictionary");
+    });
+    const inputEl = document.getElementById("dict-search");
+    if (inputEl) {
+        inputEl.value = cleaned;
+        inputEl.dispatchEvent(new Event("input", { bubbles: true }));
+    }
+    if (sidePanel)
+        sidePanel.scrollTop = 0;
+    window.dispatchEvent(new CustomEvent("paliWordSelected", { detail: { word: cleaned } }));
+}
 async function handleMouseUp(e) {
+    const targetEl = e.target instanceof Element ? e.target : null;
+    if (targetEl?.closest(".bookmark-toggle, .var-note")) {
+        return;
+    }
     const sel = window.getSelection();
     let range = null;
     let selectedText = "";
+    let clickedWordSpan = targetEl?.closest(".pali-word");
     if (sel && !sel.isCollapsed && sel.rangeCount > 0) {
         range = sel.getRangeAt(0);
         selectedText = sel.toString().trim();
+    }
+    else if (clickedWordSpan) {
+        range = document.createRange();
+        range.selectNodeContents(clickedWordSpan);
+        selectedText = (clickedWordSpan.dataset.word || clickedWordSpan.textContent || "").trim();
     }
     else {
         if (document.caretRangeFromPoint) {
@@ -46,20 +107,28 @@ async function handleMouseUp(e) {
             }
         }
         if (range && range.startContainer.nodeType === Node.TEXT_NODE) {
-            const text = range.startContainer.textContent || "";
-            const offset = range.startOffset;
-            const wordRegex = /[A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]/i;
-            if (wordRegex.test(text[offset] || text[offset - 1] || "")) {
-                let start = offset;
-                let end = offset;
-                while (start > 0 && wordRegex.test(text[start - 1] || ""))
-                    start--;
-                while (end < text.length && wordRegex.test(text[end] || ""))
-                    end++;
-                if (start < end) {
-                    range.setStart(range.startContainer, start);
-                    range.setEnd(range.startContainer, end);
-                    selectedText = range.toString().trim();
+            const parentWord = range.startContainer.parentElement?.closest(".pali-word");
+            if (parentWord) {
+                clickedWordSpan = parentWord;
+                range.selectNodeContents(parentWord);
+                selectedText = (parentWord.dataset.word || parentWord.textContent || "").trim();
+            }
+            else {
+                const text = range.startContainer.textContent || "";
+                const offset = range.startOffset;
+                const wordRegex = /[A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]/i;
+                if (wordRegex.test(text[offset] || text[offset - 1] || "")) {
+                    let start = offset;
+                    let end = offset;
+                    while (start > 0 && wordRegex.test(text[start - 1] || ""))
+                        start--;
+                    while (end < text.length && wordRegex.test(text[end] || ""))
+                        end++;
+                    if (start < end) {
+                        range.setStart(range.startContainer, start);
+                        range.setEnd(range.startContainer, end);
+                        selectedText = range.toString().trim();
+                    }
                 }
             }
         }
@@ -68,33 +137,91 @@ async function handleMouseUp(e) {
         clearSelection();
         return;
     }
-    const anchor = range.startContainer;
-    const node = anchor.nodeType === Node.TEXT_NODE ? anchor.parentElement : anchor;
+    const startNode = range.startContainer.nodeType === Node.TEXT_NODE
+        ? range.startContainer.parentElement
+        : range.startContainer;
+    const endContainer = range.endContainer ?? range.startContainer;
+    const endNode = endContainer.nodeType === Node.TEXT_NODE
+        ? endContainer.parentElement
+        : endContainer;
+    const node = clickedWordSpan ?? startNode ?? endNode;
     if (!node) {
         clearSelection();
         return;
     }
-    const segDiv = node.closest(".seg");
+    const segDiv = (node.closest(".seg") ?? endNode?.closest(".seg"));
     if (!segDiv) {
         clearSelection();
         return;
     }
-    const inPali = !!node.closest(".pali-line");
-    const inTranslation = !!node.closest(".translation-line");
+    const intersectedWords = [];
+    if (clickedWordSpan) {
+        intersectedWords.push(clickedWordSpan);
+    }
+    else {
+        const allWords = segDiv.querySelectorAll(".pali-word");
+        for (const wSpan of allWords) {
+            try {
+                if (range.intersectsNode(wSpan)) {
+                    intersectedWords.push(wSpan);
+                }
+            }
+            catch {
+            }
+        }
+        if (intersectedWords.length === 0) {
+            const closestStart = startNode?.closest(".pali-word");
+            const closestEnd = endNode?.closest(".pali-word");
+            if (closestStart)
+                intersectedWords.push(closestStart);
+            else if (closestEnd)
+                intersectedWords.push(closestEnd);
+        }
+    }
+    const inPali = intersectedWords.length > 0 ||
+        !!startNode?.closest(".pali-line") ||
+        !!endNode?.closest(".pali-line") ||
+        (!startNode?.closest(".translation-line") && !segDiv.querySelector(".pali-line"));
+    const inTranslation = !inPali && (!!startNode?.closest(".translation-line") || !!endNode?.closest(".translation-line"));
     if (!inPali && !inTranslation) {
         clearSelection();
         return;
     }
-    if (currentHighlight)
+    if (currentHighlight) {
         currentHighlight.classList.remove("selection-counterpart");
-    const counterpartEl = inPali
-        ? segDiv.querySelector(".translation-line")
-        : segDiv.querySelector(".pali-line");
-    if (counterpartEl) {
-        counterpartEl.classList.add("selection-counterpart");
-        currentHighlight = counterpartEl;
+        currentHighlight = null;
     }
-    const rect = range.getBoundingClientRect();
+    if (inPali) {
+        const primaryWordSpan = intersectedWords[0] ?? clickedWordSpan ?? node.closest(".pali-word");
+        if (primaryWordSpan) {
+            highlightPaliWords([primaryWordSpan]);
+            const tokenWords = selectedText.split(/\s+/).filter(Boolean);
+            if (tokenWords.length <= 1 || intersectedWords.length === 1) {
+                selectedText = (primaryWordSpan.dataset.word || primaryWordSpan.textContent || selectedText).trim();
+            }
+        }
+        else {
+            highlightPaliWords([]);
+        }
+        const firstWord = selectedText
+            .split(/\s+/)
+            .map((w) => w.replace(/[.,;:!?()\[\]"'«»“”‘’—–\-]/g, "").trim())
+            .find(Boolean);
+        if (firstWord) {
+            activateDictionaryTabWithWord(firstWord);
+        }
+        if (document.getElementById("panel-dictionary")) {
+            if (popoverEl)
+                popoverEl.classList.add("hidden");
+            return;
+        }
+    }
+    else {
+        highlightPaliWords([]);
+    }
+    const rect = typeof range.getBoundingClientRect === "function"
+        ? range.getBoundingClientRect()
+        : (clickedWordSpan ?? node).getBoundingClientRect();
     await buildPopover(rect, segDiv, inPali, selectedText);
 }
 async function buildPopover(rect, segDiv, selectedInPali, selectedText) {
@@ -118,7 +245,7 @@ async function buildPopover(rect, segDiv, selectedInPali, selectedText) {
     linkBtn.title = t("copyLink", settings.uiLang);
     linkBtn.style.cssText = "background:transparent;border:none;color:var(--text-muted);cursor:pointer;padding:4px;display:flex;align-items:center;margin-right:8px;";
     linkBtn.addEventListener("click", () => {
-        const [baseHash] = window.location.hash.split('?');
+        const [baseHash] = window.location.hash.split("?");
         const newUrl = `${window.location.origin}${window.location.pathname}${baseHash}?seg=${segDiv.dataset.segId}`;
         const origHtml = linkBtn.innerHTML;
         navigator.clipboard.writeText(newUrl).then(() => {

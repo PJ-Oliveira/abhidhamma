@@ -1,19 +1,19 @@
-import { t } from "./i18n.js?v=15451f96";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=15451f96";
-import { renderTree, markActiveLeaf } from "./tree.js?v=15451f96";
-import { loadChunk, renderSegments } from "./reader.js?v=15451f96";
-import { initDictionaryPanel } from "./dictionary.js?v=15451f96";
-import { initSearchPanel } from "./search.js?v=15451f96";
-import { initExportPanel } from "./export.js?v=15451f96";
-import { initSrsPanel } from "./srs.js?v=15451f96";
-import { initToolsPanel } from "./tools/tools.js?v=15451f96";
-import "./tools/mindmap.js?v=15451f96";
-import "./tools/patthana.js?v=15451f96";
-import "./tools/vithi.js?v=15451f96";
-import "./tools/matikas.js?v=15451f96";
-import "./tools/cetasika.js?v=15451f96";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=15451f96";
-import { createLogger } from "./logger.js?v=15451f96";
+import { t } from "./i18n.js?v=489adbde";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=489adbde";
+import { renderTree, markActiveLeaf } from "./tree.js?v=489adbde";
+import { loadChunk, renderSegments } from "./reader.js?v=489adbde";
+import { initDictionaryPanel } from "./dictionary.js?v=489adbde";
+import { initSearchPanel } from "./search.js?v=489adbde";
+import { initExportPanel } from "./export.js?v=489adbde";
+import { initSrsPanel } from "./srs.js?v=489adbde";
+import { initToolsPanel } from "./tools/tools.js?v=489adbde";
+import "./tools/mindmap.js?v=489adbde";
+import "./tools/patthana.js?v=489adbde";
+import "./tools/vithi.js?v=489adbde";
+import "./tools/matikas.js?v=489adbde";
+import "./tools/cetasika.js?v=489adbde";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=489adbde";
+import { createLogger } from "./logger.js?v=489adbde";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -629,9 +629,26 @@ function wireRouting() {
 }
 async function init() {
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js').catch((err) => {
-            console.error('Service Worker registration failed: ', err);
-        });
+        const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+        if (isLocal) {
+            navigator.serviceWorker.getRegistrations?.().then((regs) => {
+                for (const r of regs)
+                    void r.unregister();
+            }).catch(() => { });
+            if ('caches' in window) {
+                caches.keys().then((keys) => {
+                    for (const k of keys)
+                        void caches.delete(k);
+                }).catch(() => { });
+            }
+        }
+        else {
+            navigator.serviceWorker.register('service-worker.js').then((reg) => {
+                void reg.update();
+            }).catch((err) => {
+                console.error('Service Worker registration failed: ', err);
+            });
+        }
     }
     try {
         const res = await fetch("data/manifest.json");
