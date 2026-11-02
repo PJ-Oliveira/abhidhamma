@@ -9,3 +9,4 @@ data/dictionary/vocabulary_blocks.md
 .env
 scripts/extracted/
 scripts/.en_pt_es_cache.json
+*.pdf
