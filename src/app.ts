@@ -22,7 +22,7 @@ import "./tools/matikas.js";
 import "./tools/cetasika.js";
 import { initSelectionHandler, clearSelection } from "./selection.js";
 import { createLogger } from "./logger.js";
-import type { Manifest, WorkEntry, WorkPart, Segment, TranslationLang, UiLang } from "./types.js";
+import type { Manifest, WorkEntry, WorkPart, Segment, TranslationLang, UiLang, CommentaryMode } from "./types.js";
 
 const log = createLogger("app");
 
@@ -66,20 +66,69 @@ function getWorkGroup(workId: string): string | null {
   );
 }
 
+function workSupportsEs(work: WorkEntry | null): boolean {
+  return Boolean(work?.languages?.includes("es"));
+}
+
+function resolveCommentaryMode(work: WorkEntry | null): CommentaryMode {
+  const raw: CommentaryMode =
+    settings.commentaryMode ?? (settings.translationLang === "es" ? "en+es" : "en+pt");
+  if (!workSupportsEs(work)) {
+    if (raw === "en+es") return "en+pt";
+    if (raw === "es") return "pt";
+  }
+  return raw;
+}
+
+function commentaryModeToRenderFlags(mode: CommentaryMode): {
+  showPaliOverride: boolean;
+  showTranslationOverride: boolean;
+  effectiveLang: TranslationLang;
+} {
+  switch (mode) {
+    case "en":
+      return { showPaliOverride: true, showTranslationOverride: false, effectiveLang: "en" };
+    case "en+es":
+      return { showPaliOverride: true, showTranslationOverride: true, effectiveLang: "es" };
+    case "pt":
+      return { showPaliOverride: false, showTranslationOverride: true, effectiveLang: "pt" };
+    case "es":
+      return { showPaliOverride: false, showTranslationOverride: true, effectiveLang: "es" };
+    case "en+pt":
+    default:
+      return { showPaliOverride: true, showTranslationOverride: true, effectiveLang: "pt" };
+  }
+}
+
+function stripTags(html: string | undefined): string {
+  return (html ?? "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+}
+
 function updateSettingsLabels(): void {
   const group = state.work ? getWorkGroup(state.work.id) : null;
-  const isBilingual = group === "comentarios";
+  const isCommentary = group === "comentarios";
   const paliLabelEl = document.getElementById("label-show-pali");
   const translationLabelEl = document.getElementById("label-show-translation");
-  if (paliLabelEl) {
-    paliLabelEl.textContent = isBilingual
-      ? t("settingShowOriginal", settings.uiLang)
-      : t("settingShowPali", settings.uiLang);
-  }
-  if (translationLabelEl) {
-    translationLabelEl.textContent = isBilingual
-      ? t("settingShowPT", settings.uiLang)
-      : t("settingShowTranslation", settings.uiLang);
+  const paliCb = document.getElementById("setting-show-pali") as HTMLInputElement | null;
+  const translCb = document.getElementById("setting-show-translation") as HTMLInputElement | null;
+
+  if (isCommentary) {
+    const mode = resolveCommentaryMode(state.work);
+    const flags = commentaryModeToRenderFlags(mode);
+    const isEsMode = mode === "en+es" || mode === "es" || (mode === "en" && settings.uiLang === "es" && workSupportsEs(state.work));
+    if (paliLabelEl) paliLabelEl.textContent = t("settingShowOriginal", settings.uiLang);
+    if (translationLabelEl) {
+      translationLabelEl.textContent = isEsMode
+        ? t("settingShowES", settings.uiLang)
+        : t("settingShowPT", settings.uiLang);
+    }
+    if (paliCb) paliCb.checked = flags.showPaliOverride;
+    if (translCb) translCb.checked = flags.showTranslationOverride;
+  } else {
+    if (paliLabelEl) paliLabelEl.textContent = t("settingShowPali", settings.uiLang);
+    if (translationLabelEl) translationLabelEl.textContent = t("settingShowTranslation", settings.uiLang);
+    if (paliCb) paliCb.checked = settings.showPali;
+    if (translCb) translCb.checked = settings.showTranslation;
   }
 }
 
@@ -131,6 +180,42 @@ function renderPartTabs(): void {
   const tabsEl = el("part-tabs");
   tabsEl.innerHTML = "";
   if (!state.work) return;
+
+  const group = getWorkGroup(state.work.id);
+  if (group === "comentarios") {
+    const activeMode = resolveCommentaryMode(state.work);
+    const hasEs = workSupportsEs(state.work);
+    const modes: Array<{ mode: CommentaryMode; labelKey: string }> = hasEs
+      ? [
+          { mode: "en", labelKey: "verEn" },
+          { mode: "en+pt", labelKey: "verEnPt" },
+          { mode: "en+es", labelKey: "verEnEs" },
+          { mode: "pt", labelKey: "verPt" },
+          { mode: "es", labelKey: "verEs" },
+        ]
+      : [
+          { mode: "en", labelKey: "verEn" },
+          { mode: "en+pt", labelKey: "verEnPt" },
+          { mode: "pt", labelKey: "verPt" },
+        ];
+
+    for (const item of modes) {
+      const btn = document.createElement("button");
+      btn.className = "part-tab version-tab";
+      btn.dataset.versionMode = item.mode;
+      btn.textContent = t(item.labelKey, settings.uiLang);
+      if (item.mode === activeMode) btn.classList.add("active");
+      btn.addEventListener("click", () => {
+        updateSettings({ commentaryMode: item.mode });
+        renderPartTabs();
+        renderChapterNav();
+        rerenderContent();
+      });
+      tabsEl.appendChild(btn);
+    }
+    return;
+  }
+
   for (const partKey of Object.keys(state.work.parts)) {
     const part = state.work.parts[partKey];
     if (!part) continue;
@@ -202,6 +287,13 @@ function renderChapterNav(): void {
   list.className = "chapter-nav-list";
   list.hidden = true;
 
+  const isCommentary = getWorkGroup(state.work.id) === "comentarios";
+  const commMode = isCommentary ? resolveCommentaryMode(state.work) : null;
+  const segById =
+    isCommentary && state.segments.length > 0
+      ? new Map<number, Segment>(state.segments.map((s) => [s.id, s]))
+      : null;
+
   for (let i = 0; i < chapters.length; i++) {
     const entry = chapters[i]!;
     const chunkIdx = segIdToChunk(entry.id, part);
@@ -211,7 +303,23 @@ function renderChapterNav(): void {
     numSpan.textContent = `${i + 1}.`;
     const textSpan = document.createElement("span");
     textSpan.className = "chap-text";
-    textSpan.textContent = entry.text.replace(/^\d+\.\s*/, "");
+
+    let chapLabel = entry.text.replace(/^\d+\.\s*/, "");
+    if (commMode && segById) {
+      const seg = segById.get(entry.id);
+      if (seg) {
+        const ptClean = stripTags(seg.pt).replace(/^\d+\.\s*/, "");
+        const esClean = stripTags(seg.es).replace(/^\d+\.\s*/, "");
+        if (commMode === "pt" && ptClean) chapLabel = ptClean;
+        else if (commMode === "es" && esClean) chapLabel = esClean;
+        else if (commMode === "en+pt" && ptClean && ptClean.toLowerCase() !== chapLabel.toLowerCase()) {
+          chapLabel = `${chapLabel} · ${ptClean}`;
+        } else if (commMode === "en+es" && esClean && esClean.toLowerCase() !== chapLabel.toLowerCase()) {
+          chapLabel = `${chapLabel} · ${esClean}`;
+        }
+      }
+    }
+    textSpan.textContent = chapLabel;
     li.appendChild(numSpan);
     li.appendChild(textSpan);
     li.addEventListener("click", () => {
@@ -260,13 +368,7 @@ async function selectWork(workId: string, partKey: string, chunkIndex: number, s
   state.work = work;
   state.partKey = partKey;
   state.chunkIndex = Math.max(0, Math.min(chunkIndex, part.files.length - 1));
-
-  // For bilingual EN-PT works, ensure English (stored in pali field) is visible
-  const workGroup = getWorkGroup(workId);
-  if (workGroup === "comentarios" && !settings.showPali) {
-    updateSettings({ showPali: true });
-    el<HTMLInputElement>("setting-show-pali").checked = true;
-  }
+  state.segments = [];
 
   el("content").innerHTML = `<p class="loading">${t("loading", settings.uiLang)}</p>`;
   renderBreadcrumb();
@@ -289,6 +391,7 @@ async function selectWork(workId: string, partKey: string, chunkIndex: number, s
     return;
   }
 
+  renderChapterNav();
   rerenderContent();
 
   if (segId != null) {
@@ -422,6 +525,15 @@ function wireIconRail(): void {
       buttons.forEach((b) => b.classList.toggle("active", b.dataset.panel === target));
       panels.forEach((p) => p.classList.toggle("active", p.id === `panel-${target}`));
       toggleReaderOverlay(target);
+      if (target === "export" && state.work) {
+        const exportWorkSel = document.getElementById("export-work") as HTMLSelectElement | null;
+        if (exportWorkSel && Array.from(exportWorkSel.options).some((o) => o.value === state.work!.id)) {
+          if (exportWorkSel.value !== state.work.id) {
+            exportWorkSel.value = state.work.id;
+            exportWorkSel.dispatchEvent(new Event("change"));
+          }
+        }
+      }
       if (!skipHashUpdate) updateHash();
   };
 
@@ -491,10 +603,13 @@ function rerenderContent(): void {
   const partKey = state.partKey;
 
   const group = getWorkGroup(work.id);
+  const isCommentary = group === "comentarios";
+  const commFlags = isCommentary ? commentaryModeToRenderFlags(resolveCommentaryMode(work)) : null;
 
   renderSegments(state.segments, content, {
     onNoteHover: handleNoteHover,
-    ...(group === "comentarios" ? { effectiveLang: "pt" as const } : {}),
+    isCommentary,
+    ...(commFlags ?? {}),
     isBookmarked: (segId) => isBookmarked(work.id, partKey, segId),
     onBookmarkToggle: (seg) => {
       const active = toggleBookmark({
@@ -536,7 +651,7 @@ async function cacheAllForOffline(btn: HTMLButtonElement): Promise<void> {
   const origHtml = btn.innerHTML;
   btn.disabled = true;
   try {
-    const cache = await caches.open('abhidhamma-cache-v12');
+    const cache = await caches.open('abhidhamma-cache-v14');
     const urls: string[] = [
       './',
       './index.html',
@@ -618,7 +733,20 @@ function wireSettingsPanel(): void {
   }
   const langSelect = el<HTMLSelectElement>("setting-lang");
   langSelect.addEventListener("change", () => {
-    updateSettings({ translationLang: langSelect.value as TranslationLang, uiLang: langSelect.value as UiLang });
+    const newLang = langSelect.value as TranslationLang;
+    let nextCommMode = settings.commentaryMode;
+    if (newLang === "es") {
+      if (!nextCommMode || nextCommMode === "en+pt") nextCommMode = "en+es";
+      else if (nextCommMode === "pt") nextCommMode = "es";
+    } else if (newLang === "pt") {
+      if (nextCommMode === "en+es") nextCommMode = "en+pt";
+      else if (nextCommMode === "es") nextCommMode = "pt";
+    }
+    updateSettings({
+      translationLang: newLang,
+      uiLang: newLang as UiLang,
+      ...(nextCommMode ? { commentaryMode: nextCommMode } : {}),
+    });
     rerenderContent();
     refreshLocalizedUI();
     window.dispatchEvent(new Event("languageChanged"));
@@ -633,14 +761,43 @@ function wireSettingsPanel(): void {
     applySettingsToUI();
   });
 
+  const handleCommentaryCheckboxChange = (changed: "pali" | "transl") => {
+    const curMode = resolveCommentaryMode(state.work);
+    const hasEs = workSupportsEs(state.work);
+    const targetTransl: "pt" | "es" =
+      hasEs && (curMode === "en+es" || curMode === "es" || settings.translationLang === "es") ? "es" : "pt";
+    let pChecked = showPali.checked;
+    let tChecked = showTranslation.checked;
+    if (!pChecked && !tChecked) {
+      if (changed === "pali") tChecked = true;
+      else pChecked = true;
+    }
+    let nextMode: CommentaryMode = "en+pt";
+    if (pChecked && tChecked) nextMode = targetTransl === "es" ? "en+es" : "en+pt";
+    else if (pChecked && !tChecked) nextMode = "en";
+    else nextMode = targetTransl;
+    updateSettings({ commentaryMode: nextMode });
+    renderPartTabs();
+    renderChapterNav();
+    rerenderContent();
+  };
+
   const showPali = el<HTMLInputElement>("setting-show-pali");
   showPali.addEventListener("change", () => {
+    if (state.work && getWorkGroup(state.work.id) === "comentarios") {
+      handleCommentaryCheckboxChange("pali");
+      return;
+    }
     updateSettings({ showPali: showPali.checked });
     rerenderContent();
   });
 
   const showTranslation = el<HTMLInputElement>("setting-show-translation");
   showTranslation.addEventListener("change", () => {
+    if (state.work && getWorkGroup(state.work.id) === "comentarios") {
+      handleCommentaryCheckboxChange("transl");
+      return;
+    }
     updateSettings({ showTranslation: showTranslation.checked });
     rerenderContent();
   });
@@ -659,6 +816,7 @@ function applyStaticI18n(): void {
     const key = node.dataset.i18nTitle;
     if (key) node.title = t(key, settings.uiLang);
   });
+  updateSettingsLabels();
 }
 
 function refreshLocalizedUI(): void {
@@ -776,7 +934,7 @@ async function init(): Promise<void> {
     if ('caches' in window) {
       caches.keys().then((keys) => {
         for (const k of keys) {
-          if (k !== 'abhidhamma-cache-v12') void caches.delete(k);
+          if (k !== 'abhidhamma-cache-v14') void caches.delete(k);
         }
       }).catch(() => {});
     }

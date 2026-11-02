@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=546392a3";
-import { settings } from "./state.js?v=546392a3";
-import { createLogger } from "./logger.js?v=546392a3";
+import { t } from "./i18n.js?v=3c38029c";
+import { settings } from "./state.js?v=3c38029c";
+import { createLogger } from "./logger.js?v=3c38029c";
 const log = createLogger("export");
 let glossaryData = null;
 async function loadGlossary() {
@@ -145,6 +145,9 @@ const WORK_AUTHORS = {
     "the-conditionality-of-life": "Nina van Gorkom",
     "the-buddhist-teaching-on-physical-phenomena": "Nina van Gorkom",
     "path-without-ownership": "Robert Gillam",
+    "lessons-in-abhidhamma": "Bhikkhu Subhūti",
+    "dhamma-now": "Sarah Procter Abbott",
+    "dhamma-now-2": "Sarah Procter Abbott",
 };
 function getAuthor(workId, group) {
     return WORK_AUTHORS[workId] ?? GROUP_AUTHORS[group] ?? "Abhidhamma Piṭaka Tradition";
@@ -376,7 +379,8 @@ export function segToHtml(seg, langMode, termsMap, linkPrefix = "glossary.xhtml"
     const enText = seg.en != null ? String(seg.en) : "";
     const ptText = seg.pt != null ? String(seg.pt) : "";
     const esText = seg.es != null ? String(seg.es) : "";
-    const forcePaliLinkTest = !langMode.startsWith("pali") && hasMappedTerm(paliText, termsMap);
+    const isEnglishBase = Boolean(paliText && (paliText === enText || (!enText && /\b(the|and|is|of|to)\b/i.test(paliText))));
+    const forcePaliLinkTest = !isEnglishBase && !langMode.startsWith("pali") && hasMappedTerm(paliText, termsMap);
     const showPali = langMode.startsWith("pali") || forcePaliLinkTest;
     const showEn = langMode === "en" ||
         langMode === "pali+en" ||
@@ -390,7 +394,8 @@ export function segToHtml(seg, langMode, termsMap, linkPrefix = "glossary.xhtml"
         : "";
     if (showPali && paliText) {
         const linkedPali = fieldHtml(paliText, forcePaliLinkTest ? termsMap : undefined, linkPrefix);
-        inner += `<div class="line pali" lang="pi">${paranumPrefix}${linkedPali}</div>`;
+        const baseLangAttr = isEnglishBase ? "en" : "pi";
+        inner += `<div class="line pali" lang="${baseLangAttr}">${paranumPrefix}${linkedPali}</div>`;
     }
     if (showEn) {
         const textToUse = enText || paliText;
@@ -1996,7 +2001,7 @@ export function initExportPanel(manifest, container, getCurrentWorkId) {
     container.appendChild(chapDiv);
     container.appendChild(makeLabel(t("exportLang", settings.uiLang)));
     const langSel = makeSelect("export-lang");
-    const langOptions = [
+    const canonicalLangOptions = [
         ["en", t("exportLangEn", settings.uiLang)],
         ["pali+en", t("exportLangPaliEn", settings.uiLang)],
         ["pali+en+pt", t("exportLangPaliEnPt", settings.uiLang)],
@@ -2006,12 +2011,62 @@ export function initExportPanel(manifest, container, getCurrentWorkId) {
         ["pali+es", t("exportLangPaliEs", settings.uiLang)],
         ["pali+en+es", t("exportLangPaliEnEs", settings.uiLang)],
     ];
-    for (const [value, label] of langOptions) {
-        const opt = document.createElement("option");
-        opt.value = value;
-        opt.textContent = label;
-        langSel.appendChild(opt);
+    const commentaryTrilingualOptions = [
+        ["en", t("exportCommentaryEn", settings.uiLang)],
+        ["pali+pt", t("exportCommentaryEnPt", settings.uiLang)],
+        ["pali+es", t("exportCommentaryEnEs", settings.uiLang)],
+        ["pt", t("exportCommentaryPt", settings.uiLang)],
+        ["es", t("exportCommentaryEs", settings.uiLang)],
+    ];
+    const commentaryBilingualOptions = [
+        ["en", t("exportCommentaryEn", settings.uiLang)],
+        ["pali+pt", t("exportCommentaryEnPt", settings.uiLang)],
+        ["pt", t("exportCommentaryPt", settings.uiLang)],
+    ];
+    function refreshLangOptions(entry) {
+        const prevVal = langSel.value;
+        const isCommentary = entry?.group === "comentarios";
+        const hasEs = Boolean(entry?.work.languages?.includes("es"));
+        const opts = isCommentary
+            ? hasEs
+                ? commentaryTrilingualOptions
+                : commentaryBilingualOptions
+            : canonicalLangOptions;
+        langSel.innerHTML = "";
+        for (const [value, label] of opts) {
+            const opt = document.createElement("option");
+            opt.value = value;
+            opt.textContent = label;
+            langSel.appendChild(opt);
+        }
+        if (isCommentary) {
+            const commMode = settings.commentaryMode;
+            const mappedFromReader = commMode === "en"
+                ? "en"
+                : commMode === "en+es" && hasEs
+                    ? "pali+es"
+                    : commMode === "es" && hasEs
+                        ? "es"
+                        : commMode === "pt"
+                            ? "pt"
+                            : commMode === "en+pt"
+                                ? "pali+pt"
+                                : null;
+            if (prevVal && opts.some(([v]) => v === prevVal)) {
+                langSel.value = prevVal;
+            }
+            else if (mappedFromReader && opts.some(([v]) => v === mappedFromReader)) {
+                langSel.value = mappedFromReader;
+            }
+            else {
+                langSel.value = "pali+pt";
+            }
+        }
+        else if (prevVal && opts.some(([v]) => v === prevVal)) {
+            langSel.value = prevVal;
+        }
     }
+    refreshLangOptions(null);
     container.appendChild(langSel);
     const pdfBtn = makeButton(t("exportPdf", settings.uiLang), "export-btn-pdf");
     const epubBtn = makeButton(t("exportEpub", settings.uiLang), "export-btn-epub");
@@ -2082,13 +2137,13 @@ export function initExportPanel(manifest, container, getCurrentWorkId) {
     }
     workSel.addEventListener("change", () => {
         const isAll = workSel.value === "all_works";
+        const selectedEntry = isAll ? null : (allWorks.find((w) => w.work.id === workSel.value) ?? null);
+        refreshLangOptions(selectedEntry);
         partsDiv.style.display = isAll ? "none" : "";
         chapDiv.style.display = isAll ? "none" : "";
         pdfBtn.style.display = "";
-        if (!isAll) {
-            const work = getSelectedWork();
-            if (work)
-                refreshParts(work);
+        if (!isAll && selectedEntry) {
+            refreshParts(selectedEntry.work);
         }
     });
     const currentId = getCurrentWorkId();

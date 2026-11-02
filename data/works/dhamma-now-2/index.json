@@ -1,0 +1,398 @@
+{
+  "id": "dhamma-now-2",
+  "title": "Dhamma Now 2",
+  "languages": [
+    "en",
+    "pt",
+    "es"
+  ],
+  "parts": {
+    "texto": {
+      "label": "Text",
+      "files": [
+        "texto.json"
+      ],
+      "toc": [
+        {
+          "id": 2,
+          "rend": "subhead",
+          "text": "Sarah Procter Abbott"
+        },
+        {
+          "id": 4,
+          "rend": "chapter",
+          "text": "Preface"
+        },
+        {
+          "id": 11,
+          "rend": "chapter",
+          "text": "Chapter 1 — May 2021"
+        },
+        {
+          "id": 12,
+          "rend": "subhead",
+          "text": "64. Helping Others"
+        },
+        {
+          "id": 20,
+          "rend": "subhead",
+          "text": "65. Path to Enlightenment"
+        },
+        {
+          "id": 25,
+          "rend": "subhead",
+          "text": "66. Vegetarian"
+        },
+        {
+          "id": 41,
+          "rend": "subhead",
+          "text": "67. Suicide of Monks"
+        },
+        {
+          "id": 51,
+          "rend": "subhead",
+          "text": "68. What is Practice?"
+        },
+        {
+          "id": 67,
+          "rend": "subhead",
+          "text": "69. Accumulations"
+        },
+        {
+          "id": 78,
+          "rend": "subhead",
+          "text": "70. Appears Well"
+        },
+        {
+          "id": 88,
+          "rend": "chapter",
+          "text": "Chapter 2 — June 2021"
+        },
+        {
+          "id": 89,
+          "rend": "subhead",
+          "text": "71. The Seed and Fertiliser for the Path"
+        },
+        {
+          "id": 101,
+          "rend": "subhead",
+          "text": "72. Letting Go"
+        },
+        {
+          "id": 120,
+          "rend": "subhead",
+          "text": "73. Breath"
+        },
+        {
+          "id": 130,
+          "rend": "subhead",
+          "text": "74. Unknown Defilements"
+        },
+        {
+          "id": 141,
+          "rend": "subhead",
+          "text": "75. Khandha and Upādāna khandha"
+        },
+        {
+          "id": 156,
+          "rend": "subhead",
+          "text": "76. Nothing, Something, Nothing"
+        },
+        {
+          "id": 167,
+          "rend": "subhead",
+          "text": "77. The Point of Understanding"
+        },
+        {
+          "id": 177,
+          "rend": "subhead",
+          "text": "78. A Moment"
+        },
+        {
+          "id": 187,
+          "rend": "subhead",
+          "text": "79. Protection"
+        },
+        {
+          "id": 197,
+          "rend": "subhead",
+          "text": "80. A Certain Person"
+        },
+        {
+          "id": 209,
+          "rend": "subhead",
+          "text": "81. The Simple Life"
+        },
+        {
+          "id": 218,
+          "rend": "subhead",
+          "text": "82. Trapped by the Idea of Self"
+        },
+        {
+          "id": 228,
+          "rend": "subhead",
+          "text": "83. Conceit"
+        },
+        {
+          "id": 236,
+          "rend": "subhead",
+          "text": "84. The Signs & Details of Realities"
+        },
+        {
+          "id": 247,
+          "rend": "chapter",
+          "text": "Chapter 3 — July 2021"
+        },
+        {
+          "id": 248,
+          "rend": "subhead",
+          "text": "85. How to Cultivate the Way"
+        },
+        {
+          "id": 255,
+          "rend": "subhead",
+          "text": "86. Mettā to the Dead?"
+        },
+        {
+          "id": 264,
+          "rend": "subhead",
+          "text": "87. The Truth is always the Truth"
+        },
+        {
+          "id": 280,
+          "rend": "subhead",
+          "text": "88. Thira Saññā (Firm Remembrance)"
+        },
+        {
+          "id": 285,
+          "rend": "subhead",
+          "text": "89. Pariyatti Understanding"
+        },
+        {
+          "id": 292,
+          "rend": "subhead",
+          "text": "90. Understanding the Nimitta (signs)"
+        },
+        {
+          "id": 302,
+          "rend": "subhead",
+          "text": "91. Inner and Outer Realities"
+        },
+        {
+          "id": 320,
+          "rend": "subhead",
+          "text": "92. Don’t Rush to Understand More!"
+        },
+        {
+          "id": 330,
+          "rend": "subhead",
+          "text": "93. Saddhā (confidence)"
+        },
+        {
+          "id": 337,
+          "rend": "subhead",
+          "text": "94. Foot of the World"
+        },
+        {
+          "id": 348,
+          "rend": "subhead",
+          "text": "95. Deep"
+        },
+        {
+          "id": 358,
+          "rend": "subhead",
+          "text": "96. The Good Guy"
+        },
+        {
+          "id": 374,
+          "rend": "chapter",
+          "text": "Chapter 4 — August 2021"
+        },
+        {
+          "id": 375,
+          "rend": "subhead",
+          "text": "97. What is Hidden?"
+        },
+        {
+          "id": 395,
+          "rend": "chapter",
+          "text": "Chapter 5 — November 2021"
+        },
+        {
+          "id": 396,
+          "rend": "subhead",
+          "text": "98. Tears"
+        },
+        {
+          "id": 406,
+          "rend": "subhead",
+          "text": "99. Illumination of the Truth"
+        },
+        {
+          "id": 414,
+          "rend": "subhead",
+          "text": "100. Dukkha"
+        },
+        {
+          "id": 422,
+          "rend": "subhead",
+          "text": "101. Clear Understanding"
+        },
+        {
+          "id": 431,
+          "rend": "chapter",
+          "text": "Chapter 6 — December 2021"
+        },
+        {
+          "id": 432,
+          "rend": "subhead",
+          "text": "102. The Masterpiece"
+        },
+        {
+          "id": 441,
+          "rend": "subhead",
+          "text": "103. The Result of Kamma"
+        },
+        {
+          "id": 451,
+          "rend": "subhead",
+          "text": "104. The End of Saṃsāra"
+        },
+        {
+          "id": 468,
+          "rend": "subhead",
+          "text": "105. The 3 Gocaras (1)"
+        },
+        {
+          "id": 478,
+          "rend": "subhead",
+          "text": "106. Āyūhana"
+        },
+        {
+          "id": 488,
+          "rend": "subhead",
+          "text": "107. The 3 Gocaras (2)"
+        },
+        {
+          "id": 498,
+          "rend": "subhead",
+          "text": "108. Anger"
+        },
+        {
+          "id": 517,
+          "rend": "subhead",
+          "text": "109. Passing Away"
+        },
+        {
+          "id": 529,
+          "rend": "subhead",
+          "text": "110. Wrong Practice"
+        },
+        {
+          "id": 544,
+          "rend": "chapter",
+          "text": "Chapter 7 — January 2022"
+        },
+        {
+          "id": 545,
+          "rend": "subhead",
+          "text": "111. Citta is Paṇḍara (pure)"
+        },
+        {
+          "id": 558,
+          "rend": "subhead",
+          "text": "112. The Abhidhamma is Now"
+        },
+        {
+          "id": 573,
+          "rend": "subhead",
+          "text": "113. Falling Down"
+        },
+        {
+          "id": 588,
+          "rend": "chapter",
+          "text": "Chapter 8 — February 2022"
+        },
+        {
+          "id": 589,
+          "rend": "subhead",
+          "text": "114. Kamma and Birth"
+        },
+        {
+          "id": 597,
+          "rend": "subhead",
+          "text": "115. Fire! (1)"
+        },
+        {
+          "id": 608,
+          "rend": "chapter",
+          "text": "Chapter 9 — April 2022"
+        },
+        {
+          "id": 609,
+          "rend": "subhead",
+          "text": "116. Fire! (2)"
+        },
+        {
+          "id": 619,
+          "rend": "subhead",
+          "text": "117. Kusala and Akusala Sīla"
+        },
+        {
+          "id": 634,
+          "rend": "subhead",
+          "text": "118. Troubles in the World"
+        },
+        {
+          "id": 647,
+          "rend": "subhead",
+          "text": "119. Forgetfulness"
+        },
+        {
+          "id": 658,
+          "rend": "subhead",
+          "text": "120. Calm"
+        },
+        {
+          "id": 672,
+          "rend": "subhead",
+          "text": "121. Sakkāya Diṭṭhi"
+        },
+        {
+          "id": 683,
+          "rend": "subhead",
+          "text": "122. The Drunken Driver"
+        },
+        {
+          "id": 699,
+          "rend": "subhead",
+          "text": "123. The Body"
+        },
+        {
+          "id": 714,
+          "rend": "subhead",
+          "text": "124. Relax, it’s Gone!"
+        },
+        {
+          "id": 725,
+          "rend": "chapter",
+          "text": "Glossary"
+        },
+        {
+          "id": 841,
+          "rend": "chapter",
+          "text": "Biography"
+        },
+        {
+          "id": 843,
+          "rend": "chapter",
+          "text": "Further Study"
+        }
+      ],
+      "count": 846,
+      "chunkStarts": [
+        1
+      ]
+    }
+  }
+}

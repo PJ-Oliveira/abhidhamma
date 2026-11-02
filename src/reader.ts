@@ -27,6 +27,9 @@ export interface RenderSegmentsOptions {
   onBookmarkToggle?: (seg: Segment) => boolean;
   isBookmarked?: (segId: number) => boolean;
   effectiveLang?: TranslationLang;
+  isCommentary?: boolean;
+  showPaliOverride?: boolean;
+  showTranslationOverride?: boolean;
 }
 
 const PALI_WORD_RE = /[A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]+(?:[’'][A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]+)*/g;
@@ -73,9 +76,11 @@ function wrapPaliWords(root: HTMLElement): void {
 }
 
 export function renderSegments(segments: Segment[], container: HTMLElement, options: RenderSegmentsOptions = {}): void {
-  const { onNoteHover, onBookmarkToggle, isBookmarked } = options;
+  const { onNoteHover, onBookmarkToggle, isBookmarked, isCommentary } = options;
   container.innerHTML = "";
   const lang = options.effectiveLang ?? settings.translationLang;
+  const showPali = options.showPaliOverride ?? settings.showPali;
+  const showTransl = options.showTranslationOverride ?? settings.showTranslation;
 
   for (const seg of segments) {
     const div = document.createElement("div");
@@ -83,8 +88,9 @@ export function renderSegments(segments: Segment[], container: HTMLElement, opti
     div.dataset.rend = seg.rend;
     div.dataset.segId = String(seg.id);
     div.dataset.pali = seg.pali || "";
-    if (!settings.showTranslation) div.classList.add("no-translation");
-    if (!settings.showPali) div.classList.add("no-pali");
+    if (isCommentary) div.dataset.commentary = "true";
+    if (!showTransl || (isCommentary && lang === "en" && showPali)) div.classList.add("no-translation");
+    if (!showPali) div.classList.add("no-pali");
 
     const paliLine = document.createElement("div");
     paliLine.className = "pali-line";
@@ -110,14 +116,26 @@ export function renderSegments(segments: Segment[], container: HTMLElement, opti
       const active = onBookmarkToggle(seg);
       bookmarkBtn.textContent = active ? "★" : "☆";
     });
-    paliLine.appendChild(bookmarkBtn);
+    if (showPali) paliLine.appendChild(bookmarkBtn);
 
     div.appendChild(paliLine);
 
     const translationLine = document.createElement("div");
     translationLine.className = "translation-line";
-    const translText: string = (seg as unknown as Record<string, string>)[lang] || "";
+    let translText = "";
+    if (isCommentary) {
+      if (lang === "en") {
+        translText = !showPali && showTransl ? (seg.en || seg.pali || "") : "";
+      } else if (lang === "es") {
+        translText = seg.es || seg.pt || "";
+      } else {
+        translText = seg.pt || "";
+      }
+    } else {
+      translText = (seg as unknown as Record<string, string>)[lang] || "";
+    }
     translationLine.innerHTML = translText;
+    if (!showPali) translationLine.appendChild(bookmarkBtn);
     div.appendChild(translationLine);
 
     if (!translText) translationLine.style.display = "none";

@@ -184,6 +184,9 @@ const WORK_AUTHORS: Record<string, string> = {
   "the-conditionality-of-life": "Nina van Gorkom",
   "the-buddhist-teaching-on-physical-phenomena": "Nina van Gorkom",
   "path-without-ownership": "Robert Gillam",
+  "lessons-in-abhidhamma": "Bhikkhu Subhūti",
+  "dhamma-now": "Sarah Procter Abbott",
+  "dhamma-now-2": "Sarah Procter Abbott",
 };
 
 function getAuthor(workId: string, group: string): string {
@@ -440,7 +443,10 @@ export function segToHtml(
   const ptText = seg.pt != null ? String(seg.pt) : "";
   const esText = seg.es != null ? String(seg.es) : "";
 
-  const forcePaliLinkTest = !langMode.startsWith("pali") && hasMappedTerm(paliText, termsMap);
+  const isEnglishBase = Boolean(
+    paliText && (paliText === enText || (!enText && /\b(the|and|is|of|to)\b/i.test(paliText)))
+  );
+  const forcePaliLinkTest = !isEnglishBase && !langMode.startsWith("pali") && hasMappedTerm(paliText, termsMap);
   const showPali = langMode.startsWith("pali") || forcePaliLinkTest;
   const showEn =
     langMode === "en" ||
@@ -458,7 +464,8 @@ export function segToHtml(
 
   if (showPali && paliText) {
     const linkedPali = fieldHtml(paliText, forcePaliLinkTest ? termsMap : undefined, linkPrefix);
-    inner += `<div class="line pali" lang="pi">${paranumPrefix}${linkedPali}</div>`;
+    const baseLangAttr = isEnglishBase ? "en" : "pi";
+    inner += `<div class="line pali" lang="${baseLangAttr}">${paranumPrefix}${linkedPali}</div>`;
   }
 
   if (showEn) {
@@ -2306,7 +2313,7 @@ export function initExportPanel(
 
   container.appendChild(makeLabel(t("exportLang", settings.uiLang)));
   const langSel = makeSelect("export-lang");
-  const langOptions: Array<[LangMode, string]> = [
+  const canonicalLangOptions: Array<[LangMode, string]> = [
     ["en", t("exportLangEn", settings.uiLang)],
     ["pali+en", t("exportLangPaliEn", settings.uiLang)],
     ["pali+en+pt", t("exportLangPaliEnPt", settings.uiLang)],
@@ -2316,12 +2323,64 @@ export function initExportPanel(
     ["pali+es", t("exportLangPaliEs", settings.uiLang)],
     ["pali+en+es", t("exportLangPaliEnEs", settings.uiLang)],
   ];
-  for (const [value, label] of langOptions) {
-    const opt = document.createElement("option");
-    opt.value = value;
-    opt.textContent = label;
-    langSel.appendChild(opt);
+  const commentaryTrilingualOptions: Array<[LangMode, string]> = [
+    ["en", t("exportCommentaryEn", settings.uiLang)],
+    ["pali+pt", t("exportCommentaryEnPt", settings.uiLang)],
+    ["pali+es", t("exportCommentaryEnEs", settings.uiLang)],
+    ["pt", t("exportCommentaryPt", settings.uiLang)],
+    ["es", t("exportCommentaryEs", settings.uiLang)],
+  ];
+  const commentaryBilingualOptions: Array<[LangMode, string]> = [
+    ["en", t("exportCommentaryEn", settings.uiLang)],
+    ["pali+pt", t("exportCommentaryEnPt", settings.uiLang)],
+    ["pt", t("exportCommentaryPt", settings.uiLang)],
+  ];
+
+  function refreshLangOptions(entry: { group: string; work: WorkEntry } | null): void {
+    const prevVal = langSel.value as LangMode | "";
+    const isCommentary = entry?.group === "comentarios";
+    const hasEs = Boolean(entry?.work.languages?.includes("es"));
+    const opts = isCommentary
+      ? hasEs
+        ? commentaryTrilingualOptions
+        : commentaryBilingualOptions
+      : canonicalLangOptions;
+
+    langSel.innerHTML = "";
+    for (const [value, label] of opts) {
+      const opt = document.createElement("option");
+      opt.value = value;
+      opt.textContent = label;
+      langSel.appendChild(opt);
+    }
+
+    if (isCommentary) {
+      const commMode = settings.commentaryMode;
+      const mappedFromReader: LangMode | null =
+        commMode === "en"
+          ? "en"
+          : commMode === "en+es" && hasEs
+            ? "pali+es"
+            : commMode === "es" && hasEs
+              ? "es"
+              : commMode === "pt"
+                ? "pt"
+                : commMode === "en+pt"
+                  ? "pali+pt"
+                  : null;
+      if (prevVal && opts.some(([v]) => v === prevVal)) {
+        langSel.value = prevVal;
+      } else if (mappedFromReader && opts.some(([v]) => v === mappedFromReader)) {
+        langSel.value = mappedFromReader;
+      } else {
+        langSel.value = "pali+pt";
+      }
+    } else if (prevVal && opts.some(([v]) => v === prevVal)) {
+      langSel.value = prevVal;
+    }
   }
+
+  refreshLangOptions(null);
   container.appendChild(langSel);
 
   const pdfBtn = makeButton(t("exportPdf", settings.uiLang), "export-btn-pdf");
@@ -2403,12 +2462,13 @@ export function initExportPanel(
 
   workSel.addEventListener("change", () => {
     const isAll = workSel.value === "all_works";
+    const selectedEntry = isAll ? null : (allWorks.find((w) => w.work.id === workSel.value) ?? null);
+    refreshLangOptions(selectedEntry);
     partsDiv.style.display = isAll ? "none" : "";
     chapDiv.style.display = isAll ? "none" : "";
     pdfBtn.style.display = "";
-    if (!isAll) {
-      const work = getSelectedWork();
-      if (work) refreshParts(work);
+    if (!isAll && selectedEntry) {
+      refreshParts(selectedEntry.work);
     }
   });
 

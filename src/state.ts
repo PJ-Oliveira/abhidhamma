@@ -14,6 +14,7 @@ const DEFAULT_SETTINGS: Settings = {
   fontSize: 17,
   showPali: true,
   showTranslation: true,
+  commentaryMode: "en+pt",
 };
 
 function load<T>(key: string, fallback: T): T {

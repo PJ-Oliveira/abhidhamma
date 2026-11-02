@@ -257,9 +257,10 @@ async function buildPopover(
   const header = document.createElement("div");
   header.className = "sp-header";
   const label = document.createElement("span");
+  const isCommentarySeg = (segDiv as HTMLElement).dataset.commentary === "true";
   label.textContent = selectedInPali
     ? t("selectionTranslLabel", settings.uiLang)
-    : t("selectionPaliLabel", settings.uiLang);
+    : t(isCommentarySeg ? "selectionOriginalLabel" : "selectionPaliLabel", settings.uiLang);
   const closeBtn = document.createElement("button");
   closeBtn.className = "sp-close";
   closeBtn.textContent = "×";

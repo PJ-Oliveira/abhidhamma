@@ -1,19 +1,19 @@
-import { t } from "./i18n.js?v=546392a3";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=546392a3";
-import { renderTree, markActiveLeaf } from "./tree.js?v=546392a3";
-import { loadChunk, renderSegments } from "./reader.js?v=546392a3";
-import { initDictionaryPanel } from "./dictionary.js?v=546392a3";
-import { initSearchPanel } from "./search.js?v=546392a3";
-import { initExportPanel } from "./export.js?v=546392a3";
-import { initSrsPanel } from "./srs.js?v=546392a3";
-import { initToolsPanel } from "./tools/tools.js?v=546392a3";
-import "./tools/mindmap.js?v=546392a3";
-import "./tools/patthana.js?v=546392a3";
-import "./tools/vithi.js?v=546392a3";
-import "./tools/matikas.js?v=546392a3";
-import "./tools/cetasika.js?v=546392a3";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=546392a3";
-import { createLogger } from "./logger.js?v=546392a3";
+import { t } from "./i18n.js?v=3c38029c";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=3c38029c";
+import { renderTree, markActiveLeaf } from "./tree.js?v=3c38029c";
+import { loadChunk, renderSegments } from "./reader.js?v=3c38029c";
+import { initDictionaryPanel } from "./dictionary.js?v=3c38029c";
+import { initSearchPanel } from "./search.js?v=3c38029c";
+import { initExportPanel } from "./export.js?v=3c38029c";
+import { initSrsPanel } from "./srs.js?v=3c38029c";
+import { initToolsPanel } from "./tools/tools.js?v=3c38029c";
+import "./tools/mindmap.js?v=3c38029c";
+import "./tools/patthana.js?v=3c38029c";
+import "./tools/vithi.js?v=3c38029c";
+import "./tools/matikas.js?v=3c38029c";
+import "./tools/cetasika.js?v=3c38029c";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=3c38029c";
+import { createLogger } from "./logger.js?v=3c38029c";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -43,20 +43,69 @@ function getWorkGroup(workId) {
         return null;
     return (Object.keys(state.manifest.groups).find((g) => state.manifest?.groups[g]?.some((w) => w.id === workId)) ?? null);
 }
+function workSupportsEs(work) {
+    return Boolean(work?.languages?.includes("es"));
+}
+function resolveCommentaryMode(work) {
+    const raw = settings.commentaryMode ?? (settings.translationLang === "es" ? "en+es" : "en+pt");
+    if (!workSupportsEs(work)) {
+        if (raw === "en+es")
+            return "en+pt";
+        if (raw === "es")
+            return "pt";
+    }
+    return raw;
+}
+function commentaryModeToRenderFlags(mode) {
+    switch (mode) {
+        case "en":
+            return { showPaliOverride: true, showTranslationOverride: false, effectiveLang: "en" };
+        case "en+es":
+            return { showPaliOverride: true, showTranslationOverride: true, effectiveLang: "es" };
+        case "pt":
+            return { showPaliOverride: false, showTranslationOverride: true, effectiveLang: "pt" };
+        case "es":
+            return { showPaliOverride: false, showTranslationOverride: true, effectiveLang: "es" };
+        case "en+pt":
+        default:
+            return { showPaliOverride: true, showTranslationOverride: true, effectiveLang: "pt" };
+    }
+}
+function stripTags(html) {
+    return (html ?? "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+}
 function updateSettingsLabels() {
     const group = state.work ? getWorkGroup(state.work.id) : null;
-    const isBilingual = group === "comentarios";
+    const isCommentary = group === "comentarios";
     const paliLabelEl = document.getElementById("label-show-pali");
     const translationLabelEl = document.getElementById("label-show-translation");
-    if (paliLabelEl) {
-        paliLabelEl.textContent = isBilingual
-            ? t("settingShowOriginal", settings.uiLang)
-            : t("settingShowPali", settings.uiLang);
+    const paliCb = document.getElementById("setting-show-pali");
+    const translCb = document.getElementById("setting-show-translation");
+    if (isCommentary) {
+        const mode = resolveCommentaryMode(state.work);
+        const flags = commentaryModeToRenderFlags(mode);
+        const isEsMode = mode === "en+es" || mode === "es" || (mode === "en" && settings.uiLang === "es" && workSupportsEs(state.work));
+        if (paliLabelEl)
+            paliLabelEl.textContent = t("settingShowOriginal", settings.uiLang);
+        if (translationLabelEl) {
+            translationLabelEl.textContent = isEsMode
+                ? t("settingShowES", settings.uiLang)
+                : t("settingShowPT", settings.uiLang);
+        }
+        if (paliCb)
+            paliCb.checked = flags.showPaliOverride;
+        if (translCb)
+            translCb.checked = flags.showTranslationOverride;
     }
-    if (translationLabelEl) {
-        translationLabelEl.textContent = isBilingual
-            ? t("settingShowPT", settings.uiLang)
-            : t("settingShowTranslation", settings.uiLang);
+    else {
+        if (paliLabelEl)
+            paliLabelEl.textContent = t("settingShowPali", settings.uiLang);
+        if (translationLabelEl)
+            translationLabelEl.textContent = t("settingShowTranslation", settings.uiLang);
+        if (paliCb)
+            paliCb.checked = settings.showPali;
+        if (translCb)
+            translCb.checked = settings.showTranslation;
     }
 }
 function applySettingsToUI() {
@@ -94,6 +143,40 @@ function renderPartTabs() {
     tabsEl.innerHTML = "";
     if (!state.work)
         return;
+    const group = getWorkGroup(state.work.id);
+    if (group === "comentarios") {
+        const activeMode = resolveCommentaryMode(state.work);
+        const hasEs = workSupportsEs(state.work);
+        const modes = hasEs
+            ? [
+                { mode: "en", labelKey: "verEn" },
+                { mode: "en+pt", labelKey: "verEnPt" },
+                { mode: "en+es", labelKey: "verEnEs" },
+                { mode: "pt", labelKey: "verPt" },
+                { mode: "es", labelKey: "verEs" },
+            ]
+            : [
+                { mode: "en", labelKey: "verEn" },
+                { mode: "en+pt", labelKey: "verEnPt" },
+                { mode: "pt", labelKey: "verPt" },
+            ];
+        for (const item of modes) {
+            const btn = document.createElement("button");
+            btn.className = "part-tab version-tab";
+            btn.dataset.versionMode = item.mode;
+            btn.textContent = t(item.labelKey, settings.uiLang);
+            if (item.mode === activeMode)
+                btn.classList.add("active");
+            btn.addEventListener("click", () => {
+                updateSettings({ commentaryMode: item.mode });
+                renderPartTabs();
+                renderChapterNav();
+                rerenderContent();
+            });
+            tabsEl.appendChild(btn);
+        }
+        return;
+    }
     for (const partKey of Object.keys(state.work.parts)) {
         const part = state.work.parts[partKey];
         if (!part)
@@ -176,6 +259,11 @@ function renderChapterNav() {
     const list = document.createElement("ul");
     list.className = "chapter-nav-list";
     list.hidden = true;
+    const isCommentary = getWorkGroup(state.work.id) === "comentarios";
+    const commMode = isCommentary ? resolveCommentaryMode(state.work) : null;
+    const segById = isCommentary && state.segments.length > 0
+        ? new Map(state.segments.map((s) => [s.id, s]))
+        : null;
     for (let i = 0; i < chapters.length; i++) {
         const entry = chapters[i];
         const chunkIdx = segIdToChunk(entry.id, part);
@@ -185,7 +273,25 @@ function renderChapterNav() {
         numSpan.textContent = `${i + 1}.`;
         const textSpan = document.createElement("span");
         textSpan.className = "chap-text";
-        textSpan.textContent = entry.text.replace(/^\d+\.\s*/, "");
+        let chapLabel = entry.text.replace(/^\d+\.\s*/, "");
+        if (commMode && segById) {
+            const seg = segById.get(entry.id);
+            if (seg) {
+                const ptClean = stripTags(seg.pt).replace(/^\d+\.\s*/, "");
+                const esClean = stripTags(seg.es).replace(/^\d+\.\s*/, "");
+                if (commMode === "pt" && ptClean)
+                    chapLabel = ptClean;
+                else if (commMode === "es" && esClean)
+                    chapLabel = esClean;
+                else if (commMode === "en+pt" && ptClean && ptClean.toLowerCase() !== chapLabel.toLowerCase()) {
+                    chapLabel = `${chapLabel} · ${ptClean}`;
+                }
+                else if (commMode === "en+es" && esClean && esClean.toLowerCase() !== chapLabel.toLowerCase()) {
+                    chapLabel = `${chapLabel} · ${esClean}`;
+                }
+            }
+        }
+        textSpan.textContent = chapLabel;
         li.appendChild(numSpan);
         li.appendChild(textSpan);
         li.addEventListener("click", () => {
@@ -229,11 +335,7 @@ async function selectWork(workId, partKey, chunkIndex, segId) {
     state.work = work;
     state.partKey = partKey;
     state.chunkIndex = Math.max(0, Math.min(chunkIndex, part.files.length - 1));
-    const workGroup = getWorkGroup(workId);
-    if (workGroup === "comentarios" && !settings.showPali) {
-        updateSettings({ showPali: true });
-        el("setting-show-pali").checked = true;
-    }
+    state.segments = [];
     el("content").innerHTML = `<p class="loading">${t("loading", settings.uiLang)}</p>`;
     renderBreadcrumb();
     renderPartTabs();
@@ -253,6 +355,7 @@ async function selectWork(workId, partKey, chunkIndex, segId) {
         el("content").innerHTML = `<p class="loading">${t("noResults", settings.uiLang)}</p>`;
         return;
     }
+    renderChapterNav();
     rerenderContent();
     if (segId != null) {
         const target = el("content").querySelector(`.seg[data-seg-id="${segId}"]`);
@@ -376,6 +479,15 @@ function wireIconRail() {
         buttons.forEach((b) => b.classList.toggle("active", b.dataset.panel === target));
         panels.forEach((p) => p.classList.toggle("active", p.id === `panel-${target}`));
         toggleReaderOverlay(target);
+        if (target === "export" && state.work) {
+            const exportWorkSel = document.getElementById("export-work");
+            if (exportWorkSel && Array.from(exportWorkSel.options).some((o) => o.value === state.work.id)) {
+                if (exportWorkSel.value !== state.work.id) {
+                    exportWorkSel.value = state.work.id;
+                    exportWorkSel.dispatchEvent(new Event("change"));
+                }
+            }
+        }
         if (!skipHashUpdate)
             updateHash();
     };
@@ -445,9 +557,12 @@ function rerenderContent() {
     const work = state.work;
     const partKey = state.partKey;
     const group = getWorkGroup(work.id);
+    const isCommentary = group === "comentarios";
+    const commFlags = isCommentary ? commentaryModeToRenderFlags(resolveCommentaryMode(work)) : null;
     renderSegments(state.segments, content, {
         onNoteHover: handleNoteHover,
-        ...(group === "comentarios" ? { effectiveLang: "pt" } : {}),
+        isCommentary,
+        ...(commFlags ?? {}),
         isBookmarked: (segId) => isBookmarked(work.id, partKey, segId),
         onBookmarkToggle: (seg) => {
             const active = toggleBookmark({
@@ -486,7 +601,7 @@ async function cacheAllForOffline(btn) {
     const origHtml = btn.innerHTML;
     btn.disabled = true;
     try {
-        const cache = await caches.open('abhidhamma-cache-v12');
+        const cache = await caches.open('abhidhamma-cache-v14');
         const urls = [
             './',
             './index.html',
@@ -566,7 +681,25 @@ function wireSettingsPanel() {
     }
     const langSelect = el("setting-lang");
     langSelect.addEventListener("change", () => {
-        updateSettings({ translationLang: langSelect.value, uiLang: langSelect.value });
+        const newLang = langSelect.value;
+        let nextCommMode = settings.commentaryMode;
+        if (newLang === "es") {
+            if (!nextCommMode || nextCommMode === "en+pt")
+                nextCommMode = "en+es";
+            else if (nextCommMode === "pt")
+                nextCommMode = "es";
+        }
+        else if (newLang === "pt") {
+            if (nextCommMode === "en+es")
+                nextCommMode = "en+pt";
+            else if (nextCommMode === "es")
+                nextCommMode = "pt";
+        }
+        updateSettings({
+            translationLang: newLang,
+            uiLang: newLang,
+            ...(nextCommMode ? { commentaryMode: nextCommMode } : {}),
+        });
         rerenderContent();
         refreshLocalizedUI();
         window.dispatchEvent(new Event("languageChanged"));
@@ -579,13 +712,45 @@ function wireSettingsPanel() {
         updateSettings({ fontSize: Math.max(settings.fontSize - 1, 12) });
         applySettingsToUI();
     });
+    const handleCommentaryCheckboxChange = (changed) => {
+        const curMode = resolveCommentaryMode(state.work);
+        const hasEs = workSupportsEs(state.work);
+        const targetTransl = hasEs && (curMode === "en+es" || curMode === "es" || settings.translationLang === "es") ? "es" : "pt";
+        let pChecked = showPali.checked;
+        let tChecked = showTranslation.checked;
+        if (!pChecked && !tChecked) {
+            if (changed === "pali")
+                tChecked = true;
+            else
+                pChecked = true;
+        }
+        let nextMode = "en+pt";
+        if (pChecked && tChecked)
+            nextMode = targetTransl === "es" ? "en+es" : "en+pt";
+        else if (pChecked && !tChecked)
+            nextMode = "en";
+        else
+            nextMode = targetTransl;
+        updateSettings({ commentaryMode: nextMode });
+        renderPartTabs();
+        renderChapterNav();
+        rerenderContent();
+    };
     const showPali = el("setting-show-pali");
     showPali.addEventListener("change", () => {
+        if (state.work && getWorkGroup(state.work.id) === "comentarios") {
+            handleCommentaryCheckboxChange("pali");
+            return;
+        }
         updateSettings({ showPali: showPali.checked });
         rerenderContent();
     });
     const showTranslation = el("setting-show-translation");
     showTranslation.addEventListener("change", () => {
+        if (state.work && getWorkGroup(state.work.id) === "comentarios") {
+            handleCommentaryCheckboxChange("transl");
+            return;
+        }
         updateSettings({ showTranslation: showTranslation.checked });
         rerenderContent();
     });
@@ -606,6 +771,7 @@ function applyStaticI18n() {
         if (key)
             node.title = t(key, settings.uiLang);
     });
+    updateSettingsLabels();
 }
 function refreshLocalizedUI() {
     applyStaticI18n();
@@ -707,7 +873,7 @@ async function init() {
         if ('caches' in window) {
             caches.keys().then((keys) => {
                 for (const k of keys) {
-                    if (k !== 'abhidhamma-cache-v12')
+                    if (k !== 'abhidhamma-cache-v14')
                         void caches.delete(k);
                 }
             }).catch(() => { });

@@ -27,6 +27,7 @@ export interface WorkEntry {
   id: string;
   title: string;
   parts: Record<string, WorkPart>;
+  languages?: ("en" | "pt" | "es")[];
 }
 
 export interface Manifest {
@@ -35,6 +36,7 @@ export interface Manifest {
 
 export type TranslationLang = "en" | "pt" | "es";
 export type UiLang = "pt" | "en" | "es";
+export type CommentaryMode = "en" | "en+pt" | "en+es" | "pt" | "es";
 
 export interface Settings {
   translationLang: TranslationLang;
@@ -42,6 +44,7 @@ export interface Settings {
   fontSize: number;
   showPali: boolean;
   showTranslation: boolean;
+  commentaryMode?: CommentaryMode;
 }
 
 export interface HistoryEntry {
