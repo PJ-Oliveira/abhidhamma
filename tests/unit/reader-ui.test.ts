@@ -38,4 +38,38 @@ describe('Reader UI Integration', () => {
         expect(paliLine.classList.contains('pali-line')).toBe(true);
         expect(paliLine.closest('.seg')).not.toBeNull();
     });
+
+    it('should render contemporary commentary segments cleanly across all 5 bilingual/monolingual modes', async () => {
+        const { renderSegments } = await import('../../src/reader.js');
+        const mockCommSegs = [
+            { id: 1, rend: 'book', pali: 'Lessons in Abhidhamma', en: 'Lessons in Abhidhamma', pt: 'Lições de Abhidhamma', es: 'Lecciones de Abhidhamma' },
+            { id: 260, rend: 'bodytext', pali: '...BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB B...', en: '...BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB B...', pt: '...BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB B...', es: '...BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB B...' }
+        ];
+
+        // 1. English mode (showPaliOverride: true, showTranslationOverride: false)
+        renderSegments(mockCommSegs as any, container, { isCommentary: true, showPaliOverride: true, showTranslationOverride: false, effectiveLang: 'en' });
+        expect(container.querySelectorAll('.seg')).toHaveLength(2);
+        expect(container.querySelector('.seg')?.classList.contains('no-translation')).toBe(true);
+        expect(container.querySelector('.pali-line')?.textContent).toContain('Lessons in Abhidhamma');
+
+        // 2. Portuguese mode (showPaliOverride: false, showTranslationOverride: true)
+        renderSegments(mockCommSegs as any, container, { isCommentary: true, showPaliOverride: false, showTranslationOverride: true, effectiveLang: 'pt' });
+        expect(container.querySelector('.seg')?.classList.contains('no-pali')).toBe(true);
+        expect(container.querySelector('.translation-line')?.textContent).toContain('Lições de Abhidhamma');
+
+        // 3. Spanish mode
+        renderSegments(mockCommSegs as any, container, { isCommentary: true, showPaliOverride: false, showTranslationOverride: true, effectiveLang: 'es' });
+        expect(container.querySelector('.seg')?.classList.contains('no-pali')).toBe(true);
+        expect(container.querySelector('.translation-line')?.textContent).toContain('Lecciones de Abhidhamma');
+
+        // 4. Bilingual EN+PT
+        renderSegments(mockCommSegs as any, container, { isCommentary: true, showPaliOverride: true, showTranslationOverride: true, effectiveLang: 'pt' });
+        expect(container.querySelector('.pali-line')?.textContent).toContain('Lessons in Abhidhamma');
+        expect(container.querySelector('.translation-line')?.textContent).toContain('Lições de Abhidhamma');
+
+        // 5. Bilingual EN+ES
+        renderSegments(mockCommSegs as any, container, { isCommentary: true, showPaliOverride: true, showTranslationOverride: true, effectiveLang: 'es' });
+        expect(container.querySelector('.pali-line')?.textContent).toContain('Lessons in Abhidhamma');
+        expect(container.querySelector('.translation-line')?.textContent).toContain('Lecciones de Abhidhamma');
+    });
 });

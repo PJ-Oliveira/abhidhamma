@@ -6,9 +6,11 @@ describe('SRS Logic (Spaced Repetition)', () => {
   beforeEach(() => {
     vi.stubGlobal('fetch', vi.fn().mockImplementation((url: string) => {
       if (url.includes('vocabulary.json')) {
-        return Promise.resolve({ ok: true, json: () => Promise.resolve([
-          { id: "1", h: "Citta", en: "Mind", pt: "Mente", es: "Mente" }
-        ]) });
+        return Promise.resolve({ ok: true, json: () => Promise.resolve({
+          cards: [
+            { id: "1", h: "Citta", en: "Mind", pt: "Mente", es: "Mente" }
+          ]
+        }) });
       }
       return Promise.resolve({ ok: false, status: 404 });
     }));
@@ -86,5 +88,5 @@ describe('SRS Logic (Spaced Repetition)', () => {
     initSrsPanel(container);
     await new Promise(r => setTimeout(r, 10)); // let it render
 
-    expect(container.innerHTML).toContain('srs-summary');
+    expect(container.innerHTML).toContain('srs-card');
   });

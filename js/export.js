@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=3c38029c";
-import { settings } from "./state.js?v=3c38029c";
-import { createLogger } from "./logger.js?v=3c38029c";
+import { t } from "./i18n.js?v=ab1f056d";
+import { settings } from "./state.js?v=ab1f056d";
+import { createLogger } from "./logger.js?v=ab1f056d";
 const log = createLogger("export");
 let glossaryData = null;
 async function loadGlossary() {

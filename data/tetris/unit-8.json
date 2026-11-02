@@ -1,0 +1,762 @@
+{
+  "unit": 8,
+  "title": {
+    "en": "Compendium of Categories (Samuccaya-saṅgaha)",
+    "pt": "Compêndio das Categorias (Samuccaya-saṅgaha)",
+    "es": "Compendio de las Categorías (Samuccaya-saṅgaha)"
+  },
+  "summary": {
+    "en": "Comprehensive classification of mental and material phenomena into structural categories: unwholesome groups (āsavas, oghas, yogas, nīvaraṇas, etc.), the 37 requisites of enlightenment (bodhipakkhiya-dhammas), and universal groupings (khandhas, āyatanas, dhātus, sacca).",
+    "pt": "Classificação abrangente das realidades mentais e materiais em categorias estruturais: grupos prejudiciais (āsavas, oghas, nīvaraṇas), os 37 requisitos do despertar (bodhipakkhiya-dhammas) e agrupamentos universais (khandhas, āyatanas, dhātus, sacca).",
+    "es": "Clasificación integral de las realidades mentales y materiales en categorías estructurales: grupos perjudiciales (āsavas, oghas, nīvaraṇas), los 37 requisitos del despertar (bodhipakkhiya-dhammas) y agrupaciones universales (khandhas, āyatanas, dhātus, sacca)."
+  },
+  "taxonomies": [
+    {
+      "id": "u8.samuccaya_categories",
+      "title": {
+        "en": "Classification of Structural Categories",
+        "pt": "Classificação das Categorias Estruturais",
+        "es": "Clasificación de las Categorías Estructurales"
+      },
+      "noun": {
+        "en": "categories",
+        "pt": "categorias",
+        "es": "categorías"
+      },
+      "source": {
+        "cma": "VII §1–§41",
+        "fund": "Lesson 8.1",
+        "as": "VII.1"
+      },
+      "nodes": [
+        {
+          "id": "all_categories",
+          "name": {
+            "en": "All Structural Categories",
+            "pt": "Todas as Categorias Estruturais",
+            "es": "Todas las Categorías Estructurales"
+          },
+          "parent": null
+        },
+        {
+          "id": "akusala_groups",
+          "name": {
+            "en": "Unwholesome Categories (Akusala-saṅgaha)",
+            "pt": "Categorias Prejudiciais (Akusala-saṅgaha)",
+            "es": "Categorías Perjudiciales (Akusala-saṅgaha)"
+          },
+          "parent": "all_categories",
+          "weight": 6
+        },
+        {
+          "id": "asava_group",
+          "name": {
+            "en": "Cankers (Āsava)",
+            "pt": "Influxos (Āsava)",
+            "es": "Influjos (Āsava)"
+          },
+          "parent": "akusala_groups",
+          "weight": 4
+        },
+        {
+          "id": "ogha_group",
+          "name": {
+            "en": "Floods (Ogha)",
+            "pt": "Inundações (Ogha)",
+            "es": "Inundaciones (Ogha)"
+          },
+          "parent": "akusala_groups",
+          "weight": 4
+        },
+        {
+          "id": "yoga_group",
+          "name": {
+            "en": "Bonds (Yoga)",
+            "pt": "Grilhões de União (Yoga)",
+            "es": "Grilletes de Unión (Yoga)"
+          },
+          "parent": "akusala_groups",
+          "weight": 4
+        },
+        {
+          "id": "gantha_group",
+          "name": {
+            "en": "Bodily Ties (Gantha)",
+            "pt": "Amarras Corporais (Gantha)",
+            "es": "Ataduras Corporales (Gantha)"
+          },
+          "parent": "akusala_groups",
+          "weight": 4
+        },
+        {
+          "id": "upadana_group",
+          "name": {
+            "en": "Clingings (Upādāna)",
+            "pt": "Apegos Fortes (Upādāna)",
+            "es": "Apegos Fuertes (Upādāna)"
+          },
+          "parent": "akusala_groups",
+          "weight": 4
+        },
+        {
+          "id": "nivarana_group",
+          "name": {
+            "en": "Hindrances (Nīvaraṇa)",
+            "pt": "Obstáculos (Nīvaraṇa)",
+            "es": "Obstáculos (Nīvaraṇa)"
+          },
+          "parent": "akusala_groups",
+          "weight": 6
+        },
+        {
+          "id": "bodhipakkhiya_groups",
+          "name": {
+            "en": "Enlightenment Requisites (37 Factors)",
+            "pt": "Requisitos do Despertar (37 Fatores)",
+            "es": "Requisitos del Despertar (37 Factores)"
+          },
+          "parent": "all_categories",
+          "weight": 7
+        },
+        {
+          "id": "satipatthana_group",
+          "name": {
+            "en": "Foundations of Mindfulness (4)",
+            "pt": "Bases da Atenção Plena (4)",
+            "es": "Bases de la Atención Plena (4)"
+          },
+          "parent": "bodhipakkhiya_groups",
+          "weight": 4
+        },
+        {
+          "id": "sammappadhana_group",
+          "name": {
+            "en": "Right Strivings (4)",
+            "pt": "Esforços Corretos (4)",
+            "es": "Esfuerzos Correctos (4)"
+          },
+          "parent": "bodhipakkhiya_groups",
+          "weight": 4
+        },
+        {
+          "id": "iddhipada_group",
+          "name": {
+            "en": "Bases of Spiritual Power (4)",
+            "pt": "Bases de Poder Espiritual (4)",
+            "es": "Bases de Poder Espiritual (4)"
+          },
+          "parent": "bodhipakkhiya_groups",
+          "weight": 4
+        },
+        {
+          "id": "indriya_group",
+          "name": {
+            "en": "Spiritual Faculties (5)",
+            "pt": "Faculdades Espirituais (5)",
+            "es": "Facultades Espirituales (5)"
+          },
+          "parent": "bodhipakkhiya_groups",
+          "weight": 5
+        },
+        {
+          "id": "bala_group",
+          "name": {
+            "en": "Spiritual Powers (5)",
+            "pt": "Poderes Espirituais (5)",
+            "es": "Poderes Espirituales (5)"
+          },
+          "parent": "bodhipakkhiya_groups",
+          "weight": 5
+        },
+        {
+          "id": "bojjhanga_group",
+          "name": {
+            "en": "Factors of Enlightenment (7)",
+            "pt": "Fatores do Despertar (7)",
+            "es": "Fatores del Despertar (7)"
+          },
+          "parent": "bodhipakkhiya_groups",
+          "weight": 7
+        },
+        {
+          "id": "magganga_group",
+          "name": {
+            "en": "Path Factors (8)",
+            "pt": "Fatores do Caminho (8)",
+            "es": "Factores del Camino (8)"
+          },
+          "parent": "bodhipakkhiya_groups",
+          "weight": 8
+        },
+        {
+          "id": "sabbasangaha_groups",
+          "name": {
+            "en": "Universal Compendia (Sabbasaṅgaha)",
+            "pt": "Compêndios Universais (Sabbasaṅgaha)",
+            "es": "Compendios Universales (Sabbasaṅgaha)"
+          },
+          "parent": "all_categories",
+          "weight": 4
+        },
+        {
+          "id": "khandha_group",
+          "name": {
+            "en": "Five Aggregates (Khandha)",
+            "pt": "Cinco Agregados (Khandha)",
+            "es": "Cinco Agregados (Khandha)"
+          },
+          "parent": "sabbasangaha_groups",
+          "weight": 5
+        },
+        {
+          "id": "ayatana_group",
+          "name": {
+            "en": "Twelve Sense Bases (Āyatana)",
+            "pt": "Doze Bases Sensoriais (Āyatana)",
+            "es": "Doce Bases Sensoriales (Āyatana)"
+          },
+          "parent": "sabbasangaha_groups",
+          "weight": 12
+        },
+        {
+          "id": "dhatu_group",
+          "name": {
+            "en": "Eighteen Elements (Dhātu)",
+            "pt": "Dezoito Elementos (Dhātu)",
+            "es": "Dieciocho Elementos (Dhātu)"
+          },
+          "parent": "sabbasangaha_groups",
+          "weight": 18
+        },
+        {
+          "id": "ariyasacca_group",
+          "name": {
+            "en": "Four Noble Truths (Ariyasacca)",
+            "pt": "Quatro Nobres Verdades (Ariyasacca)",
+            "es": "Cuatro Nobles Verdades (Ariyasacca)"
+          },
+          "parent": "sabbasangaha_groups",
+          "weight": 4
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "u8.asava_four_taints",
+      "kind": "atom",
+      "topic": {
+        "en": "Four Cankers",
+        "pt": "Quatro Influxos",
+        "es": "Cuatro Influjos"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the four cankers or taints (āsava) that ferment in unliberated minds?",
+        "pt": "Quais são os quatro influxos (āsava) que fermentam na mente não liberta?",
+        "es": "¿Cuáles son los cuatro influjos (āsava) que fermentan en la mente no liberada?"
+      },
+      "correct": {
+        "en": "Sensual desire (kāmāsava), existence (bhavāsava), wrong view (diṭṭhāsava), and ignorance (avijjāsava).",
+        "pt": "Desejo sensual (kāmāsava), apego ao vir-a-ser (bhavāsava), visão incorreta (diṭṭhāsava) e ignorância (avijjāsava).",
+        "es": "Deseo sensual (kāmāsava), apego al devenir (bhavāsava), visión incorrecta (diṭṭhāsava) e ignorancia (avijjāsava)."
+      },
+      "distractors": [
+        {
+          "en": "Greed, hatred, delusion, and conceit.",
+          "pt": "Apego, aversão, delusão e vaidade.",
+          "es": "Apego, aversión, delusión y vanidad."
+        },
+        {
+          "en": "Birth, aging, sickness, and physical death.",
+          "pt": "Nascimento, velhice, enfermidade e morte física.",
+          "es": "Nacimiento, vejez, enfermedad y muerte física."
+        },
+        {
+          "en": "Envy, avarice, worry, and skeptical doubt.",
+          "pt": "Inveja, avareza, preocupação e dúvida cética.",
+          "es": "Envidia, avaricia, preocupación y duda escéptica."
+        }
+      ],
+      "explanation": {
+        "en": "The 4 āsavas ferment and ooze through sense doors. In ultimate terms, they comprise only 3 cetasikas: lobha (operating as sensual desire and desire for existence), diṭṭhi (wrong view), and moha (ignorance).",
+        "pt": "Os 4 āsavas fermentam e transbordam pelas portas. Em termos últimos, compreendem apenas 3 cetasikas: lobha (desejo sensual e pelo devir), diṭṭhi (visão incorreta) e moha (ignorância).",
+        "es": "Los 4 āsavas fermentan y desbordan por las puertas. En términos últimos, comprenden solo 3 cetasikas: lobha (deseo sensual y por el devenir), diṭṭhi (visión incorrecta) y moha (ignorancia)."
+      },
+      "source": {
+        "cma": "VII §2",
+        "fund": "Lesson 8.1"
+      }
+    },
+    {
+      "id": "u8.upadana_four_clingings",
+      "kind": "atom",
+      "topic": {
+        "en": "Four Clingings",
+        "pt": "Quatro Apegos Fortes",
+        "es": "Cuatro Apegos Fuertes"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the four kinds of clinging (upādāna) that bind beings to the cycle of rebirth?",
+        "pt": "Quais são os quatro tipos de apego forte (upādāna) que amarram os seres ao ciclo de renascimentos?",
+        "es": "¿Cuáles son los cuatro tipos de apego fuerte (upādāna) que atan a los seres al ciclo de renacimientos?"
+      },
+      "correct": {
+        "en": "Sensual clinging, clinging to wrong views, clinging to rites and rituals, and clinging to a doctrine of self.",
+        "pt": "Apego ao prazer sensual, apego a visões incorretas, apego a ritos e rituais e apego à doutrina do eu.",
+        "es": "Apego al placer sensual, apego a visiones incorrectas, apego a ritos y rituales y apego a la doctrina del yo."
+      },
+      "distractors": [
+        {
+          "en": "Clinging to wealth, family, reputation, and bodily health.",
+          "pt": "Apego a riquezas, família, reputação e saúde física.",
+          "es": "Apego a riquezas, familia, reputación y salud física."
+        },
+        {
+          "en": "Clinging to past lives, present moments, future realms, and formless heavens.",
+          "pt": "Apego a vidas passadas, momentos presentes, reinos futuros e céus sem forma.",
+          "es": "Apego a vidas pasadas, momentos presentes, reinos futuros y cielos sin forma."
+        },
+        {
+          "en": "Clinging to food, clothes, monastery lodgings, and medicine.",
+          "pt": "Apego a comida, roupas, alojamento monástico e remédios.",
+          "es": "Apego a comida, ropas, alojamiento monástico y medicinas."
+        }
+      ],
+      "explanation": {
+        "en": "Kāmupādāna (intensified greed/lobha), diṭṭhupādāna (wrong philosophical views), sīlabbatupādāna (believing rites alone purify), and attavādupādāna (clinging to a permanent self). All 4 reduce to lobha and diṭṭhi.",
+        "pt": "Kāmupādāna (apego sensual intenso), diṭṭhupādāna (visões filosóficas falsas), sīlabbatupādāna (crer que ritos purificam) e attavādupādāna (apego a um eu permanente). Todos se reduzem a lobha e diṭṭhi.",
+        "es": "Kāmupādāna (apego sensual intenso), diṭṭhupādāna (visiones filosóficas falsas), sīlabbatupādāna (creer que ritos purifican) y attavādupādāna (apego a un yo permanente). Todos se reducen a lobha y diṭṭhi."
+      },
+      "source": {
+        "cma": "VII §4",
+        "fund": "Lesson 8.1"
+      }
+    },
+    {
+      "id": "u8.nivarana_six_hindrances",
+      "kind": "atom",
+      "topic": {
+        "en": "Six Hindrances",
+        "pt": "Seis Obstáculos",
+        "es": "Seis Obstáculos"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Which six hindrances (nīvaraṇa) obstruct access to absorption and clear discernment in meditation?",
+        "pt": "Quais seis obstáculos (nīvaraṇa) bloqueiam o acesso à absorção e ao discernimento na meditação?",
+        "es": "¿Cuáles seis obstáculos (nīvaraṇa) bloquean el acceso a la absorción y al discernimiento en la meditación?"
+      },
+      "correct": {
+        "en": "Sensual desire, ill-will, sloth-torpor, restlessness-worry, skeptical doubt, and ignorance.",
+        "pt": "Desejo sensual, má vontade, preguiça-torpor, agitação-remorso, dúvida cética e ignorância.",
+        "es": "Deseo sensual, mala voluntad, pereza-torpor, agitación-remordimiento, duda escéptica e ignorancia."
+      },
+      "distractors": [
+        {
+          "en": "Envy, stinginess, conceit, arrogance, greed, and bodily pain.",
+          "pt": "Inveja, mesquinhez, vaidade, arrogância, apego e dor corporal.",
+          "es": "Envidia, tacañería, vanidad, arrogancia, apego y dolor corporal."
+        },
+        {
+          "en": "Hunger, thirst, sleep, heat, cold, and physical disease.",
+          "pt": "Fome, sede, sono, calor, frio e enfermidade física.",
+          "es": "Hambre, sed, sueño, calor, frío y enfermedad física."
+        },
+        {
+          "en": "Past karma, present obstacles, evil spirits, and celestial devils.",
+          "pt": "Kamma passado, obstáculos presentes, espíritos malignos e demônios celestiais.",
+          "es": "Kamma pasado, obstáculos presentes, espíritus malignos y demonios celestiales."
+        }
+      ],
+      "explanation": {
+        "en": "The 6 nīvaraṇas: kāmacchanda (lobha), byāpāda (dosa), thīna-middha (sluggishness), uddhacca-kukkucca (restlessness and remorse), vicikicchā (doubt), and avijjā (moha). They stifle wisdom and prevent jhāna.",
+        "pt": "Os 6 nīvaraṇas: kāmacchanda (apego), byāpāda (aversão), thīna-middha (inércia), uddhacca-kukkucca (agitação e culpa), vicikicchā (dúvida) e avijjā (delusão). Sufocam a sabedoria e impedem o jhāna.",
+        "es": "Los 6 nīvaraṇas: kāmacchanda (apego), byāpāda (aversión), thīna-middha (inercia), uddhacca-kukkucca (agitación y culpa), vicikicchā (duda) y avijjā (delusión). Sofocan la sabiduría e impiden el jhāna."
+      },
+      "source": {
+        "cma": "VII §5",
+        "fund": "Lesson 8.1"
+      }
+    },
+    {
+      "id": "u8.bodhipakkhiya_thirtyseven_groups",
+      "kind": "atom",
+      "topic": {
+        "en": "37 Requisites of Awakening",
+        "pt": "37 Requisitos do Despertar",
+        "es": "37 Requisitos del Despertar"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What seven sets comprise the thirty-seven requisites of enlightenment (bodhipakkhiya-dhammas)?",
+        "pt": "Quais sete conjuntos compõem os trinta e sete requisitos do despertar (bodhipakkhiya-dhammas)?",
+        "es": "¿Cuáles siete conjuntos componen los treinta y siete requisitos del despertar (bodhipakkhiya-dhammas)?"
+      },
+      "correct": {
+        "en": "4 satipaṭṭhāna, 4 sammappadhāna, 4 iddhipāda, 5 indriya, 5 bala, 7 bojjhaṅga, and 8 maggaṅga.",
+        "pt": "4 satipaṭṭhāna, 4 sammappadhāna, 4 iddhipāda, 5 indriya, 5 bala, 7 bojjhaṅga e 8 maggaṅga.",
+        "es": "4 satipaṭṭhāna, 4 sammappadhāna, 4 iddhipāda, 5 indriya, 5 bala, 7 bojjhaṅga y 8 maggaṅga."
+      },
+      "distractors": [
+        {
+          "en": "5 aggregates, 12 sense bases, 18 elements, and 24 conditional relations.",
+          "pt": "5 agregados, 12 bases sensoriais, 18 elementos e 24 relações condicionais.",
+          "es": "5 agregados, 12 bases sensoriales, 18 elementos y 24 relaciones condicionales."
+        },
+        {
+          "en": "10 perfections, 10 insight knowledges, 7 purifications, and 10 fetters.",
+          "pt": "10 perfeições, 10 conhecimentos de insight, 7 purificações e 10 grilhões.",
+          "es": "10 perfecciones, 10 conocimientos de insight, 7 purificaciones y 10 grilletes."
+        },
+        {
+          "en": "4 noble truths, 12 links of dependent origination, and 21 meditation topics.",
+          "pt": "4 nobres verdades, 12 elos do surgimento dependente e 21 temas de meditação.",
+          "es": "4 nobles verdades, 12 eslabones del surgimiento dependiente y 21 temas de meditación."
+        }
+      ],
+      "explanation": {
+        "en": "The 37 bodhipakkhiya-dhammas synthesize the practical Buddhist path: 4 foundations of mindfulness + 4 right strivings + 4 bases of power + 5 faculties + 5 powers + 7 factors of awakening + 8 path factors = 37.",
+        "pt": "Os 37 bodhipakkhiya-dhammas sintetizam o caminho budista: 4 bases da atenção plena + 4 esforços corretos + 4 bases de poder + 5 faculdades + 5 poderes + 7 fatores do despertar + 8 fatores do caminho = 37.",
+        "es": "Los 37 bodhipakkhiya-dhammas sintetizan el sendero budista: 4 bases de la atención plena + 4 esfuerzos correctos + 4 bases de poder + 5 facultades + 5 poderes + 7 factores del despertar + 8 factores del sendero = 37."
+      },
+      "source": {
+        "cma": "VII §24–§33",
+        "fund": "Lesson 8.3"
+      }
+    },
+    {
+      "id": "u8.khandha_five_aggregates",
+      "kind": "atom",
+      "topic": {
+        "en": "Five Aggregates",
+        "pt": "Cinco Agregados",
+        "es": "Cinco Agregados"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the five aggregates (pañcakkhandha) that encompass all conditioned existence?",
+        "pt": "Quais são os cinco agregados (pañcakkhandha) que abrangem toda a existência condicionada?",
+        "es": "¿Cuáles son los cinco agregados (pañcakkhandha) que abarcan toda la existencia condicionada?"
+      },
+      "correct": {
+        "en": "Materiality (rūpa), feeling (vedanā), perception (saññā), mental formations (saṅkhāra), and consciousness (viññāṇa).",
+        "pt": "Matéria (rūpa), sensação (vedanā), percepção (saññā), formações mentais (saṅkhāra) e consciência (viññāṇa).",
+        "es": "Materia (rūpa), sensación (vedanā), percepción (saññā), formaciones mentales (saṅkhāra) y conciencia (viññāṇa)."
+      },
+      "distractors": [
+        {
+          "en": "Earth, water, fire, wind, and space aggregates.",
+          "pt": "Agregados de terra, água, fogo, ar e espaço.",
+          "es": "Agregados de tierra, agua, fuego, aire y espacio."
+        },
+        {
+          "en": "Virtue, concentration, wisdom, liberation, and insight into liberation.",
+          "pt": "Virtude, concentração, sabedoria, libertação e visão da libertação.",
+          "es": "Virtud, concentración, sabiduría, liberación y visión de la liberación."
+        },
+        {
+          "en": "Eye, ear, nose, tongue, and body consciousnesses.",
+          "pt": "Consciências do olho, ouvido, nariz, língua e corpo.",
+          "es": "Conciencias del ojo, oído, nariz, lengua y cuerpo."
+        }
+      ],
+      "explanation": {
+        "en": "The 5 khandhas: 28 rūpas form rūpakkhandha; vedanā cetasika forms vedanākkhandha; saññā forms saññākkhandha; the remaining 50 cetasikas form saṅkhārakkhandha; all 89 cittas form viññāṇakkhandha.",
+        "pt": "Os 5 khandhas: 28 rūpas formam rūpakkhandha; o cetasika vedanā forma vedanākkhandha; saññā forma saññākkhandha; os outros 50 cetasikas formam saṅkhārakkhandha; todas as 89 cittas formam viññāṇakkhandha.",
+        "es": "Los 5 khandhas: 28 rūpas forman rūpakkhandha; el cetasika vedanā forma vedanākkhandha; saññā forma saññākkhandha; los otros 50 cetasikas forman saṅkhārakkhandha; todas las 89 cittas forman viññāṇakkhandha."
+      },
+      "source": {
+        "cma": "VII §35",
+        "fund": "Lesson 8.4"
+      }
+    },
+    {
+      "id": "u8.nibbana_khandha_exempt",
+      "kind": "atom",
+      "topic": {
+        "en": "Nibbāna Beyond Khandhas",
+        "pt": "Nibbāna Além dos Agregados",
+        "es": "Nibbāna Más Allá de los Agregados"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Why is Nibbāna not classified under any of the five aggregates (khandha-vimutta)?",
+        "pt": "Por que Nibbāna não é classificado sob nenhum dos cinco agregados (khandha-vimutta)?",
+        "es": "¿Por qué Nibbāna no se clasifica bajo ninguno de los cinco agregados (khandha-vimutta)?"
+      },
+      "correct": {
+        "en": "Because khandha denotes a composite collection of past, present, or future conditioned states; Nibbāna is unconditioned.",
+        "pt": "Porque khandha denota agrupamento composto de estados condicionados; Nibbāna é incondicionado.",
+        "es": "Porque khandha denota agrupación compuesta de estados condicionados; Nibbāna es incondicionado."
+      },
+      "distractors": [
+        {
+          "en": "Because Nibbāna is an imaginary illusion produced by intense philosophical thought.",
+          "pt": "Porque Nibbāna é uma ilusão imaginária produzida por pensamento filosófico intenso.",
+          "es": "Porque Nibbāna es una ilusión imaginaria producida por pensamiento filosófico intenso."
+        },
+        {
+          "en": "Because Nibbāna belongs solely to the category of material formations.",
+          "pt": "Porque Nibbāna pertence unicamente à categoria das formações materiais.",
+          "es": "Porque Nibbāna pertenece únicamente a la categoría de las formaciones materiales."
+        },
+        {
+          "en": "Because only enlightened Buddhas can experience the aggregates.",
+          "pt": "Porque apenas Buddhas despertos podem experienciar os agregados.",
+          "es": "Porque solo los Buddhas despiertos pueden experimentar los agregados."
+        }
+      ],
+      "explanation": {
+        "en": "Khandha means aggregate, group, or heap. Only phenomena that occur as past, present, future, internal, external, coarse, subtle, inferior, superior, near, or far can form a khandha. Nibbāna is unconditioned and exempt.",
+        "pt": "Khandha significa agregado, grupo ou monte. Apenas estados passados, presentes, futuros, grosseiros, sutis, etc., formam agregados. Nibbāna é incondicionado e está além dos agregados (khandha-vimutta).",
+        "es": "Khandha significa agregado, grupo o montón. Solo los estados pasados, presentes, futuros, toscos, sutiles, etc., forman agregados. Nibbāna es incondicionado y está más allá de los agregados (khandha-vimutta)."
+      },
+      "source": {
+        "cma": "VII §35",
+        "fund": "Lesson 8.4"
+      }
+    },
+    {
+      "id": "u8.dhatu_eighteen_elements",
+      "kind": "atom",
+      "topic": {
+        "en": "Eighteen Elements",
+        "pt": "Dezoito Elementos",
+        "es": "Dieciocho Elementos"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How are the eighteen elements (aṭṭhārasa dhātuyo) grouped into triplets?",
+        "pt": "Como os dezoito elementos (aṭṭhārasa dhātuyo) são agrupados em tripletos?",
+        "es": "¿Cómo se agrupan los dieciocho elementos (aṭṭhārasa dhātuyo) en tripletes?"
+      },
+      "correct": {
+        "en": "Six internal sense organs, six external sense objects, and six corresponding sense consciousnesses.",
+        "pt": "Seis órgãos sensoriais internos, seis objetos externos e seis consciências sensoriais correspondentes.",
+        "es": "Seis órganos sensoriales internos, seis objetos externos y seis conciencias sensoriales correspondientes."
+      },
+      "distractors": [
+        {
+          "en": "Nine wholesome elements and nine unwholesome elements.",
+          "pt": "Nove elementos benéficos e nove elementos prejudiciais.",
+          "es": "Nueve elementos benéficos y nueve elementos perjudiciales."
+        },
+        {
+          "en": "Six planes of rebirth, six periods of cosmic time, and six Buddhas.",
+          "pt": "Seis planos de renascimento, seis períodos cósmicos e seis Buddhas.",
+          "es": "Seis planos de renacimiento, seis períodos cósmicos y seis Buddhas."
+        },
+        {
+          "en": "Three physical roots, three mental roots, and twelve subtle forms.",
+          "pt": "Três raízes físicas, três raízes mentais e doze formas sutis.",
+          "es": "Tres raíces físicas, tres raíces mentales y doce formas sutiles."
+        }
+      ],
+      "explanation": {
+        "en": "The 18 dhātus: 6 sense faculties (eye to mind base), 6 sense objects (visible form to mental object), and 6 sense consciousnesses (eye-consciousness to mind-consciousness element).",
+        "pt": "Os 18 dhātus: 6 faculdades sensoriais (olho a mente), 6 objetos (forma visível a objeto mental) e 6 consciências (consciência do olho a elemento de consciência mental).",
+        "es": "Los 18 dhātus: 6 facultades sensoriales (ojo a mente), 6 objetos (forma visible a objeto mental) y 6 conciencias (conciencia del ojo a elemento de conciencia mental)."
+      },
+      "source": {
+        "cma": "VII §38",
+        "fund": "Lesson 8.4"
+      }
+    },
+    {
+      "id": "u8.deduced_fourteen_factors_synthesis",
+      "kind": "derived",
+      "topic": {
+        "en": "Bodhipakkhiya Ultimate Synthesis",
+        "pt": "Síntese dos 37 Fatores do Despertar",
+        "es": "Síntesis de los 37 Factores del Despertar"
+      },
+      "requires": [
+        "u8.bodhipakkhiya_thirtyseven_groups"
+      ],
+      "prompt": {
+        "en": "When the 37 requisites of enlightenment are reduced to ultimate realities (paramattha), how many factors remain?",
+        "pt": "Quando os 37 requisitos do despertar são reduzidos a realidades últimas (paramattha), quantos fatores restam?",
+        "es": "¿Cuando los 37 requisitos del despertar se reducen a realidades últimas (paramattha), cuántos factores quedan?"
+      },
+      "correct": {
+        "en": "Fourteen distinct mental factors (cetasikas).",
+        "pt": "Quatorze fatores mentais distintos (cetasikas).",
+        "es": "Catorce factores mentales distintos (cetasikas)."
+      },
+      "distractors": [
+        {
+          "en": "Thirty-seven completely separate and independent ultimate realities.",
+          "pt": "Trinta e sete realidades últimas completamente separadas e independentes.",
+          "es": "Treinta y siete realidades últimas completamente separadas e independientes."
+        },
+        {
+          "en": "Seven factors, matching the seven enlightenment factors.",
+          "pt": "Sete fatores, correspondendo aos sete fatores do despertar.",
+          "es": "Siete factores, correspondiendo a los siete factores del despertar."
+        },
+        {
+          "en": "Fifty-two factors, comprising all the mental concomitants.",
+          "pt": "Cinquenta e dois fatores, compreendendo todos os concomitantes mentais.",
+          "es": "Cincuenta y dos factores, comprendiendo todos los concomitantes mentales."
+        }
+      ],
+      "explanation": {
+        "en": "The 37 factors reduce to only 14 cetasikas: vīriya (counted 9 times!), sati (8 times!), paññā (5 times!), samādhi (4 times!), saddhā (2 times!), chanda (1), citta (1), passaddhi (1), pīti (1), upekkhā (1), vitakka (1), and the 3 viratis (3).",
+        "pt": "Os 37 fatores reduzem-se a apenas 14 cetasikas: vīriya (surge 9 vezes!), sati (8 vezes!), paññā (5 vezes!), samādhi (4 vezes!), saddhā (2 vezes!), chanda (1), citta (1), passaddhi (1), pīti (1), upekkhā (1), vitakka (1) e 3 viratiyo (3).",
+        "es": "Los 37 factores se reducen a solo 14 cetasikas: vīriya (¡aparece 9 veces!), sati (¡8 veces!), paññā (¡5 veces!), samādhi (¡4 veces!), saddhā (¡2 veces!), chanda (1), citta (1), passaddhi (1), pīti (1), upekkhā (1), vitakka (1) y 3 viratis (3)."
+      },
+      "source": {
+        "cma": "VII §33",
+        "fund": "Lesson 8.3"
+      }
+    },
+    {
+      "id": "u8.deduced_ariyasacca_ultimate_mapping",
+      "kind": "derived",
+      "topic": {
+        "en": "Four Truths Ultimate Mapping",
+        "pt": "Mapeamento das Quatro Verdades",
+        "es": "Mapeo de las Cuatro Verdades"
+      },
+      "requires": [
+        "u8.khandha_five_aggregates"
+      ],
+      "prompt": {
+        "en": "How do the Four Noble Truths map onto the ultimate realities (paramattha dhammas)?",
+        "pt": "Como as Quatro Nobres Verdades se mapeiam sobre as realidades últimas (paramattha dhammas)?",
+        "es": "¿Cómo se asignan las Cuatro Nobles Verdades a las realidades últimas (paramattha dhammas)?"
+      },
+      "correct": {
+        "en": "Dukkha = mundane nāma-rūpa; Samudaya = craving (lobha); Nirodha = Nibbāna; Magga = 8 supramundane path factors.",
+        "pt": "Dukkha = nāma-rūpa mundano; Samudaya = desejo (lobha); Nirodha = Nibbāna; Magga = 8 fatores do caminho.",
+        "es": "Dukkha = nāma-rūpa mundano; Samudaya = deseo (lobha); Nirodha = Nibbāna; Magga = 8 factores del sendero."
+      },
+      "distractors": [
+        {
+          "en": "All Four Noble Truths are identical to the single unconditioned element Nibbāna.",
+          "pt": "Todas as Quatro Nobres Verdades são idênticas ao elemento incondicionado Nibbāna.",
+          "es": "Todas las Cuatro Nobles Verdades son idénticas al elemento incondicionado Nibbāna."
+        },
+        {
+          "en": "The Four Truths are merely conventional concepts (paññatti) without ultimate reality.",
+          "pt": "As Quatro Verdades são meros conceitos convencionais sem realidade última.",
+          "es": "Las Cuatro Verdades son meros conceptos convencionales sin realidad última."
+        },
+        {
+          "en": "Dukkha and Samudaya are material; Nirodha and Magga are purely consciousness.",
+          "pt": "Dukkha e Samudaya são materiais; Nirodha e Magga são puramente consciência.",
+          "es": "Dukkha y Samudaya son materiales; Nirodha y Magga son puramente conciencia."
+        }
+      ],
+      "explanation": {
+        "en": "The Truth of Suffering encompasses all conditioned mundane phenomena (the 5 aggregates of clinging). The Origin of Suffering is craving (taṇhā, the cetasika lobha). Cessation is Nibbāna. The Path is the 8 mental factors in the supramundane path.",
+        "pt": "A Verdade do Sofrimento abrange todas as realidades condicionadas mundanas (os 5 agregados de apego). A Origem é o desejo (taṇhā, o cetasika lobha). A Cessação é Nibbāna. O Caminho são os 8 fatores mentais no caminho supramundano.",
+        "es": "La Verdad del Sufrimiento abarca todas las realidades condicionadas mundanas (los 5 agregados de apego). El Origen es el deseo (taṇhā, el cetasika lobha). La Cesación es Nibbāna. El Sendero son los 8 factores mentales en el sendero supramundano."
+      },
+      "source": {
+        "cma": "VII §40",
+        "fund": "Lesson 8.4"
+      }
+    },
+    {
+      "id": "u8.bodhipakkhiya_fourteen_ultimates",
+      "kind": "atom",
+      "topic": {
+        "en": "14 Bodhipakkhiya Ultimates",
+        "pt": "14 Fatores Últimos Bodhipakkhiya",
+        "es": "14 Factores Últimos Bodhipakkhiya"
+      },
+      "requires": [
+        "u8.bodhipakkhiya_thirtyseven_groups"
+      ],
+      "prompt": {
+        "en": "Reduced to ultimate realities, how many distinct dhammas form the 37 requisites?",
+        "pt": "Reduzidos a realidades últimas, quantos dhammas distintos formam os 37 requisitos?",
+        "es": "Reducidos a realidades últimas, ¿cuántos dhammas distintos forman los 37 requisitos?"
+      },
+      "correct": {
+        "en": "Exactly 14 ultimate realities (1 citta and 13 distinct cetasikas).",
+        "pt": "Exatamente 14 realidades últimas (1 citta e 13 cetasikas distintos).",
+        "es": "Exactamente 14 realidades últimas (1 citta y 13 cetasikas distintos)."
+      },
+      "distractors": [
+        {
+          "en": "37 separate mental factors, each corresponding to one specific factor.",
+          "pt": "37 fatores mentais separados, cada um correspondendo a um fator específico.",
+          "es": "37 factores mentales separados, cada uno correspondiente a un factor específico."
+        },
+        {
+          "en": "Only one single ultimate factor: the unconditioned reality of Nibbāna.",
+          "pt": "Apenas um único fator último: a realidade incondicionada de Nibbāna.",
+          "es": "Solo un único factor último: la realidad incondicionada de Nibbāna."
+        },
+        {
+          "en": "Twenty-four ultimate realities spanning both mental and physical domains.",
+          "pt": "Vinte e quatro realidades últimas abrangendo domínios mental e físico.",
+          "es": "Veinticuatro realidades últimas abarcando dominios mental y físico."
+        }
+      ],
+      "explanation": {
+        "en": "Factors like vīriya, sati, and paññā recur under different set headings, resolving to 14 dhammas.",
+        "pt": "Fatores como vīriya, sati e paññā se repetem em vários grupos, totalizando 14 dhammas.",
+        "es": "Factores como vīriya, sati y paññā se repiten en varios grupos, totalizando 14 dhammas."
+      },
+      "source": {
+        "cma": "VII §28",
+        "fund": "7.3",
+        "as": "VII.28"
+      }
+    },
+    {
+      "id": "u8.nivarana_five_sets",
+      "kind": "atom",
+      "topic": {
+        "en": "Five Hindrances Scope",
+        "pt": "Âmbito dos Cinco Obstáculos",
+        "es": "Ámbito de los Cinco Obstáculos"
+      },
+      "requires": [
+        "u8.nivarana_six_hindrances"
+      ],
+      "prompt": {
+        "en": "Which mental factor serves as the ultimate reality behind sensual desire (kāmacchanda)?",
+        "pt": "Qual fator mental serve como a realidade última por trás do desejo sensual (kāmacchanda)?",
+        "es": "¿Qué factor mental sirve como la realidad última detrás del deseo sensual (kāmacchanda)?"
+      },
+      "correct": {
+        "en": "Lobha (greed / attachment directed toward sensory pleasures).",
+        "pt": "Lobha (ganância / apego direcionado aos prazeres sensoriais).",
+        "es": "Lobha (codicia / apego dirigido a los placeres sensoriales)."
+      },
+      "distractors": [
+        {
+          "en": "Moha (sheer fundamental delusion unaccompanied by desire).",
+          "pt": "Moha (delírio fundamental puro desacompanhado de desejo).",
+          "es": "Moha (delirio fundamental puro desacompañado de deseo)."
+        },
+        {
+          "en": "Māna (conceit that compares oneself superior to other beings).",
+          "pt": "Māna (presunção que compara a si próprio superior a outros seres).",
+          "es": "Māna (presunción que compara a uno mismo superior a otros seres)."
+        },
+        {
+          "en": "Chanda (ethical zeal and neutral wish-to-do wholesome deeds).",
+          "pt": "Chanda (zelo ético e desejo neutro de praticar atos salutares).",
+          "es": "Chanda (celo ético y deseo neutro de practicar actos saludables)."
+        }
+      ],
+      "explanation": {
+        "en": "Sensual desire as a hindrance is nothing other than the cetasika lobha rooted in sensual pleasure.",
+        "pt": "O desejo sensual como obstáculo nada mais é do que o cetasika lobha enraizado no prazer dos sentidos.",
+        "es": "El deseo sensual como obstáculo no es otra cosa que el cetasika lobha enraizado en el placer de los sentidos."
+      },
+      "source": {
+        "cma": "VII §8",
+        "fund": "7.1",
+        "as": "VII.8"
+      }
+    }
+  ]
+}

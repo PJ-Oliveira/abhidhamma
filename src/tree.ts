@@ -47,7 +47,8 @@ function buildWorkNode(work: WorkEntry, onSelect: SelectHandler): HTMLLIElement 
   const partsUl = document.createElement("ul");
   partsUl.style.display = "none";
 
-  for (const partKey of Object.keys(work.parts)) {
+  const partKeys = Object.keys(work.parts);
+  for (const partKey of partKeys) {
     const part = work.parts[partKey];
     if (!part) continue;
     const partLi = document.createElement("li");
@@ -65,6 +66,9 @@ function buildWorkNode(work: WorkEntry, onSelect: SelectHandler): HTMLLIElement 
     const open = partsUl.style.display !== "none";
     partsUl.style.display = open ? "none" : "block";
     caret.classList.toggle("open", !open);
+    if (!open && partKeys.length === 1 && partKeys[0]) {
+      onSelect(work.id, partKeys[0], 0, null);
+    }
   });
 
   li.appendChild(label);

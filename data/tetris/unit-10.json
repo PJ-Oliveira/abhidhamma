@@ -1,0 +1,764 @@
+{
+  "unit": 10,
+  "title": {
+    "en": "Compendium of Meditation Subjects (Kammaṭṭhāna-saṅgaha)",
+    "pt": "Compêndio dos Temas de Meditação (Kammaṭṭhāna-saṅgaha)",
+    "es": "Compendio de los Temas de Meditación (Kammaṭṭhāna-saṅgaha)"
+  },
+  "summary": {
+    "en": "Practical fruition of Abhidhamma: the 40 subjects of calm meditation (samatha), stages of signs and absorptions, the seven stages of purification (visuddhi), ten insight knowledges (vipassanā-ñāṇa), and supramundane attainments (Nirodhasamāpatti).",
+    "pt": "Fruição prática do Abhidhamma: os 40 temas de tranquilidade (samatha), estágios de sinais e absorções, os sete estágios de purificação (visuddhi), dez conhecimentos de insight (vipassanā-ñāṇa) e realizações supramundanas (Nirodhasamāpatti).",
+    "es": "Fruición práctica del Abhidhamma: los 40 temas de tranquilidad (samatha), etapas de señales y absorciones, las siete etapas de purificación (visuddhi), diez conocimientos de insight (vipassanā-ñāṇa) y realizaciones supramundanas (Nirodhasamāpatti)."
+  },
+  "taxonomies": [
+    {
+      "id": "u10.meditation_systems",
+      "title": {
+        "en": "Meditation Methods and Purifications",
+        "pt": "Métodos de Meditação e Purificações",
+        "es": "Métodos de Meditación y Purificaciones"
+      },
+      "noun": {
+        "en": "meditative factors",
+        "pt": "fatores meditativos",
+        "es": "factores meditativos"
+      },
+      "source": {
+        "cma": "IX §1–§37",
+        "fund": "Lesson 10.1",
+        "as": "IX.1"
+      },
+      "nodes": [
+        {
+          "id": "meditation_domain",
+          "name": {
+            "en": "All Meditative Practices",
+            "pt": "Todas as Práticas Meditativas",
+            "es": "Todas las Prácticas Meditativas"
+          },
+          "parent": null
+        },
+        {
+          "id": "samatha_subjects",
+          "name": {
+            "en": "40 Samatha Subjects",
+            "pt": "40 Temas de Tranquilidade (Samatha)",
+            "es": "40 Temas de Tranquilidad (Samatha)"
+          },
+          "parent": "meditation_domain",
+          "weight": 7
+        },
+        {
+          "id": "ten_kasinas",
+          "name": {
+            "en": "Ten Kasiṇas",
+            "pt": "Dez Kasiṇas",
+            "es": "Diez Kasiṇas"
+          },
+          "parent": "samatha_subjects",
+          "weight": 10
+        },
+        {
+          "id": "ten_asubhas",
+          "name": {
+            "en": "Ten Foul Objects (Asubha)",
+            "pt": "Dez Objetos Impuros (Asubha)",
+            "es": "Diez Objetos Impuros (Asubha)"
+          },
+          "parent": "samatha_subjects",
+          "weight": 10
+        },
+        {
+          "id": "ten_anussatis",
+          "name": {
+            "en": "Ten Recollections (Anussati)",
+            "pt": "Dez Rememorações (Anussati)",
+            "es": "Diez Rememoraciones (Anussati)"
+          },
+          "parent": "samatha_subjects",
+          "weight": 10
+        },
+        {
+          "id": "four_appamannas",
+          "name": {
+            "en": "Four Immeasurables (Appamaññā)",
+            "pt": "Quatro Incomensuráveis",
+            "es": "Cuatro Inconmensurables"
+          },
+          "parent": "samatha_subjects",
+          "weight": 4
+        },
+        {
+          "id": "one_sanna",
+          "name": {
+            "en": "Repulsiveness of Food (Saññā)",
+            "pt": "Repulsão do Alimento (Saññā)",
+            "es": "Repulsión del Alimento (Saññā)"
+          },
+          "parent": "samatha_subjects",
+          "weight": 1
+        },
+        {
+          "id": "one_vavatthana",
+          "name": {
+            "en": "Four Elements Analysis (Vavatthāna)",
+            "pt": "Análise dos Quatro Elementos",
+            "es": "Análisis de Cuatro Elementos"
+          },
+          "parent": "samatha_subjects",
+          "weight": 1
+        },
+        {
+          "id": "four_arupas",
+          "name": {
+            "en": "Four Immaterial Subjects (Arūpa)",
+            "pt": "Quatro Temas Imateriais (Arūpa)",
+            "es": "Cuatro Temas Inmateriales (Arūpa)"
+          },
+          "parent": "samatha_subjects",
+          "weight": 4
+        },
+        {
+          "id": "seven_visuddhis",
+          "name": {
+            "en": "Seven Purifications (Visuddhi)",
+            "pt": "Sete Purificações (Visuddhi)",
+            "es": "Siete Purificaciones (Visuddhi)"
+          },
+          "parent": "meditation_domain",
+          "weight": 7
+        },
+        {
+          "id": "sila_visuddhi",
+          "name": {
+            "en": "Purification of Virtue (Sīla)",
+            "pt": "Purificação da Virtude (Sīla)",
+            "es": "Purificación de la Virtud (Sīla)"
+          },
+          "parent": "seven_visuddhis",
+          "weight": 1
+        },
+        {
+          "id": "citta_visuddhi",
+          "name": {
+            "en": "Purification of Mind (Citta)",
+            "pt": "Purificação da Mente (Citta)",
+            "es": "Purificación de la Mente (Citta)"
+          },
+          "parent": "seven_visuddhis",
+          "weight": 1
+        },
+        {
+          "id": "ditthi_visuddhi",
+          "name": {
+            "en": "Purification of View (Diṭṭhi)",
+            "pt": "Purificação da Visão (Diṭṭhi)",
+            "es": "Purificación de la Visión (Diṭṭhi)"
+          },
+          "parent": "seven_visuddhis",
+          "weight": 1
+        },
+        {
+          "id": "kankhavitarana_visuddhi",
+          "name": {
+            "en": "Overcoming Doubt (Kaṅkhāvitaraṇa)",
+            "pt": "Superação da Dúvida",
+            "es": "Superación de la Duda"
+          },
+          "parent": "seven_visuddhis",
+          "weight": 1
+        },
+        {
+          "id": "maggamagga_visuddhi",
+          "name": {
+            "en": "Path & Not-Path (Maggāmagga)",
+            "pt": "Caminho e Não Caminho",
+            "es": "Camino y No Camino"
+          },
+          "parent": "seven_visuddhis",
+          "weight": 1
+        },
+        {
+          "id": "patipada_visuddhi",
+          "name": {
+            "en": "The Way (Paṭipadā)",
+            "pt": "Conhecimento do Modo (Paṭipadā)",
+            "es": "Conocimiento del Modo (Paṭipadā)"
+          },
+          "parent": "seven_visuddhis",
+          "weight": 1
+        },
+        {
+          "id": "nanadassana_visuddhi",
+          "name": {
+            "en": "Vision of Knowledge (Ñāṇadassana)",
+            "pt": "Visão do Conhecimento (Ñāṇadassana)",
+            "es": "Visión del Conocimiento"
+          },
+          "parent": "seven_visuddhis",
+          "weight": 1
+        },
+        {
+          "id": "three_nimittas",
+          "name": {
+            "en": "Three Meditation Signs (Nimitta)",
+            "pt": "Três Sinais da Meditação (Nimitta)",
+            "es": "Tres Señales de Meditación"
+          },
+          "parent": "meditation_domain",
+          "weight": 3
+        },
+        {
+          "id": "parikamma_nimitta",
+          "name": {
+            "en": "Preliminary Sign (Parikamma)",
+            "pt": "Sinal Preliminar (Parikamma)",
+            "es": "Señal Preliminar (Parikamma)"
+          },
+          "parent": "three_nimittas",
+          "weight": 1
+        },
+        {
+          "id": "uggaha_nimitta",
+          "name": {
+            "en": "Learning Sign (Uggaha)",
+            "pt": "Sinal Mental Adquirido (Uggaha)",
+            "es": "Señal Mental Adquirida (Uggaha)"
+          },
+          "parent": "three_nimittas",
+          "weight": 1
+        },
+        {
+          "id": "patibhaga_nimitta",
+          "name": {
+            "en": "Counterpart Sign (Paṭibhāga)",
+            "pt": "Sinal Reflexo Imaculado (Paṭibhāga)",
+            "es": "Señal Reflejo Inmaculada (Paṭibhāga)"
+          },
+          "parent": "three_nimittas",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "u10.samatha_forty_subjects_count",
+      "kind": "atom",
+      "topic": {
+        "en": "Forty Samatha Subjects",
+        "pt": "Quarenta Temas de Tranquilidade",
+        "es": "Cuarenta Temas de Tranquilidad"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many meditation subjects (kammaṭṭhāna) are recognized for the development of calm (samatha)?",
+        "pt": "Quantos temas de meditação (kammaṭṭhāna) são reconhecidos para a tranquilidade (samatha)?",
+        "es": "¿Cuántos temas de meditación (kammaṭṭhāna) se reconocen para la tranquilidad (samatha)?"
+      },
+      "correct": {
+        "en": "Forty subjects: 10 kasiṇas, 10 asubhas, 10 anussatis, 4 appamaññās, 1 saññā, 1 vavatthāna, and 4 arūpas.",
+        "pt": "Quarenta temas: 10 kasiṇas, 10 asubhas, 10 anussatis, 4 appamaññās, 1 saññā, 1 vavatthāna e 4 arūpas.",
+        "es": "Cuarenta temas: 10 kasiṇas, 10 asubhas, 10 anussatis, 4 appamaññās, 1 saññā, 1 vavatthāna y 4 arūpas."
+      },
+      "distractors": [
+        {
+          "en": "Twenty-four subjects, matching the conditions of the Paṭṭhāna.",
+          "pt": "Vinte e quatro temas, correspondendo às condições do Paṭṭhāna.",
+          "es": "Veinticuatro temas, correspondientes a las condiciones del Paṭṭhāna."
+        },
+        {
+          "en": "Seven subjects, corresponding to the seven purifications.",
+          "pt": "Sete temas, correspondendo às sete purificações.",
+          "es": "Siete temas, correspondientes a las siete purificaciones."
+        },
+        {
+          "en": "Eighty-four subjects, matching canonical collection divisions.",
+          "pt": "Oitenta e quatro temas, correspondendo às divisões do cânon.",
+          "es": "Ochenta y cuatro temas, correspondientes a las divisiones del canon."
+        }
+      ],
+      "explanation": {
+        "en": "The 40 subjects of samatha: 10 kasiṇas (colors and elements), 10 stages of decaying corpses (asubha), 10 recollections, 4 divine abodes, perception of food repulsiveness, four-element analysis, and 4 formless subjects.",
+        "pt": "Os 40 temas de samatha: 10 kasiṇas, 10 cadáveres em decomposição (asubha), 10 rememorações, 4 moradas divinas, repulsa ao alimento, análise dos 4 elementos e 4 estados sem forma.",
+        "es": "Los 40 temas de samatha: 10 kasiṇas, 10 cadáveres en descomposición (asubha), 10 rememoraciones, 4 moradas divinas, repulsión al alimento, análisis de los 4 elementos y 4 estados sin forma."
+      },
+      "source": {
+        "cma": "IX §2–§12",
+        "fund": "Lesson 10.1"
+      }
+    },
+    {
+      "id": "u10.three_nimittas_sequence",
+      "kind": "atom",
+      "topic": {
+        "en": "Three Meditation Signs",
+        "pt": "Três Sinais Meditativos",
+        "es": "Tres Señales Meditativas"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the progressive sequence of the three signs (nimitta) in kasiṇa concentration?",
+        "pt": "Qual é a sequência progressiva dos três sinais (nimitta) na concentração com kasiṇa?",
+        "es": "¿Cuál es la secuencia progresiva de las tres señales (nimitta) en la concentración con kasiṇa?"
+      },
+      "correct": {
+        "en": "Preliminary sign (parikamma-nimitta), learning sign (uggaha-nimitta), and counterpart sign (paṭibhāga-nimitta).",
+        "pt": "Sinal preliminar (parikamma-nimitta), mental adquirido (uggaha-nimitta) e reflexo imaculado (paṭibhāga-nimitta).",
+        "es": "Señal preliminar (parikamma-nimitta), mental adquirida (uggaha-nimitta) y reflejo inmaculada (paṭibhāga-nimitta)."
+      },
+      "distractors": [
+        {
+          "en": "Bodily sign, verbal sign, and mental sign.",
+          "pt": "Sinal corporal, sinal verbal e sinal mental.",
+          "es": "Señal corporal, señal verbal y señal mental."
+        },
+        {
+          "en": "Gross sign, subtle sign, and formless sign.",
+          "pt": "Sinal grosseiro, sinal sutil e sinal sem forma.",
+          "es": "Señal tosca, señal sutil y señal sin forma."
+        },
+        {
+          "en": "Past sign, present sign, and future sign.",
+          "pt": "Sinal passado, sinal presente e sinal futuro.",
+          "es": "Señal pasada, señal presente y señal futura."
+        }
+      ],
+      "explanation": {
+        "en": "Parikamma-nimitta is the physical disk gazed upon; uggaha-nimitta is the mental replica seen with closed eyes; paṭibhāga-nimitta is the luminous, immaculate counterpart sign born of deep concentration, opening into jhāna.",
+        "pt": "Parikamma-nimitta é o disco físico; uggaha-nimitta é a réplica mental vista de olhos fechados; paṭibhāga-nimitta é o sinal abstrato imaculado e radiante nascido da profunda concentração, abrindo acesso ao jhāna.",
+        "es": "Parikamma-nimitta es el disco físico; uggaha-nimitta es la réplica mental vista con ojos cerrados; paṭibhāga-nimitta es la señal abstracta inmaculada y radiante nacida de la profunda concentración, abriendo paso al jhāna."
+      },
+      "source": {
+        "cma": "IX §16",
+        "fund": "Lesson 10.1"
+      }
+    },
+    {
+      "id": "u10.seven_visuddhis_sequence",
+      "kind": "atom",
+      "topic": {
+        "en": "Seven Purifications Sequence",
+        "pt": "Sequência das Sete Purificações",
+        "es": "Secuencia de Siete Purificaciones"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the exact chronological sequence of the seven stages of purification (satta visuddhiyo)?",
+        "pt": "Qual é a sequência cronológica exata dos sete estágios de purificação (satta visuddhiyo)?",
+        "es": "¿Cuál es la secuencia cronológica exacta de las siete etapas de purificación (satta visuddhiyo)?"
+      },
+      "correct": {
+        "en": "Sīla, citta, diṭṭhi, kaṅkhāvitaraṇa, maggāmagga, paṭipadā, and ñāṇadassana-visuddhi.",
+        "pt": "Sīla, citta, diṭṭhi, kaṅkhāvitaraṇa, maggāmagga, paṭipadā e ñāṇadassana-visuddhi.",
+        "es": "Sīla, citta, diṭṭhi, kaṅkhāvitaraṇa, maggāmagga, paṭipadā y ñāṇadassana-visuddhi."
+      },
+      "distractors": [
+        {
+          "en": "Virtue, generosity, patience, energy, truthfulness, resolution, and equanimity.",
+          "pt": "Virtude, generosidade, paciência, energia, verdade, determinação e equanimidade.",
+          "es": "Virtud, generosidad, paciencia, energía, verdad, determinación y ecuanimidad."
+        },
+        {
+          "en": "Comprehension, dissolution, fearfulness, danger, disenchantment, desire for release, and conformity.",
+          "pt": "Compreensão, dissolução, medo, perigo, desencanto, desejo de liberação e conformidade.",
+          "es": "Comprensión, disolución, miedo, peligro, desencanto, deseo de liberación y conformidad."
+        },
+        {
+          "en": "Stream-entry, once-returning, non-returning, Arahantship, silence, light, and peace.",
+          "pt": "Entrada na corrente, retorno único, não retorno, Arahant, silêncio, luz e paz.",
+          "es": "Entrada en la corriente, retorno único, no retorno, Arahant, silencio, luz y paz."
+        }
+      ],
+      "explanation": {
+        "en": "The 7 Visuddhis form the relay chariot framework of the path: moral purity (sīla) $\\to$ mental concentration (citta) $\\to$ discerning mind/matter (diṭṭhi) $\\to$ discerning conditions (kaṅkhāvitaraṇa) $\\to$ path discernment $\\to$ insight knowledges $\\to$ supramundane path vision.",
+        "pt": "As 7 Visuddhis formam a carruagem de revezamento: pureza moral (sīla) $\\to$ concentração mental (citta) $\\to$ discernir mente/matéria (diṭṭhi) $\\to$ discernir causas (kaṅkhāvitaraṇa) $\\to$ discernir o caminho $\\to$ insight $\\to$ visão do caminho supramundano.",
+        "es": "Las 7 Visuddhis forman el carruaje de relevo: pureza moral (sīla) $\\to$ concentración mental (citta) $\\to$ discernir mente/materia (diṭṭhi) $\\to$ discernir causas (kaṅkhāvitaraṇa) $\\to$ discernir el camino $\\to$ insight $\\to$ visión del sendero supramundano."
+      },
+      "source": {
+        "cma": "IX §22",
+        "fund": "Lesson 10.2"
+      }
+    },
+    {
+      "id": "u10.ditthi_visuddhi_discernment",
+      "kind": "atom",
+      "topic": {
+        "en": "Purification of View",
+        "pt": "Purificação da Visão",
+        "es": "Purificación de la Visión"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is directly accomplished during the Purification of View (diṭṭhi-visuddhi)?",
+        "pt": "O que é diretamente realizado durante a Purificação da Visão (diṭṭhi-visuddhi)?",
+        "es": "¿Qué se realiza directamente durante la Purificación de la Visión (diṭṭhi-visuddhi)?"
+      },
+      "correct": {
+        "en": "Discerning mentality (nāma) and materiality (rūpa) according to their characteristics, dispelling the delusion of self.",
+        "pt": "Discernir mente (nāma) e matéria (rūpa) por suas características, dissipando a ilusão de um eu.",
+        "es": "Discernir mente (nāma) y materia (rūpa) por sus características, disipando la ilusión de un yo."
+      },
+      "distractors": [
+        {
+          "en": "Attaining the first meditative absorption (jhāna) on a color disk.",
+          "pt": "Alcançar a primeira absorção meditativa (jhāna) em um disco de cor.",
+          "es": "Alcanzar la primera absorción meditativa (jhāna) en un disco de color."
+        },
+        {
+          "en": "Reciting canonical discourses fluently without making memory errors.",
+          "pt": "Recitar discursos canônicos com fluência sem cometer falhas de memória.",
+          "es": "Recitar discursos canónicos con fluidez sin cometer fallos de memoria."
+        },
+        {
+          "en": "Seeing past physical existences across hundreds of world cycles.",
+          "pt": "Ver existências físicas passadas através de centenas de ciclos cósmicos.",
+          "es": "Ver existencias físicas pasadas a través de cientos de ciclos cósmicos."
+        }
+      ],
+      "explanation": {
+        "en": "Diṭṭhi-visuddhi is identical to nāmarūpa-pariccheda-ñāṇa. The meditator dissects the supposed 'soul' or 'person' into bare mental processes (citta, cetasikas) and bare physical elements (rūpa), seeing no enduring agent behind them.",
+        "pt": "Diṭṭhi-visuddhi equivale a nāmarūpa-pariccheda-ñāṇa. Quem medita disseca o suposto 'eu' em meros processos mentais (citta, cetasika) e físicos (rūpa), compreendendo a ausência de qualquer entidade permanente.",
+        "es": "Diṭṭhi-visuddhi equivale a nāmarūpa-pariccheda-ñāṇa. Quien medita disecciona el supuesto 'yo' en meros procesos mentales (citta, cetasika) y físicos (rūpa), comprendiendo la ausencia de cualquier entidad permanente."
+      },
+      "source": {
+        "cma": "IX §25",
+        "fund": "Lesson 10.2"
+      }
+    },
+    {
+      "id": "u10.kankhavitarana_discernment",
+      "kind": "atom",
+      "topic": {
+        "en": "Overcoming Doubt",
+        "pt": "Superação da Dúvida",
+        "es": "Superación de la Duda"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What understanding establishes the Purification by Overcoming Doubt (kaṅkhāvitaraṇa-visuddhi)?",
+        "pt": "Qual entendimento estabelece a Purificação pela Superação da Dúvida (kaṅkhāvitaraṇa-visuddhi)?",
+        "es": "¿Qué entendimiento establece la Purificación por Superación de la Duda (kaṅkhāvitaraṇa-visuddhi)?"
+      },
+      "correct": {
+        "en": "Discerning the causes and conditions for mentality and materiality, dispelling doubts about past, present, and future.",
+        "pt": "Discernir as causas e condições para mente e matéria, superando dúvidas sobre passado, presente e futuro.",
+        "es": "Discernir las causas y condiciones para mente y materia, superando dudas sobre pasado, presente y futuro."
+      },
+      "distractors": [
+        {
+          "en": "Receiving personal confirmation from an enlightened master.",
+          "pt": "Receber confirmação pessoal de um mestre espiritual desperto.",
+          "es": "Recibir confirmación personal de un maestro espiritual despierto."
+        },
+        {
+          "en": "Fulfilling all ritual vows at a stupa or sacred tree.",
+          "pt": "Cumprir todos os votos rituais em uma estupa ou árvore sagrada.",
+          "es": "Cumplir todos los votos rituales en una estupa o árbol sagrado."
+        },
+        {
+          "en": "Eliminating bodily pain through concentrated breathing techniques.",
+          "pt": "Eliminar a dor corporal através de técnicas de respiração concentrada.",
+          "es": "Eliminar el dolor corporal a través de técnicas de respiración concentrada."
+        }
+      ],
+      "explanation": {
+        "en": "Kaṅkhāvitaraṇa-visuddhi is identical to paccayapariggaha-ñāṇa. Comprehending Dependent Arising (kamma, ignorance, craving as causes), one realizes life is neither created by a creator nor arisen by chance.",
+        "pt": "Kaṅkhāvitaraṇa-visuddhi equivale a paccayapariggaha-ñāṇa. Compreendendo as causas (kamma, ignorância, desejo), compreende-se que a vida não é obra de criador nem fruto do acaso cego.",
+        "es": "Kaṅkhāvitaraṇa-visuddhi equivale a paccayapariggaha-ñāṇa. Comprendiendo las causas (kamma, ignorancia, deseo), se comprende que la vida no es obra de creador ni fruto del azar ciego."
+      },
+      "source": {
+        "cma": "IX §26",
+        "fund": "Lesson 10.2"
+      }
+    },
+    {
+      "id": "u10.three_vimokkhas_gates",
+      "kind": "atom",
+      "topic": {
+        "en": "Three Doors of Deliverance",
+        "pt": "Três Portas da Libertação",
+        "es": "Tres Puertas de la Liberación"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What three gateways of liberation (vimokkhamukha) correspond to the three universal characteristics?",
+        "pt": "Quais três portas de libertação (vimokkhamukha) correspondem às três características universais?",
+        "es": "¿Cuáles tres puertas de liberación (vimokkhamukha) corresponden a las tres características universales?"
+      },
+      "correct": {
+        "en": "Emptiness (suññatā) from anattā; signless (animitta) from anicca; and desireless (appaṇihita) from dukkha.",
+        "pt": "Vazio (suññatā) por anattā; sem marcas (animitta) por anicca; e sem anseio (appaṇihita) por dukkha.",
+        "es": "Vacío (suññatā) por anattā; sin marcas (animitta) por anicca; y sin anhelo (appaṇihita) por dukkha."
+      },
+      "distractors": [
+        {
+          "en": "Sensory gate, fine-material gate, and formless heavenly gate.",
+          "pt": "Porta sensorial, porta da matéria sutil e porta celestial sem forma.",
+          "es": "Puerta sensorial, puerta de materia sutil y puerta celestial sin forma."
+        },
+        {
+          "en": "Moral gate, concentrated gate, and intellectual philosophy gate.",
+          "pt": "Porta moral, porta da concentração e porta da filosofia intelectual.",
+          "es": "Puerta moral, puerta de la concentración y puerta de la filosofía intelectual."
+        },
+        {
+          "en": "Past gate, present gateway, and future transcendental gate.",
+          "pt": "Porta passada, portal presente e portal transcendental futuro.",
+          "es": "Puerta pasada, portal presente y portal trascendental futuro."
+        }
+      ],
+      "explanation": {
+        "en": "Contemplating non-self (anattā) leads into the Emptiness Liberation (suññatā). Contemplating impermanence (anicca) leads into the Signless Liberation (animitta). Contemplating suffering (dukkha) leads into the Desireless (appaṇihita).",
+        "pt": "Contemplar o não eu (anattā) conduz à Libertação do Vazio (suññatā). Contemplar a impermanência (anicca) conduz à Libertação Sem Marcas (animitta). Contemplar o sofrimento (dukkha) conduz ao Desapego Sem Anseio (appaṇihita).",
+        "es": "Contemplar el no yo (anattā) conduce a la Liberación del Vacío (suññatā). Contemplar la impermanencia (anicca) conduce a la Liberación Sin Marcas (animitta). Contemplar el sufrimiento (dukkha) conduce al Desapego Sin Anhelo (appaṇihita)."
+      },
+      "source": {
+        "cma": "IX §33",
+        "fund": "Lesson 10.3"
+      }
+    },
+    {
+      "id": "u10.nirodhasamapatti_qualification",
+      "kind": "atom",
+      "topic": {
+        "en": "Attainment of Cessation",
+        "pt": "Realização da Cessação",
+        "es": "Realización de la Cesación"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Who is qualified to enter the Attainment of Cessation (nirodhasamāpatti)?",
+        "pt": "Quem é qualificado para entrar na Realização da Cessação (nirodhasamāpatti)?",
+        "es": "¿Quién está calificado para entrar en la Realización de la Cesación (nirodhasamāpatti)?"
+      },
+      "correct": {
+        "en": "Non-returners (Anāgāmīs) and Arahants who have mastered all eight fine-material and immaterial absorptions.",
+        "pt": "Não retornantes (Anāgāmīs) e Arahants que dominaram todas as oito absorções materiais e imateriais.",
+        "es": "No retornantes (Anāgāmīs) y Arahants que han dominado las ocho absorciones materiales e inmateriales."
+      },
+      "distractors": [
+        {
+          "en": "Any meditator who enters deep sleep without experiencing dreams.",
+          "pt": "Qualquer pessoa que entra em sono profundo sem ter sonhos.",
+          "es": "Cualquier persona que entra en sueño profundo sin tener sueños."
+        },
+        {
+          "en": "Stream-enterers who recite protective canonical paritta chants.",
+          "pt": "Entrados na corrente que recitam cantos de proteção paritta.",
+          "es": "Entrados en la corriente que recitan cantos de protección paritta."
+        },
+        {
+          "en": "All deities dwelling in the sensuous celestial realms.",
+          "pt": "Todas as deidades que habitam os reinos celestiais sensoriais.",
+          "es": "Todas las deidades que habitan los reinos celestiales sensoriales."
+        }
+      ],
+      "explanation": {
+        "en": "Nirodhasamāpatti is the temporary cessation of all consciousness and mental factors (citta-cetasika-nirodha). It requires two masteries: the eight meditative absorptions (samatha) and advanced insight (vipassanā).",
+        "pt": "Nirodhasamāpatti é a cessação temporária de toda a consciência e fatores mentais. Exige dois domínios: as oito absorções de tranquilidade (samatha) e o insight avançado (vipassanā).",
+        "es": "Nirodhasamāpatti es la cesación temporal de toda la conciencia y factores mentales. Exige dos dominios: las ocho absorciones de tranquilidad (samatha) y el insight avanzado (vipassanā)."
+      },
+      "source": {
+        "cma": "IX §36",
+        "fund": "Lesson 10.4"
+      }
+    },
+    {
+      "id": "u10.deduced_samatha_vs_vipassana_goal",
+      "kind": "derived",
+      "topic": {
+        "en": "Samatha vs Vipassanā Horizon",
+        "pt": "Horizonte de Samatha e Vipassanā",
+        "es": "Horizonte de Samatha y Vipassanā"
+      },
+      "requires": [
+        "u10.samatha_forty_subjects_count",
+        "u10.seven_visuddhis_sequence"
+      ],
+      "prompt": {
+        "en": "What is the ultimate limitation of calm meditation (samatha) in contrast to insight (vipassanā)?",
+        "pt": "Qual é a limitação última da meditação de tranquilidade (samatha) em contraste com o insight (vipassanā)?",
+        "es": "¿Cuál es la limitación última de la meditación de tranquilidad (samatha) frente al insight (vipassanā)?"
+      },
+      "correct": {
+        "en": "Samatha suppresses defilements temporarily; vipassanā uproots the latent defilements permanently through wisdom.",
+        "pt": "Samatha suspende impurezas temporariamente; vipassanā erradica as impurezas latentes permanentemente.",
+        "es": "Samatha suspende impurezas temporalmente; vipassanā erradica las impurezas latentes permanentemente."
+      },
+      "distractors": [
+        {
+          "en": "Samatha produces bad karma while vipassanā produces good karma.",
+          "pt": "Samatha produz mau kamma enquanto vipassanā produz bom kamma.",
+          "es": "Samatha produce mal kamma mientras que vipassanā produce buen kamma."
+        },
+        {
+          "en": "Samatha can only be practiced by deities in heavenly worlds.",
+          "pt": "Samatha só pode ser praticado por deidades em mundos celestes.",
+          "es": "Samatha solo puede ser practicado por deidades en mundos celestes."
+        },
+        {
+          "en": "Vipassanā is incapable of bringing peaceful mental joy.",
+          "pt": "Vipassanā é incapaz de proporcionar alegria mental pacífica.",
+          "es": "Vipassanā es incapaz de proporcionar alegría mental pacífica."
+        }
+      ],
+      "explanation": {
+        "en": "Samatha suppresses defilements by concentration (vikkhambhana-pahāna), like placing a stone over grass. Vipassanā uproots defilements by cutting them off at the root (samuccheda-pahāna) through path wisdom.",
+        "pt": "Samatha suprime as impurezas por concentração (vikkhambhana-pahāna), como uma pedra sobre a relva. Vipassanā extirpa as raízes das impurezas (samuccheda-pahāna) através da sabedoria do caminho.",
+        "es": "Samatha suprime las impurezas por concentración (vikkhambhana-pahāna), como una piedra sobre la hierba. Vipassanā extirpa las raíces de las impurezas (samuccheda-pahāna) a través de la sabiduría del sendero."
+      },
+      "source": {
+        "cma": "IX §21",
+        "fund": "Lesson 10.2"
+      }
+    },
+    {
+      "id": "u10.deduced_visuddhi_hierarchy",
+      "kind": "derived",
+      "topic": {
+        "en": "Purification Dependency Axiom",
+        "pt": "Axioma de Dependência da Pureza",
+        "es": "Axioma de Dependencia de la Pureza"
+      },
+      "requires": [
+        "u10.seven_visuddhis_sequence",
+        "u10.ditthi_visuddhi_discernment"
+      ],
+      "prompt": {
+        "en": "Why must Purification of Mind (citta-visuddhi) precede Purification of View (diṭṭhi-visuddhi)?",
+        "pt": "Por que a Purificação da Mente (citta-visuddhi) deve preceder a Purificação da Visão (diṭṭhi-visuddhi)?",
+        "es": "¿Por qué la Purificación de la Mente (citta-visuddhi) debe preceder a la Purificación de la Visión (diṭṭhi-visuddhi)?"
+      },
+      "correct": {
+        "en": "Because a calm mind free of hindrances is required to accurately inspect micro-instants of mind and matter.",
+        "pt": "Pois uma mente tranquila e unificada é requerida para dissecar com exatidão microinstantes de mente e matéria.",
+        "es": "Pues una mente tranquila y unificada es requerida para diseccionar con exactitud microinstantes de mente y materia."
+      },
+      "distractors": [
+        {
+          "en": "Because philosophical views can only be studied after monastic ordination.",
+          "pt": "Porque visões filosóficas só podem ser estudadas após ordenação monástica.",
+          "es": "Porque las visiones filosóficas solo pueden estudiarse tras la ordenación monástica."
+        },
+        {
+          "en": "Because matter cannot be perceived by living humans without psychic powers.",
+          "pt": "Porque a matéria não pode ser percebida por humanos sem poderes psíquicos.",
+          "es": "Porque la materia no puede ser percibida por humanos sin poderes psíquicos."
+        },
+        {
+          "en": "Because virtue is only relevant after enlightenment is attained.",
+          "pt": "Porque a virtude só é relevante depois que o despertar é alcançado.",
+          "es": "Porque la virtud solo es relevante después de alcanzar el despertar."
+        }
+      ],
+      "explanation": {
+        "en": "Citta-visuddhi (access or absorption concentration) calms the mental hindrances and clears the mind mirror. Only on this purified basis can diṭṭhi-visuddhi accurately distinguish nāma from rūpa without distortion.",
+        "pt": "Citta-visuddhi (concentração de acesso ou absorção) silencia os obstáculos mentais e limpa a mente. Apenas sobre esta base purificada pode diṭṭhi-visuddhi distinguir com exatidão nāma de rūpa sem distorções.",
+        "es": "Citta-visuddhi (concentración de acceso o absorción) silencia los obstáculos mentales y limpia la mente. Solo sobre esta base purificada puede diṭṭhi-visuddhi distinguir con exactitud nāma de rūpa sin distorsiones."
+      },
+      "source": {
+        "cma": "IX §23",
+        "fund": "Lesson 10.2"
+      }
+    },
+    {
+      "id": "u10.sotapatti_fetters_destroyed",
+      "kind": "atom",
+      "topic": {
+        "en": "Sotāpatti Fetters",
+        "pt": "Grilhões de Sotāpatti",
+        "es": "Grilletes de Sotāpatti"
+      },
+      "requires": [
+        "u10.seven_visuddhis_sequence"
+      ],
+      "prompt": {
+        "en": "Which three fetters (saṃyojana) are eradicated by the Stream-Enterer (Sotāpanna)?",
+        "pt": "Quais três grilhões (saṃyojana) são erradicados pelo Que Entrou na Correnteza?",
+        "es": "¿Cuáles tres grilletes (saṃyojana) son erradicados por Quien Entró en la Corriente?"
+      },
+      "correct": {
+        "en": "Sakkāyadiṭṭhi (personality-view), vicikicchā (doubt), sīlabbataparāmāsa.",
+        "pt": "Sakkāyadiṭṭhi (crença no eu), vicikicchā (dúvida), sīlabbataparāmāsa (apego a ritos).",
+        "es": "Sakkāyadiṭṭhi (creencia en el yo), vicikicchā (duda), sīlabbataparāmāsa (apego a ritos)."
+      },
+      "distractors": [
+        {
+          "en": "Sensual lust (kāmarāga) and coarse ill-will (paṭigha) in all their degrees.",
+          "pt": "Desejo sensual (kāmarāga) e má vontade grosseira (paṭigha) em todos os seus graus.",
+          "es": "Deseo sensual (kāmarāga) y mala voluntad grosera (paṭigha) en todos sus grados."
+        },
+        {
+          "en": "Attachment to fine-material existence (rūparāga) and immaterial realms.",
+          "pt": "Apego à existência na matéria sutil (rūparāga) e aos reinos imateriais.",
+          "es": "Apego a la existencia en la materia sutil (rūparāga) y a los reinos inmateriales."
+        },
+        {
+          "en": "Conceit (māna), restlessness (uddhacca), and deep ignorance (avijjā).",
+          "pt": "Presunção (māna), inquietação (uddhacca) e ignorância profunda (avijjā).",
+          "es": "Presunción (māna), inquietud (uddhacca) e ignorancia profunda (avijjā)."
+        }
+      ],
+      "explanation": {
+        "en": "The first path severs the three lower fetters and shuts the doors to the four woeful realms.",
+        "pt": "O primeiro caminho extirpa os três grilhões inferiores e fecha as portas dos quatro reinos de dor.",
+        "es": "El primer camino extirpa los tres grilletes inferiores y cierra las puertas de los cuatro reinos de dolor."
+      },
+      "source": {
+        "cma": "IX §34",
+        "fund": "9.4",
+        "as": "IX.34"
+      }
+    },
+    {
+      "id": "u10.upakkilesa_ten_imperfections",
+      "kind": "atom",
+      "topic": {
+        "en": "Ten Imperfections of Insight",
+        "pt": "Dez Imperfeições do Insight",
+        "es": "Diez Imperfecciones del Insight"
+      },
+      "requires": [
+        "u10.seven_visuddhis_sequence"
+      ],
+      "prompt": {
+        "en": "When do the ten imperfections of insight (vipassanupakkilesa) typically arise?",
+        "pt": "Quando surgem tipicamente as dez imperfeições do insight (vipassanupakkilesa)?",
+        "es": "¿Cuándo surgen típicamente las diez imperfecciones del insight (vipassanupakkilesa)?"
+      },
+      "correct": {
+        "en": "During early Udayabbaya-ñāṇa, as phenomena like light and joy appear.",
+        "pt": "Durante o início de Udayabbaya-ñāṇa, quando surgem estados como luz e júbilo.",
+        "es": "Durante el inicio de Udayabbaya-ñāṇa, cuando surgen estados como luz y júbilo."
+      },
+      "distractors": [
+        {
+          "en": "Only at the final moment of entering Nibbāna during Arahatship.",
+          "pt": "Apenas no momento final da entrada em Nibbāna durante o estado de Arahant.",
+          "es": "Solo en el momento final de la entrada en Nibbāna durante el estado de Arahant."
+        },
+        {
+          "en": "Exclusively when practicing non-Buddhist austerity in ascetic forests.",
+          "pt": "Exclusivamente ao praticar austeridades não budistas em florestas ascéticas.",
+          "es": "Exclusivamente al practicar austeridades no budistas en bosques ascéticos."
+        },
+        {
+          "en": "During the lowest realm of hell before any meditation can begin.",
+          "pt": "Durante o reino mais baixo dos infernos antes que a meditação possa começar.",
+          "es": "Durante el reino más bajo de los infiernos antes de que la meditación pueda comenzar."
+        }
+      ],
+      "explanation": {
+        "en": "A meditator may mistake these sublime signs (obhāsa, pīti, passaddhi) for the Path unless guided by discernment.",
+        "pt": "O meditador pode confundir estes sinais sublimes (obhāsa, pīti, passaddhi) com o Caminho.",
+        "es": "El meditador puede confundir estos signos sublimes (obhāsa, pīti, passaddhi) con el Camino."
+      },
+      "source": {
+        "cma": "IX §32",
+        "fund": "9.3",
+        "as": "IX.32"
+      }
+    }
+  ]
+}

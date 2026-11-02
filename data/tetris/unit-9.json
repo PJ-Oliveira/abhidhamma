@@ -1,0 +1,804 @@
+{
+  "unit": 9,
+  "title": {
+    "en": "Compendium of Conditionality (Paccaya-saṅgaha)",
+    "pt": "Compêndio da Condicionalidade (Paccaya-saṅgaha)",
+    "es": "Compendio de la Condicionalidad (Paccaya-saṅgaha)"
+  },
+  "summary": {
+    "en": "System of universal conditionality: Dependent Arising (Paṭiccasamuppāda) with its 12 links, 3 periods, 20 modes, and 3 rounds; and the 24 universal conditions of the Paṭṭhāna (Conditional Relations).",
+    "pt": "Sistema de condicionalidade universal: Surgimento Dependente (Paṭiccasamuppāda) com seus 12 elos, 3 períodos, 20 modos e 3 ciclos; e as 24 condições universais do Paṭṭhāna (Relações Condicionais).",
+    "es": "Sistema de condicionalidad universal: Surgimiento Dependiente (Paṭiccasamuppāda) con sus 12 eslabones, 3 períodos, 20 modos y 3 ciclos; y las 24 condiciones universales del Paṭṭhāna (Relaciones Condicionales)."
+  },
+  "taxonomies": [
+    {
+      "id": "u9.conditionality_systems",
+      "title": {
+        "en": "Conditionality Systems and Factors",
+        "pt": "Sistemas e Fatores de Condicionalidade",
+        "es": "Sistemas y Factores de Condicionalidad"
+      },
+      "noun": {
+        "en": "conditional factors",
+        "pt": "fatores condicionais",
+        "es": "factores condicionales"
+      },
+      "source": {
+        "cma": "VIII §1–§28",
+        "fund": "Lesson 9.1",
+        "as": "VIII.1"
+      },
+      "nodes": [
+        {
+          "id": "conditionality_domain",
+          "name": {
+            "en": "All Conditionality Realities",
+            "pt": "Todas as Realidades da Condicionalidade",
+            "es": "Todas las Realidades de la Condicionalidad"
+          },
+          "parent": null
+        },
+        {
+          "id": "paticcasamuppada_factors",
+          "name": {
+            "en": "Dependent Arising Links (12)",
+            "pt": "Elos do Surgimento Dependente (12)",
+            "es": "Eslabones del Surgimiento Dependiente (12)"
+          },
+          "parent": "conditionality_domain",
+          "weight": 12
+        },
+        {
+          "id": "avijja_link",
+          "name": {
+            "en": "Ignorance (Avijjā)",
+            "pt": "Ignorância (Avijjā)",
+            "es": "Ignorancia (Avijjā)"
+          },
+          "parent": "paticcasamuppada_factors",
+          "weight": 1
+        },
+        {
+          "id": "sankhara_link",
+          "name": {
+            "en": "Karmic Formations (Saṅkhārā)",
+            "pt": "Formações Kármicas (Saṅkhārā)",
+            "es": "Formaciones Kármicas (Saṅkhārā)"
+          },
+          "parent": "paticcasamuppada_factors",
+          "weight": 1
+        },
+        {
+          "id": "vinnana_link",
+          "name": {
+            "en": "Consciousness (Viññāṇa)",
+            "pt": "Consciência (Viññāṇa)",
+            "es": "Conciencia (Viññāṇa)"
+          },
+          "parent": "paticcasamuppada_factors",
+          "weight": 1
+        },
+        {
+          "id": "namarupa_link",
+          "name": {
+            "en": "Mentality-Matter (Nāmarūpa)",
+            "pt": "Mente-Matéria (Nāmarūpa)",
+            "es": "Mente-Materia (Nāmarūpa)"
+          },
+          "parent": "paticcasamuppada_factors",
+          "weight": 1
+        },
+        {
+          "id": "salayatana_link",
+          "name": {
+            "en": "Six Bases (Saḷāyatana)",
+            "pt": "Seis Bases (Saḷāyatana)",
+            "es": "Seis Bases (Saḷāyatana)"
+          },
+          "parent": "paticcasamuppada_factors",
+          "weight": 1
+        },
+        {
+          "id": "phassa_link",
+          "name": {
+            "en": "Contact (Phassa)",
+            "pt": "Contato (Phassa)",
+            "es": "Contacto (Phassa)"
+          },
+          "parent": "paticcasamuppada_factors",
+          "weight": 1
+        },
+        {
+          "id": "vedana_link",
+          "name": {
+            "en": "Feeling (Vedanā)",
+            "pt": "Sensação (Vedanā)",
+            "es": "Sensación (Vedanā)"
+          },
+          "parent": "paticcasamuppada_factors",
+          "weight": 1
+        },
+        {
+          "id": "tanha_link",
+          "name": {
+            "en": "Craving (Taṇhā)",
+            "pt": "Desejo (Taṇhā)",
+            "es": "Deseo (Taṇhā)"
+          },
+          "parent": "paticcasamuppada_factors",
+          "weight": 1
+        },
+        {
+          "id": "upadana_link",
+          "name": {
+            "en": "Clinging (Upādāna)",
+            "pt": "Apego (Upādāna)",
+            "es": "Apego (Upādāna)"
+          },
+          "parent": "paticcasamuppada_factors",
+          "weight": 1
+        },
+        {
+          "id": "bhava_link",
+          "name": {
+            "en": "Existence (Bhava)",
+            "pt": "Existência (Bhava)",
+            "es": "Existencia (Bhava)"
+          },
+          "parent": "paticcasamuppada_factors",
+          "weight": 1
+        },
+        {
+          "id": "jati_link",
+          "name": {
+            "en": "Birth (Jāti)",
+            "pt": "Nascimento (Jāti)",
+            "es": "Nacimiento (Jāti)"
+          },
+          "parent": "paticcasamuppada_factors",
+          "weight": 1
+        },
+        {
+          "id": "jaramarana_link",
+          "name": {
+            "en": "Decay and Death (Jarā-maraṇa)",
+            "pt": "Declínio e Morte (Jarā-maraṇa)",
+            "es": "Declive y Muerte (Jarā-maraṇa)"
+          },
+          "parent": "paticcasamuppada_factors",
+          "weight": 1
+        },
+        {
+          "id": "patthana_primary_conditions",
+          "name": {
+            "en": "Primary Paṭṭhāna Conditions",
+            "pt": "Condições Primárias do Paṭṭhāna",
+            "es": "Condiciones Primarias del Paṭṭhāna"
+          },
+          "parent": "conditionality_domain",
+          "weight": 6
+        },
+        {
+          "id": "hetu_cond",
+          "name": {
+            "en": "Root Condition (Hetu-paccaya)",
+            "pt": "Condição de Raiz (Hetu-paccaya)",
+            "es": "Condición de Raíz (Hetu-paccaya)"
+          },
+          "parent": "patthana_primary_conditions",
+          "weight": 1
+        },
+        {
+          "id": "arammana_cond",
+          "name": {
+            "en": "Object Condition (Ārammaṇa-paccaya)",
+            "pt": "Condição de Objeto (Ārammaṇa-paccaya)",
+            "es": "Condición de Objeto (Ārammaṇa-paccaya)"
+          },
+          "parent": "patthana_primary_conditions",
+          "weight": 1
+        },
+        {
+          "id": "sahajata_cond",
+          "name": {
+            "en": "Co-nascence (Sahajāta-paccaya)",
+            "pt": "Cossurgimento (Sahajāta-paccaya)",
+            "es": "Cosurgimiento (Sahajāta-paccaya)"
+          },
+          "parent": "patthana_primary_conditions",
+          "weight": 1
+        },
+        {
+          "id": "anantara_cond",
+          "name": {
+            "en": "Proximity Condition (Anantara-paccaya)",
+            "pt": "Proximidade Imediata (Anantara)",
+            "es": "Proximidad Inmediata (Anantara)"
+          },
+          "parent": "patthana_primary_conditions",
+          "weight": 1
+        },
+        {
+          "id": "kamma_cond",
+          "name": {
+            "en": "Kamma Condition (Kamma-paccaya)",
+            "pt": "Condição de Kamma (Kamma-paccaya)",
+            "es": "Condición de Kamma (Kamma-paccaya)"
+          },
+          "parent": "patthana_primary_conditions",
+          "weight": 1
+        },
+        {
+          "id": "asevana_cond",
+          "name": {
+            "en": "Repetition Condition (Āsevana-paccaya)",
+            "pt": "Repetição (Āsevana-paccaya)",
+            "es": "Repetición (Āsevana-paccaya)"
+          },
+          "parent": "patthana_primary_conditions",
+          "weight": 1
+        },
+        {
+          "id": "three_vattas",
+          "name": {
+            "en": "Three Rounds of Samsāra (Vaṭṭa)",
+            "pt": "Três Ciclos do Samsāra (Vaṭṭa)",
+            "es": "Tres Ciclos del Samsāra (Vaṭṭa)"
+          },
+          "parent": "conditionality_domain",
+          "weight": 3
+        },
+        {
+          "id": "kilesa_vatta",
+          "name": {
+            "en": "Defilement Round (Kilesa-vaṭṭa)",
+            "pt": "Ciclo das Impurezas (Kilesa-vaṭṭa)",
+            "es": "Ciclo de las Impurezas (Kilesa-vaṭṭa)"
+          },
+          "parent": "three_vattas",
+          "weight": 1
+        },
+        {
+          "id": "kamma_vatta",
+          "name": {
+            "en": "Action Round (Kamma-vaṭṭa)",
+            "pt": "Ciclo das Ações (Kamma-vaṭṭa)",
+            "es": "Ciclo de las Acciones (Kamma-vaṭṭa)"
+          },
+          "parent": "three_vattas",
+          "weight": 1
+        },
+        {
+          "id": "vipaka_vatta",
+          "name": {
+            "en": "Result Round (Vipāka-vaṭṭa)",
+            "pt": "Ciclo dos Resultados (Vipāka-vaṭṭa)",
+            "es": "Ciclo de los Resultados (Vipāka-vaṭṭa)"
+          },
+          "parent": "three_vattas",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "u9.paticcasamuppada_twelve_links",
+      "kind": "atom",
+      "topic": {
+        "en": "Twelve Links Count",
+        "pt": "Doze Elos Dependentes",
+        "es": "Doce Eslabones Dependientes"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many causal factors comprise the formula of Dependent Arising (Paṭiccasamuppāda)?",
+        "pt": "Quantos fatores causais compõem a fórmula do Surgimento Dependente (Paṭiccasamuppāda)?",
+        "es": "¿Cuántos factores causales componen la fórmula del Surgimiento Dependiente (Paṭiccasamuppāda)?"
+      },
+      "correct": {
+        "en": "Twelve factors, beginning with ignorance (avijjā) and ending with decay and death (jarā-maraṇa).",
+        "pt": "Doze fatores, iniciando com ignorância (avijjā) e findando em declínio e morte (jarā-maraṇa).",
+        "es": "Doce factores, iniciando con ignorancia (avijjā) y finalizando en declive y muerte (jarā-maraṇa)."
+      },
+      "distractors": [
+        {
+          "en": "Twenty-four factors, matching the conditions of the Paṭṭhāna.",
+          "pt": "Vinte e quatro fatores, correspondendo às condições do Paṭṭhāna.",
+          "es": "Veinticuatro factores, correspondientes a las condiciones del Paṭṭhāna."
+        },
+        {
+          "en": "Four factors, matching the four noble truths.",
+          "pt": "Quatro fatores, correspondendo às quatro nobres verdades.",
+          "es": "Cuatro factores, correspondientes a las cuatro nobles verdades."
+        },
+        {
+          "en": "Thirty-one factors, matching the realms of existence.",
+          "pt": "Trinta e um fatores, correspondendo aos reinos de existência.",
+          "es": "Treinta y un factores, correspondientes a los reinos de existencia."
+        }
+      ],
+      "explanation": {
+        "en": "The 12 links: avijjā $\\to$ saṅkhārā $\\to$ viññāṇa $\\to$ nāmarūpa $\\to$ saḷāyatana $\\to$ phassa $\\to$ vedanā $\\to$ taṇhā $\\to$ upādāna $\\to$ bhava $\\to$ jāti $\\to$ jarā-maraṇa.",
+        "pt": "Os 12 elos: avijjā $\\to$ saṅkhārā $\\to$ viññāṇa $\\to$ nāmarūpa $\\to$ saḷāyatana $\\to$ phassa $\\to$ vedanā $\\to$ taṇhā $\\to$ upādāna $\\to$ bhava $\\to$ jāti $\\to$ jarā-maraṇa.",
+        "es": "Los 12 eslabones: avijjā $\\to$ saṅkhārā $\\to$ viññāṇa $\\to$ nāmarūpa $\\to$ saḷāyatana $\\to$ phassa $\\to$ vedanā $\\to$ taṇhā $\\to$ upādāna $\\to$ bhava $\\to$ jāti $\\to$ jarā-maraṇa."
+      },
+      "source": {
+        "cma": "VIII §3",
+        "fund": "Lesson 9.1"
+      }
+    },
+    {
+      "id": "u9.three_periods_distribution",
+      "kind": "atom",
+      "topic": {
+        "en": "Three Periods of Time",
+        "pt": "Três Períodos de Tempo",
+        "es": "Tres Períodos de Tiempo"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How are the twelve links of Dependent Arising distributed across the three periods of time?",
+        "pt": "Como os doze elos do Surgimento Dependente são distribuídos nos três períodos de tempo?",
+        "es": "¿Cómo se distribuyen los doce eslabones del Surgimiento Dependiente en los tres períodos de tiempo?"
+      },
+      "correct": {
+        "en": "Two in the past (avijjā, saṅkhāra), eight in the present (viññāṇa to bhava), and two in the future (jāti, jarā-maraṇa).",
+        "pt": "Dois no passado (avijjā, saṅkhāra), oito no presente (viññāṇa a bhava) e dois no futuro (jāti, jarā-maraṇa).",
+        "es": "Dos en el pasado (avijjā, saṅkhāra), ocho en el presente (viññāṇa a bhava) y dos en el futuro (jāti, jarā-maraṇa)."
+      },
+      "distractors": [
+        {
+          "en": "Four in the past, four in the present, and four in the future.",
+          "pt": "Quatro no passado, quatro no presente e quatro no futuro.",
+          "es": "Cuatro en el pasado, cuatro en el presente y cuatro en el futuro."
+        },
+        {
+          "en": "Six in the past and six in the future, with present as a mere illusion.",
+          "pt": "Seis no passado e seis no futuro, sendo o presente mera ilusão.",
+          "es": "Seis en el pasado y seis en el futuro, siendo el presente mera ilusión."
+        },
+        {
+          "en": "All twelve links occur simultaneously in every thought-moment.",
+          "pt": "Todos os doze elos ocorrem simultaneamente em cada momento mental.",
+          "es": "Todos los doce eslabones ocurren simultáneamente en cada momento mental."
+        }
+      ],
+      "explanation": {
+        "en": "The classical analysis spans 3 lives: past causes (avijjā, saṅkhāra) produce present results (viññāṇa through vedanā); present causes (taṇhā, upādāna, bhava) generate future results (jāti, jarā-maraṇa).",
+        "pt": "A análise clássica abrange 3 vidas: causas passadas geram frutos presentes (viññāṇa a vedanā); causas presentes (taṇhā, upādāna, bhava) geram frutos futuros (jāti, jarā-maraṇa).",
+        "es": "El análisis clásico abarca 3 vidas: causas pasadas generan frutos presentes (viññāṇa a vedanā); causas presentes (taṇhā, upādāna, bhava) generan frutos futuros (jāti, jarā-maraṇa)."
+      },
+      "source": {
+        "cma": "VIII §4",
+        "fund": "Lesson 9.1"
+      }
+    },
+    {
+      "id": "u9.three_vattas_rounds",
+      "kind": "atom",
+      "topic": {
+        "en": "Three Rounds of Samsāra",
+        "pt": "Três Ciclos do Samsāra",
+        "es": "Tres Ciclos del Samsāra"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the three rounds (vaṭṭa) that perpetuate cyclic rebirth in samsāra?",
+        "pt": "Quais são os três ciclos (vaṭṭa) que perpetuam os renascimentos no samsāra?",
+        "es": "¿Cuáles son los tres ciclos (vaṭṭa) que perpetúan los renacimientos en el samsāra?"
+      },
+      "correct": {
+        "en": "Round of defilements (kilesa-vaṭṭa), round of kamma (kamma-vaṭṭa), and round of results (vipāka-vaṭṭa).",
+        "pt": "Ciclo das impurezas (kilesa-vaṭṭa), ciclo das ações (kamma-vaṭṭa) e ciclo dos resultados (vipāka-vaṭṭa).",
+        "es": "Ciclo de las impurezas (kilesa-vaṭṭa), ciclo de las acciones (kamma-vaṭṭa) y ciclo de los resultados (vipāka-vaṭṭa)."
+      },
+      "distractors": [
+        {
+          "en": "Round of waking, round of dreaming, and round of deep sleep.",
+          "pt": "Ciclo de vigília, ciclo de sonho e ciclo de sono profundo.",
+          "es": "Ciclo de vigilia, ciclo de sueño y ciclo de sueño profundo."
+        },
+        {
+          "en": "Round of birth, round of old age, and round of bodily death.",
+          "pt": "Ciclo de nascimento, ciclo de velhice e ciclo de morte física.",
+          "es": "Ciclo de nacimiento, ciclo de vejez y ciclo de muerte física."
+        },
+        {
+          "en": "Round of sensory world, fine-material world, and immaterial world.",
+          "pt": "Ciclo do mundo sensorial, mundo material sutil e mundo imaterial.",
+          "es": "Ciclo del mundo sensorial, mundo material sutil y mundo inmaterial."
+        }
+      ],
+      "explanation": {
+        "en": "Defilements (avijjā, taṇhā, upādāna) provoke actions (saṅkhāra, kamma-bhava). Actions generate results (viññāṇa, etc.). Experiencing results triggers new defilements, perpetuating the spinning wheel.",
+        "pt": "Impurezas (avijjā, taṇhā, upādāna) provocam ações (saṅkhāra, kamma-bhava). Ações geram resultados (viññāṇa, etc.). Experienciar resultados suscita novas impurezas, perpetuando o ciclo.",
+        "es": "Impurezas (avijjā, taṇhā, upādāna) provocan acciones (saṅkhāra, kamma-bhava). Acciones generan resultados (viññāṇa, etc.). Experimentar resultados suscita nuevas impurezas, perpetuando el ciclo."
+      },
+      "source": {
+        "cma": "VIII §7",
+        "fund": "Lesson 9.1"
+      }
+    },
+    {
+      "id": "u9.patthana_twentyfour_count",
+      "kind": "atom",
+      "topic": {
+        "en": "Twenty-Four Paṭṭhāna Conditions",
+        "pt": "Vinte e Quatro Condições",
+        "es": "Veinticuatro Condiciones"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many conditional relations (paccaya) are systematized in the Paṭṭhāna?",
+        "pt": "Quantas relações condicionais (paccaya) são sistematizadas no Paṭṭhāna?",
+        "es": "¿Cuántas relaciones condicionales (paccaya) se sistematizan en el Paṭṭhāna?"
+      },
+      "correct": {
+        "en": "Twenty-four universal conditions, beginning with root condition (hetu-paccaya).",
+        "pt": "Vinte e quatro condições universais, iniciando pela condição de raiz (hetu-paccaya).",
+        "es": "Veinticuatro condiciones universales, iniciando por la condición de raíz (hetu-paccaya)."
+      },
+      "distractors": [
+        {
+          "en": "Twelve conditions, identical to the links of Dependent Arising.",
+          "pt": "Doze condições, idênticas aos elos do Surgimento Dependente.",
+          "es": "Doce condiciones, idénticas a los eslabones del Surgimiento Dependiente."
+        },
+        {
+          "en": "Eighty-nine conditions, one for each distinct type of consciousness.",
+          "pt": "Oitenta e nove condições, uma para cada tipo de consciência.",
+          "es": "Ochenta y nueve condiciones, una para cada tipo de conciencia."
+        },
+        {
+          "en": "Four conditions, corresponding to the four great physical elements.",
+          "pt": "Quatro condições, correspondendo aos quatro grandes elementos físicos.",
+          "es": "Cuatro condiciones, correspondientes a los cuatro grandes elementos físicos."
+        }
+      ],
+      "explanation": {
+        "en": "The Paṭṭhāna (Seventh book of Abhidhamma) analyzes conditional causality into 24 distinct relations (hetu, ārammaṇa, adhipati, anantara, samanantara, sahajāta, aññamañña, nissaya, upanissaya, etc.).",
+        "pt": "O Paṭṭhāna (sétimo livro do Abhidhamma) analisa a causalidade condicional em 24 relações distintas (hetu, ārammaṇa, adhipati, anantara, samanantara, sahajāta, aññamañña, nissaya, upanissaya, etc.).",
+        "es": "El Paṭṭhāna (séptimo libro del Abhidhamma) analiza la causalidad condicional en 24 relaciones distintas (hetu, ārammaṇa, adhipati, anantara, samanantara, sahajāta, aññamañña, nissaya, upanissaya, etc.)."
+      },
+      "source": {
+        "cma": "VIII §11",
+        "fund": "Lesson 9.2"
+      }
+    },
+    {
+      "id": "u9.sahajata_paccaya_nature",
+      "kind": "atom",
+      "topic": {
+        "en": "Co-Nascence Condition",
+        "pt": "Condição de Cossurgimento",
+        "es": "Condición de Cosurgimiento"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What defines the co-nascence condition (sahajāta-paccaya)?",
+        "pt": "O que define a condição de cossurgimento (sahajāta-paccaya)?",
+        "es": "¿Qué define la condición de cosurgimiento (sahajāta-paccaya)?"
+      },
+      "correct": {
+        "en": "Phenomena arising together at the same moment supporting each other, like the flame and light of a lamp.",
+        "pt": "Realidades que surgem juntas no mesmo instante apoiando-se mutuamente, como a chama e a luz de uma lamparina.",
+        "es": "Realidades que surgen juntas en el mismo instante apoyándose mutuamente, como la llama y la luz de una lámpara."
+      },
+      "distractors": [
+        {
+          "en": "A past action producing a delayed karmic retribution in another realm.",
+          "pt": "Uma ação passada produzindo retribuição kármica atrasada em outro reino.",
+          "es": "Una acción pasada produciendo retribución kármica retrasada en otro reino."
+        },
+        {
+          "en": "One thought-moment dissolving before the next thought-moment can arise.",
+          "pt": "Um momento mental dissolvendo-se antes que o próximo possa surgir.",
+          "es": "Un momento mental disolviéndose antes de que el siguiente pueda surgir."
+        },
+        {
+          "en": "An external physical object impinging on a physical sense organ.",
+          "pt": "Um objeto físico externo impactando sobre um órgão sensorial físico.",
+          "es": "Un objeto físico externo impactando sobre un órgano sensorial físico."
+        }
+      ],
+      "explanation": {
+        "en": "In sahajāta-paccaya, the conditioning state, in arising simultaneously with the conditioned state, helps it to arise and persist: e.g., citta and cetasikas, or the 4 great essentials assisting one another.",
+        "pt": "No sahajāta-paccaya, o estado condicionador surge em sincronia com o condicionado, auxiliando-o a nascer e subsistir: por exemplo, citta e cetasikas, ou os 4 grandes essenciais auxiliando-se reciprocamente.",
+        "es": "En el sahajāta-paccaya, el estado condicionador surge en sincronía con el condicionado, ayudándolo a nacer y subsistir: por ejemplo, citta y cetasikas, o los 4 grandes esenciales ayudándose recíprocamente."
+      },
+      "source": {
+        "cma": "VIII §13",
+        "fund": "Lesson 9.2"
+      }
+    },
+    {
+      "id": "u9.anantara_paccaya_nature",
+      "kind": "atom",
+      "topic": {
+        "en": "Proximity Condition",
+        "pt": "Condição de Proximidade",
+        "es": "Condición de Proximidad"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What defines the proximity condition (anantara-paccaya)?",
+        "pt": "O que define a condição de proximidade imediata (anantara-paccaya)?",
+        "es": "¿Qué define la condición de proximidad inmediata (anantara-paccaya)?"
+      },
+      "correct": {
+        "en": "A preceding consciousness ceasing immediately to enable the successor to arise without any interval.",
+        "pt": "Uma consciência anterior cessando imediatamente para permitir que a sucessora surja sem intervalo algum.",
+        "es": "Una conciencia anterior cesando de inmediato para permitir que la sucesora surja sin intervalo alguno."
+      },
+      "distractors": [
+        {
+          "en": "Physical matter supporting mental states from a distance.",
+          "pt": "Matéria física apoiando estados mentais a partir de uma distância.",
+          "es": "Materia física apoyando estados mentales a partir de una distancia."
+        },
+        {
+          "en": "Mental factors sharing the exact same physical base.",
+          "pt": "Fatores mentais compartilhando exatamente a mesma base física.",
+          "es": "Factores mentales compartiendo exactamente la misma base física."
+        },
+        {
+          "en": "An unwholesome root producing wholesome results in the future.",
+          "pt": "Uma raiz prejudicial produzindo resultados benéficos no futuro.",
+          "es": "Una raíz perjudicial produciendo resultados benéficos en el futuro."
+        }
+      ],
+      "explanation": {
+        "en": "Anantara means 'without interval'. The preceding thought-moment dissolves completely, and its passing away acts as the indispensable open gateway for the immediate arising of the next thought-moment.",
+        "pt": "Anantara significa 'sem intervalo'. O momento mental anterior se dissolve completamente, e sua cessação atua como a condição necessária para o surgimento imediato do momento seguinte.",
+        "es": "Anantara significa 'sin intervalo'. El momento mental anterior se disuelve por completo, y su cesación actúa como la condición necesaria para el surgimiento inmediato del momento siguiente."
+      },
+      "source": {
+        "cma": "VIII §13",
+        "fund": "Lesson 9.2"
+      }
+    },
+    {
+      "id": "u9.asevana_paccaya_nature",
+      "kind": "atom",
+      "topic": {
+        "en": "Repetition Condition",
+        "pt": "Condição de Repetição",
+        "es": "Condición de Repetición"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Where does the repetition condition (āsevana-paccaya) operate exclusively?",
+        "pt": "Onde opera exclusivamente a condição de repetição (āsevana-paccaya)?",
+        "es": "¿Dónde opera exclusivamente la condición de repetición (āsevana-paccaya)?"
+      },
+      "correct": {
+        "en": "Between successive thought-moments in the javana stage, reinforcing potency by repeated practice.",
+        "pt": "Entre momentos mentais sucessivos no estágio de javana, reforçando potência por prática reiterada.",
+        "es": "Entre momentos mentales sucesivos en la etapa de javana, reforzando potencia por práctica reiterada."
+      },
+      "distractors": [
+        {
+          "en": "Between the physical heart base and bodily movements.",
+          "pt": "Entre a base física do coração e os movimentos corporais.",
+          "es": "Entre la base física del corazón y los movimientos corporales."
+        },
+        {
+          "en": "Between death consciousness and rebirth-linking.",
+          "pt": "Entre a consciência da morte e a religação renascente.",
+          "es": "Entre la conciencia de la muerte y la reconexión renaciente."
+        },
+        {
+          "en": "In the five passive sensory consciousnesses.",
+          "pt": "Nas cinco consciências sensoriais passivas.",
+          "es": "En las cinco conciencias sensoriales pasivas."
+        }
+      ],
+      "explanation": {
+        "en": "Āsevana occurs only in identical successive javana moments of the same ethical nature: preceding javanas condition subsequent ones to become progressively stronger and more proficient, like memorizing a text.",
+        "pt": "Āsevana ocorre apenas em momentos sucessivos de javana da mesma natureza: os anteriores tornam os posteriores progressivamente mais potentes e peritos, como na memorização de um texto.",
+        "es": "Āsevana ocurre solo en momentos sucesivos de javana de la misma naturaleza: los anteriores vuelven a los posteriores progresivamente más potentes y diestros, como en la memorización de un texto."
+      },
+      "source": {
+        "cma": "VIII §18",
+        "fund": "Lesson 9.2"
+      }
+    },
+    {
+      "id": "u9.deduced_twenty_modes_calculation",
+      "kind": "derived",
+      "topic": {
+        "en": "Twenty Modes Derivation",
+        "pt": "Derivação dos Vinte Modos",
+        "es": "Derivación de los Veinte Modos"
+      },
+      "requires": [
+        "u9.paticcasamuppada_twelve_links",
+        "u9.three_periods_distribution"
+      ],
+      "prompt": {
+        "en": "How are the twenty modes (vīsati ākārā) of Dependent Arising mathematically derived?",
+        "pt": "Como os vinte modos (vīsati ākārā) do Surgimento Dependente são matematicamente derivados?",
+        "es": "¿Cómo se derivan matemáticamente los veinte modos (vīsati ākārā) del Surgimiento Dependiente?"
+      },
+      "correct": {
+        "en": "Five past causes, five present results, five present causes, and five future results: 5 × 4 = 20 modes.",
+        "pt": "Cinco causas passadas, cinco resultados presentes, cinco causas presentes e cinco futuros: 5 × 4 = 20 modos.",
+        "es": "Cinco causas pasadas, cinco resultados presentes, cinco causas presentes y cinco futuros: 5 × 4 = 20 modos."
+      },
+      "distractors": [
+        {
+          "en": "Multiplying the twelve links by the two truths (conventional and ultimate).",
+          "pt": "Multiplicando os doze elos pelas duas verdades (convencional e última).",
+          "es": "Multiplicando los doce eslabones por las dos verdades (convencional y última)."
+        },
+        {
+          "en": "Adding the eight path factors to the twelve links of dependent arising.",
+          "pt": "Somando os oito fatores do caminho aos doze elos do surgimento dependente.",
+          "es": "Sumando los ocho factores del sendero a los doce eslabones del surgimiento dependiente."
+        },
+        {
+          "en": "Doubling the ten insight knowledges to account for calm and insight.",
+          "pt": "Duplicando os dez conhecimentos de insight para tranquilidade e discernimento.",
+          "es": "Duplicando los diez conocimientos de insight para tranquilidad y discernimiento."
+        }
+      ],
+      "explanation": {
+        "en": "5 past causes (avijjā, saṅkhāra, taṇhā, upādāna, kamma-bhava); 5 present results (viññāṇa, nāmarūpa, saḷāyatana, phassa, vedanā); 5 present causes (same 5); 5 future results (same 5). Total: 20 modes across 4 groups.",
+        "pt": "5 causas passadas (avijjā, saṅkhāra, taṇhā, upādāna, kamma-bhava); 5 resultados presentes (viññāṇa a vedanā); 5 causas presentes; 5 frutos futuros. Total: 20 modos através de 4 grupos.",
+        "es": "5 causas pasadas (avijjā, saṅkhāra, taṇhā, upādāna, kamma-bhava); 5 resultados presentes (viññāṇa a vedanā); 5 causas presentes; 5 frutos futuros. Total: 20 modos a través de 4 grupos."
+      },
+      "source": {
+        "cma": "VIII §5",
+        "fund": "Lesson 9.1"
+      }
+    },
+    {
+      "id": "u9.deduced_paticcasamuppada_vs_patthana",
+      "kind": "derived",
+      "topic": {
+        "en": "Two Conditionality Approaches",
+        "pt": "Duas Abordagens da Causalidade",
+        "es": "Dos Enfoques de la Causalidad"
+      },
+      "requires": [
+        "u9.paticcasamuppada_twelve_links",
+        "u9.patthana_twentyfour_count"
+      ],
+      "prompt": {
+        "en": "What is the methodological difference between Paṭiccasamuppāda and Paṭṭhāna?",
+        "pt": "Qual é a diferença metodológica entre Paṭiccasamuppāda e Paṭṭhāna?",
+        "es": "¿Cuál es la diferencia metodológica entre Paṭiccasamuppāda y Paṭṭhāna?"
+      },
+      "correct": {
+        "en": "Paṭiccasamuppāda analyzes sequential causal flow; Paṭṭhāna analyzes structural conditional forces at play.",
+        "pt": "Paṭiccasamuppāda analisa o fluxo causal sequencial; Paṭṭhāna analisa as forças condicionais em jogo.",
+        "es": "Paṭiccasamuppāda analiza el flujo causal secuencial; Paṭṭhāna analiza las fuerzas condicionales en juego."
+      },
+      "distractors": [
+        {
+          "en": "Paṭiccasamuppāda is strictly for lay followers while Paṭṭhāna is only for monastics.",
+          "pt": "Paṭiccasamuppāda é estritamente para leigos enquanto Paṭṭhāna é só para monges.",
+          "es": "Paṭiccasamuppāda es estrictamente para laicos mientras que Paṭṭhāna es solo para monjes."
+        },
+        {
+          "en": "Paṭiccasamuppāda deals with materiality while Paṭṭhāna deals exclusively with concepts.",
+          "pt": "Paṭiccasamuppāda trata da matéria enquanto Paṭṭhāna trata exclusivamente de conceitos.",
+          "es": "Paṭiccasamuppāda trata de la materia mientras que Paṭṭhāna trata exclusivamente de conceptos."
+        },
+        {
+          "en": "Paṭṭhāna was composed by commentators centuries after the historical Buddha.",
+          "pt": "O Paṭṭhāna foi composto por comentaristas séculos após o Buddha histórico.",
+          "es": "El Paṭṭhāna fue compuesto por comentaristas siglos después del Buddha histórico."
+        }
+      ],
+      "explanation": {
+        "en": "Paṭiccasamuppāda sets forth the causal chain of cyclic existence step by step (paccaya-dhammā). Paṭṭhāna takes these terms and reveals through 24 conditional relations (paccaya-satti) how they interconnect.",
+        "pt": "Paṭiccasamuppāda estabelece a cadeia causal do ciclo existencial passo a passo. O Paṭṭhāna toma esses fatores e revela, através de 24 relações condicionais (forças condicionantes), como se interconectam.",
+        "es": "Paṭiccasamuppāda establece la cadena causal del ciclo existencial paso a paso. El Paṭṭhāna toma esos factores y revela, a través de 24 relaciones condicionales (fuerzas condicionantes), cómo se interconectan."
+      },
+      "source": {
+        "cma": "VIII §1–§2",
+        "fund": "Lesson 9.2"
+      }
+    },
+    {
+      "id": "u9.paticca_three_vattas",
+      "kind": "atom",
+      "topic": {
+        "en": "Three Rounds of Samsāra",
+        "pt": "Três Ciclos do Samsāra",
+        "es": "Tres Ciclos del Samsāra"
+      },
+      "requires": [
+        "u9.three_vattas_rounds"
+      ],
+      "prompt": {
+        "en": "Which factor belongs specifically to the round of results (vipāka-vaṭṭa)?",
+        "pt": "Qual fator pertence especificamente ao ciclo dos resultados (vipāka-vaṭṭa)?",
+        "es": "¿Qué factor pertenece específicamente al ciclo de los resultados (vipāka-vaṭṭa)?"
+      },
+      "correct": {
+        "en": "Rebirth consciousness, mentality-materiality, six bases, contact, feeling.",
+        "pt": "Consciência, mente-matéria, seis bases, contato e sensação resultante.",
+        "es": "Conciencia, mente-materia, seis bases, contacto y sensación resultante."
+      },
+      "distractors": [
+        {
+          "en": "Ignorance (avijjā), craving (taṇhā), and grasping (upādāna).",
+          "pt": "Ignorância (avijjā), apego ardente (taṇhā) e apego obsessivo (upādāna).",
+          "es": "Ignorancia (avijjā), anhelo ardiente (taṇhā) y apego obsesivo (upādāna)."
+        },
+        {
+          "en": "Volitional formations (saṅkhārā) and kamma-existence (kammabhava).",
+          "pt": "Formações volitivas (saṅkhārā) e existência cármica ativa (kammabhava).",
+          "es": "Formaciones volitivas (saṅkhārā) y existencia kármica activa (kammabhava)."
+        },
+        {
+          "en": "The unconditioned cessation of rebirth through Arahatship.",
+          "pt": "A cessação incondicionada do renascimento alcançada pelo estado de Arahant.",
+          "es": "La cesación incondicionada del renacimiento alcanzada por el estado de Arahant."
+        }
+      ],
+      "explanation": {
+        "en": "Vipāka-vaṭṭa comprises the passive experiential fruits conditioned by kamma-vaṭṭa.",
+        "pt": "O vipāka-vaṭṭa compreende os frutos experienciais passivos condicionados pelo kamma-vaṭṭa.",
+        "es": "El vipāka-vaṭṭa comprende los frutos experienciales pasivos condicionados por el kamma-vaṭṭa."
+      },
+      "source": {
+        "cma": "VIII §6",
+        "fund": "8.2",
+        "as": "VIII.6"
+      }
+    },
+    {
+      "id": "u9.nanakkhanika_kamma_paccaya",
+      "kind": "atom",
+      "topic": {
+        "en": "Asynchronous Kamma Condition",
+        "pt": "Condição Cármica Assíncrona",
+        "es": "Condición Kármica Asíncrona"
+      },
+      "requires": [
+        "u9.patthana_twentyfour_count"
+      ],
+      "prompt": {
+        "en": "What defines Nānākkhaṇika Kammapaccaya in the 24 conditional relations?",
+        "pt": "O que define Nānākkhaṇika Kammapaccaya nas 24 relações condicionais?",
+        "es": "¿Qué define Nānākkhaṇika Kammapaccaya en las 24 relaciones condicionales?"
+      },
+      "correct": {
+        "en": "Past volition producing resultant consciousness and kammaja matter later.",
+        "pt": "Volicão passada produzindo consciência resultante e matéria cármica no futuro.",
+        "es": "Volición pasada produciendo conciencia resultante y materia kármica en el futuro."
+      },
+      "distractors": [
+        {
+          "en": "Volition conditioning its simultaneous conascent mental factors.",
+          "pt": "A volição condicionando seus fatores mentais conascentes simultâneos.",
+          "es": "La volición condicionando sus factores mentales connacientes simultáneos."
+        },
+        {
+          "en": "Physical food generating pure caloric nutrition across body tissues.",
+          "pt": "O alimento físico gerando pura nutrição calórica pelos tecidos do corpo.",
+          "es": "El alimento físico generando pura nutrición calórica por los tejidos del cuerpo."
+        },
+        {
+          "en": "Sensory objects attracting the attention of passive sense faculties.",
+          "pt": "Objetos sensoriais atraindo a atenção de faculdades dos sentidos passivas.",
+          "es": "Objetos sensoriales atrayendo la atención de facultades de los sentidos pasivas."
+        }
+      ],
+      "explanation": {
+        "en": "Unlike Sahajāta-kamma, Nānākkhaṇika operates across different instants of time to mature fruit.",
+        "pt": "Ao contrário do Sahajāta-kamma, o Nānākkhaṇika opera através de diferentes instantes de tempo.",
+        "es": "A diferencia de Sahajāta-kamma, Nānākkhaṇika opera a través de diferentes instantes de tiempo."
+      },
+      "source": {
+        "cma": "VIII §18",
+        "fund": "8.3",
+        "as": "VIII.18"
+      }
+    }
+  ]
+}

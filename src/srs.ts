@@ -291,7 +291,7 @@ export function initSrsPanel(container: HTMLElement): void {
     frontEl.innerHTML = `
       <div class="srs-headword">${escHtml(vocab.h)}</div>
       <div class="srs-pos">${escHtml(vocab.pos)}</div>
-      <div class="srs-freq">${t("srsFreq", settings.uiLang)}: ${vocab.freq.toLocaleString()}</div>
+      <div class="srs-freq">${t("srsFreq", settings.uiLang)}: ${(vocab.freq ?? 0).toLocaleString()}</div>
       <div class="srs-tap">${t("srsTapToReveal", settings.uiLang)}</div>
     `;
     frontEl.style.display = "block";
@@ -419,6 +419,7 @@ export function initSrsPanel(container: HTMLElement): void {
   });
 }
 
-function escHtml(s: string): string {
+function escHtml(s: string | undefined | null): string {
+  if (!s) return "";
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }

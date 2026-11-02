@@ -6,7 +6,7 @@
 <title>Abhidhamma Piṭaka</title>
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#8b0000" />
-<link rel="stylesheet" href="css/style.css?v=3c38029c" />
+<link rel="stylesheet" href="css/style.css?v=ab1f056d" />
 <script>
   window.__deferredPwaPrompt = null;
   window.addEventListener('beforeinstallprompt', function(e) {
@@ -113,7 +113,23 @@
 
     <div id="panel-srs" class="panel">
       <h2 data-i18n="srsPanelTitle">Pāli Memorization</h2>
-      <p class="side-empty" data-i18n="srsFullscreen">Viewing in main panel →</p>
+      <div class="srs-nav-menu">
+        <button class="srs-menu-item active" data-srs-mode="vocab">
+          <span class="srs-item-icon">📖</span>
+          <div class="srs-item-info">
+            <strong class="srs-item-title" data-i18n="srsMenuVocabTitle">Pāli Memorization</strong>
+            <span class="srs-item-desc" data-i18n="srsMenuVocabDesc">Vocabulary flashcards & canonical terms (SM-2)</span>
+          </div>
+        </button>
+        <button class="srs-menu-item" data-srs-mode="tetris">
+          <span class="srs-item-icon">☸</span>
+          <div class="srs-item-info">
+            <strong class="srs-item-title" data-i18n="srsMenuTetrisTitle">Abhidhamma Tetris</strong>
+            <span class="srs-item-desc" data-i18n="srsMenuTetrisDesc">Deductive gamification of Abhidhammatthasaṅgaha</span>
+          </div>
+        </button>
+      </div>
+      <p class="side-empty" data-i18n="srsFullscreenHint">Viewing in main panel →</p>
     </div>
     <div id="panel-tools" class="panel">
       <h2 data-i18n="toolsPanelTitle">Abhidhamma Tools</h2>
@@ -143,7 +159,8 @@
     </div>
 
     <div id="reader-srs" class="reader-overlay" style="display:none">
-      <div id="srs-full-body"></div>
+      <div id="srs-full-body" class="srs-view-panel"></div>
+      <div id="srs-tetris-main" class="srs-view-panel" style="display:none"></div>
     </div>
     <div id="reader-tools" class="reader-overlay" style="display:none">
       <div id="tools-full-body"></div>
@@ -156,9 +173,9 @@
 <div id="selection-popover" class="hidden"></div>
 
 <!-- ABHIDHAMMIKA INTERLOCUTOR CONTAINER -->
-<div id="interlocutor-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 10000; width: 400px; max-width: 90vw; max-height: 80vh; overflow-y: auto; display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border-radius: 8px; background: white;"></div>
-<button id="btn-toggle-interlocutor" style="position: fixed; bottom: 20px; right: 20px; z-index: 10001; padding: 12px 16px; background-color: #0f172a; color: white; border: none; border-radius: 24px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold;">💬 Debate</button>
+<div id="interlocutor-container" class="interlocutor-container" style="display: none;"></div>
+<button id="btn-toggle-interlocutor" class="btn-toggle-interlocutor" type="button" aria-label="Toggle Canonical Debate">💬 Debate</button>
 
-<script type="module" src="js/app.js?v=3c38029c"></script>
+<script type="module" src="js/app.js?v=ab1f056d"></script>
 </body>
 </html>

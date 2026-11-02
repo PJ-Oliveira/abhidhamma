@@ -14,6 +14,7 @@ import { initDictionaryPanel } from "./dictionary.js";
 import { initSearchPanel } from "./search.js";
 import { initExportPanel } from "./export.js";
 import { initSrsPanel } from "./srs.js";
+import { TetrisUI } from "./tetris/ui.js";
 import { initToolsPanel } from "./tools/tools.js";
 import "./tools/mindmap.js";
 import "./tools/patthana.js";
@@ -509,6 +510,14 @@ function wireIconRail(): void {
     tocNav.style.display = isFullscreen ? "none" : "";
     readerSrs.style.display = target === "srs" ? "flex" : "none";
     readerTools.style.display = target === "tools" ? "flex" : "none";
+    if (target === "srs") {
+      const activeBtn = document.querySelector<HTMLButtonElement>(".srs-menu-item.active");
+      const isTetris = activeBtn?.dataset.srsMode === "tetris";
+      readerSrs.classList.toggle("tetris-mode", isTetris);
+      document.body.classList.toggle("tetris-active", isTetris);
+    } else {
+      document.body.classList.remove("tetris-active");
+    }
   }
 
   switchPanel = (target: string, skipHashUpdate = false) => {
@@ -819,9 +828,14 @@ function applyStaticI18n(): void {
   updateSettingsLabels();
 }
 
+let tetrisUiInstance: TetrisUI | null = null;
+
 function refreshLocalizedUI(): void {
   applyStaticI18n();
   updateSettingsLabels();
+  if (tetrisUiInstance) {
+    tetrisUiInstance.setLang(settings.uiLang as any);
+  }
   if (!state.manifest) return;
   renderTree(state.manifest, el("tree"), (workId, partKey, chunkIndex) => void selectWork(workId, partKey, chunkIndex));
   if (state.work && state.partKey) {
@@ -852,6 +866,46 @@ function wireChunkNav(): void {
       void selectWork(state.work.id, state.partKey, state.chunkIndex + 1);
     }
   });
+}
+
+function wireSrsNavigation(): void {
+  const menuItems = document.querySelectorAll<HTMLButtonElement>(".srs-menu-item");
+  const vocabPanel = document.getElementById("srs-full-body");
+  const tetrisPanel = document.getElementById("srs-tetris-main");
+  const readerSrs = document.getElementById("reader-srs");
+
+  const setMode = (mode: string) => {
+    menuItems.forEach((b) => b.classList.toggle("active", b.dataset.srsMode === mode));
+    if (mode === "tetris") {
+      readerSrs?.classList.add("tetris-mode");
+      document.body.classList.add("tetris-active");
+      if (vocabPanel) vocabPanel.style.display = "none";
+      if (tetrisPanel) {
+        tetrisPanel.style.display = "flex";
+        if (!tetrisUiInstance) {
+          tetrisUiInstance = new TetrisUI(tetrisPanel, settings.uiLang as any);
+          void tetrisUiInstance.init();
+        }
+      }
+    } else {
+      readerSrs?.classList.remove("tetris-mode");
+      document.body.classList.remove("tetris-active");
+      if (tetrisPanel) tetrisPanel.style.display = "none";
+      if (vocabPanel) vocabPanel.style.display = "flex";
+    }
+  };
+
+  menuItems.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const mode = btn.dataset.srsMode || "vocab";
+      setMode(mode);
+    });
+  });
+
+  const activeBtn = document.querySelector<HTMLButtonElement>(".srs-menu-item.active");
+  if (activeBtn?.dataset.srsMode === "tetris") {
+    setMode("tetris");
+  }
 }
 
 interface Route {
@@ -974,6 +1028,13 @@ async function init(): Promise<void> {
   initExportPanel(state.manifest, el("export-panel-body"), () => state.work?.id ?? null);
   initSrsPanel(el("srs-full-body"));
   initToolsPanel(el("tools-full-body"));
+
+  const tetrisMount = document.getElementById("srs-tetris-main");
+  if (tetrisMount) {
+    tetrisUiInstance = new TetrisUI(tetrisMount, settings.uiLang as any);
+    void tetrisUiInstance.init();
+  }
+  wireSrsNavigation();
 
   const route = parseHash();
   if (route) {

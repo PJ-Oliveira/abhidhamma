@@ -1,0 +1,1094 @@
+{
+  "unit": 4,
+  "title": {
+    "en": "Compendium of Miscellaneous (Pakiṇṇaka-saṅgaha)",
+    "pt": "Compêndio dos Diversos (Pakiṇṇaka-saṅgaha)",
+    "es": "Compendio de los Diversos (Pakiṇṇaka-saṅgaha)"
+  },
+  "summary": {
+    "en": "Investigation of the six miscellaneous categories: feelings (vedanā), roots (hetu), functions of consciousness (kicca), sense doors (dvāra), objects of cognition (ārammaṇa), and physical bases (vatthu).",
+    "pt": "Investigação das seis categorias diversas: sensações (vedanā), raízes (hetu), funções da consciência (kicca), portas sensoriais (dvāra), objetos de cognição (ārammaṇa) e bases físicas (vatthu).",
+    "es": "Investigación de las seis categorías diversas: sensaciones (vedanā), raíces (hetu), funciones de la conciencia (kicca), puertas sensoriales (dvāra), objetos de cognición (ārammaṇa) y bases físicas (vatthu)."
+  },
+  "taxonomies": [
+    {
+      "id": "u4.hexads",
+      "title": {
+        "en": "The Six Miscellaneous Categories",
+        "pt": "As Seis Categorias Diversas",
+        "es": "Las Seis Categorías Diversas"
+      },
+      "noun": {
+        "en": "categories",
+        "pt": "categorias",
+        "es": "categorías"
+      },
+      "source": {
+        "cma": "III §1–§22",
+        "fund": "Lesson 4.1",
+        "as": "III.1"
+      },
+      "nodes": [
+        {
+          "id": "six_hexads",
+          "name": {
+            "en": "Six Miscellaneous Categories",
+            "pt": "Seis Categorias Diversas",
+            "es": "Seis Categorías Diversas"
+          },
+          "parent": null
+        },
+        {
+          "id": "vedana_hexad",
+          "name": {
+            "en": "Feelings (Vedanā)",
+            "pt": "Sensações (Vedanā)",
+            "es": "Sensaciones (Vedanā)"
+          },
+          "parent": "six_hexads",
+          "weight": 5
+        },
+        {
+          "id": "sukha_vedana",
+          "name": {
+            "en": "Bodily Pleasure (Sukha)",
+            "pt": "Prazer Corporal (Sukha)",
+            "es": "Placer Corporal (Sukha)"
+          },
+          "parent": "vedana_hexad",
+          "weight": 1
+        },
+        {
+          "id": "dukkha_vedana",
+          "name": {
+            "en": "Bodily Pain (Dukkha)",
+            "pt": "Dor Corporal (Dukkha)",
+            "es": "Dolor Corporal (Dukkha)"
+          },
+          "parent": "vedana_hexad",
+          "weight": 1
+        },
+        {
+          "id": "somanassa_vedana",
+          "name": {
+            "en": "Mental Joy (Somanassa)",
+            "pt": "Alegria Mental (Somanassa)",
+            "es": "Alegría Mental (Somanassa)"
+          },
+          "parent": "vedana_hexad",
+          "weight": 1
+        },
+        {
+          "id": "domanassa_vedana",
+          "name": {
+            "en": "Mental Grief (Domanassa)",
+            "pt": "Pesar Mental (Domanassa)",
+            "es": "Pesar Mental (Domanassa)"
+          },
+          "parent": "vedana_hexad",
+          "weight": 1
+        },
+        {
+          "id": "upekkha_vedana",
+          "name": {
+            "en": "Equanimity (Upekkhā)",
+            "pt": "Equanimidade (Upekkhā)",
+            "es": "Ecuanimidad (Upekkhā)"
+          },
+          "parent": "vedana_hexad",
+          "weight": 1
+        },
+        {
+          "id": "hetu_hexad",
+          "name": {
+            "en": "Roots (Hetu)",
+            "pt": "Raízes (Hetu)",
+            "es": "Raíces (Hetu)"
+          },
+          "parent": "six_hexads",
+          "weight": 6
+        },
+        {
+          "id": "lobha_hetu",
+          "name": {
+            "en": "Greed Root (Lobha)",
+            "pt": "Raiz do Apego (Lobha)",
+            "es": "Raíz del Apego (Lobha)"
+          },
+          "parent": "hetu_hexad",
+          "weight": 1
+        },
+        {
+          "id": "dosa_hetu",
+          "name": {
+            "en": "Hatred Root (Dosa)",
+            "pt": "Raiz da Aversão (Dosa)",
+            "es": "Raíz de la Aversión (Dosa)"
+          },
+          "parent": "hetu_hexad",
+          "weight": 1
+        },
+        {
+          "id": "moha_hetu",
+          "name": {
+            "en": "Delusion Root (Moha)",
+            "pt": "Raiz da Delusão (Moha)",
+            "es": "Raíz de la Delusión (Moha)"
+          },
+          "parent": "hetu_hexad",
+          "weight": 1
+        },
+        {
+          "id": "alobha_hetu",
+          "name": {
+            "en": "Non-Greed Root (Alobha)",
+            "pt": "Raiz do Não Apego (Alobha)",
+            "es": "Raíz del No Apego (Alobha)"
+          },
+          "parent": "hetu_hexad",
+          "weight": 1
+        },
+        {
+          "id": "adosa_hetu",
+          "name": {
+            "en": "Non-Hatred Root (Adosa)",
+            "pt": "Raiz da Não Aversão (Adosa)",
+            "es": "Raíz de la No Aversión (Adosa)"
+          },
+          "parent": "hetu_hexad",
+          "weight": 1
+        },
+        {
+          "id": "amoha_hetu",
+          "name": {
+            "en": "Non-Delusion Root (Amoha)",
+            "pt": "Raiz da Não Delusão (Amoha)",
+            "es": "Raíz de la No Delusión (Amoha)"
+          },
+          "parent": "hetu_hexad",
+          "weight": 1
+        },
+        {
+          "id": "kicca_hexad",
+          "name": {
+            "en": "Functions (Kicca)",
+            "pt": "Funções (Kicca)",
+            "es": "Funciones (Kicca)"
+          },
+          "parent": "six_hexads",
+          "weight": 14
+        },
+        {
+          "id": "patisandhi_kicca",
+          "name": {
+            "en": "Rebirth-Linking (Paṭisandhi)",
+            "pt": "Religação Renascente (Paṭisandhi)",
+            "es": "Reconexión Renaciente (Paṭisandhi)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "bhavanga_kicca",
+          "name": {
+            "en": "Life-Continuum (Bhavaṅga)",
+            "pt": "Fluxo de Existência (Bhavaṅga)",
+            "es": "Continuidad Vital (Bhavaṅga)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "avajjana_kicca",
+          "name": {
+            "en": "Adverting (Āvajjana)",
+            "pt": "Advertência (Āvajjana)",
+            "es": "Advertencia (Āvajjana)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "dassana_kicca",
+          "name": {
+            "en": "Seeing (Dassana)",
+            "pt": "Visão (Dassana)",
+            "es": "Visión (Dassana)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "savana_kicca",
+          "name": {
+            "en": "Hearing (Savana)",
+            "pt": "Audição (Savana)",
+            "es": "Audición (Savana)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "ghayana_kicca",
+          "name": {
+            "en": "Smelling (Ghāyana)",
+            "pt": "Olfato (Ghāyana)",
+            "es": "Olfato (Ghāyana)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "sayana_kicca",
+          "name": {
+            "en": "Tasting (Sāyana)",
+            "pt": "Paladar (Sāyana)",
+            "es": "Gusto (Sāyana)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "phusana_kicca",
+          "name": {
+            "en": "Touching (Phusana)",
+            "pt": "Toque Corporal (Phusana)",
+            "es": "Tacto Corporal (Phusana)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "sampaticchana_kicca",
+          "name": {
+            "en": "Receiving (Sampaṭicchana)",
+            "pt": "Recepção (Sampaṭicchana)",
+            "es": "Recepción (Sampaṭicchana)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "santirana_kicca",
+          "name": {
+            "en": "Investigating (Santīraṇa)",
+            "pt": "Investigação (Santīraṇa)",
+            "es": "Investigación (Santīraṇa)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "votthabbana_kicca",
+          "name": {
+            "en": "Determining (Voṭṭhabbana)",
+            "pt": "Determinação (Voṭṭhabbana)",
+            "es": "Determinación (Voṭṭhabbana)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "javana_kicca",
+          "name": {
+            "en": "Impulsion (Javana)",
+            "pt": "Impulsão Ativa (Javana)",
+            "es": "Impulsión Activa (Javana)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "tadarammmana_kicca",
+          "name": {
+            "en": "Registration (Tadārammaṇa)",
+            "pt": "Registro (Tadārammaṇa)",
+            "es": "Registro (Tadārammaṇa)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "cuti_kicca",
+          "name": {
+            "en": "Death (Cuti)",
+            "pt": "Morte (Cuti)",
+            "es": "Muerte (Cuti)"
+          },
+          "parent": "kicca_hexad",
+          "weight": 1
+        },
+        {
+          "id": "dvara_hexad",
+          "name": {
+            "en": "Sense Doors (Dvāra)",
+            "pt": "Portas Sensoriais (Dvāra)",
+            "es": "Puertas Sensoriales (Dvāra)"
+          },
+          "parent": "six_hexads",
+          "weight": 6
+        },
+        {
+          "id": "cakkhu_dvara",
+          "name": {
+            "en": "Eye Door (Cakkhudvāra)",
+            "pt": "Porta do Olho (Cakkhudvāra)",
+            "es": "Puerta del Ojo (Cakkhudvāra)"
+          },
+          "parent": "dvara_hexad",
+          "weight": 1
+        },
+        {
+          "id": "sota_dvara",
+          "name": {
+            "en": "Ear Door (Sotadvāra)",
+            "pt": "Porta do Ouvido (Sotadvāra)",
+            "es": "Puerta del Oído (Sotadvāra)"
+          },
+          "parent": "dvara_hexad",
+          "weight": 1
+        },
+        {
+          "id": "ghana_dvara",
+          "name": {
+            "en": "Nose Door (Ghānadvāra)",
+            "pt": "Porta do Nariz (Ghānadvāra)",
+            "es": "Puerta de la Nariz (Ghānadvāra)"
+          },
+          "parent": "dvara_hexad",
+          "weight": 1
+        },
+        {
+          "id": "jivha_dvara",
+          "name": {
+            "en": "Tongue Door (Jivhādvāra)",
+            "pt": "Porta da Língua (Jivhādvāra)",
+            "es": "Puerta de la Lengua (Jivhādvāra)"
+          },
+          "parent": "dvara_hexad",
+          "weight": 1
+        },
+        {
+          "id": "kaya_dvara",
+          "name": {
+            "en": "Body Door (Kāyadvāra)",
+            "pt": "Porta do Corpo (Kāyadvāra)",
+            "es": "Puerta del Cuerpo (Kāyadvāra)"
+          },
+          "parent": "dvara_hexad",
+          "weight": 1
+        },
+        {
+          "id": "mano_dvara",
+          "name": {
+            "en": "Mind Door (Manodvāra)",
+            "pt": "Porta da Mente (Manodvāra)",
+            "es": "Puerta de la Mente (Manodvāra)"
+          },
+          "parent": "dvara_hexad",
+          "weight": 1
+        },
+        {
+          "id": "arammana_hexad",
+          "name": {
+            "en": "Cognitive Objects (Ārammaṇa)",
+            "pt": "Objetos de Cognição (Ārammaṇa)",
+            "es": "Objetos de Cognición (Ārammaṇa)"
+          },
+          "parent": "six_hexads",
+          "weight": 6
+        },
+        {
+          "id": "rupa_arammana",
+          "name": {
+            "en": "Visible Form (Rūpārammaṇa)",
+            "pt": "Forma Visível (Rūpārammaṇa)",
+            "es": "Forma Visible (Rūpārammaṇa)"
+          },
+          "parent": "arammana_hexad",
+          "weight": 1
+        },
+        {
+          "id": "sadda_arammana",
+          "name": {
+            "en": "Sound Object (Saddārammaṇa)",
+            "pt": "Som (Saddārammaṇa)",
+            "es": "Sonido (Saddārammaṇa)"
+          },
+          "parent": "arammana_hexad",
+          "weight": 1
+        },
+        {
+          "id": "gandha_arammana",
+          "name": {
+            "en": "Odour Object (Gandhārammaṇa)",
+            "pt": "Odor (Gandhārammaṇa)",
+            "es": "Olor (Gandhārammaṇa)"
+          },
+          "parent": "arammana_hexad",
+          "weight": 1
+        },
+        {
+          "id": "rasa_arammana",
+          "name": {
+            "en": "Taste Object (Rasārammaṇa)",
+            "pt": "Sabor (Rasārammaṇa)",
+            "es": "Sabor (Rasārammaṇa)"
+          },
+          "parent": "arammana_hexad",
+          "weight": 1
+        },
+        {
+          "id": "photthabba_arammana",
+          "name": {
+            "en": "Tangible Object (Phoṭṭhabbārammaṇa)",
+            "pt": "Objeto Tangível (Phoṭṭhabbārammaṇa)",
+            "es": "Objeto Tangible (Phoṭṭhabbārammaṇa)"
+          },
+          "parent": "arammana_hexad",
+          "weight": 1
+        },
+        {
+          "id": "dhamma_arammana",
+          "name": {
+            "en": "Mental Object (Dhammārammaṇa)",
+            "pt": "Objeto Mental (Dhammārammaṇa)",
+            "es": "Objeto Mental (Dhammārammaṇa)"
+          },
+          "parent": "arammana_hexad",
+          "weight": 1
+        },
+        {
+          "id": "vatthu_hexad",
+          "name": {
+            "en": "Physical Bases (Vatthu)",
+            "pt": "Bases Físicas (Vatthu)",
+            "es": "Bases Físicas (Vatthu)"
+          },
+          "parent": "six_hexads",
+          "weight": 6
+        },
+        {
+          "id": "cakkhu_vatthu",
+          "name": {
+            "en": "Eye Base (Cakkhuvatthu)",
+            "pt": "Base do Olho (Cakkhuvatthu)",
+            "es": "Base del Ojo (Cakkhuvatthu)"
+          },
+          "parent": "vatthu_hexad",
+          "weight": 1
+        },
+        {
+          "id": "sota_vatthu",
+          "name": {
+            "en": "Ear Base (Sotavatthu)",
+            "pt": "Base do Ouvido (Sotavatthu)",
+            "es": "Base del Oído (Sotavatthu)"
+          },
+          "parent": "vatthu_hexad",
+          "weight": 1
+        },
+        {
+          "id": "ghana_vatthu",
+          "name": {
+            "en": "Nose Base (Ghānavatthu)",
+            "pt": "Base do Nariz (Ghānavatthu)",
+            "es": "Base de la Nariz (Ghānavatthu)"
+          },
+          "parent": "vatthu_hexad",
+          "weight": 1
+        },
+        {
+          "id": "jivha_vatthu",
+          "name": {
+            "en": "Tongue Base (Jivhāvatthu)",
+            "pt": "Base da Língua (Jivhāvatthu)",
+            "es": "Base de la Lengua (Jivhāvatthu)"
+          },
+          "parent": "vatthu_hexad",
+          "weight": 1
+        },
+        {
+          "id": "kaya_vatthu",
+          "name": {
+            "en": "Body Base (Kāyavatthu)",
+            "pt": "Base do Corpo (Kāyavatthu)",
+            "es": "Base del Cuerpo (Kāyavatthu)"
+          },
+          "parent": "vatthu_hexad",
+          "weight": 1
+        },
+        {
+          "id": "hadaya_vatthu",
+          "name": {
+            "en": "Heart Base (Hadayavatthu)",
+            "pt": "Base do Coração (Hadayavatthu)",
+            "es": "Base del Corazón (Hadayavatthu)"
+          },
+          "parent": "vatthu_hexad",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "u4.vedana_fivefold_division",
+      "kind": "atom",
+      "topic": {
+        "en": "Fivefold Feeling",
+        "pt": "Sensação Quíntupla",
+        "es": "Sensación Quíntuple"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How is feeling (vedanā) analyzed into five distinct classes?",
+        "pt": "Como a sensação (vedanā) é analisada em cinco classes distintas?",
+        "es": "¿Cómo se analiza la sensación (vedanā) en cinco clases distintas?"
+      },
+      "correct": {
+        "en": "Bodily pleasure, bodily pain, mental joy, mental grief, and equanimity.",
+        "pt": "Prazer corporal, dor corporal, alegria mental, pesar mental e equanimidade.",
+        "es": "Placer corporal, dolor corporal, alegría mental, pesar mental y ecuanimidad."
+      },
+      "distractors": [
+        {
+          "en": "Past feeling, present feeling, future feeling, internal, and external.",
+          "pt": "Sensação passada, presente, futura, interna e externa.",
+          "es": "Sensación pasada, presente, futura, interna y externa."
+        },
+        {
+          "en": "Coarse feeling, subtle feeling, base feeling, superior, and sublime.",
+          "pt": "Sensação grosseira, sutil, inferior, superior e sublime.",
+          "es": "Sensación tosca, sutil, inferior, superior y sublime."
+        },
+        {
+          "en": "Sensory feeling, fine-material, immaterial, noble, and enlightened.",
+          "pt": "Sensação sensorial, da matéria sutil, imaterial, nobre e desperta.",
+          "es": "Sensación sensorial, de materia sutil, inmaterial, noble y despierta."
+        }
+      ],
+      "explanation": {
+        "en": "The 5-fold classification divides affective experience by faculty: physical bodily sensation (sukha/dukkha), mental emotional tone (somanassa/domanassa), and neutral equanimity (upekkhā).",
+        "pt": "A classificação quíntupla divide a experiência afetiva por faculdade: sensação física corporal (sukha/dukkha), tom emocional mental (somanassa/domanassa) e equanimidade neutra (upekkhā).",
+        "es": "La clasificación quíntuple divide la experiencia afectiva por facultad: sensación física corporal (sukha/dukkha), tono emocional mental (somanassa/domanassa) y ecuanimidad neutra (upekkhā)."
+      },
+      "source": {
+        "cma": "III §2",
+        "fund": "Lesson 4.1"
+      }
+    },
+    {
+      "id": "u4.hetu_six_roots",
+      "kind": "atom",
+      "topic": {
+        "en": "Six Psychological Roots",
+        "pt": "Seis Raízes Psicológicas",
+        "es": "Seis Raíces Psicológicas"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the six roots (hetu) that establish karmic quality in consciousness?",
+        "pt": "Quais são as seis raízes (hetu) que estabelecem a qualidade kármica na consciência?",
+        "es": "¿Cuáles son las seis raíces (hetu) que establecen la calidad kármica en la conciencia?"
+      },
+      "correct": {
+        "en": "Three unwholesome (lobha, dosa, moha) and three beautiful (alobha, adosa, amoha).",
+        "pt": "Três prejudiciais (lobha, dosa, moha) e três belas (alobha, adosa, amoha).",
+        "es": "Tres perjudiciales (lobha, dosa, moha) y tres bellas (alobha, adosa, amoha)."
+      },
+      "distractors": [
+        {
+          "en": "Six sensory doors through which cognitive processes occur.",
+          "pt": "Seis portas sensoriais através das quais ocorrem os processos.",
+          "es": "Seis puertas sensoriales a través de las cuales ocurren los procesos."
+        },
+        {
+          "en": "Three wholesome roots and three indifferent material elements.",
+          "pt": "Três raízes benéficas e três elementos materiais indiferentes.",
+          "es": "Tres raíces benéficas y tres elementos materiales indiferentes."
+        },
+        {
+          "en": "Six kinds of kamma generated by bodily, verbal, and mental deeds.",
+          "pt": "Seis tipos de kamma gerados por atos corporais, verbais e mentais.",
+          "es": "Seis tipos de kamma generados por actos corporales, verbales y mentales."
+        }
+      ],
+      "explanation": {
+        "en": "Hetus act like tree roots giving stability to consciousness: 3 akusala roots (greed, hatred, delusion) and 3 sobhana roots (generosity/non-greed, loving-kindness/non-hatred, wisdom/non-delusion).",
+        "pt": "Hetus agem como raízes que conferem estabilidade à consciência: 3 raízes prejudiciais (apego, aversão, delusão) e 3 raízes belas (não apego, não aversão, não delusão).",
+        "es": "Hetus actúan como raíces que dan estabilidad a la conciencia: 3 raíces perjudiciales (apego, aversión, delusión) y 3 raíces bellas (no apego, no aversión, no delusión)."
+      },
+      "source": {
+        "cma": "III §5",
+        "fund": "Lesson 4.2"
+      }
+    },
+    {
+      "id": "u4.kicca_fourteen_functions",
+      "kind": "atom",
+      "topic": {
+        "en": "Fourteen Functions",
+        "pt": "Quatorze Funções",
+        "es": "Catorce Funciones"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many distinct functions (kicca) does consciousness perform in cognitive life?",
+        "pt": "Quantas funções distintas (kicca) a consciência desempenha na vida cognitiva?",
+        "es": "¿Cuántas funciones distintas (kicca) desempeña la conciencia en la vida cognitiva?"
+      },
+      "correct": {
+        "en": "Fourteen functions, from rebirth-linking (paṭisandhi) to death (cuti).",
+        "pt": "Quatorze funções, da religação renascente (paṭisandhi) à morte (cuti).",
+        "es": "Catorce funciones, desde la reconexión renaciente (paṭisandhi) hasta la muerte (cuti)."
+      },
+      "distractors": [
+        {
+          "en": "Seven functions, corresponding to the universal mental factors.",
+          "pt": "Sete funções, correspondendo aos fatores mentais universais.",
+          "es": "Siete funciones, correspondiendo a los factores mentales universales."
+        },
+        {
+          "en": "Twelve functions, matching the twelve links of dependent arising.",
+          "pt": "Doze funções, correspondendo aos doze elos do surgimento dependente.",
+          "es": "Doce funciones, correspondiendo a los doce eslabones del surgimiento dependiente."
+        },
+        {
+          "en": "Five functions, one for each sensory aggregate.",
+          "pt": "Cinco funções, uma para cada agregado sensorial.",
+          "es": "Cinco funciones, una para cada agregado sensorial."
+        }
+      ],
+      "explanation": {
+        "en": "The 14 functions: paṭisandhi, bhavaṅga, āvajjana, dassana, savana, ghāyana, sāyana, phusana, sampaṭicchana, santīraṇa, voṭṭhabbana, javana, tadārammaṇa, and cuti.",
+        "pt": "As 14 funções: paṭisandhi, bhavaṅga, āvajjana, dassana, savana, ghāyana, sāyana, phusana, sampaṭicchana, santīraṇa, voṭṭhabbana, javana, tadārammaṇa e cuti.",
+        "es": "Las 14 funciones: paṭisandhi, bhavaṅga, āvajjana, dassana, savana, ghāyana, sāyana, phusana, sampaṭicchana, santīraṇa, voṭṭhabbana, javana, tadārammaṇa y cuti."
+      },
+      "source": {
+        "cma": "III §8",
+        "fund": "Lesson 4.3"
+      }
+    },
+    {
+      "id": "u4.patisandhi_bhavanga_cuti_identity",
+      "kind": "atom",
+      "topic": {
+        "en": "Triplet Functions",
+        "pt": "Tríplice Função",
+        "es": "Triple Función"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Which three functions are performed by the exact same nineteen types of resultant citta?",
+        "pt": "Quais três funções são desempenhadas pelos mesmos dezenove tipos de citta resultante?",
+        "es": "¿Cuáles tres funciones son desempeñadas por los mismos diecinueve tipos de citta resultante?"
+      },
+      "correct": {
+        "en": "Rebirth-linking (paṭisandhi), life-continuum (bhavaṅga), and death (cuti).",
+        "pt": "Religação renascente (paṭisandhi), fluxo de existência (bhavaṅga) e morte (cuti).",
+        "es": "Reconexión renaciente (paṭisandhi), continuidad vital (bhavaṅga) y muerte (cuti)."
+      },
+      "distractors": [
+        {
+          "en": "Adverting (āvajjana), seeing (dassana), and hearing (savana).",
+          "pt": "Advertência (āvajjana), visão (dassana) e audição (savana).",
+          "es": "Advertencia (āvajjana), visión (dassana) y audición (savana)."
+        },
+        {
+          "en": "Receiving (sampaṭicchana), investigating (santīraṇa), and determining (voṭṭhabbana).",
+          "pt": "Recepção (sampaṭicchana), investigação (santīraṇa) e determinação (voṭṭhabbana).",
+          "es": "Recepción (sampaṭicchana), investigación (santīraṇa) y determinación (voṭṭhabbana)."
+        },
+        {
+          "en": "Impulsion (javana), registration (tadārammaṇa), and dissolution (bhaṅga).",
+          "pt": "Impulsão (javana), registro (tadārammaṇa) e dissolução (bhaṅga).",
+          "es": "Impulsión (javana), registro (tadārammaṇa) y disolución (bhaṅga)."
+        }
+      ],
+      "explanation": {
+        "en": "The citta that links a new life (paṭisandhi), sustains individual identity throughout life (bhavaṅga), and concludes life (cuti) is of the identical type, taking the exact same object.",
+        "pt": "A citta que conecta uma nova vida (paṭisandhi), sustenta o fluxo vital (bhavaṅga) e encerra a existência (cuti) é do tipo idêntico, apreendendo exatamente o mesmo objeto.",
+        "es": "La citta que conecta una nueva vida (paṭisandhi), sostiene el flujo vital (bhavaṅga) y concluye la existencia (cuti) es del tipo idéntico, aprehendiendo exactamente el mismo objeto."
+      },
+      "source": {
+        "cma": "III §9",
+        "fund": "Lesson 4.3"
+      }
+    },
+    {
+      "id": "u4.dvara_six_doors",
+      "kind": "atom",
+      "topic": {
+        "en": "Six Doors",
+        "pt": "Seis Portas",
+        "es": "Seis Puertas"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What constitutes the six doors (dvāra) through which cognitive processes encounter objects?",
+        "pt": "O que constitui as seis portas (dvāra) através das quais os processos encontram objetos?",
+        "es": "¿Qué constituye las seis puertas (dvāra) a través de las cuales los procesos encuentran objetos?"
+      },
+      "correct": {
+        "en": "The five physical sense organs and the life-continuum (bhavaṅga) as the mind door.",
+        "pt": "Os cinco órgãos sensoriais físicos e o fluxo de existência (bhavaṅga) como porta mental.",
+        "es": "Los cinco órganos sensoriales físicos y la continuidad vital (bhavaṅga) como puerta mental."
+      },
+      "distractors": [
+        {
+          "en": "The six external objects: sight, sound, smell, taste, touch, and thought.",
+          "pt": "Os seis objetos externos: visão, som, odor, sabor, toque e pensamento.",
+          "es": "Los seis objetos externos: visión, sonido, olor, sabor, tacto y pensamiento."
+        },
+        {
+          "en": "The six roots of wholesome and unwholesome actions.",
+          "pt": "As seis raízes das ações benéficas e prejudiciais.",
+          "es": "Las seis raíces de las acciones benéficas y perjudiciales."
+        },
+        {
+          "en": "The six physical elements of earth, water, fire, wind, space, and consciousness.",
+          "pt": "Os seis elementos físicos de terra, água, fogo, ar, espaço e consciência.",
+          "es": "Los seis elementos físicos de tierra, agua, fuego, aire, espacio y conciencia."
+        }
+      ],
+      "explanation": {
+        "en": "A dvāra is the medium of cognitive interaction: the 5 sensitive matters (pasāda-rūpa) serve as the five physical doors; the bhavaṅga consciousness acts as the mind door (manodvāra).",
+        "pt": "Uma dvāra é o canal de interação cognitiva: as 5 matérias sensíveis (pasāda-rūpa) servem como portas físicas; a consciência bhavaṅga atua como porta mental (manodvāra).",
+        "es": "Una dvāra es el canal de interacción cognitiva: las 5 materias sensibles (pasāda-rūpa) sirven como puertas físicas; la conciencia bhavaṅga actúa como puerta mental (manodvāra)."
+      },
+      "source": {
+        "cma": "III §12",
+        "fund": "Lesson 4.4"
+      }
+    },
+    {
+      "id": "u4.dvaravimutta_citta_count",
+      "kind": "atom",
+      "topic": {
+        "en": "Door-Freed Consciousness",
+        "pt": "Consciência Livre de Portas",
+        "es": "Conciencia Libre de Puertas"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many cittas can function as door-freed (dvāravimutta) outside active cognitive processes?",
+        "pt": "Quantos cittas podem funcionar como livres de portas (dvāravimutta) fora de processos ativos?",
+        "es": "¿Cuántos cittas pueden funcionar como libres de puertas (dvāravimutta) fuera de procesos activos?"
+      },
+      "correct": {
+        "en": "Nineteen cittas, when performing rebirth-linking, life-continuum, and death functions.",
+        "pt": "Dezenove cittas, quando desempenham religação renascente, fluxo vital e morte.",
+        "es": "Diecinueve cittas, cuando desempeñan reconexión renaciente, continuidad vital y muerte."
+      },
+      "distractors": [
+        {
+          "en": "Eighty-nine cittas, whenever meditation is cultivated.",
+          "pt": "Oitenta e nove cittas, sempre que a meditação é cultivada.",
+          "es": "Ochenta y nueve cittas, siempre que se cultiva la meditación."
+        },
+        {
+          "en": "Two cittas, consisting solely of the two adverting consciousnesses.",
+          "pt": "Dois cittas, consistindo apenas nas duas consciências de advertência.",
+          "es": "Dos cittas, consistiendo solo en las dos conciencias de advertencia."
+        },
+        {
+          "en": "Zero cittas, because consciousness can never exist without a door.",
+          "pt": "Zero cittas, pois a consciência nunca pode existir sem uma porta.",
+          "es": "Cero cittas, pues la conciencia nunca puede existir sin una puerta."
+        }
+      ],
+      "explanation": {
+        "en": "When citta acts as paṭisandhi, bhavaṅga, or cuti, it does not apprehend objects through the six sense doors; it is therefore termed 'dvāravimutta' (free from the doors). Exactly 19 vipāka cittas can perform these functions.",
+        "pt": "Quando citta atua como paṭisandhi, bhavaṅga ou cuti, não apreende objetos através das seis portas sensoriais; é chamada de 'dvāravimutta' (livre de portas). Exatamente 19 cittas vipāka podem exercer tais funções.",
+        "es": "Cuando citta actúa como paṭisandhi, bhavaṅga o cuti, no aprehende objetos a través de las seis puertas sensoriales; se denomina 'dvāravimutta' (libre de puertas). Exactamente 19 cittas vipāka pueden ejercer tales funciones."
+      },
+      "source": {
+        "cma": "III §13",
+        "fund": "Lesson 4.4"
+      }
+    },
+    {
+      "id": "u4.photthabba_three_elements",
+      "kind": "atom",
+      "topic": {
+        "en": "Tangible Object Nature",
+        "pt": "Natureza do Objeto Tangível",
+        "es": "Naturaleza del Objeto Tangible"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Which physical elements comprise the tangible object (phoṭṭhabbārammaṇa)?",
+        "pt": "Quais elementos físicos compõem o objeto tangível (phoṭṭhabbārammaṇa)?",
+        "es": "¿Cuáles elementos físicos componen el objeto tangible (phoṭṭhabbārammaṇa)?"
+      },
+      "correct": {
+        "en": "Three great essentials: earth (pathavī), fire (tejo), and air (vāyo).",
+        "pt": "Três grandes essenciais: terra (pathavī), fogo (tejo) e ar (vāyo).",
+        "es": "Tres grandes esenciales: tierra (pathavī), fuego (tejo) y aire (vāyo)."
+      },
+      "distractors": [
+        {
+          "en": "All four great essentials, including water (āpo).",
+          "pt": "Todos os quatro grandes essenciais, incluindo a água (āpo).",
+          "es": "Todos los cuatro grandes esenciales, incluyendo el agua (āpo)."
+        },
+        {
+          "en": "Water and earth elements exclusively.",
+          "pt": "Elementos de água e terra exclusivamente.",
+          "es": "Elementos de agua y tierra exclusivamente."
+        },
+        {
+          "en": "Derived matter particles of touch sensitivity.",
+          "pt": "Partículas de matéria derivada de sensibilidade tátil.",
+          "es": "Partículas de materia derivada de sensibilidad táctil."
+        }
+      ],
+      "explanation": {
+        "en": "The water element (āpo-dhātu) cannot be physically felt by bodily contact; its cohesion is known mentally. Physical touch registers hardness/softness (earth), heat/cold (fire), and pressure/motion (air).",
+        "pt": "O elemento água (āpo-dhātu) não pode ser sentido fisicamente por contato corporal; sua coesão é conhecida pela mente. O tato físico registra dureza/suavidade (terra), calor/frio (fogo) e pressão/movimento (ar).",
+        "es": "El elemento agua (āpo-dhātu) no puede ser sentido físicamente por contacto corporal; su cohesión se conoce por la mente. El tacto físico registra dureza/suavidad (tierra), calor/frío (fuego) y presión/movimiento (aire)."
+      },
+      "source": {
+        "cma": "III §16",
+        "fund": "Lesson 4.5"
+      }
+    },
+    {
+      "id": "u4.dhammarammana_six_classes",
+      "kind": "atom",
+      "topic": {
+        "en": "Mental Object Scope",
+        "pt": "Escopo do Objeto Mental",
+        "es": "Alcance del Objeto Mental"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What six classes of reality constitute mental objects (dhammārammaṇa)?",
+        "pt": "Quais seis classes de realidade constituem os objetos mentais (dhammārammaṇa)?",
+        "es": "¿Cuáles seis clases de realidad constituyen los objetos mentales (dhammārammaṇa)?"
+      },
+      "correct": {
+        "en": "Sensitive matter, subtle matter, consciousness, mental factors, Nibbāna, and concepts.",
+        "pt": "Matéria sensível, matéria sutil, consciência, fatores mentais, Nibbāna e conceitos.",
+        "es": "Materia sensible, materia sutil, conciencia, factores mentales, Nibbāna y conceptos."
+      },
+      "distractors": [
+        {
+          "en": "Visible forms, sounds, odours, tastes, tangibles, and concepts.",
+          "pt": "Formas visíveis, sons, odores, sabores, tangíveis e conceitos.",
+          "es": "Formas visibles, sonidos, olores, sabores, tangibles y conceptos."
+        },
+        {
+          "en": "The four noble truths and the eightfold noble path.",
+          "pt": "As quatro nobres verdades e o nobre caminho óctuplo.",
+          "es": "Las cuatro nobles verdades y el noble óctuple sendero."
+        },
+        {
+          "en": "Only past memories and imaginary fictional images.",
+          "pt": "Apenas memórias passadas e imagens ficcionais imaginárias.",
+          "es": "Solo memorias pasadas e imágenes ficcionales imaginarias."
+        }
+      ],
+      "explanation": {
+        "en": "Dhammārammaṇa encompasses everything known exclusively by the mind door: 5 sensitive matters (pasāda), 16 subtle matters (sukhuma-rūpa), all 89 cittas, all 52 cetasikas, Nibbāna, and paññatti.",
+        "pt": "Dhammārammaṇa abrange tudo o que é conhecido exclusivamente pela mente: 5 matérias sensíveis (pasāda), 16 matérias sutis (sukhuma-rūpa), todas as 89 cittas, todos os 52 cetasikas, Nibbāna e paññatti.",
+        "es": "Dhammārammaṇa abarca todo lo que se conoce exclusivamente por la mente: 5 materias sensibles (pasāda), 16 materias sutiles (sukhuma-rūpa), todas las 89 cittas, todos los 52 cetasikas, Nibbāna y paññatti."
+      },
+      "source": {
+        "cma": "III §17",
+        "fund": "Lesson 4.5"
+      }
+    },
+    {
+      "id": "u4.hadayavatthu_heart_base",
+      "kind": "atom",
+      "topic": {
+        "en": "Heart Base Role",
+        "pt": "Papel da Base do Coração",
+        "es": "Papel de la Base del Corazón"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the function of the heart-base (hadayavatthu) in the Abhidhamma?",
+        "pt": "Qual é a função da base do coração (hadayavatthu) no Abhidhamma?",
+        "es": "¿Cuál es la función de la base del corazón (hadayavatthu) en el Abhidhamma?"
+      },
+      "correct": {
+        "en": "It serves as the physical support for mind element and mind-consciousness element in realms with matter.",
+        "pt": "Serve como suporte físico para o elemento mental e o elemento de consciência mental onde há matéria.",
+        "es": "Sirve como soporte físico para el elemento mental y el elemento de conciencia mental donde hay materia."
+      },
+      "distractors": [
+        {
+          "en": "It pumps blood throughout the physical body without any relation to mind.",
+          "pt": "Bombeia sangue através do corpo físico sem relação com a mente.",
+          "es": "Bombea sangre a través del cuerpo físico sin relación con la mente."
+        },
+        {
+          "en": "It acts as the physical sense organ for hearing sounds.",
+          "pt": "Atua como órgão sensorial físico para ouvir sons.",
+          "es": "Actúa como órgano sensorial físico para oír sonidos."
+        },
+        {
+          "en": "It generates unwholesome defilements independently of mental volition.",
+          "pt": "Gera impurezas prejudiciais independentemente da volição mental.",
+          "es": "Genera impurezas perjudiciales independientemente de la volición mental."
+        }
+      ],
+      "explanation": {
+        "en": "While the first five consciousnesses rely on their respective physical sense organs (eye, ear, nose, tongue, body), all other cittas in sensuous and fine-material planes depend upon hadayavatthu.",
+        "pt": "Enquanto as cinco primeiras consciências dependem de seus respectivos órgãos sensoriais (olho, ouvido, nariz, língua, corpo), todas as outras nos planos sensual e material dependem do hadayavatthu.",
+        "es": "Mientras que las cinco primeras conciencias dependen de sus respectivos órganos sensoriales (ojo, oído, nariz, lengua, cuerpo), todas las demás en los planos sensorial y material dependen del hadayavatthu."
+      },
+      "source": {
+        "cma": "III §20",
+        "fund": "Lesson 4.6"
+      }
+    },
+    {
+      "id": "u4.deduced_tihetuka_citta_count",
+      "kind": "derived",
+      "topic": {
+        "en": "Three-Rooted Consciousness",
+        "pt": "Consciência com Três Raízes",
+        "es": "Conciencia con Tres Raíces"
+      },
+      "requires": [
+        "u4.hetu_six_roots"
+      ],
+      "prompt": {
+        "en": "How many consciousnesses are classified as three-rooted (tihetuka) in the brief enumeration?",
+        "pt": "Quantas consciências são classificadas com três raízes (tihetuka) na enumeração breve?",
+        "es": "¿Cuántas conciencias se clasifican con tres raíces (tihetuka) en la enumeración breve?"
+      },
+      "correct": {
+        "en": "47 cittas: 12 sense-sphere beautiful with knowledge, 15 fine-material, 12 immaterial, and 8 supramundane.",
+        "pt": "47 cittas: 12 belas sensoriais com conhecimento, 15 da matéria sutil, 12 imateriais e 8 supramundanas.",
+        "es": "47 cittas: 12 bellas sensoriales con conocimiento, 15 de materia sutil, 12 inmateriales y 8 supramundanas."
+      },
+      "distractors": [
+        {
+          "en": "18 cittas, corresponding exactly to the rootless category.",
+          "pt": "18 cittas, correspondendo exatamente à categoria sem raiz.",
+          "es": "18 cittas, correspondiendo exactamente a la categoría sin raíz."
+        },
+        {
+          "en": "12 cittas, consisting of the unwholesome consciousness group.",
+          "pt": "12 cittas, consistindo no grupo da consciência prejudicial.",
+          "es": "12 cittas, consistiendo en el grupo de la conciencia perjudicial."
+        },
+        {
+          "en": "89 cittas, because all consciousness eventually requires wisdom.",
+          "pt": "89 cittas, pois toda consciência requer sabedoria ao final.",
+          "es": "89 cittas, pues toda conciencia requiere sabiduría al final."
+        }
+      ],
+      "explanation": {
+        "en": "Tihetuka cittas possess alobha, adosa, and amoha: 12 kāmāvacara-sobhana joined with knowledge (4 kusala + 4 vipāka + 4 kiriya) + 15 rūpāvacara + 12 arūpāvacara + 8 lokuttara = 47. (In 121 scheme: 79).",
+        "pt": "Cittas tihetuka possuem alobha, adosa e amoha: 12 kāmāvacara-sobhana com conhecimento (4 kusala + 4 vipāka + 4 kiriya) + 15 rūpāvacara + 12 arūpāvacara + 8 lokuttara = 47. (No esquema de 121: 79).",
+        "es": "Cittas tihetuka poseen alobha, adosa y amoha: 12 kāmāvacara-sobhana con conocimiento (4 kusala + 4 vipāka + 4 kiriya) + 15 rūpāvacara + 12 arūpāvacara + 8 lokuttara = 47. (En el esquema de 121: 79)."
+      },
+      "source": {
+        "cma": "III §7",
+        "fund": "Lesson 4.2"
+      }
+    },
+    {
+      "id": "u4.deduced_javana_scope",
+      "kind": "derived",
+      "topic": {
+        "en": "Javana Scope and Kamma",
+        "pt": "Escopo de Javana e Kamma",
+        "es": "Alcance de Javana y Kamma"
+      },
+      "requires": [
+        "u4.kicca_fourteen_functions"
+      ],
+      "prompt": {
+        "en": "Why is the impulsion function (javana) the only stage where new kamma is accumulated?",
+        "pt": "Por que a função de impulsão (javana) é o único estágio em que novo kamma é acumulado?",
+        "es": "¿Por qué la función de impulsión (javana) es la única etapa en que se acumula nuevo kamma?"
+      },
+      "correct": {
+        "en": "Because javana represents active ethical response endowed with free volition, unlike passive receptive stages.",
+        "pt": "Porque javana representa a resposta ética ativa dotada de volição livre, diferindo dos estágios passivos.",
+        "es": "Porque javana representa la respuesta ética activa dotada de volición libre, a diferencia de las etapas pasivas."
+      },
+      "distractors": [
+        {
+          "en": "Because javana occurs exclusively in dreamless deep sleep.",
+          "pt": "Porque javana ocorre exclusivamente no sono profundo sem sonhos.",
+          "es": "Porque javana ocurre exclusivamente en el sueño profundo sin sueños."
+        },
+        {
+          "en": "Because only resultant consciousness can perform javana.",
+          "pt": "Porque apenas a consciência resultante pode executar javana.",
+          "es": "Porque solo la conciencia resultante puede ejecutar javana."
+        },
+        {
+          "en": "Because javana lasts for exactly seventeen thought-moments.",
+          "pt": "Porque javana dura exatamente dezessete momentos mentais.",
+          "es": "Porque javana dura exactamente diecisiete momentos mentales."
+        }
+      ],
+      "explanation": {
+        "en": "Preceding moments (adverting, seeing, receiving, investigating, determining) are either resultant or preparatory. In javana (usually 7 consecutive moments), wholesome or unwholesome volition exercises decisive karmic agency.",
+        "pt": "Momentos anteriores (advertência, visão, recepção, investigação, determinação) são resultantes ou preparatórios. No javana (geralmente 7 momentos), a volição benéfica ou prejudicial exerce agência kármica decisiva.",
+        "es": "Los momentos anteriores (advertencia, visión, recepción, investigación, determinación) son resultantes o preparatorios. En el javana (generalmente 7 momentos), la volición benéfica o perjudicial ejerce agencia kármica decisiva."
+      },
+      "source": {
+        "cma": "III §10",
+        "fund": "Lesson 4.3"
+      }
+    },
+    {
+      "id": "u4.deduced_arupa_plane_bases",
+      "kind": "derived",
+      "topic": {
+        "en": "Bases in Immaterial Plane",
+        "pt": "Bases no Plano Imaterial",
+        "es": "Bases en el Plano Inmaterial"
+      },
+      "requires": [
+        "u4.hadayavatthu_heart_base"
+      ],
+      "prompt": {
+        "en": "How do consciousnesses function in the immaterial realms (arūpāvacara-bhūmi) with respect to bases?",
+        "pt": "Como as consciências operam nos reinos imateriais (arūpāvacara-bhūmi) em relação às bases?",
+        "es": "¿Cómo operan las conciencias en los reinos inmateriales (arūpāvacara-bhūmi) con respecto a las bases?"
+      },
+      "correct": {
+        "en": "They arise completely base-less (avatthuka), supported solely by associated mental factors.",
+        "pt": "Surgem completamente sem base física (avatthuka), sustentadas apenas por fatores mentais.",
+        "es": "Surgen completamente sin base física (avatthuka), sustentadas solo por factores mentales."
+      },
+      "distractors": [
+        {
+          "en": "They rely on ethereal celestial heart bases located in space.",
+          "pt": "Apoiam-se em bases do coração celestiais etéreas localizadas no espaço.",
+          "es": "Se apoyan en bases del corazón celestiales etéreas ubicadas en el espacio."
+        },
+        {
+          "en": "They depend on eye-bases and ear-bases to perceive divine sounds.",
+          "pt": "Dependem da base do olho e do ouvido para perceber sons divinos.",
+          "es": "Dependen de la base del ojo y del oído para percibir sonidos divinos."
+        },
+        {
+          "en": "They cannot arise at all until rebirth into a physical plane occurs.",
+          "pt": "Não podem surgir de forma alguma até renascerem em um plano físico.",
+          "es": "No pueden surgir de ninguna manera hasta renacer en un plano físico."
+        }
+      ],
+      "explanation": {
+        "en": "In the 4 arūpa realms, matter is entirely absent. The 4 arūpāvacara cittas and 4 lokuttara cittas occurring there arise without any physical base (avatthuka). In all other realms, citta requires its appropriate vatthu.",
+        "pt": "Nos 4 reinos de arūpa, a matéria está ausente. As 4 cittas arūpāvacara e as 4 lokuttara que ali ocorrem surgem sem base física (avatthuka). Em todos os outros reinos, citta requer sua respectiva base física.",
+        "es": "En los 4 reinos de arūpa, la materia está ausente. Las 4 cittas arūpāvacara y las 4 lokuttara que allí ocurren surgen sin base física (avatthuka). En todos los otros reinos, citta requiere su respectiva base física."
+      },
+      "source": {
+        "cma": "III §21",
+        "fund": "Lesson 4.6"
+      }
+    }
+  ]
+}
