@@ -131,6 +131,8 @@ html, body {
   gap: 6px;
   padding: 4px 6px;
   border-radius: 4px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .tree .node-label:hover { background: var(--accent-soft); }
 .tree .node-label.leaf-active { background: var(--accent-soft); color: var(--accent); }
@@ -699,9 +701,19 @@ sup.var-note { color: var(--accent); cursor: help; font-size: .7em; }
    ══════════════════════════════════════════════════════════════════════════════ */
 
 .tools-tab-bar {
-  display: flex; gap: 2px; border-bottom: 2px solid var(--border);
-  padding: 0 8px; background: var(--bg-panel);
-  flex-shrink: 0; overflow-x: auto;
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid var(--border);
+  padding: 0 8px;
+  background: var(--bg-panel);
+  flex-shrink: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tools-tab-bar::-webkit-scrollbar {
+  display: none;
 }
 .tools-tab-btn {
   padding: 10px 14px; border: none; background: none;
@@ -1003,6 +1015,11 @@ details[open] > summary::before { transform: rotate(90deg); }
   
   .cet-comp-wrap {
     flex-direction: column;
+  }
+  
+  .tools-tab-btn {
+    padding: 8px 11px;
+    font-size: 12px;
   }
   
   /* SRS Mobile tweaks */
