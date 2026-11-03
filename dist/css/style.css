@@ -1792,24 +1792,35 @@ details[open] > summary::before { transform: rotate(90deg); }
   .tetris-header {
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
-    padding: 8px 12px;
+    gap: 6px;
+    padding: 6px 12px;
   }
   .tetris-title-row {
     justify-content: space-between;
   }
   .tetris-unit-row {
+    flex: 0 0 auto !important;
+    width: 100%;
     max-width: 100%;
   }
   .tetris-stats-row {
     margin-left: 0;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
   .tetris-question-box {
-    padding: 10px 14px;
+    padding: 8px 12px;
+    gap: 4px;
+  }
+  .tetris-prompt-text {
+    font-size: 14px;
+    line-height: 1.35;
+    margin: 0;
   }
   .tetris-controls-row {
-    padding: 8px 14px;
+    padding: 6px 12px;
+    min-height: 44px;
     padding-right: clamp(135px, 18vw, 150px);
   }
   .tetris-kb-hint {
@@ -1827,20 +1838,69 @@ details[open] > summary::before { transform: rotate(90deg); }
 }
 
 @media (max-width: 600px) {
+  /* Prevent vertical overflow and clipping in Tetris mode */
+  body.tetris-active #reader {
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+
   .srs-top-bar {
-    padding: 6px 8px;
-    gap: 6px;
+    padding: 4px 6px;
+    gap: 4px;
   }
   .srs-tab-btn {
-    padding: 6px 10px;
-    font-size: 12px;
+    padding: 4px 8px;
+    font-size: 11px;
     flex: 1;
-    max-width: 200px;
+    max-width: 180px;
     justify-content: center;
   }
   .srs-tab-icon {
-    font-size: 14px;
+    font-size: 13px;
   }
+
+  /* Ultra-compact Tetris Header on phone screens */
+  .tetris-header {
+    padding: 4px 8px;
+    gap: 4px;
+  }
+  .tetris-title-row {
+    display: none !important; /* Hide redundant title: Tetris is already indicated on tab bar & rail */
+  }
+  .tetris-unit-row {
+    flex: 0 0 auto !important;
+    width: 100%;
+    max-width: 100%;
+  }
+  .tetris-unit-row select.tetris-unit-select {
+    padding: 5px 8px;
+    font-size: 12px;
+    height: 32px;
+    line-height: 1.2;
+  }
+  .tetris-stats-row {
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  .tetris-stat-pill {
+    padding: 2px 7px;
+    font-size: 10.5px;
+    gap: 4px;
+  }
+  .tetris-expand-btn {
+    padding: 2px 6px;
+    font-size: 12px;
+  }
+
+  /* Matrix takes maximum vertical space */
+  .tetris-matrix {
+    min-height: 120px !important;
+  }
+
   .tetris-piece {
     padding: 6px 4px;
     font-size: 11px;
@@ -1855,6 +1915,43 @@ details[open] > summary::before { transform: rotate(90deg); }
     line-height: 1.25;
   }
 
+  /* Compact and clear question box — never cut off */
+  .tetris-question-box {
+    padding: 6px 10px;
+    gap: 3px;
+    flex-shrink: 0;
+  }
+  .tetris-topic-badge {
+    font-size: 9.5px;
+    padding: 1px 5px;
+  }
+  .tetris-prompt-text {
+    font-size: 13px;
+    line-height: 1.35;
+    margin: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Controls row: clear and touch-friendly */
+  .tetris-controls-row {
+    padding: 4px 10px 6px;
+    min-height: 42px;
+    padding-right: 10px !important;
+  }
+  .tetris-controls-btns {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .tetris-controls-btns .tetris-btn {
+    flex: 1;
+    max-width: none;
+    padding: 7px 12px;
+    font-size: 12.5px;
+    height: 34px;
+  }
+
   #btn-toggle-interlocutor {
     bottom: 70px;
     right: 12px;
@@ -1865,13 +1962,7 @@ details[open] > summary::before { transform: rotate(90deg); }
 
   body.tetris-active #btn-toggle-interlocutor,
   body:has(#reader-srs.tetris-mode:not([style*="display: none"])) #btn-toggle-interlocutor {
-    bottom: 122px;
-    right: 12px;
-  }
-
-  body.tetris-active .tetris-controls-row,
-  body:has(#reader-srs.tetris-mode:not([style*="display: none"])) .tetris-controls-row {
-    padding-right: 14px !important;
+    display: none !important;
   }
 
   #interlocutor-container {
@@ -1885,7 +1976,7 @@ details[open] > summary::before { transform: rotate(90deg); }
 
   body.tetris-active #interlocutor-container,
   body:has(#reader-srs.tetris-mode:not([style*="display: none"])) #interlocutor-container {
-    bottom: 162px;
+    display: none !important;
   }
 }
 
