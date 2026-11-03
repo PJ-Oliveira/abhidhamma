@@ -1,0 +1,403 @@
+{
+  "id": "dhamma-now",
+  "title": "Dhamma Now",
+  "languages": [
+    "en",
+    "pt",
+    "es"
+  ],
+  "parts": {
+    "texto": {
+      "label": "Text",
+      "files": [
+        "texto.json"
+      ],
+      "toc": [
+        {
+          "id": 2,
+          "rend": "subhead",
+          "text": "Sarah Procter Abbott"
+        },
+        {
+          "id": 4,
+          "rend": "chapter",
+          "text": "Preface"
+        },
+        {
+          "id": 12,
+          "rend": "chapter",
+          "text": "Chapter 1 — August 2020"
+        },
+        {
+          "id": 13,
+          "rend": "subhead",
+          "text": "Zoom Jottings 1 — Conditions"
+        },
+        {
+          "id": 21,
+          "rend": "subhead",
+          "text": "Zoom Jottings 2 — The Best Medicine"
+        },
+        {
+          "id": 30,
+          "rend": "subhead",
+          "text": "Zoom Jottings 3 — Taking Refuge"
+        },
+        {
+          "id": 38,
+          "rend": "subhead",
+          "text": "Zoom Jottings 4 — The Examination"
+        },
+        {
+          "id": 47,
+          "rend": "subhead",
+          "text": "Zoom Jottings 5 — Āsavas"
+        },
+        {
+          "id": 59,
+          "rend": "subhead",
+          "text": "Zoom Jottings 6 — What is Vinaya?"
+        },
+        {
+          "id": 66,
+          "rend": "subhead",
+          "text": "Zoom Jottings 7 — The Truths"
+        },
+        {
+          "id": 76,
+          "rend": "subhead",
+          "text": "Zoom Jottings 8 — Understanding has to Develop"
+        },
+        {
+          "id": 85,
+          "rend": "subhead",
+          "text": "Zoom Jottings 9 — What is Practice?"
+        },
+        {
+          "id": 98,
+          "rend": "subhead",
+          "text": "Zoom Jottings 10 — The Meaning of Reality"
+        },
+        {
+          "id": 110,
+          "rend": "subhead",
+          "text": "Zoom Jottings 11 — Can Anyone Practice?"
+        },
+        {
+          "id": 120,
+          "rend": "subhead",
+          "text": "Zoom Jottings 12 — Can Anyone do Anything?"
+        },
+        {
+          "id": 129,
+          "rend": "subhead",
+          "text": "Zoom Jottings 13 — Is there any Short-cut?"
+        },
+        {
+          "id": 141,
+          "rend": "subhead",
+          "text": "Zoom Jottings 14 — Why Study Pāli?"
+        },
+        {
+          "id": 150,
+          "rend": "subhead",
+          "text": "Zoom Jottings 15 — 4 Right Understandings and 4 Right Efforts"
+        },
+        {
+          "id": 174,
+          "rend": "subhead",
+          "text": "Zoom Jottings 16 — What is there Now?"
+        },
+        {
+          "id": 185,
+          "rend": "subhead",
+          "text": "Zoom Jottings 17 — Enlightened to What?"
+        },
+        {
+          "id": 194,
+          "rend": "subhead",
+          "text": "Zoom Jottings 18 — Depending on Conditions"
+        },
+        {
+          "id": 201,
+          "rend": "chapter",
+          "text": "Chapter 2 — September 2020"
+        },
+        {
+          "id": 202,
+          "rend": "subhead",
+          "text": "Zoom Jottings 19 — Just do Your Best!"
+        },
+        {
+          "id": 209,
+          "rend": "subhead",
+          "text": "Zoom Jottings 20 — Virtue and Abandoning (Pahāna)"
+        },
+        {
+          "id": 223,
+          "rend": "subhead",
+          "text": "Zoom Jottings 21 — Once in Nowhere"
+        },
+        {
+          "id": 230,
+          "rend": "subhead",
+          "text": "Zoom Jottings 22 — The Empty World"
+        },
+        {
+          "id": 237,
+          "rend": "subhead",
+          "text": "Zoom Jottings 23 — Letting go of Desire for Understanding"
+        },
+        {
+          "id": 245,
+          "rend": "subhead",
+          "text": "Zoom Jottings 24 — Sammā Saṅkappa (Right Thinking)"
+        },
+        {
+          "id": 253,
+          "rend": "chapter",
+          "text": "Chapter 3 — October 2020"
+        },
+        {
+          "id": 254,
+          "rend": "subhead",
+          "text": "Zoom Jottings 25 — The World of Nimitta (Signs)"
+        },
+        {
+          "id": 261,
+          "rend": "subhead",
+          "text": "Zoom Jottings 26 — Burning"
+        },
+        {
+          "id": 278,
+          "rend": "subhead",
+          "text": "Zoom Jottings 27 — The Dear Self"
+        },
+        {
+          "id": 286,
+          "rend": "subhead",
+          "text": "Zoom Jottings 28 — Considering the True Words"
+        },
+        {
+          "id": 292,
+          "rend": "subhead",
+          "text": "Zoom Jottings 29 — The Proof of Understanding"
+        },
+        {
+          "id": 301,
+          "rend": "subhead",
+          "text": "Zoom Jottings 30 — Wrong Practice and Rituals"
+        },
+        {
+          "id": 309,
+          "rend": "subhead",
+          "text": "Zoom Jottings 31 — Study the Truth Respectfully"
+        },
+        {
+          "id": 319,
+          "rend": "subhead",
+          "text": "Zoom Jottings 32 — Soul"
+        },
+        {
+          "id": 329,
+          "rend": "subhead",
+          "text": "Zoom Jottings 33 — What is Now?"
+        },
+        {
+          "id": 343,
+          "rend": "subhead",
+          "text": "Zoom Jottings 34 — The Chief of Experiencing"
+        },
+        {
+          "id": 351,
+          "rend": "subhead",
+          "text": "Zoom Jottings 35 — Dhātu (Element)"
+        },
+        {
+          "id": 358,
+          "rend": "chapter",
+          "text": "Chapter 4 — November 2020"
+        },
+        {
+          "id": 359,
+          "rend": "subhead",
+          "text": "Zoom Jottings 36 — The Value of Patience"
+        },
+        {
+          "id": 370,
+          "rend": "subhead",
+          "text": "Zoom Jottings 37 — Anattā & Suññatā"
+        },
+        {
+          "id": 376,
+          "rend": "subhead",
+          "text": "Zoom Jottings 38 — Where is the World?"
+        },
+        {
+          "id": 384,
+          "rend": "subhead",
+          "text": "Zoom Jottings 39 — The Raft"
+        },
+        {
+          "id": 394,
+          "rend": "subhead",
+          "text": "Zoom Jottings 40 — The Magic Show"
+        },
+        {
+          "id": 402,
+          "rend": "subhead",
+          "text": "Zoom Jottings 41 — Why Bother?"
+        },
+        {
+          "id": 425,
+          "rend": "subhead",
+          "text": "Zoom Jottings 42 — The Bhikkhu’s Life"
+        },
+        {
+          "id": 430,
+          "rend": "subhead",
+          "text": "Zoom Jottings 43 — Giving to a Bhikkhu or a Beggar"
+        },
+        {
+          "id": 457,
+          "rend": "subhead",
+          "text": "Zoom Jottings 44 — Hearing Again and Again"
+        },
+        {
+          "id": 467,
+          "rend": "subhead",
+          "text": "Zoom Jottings 45 — Preparation for Understanding"
+        },
+        {
+          "id": 475,
+          "rend": "subhead",
+          "text": "Zoom Jottings 46 — All Gone!"
+        },
+        {
+          "id": 482,
+          "rend": "subhead",
+          "text": "Zoom Jottings 47 — Once in Saṃsāra!"
+        },
+        {
+          "id": 490,
+          "rend": "chapter",
+          "text": "Chapter 5 — December 2020"
+        },
+        {
+          "id": 491,
+          "rend": "subhead",
+          "text": "Zoom Jottings 48 — Nutriment ( Āhāra)"
+        },
+        {
+          "id": 504,
+          "rend": "chapter",
+          "text": "Chapter 6 — January 2021"
+        },
+        {
+          "id": 505,
+          "rend": "subhead",
+          "text": "Zoom Jottings 49 — Sīla (1)"
+        },
+        {
+          "id": 521,
+          "rend": "chapter",
+          "text": "Chapter 7 — February 2021"
+        },
+        {
+          "id": 522,
+          "rend": "subhead",
+          "text": "Zoom Jottings 50 — Sīla (2)"
+        },
+        {
+          "id": 535,
+          "rend": "subhead",
+          "text": "Zoom Jottings 51 — Ānāpānasati"
+        },
+        {
+          "id": 545,
+          "rend": "subhead",
+          "text": "Zoom Jottings 52 — Kusala (wholesome) or Akusala (unwholesome) Cittas now?"
+        },
+        {
+          "id": 554,
+          "rend": "chapter",
+          "text": "Chapter 8 — March 2021"
+        },
+        {
+          "id": 555,
+          "rend": "subhead",
+          "text": "Zoom Jottings 53 — Ummagga, the “popping up” of Paññā"
+        },
+        {
+          "id": 567,
+          "rend": "subhead",
+          "text": "Zoom Jottings 54 — Bhava (existing) and Bhāva (nature)"
+        },
+        {
+          "id": 574,
+          "rend": "subhead",
+          "text": "Zoom Jottings 55 — Groups of Rūpas"
+        },
+        {
+          "id": 594,
+          "rend": "chapter",
+          "text": "Chapter 9 — April 2021"
+        },
+        {
+          "id": 595,
+          "rend": "subhead",
+          "text": "Zoom Jottings 56 — Sacca Pāramī (the perfection of truthfulness)"
+        },
+        {
+          "id": 602,
+          "rend": "subhead",
+          "text": "Zoom Jottings 57 — Meditation"
+        },
+        {
+          "id": 609,
+          "rend": "subhead",
+          "text": "Zoom Jottings 58 — Dreaming about how “I can do!”"
+        },
+        {
+          "id": 616,
+          "rend": "subhead",
+          "text": "Zoom Jottings 59 — Seeing in the Dark"
+        },
+        {
+          "id": 623,
+          "rend": "subhead",
+          "text": "Zoom Jottings 60 — Loss of a Dear Sister"
+        },
+        {
+          "id": 639,
+          "rend": "subhead",
+          "text": "Zoom Jottings 61 — Ordaining"
+        },
+        {
+          "id": 659,
+          "rend": "subhead",
+          "text": "Zoom Jottings 62 — The Worldly Conditions"
+        },
+        {
+          "id": 673,
+          "rend": "subhead",
+          "text": "Zoom Jottings 63 — Surgery"
+        },
+        {
+          "id": 681,
+          "rend": "chapter",
+          "text": "Biography"
+        },
+        {
+          "id": 683,
+          "rend": "chapter",
+          "text": "Further Study"
+        }
+      ],
+      "count": 686,
+      "chunkStarts": [
+        1
+      ]
+    }
+  }
+}

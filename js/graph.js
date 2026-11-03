@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=ab1f056d";
-import { settings } from "./state.js?v=ab1f056d";
-import { createLogger } from "./logger.js?v=ab1f056d";
+import { t } from "./i18n.js?v=b6a19a3f";
+import { settings } from "./state.js?v=b6a19a3f";
+import { createLogger } from "./logger.js?v=b6a19a3f";
 const log = createLogger("graph");
 const GROUP_COLORS = {
     citta: "#c96b32",

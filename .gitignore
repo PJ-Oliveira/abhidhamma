@@ -10,3 +10,4 @@ data/dictionary/vocabulary_blocks.md
 scripts/extracted/
 scripts/.en_pt_es_cache.json
 *.pdf
+coverage/

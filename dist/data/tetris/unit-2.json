@@ -1,0 +1,1173 @@
+{
+  "unit": 2,
+  "title": {
+    "en": "Compendium of Consciousness (Citta-saṅgaha)",
+    "pt": "Compêndio da Consciência (Citta-saṅgaha)",
+    "es": "Compendio de la Conciencia (Citta-saṅgaha)"
+  },
+  "summary": {
+    "en": "Systematic dissection of consciousness (citta): the 89 and 121 types classified by planes (bhūmi: kāmāvacara, rūpāvacara, arūpāvacara, lokuttara), by nature (jāti: akusala, kusala, vipāka, kiriya), roots (hetu), feeling (vedanā), and prompting.",
+    "pt": "Dissecação sistemática da consciência (citta): os 89 e 121 tipos classificados por planos (bhūmi: kāmāvacara, rūpāvacara, arūpāvacara, lokuttara), por natureza (jāti: akusala, kusala, vipāka, kiriya), raízes (hetu), sensação (vedanā) e incitação.",
+    "es": "Disección sistemática de la conciencia (citta): los 89 y 121 tipos clasificados por planos (bhūmi: kāmāvacara, rūpāvacara, arūpāvacara, lokuttara), por naturaleza (jāti: akusala, kusala, vipāka, kiriya), raíces (hetu), sensación (vedanā) e incitación."
+  },
+  "taxonomies": [
+    {
+      "id": "u2.citta_planes",
+      "title": {
+        "en": "Consciousness by Planes of Existence",
+        "pt": "Consciência por Planos de Existência",
+        "es": "Conciencia por Planos de Existencia"
+      },
+      "noun": {
+        "en": "types of consciousness",
+        "pt": "tipos de consciência",
+        "es": "tipos de conciencia"
+      },
+      "source": {
+        "cma": "I §3–§30",
+        "fund": "Lesson 2.1",
+        "as": "I.3"
+      },
+      "nodes": [
+        {
+          "id": "citta_89",
+          "name": {
+            "en": "All Consciousness (89 Cittas)",
+            "pt": "Todas as Consciências (89 Cittas)",
+            "es": "Todas las Conciencias (89 Cittas)"
+          },
+          "parent": null
+        },
+        {
+          "id": "kamavacara_plane",
+          "name": {
+            "en": "Sensuous Plane Consciousness (Kāmāvacara)",
+            "pt": "Consciência do Plano Sensual (Kāmāvacara)",
+            "es": "Conciencia del Plano Sensorial (Kāmāvacara)"
+          },
+          "parent": "citta_89"
+        },
+        {
+          "id": "akusala_group",
+          "name": {
+            "en": "Unwholesome Consciousness (Akusala)",
+            "pt": "Consciência Prejudicial (Akusala)",
+            "es": "Conciencia Perjudicial (Akusala)"
+          },
+          "parent": "kamavacara_plane",
+          "weight": 12
+        },
+        {
+          "id": "lobha_mula",
+          "name": {
+            "en": "Greed-Rooted Consciousness (Lobha-mūla)",
+            "pt": "Consciência com Raiz no Apego (Lobha-mūla)",
+            "es": "Conciencia con Raíz en el Apego (Lobha-mūla)"
+          },
+          "parent": "akusala_group",
+          "weight": 8
+        },
+        {
+          "id": "dosa_mula",
+          "name": {
+            "en": "Hatred-Rooted Consciousness (Dosa-mūla)",
+            "pt": "Consciência com Raiz na Aversão (Dosa-mūla)",
+            "es": "Conciencia con Raíz en la Aversión (Dosa-mūla)"
+          },
+          "parent": "akusala_group",
+          "weight": 2
+        },
+        {
+          "id": "moha_mula",
+          "name": {
+            "en": "Delusion-Rooted Consciousness (Moha-mūla)",
+            "pt": "Consciência com Raiz na Delusão (Moha-mūla)",
+            "es": "Conciencia con Raíz en la Delusión (Moha-mūla)"
+          },
+          "parent": "akusala_group",
+          "weight": 2
+        },
+        {
+          "id": "ahetuka_group",
+          "name": {
+            "en": "Rootless Consciousness (Ahetuka)",
+            "pt": "Consciência Sem Raiz (Ahetuka)",
+            "es": "Conciencia Sin Raíz (Ahetuka)"
+          },
+          "parent": "kamavacara_plane",
+          "weight": 18
+        },
+        {
+          "id": "akusala_vipaka",
+          "name": {
+            "en": "Unwholesome Resultant Rootless (Akusala-vipāka)",
+            "pt": "Resultante Prejudicial Sem Raiz (Akusala-vipāka)",
+            "es": "Resultante Perjudicial Sin Raíz (Akusala-vipāka)"
+          },
+          "parent": "ahetuka_group",
+          "weight": 7
+        },
+        {
+          "id": "kusala_vipaka_ahetuka",
+          "name": {
+            "en": "Wholesome Resultant Rootless (Ahetuka Kusala-vipāka)",
+            "pt": "Resultante Benéfica Sem Raiz (Ahetuka Kusala-vipāka)",
+            "es": "Resultante Benéfica Sin Raíz (Ahetuka Kusala-vipāka)"
+          },
+          "parent": "ahetuka_group",
+          "weight": 8
+        },
+        {
+          "id": "ahetuka_kiriya",
+          "name": {
+            "en": "Rootless Functional (Ahetuka Kiriya)",
+            "pt": "Funcional Sem Raiz (Ahetuka Kiriya)",
+            "es": "Funcional Sin Raíz (Ahetuka Kiriya)"
+          },
+          "parent": "ahetuka_group",
+          "weight": 3
+        },
+        {
+          "id": "kamavacara_sobhana",
+          "name": {
+            "en": "Sense-Sphere Beautiful (Kāmāvacara Sobhana)",
+            "pt": "Belas do Plano Sensual (Kāmāvacara Sobhana)",
+            "es": "Bellas del Plano Sensorial (Kāmāvacara Sobhana)"
+          },
+          "parent": "kamavacara_plane",
+          "weight": 24
+        },
+        {
+          "id": "mahakusala",
+          "name": {
+            "en": "Great Wholesome (Mahākusala)",
+            "pt": "Grandes Benéficas (Mahākusala)",
+            "es": "Grandes Benéficas (Mahākusala)"
+          },
+          "parent": "kamavacara_sobhana",
+          "weight": 8
+        },
+        {
+          "id": "mahavipaka",
+          "name": {
+            "en": "Great Resultant (Mahāvipāka)",
+            "pt": "Grandes Resultantes (Mahāvipāka)",
+            "es": "Grandes Resultantes (Mahāvipāka)"
+          },
+          "parent": "kamavacara_sobhana",
+          "weight": 8
+        },
+        {
+          "id": "mahakiriya",
+          "name": {
+            "en": "Great Functional (Mahākiriya)",
+            "pt": "Grandes Funcionais (Mahākiriya)",
+            "es": "Grandes Funcionales (Mahākiriya)"
+          },
+          "parent": "kamavacara_sobhana",
+          "weight": 8
+        },
+        {
+          "id": "rupavacara_plane",
+          "name": {
+            "en": "Fine-Material Plane Consciousness (Rūpāvacara)",
+            "pt": "Consciência da Matéria Sutil (Rūpāvacara)",
+            "es": "Conciencia de la Materia Sutil (Rūpāvacara)"
+          },
+          "parent": "citta_89",
+          "weight": 15
+        },
+        {
+          "id": "rupavacara_kusala",
+          "name": {
+            "en": "Fine-Material Wholesome (Rūpāvacara Kusala)",
+            "pt": "Benéficas da Matéria Sutil (Rūpāvacara Kusala)",
+            "es": "Benéficas de la Materia Sutil (Rūpāvacara Kusala)"
+          },
+          "parent": "rupavacara_plane",
+          "weight": 5
+        },
+        {
+          "id": "rupavacara_vipaka",
+          "name": {
+            "en": "Fine-Material Resultant (Rūpāvacara Vipāka)",
+            "pt": "Resultantes da Matéria Sutil (Rūpāvacara Vipāka)",
+            "es": "Resultantes de la Materia Sutil (Rūpāvacara Vipāka)"
+          },
+          "parent": "rupavacara_plane",
+          "weight": 5
+        },
+        {
+          "id": "rupavacara_kiriya",
+          "name": {
+            "en": "Fine-Material Functional (Rūpāvacara Kiriya)",
+            "pt": "Funcionais da Matéria Sutil (Rūpāvacara Kiriya)",
+            "es": "Funcionales de la Materia Sutil (Rūpāvacara Kiriya)"
+          },
+          "parent": "rupavacara_plane",
+          "weight": 5
+        },
+        {
+          "id": "arupavacara_plane",
+          "name": {
+            "en": "Immaterial Plane Consciousness (Arūpāvacara)",
+            "pt": "Consciência do Plano Imaterial (Arūpāvacara)",
+            "es": "Conciencia del Plano Inmaterial (Arūpāvacara)"
+          },
+          "parent": "citta_89",
+          "weight": 12
+        },
+        {
+          "id": "arupavacara_kusala",
+          "name": {
+            "en": "Immaterial Wholesome (Arūpāvacara Kusala)",
+            "pt": "Benéficas do Plano Imaterial (Arūpāvacara Kusala)",
+            "es": "Benéficas del Plano Inmaterial (Arūpāvacara Kusala)"
+          },
+          "parent": "arupavacara_plane",
+          "weight": 4
+        },
+        {
+          "id": "arupavacara_vipaka",
+          "name": {
+            "en": "Immaterial Resultant (Arūpāvacara Vipāka)",
+            "pt": "Resultantes do Plano Imaterial (Arūpāvacara Vipāka)",
+            "es": "Resultantes del Plano Inmaterial (Arūpāvacara Vipāka)"
+          },
+          "parent": "arupavacara_plane",
+          "weight": 4
+        },
+        {
+          "id": "arupavacara_kiriya",
+          "name": {
+            "en": "Immaterial Functional (Arūpāvacara Kiriya)",
+            "pt": "Funcionais do Plano Imaterial (Arūpāvacara Kiriya)",
+            "es": "Funcionales del Plano Inmaterial (Arūpāvacara Kiriya)"
+          },
+          "parent": "arupavacara_plane",
+          "weight": 4
+        },
+        {
+          "id": "lokuttara_plane",
+          "name": {
+            "en": "Supramundane Consciousness (Lokuttara)",
+            "pt": "Consciência Supramundana (Lokuttara)",
+            "es": "Conciencia Supramundana (Lokuttara)"
+          },
+          "parent": "citta_89",
+          "weight": 8
+        },
+        {
+          "id": "magga_citta",
+          "name": {
+            "en": "Path Consciousness (Maggacitta)",
+            "pt": "Consciência do Caminho (Maggacitta)",
+            "es": "Conciencia del Camino (Maggacitta)"
+          },
+          "parent": "lokuttara_plane",
+          "weight": 4
+        },
+        {
+          "id": "phala_citta",
+          "name": {
+            "en": "Fruit Consciousness (Phalacitta)",
+            "pt": "Consciência do Fruto (Phalacitta)",
+            "es": "Conciencia del Fruto (Phalacitta)"
+          },
+          "parent": "lokuttara_plane",
+          "weight": 4
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "u2.citta_total_count",
+      "kind": "atom",
+      "topic": {
+        "en": "Count of Consciousness",
+        "pt": "Contagem da Consciência",
+        "es": "Conteo de la Conciencia"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many types of consciousness (citta) are enumerated in brief and in detail?",
+        "pt": "Quantos tipos de consciência (citta) são enumerados de forma breve e detalhada?",
+        "es": "¿Cuántos tipos de conciencia (citta) se enumeran de forma breve y detallada?"
+      },
+      "correct": {
+        "en": "89 in brief and 121 in detail.",
+        "pt": "89 de forma breve e 121 de forma detalhada.",
+        "es": "89 de forma breve y 121 de forma detallada."
+      },
+      "distractors": [
+        {
+          "en": "52 in brief and 89 in detail.",
+          "pt": "52 de forma breve e 89 de forma detalhada.",
+          "es": "52 de forma breve y 89 de forma detallada."
+        },
+        {
+          "en": "89 in brief and 108 in detail.",
+          "pt": "89 de forma breve e 108 de forma detalhada.",
+          "es": "89 de forma breve y 108 de forma detalhada."
+        },
+        {
+          "en": "54 in brief and 121 in detail.",
+          "pt": "54 de forma breve e 121 de forma detalhada.",
+          "es": "54 de forma breve y 121 de forma detalhada."
+        }
+      ],
+      "explanation": {
+        "en": "When supramundane consciousness is taken as 8 (4 paths and 4 fruits), the total is 89. When each is multiplied by the five jhānas, the 8 become 40, yielding 121 cittas.",
+        "pt": "Quando a consciência supramundana é contada como 8 (4 caminhos e 4 frutos), o total é 89. Quando multiplicada pelos cinco jhānas, os 8 tornam-se 40, totalizando 121 cittas.",
+        "es": "Cuando la conciencia supramundana se cuenta como 8 (4 caminos y 4 frutos), el total es 89. Cuando se multiplica por los cinco jhānas, los 8 pasan a ser 40, totalizando 121 cittas."
+      },
+      "source": {
+        "cma": "I §3",
+        "fund": "Lesson 2.1",
+        "as": "I.3"
+      }
+    },
+    {
+      "id": "u2.akusala_subgroups",
+      "kind": "atom",
+      "topic": {
+        "en": "Unwholesome Roots",
+        "pt": "Raízes Prejudiciais",
+        "es": "Raíces Perjudiciales"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How are the twelve unwholesome consciousnesses (akusala citta) divided by their roots?",
+        "pt": "Como as doze consciências prejudiciais (akusala citta) são divididas por suas raízes?",
+        "es": "¿Cómo se dividen las doce conciencias perjudiciales (akusala citta) por sus raíces?"
+      },
+      "correct": {
+        "en": "8 rooted in greed (lobha), 2 in hatred (dosa), and 2 in delusion (moha).",
+        "pt": "8 com raiz no apego (lobha), 2 na aversão (dosa) e 2 na delusão (moha).",
+        "es": "8 con raíz en el apego (lobha), 2 en la aversión (dosa) y 2 en la delusión (moha)."
+      },
+      "distractors": [
+        {
+          "en": "4 rooted in greed, 4 in hatred, and 4 in delusion.",
+          "pt": "4 com raiz no apego, 4 na aversão e 4 na delusão.",
+          "es": "4 con raíz en el apego, 4 en la aversión y 4 en la delusión."
+        },
+        {
+          "en": "6 rooted in greed and 6 in hatred.",
+          "pt": "6 com raiz no apego e 6 na aversão.",
+          "es": "6 con raíz en el apego y 6 en la aversión."
+        },
+        {
+          "en": "10 rooted in greed and 2 in delusion.",
+          "pt": "10 com raiz no apego e 2 na delusão.",
+          "es": "10 con raíz en el apego y 2 en la delusión."
+        }
+      ],
+      "explanation": {
+        "en": "Greed-rooted consciousness has eight variations based on feeling, view, and prompting. Hatred-rooted has two (unprompted and prompted). Delusion-rooted has two (with doubt and with restlessness).",
+        "pt": "A consciência com raiz no apego tem oito variações baseadas em sensação, visão e incitação. A com raiz na aversão tem duas. A com raiz na delusão tem duas (com dúvida e com agitação).",
+        "es": "La conciencia con raíz en el apego tiene ocho variaciones según sensación, visión e incitación. La con raíz en la aversión tiene dos. La con raíz en la delusión tiene dos (con duda y con agitación)."
+      },
+      "source": {
+        "cma": "I §4–§12",
+        "fund": "Lesson 2.2",
+        "as": "I.4"
+      }
+    },
+    {
+      "id": "u2.ahetuka_meaning",
+      "kind": "atom",
+      "topic": {
+        "en": "Rootless Consciousness",
+        "pt": "Consciência Sem Raiz",
+        "es": "Conciencia Sin Raíz"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What does 'ahetuka' mean in the classification of the eighteen rootless cittas?",
+        "pt": "O que significa 'ahetuka' na classificação das dezoito consciências sem raiz?",
+        "es": "¿Qué significa 'ahetuka' en la clasificación de las dieciocho conciencias sin raíz?"
+      },
+      "correct": {
+        "en": "They are devoid of the six concomitant roots (hetu: lobha, dosa, moha, alobha, adosa, amoha).",
+        "pt": "São desprovidas das seis raízes concomitantes (hetu: lobha, dosa, moha, alobha, adosa, amoha).",
+        "es": "Carecen de las seis raíces concomitantes (hetu: lobha, dosa, moha, alobha, adosa, amoha)."
+      },
+      "distractors": [
+        {
+          "en": "They arise spontaneously without any cause or condition whatsoever.",
+          "pt": "Surgem espontaneamente sem causa ou condição alguma.",
+          "es": "Surgen espontáneamente sin causa ni condición alguna."
+        },
+        {
+          "en": "They cannot produce any physical movements or vocal speech.",
+          "pt": "Não podem produzir movimentos físicos ou fala verbal.",
+          "es": "No pueden producir movimientos físicos o habla verbal."
+        },
+        {
+          "en": "They occur only in inanimate material elements like stones.",
+          "pt": "Ocorrem apenas em elementos materiais inanimados como pedras.",
+          "es": "Ocurren solo en elementos materiales inanimados como piedras."
+        }
+      ],
+      "explanation": {
+        "en": "Ahetuka means devoid of root-conditions (hetu-paccaya). They still arise through other conditions (like object, door, and preceding mental state), but lack the six strong psychological roots.",
+        "pt": "Ahetuka significa desprovido de condições-raiz (hetu-paccaya). Ainda surgem por outras condições (como objeto, porta e estado mental anterior), mas carecem das seis raízes psicológicas fortes.",
+        "es": "Ahetuka significa desprovisto de condiciones-raíz (hetu-paccaya). Siguen surgiendo por otras condiciones (como objeto, puerta y estado mental anterior), pero carecen de las seis raíces psicológicas fuertes."
+      },
+      "source": {
+        "cma": "I §8–§10",
+        "fund": "Lesson 2.3",
+        "as": "I.7"
+      }
+    },
+    {
+      "id": "u2.jati_fourfold_division",
+      "kind": "atom",
+      "topic": {
+        "en": "Fourfold Nature",
+        "pt": "Natureza Quádrupla",
+        "es": "Naturaleza Cuádruple"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the four natures (jāti) into which consciousness is classified ethically?",
+        "pt": "Quais são as quatro naturezas (jāti) sob as quais a consciência é classificada eticamente?",
+        "es": "¿Cuáles son las cuatro naturalezas (jāti) bajo las cuales se clasifica éticamente la conciencia?"
+      },
+      "correct": {
+        "en": "Unwholesome (akusala), wholesome (kusala), resultant (vipāka), and functional (kiriya).",
+        "pt": "Prejudicial (akusala), benéfica (kusala), resultante (vipāka) e funcional (kiriya).",
+        "es": "Perjudicial (akusala), benéfica (kusala), resultante (vipāka) y funcional (kiriya)."
+      },
+      "distractors": [
+        {
+          "en": "Past, present, future, and timeless states.",
+          "pt": "Estados do passado, presente, futuro e atemporais.",
+          "es": "Estados del pasado, presente, futuro y atemporales."
+        },
+        {
+          "en": "Inferior, medium, superior, and transcendental.",
+          "pt": "Inferior, médio, superior e transcendental.",
+          "es": "Inferior, medio, superior y trascendental."
+        },
+        {
+          "en": "Eye, ear, nose, and mind-door states.",
+          "pt": "Estados da porta do olho, ouvido, nariz e mente.",
+          "es": "Estados de la puerta del ojo, oído, nariz y mente."
+        }
+      ],
+      "explanation": {
+        "en": "Every citta belongs to one of four jātis: kusala (wholesome generating good kamma), akusala (unwholesome generating bad kamma), vipāka (karmic results ripening), or kiriya (karmically inoperative actions).",
+        "pt": "Cada citta pertence a uma de quatro jātis: kusala (benéfica gerando kamma bom), akusala (prejudicial gerando mau kamma), vipāka (resultado kármico) ou kiriya (ações funcionalmente inoperantes).",
+        "es": "Cada citta pertenece a una de cuatro jātis: kusala (benéfica generando kamma bueno), akusala (perjudicial generando mal kamma), vipāka (resultado kármico) o kiriya (acciones funcionalmente inoperantes)."
+      },
+      "source": {
+        "cma": "Introduction §5",
+        "fund": "Lesson 2.1"
+      }
+    },
+    {
+      "id": "u2.lobhamula_eight_division",
+      "kind": "atom",
+      "topic": {
+        "en": "Greed-Rooted Division",
+        "pt": "Divisão do Apego",
+        "es": "División del Apego"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How are the eight greed-rooted consciousnesses (lobha-mūla cittas) systematically divided?",
+        "pt": "Como as oito consciências com raiz no apego (lobha-mūla cittas) são sistematicamente divididas?",
+        "es": "¿Cómo se dividen sistemáticamente las ocho conciencias con raíz en el apego (lobha-mūla cittas)?"
+      },
+      "correct": {
+        "en": "By joy vs equanimity, accompanied by wrong view vs dissociated, and unprompted vs prompted.",
+        "pt": "Por alegria versus equanimidade, associadas a visão incorreta versus dissociadas, e espontâneas versus incitadas.",
+        "es": "Por alegría frente a ecuanimidad, asociadas con visión incorrecta frente a disociadas, y espontáneas frente a incitadas."
+      },
+      "distractors": [
+        {
+          "en": "By pleasant bodily feeling, painful bodily feeling, and neutral sensation.",
+          "pt": "Por sensação corporal agradável, dor corporal e sensação neutra.",
+          "es": "Por sensación corporal agradable, dolor corporal y sensación neutra."
+        },
+        {
+          "en": "By fine-material realms, immaterial realms, and sensory realms.",
+          "pt": "Por reinos da matéria sutil, reinos imateriais e reinos sensoriais.",
+          "es": "Por reinos de materia sutil, reinos inmateriales y reinos sensoriales."
+        },
+        {
+          "en": "By path knowledge, fruition knowledge, and review knowledge.",
+          "pt": "Por conhecimento do caminho, da fruição e da revisão.",
+          "es": "Por conocimiento del camino, de la fruición y de la revisión."
+        }
+      ],
+      "explanation": {
+        "en": "The 8 lobha cittas result from three binary combinations: 2 feelings (somanassa/upekkhā) × 2 views (diṭṭhigata-sampayutta/vippayutta) × 2 modes of inducement (asaṅkhārika/sasaṅkhārika) = 8.",
+        "pt": "Os 8 cittas de lobha resultam de três combinações binárias: 2 sensações (somanassa/upekkhā) × 2 visões (diṭṭhigata-sampayutta/vippayutta) × 2 modos de indução (asaṅkhārika/sasaṅkhārika) = 8.",
+        "es": "Los 8 cittas de lobha resultan de tres combinaciones binarias: 2 sensaciones (somanassa/upekkhā) × 2 visiones (diṭṭhigata-sampayutta/vippayutta) × 2 modos de inducción (asaṅkhārika/sasaṅkhārika) = 8."
+      },
+      "source": {
+        "cma": "I §4",
+        "fund": "Lesson 2.2"
+      }
+    },
+    {
+      "id": "u2.dosamula_two_division",
+      "kind": "atom",
+      "topic": {
+        "en": "Hatred-Rooted Structure",
+        "pt": "Estrutura da Aversão",
+        "es": "Estructura de la Aversión"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What feeling and mental factor define both aversion-rooted consciousnesses (dosa-mūla cittas)?",
+        "pt": "Qual sensação e qual fator mental definem ambas as consciências com raiz na aversão (dosa-mūla cittas)?",
+        "es": "¿Qué sensación y qué factor mental definen ambas conciencias con raíz en la aversión (dosa-mūla cittas)?"
+      },
+      "correct": {
+        "en": "Displeasure (domanassa) and ill-will (paṭigha); one is unprompted and one is prompted.",
+        "pt": "Desprazer (domanassa) e má vontade (paṭigha); uma é espontânea e uma é incitada.",
+        "es": "Desagrado (domanassa) y mala voluntad (paṭigha); una es espontánea y una es incitada."
+      },
+      "distractors": [
+        {
+          "en": "Equanimity (upekkhā) and skeptical doubt (vicikicchā).",
+          "pt": "Equanimidade (upekkhā) e dúvida cética (vicikicchā).",
+          "es": "Ecuanimidad (upekkhā) y duda escéptica (vicikicchā)."
+        },
+        {
+          "en": "Joy (somanassa) and conceit (māna).",
+          "pt": "Alegria (somanassa) e vaidade (māna).",
+          "es": "Alegría (somanassa) y vanidad (māna)."
+        },
+        {
+          "en": "Bodily pain (dukkha) and remorse (kukkucca).",
+          "pt": "Dor física (dukkha) e remorso (kukkucca).",
+          "es": "Dolor físico (dukkha) y remordimiento (kukkucca)."
+        }
+      ],
+      "explanation": {
+        "en": "Both dosa-mūla cittas are invariably accompanied by unpleasant mental feeling (domanassa) and joined with anger/resistance (paṭighasampayutta). They differ solely by being asaṅkhārika or sasaṅkhārika.",
+        "pt": "Ambos os cittas de dosa-mūla são invariavelmente acompanhados por desprazer mental (domanassa) e associados a resistência/raiva (paṭighasampayutta). Diferem apenas por serem asaṅkhārika ou sasaṅkhārika.",
+        "es": "Ambos cittas de dosa-mūla van acompañados invariablemente de desagrado mental (domanassa) y asociados con resistencia/ira (paṭighasampayutta). Difieren solo por ser asaṅkhārika o sasaṅkhārika."
+      },
+      "source": {
+        "cma": "I §9",
+        "fund": "Lesson 2.2"
+      }
+    },
+    {
+      "id": "u2.mohamula_two_division",
+      "kind": "atom",
+      "topic": {
+        "en": "Delusion-Rooted Structure",
+        "pt": "Estrutura da Delusão",
+        "es": "Estructura de la Delusión"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What distinguishes the two delusion-rooted consciousnesses (moha-mūla cittas)?",
+        "pt": "O que distingue as duas consciências com raiz na delusão (moha-mūla cittas)?",
+        "es": "¿Qué distingue a las dos conciencias con raíz en la delusión (moha-mūla cittas)?"
+      },
+      "correct": {
+        "en": "One is accompanied by skeptical doubt (vicikicchā) and the other by restlessness (uddhacca); both have equanimity.",
+        "pt": "Uma é acompanhada de dúvida cética (vicikicchā) e a outra de agitação (uddhacca); ambas têm equanimidade.",
+        "es": "Una está acompañada de duda escéptica (vicikicchā) y la otra de agitación (uddhacca); ambas tienen ecuanimidad."
+      },
+      "distractors": [
+        {
+          "en": "One has joy and wrong view while the other has grief and aversion.",
+          "pt": "Uma tem alegria e visão incorreta enquanto a outra tem pesar e aversão.",
+          "es": "Una tiene alegría y visión incorrecta mientras que la otra tiene pesar y aversión."
+        },
+        {
+          "en": "One is wholesome and one is unwholesome.",
+          "pt": "Uma é benéfica e a outra é prejudicial.",
+          "es": "Una es benéfica y la otra es perjudicial."
+        },
+        {
+          "en": "One is prompted and one is unprompted.",
+          "pt": "Uma é incitada e a outra é espontânea.",
+          "es": "Una es incitada y la otra es espontánea."
+        }
+      ],
+      "explanation": {
+        "en": "Both moha-mūla cittas are always accompanied by neutral feeling (upekkhā). One is associated with vicikicchā (paralyzing doubt), and the other with uddhacca (distracted mental restlessness).",
+        "pt": "Ambos os cittas de moha-mūla são sempre acompanhados de sensação neutra (upekkhā). Um é associado a vicikicchā (dúvida paralisante) e o outro a uddhacca (agitação mental dispersa).",
+        "es": "Ambos cittas de moha-mūla van siempre acompañados de sensación neutra (upekkhā). Uno está asociado con vicikicchā (duda paralizante) y el otro con uddhacca (agitación mental dispersa)."
+      },
+      "source": {
+        "cma": "I §11",
+        "fund": "Lesson 2.2"
+      }
+    },
+    {
+      "id": "u2.akusala_vipaka_seven_count",
+      "kind": "atom",
+      "topic": {
+        "en": "Unwholesome Resultant Count",
+        "pt": "Resultantes Prejudiciais",
+        "es": "Resultantes Perjudiciales"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many unwholesome-resultant rootless consciousnesses (akusala-vipāka ahetuka cittas) are classified?",
+        "pt": "Quantas consciências sem raiz resultantes prejudiciais (akusala-vipāka ahetuka cittas) são classificadas?",
+        "es": "¿Cuántas conciencias sin raíz resultantes perjudiciales (akusala-vipāka ahetuka cittas) se clasifican?"
+      },
+      "correct": {
+        "en": "Seven: eye, ear, nose, tongue, body consciousness, receiving, and investigating consciousness.",
+        "pt": "Sete: consciência do olho, ouvido, nariz, língua, corpo, recepção e investigação.",
+        "es": "Siete: conciencia del ojo, oído, nariz, lengua, cuerpo, recepción e investigación."
+      },
+      "distractors": [
+        {
+          "en": "Eight, because investigating consciousness is doubled with joy.",
+          "pt": "Oito, pois a investigação é duplicada com alegria.",
+          "es": "Ocho, pues la investigación se duplica con alegría."
+        },
+        {
+          "en": "Twelve, corresponding to all unwholesome roots.",
+          "pt": "Doze, correspondendo a todas as raízes prejudiciais.",
+          "es": "Doce, correspondiendo a todas las raíces perjudiciales."
+        },
+        {
+          "en": "Three, performing only the adverting functions.",
+          "pt": "Três, realizando apenas funções de advertência.",
+          "es": "Tres, realizando solo funciones de advertencia."
+        }
+      ],
+      "explanation": {
+        "en": "The 7 akusala-vipāka cittas: 5 sensory consciousnesses (cakkhu-, sota-, ghāna-, jivhā-, kāya-viññāṇa), receiving consciousness (sampaṭicchana), and investigating consciousness (santīraṇa).",
+        "pt": "Os 7 cittas de akusala-vipāka: 5 consciências sensoriais (olho, ouvido, nariz, língua, corpo), consciência receptora (sampaṭicchana) e investigadora (santīraṇa).",
+        "es": "Los 7 cittas de akusala-vipāka: 5 conciencias sensoriales (ojo, oído, nariz, lengua, cuerpo), conciencia receptora (sampaṭicchana) e investigadora (santīraṇa)."
+      },
+      "source": {
+        "cma": "I §8",
+        "fund": "Lesson 2.3"
+      }
+    },
+    {
+      "id": "u2.body_consciousness_feelings",
+      "kind": "atom",
+      "topic": {
+        "en": "Body Consciousness Feelings",
+        "pt": "Sensações do Corpo",
+        "es": "Sensaciones del Cuerpo"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What feelings accompany unwholesome-resultant vs wholesome-resultant body-consciousness?",
+        "pt": "Quais sensações acompanham a consciência corporal resultante prejudicial versus benéfica?",
+        "es": "¿Qué sensaciones acompañan a la conciencia corporal resultante perjudicial frente a la benéfica?"
+      },
+      "correct": {
+        "en": "Bodily pain (dukkha) in unwholesome-resultant, and bodily pleasure (sukha) in wholesome-resultant.",
+        "pt": "Dor corporal (dukkha) na resultante prejudicial e prazer corporal (sukha) na resultante benéfica.",
+        "es": "Dolor corporal (dukkha) en la resultante perjudicial y placer corporal (sukha) en la resultante benéfica."
+      },
+      "distractors": [
+        {
+          "en": "Both are accompanied strictly by neutral equanimity (upekkhā).",
+          "pt": "Ambas são acompanhadas estritamente por equanimidade neutra (upekkhā).",
+          "es": "Ambas están acompañadas estrictamente por ecuanimidad neutra (upekkhā)."
+        },
+        {
+          "en": "Mental grief (domanassa) and mental joy (somanassa).",
+          "pt": "Pesar mental (domanassa) e alegria mental (somanassa).",
+          "es": "Pesar mental (domanassa) y alegría mental (somanassa)."
+        },
+        {
+          "en": "Displeasure in both, varying only by intensity.",
+          "pt": "Desprazer em ambas, variando apenas pela intensidade.",
+          "es": "Desagrado en ambas, variando solo por la intensidad."
+        }
+      ],
+      "explanation": {
+        "en": "In the five sense-consciousnesses, the first four (eye, ear, nose, tongue) are accompanied by neutral feeling (upekkhā). Only body-consciousness is accompanied by sharp bodily pain (dukkha) or bodily pleasure (sukha).",
+        "pt": "Nas cinco consciências sensoriais, as quatro primeiras (olho, ouvido, nariz, língua) são acompanhadas de sensação neutra (upekkhā). Apenas a consciência corporal tem dor física aguda (dukkha) ou prazer físico (sukha).",
+        "es": "En las cinco conciencias sensoriales, las cuatro primeras (ojo, oído, nariz, lengua) van acompañadas de sensación neutra (upekkhā). Solo la conciencia corporal tiene dolor físico agudo (dukkha) o placer físico (sukha)."
+      },
+      "source": {
+        "cma": "I §8–§10",
+        "fund": "Lesson 2.3"
+      }
+    },
+    {
+      "id": "u2.santirana_three_types",
+      "kind": "atom",
+      "topic": {
+        "en": "Investigating Consciousness",
+        "pt": "Consciência Investigadora",
+        "es": "Conciencia Investigadora"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many investigating consciousnesses (santīraṇa cittas) exist across all rootless resultant types?",
+        "pt": "Quantas consciências de investigação (santīraṇa cittas) existem entre os tipos resultantes sem raiz?",
+        "es": "¿Cuántas conciencias de investigación (santīraṇa cittas) existen entre los tipos resultantes sin raíz?"
+      },
+      "correct": {
+        "en": "Three: one unwholesome with equanimity, one wholesome with equanimity, and one wholesome with joy.",
+        "pt": "Três: uma prejudicial com equanimidade, uma benéfica com equanimidade e uma benéfica com alegria.",
+        "es": "Tres: una perjudicial con ecuanimidad, una benéfica con ecuanimidad y una benéfica con alegría."
+      },
+      "distractors": [
+        {
+          "en": "Two: one unwholesome and one wholesome, both with neutral feeling.",
+          "pt": "Duas: uma prejudicial e uma benéfica, ambas com sensação neutra.",
+          "es": "Dos: una perjudicial y una benéfica, ambas con sensación neutra."
+        },
+        {
+          "en": "Four: divided according to unprompted and prompted modalities.",
+          "pt": "Quatro: divididas segundo modalidades espontâneas e incitadas.",
+          "es": "Cuatro: divididas según modalidades espontáneas e incitadas."
+        },
+        {
+          "en": "Six: one for each of the six sense doors.",
+          "pt": "Seis: uma para cada uma das seis portas dos sentidos.",
+          "es": "Seis: una para cada una de las seis puertas de los sentidos."
+        }
+      ],
+      "explanation": {
+        "en": "There are exactly three santīraṇa cittas: 1 akusala-vipāka with upekkhā (for undesirable objects), 1 kusala-vipāka with upekkhā (for moderately desirable objects), and 1 kusala-vipāka with somanassa (for extraordinarily desirable objects).",
+        "pt": "Há exatamente três cittas santīraṇa: 1 akusala-vipāka com upekkhā (para objetos indesejáveis), 1 kusala-vipāka com upekkhā (para objetos moderadamente desejáveis) e 1 kusala-vipāka com somanassa (para objetos extraordinariamente desejáveis).",
+        "es": "Hay exactamente tres cittas santīraṇa: 1 akusala-vipāka con upekkhā (para objetos indeseables), 1 kusala-vipāka con upekkhā (para objetos moderadamente deseables) y 1 kusala-vipāka con somanassa (para objetos extraordinariamente deseables)."
+      },
+      "source": {
+        "cma": "I §8–§10",
+        "fund": "Lesson 2.3"
+      }
+    },
+    {
+      "id": "u2.ahetuka_kiriya_three_types",
+      "kind": "atom",
+      "topic": {
+        "en": "Rootless Functional Types",
+        "pt": "Tipos Funcionais Sem Raiz",
+        "es": "Tipos Funcionales Sin Raíz"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the three rootless functional consciousnesses (ahetuka kiriya cittas)?",
+        "pt": "Quais são as três consciências funcionais sem raiz (ahetuka kiriya cittas)?",
+        "es": "¿Cuáles son las tres conciencias funcionales sin raíz (ahetuka kiriya cittas)?"
+      },
+      "correct": {
+        "en": "Five-door adverting (pañcadvārāvajjana), mind-door adverting (manodvārāvajjana), and hasituppāda.",
+        "pt": "Advertência na porta quíntupla (pañcadvārāvajjana), na porta mental (manodvārāvajjana) e hasituppāda.",
+        "es": "Advertencia en puerta quíntuple (pañcadvārāvajjana), puerta mental (manodvārāvajjana) y hasituppāda."
+      },
+      "distractors": [
+        {
+          "en": "Receiving, investigating, and determining consciousness.",
+          "pt": "Recepção, investigação e determinação.",
+          "es": "Recepción, investigación y determinación."
+        },
+        {
+          "en": "Eye-adverting, ear-adverting, and nose-adverting consciousness.",
+          "pt": "Advertência do olho, do ouvido e do nariz.",
+          "es": "Advertencia del ojo, del oído y de la nariz."
+        },
+        {
+          "en": "Life-continuum, death consciousness, and rebirth-linking consciousness.",
+          "pt": "Fluxo de existência, morte e religação renascente.",
+          "es": "Continuidad vital, muerte y reconexión renaciente."
+        }
+      ],
+      "explanation": {
+        "en": "The three rootless functional cittas do not produce kamma: pañcadvārāvajjana adverts to sensory objects, manodvārāvajjana adverts to mind objects (also acts as determining in 5-door process), and hasituppāda generates smiles in Arahants.",
+        "pt": "As três cittas funcionais sem raiz não produzem kamma: pañcadvārāvajjana adverte a objetos sensoriais, manodvārāvajjana adverte a objetos mentais (e determina no processo quíntuplo) e hasituppāda gera o sorriso dos Arahants.",
+        "es": "Las tres cittas funcionales sin raíz no producen kamma: pañcadvārāvajjana advierte a objetos sensoriales, manodvārāvajjana advierte a objetos mentales (y determina en el proceso quíntuple) y hasituppāda genera la sonrisa de los Arahants."
+      },
+      "source": {
+        "cma": "I §10",
+        "fund": "Lesson 2.3"
+      }
+    },
+    {
+      "id": "u2.mahakusala_eight_division",
+      "kind": "atom",
+      "topic": {
+        "en": "Great Wholesome Structure",
+        "pt": "Estrutura das Benéficas",
+        "es": "Estructura de las Benéficas"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What three factors determine the eightfold classification of great wholesome consciousness (mahākusala)?",
+        "pt": "Quais três fatores determinam a classificação óctupla da grande consciência benéfica (mahākusala)?",
+        "es": "¿Cuáles tres factores determinan la clasificación óctuple de la gran conciencia benéfica (mahākusala)?"
+      },
+      "correct": {
+        "en": "Joy vs equanimity, knowledge-associated vs dissociated, and unprompted vs prompted.",
+        "pt": "Alegria versus equanimidade, associada ao conhecimento versus dissociada, e espontânea versus incitada.",
+        "es": "Alegría frente a ecuanimidad, asociada con el conocimiento frente a disociada, y espontánea frente a incitada."
+      },
+      "distractors": [
+        {
+          "en": "Generosity, moral virtue, and meditative absorption.",
+          "pt": "Generosidade, virtude moral e absorção meditativa.",
+          "es": "Generosidad, virtud moral y absorción meditativa."
+        },
+        {
+          "en": "Sensory plane, fine-material plane, and immaterial plane.",
+          "pt": "Plano sensorial, plano da matéria sutil e plano imaterial.",
+          "es": "Plano sensorial, plano de materia sutil y plano inmaterial."
+        },
+        {
+          "en": "Three roots, two roots, and rootless states.",
+          "pt": "Três raízes, duas raízes e estados sem raiz.",
+          "es": "Tres raíces, dos raíces y estados sin raíz."
+        }
+      ],
+      "explanation": {
+        "en": "The 8 mahākusala cittas parallel the 8 lobha-mūla cittas in structure: 2 feelings (joy/equanimity) × 2 cognitive modes (with knowledge/without knowledge) × 2 energetic modes (unprompted/prompted) = 8.",
+        "pt": "Os 8 cittas mahākusala têm estrutura paralela aos 8 de lobha: 2 sensações (alegria/equanimidade) × 2 modos cognitivos (com conhecimento/sem conhecimento) × 2 modos de energia (espontâneo/incitado) = 8.",
+        "es": "Los 8 cittas mahākusala tienen estructura paralela a los 8 de lobha: 2 sensaciones (alegría/ecuanimidad) × 2 modos cognitivos (con conocimiento/sin conocimiento) × 2 modos de energía (espontáneo/incitado) = 8."
+      },
+      "source": {
+        "cma": "I §13",
+        "fund": "Lesson 2.4"
+      }
+    },
+    {
+      "id": "u2.rupavacara_fifteen_division",
+      "kind": "atom",
+      "topic": {
+        "en": "Fine-Material Jhānas",
+        "pt": "Jhānas da Matéria Sutil",
+        "es": "Jhānas de Materia Sutil"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How are the fifteen fine-material sphere consciousnesses (rūpāvacara cittas) partitioned?",
+        "pt": "Como as quinze consciências da matéria sutil (rūpāvacara cittas) são divididas?",
+        "es": "¿Cómo se dividen las quince conciencias de la materia sutil (rūpāvacara cittas)?"
+      },
+      "correct": {
+        "en": "Five wholesome (kusala), five resultant (vipāka), and five functional (kiriya) across the five jhānas.",
+        "pt": "Cinco benéficas (kusala), cinco resultantes (vipāka) e cinco funcionais (kiriya) nos cinco jhānas.",
+        "es": "Cinco benéficas (kusala), cinco resultantes (vipāka) y cinco funcionales (kiriya) en los cinco jhānas."
+      },
+      "distractors": [
+        {
+          "en": "Ten wholesome states and five supramundane fruits.",
+          "pt": "Dez estados benéficos e cinco frutos supramundanos.",
+          "es": "Diez estados benéficos y cinco frutos supramundanos."
+        },
+        {
+          "en": "Fifteen progressive levels of formless concentration.",
+          "pt": "Quinze níveis progressivos de concentração sem forma.",
+          "es": "Quince niveles progresivos de concentración sin forma."
+        },
+        {
+          "en": "Three roots multiplied by five sensory fields.",
+          "pt": "Três raízes multiplicadas por cinco campos sensoriais.",
+          "es": "Tres raíces multiplicadas por cinco campos sensoriales."
+        }
+      ],
+      "explanation": {
+        "en": "In the Abhidhamma 5-jhāna system: 1st jhāna has 5 factors, 2nd has 4, 3rd has 3, 4th has 2 (joy+one-pointedness), and 5th has 2 (equanimity+one-pointedness). Each has kusala, vipāka, and kiriya, making 15.",
+        "pt": "No sistema de 5 jhānas do Abhidhamma: o 1º tem 5 fatores, o 2º tem 4, o 3º tem 3, o 4º tem 2 (alegria+unificação) e o 5º tem 2 (equanimidade+unificação). Cada um tem kusala, vipāka e kiriya, totalizando 15.",
+        "es": "En el sistema de 5 jhānas del Abhidhamma: el 1º tiene 5 factores, el 2º tiene 4, el 3º tiene 3, el 4º tiene 2 (alegría+unificación) y el 5º tiene 2 (ecuanimidad+unificación). Cada uno tiene kusala, vipāka y kiriya, totalizando 15."
+      },
+      "source": {
+        "cma": "I §18–§21",
+        "fund": "Lesson 2.5"
+      }
+    },
+    {
+      "id": "u2.arupavacara_twelve_division",
+      "kind": "atom",
+      "topic": {
+        "en": "Immaterial Realms",
+        "pt": "Reinos Imateriais",
+        "es": "Reinos Inmateriales"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the four meditative realms whose consciousness comprises the twelve arūpāvacara cittas?",
+        "pt": "Quais são os quatro reinos meditativos cuja consciência compreende os doze cittas arūpāvacara?",
+        "es": "¿Cuáles son los cuatro reinos meditativos cuya conciencia comprende los doce cittas arūpāvacara?"
+      },
+      "correct": {
+        "en": "Infinite space, infinite consciousness, nothingness, and neither-perception-nor-non-perception.",
+        "pt": "Espaço infinito, consciência infinita, nada e nem-percepção-nem-não-percepção.",
+        "es": "Espacio infinito, conciencia infinita, nada y ni-percepción-ni-no-percepción."
+      },
+      "distractors": [
+        {
+          "en": "Earth, water, fire, and wind kasiṇa absorptions.",
+          "pt": "Absorções de kasiṇa de terra, água, fogo e ar.",
+          "es": "Absorciones de kasiṇa de tierra, agua, fuego y aire."
+        },
+        {
+          "en": "The realms of the four great divine kings.",
+          "pt": "Os reinos dos quatro grandes reis divinos.",
+          "es": "Los reinos de los cuatro grandes reyes divinos."
+        },
+        {
+          "en": "Virtue, concentration, wisdom, and liberation.",
+          "pt": "Virtude, concentração, sabedoria e libertação.",
+          "es": "Virtud, concentración, sabiduría y liberación."
+        }
+      ],
+      "explanation": {
+        "en": "The four formless realms each have wholesome, resultant, and functional forms (4 × 3 = 12 cittas). They all share the jhāna factors of the fifth jhāna (upekkhā and ekaggatā), differing only in object.",
+        "pt": "Os quatro reinos sem forma possuem modalidades benéfica, resultante e funcional (4 × 3 = 12 cittas). Todos compartilham os fatores do quinto jhāna (upekkhā e ekaggatā), diferindo unicamente pelo objeto.",
+        "es": "Los cuatro reinos sin forma poseen modalidades benéfica, resultante y funcional (4 × 3 = 12 cittas). Todos comparten los factores del quinto jhāna (upekkhā y ekaggatā), difiriendo únicamente por el objeto."
+      },
+      "source": {
+        "cma": "I §22–§25",
+        "fund": "Lesson 2.6"
+      }
+    },
+    {
+      "id": "u2.lokuttara_eight_division",
+      "kind": "atom",
+      "topic": {
+        "en": "Supramundane Paths and Fruits",
+        "pt": "Caminhos e Frutos Supramundanos",
+        "es": "Caminhos y Frutos Supramundanos"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the eight supramundane consciousnesses (lokuttara cittas) in the basic classification?",
+        "pt": "Quais são as oito consciências supramundanas (lokuttara cittas) na classificação básica?",
+        "es": "¿Cuáles son las ocho conciencias supramundanas (lokuttara cittas) en la clasificación básica?"
+      },
+      "correct": {
+        "en": "Four path consciousnesses (maggacitta) and four fruit consciousnesses (phalacitta).",
+        "pt": "Quatro consciências do caminho (maggacitta) e quatro consciências do fruto (phalacitta).",
+        "es": "Cuatro conciencias del camino (maggacitta) y cuatro conciencias del fruto (phalacitta)."
+      },
+      "distractors": [
+        {
+          "en": "Eight progressive levels of calm meditation (jhāna).",
+          "pt": "Oito níveis progressivos de meditação de tranquilidade (jhāna).",
+          "es": "Ocho niveles progresivos de meditación de tranquilidad (jhāna)."
+        },
+        {
+          "en": "Four kinds of wholesome kamma and four kinds of unwholesome kamma.",
+          "pt": "Quatro tipos de kamma benéfico e quatro tipos de kamma prejudicial.",
+          "es": "Cuatro tipos de kamma benéfico y cuatro tipos de kamma perjudicial."
+        },
+        {
+          "en": "Eight divine abodes cultivated by noble disciples.",
+          "pt": "Oito moradas divinas cultivadas por nobres discípulos.",
+          "es": "Ocho moradas divinas cultivadas por nobles discípulos."
+        }
+      ],
+      "explanation": {
+        "en": "The 8 lokuttara cittas correspond to the four stages of awakening: Stream-entry (Sotāpatti), Once-returning (Sakadāgāmī), Non-returning (Anāgāmī), and Arahantship (Arahatta), each having a path and a fruit.",
+        "pt": "Os 8 cittas lokuttara correspondem aos quatro estágios do despertar: Entrada na corrente (Sotāpatti), Retorno único (Sakadāgāmī), Não retorno (Anāgāmī) e Estado de Arahant (Arahatta), cada um com caminho e fruto.",
+        "es": "Los 8 cittas lokuttara corresponden a las cuatro etapas del despertar: Entrada en la corriente (Sotāpatti), Retorno único (Sakadāgāmī), No retorno (Anāgāmī) y Estado de Arahant (Arahatta), cada uno con camino y fruto."
+      },
+      "source": {
+        "cma": "I §28–§30",
+        "fund": "Lesson 2.7"
+      }
+    },
+    {
+      "id": "u2.deduced_kiriya_function",
+      "kind": "derived",
+      "topic": {
+        "en": "Kiriya Significance",
+        "pt": "Significado de Kiriya",
+        "es": "Significado de Kiriya"
+      },
+      "requires": [
+        "u2.jati_fourfold_division"
+      ],
+      "prompt": {
+        "en": "Why do enlightened beings (Arahants) perform actions through functional consciousness (kiriya) instead of wholesome (kusala)?",
+        "pt": "Por que seres despertos (Arahants) agem através da consciência funcional (kiriya) em vez da benéfica (kusala)?",
+        "es": "¿Por qué los seres despiertos (Arahants) actúan a través de la conciencia funcional (kiriya) en vez de la benéfica (kusala)?"
+      },
+      "correct": {
+        "en": "Because their actions are completely purified of craving and delusion, leaving no karmic potential for future rebirth.",
+        "pt": "Porque suas ações estão purificadas do desejo e da delusão, não deixando potencial kármico para renascimento futuro.",
+        "es": "Porque sus acciones están purificadas del deseo y de la delusión, sin dejar potencial kármico para renacimiento futuro."
+      },
+      "distractors": [
+        {
+          "en": "Because Arahants are incapable of experiencing happiness or mental focus.",
+          "pt": "Porque Arahants são incapazes de experienciar felicidade ou foco mental.",
+          "es": "Porque los Arahants son incapaces de experimentar felicidad o enfoque mental."
+        },
+        {
+          "en": "Because kiriya consciousness is completely unconscious and automatic.",
+          "pt": "Porque a consciência kiriya é completamente desprovida de consciência e automática.",
+          "es": "Porque la conciencia kiriya es completamente desprovista de conciencia y automática."
+        },
+        {
+          "en": "Because only deities can produce wholesome karma.",
+          "pt": "Porque apenas deidades podem produzir kamma benéfico.",
+          "es": "Porque solo las deidades pueden producir kamma benéfico."
+        }
+      ],
+      "explanation": {
+        "en": "Kiriya cittas perform their functions without generating karmic traces (vipāka). In an Arahant, with all roots of defilement uprooted, deeds bear no future fruits.",
+        "pt": "Cittas kiriya exercem suas funções sem gerar traços kármicos (vipāka). Em um Arahant, com todas as raízes de impurezas erradicadas, atos não geram frutos futuros.",
+        "es": "Las cittas kiriya ejercen sus funciones sin generar huellas kármicas (vipāka). En un Arahant, con todas las raíces de impurezas erradicadas, los actos no generan frutos futuros."
+      },
+      "source": {
+        "cma": "I §15",
+        "fund": "Lesson 2.1"
+      }
+    },
+    {
+      "id": "u2.deduced_121_calculation",
+      "kind": "derived",
+      "topic": {
+        "en": "121 Citta Derivation",
+        "pt": "Derivação dos 121 Cittas",
+        "es": "Derivación de los 121 Cittas"
+      },
+      "requires": [
+        "u2.citta_total_count"
+      ],
+      "prompt": {
+        "en": "What exact mathematical operation expands the 89 consciousnesses into 121?",
+        "pt": "Qual operação matemática exata expande as 89 consciências em 121?",
+        "es": "¿Qué operación matemática exacta expande las 89 conciencias a 121?"
+      },
+      "correct": {
+        "en": "Replacing the 8 supramundane cittas with 40 (8 × 5 jhānas), adding 32 cittas: 89 - 8 + 40 = 121.",
+        "pt": "Substituindo os 8 cittas supramundanos por 40 (8 × 5 jhānas), somando 32 cittas: 89 - 8 + 40 = 121.",
+        "es": "Sustituyendo los 8 cittas supramundanos por 40 (8 × 5 jhānas), sumando 32 cittas: 89 - 8 + 40 = 121."
+      },
+      "distractors": [
+        {
+          "en": "Multiplying the entire 89 cittas by the four noble truths.",
+          "pt": "Multiplicando todas as 89 cittas pelas quatro nobres verdades.",
+          "es": "Multiplicando todas las 89 cittas por las cuatro nobles verdades."
+        },
+        {
+          "en": "Adding the 32 parts of the body to the 89 consciousnesses.",
+          "pt": "Adicionando as 32 partes do corpo às 89 consciências.",
+          "es": "Añadiendo las 32 partes del cuerpo a las 89 conciencias."
+        },
+        {
+          "en": "Doubling all 18 rootless cittas to account for male and female beings.",
+          "pt": "Duplicando todas as 18 consciências sem raiz para seres masculinos e femininos.",
+          "es": "Duplicando todas las 18 conciencias sin raíz para seres masculinos y femeninos."
+        }
+      ],
+      "explanation": {
+        "en": "The 81 mundane cittas remain unchanged. The 8 supramundane cittas are each crossed with the 5 jhānas, producing 40 lokuttara cittas (20 paths + 20 fruits). 81 + 40 = 121.",
+        "pt": "Os 81 cittas mundanos permanecem inalterados. Os 8 cittas supramundanos são cruzados com os 5 jhānas, produzindo 40 cittas lokuttara (20 caminhos + 20 frutos). 81 + 40 = 121.",
+        "es": "Los 81 cittas mundanos permanecen inalterados. Los 8 cittas supramundanos se cruzan con los 5 jhānas, produciendo 40 cittas lokuttara (20 caminos + 20 frutos). 81 + 40 = 121."
+      },
+      "source": {
+        "cma": "I §31–§32",
+        "fund": "Lesson 2.7"
+      }
+    },
+    {
+      "id": "u2.deduced_sobhana_total_count",
+      "kind": "derived",
+      "topic": {
+        "en": "Count of Beautiful Citta",
+        "pt": "Contagem de Cittas Belos",
+        "es": "Conteo de Cittas Bellos"
+      },
+      "requires": [
+        "u2.citta_total_count",
+        "u2.akusala_subgroups",
+        "u2.ahetuka_meaning"
+      ],
+      "prompt": {
+        "en": "How many consciousnesses are classified as beautiful (sobhana) out of the total 89 cittas?",
+        "pt": "Quantas consciências são classificadas como belas (sobhana) do total de 89 cittas?",
+        "es": "¿Cuántas conciencias se clasifican como bellas (sobhana) del total de 89 cittas?"
+      },
+      "correct": {
+        "en": "Fifty-nine: 89 total minus 12 unwholesome and 18 rootless cittas.",
+        "pt": "Cinquenta e nove: 89 no total menos 12 prejudiciais e 18 sem raiz.",
+        "es": "Cincuenta y nueve: 89 en total menos 12 perjudiciales y 18 sin raíz."
+      },
+      "distractors": [
+        {
+          "en": "Twenty-four, consisting only of the sense-sphere beautiful cittas.",
+          "pt": "Vinte e quatro, consistindo apenas nas belas do plano sensorial.",
+          "es": "Veinticuatro, consistiendo solo en las bellas del plano sensorial."
+        },
+        {
+          "en": "Forty, matching the expanded supramundane path and fruits.",
+          "pt": "Quarenta, correspondendo aos caminhos e frutos expandidos.",
+          "es": "Cuarenta, correspondiendo a los caminos y frutos expandidos."
+        },
+        {
+          "en": "Eighty-one, leaving out the eight supramundane states.",
+          "pt": "Oitenta e um, deixando de fora os oito estados supramundanos.",
+          "es": "Ochenta y uno, dejando fuera los ocho estados supramundanos."
+        }
+      ],
+      "explanation": {
+        "en": "Sobhana (beautiful) consciousness excludes akusala (12) and ahetuka (18). 89 - 30 = 59 sobhana cittas (24 kāmāvacara-sobhana + 15 rūpāvacara + 12 arūpāvacara + 8 lokuttara). In 121 system: 59 + 32 = 91.",
+        "pt": "Consciência bela (sobhana) exclui akusala (12) e ahetuka (18). 89 - 30 = 59 cittas sobhana (24 kāmāvacara-sobhana + 15 rūpāvacara + 12 arūpāvacara + 8 lokuttara). No esquema de 121: 59 + 32 = 91.",
+        "es": "La conciencia bella (sobhana) excluye akusala (12) y ahetuka (18). 89 - 30 = 59 cittas sobhana (24 kāmāvacara-sobhana + 15 rūpāvacara + 12 arūpāvacara + 8 lokuttara). En el esquema de 121: 59 + 32 = 91."
+      },
+      "source": {
+        "cma": "I §12",
+        "fund": "Lesson 2.4"
+      }
+    },
+    {
+      "id": "u2.deduced_lokuttara_forty_calculation",
+      "kind": "derived",
+      "topic": {
+        "en": "Lokuttara Jhāna Synthesis",
+        "pt": "Síntese dos Jhānas Lokuttara",
+        "es": "Síntesis de los Jhānas Lokuttara"
+      },
+      "requires": [
+        "u2.lokuttara_eight_division",
+        "u2.deduced_121_calculation"
+      ],
+      "prompt": {
+        "en": "How are the 40 supramundane consciousnesses derived from the 8 basic paths and fruits?",
+        "pt": "Como as 40 consciências supramundanas são derivadas dos 8 caminhos e frutos básicos?",
+        "es": "¿Cómo se derivan las 40 conciencias supramundanas de los 8 caminos y frutos básicos?"
+      },
+      "correct": {
+        "en": "Each of the 8 supramundane cittas is multiplied by the 5 jhānas based on accompanying factors.",
+        "pt": "Cada um dos 8 cittas supramundanos é multiplicado pelos 5 jhānas com base em seus fatores.",
+        "es": "Cada uno de los 8 cittas supramundanos se multiplica por los 5 jhānas según sus factores."
+      },
+      "distractors": [
+        {
+          "en": "By multiplying the 8 paths and fruits by the five spiritual faculties.",
+          "pt": "Multiplicando os 8 caminhos e frutos pelas cinco faculdades espirituais.",
+          "es": "Multiplicando los 8 caminos y frutos por las cinco facultades espirituales."
+        },
+        {
+          "en": "By adding the 32 parts of the body to the 8 supramundane states.",
+          "pt": "Somando as 32 partes do corpo aos 8 estados supramundanos.",
+          "es": "Sumando las 32 partes del cuerpo a los 8 estados supramundanos."
+        },
+        {
+          "en": "By multiplying the 8 states by the five aggregates of clinging.",
+          "pt": "Multiplicando os 8 estados pelos cinco agregados de apego.",
+          "es": "Multiplicando los 8 estados por los cinco agregados de apego."
+        }
+      ],
+      "explanation": {
+        "en": "Each supramundane path and fruit occurs at the level of one of the 5 jhānas depending on the concentration used as foundation for insight. 8 cittas × 5 jhānas = 40 supramundane cittas.",
+        "pt": "Cada caminho e fruto supramundano ocorre no nível de um dos 5 jhānas conforme a concentração usada como base para insight. 8 cittas × 5 jhānas = 40 cittas supramundanos.",
+        "es": "Cada camino y fruto supramundano ocurre en el nivel de uno de los 5 jhānas según la concentración empleada como base para insight. 8 cittas × 5 jhānas = 40 cittas supramundanos."
+      },
+      "source": {
+        "cma": "I §31",
+        "fund": "Lesson 2.7"
+      }
+    }
+  ]
+}

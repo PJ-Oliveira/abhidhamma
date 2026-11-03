@@ -304,7 +304,10 @@ main#reader { display: flex; flex-direction: column; min-width: 0; position: rel
 
 .seg { margin: 0 auto 14px auto; max-width: min(900px, 100%); transition: background 1.4s ease; border-radius: 4px; }
 .seg .pali-line {
+  font-family: "Gentium Book Plus", Georgia, serif;
   line-height: 1.7;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .seg .paranum-badge {
   display: inline-block;
@@ -321,6 +324,8 @@ main#reader { display: flex; flex-direction: column; min-width: 0; position: rel
   margin-top: 4px;
   color: var(--text-muted);
   line-height: 1.6;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .seg.no-translation .translation-line { display: none; }
 .seg.no-pali .pali-line { display: none; }
@@ -372,7 +377,59 @@ main#reader { display: flex; flex-direction: column; min-width: 0; position: rel
 }
 .seg[data-rend="footnote"] .pali-line { margin-top: 2px; }
 .seg[data-rend="glossary"] .pali-line { font-weight: 600; }
-.seg[data-rend="glossary"] .pali-line b { color: var(--accent); }
+.seg[data-rend="glossary"] .pali-line b,
+.seg[data-rend="glossary"] .translation-line b { color: var(--accent); }
+
+/* Monolingual translation mode (.seg.no-pali) — full book typography */
+.seg.no-pali .translation-line {
+  font-family: "Gentium Book Plus", Georgia, serif;
+  color: var(--text);
+  border-left: none;
+  padding-left: 0;
+  margin-top: 0;
+  line-height: 1.7;
+}
+.seg.no-pali[data-rend="book"] .translation-line,
+.seg.no-pali[data-rend="nikaya"] .translation-line,
+.seg.no-pali[data-rend="title"] .translation-line {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 700;
+  font-style: normal;
+  margin: 18px 0 4px;
+}
+.seg.no-pali[data-rend="chapter"] .translation-line {
+  font-size: 1.15em;
+  font-weight: 700;
+  margin-top: 22px;
+  color: var(--accent);
+}
+.seg.no-pali[data-rend="subhead"] .translation-line {
+  font-weight: 700;
+  margin-top: 12px;
+}
+.seg.no-pali[data-rend="subsubhead"] .translation-line {
+  font-weight: 600;
+  font-style: italic;
+}
+.seg.no-pali[data-rend="centre"] .translation-line {
+  text-align: center;
+}
+.seg.no-pali[data-rend^="gatha"] .translation-line {
+  font-style: italic;
+  margin-left: 2em;
+}
+.seg.no-pali[data-rend="indent"] .translation-line {
+  margin-left: 2em;
+  padding-left: 1em;
+  border-left: 3px solid var(--accent-soft, #c8a96e44);
+  font-style: italic;
+}
+.seg.no-pali[data-rend="footnote"] .translation-line {
+  font-size: 0.82em;
+  color: var(--text-muted);
+  opacity: 0.8;
+}
 
 sup.var-note { color: var(--accent); cursor: help; font-size: .7em; }
 
@@ -414,10 +471,11 @@ sup.var-note { color: var(--accent); cursor: help; font-size: .7em; }
 
 .welcome { max-width: min(560px, 90vw); margin: var(--pad-lg) auto; text-align: center; color: var(--text-muted); }
 .welcome-logo {
+  max-width: 320px;
   width: 100%;
   height: auto;
   display: block;
-  margin-bottom: 16px;
+  margin: 0 auto 16px auto;
 }
 .welcome-credit { margin-top: 20px; }
 
@@ -435,7 +493,23 @@ sup.var-note { color: var(--accent); cursor: help; font-size: .7em; }
 #export-panel-body button:hover { opacity: .88; }
 #export-panel-body button:disabled { opacity: .5; cursor: default; }
 
-/* ---- bidirectional selection ---- */
+/* ---- granular pali word selection ---- */
+.pali-line .pali-word {
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0 1px;
+  margin: 0 -1px;
+  transition: background-color 0.14s ease, color 0.14s ease, box-shadow 0.14s ease;
+}
+.pali-line .pali-word:hover {
+  background-color: rgba(179, 102, 63, 0.14);
+}
+.pali-line .pali-word.pali-word-selected {
+  background-color: rgba(179, 102, 63, 0.26);
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
 .selection-counterpart {
   background: rgba(179, 102, 63, 0.10);
   outline: 2px solid var(--accent-soft);
@@ -1008,5 +1082,826 @@ details[open] > summary::before { transform: rotate(90deg); }
   .part-tabs button {
     white-space: nowrap;
     flex-shrink: 0;
+  }
+}
+
+/* ─── Abhidhamma Tetris Gamification Engine & SRS Mode Navigation ─────────── */
+
+.srs-nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 14px 0 16px;
+  width: 100%;
+}
+
+.srs-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.18s ease;
+  color: var(--text);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.srs-menu-item:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.srs-menu-item.active {
+  border: 2px solid var(--accent);
+  background: var(--bg);
+  box-shadow: 0 2px 8px rgba(179, 102, 63, 0.18);
+}
+
+.srs-item-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.srs-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow: hidden;
+}
+
+.srs-item-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.srs-menu-item.active .srs-item-title {
+  color: var(--accent);
+}
+
+.srs-item-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+#reader-srs {
+  padding: 0 !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  overflow: hidden !important;
+}
+
+.srs-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.srs-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: var(--bg-content);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  user-select: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.srs-tab-btn:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-1px);
+}
+
+.srs-tab-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 2px 6px rgba(139, 0, 0, 0.25);
+}
+
+.srs-tab-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.srs-tab-label {
+  line-height: 1;
+}
+
+.srs-view-panel {
+  width: 100%;
+  height: 100%;
+  max-width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  padding: clamp(12px, 3vw, 24px);
+  box-sizing: border-box;
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+#reader-srs.tetris-mode {
+  padding: 0 !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+  overflow: hidden !important;
+}
+
+#reader-srs.tetris-mode > #srs-tetris-main {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  flex: 1 1 0 !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+#srs-tetris-main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tetris-widget {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-content);
+  position: relative;
+  font-family: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.tetris-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px clamp(14px, 2.5vw, 24px);
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.tetris-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tetris-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.tetris-icon {
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.tetris-unit-row {
+  flex: 1 1 260px;
+  max-width: 440px;
+  display: flex;
+  align-items: center;
+}
+
+.tetris-unit-row select.tetris-unit-select {
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 12px;
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.tetris-unit-row select.tetris-unit-select:focus {
+  border-color: var(--accent);
+}
+
+.tetris-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.tetris-stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+
+.tetris-stat-pill .stat-lbl {
+  color: var(--text-muted);
+}
+
+.tetris-stat-pill strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.tetris-expand-btn {
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text-muted);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.tetris-expand-btn:hover {
+  background: var(--accent-soft);
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.tetris-arena {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  background: #140e0a;
+  overflow: hidden;
+}
+
+.tetris-matrix {
+  position: relative;
+  width: 100%;
+  flex: 1 1 0;
+  min-height: 200px;
+  background: radial-gradient(circle at 50% 25%, #1d150e 0%, #0d0906 100%);
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.85);
+  box-sizing: border-box;
+}
+
+.tetris-matrix-grid-lines {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  pointer-events: none;
+}
+
+.tetris-lane-guide {
+  flex: 1;
+  border-right: 1px dashed rgba(255, 255, 255, 0.07);
+  height: 100%;
+}
+
+.tetris-lane-guide:last-child {
+  border-right: none;
+}
+
+.tetris-pieces-container {
+  position: absolute;
+  inset: 0;
+  bottom: 24px; /* space for floor */
+  overflow: visible;
+}
+
+.tetris-piece {
+  position: absolute;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: clamp(12px, 1.2vw, 14px);
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  transition: transform 0.12s ease, filter 0.12s ease, box-shadow 0.12s ease;
+  z-index: 2;
+  box-sizing: border-box;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  min-height: 56px;
+}
+
+.tetris-piece:hover {
+  filter: brightness(1.25);
+  transform: scale(1.02);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.8), 0 0 16px rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+.tetris-piece-slot-0 {
+  background: linear-gradient(145deg, #78350f 0%, #b45309 60%, #d97706 100%);
+  border: 2px solid #fbbf24;
+  color: #fff;
+}
+
+.tetris-piece-slot-1 {
+  background: linear-gradient(145deg, #134e4a 0%, #0f766e 60%, #0d9488 100%);
+  border: 2px solid #2dd4bf;
+  color: #fff;
+}
+
+.tetris-piece-slot-2 {
+  background: linear-gradient(145deg, #312e81 0%, #4338ca 60%, #4f46e5 100%);
+  border: 2px solid #818cf8;
+  color: #fff;
+}
+
+.tetris-piece-slot-3 {
+  background: linear-gradient(145deg, #881337 0%, #be123c 60%, #e11d48 100%);
+  border: 2px solid #fb7185;
+  color: #fff;
+}
+
+.piece-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.piece-key-badge {
+  font-weight: 800;
+  font-size: 13px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 5px;
+  padding: 2px 10px;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.piece-body {
+  font-family: inherit;
+  font-size: clamp(12px, 1.15vw, 13.5px);
+  line-height: 1.35;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  width: 100%;
+}
+
+.piece-shattered {
+  animation: shatter 0.35s forwards ease-out;
+}
+
+@keyframes shatter {
+  0% { transform: scale(1); opacity: 1; filter: brightness(2); }
+  50% { transform: scale(1.15) rotate(4deg); opacity: 0.8; }
+  100% { transform: scale(0.2) rotate(-15deg); opacity: 0; }
+}
+
+.tetris-floor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: repeating-linear-gradient(45deg, #991b1b, #991b1b 12px, #7f1d1d 12px, #7f1d1d 24px);
+  border-top: 2px solid #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: 0 -2px 10px rgba(239, 68, 68, 0.45);
+}
+
+.floor-text {
+  font-size: 10px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 2px #000;
+  text-transform: uppercase;
+}
+
+/* Anchored question box immediately below floor */
+.tetris-question-box {
+  flex-shrink: 0;
+  background: var(--bg-content);
+  border-top: 2px solid var(--border);
+  padding: 14px clamp(16px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+.tetris-topic-badge {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.tetris-prompt-text {
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+  margin: 2px 0 4px;
+}
+
+.tetris-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 14, 10, 0.94);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 20;
+}
+
+.overlay-card {
+  background: var(--bg-panel);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: popIn 0.25s ease-out;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.overlay-icon {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.overlay-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.overlay-explanation {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.overlay-correct .overlay-icon { color: #10b981; }
+.overlay-correct .overlay-title { color: #10b981; }
+.overlay-correct { border-color: #10b981; }
+
+.overlay-wrong .overlay-icon { color: #ef4444; }
+.overlay-wrong .overlay-title { color: #ef4444; }
+.overlay-wrong { border-color: #ef4444; }
+
+.overlay-failed .overlay-icon {
+  color: #ef4444;
+  animation: pulseFail 0.6s infinite alternate;
+}
+
+@keyframes pulseFail {
+  from { transform: scale(1); }
+  to { transform: scale(1.25); }
+}
+
+.overlay-failed .overlay-title {
+  color: #ef4444;
+}
+
+.tetris-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px clamp(16px, 2.5vw, 32px) 10px;
+  padding-right: clamp(140px, 15vw, 175px); /* Clear the floating Debate button on desktop/tablet */
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  min-height: 52px;
+}
+
+.tetris-kb-hint {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tetris-controls-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tetris-btn {
+  padding: 7px 18px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid var(--border);
+}
+
+.tetris-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.tetris-btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.tetris-btn-secondary {
+  background: var(--bg-content);
+  color: var(--text);
+}
+
+.tetris-btn-secondary:hover {
+  background: var(--accent-soft);
+}
+
+/* Modo Expandido Modal / Main Viewport */
+.tetris-widget.tetris-expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  z-index: 1000;
+  border: none;
+  border-radius: 0;
+}
+
+/* ── Canonical Debate Floating Action Button & Container ────────────── */
+#btn-toggle-interlocutor {
+  position: fixed;
+  bottom: 8px;
+  right: 18px;
+  z-index: 10001;
+  padding: 8px 18px;
+  height: 35px;
+  background-color: #0f172a;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+  font-weight: 700;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+#btn-toggle-interlocutor:hover {
+  background-color: #1e293b;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.38);
+}
+
+#btn-toggle-interlocutor:active {
+  transform: translateY(1px);
+}
+
+#interlocutor-container {
+  position: fixed;
+  bottom: 50px;
+  right: 18px;
+  z-index: 10000;
+  width: 420px;
+  max-width: min(420px, calc(100vw - 36px));
+  max-height: calc(85vh - 60px);
+  overflow-y: auto;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  background: var(--bg-panel, #f5ece0);
+  border: 1px solid var(--border, #d9c3a6);
+}
+
+@media (max-width: 860px) {
+  .tetris-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+  .tetris-title-row {
+    justify-content: space-between;
+  }
+  .tetris-unit-row {
+    max-width: 100%;
+  }
+  .tetris-stats-row {
+    margin-left: 0;
+    width: 100%;
+  }
+  .tetris-question-box {
+    padding: 10px 14px;
+  }
+  .tetris-controls-row {
+    padding: 8px 14px;
+    padding-right: clamp(135px, 18vw, 150px);
+  }
+  .tetris-kb-hint {
+    display: none;
+  }
+  .tetris-controls-btns {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .tetris-controls-btns .tetris-btn {
+    flex: 1;
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 600px) {
+  .srs-top-bar {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+  .srs-tab-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    flex: 1;
+    max-width: 200px;
+    justify-content: center;
+  }
+  .srs-tab-icon {
+    font-size: 14px;
+  }
+  .tetris-piece {
+    padding: 6px 4px;
+    font-size: 11px;
+    min-height: 48px;
+  }
+  .piece-key-badge {
+    padding: 1px 6px;
+    font-size: 11px;
+  }
+  .piece-body {
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  #btn-toggle-interlocutor {
+    bottom: 70px;
+    right: 12px;
+    padding: 6px 14px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  body.tetris-active #btn-toggle-interlocutor,
+  body:has(#reader-srs.tetris-mode:not([style*="display: none"])) #btn-toggle-interlocutor {
+    bottom: 122px;
+    right: 12px;
+  }
+
+  body.tetris-active .tetris-controls-row,
+  body:has(#reader-srs.tetris-mode:not([style*="display: none"])) .tetris-controls-row {
+    padding-right: 14px !important;
+  }
+
+  #interlocutor-container {
+    bottom: 110px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+    max-width: none;
+    max-height: 60vh;
+  }
+
+  body.tetris-active #interlocutor-container,
+  body:has(#reader-srs.tetris-mode:not([style*="display: none"])) #interlocutor-container {
+    bottom: 162px;
+  }
+}
+
+@media (max-height: 640px) {
+  .tetris-header {
+    padding: 6px 12px;
+  }
+  .tetris-question-box {
+    padding: 8px 14px;
+    gap: 6px;
+  }
+  .tetris-prompt-text {
+    font-size: 13px;
+    margin: 0;
+  }
+  .tetris-controls-row {
+    padding: 6px 14px;
   }
 }

@@ -1,0 +1,383 @@
+{
+  "id": "lessons-in-abhidhamma",
+  "title": "Lessons in Abhidhamma",
+  "languages": [
+    "en",
+    "pt",
+    "es"
+  ],
+  "parts": {
+    "texto": {
+      "label": "Text",
+      "files": [
+        "texto.json"
+      ],
+      "toc": [
+        {
+          "id": 2,
+          "rend": "subhead",
+          "text": "Bhante Subhūti (Bhikkhu Subhūti)"
+        },
+        {
+          "id": 3,
+          "rend": "subhead",
+          "text": "A Practical Top-Down Conceptual Approach"
+        },
+        {
+          "id": 5,
+          "rend": "chapter",
+          "text": "Abhidhamma Lesson #1"
+        },
+        {
+          "id": 6,
+          "rend": "subhead",
+          "text": "Hearing and seeing do not take place at the same time."
+        },
+        {
+          "id": 21,
+          "rend": "chapter",
+          "text": "Abhidhamma Lesson #2"
+        },
+        {
+          "id": 22,
+          "rend": "subhead",
+          "text": "The mind is singular and digital without mixing."
+        },
+        {
+          "id": 33,
+          "rend": "subhead",
+          "text": "Mental Exercise"
+        },
+        {
+          "id": 36,
+          "rend": "subhead",
+          "text": "A Note on Kamma"
+        },
+        {
+          "id": 40,
+          "rend": "subhead",
+          "text": "It Is All An Illusion"
+        },
+        {
+          "id": 45,
+          "rend": "subhead",
+          "text": "Conclusion"
+        },
+        {
+          "id": 49,
+          "rend": "subhead",
+          "text": "Some comments:"
+        },
+        {
+          "id": 50,
+          "rend": "subhead",
+          "text": "graeme russell elliin said:"
+        },
+        {
+          "id": 57,
+          "rend": "chapter",
+          "text": "Abhidhamma Lesson #3"
+        },
+        {
+          "id": 58,
+          "rend": "subhead",
+          "text": "The Idle Process"
+        },
+        {
+          "id": 61,
+          "rend": "subhead",
+          "text": "A car is the same way."
+        },
+        {
+          "id": 63,
+          "rend": "subhead",
+          "text": "The mind is the same way."
+        },
+        {
+          "id": 68,
+          "rend": "subhead",
+          "text": "Mental Exercise"
+        },
+        {
+          "id": 70,
+          "rend": "subhead",
+          "text": "One more thing. The Object of Consciousness"
+        },
+        {
+          "id": 82,
+          "rend": "subhead",
+          "text": "References and Notes:"
+        },
+        {
+          "id": 85,
+          "rend": "subhead",
+          "text": "a quote from Idle (CPU) from Wikipedia."
+        },
+        {
+          "id": 87,
+          "rend": "chapter",
+          "text": "Abhidhamma Lesson #4"
+        },
+        {
+          "id": 88,
+          "rend": "subhead",
+          "text": "Can water be felt?"
+        },
+        {
+          "id": 89,
+          "rend": "subhead",
+          "text": "An Introduction To Material Realities And The Sense Of Touch."
+        },
+        {
+          "id": 100,
+          "rend": "subhead",
+          "text": "Sensing and Feeler Particles"
+        },
+        {
+          "id": 103,
+          "rend": "subhead",
+          "text": "So Back To The Picture"
+        },
+        {
+          "id": 108,
+          "rend": "subhead",
+          "text": "Mental Exercise"
+        },
+        {
+          "id": 112,
+          "rend": "subhead",
+          "text": "A small note about the location of the mind"
+        },
+        {
+          "id": 117,
+          "rend": "subhead",
+          "text": "References:"
+        },
+        {
+          "id": 119,
+          "rend": "chapter",
+          "text": "Abhidhamma Lesson #5"
+        },
+        {
+          "id": 120,
+          "rend": "subhead",
+          "text": "Guns, Buttons, and E.Motions"
+        },
+        {
+          "id": 121,
+          "rend": "subhead",
+          "text": "There is more than meets the eye."
+        },
+        {
+          "id": 128,
+          "rend": "subhead",
+          "text": "There are four types of Compactness for the mind."
+        },
+        {
+          "id": 140,
+          "rend": "subhead",
+          "text": "1,2,3, \"Awwww.\""
+        },
+        {
+          "id": 169,
+          "rend": "subhead",
+          "text": "Now What Happens In The Mind?"
+        },
+        {
+          "id": 214,
+          "rend": "subhead",
+          "text": "By memory, you should know:"
+        },
+        {
+          "id": 227,
+          "rend": "subhead",
+          "text": "In Review"
+        },
+        {
+          "id": 231,
+          "rend": "subhead",
+          "text": "Mental Exercise"
+        },
+        {
+          "id": 245,
+          "rend": "subhead",
+          "text": "Try to reserve at least an hour to play around with this exercise."
+        },
+        {
+          "id": 247,
+          "rend": "subhead",
+          "text": "References:"
+        },
+        {
+          "id": 250,
+          "rend": "chapter",
+          "text": "Abhidhamma Lesson #5B"
+        },
+        {
+          "id": 251,
+          "rend": "subhead",
+          "text": "So what happens during Samādhi?"
+        },
+        {
+          "id": 255,
+          "rend": "subhead",
+          "text": "Two Types of Extended Continuous Consciousnesses[2]"
+        },
+        {
+          "id": 258,
+          "rend": "subhead",
+          "text": "Bhavanga Consciousness (Idle)"
+        },
+        {
+          "id": 263,
+          "rend": "subhead",
+          "text": "Interruption"
+        },
+        {
+          "id": 267,
+          "rend": "subhead",
+          "text": "Jhāna Consciousness"
+        },
+        {
+          "id": 278,
+          "rend": "subhead",
+          "text": "Meditation Sign"
+        },
+        {
+          "id": 281,
+          "rend": "subhead",
+          "text": "Attainment of Jhāna"
+        },
+        {
+          "id": 289,
+          "rend": "subhead",
+          "text": "Purity of the Jhāna Stream"
+        },
+        {
+          "id": 302,
+          "rend": "subhead",
+          "text": "One Pointedness"
+        },
+        {
+          "id": 304,
+          "rend": "subhead",
+          "text": "Conclusion"
+        },
+        {
+          "id": 306,
+          "rend": "subhead",
+          "text": "One Last Thing:"
+        },
+        {
+          "id": 311,
+          "rend": "subhead",
+          "text": "Mental Exercise:"
+        },
+        {
+          "id": 315,
+          "rend": "chapter",
+          "text": "Abhidhamma Lesson #6"
+        },
+        {
+          "id": 316,
+          "rend": "subhead",
+          "text": "What Matters?"
+        },
+        {
+          "id": 323,
+          "rend": "subhead",
+          "text": "Onward! The Microscope World"
+        },
+        {
+          "id": 325,
+          "rend": "subhead",
+          "text": "A Word on \"Seeing\""
+        },
+        {
+          "id": 327,
+          "rend": "subhead",
+          "text": "32 Parts"
+        },
+        {
+          "id": 334,
+          "rend": "subhead",
+          "text": "The Five Constituent Parts"
+        },
+        {
+          "id": 340,
+          "rend": "subhead",
+          "text": "12 Characteristics"
+        },
+        {
+          "id": 353,
+          "rend": "subhead",
+          "text": "\"Cured concrete has water element\""
+        },
+        {
+          "id": 355,
+          "rend": "subhead",
+          "text": "Slicing Down to the Particle Level"
+        },
+        {
+          "id": 365,
+          "rend": "subhead",
+          "text": "Back to Nutritive essence"
+        },
+        {
+          "id": 371,
+          "rend": "subhead",
+          "text": "Digital Movement"
+        },
+        {
+          "id": 391,
+          "rend": "subhead",
+          "text": "One More Thing:"
+        },
+        {
+          "id": 393,
+          "rend": "subhead",
+          "text": "A Mental Exercise:"
+        },
+        {
+          "id": 402,
+          "rend": "subhead",
+          "text": "Some More Information:"
+        },
+        {
+          "id": 405,
+          "rend": "subhead",
+          "text": "The train cars follow the caboose"
+        },
+        {
+          "id": 409,
+          "rend": "subhead",
+          "text": "Mind and Matter Connection"
+        },
+        {
+          "id": 411,
+          "rend": "subhead",
+          "text": "Perpetual Generations"
+        },
+        {
+          "id": 414,
+          "rend": "chapter",
+          "text": "Abhidhamma Lesson #7"
+        },
+        {
+          "id": 415,
+          "rend": "subhead",
+          "text": "It's In There!"
+        },
+        {
+          "id": 416,
+          "rend": "subhead",
+          "text": "An introduction to Mental Factors (or Ingredients)"
+        }
+      ],
+      "count": 455,
+      "chunkStarts": [
+        1
+      ]
+    }
+  }
+}

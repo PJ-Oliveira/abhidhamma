@@ -27,6 +27,7 @@ def prepare_dist():
         "index.html",
         "manifest.json",
         "service-worker.js",
+        "CNAME",
         "README.md",
         "README_pt.md",
         "LICENSE-GNU",

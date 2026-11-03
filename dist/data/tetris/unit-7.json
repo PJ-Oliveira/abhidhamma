@@ -1,0 +1,767 @@
+{
+  "unit": 7,
+  "title": {
+    "en": "Compendium of Matter & Concepts (Rūpa & Paññatti)",
+    "pt": "Compêndio da Matéria e Conceitos (Rūpa e Paññatti)",
+    "es": "Compendio de la Materia y Conceptos (Rūpa y Paññatti)"
+  },
+  "summary": {
+    "en": "Analysis of the 28 kinds of matter (rūpa): the four great essentials (mahābhūta), 24 derived matters (upādā-rūpa), four origins of matter (samuṭṭhāna), material clusters (kalāpas), and conventional realities (paññatti).",
+    "pt": "Análise dos 28 tipos de matéria (rūpa): os quatro grandes essenciais (mahābhūta), 24 matérias derivadas (upādā-rūpa), quatro origens da matéria (samuṭṭhāna), agrupamentos materiais (kalāpas) e conceitos convencionais (paññatti).",
+    "es": "Análisis de los 28 tipos de materia (rūpa): los cuatro grandes esenciales (mahābhūta), 24 materias derivadas (upādā-rūpa), cuatro orígenes de la materia (samuṭṭhāna), agrupaciones materiales (kalāpas) y conceptos convencionales (paññatti)."
+  },
+  "taxonomies": [
+    {
+      "id": "u7.rupa_classification",
+      "title": {
+        "en": "Classification of Material Phenomena",
+        "pt": "Classificação das Realidades Materiais",
+        "es": "Clasificación de las Realidades Materiales"
+      },
+      "noun": {
+        "en": "material phenomena",
+        "pt": "realidades materiais",
+        "es": "realidades materiales"
+      },
+      "source": {
+        "cma": "VI §1–§29",
+        "fund": "Lesson 7.1",
+        "as": "VI.1"
+      },
+      "nodes": [
+        {
+          "id": "rupa_domain",
+          "name": {
+            "en": "All 28 Material Realities",
+            "pt": "Todas as 28 Realidades Materiais",
+            "es": "Todas las 28 Realidades Materiales"
+          },
+          "parent": null
+        },
+        {
+          "id": "mahabhuta_group",
+          "name": {
+            "en": "Great Essentials (Mahābhūta)",
+            "pt": "Grandes Essenciais (Mahābhūta)",
+            "es": "Grandes Esenciales (Mahābhūta)"
+          },
+          "parent": "rupa_domain",
+          "weight": 4
+        },
+        {
+          "id": "pathavi_element",
+          "name": {
+            "en": "Earth Element (Pathavī-dhātu)",
+            "pt": "Elemento Terra (Pathavī-dhātu)",
+            "es": "Elemento Tierra (Pathavī-dhātu)"
+          },
+          "parent": "mahabhuta_group",
+          "weight": 1
+        },
+        {
+          "id": "apo_element",
+          "name": {
+            "en": "Water Element (Āpo-dhātu)",
+            "pt": "Elemento Água (Āpo-dhātu)",
+            "es": "Elemento Agua (Āpo-dhātu)"
+          },
+          "parent": "mahabhuta_group",
+          "weight": 1
+        },
+        {
+          "id": "tejo_element",
+          "name": {
+            "en": "Fire Element (Tejo-dhātu)",
+            "pt": "Elemento Fogo (Tejo-dhātu)",
+            "es": "Elemento Fuego (Tejo-dhātu)"
+          },
+          "parent": "mahabhuta_group",
+          "weight": 1
+        },
+        {
+          "id": "vayo_element",
+          "name": {
+            "en": "Air Element (Vāyo-dhātu)",
+            "pt": "Elemento Ar (Vāyo-dhātu)",
+            "es": "Elemento Aire (Vāyo-dhātu)"
+          },
+          "parent": "mahabhuta_group",
+          "weight": 1
+        },
+        {
+          "id": "upada_group",
+          "name": {
+            "en": "Derived Matter (Upādā-rūpa)",
+            "pt": "Matéria Derivada (Upādā-rūpa)",
+            "es": "Materia Derivada (Upādā-rūpa)"
+          },
+          "parent": "rupa_domain",
+          "weight": 24
+        },
+        {
+          "id": "pasada_rupa",
+          "name": {
+            "en": "Sensitive Matter (Pasāda-rūpa)",
+            "pt": "Matéria Sensível (Pasāda-rūpa)",
+            "es": "Materia Sensible (Pasāda-rūpa)"
+          },
+          "parent": "upada_group",
+          "weight": 5
+        },
+        {
+          "id": "cakkhu_pasada",
+          "name": {
+            "en": "Eye Sensitivity (Cakkhupasāda)",
+            "pt": "Sensibilidade do Olho",
+            "es": "Sensibilidad del Ojo"
+          },
+          "parent": "pasada_rupa",
+          "weight": 1
+        },
+        {
+          "id": "sota_pasada",
+          "name": {
+            "en": "Ear Sensitivity (Sotapasāda)",
+            "pt": "Sensibilidade do Ouvido",
+            "es": "Sensibilidad del Oído"
+          },
+          "parent": "pasada_rupa",
+          "weight": 1
+        },
+        {
+          "id": "ghana_pasada",
+          "name": {
+            "en": "Nose Sensitivity (Ghānapasāda)",
+            "pt": "Sensibilidade do Nariz",
+            "es": "Sensibilidad de la Nariz"
+          },
+          "parent": "pasada_rupa",
+          "weight": 1
+        },
+        {
+          "id": "jivha_pasada",
+          "name": {
+            "en": "Tongue Sensitivity (Jivhāpasāda)",
+            "pt": "Sensibilidade da Língua",
+            "es": "Sensibilidad de la Lengua"
+          },
+          "parent": "pasada_rupa",
+          "weight": 1
+        },
+        {
+          "id": "kaya_pasada",
+          "name": {
+            "en": "Body Sensitivity (Kāyapasāda)",
+            "pt": "Sensibilidade do Corpo",
+            "es": "Sensibilidad del Cuerpo"
+          },
+          "parent": "pasada_rupa",
+          "weight": 1
+        },
+        {
+          "id": "gocara_rupa",
+          "name": {
+            "en": "Objective Sense Matter (Gocara-rūpa)",
+            "pt": "Matéria Objetiva (Gocara-rūpa)",
+            "es": "Materia Objetiva (Gocara-rūpa)"
+          },
+          "parent": "upada_group",
+          "weight": 4
+        },
+        {
+          "id": "rupa_visaya",
+          "name": {
+            "en": "Visible Form (Rūpārammaṇa)",
+            "pt": "Forma Visível (Rūpārammaṇa)",
+            "es": "Forma Visible (Rūpārammaṇa)"
+          },
+          "parent": "gocara_rupa",
+          "weight": 1
+        },
+        {
+          "id": "sadda_visaya",
+          "name": {
+            "en": "Sound (Saddārammaṇa)",
+            "pt": "Som (Saddārammaṇa)",
+            "es": "Sonido (Saddārammaṇa)"
+          },
+          "parent": "gocara_rupa",
+          "weight": 1
+        },
+        {
+          "id": "gandha_visaya",
+          "name": {
+            "en": "Odour (Gandhārammaṇa)",
+            "pt": "Odor (Gandhārammaṇa)",
+            "es": "Olor (Gandhārammaṇa)"
+          },
+          "parent": "gocara_rupa",
+          "weight": 1
+        },
+        {
+          "id": "rasa_visaya",
+          "name": {
+            "en": "Taste (Rasārammaṇa)",
+            "pt": "Sabor (Rasārammaṇa)",
+            "es": "Sabor (Rasārammaṇa)"
+          },
+          "parent": "gocara_rupa",
+          "weight": 1
+        },
+        {
+          "id": "bhava_rupa",
+          "name": {
+            "en": "Sex State Matter (Bhāva-rūpa)",
+            "pt": "Matéria Sexual (Bhāva-rūpa)",
+            "es": "Materia Sexual (Bhāva-rūpa)"
+          },
+          "parent": "upada_group",
+          "weight": 2
+        },
+        {
+          "id": "itthi_bhava",
+          "name": {
+            "en": "Femininity (Itthindriya)",
+            "pt": "Feminilidade (Itthindriya)",
+            "es": "Feminidad (Itthindriya)"
+          },
+          "parent": "bhava_rupa",
+          "weight": 1
+        },
+        {
+          "id": "purisa_bhava",
+          "name": {
+            "en": "Masculinity (Purisindriya)",
+            "pt": "Masculinidade (Purisindriya)",
+            "es": "Masculinidad (Purisindriya)"
+          },
+          "parent": "bhava_rupa",
+          "weight": 1
+        },
+        {
+          "id": "anipphanna_group",
+          "name": {
+            "en": "Non-Concretely Produced (Anipphanna)",
+            "pt": "Matéria Não Concretamente Produzida",
+            "es": "Materia No Concretamente Producida"
+          },
+          "parent": "upada_group",
+          "weight": 10
+        },
+        {
+          "id": "akasa_rupa",
+          "name": {
+            "en": "Space Element (Ākāsadhātu)",
+            "pt": "Elemento Espaço (Ākāsadhātu)",
+            "es": "Elemento Espacio (Ākāsadhātu)"
+          },
+          "parent": "anipphanna_group",
+          "weight": 1
+        },
+        {
+          "id": "vinnatti_pair",
+          "name": {
+            "en": "Intimation Matter (Viññatti)",
+            "pt": "Matéria de Intimação (Viññatti)",
+            "es": "Materia de Intimación (Viññatti)"
+          },
+          "parent": "anipphanna_group",
+          "weight": 2
+        },
+        {
+          "id": "vikara_triad",
+          "name": {
+            "en": "Mutability Matter (Vikāra)",
+            "pt": "Matéria de Mutabilidade (Vikāra)",
+            "es": "Materia de Mutabilidad (Vikāra)"
+          },
+          "parent": "anipphanna_group",
+          "weight": 3
+        },
+        {
+          "id": "lakkhana_tetrad",
+          "name": {
+            "en": "Material Characteristics (Lakkhaṇa)",
+            "pt": "Características Materiais (Lakkhaṇa)",
+            "es": "Características Materiales (Lakkhaṇa)"
+          },
+          "parent": "anipphanna_group",
+          "weight": 4
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "u7.rupa_twentyeight_division",
+      "kind": "atom",
+      "topic": {
+        "en": "Twenty-Eight Matter",
+        "pt": "Vinte e Oito Matérias",
+        "es": "Veintiocho Materias"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How are the twenty-eight material phenomena (rūpa) fundamentally divided?",
+        "pt": "Como as vinte e oito realidades materiais (rūpa) são fundamentalmente divididas?",
+        "es": "¿Cómo se dividen fundamentalmente las veintiocho realidades materiales (rūpa)?"
+      },
+      "correct": {
+        "en": "Four great essentials (mahābhūta) and twenty-four derived matters (upādā-rūpa).",
+        "pt": "Quatro grandes essenciais (mahābhūta) e vinte e quatro matérias derivadas (upādā-rūpa).",
+        "es": "Cuatro grandes esenciales (mahābhūta) y veinticuatro materias derivadas (upādā-rūpa)."
+      },
+      "distractors": [
+        {
+          "en": "Fourteen wholesome elements and fourteen unwholesome elements.",
+          "pt": "Quatorze elementos benéficos e quatorze elementos prejudiciais.",
+          "es": "Catorce elementos benéficos y catorce elementos perjudiciales."
+        },
+        {
+          "en": "Five physical elements and twenty-three psychological thoughts.",
+          "pt": "Cinco elementos físicos e vinte e três pensamentos psicológicos.",
+          "es": "Cinco elementos físicos y veintitrés pensamientos psicológicos."
+        },
+        {
+          "en": "Twelve internal bases and sixteen external material objects.",
+          "pt": "Doze bases internas e dezesseis objetos materiais externos.",
+          "es": "Doce bases internas y dieciséis objetos materiales externos."
+        }
+      ],
+      "explanation": {
+        "en": "All matter in existence consists either of the 4 primary foundation elements (earth, water, fire, air) or of the 24 secondary material phenomena derived from and dependent upon them (upādā-rūpa).",
+        "pt": "Toda a matéria consiste ou nos 4 elementos primários fundamentais (terra, água, fogo, ar) ou nas 24 matérias derivadas que dependem diretamente deles (upādā-rūpa).",
+        "es": "Toda la materia consiste o en los 4 elementos primarios fundamentales (tierra, agua, fuego, aire) o en las 24 materias derivadas que dependen directamente de ellos (upādā-rūpa)."
+      },
+      "source": {
+        "cma": "VI §2",
+        "fund": "Lesson 7.1"
+      }
+    },
+    {
+      "id": "u7.four_mahabhutas_characteristics",
+      "kind": "atom",
+      "topic": {
+        "en": "Four Great Essentials",
+        "pt": "Quatro Grandes Essenciais",
+        "es": "Cuatro Grandes Esenciales"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the distinct characteristics of the four great essentials (mahābhūta)?",
+        "pt": "Quais são as características distintivas dos quatro grandes essenciais (mahābhūta)?",
+        "es": "¿Cuáles son las características distintivas de los cuatro grandes esenciales (mahābhūta)?"
+      },
+      "correct": {
+        "en": "Hardness/solidity (earth), flowing/cohesion (water), heat/temperature (fire), and distension/motion (air).",
+        "pt": "Dureza/solidez (terra), coesão/fluidez (água), calor/temperatura (fogo) e extensão/movimento (ar).",
+        "es": "Dureza/solidez (tierra), cohesión/fluidez (agua), calor/temperatura (fuego) y extensión/movimiento (aire)."
+      },
+      "distractors": [
+        {
+          "en": "Sweetness, sourness, bitterness, and saltiness.",
+          "pt": "Doçura, acidez, amargor e salinidade.",
+          "es": "Dulzura, acidez, amargor y salinidad."
+        },
+        {
+          "en": "Greed, hatred, delusion, and wisdom.",
+          "pt": "Apego, aversão, delusão e sabedoria.",
+          "es": "Apego, aversión, delusión y sabiduría."
+        },
+        {
+          "en": "Birth, growth, decay, and death.",
+          "pt": "Nascimento, crescimento, declínio e morte.",
+          "es": "Nacimiento, crecimiento, declive y muerte."
+        }
+      ],
+      "explanation": {
+        "en": "Pathavī has the characteristic of hardness (kakkhala); āpo of oozing/cohesion (bandhana); tejo of temperature (uṇhatta); vāyo of distension and supporting motion (vitthambhana).",
+        "pt": "Pathavī tem a característica de solidez (kakkhala); āpo de coesão (bandhana); tejo de calor/temperatura (uṇhatta); vāyo de extensão e sustentação do movimento (vitthambhana).",
+        "es": "Pathavī tiene la característica de solidez (kakkhala); āpo de cohesión (bandhana); tejo de calor/temperatura (uṇhatta); vāyo de extensión y sustentación del movimiento (vitthambhana)."
+      },
+      "source": {
+        "cma": "VI §3",
+        "fund": "Lesson 7.1"
+      }
+    },
+    {
+      "id": "u7.nipphanna_vs_anipphanna",
+      "kind": "atom",
+      "topic": {
+        "en": "Concretely Produced Matter",
+        "pt": "Matéria Concretamente Produzida",
+        "es": "Materia Concretamente Producida"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the distinction between nipphanna-rūpa (18) and anipphanna-rūpa (10)?",
+        "pt": "Qual é a distinção entre nipphanna-rūpa (18) e anipphanna-rūpa (10)?",
+        "es": "¿Cuál es la distinción entre nipphanna-rūpa (18) y anipphanna-rūpa (10)?"
+      },
+      "correct": {
+        "en": "Nipphanna matter possesses intrinsic real nature (sabhāva); anipphanna matter defines modes, limits, or qualities.",
+        "pt": "Nipphanna possui natureza real intrínseca (sabhāva); anipphanna define modos, limites ou qualidades.",
+        "es": "Nipphanna posee naturaleza real intrínseca (sabhāva); anipphanna define modos, límites o calidades."
+      },
+      "distractors": [
+        {
+          "en": "Nipphanna arises only in heavenly worlds while anipphanna arises in hell.",
+          "pt": "Nipphanna surge apenas em mundos celestiais enquanto anipphanna surge no inferno.",
+          "es": "Nipphanna surge solo en mundos celestiales mientras que anipphanna surge en el infierno."
+        },
+        {
+          "en": "Nipphanna lasts forever while anipphanna perishes after one second.",
+          "pt": "Nipphanna dura para sempre enquanto anipphanna perece após um segundo.",
+          "es": "Nipphanna dura para siempre mientras que anipphanna perece tras un segundo."
+        },
+        {
+          "en": "Nipphanna can think and reason while anipphanna is purely physical without mind.",
+          "pt": "Nipphanna pode pensar e raciocinar enquanto anipphanna é puramente física sem mente.",
+          "es": "Nipphanna puede pensar y razonar mientras que anipphanna es puramente física sin mente."
+        }
+      ],
+      "explanation": {
+        "en": "The 18 nipphanna-rūpas possess intrinsic nature, are directly produced by conditions, and serve as valid objects of insight meditation. The 10 anipphanna-rūpas are descriptive attributes or limitations of matter.",
+        "pt": "As 18 matérias nipphanna têm natureza intrínseca real, são produzidas por condições e servem como objetos para insight. As 10 anipphanna são modos, delimitações ou fases descritivas.",
+        "es": "Las 18 materias nipphanna tienen naturaleza intrínseca real, son producidas por condiciones y sirven como objetos para insight. Las 10 anipphanna son modos, delimitaciones o fases descriptivas."
+      },
+      "source": {
+        "cma": "VI §4",
+        "fund": "Lesson 7.2"
+      }
+    },
+    {
+      "id": "u7.four_samutthanas",
+      "kind": "atom",
+      "topic": {
+        "en": "Four Origins of Matter",
+        "pt": "Quatro Origens da Matéria",
+        "es": "Cuatro Orígenes de la Materia"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the four causal origins (samuṭṭhāna) that generate physical matter in living beings?",
+        "pt": "Quais são as quatro origens causais (samuṭṭhāna) que geram matéria física nos seres vivos?",
+        "es": "¿Cuáles son los cuatro orígenes causales (samuṭṭhāna) que generan materia física en los seres vivos?"
+      },
+      "correct": {
+        "en": "Kamma, consciousness (citta), temperature (utu), and nutriment (āhāra).",
+        "pt": "Kamma, consciência (citta), temperatura (utu) e alimento (āhāra).",
+        "es": "Kamma, conciencia (citta), temperatura (utu) y alimento (āhāra)."
+      },
+      "distractors": [
+        {
+          "en": "Earth, water, fire, and wind elements.",
+          "pt": "Elementos de terra, água, fogo e ar.",
+          "es": "Elementos de tierra, agua, fuego y aire."
+        },
+        {
+          "en": "Father, mother, doctor, and physical medicine.",
+          "pt": "Pai, mãe, médico e remédios físicos.",
+          "es": "Padre, madre, médico y medicinas físicas."
+        },
+        {
+          "en": "Past lives, astrological planets, seasons, and divine will.",
+          "pt": "Vidas passadas, planetas astrológicos, estações e vontade divina.",
+          "es": "Vidas pasadas, planetas astrológicos, estaciones y voluntad divina."
+        }
+      ],
+      "explanation": {
+        "en": "Matter in sentient organisms arises from 4 distinct generative forces: past volitional deeds (kamma), ongoing thoughts (citta), environmental and somatic heat (utu), and absorbed nutrients (āhāra/ojā).",
+        "pt": "A matéria nos organismos vivos surge de 4 forças geradoras: atos volitivos passados (kamma), pensamentos presentes (citta), calor e temperatura interna (utu) e nutrientes assimilados (āhāra/ojā).",
+        "es": "La materia en los organismos vivos surge de 4 fuerzas generadoras: actos volitivos pasados (kamma), pensamientos presentes (citta), calor y temperatura interna (utu) y nutrientes asimilados (āhāra/ojā)."
+      },
+      "source": {
+        "cma": "VI §9",
+        "fund": "Lesson 7.3"
+      }
+    },
+    {
+      "id": "u7.suddhatthaka_kalapa",
+      "kind": "atom",
+      "topic": {
+        "en": "Pure Octad Matter",
+        "pt": "Óctade Pura da Matéria",
+        "es": "Óctada Pura de la Materia"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Which eight material elements comprise the inseparable fundamental material cluster (suddhaṭṭhaka)?",
+        "pt": "Quais oito elementos materiais compõem o grupamento inseparável fundamental (suddhaṭṭhaka)?",
+        "es": "¿Cuáles ocho elementos materiales componen la agrupación inseparable fundamental (suddhaṭṭhaka)?"
+      },
+      "correct": {
+        "en": "The four great essentials plus color, smell, taste, and nutritive essence (ojā).",
+        "pt": "Os quatro grandes essenciais mais cor, odor, sabor e essência nutritiva (ojā).",
+        "es": "Los cuatro grandes esenciales más color, olor, sabor y esencia nutritiva (ojā)."
+      },
+      "distractors": [
+        {
+          "en": "The five physical sense organs and the three roots.",
+          "pt": "Os cinco órgãos sensoriais físicos e as três raízes.",
+          "es": "Los cinco órganos sensoriales físicos y las tres raíces."
+        },
+        {
+          "en": "Eight varieties of temperature occurring across seasons.",
+          "pt": "Oito variedades de temperatura ocorrendo ao longo das estações.",
+          "es": "Ocho variedades de temperatura a lo largo de las estaciones."
+        },
+        {
+          "en": "Earth element divided eight times into microscopic atoms.",
+          "pt": "Elemento terra dividido oito vezes em átomos microscópicos.",
+          "es": "Elemento tierra dividido ocho veces en átomos microscópicos."
+        }
+      ],
+      "explanation": {
+        "en": "The suddhaṭṭhaka (pure octad) is the irreducible atomic unit of matter: pathavī, āpo, tejo, vāyo, vaṇṇa (color), gandha (smell), rasa (taste), and ojā (nutritive essence). It cannot be further divided.",
+        "pt": "A suddhaṭṭhaka (óctade pura) é a unidade atômica irredutível da matéria: pathavī, āpo, tejo, vāyo, vaṇṇa (cor), gandha (odor), rasa (sabor) e ojā (nutriente). Não pode ser subdividida.",
+        "es": "La suddhaṭṭhaka (óctada pura) es la unidad atómica irreducible de la materia: pathavī, āpo, tejo, vāyo, vaṇṇa (color), gandha (olor), rasa (sabor) y ojā (nutriente). No puede ser subdividida."
+      },
+      "source": {
+        "cma": "VI §16",
+        "fund": "Lesson 7.4"
+      }
+    },
+    {
+      "id": "u7.pannatti_attha_vs_nama",
+      "kind": "atom",
+      "topic": {
+        "en": "Meaning vs Nominal Concept",
+        "pt": "Conceito de Significado e Nome",
+        "es": "Concepto de Significado y Nombre"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the functional difference between attha-paññatti and nāma-paññatti?",
+        "pt": "Qual é a diferença funcional entre attha-paññatti e nāma-paññatti?",
+        "es": "¿Cuál es la diferencia funcional entre attha-paññatti y nāma-paññatti?"
+      },
+      "correct": {
+        "en": "Attha-paññatti is the concept or idea signified; nāma-paññatti is the linguistic sound or name that signifies it.",
+        "pt": "Attha-paññatti é o conceito ou ideia significada; nāma-paññatti é o som verbal ou nome que a significa.",
+        "es": "Attha-paññatti es el concepto o idea significada; nāma-paññatti es el sonido verbal o nombre que la significa."
+      },
+      "distractors": [
+        {
+          "en": "Attha-paññatti is ultimate reality while nāma-paññatti is imaginary fiction.",
+          "pt": "Attha-paññatti é realidade última enquanto nāma-paññatti é ficção imaginária.",
+          "es": "Attha-paññatti es realidad última mientras que nāma-paññatti es ficción imaginaria."
+        },
+        {
+          "en": "Nāma-paññatti arises only in meditation while attha-paññatti arises in dreams.",
+          "pt": "Nāma-paññatti surge apenas na meditação enquanto attha-paññatti surge em sonhos.",
+          "es": "Nāma-paññatti surge solo en meditación mientras que attha-paññatti surge en sueños."
+        },
+        {
+          "en": "Both are physical particles generated by vocal cords in the throat.",
+          "pt": "Ambos são partículas físicas geradas pelas cordas vocais na garganta.",
+          "es": "Ambos son partículas físicas generadas por las cuerdas vocales en la garganta."
+        }
+      ],
+      "explanation": {
+        "en": "Nāma-paññatti is the designation, name, or word (paññāpanato paññatti: that which makes known). Attha-paññatti is the mental image, concept, or notion signified (paññāpiyattā paññatti: that which is made known).",
+        "pt": "Nāma-paññatti é a designação, nome ou termo (aquilo que dá a conhecer). Attha-paññatti é o significado, ideia ou noção conceitual (aquilo que é tornado conhecido).",
+        "es": "Nāma-paññatti es la designación, nombre o término (lo que da a conocer). Attha-paññatti es el significado, idea o noción conceptual (lo que es dado a conocer)."
+      },
+      "source": {
+        "cma": "VIII §29–§30",
+        "fund": "Lesson 1.1"
+      }
+    },
+    {
+      "id": "u7.deduced_kammaja_matter_duration",
+      "kind": "derived",
+      "topic": {
+        "en": "Kamma-Born Matter Lifespan",
+        "pt": "Matéria Nascida do Kamma",
+        "es": "Materia Nacida del Kamma"
+      },
+      "requires": [
+        "u7.four_samutthanas"
+      ],
+      "prompt": {
+        "en": "At what precise moment does kamma-produced matter (kammaja-rūpa) cease to arise in a dying being?",
+        "pt": "Em qual momento exato a matéria produzida por kamma cessa de surgir em um ser que está morrendo?",
+        "es": "¿En qué momento exacto la materia producida por kamma cesa de surgir en un ser que está muriendo?"
+      },
+      "correct": {
+        "en": "At the arising sub-moment of the seventeenth thought-moment preceding death consciousness (cuti).",
+        "pt": "No submomento de surgimento do décimo sétimo momento mental anterior à morte (cuti).",
+        "es": "En el submomento de surgimiento del decimoséptimo momento mental anterior a la muerte (cuti)."
+      },
+      "distractors": [
+        {
+          "en": "Exactly when the physical heart stops pumping blood in the chest.",
+          "pt": "Exatamente quando o coração físico para de bombear sangue no peito.",
+          "es": "Exactamente cuando el corazón físico deja de bombear sangre en el pecho."
+        },
+        {
+          "en": "Three days after the burial of the physical corpse.",
+          "pt": "Três dias após o sepultamento do cadáver físico.",
+          "es": "Tres días después del sepelio del cadáver físico."
+        },
+        {
+          "en": "It never ceases to arise, continuing as matter in the cemetery.",
+          "pt": "Nunca cessa de surgir, continuando como matéria no cemitério.",
+          "es": "Nunca cesa de surgir, continuando como materia en el cementerio."
+        }
+      ],
+      "explanation": {
+        "en": "Because matter endures for 17 thought-moments, kamma ceases producing new matter at the 17th moment before cuti. When cuti ceases, all kamma-born matter perishes synchronously with it.",
+        "pt": "Como a matéria perdura por 17 momentos mentais, o kamma cessa de produzir nova matéria no 17º momento antes de cuti. Ao cessar a cuti, toda a matéria nascida do kamma extingue-se em sincronia.",
+        "es": "Como la materia dura 17 momentos mentales, el kamma cesa de producir nueva materia en el 17º momento antes de cuti. Al cesar la cuti, toda la materia nacida del kamma se extingue en sincronía."
+      },
+      "source": {
+        "cma": "VI §23",
+        "fund": "Lesson 7.3"
+      }
+    },
+    {
+      "id": "u7.deduced_pasada_origin",
+      "kind": "derived",
+      "topic": {
+        "en": "Origin of Sensitive Matter",
+        "pt": "Origem da Matéria Sensível",
+        "es": "Origen de la Materia Sensible"
+      },
+      "requires": [
+        "u7.four_samutthanas",
+        "u7.rupa_twentyeight_division"
+      ],
+      "prompt": {
+        "en": "From which of the four origins do the five sensitive matters (pasāda-rūpa) arise exclusively?",
+        "pt": "De qual das quatro origens surgem exclusivamente as cinco matérias sensíveis (pasāda-rūpa)?",
+        "es": "¿De cuál de los cuatro orígenes surgen exclusivamente las cinco materias sensibles (pasāda-rūpa)?"
+      },
+      "correct": {
+        "en": "Exclusively from kamma (kammaja-rūpa); they can never be generated by mind, temperature, or food.",
+        "pt": "Exclusivamente do kamma (kammaja-rūpa); nunca podem ser geradas por mente, temperatura ou alimento.",
+        "es": "Exclusivamente del kamma (kammaja-rūpa); nunca pueden ser generadas por mente, temperatura o alimento."
+      },
+      "distractors": [
+        {
+          "en": "Exclusively from physical nutrition and medicinal herbs.",
+          "pt": "Exclusivamente da nutrição física e ervas medicinais.",
+          "es": "Exclusivamente de la nutrición física y hierbas medicinales."
+        },
+        {
+          "en": "From mental thoughts whenever one concentrates the eyes.",
+          "pt": "Dos pensamentos mentais sempre que alguém concentra os olhos.",
+          "es": "De los pensamientos mentales siempre que se concentran los ojos."
+        },
+        {
+          "en": "From external ambient temperature and seasonal changes.",
+          "pt": "Da temperatura ambiente externa e mudanças sazonais.",
+          "es": "De la temperatura ambiente externa y cambios estacionales."
+        }
+      ],
+      "explanation": {
+        "en": "The 5 sensitive matters (eye, ear, nose, tongue, body sensitivity) and the 2 sex faculties, heart-base, and life-faculty are generated solely by past kamma. They cannot be manufactured by medical technology.",
+        "pt": "As 5 matérias sensíveis (olho, ouvido, nariz, língua, corpo), as 2 faculdades sexuais, a base do coração e a faculdade vital surgem unicamente do kamma passado. Não podem ser produzidas por tecnologia médica.",
+        "es": "Las 5 materias sensibles (ojo, oído, nariz, lengua, cuerpo), las 2 facultades sexuales, la base del corazón y la facultad vital surgen únicamente del kamma pasado. No pueden ser producidas por tecnología médica."
+      },
+      "source": {
+        "cma": "VI §11",
+        "fund": "Lesson 7.3"
+      }
+    },
+    {
+      "id": "u7.apo_element_inference",
+      "kind": "atom",
+      "topic": {
+        "en": "Water Element Nature",
+        "pt": "Natureza do Elemento Água",
+        "es": "Naturaleza del Elemento Agua"
+      },
+      "requires": [
+        "u7.four_mahabhutas_characteristics"
+      ],
+      "prompt": {
+        "en": "Why can the water element (āpodhātu) not be directly sensed by bodily touch?",
+        "pt": "Por que o elemento água (āpodhātu) não pode ser tocado diretamente pelo corpo?",
+        "es": "¿Por qué el elemento agua (āpodhātu) no puede tocarse directamente por el cuerpo?"
+      },
+      "correct": {
+        "en": "Touch senses only earth, fire, and wind; water is cohesion and is inferred.",
+        "pt": "O tato sente apenas terra, fogo e ar; a água é coesão e é inferida pela mente.",
+        "es": "El tacto siente solo tierra, fuego y aire; el agua es cohesión y se infiere mentalmente."
+      },
+      "distractors": [
+        {
+          "en": "Because water possesses zero physical density compared to other elements.",
+          "pt": "Porque a água possui densidade física nula comparada aos outros elementos.",
+          "es": "Porque el agua posee densidad física nula comparada con los otros elementos."
+        },
+        {
+          "en": "Because bodily touch can only cognize abstract conventional concepts.",
+          "pt": "Porque o tato corporal só pode apreender conceitos convencionais abstratos.",
+          "es": "Porque el tacto corporal solo puede aprehender conceptos convencionales abstractos."
+        },
+        {
+          "en": "Water element can only arise within the immaterial arūpa spheres.",
+          "pt": "O elemento água só pode surgir dentro das esferas imateriais de arūpa.",
+          "es": "El elemento agua solo puede surgir dentro de las esferas inmateriales de arūpa."
+        }
+      ],
+      "explanation": {
+        "en": "Phoṭṭhabbārammaṇa consists exclusively of paṭhavī (hardness), tejo (heat), and vāyo (pressure).",
+        "pt": "Phoṭṭhabbārammaṇa consiste exclusivamente de paṭhavī (dureza), tejo (calor) e vāyo (pressão).",
+        "es": "Phoṭṭhabbārammaṇa consiste exclusivamente de paṭhavī (dureza), tejo (calor) y vāyo (presión)."
+      },
+      "source": {
+        "cma": "VI §3",
+        "fund": "6.1",
+        "as": "VI.3"
+      }
+    },
+    {
+      "id": "u7.hadaya_indriya_kammaja",
+      "kind": "atom",
+      "topic": {
+        "en": "Kammaja Matter Exclusives",
+        "pt": "Exclusivos de Kammaja Rūpa",
+        "es": "Exclusivos de Kammaja Rūpa"
+      },
+      "requires": [
+        "u7.four_samutthanas"
+      ],
+      "prompt": {
+        "en": "Which group of material realities is produced exclusively by past kamma?",
+        "pt": "Qual grupo de realidades materiais é produzido exclusivamente pelo kamma passado?",
+        "es": "¿Qué grupo de realidades materiales es producido exclusivamente por el kamma pasado?"
+      },
+      "correct": {
+        "en": "The five sense faculties, two sex faculties, heart-base, and vitality.",
+        "pt": "As cinco faculdades sensoriais, dois sexos, base do coração e vitalidade física.",
+        "es": "Las cinco facultades sensoriales, dos sexos, base del corazón y vitalidad física."
+      },
+      "distractors": [
+        {
+          "en": "The two bodily and vocal intimations along with physical lightness.",
+          "pt": "As duas intimações corporal e vocal juntamente com a leveza física.",
+          "es": "Las dos intimaciones corporal y vocal junto con la ligereza física."
+        },
+        {
+          "en": "All four great essential elements and sound produced by friction.",
+          "pt": "Todos os quatro grandes elementos essenciais e o som produzido por atrito.",
+          "es": "Todos los cuatro grandes elementos esenciales y el sonido producido por fricción."
+        },
+        {
+          "en": "Nutritive essence (ojā) and space element (ākāsadhātu) in the body.",
+          "pt": "A essência nutritiva (ojā) e o elemento espaço (ākāsadhātu) no corpo.",
+          "es": "La esencia nutritiva (ojā) y el elemento espacio (ākāsadhātu) en el cuerpo."
+        }
+      ],
+      "explanation": {
+        "en": "The eight faculties and the heart-base can never originate from citta, temperature, or nutriment.",
+        "pt": "As oito faculdades e a base do coração nunca podem originar-se de citta, temperatura ou nutrição.",
+        "es": "Las ocho facultades y la base del corazón nunca pueden originarse de citta, temperatura o nutrición."
+      },
+      "source": {
+        "cma": "VI §10",
+        "fund": "6.3",
+        "as": "VI.10"
+      }
+    }
+  ]
+}

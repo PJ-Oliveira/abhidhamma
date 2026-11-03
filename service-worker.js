@@ -1,4 +1,4 @@
-const CACHE_NAME = 'abhidhamma-cache-v14';
+const CACHE_NAME = 'abhidhamma-cache-v15';
 
 // App shell files to cache on install
 const CORE_ASSETS = [
@@ -26,7 +26,25 @@ const CORE_ASSETS = [
   './js/srs.js',
   './js/state.js',
   './js/tree.js',
-  './js/types.js'
+  './js/types.js',
+  './js/tetris/index.js',
+  './js/tetris/ui.js',
+  './js/tetris/engine.js',
+  './js/tetris/curriculum.js',
+  './js/tetris/taxonomy.js',
+  './js/tetris/scheduler.js',
+  './js/tetris/types.js',
+  './data/tetris/index.json',
+  './data/tetris/unit-1.json',
+  './data/tetris/unit-2.json',
+  './data/tetris/unit-3.json',
+  './data/tetris/unit-4.json',
+  './data/tetris/unit-5.json',
+  './data/tetris/unit-6.json',
+  './data/tetris/unit-7.json',
+  './data/tetris/unit-8.json',
+  './data/tetris/unit-9.json',
+  './data/tetris/unit-10.json'
 ];
 
 async function precacheAllData() {

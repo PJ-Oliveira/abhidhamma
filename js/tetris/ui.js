@@ -1,6 +1,6 @@
-import { TetrisEngine } from "./engine.js?v=ab1f056d";
-import { loadCurriculum } from "./curriculum.js?v=ab1f056d";
-import { computeUnitMastery } from "./scheduler.js?v=ab1f056d";
+import { TetrisEngine } from "./engine.js?v=b6a19a3f";
+import { loadCurriculum } from "./curriculum.js?v=b6a19a3f";
+import { computeUnitMastery } from "./scheduler.js?v=b6a19a3f";
 const LABELS = {
     pt: {
         title: "Abhidhamma Tetris",
@@ -346,7 +346,8 @@ export class TetrisUI {
             }
         }
         const colWidth = 100 / Math.max(1, numPieces);
-        const gutter = 14;
+        const containerW = this.piecesContainerEl.clientWidth || this.container.clientWidth || (typeof window !== "undefined" ? window.innerWidth : 800);
+        const gutter = containerW < 600 ? 5 : 14;
         for (let i = 0; i < pieces.length; i++) {
             const p = pieces[i];
             let pieceEl = this.piecesContainerEl.querySelector(`[data-key="${p.key}"]`);

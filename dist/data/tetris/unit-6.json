@@ -1,0 +1,820 @@
+{
+  "unit": 6,
+  "title": {
+    "en": "Compendium of Process-Freed (Vīthimutta-saṅgaha)",
+    "pt": "Compêndio do Processo-Livre (Vīthimutta-saṅgaha)",
+    "es": "Compendio del Proceso-Libre (Vīthimutta-saṅgaha)"
+  },
+  "summary": {
+    "en": "Cosmology and the cycle of rebirth: the four planes and 31 realms of existence, four modes of rebirth-linking, 16 kinds of kamma, the death and rebirth process, and the three signs appearing at death.",
+    "pt": "Cosmologia e ciclo de renascimentos: os quatro planos e 31 reinos de existência, quatro modos de religação renascente, 16 tipos de kamma, o processo de morte e renascimento e os três sinais que surgem na morte.",
+    "es": "Cosmología y ciclo de renacimientos: los cuatro planos y 31 reinos de existencia, cuatro modos de reconexión renaciente, 16 tipos de kamma, el proceso de muerte y renacimiento y las tres señales que surgen en la muerte."
+  },
+  "taxonomies": [
+    {
+      "id": "u6.cosmology_kamma",
+      "title": {
+        "en": "Planes of Existence and Kamma Orders",
+        "pt": "Planos de Existência e Ordens de Kamma",
+        "es": "Planos de Existencia y Órdenes de Kamma"
+      },
+      "noun": {
+        "en": "orders",
+        "pt": "ordens",
+        "es": "órdenes"
+      },
+      "source": {
+        "cma": "V §1–§40",
+        "fund": "Lesson 6.1",
+        "as": "V.1"
+      },
+      "nodes": [
+        {
+          "id": "vithimutta_domains",
+          "name": {
+            "en": "All Process-Freed Domains",
+            "pt": "Todos os Domínios Livres de Processo",
+            "es": "Todos los Dominios Libres de Proceso"
+          },
+          "parent": null
+        },
+        {
+          "id": "four_planes",
+          "name": {
+            "en": "Planes of Existence (Bhūmi)",
+            "pt": "Planos de Existência (Bhūmi)",
+            "es": "Planos de Existencia (Bhūmi)"
+          },
+          "parent": "vithimutta_domains",
+          "weight": 4
+        },
+        {
+          "id": "apaya_plane",
+          "name": {
+            "en": "Woeful Plane (Apāya)",
+            "pt": "Plano de Privação (Apāya)",
+            "es": "Plano de Privación (Apāya)"
+          },
+          "parent": "four_planes",
+          "weight": 4
+        },
+        {
+          "id": "niraya_realm",
+          "name": {
+            "en": "Hell Realm (Niraya)",
+            "pt": "Reino do Inferno (Niraya)",
+            "es": "Reino del Infierno (Niraya)"
+          },
+          "parent": "apaya_plane",
+          "weight": 1
+        },
+        {
+          "id": "tiracchana_realm",
+          "name": {
+            "en": "Animal Realm (Tiracchāna)",
+            "pt": "Reino Animal (Tiracchāna)",
+            "es": "Reino Animal (Tiracchāna)"
+          },
+          "parent": "apaya_plane",
+          "weight": 1
+        },
+        {
+          "id": "peta_realm",
+          "name": {
+            "en": "Ghost Realm (Peta)",
+            "pt": "Reino dos Espectros (Peta)",
+            "es": "Reino de los Espectros (Peta)"
+          },
+          "parent": "apaya_plane",
+          "weight": 1
+        },
+        {
+          "id": "asura_realm",
+          "name": {
+            "en": "Titan Realm (Asura)",
+            "pt": "Reino dos Asuras (Asura)",
+            "es": "Reino de los Asuras (Asura)"
+          },
+          "parent": "apaya_plane",
+          "weight": 1
+        },
+        {
+          "id": "kamasugati_plane",
+          "name": {
+            "en": "Sensuous Bliss Plane (Kāmasugati)",
+            "pt": "Plano Feliz Sensual (Kāmasugati)",
+            "es": "Plano Feliz Sensorial (Kāmasugati)"
+          },
+          "parent": "four_planes",
+          "weight": 7
+        },
+        {
+          "id": "manussa_realm",
+          "name": {
+            "en": "Human Realm (Manussa)",
+            "pt": "Reino Humano (Manussa)",
+            "es": "Reino Humano (Manussa)"
+          },
+          "parent": "kamasugati_plane",
+          "weight": 1
+        },
+        {
+          "id": "deva_six_realms",
+          "name": {
+            "en": "Six Deva Realms (Devaloka)",
+            "pt": "Seis Reinos dos Devas (Devaloka)",
+            "es": "Seis Reinos de los Devas (Devaloka)"
+          },
+          "parent": "kamasugati_plane",
+          "weight": 6
+        },
+        {
+          "id": "rupavacara_plane",
+          "name": {
+            "en": "Fine-Material Plane (Rūpabhūmi)",
+            "pt": "Plano da Matéria Sutil (Rūpabhūmi)",
+            "es": "Plano de Materia Sutil (Rūpabhūmi)"
+          },
+          "parent": "four_planes",
+          "weight": 16
+        },
+        {
+          "id": "arupavacara_plane",
+          "name": {
+            "en": "Immaterial Plane (Arūpabhūmi)",
+            "pt": "Plano Imaterial (Arūpabhūmi)",
+            "es": "Plano Inmaterial (Arūpabhūmi)"
+          },
+          "parent": "four_planes",
+          "weight": 4
+        },
+        {
+          "id": "kamma_functions",
+          "name": {
+            "en": "Kamma by Function (Kicca)",
+            "pt": "Kamma por Função (Kicca)",
+            "es": "Kamma por Función (Kicca)"
+          },
+          "parent": "vithimutta_domains",
+          "weight": 4
+        },
+        {
+          "id": "janaka_kamma",
+          "name": {
+            "en": "Productive Kamma (Janaka)",
+            "pt": "Kamma Produtor (Janaka)",
+            "es": "Kamma Productor (Janaka)"
+          },
+          "parent": "kamma_functions",
+          "weight": 1
+        },
+        {
+          "id": "upatthambhaka_kamma",
+          "name": {
+            "en": "Supportive Kamma (Upatthambhaka)",
+            "pt": "Kamma Sustentador (Upatthambhaka)",
+            "es": "Kamma Sustentador (Upatthambhaka)"
+          },
+          "parent": "kamma_functions",
+          "weight": 1
+        },
+        {
+          "id": "upapilaka_kamma",
+          "name": {
+            "en": "Obstructive Kamma (Upapīḷaka)",
+            "pt": "Kamma Obstrutivo (Upapīḷaka)",
+            "es": "Kamma Obstructivo (Upapīḷaka)"
+          },
+          "parent": "kamma_functions",
+          "weight": 1
+        },
+        {
+          "id": "upaghataka_kamma",
+          "name": {
+            "en": "Destructive Kamma (Upaghātaka)",
+            "pt": "Kamma Destrutivo (Upaghātaka)",
+            "es": "Kamma Destructivo (Upaghātaka)"
+          },
+          "parent": "kamma_functions",
+          "weight": 1
+        },
+        {
+          "id": "kamma_priorities",
+          "name": {
+            "en": "Kamma by Priority (Pākadāna)",
+            "pt": "Kamma por Prioridade (Pākadāna)",
+            "es": "Kamma por Prioridad (Pākadāna)"
+          },
+          "parent": "vithimutta_domains",
+          "weight": 4
+        },
+        {
+          "id": "garuka_kamma",
+          "name": {
+            "en": "Weighty Kamma (Garuka)",
+            "pt": "Kamma Pesado (Garuka)",
+            "es": "Kamma Pesado (Garuka)"
+          },
+          "parent": "kamma_priorities",
+          "weight": 1
+        },
+        {
+          "id": "acinna_kamma",
+          "name": {
+            "en": "Habitual Kamma (Āciṇṇa)",
+            "pt": "Kamma Habitual (Āciṇṇa)",
+            "es": "Kamma Habitual (Āciṇṇa)"
+          },
+          "parent": "kamma_priorities",
+          "weight": 1
+        },
+        {
+          "id": "asanna_kamma",
+          "name": {
+            "en": "Death-Proximate Kamma (Āsanna)",
+            "pt": "Kamma Próximo à Morte (Āsanna)",
+            "es": "Kamma Próximo a la Muerte (Āsanna)"
+          },
+          "parent": "kamma_priorities",
+          "weight": 1
+        },
+        {
+          "id": "katatta_kamma",
+          "name": {
+            "en": "Reserve Kamma (Kaṭattā)",
+            "pt": "Kamma de Reserva (Kaṭattā)",
+            "es": "Kamma de Reserva (Kaṭattā)"
+          },
+          "parent": "kamma_priorities",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "u6.thirtyone_realms_count",
+      "kind": "atom",
+      "topic": {
+        "en": "Thirty-One Realms",
+        "pt": "Trinta e Um Reinos",
+        "es": "Treinta y Un Reinos"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many distinct realms of existence (bhūmi) are taught in the Buddhist cosmos?",
+        "pt": "Quantos reinos de existência distintos (bhūmi) são ensinados no cosmos budista?",
+        "es": "¿Cuántos reinos de existencia distintos (bhūmi) se enseñan en el cosmos budista?"
+      },
+      "correct": {
+        "en": "Thirty-one realms: 11 sensuous, 16 fine-material, and 4 immaterial.",
+        "pt": "Trinta e um reinos: 11 sensoriais, 16 da matéria sutil e 4 imateriais.",
+        "es": "Treinta y un reinos: 11 sensoriales, 16 de materia sutil y 4 inmateriales."
+      },
+      "distractors": [
+        {
+          "en": "Six realms of rebirth according to ordinary folk mythology.",
+          "pt": "Seis reinos de renascimento segundo a mitologia popular comum.",
+          "es": "Seis reinos de renacimiento según la mitología popular común."
+        },
+        {
+          "en": "Three realms: heaven, earth, and underworld.",
+          "pt": "Três reinos: céu, terra e submundo.",
+          "es": "Tres reinos: cielo, tierra e inframundo."
+        },
+        {
+          "en": "Eighty-four thousand separate physical planets.",
+          "pt": "Oitenta e quatro mil planetas físicos separados.",
+          "es": "Ochenta y cuatro mil planetas físicos separados."
+        }
+      ],
+      "explanation": {
+        "en": "The 31 realms: 4 woeful states + human realm + 6 sensual heavens = 11 kāma-bhūmi; 16 rūpa-bhūmi (including 5 Suddhāvāsa for non-returners); and 4 formless arūpa-bhūmi.",
+        "pt": "Os 31 reinos: 4 estados de privação + reino humano + 6 céus sensoriais = 11 kāma-bhūmi; 16 rūpa-bhūmi (incluindo as 5 Suddhāvāsa para não retornantes) e 4 arūpa-bhūmi sem forma.",
+        "es": "Los 31 reinos: 4 estados de privación + reino humano + 6 cielos sensoriales = 11 kāma-bhūmi; 16 rūpa-bhūmi (incluyendo las 5 Suddhāvāsa para no retornantes) y 4 arūpa-bhūmi sin forma."
+      },
+      "source": {
+        "cma": "V §2–§8",
+        "fund": "Lesson 6.1"
+      }
+    },
+    {
+      "id": "u6.apaya_four_realms",
+      "kind": "atom",
+      "topic": {
+        "en": "Four Woeful States",
+        "pt": "Quatro Estados de Privação",
+        "es": "Cuatro Estados de Privación"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the four woeful realms (apāya-bhūmi) resulting from unwholesome kamma?",
+        "pt": "Quais são os quatro reinos de privação (apāya-bhūmi) resultantes de kamma prejudicial?",
+        "es": "¿Cuáles son los cuatro reinos de privación (apāya-bhūmi) resultantes de kamma perjudicial?"
+      },
+      "correct": {
+        "en": "Hell (niraya), the animal realm (tiracchāna), the ghost realm (peta), and the host of titans (asura).",
+        "pt": "O inferno (niraya), o reino animal (tiracchāna), o reino dos espectros (peta) e os titãs (asura).",
+        "es": "El infierno (niraya), el reino animal (tiracchāna), el reino de los espectros (peta) y los titanes (asura)."
+      },
+      "distractors": [
+        {
+          "en": "Birth, aging, sickness, and death in human existence.",
+          "pt": "Nascimento, velhice, enfermidade e morte na existência humana.",
+          "es": "Nacimiento, vejez, enfermedad y muerte en la existencia humana."
+        },
+        {
+          "en": "Greed, hatred, delusion, and conceit realms.",
+          "pt": "Reinos de apego, aversão, delusão e vaidade.",
+          "es": "Reinos de apego, aversión, delusión y vanidad."
+        },
+        {
+          "en": "Four outer islands surrounding Mount Meru in space.",
+          "pt": "Quatro ilhas exteriores ao redor do Monte Meru no espaço.",
+          "es": "Cuatro islas exteriores alrededor del Monte Meru en el espacio."
+        }
+      ],
+      "explanation": {
+        "en": "Rebirth into any of the 4 apāyas is generated exclusively by unwholesome kamma and linked by a single consciousness: the unwholesome-resultant investigating consciousness (akusala-vipāka santīraṇa).",
+        "pt": "O renascimento em qualquer dos 4 apāyas é gerado por kamma prejudicial e ligado por uma única consciência: a consciência investigadora resultante prejudicial (akusala-vipāka santīraṇa).",
+        "es": "El renacimiento en cualquiera de los 4 apāyas es generado por kamma perjudicial y conectado por una sola conciencia: la conciencia investigadora resultante perjudicial (akusala-vipāka santīraṇa)."
+      },
+      "source": {
+        "cma": "V §3",
+        "fund": "Lesson 6.1"
+      }
+    },
+    {
+      "id": "u6.kamma_four_functions",
+      "kind": "atom",
+      "topic": {
+        "en": "Kamma by Function",
+        "pt": "Kamma por Função",
+        "es": "Kamma por Función"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the four varieties of kamma classified according to function (kicca)?",
+        "pt": "Quais são as quatro variedades de kamma classificadas de acordo com a função (kicca)?",
+        "es": "¿Cuáles son las cuatro variedades de kamma clasificadas según la función (kicca)?"
+      },
+      "correct": {
+        "en": "Productive (janaka), supportive (upatthambhaka), obstructive (upapīḷaka), and destructive (upaghātaka).",
+        "pt": "Produtor (janaka), sustentador (upatthambhaka), obstrutivo (upapīḷaka) e destrutivo (upaghātaka).",
+        "es": "Productor (janaka), sustentador (upatthambhaka), obstructivo (upapīḷaka) y destructivo (upaghātaka)."
+      },
+      "distractors": [
+        {
+          "en": "Bodily, vocal, mental, and psychic kamma.",
+          "pt": "Kamma corporal, verbal, mental e psíquico.",
+          "es": "Kamma corporal, verbal, mental y psíquico."
+        },
+        {
+          "en": "Weighty, habitual, proximate, and reserve kamma.",
+          "pt": "Kamma pesado, habitual, próximo e de reserva.",
+          "es": "Kamma pesado, habitual, próximo y de reserva."
+        },
+        {
+          "en": "Present, next life, future lives, and defunct kamma.",
+          "pt": "Kamma presente, da próxima vida, de vidas futuras e extinto.",
+          "es": "Kamma presente, de la próxima vida, de vidas futuras y extinto."
+        }
+      ],
+      "explanation": {
+        "en": "Janaka generates rebirth-linking and materiality; upatthambhaka reinforces existing results; upapīḷaka impedes and frustrates ripe results; upaghātaka cuts off weaker kamma completely.",
+        "pt": "Janaka gera a religação renascente e a matéria; upatthambhaka reforça resultados existentes; upapīḷaka frustra resultados maduros; upaghātaka anula por completo o kamma mais fraco.",
+        "es": "Janaka genera la reconexión renaciente y la materia; upatthambhaka refuerza resultados existentes; upapīḷaka frustra resultados maduros; upaghātaka anula por completo el kamma más débil."
+      },
+      "source": {
+        "cma": "V §18",
+        "fund": "Lesson 6.2"
+      }
+    },
+    {
+      "id": "u6.garuka_kamma_definition",
+      "kind": "atom",
+      "topic": {
+        "en": "Weighty Kamma",
+        "pt": "Kamma Pesado",
+        "es": "Kamma Pesado"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What constitutes weighty kamma (garuka kamma) that takes absolute priority in ripening?",
+        "pt": "O que constitui o kamma pesado (garuka kamma) que assume prioridade absoluta na maturação?",
+        "es": "¿Qué constituye el kamma pesado (garuka kamma) que toma prioridad absoluta en la maduración?"
+      },
+      "correct": {
+        "en": "On the unwholesome side, the five heinous crimes; on the wholesome side, the meditative absorptions (jhāna).",
+        "pt": "No lado prejudicial, os cinco crimes hediondos; no lado benéfico, as absorções meditativas (jhāna).",
+        "es": "En el lado perjudicial, los cinco crímenes atroces; en el lado benéfico, las absorciones meditativas (jhāna)."
+      },
+      "distractors": [
+        {
+          "en": "Stealing gold from a monastery or insulting monastic robes.",
+          "pt": "Roubar ouro de um monastério ou insultar vestes monásticas.",
+          "es": "Robar oro de un monasterio o insultar hábitos monásticos."
+        },
+        {
+          "en": "Donating vast wealth to construct stone temples in cities.",
+          "pt": "Doar vasta riqueza para construir templos de pedra em cidades.",
+          "es": "Donar inmensa riqueza para construir templos de piedra en ciudades."
+        },
+        {
+          "en": "Kamma performed while under the influence of physical fever.",
+          "pt": "Kamma realizado sob a influência de febre física.",
+          "es": "Kamma realizado bajo la influencia de fiebre física."
+        }
+      ],
+      "explanation": {
+        "en": "The 5 heinous crimes (anantariya-kamma: matricide, patricide, killing an Arahant, wounding a Buddha, causing a schism) guarantee hell; mastery of jhāna guarantees rebirth in the Brahmā realms.",
+        "pt": "Os 5 crimes hediondos (matricídio, patricídio, matar um Arahant, ferir um Buddha, causar cisma) garantem o inferno; o domínio dos jhānas garante o renascimento nos reinos de Brahmā.",
+        "es": "Los 5 crímenes atroces (matricidio, parricidio, matar a un Arahant, herir a un Buddha, causar cisma) garantizan el infierno; el dominio de los jhānas garantiza el renacimiento en los reinos de Brahmā."
+      },
+      "source": {
+        "cma": "V §19",
+        "fund": "Lesson 6.2"
+      }
+    },
+    {
+      "id": "u6.three_deathbed_signs",
+      "kind": "atom",
+      "topic": {
+        "en": "Three Deathbed Signs",
+        "pt": "Três Sinais da Morte",
+        "es": "Tres Señales de la Muerte"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What three types of signs appear to the mind of a dying person at the threshold of death?",
+        "pt": "Quais três tipos de sinais aparecem à mente de alguém no limiar da morte?",
+        "es": "¿Cuáles tres tipos de señales aparecen a la mente de alguien en el umbral de la muerte?"
+      },
+      "correct": {
+        "en": "Kamma (past action), kamma-nimitta (sign of kamma), or gati-nimitta (sign of destination).",
+        "pt": "Kamma (ação passada), kamma-nimitta (sinal do kamma) ou gati-nimitta (sinal do destino).",
+        "es": "Kamma (acción pasada), kamma-nimitta (señal del kamma) o gati-nimitta (señal del destino)."
+      },
+      "distractors": [
+        {
+          "en": "Past lives, future prophecies, and memory of the Buddha.",
+          "pt": "Vidas passadas, profecias futuras e memória do Buddha.",
+          "es": "Vidas pasadas, profecías futuras y memoria del Buddha."
+        },
+        {
+          "en": "The four elements, the five aggregates, and Nibbāna.",
+          "pt": "Os quatro elementos, os cinco agregados e Nibbāna.",
+          "es": "Los cuatro elementos, los cinco agregados y Nibbāna."
+        },
+        {
+          "en": "Lightness, darkness, heat, and cold sensations.",
+          "pt": "Sensações de claridade, escuridão, calor e frio.",
+          "es": "Sensaciones de claridad, oscuridad, calor y frío."
+        }
+      ],
+      "explanation": {
+        "en": "Kamma is the vivid recollection of the past deed itself; kamma-nimitta is an object or instrument related to the action (e.g., flowers or weapons); gati-nimitta is a preview of the upcoming realm (e.g., celestial gardens or fire).",
+        "pt": "Kamma é a lembrança vívida do ato em si; kamma-nimitta é um objeto associado à ação (flores, armas); gati-nimitta é uma prévia do reino futuro (jardins celestiais ou chamas).",
+        "es": "Kamma es el recuerdo vivo del acto en sí; kamma-nimitta es un objeto asociado a la acción (flores, armas); gati-nimitta es un anticipo del reino futuro (jardines celestiales o llamas)."
+      },
+      "source": {
+        "cma": "V §35",
+        "fund": "Lesson 6.3"
+      }
+    },
+    {
+      "id": "u6.cuti_patisandhi_no_interval",
+      "kind": "atom",
+      "topic": {
+        "en": "Immediate Continuity",
+        "pt": "Continuidade Imediata",
+        "es": "Continuidad Inmediata"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the precise relationship between the death consciousness (cuti) and rebirth-linking (paṭisandhi)?",
+        "pt": "Qual é a relação precisa entre a consciência da morte (cuti) e a religação renascente (paṭisandhi)?",
+        "es": "¿Cuál es la relación precisa entre la conciencia de la muerte (cuti) y la reconexión renaciente (paṭisandhi)?"
+      },
+      "correct": {
+        "en": "Paṭisandhi arises in the very next thought-moment without any intermediate state (antarābhava).",
+        "pt": "Paṭisandhi surge no momento mental imediatamente seguinte, sem estado intermediário algum.",
+        "es": "Paṭisandhi surge en el momento mental inmediatamente siguiente, sin estado intermedio alguno."
+      },
+      "distractors": [
+        {
+          "en": "Consciousness wanders in an intermediate realm for seven to forty-nine days.",
+          "pt": "A consciência vaga em um reino intermediário por sete a quarenta e nove dias.",
+          "es": "La conciencia vaga en un reino intermedio por siete a cuarenta y nueve días."
+        },
+        {
+          "en": "A permanent soul leaves the physical corpse and searches for human parents.",
+          "pt": "Uma alma permanente deixa o cadáver físico e busca pais humanos.",
+          "es": "Un alma permanente abandona el cadáver físico y busca padres humanos."
+        },
+        {
+          "en": "Mind ceases completely and permanently until resurrected by divine command.",
+          "pt": "A mente cessa completa e definitivamente até ser ressuscitada por ordem divina.",
+          "es": "La mente cesa completa y definitivamente hasta ser resucitada por orden divina."
+        }
+      ],
+      "explanation": {
+        "en": "In orthodox Theravada Abhidhamma, as soon as the death consciousness of the old life perishes, its cessation conditions the arising of the rebirth-linking consciousness in the new existence by proximity condition (anantara-paccaya).",
+        "pt": "No Abhidhamma Theravada ortodoxo, assim que a consciência da morte cessa, essa extinção condiciona o surgimento imediato da religação renascente por condição de proximidade (anantara-paccaya).",
+        "es": "En el Abhidhamma Theravada ortodoxo, en cuanto la conciencia de la muerte cesa, esa extinción condiciona el surgimiento inmediato de la reconexión renaciente por condición de proximidad (anantara-paccaya)."
+      },
+      "source": {
+        "cma": "V §38",
+        "fund": "Lesson 6.3"
+      }
+    },
+    {
+      "id": "u6.asannasatta_realm_nature",
+      "kind": "atom",
+      "topic": {
+        "en": "Non-Percipient Realm",
+        "pt": "Reino dos Seres Sem Percepção",
+        "es": "Reino de los Seres Sin Percepción"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the unique ontological characteristic of beings born in the Asaññasatta realm?",
+        "pt": "Qual é a característica ontológica única dos seres nascidos no reino Asaññasatta?",
+        "es": "¿Cuál es la característica ontológica única de los seres nacidos en el reino Asaññasatta?"
+      },
+      "correct": {
+        "en": "They possess only physical materiality (rūpa) without any consciousness or mental factors.",
+        "pt": "Possuem unicamente matéria física (rūpa) sem qualquer consciência ou fatores mentais.",
+        "es": "Poseen únicamente materia física (rūpa) sin ninguna conciencia o factores mentales."
+      },
+      "distractors": [
+        {
+          "en": "They possess only consciousness without any physical bodily matter whatsoever.",
+          "pt": "Possuem apenas consciência sem matéria corporal física alguma.",
+          "es": "Poseen solo conciencia sin materia corporal física alguna."
+        },
+        {
+          "en": "They exist as omniscient deities who never experience hunger or pain.",
+          "pt": "Existem como deidades oniscientes que nunca sentem fome ou dor.",
+          "es": "Existen como deidades omniscientes que nunca sienten hambre o dolor."
+        },
+        {
+          "en": "They undergo continuous birth and death every single thought-moment.",
+          "pt": "Sofrem nascimento e morte contínuos a cada momento mental.",
+          "es": "Experimentan nacimiento y muerte continuos a cada momento mental."
+        }
+      ],
+      "explanation": {
+        "en": "Asaññasatta (in the 4th jhāna plane) is attained through dispassion toward perception (saññāvirāga). Beings endure for 500 great kappas as motionless statues of pure matter until the past kamma expires.",
+        "pt": "Asaññasatta (no 4º jhāna) é alcançado pelo desapaixonamento pela percepção. Os seres permanecem por 500 grandes kappas como estátuas de pura matéria até que o kamma passado expire.",
+        "es": "Asaññasatta (en el 4º jhāna) se alcanza por el desapasionamiento hacia la percepción. Los seres permanecen por 500 grandes kappas como estatuas de pura materia hasta que expire el kamma previo."
+      },
+      "source": {
+        "cma": "V §7",
+        "fund": "Lesson 6.1"
+      }
+    },
+    {
+      "id": "u6.suddhavasa_five_realms",
+      "kind": "atom",
+      "topic": {
+        "en": "Pure Abodes Eligibility",
+        "pt": "Moradas Puras e Elegibilidade",
+        "es": "Moradas Puras y Elegibilidad"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Who is exclusively eligible for rebirth in the five Pure Abodes (Suddhāvāsa)?",
+        "pt": "Quem é exclusivamente elegível para o renascimento nas cinco Moradas Puras (Suddhāvāsa)?",
+        "es": "¿Quién es exclusivamente elegible para el renacimiento en las cinco Moradas Puras (Suddhāvāsa)?"
+      },
+      "correct": {
+        "en": "Non-returners (Anāgāmīs) who have mastered the fifth fine-material jhāna.",
+        "pt": "Não retornantes (Anāgāmīs) que dominaram o quinto jhāna da matéria sutil.",
+        "es": "No retornantes (Anāgāmīs) que han dominado el quinto jhāna de materia sutil."
+      },
+      "distractors": [
+        {
+          "en": "Stream-enterers and once-returners who cultivate loving-kindness.",
+          "pt": "Entrados na corrente e retornantes únicos que cultivam bondade amorosa.",
+          "es": "Entrados en la corriente y retornantes únicos que cultivan amor benevolente."
+        },
+        {
+          "en": "Worldlings who perform extraordinary acts of public philanthropy.",
+          "pt": "Pessoas comuns que praticam atos extraordinários de filantropia pública.",
+          "es": "Personas comunes que practican actos extraordinarios de filantropía pública."
+        },
+        {
+          "en": "All heavenly devas who fulfill standard moral precepts.",
+          "pt": "Todos os devas celestiais que cumprem preceitos morais padrão.",
+          "es": "Todos los devas celestiales que cumplen preceptos morales estándar."
+        }
+      ],
+      "explanation": {
+        "en": "The 5 Pure Abodes (Aviha, Atappa, Sudassa, Sudassī, Akaniṭṭha) are populated exclusively by Anāgāmīs who attain Arahantship and final Nibbāna there, never descending to lower realms.",
+        "pt": "As 5 Moradas Puras (Aviha, Atappa, Sudassa, Sudassī, Akaniṭṭha) são habitadas exclusivamente por Anāgāmīs que ali atingem o estado de Arahant e o Nibbāna final.",
+        "es": "Las 5 Moradas Puras (Aviha, Atappa, Sudassa, Sudassī, Akaniṭṭha) están habitadas exclusivamente por Anāgāmīs que alcanzan allí el estado de Arahant y el Nibbāna final."
+      },
+      "source": {
+        "cma": "V §6",
+        "fund": "Lesson 6.1"
+      }
+    },
+    {
+      "id": "u6.deduced_patisandhi_citta_matching",
+      "kind": "derived",
+      "topic": {
+        "en": "Rebirth-Linking Matching",
+        "pt": "Correspondência de Religação",
+        "es": "Correspondencia de Reconexión"
+      },
+      "requires": [
+        "u6.thirtyone_realms_count",
+        "u6.apaya_four_realms"
+      ],
+      "prompt": {
+        "en": "How many specific resultant cittas act as rebirth-linking across all 31 realms?",
+        "pt": "Quantos cittas resultantes específicos atuam na religação renascente nos 31 reinos?",
+        "es": "¿Cuántos cittas resultantes específicos actúan en la reconexión renaciente en los 31 reinos?"
+      },
+      "correct": {
+        "en": "Nineteen cittas: 1 unwholesome resultant, 9 sense-sphere wholesome resultants, 5 fine-material, and 4 immaterial.",
+        "pt": "Dezenove cittas: 1 resultante prejudicial, 9 resultantes benéficas sensoriais, 5 da matéria sutil e 4 imateriais.",
+        "es": "Diecinueve cittas: 1 resultante perjudicial, 9 resultantes benéficas sensoriales, 5 de materia sutil y 4 inmateriales."
+      },
+      "distractors": [
+        {
+          "en": "Thirty-one cittas, exactly one unique consciousness for every single realm.",
+          "pt": "Trinta e um cittas, exatamente uma consciência única para cada reino.",
+          "es": "Treinta y un cittas, exactamente una conciencia única para cada reino."
+        },
+        {
+          "en": "Fifty-four cittas, comprising the whole sensory sphere collection.",
+          "pt": "Cinquenta e quatro cittas, compreendendo toda a esfera sensorial.",
+          "es": "Cincuenta y cuatro cittas, comprendiendo toda la esfera sensorial."
+        },
+        {
+          "en": "Eight cittas, corresponding to the four paths and four fruits.",
+          "pt": "Oito cittas, correspondendo aos quatro caminhos e quatro frutos.",
+          "es": "Ocho cittas, correspondiendo a los cuatro caminos y cuatro frutos."
+        }
+      ],
+      "explanation": {
+        "en": "1 akusala-vipāka santīraṇa (for 4 apāyas) + 1 ahetuka kusala-vipāka santīraṇa (for disabled humans/lower devas) + 8 mahāvipāka (for humans and 6 devas) + 5 rūpa-vipāka + 4 arūpa-vipāka = 19 paṭisandhi cittas.",
+        "pt": "1 santīraṇa akusala-vipāka (4 apāyas) + 1 santīraṇa kusala-vipāka (humanos deficientes) + 8 mahāvipāka (humanos e devas) + 5 rūpa-vipāka + 4 arūpa-vipāka = 19 cittas de paṭisandhi.",
+        "es": "1 santīraṇa akusala-vipāka (4 apāyas) + 1 santīraṇa kusala-vipāka (humanos con discapacidad) + 8 mahāvipāka (humanos y devas) + 5 rūpa-vipāka + 4 arūpa-vipāka = 19 cittas de paṭisandhi."
+      },
+      "source": {
+        "cma": "V §10–§17",
+        "fund": "Lesson 6.1"
+      }
+    },
+    {
+      "id": "u6.deduced_asanna_vs_acinna_priority",
+      "kind": "derived",
+      "topic": {
+        "en": "Kamma Ripening Dynamic",
+        "pt": "Dinâmica de Maturação do Kamma",
+        "es": "Dinámica de Maduración del Kamma"
+      },
+      "requires": [
+        "u6.kamma_four_functions",
+        "u6.garuka_kamma_definition"
+      ],
+      "prompt": {
+        "en": "In the absence of weighty kamma (garuka), which kamma takes priority in determining the next rebirth?",
+        "pt": "Na ausência de kamma pesado (garuka), qual kamma tem prioridade para determinar o próximo renascimento?",
+        "es": "En ausencia de kamma pesado (garuka), ¿cuál kamma tiene prioridad para determinar el próximo renacimiento?"
+      },
+      "correct": {
+        "en": "Death-proximate kamma (āsanna) or habitual kamma (āciṇṇa) if proximate is not prominent.",
+        "pt": "Kamma próximo à morte (āsanna) ou kamma habitual (āciṇṇa) se o próximo não for preeminente.",
+        "es": "Kamma próximo a la muerte (āsanna) o kamma habitual (āciṇṇa) si el próximo no es prominente."
+      },
+      "distractors": [
+        {
+          "en": "Reserve kamma (kaṭattā) always supersedes habitual and proximate kamma.",
+          "pt": "Kamma de reserva (kaṭattā) sempre supera o habitual e o próximo.",
+          "es": "El kamma de reserva (kaṭattā) siempre supera al habitual y al próximo."
+        },
+        {
+          "en": "The very first kamma performed in infancy always ripens at death.",
+          "pt": "O primeiríssimo kamma realizado na infância sempre amadurece na morte.",
+          "es": "El primerísimo kamma realizado en la infancia siempre madura al morir."
+        },
+        {
+          "en": "Random chance, as kamma operates without any predictable sequence.",
+          "pt": "Acaso aleatório, pois o kamma opera sem qualquer sequência previsível.",
+          "es": "El azar, pues el kamma opera sin ninguna secuencia predecible."
+        }
+      ],
+      "explanation": {
+        "en": "Priority order: 1. Garuka (weighty), 2. Āsanna (death-proximate, remembered or done near death), 3. Āciṇṇa (habitual, deeply ingrained pattern), 4. Kaṭattā (reserve/unintentional kamma done in the past).",
+        "pt": "Ordem de prioridade: 1. Garuka (pesado), 2. Āsanna (próximo à morte, lembrado ou feito no leito), 3. Āciṇṇa (hábito consolidado), 4. Kaṭattā (kamma de reserva acumulado).",
+        "es": "Orden de prioridad: 1. Garuka (pesado), 2. Āsanna (próximo a la muerte, recordado o hecho en el lecho), 3. Āciṇṇa (hábito consolidado), 4. Kaṭattā (kamma de reserva acumulado)."
+      },
+      "source": {
+        "cma": "V §20",
+        "fund": "Lesson 6.2"
+      }
+    },
+    {
+      "id": "u6.patisandhi_nineteen_count",
+      "kind": "atom",
+      "topic": {
+        "en": "19 Rebirth Cittas",
+        "pt": "19 Cittas de Renascimento",
+        "es": "19 Cittas de Renacimiento"
+      },
+      "requires": [
+        "u6.thirtyone_realms_count"
+      ],
+      "prompt": {
+        "en": "Exactly how many cittas can perform the function of rebirth-linking (paṭisandhi)?",
+        "pt": "Exatamente quantos cittas podem desempenhar a função de renascimento (paṭisandhi)?",
+        "es": "¿Exactamente cuántos cittas pueden desempeñar la función de renacimiento (paṭisandhi)?"
+      },
+      "correct": {
+        "en": "19 cittas (2 santīraṇa, 8 mahāvipāka, 5 rūpa-vipāka, 4 arūpa-vipāka).",
+        "pt": "19 cittas (2 santīraṇa, 8 mahāvipāka, 5 rūpa-vipāka, 4 arūpa-vipāka).",
+        "es": "19 cittas (2 santīraṇa, 8 mahāvipāka, 5 rūpa-vipāka, 4 arūpa-vipāka)."
+      },
+      "distractors": [
+        {
+          "en": "89 cittas, since any consciousness can bind existence in saṃsāra.",
+          "pt": "89 cittas, já que qualquer consciência pode ligar a existência no saṃsāra.",
+          "es": "89 cittas, ya que cualquier conciencia puede ligar la existencia en el saṃsāra."
+        },
+        {
+          "en": "12 unwholesome cittas together with the eight supramundane fruits.",
+          "pt": "12 cittas prejudiciais juntamente com os oito frutos supramundanos.",
+          "es": "12 cittas perjudiciales junto con los ocho frutos supramundanos."
+        },
+        {
+          "en": "Only the five fine-material absorption resultant consciousnesses.",
+          "pt": "Apenas as cinco consciências resultantes de absorção na matéria sutil.",
+          "es": "Solo las cinco conciencias resultantes de absorción en la materia sutil."
+        }
+      ],
+      "explanation": {
+        "en": "Only specific resultant (vipāka) consciousnesses can perform paṭisandhi, bhavaṅga, and cuti.",
+        "pt": "Apenas consciências resultantes (vipāka) específicas podem realizar paṭisandhi, bhavaṅga e cuti.",
+        "es": "Solo conciencias resultantes (vipāka) específicas pueden realizar paṭisandhi, bhavaṅga y cuti."
+      },
+      "source": {
+        "cma": "V §9",
+        "fund": "5.2",
+        "as": "V.9"
+      }
+    },
+    {
+      "id": "u6.asanna_kamma_role",
+      "kind": "atom",
+      "topic": {
+        "en": "Āsanna Kamma",
+        "pt": "Āsanna Kamma",
+        "es": "Āsanna Kamma"
+      },
+      "requires": [
+        "u6.kamma_four_functions"
+      ],
+      "prompt": {
+        "en": "What defines near-death kamma (āsanna kamma) in the order of kamma ripening?",
+        "pt": "O que define o kamma próximo à morte (āsanna kamma) na ordem de maturação do kamma?",
+        "es": "¿Qué define el kamma cercano a la muerte (āsanna kamma) en el orden de maduración del kamma?"
+      },
+      "correct": {
+        "en": "Action performed or remembered immediately before death that ripens next.",
+        "pt": "Ação realizada ou lembrada imediatamente antes da morte que matura em seguida.",
+        "es": "Acción realizada o recordada inmediatamente antes de la muerte que madura después."
+      },
+      "distractors": [
+        {
+          "en": "A habitual action repeated constantly throughout decades of adult life.",
+          "pt": "Uma ação habitual repetida constantemente ao longo de décadas de vida adulta.",
+          "es": "Una acción habitual repetida constantemente a lo largo de décadas de vida adulta."
+        },
+        {
+          "en": "Any dormant kamma from ancient past lives that has never found an opportunity.",
+          "pt": "Qualquer kamma dormente de vidas passadas que nunca encontrou oportunidade.",
+          "es": "Cualquier kamma latente de vidas pasadas que nunca encontró oportunidad."
+        },
+        {
+          "en": "Kamma so heinous that it ripens immediately in the present moment.",
+          "pt": "Kamma tão atroz que matura instantaneamente no próprio momento presente.",
+          "es": "Kamma tan atroz que madura instantáneamente en el propio momento presente."
+        }
+      ],
+      "explanation": {
+        "en": "In the absence of weighty (garuka) kamma, āsanna kamma takes priority over habitual (āciṇṇa) kamma.",
+        "pt": "Na ausência de kamma pesado (garuka), o āsanna kamma tem prioridade sobre o habitual (āciṇṇa).",
+        "es": "En ausencia de kamma pesado (garuka), el āsanna kamma tiene prioridad sobre el habitual (āciṇṇa)."
+      },
+      "source": {
+        "cma": "V §30",
+        "fund": "5.4",
+        "as": "V.30"
+      }
+    }
+  ]
+}

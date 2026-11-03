@@ -1,4 +1,4 @@
-import { createLogger } from "./logger.js?v=6379fc71";
+import { createLogger } from "./logger.js?v=b6a19a3f";
 const log = createLogger("state");
 const SETTINGS_KEY = "atp.settings.v1";
 const HISTORY_KEY = "atp.history.v1";
@@ -10,6 +10,7 @@ const DEFAULT_SETTINGS = {
     fontSize: 17,
     showPali: true,
     showTranslation: true,
+    commentaryMode: "en+pt",
 };
 function load(key, fallback) {
     try {

@@ -1,0 +1,1329 @@
+{
+  "unit": 3,
+  "title": {
+    "en": "Compendium of Mental Factors (Cetasika-saṅgaha)",
+    "pt": "Compêndio dos Fatores Mentais (Cetasika-saṅgaha)",
+    "es": "Compendio de los Factores Mentales (Cetasika-saṅgaha)"
+  },
+  "summary": {
+    "en": "Dissection of the 52 mental factors (cetasika): 7 universals (sabbacitta), 6 particulars (pakiṇṇaka), 14 unwholesome (akusala), and 25 beautiful (sobhana), together with association (sampayoga) and inclusion (saṅgaha) methods.",
+    "pt": "Dissecação dos 52 fatores mentais (cetasika): 7 universais (sabbacitta), 6 particulares (pakiṇṇaka), 14 prejudiciais (akusala) e 25 belos (sobhana), junto aos métodos de associação (sampayoga) e inclusão (saṅgaha).",
+    "es": "Disección de los 52 factores mentales (cetasika): 7 universales (sabbacitta), 6 particulares (pakiṇṇaka), 14 perjudiciales (akusala) y 25 bellos (sobhana), junto a los métodos de asociación (sampayoga) e inclusión (saṅgaha)."
+  },
+  "taxonomies": [
+    {
+      "id": "u3.cetasikas",
+      "title": {
+        "en": "Classification of the 52 Mental Factors",
+        "pt": "Classificação dos 52 Fatores Mentais",
+        "es": "Clasificación de los 52 Factores Mentales"
+      },
+      "noun": {
+        "en": "mental factors",
+        "pt": "fatores mentais",
+        "es": "factores mentales"
+      },
+      "source": {
+        "cma": "II §1–§17",
+        "fund": "Lesson 3.1",
+        "as": "II.1"
+      },
+      "nodes": [
+        {
+          "id": "all_cetasikas",
+          "name": {
+            "en": "All 52 Mental Factors",
+            "pt": "Todos os 52 Fatores Mentais",
+            "es": "Todos los 52 Factores Mentales"
+          },
+          "parent": null
+        },
+        {
+          "id": "annasamana_group",
+          "name": {
+            "en": "Ethically Variable (Aññasamāna)",
+            "pt": "Variavelmente Éticos (Aññasamāna)",
+            "es": "Variables Éticamente (Aññasamāna)"
+          },
+          "parent": "all_cetasikas",
+          "weight": 13
+        },
+        {
+          "id": "sabbacitta_group",
+          "name": {
+            "en": "Universals (Sabbacitta-sādhāraṇa)",
+            "pt": "Universais (Sabbacitta-sādhāraṇa)",
+            "es": "Universales (Sabbacitta-sādhāraṇa)"
+          },
+          "parent": "annasamana_group",
+          "weight": 7
+        },
+        {
+          "id": "phassa_node",
+          "name": {
+            "en": "Contact (Phassa)",
+            "pt": "Contato (Phassa)",
+            "es": "Contacto (Phassa)"
+          },
+          "parent": "sabbacitta_group",
+          "weight": 1
+        },
+        {
+          "id": "vedana_node",
+          "name": {
+            "en": "Feeling (Vedanā)",
+            "pt": "Sensação (Vedanā)",
+            "es": "Sensación (Vedanā)"
+          },
+          "parent": "sabbacitta_group",
+          "weight": 1
+        },
+        {
+          "id": "sanna_node",
+          "name": {
+            "en": "Perception (Saññā)",
+            "pt": "Percepção (Saññā)",
+            "es": "Percepción (Saññā)"
+          },
+          "parent": "sabbacitta_group",
+          "weight": 1
+        },
+        {
+          "id": "cetana_node",
+          "name": {
+            "en": "Volition (Cetanā)",
+            "pt": "Volitição (Cetanā)",
+            "es": "Volición (Cetanā)"
+          },
+          "parent": "sabbacitta_group",
+          "weight": 1
+        },
+        {
+          "id": "ekaggata_node",
+          "name": {
+            "en": "One-Pointedness (Ekaggatā)",
+            "pt": "Unificação (Ekaggatā)",
+            "es": "Unificación (Ekaggatā)"
+          },
+          "parent": "sabbacitta_group",
+          "weight": 1
+        },
+        {
+          "id": "jivitindriya_node",
+          "name": {
+            "en": "Life Faculty (Jīvitindriya)",
+            "pt": "Faculdade Vital (Jīvitindriya)",
+            "es": "Facultad Vital (Jīvitindriya)"
+          },
+          "parent": "sabbacitta_group",
+          "weight": 1
+        },
+        {
+          "id": "manasikara_node",
+          "name": {
+            "en": "Attention (Manasikāra)",
+            "pt": "Atenção (Manasikāra)",
+            "es": "Atención (Manasikāra)"
+          },
+          "parent": "sabbacitta_group",
+          "weight": 1
+        },
+        {
+          "id": "pakinnaka_group",
+          "name": {
+            "en": "Particulars (Pakiṇṇaka)",
+            "pt": "Particulares (Pakiṇṇaka)",
+            "es": "Particulares (Pakiṇṇaka)"
+          },
+          "parent": "annasamana_group",
+          "weight": 6
+        },
+        {
+          "id": "vitakka_node",
+          "name": {
+            "en": "Applied Thought (Vitakka)",
+            "pt": "Pensamento Aplicado (Vitakka)",
+            "es": "Pensamiento Aplicado (Vitakka)"
+          },
+          "parent": "pakinnaka_group",
+          "weight": 1
+        },
+        {
+          "id": "vicara_node",
+          "name": {
+            "en": "Sustained Thought (Vicāra)",
+            "pt": "Pensamento Sustentado (Vicāra)",
+            "es": "Pensamiento Sostenido (Vicāra)"
+          },
+          "parent": "pakinnaka_group",
+          "weight": 1
+        },
+        {
+          "id": "adhimokkha_node",
+          "name": {
+            "en": "Decision (Adhimokkha)",
+            "pt": "Decisão (Adhimokkha)",
+            "es": "Decisión (Adhimokkha)"
+          },
+          "parent": "pakinnaka_group",
+          "weight": 1
+        },
+        {
+          "id": "viriya_node",
+          "name": {
+            "en": "Energy (Vīriya)",
+            "pt": "Energia (Vīriya)",
+            "es": "Energía (Vīriya)"
+          },
+          "parent": "pakinnaka_group",
+          "weight": 1
+        },
+        {
+          "id": "piti_node",
+          "name": {
+            "en": "Zest (Pīti)",
+            "pt": "Entusiasmo (Pīti)",
+            "es": "Entusiasmo (Pīti)"
+          },
+          "parent": "pakinnaka_group",
+          "weight": 1
+        },
+        {
+          "id": "chanda_node",
+          "name": {
+            "en": "Desire to Act (Chanda)",
+            "pt": "Desejo de Agir (Chanda)",
+            "es": "Deseo de Actuar (Chanda)"
+          },
+          "parent": "pakinnaka_group",
+          "weight": 1
+        },
+        {
+          "id": "akusala_cetasikas",
+          "name": {
+            "en": "Unwholesome Factors (Akusala)",
+            "pt": "Fatores Prejudiciais (Akusala)",
+            "es": "Factores Perjudiciales (Akusala)"
+          },
+          "parent": "all_cetasikas",
+          "weight": 14
+        },
+        {
+          "id": "sabbakusala_group",
+          "name": {
+            "en": "Unwholesome Universals",
+            "pt": "Universais Prejudiciais",
+            "es": "Universales Perjudiciales"
+          },
+          "parent": "akusala_cetasikas",
+          "weight": 4
+        },
+        {
+          "id": "moha_node",
+          "name": {
+            "en": "Delusion (Moha)",
+            "pt": "Delusão (Moha)",
+            "es": "Delusión (Moha)"
+          },
+          "parent": "sabbakusala_group",
+          "weight": 1
+        },
+        {
+          "id": "ahirika_node",
+          "name": {
+            "en": "Shamelessness (Ahirika)",
+            "pt": "Falta de Vergonha (Ahirika)",
+            "es": "Falta de Vergüenza (Ahirika)"
+          },
+          "parent": "sabbakusala_group",
+          "weight": 1
+        },
+        {
+          "id": "anottappa_node",
+          "name": {
+            "en": "Fearlessness of Wrong (Anottappa)",
+            "pt": "Destemor Moral (Anottappa)",
+            "es": "Falta de Temor Moral (Anottappa)"
+          },
+          "parent": "sabbakusala_group",
+          "weight": 1
+        },
+        {
+          "id": "uddhacca_node",
+          "name": {
+            "en": "Restlessness (Uddhacca)",
+            "pt": "Agitação (Uddhacca)",
+            "es": "Agitación (Uddhacca)"
+          },
+          "parent": "sabbakusala_group",
+          "weight": 1
+        },
+        {
+          "id": "lobha_group",
+          "name": {
+            "en": "Greed Triad (Lobha-gaṇa)",
+            "pt": "Tríade do Apego (Lobha-gaṇa)",
+            "es": "Tríada del Apego (Lobha-gaṇa)"
+          },
+          "parent": "akusala_cetasikas",
+          "weight": 3
+        },
+        {
+          "id": "lobha_node",
+          "name": {
+            "en": "Greed (Lobha)",
+            "pt": "Apego (Lobha)",
+            "es": "Apego (Lobha)"
+          },
+          "parent": "lobha_group",
+          "weight": 1
+        },
+        {
+          "id": "ditthi_node",
+          "name": {
+            "en": "Wrong View (Diṭṭhi)",
+            "pt": "Visão Incorreta (Diṭṭhi)",
+            "es": "Visión Incorrecta (Diṭṭhi)"
+          },
+          "parent": "lobha_group",
+          "weight": 1
+        },
+        {
+          "id": "mana_node",
+          "name": {
+            "en": "Conceit (Māna)",
+            "pt": "Vaidade (Māna)",
+            "es": "Vanidad (Māna)"
+          },
+          "parent": "lobha_group",
+          "weight": 1
+        },
+        {
+          "id": "dosa_group",
+          "name": {
+            "en": "Aversion Tetrad (Dosa-catukka)",
+            "pt": "Tétrade da Aversão (Dosa-catukka)",
+            "es": "Tétrada de la Aversión (Dosa-catukka)"
+          },
+          "parent": "akusala_cetasikas",
+          "weight": 4
+        },
+        {
+          "id": "dosa_node",
+          "name": {
+            "en": "Aversion (Dosa)",
+            "pt": "Aversão (Dosa)",
+            "es": "Aversión (Dosa)"
+          },
+          "parent": "dosa_group",
+          "weight": 1
+        },
+        {
+          "id": "issa_node",
+          "name": {
+            "en": "Envy (Issā)",
+            "pt": "Inveja (Issā)",
+            "es": "Envidia (Issā)"
+          },
+          "parent": "dosa_group",
+          "weight": 1
+        },
+        {
+          "id": "macchariya_node",
+          "name": {
+            "en": "Avarice (Macchariya)",
+            "pt": "Avareza (Macchariya)",
+            "es": "Avaricia (Macchariya)"
+          },
+          "parent": "dosa_group",
+          "weight": 1
+        },
+        {
+          "id": "kukkucca_node",
+          "name": {
+            "en": "Remorse (Kukkucca)",
+            "pt": "Remorso (Kukkucca)",
+            "es": "Remordimiento (Kukkucca)"
+          },
+          "parent": "dosa_group",
+          "weight": 1
+        },
+        {
+          "id": "sobhana_cetasikas",
+          "name": {
+            "en": "Beautiful Factors (Sobhana)",
+            "pt": "Fatores Belos (Sobhana)",
+            "es": "Factores Bellos (Sobhana)"
+          },
+          "parent": "all_cetasikas",
+          "weight": 25
+        },
+        {
+          "id": "sobhana_sadharana",
+          "name": {
+            "en": "Beautiful Universals (19)",
+            "pt": "Universais Belos (19)",
+            "es": "Universales Bellos (19)"
+          },
+          "parent": "sobhana_cetasikas",
+          "weight": 19
+        },
+        {
+          "id": "saddha_node",
+          "name": {
+            "en": "Faith (Saddhā)",
+            "pt": "Fé (Saddhā)",
+            "es": "Fe (Saddhā)"
+          },
+          "parent": "sobhana_sadharana",
+          "weight": 1
+        },
+        {
+          "id": "sati_node",
+          "name": {
+            "en": "Mindfulness (Sati)",
+            "pt": "Atenção Plena (Sati)",
+            "es": "Atención Plena (Sati)"
+          },
+          "parent": "sobhana_sadharana",
+          "weight": 1
+        },
+        {
+          "id": "hiri_node",
+          "name": {
+            "en": "Moral Shame (Hiri)",
+            "pt": "Vergonha Moral (Hiri)",
+            "es": "Vergüenza Moral (Hiri)"
+          },
+          "parent": "sobhana_sadharana",
+          "weight": 1
+        },
+        {
+          "id": "ottappa_node",
+          "name": {
+            "en": "Moral Dread (Ottappa)",
+            "pt": "Temor Moral (Ottappa)",
+            "es": "Temor Moral (Ottappa)"
+          },
+          "parent": "sobhana_sadharana",
+          "weight": 1
+        },
+        {
+          "id": "alobha_node",
+          "name": {
+            "en": "Non-Greed (Alobha)",
+            "pt": "Não Apego (Alobha)",
+            "es": "No Apego (Alobha)"
+          },
+          "parent": "sobhana_sadharana",
+          "weight": 1
+        },
+        {
+          "id": "adosa_node",
+          "name": {
+            "en": "Non-Hatred (Adosa)",
+            "pt": "Não Aversão (Adosa)",
+            "es": "No Aversión (Adosa)"
+          },
+          "parent": "sobhana_sadharana",
+          "weight": 1
+        },
+        {
+          "id": "tatramajjhattata_node",
+          "name": {
+            "en": "Equanimity (Tatramajjhattatā)",
+            "pt": "Equanimidade (Tatramajjhattatā)",
+            "es": "Ecuanimidad (Tatramajjhattatā)"
+          },
+          "parent": "sobhana_sadharana",
+          "weight": 1
+        },
+        {
+          "id": "virati_group",
+          "name": {
+            "en": "Abstinences (Viratiyo)",
+            "pt": "Abstenções (Viratiyo)",
+            "es": "Abstenciones (Viratiyo)"
+          },
+          "parent": "sobhana_cetasikas",
+          "weight": 3
+        },
+        {
+          "id": "sammavaca_node",
+          "name": {
+            "en": "Right Speech (Sammāvācā)",
+            "pt": "Fala Correta (Sammāvācā)",
+            "es": "Habla Correcta (Sammāvācā)"
+          },
+          "parent": "virati_group",
+          "weight": 1
+        },
+        {
+          "id": "sammakammanta_node",
+          "name": {
+            "en": "Right Action (Sammākammanta)",
+            "pt": "Ação Correta (Sammākammanta)",
+            "es": "Acción Correcta (Sammākammanta)"
+          },
+          "parent": "virati_group",
+          "weight": 1
+        },
+        {
+          "id": "sammaajiva_node",
+          "name": {
+            "en": "Right Livelihood (Sammā-ājīva)",
+            "pt": "Modo de Vida Correto (Sammā-ājīva)",
+            "es": "Modo de Vida Correcto (Sammā-ājīva)"
+          },
+          "parent": "virati_group",
+          "weight": 1
+        },
+        {
+          "id": "appamanna_group",
+          "name": {
+            "en": "Immeasurables (Appamaññā)",
+            "pt": "Incomensuráveis (Appamaññā)",
+            "es": "Inconmensurables (Appamaññā)"
+          },
+          "parent": "sobhana_cetasikas",
+          "weight": 2
+        },
+        {
+          "id": "karuna_node",
+          "name": {
+            "en": "Compassion (Karuṇā)",
+            "pt": "Compaixão (Karuṇā)",
+            "es": "Compasión (Karuṇā)"
+          },
+          "parent": "appamanna_group",
+          "weight": 1
+        },
+        {
+          "id": "mudita_node",
+          "name": {
+            "en": "Appreciative Joy (Muditā)",
+            "pt": "Alegria Apreciativa (Muditā)",
+            "es": "Alegría Apreciativa (Muditā)"
+          },
+          "parent": "appamanna_group",
+          "weight": 1
+        },
+        {
+          "id": "panna_group",
+          "name": {
+            "en": "Faculty of Wisdom",
+            "pt": "Faculdade da Sabedoria",
+            "es": "Facultad de la Sabiduría"
+          },
+          "parent": "sobhana_cetasikas",
+          "weight": 1
+        },
+        {
+          "id": "pannindriya_node",
+          "name": {
+            "en": "Wisdom (Paññindriya)",
+            "pt": "Sabedoria (Paññindriya)",
+            "es": "Sabiduría (Paññindriya)"
+          },
+          "parent": "panna_group",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "u3.seven_universals_identity",
+      "kind": "atom",
+      "topic": {
+        "en": "Seven Universals",
+        "pt": "Sete Universais",
+        "es": "Siete Universales"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Which seven mental factors (sabbacitta-sādhāraṇa) arise in every single state of consciousness?",
+        "pt": "Quais sete fatores mentais (sabbacitta-sādhāraṇa) surgem em cada estado de consciência?",
+        "es": "¿Cuáles siete factores mentales (sabbacitta-sādhāraṇa) surgen en cada estado de conciencia?"
+      },
+      "correct": {
+        "en": "Phassa, vedanā, saññā, cetanā, ekaggatā, jīvitindriya, and manasikāra.",
+        "pt": "Phassa, vedanā, saññā, cetanā, ekaggatā, jīvitindriya e manasikāra.",
+        "es": "Phassa, vedanā, saññā, cetanā, ekaggatā, jīvitindriya y manasikāra."
+      },
+      "distractors": [
+        {
+          "en": "Vitakka, vicāra, adhimokkha, viriya, pīti, chanda, and cetanā.",
+          "pt": "Vitakka, vicāra, adhimokkha, viriya, pīti, chanda e cetanā.",
+          "es": "Vitakka, vicāra, adhimokkha, viriya, pīti, chanda y cetanā."
+        },
+        {
+          "en": "Moha, ahirika, anottappa, uddhacca, lobha, dosa, and diṭṭhi.",
+          "pt": "Moha, ahirika, anottappa, uddhacca, lobha, dosa e diṭṭhi.",
+          "es": "Moha, ahirika, anottappa, uddhacca, lobha, dosa y diṭṭhi."
+        },
+        {
+          "en": "Saddhā, sati, hiri, ottappa, alobha, adosa, and paññā.",
+          "pt": "Saddhā, sati, hiri, ottappa, alobha, adosa e paññā.",
+          "es": "Saddhā, sati, hiri, ottappa, alobha, adosa y paññā."
+        }
+      ],
+      "explanation": {
+        "en": "These seven primary factors are present in all 89/121 cittas without exception: contact, feeling, perception, volition, one-pointedness, life faculty, and attention.",
+        "pt": "Estes sete fatores primários estão presentes em todas as 89/121 cittas sem exceção: contato, sensação, percepção, volição, unificação, faculdade vital e atenção.",
+        "es": "Estos siete factores primarios están presentes en todas las 89/121 cittas sin excepción: contacto, sensación, percepción, volición, unificación, facultad vital y atención."
+      },
+      "source": {
+        "cma": "II §2",
+        "fund": "Lesson 3.2",
+        "as": "II.2"
+      }
+    },
+    {
+      "id": "u3.cetana_function",
+      "kind": "atom",
+      "topic": {
+        "en": "Function of Cetanā",
+        "pt": "Função de Cetanā",
+        "es": "Función de Cetanā"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the characteristic function (rasa) of volition (cetanā) in consciousness?",
+        "pt": "Qual é a função característica (rasa) da volição (cetanā) na consciência?",
+        "es": "¿Cuál es la función característica (rasa) de la volición (cetanā) en la conciencia?"
+      },
+      "correct": {
+        "en": "Coordinating associated factors and generating karma (cetanāhaṃ bhikkhave kammaṃ vadāmi).",
+        "pt": "Coordenar fatores associados e gerar kamma (cetanāhaṃ bhikkhave kammaṃ vadāmi).",
+        "es": "Coordinar factores asociados y generar kamma (cetanāhaṃ bhikkhave kammaṃ vadāmi)."
+      },
+      "distractors": [
+        {
+          "en": "Experiencing the hedonic flavor of desirable and undesirable objects.",
+          "pt": "Experienciar o sabor hedônico de objetos desejáveis e indesejáveis.",
+          "es": "Experimentar el sabor hedónico de objetos deseables e indeseables."
+        },
+        {
+          "en": "Recognizing distinctive characteristics and marks of past memories.",
+          "pt": "Reconhecer marcas e características distintivas de memórias passadas.",
+          "es": "Reconocer marcas y características distintivas de memorias pasadas."
+        },
+        {
+          "en": "Anchor consciousness to a single point without any movement.",
+          "pt": "Ancorar a consciência em um único ponto sem qualquer movimento.",
+          "es": "Anclar la conciencia a un solo punto sin ningún movimiento."
+        }
+      ],
+      "explanation": {
+        "en": "Cetanā coordinates the associated mental factors towards the objective goal. In wholesome and unwholesome states, cetanā is identical to volitional kamma.",
+        "pt": "Cetanā coordena os fatores mentais associados em direção à meta objetiva. Nos estados benéficos e prejudiciais, cetanā é idêntica ao kamma volitivo.",
+        "es": "Cetanā coordina los factores mentales asociados hacia la meta objetiva. En los estados benéficos y perjudiciales, cetanā es idéntica al kamma volitivo."
+      },
+      "source": {
+        "cma": "II §2",
+        "fund": "Lesson 3.2"
+      }
+    },
+    {
+      "id": "u3.four_akusala_universals",
+      "kind": "atom",
+      "topic": {
+        "en": "Unwholesome Universals",
+        "pt": "Universais Prejudiciais",
+        "es": "Universales Perjudiciales"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Which four mental factors (sabbākusalasādhāraṇa) arise in every unwholesome consciousness?",
+        "pt": "Quais quatro fatores mentais (sabbākusalasādhāraṇa) surgem em toda consciência prejudicial?",
+        "es": "¿Cuáles cuatro factores mentales (sabbākusalasādhāraṇa) surgen en toda conciencia perjudicial?"
+      },
+      "correct": {
+        "en": "Delusion (moha), shamelessness (ahirika), fearlessness of wrongdoing (anottappa), and restlessness (uddhacca).",
+        "pt": "Delusão (moha), falta de vergonha (ahirika), destemor moral (anottappa) e agitação (uddhacca).",
+        "es": "Delusión (moha), falta de vergüenza (ahirika), falta de temor moral (anottappa) y agitación (uddhacca)."
+      },
+      "distractors": [
+        {
+          "en": "Greed, hatred, delusion, and wrong view.",
+          "pt": "Apego, aversão, delusão e visão incorreta.",
+          "es": "Apego, aversión, delusión y visión incorrecta."
+        },
+        {
+          "en": "Sloth, torpor, restlessness, and doubt.",
+          "pt": "Preguiça, torpor, agitação e dúvida.",
+          "es": "Pereza, torpeza, agitación y duda."
+        },
+        {
+          "en": "Envy, avarice, remorse, and conceit.",
+          "pt": "Inveja, avareza, remorso e vaidade.",
+          "es": "Envidia, avaricia, remordimiento y vanidad."
+        }
+      ],
+      "explanation": {
+        "en": "These four factors accompany all twelve unwholesome cittas: moha (blindness to ultimate truth), ahirika (lack of moral conscience), anottappa (lack of moral shame), and uddhacca (mental agitation).",
+        "pt": "Estes quatro fatores acompanham todas as doze cittas prejudiciais: moha (cegueira ontológica), ahirika (ausência de consciência moral), anottappa (destemor ante as consequências) e uddhacca (agitação).",
+        "es": "Estos cuatro factores acompañan a las doce cittas perjudiciales: moha (ceguera ontológica), ahirika (ausencia de conciencia moral), anottappa (falta de temor moral) y uddhacca (agitación)."
+      },
+      "source": {
+        "cma": "II §3",
+        "fund": "Lesson 3.3",
+        "as": "II.3"
+      }
+    },
+    {
+      "id": "u3.nineteen_sobhana_universals",
+      "kind": "atom",
+      "topic": {
+        "en": "Beautiful Universals",
+        "pt": "Universais Belos",
+        "es": "Universales Bellos"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many beautiful universals (sobhanasādhāraṇa) arise in all 59 beautiful consciousnesses?",
+        "pt": "Quantos universais belos (sobhanasādhāraṇa) surgem em todas as 59 consciências belas?",
+        "es": "¿Cuántos universales bellos (sobhanasādhāraṇa) surgen en todas las 59 conciencias bellas?"
+      },
+      "correct": {
+        "en": "Nineteen factors, headed by faith (saddhā) and mindfulness (sati).",
+        "pt": "Dezenove fatores, encabeçados por fé (saddhā) e atenção plena (sati).",
+        "es": "Diecinueve factores, encabezados por fe (saddhā) y atención plena (sati)."
+      },
+      "distractors": [
+        {
+          "en": "Twenty-five factors, comprising the entire beautiful division.",
+          "pt": "Vinte e cinco fatores, compreendendo toda a divisão bela.",
+          "es": "Veinticinco factores, comprendiendo toda la división bella."
+        },
+        {
+          "en": "Seven factors, mirroring the universal neutral group.",
+          "pt": "Sete fatores, espelhando o grupo neutro universal.",
+          "es": "Siete factores, reflejando el grupo neutro universal."
+        },
+        {
+          "en": "Twelve factors, corresponding to the twelve links of dependent origination.",
+          "pt": "Doze fatores, correspondendo aos doze elos do surgimento dependente.",
+          "es": "Doce factores, correspondiendo a los doce eslabones del surgimiento dependiente."
+        }
+      ],
+      "explanation": {
+        "en": "The 19 sobhanasādhāraṇa: saddhā, sati, hiri, ottappa, alobha, adosa, tatramajjhattatā, and six pairs of tranquillity, lightness, pliancy, wieldiness, proficiency, and rectitude of mental body and consciousness.",
+        "pt": "Os 19 sobhanasādhāraṇa: saddhā, sati, hiri, ottappa, alobha, adosa, tatramajjhattatā e seis pares: tranquilidade, leveza, maleabilidade, operosidade, perícia e retidão do corpo mental e da consciência.",
+        "es": "Los 19 sobhanasādhāraṇa: saddhā, sati, hiri, ottappa, alobha, adosa, tatramajjhattatā y seis pares: tranquilidad, ligereza, maleabilidad, operatividad, pericia y rectitud del cuerpo mental y de la conciencia."
+      },
+      "source": {
+        "cma": "II §5–§8",
+        "fund": "Lesson 3.4",
+        "as": "II.5"
+      }
+    },
+    {
+      "id": "u3.phassa_definition",
+      "kind": "atom",
+      "topic": {
+        "en": "Contact Characteristic",
+        "pt": "Característica do Contato",
+        "es": "Característica del Contacto"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the defining characteristic of contact (phassa) among the universals?",
+        "pt": "Qual é a característica definidora do contato (phassa) entre as universais?",
+        "es": "¿Cuál es la característica definitoria del contacto (phassa) entre las universales?"
+      },
+      "correct": {
+        "en": "Touching the objective field and linking consciousness with the object (phusana).",
+        "pt": "Tocar o campo objetivo e vincular a consciência ao objeto (phusana).",
+        "es": "Tocar el campo objetivo y vincular la conciencia con el objeto (phusana)."
+      },
+      "distractors": [
+        {
+          "en": "Deciding and determining the truth of an assertion.",
+          "pt": "Decidir e determinar a verdade de uma asserção.",
+          "es": "Decidir y determinar la verdad de una aseveración."
+        },
+        {
+          "en": "Directing attention from one object to another.",
+          "pt": "Dirigir a atenção de um objeto a outro.",
+          "es": "Dirigir la atención de un objeto a otro."
+        },
+        {
+          "en": "Striving to accomplish arduous physical work.",
+          "pt": "Esforçar-se para realizar trabalho físico árduo.",
+          "es": "Esforzarse para realizar trabajo físico arduo."
+        }
+      ],
+      "explanation": {
+        "en": "Phassa has the characteristic of touching (phusana). Its function is impingement (saṅghaṭṭana), bringing consciousness, the sense faculty, and the object into collision.",
+        "pt": "Phassa tem a característica de tocar (phusana). Sua função é colisão (saṅghaṭṭana), reunindo a consciência, a faculdade sensorial e o objeto em um ponto de contato.",
+        "es": "Phassa tiene la característica de tocar (phusana). Su función es colisión (saṅghaṭṭana), reuniendo la conciencia, la facultad sensorial y el objeto en un punto de contacto."
+      },
+      "source": {
+        "cma": "II §2",
+        "fund": "Lesson 3.2"
+      }
+    },
+    {
+      "id": "u3.manasikara_definition",
+      "kind": "atom",
+      "topic": {
+        "en": "Attention Function",
+        "pt": "Função da Atenção",
+        "es": "Función de la Atención"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the characteristic function of attention (manasikāra) among the mental factors?",
+        "pt": "Qual é a função característica da atenção (manasikāra) entre os fatores mentais?",
+        "es": "¿Cuál es la función característica de la atención (manasikāra) entre los factores mentales?"
+      },
+      "correct": {
+        "en": "Driving and steering the associated states towards the object (sāraṇa-rasa).",
+        "pt": "Conduzir e direcionar os estados associados rumo ao objeto (sāraṇa-rasa).",
+        "es": "Conducir y orientar los estados asociados hacia el objeto (sāraṇa-rasa)."
+      },
+      "distractors": [
+        {
+          "en": "Remembering past events from previous existences.",
+          "pt": "Lembrar eventos passados de existências anteriores.",
+          "es": "Recordar eventos pasados de existencias anteriores."
+        },
+        {
+          "en": "Purifying the mind from all defilements instantly.",
+          "pt": "Purificar a mente de todas as impurezas instantaneamente.",
+          "es": "Purificar la mente de todas las impurezas instantáneamente."
+        },
+        {
+          "en": "Producing pleasant sensation in bodily tissues.",
+          "pt": "Produzir sensação agradável nos tecidos corporais.",
+          "es": "Producir sensación agradable en los tejidos corporales."
+        }
+      ],
+      "explanation": {
+        "en": "Manasikāra conducts consciousness to the object like a rudder steering a ship. It is distinct from vitakka (which applies mind onto object) and sati (which maintains presence of mind).",
+        "pt": "Manasikāra conduz a consciência ao objeto como um leme guia o barco. Distingue-se de vitakka (que aplica a mente sobre o objeto) e de sati (que mantém a presença atenta).",
+        "es": "Manasikāra conduce la conciencia al objeto como un timón guía el barco. Se distingue de vitakka (que aplica la mente sobre el objeto) y de sati (que mantiene la presencia atenta)."
+      },
+      "source": {
+        "cma": "II §2",
+        "fund": "Lesson 3.2"
+      }
+    },
+    {
+      "id": "u3.pakinnaka_six_factors",
+      "kind": "atom",
+      "topic": {
+        "en": "Six Particulars",
+        "pt": "Seis Particulares",
+        "es": "Seis Particulares"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Which six mental factors constitute the particulars (pakiṇṇaka)?",
+        "pt": "Quais seis fatores mentais constituem os particulares (pakiṇṇaka)?",
+        "es": "¿Cuáles seis factores mentales constituyen los particulares (pakiṇṇaka)?"
+      },
+      "correct": {
+        "en": "Applied thought, sustained thought, decision, energy, zest, and desire to act.",
+        "pt": "Pensamento aplicado, sustentado, decisão, energia, entusiasmo e desejo de agir.",
+        "es": "Pensamiento aplicado, sostenido, decisión, energía, entusiasmo y deseo de actuar."
+      },
+      "distractors": [
+        {
+          "en": "Faith, mindfulness, moral shame, dread, non-greed, and non-hatred.",
+          "pt": "Fé, atenção plena, vergonha moral, temor, não apego e não aversão.",
+          "es": "Fe, atención plena, vergüenza moral, temor, no apego y no aversión."
+        },
+        {
+          "en": "Greed, wrong view, conceit, jealousy, avarice, and remorse.",
+          "pt": "Apego, visão incorreta, vaidade, inveja, avareza e remorso.",
+          "es": "Apego, visión incorrecta, vanidad, envidia, avaricia y remordimiento."
+        },
+        {
+          "en": "Pleasure, pain, joy, grief, equanimity, and neutral sensation.",
+          "pt": "Prazer, dor, alegria, pesar, equanimidade e sensação neutra.",
+          "es": "Placer, dolor, alegría, pesar, ecuanimidad y sensación neutra."
+        }
+      ],
+      "explanation": {
+        "en": "The 6 pakiṇṇakas (vitakka, vicāra, adhimokkha, vīriya, pīti, chanda) can combine with wholesome, unwholesome, or indeterminate states, but do not arise universally in all cittas.",
+        "pt": "Os 6 pakiṇṇakas (vitakka, vicāra, adhimokkha, vīriya, pīti, chanda) podem se combinar com estados benéficos, prejudiciais ou indeterminados, mas não surgem em todas as cittas.",
+        "es": "Los 6 pakiṇṇakas (vitakka, vicāra, adhimokkha, vīriya, pīti, chanda) pueden combinarse con estados benéficos, perjudiciales o indeterminados, pero no surgen en todas las cittas."
+      },
+      "source": {
+        "cma": "II §3",
+        "fund": "Lesson 3.2"
+      }
+    },
+    {
+      "id": "u3.vitakka_vicara_difference",
+      "kind": "atom",
+      "topic": {
+        "en": "Vitakka vs Vicāra",
+        "pt": "Vitakka versus Vicāra",
+        "es": "Vitakka frente a Vicāra"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the distinction between applied thought (vitakka) and sustained thought (vicāra)?",
+        "pt": "Qual é a distinção entre pensamento aplicado (vitakka) e sustentado (vicāra)?",
+        "es": "¿Cuál es la distinción entre pensamiento aplicado (vitakka) y sostenido (vicāra)?"
+      },
+      "correct": {
+        "en": "Vitakka mounts the mind onto the object; vicāra keeps the mind anchored, examining it.",
+        "pt": "Vitakka lança a mente sobre o objeto; vicāra a mantém ancorada, examinando-o.",
+        "es": "Vitakka lanza la mente sobre el objeto; vicāra la mantiene anclada, examinándolo."
+      },
+      "distractors": [
+        {
+          "en": "Vitakka is unwholesome while vicāra is always wholesome.",
+          "pt": "Vitakka é prejudicial enquanto vicāra é sempre benéfico.",
+          "es": "Vitakka es perjudicial mientras que vicāra es siempre benéfico."
+        },
+        {
+          "en": "Vitakka arises only in the senses while vicāra arises in dreams.",
+          "pt": "Vitakka surge apenas nos sentidos enquanto vicāra surge em sonhos.",
+          "es": "Vitakka surge solo en los sentidos mientras que vicāra surge en sueños."
+        },
+        {
+          "en": "Vitakka is bodily action while vicāra is vocal speech.",
+          "pt": "Vitakka é ação corporal enquanto vicāra é fala verbal.",
+          "es": "Vitakka es acción corporal mientras que vicāra es habla verbal."
+        }
+      ],
+      "explanation": {
+        "en": "Simile: Vitakka is like striking a bell; vicāra is like the continuing reverberation. Or: vitakka is a bird flapping wings to take off; vicāra is gliding smoothly with outstretched wings.",
+        "pt": "Símile: Vitakka é o badalar inicial do sino; vicāra é a reverberação contínua. Ou: vitakka é a ave batendo asas para alçar voo; vicāra é o planar suave com asas abertas.",
+        "es": "Símil: Vitakka es el tañido inicial de la campana; vicāra es la reverberación continua. O: vitakka es el ave batiendo alas para alzarse; vicāra es el planear suave con alas abiertas."
+      },
+      "source": {
+        "cma": "II §3",
+        "fund": "Lesson 3.2"
+      }
+    },
+    {
+      "id": "u3.dosa_tetrad_members",
+      "kind": "atom",
+      "topic": {
+        "en": "Aversion Tetrad",
+        "pt": "Tétrade da Aversão",
+        "es": "Tétrada de la Aversión"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Which four unwholesome mental factors form the aversion tetrad (dosa-catukka)?",
+        "pt": "Quais quatro fatores mentais prejudiciais formam a tétrade da aversão (dosa-catukka)?",
+        "es": "¿Cuáles cuatro factores mentales perjudiciales forman la tétrada de la aversión (dosa-catukka)?"
+      },
+      "correct": {
+        "en": "Hatred (dosa), envy (issā), avarice (macchariya), and remorse (kukkucca).",
+        "pt": "Aversão (dosa), inveja (issā), avareza (macchariya) e remorso (kukkucca).",
+        "es": "Aversión (dosa), envidia (issā), avaricia (macchariya) y remordimiento (kukkucca)."
+      },
+      "distractors": [
+        {
+          "en": "Greed, wrong view, conceit, and delusion.",
+          "pt": "Apego, visão incorreta, vaidade e delusão.",
+          "es": "Apego, visión incorrecta, vanidad y delusión."
+        },
+        {
+          "en": "Sloth, torpor, restlessness, and skeptical doubt.",
+          "pt": "Preguiça, torpor, agitação e dúvida cética.",
+          "es": "Pereza, torpeza, agitación y duda escéptica."
+        },
+        {
+          "en": "Shamelessness, fearlessness of wrongdoing, delusion, and distraction.",
+          "pt": "Falta de vergonha, destemor moral, delusão e distração.",
+          "es": "Falta de vergüenza, falta de temor moral, delusión y distracción."
+        }
+      ],
+      "explanation": {
+        "en": "The four aversion factors arise exclusively in the 2 dosa-mūla cittas. Dosa is ill-will; issā is jealousy of others' success; macchariya is concealment of one's own prosperity; kukkucca is brooding remorse.",
+        "pt": "Os quatro fatores de aversão surgem exclusivamente nos 2 cittas de dosa-mūla. Dosa é aversão; issā é inveja do sucesso alheio; macchariya é avareza sobre os próprios bens; kukkucca é remorso culposo.",
+        "es": "Los cuatro factores de aversión surgen exclusivamente en los 2 cittas de dosa-mūla. Dosa es aversión; issā es envidia del éxito ajeno; macchariya es avaricia sobre los propios bienes; kukkucca es remordimiento culpable."
+      },
+      "source": {
+        "cma": "II §4",
+        "fund": "Lesson 3.3"
+      }
+    },
+    {
+      "id": "u3.thina_middha_conditions",
+      "kind": "atom",
+      "topic": {
+        "en": "Sloth and Torpor",
+        "pt": "Preguiça e Torpor",
+        "es": "Pereza y Torpeza"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Under what specific psychological condition do sloth (thīna) and torpor (middha) arise?",
+        "pt": "Sob qual condição psicológica específica surgem a preguiça (thīna) e o torpor (middha)?",
+        "es": "¿Bajo qué condición psicológica específica surgen la pereza (thīna) y el torpor (middha)?"
+      },
+      "correct": {
+        "en": "Exclusively in prompted (sasaṅkhārika) unwholesome consciousness, never in unprompted.",
+        "pt": "Exclusivamente na consciência prejudicial incitada (sasaṅkhārika), nunca na espontânea.",
+        "es": "Exclusivamente en la conciencia perjudicial incitada (sasaṅkhārika), nunca en la espontánea."
+      },
+      "distractors": [
+        {
+          "en": "Exclusively during deep meditative absorption (jhāna).",
+          "pt": "Exclusivamente durante profunda absorção meditativa (jhāna).",
+          "es": "Exclusivamente durante profunda absorción meditativa (jhāna)."
+        },
+        {
+          "en": "Only in wholesome rootless functional consciousness.",
+          "pt": "Apenas na consciência funcional sem raiz benéfica.",
+          "es": "Solo en la conciencia funcional sin raíz benéfica."
+        },
+        {
+          "en": "In all unwholesome states indiscriminately.",
+          "pt": "Em todos os estados prejudiciais indistintamente.",
+          "es": "En todos los estados perjudiciales indistintamente."
+        }
+      ],
+      "explanation": {
+        "en": "Thīna (sluggishness of citta) and middha (sluggishness of cetasikas) arise only in prompted unwholesome consciousness (4 greed-rooted and 1 hatred-rooted = 5 sasaṅkhārika cittas).",
+        "pt": "Thīna (lentidão de citta) e middha (torpor dos cetasikas) surgem apenas nas consciências prejudiciais incitadas (4 com apego e 1 com aversão = 5 cittas sasaṅkhārika).",
+        "es": "Thīna (lentitud de citta) y middha (torpor de los cetasikas) surgen solo en las conciencias perjudiciales incitadas (4 con apego y 1 con aversión = 5 cittas sasaṅkhārika)."
+      },
+      "source": {
+        "cma": "II §4",
+        "fund": "Lesson 3.3"
+      }
+    },
+    {
+      "id": "u3.virati_three_identity",
+      "kind": "atom",
+      "topic": {
+        "en": "Three Abstinences",
+        "pt": "Três Abstenções",
+        "es": "Tres Abstenciones"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the three abstinences (viratiyo) among the beautiful mental factors?",
+        "pt": "Quais são as três abstenções (viratiyo) entre os fatores mentais belos?",
+        "es": "¿Cuáles son las tres abstenciones (viratiyo) entre los factores mentales bellos?"
+      },
+      "correct": {
+        "en": "Right speech (sammāvācā), right action (sammākammanta), and right livelihood (sammā-ājīva).",
+        "pt": "Fala correta (sammāvācā), ação correta (sammākammanta) e meio de vida correto (sammā-ājīva).",
+        "es": "Habla correcta (sammāvācā), acción correcta (sammākammanta) y medio de vida correcto (sammā-ājīva)."
+      },
+      "distractors": [
+        {
+          "en": "Right view, right intention, and right mindfulness.",
+          "pt": "Visão correta, intenção correta e atenção plena correta.",
+          "es": "Visión correcta, intención correcta y atención plena correcta."
+        },
+        {
+          "en": "Non-greed, non-hatred, and non-delusion.",
+          "pt": "Não apego, não aversão e não delusão.",
+          "es": "No apego, no aversión y no delusión."
+        },
+        {
+          "en": "Compassion, appreciative joy, and equanimity.",
+          "pt": "Compaixão, alegria apreciativa e equanimidade.",
+          "es": "Compasión, alegría apreciativa y ecuanimidad."
+        }
+      ],
+      "explanation": {
+        "en": "The three viratiyo represent deliberate abstinence from wrong speech, wrong bodily action, and wrong livelihood. In the Noble Eightfold Path, they constitute the moral virtue aggregate (sīlakkhandha).",
+        "pt": "As três viratiyo representam a abstenção deliberada da fala errônea, da ação errônea e do modo de vida errôneo. No Nobre Caminho Óctuplo, constituem o agregado da virtude moral (sīlakkhandha).",
+        "es": "Las tres viratiyo representan la abstención deliberada del habla errónea, de la acción errónea y del modo de vida erróneo. En el Noble Óctuple Sendero, constituyen el agregado de la virtud moral (sīlakkhandha)."
+      },
+      "source": {
+        "cma": "II §6",
+        "fund": "Lesson 3.4"
+      }
+    },
+    {
+      "id": "u3.appamanna_two_identity",
+      "kind": "atom",
+      "topic": {
+        "en": "Two Immeasurables",
+        "pt": "Dois Incomensuráveis",
+        "es": "Dos Inconmensurables"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Which two mental factors constitute the immeasurables (appamaññā) in the cetasika list?",
+        "pt": "Quais dois fatores mentais constituem os incomensuráveis (appamaññā) na lista de cetasikas?",
+        "es": "¿Cuáles dos factores mentales constituyen los inconmensurables (appamaññā) en la lista de cetasikas?"
+      },
+      "correct": {
+        "en": "Compassion (karuṇā) and appreciative joy (muditā).",
+        "pt": "Compaixão (karuṇā) e alegria apreciativa (muditā).",
+        "es": "Compasión (karuṇā) y alegría apreciativa (muditā)."
+      },
+      "distractors": [
+        {
+          "en": "Loving-kindness (mettā) and equanimity (upekkhā).",
+          "pt": "Bondade amorosa (mettā) e equanimidade (upekkhā).",
+          "es": "Amor benevolente (mettā) y ecuanimidad (upekkhā)."
+        },
+        {
+          "en": "Faith (saddhā) and mindfulness (sati).",
+          "pt": "Fé (saddhā) e atenção plena (sati).",
+          "es": "Fe (saddhā) y atención plena (sati)."
+        },
+        {
+          "en": "Patience (khanti) and truthfulness (sacca).",
+          "pt": "Paciência (khanti) e veracidade (sacca).",
+          "es": "Paciencia (khanti) y veracidad (sacca)."
+        }
+      ],
+      "explanation": {
+        "en": "The 4 Brahmavihāras are covered by 4 dhammas: loving-kindness (mettā) is adosa (non-hatred); equanimity (upekkhā) is tatramajjhattatā; compassion (karuṇā) and appreciative joy (muditā) are separate cetasikas.",
+        "pt": "Os 4 Brahmavihāras são contemplados por 4 dhammas: mettā é adosa (não aversão); upekkhā é tatramajjhattatā; karuṇā (compaixão) e muditā (alegria apreciativa) são cetasikas autônomos.",
+        "es": "Los 4 Brahmavihāras son cubiertos por 4 dhammas: mettā es adosa (no aversión); upekkhā es tatramajjhattatā; karuṇā (compasión) y muditā (alegría apreciativa) son cetasikas autónomos."
+      },
+      "source": {
+        "cma": "II §7",
+        "fund": "Lesson 3.4"
+      }
+    },
+    {
+      "id": "u3.panna_amoha_identity",
+      "kind": "atom",
+      "topic": {
+        "en": "Wisdom Faculty",
+        "pt": "Faculdade da Sabedoria",
+        "es": "Facultad de la Sabiduría"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What ultimate reality underlies the mental faculty of wisdom (paññindriya)?",
+        "pt": "Qual realidade última fundamenta a faculdade mental da sabedoria (paññindriya)?",
+        "es": "¿Qué realidad última fundamenta la facultad mental de la sabiduría (paññindriya)?"
+      },
+      "correct": {
+        "en": "Non-delusion (amoha), characterized by penetrating dhammas according to their true nature.",
+        "pt": "Não delusão (amoha), caracterizada por penetrar os dhammas conforme sua verdadeira natureza.",
+        "es": "No delusión (amoha), caracterizada por penetrar los dhammas según su verdadera naturaleza."
+      },
+      "distractors": [
+        {
+          "en": "Mindfulness (sati), characterized by remembering canonical texts.",
+          "pt": "Atenção plena (sati), caracterizada por lembrar textos canônicos.",
+          "es": "Atención plena (sati), caracterizada por recordar textos canónicos."
+        },
+        {
+          "en": "One-pointedness (ekaggatā), characterized by non-distraction.",
+          "pt": "Unificação mental (ekaggatā), caracterizada por não distração.",
+          "es": "Unificación mental (ekaggatā), caracterizada por no distracción."
+        },
+        {
+          "en": "Decision (adhimokkha), characterized by unshakable commitment.",
+          "pt": "Decisão (adhimokkha), caracterizada por compromisso inabalável.",
+          "es": "Decisión (adhimokkha), caracterizada por compromiso inquebrantable."
+        }
+      ],
+      "explanation": {
+        "en": "Paññindriya has the ultimate nature of amoha. It exercises predominance (indriya) in comprehending anicca, dukkha, and anattā, acting as the illuminating torch of discernment.",
+        "pt": "Paññindriya tem a natureza última de amoha. Exerce predomínio (indriya) na compreensão de anicca, dukkha e anattā, atuando como a tocha iluminadora do discernimento.",
+        "es": "Paññindriya tiene la naturaleza última de amoha. Ejerce predominio (indriya) en la comprensión de anicca, dukkha y anattā, actuando como la antorcha iluminadora del discernimiento."
+      },
+      "source": {
+        "cma": "II §8",
+        "fund": "Lesson 3.4"
+      }
+    },
+    {
+      "id": "u3.deduced_minimum_cetasikas",
+      "kind": "derived",
+      "topic": {
+        "en": "Minimum Cetasika Axiom",
+        "pt": "Axioma do Mínimo de Cetasikas",
+        "es": "Axioma del Mínimo de Cetasikas"
+      },
+      "requires": [
+        "u3.seven_universals_identity"
+      ],
+      "prompt": {
+        "en": "What is the absolute minimum number of cetasikas that can arise in any single thought-moment?",
+        "pt": "Qual é o número mínimo absoluto de cetasikas que podem surgir em um momento mental?",
+        "es": "¿Cuál es el número mínimo absoluto de cetasikas que pueden surgir en un momento mental?"
+      },
+      "correct": {
+        "en": "Seven: the seven universal mental factors (sabbacitta-sādhāraṇa).",
+        "pt": "Sete: os sete fatores mentais universais (sabbacitta-sādhāraṇa).",
+        "es": "Siete: los siete factores mentales universales (sabbacitta-sādhāraṇa)."
+      },
+      "distractors": [
+        {
+          "en": "One: bare consciousness without any concomitants.",
+          "pt": "Um: mera consciência sem concomitante algum.",
+          "es": "Uno: simple conciencia sin concomitante alguno."
+        },
+        {
+          "en": "Three: contact, feeling, and perception alone.",
+          "pt": "Três: apenas contato, sensação e percepção.",
+          "es": "Tres: solo contacto, sensación y percepción."
+        },
+        {
+          "en": "Nineteen: the beautiful universals group.",
+          "pt": "Dezenove: o grupo dos universais belos.",
+          "es": "Diecinueve: el grupo de los universales bellos."
+        }
+      ],
+      "explanation": {
+        "en": "In the two sets of five sense-consciousnesses (dvi-pañcaviññāṇa), only the seven universals arise. No particular, unwholesome, or beautiful factors accompany them.",
+        "pt": "Nas duas séries de cinco consciências sensoriais (dvi-pañcaviññāṇa), apenas os sete universais surgem. Nenhum fator particular, prejudicial ou belo as acompanha.",
+        "es": "En los dos grupos de cinco conciencias sensoriales (dvi-pañcaviññāṇa), solo surgen los siete universales. Ningún factor particular, perjudicial o bello las acompaña."
+      },
+      "source": {
+        "cma": "II §18",
+        "fund": "Lesson 3.5"
+      }
+    },
+    {
+      "id": "u3.deduced_ditthi_mana_mutual_exclusion",
+      "kind": "derived",
+      "topic": {
+        "en": "Diṭṭhi and Māna Exclusion",
+        "pt": "Exclusão entre Diṭṭhi e Māna",
+        "es": "Exclusión entre Diṭṭhi y Māna"
+      },
+      "requires": [
+        "u3.four_akusala_universals"
+      ],
+      "prompt": {
+        "en": "Why can wrong view (diṭṭhi) and conceit (māna) never occur simultaneously in the same citta?",
+        "pt": "Por que a visão incorreta (diṭṭhi) e a vaidade (māna) nunca podem ocorrer juntas na mesma citta?",
+        "es": "¿Por qué la visión incorrecta (diṭṭhi) y la vanidad (māna) nunca pueden ocurrir juntas en la misma citta?"
+      },
+      "correct": {
+        "en": "Because diṭṭhi misapprehends anatta by asserting self, whereas māna compares status based on an assumed self.",
+        "pt": "Porque diṭṭhi distorce anattā afirmando um eu, enquanto māna compara posições baseando-se em um eu assumido.",
+        "es": "Porque diṭṭhi distorsiona anattā afirmando un yo, mientras que māna compara posiciones basándose en un yo asumido."
+      },
+      "distractors": [
+        {
+          "en": "Because diṭṭhi is wholesome and māna is unwholesome.",
+          "pt": "Porque diṭṭhi é benéfica e māna é prejudicial.",
+          "es": "Porque diṭṭhi es benéfica y māna es perjudicial."
+        },
+        {
+          "en": "Because māna arises only in hatred-rooted consciousness.",
+          "pt": "Porque māna surge apenas na consciência com raiz na aversão.",
+          "es": "Porque māna surge solo en la conciencia con raíz en la aversión."
+        },
+        {
+          "en": "Because diṭṭhi requires joy while māna requires mental grief.",
+          "pt": "Porque diṭṭhi exige alegria enquanto māna exige pesar mental.",
+          "es": "Porque diṭṭhi exige alegría mientras que māna exige pesar mental."
+        }
+      ],
+      "explanation": {
+        "en": "Both belong to the greed family (lobha-gaṇa). In the 8 greed-rooted cittas, 4 are joined with wrong view (diṭṭhigata-sampayutta); the other 4 are dissociated (vippayutta), in which māna may arise conditionally.",
+        "pt": "Ambos pertencem à família do apego (lobha-gaṇa). Nos 8 cittas de lobha, 4 associam-se a visão incorreta (diṭṭhigata-sampayutta); os outros 4 são dissociados (vippayutta), nos quais māna pode surgir condicionalmente.",
+        "es": "Ambos pertenecen a la familia del apego (lobha-gaṇa). En los 8 cittas de lobha, 4 se asocian con visión incorrecta (diṭṭhigata-sampayutta); los otros 4 son disociados (vippayutta), en los cuales māna puede surgir condicionalmente."
+      },
+      "source": {
+        "cma": "II §13",
+        "fund": "Lesson 3.3"
+      }
+    },
+    {
+      "id": "u3.deduced_virati_mundane_vs_supramundane",
+      "kind": "derived",
+      "topic": {
+        "en": "Virati Modes",
+        "pt": "Modos das Viratiyo",
+        "es": "Modos de las Viratiyo"
+      },
+      "requires": [
+        "u3.virati_three_identity"
+      ],
+      "prompt": {
+        "en": "How do the three abstinences (viratiyo) function in mundane vs supramundane consciousness?",
+        "pt": "Como as três abstenções (viratiyo) operam na consciência mundana versus supramundana?",
+        "es": "¿Cómo operan las tres abstenciones (viratiyo) en la conciencia mundana frente a la supramundana?"
+      },
+      "correct": {
+        "en": "In mundane consciousness they arise separately and occasionally; in supramundane they arise together constantly.",
+        "pt": "Na mundana surgem separadas e ocasionalmente; na supramundana surgem juntas constantemente.",
+        "es": "En la mundana surgen separadas y ocasionalmente; en la supramundana surgen juntas constantemente."
+      },
+      "distractors": [
+        {
+          "en": "They arise only in unwholesome consciousness to prevent verbal transgressions.",
+          "pt": "Surgem apenas na consciência prejudicial para evitar transgressões verbais.",
+          "es": "Surgen solo en la conciencia perjudicial para evitar transgresiones verbales."
+        },
+        {
+          "en": "They can never arise in supramundane consciousness because noble beings have no precepts.",
+          "pt": "Nunca surgem na supramundana porque seres nobres não têm preceitos.",
+          "es": "Nunca surgen en la supramundana porque los seres nobles no tienen preceptos."
+        },
+        {
+          "en": "They are permanent in all beings regardless of ethical conduct.",
+          "pt": "São permanentes em todos os seres independentemente da conduta ética.",
+          "es": "Son permanentes en todos los seres independientemente de la conducta ética."
+        }
+      ],
+      "explanation": {
+        "en": "In mundane wholesome cittas, one abstains from one transgression at a time (nānā kadāci). In supramundane path and fruit cittas, all three arise simultaneously and permanently (ekato niccaṃ), eradicating moral defilements.",
+        "pt": "Nas cittas benéficas mundanas, abstém-se de uma falta por vez (nānā kadāci). Nos caminhos e frutos supramundanos, as três surgem simultaneamente e de forma permanente (ekato niccaṃ), erradicando impurezas morais.",
+        "es": "En las cittas benéficas mundanas, se abstiene de una falta a la vez (nānā kadāci). En los caminos y frutos supramundanos, las tres surgen simultáneamente y de forma permanente (ekato niccaṃ), erradicando impurezas morales."
+      },
+      "source": {
+        "cma": "II §15",
+        "fund": "Lesson 3.4"
+      }
+    },
+    {
+      "id": "u3.deduced_dosa_cetasikas_exclusivity",
+      "kind": "derived",
+      "topic": {
+        "en": "Aversion Factors Scope",
+        "pt": "Escopo dos Fatores de Aversão",
+        "es": "Alcance de los Factores de Aversión"
+      },
+      "requires": [
+        "u3.dosa_tetrad_members"
+      ],
+      "prompt": {
+        "en": "In which types of consciousness can the four aversion factors (dosa, issā, macchariya, kukkucca) arise?",
+        "pt": "Em quais tipos de consciência podem surgir os quatro fatores de aversão (dosa, issā, macchariya, kukkucca)?",
+        "es": "¿En cuáles tipos de conciencia pueden surgir los cuatro factores de aversión (dosa, issā, macchariya, kukkucca)?"
+      },
+      "correct": {
+        "en": "Exclusively in the two aversion-rooted consciousnesses (dosa-mūla cittas).",
+        "pt": "Exclusivamente nas duas consciências com raiz na aversão (dosa-mūla cittas).",
+        "es": "Exclusivamente en las dos conciencias con raíz en la aversión (dosa-mūla cittas)."
+      },
+      "distractors": [
+        {
+          "en": "In all twelve unwholesome consciousnesses whenever agitation occurs.",
+          "pt": "Em todas as doze consciências prejudiciais quando há agitação.",
+          "es": "En las doce conciencias perjudiciales cuando hay agitación."
+        },
+        {
+          "en": "In rootless resultant states when experiencing painful bodily contact.",
+          "pt": "Nos estados resultantes sem raiz ao experienciar contato corporal doloroso.",
+          "es": "En los estados resultantes sin raíz al experimentar contacto corporal doloroso."
+        },
+        {
+          "en": "In delusion-rooted consciousness accompanied by skeptical doubt.",
+          "pt": "Na consciência com raiz na delusão acompanhada de dúvida cética.",
+          "es": "En la conciencia con raíz en la delusión acompañada de duda escéptica."
+        }
+      ],
+      "explanation": {
+        "en": "Dosa is always present in both dosa-mūla cittas. Issā (envy), macchariya (avarice), and kukkucca (remorse) arise intermittently and separately in these same two cittas only.",
+        "pt": "Dosa está sempre presente em ambos os cittas de dosa-mūla. Issā (inveja), macchariya (avareza) e kukkucca (remorso) surgem intermitentemente e em separado apenas nestes mesmos dois cittas.",
+        "es": "Dosa está siempre presente en ambos cittas de dosa-mūla. Issā (envidia), macchariya (avaricia) y kukkucca (remordimiento) surgen intermitentemente y por separado solo en estos mismos dos cittas."
+      },
+      "source": {
+        "cma": "II §13",
+        "fund": "Lesson 3.3"
+      }
+    }
+  ]
+}

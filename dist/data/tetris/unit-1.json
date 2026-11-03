@@ -1,0 +1,963 @@
+{
+  "unit": 1,
+  "title": {
+    "en": "The Four Ultimate Realities & Ontological Axioms",
+    "pt": "As Quatro Realidades Últimas e Axiomas Ontológicos",
+    "es": "Las Cuatro Realidades Últimas y Axiomas Ontológicos"
+  },
+  "summary": {
+    "en": "Axiomatic foundation of Theravada Abhidhamma: distinguishing Paramattha from Paññatti, defining the four ultimate realities (citta, cetasika, rūpa, Nibbāna), the four conditions of mental factor association, and the fourfold defining devices (lakkhaṇa, rasa, paccupaṭṭhāna, padaṭṭhāna).",
+    "pt": "Fundação axiomática do Abhidhamma Theravada: distinção entre Paramattha e Paññatti, definição das quatro realidades últimas (citta, cetasika, rūpa, Nibbāna), as quatro condições de associação dos fatores mentais e o método quádruplo de definição.",
+    "es": "Fundación axiomática del Abhidhamma Theravada: distinción entre Paramattha y Paññatti, definición de las cuatro realidades últimas (citta, cetasika, rūpa, Nibbāna), las cuatro condiciones de asociación mental y el método cuádruple de definición."
+  },
+  "taxonomies": [
+    {
+      "id": "u1.realities",
+      "title": {
+        "en": "Classification of Realities",
+        "pt": "Classificação das Realidades",
+        "es": "Clasificación de las Realidades"
+      },
+      "noun": {
+        "en": "realities",
+        "pt": "realidades",
+        "es": "realidades"
+      },
+      "source": {
+        "cma": "I §2",
+        "fund": "Lesson 1.2",
+        "as": "I.2"
+      },
+      "nodes": [
+        {
+          "id": "all_realities",
+          "name": {
+            "en": "All Realities",
+            "pt": "Todas as Realidades",
+            "es": "Todas las Realidades"
+          },
+          "parent": null
+        },
+        {
+          "id": "pannatti_domain",
+          "name": {
+            "en": "Conventional Concepts (Paññatti)",
+            "pt": "Conceitos Convencionais (Paññatti)",
+            "es": "Conceptos Convencionales (Paññatti)"
+          },
+          "parent": "all_realities"
+        },
+        {
+          "id": "nama_pannatti",
+          "name": {
+            "en": "Nominal Concept (Nāma-paññatti)",
+            "pt": "Conceito Nominal (Nāma-paññatti)",
+            "es": "Concepto Nominal (Nāma-paññatti)"
+          },
+          "parent": "pannatti_domain"
+        },
+        {
+          "id": "vijjamana_node",
+          "name": {
+            "en": "Concept of the Real (Vijjamāna)",
+            "pt": "Conceito do Real (Vijjamāna)",
+            "es": "Concepto de lo Real (Vijjamāna)"
+          },
+          "parent": "nama_pannatti",
+          "weight": 1
+        },
+        {
+          "id": "avijjamana_node",
+          "name": {
+            "en": "Concept of the Unreal (Avijjamāna)",
+            "pt": "Conceito do Não Real (Avijjamāna)",
+            "es": "Concepto de lo No Real (Avijjamāna)"
+          },
+          "parent": "nama_pannatti",
+          "weight": 1
+        },
+        {
+          "id": "attha_pannatti",
+          "name": {
+            "en": "Conceptual Meaning (Attha-paññatti)",
+            "pt": "Conceito de Significado (Attha-paññatti)",
+            "es": "Concepto de Significado (Attha-paññatti)"
+          },
+          "parent": "pannatti_domain"
+        },
+        {
+          "id": "santhanapannatti_node",
+          "name": {
+            "en": "Concept of Form (Santhāna-paññatti)",
+            "pt": "Conceito de Forma (Santhāna-paññatti)",
+            "es": "Concepto de Forma (Santhāna-paññatti)"
+          },
+          "parent": "attha_pannatti",
+          "weight": 1
+        },
+        {
+          "id": "samuhapannatti_node",
+          "name": {
+            "en": "Collective Concept (Samūha-paññatti)",
+            "pt": "Conceito Coletivo (Samūha-paññatti)",
+            "es": "Concepto Colectivo (Samūha-paññatti)"
+          },
+          "parent": "attha_pannatti",
+          "weight": 1
+        },
+        {
+          "id": "paramattha_domain",
+          "name": {
+            "en": "Ultimate Realities (Paramattha)",
+            "pt": "Realidades Últimas (Paramattha)",
+            "es": "Realidades Últimas (Paramattha)"
+          },
+          "parent": "all_realities"
+        },
+        {
+          "id": "citta_node",
+          "name": {
+            "en": "Consciousness (Citta)",
+            "pt": "Consciência (Citta)",
+            "es": "Conciencia (Citta)"
+          },
+          "parent": "paramattha_domain",
+          "weight": 89
+        },
+        {
+          "id": "cetasika_node",
+          "name": {
+            "en": "Mental Factors (Cetasika)",
+            "pt": "Fatores Mentais (Cetasika)",
+            "es": "Factores Mentales (Cetasika)"
+          },
+          "parent": "paramattha_domain",
+          "weight": 52
+        },
+        {
+          "id": "rupa_node",
+          "name": {
+            "en": "Matter (Rūpa)",
+            "pt": "Matéria (Rūpa)",
+            "es": "Materia (Rūpa)"
+          },
+          "parent": "paramattha_domain",
+          "weight": 28
+        },
+        {
+          "id": "nibbana_node",
+          "name": {
+            "en": "Nibbāna",
+            "pt": "Nibbāna",
+            "es": "Nibbāna"
+          },
+          "parent": "paramattha_domain",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "u1.paramattha_definition",
+      "kind": "atom",
+      "topic": {
+        "en": "Paramattha Dhammas",
+        "pt": "Dhammas Paramattha",
+        "es": "Dhammas Paramattha"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the primary characteristic of an ultimate reality (paramattha dhamma)?",
+        "pt": "Qual é a característica primordial de uma realidade última (paramattha dhamma)?",
+        "es": "¿Cuál es la característica primordial de una realidad última (paramattha dhamma)?"
+      },
+      "correct": {
+        "en": "It exists by virtue of its intrinsic nature (sabhāva) and is directly verifiable.",
+        "pt": "Existe por virtude de sua natureza intrínseca (sabhāva) e pode ser verificada de modo direto.",
+        "es": "Existe por virtud de su naturaleza intrínseca (sabhāva) y puede ser verificada de modo directo."
+      },
+      "distractors": [
+        {
+          "en": "It is created by conventional consensus and linguistic designations.",
+          "pt": "É criada por consenso convencional e designações linguísticas.",
+          "es": "Es creada por consenso convencional y designaciones lingüísticas."
+        },
+        {
+          "en": "It is a mental fiction derived from physical imagination without real base.",
+          "pt": "É uma ficção mental derivada da imaginação física sem base real.",
+          "es": "Es una ficción mental derivada de la imaginación física sin base real."
+        },
+        {
+          "en": "It ceases permanently when one stops thinking about its name.",
+          "pt": "Cessa permanentemente quando se deixa de pensar em seu nome.",
+          "es": "Cesa permanentemente cuando se deja de pensar en su nombre."
+        }
+      ],
+      "explanation": {
+        "en": "Paramattha dhammas are realities with their own intrinsic nature (sabhāva-dhāritā), enduring analytical dissection and verifiable through direct meditative insight.",
+        "pt": "Os dhammas paramattha possuem sua própria natureza intrínseca (sabhāva-dhāritā), subsistem à dissecação analítica e são verificáveis por visão direta meditativa.",
+        "es": "Los dhammas paramattha poseen su propia naturaleza intrínseca (sabhāva-dhāritā), subsisten a la disección analítica y son verificables por visión directa meditativa."
+      },
+      "source": {
+        "cma": "I §2",
+        "fund": "Lesson 1.1"
+      }
+    },
+    {
+      "id": "u1.four_paramatthas_count",
+      "kind": "atom",
+      "topic": {
+        "en": "Four Ultimate Realities",
+        "pt": "Quatro Realidades Últimas",
+        "es": "Cuatro Realidades Últimas"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many ultimate realities (paramattha dhammas) are taught in the Abhidhamma?",
+        "pt": "Quantas realidades últimas (paramattha dhammas) são ensinadas no Abhidhamma?",
+        "es": "¿Cuántas realidades últimas (paramattha dhammas) se enseñan en el Abhidhamma?"
+      },
+      "correct": {
+        "en": "Four: citta, cetasika, rūpa, and Nibbāna.",
+        "pt": "Quatro: citta, cetasika, rūpa e Nibbāna.",
+        "es": "Cuatro: citta, cetasika, rūpa y Nibbāna."
+      },
+      "distractors": [
+        {
+          "en": "Five: the five aggregates (khandhas).",
+          "pt": "Cinco: os cinco agregados (khandhas).",
+          "es": "Cinco: los cinco agregados (khandhas)."
+        },
+        {
+          "en": "Three: body, mind, and soul.",
+          "pt": "Três: corpo, mente e alma.",
+          "es": "Tres: cuerpo, mente y alma."
+        },
+        {
+          "en": "Twelve: the twelve bases (āyatanas).",
+          "pt": "Doze: as doze bases (āyatanas).",
+          "es": "Doce: las doce bases (āyatanas)."
+        }
+      ],
+      "explanation": {
+        "en": "The Abhidhammatthasaṅgaha establishes exactly four ultimate realities: consciousness (citta), mental factors (cetasika), matter (rūpa), and the unconditioned element (Nibbāna).",
+        "pt": "O Abhidhammatthasaṅgaha estabelece exatamente quatro realidades últimas: consciência (citta), fatores mentais (cetasika), matéria (rūpa) e o elemento incondicionado (Nibbāna).",
+        "es": "El Abhidhammatthasaṅgaha establece exactamente cuatro realidades últimas: conciencia (citta), factores mentales (cetasika), materia (rūpa) y el elemento incondicionado (Nibbāna)."
+      },
+      "source": {
+        "cma": "I §2",
+        "fund": "Lesson 1.2",
+        "as": "I.2"
+      }
+    },
+    {
+      "id": "u1.citta_characteristic",
+      "kind": "atom",
+      "topic": {
+        "en": "Citta Characteristic",
+        "pt": "Característica de Citta",
+        "es": "Característica de Citta"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the defining characteristic (lakkhaṇa) of consciousness (citta)?",
+        "pt": "Qual é a característica definidora (lakkhaṇa) da consciência (citta)?",
+        "es": "¿Cuál es la característica definitoria (lakkhaṇa) de la conciencia (citta)?"
+      },
+      "correct": {
+        "en": "Cognizing or being aware of an object (vijānana-lakkhaṇaṃ).",
+        "pt": "Conhecer ou estar ciente de um objeto (vijānana-lakkhaṇaṃ).",
+        "es": "Conocer o ser consciente de un objeto (vijānana-lakkhaṇaṃ)."
+      },
+      "distractors": [
+        {
+          "en": "Feeling the hedonic tone of pleasure and pain (vedayita).",
+          "pt": "Sentir o tom hedônico de prazer e dor (vedayita).",
+          "es": "Sentir el tono hedónico de placer y dolor (vedayita)."
+        },
+        {
+          "en": "Remembering and recognizing signs and marks (sañjānana).",
+          "pt": "Lembrar e reconhecer marcas e sinais (sañjānana).",
+          "es": "Recordar y reconocer marcas y señales (sañjānana)."
+        },
+        {
+          "en": "Deforming under cold, heat, and physical pressure (ruppana).",
+          "pt": "Deformar-se sob frio, calor e pressão física (ruppana).",
+          "es": "Deformarse bajo frío, calor y presión física (ruppana)."
+        }
+      ],
+      "explanation": {
+        "en": "Citta has the single defining characteristic of cognizing an object (ārammaṇavijānana). Though diversified by roots, planes, and associations, this fundamental knowing nature is invariable.",
+        "pt": "Citta tem a característica única de conhecer um objeto (ārammaṇavijānana). Embora diversificada por raízes, planos e associações, esta natureza cognoscitiva fundamental é invariável.",
+        "es": "Citta tiene la característica única de conocer un objeto (ārammaṇavijānana). Aunque diversificada por raíces, planos y asociaciones, esta naturaleza cognoscitiva fundamental es invariable."
+      },
+      "source": {
+        "cma": "I §3",
+        "fund": "Lesson 1.2"
+      }
+    },
+    {
+      "id": "u1.cetasika_concomitance",
+      "kind": "atom",
+      "topic": {
+        "en": "Cetasika Definition",
+        "pt": "Definição de Cetasika",
+        "es": "Definición de Cetasika"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How are mental factors (cetasikas) distinguished from bare consciousness (citta)?",
+        "pt": "Como os fatores mentais (cetasikas) são distinguidos da mera consciência (citta)?",
+        "es": "¿Cómo se distinguen los factores mentales (cetasikas) de la simple conciencia (citta)?"
+      },
+      "correct": {
+        "en": "They are mental concomitants that perform specialized cognitive functions and color citta.",
+        "pt": "São concomitantes mentais que realizam funções cognitivas específicas e colorem citta.",
+        "es": "Son concomitantes mentales que realizan funciones cognitivas específicas y colorean citta."
+      },
+      "distractors": [
+        {
+          "en": "They are physical particles generated by brain chemistry.",
+          "pt": "São partículas físicas geradas por química cerebral.",
+          "es": "Son partículas físicas generadas por química cerebral."
+        },
+        {
+          "en": "They exist independently of consciousness in a separate metaphysical storehouse.",
+          "pt": "Existem independentemente da consciência em um repositório metafísico separado.",
+          "es": "Existen independientemente de la conciencia en un repositorio metafísico separado."
+        },
+        {
+          "en": "They are permanent souls that observe consciousness pass by.",
+          "pt": "São almas permanentes que observam a consciência passar.",
+          "es": "Son almas permanentes que observan la conciencia pasar."
+        }
+      ],
+      "explanation": {
+        "en": "Cetasikas arise and cease together with citta, share the same object and the same physical base, modifying and specializing the basic knowing awareness of citta.",
+        "pt": "Os cetasikas surgem e cessam junto com citta, compartilham o mesmo objeto e a mesma base física, modificando e especializando a consciência básica de citta.",
+        "es": "Los cetasikas surgen y cesan junto con citta, comparten el mismo objeto y la misma base física, modificando y especializando la conciencia básica de citta."
+      },
+      "source": {
+        "cma": "II §1",
+        "fund": "Lesson 1.2",
+        "as": "II.1"
+      }
+    },
+    {
+      "id": "u1.rupa_characteristic",
+      "kind": "atom",
+      "topic": {
+        "en": "Rūpa Characteristic",
+        "pt": "Característica de Rūpa",
+        "es": "Característica de Rūpa"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the essential defining characteristic of materiality (rūpa)?",
+        "pt": "Qual é a característica definidora essencial da matéria (rūpa)?",
+        "es": "¿Cuál es la característica definitoria esencial de la materia (rūpa)?"
+      },
+      "correct": {
+        "en": "Undergoing deformation, change, and disruption through physical conditions (ruppana).",
+        "pt": "Sofrer deformação, mudança e perturbação por condições físicas (ruppana).",
+        "es": "Sufrir deformación, cambio y perturbación por condiciones físicas (ruppana)."
+      },
+      "distractors": [
+        {
+          "en": "Directly knowing or experiencing an object.",
+          "pt": "Conhecer ou experienciar diretamente um objeto.",
+          "es": "Conocer o experimentar directamente un objeto."
+        },
+        {
+          "en": "Possessing the capacity for self-reflection and volitional karma.",
+          "pt": "Possuir a capacidade de autorreflexão e kamma volitivo.",
+          "es": "Poseer la capacidad de autorreflexión y kamma volitivo."
+        },
+        {
+          "en": "Existing eternally without arising or dissolution.",
+          "pt": "Existir eternamente sem surgimento ou dissolução.",
+          "es": "Existir eternamente sin surgimiento o disolución."
+        }
+      ],
+      "explanation": {
+        "en": "Rūpa is devoid of objective cognizing ability (anārammaṇa) and is characterized by ruppana: transformation and disruption caused by cold, heat, hunger, thirst, and physical contacts.",
+        "pt": "Rūpa é desprovido de capacidade cognoscitiva de objetos (anārammaṇa) e é caracterizado por ruppana: transformação e perturbação causadas por frio, calor, fome, sede e contatos físicos.",
+        "es": "Rūpa carece de capacidad cognoscitiva de objetos (anārammaṇa) y está caracterizado por ruppana: transformación y perturbación causadas por frío, calor, hambre, sed y contactos físicos."
+      },
+      "source": {
+        "cma": "VI §1",
+        "fund": "Lesson 1.2"
+      }
+    },
+    {
+      "id": "u1.nibbana_characteristic",
+      "kind": "atom",
+      "topic": {
+        "en": "Nibbāna Characteristic",
+        "pt": "Característica de Nibbāna",
+        "es": "Característica de Nibbāna"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How is Nibbāna classified among the four ultimate realities?",
+        "pt": "Como Nibbāna é classificado entre as quatro realidades últimas?",
+        "es": "¿Cómo se clasifica Nibbāna entre las cuatro realidades últimas?"
+      },
+      "correct": {
+        "en": "As the sole unconditioned reality (asaṅkhata-dhātu), peaceful and permanent.",
+        "pt": "Como a única realidade incondicionada (asaṅkhata-dhātu), pacífica e permanente.",
+        "es": "Como la única realidad incondicionada (asaṅkhata-dhātu), pacífica y permanente."
+      },
+      "distractors": [
+        {
+          "en": "As a temporary trance state created by refined concentration.",
+          "pt": "Como um estado de transe temporário criado por concentração refinada.",
+          "es": "Como un estado de trance temporal creado por concentración refinada."
+        },
+        {
+          "en": "As total annihilation of existence into absolute nothingness.",
+          "pt": "Como aniquilação total da existência em absoluto nada.",
+          "es": "Como aniquilación total de la existencia en la nada absoluta."
+        },
+        {
+          "en": "As an omnipresent cosmic consciousness uniting all beings.",
+          "pt": "Como uma consciência cósmica onipresente que une todos os seres.",
+          "es": "Como una conciencia cósmica omnipresente que une a todos los seres."
+        }
+      ],
+      "explanation": {
+        "en": "Nibbāna is an ultimate reality that is unconditioned (asaṅkhata). It does not arise, change, or pass away; its characteristic is peace (santi-lakkhaṇa).",
+        "pt": "Nibbāna é uma realidade última incondicionada (asaṅkhata). Não surge, não muda nem se dissolve; sua característica é a paz (santi-lakkhaṇa).",
+        "es": "Nibbāna es una realidad última incondicionada (asaṅkhata). No surge, no cambia ni se disuelve; su característica es la paz (santi-lakkhaṇa)."
+      },
+      "source": {
+        "cma": "VI §30",
+        "fund": "Lesson 1.2",
+        "as": "VI.14"
+      }
+    },
+    {
+      "id": "u1.fourfold_definition_method",
+      "kind": "atom",
+      "topic": {
+        "en": "Defining Method",
+        "pt": "Método de Definição",
+        "es": "Método de Definición"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the four components of the classical defining device (lakkhaṇādi-catukka)?",
+        "pt": "Quais são os quatro componentes do método clássico de definição (lakkhaṇādi-catukka)?",
+        "es": "¿Cuáles son los cuatro componentes del método clásico de definición (lakkhaṇādi-catukka)?"
+      },
+      "correct": {
+        "en": "Characteristic (lakkhaṇa), function (rasa), manifestation (paccupaṭṭhāna), and proximate cause (padaṭṭhāna).",
+        "pt": "Característica (lakkhaṇa), função (rasa), manifestação (paccupaṭṭhāna) e causa imediata (padaṭṭhāna).",
+        "es": "Característica (lakkhaṇa), función (rasa), manifestación (paccupaṭṭhāna) y causa inmediata (padaṭṭhāna)."
+      },
+      "distractors": [
+        {
+          "en": "Origin, duration, change, and total cessation.",
+          "pt": "Origem, duração, mudança e cessação total.",
+          "es": "Origen, duración, cambio y cesación total."
+        },
+        {
+          "en": "Name, shape, substance, and linguistic usage.",
+          "pt": "Nome, forma, substância e uso linguístico.",
+          "es": "Nombre, forma, sustancia y uso lingüístico."
+        },
+        {
+          "en": "Past karma, present effort, future fruition, and result.",
+          "pt": "Kamma passado, esforço presente, fruição futura e resultado.",
+          "es": "Kamma pasado, esfuerzo presente, fruición futura y resultado."
+        }
+      ],
+      "explanation": {
+        "en": "The Atthasālinī and Visuddhimagga employ lakkhaṇādi-catukka to define each ultimate reality unambiguously across four dimensions.",
+        "pt": "O Atthasālinī e o Visuddhimagga empregam lakkhaṇādi-catukka para definir cada realidade última sem ambiguidade através de quatro dimensões.",
+        "es": "El Atthasālinī y el Visuddhimagga emplean lakkhaṇādi-catukka para definir cada realidad última sin ambigüedad a través de cuatro dimensiones."
+      },
+      "source": {
+        "cma": "Introduction §4",
+        "fund": "Lesson 1.3"
+      }
+    },
+    {
+      "id": "u1.pannatti_twofold_division",
+      "kind": "atom",
+      "topic": {
+        "en": "Conventional Concepts",
+        "pt": "Conceitos Convencionais",
+        "es": "Conceptos Convencionales"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the two principal divisions of conventional concepts (paññatti)?",
+        "pt": "Quais são as duas divisões principais dos conceitos convencionais (paññatti)?",
+        "es": "¿Cuáles son las dos divisiones principales de los conceptos convencionales (paññatti)?"
+      },
+      "correct": {
+        "en": "Nāma-paññatti (name-concept) and attha-paññatti (meaning-concept).",
+        "pt": "Nāma-paññatti (conceito de nome) e attha-paññatti (conceito de significado).",
+        "es": "Nāma-paññatti (concepto de nombre) y attha-paññatti (concepto de significado)."
+      },
+      "distractors": [
+        {
+          "en": "Saccikā-paññatti and sammuti-paññatti.",
+          "pt": "Saccikā-paññatti e sammuti-paññatti.",
+          "es": "Saccikā-paññatti y sammuti-paññatti."
+        },
+        {
+          "en": "Khandha-paññatti and dhātu-paññatti.",
+          "pt": "Khandha-paññatti e dhātu-paññatti.",
+          "es": "Khandha-paññatti y dhātu-paññatti."
+        },
+        {
+          "en": "Kusala-paññatti and akusala-paññatti.",
+          "pt": "Kusala-paññatti e akusala-paññatti.",
+          "es": "Kusala-paññatti y akusala-paññatti."
+        }
+      ],
+      "explanation": {
+        "en": "Paññatti is twofold: that which makes known (nāma-paññatti, verbal signs/names) and that which is made known (attha-paññatti, notions/meanings signified).",
+        "pt": "Paññatti é duplo: aquilo que dá a conhecer (nāma-paññatti, sinais verbais ou nomes) e aquilo que é tornado conhecido (attha-paññatti, noções ou significados).",
+        "es": "Paññatti es doble: lo que da a conocer (nāma-paññatti, signos verbales o nombres) y lo que es dado a conocer (attha-paññatti, nociones o significados)."
+      },
+      "source": {
+        "cma": "VIII §29–§30",
+        "fund": "Lesson 1.1"
+      }
+    },
+    {
+      "id": "u1.nama_pannatti_sixfold",
+      "kind": "atom",
+      "topic": {
+        "en": "Sixfold Naming",
+        "pt": "Nomeação Sêxtupla",
+        "es": "Denominación Séxtuple"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many modes of nāma-paññatti (designations) are formulated based on real and unreal entities?",
+        "pt": "Quantos modos de nāma-paññatti (designações) são formulados com base em entidades reais e não reais?",
+        "es": "¿Cuántos modos de nāma-paññatti (designaciones) se formulan con base en entidades reales y no reales?"
+      },
+      "correct": {
+        "en": "Six modes combining existent and non-existent designations.",
+        "pt": "Seis modos combinando designações de existentes e não existentes.",
+        "es": "Seis modos combinando designaciones de existentes y no existentes."
+      },
+      "distractors": [
+        {
+          "en": "Four modes corresponding to the four noble truths.",
+          "pt": "Quatro modos correspondendo às quatro nobres verdades.",
+          "es": "Cuatro modos correspondientes a las cuatro nobles verdades."
+        },
+        {
+          "en": "Twelve modes matching the bases (āyatanas).",
+          "pt": "Doze modos correspondendo às bases (āyatanas).",
+          "es": "Doce modos correspondientes a las bases (āyatanas)."
+        },
+        {
+          "en": "Three modes according to the three periods of time.",
+          "pt": "Três modos de acordo com os três períodos de tempo.",
+          "es": "Tres modos según los tres períodos de tiempo."
+        }
+      ],
+      "explanation": {
+        "en": "The six modes of nāma-paññatti: concept of the existent, concept of the non-existent, concept of non-existent by existent, concept of existent by non-existent, concept of existent by existent, and concept of non-existent by non-existent.",
+        "pt": "Os seis modos de nāma-paññatti: conceito do existente, conceito do não existente, conceito do não existente pelo existente, do existente pelo não existente, do existente pelo existente e do não existente pelo não existente.",
+        "es": "Los seis modos de nāma-paññatti: concepto de lo existente, concepto de lo no existente, concepto de lo no existente por lo existente, de lo existente por lo no existente, de lo existente por lo existente y de lo no existente por lo no existente."
+      },
+      "source": {
+        "cma": "VIII §31",
+        "fund": "Lesson 1.1"
+      }
+    },
+    {
+      "id": "u1.asankhata_nibbana_distinction",
+      "kind": "atom",
+      "topic": {
+        "en": "Conditioned vs Unconditioned",
+        "pt": "Condicionado e Incondicionado",
+        "es": "Condicionado e Incondicionado"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Which of the four ultimate realities is unconditioned (asaṅkhata) and free from arising and ceasing?",
+        "pt": "Qual das quatro realidades últimas é incondicionada (asaṅkhata) e isenta de surgimento e cessação?",
+        "es": "¿Cuál de las cuatro realidades últimas es incondicionada (asaṅkhata) y está exenta de surgimiento y cesación?"
+      },
+      "correct": {
+        "en": "Nibbāna alone; citta, cetasika, and rūpa are conditioned (saṅkhata).",
+        "pt": "Nibbāna unicamente; citta, cetasika e rūpa são condicionados (saṅkhata).",
+        "es": "Nibbāna únicamente; citta, cetasika y rūpa son condicionados (saṅkhata)."
+      },
+      "distractors": [
+        {
+          "en": "Citta alone, because consciousness is inherently luminous.",
+          "pt": "Citta unicamente, pois a consciência é inerentemente luminosa.",
+          "es": "Citta únicamente, pues la conciencia es intrínsecamente luminosa."
+        },
+        {
+          "en": "Rūpa alone, because atomic elements cannot be destroyed.",
+          "pt": "Rūpa unicamente, pois elementos atômicos não se destroem.",
+          "es": "Rūpa únicamente, pues los elementos atómicos no se destruyen."
+        },
+        {
+          "en": "Both citta and Nibbāna, as mental realities.",
+          "pt": "Tanto citta quanto Nibbāna, como realidades mentais.",
+          "es": "Tanto citta como Nibbāna, como realidades mentales."
+        }
+      ],
+      "explanation": {
+        "en": "Citta, cetasika, and rūpa are conditioned dhammas (saṅkhata) that arise due to causes and endure for micro-instants. Nibbāna is unconditioned (asaṅkhata), devoid of arising, change, or cessation.",
+        "pt": "Citta, cetasika e rūpa são dhammas condicionados (saṅkhata) que surgem por causas e perduram por microinstantes. Nibbāna é incondicionado (asaṅkhata), isento de surgimento, mudança ou cessação.",
+        "es": "Citta, cetasika y rūpa son dhammas condicionados (saṅkhata) que surgen por causas y perduran por microinstantes. Nibbāna es incondicionado (asaṅkhata), exento de surgimiento, cambio o cesación."
+      },
+      "source": {
+        "cma": "I §2",
+        "fund": "Lesson 1.2"
+      }
+    },
+    {
+      "id": "u1.citta_three_submoments",
+      "kind": "atom",
+      "topic": {
+        "en": "Three Sub-moments",
+        "pt": "Três Submomentos",
+        "es": "Tres Submomentos"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the three micro-instants (khaṇa) that constitute the life-moment of any conditioned consciousness?",
+        "pt": "Quais são os três microinstantes (khaṇa) que constituem o momento de vida de qualquer consciência condicionada?",
+        "es": "¿Cuáles son los tres microinstantes (khaṇa) que constituyen el momento de vida de cualquier conciencia condicionada?"
+      },
+      "correct": {
+        "en": "Arising (uppāda), presence (ṭhiti), and dissolution (bhaṅga).",
+        "pt": "Surgimento (uppāda), presença (ṭhiti) e dissolução (bhaṅga).",
+        "es": "Surgimiento (uppāda), presencia (ṭhiti) y disolución (bhaṅga)."
+      },
+      "distractors": [
+        {
+          "en": "Past (atīta), present (paccuppanna), and future (anāgata).",
+          "pt": "Passado (atīta), presente (paccuppanna) e futuro (anāgata).",
+          "es": "Pasado (atīta), presente (paccuppanna) y futuro (anāgata)."
+        },
+        {
+          "en": "Birth (jāti), old age (jarā), and death (maraṇa).",
+          "pt": "Nascimento (jāti), velhice (jarā) e morte (maraṇa).",
+          "es": "Nacimiento (jāti), vejez (jarā) y muerte (maraṇa)."
+        },
+        {
+          "en": "Defilement (kilesa), action (kamma), and result (vipāka).",
+          "pt": "Maculação (kilesa), ação (kamma) e resultado (vipāka).",
+          "es": "Maculación (kilesa), acción (kamma) y resultado (vipāka)."
+        }
+      ],
+      "explanation": {
+        "en": "Each cittakkhaṇa consists of three nascent sub-moments: genesis/arising (uppāda-khaṇa), static peak/presence (ṭhiti-khaṇa), and cessation/dissolution (bhaṅga-khaṇa).",
+        "pt": "Cada cittakkhaṇa consiste em três submomentos nascentes: gênese/surgimento (uppāda-khaṇa), ápice estático/presença (ṭhiti-khaṇa) e cessação/dissolução (bhaṅga-khaṇa).",
+        "es": "Cada cittakkhaṇa consiste en tres submomentos nacientes: génesis/surgimiento (uppāda-khaṇa), ápice estático/presencia (ṭhiti-khaṇa) y cesación/disolución (bhaṅga-khaṇa)."
+      },
+      "source": {
+        "cma": "IV §6",
+        "fund": "Lesson 1.2"
+      }
+    },
+    {
+      "id": "u1.four_concomitances_detail",
+      "kind": "atom",
+      "topic": {
+        "en": "Four Association Factors",
+        "pt": "Quatro Fatores de Associação",
+        "es": "Cuatro Factores de Asociación"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Which four conditions simultaneously define the association (sampayoga) of cetasika with citta?",
+        "pt": "Quais quatro condições definem simultaneamente a associação (sampayoga) de cetasika com citta?",
+        "es": "¿Cuáles cuatro condiciones definen simultáneamente la asociación (sampayoga) de cetasika con citta?"
+      },
+      "correct": {
+        "en": "Arising together, ceasing together, having the same object, and having the same base.",
+        "pt": "Surgir juntos, cessar juntos, ter o mesmo objeto e ter a mesma base.",
+        "es": "Surgir juntos, cesar juntos, tener el mismo objeto y tener la misma base."
+      },
+      "distractors": [
+        {
+          "en": "Sharing the same intention, feeling, perception, and consciousness.",
+          "pt": "Compartilhar a mesma intenção, sensação, percepção e consciência.",
+          "es": "Compartir la misma intención, sensación, percepción y conciencia."
+        },
+        {
+          "en": "Having the same root, door, plane, and destination.",
+          "pt": "Ter a mesma raiz, porta, plano e destino.",
+          "es": "Tener la misma raíz, puerta, plano y destino."
+        },
+        {
+          "en": "Occurring in the same person, moment, realm, and posture.",
+          "pt": "Ocorrer na mesma pessoa, momento, reino e postura.",
+          "es": "Ocurrir en la misma persona, momento, reino y postura."
+        }
+      ],
+      "explanation": {
+        "en": "Ekuppāda (co-arising), ekanirodha (co-cessation), ekālambana (co-object), and ekavatthuka (co-base): these four conditions ensure mental factors form an indivisible experiential unit with consciousness.",
+        "pt": "Ekuppāda (cossurgimento), ekanirodha (cocessação), ekālambana (co-objeto) e ekavatthuka (cobase): estas quatro condições garantem que os fatores mentais formem uma unidade experiencial indivisível com a consciência.",
+        "es": "Ekuppāda (cosurgimiento), ekanirodha (cocesación), ekālambana (co-objeto) y ekavatthuka (cobase): estas cuatro condiciones garantizan que los factores mentales formen una unidad experiencial indivisible con la conciencia."
+      },
+      "source": {
+        "cma": "II §1",
+        "fund": "Lesson 1.2",
+        "as": "II.1"
+      }
+    },
+    {
+      "id": "u1.deduced_nama_rupa_synthesis",
+      "kind": "derived",
+      "topic": {
+        "en": "Nāma-Rūpa Axiom",
+        "pt": "Axioma de Nāma-Rūpa",
+        "es": "Axioma de Nāma-Rūpa"
+      },
+      "requires": [
+        "u1.citta_characteristic",
+        "u1.cetasika_concomitance",
+        "u1.rupa_characteristic"
+      ],
+      "prompt": {
+        "en": "Why are consciousness and mental factors grouped together as 'Nāma' in contrast to 'Rūpa'?",
+        "pt": "Por que a consciência e os fatores mentais são agrupados sob 'Nāma' em contraste com 'Rūpa'?",
+        "es": "¿Por qué la conciencia y los factores mentales se agrupan bajo 'Nāma' en contraste con 'Rūpa'?"
+      },
+      "correct": {
+        "en": "Because they bend towards and apprehend an object, whereas matter is devoid of cognizing capacity.",
+        "pt": "Porque se inclinam e apreendem um objeto, ao passo que a matéria é desprovida de cognição.",
+        "es": "Porque se inclinan y aprehenden un objeto, mientras que la materia carece de cognición."
+      },
+      "distractors": [
+        {
+          "en": "Because nāma lasts for seventeen thought-moments while rūpa lasts for only one.",
+          "pt": "Porque nāma dura dezessete momentos mentais enquanto rūpa dura apenas um.",
+          "es": "Porque nāma dura diecisiete momentos mentales mientras que rūpa dura solo uno."
+        },
+        {
+          "en": "Because matter is permanent and mental states are entirely non-existent fictions.",
+          "pt": "Porque a matéria é permanente e os estados mentais são ficções inexistentes.",
+          "es": "Porque la materia es permanente y los estados mentales son ficciones inexistentes."
+        },
+        {
+          "en": "Because rūpa can arise without any conditions while nāma requires creator gods.",
+          "pt": "Porque rūpa pode surgir sem condições enquanto nāma requer deuses criadores.",
+          "es": "Porque rūpa puede surgir sin condiciones mientras que nāma requiere dioses creadores."
+        }
+      ],
+      "explanation": {
+        "en": "Nāma derives from 'namati' (to bend towards an object). Citta and cetasikas always cognize an objective field (sa-ārammaṇa). Rūpa is anārammaṇa (objectless) and changes under physical stress.",
+        "pt": "Nāma deriva de 'namati' (inclinar-se em direção ao objeto). Citta e cetasikas sempre conhecem um campo objetivo (sa-ārammaṇa). Rūpa é anārammaṇa (sem objeto) e se altera sob estresse físico.",
+        "es": "Nāma deriva de 'namati' (inclinarse hacia el objeto). Citta y cetasikas siempre conocen un campo objetivo (sa-ārammaṇa). Rūpa es anārammaṇa (sin objeto) y se altera bajo estrés físico."
+      },
+      "source": {
+        "cma": "I §2",
+        "fund": "Lesson 1.2"
+      }
+    },
+    {
+      "id": "u1.lakkhana_rasa_pada_distinction",
+      "kind": "derived",
+      "topic": {
+        "en": "Proximate Cause in Method",
+        "pt": "Causa Imediata no Método",
+        "es": "Causa Inmediata en el Método"
+      },
+      "requires": [
+        "u1.fourfold_definition_method"
+      ],
+      "prompt": {
+        "en": "In the fourfold defining device (lakkhaṇādi-catukka), what is the function of the proximate cause (padaṭṭhāna)?",
+        "pt": "No método quádruplo de definição (lakkhaṇādi-catukka), qual é a função da causa imediata (padaṭṭhāna)?",
+        "es": "En el método cuádruple de definición (lakkhaṇādi-catukka), ¿cuál es la función de la causa inmediata (padaṭṭhāna)?"
+      },
+      "correct": {
+        "en": "It points to the direct antecedent condition or footing from which the reality arises.",
+        "pt": "Aponta a condição antecedente direta ou base imediata a partir da qual a realidade surge.",
+        "es": "Señala la condición antecedente directa o base inmediata a partir de la cual la realidad surge."
+      },
+      "distractors": [
+        {
+          "en": "It shows how the state appears to the meditator's introspective vision.",
+          "pt": "Mostra como o estado aparece à visão introspectiva de quem medita.",
+          "es": "Muestra cómo el estado aparece a la visión introspectiva de quien medita."
+        },
+        {
+          "en": "It establishes the intrinsic mark that distinguishes the reality from all others.",
+          "pt": "Estabelece a marca intrínseca que distingue a realidade de todas as outras.",
+          "es": "Establece la marca intrínseca que distingue la realidad de todas las otras."
+        },
+        {
+          "en": "It executes the essential task or achievement of the reality.",
+          "pt": "Executa a tarefa essencial ou realização da realidade.",
+          "es": "Ejecuta la tarea esencial o realización de la realidad."
+        }
+      ],
+      "explanation": {
+        "en": "Padaṭṭhāna is the proximate antecedent cause or footing. Lakkhaṇa is the distinguishing mark; rasa is its essential function; paccupaṭṭhāna is its mode of appearance in contemplative experience.",
+        "pt": "Padaṭṭhāna é a causa antecedente imediata ou sustentáculo. Lakkhaṇa é a marca distintiva; rasa é sua função essencial; paccupaṭṭhāna é seu modo de aparição na experiência contemplativa.",
+        "es": "Padaṭṭhāna es la causa antecedente inmediata o base. Lakkhaṇa es la marca distintiva; rasa es su función esencial; paccupaṭṭhāna es su modo de aparición en la experiencia contemplativa."
+      },
+      "source": {
+        "cma": "Introduction §4",
+        "fund": "Lesson 1.3"
+      }
+    },
+    {
+      "id": "u1.deduced_pannatti_non_sabhaava",
+      "kind": "derived",
+      "topic": {
+        "en": "Concepts Lack Sabhāva",
+        "pt": "Conceitos Carecem de Sabhāva",
+        "es": "Conceptos Carecen de Sabhāva"
+      },
+      "requires": [
+        "u1.paramattha_definition",
+        "u1.pannatti_twofold_division"
+      ],
+      "prompt": {
+        "en": "Why are conventional concepts (paññatti) excluded from the classification of the five aggregates (khandhas)?",
+        "pt": "Por que os conceitos convencionais (paññatti) são excluídos da classificação dos cinco agregados (khandhas)?",
+        "es": "¿Por qué los conceptos convencionales (paññatti) quedan excluidos de la clasificación de los cinco agregados (khandhas)?"
+      },
+      "correct": {
+        "en": "Because concepts lack intrinsic reality (sabhāva) and do not undergo arising, presence, and dissolution.",
+        "pt": "Porque conceitos não têm realidade intrínseca (sabhāva) e não sofrem surgimento, presença e dissolução.",
+        "es": "Porque los conceptos carecen de realidad intrínseca (sabhāva) y no experimentan surgimiento, presencia y disolución."
+      },
+      "distractors": [
+        {
+          "en": "Because concepts belong entirely to the aggregate of consciousness (viññāṇakkhandha).",
+          "pt": "Porque conceitos pertencem inteiramente ao agregado da consciência (viññāṇakkhandha).",
+          "es": "Porque los conceptos pertenecen por entero al agregado de la conciencia (viññāṇakkhandha)."
+        },
+        {
+          "en": "Because concepts can only be understood by enlightened beings.",
+          "pt": "Porque conceitos só podem ser compreendidos por seres despertos.",
+          "es": "Porque los conceptos solo pueden ser comprendidos por seres despiertos."
+        },
+        {
+          "en": "Because concepts are material forms created by physical vocal intimation.",
+          "pt": "Porque conceitos são formas materiais criadas pela intimação vocal.",
+          "es": "Porque los conceptos son formas materiales creadas por la intimación vocal."
+        }
+      ],
+      "explanation": {
+        "en": "The five aggregates encompass all conditioned ultimate realities (saṅkhata-paramattha). Paññatti is mentally constructed designation; it has no independent ontological arising or dissolution.",
+        "pt": "Os cinco agregados englobam todas as realidades últimas condicionadas (saṅkhata-paramattha). Paññatti é uma designação construída pela mente; não possui surgimento ou dissolução ontológica independente.",
+        "es": "Los cinco agregados abarcan todas las realidades últimas condicionadas (saṅkhata-paramattha). Paññatti es una designación construida por la mente; no posee surgimiento ni disolución ontológica independiente."
+      },
+      "source": {
+        "cma": "VIII §29",
+        "fund": "Lesson 1.1"
+      }
+    },
+    {
+      "id": "u1.serial_citta_axiom",
+      "kind": "atom",
+      "topic": {
+        "en": "Serial Consciousness",
+        "pt": "Consciência Serial",
+        "es": "Conciencia Serial"
+      },
+      "requires": [
+        "u1.citta_characteristic"
+      ],
+      "prompt": {
+        "en": "According to Theravada Abhidhamma, can two moments of consciousness arise simultaneously?",
+        "pt": "Segundo o Abhidhamma Theravada, dois cittas podem surgir simultaneamente?",
+        "es": "Según el Abhidhamma Theravada, ¿pueden surgir dos cittas simultáneamente?"
+      },
+      "correct": {
+        "en": "No; cittas arise in strict serial succession, never simultaneously.",
+        "pt": "Não; os cittas surgem em sucessão estritamente serial, nunca simultâneos.",
+        "es": "No; los cittas surgen en sucesión estrictamente serial, nunca simultáneos."
+      },
+      "distractors": [
+        {
+          "en": "Yes; seeing and hearing always occur concurrently in parallel.",
+          "pt": "Sim; ver e ouvir sempre ocorrem concorrentemente em paralelo.",
+          "es": "Sim; ver y oír siempre ocurren concurrentemente en paralelo."
+        },
+        {
+          "en": "Yes; sensory consciousness and mind consciousness occur together.",
+          "pt": "Sim; consciência sensorial e consciência mental ocorrem juntas.",
+          "es": "Sí; conciencia sensorial y conciencia mental ocurren juntas."
+        },
+        {
+          "en": "Only in the immaterial realms can cittas arise in parallel streams.",
+          "pt": "Apenas nos reinos imateriais os cittas surgem em fluxos paralelos.",
+          "es": "Solo en los reinos inmateriales los cittas surgen en flujos paralelos."
+        }
+      ],
+      "explanation": {
+        "en": "Consciousness is strictly singular and digital; each citta arises and falls before the next arises.",
+        "pt": "A consciência é estritamente singular e discreta; cada citta surge e cessa antes do próximo surgir.",
+        "es": "La conciencia es estrictamente singular y discreta; cada citta surge y cesa antes de que surja el siguiente."
+      },
+      "source": {
+        "cma": "I §3",
+        "fund": "Lesson 1.3",
+        "as": "I.3"
+      }
+    },
+    {
+      "id": "u1.attha_pannatti_nature",
+      "kind": "atom",
+      "topic": {
+        "en": "Attha-paññatti",
+        "pt": "Attha-paññatti",
+        "es": "Attha-paññatti"
+      },
+      "requires": [
+        "u1.pannatti_twofold_division"
+      ],
+      "prompt": {
+        "en": "What is attha-paññatti in the Abhidhamma classification of concepts?",
+        "pt": "O que é attha-paññatti na classificação de conceitos do Abhidhamma?",
+        "es": "¿Qué es attha-paññatti en la clasificación de conceptos del Abhidhamma?"
+      },
+      "correct": {
+        "en": "The conceptual meaning or signified idea grasped by the understanding.",
+        "pt": "O significado conceitual ou ideia significada apreendida pelo intelecto.",
+        "es": "El significado conceptual o idea significada aprehendida por el intelecto."
+      },
+      "distractors": [
+        {
+          "en": "The audible name, vocal sound, or linguistic label applied to things.",
+          "pt": "O nome audível, som vocal ou rótulo linguístico aplicado às coisas.",
+          "es": "El nombre audible, sonido vocal o etiqueta lingüística aplicada a las cosas."
+        },
+        {
+          "en": "An indivisible physical particle endowed with elemental qualities.",
+          "pt": "Uma partícula física indivisível dotada de qualidades elementares.",
+          "es": "Una partícula física indivisible dotada de cualidades elementales."
+        },
+        {
+          "en": "The direct supramundane experience of the Unconditioned Nibbāna.",
+          "pt": "A experiência supramundana direta do Incondicionado Nibbāna.",
+          "es": "La experiencia supramundana directa del Incondicionado Nibbāna."
+        }
+      ],
+      "explanation": {
+        "en": "Attha-paññatti is that which is made known (the signified idea), whereas nāma-paññatti is the name that makes it known.",
+        "pt": "Attha-paññatti é aquilo que é dado a conhecer (a ideia significada), enquanto nāma-paññatti é o nome que a torna conhecida.",
+        "es": "Attha-paññatti es lo que se da a conocer (la idea significada), mientras que nāma-paññatti es el nombre que la da a conocer."
+      },
+      "source": {
+        "cma": "VIII §29",
+        "fund": "8.4",
+        "as": "VIII.29"
+      }
+    }
+  ]
+}

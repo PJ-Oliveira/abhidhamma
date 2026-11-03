@@ -1,19 +1,20 @@
-import { t } from "./i18n.js?v=6379fc71";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=6379fc71";
-import { renderTree, markActiveLeaf } from "./tree.js?v=6379fc71";
-import { loadChunk, renderSegments } from "./reader.js?v=6379fc71";
-import { initDictionaryPanel } from "./dictionary.js?v=6379fc71";
-import { initSearchPanel } from "./search.js?v=6379fc71";
-import { initExportPanel } from "./export.js?v=6379fc71";
-import { initSrsPanel } from "./srs.js?v=6379fc71";
-import { initToolsPanel } from "./tools/tools.js?v=6379fc71";
-import "./tools/mindmap.js?v=6379fc71";
-import "./tools/patthana.js?v=6379fc71";
-import "./tools/vithi.js?v=6379fc71";
-import "./tools/matikas.js?v=6379fc71";
-import "./tools/cetasika.js?v=6379fc71";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=6379fc71";
-import { createLogger } from "./logger.js?v=6379fc71";
+import { t } from "./i18n.js?v=b6a19a3f";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=b6a19a3f";
+import { renderTree, markActiveLeaf } from "./tree.js?v=b6a19a3f";
+import { loadChunk, renderSegments } from "./reader.js?v=b6a19a3f";
+import { initDictionaryPanel } from "./dictionary.js?v=b6a19a3f";
+import { initSearchPanel } from "./search.js?v=b6a19a3f";
+import { initExportPanel } from "./export.js?v=b6a19a3f";
+import { initSrsPanel } from "./srs.js?v=b6a19a3f";
+import { TetrisUI } from "./tetris/ui.js?v=b6a19a3f";
+import { initToolsPanel } from "./tools/tools.js?v=b6a19a3f";
+import "./tools/mindmap.js?v=b6a19a3f";
+import "./tools/patthana.js?v=b6a19a3f";
+import "./tools/vithi.js?v=b6a19a3f";
+import "./tools/matikas.js?v=b6a19a3f";
+import "./tools/cetasika.js?v=b6a19a3f";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=b6a19a3f";
+import { createLogger } from "./logger.js?v=b6a19a3f";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -43,20 +44,69 @@ function getWorkGroup(workId) {
         return null;
     return (Object.keys(state.manifest.groups).find((g) => state.manifest?.groups[g]?.some((w) => w.id === workId)) ?? null);
 }
+function workSupportsEs(work) {
+    return Boolean(work?.languages?.includes("es"));
+}
+function resolveCommentaryMode(work) {
+    const raw = settings.commentaryMode ?? (settings.translationLang === "es" ? "en+es" : "en+pt");
+    if (!workSupportsEs(work)) {
+        if (raw === "en+es")
+            return "en+pt";
+        if (raw === "es")
+            return "pt";
+    }
+    return raw;
+}
+function commentaryModeToRenderFlags(mode) {
+    switch (mode) {
+        case "en":
+            return { showPaliOverride: true, showTranslationOverride: false, effectiveLang: "en" };
+        case "en+es":
+            return { showPaliOverride: true, showTranslationOverride: true, effectiveLang: "es" };
+        case "pt":
+            return { showPaliOverride: false, showTranslationOverride: true, effectiveLang: "pt" };
+        case "es":
+            return { showPaliOverride: false, showTranslationOverride: true, effectiveLang: "es" };
+        case "en+pt":
+        default:
+            return { showPaliOverride: true, showTranslationOverride: true, effectiveLang: "pt" };
+    }
+}
+function stripTags(html) {
+    return (html ?? "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+}
 function updateSettingsLabels() {
     const group = state.work ? getWorkGroup(state.work.id) : null;
-    const isBilingual = group === "comentarios";
+    const isCommentary = group === "comentarios";
     const paliLabelEl = document.getElementById("label-show-pali");
     const translationLabelEl = document.getElementById("label-show-translation");
-    if (paliLabelEl) {
-        paliLabelEl.textContent = isBilingual
-            ? t("settingShowOriginal", settings.uiLang)
-            : t("settingShowPali", settings.uiLang);
+    const paliCb = document.getElementById("setting-show-pali");
+    const translCb = document.getElementById("setting-show-translation");
+    if (isCommentary) {
+        const mode = resolveCommentaryMode(state.work);
+        const flags = commentaryModeToRenderFlags(mode);
+        const isEsMode = mode === "en+es" || mode === "es" || (mode === "en" && settings.uiLang === "es" && workSupportsEs(state.work));
+        if (paliLabelEl)
+            paliLabelEl.textContent = t("settingShowOriginal", settings.uiLang);
+        if (translationLabelEl) {
+            translationLabelEl.textContent = isEsMode
+                ? t("settingShowES", settings.uiLang)
+                : t("settingShowPT", settings.uiLang);
+        }
+        if (paliCb)
+            paliCb.checked = flags.showPaliOverride;
+        if (translCb)
+            translCb.checked = flags.showTranslationOverride;
     }
-    if (translationLabelEl) {
-        translationLabelEl.textContent = isBilingual
-            ? t("settingShowPT", settings.uiLang)
-            : t("settingShowTranslation", settings.uiLang);
+    else {
+        if (paliLabelEl)
+            paliLabelEl.textContent = t("settingShowPali", settings.uiLang);
+        if (translationLabelEl)
+            translationLabelEl.textContent = t("settingShowTranslation", settings.uiLang);
+        if (paliCb)
+            paliCb.checked = settings.showPali;
+        if (translCb)
+            translCb.checked = settings.showTranslation;
     }
 }
 function applySettingsToUI() {
@@ -73,7 +123,7 @@ function updateHash() {
     const activeBtn = document.querySelector(".rail-btn.active");
     const panel = activeBtn ? (activeBtn.dataset.panel || "tipitaka") : "tipitaka";
     let base = `#/${panel}`;
-    if (state.work && state.partKey && state.chunkIndex !== undefined) {
+    if (panel !== "srs" && panel !== "tetris" && state.work && state.partKey && state.chunkIndex !== undefined) {
         base += `/${state.work.id}/${state.partKey}/${state.chunkIndex}`;
     }
     if (location.hash !== base) {
@@ -94,6 +144,40 @@ function renderPartTabs() {
     tabsEl.innerHTML = "";
     if (!state.work)
         return;
+    const group = getWorkGroup(state.work.id);
+    if (group === "comentarios") {
+        const activeMode = resolveCommentaryMode(state.work);
+        const hasEs = workSupportsEs(state.work);
+        const modes = hasEs
+            ? [
+                { mode: "en", labelKey: "verEn" },
+                { mode: "en+pt", labelKey: "verEnPt" },
+                { mode: "en+es", labelKey: "verEnEs" },
+                { mode: "pt", labelKey: "verPt" },
+                { mode: "es", labelKey: "verEs" },
+            ]
+            : [
+                { mode: "en", labelKey: "verEn" },
+                { mode: "en+pt", labelKey: "verEnPt" },
+                { mode: "pt", labelKey: "verPt" },
+            ];
+        for (const item of modes) {
+            const btn = document.createElement("button");
+            btn.className = "part-tab version-tab";
+            btn.dataset.versionMode = item.mode;
+            btn.textContent = t(item.labelKey, settings.uiLang);
+            if (item.mode === activeMode)
+                btn.classList.add("active");
+            btn.addEventListener("click", () => {
+                updateSettings({ commentaryMode: item.mode });
+                renderPartTabs();
+                renderChapterNav();
+                rerenderContent();
+            });
+            tabsEl.appendChild(btn);
+        }
+        return;
+    }
     for (const partKey of Object.keys(state.work.parts)) {
         const part = state.work.parts[partKey];
         if (!part)
@@ -176,6 +260,11 @@ function renderChapterNav() {
     const list = document.createElement("ul");
     list.className = "chapter-nav-list";
     list.hidden = true;
+    const isCommentary = getWorkGroup(state.work.id) === "comentarios";
+    const commMode = isCommentary ? resolveCommentaryMode(state.work) : null;
+    const segById = isCommentary && state.segments.length > 0
+        ? new Map(state.segments.map((s) => [s.id, s]))
+        : null;
     for (let i = 0; i < chapters.length; i++) {
         const entry = chapters[i];
         const chunkIdx = segIdToChunk(entry.id, part);
@@ -185,7 +274,25 @@ function renderChapterNav() {
         numSpan.textContent = `${i + 1}.`;
         const textSpan = document.createElement("span");
         textSpan.className = "chap-text";
-        textSpan.textContent = entry.text.replace(/^\d+\.\s*/, "");
+        let chapLabel = entry.text.replace(/^\d+\.\s*/, "");
+        if (commMode && segById) {
+            const seg = segById.get(entry.id);
+            if (seg) {
+                const ptClean = stripTags(seg.pt).replace(/^\d+\.\s*/, "");
+                const esClean = stripTags(seg.es).replace(/^\d+\.\s*/, "");
+                if (commMode === "pt" && ptClean)
+                    chapLabel = ptClean;
+                else if (commMode === "es" && esClean)
+                    chapLabel = esClean;
+                else if (commMode === "en+pt" && ptClean && ptClean.toLowerCase() !== chapLabel.toLowerCase()) {
+                    chapLabel = `${chapLabel} · ${ptClean}`;
+                }
+                else if (commMode === "en+es" && esClean && esClean.toLowerCase() !== chapLabel.toLowerCase()) {
+                    chapLabel = `${chapLabel} · ${esClean}`;
+                }
+            }
+        }
+        textSpan.textContent = chapLabel;
         li.appendChild(numSpan);
         li.appendChild(textSpan);
         li.addEventListener("click", () => {
@@ -229,11 +336,7 @@ async function selectWork(workId, partKey, chunkIndex, segId) {
     state.work = work;
     state.partKey = partKey;
     state.chunkIndex = Math.max(0, Math.min(chunkIndex, part.files.length - 1));
-    const workGroup = getWorkGroup(workId);
-    if (workGroup === "comentarios" && !settings.showPali) {
-        updateSettings({ showPali: true });
-        el("setting-show-pali").checked = true;
-    }
+    state.segments = [];
     el("content").innerHTML = `<p class="loading">${t("loading", settings.uiLang)}</p>`;
     renderBreadcrumb();
     renderPartTabs();
@@ -253,6 +356,7 @@ async function selectWork(workId, partKey, chunkIndex, segId) {
         el("content").innerHTML = `<p class="loading">${t("noResults", settings.uiLang)}</p>`;
         return;
     }
+    renderChapterNav();
     rerenderContent();
     if (segId != null) {
         const target = el("content").querySelector(`.seg[data-seg-id="${segId}"]`);
@@ -347,7 +451,7 @@ function wireIconRail() {
         if (w >= MIN_W)
             root.style.setProperty("--panel-w", w + "px");
     }
-    const FULLSCREEN_PANELS = new Set(["srs", "tools"]);
+    const FULLSCREEN_PANELS = new Set(["srs", "tools", "tetris"]);
     const readerHeader = el("reader-header");
     const readerContent = el("content");
     const tocNav = el("toc-nav");
@@ -358,8 +462,18 @@ function wireIconRail() {
         readerHeader.style.display = isFullscreen ? "none" : "";
         readerContent.style.display = isFullscreen ? "none" : "";
         tocNav.style.display = isFullscreen ? "none" : "";
-        readerSrs.style.display = target === "srs" ? "flex" : "none";
+        const isSrsOrTetris = target === "srs" || target === "tetris";
+        readerSrs.style.display = isSrsOrTetris ? "flex" : "none";
         readerTools.style.display = target === "tools" ? "flex" : "none";
+        if (isSrsOrTetris) {
+            const activeBtn = document.querySelector(".srs-tab-btn.active, .srs-menu-item.active");
+            const isTetris = target === "tetris" || (target !== "srs" && activeBtn?.dataset.srsMode === "tetris");
+            readerSrs.classList.toggle("tetris-mode", isTetris);
+            document.body.classList.toggle("tetris-active", isTetris);
+        }
+        else {
+            document.body.classList.remove("tetris-active");
+        }
     }
     switchPanel = (target, skipHashUpdate = false) => {
         if (!target)
@@ -374,8 +488,23 @@ function wireIconRail() {
             doExpand();
         }
         buttons.forEach((b) => b.classList.toggle("active", b.dataset.panel === target));
-        panels.forEach((p) => p.classList.toggle("active", p.id === `panel-${target}`));
+        panels.forEach((p) => p.classList.toggle("active", p.id === (target === "tetris" ? "panel-tetris" : `panel-${target}`)));
         toggleReaderOverlay(target);
+        if (target === "tetris") {
+            setSrsModeGlobal?.("tetris", false);
+        }
+        else if (target === "srs") {
+            setSrsModeGlobal?.("vocab", false);
+        }
+        if (target === "export" && state.work) {
+            const exportWorkSel = document.getElementById("export-work");
+            if (exportWorkSel && Array.from(exportWorkSel.options).some((o) => o.value === state.work.id)) {
+                if (exportWorkSel.value !== state.work.id) {
+                    exportWorkSel.value = state.work.id;
+                    exportWorkSel.dispatchEvent(new Event("change"));
+                }
+            }
+        }
         if (!skipHashUpdate)
             updateHash();
     };
@@ -445,9 +574,12 @@ function rerenderContent() {
     const work = state.work;
     const partKey = state.partKey;
     const group = getWorkGroup(work.id);
+    const isCommentary = group === "comentarios";
+    const commFlags = isCommentary ? commentaryModeToRenderFlags(resolveCommentaryMode(work)) : null;
     renderSegments(state.segments, content, {
         onNoteHover: handleNoteHover,
-        ...(group === "comentarios" ? { effectiveLang: "pt" } : {}),
+        isCommentary,
+        ...(commFlags ?? {}),
         isBookmarked: (segId) => isBookmarked(work.id, partKey, segId),
         onBookmarkToggle: (seg) => {
             const active = toggleBookmark({
@@ -464,34 +596,127 @@ function rerenderContent() {
     applyStaticI18n();
     setTimeout(() => { content.scrollTop = savedScroll; }, 0);
 }
-let deferredPrompt;
+let deferredPrompt = window.__deferredPwaPrompt ?? null;
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
+    window.__deferredPwaPrompt = e;
     const installContainer = document.getElementById('pwa-install-container');
     if (installContainer)
         installContainer.style.display = 'block';
 });
+window.addEventListener('appinstalled', () => {
+    deferredPrompt = null;
+    window.__deferredPwaPrompt = null;
+    const installContainer = document.getElementById('pwa-install-container');
+    if (installContainer)
+        installContainer.style.display = 'none';
+});
+async function cacheAllForOffline(btn) {
+    if (!('caches' in window))
+        return;
+    const origHtml = btn.innerHTML;
+    btn.disabled = true;
+    try {
+        const cache = await caches.open('abhidhamma-cache-v14');
+        const urls = [
+            './',
+            './index.html',
+            './manifest.json',
+            './css/style.css',
+            './data/manifest.json',
+            './data/dictionary/pali_core.json',
+            './data/dictionary/common_pali.json',
+        ];
+        if (state.manifest?.groups) {
+            for (const group of Object.values(state.manifest.groups)) {
+                for (const work of group) {
+                    for (const part of Object.values(work.parts || {})) {
+                        for (const file of part.files || []) {
+                            urls.push(`./data/works/${work.id}/${file}`);
+                        }
+                    }
+                }
+            }
+        }
+        const total = urls.length;
+        let done = 0;
+        const BATCH = 6;
+        for (let i = 0; i < total; i += BATCH) {
+            const slice = urls.slice(i, i + BATCH);
+            await Promise.all(slice.map(async (u) => {
+                try {
+                    const existing = await cache.match(u);
+                    if (!existing) {
+                        const r = await fetch(u);
+                        if (r.ok)
+                            await cache.put(u, r.clone());
+                    }
+                }
+                catch {
+                }
+            }));
+            done = Math.min(total, i + slice.length);
+            const pct = Math.round((done / total) * 100);
+            btn.innerHTML = `<span style="font-size: 16px;">⏳</span> Offline (${pct}%)`;
+        }
+        btn.innerHTML = `<span style="font-size: 18px;">✅</span> Offline 100%`;
+        setTimeout(() => {
+            btn.disabled = false;
+            btn.innerHTML = origHtml;
+        }, 3500);
+    }
+    catch {
+        btn.disabled = false;
+        btn.innerHTML = origHtml;
+    }
+}
 function wireSettingsPanel() {
+    const installContainer = document.getElementById('pwa-install-container');
+    const isStandalone = window.matchMedia?.('(display-mode: standalone)')?.matches ||
+        navigator.standalone === true;
+    if (installContainer && isStandalone) {
+        installContainer.style.display = 'none';
+    }
     const installBtn = document.getElementById('btn-install-pwa');
     if (installBtn) {
         installBtn.addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') {
-                    console.log('User accepted the install prompt');
-                }
+            const promptEvent = deferredPrompt || window.__deferredPwaPrompt;
+            if (promptEvent) {
+                promptEvent.prompt();
+                const { outcome } = await promptEvent.userChoice;
                 deferredPrompt = null;
-                const installContainer = document.getElementById('pwa-install-container');
-                if (installContainer)
-                    installContainer.style.display = 'none';
+                window.__deferredPwaPrompt = null;
+                if (outcome === 'accepted') {
+                    if (installContainer)
+                        installContainer.style.display = 'none';
+                    return;
+                }
             }
+            await cacheAllForOffline(installBtn);
         });
     }
     const langSelect = el("setting-lang");
     langSelect.addEventListener("change", () => {
-        updateSettings({ translationLang: langSelect.value, uiLang: langSelect.value });
+        const newLang = langSelect.value;
+        let nextCommMode = settings.commentaryMode;
+        if (newLang === "es") {
+            if (!nextCommMode || nextCommMode === "en+pt")
+                nextCommMode = "en+es";
+            else if (nextCommMode === "pt")
+                nextCommMode = "es";
+        }
+        else if (newLang === "pt") {
+            if (nextCommMode === "en+es")
+                nextCommMode = "en+pt";
+            else if (nextCommMode === "es")
+                nextCommMode = "pt";
+        }
+        updateSettings({
+            translationLang: newLang,
+            uiLang: newLang,
+            ...(nextCommMode ? { commentaryMode: nextCommMode } : {}),
+        });
         rerenderContent();
         refreshLocalizedUI();
         window.dispatchEvent(new Event("languageChanged"));
@@ -504,13 +729,45 @@ function wireSettingsPanel() {
         updateSettings({ fontSize: Math.max(settings.fontSize - 1, 12) });
         applySettingsToUI();
     });
+    const handleCommentaryCheckboxChange = (changed) => {
+        const curMode = resolveCommentaryMode(state.work);
+        const hasEs = workSupportsEs(state.work);
+        const targetTransl = hasEs && (curMode === "en+es" || curMode === "es" || settings.translationLang === "es") ? "es" : "pt";
+        let pChecked = showPali.checked;
+        let tChecked = showTranslation.checked;
+        if (!pChecked && !tChecked) {
+            if (changed === "pali")
+                tChecked = true;
+            else
+                pChecked = true;
+        }
+        let nextMode = "en+pt";
+        if (pChecked && tChecked)
+            nextMode = targetTransl === "es" ? "en+es" : "en+pt";
+        else if (pChecked && !tChecked)
+            nextMode = "en";
+        else
+            nextMode = targetTransl;
+        updateSettings({ commentaryMode: nextMode });
+        renderPartTabs();
+        renderChapterNav();
+        rerenderContent();
+    };
     const showPali = el("setting-show-pali");
     showPali.addEventListener("change", () => {
+        if (state.work && getWorkGroup(state.work.id) === "comentarios") {
+            handleCommentaryCheckboxChange("pali");
+            return;
+        }
         updateSettings({ showPali: showPali.checked });
         rerenderContent();
     });
     const showTranslation = el("setting-show-translation");
     showTranslation.addEventListener("change", () => {
+        if (state.work && getWorkGroup(state.work.id) === "comentarios") {
+            handleCommentaryCheckboxChange("transl");
+            return;
+        }
         updateSettings({ showTranslation: showTranslation.checked });
         rerenderContent();
     });
@@ -531,10 +788,15 @@ function applyStaticI18n() {
         if (key)
             node.title = t(key, settings.uiLang);
     });
+    updateSettingsLabels();
 }
+let tetrisUiInstance = null;
 function refreshLocalizedUI() {
     applyStaticI18n();
     updateSettingsLabels();
+    if (tetrisUiInstance) {
+        tetrisUiInstance.setLang(settings.uiLang);
+    }
     if (!state.manifest)
         return;
     renderTree(state.manifest, el("tree"), (workId, partKey, chunkIndex) => void selectWork(workId, partKey, chunkIndex));
@@ -567,6 +829,84 @@ function wireChunkNav() {
         }
     });
 }
+let setSrsModeGlobal = null;
+function wireSrsNavigation() {
+    const menuItems = document.querySelectorAll(".srs-menu-item, .srs-tab-btn");
+    const vocabPanel = document.getElementById("srs-full-body");
+    const tetrisPanel = document.getElementById("srs-tetris-main");
+    const readerSrs = document.getElementById("reader-srs");
+    const setMode = (mode, updateHashRoute = true) => {
+        menuItems.forEach((b) => {
+            const active = b.dataset.srsMode === mode;
+            b.classList.toggle("active", active);
+            if (b.hasAttribute("aria-selected")) {
+                b.setAttribute("aria-selected", active ? "true" : "false");
+            }
+        });
+        const railSrs = document.querySelector('.rail-btn[data-panel="srs"]');
+        const railTetris = document.querySelector('.rail-btn[data-panel="tetris"]');
+        if (railSrs && railTetris) {
+            if (mode === "tetris") {
+                railSrs.classList.remove("active");
+                railTetris.classList.add("active");
+            }
+            else {
+                railTetris.classList.remove("active");
+                railSrs.classList.add("active");
+            }
+        }
+        const panelSrs = document.getElementById("panel-srs");
+        const panelTetris = document.getElementById("panel-tetris");
+        if (panelSrs && panelTetris) {
+            if (mode === "tetris") {
+                panelSrs.classList.remove("active");
+                panelTetris.classList.add("active");
+            }
+            else {
+                panelTetris.classList.remove("active");
+                panelSrs.classList.add("active");
+            }
+        }
+        if (mode === "tetris") {
+            readerSrs?.classList.add("tetris-mode");
+            document.body.classList.add("tetris-active");
+            if (vocabPanel)
+                vocabPanel.style.display = "none";
+            if (tetrisPanel) {
+                tetrisPanel.style.display = "flex";
+                if (!tetrisUiInstance) {
+                    tetrisUiInstance = new TetrisUI(tetrisPanel, settings.uiLang);
+                    void tetrisUiInstance.init();
+                }
+            }
+            if (updateHashRoute) {
+                history.replaceState(null, "", "#/tetris");
+            }
+        }
+        else {
+            readerSrs?.classList.remove("tetris-mode");
+            document.body.classList.remove("tetris-active");
+            if (tetrisPanel)
+                tetrisPanel.style.display = "none";
+            if (vocabPanel)
+                vocabPanel.style.display = "flex";
+            if (updateHashRoute) {
+                history.replaceState(null, "", "#/srs");
+            }
+        }
+    };
+    setSrsModeGlobal = setMode;
+    menuItems.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const mode = btn.dataset.srsMode || "vocab";
+            setMode(mode, true);
+        });
+    });
+    const activeBtn = document.querySelector(".srs-tab-btn.active, .srs-menu-item.active");
+    if (activeBtn?.dataset.srsMode === "tetris") {
+        setMode("tetris", false);
+    }
+}
 function parseHash() {
     const hash = location.hash.replace(/^#\/?/, "");
     if (!hash)
@@ -576,8 +916,13 @@ function parseHash() {
         return null;
     let panel = "tipitaka";
     let workId, partKey, chunkIndexStr;
-    const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools"]);
-    if (parts[0] && knownPanels.has(parts[0])) {
+    const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools", "tetris"]);
+    if (parts[0] === "srs" && parts[1] === "tetris") {
+        parts.shift();
+        parts.shift();
+        panel = "tetris";
+    }
+    else if (parts[0] && knownPanels.has(parts[0])) {
         panel = parts.shift();
     }
     if (parts.length >= 3) {
@@ -629,7 +974,17 @@ function wireRouting() {
 }
 async function init() {
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js').catch((err) => {
+        if ('caches' in window) {
+            caches.keys().then((keys) => {
+                for (const k of keys) {
+                    if (k !== 'abhidhamma-cache-v14')
+                        void caches.delete(k);
+                }
+            }).catch(() => { });
+        }
+        navigator.serviceWorker.register('service-worker.js').then((reg) => {
+            void reg.update();
+        }).catch((err) => {
             console.error('Service Worker registration failed: ', err);
         });
     }
@@ -661,6 +1016,12 @@ async function init() {
     initExportPanel(state.manifest, el("export-panel-body"), () => state.work?.id ?? null);
     initSrsPanel(el("srs-full-body"));
     initToolsPanel(el("tools-full-body"));
+    const tetrisMount = document.getElementById("srs-tetris-main");
+    if (tetrisMount) {
+        tetrisUiInstance = new TetrisUI(tetrisMount, settings.uiLang);
+        void tetrisUiInstance.init();
+    }
+    wireSrsNavigation();
     const route = parseHash();
     if (route) {
         if (route.panel !== "tipitaka") {

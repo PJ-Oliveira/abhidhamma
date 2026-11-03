@@ -1,0 +1,809 @@
+{
+  "unit": 5,
+  "title": {
+    "en": "Compendium of Cognitive Processes (Vīthi-saṅgaha)",
+    "pt": "Compêndio dos Processos Cognitivos (Vīthi-saṅgaha)",
+    "es": "Compendio de los Procesos Cognitivos (Vīthi-saṅgaha)"
+  },
+  "summary": {
+    "en": "Mechanics of cognitive processes (cittavīthi): duration of matter (17 thought-moments), five-door process steps, grades of presentation (atimahantārammaṇa, etc.), mind-door processes, and absorption (appanā).",
+    "pt": "Mecânica dos processos cognitivos (cittavīthi): duração da matéria (17 momentos mentais), etapas do processo quíntuplo, graus de apresentação (atimahantārammaṇa, etc.), processos na porta mental e absorção (appanā).",
+    "es": "Mecánica de los procesos cognitivos (cittavīthi): duración de la materia (17 momentos mentales), etapas del proceso quíntuple, grados de presentación (atimahantārammaṇa, etc.), procesos en la puerta mental y absorción (appanā)."
+  },
+  "taxonomies": [
+    {
+      "id": "u5.vithi_orders",
+      "title": {
+        "en": "Classification of Cognitive Processes",
+        "pt": "Classificação dos Processos Cognitivos",
+        "es": "Clasificación de los Procesos Cognitivos"
+      },
+      "noun": {
+        "en": "processes",
+        "pt": "processos",
+        "es": "procesos"
+      },
+      "source": {
+        "cma": "IV §1–§30",
+        "fund": "Lesson 5.1",
+        "as": "IV.1"
+      },
+      "nodes": [
+        {
+          "id": "cognitive_processes",
+          "name": {
+            "en": "All Cognitive Processes",
+            "pt": "Todos os Processos Cognitivos",
+            "es": "Todos los Procesos Cognitivos"
+          },
+          "parent": null
+        },
+        {
+          "id": "pancadvara_vithi",
+          "name": {
+            "en": "Five-Door Processes (Pañcadvāra)",
+            "pt": "Processos da Porta Quíntupla (Pañcadvāra)",
+            "es": "Procesos de Puerta Quíntuple (Pañcadvāra)"
+          },
+          "parent": "cognitive_processes",
+          "weight": 5
+        },
+        {
+          "id": "eye_door_vithi",
+          "name": {
+            "en": "Eye-Door Process (Cakkhudvāravīthi)",
+            "pt": "Processo da Porta do Olho",
+            "es": "Proceso de la Puerta del Ojo"
+          },
+          "parent": "pancadvara_vithi",
+          "weight": 1
+        },
+        {
+          "id": "ear_door_vithi",
+          "name": {
+            "en": "Ear-Door Process (Sotadvāravīthi)",
+            "pt": "Processo da Porta do Ouvido",
+            "es": "Proceso de la Puerta del Oído"
+          },
+          "parent": "pancadvara_vithi",
+          "weight": 1
+        },
+        {
+          "id": "nose_door_vithi",
+          "name": {
+            "en": "Nose-Door Process (Ghānadvāravīthi)",
+            "pt": "Processo da Porta do Nariz",
+            "es": "Proceso de la Puerta de la Nariz"
+          },
+          "parent": "pancadvara_vithi",
+          "weight": 1
+        },
+        {
+          "id": "tongue_door_vithi",
+          "name": {
+            "en": "Tongue-Door Process (Jivhādvāravīthi)",
+            "pt": "Processo da Porta da Língua",
+            "es": "Proceso de la Puerta de la Lengua"
+          },
+          "parent": "pancadvara_vithi",
+          "weight": 1
+        },
+        {
+          "id": "body_door_vithi",
+          "name": {
+            "en": "Body-Door Process (Kāyadvāravīthi)",
+            "pt": "Processo da Porta do Corpo",
+            "es": "Proceso de la Puerta del Cuerpo"
+          },
+          "parent": "pancadvara_vithi",
+          "weight": 1
+        },
+        {
+          "id": "pancadvara_courses",
+          "name": {
+            "en": "Grades of Presentation (Five-Door)",
+            "pt": "Graus de Apresentação (Porta Quíntupla)",
+            "es": "Grados de Presentación (Puerta Quíntuple)"
+          },
+          "parent": "cognitive_processes",
+          "weight": 4
+        },
+        {
+          "id": "atimahanta_course",
+          "name": {
+            "en": "Very Great Object (Atimahantārammaṇa)",
+            "pt": "Objeto Muito Grande (Atimahantārammaṇa)",
+            "es": "Objeto Muy Grande (Atimahantārammaṇa)"
+          },
+          "parent": "pancadvara_courses",
+          "weight": 1
+        },
+        {
+          "id": "mahanta_course",
+          "name": {
+            "en": "Great Object (Mahantārammaṇa)",
+            "pt": "Objeto Grande (Mahantārammaṇa)",
+            "es": "Objeto Grande (Mahantārammaṇa)"
+          },
+          "parent": "pancadvara_courses",
+          "weight": 1
+        },
+        {
+          "id": "paritta_course",
+          "name": {
+            "en": "Slight Object (Parittārammaṇa)",
+            "pt": "Objeto Leve (Parittārammaṇa)",
+            "es": "Objeto Leve (Parittārammaṇa)"
+          },
+          "parent": "pancadvara_courses",
+          "weight": 1
+        },
+        {
+          "id": "atiparitta_course",
+          "name": {
+            "en": "Very Slight Object (Atiparittārammaṇa)",
+            "pt": "Objeto Muito Leve (Atiparittārammaṇa)",
+            "es": "Objeto Muy Leve (Atiparittārammaṇa)"
+          },
+          "parent": "pancadvara_courses",
+          "weight": 1
+        },
+        {
+          "id": "manodvara_courses",
+          "name": {
+            "en": "Mind-Door Presentations",
+            "pt": "Apresentações na Porta Mental",
+            "es": "Presentaciones en la Puerta Mental"
+          },
+          "parent": "cognitive_processes",
+          "weight": 2
+        },
+        {
+          "id": "vibhuta_course",
+          "name": {
+            "en": "Clear Object (Vibhūtārammaṇa)",
+            "pt": "Objeto Nítido (Vibhūtārammaṇa)",
+            "es": "Objeto Nítido (Vibhūtārammaṇa)"
+          },
+          "parent": "manodvara_courses",
+          "weight": 1
+        },
+        {
+          "id": "avibhuta_course",
+          "name": {
+            "en": "Obscure Object (Avibhūtārammaṇa)",
+            "pt": "Objeto Obscuro (Avibhūtārammaṇa)",
+            "es": "Objeto Obscuro (Avibhūtārammaṇa)"
+          },
+          "parent": "manodvara_courses",
+          "weight": 1
+        },
+        {
+          "id": "appana_stages",
+          "name": {
+            "en": "Absorption Sequence (Appanāvīthi)",
+            "pt": "Sequência de Absorção (Appanāvīthi)",
+            "es": "Secuencia de Absorción (Appanāvīthi)"
+          },
+          "parent": "cognitive_processes",
+          "weight": 5
+        },
+        {
+          "id": "parikamma_stage",
+          "name": {
+            "en": "Preparation (Parikamma)",
+            "pt": "Preparação (Parikamma)",
+            "es": "Preparación (Parikamma)"
+          },
+          "parent": "appana_stages",
+          "weight": 1
+        },
+        {
+          "id": "upacara_stage",
+          "name": {
+            "en": "Access (Upacāra)",
+            "pt": "Aproximação (Upacāra)",
+            "es": "Aproximación (Upacāra)"
+          },
+          "parent": "appana_stages",
+          "weight": 1
+        },
+        {
+          "id": "anuloma_stage",
+          "name": {
+            "en": "Conformity (Anuloma)",
+            "pt": "Conformidade (Anuloma)",
+            "es": "Conformidad (Anuloma)"
+          },
+          "parent": "appana_stages",
+          "weight": 1
+        },
+        {
+          "id": "gotrabhu_stage",
+          "name": {
+            "en": "Change-of-Lineage (Gotrabhū)",
+            "pt": "Mudança de Linhagem (Gotrabhū)",
+            "es": "Cambio de Linaje (Gotrabhū)"
+          },
+          "parent": "appana_stages",
+          "weight": 1
+        },
+        {
+          "id": "appana_stage",
+          "name": {
+            "en": "Absorption Peak (Appanā)",
+            "pt": "Ápice da Absorção (Appanā)",
+            "es": "Ápice de la Absorción (Appanā)"
+          },
+          "parent": "appana_stages",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "u5.rupa_seventeen_moments_duration",
+      "kind": "atom",
+      "topic": {
+        "en": "Lifespan of Matter",
+        "pt": "Duração da Matéria",
+        "es": "Duración de la Materia"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How long does a single unit of matter (rūpa) endure relative to mental moments?",
+        "pt": "Quanto tempo dura uma unidade de matéria (rūpa) em relação a momentos mentais?",
+        "es": "¿Cuánto dura una unidad de materia (rūpa) en relación con momentos mentales?"
+      },
+      "correct": {
+        "en": "Seventeen thought-moments (cittakkhaṇa).",
+        "pt": "Dezessete momentos mentais (cittakkhaṇa).",
+        "es": "Diecisiete momentos mentales (cittakkhaṇa)."
+      },
+      "distractors": [
+        {
+          "en": "Exactly one thought-moment, flashing in and out synchronously.",
+          "pt": "Exatamente um momento mental, surgindo e cessando em sincronia.",
+          "es": "Exactamente un momento mental, surgiendo y cesando en sincronía."
+        },
+        {
+          "en": "A single day and night of human standard time.",
+          "pt": "Exatamente um dia e uma noite no tempo padrão humano.",
+          "es": "Exactamente un día y una noche en el tiempo estándar humano."
+        },
+        {
+          "en": "Infinite duration, because physical matter cannot dissolve.",
+          "pt": "Duração infinita, pois a matéria física não se dissolve.",
+          "es": "Duración infinita, pues la materia física no se disuelve."
+        }
+      ],
+      "explanation": {
+        "en": "The life of materiality is seventeen times longer than the life of consciousness. Mind arises, changes, and perishes swiftly; matter alters much more slowly.",
+        "pt": "A vida da matéria é dezessete vezes mais longa que a vida da consciência. A mente surge, muda e se extingue com extrema rapidez; a matéria se altera mais lentamente.",
+        "es": "La vida de la materia es diecisiete veces más larga que la vida de la conciencia. La mente surge, cambia y se extingue con extrema rapidez; la materia se altera más lentamente."
+      },
+      "source": {
+        "cma": "IV §6",
+        "fund": "Lesson 5.1"
+      }
+    },
+    {
+      "id": "u5.pancadvara_seventeen_sequence",
+      "kind": "atom",
+      "topic": {
+        "en": "Eye-Door Process Stages",
+        "pt": "Estágios do Processo do Olho",
+        "es": "Etapas del Proceso del Ojo"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the complete sequence of seventeen moments in a very great object sensory process?",
+        "pt": "Qual é a sequência completa de dezessete momentos no processo com objeto muito grande?",
+        "es": "¿Cuál es la secuencia completa de diecisiete momentos en el proceso con objeto muy grande?"
+      },
+      "correct": {
+        "en": "Atīta, calana, upaccheda, āvajjana, viññāṇa, sampaṭicchana, santīraṇa, voṭṭhabbana, 7 javanas, 2 tadārammaṇas.",
+        "pt": "Atīta, calana, upaccheda, āvajjana, viññāṇa, sampaṭicchana, santīraṇa, voṭṭhabbana, 7 javanas, 2 tadārammaṇas.",
+        "es": "Atīta, calana, upaccheda, āvajjana, viññāṇa, sampaṭicchana, santīraṇa, voṭṭhabbana, 7 javanas, 2 tadārammaṇas."
+      },
+      "distractors": [
+        {
+          "en": "Three adverting moments, seven receiving moments, and seven impulsions.",
+          "pt": "Três momentos de advertência, sete de recepção e sete de impulsão.",
+          "es": "Tres momentos de advertencia, siete de recepción y siete de impulsión."
+        },
+        {
+          "en": "Seventeen continuous javana moments without any preparatory stages.",
+          "pt": "Dezessete momentos contínuos de javana sem etapas preparatórias.",
+          "es": "Diecisiete momentos continuos de javana sin etapas preparatorias."
+        },
+        {
+          "en": "Rebirth-linking, life-continuum, seven javanas, and death consciousness.",
+          "pt": "Religação renascente, fluxo vital, sete javanas e consciência da morte.",
+          "es": "Reconexión renaciente, continuidad vital, siete javanas y muerte."
+        }
+      ],
+      "explanation": {
+        "en": "The 17 moments: 1 past bhavaṅga (atīta), 2 vibrating (calana), 3 arrest (upaccheda), 4 5-door adverting, 5 sense consciousness, 6 receiving, 7 investigating, 8 determining, 9–15 javana (7), 16–17 registration (2).",
+        "pt": "Os 17 momentos: 1 bhavaṅga passado (atīta), 2 vibrante (calana), 3 interrupção (upaccheda), 4 advertência, 5 consciência sensorial, 6 recepção, 7 investigação, 8 determinação, 9-15 javana (7), 16-17 registro (2).",
+        "es": "Los 17 momentos: 1 bhavaṅga pasado (atīta), 2 vibrante (calana), 3 interrupción (upaccheda), 4 advertencia, 5 conciencia sensorial, 6 recepción, 7 investigación, 8 determinación, 9-15 javana (7), 16-17 registro (2)."
+      },
+      "source": {
+        "cma": "IV §6",
+        "fund": "Lesson 5.2"
+      }
+    },
+    {
+      "id": "u5.votthabbana_determining_role",
+      "kind": "atom",
+      "topic": {
+        "en": "Determining Function",
+        "pt": "Função de Determinação",
+        "es": "Función de Determinación"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "Which specific consciousness executes the determining function (voṭṭhabbana) in 5-door processes?",
+        "pt": "Qual consciência específica executa a função de determinação (voṭṭhabbana) no processo quíntuplo?",
+        "es": "¿Qué conciencia específica ejecuta la función de determinación (voṭṭhabbana) en el proceso quíntuple?"
+      },
+      "correct": {
+        "en": "Mind-door adverting consciousness (manodvārāvajjana).",
+        "pt": "Consciência de advertência na porta mental (manodvārāvajjana).",
+        "es": "Conciencia de advertencia en la puerta mental (manodvārāvajjana)."
+      },
+      "distractors": [
+        {
+          "en": "Investigating consciousness accompanied by joy (santīraṇa).",
+          "pt": "Consciência de investigação acompanhada de alegria (santīraṇa).",
+          "es": "Conciencia de investigación acompañada de alegría (santīraṇa)."
+        },
+        {
+          "en": "Receiving consciousness accompanied by equanimity (sampaṭicchana).",
+          "pt": "Consciência de recepção acompanhada de equanimidade (sampaṭicchana).",
+          "es": "Conciencia de recepción acompañada de ecuanimidad (sampaṭicchana)."
+        },
+        {
+          "en": "Five-door adverting consciousness (pañcadvārāvajjana).",
+          "pt": "Consciência de advertência na porta quíntupla (pañcadvārāvajjana).",
+          "es": "Conciencia de advertencia en la puerta quíntuple (pañcadvārāvajjana)."
+        }
+      ],
+      "explanation": {
+        "en": "In sensory processes, manodvārāvajjana does not advert to a mental object; rather, it determines (voṭṭhabbana) the sensory object, deciding its evaluation before javana commences.",
+        "pt": "Nos processos sensoriais, manodvārāvajjana não adverte a um objeto mental; em vez disso, determina (voṭṭhabbana) o objeto sensorial, delimitando sua avaliação antes do início do javana.",
+        "es": "En los procesos sensoriales, manodvārāvajjana no advierte a un objeto mental; en cambio, determina (voṭṭhabbana) el objeto sensorial, delimitando su evaluación antes del inicio del javana."
+      },
+      "source": {
+        "cma": "IV §6",
+        "fund": "Lesson 5.2"
+      }
+    },
+    {
+      "id": "u5.four_grades_presentation",
+      "kind": "atom",
+      "topic": {
+        "en": "Four Grades of Presentation",
+        "pt": "Quatro Graus de Apresentação",
+        "es": "Cuatro Grados de Presentación"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the four grades of object presentation at the five sense doors?",
+        "pt": "Quais são os quatro graus de apresentação do objeto nas cinco portas sensoriais?",
+        "es": "¿Cuáles son los cuatro grados de presentación del objeto en las cinco puertas sensoriales?"
+      },
+      "correct": {
+        "en": "Atimahantārammaṇa, mahantārammaṇa, parittārammaṇa, and atiparittārammaṇa.",
+        "pt": "Atimahantārammaṇa, mahantārammaṇa, parittārammaṇa e atiparittārammaṇa.",
+        "es": "Atimahantārammaṇa, mahantārammaṇa, parittārammaṇa y atiparittārammaṇa."
+      },
+      "distractors": [
+        {
+          "en": "Kāmāvacara, rūpāvacara, arūpāvacara, and lokuttara.",
+          "pt": "Kāmāvacara, rūpāvacara, arūpāvacara e lokuttara.",
+          "es": "Kāmāvacara, rūpāvacara, arūpāvacara y lokuttara."
+        },
+        {
+          "en": "Kusala, akusala, vipāka, and kiriya.",
+          "pt": "Kusala, akusala, vipāka e kiriya.",
+          "es": "Kusala, akusala, vipāka y kiriya."
+        },
+        {
+          "en": "Somanassa, domanassa, sukha, and dukkha.",
+          "pt": "Somanassa, domanassa, sukha e dukkha.",
+          "es": "Somanassa, domanassa, sukha e dukkha."
+        }
+      ],
+      "explanation": {
+        "en": "Depending on how many past bhavaṅga moments elapse before the object impinges on the sense base, the process reaches registration (very great), javana (great), determining (slight), or only vibration (very slight).",
+        "pt": "Conforme o número de momentos de bhavaṅga passados antes do impacto, o processo alcança o registro (muito grande), javana (grande), determinação (leve) ou apenas vibração (muito leve).",
+        "es": "Según el número de momentos de bhavaṅga pasados antes del impacto, el proceso alcanza el registro (muy grande), javana (grande), determinación (leve) o solo vibración (muy leve)."
+      },
+      "source": {
+        "cma": "IV §7",
+        "fund": "Lesson 5.3"
+      }
+    },
+    {
+      "id": "u5.manodvara_two_grades",
+      "kind": "atom",
+      "topic": {
+        "en": "Mind-Door Presentation",
+        "pt": "Apresentação na Porta Mental",
+        "es": "Presentación en la Puerta Mental"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the two grades of object clarity in mundane mind-door cognitive processes?",
+        "pt": "Quais são os dois graus de clareza do objeto nos processos mentais mundanos?",
+        "es": "¿Cuáles son los dos grados de claridad del objeto en los procesos mentales mundanos?"
+      },
+      "correct": {
+        "en": "Vibhūtārammaṇa (clear object) and avibhūtārammaṇa (obscure object).",
+        "pt": "Vibhūtārammaṇa (objeto nítido) e avibhūtārammaṇa (objeto obscuro).",
+        "es": "Vibhūtārammaṇa (objeto nítido) y avibhūtārammaṇa (objeto obscuro)."
+      },
+      "distractors": [
+        {
+          "en": "Parikamma and upacāra presentations.",
+          "pt": "Apresentações parikamma e upacāra.",
+          "es": "Presentaciones parikamma y upacāra."
+        },
+        {
+          "en": "Anicca and dukkha contemplation courses.",
+          "pt": "Cursos de contemplação anicca e dukkha.",
+          "es": "Cursos de contemplación anicca y dukkha."
+        },
+        {
+          "en": "External and internal conceptual formations.",
+          "pt": "Formações conceituais externas e internas.",
+          "es": "Formaciones conceptuales externas e internas."
+        }
+      ],
+      "explanation": {
+        "en": "A clear object (vibhūta) runs through 2 bhavaṅga vibrations, adverting, 7 javanas, and ends with 2 tadārammaṇa registrations. An obscure object (avibhūta) terminates after javana without registration.",
+        "pt": "Um objeto nítido (vibhūta) percorre 2 vibrações de bhavaṅga, advertência, 7 javanas e finaliza com 2 registros tadārammaṇa. Um objeto obscuro (avibhūta) encerra-se após o javana sem registro.",
+        "es": "Un objeto nítido (vibhūta) recorre 2 vibraciones de bhavaṅga, advertencia, 7 javanas y finaliza con 2 registros tadārammaṇa. Un objeto obscuro (avibhūta) concluye tras el javana sin registro."
+      },
+      "source": {
+        "cma": "IV §17",
+        "fund": "Lesson 5.4"
+      }
+    },
+    {
+      "id": "u5.appana_vithi_five_moments",
+      "kind": "atom",
+      "topic": {
+        "en": "Appanā Process Order",
+        "pt": "Ordem do Processo de Absorção",
+        "es": "Orden del Proceso de Absorción"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What are the preliminary thought-moments leading into absorption (appanāvīthi)?",
+        "pt": "Quais são os momentos mentais preliminares que conduzem à absorção (appanāvīthi)?",
+        "es": "¿Cuáles son los momentos mentales preliminares que conducen a la absorción (appanāvīthi)?"
+      },
+      "correct": {
+        "en": "Preparation (parikamma), access (upacāra), conformity (anuloma), and change-of-lineage (gotrabhū).",
+        "pt": "Preparação (parikamma), aproximação (upacāra), conformidade (anuloma) e mudança de linhagem (gotrabhū).",
+        "es": "Preparación (parikamma), aproximación (upacāra), conformidad (anuloma) y cambio de linaje (gotrabhū)."
+      },
+      "distractors": [
+        {
+          "en": "Contact, feeling, perception, volition, and attention.",
+          "pt": "Contato, sensação, percepção, volição e atenção.",
+          "es": "Contacto, sensación, percepción, volición y atención."
+        },
+        {
+          "en": "Seeing, hearing, smelling, tasting, and touching.",
+          "pt": "Visão, audição, olfato, paladar e tato.",
+          "es": "Visión, audición, olfato, gusto y tacto."
+        },
+        {
+          "en": "Receiving, investigating, determining, impulsion, and registration.",
+          "pt": "Recepção, investigação, determinação, impulsão e registro.",
+          "es": "Recepción, investigación, determinación, impulsión y registro."
+        }
+      ],
+      "explanation": {
+        "en": "Before absorption (jhāna or magga) arises, four sense-sphere javana moments prepare the mind: parikamma prepares, upacāra draws near, anuloma harmonizes, and gotrabhū transcends the lower domain.",
+        "pt": "Antes de a absorção (jhāna ou magga) surgir, quatro momentos de javana sensorial preparam a mente: parikamma prepara, upacāra aproxima, anuloma harmoniza e gotrabhū transcende o plano inferior.",
+        "es": "Antes de que surja la absorción (jhāna o magga), cuatro momentos de javana sensorial preparan la mente: parikamma prepara, upacāra aproxima, anuloma armoniza y gotrabhū trasciende el plano inferior."
+      },
+      "source": {
+        "cma": "IV §18",
+        "fund": "Lesson 5.5"
+      }
+    },
+    {
+      "id": "u5.gotrabhu_function",
+      "kind": "atom",
+      "topic": {
+        "en": "Change-of-Lineage Role",
+        "pt": "Papel da Mudança de Linhagem",
+        "es": "Papel del Cambio de Linaje"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "What is the unique function of the change-of-lineage consciousness (gotrabhū)?",
+        "pt": "Qual é a função singular da consciência de mudança de linhagem (gotrabhū)?",
+        "es": "¿Cuál es la función singular de la conciencia de cambio de linaje (gotrabhū)?"
+      },
+      "correct": {
+        "en": "Transcending the worldly plane and taking Nibbāna as object, immediately preceding the Path.",
+        "pt": "Transcender o plano mundano e tomar Nibbāna como objeto, imediatamente antes do Caminho.",
+        "es": "Trascender el plano mundano y tomar Nibbāna como objeto, inmediatamente antes del Camino."
+      },
+      "distractors": [
+        {
+          "en": "Eradicating defilements permanently and becoming an Arahant instantly.",
+          "pt": "Erradicar impurezas permanentemente e tornar-se um Arahant no mesmo instante.",
+          "es": "Erradicar impurezas permanentemente y convertirse en un Arahant al instante."
+        },
+        {
+          "en": "Returning consciousness to the sleeping life-continuum state.",
+          "pt": "Retornar a consciência ao estado dormente do fluxo de existência.",
+          "es": "Retornar la conciencia al estado latente de la continuidad vital."
+        },
+        {
+          "en": "Generating vast amounts of physical warmth in the heart base.",
+          "pt": "Gerar vastas quantidades de calor físico na base do coração.",
+          "es": "Generar grandes cantidades de calor físico en la base del corazón."
+        }
+      ],
+      "explanation": {
+        "en": "Gotrabhū cuts off the lineage of the worldling (puthujjana) and inaugurates the lineage of the noble ones (ariya). In the path process, it is the first consciousness to apprehend Nibbāna, yet cannot eradicate defilements.",
+        "pt": "Gotrabhū corta a linhagem do indivíduo comum (puthujjana) e inaugura a linhagem dos nobres (ariya). No processo do caminho, é a primeira consciência a apreender Nibbāna, embora não erradique as impurezas.",
+        "es": "Gotrabhū corta el linaje del individuo común (puthujjana) e inaugura el linaje de los nobles (ariya). En el proceso del camino, es la primera conciencia en aprehender Nibbāna, aunque no erradique las impurezas."
+      },
+      "source": {
+        "cma": "IV §21",
+        "fund": "Lesson 5.5"
+      }
+    },
+    {
+      "id": "u5.maggacitta_single_moment",
+      "kind": "atom",
+      "topic": {
+        "en": "Path Consciousness Duration",
+        "pt": "Duração da Consciência do Caminho",
+        "es": "Duración de la Conciencia del Camino"
+      },
+      "requires": [],
+      "prompt": {
+        "en": "How many thought-moments does the supramundane path consciousness (maggacitta) endure?",
+        "pt": "Por quantos momentos mentais dura a consciência do caminho supramundano (maggacitta)?",
+        "es": "¿Por cuántos momentos mentales dura la conciencia del camino supramundano (maggacitta)?"
+      },
+      "correct": {
+        "en": "Exactly one single thought-moment, immediately followed by fruition (phalacitta).",
+        "pt": "Exatamente um único momento mental, seguido imediatamente pelo fruto (phalacitta).",
+        "es": "Exactamente un único momento mental, seguido de inmediato por el fruto (phalacitta)."
+      },
+      "distractors": [
+        {
+          "en": "Seven thought-moments, like all normal javana sequences.",
+          "pt": "Sete momentos mentais, como todas as sequências normais de javana.",
+          "es": "Siete momentos mentales, como todas las secuencias normales de javana."
+        },
+        {
+          "en": "Seventeen thought-moments, matching the full duration of physical matter.",
+          "pt": "Dezessete momentos mentais, igualando a duração da matéria física.",
+          "es": "Diecisiete momentos mentales, igualando la duración de la materia física."
+        },
+        {
+          "en": "It endures indefinitely until deliberately broken by the meditator.",
+          "pt": "Dura indefinidamente até ser interrompida deliberadamente por quem medita.",
+          "es": "Dura indefinidamente hasta ser interrumpida deliberadamente por quien medita."
+        }
+      ],
+      "explanation": {
+        "en": "Unlike ordinary javanas that repeat 7 times, maggacitta arises for only one single thought-moment to cut off specific defilements, followed immediately without interval by 2 or 3 fruit moments (phalacitta).",
+        "pt": "Diferente dos javanas ordinários que se repetem 7 vezes, maggacitta surge por apenas um momento mental para cortar impurezas, seguida sem intervalo por 2 ou 3 momentos de fruto (phalacitta).",
+        "es": "A diferencia de los javanas ordinarios que se repiten 7 veces, maggacitta surge por un solo momento mental para cortar impurezas, seguida sin intervalo por 2 o 3 momentos de fruto (phalacitta)."
+      },
+      "source": {
+        "cma": "IV §22",
+        "fund": "Lesson 5.5"
+      }
+    },
+    {
+      "id": "u5.deduced_tikkhapuggala_appana",
+      "kind": "derived",
+      "topic": {
+        "en": "Keen Intellect Appanā",
+        "pt": "Absorção do Intelecto Agudo",
+        "es": "Absorción del Intelecto Agudo"
+      },
+      "requires": [
+        "u5.appana_vithi_five_moments"
+      ],
+      "prompt": {
+        "en": "How does the absorption cognitive process differ for a practitioner of keen intellect (tikkhapuggala)?",
+        "pt": "Como o processo cognitivo de absorção difere para alguém de intelecto agudo (tikkhapuggala)?",
+        "es": "¿Cómo difiere el proceso cognitivo de absorción para alguien de intelecto agudo (tikkhapuggala)?"
+      },
+      "correct": {
+        "en": "The preparation stage (parikamma) is omitted, beginning immediately with access (upacāra).",
+        "pt": "O estágio de preparação (parikamma) é omitido, iniciando de imediato pela aproximação (upacāra).",
+        "es": "La etapa de preparación (parikamma) se omite, comenzando de inmediato por la aproximación (upacāra)."
+      },
+      "distractors": [
+        {
+          "en": "The change-of-lineage moment is repeated seven times instead of once.",
+          "pt": "A mudança de linhagem é repetida sete vezes em vez de uma só.",
+          "es": "El cambio de linaje se repite siete veces en vez de una sola."
+        },
+        {
+          "en": "The process skips absorption entirely and attains Nibbāna without concentration.",
+          "pt": "O processo pula a absorção e alcança Nibbāna sem concentração.",
+          "es": "El proceso salta la absorción y alcanza Nibbāna sin concentración."
+        },
+        {
+          "en": "Fruition consciousness never arises after the path moment.",
+          "pt": "A consciência de fruto nunca surge após o momento do caminho.",
+          "es": "La conciencia de fruto nunca surge tras el momento del camino."
+        }
+      ],
+      "explanation": {
+        "en": "For a person of average faculties (mandapuggala), there are 4 preliminary moments: parikamma, upacāra, anuloma, gotrabhū. For one of keen faculties (tikkhapuggala), parikamma is bypassed, yielding 3 fruit moments.",
+        "pt": "Para alguém de faculdades medianas (mandapuggala), há 4 momentos preliminares: parikamma, upacāra, anuloma, gotrabhū. Para alguém de faculdades agudas (tikkhapuggala), parikamma é dispensado, gerando 3 momentos de fruto.",
+        "es": "Para alguien de facultades medianas (mandapuggala), hay 4 momentos preliminares: parikamma, upacāra, anuloma, gotrabhū. Para alguien de facultades agudas (tikkhapuggala), parikamma se omite, generando 3 momentos de fruto."
+      },
+      "source": {
+        "cma": "IV §18",
+        "fund": "Lesson 5.5"
+      }
+    },
+    {
+      "id": "u5.deduced_tadarammmana_conditions",
+      "kind": "derived",
+      "topic": {
+        "en": "Registration Conditions",
+        "pt": "Condições do Registro",
+        "es": "Condiciones del Registro"
+      },
+      "requires": [
+        "u5.four_grades_presentation",
+        "u5.manodvara_two_grades"
+      ],
+      "prompt": {
+        "en": "What three conditions must converge for registration consciousness (tadārammaṇa) to occur?",
+        "pt": "Quais três condições devem convergir para que o registro (tadārammaṇa) ocorra?",
+        "es": "¿Cuáles tres condiciones deben coincidir para que ocurra el registro (tadārammaṇa)?"
+      },
+      "correct": {
+        "en": "Sense-sphere javana, sense-sphere being, and a prominent sense-sphere object.",
+        "pt": "Javana do plano sensorial, ser do plano sensorial e objeto sensorial proeminente.",
+        "es": "Javana del plano sensorial, ser del plano sensorial y objeto sensorial prominente."
+      },
+      "distractors": [
+        {
+          "en": "Fine-material javana, immaterial realm, and concept object.",
+          "pt": "Javana da matéria sutil, reino imaterial e objeto conceitual.",
+          "es": "Javana de materia sutil, reino inmaterial y objeto conceptual."
+        },
+        {
+          "en": "Supramundane javana, noble being, and Nibbāna as object.",
+          "pt": "Javana supramundano, ser nobre e Nibbāna como objeto.",
+          "es": "Javana supramundano, ser noble y Nibbāna como objeto."
+        },
+        {
+          "en": "Rootless functional javana, deep sleep, and absence of physical sense doors.",
+          "pt": "Javana funcional sem raiz, sono profundo e ausência de portas físicas.",
+          "es": "Javana funcional sin raíz, sueño profundo y ausencia de puertas físicas."
+        }
+      ],
+      "explanation": {
+        "en": "Tadārammaṇa occurs strictly in the sensual plane (kāmāvacara-bhūmi) when a sensual-plane being experiences a very great or clear sensual object with a sensual javana. It never occurs in jhāna or higher planes.",
+        "pt": "Tadārammaṇa ocorre estritamente no plano sensual quando um ser desse plano experimenta um objeto sensual muito grande ou nítido com javana sensual. Nunca ocorre em jhāna ou planos superiores.",
+        "es": "Tadārammaṇa ocurre estrictamente en el plano sensorial cuando un ser de dicho plano experimenta un objeto sensorial muy grande o nítido con javana sensorial. Nunca ocurre en jhāna o planos superiores."
+      },
+      "source": {
+        "cma": "IV §19",
+        "fund": "Lesson 5.3"
+      }
+    },
+    {
+      "id": "u5.ati_paritta_object",
+      "kind": "atom",
+      "topic": {
+        "en": "Atiparitta Object",
+        "pt": "Objeto Atiparitta",
+        "es": "Objeto Atiparitta"
+      },
+      "requires": [
+        "u5.four_grades_presentation"
+      ],
+      "prompt": {
+        "en": "In the eye-door process, what occurs when the presentation is 'atiparitta' (very slight)?",
+        "pt": "No processo da porta dos olhos, o que ocorre quando a apresentação é 'atiparitta' (muito tênue)?",
+        "es": "En el proceso de la puerta del ojo, ¿qué ocurre cuando la presentación es 'atiparitta' (muy tenue)?"
+      },
+      "correct": {
+        "en": "Only two or three vibrations of bhavaṅga occur; no thought-process arises at all.",
+        "pt": "Ocorrem apenas duas ou três vibrações do bhavaṅga; nenhum processo cognitivo surge.",
+        "es": "Solo ocurren dos o tres vibraciones del bhavaṅga; no surge ningún proceso cognitivo."
+      },
+      "distractors": [
+        {
+          "en": "A full seventeen-moment process runs all the way to registration (tadārammaṇa).",
+          "pt": "Um processo completo de dezessete momentos se estende até o registro (tadārammaṇa).",
+          "es": "Un proceso completo de diecisiete momentos se extiende hasta el registro (tadārammaṇa)."
+        },
+        {
+          "en": "The process reaches javana impulsion for only one single thought-moment.",
+          "pt": "O processo alcança a impulsão javana por apenas um único momento mental.",
+          "es": "El proceso alcanza la impulsión javana por solo un único momento mental."
+        },
+        {
+          "en": "It immediately triggers the attainment of fine-material absorption (appanā).",
+          "pt": "Desencadeia imediatamente a realização de absorção da matéria sutil (appanā).",
+          "es": "Desencadena inmediatamente la realización de absorción de la materia sutil (appanā)."
+        }
+      ],
+      "explanation": {
+        "en": "In atiparitta presentation, the physical object perishes before a process can form, yielding only bhavaṅga-calana.",
+        "pt": "Na apresentação atiparitta, o objeto físico cessa antes que um processo possa se formar, gerando apenas bhavaṅga-calana.",
+        "es": "En la presentación atiparitta, el objeto físico perece antes de que pueda formarse un proceso, generando solo bhavaṅga-calana."
+      },
+      "source": {
+        "cma": "IV §7",
+        "fund": "4.2",
+        "as": "IV.7"
+      }
+    },
+    {
+      "id": "u5.nirodhasamapatti_vithi",
+      "kind": "atom",
+      "topic": {
+        "en": "Nirodha-samāpatti Process",
+        "pt": "Processo de Nirodha-samāpatti",
+        "es": "Proceso de Nirodha-samāpatti"
+      },
+      "requires": [
+        "u5.appana_vithi_five_moments"
+      ],
+      "prompt": {
+        "en": "Which consciousness immediately precedes the entry into Nirodha-samāpatti?",
+        "pt": "Qual consciência precede imediatamente a entrada em Nirodha-samāpatti?",
+        "es": "¿Qué conciencia precede inmediatamente a la entrada en Nirodha-samāpatti?"
+      },
+      "correct": {
+        "en": "Two moments of fourth immaterial absorption (nevasaññānāsaññāyatana) citta.",
+        "pt": "Dois momentos de consciência da quarta absorção imaterial (nevasaññānāsaññāyatana).",
+        "es": "Dos momentos de conciencia de la cuarta absorción inmaterial (nevasaññānāsaññāyatana)."
+      },
+      "distractors": [
+        {
+          "en": "Seven moments of ordinary sensual wholesome javana accompanied by joy.",
+          "pt": "Sete momentos de javana sensorial saudável comum acompanhados de júbilo.",
+          "es": "Siete momentos de javana sensorial saludable común acompañados de júbilo."
+        },
+        {
+          "en": "A single moment of Sotāpatti fruit consciousness resting in Nibbāna.",
+          "pt": "Um único momento de consciência de fruto de Sotāpatti repousando em Nibbāna.",
+          "es": "Un único momento de conciencia de fruto de Sotāpatti descansando en Nibbāna."
+        },
+        {
+          "en": "An unbroken stream of forty-nine life-continuum bhavaṅga moments.",
+          "pt": "Um fluxo ininterrupto de quarenta e nove momentos de bhavaṅga do contínuo de vida.",
+          "es": "Un flujo ininterrumpido de cuarenta y nueve momentos de bhavaṅga del continuo de vida."
+        }
+      ],
+      "explanation": {
+        "en": "After two moments of the fourth arūpa citta, the mental stream completely suspends during cessation.",
+        "pt": "Após dois momentos do quarto citta arūpa, o fluxo mental se suspende completamente durante a cessação.",
+        "es": "Tras dos momentos del cuarto citta arūpa, el flujo mental se suspende por completo durante la cesación."
+      },
+      "source": {
+        "cma": "IV §22",
+        "fund": "4.5",
+        "as": "IV.22"
+      }
+    }
+  ]
+}

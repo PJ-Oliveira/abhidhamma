@@ -375,9 +375,9 @@ export class TetrisUI {
     }
 
     const colWidth = 100 / Math.max(1, numPieces);
-    // Margens generosas (14px em cada lado = 28px de separação entre peças)
-    // para garantir que NUNCA se misturem ou se sobreponham
-    const gutter = 14;
+    // Margens adaptativas para garantir separação visual sem comprimir texto no mobile
+    const containerW = this.piecesContainerEl.clientWidth || this.container.clientWidth || (typeof window !== "undefined" ? window.innerWidth : 800);
+    const gutter = containerW < 600 ? 5 : 14;
 
     for (let i = 0; i < pieces.length; i++) {
       const p = pieces[i]!;

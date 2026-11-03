@@ -1,20 +1,20 @@
-import { t } from "./i18n.js?v=ab1f056d";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=ab1f056d";
-import { renderTree, markActiveLeaf } from "./tree.js?v=ab1f056d";
-import { loadChunk, renderSegments } from "./reader.js?v=ab1f056d";
-import { initDictionaryPanel } from "./dictionary.js?v=ab1f056d";
-import { initSearchPanel } from "./search.js?v=ab1f056d";
-import { initExportPanel } from "./export.js?v=ab1f056d";
-import { initSrsPanel } from "./srs.js?v=ab1f056d";
-import { TetrisUI } from "./tetris/ui.js?v=ab1f056d";
-import { initToolsPanel } from "./tools/tools.js?v=ab1f056d";
-import "./tools/mindmap.js?v=ab1f056d";
-import "./tools/patthana.js?v=ab1f056d";
-import "./tools/vithi.js?v=ab1f056d";
-import "./tools/matikas.js?v=ab1f056d";
-import "./tools/cetasika.js?v=ab1f056d";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=ab1f056d";
-import { createLogger } from "./logger.js?v=ab1f056d";
+import { t } from "./i18n.js?v=b6a19a3f";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=b6a19a3f";
+import { renderTree, markActiveLeaf } from "./tree.js?v=b6a19a3f";
+import { loadChunk, renderSegments } from "./reader.js?v=b6a19a3f";
+import { initDictionaryPanel } from "./dictionary.js?v=b6a19a3f";
+import { initSearchPanel } from "./search.js?v=b6a19a3f";
+import { initExportPanel } from "./export.js?v=b6a19a3f";
+import { initSrsPanel } from "./srs.js?v=b6a19a3f";
+import { TetrisUI } from "./tetris/ui.js?v=b6a19a3f";
+import { initToolsPanel } from "./tools/tools.js?v=b6a19a3f";
+import "./tools/mindmap.js?v=b6a19a3f";
+import "./tools/patthana.js?v=b6a19a3f";
+import "./tools/vithi.js?v=b6a19a3f";
+import "./tools/matikas.js?v=b6a19a3f";
+import "./tools/cetasika.js?v=b6a19a3f";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=b6a19a3f";
+import { createLogger } from "./logger.js?v=b6a19a3f";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -123,7 +123,7 @@ function updateHash() {
     const activeBtn = document.querySelector(".rail-btn.active");
     const panel = activeBtn ? (activeBtn.dataset.panel || "tipitaka") : "tipitaka";
     let base = `#/${panel}`;
-    if (state.work && state.partKey && state.chunkIndex !== undefined) {
+    if (panel !== "srs" && panel !== "tetris" && state.work && state.partKey && state.chunkIndex !== undefined) {
         base += `/${state.work.id}/${state.partKey}/${state.chunkIndex}`;
     }
     if (location.hash !== base) {
@@ -451,7 +451,7 @@ function wireIconRail() {
         if (w >= MIN_W)
             root.style.setProperty("--panel-w", w + "px");
     }
-    const FULLSCREEN_PANELS = new Set(["srs", "tools"]);
+    const FULLSCREEN_PANELS = new Set(["srs", "tools", "tetris"]);
     const readerHeader = el("reader-header");
     const readerContent = el("content");
     const tocNav = el("toc-nav");
@@ -462,11 +462,12 @@ function wireIconRail() {
         readerHeader.style.display = isFullscreen ? "none" : "";
         readerContent.style.display = isFullscreen ? "none" : "";
         tocNav.style.display = isFullscreen ? "none" : "";
-        readerSrs.style.display = target === "srs" ? "flex" : "none";
+        const isSrsOrTetris = target === "srs" || target === "tetris";
+        readerSrs.style.display = isSrsOrTetris ? "flex" : "none";
         readerTools.style.display = target === "tools" ? "flex" : "none";
-        if (target === "srs") {
-            const activeBtn = document.querySelector(".srs-menu-item.active");
-            const isTetris = activeBtn?.dataset.srsMode === "tetris";
+        if (isSrsOrTetris) {
+            const activeBtn = document.querySelector(".srs-tab-btn.active, .srs-menu-item.active");
+            const isTetris = target === "tetris" || (target !== "srs" && activeBtn?.dataset.srsMode === "tetris");
             readerSrs.classList.toggle("tetris-mode", isTetris);
             document.body.classList.toggle("tetris-active", isTetris);
         }
@@ -487,8 +488,14 @@ function wireIconRail() {
             doExpand();
         }
         buttons.forEach((b) => b.classList.toggle("active", b.dataset.panel === target));
-        panels.forEach((p) => p.classList.toggle("active", p.id === `panel-${target}`));
+        panels.forEach((p) => p.classList.toggle("active", p.id === (target === "tetris" ? "panel-tetris" : `panel-${target}`)));
         toggleReaderOverlay(target);
+        if (target === "tetris") {
+            setSrsModeGlobal?.("tetris", false);
+        }
+        else if (target === "srs") {
+            setSrsModeGlobal?.("vocab", false);
+        }
         if (target === "export" && state.work) {
             const exportWorkSel = document.getElementById("export-work");
             if (exportWorkSel && Array.from(exportWorkSel.options).some((o) => o.value === state.work.id)) {
@@ -822,13 +829,44 @@ function wireChunkNav() {
         }
     });
 }
+let setSrsModeGlobal = null;
 function wireSrsNavigation() {
-    const menuItems = document.querySelectorAll(".srs-menu-item");
+    const menuItems = document.querySelectorAll(".srs-menu-item, .srs-tab-btn");
     const vocabPanel = document.getElementById("srs-full-body");
     const tetrisPanel = document.getElementById("srs-tetris-main");
     const readerSrs = document.getElementById("reader-srs");
-    const setMode = (mode) => {
-        menuItems.forEach((b) => b.classList.toggle("active", b.dataset.srsMode === mode));
+    const setMode = (mode, updateHashRoute = true) => {
+        menuItems.forEach((b) => {
+            const active = b.dataset.srsMode === mode;
+            b.classList.toggle("active", active);
+            if (b.hasAttribute("aria-selected")) {
+                b.setAttribute("aria-selected", active ? "true" : "false");
+            }
+        });
+        const railSrs = document.querySelector('.rail-btn[data-panel="srs"]');
+        const railTetris = document.querySelector('.rail-btn[data-panel="tetris"]');
+        if (railSrs && railTetris) {
+            if (mode === "tetris") {
+                railSrs.classList.remove("active");
+                railTetris.classList.add("active");
+            }
+            else {
+                railTetris.classList.remove("active");
+                railSrs.classList.add("active");
+            }
+        }
+        const panelSrs = document.getElementById("panel-srs");
+        const panelTetris = document.getElementById("panel-tetris");
+        if (panelSrs && panelTetris) {
+            if (mode === "tetris") {
+                panelSrs.classList.remove("active");
+                panelTetris.classList.add("active");
+            }
+            else {
+                panelTetris.classList.remove("active");
+                panelSrs.classList.add("active");
+            }
+        }
         if (mode === "tetris") {
             readerSrs?.classList.add("tetris-mode");
             document.body.classList.add("tetris-active");
@@ -841,6 +879,9 @@ function wireSrsNavigation() {
                     void tetrisUiInstance.init();
                 }
             }
+            if (updateHashRoute) {
+                history.replaceState(null, "", "#/tetris");
+            }
         }
         else {
             readerSrs?.classList.remove("tetris-mode");
@@ -849,17 +890,21 @@ function wireSrsNavigation() {
                 tetrisPanel.style.display = "none";
             if (vocabPanel)
                 vocabPanel.style.display = "flex";
+            if (updateHashRoute) {
+                history.replaceState(null, "", "#/srs");
+            }
         }
     };
+    setSrsModeGlobal = setMode;
     menuItems.forEach((btn) => {
         btn.addEventListener("click", () => {
             const mode = btn.dataset.srsMode || "vocab";
-            setMode(mode);
+            setMode(mode, true);
         });
     });
-    const activeBtn = document.querySelector(".srs-menu-item.active");
+    const activeBtn = document.querySelector(".srs-tab-btn.active, .srs-menu-item.active");
     if (activeBtn?.dataset.srsMode === "tetris") {
-        setMode("tetris");
+        setMode("tetris", false);
     }
 }
 function parseHash() {
@@ -871,8 +916,13 @@ function parseHash() {
         return null;
     let panel = "tipitaka";
     let workId, partKey, chunkIndexStr;
-    const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools"]);
-    if (parts[0] && knownPanels.has(parts[0])) {
+    const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools", "tetris"]);
+    if (parts[0] === "srs" && parts[1] === "tetris") {
+        parts.shift();
+        parts.shift();
+        panel = "tetris";
+    }
+    else if (parts[0] && knownPanels.has(parts[0])) {
         panel = parts.shift();
     }
     if (parts.length >= 3) {

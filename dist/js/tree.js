@@ -1,5 +1,5 @@
-import { t } from "./i18n.js?v=6379fc71";
-import { settings } from "./state.js?v=6379fc71";
+import { t } from "./i18n.js?v=b6a19a3f";
+import { settings } from "./state.js?v=b6a19a3f";
 const GROUP_ORDER = ["abhidhamma", "outros", "visuddhimagga", "comentarios"];
 export function renderTree(manifest, container, onSelect) {
     container.innerHTML = "";
@@ -35,7 +35,8 @@ function buildWorkNode(work, onSelect) {
     label.appendChild(text);
     const partsUl = document.createElement("ul");
     partsUl.style.display = "none";
-    for (const partKey of Object.keys(work.parts)) {
+    const partKeys = Object.keys(work.parts);
+    for (const partKey of partKeys) {
         const part = work.parts[partKey];
         if (!part)
             continue;
@@ -53,6 +54,9 @@ function buildWorkNode(work, onSelect) {
         const open = partsUl.style.display !== "none";
         partsUl.style.display = open ? "none" : "block";
         caret.classList.toggle("open", !open);
+        if (!open && partKeys.length === 1 && partKeys[0]) {
+            onSelect(work.id, partKeys[0], 0, null);
+        }
     });
     li.appendChild(label);
     li.appendChild(partsUl);

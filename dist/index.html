@@ -6,7 +6,16 @@
 <title>Abhidhamma Piṭaka</title>
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#8b0000" />
-<link rel="stylesheet" href="css/style.css?v=6379fc71" />
+<link rel="stylesheet" href="css/style.css?v=b6a19a3f" />
+<script>
+  window.__deferredPwaPrompt = null;
+  window.addEventListener('beforeinstallprompt', function(e) {
+    e.preventDefault();
+    window.__deferredPwaPrompt = e;
+    var c = document.getElementById('pwa-install-container');
+    if (c) c.style.display = 'block';
+  });
+</script>
 </head>
 <body>
 <div id="app">
@@ -33,12 +42,21 @@
     <button class="rail-btn" data-panel="srs" data-i18n-title="navSrs" title="Pāli Memorization">
       <span class="icon">🧠</span><span class="lbl" data-i18n="navSrs">SRS</span>
     </button>
+    <button class="rail-btn" data-panel="tetris" data-i18n-title="navTetris" title="Abhidhamma Tetris">
+      <span class="icon">☸</span><span class="lbl" data-i18n="navTetris">Tetris</span>
+    </button>
     <button class="rail-btn" data-panel="tools" data-i18n-title="navTools" title="Abhidhamma Tools">
       <span class="icon">🔬</span><span class="lbl" data-i18n="navTools">Tools</span>
     </button>
   </nav>
 
   <aside id="side-panel">
+    <div id="pwa-install-container" style="display: block; padding: 12px; background: #e8f5e9; border-bottom: 2px solid #c8e6c9;">
+      <button id="btn-install-pwa" style="width: 100%; padding: 12px; background: #4caf50; color: white; border: none; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <span style="font-size: 18px;">📲</span> App Offline
+      </button>
+    </div>
+
     <div id="panel-tipitaka" class="panel active">
       <h2 data-i18n="navTipitaka">Tipiṭaka</h2>
       <div id="tree" class="tree"></div>
@@ -81,11 +99,6 @@
           <button id="font-inc">A+</button>
         </span>
       </label>
-      <div class="setting-row" id="pwa-install-container" style="display: none; margin-top: 15px;">
-        <button id="btn-install-pwa" style="width: 100%; padding: 10px; background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: 4px; font-size: 14px; font-weight: 500; cursor: pointer;">
-          📲 Install App (Offline Reading)
-        </button>
-      </div>
       <label class="setting-row">
         <span id="label-show-pali" data-i18n="settingShowPali">Show Pāli</span>
         <input id="setting-show-pali" type="checkbox" checked />
@@ -97,13 +110,49 @@
     </div>
 
     <div id="panel-export" class="panel">
-      <h2 data-i18n="exportPanelTitle">Export</h2>
+      <h2 data-i18n="exportPanelTitle">Export (Offline)</h2>
       <div id="export-panel-body"></div>
     </div>
 
     <div id="panel-srs" class="panel">
       <h2 data-i18n="srsPanelTitle">Pāli Memorization</h2>
-      <p class="side-empty" data-i18n="srsFullscreen">Viewing in main panel →</p>
+      <div class="srs-nav-menu">
+        <button class="srs-menu-item active" data-srs-mode="vocab">
+          <span class="srs-item-icon">📖</span>
+          <div class="srs-item-info">
+            <strong class="srs-item-title" data-i18n="srsMenuVocabTitle">Pāli Memorization</strong>
+            <span class="srs-item-desc" data-i18n="srsMenuVocabDesc">Vocabulary flashcards & canonical terms (SM-2)</span>
+          </div>
+        </button>
+        <button class="srs-menu-item" data-srs-mode="tetris">
+          <span class="srs-item-icon">☸</span>
+          <div class="srs-item-info">
+            <strong class="srs-item-title" data-i18n="srsMenuTetrisTitle">Abhidhamma Tetris</strong>
+            <span class="srs-item-desc" data-i18n="srsMenuTetrisDesc">Deductive gamification of Abhidhammatthasaṅgaha</span>
+          </div>
+        </button>
+      </div>
+      <p class="side-empty" data-i18n="srsFullscreenHint">Viewing in main panel →</p>
+    </div>
+    <div id="panel-tetris" class="panel">
+      <h2 data-i18n="srsMenuTetrisTitle">Abhidhamma Tetris</h2>
+      <div class="srs-nav-menu">
+        <button class="srs-menu-item" data-srs-mode="vocab">
+          <span class="srs-item-icon">📖</span>
+          <div class="srs-item-info">
+            <strong class="srs-item-title" data-i18n="srsMenuVocabTitle">Pāli Memorization</strong>
+            <span class="srs-item-desc" data-i18n="srsMenuVocabDesc">Vocabulary flashcards & canonical terms (SM-2)</span>
+          </div>
+        </button>
+        <button class="srs-menu-item active" data-srs-mode="tetris">
+          <span class="srs-item-icon">☸</span>
+          <div class="srs-item-info">
+            <strong class="srs-item-title" data-i18n="srsMenuTetrisTitle">Abhidhamma Tetris</strong>
+            <span class="srs-item-desc" data-i18n="srsMenuTetrisDesc">Deductive gamification of Abhidhammatthasaṅgaha</span>
+          </div>
+        </button>
+      </div>
+      <p class="side-empty" data-i18n="srsFullscreenHint">Viewing in main panel →</p>
     </div>
     <div id="panel-tools" class="panel">
       <h2 data-i18n="toolsPanelTitle">Abhidhamma Tools</h2>
@@ -133,7 +182,18 @@
     </div>
 
     <div id="reader-srs" class="reader-overlay" style="display:none">
-      <div id="srs-full-body"></div>
+      <div class="srs-top-bar" role="tablist" aria-label="SRS Mode Selection">
+        <button class="srs-tab-btn active" data-srs-mode="vocab" type="button" role="tab" aria-selected="true">
+          <span class="srs-tab-icon">📖</span>
+          <span class="srs-tab-label" data-i18n="srsMenuVocabTitle">Pāli Memorization</span>
+        </button>
+        <button class="srs-tab-btn" data-srs-mode="tetris" type="button" role="tab" aria-selected="false">
+          <span class="srs-tab-icon">☸</span>
+          <span class="srs-tab-label" data-i18n="srsMenuTetrisTitle">Abhidhamma Tetris</span>
+        </button>
+      </div>
+      <div id="srs-full-body" class="srs-view-panel"></div>
+      <div id="srs-tetris-main" class="srs-view-panel" style="display:none"></div>
     </div>
     <div id="reader-tools" class="reader-overlay" style="display:none">
       <div id="tools-full-body"></div>
@@ -146,9 +206,9 @@
 <div id="selection-popover" class="hidden"></div>
 
 <!-- ABHIDHAMMIKA INTERLOCUTOR CONTAINER -->
-<div id="interlocutor-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 10000; width: 400px; max-width: 90vw; max-height: 80vh; overflow-y: auto; display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border-radius: 8px; background: white;"></div>
-<button id="btn-toggle-interlocutor" style="position: fixed; bottom: 20px; right: 20px; z-index: 10001; padding: 12px 16px; background-color: #0f172a; color: white; border: none; border-radius: 24px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold;">💬 Debate</button>
+<div id="interlocutor-container" class="interlocutor-container" style="display: none;"></div>
+<button id="btn-toggle-interlocutor" class="btn-toggle-interlocutor" type="button" aria-label="Toggle Canonical Debate">💬 Debate</button>
 
-<script type="module" src="js/app.js?v=6379fc71"></script>
+<script type="module" src="js/app.js?v=b6a19a3f"></script>
 </body>
 </html>

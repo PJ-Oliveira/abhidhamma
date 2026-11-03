@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=6379fc71";
-import { settings } from "./state.js?v=6379fc71";
-import { createLogger } from "./logger.js?v=6379fc71";
+import { t } from "./i18n.js?v=b6a19a3f";
+import { settings } from "./state.js?v=b6a19a3f";
+import { createLogger } from "./logger.js?v=b6a19a3f";
 const log = createLogger("srs");
 const SRS_KEY = "atp.srs.v1";
 const SRS_STATS_KEY = "atp.srs.stats.v1";
@@ -206,7 +206,7 @@ export function initSrsPanel(container) {
         frontEl.innerHTML = `
       <div class="srs-headword">${escHtml(vocab.h)}</div>
       <div class="srs-pos">${escHtml(vocab.pos)}</div>
-      <div class="srs-freq">${t("srsFreq", settings.uiLang)}: ${vocab.freq.toLocaleString()}</div>
+      <div class="srs-freq">${t("srsFreq", settings.uiLang)}: ${(vocab.freq ?? 0).toLocaleString()}</div>
       <div class="srs-tap">${t("srsTapToReveal", settings.uiLang)}</div>
     `;
         frontEl.style.display = "block";
@@ -325,6 +325,8 @@ export function initSrsPanel(container) {
     });
 }
 function escHtml(s) {
+    if (!s)
+        return "";
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 //# sourceMappingURL=srs.js.map
