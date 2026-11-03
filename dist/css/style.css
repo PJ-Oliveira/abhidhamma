@@ -929,19 +929,28 @@ details[open] > summary::before { transform: rotate(90deg); }
     padding-top: 0;
     border-right: none;
     border-top: 1px solid var(--border);
-    justify-content: space-around;
+    justify-content: flex-start;
     z-index: 50;
     width: 100%;
     background: var(--bg-panel);
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  #icon-rail::-webkit-scrollbar {
+    display: none;
   }
   
   .rail-btn {
     border-left: none !important;
     border-top: 3px solid transparent;
-    padding: 6px;
-    flex: 1;
+    padding: 6px 2px;
+    flex: 1 0 auto;
+    min-width: 38px;
     font-size: 11px;
     justify-content: center;
+    box-sizing: border-box;
   }
   
   .rail-btn.active {
@@ -1221,6 +1230,27 @@ details[open] > summary::before { transform: rotate(90deg); }
   line-height: 1;
 }
 
+.srs-tab-label .label-short {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .srs-top-bar {
+    padding: 3px 6px;
+    gap: 6px;
+  }
+  .srs-tab-btn {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+  .srs-tab-label .label-full {
+    display: none;
+  }
+  .srs-tab-label .label-short {
+    display: inline;
+  }
+}
+
 .srs-view-panel {
   width: 100%;
   height: 100%;
@@ -1444,6 +1474,9 @@ details[open] > summary::before { transform: rotate(90deg); }
   line-height: 1.4;
   cursor: pointer;
   user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1663,6 +1696,18 @@ details[open] > summary::before { transform: rotate(90deg); }
 
 .overlay-failed .overlay-title {
   color: #ef4444;
+}
+
+.overlay-paused .overlay-icon {
+  color: var(--accent);
+}
+
+.overlay-paused .overlay-title {
+  color: var(--accent);
+}
+
+.paused-card {
+  border-color: rgba(179, 102, 63, 0.4);
 }
 
 .tetris-controls-row {

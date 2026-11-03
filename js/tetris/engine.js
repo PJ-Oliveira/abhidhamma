@@ -1,4 +1,4 @@
-import { createInitialSchedulerState, loadSchedulerState, recordAnswer, saveSchedulerState, selectNextCard, } from "./scheduler.js?v=b6a19a3f";
+import { createInitialSchedulerState, loadSchedulerState, recordAnswer, saveSchedulerState, selectNextCard, } from "./scheduler.js?v=fa47fb44";
 export const DEFAULT_ENGINE_CONFIG = {
     fallSpeedPercentPerSec: 5.0,
     pieceHeightPercent: 14,

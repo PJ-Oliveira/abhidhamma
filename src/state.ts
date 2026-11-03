@@ -1,4 +1,4 @@
-import type { Settings, HistoryEntry, BookmarkEntry } from "./types.js";
+import type { Settings, HistoryEntry, BookmarkEntry, TranslationLang, UiLang, CommentaryMode } from "./types.js";
 import { createLogger } from "./logger.js";
 
 const log = createLogger("state");
@@ -8,13 +8,29 @@ const HISTORY_KEY = "atp.history.v1";
 const BOOKMARKS_KEY = "atp.bookmarks.v1";
 const HISTORY_LIMIT = 50;
 
+function detectDefaultLang(): { translationLang: TranslationLang; uiLang: UiLang; commentaryMode: CommentaryMode } {
+  try {
+    const nav = typeof navigator !== "undefined" ? navigator : null;
+    const lang = (nav?.language || (nav as any)?.userLanguage || "").toLowerCase();
+    if (lang.startsWith("pt")) {
+      return { translationLang: "pt", uiLang: "pt", commentaryMode: "en+pt" };
+    }
+    if (lang.startsWith("es")) {
+      return { translationLang: "es", uiLang: "es", commentaryMode: "en+es" };
+    }
+  } catch {}
+  return { translationLang: "en", uiLang: "en", commentaryMode: "en+pt" };
+}
+
+const detected = detectDefaultLang();
+
 const DEFAULT_SETTINGS: Settings = {
-  translationLang: "en",
-  uiLang: "en",
+  translationLang: detected.translationLang,
+  uiLang: detected.uiLang,
   fontSize: 17,
   showPali: true,
   showTranslation: true,
-  commentaryMode: "en+pt",
+  commentaryMode: detected.commentaryMode,
 };
 
 function load<T>(key: string, fallback: T): T {

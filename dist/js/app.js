@@ -1,20 +1,20 @@
-import { t } from "./i18n.js?v=b6a19a3f";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=b6a19a3f";
-import { renderTree, markActiveLeaf } from "./tree.js?v=b6a19a3f";
-import { loadChunk, renderSegments } from "./reader.js?v=b6a19a3f";
-import { initDictionaryPanel } from "./dictionary.js?v=b6a19a3f";
-import { initSearchPanel } from "./search.js?v=b6a19a3f";
-import { initExportPanel } from "./export.js?v=b6a19a3f";
-import { initSrsPanel } from "./srs.js?v=b6a19a3f";
-import { TetrisUI } from "./tetris/ui.js?v=b6a19a3f";
-import { initToolsPanel } from "./tools/tools.js?v=b6a19a3f";
-import "./tools/mindmap.js?v=b6a19a3f";
-import "./tools/patthana.js?v=b6a19a3f";
-import "./tools/vithi.js?v=b6a19a3f";
-import "./tools/matikas.js?v=b6a19a3f";
-import "./tools/cetasika.js?v=b6a19a3f";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=b6a19a3f";
-import { createLogger } from "./logger.js?v=b6a19a3f";
+import { t } from "./i18n.js?v=fa47fb44";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=fa47fb44";
+import { renderTree, markActiveLeaf } from "./tree.js?v=fa47fb44";
+import { loadChunk, renderSegments } from "./reader.js?v=fa47fb44";
+import { initDictionaryPanel } from "./dictionary.js?v=fa47fb44";
+import { initSearchPanel } from "./search.js?v=fa47fb44";
+import { initExportPanel } from "./export.js?v=fa47fb44";
+import { initSrsPanel } from "./srs.js?v=fa47fb44";
+import { TetrisUI } from "./tetris/ui.js?v=fa47fb44";
+import { initToolsPanel } from "./tools/tools.js?v=fa47fb44";
+import "./tools/mindmap.js?v=fa47fb44";
+import "./tools/patthana.js?v=fa47fb44";
+import "./tools/vithi.js?v=fa47fb44";
+import "./tools/matikas.js?v=fa47fb44";
+import "./tools/cetasika.js?v=fa47fb44";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=fa47fb44";
+import { createLogger } from "./logger.js?v=fa47fb44";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -487,7 +487,13 @@ function wireIconRail() {
         else {
             doExpand();
         }
-        buttons.forEach((b) => b.classList.toggle("active", b.dataset.panel === target));
+        buttons.forEach((b) => {
+            const isActive = b.dataset.panel === target;
+            b.classList.toggle("active", isActive);
+            if (isActive && isMobile) {
+                b.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            }
+        });
         panels.forEach((p) => p.classList.toggle("active", p.id === (target === "tetris" ? "panel-tetris" : `panel-${target}`)));
         toggleReaderOverlay(target);
         if (target === "tetris") {

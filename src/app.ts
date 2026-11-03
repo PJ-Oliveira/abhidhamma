@@ -532,7 +532,13 @@ function wireIconRail(): void {
         doExpand();
       }
 
-      buttons.forEach((b) => b.classList.toggle("active", b.dataset.panel === target));
+      buttons.forEach((b) => {
+        const isActive = b.dataset.panel === target;
+        b.classList.toggle("active", isActive);
+        if (isActive && isMobile) {
+          b.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+        }
+      });
       panels.forEach((p) => p.classList.toggle("active", p.id === (target === "tetris" ? "panel-tetris" : `panel-${target}`)));
       toggleReaderOverlay(target);
       if (target === "tetris") {

@@ -1,6 +1,6 @@
-import { TetrisEngine } from "./engine.js?v=b6a19a3f";
-import { loadCurriculum } from "./curriculum.js?v=b6a19a3f";
-import { computeUnitMastery } from "./scheduler.js?v=b6a19a3f";
+import { TetrisEngine } from "./engine.js?v=fa47fb44";
+import { loadCurriculum } from "./curriculum.js?v=fa47fb44";
+import { computeUnitMastery } from "./scheduler.js?v=fa47fb44";
 const LABELS = {
     pt: {
         title: "Abhidhamma Tetris",
@@ -23,6 +23,11 @@ const LABELS = {
         expand: "Expandir",
         collapse: "Recolher",
         keyboardHint: "Responda clicando na peça ou teclando [1–4] • [Espaço] Iniciar/Pausar",
+        pausedTitle: "Jogo Pausado",
+        pausedDesc: "Pressione 'Continuar' ou a barra de espaço para prosseguir.",
+        unitCompletedTitle: "Unidade Concluída!",
+        unitCompletedDesc: "Você alcançou 100% de precisão nos conceitos desta unidade.",
+        continuePracticeBtn: "Continuar Prática",
     },
     en: {
         title: "Abhidhamma Tetris",
@@ -45,6 +50,11 @@ const LABELS = {
         expand: "Expand",
         collapse: "Collapse",
         keyboardHint: "Answer by clicking the piece or pressing [1–4] • [Space] Start/Pause",
+        pausedTitle: "Game Paused",
+        pausedDesc: "Press 'Resume' or Spacebar to continue.",
+        unitCompletedTitle: "Unit Completed!",
+        unitCompletedDesc: "You reached 100% precision on this unit's concepts.",
+        continuePracticeBtn: "Continue Practice",
     },
     es: {
         title: "Abhidhamma Tetris",
@@ -67,6 +77,11 @@ const LABELS = {
         expand: "Expandir",
         collapse: "Contraer",
         keyboardHint: "Responda haciendo clic en la pieza o tecleando [1–4] • [Espacio] Iniciar/Pausar",
+        pausedTitle: "Juego Pausado",
+        pausedDesc: "Presione 'Continuar' o la barra espaciadora para proseguir.",
+        unitCompletedTitle: "¡Unidad Completada!",
+        unitCompletedDesc: "Alcanzaste 100% de precisión en los conceptos de esta unidad.",
+        continuePracticeBtn: "Continuar Práctica",
     },
 };
 export class TetrisUI {
@@ -135,11 +150,11 @@ export class TetrisUI {
         </div>
         <div class="tetris-stats-row">
           <span class="tetris-stat-pill" title="100% Target Precision">
-            <span class="stat-lbl">${strings.mastery}:</span>
+            <span class="stat-lbl tetris-mastery-lbl">${strings.mastery}:</span>
             <strong class="tetris-mastery-val">0%</strong>
           </span>
           <span class="tetris-stat-pill">
-            <span class="stat-lbl">🔥 ${strings.streak}:</span>
+            <span class="stat-lbl tetris-streak-lbl">🔥 ${strings.streak}:</span>
             <strong class="tetris-streak-val">0</strong>
           </span>
           <button class="tetris-expand-btn" title="${strings.expand}">⤢</button>
@@ -192,6 +207,12 @@ export class TetrisUI {
         const titleText = this.wrapperEl.querySelector(".tetris-title-text");
         if (titleText)
             titleText.textContent = s.title;
+        const masteryLbl = this.wrapperEl.querySelector(".tetris-mastery-lbl");
+        if (masteryLbl)
+            masteryLbl.textContent = `${s.mastery}:`;
+        const streakLbl = this.wrapperEl.querySelector(".tetris-streak-lbl");
+        if (streakLbl)
+            streakLbl.textContent = `🔥 ${s.streak}:`;
         const floorText = this.wrapperEl.querySelector(".floor-text");
         if (floorText)
             floorText.textContent = s.floorWarning;
@@ -324,6 +345,12 @@ export class TetrisUI {
         else if (state.phase === "completed") {
             this.renderCompletedOverlay();
         }
+        else if (state.phase === "idle" && state.question && state.pieces.length > 0) {
+            this.renderPausedOverlay();
+        }
+        else if (state.phase === "idle") {
+            this.overlayEl.style.display = "none";
+        }
     }
     onQuestionLoaded(question) {
         this.topicEl.textContent = question.topic;
@@ -372,12 +399,32 @@ export class TetrisUI {
                     bodyEl.textContent = p.text;
                 }
             }
-            pieceEl.style.top = `${p.topRow}%`;
+            pieceEl.style.top = `calc(${p.topRow}% + 4px)`;
             pieceEl.style.left = `calc(${p.slot * colWidth}% + ${gutter}px)`;
             pieceEl.style.width = `calc(${colWidth}% - ${gutter * 2}px)`;
             if (p.shattered) {
                 pieceEl.classList.add("piece-shattered");
             }
+        }
+    }
+    renderPausedOverlay() {
+        const s = LABELS[this.lang];
+        this.overlayEl.className = "tetris-overlay overlay-paused";
+        this.overlayEl.style.display = "flex";
+        this.overlayEl.innerHTML = `
+      <div class="overlay-card paused-card">
+        <div class="overlay-icon">⏸</div>
+        <h3 class="overlay-title">${s.pausedTitle}</h3>
+        <p class="overlay-explanation">${s.pausedDesc}</p>
+        <button class="tetris-btn tetris-btn-primary resume-overlay-btn">${s.resume}</button>
+      </div>
+    `;
+        const resumeBtn = this.overlayEl.querySelector(".resume-overlay-btn");
+        if (resumeBtn) {
+            resumeBtn.addEventListener("click", () => {
+                this.engine.resume();
+                this.startPauseBtn.textContent = s.pause;
+            });
         }
     }
     renderFeedbackOverlay(fb) {
@@ -413,14 +460,15 @@ export class TetrisUI {
         }
     }
     renderCompletedOverlay() {
+        const s = LABELS[this.lang];
         this.overlayEl.className = "tetris-overlay overlay-completed";
         this.overlayEl.style.display = "flex";
         this.overlayEl.innerHTML = `
       <div class="overlay-card">
         <div class="overlay-icon">☸</div>
-        <h3 class="overlay-title">Unidade Concluída!</h3>
-        <p class="overlay-explanation">Você alcançou 100% de precisão nos conceitos desta unidade.</p>
-        <button class="tetris-btn tetris-btn-primary replay-btn">Continuar Prática</button>
+        <h3 class="overlay-title">${s.unitCompletedTitle}</h3>
+        <p class="overlay-explanation">${s.unitCompletedDesc}</p>
+        <button class="tetris-btn tetris-btn-primary replay-btn">${s.continuePracticeBtn}</button>
       </div>
     `;
         const replayBtn = this.overlayEl.querySelector(".replay-btn");

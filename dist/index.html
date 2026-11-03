@@ -6,7 +6,7 @@
 <title>Abhidhamma Piṭaka</title>
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#8b0000" />
-<link rel="stylesheet" href="css/style.css?v=b6a19a3f" />
+<link rel="stylesheet" href="css/style.css?v=fa47fb44" />
 <script>
   window.__deferredPwaPrompt = null;
   window.addEventListener('beforeinstallprompt', function(e) {
@@ -185,11 +185,17 @@
       <div class="srs-top-bar" role="tablist" aria-label="SRS Mode Selection">
         <button class="srs-tab-btn active" data-srs-mode="vocab" type="button" role="tab" aria-selected="true">
           <span class="srs-tab-icon">📖</span>
-          <span class="srs-tab-label" data-i18n="srsMenuVocabTitle">Pāli Memorization</span>
+          <span class="srs-tab-label">
+            <span class="label-full" data-i18n="srsMenuVocabTitle">Pāli Memorization</span>
+            <span class="label-short" data-i18n="srsMenuVocabShort">Memorize</span>
+          </span>
         </button>
         <button class="srs-tab-btn" data-srs-mode="tetris" type="button" role="tab" aria-selected="false">
           <span class="srs-tab-icon">☸</span>
-          <span class="srs-tab-label" data-i18n="srsMenuTetrisTitle">Abhidhamma Tetris</span>
+          <span class="srs-tab-label">
+            <span class="label-full" data-i18n="srsMenuTetrisTitle">Abhidhamma Tetris</span>
+            <span class="label-short" data-i18n="srsMenuTetrisShort">Tetris</span>
+          </span>
         </button>
       </div>
       <div id="srs-full-body" class="srs-view-panel"></div>
@@ -209,6 +215,6 @@
 <div id="interlocutor-container" class="interlocutor-container" style="display: none;"></div>
 <button id="btn-toggle-interlocutor" class="btn-toggle-interlocutor" type="button" aria-label="Toggle Canonical Debate">💬 Debate</button>
 
-<script type="module" src="js/app.js?v=b6a19a3f"></script>
+<script type="module" src="js/app.js?v=fa47fb44"></script>
 </body>
 </html>
