@@ -21,6 +21,7 @@ const LABELS = {
     retryBtn: "Tentar Novamente",
     correctTitle: "Correto!",
     wrongTitle: "Incorreto!",
+    skipHint: "Clique ou pressione qualquer tecla para continuar",
     waitingPrompt: "Pressione 'Iniciar' para começar a queda das peças.",
     expand: "Expandir",
     collapse: "Recolher",
@@ -48,6 +49,7 @@ const LABELS = {
     retryBtn: "Try Again",
     correctTitle: "Correct!",
     wrongTitle: "Incorrect!",
+    skipHint: "Click or press any key to continue",
     waitingPrompt: "Press 'Start' to begin the falling pieces.",
     expand: "Expand",
     collapse: "Collapse",
@@ -75,6 +77,7 @@ const LABELS = {
     retryBtn: "Intentar de Nuevo",
     correctTitle: "¡Correcto!",
     wrongTitle: "¡Incorrecto!",
+    skipHint: "Haga clic o presione cualquier tecla para continuar",
     waitingPrompt: "Presione 'Iniciar' para comenzar la caída de piezas.",
     expand: "Expandir",
     collapse: "Contraer",
@@ -123,9 +126,10 @@ export class TetrisUI {
         onCardAnswered: () => this.updateMasteryDisplay(),
       },
       {
-        fallSpeedPercentPerSec: 5.0, // Velocidade constante razoável
+        fallSpeedPercentPerSec: 3.2, // Velocidade constante mais serena (~31s do topo ao chão)
         pieceHeightPercent: 14,
-        feedbackDelayMs: 2200,
+        feedbackDelayMs: 1100, // Transição ágil no acerto
+        feedbackWrongDelayMs: 1400, // Transição ágil no erro
       }
     );
     this.engine.setLang(this.lang);
@@ -318,6 +322,14 @@ export class TetrisUI {
       this.toggleExpand();
     });
 
+    // Permite que o jogador avance imediatamente ao clicar no overlay de feedback
+    this.overlayEl.addEventListener("click", (e) => {
+      if (this.engine && this.engine.getState().phase === "feedback") {
+        e.stopPropagation();
+        this.engine.skipFeedback();
+      }
+    });
+
     // Keyboard listener for instant response
     window.addEventListener("keydown", (e) => {
       // Don't intercept if user is typing in an input
@@ -325,6 +337,13 @@ export class TetrisUI {
       if (active && (active.tagName === "INPUT" || active.tagName === "TEXTAREA")) return;
 
       if (!this.container.offsetParent) return; // not visible
+
+      const state = this.engine ? this.engine.getState() : null;
+      if (state && state.phase === "feedback") {
+        // Qualquer tecla de jogo avança o feedback imediatamente sem travar o ritmo
+        this.engine.skipFeedback();
+        return;
+      }
 
       const key = e.key.toUpperCase();
       if (key === "1" || key === "2" || key === "3" || key === "4" || key === "5") {
@@ -470,10 +489,11 @@ export class TetrisUI {
     this.overlayEl.style.display = "flex";
 
     this.overlayEl.innerHTML = `
-      <div class="overlay-card">
+      <div class="overlay-card overlay-card-interactive" title="${s.skipHint}">
         <div class="overlay-icon">${isCorrect ? "✓" : "✗"}</div>
         <h3 class="overlay-title">${isCorrect ? s.correctTitle : s.wrongTitle}</h3>
         <p class="overlay-explanation">${fb.explanation}</p>
+        <span class="overlay-skip-hint">${s.skipHint}</span>
       </div>
     `;
   }

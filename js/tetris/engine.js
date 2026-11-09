@@ -1,8 +1,9 @@
-import { createInitialSchedulerState, loadSchedulerState, recordAnswer, saveSchedulerState, selectNextCard, } from "./scheduler.js?v=fa47fb44";
+import { createInitialSchedulerState, loadSchedulerState, recordAnswer, saveSchedulerState, selectNextCard, } from "./scheduler.js?v=b1f32522";
 export const DEFAULT_ENGINE_CONFIG = {
-    fallSpeedPercentPerSec: 5.0,
+    fallSpeedPercentPerSec: 3.2,
     pieceHeightPercent: 14,
-    feedbackDelayMs: 2200,
+    feedbackDelayMs: 1100,
+    feedbackWrongDelayMs: 1400,
 };
 export class TetrisEngine {
     curriculum;
@@ -70,6 +71,14 @@ export class TetrisEngine {
     }
     getScheduler() {
         return this.scheduler;
+    }
+    getConfig() {
+        return this.config;
+    }
+    skipFeedback() {
+        if (this.phase === "feedback") {
+            this.loadNextQuestion();
+        }
     }
     getState() {
         return {
@@ -175,9 +184,10 @@ export class TetrisEngine {
             saveSchedulerState(this.scheduler, this.currentUnit);
             this.callbacks.onCardAnswered(this.currentQuestion.cardId, false);
             this.emitState();
+            const wrongDelay = this.config.feedbackWrongDelayMs ?? Math.round(this.config.feedbackDelayMs * 1.3);
             this.feedbackTimer = window.setTimeout(() => {
                 this.loadNextQuestion();
-            }, this.config.feedbackDelayMs + 1000);
+            }, wrongDelay);
         }
     }
     loadNextQuestion() {

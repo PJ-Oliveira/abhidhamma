@@ -17,7 +17,7 @@ import {
   computeUnitMastery,
   LEARNING_STEPS_COUNT,
 } from "../../src/tetris/scheduler.js";
-import { TetrisEngine } from "../../src/tetris/engine.js";
+import { TetrisEngine, DEFAULT_ENGINE_CONFIG } from "../../src/tetris/engine.js";
 import { TetrisUI } from "../../src/tetris/ui.js";
 import type { Taxonomy, UnitFile } from "../../src/tetris/types.js";
 
@@ -288,6 +288,44 @@ describe("Abhidhamma Tetris — Engine State Machine & Critical Failure", () => 
     expect(st.stats.streak).toBe(1);
     engine.destroy();
   });
+
+  it("should have calibrated defaults with calmer fall speed and shorter feedback delays", () => {
+    expect(DEFAULT_ENGINE_CONFIG.fallSpeedPercentPerSec).toBe(3.2);
+    expect(DEFAULT_ENGINE_CONFIG.feedbackDelayMs).toBe(1100);
+    expect(DEFAULT_ENGINE_CONFIG.feedbackWrongDelayMs).toBe(1400);
+
+    const engine = new TetrisEngine(curriculum, {
+      onStateChange: () => {},
+      onQuestionLoaded: () => {},
+      onCriticalFailure: () => {},
+      onCardAnswered: () => {},
+    });
+
+    expect(engine.getConfig().fallSpeedPercentPerSec).toBe(3.2);
+    expect(engine.getConfig().feedbackDelayMs).toBe(1100);
+    expect(engine.getConfig().feedbackWrongDelayMs).toBe(1400);
+    engine.destroy();
+  });
+
+  it("should support skipFeedback to immediately advance to next question without waiting", () => {
+    const engine = new TetrisEngine(curriculum, {
+      onStateChange: () => {},
+      onQuestionLoaded: () => {},
+      onCriticalFailure: () => {},
+      onCardAnswered: () => {},
+    });
+
+    engine.start();
+    const correctPiece = engine.getState().pieces.find((p) => p.isCorrect)!;
+    engine.selectOption(correctPiece.key);
+
+    expect(engine.getState().phase).toBe("feedback");
+    // Player clicks or presses key to advance immediately:
+    engine.skipFeedback();
+    // Phase advances to falling or completed
+    expect(["falling", "completed"]).toContain(engine.getState().phase);
+    engine.destroy();
+  });
 });
 
 describe("Abhidhamma Tetris — UI Component Mounting & Viewport Switching", () => {
@@ -346,6 +384,34 @@ describe("Abhidhamma Tetris — UI Component Mounting & Viewport Switching", () 
 
     ui.setLang("es");
     expect(mount.querySelector(".floor-text")?.textContent).toContain("SUELO");
+  });
+
+  it("should advance immediately when clicking feedback overlay during feedback", async () => {
+    const mount = document.getElementById("srs-tetris-main")!;
+    const ui = new TetrisUI(mount, "pt");
+    await ui.init();
+
+    // Register sample unit so questions are available in jsdom
+    (ui as any).curriculum.registerUnit(sampleUnitFile);
+    (ui as any).populateUnits();
+
+    const startBtn = mount.querySelector(".tetris-start-btn") as HTMLButtonElement;
+    startBtn.click();
+
+    const engine = (ui as any).engine as TetrisEngine;
+    const state = engine.getState();
+    expect(state.phase).toBe("falling");
+    const correctPiece = state.pieces.find((p) => p.isCorrect)!;
+    engine.selectOption(correctPiece.key);
+
+    expect(engine.getState().phase).toBe("feedback");
+    const overlay = mount.querySelector(".tetris-overlay") as HTMLElement;
+    expect(overlay.style.display).not.toBe("none");
+
+    // Click overlay to skip immediately:
+    overlay.click();
+    expect(["falling", "completed"]).toContain(engine.getState().phase);
+    engine.destroy();
   });
 
   it("should register all 10 units of Abhidhammatthasaṅgaha and exceed 450 total granular questions", () => {

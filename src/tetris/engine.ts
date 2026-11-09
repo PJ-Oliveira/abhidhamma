@@ -31,13 +31,16 @@ export interface EngineConfig {
   readonly pieceHeightPercent: number;
   /** Tempo de exibição da explicação pedagógica em ms após resposta correta. */
   readonly feedbackDelayMs: number;
+  /** Tempo de exibição da explicação pedagógica em ms após resposta incorreta. */
+  readonly feedbackWrongDelayMs?: number | undefined;
 }
 
 export const DEFAULT_ENGINE_CONFIG: EngineConfig = {
-  // Queda serena e constante: leva ~18 segundos do topo ao chão.
-  fallSpeedPercentPerSec: 5.0,
+  // Queda serena e constante: leva ~31 segundos do topo ao chão (descendo a 3.2%/s).
+  fallSpeedPercentPerSec: 3.2,
   pieceHeightPercent: 14,
-  feedbackDelayMs: 2200,
+  feedbackDelayMs: 1100,
+  feedbackWrongDelayMs: 1400,
 };
 
 export class TetrisEngine {
@@ -114,6 +117,19 @@ export class TetrisEngine {
 
   public getScheduler() {
     return this.scheduler;
+  }
+
+  public getConfig(): Readonly<EngineConfig> {
+    return this.config;
+  }
+
+  /**
+   * Permite avançar imediatamente para a próxima pergunta caso esteja na fase de feedback.
+   */
+  public skipFeedback(): void {
+    if (this.phase === "feedback") {
+      this.loadNextQuestion();
+    }
   }
 
   public getState(): GameState {
@@ -241,9 +257,10 @@ export class TetrisEngine {
       this.emitState();
 
       // Dá ao aluno tempo para ler a refutação conceitual e continuar
+      const wrongDelay = this.config.feedbackWrongDelayMs ?? Math.round(this.config.feedbackDelayMs * 1.3);
       this.feedbackTimer = window.setTimeout(() => {
         this.loadNextQuestion();
-      }, this.config.feedbackDelayMs + 1000);
+      }, wrongDelay);
     }
   }
 

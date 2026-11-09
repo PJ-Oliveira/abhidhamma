@@ -1,4 +1,4 @@
-import { getEligibleGeneratedCards, materializeGeneratedQuestion } from "./taxonomy.js?v=fa47fb44";
+import { getEligibleGeneratedCards, materializeGeneratedQuestion } from "./taxonomy.js?v=b1f32522";
 function shuffle(arr, rng = Math.random) {
     const res = [...arr];
     for (let i = res.length - 1; i > 0; i--) {

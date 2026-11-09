@@ -1701,6 +1701,20 @@ details[open] > summary::before { transform: rotate(90deg); }
 .overlay-wrong .overlay-title { color: #ef4444; }
 .overlay-wrong { border-color: #ef4444; }
 
+.overlay-card-interactive {
+  cursor: pointer;
+  user-select: none;
+}
+
+.overlay-skip-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  opacity: 0.75;
+  margin-top: 2px;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
 .overlay-failed .overlay-icon {
   color: #ef4444;
   animation: pulseFail 0.6s infinite alternate;

@@ -1,6 +1,6 @@
-import { TetrisEngine } from "./engine.js?v=fa47fb44";
-import { loadCurriculum } from "./curriculum.js?v=fa47fb44";
-import { computeUnitMastery } from "./scheduler.js?v=fa47fb44";
+import { TetrisEngine } from "./engine.js?v=b1f32522";
+import { loadCurriculum } from "./curriculum.js?v=b1f32522";
+import { computeUnitMastery } from "./scheduler.js?v=b1f32522";
 const LABELS = {
     pt: {
         title: "Abhidhamma Tetris",
@@ -19,6 +19,7 @@ const LABELS = {
         retryBtn: "Tentar Novamente",
         correctTitle: "Correto!",
         wrongTitle: "Incorreto!",
+        skipHint: "Clique ou pressione qualquer tecla para continuar",
         waitingPrompt: "Pressione 'Iniciar' para começar a queda das peças.",
         expand: "Expandir",
         collapse: "Recolher",
@@ -46,6 +47,7 @@ const LABELS = {
         retryBtn: "Try Again",
         correctTitle: "Correct!",
         wrongTitle: "Incorrect!",
+        skipHint: "Click or press any key to continue",
         waitingPrompt: "Press 'Start' to begin the falling pieces.",
         expand: "Expand",
         collapse: "Collapse",
@@ -73,6 +75,7 @@ const LABELS = {
         retryBtn: "Intentar de Nuevo",
         correctTitle: "¡Correcto!",
         wrongTitle: "¡Incorrecto!",
+        skipHint: "Haga clic o presione cualquier tecla para continuar",
         waitingPrompt: "Presione 'Iniciar' para comenzar la caída de piezas.",
         expand: "Expandir",
         collapse: "Contraer",
@@ -112,9 +115,10 @@ export class TetrisUI {
             onCriticalFailure: () => this.onCriticalFailure(),
             onCardAnswered: () => this.updateMasteryDisplay(),
         }, {
-            fallSpeedPercentPerSec: 5.0,
+            fallSpeedPercentPerSec: 3.2,
             pieceHeightPercent: 14,
-            feedbackDelayMs: 2200,
+            feedbackDelayMs: 1100,
+            feedbackWrongDelayMs: 1400,
         });
         this.engine.setLang(this.lang);
         this.bindEvents();
@@ -295,12 +299,23 @@ export class TetrisUI {
         expandBtn.addEventListener("click", () => {
             this.toggleExpand();
         });
+        this.overlayEl.addEventListener("click", (e) => {
+            if (this.engine && this.engine.getState().phase === "feedback") {
+                e.stopPropagation();
+                this.engine.skipFeedback();
+            }
+        });
         window.addEventListener("keydown", (e) => {
             const active = document.activeElement;
             if (active && (active.tagName === "INPUT" || active.tagName === "TEXTAREA"))
                 return;
             if (!this.container.offsetParent)
                 return;
+            const state = this.engine ? this.engine.getState() : null;
+            if (state && state.phase === "feedback") {
+                this.engine.skipFeedback();
+                return;
+            }
             const key = e.key.toUpperCase();
             if (key === "1" || key === "2" || key === "3" || key === "4" || key === "5") {
                 this.engine.selectOption(key);
@@ -433,10 +448,11 @@ export class TetrisUI {
         this.overlayEl.className = `tetris-overlay ${isCorrect ? "overlay-correct" : "overlay-wrong"}`;
         this.overlayEl.style.display = "flex";
         this.overlayEl.innerHTML = `
-      <div class="overlay-card">
+      <div class="overlay-card overlay-card-interactive" title="${s.skipHint}">
         <div class="overlay-icon">${isCorrect ? "✓" : "✗"}</div>
         <h3 class="overlay-title">${isCorrect ? s.correctTitle : s.wrongTitle}</h3>
         <p class="overlay-explanation">${fb.explanation}</p>
+        <span class="overlay-skip-hint">${s.skipHint}</span>
       </div>
     `;
     }
