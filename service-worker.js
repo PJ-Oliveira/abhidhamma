@@ -1,4 +1,4 @@
-const CACHE_NAME = 'abhidhamma-cache-v16';
+const CACHE_NAME = 'abhidhamma-cache-v17';
 
 // App shell files to cache on install
 const CORE_ASSETS = [
@@ -34,6 +34,10 @@ const CORE_ASSETS = [
   './js/tetris/taxonomy.js',
   './js/tetris/scheduler.js',
   './js/tetris/types.js',
+  './js/abhidhamma-srs/types.js',
+  './js/abhidhamma-srs/scheduler.js',
+  './js/abhidhamma-srs/ui.js',
+  './data/srs/abhidhamma_cards.json',
   './data/tetris/index.json',
   './data/tetris/unit-1.json',
   './data/tetris/unit-2.json',

@@ -231,12 +231,14 @@ export function initSrsPanel(container: HTMLElement): void {
     { q: 5, label: () => t("srsEasy", settings.uiLang), cls: "srs-btn-easy" },
   ];
 
+  const ratingBtns: { btn: HTMLButtonElement; label: () => string }[] = [];
   for (const r of ratings) {
     const btn = document.createElement("button");
     btn.className = `srs-btn ${r.cls}`;
     btn.textContent = r.label();
     btn.addEventListener("click", () => handleRating(r.q));
     ratingBar.appendChild(btn);
+    ratingBtns.push({ btn, label: r.label });
   }
 
   // Progress bar
@@ -380,9 +382,9 @@ export function initSrsPanel(container: HTMLElement): void {
 
   // Keyboard shortcuts
   document.addEventListener("keydown", (e) => {
-    // Only when the SRS reader overlay is visible
+    // Only when the SRS reader overlay and vocab panel are visible
     const overlay = container.closest("#reader-srs") as HTMLElement | null;
-    if (!overlay || overlay.style.display === "none") return;
+    if (!overlay || overlay.style.display === "none" || container.style.display === "none") return;
 
     if (!isFlipped && (e.key === " " || e.key === "Enter")) {
       e.preventDefault();
@@ -392,6 +394,20 @@ export function initSrsPanel(container: HTMLElement): void {
       else if (e.key === "2") handleRating(3);
       else if (e.key === "3") handleRating(4);
       else if (e.key === "4") handleRating(5);
+    }
+  });
+
+  window.addEventListener("languageChanged", () => {
+    for (const item of ratingBtns) {
+      item.btn.textContent = item.label();
+    }
+    updateStatsBar();
+    if (currentIndex < queue.length && queue[currentIndex]) {
+      const wasFlipped = isFlipped;
+      showCard(queue[currentIndex]!);
+      if (wasFlipped) flipCard();
+    } else if (queue.length > 0) {
+      showComplete();
     }
   });
 

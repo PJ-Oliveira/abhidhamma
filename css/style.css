@@ -36,6 +36,7 @@
 html, body {
   margin: 0;
   height: 100%;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--text);
   font-family: "Segoe UI", Roboto, "Noto Sans", sans-serif;
@@ -76,13 +77,40 @@ html, body {
 
 /* ---- side panel ---- */
 #side-panel {
+  position: relative;
   background: var(--bg-panel);
   border-right: 1px solid var(--border);
   width: var(--panel-w);
   overflow-y: auto;
+  overflow-x: hidden;
   transition: width 0.15s ease, padding 0.15s ease;
 }
 #side-panel.collapsed { width: 0; padding: 0; overflow: hidden; border-right: none; }
+
+.side-panel-close {
+  display: none;
+  position: sticky;
+  top: 8px;
+  float: right;
+  margin: 8px 10px 0 0;
+  z-index: 5;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-content);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.side-panel-close:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
 
 .panel { display: none; padding: var(--pad-md); }
 .panel.active { display: block; }
@@ -263,6 +291,7 @@ main#reader { display: flex; flex-direction: column; min-width: 0; position: rel
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
+  left: auto;
   z-index: 200;
   background: var(--bg-panel);
   border: 1px solid var(--border);
@@ -271,9 +300,10 @@ main#reader { display: flex; flex-direction: column; min-width: 0; position: rel
   list-style: none;
   margin: 0;
   padding: 8px 0;
-  min-width: 280px;
-  max-width: 90vw;
+  min-width: min(280px, calc(100vw - 24px));
+  max-width: calc(100vw - 24px);
   max-height: calc(100vh - 120px);
+  max-height: calc(100dvh - 120px);
   overflow-y: auto;
 }
 .chapter-nav-list li {
@@ -927,11 +957,39 @@ details[open] > summary::before { transform: rotate(90deg); }
   z-index: 3;
 }
 
+/* ====== TABLET & SMALL SCREEN DRAWER (<= 860px) ====== */
+@media (max-width: 860px) and (min-width: 601px) {
+  #app {
+    grid-template-columns: var(--rail-w) 1fr;
+  }
+  #panel-resizer {
+    display: none;
+  }
+  #side-panel {
+    position: fixed;
+    left: var(--rail-w);
+    top: 0;
+    bottom: 0;
+    width: min(320px, calc(100vw - var(--rail-w))) !important;
+    max-width: calc(100vw - var(--rail-w)) !important;
+    z-index: 40;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.18);
+  }
+  #side-panel.collapsed {
+    display: none;
+  }
+  .side-panel-close {
+    display: inline-flex;
+  }
+}
+
 /* ====== SUPER RESPONSIVE MOBILE LAYOUT ====== */
 @media (max-width: 600px) {
   #app {
     display: flex;
     flex-direction: column-reverse;
+    height: 100vh;
+    height: 100dvh;
   }
   
   /* Rail turns into a Bottom Navigation Bar */
@@ -949,6 +1007,7 @@ details[open] > summary::before { transform: rotate(90deg); }
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    flex-shrink: 0;
   }
   #icon-rail::-webkit-scrollbar {
     display: none;
@@ -983,6 +1042,10 @@ details[open] > summary::before { transform: rotate(90deg); }
     box-shadow: none;
     border-right: none;
   }
+
+  .side-panel-close {
+    display: inline-flex;
+  }
   
   /* When collapsed, hide it entirely */
   #side-panel.collapsed {
@@ -992,7 +1055,9 @@ details[open] > summary::before { transform: rotate(90deg); }
   /* Content area takes remaining space above nav bar */
   #reader {
     flex: 1;
+    min-height: 0;
     overflow-y: auto;
+    overflow-x: hidden;
     position: relative;
     width: 100%;
     padding-bottom: 20px;
@@ -1091,16 +1156,35 @@ details[open] > summary::before { transform: rotate(90deg); }
     max-height: 50vh;
   }
 
-  /* Reader header: stack tabs vertically if cramped */
+  /* Reader header: stack tabs vertically if cramped, prevent left overflow on chapter dropdown */
+  #header-text {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
   #tabs-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
+    width: 100%;
+    max-width: 100%;
   }
-  .chapter-nav { margin-left: 0; }
+  .chapter-nav {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .chapter-nav-list {
+    left: 0;
+    right: auto;
+    min-width: min(280px, calc(100vw - 24px));
+    max-width: calc(100vw - 24px);
+    max-height: calc(100dvh - 160px);
+  }
   
   /* Part tabs: scroll horizontally if too many */
   .part-tabs {
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
@@ -2070,5 +2154,665 @@ details[open] > summary::before { transform: rotate(90deg); }
   }
   .tetris-controls-row {
     padding: 6px 14px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ABHIDHAMMATTHASAṄGAHA ANKI SRS MODULE (Bricks -> House)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+#srs-abhidhamma-main {
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.abhi-srs-wrap {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: 48px;
+  box-sizing: border-box;
+}
+
+.abhi-srs-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.abhi-srs-title {
+  margin: 0 0 4px;
+  font-size: clamp(17px, 2vw, 22px);
+  color: var(--accent);
+  font-family: 'Gentium Book Plus', Georgia, serif;
+}
+
+.abhi-srs-subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  max-width: 660px;
+}
+
+.abhi-srs-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.abhi-limit-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.abhi-limit-select {
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text);
+  font-size: 12.5px;
+}
+
+.abhi-btn-primary {
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.12s ease;
+}
+
+.abhi-btn-primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.abhi-btn-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.abhi-btn-secondary {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.abhi-btn-secondary:hover {
+  background: var(--accent-soft);
+}
+
+.abhi-telemetry-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.abhi-tele-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.abhi-tele-pill strong {
+  color: var(--text);
+}
+
+.abhi-tier-legend {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  background: var(--bg-panel);
+  border-left: 3px solid var(--accent);
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+}
+
+.abhi-chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(310px, 100%), 1fr));
+  gap: 12px;
+}
+
+.abhi-chapter-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.abhi-chapter-card.unlocked:hover {
+  border-color: var(--accent);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.abhi-chapter-card.locked {
+  opacity: 0.72;
+}
+
+.abhi-ch-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.abhi-ch-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.abhi-ch-num {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.abhi-ch-pali {
+  font-family: 'Gentium Book Plus', Georgia, serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.abhi-ch-status {
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.abhi-ch-status.unlocked { color: #27ae60; }
+.abhi-ch-status.locked { color: var(--text-muted); }
+
+.abhi-ch-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.abhi-ch-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.abhi-ch-progress-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.abhi-ch-progress-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.abhi-ch-tiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.abhi-tier-pill {
+  font-size: 11.5px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.abhi-tier-pill.muted {
+  opacity: 0.6;
+}
+
+.abhi-ch-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.anki-cnt {
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 600;
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+}
+
+.anki-cnt.new { color: #1d6fa5; }
+.anki-cnt.learn { color: #c05621; }
+.anki-cnt.rev { color: #22864d; }
+.anki-cnt.mast { color: var(--accent); }
+
+.abhi-ch-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.abhi-ch-lock-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  flex: 1;
+  min-width: 140px;
+}
+
+.abhi-btn-study-ch {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.abhi-btn-study-ch:hover:not(:disabled) {
+  background: var(--accent);
+  color: #fff;
+}
+
+.abhi-btn-study-ch:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: var(--border);
+  color: var(--text-muted);
+  background: transparent;
+}
+
+.abhi-footer-tools {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 8px;
+}
+
+.abhi-btn-reset {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.abhi-btn-reset:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+/* ── Study Stage ── */
+
+.abhi-study-mode {
+  max-width: 780px;
+}
+
+.abhi-study-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.abhi-btn-back {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-content);
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.abhi-btn-back:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.abhi-study-scope {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: 'Gentium Book Plus', Georgia, serif;
+}
+
+.abhi-queue-pills {
+  display: flex;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.abhi-flashcard {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: clamp(18px, 3vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
+}
+
+.abhi-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.abhi-cat-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.abhi-tier-badge {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.abhi-tier-badge.tier-house {
+  background: #fdebd0;
+  color: #9c4a1a;
+  border: 1px solid #e6b88a;
+}
+
+.abhi-card-pali {
+  font-family: 'Gentium Book Plus', Georgia, serif;
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+
+.abhi-card-prompt {
+  font-size: clamp(15px, 1.6vw, 18px);
+  color: var(--text);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.abhi-recall-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-content);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13.5px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.abhi-recall-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.abhi-reveal-row {
+  display: flex;
+  justify-content: center;
+}
+
+.abhi-btn-reveal {
+  padding: 12px 26px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  max-width: 340px;
+}
+
+.abhi-btn-reveal:hover {
+  filter: brightness(1.08);
+}
+
+.abhi-card-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2px 0;
+}
+
+.abhi-card-answer {
+  font-family: 'Gentium Book Plus', Georgia, serif;
+  font-size: clamp(15px, 1.5vw, 17px);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.abhi-char-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 8px;
+  padding: 10px;
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.abhi-char-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.abhi-char-lbl {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.abhi-char-val {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.abhi-mechanics-box {
+  background: var(--bg-content);
+  border-left: 3px solid var(--translation-bar);
+  padding: 10px 12px;
+  border-radius: 0 6px 6px 0;
+}
+
+.abhi-mechanics-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--translation-bar);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.abhi-mechanics-text {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.abhi-source-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--text-muted);
+  padding-top: 6px;
+  border-top: 1px dashed var(--border);
+}
+
+.abhi-source-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.abhi-source-link:hover {
+  text-decoration: underline;
+}
+
+.abhi-anki-ratings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.abhi-rate-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 6px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: filter 0.14s ease, transform 0.1s ease;
+}
+
+.abhi-rate-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.abhi-rate-btn .rate-lbl {
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.abhi-rate-btn .rate-int {
+  font-size: 11.5px;
+  opacity: 0.9;
+}
+
+.abhi-rate-btn.rate-1 { background: #c0392b; }
+.abhi-rate-btn.rate-2 { background: #d35400; }
+.abhi-rate-btn.rate-3 { background: #27ae60; }
+.abhi-rate-btn.rate-4 { background: #2471a3; }
+
+.abhi-complete-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.abhi-complete-icon { font-size: 36px; }
+.abhi-complete-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.abhi-complete-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.abhi-srs-loading,
+.abhi-srs-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 40px 16px;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .abhi-anki-ratings {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .abhi-srs-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .abhi-btn-study-all {
+    width: 100%;
+  }
+  .srs-top-bar {
+    gap: 4px;
+    padding: 4px 6px;
+  }
+  .srs-tab-btn {
+    padding: 5px 8px;
+    font-size: 11px;
+    min-width: 0;
   }
 }

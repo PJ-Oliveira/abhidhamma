@@ -1,0 +1,183 @@
+"""Chapter 7: Samuccayapariccheda — Compendium of Categories (Akusala, Missaka, Bodhipakkhiya, Sabba)."""
+
+CHAPTER_META = {
+    "chapter": 7,
+    "paliTitle": "Samuccayapariccheda",
+    "title": {
+        "pt": "Cap. 7: Compêndio das Categorias (Samuccaya)",
+        "en": "Ch. 7: Compendium of Categories (Samuccaya)",
+        "es": "Cap. 7: Compendio de las Categorías (Samuccaya)",
+    },
+    "subtitle": {
+        "pt": "Agrupamentos prejudiciais (āsava, nīvaraṇa, saṃyojana), mistos, 37 fatores da iluminação e síntese total (khandha, āyatana, dhātu, sacca).",
+        "en": "Unwholesome groups (āsava, nīvaraṇa, saṃyojana), mixed categories, 37 enlightenment factors, and total compendium.",
+        "es": "Grupos insalubres, categorías mixtas, 37 factores de la iluminación y síntesis total (khandha, āyatana, dhātu, sacca).",
+    },
+    "unlockPrevAtomPct": 80,
+    "houseUnlockAtomPct": 75,
+}
+
+
+def build_cards():
+    return [
+        {
+            "id": "c7.asava_ogha_yoga_4",
+            "chapter": 7,
+            "axis": "samuccaya",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": "4 Āsava · 4 Ogha · 4 Yoga",
+            "categoryLabel": {"pt": "Akusala-saṅgaha · Impurezas", "en": "Akusala-saṅgaha · Taints & Floods", "es": "Akusala-saṅgaha · Contaminaciones"},
+            "prompt": {
+                "pt": "Quais são os 4 Āsavas (impurezas/fermentações), idênticos em conteúdo aos 4 Oghas (torrentes) e 4 Yogas (jugos), e quais cetasikas os constituem?",
+                "en": "What are the 4 Āsavas (taints), identical in content to the 4 Oghas (floods) and 4 Yogas (yokes), and which cetasikas constitute them?",
+                "es": "¿Cuáles son los 4 Āsavas (impurezas), idénticos en contenido a los 4 Oghas y 4 Yogas, y qué cetasikas los constituyen?",
+            },
+            "answer": {
+                "pt": "1. Kāmāsava (desejo sensual = lobha); 2. Bhavāsava (desejo por existência = lobha); 3. Diṭṭhāsava (visão errônea = diṭṭhi); 4. Avijjāsava (ignorância = moha). São portanto apenas 3 cetasikas distintos (lobha, diṭṭhi, moha).",
+                "en": "1. Kāmāsava (sensual desire = lobha); 2. Bhavāsava (desire for existence = lobha); 3. Diṭṭhāsava (wrong view = diṭṭhi); 4. Avijjāsava (ignorance = moha). Reduced to 3 discrete cetasikas (lobha, diṭṭhi, moha).",
+                "es": "1. Kāmāsava (deseo sensual = lobha); 2. Bhavāsava (deseo de existencia = lobha); 3. Diṭṭhāsava (visión errónea = diṭṭhi); 4. Avijjāsava (ignorancia = moha).",
+            },
+            "source": {"as": "VII.3–5", "cma": "VII §3–5", "segId": 581},
+        },
+        {
+            "id": "c7.upadana_4",
+            "chapter": 7,
+            "axis": "samuccaya",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": {"pt": "4 Upādāna (Apegos)", "en": "4 Upādāna (Clingings)", "es": "4 Upādāna (Aferramientos)"},
+            "categoryLabel": {"pt": "Akusala-saṅgaha · Apegos", "en": "Akusala-saṅgaha · Clingings", "es": "Akusala-saṅgaha · Apegos"},
+            "prompt": {
+                "pt": "Quais são os 4 Upādānas (apegos intensos) e a quais cetasikas discretos correspondem?",
+                "en": "What are the 4 Upādānas (clingings) and which discrete cetasikas do they correspond to?",
+                "es": "¿Cuáles son los 4 Upādānas (apegos intensos) y a qué cetasikas discretos corresponden?",
+            },
+            "answer": {
+                "pt": "1. Kāmupādāna (apego ao prazer sensual = lobha); 2. Diṭṭhupādāna (apego a visões errôneas = diṭṭhi); 3. Sīlabbatupādāna (apego a ritos e observâncias = diṭṭhi); 4. Attavādupādāna (apego à doutrina do eu = diṭṭhi). Reduzem-se a 2 cetasikas (lobha e diṭṭhi).",
+                "en": "1. Kāmupādāna (sensual clinging = lobha); 2. Diṭṭhupādāna (clinging to wrong views = diṭṭhi); 3. Sīlabbatupādāna (rites and rituals = diṭṭhi); 4. Attavādupādāna (self-doctrine = diṭṭhi). Reduced to 2 cetasikas: lobha and diṭṭhi.",
+                "es": "1. Kāmupādāna (lobha); 2. Diṭṭhupādāna (diṭṭhi); 3. Sīlabbatupādāna (diṭṭhi); 4. Attavādupādāna (diṭṭhi). Solo 2 cetasikas: lobha y diṭṭhi.",
+            },
+            "source": {"as": "VII.7", "cma": "VII §7", "segId": 586},
+        },
+        {
+            "id": "c7.nivarana_6",
+            "chapter": 7,
+            "axis": "samuccaya",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": {"pt": "6 Nīvaraṇa (Obstáculos Mentais)", "en": "6 Nīvaraṇa (Mental Hindrances)", "es": "6 Nīvaraṇa (Obstáculos Mentales)"},
+            "categoryLabel": {"pt": "Akusala-saṅgaha · Obstáculos", "en": "Akusala-saṅgaha · Hindrances", "es": "Akusala-saṅgaha · Obstáculos"},
+            "prompt": {
+                "pt": "Enumere os 6 Nīvaraṇas (obstáculos à absorção jhāna e ao insight) no Abhidhammatthasaṅgaha e seus cetasikas correspondentes.",
+                "en": "List the 6 Nīvaraṇas (hindrances to jhāna and insight) in the Abhidhammatthasaṅgaha and their corresponding cetasikas.",
+                "es": "Enumere los 6 Nīvaraṇas (obstáculos al jhāna y al insight) y sus cetasikas correspondientes.",
+            },
+            "answer": {
+                "pt": "1. Kāmacchanda (desejo sensual = lobha); 2. Vyāpāda (má-vontade = dosa); 3. Thīna-middha (preguiça e torpor = 2 cetasikas); 4. Uddhacca-kukkucca (inquietação e remorso = 2 cetasikas); 5. Vicikicchā (dúvida cética); 6. Avijjā (ignorância = moha). Total: 8 cetasikas.",
+                "en": "1. Kāmacchanda (sensual desire = lobha); 2. Vyāpāda (ill-will = dosa); 3. Thīna-middha (sloth-torpor = 2); 4. Uddhacca-kukkucca (restlessness-worry = 2); 5. Vicikicchā (doubt); 6. Avijjā (ignorance = moha). Total: 8 cetasikas.",
+                "es": "1. Kāmacchanda (lobha); 2. Vyāpāda (dosa); 3. Thīna-middha (2); 4. Uddhacca-kukkucca (2); 5. Vicikicchā; 6. Avijjā (moha). Total: 8 cetasikas.",
+            },
+            "source": {"as": "VII.8", "cma": "VII §8", "segId": 588},
+        },
+        {
+            "id": "c7.samyojana_10",
+            "chapter": 7,
+            "axis": "samuccaya",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": {"pt": "10 Saṃyojana (Grilhões da Existência)", "en": "10 Saṃyojana (Fetters of Existence)", "es": "10 Saṃyojana (Ataduras de la Existencia)"},
+            "categoryLabel": {"pt": "Akusala-saṅgaha · Grilhões", "en": "Akusala-saṅgaha · Fetters", "es": "Akusala-saṅgaha · Ataduras"},
+            "prompt": {
+                "pt": "Liste os 10 Saṃyojanas (grilhões do método suttanta) e indique qual caminho supramundano (Magga) erradica cada um.",
+                "en": "List the 10 Saṃyojanas (suttanta fetters) and state which supramundane path (Magga) eradicates each.",
+                "es": "Liste los 10 Saṃyojanas (ataduras) e indique qué camino supramundano (Magga) erradica cada uno.",
+            },
+            "answer": {
+                "pt": "5 Grilhões Inferiores: (1) Sakkāya-diṭṭhi, (2) Vicikicchā, (3) Sīlabbata-parāmāsa [erradicados em Sotāpatti]; (4) Kāmarāga, (5) Paṭigha [erradicados em Anāgāmi]. 5 Grilhões Superiores: (6) Rūparāga, (7) Arūparāga, (8) Māna, (9) Uddhacca, (10) Avijjā [erradicados em Arahatta].",
+                "en": "5 Lower Fetters: (1) Sakkāya-diṭṭhi, (2) Vicikicchā, (3) Sīlabbata-parāmāsa [eradicated by Sotāpatti]; (4) Kāmarāga, (5) Paṭigha [by Anāgāmi]. 5 Higher Fetters: (6) Rūparāga, (7) Arūparāga, (8) Māna, (9) Uddhacca, (10) Avijjā [by Arahatta].",
+                "es": "5 Inferiores: Sakkāya-diṭṭhi, Vicikicchā, Sīlabbata-parāmāsa [Sotāpatti]; Kāmarāga, Paṭigha [Anāgāmi]. 5 Superiores: Rūparāga, Arūparāga, Māna, Uddhacca, Avijjā [Arahatta].",
+            },
+            "source": {"as": "VII.10", "cma": "VII §10", "segId": 591},
+        },
+        {
+            "id": "c7.kilesa_10",
+            "chapter": 7,
+            "axis": "samuccaya",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": {"pt": "10 Kilesa (Contaminações Mentais)", "en": "10 Kilesa (Mental Defilements)", "es": "10 Kilesa (Impurezas Mentales)"},
+            "categoryLabel": {"pt": "Akusala-saṅgaha · Kilesas", "en": "Akusala-saṅgaha · Defilements", "es": "Akusala-saṅgaha · Impurezas"},
+            "prompt": {
+                "pt": "Enumere os 10 Kilesas (contaminações que atormentam e maculam a mente).",
+                "en": "Enumerate the 10 Kilesas (defilements that torment and defile the mind).",
+                "es": "Enumere los 10 Kilesas (impurezas mentales).",
+            },
+            "answer": {
+                "pt": "1. Lobha (avidez), 2. Dosa (ódio), 3. Moha (ilusão), 4. Māna (presunção), 5. Diṭṭhi (visão errônea), 6. Vicikicchā (dúvida), 7. Thīna (preguiça), 8. Uddhacca (inquietação), 9. Ahirika (desvergonha), 10. Anottappa (destemor moral). (10 cetasikas distintos.)",
+                "en": "1. Lobha, 2. Dosa, 3. Moha, 4. Māna, 5. Diṭṭhi, 6. Vicikicchā, 7. Thīna, 8. Uddhacca, 9. Ahirika, 10. Anottappa (10 distinct cetasikas).",
+                "es": "1. Lobha, 2. Dosa, 3. Moha, 4. Māna, 5. Diṭṭhi, 6. Vicikicchā, 7. Thīna, 8. Uddhacca, 9. Ahirika, 10. Anottappa.",
+            },
+            "source": {"as": "VII.12", "cma": "VII §12", "segId": 593},
+        },
+        {
+            "id": "c7.bodhipakkhiya_37",
+            "chapter": 7,
+            "axis": "samuccaya",
+            "tier": "structure",
+            "requires": ["c7.samyojana_10"],
+            "paliTerm": {"pt": "Bodhipakkhiya-dhammā (37 Fatores da Iluminação)", "en": "Bodhipakkhiya-dhammā (37 Enlightenment Factors)", "es": "Bodhipakkhiya-dhammā (37 Factores de Iluminación)"},
+            "categoryLabel": {"pt": "Bodhipakkhiya-saṅgaha · 7 Grupos", "en": "Bodhipakkhiya-saṅgaha · 7 Groups", "es": "Bodhipakkhiya-saṅgaha · 7 Grupos"},
+            "prompt": {
+                "pt": "Quais são os 7 conjuntos que compõem os 37 Fatores da Iluminação (Bodhipakkhiya) e a quantos dhammas últimos reais eles se reduzem?",
+                "en": "What are the 7 sets composing the 37 Enlightenment Factors (Bodhipakkhiya) and how many ultimate dhammas do they reduce to?",
+                "es": "¿Cuáles son los 7 conjuntos de los 37 Factores de Iluminación y a cuántos dhammas últimos reales se reducen?",
+            },
+            "answer": {
+                "pt": "4 Satipaṭṭhānas + 4 Sammappadhānas + 4 Iddhipādas + 5 Indriyas + 5 Balas + 7 Bojjhaṅgas + 8 Ariyamaggaṅgas = 37 fatores. Ultimamente reduzem-se a 14 realidades discretas: 1 citta (chittādhipati) + 13 cetasikas (chanda, viriya, saddhā, sati, ekaggatā, paññā, vitakka, pīti, passaddhi, tatramajjhattatā, sammāvācā, sammākammanta, sammā-ājīva).",
+                "en": "4 Satipaṭṭhānas + 4 Right Efforts + 4 Bases of Power + 5 Faculties + 5 Powers + 7 Factors of Enlightenment + 8 Path Factors = 37. Ultimately reduce to 14 dhammas (1 citta + 13 cetasikas).",
+                "es": "4 Satipaṭṭhānas + 4 Esfuerzos Correctos + 4 Iddhipādas + 5 Indriyas + 5 Balas + 7 Bojjhaṅgas + 8 Factores del Camino = 37 (se reducen a 14 dhammas: 1 citta + 13 cetasikas).",
+            },
+            "source": {"as": "VII.24–33", "cma": "VII §24–33", "segId": 614},
+        },
+        {
+            "id": "c7.sabba_khandha_5",
+            "chapter": 7,
+            "axis": "samuccaya",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": {"pt": "Pañcakkhandha (Os 5 Agregados) vs. Nibbāna", "en": "Pañcakkhandha (The 5 Aggregates) vs. Nibbāna", "es": "Pañcakkhandha (Los 5 Agregados) vs. Nibbāna"},
+            "categoryLabel": {"pt": "Sabba-saṅgaha · Agregados", "en": "Sabba-saṅgaha · Aggregates", "es": "Sabba-saṅgaha · Agregados"},
+            "prompt": {
+                "pt": "Como os 4 Paramatthas se distribuem nos 5 Khandhas (Agregados) e qual realidade última fica estritamente FORA dos 5 agregados?",
+                "en": "How do the 4 Paramatthas map onto the 5 Khandhas (Aggregates) and which ultimate reality stands strictly OUTSIDE the 5 aggregates?",
+                "es": "¿Cómo se distribuyen los 4 Paramatthas en los 5 Khandhas y qué realidad última queda estrictamente FUERA de los 5 agregados?",
+            },
+            "answer": {
+                "pt": "1. Rūpakkhandha = 28 rūpas; 2. Vedanākkhandha = cetasika vedanā; 3. Saññākkhandha = cetasika saññā; 4. Saṅkhārakkhandha = os outros 50 cetasikas; 5. Viññāṇakkhandha = os 89/121 cittas. Nibbāna é khandha-vimutta (inteiramente fora dos 5 agregados, por ser asaṅkhata).",
+                "en": "1. Rūpakkhandha = 28 rūpas; 2. Vedanākkhandha = vedanā; 3. Saññākkhandha = saññā; 4. Saṅkhārakkhandha = remaining 50 cetasikas; 5. Viññāṇakkhandha = 89/121 cittas. Nibbāna is khandha-vimutta (completely outside the 5 aggregates).",
+                "es": "1. Rūpa = 28 rūpas; 2. Vedanā = vedanā; 3. Saññā = saññā; 4. Saṅkhāra = 50 cetasikas restantes; 5. Viññāṇa = 89/121 cittas. Nibbāna está fuera de los 5 agregados (khandha-vimutta).",
+            },
+            "source": {"as": "VII.34–35", "cma": "VII §34–35", "segId": 631},
+        },
+        {
+            "id": "c7.house_sabbasangaha",
+            "chapter": 7,
+            "axis": "samuccaya",
+            "tier": "house",
+            "requires": ["c7.sabba_khandha_5", "c7.bodhipakkhiya_37", "c7.nivarana_6"],
+            "paliTerm": "12 Āyatanas · 18 Dhātus · 4 Ariyasaccas",
+            "categoryLabel": {"pt": "Síntese Arquitetônica (Casa)", "en": "Architectural Synthesis (House)", "es": "Síntesis Arquitectónica (Casa)"},
+            "prompt": {
+                "pt": "Mapeie todos os 4 Paramatthas nas três grelhas finais do Sabba-saṅgaha: 12 Āyatanas (Bases), 18 Dhātus (Elementos) e 4 Nobres Verdades.",
+                "en": "Map all 4 Paramatthas onto the final three grids of Sabba-saṅgaha: 12 Āyatanas (Bases), 18 Dhātus (Elements), and 4 Noble Truths.",
+                "es": "Mapee los 4 Paramatthas en las tres rejillas finales de Sabba-saṅgaha: 12 Āyatanas, 18 Dhātus y 4 Nobles Verdades.",
+            },
+            "answer": {
+                "pt": "12 Āyatanas: 10 materiais (5 pasādas + 5 objetos sensoriais [phoṭṭhabba = pathavī/tejo/vāyo]), Manāyatana = 89 cittas, Dhammāyatana = 52 cetasikas + 16 sukhuma-rūpa + Nibbāna. 18 Dhātus: divide Manāyatana em 7 consciências (5 sensoriais + manodhātu [3] + manoviññāṇadhātu [76]). 4 Verdades: Dukkha = 81 mundanos + 52 cetasikas (exc. lobha) + 28 rūpas; Samudaya = lobha; Nirodha = Nibbāna; Magga = 8 fatores no Magga-citta.",
+                "en": "12 Āyatanas: 10 physical + Manāyatana (89 cittas) + Dhammāyatana (52 cetasikas + 16 subtle rūpa + Nibbāna). 18 Dhātus: splits Manāyatana into 7 consciousness-elements. 4 Truths: Dukkha = 81 mundane cittas + 51 cetasikas + 28 rūpas; Samudaya = lobha; Nirodha = Nibbāna; Magga = 8 path factors in Magga-citta.",
+                "es": "12 Āyatanas: 10 físicos + Manāyatana (89 cittas) + Dhammāyatana (52 cetasikas + 16 rūpas sutiles + Nibbāna). 18 Dhātus: divide Manāyatana en 7 elementos. 4 Verdades: Dukkha (mundano), Samudaya (lobha), Nirodha (Nibbāna), Magga (8 factores en Magga-citta).",
+            },
+            "source": {"as": "VII.36–41", "cma": "VII §36–41", "segId": 635},
+        },
+    ]

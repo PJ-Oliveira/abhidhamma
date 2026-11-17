@@ -1,7 +1,7 @@
-export * from "./types.js?v=b1f32522";
-export * from "./taxonomy.js?v=b1f32522";
-export * from "./curriculum.js?v=b1f32522";
-export * from "./scheduler.js?v=b1f32522";
-export * from "./engine.js?v=b1f32522";
-export * from "./ui.js?v=b1f32522";
+export * from "./types.js?v=d4d916a6";
+export * from "./taxonomy.js?v=d4d916a6";
+export * from "./curriculum.js?v=d4d916a6";
+export * from "./scheduler.js?v=d4d916a6";
+export * from "./engine.js?v=d4d916a6";
+export * from "./ui.js?v=d4d916a6";
 //# sourceMappingURL=index.js.map

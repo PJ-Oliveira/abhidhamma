@@ -1,20 +1,21 @@
-import { t } from "./i18n.js?v=b1f32522";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=b1f32522";
-import { renderTree, markActiveLeaf } from "./tree.js?v=b1f32522";
-import { loadChunk, renderSegments } from "./reader.js?v=b1f32522";
-import { initDictionaryPanel } from "./dictionary.js?v=b1f32522";
-import { initSearchPanel } from "./search.js?v=b1f32522";
-import { initExportPanel } from "./export.js?v=b1f32522";
-import { initSrsPanel } from "./srs.js?v=b1f32522";
-import { TetrisUI } from "./tetris/ui.js?v=b1f32522";
-import { initToolsPanel } from "./tools/tools.js?v=b1f32522";
-import "./tools/mindmap.js?v=b1f32522";
-import "./tools/patthana.js?v=b1f32522";
-import "./tools/vithi.js?v=b1f32522";
-import "./tools/matikas.js?v=b1f32522";
-import "./tools/cetasika.js?v=b1f32522";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=b1f32522";
-import { createLogger } from "./logger.js?v=b1f32522";
+import { t } from "./i18n.js?v=d4d916a6";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=d4d916a6";
+import { renderTree, markActiveLeaf } from "./tree.js?v=d4d916a6";
+import { loadChunk, renderSegments } from "./reader.js?v=d4d916a6";
+import { initDictionaryPanel } from "./dictionary.js?v=d4d916a6";
+import { initSearchPanel } from "./search.js?v=d4d916a6";
+import { initExportPanel } from "./export.js?v=d4d916a6";
+import { initSrsPanel } from "./srs.js?v=d4d916a6";
+import { TetrisUI } from "./tetris/ui.js?v=d4d916a6";
+import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=d4d916a6";
+import { initToolsPanel } from "./tools/tools.js?v=d4d916a6";
+import "./tools/mindmap.js?v=d4d916a6";
+import "./tools/patthana.js?v=d4d916a6";
+import "./tools/vithi.js?v=d4d916a6";
+import "./tools/matikas.js?v=d4d916a6";
+import "./tools/cetasika.js?v=d4d916a6";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=d4d916a6";
+import { createLogger } from "./logger.js?v=d4d916a6";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -233,6 +234,31 @@ function closeChapterNav() {
         btn.setAttribute("aria-expanded", "false");
     }
 }
+function clampChapterNavList(list) {
+    list.style.left = "";
+    list.style.right = "";
+    list.style.transform = "";
+    const vw = window.innerWidth;
+    if (vw <= 0)
+        return;
+    const rect = list.getBoundingClientRect();
+    if (rect.width <= 0)
+        return;
+    const margin = 8;
+    let dx = 0;
+    if (rect.left < margin) {
+        dx = margin - rect.left;
+    }
+    else if (rect.right > vw - margin) {
+        dx = (vw - margin) - rect.right;
+        if (rect.left + dx < margin) {
+            dx = margin - rect.left;
+        }
+    }
+    if (dx !== 0) {
+        list.style.transform = `translateX(${Math.round(dx)}px)`;
+    }
+}
 function renderChapterNav() {
     const navEl = el("chapter-nav");
     navEl.innerHTML = "";
@@ -306,6 +332,8 @@ function renderChapterNav() {
         list.hidden = !opening;
         btn.classList.toggle("open", opening);
         btn.setAttribute("aria-expanded", String(opening));
+        if (opening)
+            clampChapterNavList(list);
         e.stopPropagation();
     });
     navEl.appendChild(btn);
@@ -451,7 +479,7 @@ function wireIconRail() {
         if (w >= MIN_W)
             root.style.setProperty("--panel-w", w + "px");
     }
-    const FULLSCREEN_PANELS = new Set(["srs", "tools", "tetris"]);
+    const FULLSCREEN_PANELS = new Set(["srs", "tools", "tetris", "abhidhamma-srs"]);
     const readerHeader = el("reader-header");
     const readerContent = el("content");
     const tocNav = el("toc-nav");
@@ -462,12 +490,12 @@ function wireIconRail() {
         readerHeader.style.display = isFullscreen ? "none" : "";
         readerContent.style.display = isFullscreen ? "none" : "";
         tocNav.style.display = isFullscreen ? "none" : "";
-        const isSrsOrTetris = target === "srs" || target === "tetris";
+        const isSrsOrTetris = target === "srs" || target === "tetris" || target === "abhidhamma-srs";
         readerSrs.style.display = isSrsOrTetris ? "flex" : "none";
         readerTools.style.display = target === "tools" ? "flex" : "none";
         if (isSrsOrTetris) {
             const activeBtn = document.querySelector(".srs-tab-btn.active, .srs-menu-item.active");
-            const isTetris = target === "tetris" || (target !== "srs" && activeBtn?.dataset.srsMode === "tetris");
+            const isTetris = target === "tetris" || (target !== "srs" && target !== "abhidhamma-srs" && activeBtn?.dataset.srsMode === "tetris");
             readerSrs.classList.toggle("tetris-mode", isTetris);
             document.body.classList.toggle("tetris-active", isTetris);
         }
@@ -487,17 +515,22 @@ function wireIconRail() {
         else {
             doExpand();
         }
+        const railTarget = target === "abhidhamma-srs" ? "srs" : target;
         buttons.forEach((b) => {
-            const isActive = b.dataset.panel === target;
+            const isActive = b.dataset.panel === railTarget;
             b.classList.toggle("active", isActive);
             if (isActive && isMobile) {
                 b.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
             }
         });
-        panels.forEach((p) => p.classList.toggle("active", p.id === (target === "tetris" ? "panel-tetris" : `panel-${target}`)));
+        const panelIdTarget = target === "tetris" ? "panel-tetris" : target === "abhidhamma-srs" ? "panel-srs" : `panel-${target}`;
+        panels.forEach((p) => p.classList.toggle("active", p.id === panelIdTarget));
         toggleReaderOverlay(target);
         if (target === "tetris") {
             setSrsModeGlobal?.("tetris", false);
+        }
+        else if (target === "abhidhamma-srs") {
+            setSrsModeGlobal?.("abhidhamma", false);
         }
         else if (target === "srs") {
             setSrsModeGlobal?.("vocab", false);
@@ -530,6 +563,11 @@ function wireIconRail() {
         if (sidePanel.classList.contains("collapsed"))
             doExpand();
         else
+            doCollapse();
+    });
+    const sideCloseBtn = document.getElementById("side-panel-close");
+    sideCloseBtn?.addEventListener("click", () => {
+        if (!sidePanel.classList.contains("collapsed"))
             doCollapse();
     });
     const resizer = el("panel-resizer");
@@ -797,11 +835,15 @@ function applyStaticI18n() {
     updateSettingsLabels();
 }
 let tetrisUiInstance = null;
+let abhidhammaSrsInstance = null;
 function refreshLocalizedUI() {
     applyStaticI18n();
     updateSettingsLabels();
     if (tetrisUiInstance) {
         tetrisUiInstance.setLang(settings.uiLang);
+    }
+    if (abhidhammaSrsInstance) {
+        abhidhammaSrsInstance.setLang(settings.uiLang);
     }
     if (!state.manifest)
         return;
@@ -839,6 +881,7 @@ let setSrsModeGlobal = null;
 function wireSrsNavigation() {
     const menuItems = document.querySelectorAll(".srs-menu-item, .srs-tab-btn");
     const vocabPanel = document.getElementById("srs-full-body");
+    const abhidhammaPanel = document.getElementById("srs-abhidhamma-main");
     const tetrisPanel = document.getElementById("srs-tetris-main");
     const readerSrs = document.getElementById("reader-srs");
     const setMode = (mode, updateHashRoute = true) => {
@@ -878,6 +921,8 @@ function wireSrsNavigation() {
             document.body.classList.add("tetris-active");
             if (vocabPanel)
                 vocabPanel.style.display = "none";
+            if (abhidhammaPanel)
+                abhidhammaPanel.style.display = "none";
             if (tetrisPanel) {
                 tetrisPanel.style.display = "flex";
                 if (!tetrisUiInstance) {
@@ -889,11 +934,31 @@ function wireSrsNavigation() {
                 history.replaceState(null, "", "#/tetris");
             }
         }
+        else if (mode === "abhidhamma") {
+            readerSrs?.classList.remove("tetris-mode");
+            document.body.classList.remove("tetris-active");
+            if (vocabPanel)
+                vocabPanel.style.display = "none";
+            if (tetrisPanel)
+                tetrisPanel.style.display = "none";
+            if (abhidhammaPanel) {
+                abhidhammaPanel.style.display = "flex";
+                if (!abhidhammaSrsInstance) {
+                    abhidhammaSrsInstance = new AbhidhammaSrsUI(abhidhammaPanel, settings.uiLang);
+                    void abhidhammaSrsInstance.init();
+                }
+            }
+            if (updateHashRoute) {
+                history.replaceState(null, "", "#/srs/abhidhamma");
+            }
+        }
         else {
             readerSrs?.classList.remove("tetris-mode");
             document.body.classList.remove("tetris-active");
             if (tetrisPanel)
                 tetrisPanel.style.display = "none";
+            if (abhidhammaPanel)
+                abhidhammaPanel.style.display = "none";
             if (vocabPanel)
                 vocabPanel.style.display = "flex";
             if (updateHashRoute) {
@@ -912,6 +977,9 @@ function wireSrsNavigation() {
     if (activeBtn?.dataset.srsMode === "tetris") {
         setMode("tetris", false);
     }
+    else if (activeBtn?.dataset.srsMode === "abhidhamma") {
+        setMode("abhidhamma", false);
+    }
 }
 function parseHash() {
     const hash = location.hash.replace(/^#\/?/, "");
@@ -922,11 +990,16 @@ function parseHash() {
         return null;
     let panel = "tipitaka";
     let workId, partKey, chunkIndexStr;
-    const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools", "tetris"]);
+    const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools", "tetris", "abhidhamma-srs"]);
     if (parts[0] === "srs" && parts[1] === "tetris") {
         parts.shift();
         parts.shift();
         panel = "tetris";
+    }
+    else if (parts[0] === "srs" && parts[1] === "abhidhamma") {
+        parts.shift();
+        parts.shift();
+        panel = "abhidhamma-srs";
     }
     else if (parts[0] && knownPanels.has(parts[0])) {
         panel = parts.shift();
@@ -958,7 +1031,7 @@ function wireRouting() {
         if (!route)
             return;
         const activeBtn = document.querySelector(".rail-btn.active");
-        if (!activeBtn || activeBtn.dataset.panel !== route.panel) {
+        if (!activeBtn || activeBtn.dataset.panel !== route.panel || route.panel === "abhidhamma-srs") {
             switchPanel?.(route.panel, true);
         }
         if (route.workId && route.partKey && route.chunkIndex !== undefined) {
@@ -1026,6 +1099,11 @@ async function init() {
     if (tetrisMount) {
         tetrisUiInstance = new TetrisUI(tetrisMount, settings.uiLang);
         void tetrisUiInstance.init();
+    }
+    const abhidhammaMount = document.getElementById("srs-abhidhamma-main");
+    if (abhidhammaMount) {
+        abhidhammaSrsInstance = new AbhidhammaSrsUI(abhidhammaMount, settings.uiLang);
+        void abhidhammaSrsInstance.init();
     }
     wireSrsNavigation();
     const route = parseHash();

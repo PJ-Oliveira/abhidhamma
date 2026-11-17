@@ -1,0 +1,183 @@
+"""Chapter 5: Vīthimuttapariccheda — Planes of Existence, Rebirth-Linking, Kamma & Death-Rebirth Sequence."""
+
+CHAPTER_META = {
+    "chapter": 5,
+    "paliTitle": "Vīthimuttapariccheda",
+    "title": {
+        "pt": "Cap. 5: Processo-Livre (Planos, Kamma e Renascimento)",
+        "en": "Ch. 5: Compendium of Process-Freed (Planes, Kamma & Rebirth)",
+        "es": "Cap. 5: Compendio del Proceso-Libre (Planos, Kamma y Renacimiento)",
+    },
+    "subtitle": {
+        "pt": "31 planos (4 categorias), 4 tipos de paṭisandhi, 16 classes de kamma e a mecânica de morte-religação.",
+        "en": "31 planes (4 groups), 4 types of paṭisandhi, 16 kamma classes, and death-rebirth mechanics.",
+        "es": "31 planos (4 grupos), 4 tipos de paṭisandhi, 16 clases de kamma y mecánica de muerte-reconexión.",
+    },
+    "unlockPrevAtomPct": 80,
+    "houseUnlockAtomPct": 75,
+}
+
+
+def build_cards():
+    return [
+        {
+            "id": "c5.bhumi_apaya",
+            "chapter": 5,
+            "axis": "vithimutta",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": {"pt": "Apāya-bhūmi (4 Planos de Miséria)", "en": "Apāya-bhūmi (4 Woeful Planes)", "es": "Apāya-bhūmi (4 Planos de Miseria)"},
+            "categoryLabel": {"pt": "Vīthimutta · Planos (1/4)", "en": "Vīthimutta · Planes (1/4)", "es": "Vīthimutta · Planos (1/4)"},
+            "prompt": {
+                "pt": "Quais são os 4 planos de miséria (Apāya-bhūmi) e qual único citta atua neles como paṭisandhi, bhavaṅga e cuti?",
+                "en": "What are the 4 woeful planes (Apāya-bhūmi) and which single citta acts there as paṭisandhi, bhavaṅga, and cuti?",
+                "es": "¿Cuáles son los 4 planos de miseria (Apāya-bhūmi) y qué único citta actúa allí como paṭisandhi, bhavaṅga y cuti?",
+            },
+            "answer": {
+                "pt": "Niraya (inferno), Tiracchānayoni (reino animal), Pettivisaya (fantasmas famintos) e Asurakāya (demônios/asuras). A religação (paṭisandhi), bhavaṅga e cuti nesses 4 planos são desempenhados exclusivamente pelo Akusala-vipāka Upekkhā-santīraṇa (#19).",
+                "en": "Niraya (hell), Tiracchānayoni (animal realm), Pettivisaya (hungry ghosts), and Asurakāya (asuras). Paṭisandhi, bhavaṅga, and cuti here are exclusively Akusala-vipāka Upekkhā-santīraṇa (#19).",
+                "es": "Niraya (infierno), Tiracchānayoni (reino animal), Pettivisaya (espectros) y Asurakāya (asuras). Paṭisandhi, bhavaṅga y cuti allí son exclusivamente Akusala-vipāka Upekkhā-santīraṇa (#19).",
+            },
+            "source": {"as": "V.3; V.9", "cma": "V §3; §9", "segId": 364},
+        },
+        {
+            "id": "c5.bhumi_kamasugati",
+            "chapter": 5,
+            "axis": "vithimutta",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": {"pt": "Kāmasugati-bhūmi (7 Planos Sensoriais Ditosos)", "en": "Kāmasugati-bhūmi (7 Blissful Sense Planes)", "es": "Kāmasugati-bhūmi (7 Planos Sensoriales Dichosos)"},
+            "categoryLabel": {"pt": "Vīthimutta · Planos (2/4)", "en": "Vīthimutta · Planes (2/4)", "es": "Vīthimutta · Planos (2/4)"},
+            "prompt": {
+                "pt": "Quais são os 7 planos sensoriais ditosos (Kāmasugati) e quais cittas de paṭisandhi operam neles?",
+                "en": "What are the 7 sensuous blissful planes (Kāmasugati) and which paṭisandhi cittas operate in them?",
+                "es": "¿Cuáles son los 7 planos sensoriales dichosos (Kāmasugati) y qué cittas de paṭisandhi operan en ellos?",
+            },
+            "answer": {
+                "pt": "Humano (Manussa) + 6 reinos celestiais (Cātummahārājika, Tāvatiṃsa, Yāma, Tusita, Nimmānaratī, Paranimmitavasavattī). A paṭisandhi ocorre com os 8 Mahāvipākas (para seres dvihetuka/tihetuka) ou com o Kusala-vipāka Upekkhā-santīraṇa (#27, para humanos/devas inferiores ahetuka).",
+                "en": "Human (Manussa) + 6 heavenly deva realms (Cātummahārājika through Paranimmitavasavattī). Paṭisandhi is one of the 8 Mahāvipākas (for dvihetuka/tihetuka beings) or Kusala-vipāka Upekkhā-santīraṇa (#27, for rootless rebirth).",
+                "es": "Humano (Manussa) + 6 reinos celestiales (Cātummahārājika a Paranimmitavasavattī). Paṭisandhi ocurre con los 8 Mahāvipākas o Kusala-vipāka Upekkhā-santīraṇa (#27).",
+            },
+            "source": {"as": "V.4; V.10", "cma": "V §4; §10", "segId": 366},
+        },
+        {
+            "id": "c5.bhumi_rupa_arupa",
+            "chapter": 5,
+            "axis": "vithimutta",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": "Rūpa-bhūmi (16) & Arūpa-bhūmi (4)",
+            "categoryLabel": {"pt": "Vīthimutta · Planos (3–4/4)", "en": "Vīthimutta · Planes (3–4/4)", "es": "Vīthimutta · Planos (3–4/4)"},
+            "prompt": {
+                "pt": "Como se organizam os 16 reinos de forma fina (Rūpa) e os 4 reinos imateriais (Arūpa), incluindo as exceções Asaññasatta e Suddhāvāsa?",
+                "en": "How are the 16 fine-material (Rūpa) and 4 immaterial (Arūpa) realms organized, including Asaññasatta and Suddhāvāsa?",
+                "es": "¿Cómo se organizan los 16 reinos de forma sutil (Rūpa) y los 4 inmateriales (Arūpa), incluyendo Asaññasatta y Suddhāvāsa?",
+            },
+            "answer": {
+                "pt": "16 Rūpa: 3 do 1º jhāna, 3 do 2º, 3 do 3º, 7 do 4º (inclui Vehapphala, Asaññasatta [seres sem consciência — apenas matéria produzida por kamma, jīvitanavaka-kalāpa!] e 5 Suddhāvāsa [Moradas Puras exclusivas de Anāgāmīs]). 4 Arūpa: apenas nāma (avatthuka), paṭisandhi pelos 4 Arūpāvacara Vipākas.",
+                "en": "16 Rūpa: 3 of 1st jhāna, 3 of 2nd, 3 of 3rd, 7 of 4th (incl. Vehapphala, Asaññasatta [mindless beings with only kamma-born matter], and 5 Pure Abodes exclusive to Non-Returners). 4 Arūpa: mind-only (avatthuka), paṭisandhi via 4 Arūpāvacara Vipākas.",
+                "es": "16 Rūpa: 3 del 1.º jhāna, 3 del 2.º, 3 del 3.º, 7 del 4.º (incl. Asaññasatta [seres sin conciencia, solo materia] y 5 Moradas Puras para Anāgāmīs). 4 Arūpa: solo mente (avatthuka), paṭisandhi por 4 Arūpāvacara Vipākas.",
+            },
+            "source": {"as": "V.5–6; V.11–12", "cma": "V §5–6; §11–12", "segId": 370},
+        },
+        {
+            "id": "c5.kamma_kicca_4",
+            "chapter": 5,
+            "axis": "vithimutta",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": {"pt": "Kamma por Função (Kicca-catukka)", "en": "Kamma by Function (Kicca-catukka)", "es": "Kamma por Función (Kicca-catukka)"},
+            "categoryLabel": {"pt": "Vīthimutta · Kamma (1/4)", "en": "Vīthimutta · Kamma (1/4)", "es": "Vīthimutta · Kamma (1/4)"},
+            "prompt": {
+                "pt": "Defina as 4 funções do Kamma: Janaka, Upatthambhaka, Upapīḷaka e Upaghātaka.",
+                "en": "Define the 4 functions of Kamma: Janaka, Upatthambhaka, Upapīḷaka, and Upaghātaka.",
+                "es": "Defina las 4 funciones del Kamma: Janaka, Upatthambhaka, Upapīḷaka y Upaghātaka.",
+            },
+            "answer": {
+                "pt": "(1) Janaka (produtor): gera os agregados de renascimento (paṭisandhi) e resultados na vida; (2) Upatthambhaka (sustentador): reforça e prolonga resultados de outro kamma; (3) Upapīḷaka (obstrutor): enfraquece ou obstrui a maturação de outro kamma; (4) Upaghātaka (destrutivo): corta e substitui completamente o resultado de um kamma mais fraco.",
+                "en": "(1) Janaka (productive): generates rebirth aggregates and life-results; (2) Upatthambhaka (supportive): reinforces/prolongs another kamma's results; (3) Upapīḷaka (obstructive): weakens/frustrates another kamma; (4) Upaghātaka (destructive): cuts off a weaker kamma and substitutes its own result.",
+                "es": "(1) Janaka (productor): genera los agregados de renacimiento y resultados; (2) Upatthambhaka (sustentador): refuerza otro kamma; (3) Upapīḷaka (obstructor): debilita otro kamma; (4) Upaghātaka (destructivo): corta un kamma más débil e impone su resultado.",
+            },
+            "source": {"as": "V.18", "cma": "V §18", "segId": 418},
+        },
+        {
+            "id": "c5.kamma_pakadana_4",
+            "chapter": 5,
+            "axis": "vithimutta",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": {"pt": "Kamma por Ordem de Frutificação (Pākadāna-pariyāya)", "en": "Kamma by Order of Ripening (Pākadāna-pariyāya)", "es": "Kamma por Orden de Maduración (Pākadāna-pariyāya)"},
+            "categoryLabel": {"pt": "Vīthimutta · Kamma (2/4)", "en": "Vīthimutta · Kamma (2/4)", "es": "Vīthimutta · Kamma (2/4)"},
+            "prompt": {
+                "pt": "Qual é a ordem estrita de prioridade na frutificação do Kamma para o próximo renascimento?",
+                "en": "What is the strict priority order in which Kamma ripens to produce the next rebirth?",
+                "es": "¿Cuál es el orden estricto de prioridad en la maduración del Kamma para el próximo renacimiento?",
+            },
+            "answer": {
+                "pt": "1. Garuka (pesado: 5 crimes hediondos [ānantariya] ou jhānas mantidos até a morte); 2. Āsanna (kamma próximo à morte, lembrado ou praticado no leito de morte); 3. Āciṇṇa (kamma habitual acumulado regularmente); 4. Kaṭattā (kamma residual de reserva acumulado em vidas passadas).",
+                "en": "1. Garuka (weighty: 5 heinous crimes or sustained jhānas); 2. Āsanna (death-proximate kamma); 3. Āciṇṇa (habitual kamma); 4. Kaṭattā (reserve/cumulative past kamma).",
+                "es": "1. Garuka (pesado: 5 crímenes atroces o jhānas); 2. Āsanna (cercano a la muerte); 3. Āciṇṇa (habitual); 4. Kaṭattā (de reserva).",
+            },
+            "source": {"as": "V.19", "cma": "V §19", "segId": 420},
+        },
+        {
+            "id": "c5.kamma_pakakala_4",
+            "chapter": 5,
+            "axis": "vithimutta",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": {"pt": "Kamma por Tempo de Maturação (Pākakāla)", "en": "Kamma by Time of Ripening (Pākakāla)", "es": "Kamma por Tiempo de Maduración (Pākakāla)"},
+            "categoryLabel": {"pt": "Vīthimutta · Kamma (3/4)", "en": "Vīthimutta · Kamma (3/4)", "es": "Vīthimutta · Kamma (3/4)"},
+            "prompt": {
+                "pt": "Como os 7 momentos de javana em um único processo determinam as 4 classes temporais de Kamma?",
+                "en": "How do the 7 javana moments in a single process determine the 4 time-of-ripening classes of Kamma?",
+                "es": "¿Cómo determinan los 7 momentos de javana las 4 clases temporales de maduración del Kamma?",
+            },
+            "answer": {
+                "pt": "(1) Diṭṭhadhammavedanīya (frutifica nesta vida): volição do 1º javana; (2) Upapajjavedanīya (frutifica na próxima vida imediata): volição do 7º javana; (3) Aparāpariyavedanīya (frutifica em qualquer vida subsequente até o Parinibbāna): os 5 javanas intermediários (2º ao 6º); (4) Ahosi (ineficaz/extinto): quando o prazo expira sem oportunidade ou com o Parinibbāna.",
+                "en": "(1) Diṭṭhadhammavedanīya (ripening in this life): 1st javana; (2) Upapajjavedanīya (next immediate life): 7th javana; (3) Aparāpariyavedanīya (indefinitely effective across future lives): 5 middle javanas (2nd–6th); (4) Ahosi (defunct): when opportunity expires or upon Parinibbāna.",
+                "es": "(1) Diṭṭhadhammavedanīya (esta vida): 1.er javana; (2) Upapajjavedanīya (próxima vida): 7.º javana; (3) Aparāpariyavedanīya (vidas sucesivas): javanas 2.º–6.º; (4) Ahosi (extinto).",
+            },
+            "source": {"as": "V.20", "cma": "V §20", "segId": 422},
+        },
+        {
+            "id": "c5.maranasanna_objects",
+            "chapter": 5,
+            "axis": "vithimutta",
+            "tier": "structure",
+            "requires": ["c5.kamma_pakadana_4", "c5.bhumi_kamasugati"],
+            "paliTerm": {"pt": "Os 3 Objetos da Morte e do Renascimento", "en": "The 3 Objects of Death and Rebirth", "es": "Los 3 Objetos de la Muerte y del Renacimiento"},
+            "categoryLabel": {"pt": "Vīthimutta · Processo de Morte", "en": "Vīthimutta · Death Process", "es": "Vīthimutta · Proceso de Muerte"},
+            "prompt": {
+                "pt": "Quais são os 3 objetos possíveis que se apresentam nos últimos 5 javanas antes da morte (maraṇāsanna-vīthi) e que permanecem como objeto de Paṭisandhi, Bhavaṅga e Cuti na vida seguinte?",
+                "en": "What are the 3 possible objects presenting in the final 5 javanas before death and persisting as the object of Paṭisandhi, Bhavaṅga, and Cuti in the next life?",
+                "es": "¿Cuáles son los 3 objetos posibles en los últimos 5 javanas antes de morir que persisten como objeto de Paṭisandhi, Bhavaṅga y Cuti en la siguiente vida?",
+            },
+            "answer": {
+                "pt": "(1) Kamma (a própria ação volitiva passada apresentada à porta mental); (2) Kammanimitta (sinal/instrumento associado ao kamma, em qualquer das 6 portas); (3) Gatinimitta (sinal do destino futuro de renascimento). A sequência é: 5 maraṇāsanna-javanas → cuti-citta → paṭisandhi-citta (imediatamente na vida seguinte, por anantara-paccaya, sem intervalo!) → bhavaṅga.",
+                "en": "(1) Kamma (the past volitional deed itself); (2) Kammanimitta (a sign/instrument associated with the deed); (3) Gatinimitta (sign of the future rebirth destination). Sequence: 5 death-proximate javanas → cuti-citta → paṭisandhi-citta (immediately in the next life with zero time gap) → bhavaṅga.",
+                "es": "(1) Kamma; (2) Kammanimitta (señal del kamma); (3) Gatinimitta (señal del destino futuro). Secuencia: 5 javanas → cuti → paṭisandhi (sin intervalo temporal) → bhavaṅga.",
+            },
+            "source": {"as": "V.33–36", "cma": "V §33–36", "segId": 462},
+        },
+        {
+            "id": "c5.house_vithimutta",
+            "chapter": 5,
+            "axis": "vithimutta",
+            "tier": "house",
+            "requires": ["c5.bhumi_apaya", "c5.bhumi_rupa_arupa", "c5.kamma_pakakala_4", "c5.maranasanna_objects"],
+            "paliTerm": {"pt": "Ciclo Completo Cuti–Paṭisandhi–Bhavaṅga nos 31 Reinos", "en": "Complete Cuti–Paṭisandhi–Bhavaṅga Cycle in 31 Realms", "es": "Ciclo Completo Cuti–Paṭisandhi–Bhavaṅga en los 31 Reinos"},
+            "categoryLabel": {"pt": "Síntese Arquitetônica (Casa)", "en": "Architectural Synthesis (House)", "es": "Síntesis Arquitectónica (Casa)"},
+            "prompt": {
+                "pt": "Explique por que o Paṭisandhi-citta do próximo nascimento toma o mesmo objeto que o último processo cognitivo da vida anterior (maraṇāsanna-vīthi), mas NÃO o objeto da Cuti-citta anterior.",
+                "en": "Explain why the next life's Paṭisandhi-citta takes the same object as the dying person's final maraṇāsanna-vīthi, rather than the preceding Cuti-citta's object.",
+                "es": "Explique por qué el Paṭisandhi-citta siguiente toma el mismo objeto que el último maraṇāsanna-vīthi, y NO el objeto de la Cuti-citta anterior.",
+            },
+            "answer": {
+                "pt": "A Cuti-citta pertence ainda ao kamma da vida que está terminando (carrega o objeto do renascimento anterior). O novo Paṭisandhi-citta é fruto (vipāka) do kamma que amadureceu no último maraṇāsanna-vīthi: portanto herda diretamente o objeto (kamma, kammanimitta ou gatinimitta) apreendido naquele último processo cognitivo, tornando-o o objeto de Paṭisandhi, Bhavaṅga e Cuti de toda a nova existência.",
+                "en": "The Cuti-citta still belongs to the ending life's kamma (carrying the old life's object). The new Paṭisandhi-citta is the vipāka of the kamma triggered in the final maraṇāsanna-vīthi; hence it inherits that final process's object (kamma, kammanimitta, or gatinimitta) for the new life's Paṭisandhi, Bhavaṅga, and Cuti.",
+                "es": "La Cuti-citta aún pertenece al kamma de la vida saliente. El nuevo Paṭisandhi-citta es fruto del kamma activado en el último maraṇāsanna-vīthi, heredando ese objeto para todo el nuevo Paṭisandhi, Bhavaṅga y Cuti.",
+            },
+            "source": {"as": "V.33–36", "cma": "V §33–36", "segId": 462},
+        },
+    ]

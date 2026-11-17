@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=b1f32522";
-import { settings } from "./state.js?v=b1f32522";
-import { createLogger } from "./logger.js?v=b1f32522";
+import { t } from "./i18n.js?v=d4d916a6";
+import { settings } from "./state.js?v=d4d916a6";
+import { createLogger } from "./logger.js?v=d4d916a6";
 const log = createLogger("srs");
 const SRS_KEY = "atp.srs.v1";
 const SRS_STATS_KEY = "atp.srs.stats.v1";
@@ -159,12 +159,14 @@ export function initSrsPanel(container) {
         { q: 4, label: () => t("srsGood", settings.uiLang), cls: "srs-btn-good" },
         { q: 5, label: () => t("srsEasy", settings.uiLang), cls: "srs-btn-easy" },
     ];
+    const ratingBtns = [];
     for (const r of ratings) {
         const btn = document.createElement("button");
         btn.className = `srs-btn ${r.cls}`;
         btn.textContent = r.label();
         btn.addEventListener("click", () => handleRating(r.q));
         ratingBar.appendChild(btn);
+        ratingBtns.push({ btn, label: r.label });
     }
     const progressWrap = document.createElement("div");
     progressWrap.className = "srs-progress-wrap";
@@ -287,7 +289,7 @@ export function initSrsPanel(container) {
     });
     document.addEventListener("keydown", (e) => {
         const overlay = container.closest("#reader-srs");
-        if (!overlay || overlay.style.display === "none")
+        if (!overlay || overlay.style.display === "none" || container.style.display === "none")
             return;
         if (!isFlipped && (e.key === " " || e.key === "Enter")) {
             e.preventDefault();
@@ -302,6 +304,21 @@ export function initSrsPanel(container) {
                 handleRating(4);
             else if (e.key === "4")
                 handleRating(5);
+        }
+    });
+    window.addEventListener("languageChanged", () => {
+        for (const item of ratingBtns) {
+            item.btn.textContent = item.label();
+        }
+        updateStatsBar();
+        if (currentIndex < queue.length && queue[currentIndex]) {
+            const wasFlipped = isFlipped;
+            showCard(queue[currentIndex]);
+            if (wasFlipped)
+                flipCard();
+        }
+        else if (queue.length > 0) {
+            showComplete();
         }
     });
     showLoading();
