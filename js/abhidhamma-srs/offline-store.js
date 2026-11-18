@@ -1,5 +1,5 @@
-import { DEFAULT_ANKI_CONFIG, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, STORAGE_MNEMONICS_KEY, } from "./scheduler.js?v=7f93ce05";
-export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v25";
+import { DEFAULT_ANKI_CONFIG, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, STORAGE_MNEMONICS_KEY, } from "./scheduler.js?v=cf555ccc";
+export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v26";
 export const VAULT_CACHE_NAME = "abhidhamma-anki-vault-v1";
 export const VAULT_SNAPSHOT_PATH = "/_offline_vault/abhidhamma-anki-progress.json";
 export const VAULT_OPFS_FILENAME = "abhidhamma-anki-progress.json";

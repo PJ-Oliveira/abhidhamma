@@ -1,22 +1,22 @@
-import { t } from "./i18n.js?v=7f93ce05";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=7f93ce05";
-import { renderTree, markActiveLeaf } from "./tree.js?v=7f93ce05";
-import { loadChunk, renderSegments } from "./reader.js?v=7f93ce05";
-import { initDictionaryPanel } from "./dictionary.js?v=7f93ce05";
-import { initSearchPanel } from "./search.js?v=7f93ce05";
-import { initExportPanel } from "./export.js?v=7f93ce05";
-import { initSrsPanel } from "./srs.js?v=7f93ce05";
-import { TetrisUI } from "./tetris/ui.js?v=7f93ce05";
-import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=7f93ce05";
-import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=7f93ce05";
-import { initToolsPanel } from "./tools/tools.js?v=7f93ce05";
-import "./tools/mindmap.js?v=7f93ce05";
-import "./tools/patthana.js?v=7f93ce05";
-import "./tools/vithi.js?v=7f93ce05";
-import "./tools/matikas.js?v=7f93ce05";
-import "./tools/cetasika.js?v=7f93ce05";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=7f93ce05";
-import { createLogger } from "./logger.js?v=7f93ce05";
+import { t } from "./i18n.js?v=cf555ccc";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=cf555ccc";
+import { renderTree, markActiveLeaf } from "./tree.js?v=cf555ccc";
+import { loadChunk, renderSegments } from "./reader.js?v=cf555ccc";
+import { initDictionaryPanel } from "./dictionary.js?v=cf555ccc";
+import { initSearchPanel } from "./search.js?v=cf555ccc";
+import { initExportPanel } from "./export.js?v=cf555ccc";
+import { initSrsPanel } from "./srs.js?v=cf555ccc";
+import { TetrisUI } from "./tetris/ui.js?v=cf555ccc";
+import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=cf555ccc";
+import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=cf555ccc";
+import { initToolsPanel } from "./tools/tools.js?v=cf555ccc";
+import "./tools/mindmap.js?v=cf555ccc";
+import "./tools/patthana.js?v=cf555ccc";
+import "./tools/vithi.js?v=cf555ccc";
+import "./tools/matikas.js?v=cf555ccc";
+import "./tools/cetasika.js?v=cf555ccc";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=cf555ccc";
+import { createLogger } from "./logger.js?v=cf555ccc";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -448,6 +448,7 @@ function renderBookmarks() {
     }
 }
 let switchPanel;
+let collapseSidePanel;
 function wireIconRail() {
     const buttons = document.querySelectorAll(".rail-btn");
     const panels = document.querySelectorAll(".panel");
@@ -474,6 +475,7 @@ function wireIconRail() {
         sidePanel.classList.remove("collapsed");
         collapseBtn.textContent = "‹";
     }
+    collapseSidePanel = doCollapse;
     const savedW = localStorage.getItem("panelW");
     if (savedW) {
         const w = parseInt(savedW, 10);
@@ -509,7 +511,7 @@ function wireIconRail() {
             return;
         const isMobile = window.innerWidth <= 860;
         const isFullscreen = FULLSCREEN_PANELS.has(target);
-        if (isMobile && isFullscreen) {
+        if (isFullscreen) {
             if (!sidePanel.classList.contains("collapsed"))
                 doCollapse();
         }
@@ -979,6 +981,7 @@ function wireSrsNavigation() {
         btn.addEventListener("click", () => {
             const mode = btn.dataset.srsMode || "vocab";
             setMode(mode, true);
+            collapseSidePanel?.();
         });
     });
     const activeBtn = document.querySelector(".srs-tab-btn.active, .srs-menu-item.active");
@@ -1043,6 +1046,9 @@ function wireRouting() {
             switchPanel?.(route.panel, true);
         }
         if (route.workId && route.partKey && route.chunkIndex !== undefined) {
+            if (window.innerWidth <= 860) {
+                collapseSidePanel?.();
+            }
             if (state.work?.id === route.workId && state.partKey === route.partKey && state.chunkIndex === route.chunkIndex) {
                 if (route.segId != null) {
                     const target = el("content").querySelector(`.seg[data-seg-id="${route.segId}"]`);

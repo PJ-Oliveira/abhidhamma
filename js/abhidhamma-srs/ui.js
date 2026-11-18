@@ -1,6 +1,6 @@
-import { buildEarlyReviewQueue, buildProgressiveCloze, buildStudyQueue, computeAllChapterProgress, computeDailyNewQuota, computePlan90Summary, computeProportionalExtraBatch, countLeeches, createInitialAnkiCardState, DAY_MS, defaultClozeStage, ensurePaceTarget, isLeech, isRecitationCard, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, PACE_DEFAULT_HORIZON_DAYS, previewAnkiIntervals, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, saveMnemonicNote, scheduleAnkiCard, } from "./scheduler.js?v=7f93ce05";
-import { buildLocalStorageSnapshot, fetchDeckWithOfflineCache, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistOfflineProgress, resetOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "./offline-store.js?v=7f93ce05";
-import { settings } from "../state.js?v=7f93ce05";
+import { buildEarlyReviewQueue, buildProgressiveCloze, buildStudyQueue, computeAllChapterProgress, computeDailyNewQuota, computePlan90Summary, computeProportionalExtraBatch, countLeeches, createInitialAnkiCardState, DAY_MS, defaultClozeStage, ensurePaceTarget, isLeech, isRecitationCard, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, PACE_DEFAULT_HORIZON_DAYS, previewAnkiIntervals, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, saveMnemonicNote, scheduleAnkiCard, } from "./scheduler.js?v=cf555ccc";
+import { buildLocalStorageSnapshot, fetchDeckWithOfflineCache, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistOfflineProgress, resetOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "./offline-store.js?v=cf555ccc";
+import { settings } from "../state.js?v=cf555ccc";
 const UI_STRINGS = {
     pt: {
         moduleTitle: "Abhidhammatthasaṅgaha — Repetição Espaçada (Anki SRS)",

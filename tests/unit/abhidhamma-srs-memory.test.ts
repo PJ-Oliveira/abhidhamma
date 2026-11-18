@@ -456,4 +456,102 @@ describe("Estudo Extra Proporcional após concluir a dose do dia", () => {
     planBtn.click();
     expect(mount.querySelector(".abhi-flashcard")).not.toBeNull();
   });
+
+  it("renderiza e valida interações de todos os tipos de carta (4 campos, mathStructure, enumeração, sequência, sanguessuga)", async () => {
+    localStorage.clear();
+    const now = 1_700_000_000_000;
+    const states: Record<string, AnkiCardState> = {};
+    // Desbloqueia caps 0..4 marcando átomos como memorizados no futuro
+    for (const c of dataset.cards) {
+      if (c.tier === "atom" && c.chapter <= 4) {
+        states[c.id] = {
+          id: c.id,
+          phase: "review",
+          step: 0,
+          intervalDays: 10,
+          lapsedIntervalDays: 1,
+          easeFactor: 2.5,
+          reps: 2,
+          lapses: 0,
+          dueAt: now + 10 * DAY_MS,
+          lastReviewAt: now - DAY_MS,
+        };
+      }
+    }
+    // 1) Carta com 4 campos + mathStructure + sanguessuga: c2.cet_01 (Phassa)
+    states["c2.cet_01"] = { ...states["c2.cet_01"]!, lapses: 5, dueAt: now - 3000 };
+    // 2) Carta de enumeração: c2.enum_universal_7 (força como devida em review para testar imediatamente)
+    states["c2.enum_universal_7"] = {
+      id: "c2.enum_universal_7",
+      phase: "review",
+      step: 0,
+      intervalDays: 1,
+      lapsedIntervalDays: 1,
+      easeFactor: 2.5,
+      reps: 1,
+      lapses: 0,
+      dueAt: now - 2000,
+      lastReviewAt: now - DAY_MS,
+    };
+    // 3) Carta de sequência: c4.seq_vithi_17
+    states["c4.seq_vithi_17"] = {
+      id: "c4.seq_vithi_17",
+      phase: "review",
+      step: 0,
+      intervalDays: 1,
+      lapsedIntervalDays: 1,
+      easeFactor: 2.5,
+      reps: 1,
+      lapses: 0,
+      dueAt: now - 1000,
+      lastReviewAt: now - DAY_MS,
+    };
+    localStorage.setItem("atp.abhidhamma.anki.cards.v1", JSON.stringify(states));
+
+    const raw = JSON.stringify(dataset);
+    global.fetch = async () => ({ ok: true, status: 200, json: async () => JSON.parse(raw) }) as any;
+    const mount = document.createElement("div");
+    document.body.appendChild(mount);
+    const ui = new AbhidhammaSrsUI(mount, "pt");
+    await ui.init();
+
+    // Abre Cap. 2 -> 1ª carta é c2.cet_01 (4 campos + mathStructure + sanguessuga)
+    mount.querySelector<HTMLButtonElement>('[data-study-chapter="2"]')!.click();
+    const lakInput = mount.querySelector<HTMLInputElement>('[data-fourfold="lakkhana"]')!;
+    expect(lakInput).not.toBeNull();
+    lakInput.value = "tocar o objeto";
+    mount.querySelector<HTMLButtonElement>(".abhi-btn-reveal")!.click();
+    expect(mount.querySelector(".abhi-math-box")).not.toBeNull();
+    expect(mount.querySelector(".abhi-leech-box")).not.toBeNull();
+    expect(mount.querySelector(".abhi-char-user")?.textContent).toContain("tocar o objeto");
+
+    // Salva nota mnemônica
+    const mnem = mount.querySelector<HTMLTextAreaElement>(".abhi-mnemonic-input")!;
+    mnem.value = "Contato = fósforo riscando";
+    mnem.dispatchEvent(new Event("input"));
+    expect(loadMnemonicNotes()["c2.cet_01"]).toBe("Contato = fósforo riscando");
+
+    // Avalia Bom -> vai para c2.enum_universal_7 (Enumeração com checklist)
+    mount.querySelector<HTMLButtonElement>('.abhi-rate-btn[data-rate="3"]')!.click();
+    mount.querySelector<HTMLButtonElement>(".abhi-btn-reveal")!.click();
+    const enumBoxes = mount.querySelectorAll<HTMLInputElement>("[data-enum-idx]");
+    expect(enumBoxes.length).toBe(7);
+    expect(mount.querySelector(".abhi-enum-status.warn")).not.toBeNull();
+    // Marca todos os 7 itens -> muda para completo (ok)
+    enumBoxes.forEach((b) => {
+      b.checked = true;
+      b.dispatchEvent(new Event("change"));
+    });
+    expect(mount.querySelector(".abhi-enum-status.ok")).not.toBeNull();
+
+    // Abre Cap. 4 -> c4.seq_vithi_17 (Sequência interativa)
+    mount.querySelector<HTMLButtonElement>(".abhi-btn-back")!.click();
+    mount.querySelector<HTMLButtonElement>('[data-study-chapter="4"]')!.click();
+    const chips = mount.querySelectorAll<HTMLButtonElement>("[data-seq-pick]");
+    expect(chips.length).toBe(10);
+    chips[0]!.click();
+    expect(mount.querySelectorAll("[data-seq-remove]").length).toBe(1);
+    mount.querySelector<HTMLButtonElement>(".abhi-btn-reveal")!.click();
+    expect(mount.querySelector(".abhi-seq-result")).not.toBeNull();
+  });
 });

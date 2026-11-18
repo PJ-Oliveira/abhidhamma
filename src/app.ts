@@ -490,6 +490,7 @@ function renderBookmarks(): void {
 }
 
 let switchPanel: ((target: string, skipHashUpdate?: boolean) => void) | undefined;
+let collapseSidePanel: (() => void) | undefined;
 
 function wireIconRail(): void {
   const buttons = document.querySelectorAll<HTMLButtonElement>(".rail-btn");
@@ -519,6 +520,7 @@ function wireIconRail(): void {
     sidePanel.classList.remove("collapsed");
     collapseBtn.textContent = "‹";
   }
+  collapseSidePanel = doCollapse;
 
   const savedW = localStorage.getItem("panelW");
   if (savedW) {
@@ -556,7 +558,7 @@ function wireIconRail(): void {
       const isMobile = window.innerWidth <= 860;
       const isFullscreen = FULLSCREEN_PANELS.has(target);
 
-      if (isMobile && isFullscreen) {
+      if (isFullscreen) {
         if (!sidePanel.classList.contains("collapsed")) doCollapse();
       } else {
         doExpand();
@@ -1020,6 +1022,7 @@ function wireSrsNavigation(): void {
     btn.addEventListener("click", () => {
       const mode = btn.dataset.srsMode || "vocab";
       setMode(mode, true);
+      collapseSidePanel?.();
     });
   });
 
@@ -1098,6 +1101,9 @@ function wireRouting(): void {
     }
     
     if (route.workId && route.partKey && route.chunkIndex !== undefined) {
+      if (window.innerWidth <= 860) {
+        collapseSidePanel?.();
+      }
       if (state.work?.id === route.workId && state.partKey === route.partKey && state.chunkIndex === route.chunkIndex) {
          if (route.segId != null) {
             const target = el("content").querySelector<HTMLElement>(`.seg[data-seg-id="${route.segId}"]`);
