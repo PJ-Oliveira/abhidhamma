@@ -1,4 +1,6 @@
-const CACHE_NAME = 'abhidhamma-cache-v17';
+const CACHE_NAME = 'abhidhamma-cache-v25';
+const VAULT_CACHE_NAME = 'abhidhamma-anki-vault-v1';
+const PROTECTED_CACHES = new Set([CACHE_NAME, VAULT_CACHE_NAME]);
 
 // App shell files to cache on install
 const CORE_ASSETS = [
@@ -36,6 +38,7 @@ const CORE_ASSETS = [
   './js/tetris/types.js',
   './js/abhidhamma-srs/types.js',
   './js/abhidhamma-srs/scheduler.js',
+  './js/abhidhamma-srs/offline-store.js',
   './js/abhidhamma-srs/ui.js',
   './data/srs/abhidhamma_cards.json',
   './data/tetris/index.json',
@@ -110,7 +113,7 @@ self.addEventListener('activate', (event) => {
     const cacheNames = await caches.keys();
     let deletedOld = false;
     for (const name of cacheNames) {
-      if (name !== CACHE_NAME) {
+      if (!PROTECTED_CACHES.has(name)) {
         deletedOld = true;
         await caches.delete(name);
       }
@@ -134,6 +137,15 @@ self.addEventListener('fetch', (event) => {
   if (!event.request.url.startsWith('http')) return;
 
   const url = new URL(event.request.url);
+  if (url.pathname.endsWith('/_offline_vault/abhidhamma-anki-progress.json')) {
+    event.respondWith(
+      caches.open(VAULT_CACHE_NAME).then((c) => c.match(event.request)).then((hit) => {
+        if (hit) return hit;
+        return new Response('null', { status: 404, headers: { 'Content-Type': 'application/json' } });
+      })
+    );
+    return;
+  }
   const isLocalhost = url.hostname === 'localhost' || url.hostname === '127.0.0.1';
 
   // Network-first on localhost or for app code/HTML so updates appear immediately

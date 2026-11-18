@@ -1,21 +1,22 @@
-import { t } from "./i18n.js?v=d4d916a6";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=d4d916a6";
-import { renderTree, markActiveLeaf } from "./tree.js?v=d4d916a6";
-import { loadChunk, renderSegments } from "./reader.js?v=d4d916a6";
-import { initDictionaryPanel } from "./dictionary.js?v=d4d916a6";
-import { initSearchPanel } from "./search.js?v=d4d916a6";
-import { initExportPanel } from "./export.js?v=d4d916a6";
-import { initSrsPanel } from "./srs.js?v=d4d916a6";
-import { TetrisUI } from "./tetris/ui.js?v=d4d916a6";
-import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=d4d916a6";
-import { initToolsPanel } from "./tools/tools.js?v=d4d916a6";
-import "./tools/mindmap.js?v=d4d916a6";
-import "./tools/patthana.js?v=d4d916a6";
-import "./tools/vithi.js?v=d4d916a6";
-import "./tools/matikas.js?v=d4d916a6";
-import "./tools/cetasika.js?v=d4d916a6";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=d4d916a6";
-import { createLogger } from "./logger.js?v=d4d916a6";
+import { t } from "./i18n.js?v=7f93ce05";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=7f93ce05";
+import { renderTree, markActiveLeaf } from "./tree.js?v=7f93ce05";
+import { loadChunk, renderSegments } from "./reader.js?v=7f93ce05";
+import { initDictionaryPanel } from "./dictionary.js?v=7f93ce05";
+import { initSearchPanel } from "./search.js?v=7f93ce05";
+import { initExportPanel } from "./export.js?v=7f93ce05";
+import { initSrsPanel } from "./srs.js?v=7f93ce05";
+import { TetrisUI } from "./tetris/ui.js?v=7f93ce05";
+import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=7f93ce05";
+import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=7f93ce05";
+import { initToolsPanel } from "./tools/tools.js?v=7f93ce05";
+import "./tools/mindmap.js?v=7f93ce05";
+import "./tools/patthana.js?v=7f93ce05";
+import "./tools/vithi.js?v=7f93ce05";
+import "./tools/matikas.js?v=7f93ce05";
+import "./tools/cetasika.js?v=7f93ce05";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=7f93ce05";
+import { createLogger } from "./logger.js?v=7f93ce05";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -662,7 +663,8 @@ async function cacheAllForOffline(btn) {
     const origHtml = btn.innerHTML;
     btn.disabled = true;
     try {
-        const cache = await caches.open('abhidhamma-cache-v14');
+        void requestPersistentStorage();
+        const cache = await caches.open(APP_OFFLINE_CACHE_NAME);
         const urls = [
             './',
             './index.html',
@@ -671,6 +673,12 @@ async function cacheAllForOffline(btn) {
             './data/manifest.json',
             './data/dictionary/pali_core.json',
             './data/dictionary/common_pali.json',
+            './data/srs/abhidhamma_cards.json',
+            './js/abhidhamma-srs/types.js',
+            './js/abhidhamma-srs/scheduler.js',
+            './js/abhidhamma-srs/offline-store.js',
+            './js/abhidhamma-srs/ui.js',
+            './data/tetris/index.json',
         ];
         if (state.manifest?.groups) {
             for (const group of Object.values(state.manifest.groups)) {
@@ -1056,7 +1064,7 @@ async function init() {
         if ('caches' in window) {
             caches.keys().then((keys) => {
                 for (const k of keys) {
-                    if (k !== 'abhidhamma-cache-v14')
+                    if (k !== APP_OFFLINE_CACHE_NAME && k !== VAULT_CACHE_NAME)
                         void caches.delete(k);
                 }
             }).catch(() => { });

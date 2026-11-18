@@ -1,6 +1,11 @@
 export const MINUTE_MS = 60_000;
 export const DAY_MS = 86_400_000;
 export const DEFAULT_LEARN_AHEAD_MS = 20 * MINUTE_MS;
+export const PACE_DEFAULT_HORIZON_DAYS = 90;
+export const PACE_RESERVE_DAYS = 12;
+export const PACE_MIN_NEW = 5;
+export const PACE_MAX_NEW = 60;
+export const LEECH_THRESHOLD = 4;
 export const DEFAULT_ANKI_CONFIG = {
     learningStepsMin: [1, 10],
     relearningStepsMin: [10],
@@ -12,10 +17,15 @@ export const DEFAULT_ANKI_CONFIG = {
     easyBonus: 1.3,
     lapseIntervalMultiplier: 0.5,
     newCardsPerDay: 25,
+    adaptivePace: true,
+    paceTargetMs: 0,
+    extraNewDate: "",
+    extraNewCount: 0,
 };
 export const STORAGE_STATES_KEY = "atp.abhidhamma.anki.cards.v1";
 export const STORAGE_STATS_KEY = "atp.abhidhamma.anki.stats.v1";
 export const STORAGE_CONFIG_KEY = "atp.abhidhamma.anki.config.v1";
+export const STORAGE_MNEMONICS_KEY = "atp.abhidhamma.anki.mnemonics.v1";
 function round2(n) {
     return Math.round(n * 100) / 100;
 }
@@ -115,6 +125,201 @@ export function saveAnkiConfig(config) {
     catch {
     }
 }
+export function loadMnemonicNotes() {
+    try {
+        const raw = localStorage.getItem(STORAGE_MNEMONICS_KEY);
+        if (!raw)
+            return {};
+        const parsed = JSON.parse(raw);
+        return parsed && typeof parsed === "object" ? parsed : {};
+    }
+    catch {
+        return {};
+    }
+}
+export function saveMnemonicNote(cardId, note) {
+    const all = loadMnemonicNotes();
+    const trimmed = note.trim();
+    if (trimmed)
+        all[cardId] = trimmed;
+    else
+        delete all[cardId];
+    try {
+        localStorage.setItem(STORAGE_MNEMONICS_KEY, JSON.stringify(all));
+    }
+    catch {
+    }
+    return all;
+}
+export function isRecitationCard(card) {
+    return card.axis === "recitation";
+}
+export function isLeech(state, threshold = LEECH_THRESHOLD) {
+    return state !== undefined && state.lapses >= threshold;
+}
+export function countLeeches(states, threshold = LEECH_THRESHOLD) {
+    let n = 0;
+    for (const st of Object.values(states)) {
+        if (isLeech(st, threshold))
+            n++;
+    }
+    return n;
+}
+export function ensurePaceTarget(config, nowMs = Date.now()) {
+    if (!config.adaptivePace || config.paceTargetMs > 0)
+        return config;
+    return { ...config, paceTargetMs: nowMs + PACE_DEFAULT_HORIZON_DAYS * DAY_MS };
+}
+function toDayString(nowMs) {
+    return new Date(nowMs).toISOString().slice(0, 10);
+}
+export function countDueCards(cards, states, nowMs = Date.now()) {
+    let due = 0;
+    for (const c of cards) {
+        const st = states[c.id];
+        if (st && st.phase !== "new" && st.dueAt <= nowMs)
+            due++;
+    }
+    return due;
+}
+export function computeDailyNewQuota(cards, states, stats, config, nowMs = Date.now()) {
+    const extra = config.extraNewDate === toDayString(nowMs) ? Math.max(0, config.extraNewCount) : 0;
+    if (!config.adaptivePace || config.paceTargetMs <= 0) {
+        return config.newCardsPerDay + extra;
+    }
+    let remaining = 0;
+    for (const c of cards) {
+        const st = states[c.id];
+        if (!st || st.phase === "new")
+            remaining++;
+    }
+    const msLeft = config.paceTargetMs - PACE_RESERVE_DAYS * DAY_MS - nowMs;
+    let base;
+    if (msLeft <= 0) {
+        base = remaining > 0 ? Math.ceil(remaining / 10) : 0;
+    }
+    else {
+        const daysLeft = Math.max(1, Math.ceil(msLeft / DAY_MS));
+        base = Math.ceil((remaining + stats.newStudiedToday) / daysLeft);
+    }
+    base = base > 0 ? Math.min(PACE_MAX_NEW, Math.max(PACE_MIN_NEW, base)) : 0;
+    const due = countDueCards(cards, states, nowMs);
+    if (due >= 300)
+        base = Math.ceil(base * 0.4);
+    else if (due >= 200)
+        base = Math.ceil(base * 0.6);
+    else if (due >= 120)
+        base = Math.ceil(base * 0.8);
+    return base + extra;
+}
+export function computePlan90Summary(cards, states, stats, config, nowMs = Date.now()) {
+    const effective = ensurePaceTarget({ ...config, adaptivePace: true }, nowMs);
+    const startMs = effective.paceTargetMs - PACE_DEFAULT_HORIZON_DAYS * DAY_MS;
+    const elapsedDays = Math.floor(Math.max(0, nowMs - startMs) / DAY_MS);
+    const currentDay = Math.min(PACE_DEFAULT_HORIZON_DAYS, elapsedDays + 1);
+    const daysRemaining = Math.max(0, Math.ceil((effective.paceTargetMs - nowMs) / DAY_MS));
+    const isConsolidationPhase = daysRemaining <= PACE_RESERVE_DAYS;
+    let memorizedCards = 0;
+    let remainingNewCards = 0;
+    let dueNowCount = 0;
+    for (const c of cards) {
+        const st = states[c.id];
+        if (!st || st.phase === "new") {
+            remainingNewCards++;
+        }
+        else {
+            if (isCardMemorized(st))
+                memorizedCards++;
+            if (st.dueAt <= nowMs)
+                dueNowCount++;
+        }
+    }
+    const dailyNewTarget = computeDailyNewQuota(cards, states, stats, effective, nowMs);
+    const newRemainingToday = Math.max(0, Math.min(remainingNewCards, dailyNewTarget - stats.newStudiedToday));
+    const progressPct = cards.length > 0 ? Math.round((memorizedCards / cards.length) * 100) : 100;
+    return {
+        currentDay,
+        totalDays: PACE_DEFAULT_HORIZON_DAYS,
+        daysRemaining,
+        isConsolidationPhase,
+        totalCards: cards.length,
+        memorizedCards,
+        remainingNewCards,
+        dailyNewTarget,
+        newRemainingToday,
+        dueNowCount,
+        progressPct,
+    };
+}
+export function interleaveByChapter(items) {
+    const buckets = new Map();
+    for (const it of items) {
+        const arr = buckets.get(it.chapter);
+        if (arr)
+            arr.push(it);
+        else
+            buckets.set(it.chapter, [it]);
+    }
+    const lists = [...buckets.keys()].sort((a, b) => a - b).map((k) => buckets.get(k));
+    const out = [];
+    for (let i = 0; out.length < items.length; i++) {
+        for (const l of lists) {
+            if (i < l.length)
+                out.push(l[i]);
+        }
+    }
+    return out;
+}
+export function buildProgressiveCloze(paliText, stage) {
+    const tokens = paliText.split(/\s+/).filter(Boolean);
+    if (tokens.length === 0)
+        return "";
+    if (stage === 3) {
+        const nonSlash = tokens.filter((t) => t !== "/");
+        const cueLen = Math.min(2, Math.max(1, nonSlash.length - 1));
+        const cue = nonSlash.slice(0, cueLen).join(" ").replace(/[.,;:?!]+$/, "");
+        return `${cue} … [${nonSlash.length}]`;
+    }
+    if (stage === 2) {
+        return tokens
+            .map((tok) => {
+            if (tok === "/")
+                return "/";
+            const m = /^([^A-Za-zĀĪŪṄÑṬḌṆḶṂāīūṅñṭḍṇḷṃ]*)([A-Za-zĀĪŪṄÑṬḌṆḶṂāīūṅñṭḍṇḷṃ])([A-Za-zĀĪŪṄÑṬḌṆḶṂāīūṅñṭḍṇḷṃ-]*)([^A-Za-zĀĪŪṄÑṬḌṆḶṂāīūṅñṭḍṇḷṃ]*)$/.exec(tok);
+            if (!m)
+                return tok;
+            const [, pre, first, rest, post] = m;
+            return rest && rest.length > 0 ? `${pre}${first}…${post}` : tok;
+        })
+            .join(" ");
+    }
+    let masked = 0;
+    const out = tokens.map((tok, idx) => {
+        if (tok === "/" || idx === 0)
+            return tok;
+        const stripped = tok.replace(/[^A-Za-zĀĪŪṄÑṬḌṆḶṂāīūṅñṭḍṇḷṃ]/g, "");
+        if (stripped.length >= 5 && idx % 2 === 1) {
+            masked++;
+            const trail = tok.match(/[.,;:?!]+$/)?.[0] ?? "";
+            return `_____${trail}`;
+        }
+        return tok;
+    });
+    if (masked === 0 && tokens.length > 1) {
+        const lastIdx = tokens.length - 1;
+        const trail = tokens[lastIdx].match(/[.,;:?!]+$/)?.[0] ?? "";
+        out[lastIdx] = `_____${trail}`;
+    }
+    return out.join(" ");
+}
+export function defaultClozeStage(state) {
+    const reps = state?.reps ?? 0;
+    if (reps <= 0)
+        return 1;
+    if (reps === 1)
+        return 2;
+    return 3;
+}
 export function scheduleAnkiCard(prev, rating, nowMs = Date.now(), config = DEFAULT_ANKI_CONFIG) {
     const steps = config.learningStepsMin.length > 0 ? config.learningStepsMin : [1, 10];
     const relearnSteps = config.relearningStepsMin.length > 0 ? config.relearningStepsMin : [10];
@@ -195,6 +400,32 @@ export function scheduleAnkiCard(prev, rating, nowMs = Date.now(), config = DEFA
                 easeFactor: nextEase,
                 lapses: prev.lapses + 1,
                 dueAt: nowMs + relearnMin * MINUTE_MS,
+                lastReviewAt: nowMs,
+            };
+        }
+        if (prev.dueAt > nowMs && prev.lastReviewAt > 0 && prev.dueAt > prev.lastReviewAt) {
+            const elapsedRatio = Math.max(0, Math.min(1, (nowMs - prev.lastReviewAt) / (prev.dueAt - prev.lastReviewAt)));
+            if (rating === 2) {
+                const nextEase = Math.max(config.minEase, round2(prev.easeFactor - 0.05));
+                return {
+                    ...prev,
+                    easeFactor: nextEase,
+                    reps: prev.reps + 1,
+                    dueAt: Math.max(prev.dueAt, nowMs + baseInterval * DAY_MS),
+                    lastReviewAt: nowMs,
+                };
+            }
+            const fullNext = rating === 4
+                ? Math.max(baseInterval + 2, Math.round(baseInterval * round2(prev.easeFactor + 0.15) * config.easyBonus))
+                : Math.max(baseInterval + 1, Math.round(baseInterval * prev.easeFactor));
+            const nextDays = Math.max(baseInterval, Math.round(baseInterval + (fullNext - baseInterval) * elapsedRatio));
+            const nextEase = rating === 4 ? round2(prev.easeFactor + 0.05 * elapsedRatio) : prev.easeFactor;
+            return {
+                ...prev,
+                intervalDays: nextDays,
+                easeFactor: nextEase,
+                reps: prev.reps + 1,
+                dueAt: Math.max(prev.dueAt, nowMs + nextDays * DAY_MS),
                 lastReviewAt: nowMs,
             };
         }
@@ -351,8 +582,20 @@ export function computeAllChapterProgress(chapters, cards, states, nowMs = Date.
         let structureMemorized = 0;
         let houseTotal = 0;
         let houseMemorized = 0;
+        let recitationTotal = 0;
+        let recitationMemorized = 0;
+        let leechCount = 0;
         for (const c of chCards) {
-            const mem = isCardMemorized(states[c.id]);
+            const st = states[c.id];
+            const mem = isCardMemorized(st);
+            if (isLeech(st))
+                leechCount++;
+            if (isRecitationCard(c)) {
+                recitationTotal++;
+                if (mem)
+                    recitationMemorized++;
+                continue;
+            }
             if (c.tier === "atom") {
                 atomTotal++;
                 if (mem)
@@ -370,7 +613,7 @@ export function computeAllChapterProgress(chapters, cards, states, nowMs = Date.
             }
         }
         const totalCards = chCards.length;
-        const totalMemorized = atomMemorized + structureMemorized + houseMemorized;
+        const totalMemorized = atomMemorized + structureMemorized + houseMemorized + recitationMemorized;
         const atomMasteryPct = atomTotal > 0 ? Math.round((atomMemorized / atomTotal) * 100) : 100;
         const totalMasteryPct = totalCards > 0 ? Math.round((totalMemorized / totalCards) * 100) : 100;
         let unlocked = true;
@@ -420,6 +663,9 @@ export function computeAllChapterProgress(chapters, cards, states, nowMs = Date.
             houseTotal,
             houseMemorized,
             houseUnlocked,
+            recitationTotal,
+            recitationMemorized,
+            leechCount,
             totalMemorized,
             totalMasteryPct,
             newAvailableCount,
@@ -438,12 +684,12 @@ export function isCardUnlocked(card, chapterCards, chapterMeta, states, chapterI
             return false;
         }
     }
-    if (card.tier === "atom")
+    if (card.tier === "atom" || isRecitationCard(card))
         return true;
     let atomTotal = 0;
     let atomMemorized = 0;
     for (const c of chapterCards) {
-        if (c.tier === "atom") {
+        if (!isRecitationCard(c) && c.tier === "atom") {
             atomTotal++;
             if (isCardMemorized(states[c.id]))
                 atomMemorized++;
@@ -462,7 +708,7 @@ const TIER_ORDER = {
     structure: 1,
     house: 2,
 };
-export function buildStudyQueue(chapters, cards, states, stats, config = DEFAULT_ANKI_CONFIG, scopeChapter = null, nowMs = Date.now()) {
+export function buildStudyQueue(chapters, cards, states, stats, config = DEFAULT_ANKI_CONFIG, scopeChapter = null, nowMs = Date.now(), filterMode = "all") {
     const progressMap = computeAllChapterProgress(chapters, cards, states, nowMs);
     const metaByChapter = new Map(chapters.map((m) => [m.chapter, m]));
     const cardsByChapter = new Map();
@@ -473,7 +719,16 @@ export function buildStudyQueue(chapters, cards, states, stats, config = DEFAULT
         else
             cardsByChapter.set(c.chapter, [c]);
     }
-    const scopedCards = scopeChapter === null ? cards : cards.filter((c) => c.chapter === scopeChapter);
+    let scopedCards = scopeChapter === null ? cards : cards.filter((c) => c.chapter === scopeChapter);
+    if (filterMode === "concepts") {
+        scopedCards = scopedCards.filter((c) => !isRecitationCard(c));
+    }
+    else if (filterMode === "recitation") {
+        scopedCards = scopedCards.filter(isRecitationCard);
+    }
+    else if (filterMode === "leeches") {
+        scopedCards = scopedCards.filter((c) => isLeech(states[c.id]));
+    }
     const dueLearning = [];
     const learnAhead = [];
     const dueReview = [];
@@ -485,6 +740,10 @@ export function buildStudyQueue(chapters, cards, states, stats, config = DEFAULT
         if (!prog || !meta || !prog.unlocked)
             continue;
         const st = states[card.id];
+        if (filterMode === "leeches") {
+            dueReview.push({ card, dueAt: st?.dueAt ?? nowMs });
+            continue;
+        }
         if (!st || st.phase === "new") {
             if (isCardUnlocked(card, chCards, meta, states, prog.unlocked)) {
                 newUnlocked.push(card);
@@ -510,12 +769,17 @@ export function buildStudyQueue(chapters, cards, states, stats, config = DEFAULT
     newUnlocked.sort((a, b) => {
         if (a.chapter !== b.chapter)
             return a.chapter - b.chapter;
+        const recA = isRecitationCard(a) ? 1 : 0;
+        const recB = isRecitationCard(b) ? 1 : 0;
+        if (recA !== recB)
+            return recA - recB;
         return TIER_ORDER[a.tier] - TIER_ORDER[b.tier];
     });
-    const remainingNewQuota = Math.max(0, config.newCardsPerDay - stats.newStudiedToday);
+    const dailyQuota = computeDailyNewQuota(cards, states, stats, config, nowMs);
+    const remainingNewQuota = Math.max(0, dailyQuota - stats.newStudiedToday);
     const cappedNew = newUnlocked.slice(0, remainingNewQuota);
     const learningCards = dueLearning.map((x) => x.card);
-    const reviewCards = dueReview.map((x) => x.card);
+    const reviewCards = interleaveByChapter(dueReview.map((x) => x.card));
     const aheadCards = learnAhead.map((x) => x.card);
     const queue = [...learningCards, ...reviewCards, ...cappedNew];
     if (queue.length === 0 && aheadCards.length > 0) {
@@ -527,6 +791,67 @@ export function buildStudyQueue(chapters, cards, states, stats, config = DEFAULT
         newUnlocked: cappedNew,
         learnAhead: aheadCards,
         queue,
+    };
+}
+export function buildEarlyReviewQueue(chapters, cards, states, scopeChapter = null, limit = 10, nowMs = Date.now()) {
+    const progressMap = computeAllChapterProgress(chapters, cards, states, nowMs);
+    const scoped = scopeChapter === null ? cards : cards.filter((c) => c.chapter === scopeChapter);
+    const candidates = [];
+    for (const card of scoped) {
+        const prog = progressMap.get(card.chapter);
+        if (!prog || !prog.unlocked)
+            continue;
+        const st = states[card.id];
+        if (!st || st.phase === "new")
+            continue;
+        const daysUntilDue = Math.max(0, (st.dueAt - nowMs) / DAY_MS);
+        const fragility = (3 - st.easeFactor) * 4 + st.lapses * 2;
+        const score = (st.phase === "review" ? 10 : 0) + daysUntilDue - fragility;
+        candidates.push({ card, score, dueAt: st.dueAt });
+    }
+    candidates.sort((a, b) => a.score - b.score || a.dueAt - b.dueAt);
+    return interleaveByChapter(candidates.slice(0, Math.max(1, limit)).map((x) => x.card));
+}
+export function computeProportionalExtraBatch(chapters, cards, states, scopeChapter = null, nowMs = Date.now()) {
+    const progressMap = computeAllChapterProgress(chapters, cards, states, nowMs);
+    const metaByChapter = new Map(chapters.map((m) => [m.chapter, m]));
+    const cardsByChapter = new Map();
+    for (const c of cards) {
+        const arr = cardsByChapter.get(c.chapter);
+        if (arr)
+            arr.push(c);
+        else
+            cardsByChapter.set(c.chapter, [c]);
+    }
+    const scoped = scopeChapter === null ? cards : cards.filter((c) => c.chapter === scopeChapter);
+    let unlockedNew = 0;
+    let studied = 0;
+    let fragile = 0;
+    for (const card of scoped) {
+        const prog = progressMap.get(card.chapter);
+        const meta = metaByChapter.get(card.chapter);
+        const chCards = cardsByChapter.get(card.chapter) ?? [];
+        if (!prog || !meta || !prog.unlocked)
+            continue;
+        const st = states[card.id];
+        if (!st || st.phase === "new") {
+            if (isCardUnlocked(card, chCards, meta, states, prog.unlocked))
+                unlockedNew++;
+        }
+        else {
+            studied++;
+            if (st.lapses >= 2 || st.easeFactor < 2.1 || st.phase !== "review")
+                fragile++;
+        }
+    }
+    const extraNew = unlockedNew === 0 ? 0 : fragile >= 20 ? Math.min(5, unlockedNew) : Math.min(10, unlockedNew);
+    const targetReviews = extraNew > 0 ? Math.max(3, Math.ceil(extraNew * 0.5)) : 10;
+    const earlyReviews = Math.min(studied, targetReviews);
+    return {
+        extraNew,
+        earlyReviews,
+        hasMoreNew: unlockedNew > 0,
+        hasReviewable: studied > 0,
     };
 }
 //# sourceMappingURL=scheduler.js.map

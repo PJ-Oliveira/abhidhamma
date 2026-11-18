@@ -16,6 +16,11 @@ import { initExportPanel } from "./export.js";
 import { initSrsPanel } from "./srs.js";
 import { TetrisUI } from "./tetris/ui.js";
 import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js";
+import {
+  APP_OFFLINE_CACHE_NAME,
+  requestPersistentStorage,
+  VAULT_CACHE_NAME,
+} from "./abhidhamma-srs/offline-store.js";
 import { initToolsPanel } from "./tools/tools.js";
 import "./tools/mindmap.js";
 import "./tools/patthana.js";
@@ -706,7 +711,8 @@ async function cacheAllForOffline(btn: HTMLButtonElement): Promise<void> {
   const origHtml = btn.innerHTML;
   btn.disabled = true;
   try {
-    const cache = await caches.open('abhidhamma-cache-v14');
+    void requestPersistentStorage();
+    const cache = await caches.open(APP_OFFLINE_CACHE_NAME);
     const urls: string[] = [
       './',
       './index.html',
@@ -715,6 +721,12 @@ async function cacheAllForOffline(btn: HTMLButtonElement): Promise<void> {
       './data/manifest.json',
       './data/dictionary/pali_core.json',
       './data/dictionary/common_pali.json',
+      './data/srs/abhidhamma_cards.json',
+      './js/abhidhamma-srs/types.js',
+      './js/abhidhamma-srs/scheduler.js',
+      './js/abhidhamma-srs/offline-store.js',
+      './js/abhidhamma-srs/ui.js',
+      './data/tetris/index.json',
     ];
     if (state.manifest?.groups) {
       for (const group of Object.values(state.manifest.groups)) {
@@ -1107,7 +1119,7 @@ async function init(): Promise<void> {
     if ('caches' in window) {
       caches.keys().then((keys) => {
         for (const k of keys) {
-          if (k !== 'abhidhamma-cache-v14') void caches.delete(k);
+          if (k !== APP_OFFLINE_CACHE_NAME && k !== VAULT_CACHE_NAME) void caches.delete(k);
         }
       }).catch(() => {});
     }

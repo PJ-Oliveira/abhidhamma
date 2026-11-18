@@ -10,6 +10,16 @@ export type Localized = Readonly<Record<Lang, string>>;
  */
 export type CardTier = "atom" | "structure" | "house";
 
+export type CardMode =
+  | "standard"
+  | "checksum"
+  | "enumeration"
+  | "sequence"
+  | "confusable"
+  | "cloze_pali";
+
+export type StudyFilterMode = "all" | "concepts" | "recitation" | "leeches";
+
 export type AbhidhammaAxis =
   | "paramattha"
   | "citta"
@@ -21,7 +31,8 @@ export type AbhidhammaAxis =
   | "nibbana"
   | "samuccaya"
   | "paccaya"
-  | "kammatthana";
+  | "kammatthana"
+  | "recitation";
 
 export interface CardCharacteristics {
   readonly lakkhana?: Localized;
@@ -34,6 +45,7 @@ export interface CardSourceRef {
   readonly as?: string;
   readonly cma?: string;
   readonly segId?: number;
+  readonly segIds?: readonly number[];
 }
 
 export interface AbhidhammaCard {
@@ -41,6 +53,7 @@ export interface AbhidhammaCard {
   readonly chapter: number;
   readonly axis: AbhidhammaAxis;
   readonly tier: CardTier;
+  readonly mode?: CardMode;
   readonly requires: readonly string[];
   readonly paliTerm: Localized | string;
   readonly categoryLabel: Localized;
@@ -48,6 +61,11 @@ export interface AbhidhammaCard {
   readonly answer: Localized;
   readonly characteristics?: CardCharacteristics;
   readonly mechanics?: Localized;
+  readonly mathStructure?: Localized;
+  readonly checklist?: readonly Localized[];
+  readonly sequenceItems?: readonly Localized[];
+  readonly isGatha?: boolean;
+  readonly paliText?: string;
   readonly source: CardSourceRef;
 }
 
@@ -97,6 +115,13 @@ export interface AnkiConfig {
   readonly easyBonus: number;
   readonly lapseIntervalMultiplier: number;
   readonly newCardsPerDay: number;
+  /** Ritmo automático diário distribuindo o baralho ao longo da jornada. */
+  readonly adaptivePace: boolean;
+  /** Data-alvo interna (epoch ms) do ritmo automático; 0 = ainda não inicializada. */
+  readonly paceTargetMs: number;
+  /** Cartas novas extras liberadas manualmente apenas para o dia `extraNewDate` (YYYY-MM-DD). */
+  readonly extraNewDate: string;
+  readonly extraNewCount: number;
 }
 
 export interface AnkiStats {
@@ -106,6 +131,20 @@ export interface AnkiStats {
   readonly newStudiedToday: number;
   readonly streak: number;
   readonly lastSessionDate: string;
+}
+
+export interface Plan90Summary {
+  readonly currentDay: number;
+  readonly totalDays: number;
+  readonly daysRemaining: number;
+  readonly isConsolidationPhase: boolean;
+  readonly totalCards: number;
+  readonly memorizedCards: number;
+  readonly remainingNewCards: number;
+  readonly dailyNewTarget: number;
+  readonly newRemainingToday: number;
+  readonly dueNowCount: number;
+  readonly progressPct: number;
 }
 
 export interface ChapterProgress {
@@ -120,6 +159,9 @@ export interface ChapterProgress {
   readonly houseTotal: number;
   readonly houseMemorized: number;
   readonly houseUnlocked: boolean;
+  readonly recitationTotal: number;
+  readonly recitationMemorized: number;
+  readonly leechCount: number;
   readonly totalMemorized: number;
   readonly totalMasteryPct: number;
   readonly newAvailableCount: number;

@@ -20,6 +20,7 @@ from srs_chapters import (
     ch7_samuccaya,
     ch8_paccaya,
     ch9_kammatthana,
+    extra_memory_cards,
 )
 
 MODULES = [
@@ -66,9 +67,17 @@ def validate_dataset(chapters, cards):
         validate_localized(card["answer"], f"{cid}.answer")
         if "mechanics" in card:
             validate_localized(card["mechanics"], f"{cid}.mechanics")
+        if "mathStructure" in card:
+            validate_localized(card["mathStructure"], f"{cid}.mathStructure")
         if "characteristics" in card:
             for k, v in card["characteristics"].items():
                 validate_localized(v, f"{cid}.characteristics.{k}")
+        if "checklist" in card:
+            for idx, item in enumerate(card["checklist"]):
+                validate_localized(item, f"{cid}.checklist[{idx}]")
+        if "sequenceItems" in card:
+            for idx, item in enumerate(card["sequenceItems"]):
+                validate_localized(item, f"{cid}.sequenceItems[{idx}]")
 
         # Guard against Portuguese leaks in EN/ES
         en_leaks = re.findall(
@@ -140,6 +149,8 @@ def main():
     cards = []
     for m in MODULES:
         cards.extend(m.build_cards())
+    cards.extend(extra_memory_cards.build_cards())
+    extra_memory_cards.attach_math_structures(cards)
 
     validate_dataset(chapters, cards)
 

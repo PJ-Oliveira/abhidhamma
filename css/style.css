@@ -2816,3 +2816,520 @@ details[open] > summary::before { transform: rotate(90deg); }
     min-width: 0;
   }
 }
+
+/* ── Abhidhamma SRS: Two-Track (Chapters & 90-Day Plan), Math Box & Recall ── */
+.abhi-method-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.abhi-track-tabs, .abhi-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.abhi-track-tab {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text);
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.abhi-track-tab:hover { border-color: var(--accent); }
+.abhi-track-tab.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.abhi-filter-pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.abhi-filter-pill:hover { border-color: var(--accent); }
+.abhi-filter-pill.active {
+  background: var(--accent-soft);
+  color: var(--text);
+  border-color: var(--accent);
+}
+.abhi-tele-leech, .abhi-leech-pill {
+  border-color: rgba(192, 57, 43, 0.45);
+  color: #9e2a1f;
+}
+.abhi-btn-link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 0;
+  text-align: left;
+}
+.abhi-btn-link:hover { text-decoration: underline; }
+
+/* 90-Day Structured Plan Panel */
+.abhi-plan90-card {
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.abhi-plan90-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.abhi-plan90-title { margin: 0 0 6px; font-size: 18px; }
+.abhi-plan90-desc { margin: 0; font-size: 13.5px; color: var(--text-muted); line-height: 1.5; max-width: 720px; }
+.abhi-plan90-phase {
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+.abhi-plan90-phase.consolidate {
+  background: rgba(90, 122, 95, 0.2);
+  color: #2e5333;
+}
+.abhi-plan90-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+.abhi-plan90-stat {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-content);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.abhi-plan90-stat span { font-size: 12px; color: var(--text-muted); }
+.abhi-plan90-stat strong { font-size: 15px; color: var(--text); }
+.abhi-plan90-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Mathematical List Structure Callout */
+.abhi-math-box {
+  margin-top: 10px;
+  padding: 10px 13px;
+  border-left: 3px solid var(--translation-bar);
+  background: rgba(90, 122, 95, 0.1);
+  border-radius: 6px;
+}
+.abhi-math-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--translation-bar);
+  margin-bottom: 4px;
+}
+.abhi-math-text {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* Recall & 4-field grid */
+.abhi-recall-box { margin-top: 12px; }
+.abhi-recall-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-content);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13.5px;
+  resize: vertical;
+}
+.abhi-user-recall {
+  background: var(--bg-panel);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+.abhi-user-recall-lbl { font-size: 11.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; }
+.abhi-user-recall-text { font-size: 13.5px; margin-top: 3px; white-space: pre-wrap; }
+.abhi-fourfold-wrap { margin-top: 12px; }
+.abhi-fourfold-title { font-size: 12.5px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; }
+.abhi-fourfold-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+}
+.abhi-fourfold-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.abhi-fourfold-grid input {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-content);
+  color: var(--text);
+  font-size: 13px;
+}
+.abhi-char-user {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* Progressive Pāli Cloze */
+.abhi-cloze-bar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.abhi-stage-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.abhi-stage-pill.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.abhi-cloze-box {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  font-family: "Gentium Book Plus", Georgia, serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.abhi-pali-verbatim {
+  font-family: "Gentium Book Plus", Georgia, serif;
+  font-size: 16.5px;
+  line-height: 1.65;
+}
+
+/* Enumeration Checklist & Sequence Builder */
+.abhi-enum-box {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+.abhi-enum-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.abhi-enum-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.abhi-enum-list label {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  cursor: pointer;
+  font-size: 13.5px;
+}
+.abhi-enum-status {
+  margin-top: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+.abhi-enum-status.ok { color: #2e7d32; }
+.abhi-enum-status.warn { color: #a94417; }
+
+.abhi-seq-wrap { margin-top: 12px; display: flex; flex-direction: column; gap: 10px; }
+.abhi-seq-hint { font-size: 12.5px; color: var(--text-muted); }
+.abhi-seq-placed, .abhi-seq-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  min-height: 44px;
+}
+.abhi-seq-empty { opacity: 0.5; font-size: 13px; }
+.abhi-seq-chip {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-content);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.abhi-seq-chip.placed {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+.abhi-seq-result {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+.abhi-seq-result-head { font-size: 13px; margin-bottom: 6px; }
+.abhi-seq-grades { display: flex; flex-wrap: wrap; gap: 6px; }
+.abhi-seq-grade {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.abhi-seq-grade.ok { background: rgba(46, 125, 50, 0.14); color: #225e26; }
+.abhi-seq-grade.bad { background: rgba(192, 57, 43, 0.14); color: #9e2a1f; }
+
+/* Leech & Personal Mnemonic */
+.abhi-leech-box {
+  margin-top: 10px;
+  padding: 9px 12px;
+  border-left: 3px solid #c0392b;
+  background: rgba(192, 57, 43, 0.09);
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.abhi-mnemonic-box {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px dashed var(--accent);
+  background: var(--bg-panel);
+}
+.abhi-mnemonic-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.abhi-mnemonic-saved { color: #2e7d32; }
+.abhi-mnemonic-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-content);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  resize: vertical;
+}
+
+/* Offline Vault Footer Bar */
+.abhi-vault-bar {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+.abhi-vault-status {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.abhi-vault-status strong { color: var(--text); }
+.abhi-vault-tag {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(90, 122, 95, 0.16);
+  color: #2e5333;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.abhi-vault-tag.offline {
+  background: rgba(179, 102, 63, 0.18);
+  color: var(--accent);
+}
+.abhi-vault-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.abhi-btn-vault {
+  padding: 6px 11px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--bg-content);
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.abhi-btn-vault:hover { border-color: var(--accent); }
+.abhi-vault-notice {
+  width: 100%;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--translation-bar);
+}
+
+/* ── Mobile (Samsung 360px/412px) & Laptop Responsiveness Fixes ──────────── */
+.abhi-srs-wrap {
+  padding-bottom: 84px; /* Always clears floating Debate button on desktop/laptop */
+}
+.tools-panel {
+  padding-bottom: 76px;
+}
+
+@media (max-width: 768px) {
+  /* Hide floating Debate FAB inside SRS/Anki on small screens so it never blocks rating or action buttons */
+  body:has(#reader-srs:not([style*="display: none"])) #btn-toggle-interlocutor {
+    display: none !important;
+  }
+
+  /* Wrap all 5 Tools tabs cleanly inside 360px+ viewports with zero right-edge clipping */
+  .tools-tab-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+    gap: 4px;
+    padding: 6px;
+  }
+  .tools-tab-btn {
+    padding: 6px 9px;
+    font-size: 11.5px;
+    gap: 4px;
+    flex: 0 1 auto;
+  }
+  .tools-tab-icon {
+    font-size: 14px;
+  }
+
+  /* Comfortable Anki mobile layout (Samsung 360x800 / 412x915) */
+  .abhi-srs-wrap {
+    padding: 12px 12px 96px;
+  }
+  .abhi-flashcard {
+    padding: 14px;
+  }
+  .abhi-card-pali {
+    font-size: 18px;
+    word-break: break-word;
+  }
+  .abhi-card-prompt {
+    font-size: 15px;
+  }
+  .abhi-anki-ratings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .abhi-rate-btn {
+    min-height: 48px;
+    padding: 10px 8px;
+  }
+  .abhi-plan90-card {
+    padding: 14px;
+  }
+  .abhi-plan90-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .abhi-plan90-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .abhi-plan90-actions button {
+    width: 100%;
+    text-align: center;
+  }
+  .abhi-track-tabs {
+    width: 100%;
+  }
+  .abhi-track-tab {
+    flex: 1;
+    text-align: center;
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+  .abhi-vault-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+  .abhi-vault-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .abhi-vault-actions .abhi-btn-reset {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+  .abhi-study-topbar {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .abhi-study-scope {
+    font-size: 13px;
+  }
+  .abhi-fourfold-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) {
+  .abhi-vault-bar {
+    padding-right: 132px; /* Always clears floating Debate button on desktop/laptop */
+  }
+}
