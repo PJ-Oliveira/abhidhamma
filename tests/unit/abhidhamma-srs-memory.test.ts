@@ -16,16 +16,23 @@ import {
   DEFAULT_ANKI_CONFIG,
   defaultClozeStage,
   ensurePaceTarget,
+  getMaxIntervalForHorizon,
+  getReserveDaysForHorizon,
   interleaveByChapter,
   isLeech,
   isRecitationCard,
+  isReviewDue,
   loadMnemonicNotes,
+  MAX_NEW_CARDS_PER_DAY,
+  MAX_REVIEWS_PER_DAY,
+  normalizeAnkiConfig,
   PACE_DEFAULT_HORIZON_DAYS,
   PACE_MAX_NEW,
   PACE_MIN_NEW,
   PACE_RESERVE_DAYS,
   saveMnemonicNote,
   scheduleAnkiCard,
+  setPaceHorizon,
 } from "../../src/abhidhamma-srs/scheduler.js";
 import { AbhidhammaSrsUI } from "../../src/abhidhamma-srs/ui.js";
 import {
@@ -112,29 +119,79 @@ describe("Trilha de 90 Dias, Freio de Revisões, Sanguessugas e Intercalação",
     states = {};
   });
 
-  it("calibra a cota diária de 90 dias com reserva de 12 dias e freia acúmulo de revisões", () => {
-    const cfg = ensurePaceTarget(DEFAULT_ANKI_CONFIG, now);
-    expect(cfg.paceTargetMs).toBe(now + PACE_DEFAULT_HORIZON_DAYS * DAY_MS);
+  it("calibra trilhas de 30, 60 e 90 dias com teto estrito de 12 novas/dia, revisões 9999/dia e freio de acúmulo", () => {
+    expect(MAX_NEW_CARDS_PER_DAY).toBe(12);
+    expect(PACE_MAX_NEW).toBe(12);
+    expect(MAX_REVIEWS_PER_DAY).toBe(9999);
 
-    const activeDays = PACE_DEFAULT_HORIZON_DAYS - PACE_RESERVE_DAYS;
-    const expected = Math.min(PACE_MAX_NEW, Math.max(PACE_MIN_NEW, Math.ceil(dataset.cards.length / activeDays)));
-    const q0 = computeDailyNewQuota(dataset.cards, states, stats, cfg, now);
-    expect(q0).toBe(expected);
+    // Padrão (30 dias): 357 / 30 = 11.9 -> 12 novas/dia, 0d reserva, teto de intervalo 10d
+    const cfg30 = ensurePaceTarget(DEFAULT_ANKI_CONFIG, now);
+    expect(cfg30.paceHorizonDays).toBe(30);
+    expect(cfg30.paceTargetMs).toBe(now + 30 * DAY_MS);
+    expect(computeDailyNewQuota(dataset.cards, states, stats, cfg30, now)).toBe(12);
+    const sum30 = computePlan90Summary(dataset.cards, states, stats, cfg30, now);
+    expect(sum30.totalDays).toBe(30);
+    expect(sum30.reserveDays).toBe(0);
+    expect(sum30.maxIntervalDays).toBe(10);
+    expect(sum30.dailyNewTarget).toBe(12);
 
-    const summary = computePlan90Summary(dataset.cards, states, stats, cfg, now);
-    expect(summary.currentDay).toBe(1);
-    expect(summary.totalDays).toBe(90);
-    expect(summary.isConsolidationPhase).toBe(false);
-    expect(summary.dailyNewTarget).toBe(expected);
+    // 60 dias: 54 dias ativos + 6 dias de consolidação -> 7 novas/dia, teto 15d
+    const cfg60 = setPaceHorizon(DEFAULT_ANKI_CONFIG, 60, now);
+    const expected60 = Math.min(12, Math.ceil(dataset.cards.length / (60 - getReserveDaysForHorizon(60))));
+    expect(computeDailyNewQuota(dataset.cards, states, stats, cfg60, now)).toBe(expected60);
+    const sum60 = computePlan90Summary(dataset.cards, states, stats, cfg60, now);
+    expect(sum60.totalDays).toBe(60);
+    expect(sum60.reserveDays).toBe(6);
+    expect(sum60.maxIntervalDays).toBe(15);
 
-    const lateSummary = computePlan90Summary(dataset.cards, states, stats, cfg, now + 82 * DAY_MS);
-    expect(lateSummary.isConsolidationPhase).toBe(true);
+    // 90 dias: 78 dias ativos + 12 dias de consolidação -> 5 novas/dia, teto 21d
+    const cfg90 = setPaceHorizon(DEFAULT_ANKI_CONFIG, 90, now);
+    const activeDays90 = 90 - PACE_RESERVE_DAYS;
+    const expected90 = Math.min(PACE_MAX_NEW, Math.max(PACE_MIN_NEW, Math.ceil(dataset.cards.length / activeDays90)));
+    const q90 = computeDailyNewQuota(dataset.cards, states, stats, cfg90, now);
+    expect(q90).toBe(expected90);
 
+    const summary90 = computePlan90Summary(dataset.cards, states, stats, cfg90, now);
+    expect(summary90.currentDay).toBe(1);
+    expect(summary90.totalDays).toBe(90);
+    expect(summary90.isConsolidationPhase).toBe(false);
+    expect(summary90.dailyNewTarget).toBe(expected90);
+
+    const lateSummary90 = computePlan90Summary(dataset.cards, states, stats, cfg90, now + 82 * DAY_MS);
+    expect(lateSummary90.isConsolidationPhase).toBe(true);
+
+    // Config manual antiga com 9999 ou 25 novas/dia é sempre limitada a 12 novas/dia e revisões em 9999
+    const legacyCfg = normalizeAnkiConfig({ adaptivePace: false, newCardsPerDay: 9999, extraNewCount: 50 });
+    expect(legacyCfg.newCardsPerDay).toBe(12);
+    expect(legacyCfg.maxReviewsPerDay).toBe(9999);
+    expect(computeDailyNewQuota(dataset.cards, states, stats, legacyCfg, now)).toBe(12);
+
+    // Teto de intervalo SM-2 por horizonte evita intervalos longos demais antes do prazo
+    let st = createInitialAnkiCardState("c0.citta_atom", cfg30);
+    st = { ...st, phase: "review", intervalDays: 8, easeFactor: 2.5, dueAt: now - 1000, lastReviewAt: now - 8 * DAY_MS };
+    const next30 = scheduleAnkiCard(st, 3, now, cfg30);
+    expect(next30.intervalDays).toBe(getMaxIntervalForHorizon(30)); // 10d max em 30d
+    const next60 = scheduleAnkiCard(st, 3, now, cfg60);
+    expect(next60.intervalDays).toBe(getMaxIntervalForHorizon(60)); // 15d max em 60d
+
+    // Rollover diário: carta graduada ontem à noite já vence hoje pela manhã
+    const yesterdayNight = Date.UTC(2026, 10, 17, 22, 0, 0);
+    const todayMorning = Date.UTC(2026, 10, 18, 8, 0, 0);
+    const revSt: AnkiCardState = {
+      ...createInitialAnkiCardState("c0.rupa_atom"),
+      phase: "review",
+      intervalDays: 1,
+      dueAt: yesterdayNight + DAY_MS,
+      lastReviewAt: yesterdayNight,
+    };
+    expect(isReviewDue(revSt, todayMorning)).toBe(true);
+
+    // Freio automático quando há grande acúmulo de revisões vencidas
     for (const c of dataset.cards.slice(0, 220)) {
       states[c.id] = { ...createInitialAnkiCardState(c.id), phase: "review", intervalDays: 3, dueAt: now - 1 };
     }
     expect(countDueCards(dataset.cards, states, now)).toBe(220);
-    expect(computeDailyNewQuota(dataset.cards, states, stats, cfg, now)).toBeLessThan(q0);
+    expect(computeDailyNewQuota(dataset.cards, states, stats, cfg90, now)).toBeLessThan(q90);
   });
 
   it("detecta sanguessugas, persiste notas mnemônicas, filtra fila e intercala capítulos", () => {
@@ -184,16 +241,35 @@ describe("Trilha de 90 Dias, Freio de Revisões, Sanguessugas e Intercalação",
     // Default track is Chapters (10 chapter cards)
     expect(mount.querySelectorAll(".abhi-chapter-card").length).toBe(10);
 
-    // Switch to 90-Day Track
+    // Switch to Track (default 30 Days) and test switching 30 -> 60 -> 90 -> 30
     mount.querySelector<HTMLButtonElement>('[data-track="plan90"]')!.click();
     expect(mount.querySelector(".abhi-plan90-card")).not.toBeNull();
-    expect(mount.textContent).toContain("90 Days");
+    expect(mount.textContent).toContain("30 Days");
+    expect(mount.querySelectorAll("[data-horizon]").length).toBe(3);
 
-    // Start today's dose directly from 90-Day Track
+    // Select dropdown must never offer > 12 new cards/day
+    const selectOpts = Array.from(mount.querySelectorAll<HTMLOptionElement>(".abhi-limit-select option")).map(
+      (o) => o.value
+    );
+    for (const v of selectOpts) {
+      if (!v.startsWith("auto")) {
+        expect(Number(v)).toBeLessThanOrEqual(12);
+      }
+    }
+
+    mount.querySelector<HTMLButtonElement>('[data-horizon="60"]')!.click();
+    expect(mount.textContent).toContain("60 Days");
+    mount.querySelector<HTMLButtonElement>('[data-horizon="90"]')!.click();
+    expect(mount.textContent).toContain("90 Days");
+    mount.querySelector<HTMLButtonElement>('[data-horizon="30"]')!.click();
+    expect(mount.textContent).toContain("30 Days");
+
+    // Start today's dose directly from Track (default clinical mode = 2 buttons: Again / Good)
     mount.querySelector<HTMLButtonElement>(".abhi-btn-study-plan90")!.click();
     expect(mount.querySelector(".abhi-flashcard")).not.toBeNull();
     mount.querySelector<HTMLButtonElement>(".abhi-btn-reveal")!.click();
     expect(mount.querySelector(".abhi-anki-ratings")).not.toBeNull();
+    expect(mount.querySelectorAll(".abhi-rate-btn").length).toBe(2);
   });
 });
 
@@ -409,32 +485,46 @@ describe("Cofre Offline de Respostas (Cache API, Merge e Fallback sem Rede)", ()
   });
 });
 
-describe("Estudo Extra Proporcional após concluir a dose do dia", () => {
-  it("não bloqueia após bater a meta diária, gera lote proporcional e protege SM-2 em revisões antecipadas", async () => {
+describe("Teto Estrito de 12 Novas/Dia e Revisão Máxima após concluir a dose do dia", () => {
+  it("bloqueia novas acima de 12/dia, libera TODAS as estudadas para revisão máxima e protege SM-2 em revisões antecipadas", async () => {
     localStorage.clear();
-    const now = 1_700_000_000_000;
+    const now = Date.now();
     const states: Record<string, AnkiCardState> = {};
-    // Memoriza 13 cartas (atingindo a meta diária Auto=13)
-    const first13 = dataset.cards.filter((c) => c.chapter === 0 || c.chapter === 1).slice(0, 13);
-    for (const c of first13) {
+    // Memoriza 12 cartas hoje (atingindo o teto máximo absoluto de 12 novas/dia)
+    const first12 = dataset.cards.filter((c) => c.chapter === 0 || c.chapter === 1).slice(0, 12);
+    for (const c of first12) {
       states[c.id] = scheduleAnkiCard(createInitialAnkiCardState(c.id), 4, now);
     }
-    const today = new Date().toISOString().slice(0, 10);
+    const today = new Date(now).toISOString().slice(0, 10);
+    const statsAtCap = {
+      totalReviewed: 12,
+      reviewedToday: 12,
+      correctToday: 12,
+      newStudiedToday: 12,
+      streak: 1,
+      lastSessionDate: today,
+    };
     localStorage.setItem("atp.abhidhamma.anki.cards.v1", JSON.stringify(states));
-    localStorage.setItem(
-      "atp.abhidhamma.anki.stats.v1",
-      JSON.stringify({ totalReviewed: 13, reviewedToday: 13, correctToday: 13, newStudiedToday: 13, streak: 1, lastSessionDate: today })
-    );
+    localStorage.setItem("atp.abhidhamma.anki.stats.v1", JSON.stringify(statsAtCap));
 
     // Revisão antecipada 10 min depois de graduar (intervalDays=4) NÃO infla o intervalo para 10+ dias
-    const earlyReviewed = scheduleAnkiCard(states[first13[0]!.id]!, 3, now + 600_000);
+    const earlyReviewed = scheduleAnkiCard(states[first12[0]!.id]!, 3, now + 600_000);
     expect(earlyReviewed.intervalDays).toBe(4);
     expect(earlyReviewed.reps).toBe(2);
 
-    const batch = computeProportionalExtraBatch(dataset.chapters, dataset.cards, states, null, now);
-    expect(batch.extraNew).toBe(10);
-    expect(batch.earlyReviews).toBe(5);
-    expect(buildEarlyReviewQueue(dataset.chapters, dataset.cards, states, null, 5, now).length).toBe(5);
+    // Com 12 novas já feitas hoje: 0 novas extras e TODAS as 12 estudadas liberadas para revisão máxima
+    const batchAtCap = computeProportionalExtraBatch(dataset.chapters, dataset.cards, states, null, now, statsAtCap);
+    expect(batchAtCap.extraNew).toBe(0);
+    expect(batchAtCap.hasMoreNew).toBe(false);
+    expect(batchAtCap.earlyReviews).toBe(12);
+    expect(buildEarlyReviewQueue(dataset.chapters, dataset.cards, states, null, undefined, now).length).toBe(12);
+
+    // Com apenas 5 novas feitas hoje (ex.: trilha de 90d): pode adicionar no máximo até completar 12/dia + TODAS as revisões
+    const statsUnderCap = { ...statsAtCap, newStudiedToday: 5 };
+    const batchUnderCap = computeProportionalExtraBatch(dataset.chapters, dataset.cards, states, null, now, statsUnderCap);
+    expect(batchUnderCap.extraNew).toBeGreaterThan(0);
+    expect(statsUnderCap.newStudiedToday + batchUnderCap.extraNew).toBeLessThanOrEqual(12);
+    expect(batchUnderCap.earlyReviews).toBe(12);
 
     const raw = JSON.stringify(dataset);
     global.fetch = async () => ({ ok: true, status: 200, json: async () => JSON.parse(raw) }) as any;
@@ -443,16 +533,17 @@ describe("Estudo Extra Proporcional após concluir a dose do dia", () => {
     const ui = new AbhidhammaSrsUI(mount, "pt");
     await ui.init();
 
-    // Mesmo com cota diária 100% concluída, ambos os botões permanecem DESBLOQUEADOS
+    // Mesmo com 12/12 novas concluídas, ambos os botões permanecem DESBLOQUEADOS para Revisão Máxima
     const allBtn = mount.querySelector<HTMLButtonElement>(".abhi-btn-study-all")!;
     expect(allBtn.disabled).toBe(false);
+    expect(allBtn.textContent).toContain("Revisão Máxima");
 
     mount.querySelector<HTMLButtonElement>('[data-track="plan90"]')!.click();
     const planBtn = mount.querySelector<HTMLButtonElement>(".abhi-btn-study-plan90")!;
     expect(planBtn.disabled).toBe(false);
     expect(mount.querySelector(".abhi-btn-review-ahead-plan90")).not.toBeNull();
 
-    // Clicar inicia imediatamente o lote extra proporcional
+    // Clicar inicia imediatamente a revisão máxima
     planBtn.click();
     expect(mount.querySelector(".abhi-flashcard")).not.toBeNull();
   });

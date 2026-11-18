@@ -104,6 +104,8 @@ export interface AnkiCardState {
   readonly lastReviewAt: number;
 }
 
+export type PaceHorizonDays = 30 | 60 | 90;
+
 export interface AnkiConfig {
   readonly learningStepsMin: readonly number[];
   readonly relearningStepsMin: readonly number[];
@@ -114,11 +116,20 @@ export interface AnkiConfig {
   readonly hardIntervalMultiplier: number;
   readonly easyBonus: number;
   readonly lapseIntervalMultiplier: number;
+  /** Limite diário de cartas novas (sempre limitado a no máximo 12/dia). */
   readonly newCardsPerDay: number;
+  /** Limite diário de revisões (fixado no máximo: 9999, nunca ocultando revisões pendentes). */
+  readonly maxReviewsPerDay: number;
   /** Ritmo automático diário distribuindo o baralho ao longo da jornada. */
   readonly adaptivePace: boolean;
+  /** Meta escolhida de conclusão (30, 60 ou 90 dias). */
+  readonly paceHorizonDays: PaceHorizonDays;
   /** Data-alvo interna (epoch ms) do ritmo automático; 0 = ainda não inicializada. */
   readonly paceTargetMs: number;
+  /** Teto máximo de intervalo (em dias) para manter revisão contínua e alta retenção. */
+  readonly maxIntervalDays: number;
+  /** Avaliação clínica estrita (apenas "De novo" e "Bom", sem negociar com "Difícil"). */
+  readonly strictClinicalGrading: boolean;
   /** Cartas novas extras liberadas manualmente apenas para o dia `extraNewDate` (YYYY-MM-DD). */
   readonly extraNewDate: string;
   readonly extraNewCount: number;
@@ -136,6 +147,8 @@ export interface AnkiStats {
 export interface Plan90Summary {
   readonly currentDay: number;
   readonly totalDays: number;
+  readonly reserveDays: number;
+  readonly maxIntervalDays: number;
   readonly daysRemaining: number;
   readonly isConsolidationPhase: boolean;
   readonly totalCards: number;
@@ -146,6 +159,8 @@ export interface Plan90Summary {
   readonly dueNowCount: number;
   readonly progressPct: number;
 }
+
+export type PacePlanSummary = Plan90Summary;
 
 export interface ChapterProgress {
   readonly chapter: number;

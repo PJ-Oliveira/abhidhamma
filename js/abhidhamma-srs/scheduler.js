@@ -1,11 +1,33 @@
 export const MINUTE_MS = 60_000;
 export const DAY_MS = 86_400_000;
 export const DEFAULT_LEARN_AHEAD_MS = 20 * MINUTE_MS;
-export const PACE_DEFAULT_HORIZON_DAYS = 90;
+export const MAX_NEW_CARDS_PER_DAY = 12;
+export const MAX_REVIEWS_PER_DAY = 9999;
+export const PACE_HORIZON_OPTIONS = [30, 60, 90];
+export const PACE_DEFAULT_HORIZON_DAYS = 30;
 export const PACE_RESERVE_DAYS = 12;
-export const PACE_MIN_NEW = 5;
-export const PACE_MAX_NEW = 60;
+export const PACE_MIN_NEW = 1;
+export const PACE_MAX_NEW = MAX_NEW_CARDS_PER_DAY;
 export const LEECH_THRESHOLD = 4;
+export function normalizeHorizonDays(days) {
+    if (days === 30 || days === 60 || days === 90)
+        return days;
+    return PACE_DEFAULT_HORIZON_DAYS;
+}
+export function getReserveDaysForHorizon(horizonDays) {
+    if (horizonDays === 30)
+        return 0;
+    if (horizonDays === 60)
+        return 6;
+    return PACE_RESERVE_DAYS;
+}
+export function getMaxIntervalForHorizon(horizonDays) {
+    if (horizonDays === 30)
+        return 10;
+    if (horizonDays === 60)
+        return 15;
+    return 21;
+}
 export const DEFAULT_ANKI_CONFIG = {
     learningStepsMin: [1, 10],
     relearningStepsMin: [10],
@@ -16,12 +38,52 @@ export const DEFAULT_ANKI_CONFIG = {
     hardIntervalMultiplier: 1.2,
     easyBonus: 1.3,
     lapseIntervalMultiplier: 0.5,
-    newCardsPerDay: 25,
+    newCardsPerDay: MAX_NEW_CARDS_PER_DAY,
+    maxReviewsPerDay: MAX_REVIEWS_PER_DAY,
     adaptivePace: true,
+    paceHorizonDays: PACE_DEFAULT_HORIZON_DAYS,
     paceTargetMs: 0,
+    maxIntervalDays: getMaxIntervalForHorizon(PACE_DEFAULT_HORIZON_DAYS),
+    strictClinicalGrading: true,
     extraNewDate: "",
     extraNewCount: 0,
 };
+export function normalizeAnkiConfig(raw) {
+    const merged = {
+        ...DEFAULT_ANKI_CONFIG,
+        ...(raw ?? {}),
+    };
+    const paceHorizonDays = normalizeHorizonDays(merged.paceHorizonDays);
+    const rawNew = Number.isFinite(merged.newCardsPerDay)
+        ? Math.floor(merged.newCardsPerDay)
+        : MAX_NEW_CARDS_PER_DAY;
+    const newCardsPerDay = Math.max(0, Math.min(MAX_NEW_CARDS_PER_DAY, rawNew));
+    const defaultMaxIv = getMaxIntervalForHorizon(paceHorizonDays);
+    const rawMaxIv = Number.isFinite(merged.maxIntervalDays) && merged.maxIntervalDays > 0
+        ? Math.floor(merged.maxIntervalDays)
+        : defaultMaxIv;
+    const maxIntervalDays = Math.max(1, Math.min(defaultMaxIv, rawMaxIv));
+    const extraNewCount = Number.isFinite(merged.extraNewCount) ? Math.max(0, Math.floor(merged.extraNewCount)) : 0;
+    return {
+        ...merged,
+        paceHorizonDays,
+        newCardsPerDay,
+        maxReviewsPerDay: MAX_REVIEWS_PER_DAY,
+        maxIntervalDays,
+        strictClinicalGrading: merged.strictClinicalGrading !== false,
+        extraNewCount,
+    };
+}
+export function setPaceHorizon(config, horizonDays, nowMs = Date.now()) {
+    const safeHorizon = normalizeHorizonDays(horizonDays);
+    return normalizeAnkiConfig({
+        ...config,
+        adaptivePace: true,
+        paceHorizonDays: safeHorizon,
+        paceTargetMs: nowMs + safeHorizon * DAY_MS,
+        maxIntervalDays: getMaxIntervalForHorizon(safeHorizon),
+    });
+}
 export const STORAGE_STATES_KEY = "atp.abhidhamma.anki.cards.v1";
 export const STORAGE_STATS_KEY = "atp.abhidhamma.anki.stats.v1";
 export const STORAGE_CONFIG_KEY = "atp.abhidhamma.anki.config.v1";
@@ -108,10 +170,7 @@ export function loadAnkiConfig() {
         const raw = localStorage.getItem(STORAGE_CONFIG_KEY);
         if (raw) {
             const parsed = JSON.parse(raw);
-            return {
-                ...DEFAULT_ANKI_CONFIG,
-                ...parsed,
-            };
+            return normalizeAnkiConfig(parsed);
         }
     }
     catch {
@@ -120,7 +179,7 @@ export function loadAnkiConfig() {
 }
 export function saveAnkiConfig(config) {
     try {
-        localStorage.setItem(STORAGE_CONFIG_KEY, JSON.stringify(config));
+        localStorage.setItem(STORAGE_CONFIG_KEY, JSON.stringify(normalizeAnkiConfig(config)));
     }
     catch {
     }
@@ -166,26 +225,35 @@ export function countLeeches(states, threshold = LEECH_THRESHOLD) {
     return n;
 }
 export function ensurePaceTarget(config, nowMs = Date.now()) {
-    if (!config.adaptivePace || config.paceTargetMs > 0)
-        return config;
-    return { ...config, paceTargetMs: nowMs + PACE_DEFAULT_HORIZON_DAYS * DAY_MS };
+    const normalized = normalizeAnkiConfig(config);
+    if (!normalized.adaptivePace || normalized.paceTargetMs > 0)
+        return normalized;
+    return { ...normalized, paceTargetMs: nowMs + normalized.paceHorizonDays * DAY_MS };
 }
 function toDayString(nowMs) {
     return new Date(nowMs).toISOString().slice(0, 10);
 }
+export function isReviewDue(state, nowMs = Date.now()) {
+    if (!state || state.phase === "new")
+        return false;
+    if (state.phase === "review") {
+        return state.dueAt <= nowMs || toDayString(state.dueAt) <= toDayString(nowMs);
+    }
+    return state.dueAt <= nowMs;
+}
 export function countDueCards(cards, states, nowMs = Date.now()) {
     let due = 0;
     for (const c of cards) {
-        const st = states[c.id];
-        if (st && st.phase !== "new" && st.dueAt <= nowMs)
+        if (isReviewDue(states[c.id], nowMs))
             due++;
     }
     return due;
 }
 export function computeDailyNewQuota(cards, states, stats, config, nowMs = Date.now()) {
-    const extra = config.extraNewDate === toDayString(nowMs) ? Math.max(0, config.extraNewCount) : 0;
-    if (!config.adaptivePace || config.paceTargetMs <= 0) {
-        return config.newCardsPerDay + extra;
+    const safe = normalizeAnkiConfig(config);
+    const extra = safe.extraNewDate === toDayString(nowMs) ? Math.max(0, safe.extraNewCount) : 0;
+    if (!safe.adaptivePace || safe.paceTargetMs <= 0) {
+        return Math.min(MAX_NEW_CARDS_PER_DAY, safe.newCardsPerDay + extra);
     }
     let remaining = 0;
     for (const c of cards) {
@@ -193,10 +261,14 @@ export function computeDailyNewQuota(cards, states, stats, config, nowMs = Date.
         if (!st || st.phase === "new")
             remaining++;
     }
-    const msLeft = config.paceTargetMs - PACE_RESERVE_DAYS * DAY_MS - nowMs;
+    if (remaining === 0)
+        return 0;
+    const reserveDays = getReserveDaysForHorizon(safe.paceHorizonDays);
+    const msLeft = safe.paceTargetMs - reserveDays * DAY_MS - nowMs;
     let base;
     if (msLeft <= 0) {
-        base = remaining > 0 ? Math.ceil(remaining / 10) : 0;
+        const totalDaysLeft = Math.max(1, Math.ceil((safe.paceTargetMs - nowMs) / DAY_MS));
+        base = Math.ceil((remaining + stats.newStudiedToday) / totalDaysLeft);
     }
     else {
         const daysLeft = Math.max(1, Math.ceil(msLeft / DAY_MS));
@@ -210,15 +282,17 @@ export function computeDailyNewQuota(cards, states, stats, config, nowMs = Date.
         base = Math.ceil(base * 0.6);
     else if (due >= 120)
         base = Math.ceil(base * 0.8);
-    return base + extra;
+    return Math.min(MAX_NEW_CARDS_PER_DAY, base + extra);
 }
 export function computePlan90Summary(cards, states, stats, config, nowMs = Date.now()) {
     const effective = ensurePaceTarget({ ...config, adaptivePace: true }, nowMs);
-    const startMs = effective.paceTargetMs - PACE_DEFAULT_HORIZON_DAYS * DAY_MS;
+    const totalDays = effective.paceHorizonDays;
+    const reserveDays = getReserveDaysForHorizon(totalDays);
+    const maxIntervalDays = effective.maxIntervalDays;
+    const startMs = effective.paceTargetMs - totalDays * DAY_MS;
     const elapsedDays = Math.floor(Math.max(0, nowMs - startMs) / DAY_MS);
-    const currentDay = Math.min(PACE_DEFAULT_HORIZON_DAYS, elapsedDays + 1);
+    const currentDay = Math.min(totalDays, elapsedDays + 1);
     const daysRemaining = Math.max(0, Math.ceil((effective.paceTargetMs - nowMs) / DAY_MS));
-    const isConsolidationPhase = daysRemaining <= PACE_RESERVE_DAYS;
     let memorizedCards = 0;
     let remainingNewCards = 0;
     let dueNowCount = 0;
@@ -230,16 +304,19 @@ export function computePlan90Summary(cards, states, stats, config, nowMs = Date.
         else {
             if (isCardMemorized(st))
                 memorizedCards++;
-            if (st.dueAt <= nowMs)
+            if (isReviewDue(st, nowMs))
                 dueNowCount++;
         }
     }
+    const isConsolidationPhase = remainingNewCards === 0 || (reserveDays > 0 && daysRemaining <= reserveDays);
     const dailyNewTarget = computeDailyNewQuota(cards, states, stats, effective, nowMs);
     const newRemainingToday = Math.max(0, Math.min(remainingNewCards, dailyNewTarget - stats.newStudiedToday));
     const progressPct = cards.length > 0 ? Math.round((memorizedCards / cards.length) * 100) : 100;
     return {
         currentDay,
-        totalDays: PACE_DEFAULT_HORIZON_DAYS,
+        totalDays,
+        reserveDays,
+        maxIntervalDays,
         daysRemaining,
         isConsolidationPhase,
         totalCards: cards.length,
@@ -251,6 +328,7 @@ export function computePlan90Summary(cards, states, stats, config, nowMs = Date.
         progressPct,
     };
 }
+export const computePacePlanSummary = computePlan90Summary;
 export function interleaveByChapter(items) {
     const buckets = new Map();
     for (const it of items) {
@@ -321,8 +399,10 @@ export function defaultClozeStage(state) {
     return 3;
 }
 export function scheduleAnkiCard(prev, rating, nowMs = Date.now(), config = DEFAULT_ANKI_CONFIG) {
-    const steps = config.learningStepsMin.length > 0 ? config.learningStepsMin : [1, 10];
-    const relearnSteps = config.relearningStepsMin.length > 0 ? config.relearningStepsMin : [10];
+    const safeCfg = normalizeAnkiConfig(config);
+    const steps = safeCfg.learningStepsMin.length > 0 ? safeCfg.learningStepsMin : [1, 10];
+    const relearnSteps = safeCfg.relearningStepsMin.length > 0 ? safeCfg.relearningStepsMin : [10];
+    const capInterval = (days) => Math.max(1, Math.min(safeCfg.maxIntervalDays, days));
     if (prev.phase === "new" || prev.phase === "learning") {
         const currentStep = Math.max(0, Math.min(prev.step, steps.length - 1));
         const step0Min = steps[0] ?? 1;
@@ -353,7 +433,7 @@ export function scheduleAnkiCard(prev, rating, nowMs = Date.now(), config = DEFA
         if (rating === 3) {
             const nextStep = prev.phase === "new" ? 1 : currentStep + 1;
             if (nextStep >= steps.length) {
-                const days = Math.max(1, config.graduatingIntervalDays);
+                const days = capInterval(safeCfg.graduatingIntervalDays);
                 return {
                     ...prev,
                     phase: "review",
@@ -374,7 +454,7 @@ export function scheduleAnkiCard(prev, rating, nowMs = Date.now(), config = DEFA
                 lastReviewAt: nowMs,
             };
         }
-        const easyDays = Math.max(1, config.easyIntervalDays);
+        const easyDays = capInterval(safeCfg.easyIntervalDays);
         return {
             ...prev,
             phase: "review",
@@ -388,8 +468,8 @@ export function scheduleAnkiCard(prev, rating, nowMs = Date.now(), config = DEFA
     if (prev.phase === "review") {
         const baseInterval = Math.max(1, prev.intervalDays);
         if (rating === 1) {
-            const nextEase = Math.max(config.minEase, round2(prev.easeFactor - 0.2));
-            const nextLapsedDays = Math.max(1, Math.round(baseInterval * config.lapseIntervalMultiplier));
+            const nextEase = Math.max(safeCfg.minEase, round2(prev.easeFactor - 0.2));
+            const nextLapsedDays = capInterval(Math.round(baseInterval * safeCfg.lapseIntervalMultiplier));
             const relearnMin = relearnSteps[0] ?? 10;
             return {
                 ...prev,
@@ -403,22 +483,26 @@ export function scheduleAnkiCard(prev, rating, nowMs = Date.now(), config = DEFA
                 lastReviewAt: nowMs,
             };
         }
-        if (prev.dueAt > nowMs && prev.lastReviewAt > 0 && prev.dueAt > prev.lastReviewAt) {
+        if (toDayString(prev.dueAt) > toDayString(nowMs) &&
+            prev.dueAt > nowMs &&
+            prev.lastReviewAt > 0 &&
+            prev.dueAt > prev.lastReviewAt) {
             const elapsedRatio = Math.max(0, Math.min(1, (nowMs - prev.lastReviewAt) / (prev.dueAt - prev.lastReviewAt)));
             if (rating === 2) {
-                const nextEase = Math.max(config.minEase, round2(prev.easeFactor - 0.05));
+                const nextEase = Math.max(safeCfg.minEase, round2(prev.easeFactor - 0.05));
+                const cappedBase = capInterval(baseInterval);
                 return {
                     ...prev,
                     easeFactor: nextEase,
                     reps: prev.reps + 1,
-                    dueAt: Math.max(prev.dueAt, nowMs + baseInterval * DAY_MS),
+                    dueAt: Math.max(prev.dueAt, nowMs + cappedBase * DAY_MS),
                     lastReviewAt: nowMs,
                 };
             }
             const fullNext = rating === 4
-                ? Math.max(baseInterval + 2, Math.round(baseInterval * round2(prev.easeFactor + 0.15) * config.easyBonus))
-                : Math.max(baseInterval + 1, Math.round(baseInterval * prev.easeFactor));
-            const nextDays = Math.max(baseInterval, Math.round(baseInterval + (fullNext - baseInterval) * elapsedRatio));
+                ? capInterval(Math.max(baseInterval + 2, Math.round(baseInterval * round2(prev.easeFactor + 0.15) * safeCfg.easyBonus)))
+                : capInterval(Math.max(baseInterval + 1, Math.round(baseInterval * prev.easeFactor)));
+            const nextDays = capInterval(Math.max(baseInterval, Math.round(baseInterval + (fullNext - baseInterval) * elapsedRatio)));
             const nextEase = rating === 4 ? round2(prev.easeFactor + 0.05 * elapsedRatio) : prev.easeFactor;
             return {
                 ...prev,
@@ -430,8 +514,8 @@ export function scheduleAnkiCard(prev, rating, nowMs = Date.now(), config = DEFA
             };
         }
         if (rating === 2) {
-            const nextEase = Math.max(config.minEase, round2(prev.easeFactor - 0.15));
-            const nextDays = Math.max(baseInterval + 1, Math.round(baseInterval * config.hardIntervalMultiplier));
+            const nextEase = Math.max(safeCfg.minEase, round2(prev.easeFactor - 0.15));
+            const nextDays = capInterval(Math.max(baseInterval + 1, Math.round(baseInterval * safeCfg.hardIntervalMultiplier)));
             return {
                 ...prev,
                 phase: "review",
@@ -444,7 +528,7 @@ export function scheduleAnkiCard(prev, rating, nowMs = Date.now(), config = DEFA
             };
         }
         if (rating === 3) {
-            const nextDays = Math.max(baseInterval + 1, Math.round(baseInterval * prev.easeFactor));
+            const nextDays = capInterval(Math.max(baseInterval + 1, Math.round(baseInterval * prev.easeFactor)));
             return {
                 ...prev,
                 phase: "review",
@@ -456,7 +540,7 @@ export function scheduleAnkiCard(prev, rating, nowMs = Date.now(), config = DEFA
             };
         }
         const nextEase = round2(prev.easeFactor + 0.15);
-        const nextDays = Math.max(baseInterval + 2, Math.round(baseInterval * nextEase * config.easyBonus));
+        const nextDays = capInterval(Math.max(baseInterval + 2, Math.round(baseInterval * nextEase * safeCfg.easyBonus)));
         return {
             ...prev,
             phase: "review",
@@ -495,7 +579,7 @@ export function scheduleAnkiCard(prev, rating, nowMs = Date.now(), config = DEFA
     if (rating === 3) {
         const nextStep = currentStep + 1;
         if (nextStep >= relearnSteps.length) {
-            const days = Math.max(1, prev.lapsedIntervalDays);
+            const days = capInterval(prev.lapsedIntervalDays);
             return {
                 ...prev,
                 phase: "review",
@@ -516,7 +600,7 @@ export function scheduleAnkiCard(prev, rating, nowMs = Date.now(), config = DEFA
             lastReviewAt: nowMs,
         };
     }
-    const easyDays = Math.max(4, prev.lapsedIntervalDays + 1);
+    const easyDays = capInterval(Math.max(4, prev.lapsedIntervalDays + 1));
     return {
         ...prev,
         phase: "review",
@@ -645,7 +729,7 @@ export function computeAllChapterProgress(chapters, cards, states, nowMs = Date.
                     }
                 }
                 else if (st.phase === "review") {
-                    if (st.dueAt <= nowMs) {
+                    if (isReviewDue(st, nowMs)) {
                         reviewDueCount++;
                     }
                 }
@@ -758,7 +842,7 @@ export function buildStudyQueue(chapters, cards, states, stats, config = DEFAULT
             }
         }
         else if (st.phase === "review") {
-            if (st.dueAt <= nowMs) {
+            if (isReviewDue(st, nowMs)) {
                 dueReview.push({ card, dueAt: st.dueAt });
             }
         }
@@ -776,10 +860,10 @@ export function buildStudyQueue(chapters, cards, states, stats, config = DEFAULT
         return TIER_ORDER[a.tier] - TIER_ORDER[b.tier];
     });
     const dailyQuota = computeDailyNewQuota(cards, states, stats, config, nowMs);
-    const remainingNewQuota = Math.max(0, dailyQuota - stats.newStudiedToday);
+    const remainingNewQuota = Math.max(0, Math.min(MAX_NEW_CARDS_PER_DAY, dailyQuota) - stats.newStudiedToday);
     const cappedNew = newUnlocked.slice(0, remainingNewQuota);
     const learningCards = dueLearning.map((x) => x.card);
-    const reviewCards = interleaveByChapter(dueReview.map((x) => x.card));
+    const reviewCards = interleaveByChapter(dueReview.map((x) => x.card)).slice(0, MAX_REVIEWS_PER_DAY);
     const aheadCards = learnAhead.map((x) => x.card);
     const queue = [...learningCards, ...reviewCards, ...cappedNew];
     if (queue.length === 0 && aheadCards.length > 0) {
@@ -793,7 +877,7 @@ export function buildStudyQueue(chapters, cards, states, stats, config = DEFAULT
         queue,
     };
 }
-export function buildEarlyReviewQueue(chapters, cards, states, scopeChapter = null, limit = 10, nowMs = Date.now()) {
+export function buildEarlyReviewQueue(chapters, cards, states, scopeChapter = null, limit = MAX_REVIEWS_PER_DAY, nowMs = Date.now()) {
     const progressMap = computeAllChapterProgress(chapters, cards, states, nowMs);
     const scoped = scopeChapter === null ? cards : cards.filter((c) => c.chapter === scopeChapter);
     const candidates = [];
@@ -812,7 +896,7 @@ export function buildEarlyReviewQueue(chapters, cards, states, scopeChapter = nu
     candidates.sort((a, b) => a.score - b.score || a.dueAt - b.dueAt);
     return interleaveByChapter(candidates.slice(0, Math.max(1, limit)).map((x) => x.card));
 }
-export function computeProportionalExtraBatch(chapters, cards, states, scopeChapter = null, nowMs = Date.now()) {
+export function computeProportionalExtraBatch(chapters, cards, states, scopeChapter = null, nowMs = Date.now(), stats) {
     const progressMap = computeAllChapterProgress(chapters, cards, states, nowMs);
     const metaByChapter = new Map(chapters.map((m) => [m.chapter, m]));
     const cardsByChapter = new Map();
@@ -844,13 +928,15 @@ export function computeProportionalExtraBatch(chapters, cards, states, scopeChap
                 fragile++;
         }
     }
-    const extraNew = unlockedNew === 0 ? 0 : fragile >= 20 ? Math.min(5, unlockedNew) : Math.min(10, unlockedNew);
-    const targetReviews = extraNew > 0 ? Math.max(3, Math.ceil(extraNew * 0.5)) : 10;
-    const earlyReviews = Math.min(studied, targetReviews);
+    const remainingCapToday = Math.max(0, MAX_NEW_CARDS_PER_DAY - (stats?.newStudiedToday ?? 0));
+    const extraNew = unlockedNew === 0 || remainingCapToday === 0
+        ? 0
+        : Math.min(unlockedNew, remainingCapToday, fragile >= 20 ? 3 : 6);
+    const earlyReviews = Math.min(studied, MAX_REVIEWS_PER_DAY);
     return {
         extraNew,
         earlyReviews,
-        hasMoreNew: unlockedNew > 0,
+        hasMoreNew: unlockedNew > 0 && remainingCapToday > 0,
         hasReviewable: studied > 0,
     };
 }

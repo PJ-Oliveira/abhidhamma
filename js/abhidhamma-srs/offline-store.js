@@ -1,4 +1,4 @@
-import { DEFAULT_ANKI_CONFIG, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, STORAGE_MNEMONICS_KEY, } from "./scheduler.js?v=cf555ccc";
+import { DEFAULT_ANKI_CONFIG, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, normalizeAnkiConfig, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, STORAGE_MNEMONICS_KEY, } from "./scheduler.js?v=6819cf1b";
 export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v26";
 export const VAULT_CACHE_NAME = "abhidhamma-anki-vault-v1";
 export const VAULT_SNAPSHOT_PATH = "/_offline_vault/abhidhamma-anki-progress.json";
@@ -77,11 +77,11 @@ function mergeConfig(a, b, aUpdated, bUpdated) {
         : secondary.paceTargetMs > 0
             ? secondary.paceTargetMs
             : 0;
-    return {
+    return normalizeAnkiConfig({
         ...DEFAULT_ANKI_CONFIG,
         ...primary,
         paceTargetMs,
-    };
+    });
 }
 export function mergeSnapshots(a, b) {
     const states = { ...a.states };
@@ -528,7 +528,7 @@ export function parseProgressBackup(rawJson) {
         updatedAt: typeof parsed.updatedAt === "number" ? parsed.updatedAt : now,
         states: parsed.states,
         stats: parsed.stats ?? loadAnkiStats(now),
-        config: { ...DEFAULT_ANKI_CONFIG, ...(parsed.config ?? {}) },
+        config: normalizeAnkiConfig(parsed.config),
         mnemonics: parsed.mnemonics && typeof parsed.mnemonics === "object" ? parsed.mnemonics : {},
         reviewLogCount: typeof parsed.reviewLogCount === "number" ? parsed.reviewLogCount : Object.keys(parsed.states).length,
         recentLog: Array.isArray(parsed.recentLog) ? parsed.recentLog.slice(-MAX_SNAPSHOT_LOG) : [],

@@ -1,6 +1,6 @@
-import { TetrisEngine } from "./engine.js?v=cf555ccc";
-import { loadCurriculum } from "./curriculum.js?v=cf555ccc";
-import { computeUnitMastery } from "./scheduler.js?v=cf555ccc";
+import { TetrisEngine } from "./engine.js?v=6819cf1b";
+import { loadCurriculum } from "./curriculum.js?v=6819cf1b";
+import { computeUnitMastery } from "./scheduler.js?v=6819cf1b";
 const LABELS = {
     pt: {
         title: "Abhidhamma Tetris",

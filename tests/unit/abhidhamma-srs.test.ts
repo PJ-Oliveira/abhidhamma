@@ -204,16 +204,31 @@ describe("Abhidhammatthasaṅgaha Anki SRS Engine & Exhaustive Dataset", () => {
     const revealBtn = mount.querySelector<HTMLButtonElement>(".abhi-btn-reveal")!;
     revealBtn.click();
     expect(mount.querySelector(".abhi-anki-ratings")).not.toBeNull();
-    expect(mount.querySelectorAll(".abhi-rate-btn").length).toBe(4);
+    // Default is strict clinical grading: 2 buttons (De novo / Bom), no Hard button
+    expect(mount.querySelectorAll(".abhi-rate-btn").length).toBe(2);
+    expect(mount.querySelector('.abhi-rate-btn[data-rate="2"]')).toBeNull();
 
-    // Rate "Easy" (4) -> saves state to localStorage
-    const easyBtn = mount.querySelector<HTMLButtonElement>('.abhi-rate-btn[data-rate="4"]')!;
-    easyBtn.click();
+    // Rate "Bom" (3) -> saves learning state to localStorage
+    const goodBtn = mount.querySelector<HTMLButtonElement>('.abhi-rate-btn[data-rate="3"]')!;
+    goodBtn.click();
     const saved = JSON.parse(localStorage.getItem("atp.abhidhamma.anki.cards.v1") || "{}");
     expect(Object.keys(saved).length).toBe(1);
     const firstKey = Object.keys(saved)[0]!;
-    expect(saved[firstKey].phase).toBe("review");
-    expect(saved[firstKey].intervalDays).toBe(4);
+    expect(saved[firstKey].phase).toBe("learning");
+    expect(saved[firstKey].step).toBe(1);
+
+    // Go back, toggle to classic 4-button Anki mode, and rate "Fácil" (4)
+    mount.querySelector<HTMLButtonElement>(".abhi-btn-back")!.click();
+    mount.querySelector<HTMLButtonElement>(".abhi-btn-clinical-toggle")!.click();
+    mount.querySelector<HTMLButtonElement>('[data-study-chapter="0"]')!.click();
+    mount.querySelector<HTMLButtonElement>(".abhi-btn-reveal")!.click();
+    expect(mount.querySelectorAll(".abhi-rate-btn").length).toBe(4);
+    const easyBtn = mount.querySelector<HTMLButtonElement>('.abhi-rate-btn[data-rate="4"]')!;
+    easyBtn.click();
+    const saved2 = JSON.parse(localStorage.getItem("atp.abhidhamma.anki.cards.v1") || "{}");
+    const reviewedCards = Object.values(saved2).filter((s: any) => s.phase === "review");
+    expect(reviewedCards.length).toBe(1);
+    expect((reviewedCards[0] as any).intervalDays).toBe(4);
   });
 
   it("renders AbhidhammaSrsUI dynamically in pt, en, and es via setLang()", async () => {
@@ -229,14 +244,14 @@ describe("Abhidhammatthasaṅgaha Anki SRS Engine & Exhaustive Dataset", () => {
     mount.querySelector<HTMLButtonElement>('[data-study-chapter="0"]')!.click();
     mount.querySelector<HTMLButtonElement>(".abhi-btn-reveal")!.click();
     expect(mount.querySelector('.abhi-rate-btn[data-rate="1"]')!.textContent).toContain("Again");
-    expect(mount.querySelector('.abhi-rate-btn[data-rate="4"]')!.textContent).toContain("Easy");
+    expect(mount.querySelector('.abhi-rate-btn[data-rate="3"]')!.textContent).toContain("Good");
 
     ui.setLang("es");
     expect(mount.querySelector('.abhi-rate-btn[data-rate="1"]')!.textContent).toContain("Otra vez");
-    expect(mount.querySelector('.abhi-rate-btn[data-rate="4"]')!.textContent).toContain("Fácil");
+    expect(mount.querySelector('.abhi-rate-btn[data-rate="3"]')!.textContent).toContain("Bien");
 
     ui.setLang("pt");
-    expect(mount.querySelector('.abhi-rate-btn[data-rate="1"]')!.textContent).toContain("Errei");
-    expect(mount.querySelector('.abhi-rate-btn[data-rate="4"]')!.textContent).toContain("Fácil");
+    expect(mount.querySelector('.abhi-rate-btn[data-rate="1"]')!.textContent).toContain("De novo");
+    expect(mount.querySelector('.abhi-rate-btn[data-rate="3"]')!.textContent).toContain("Bom");
   });
 });

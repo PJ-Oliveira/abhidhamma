@@ -8,22 +8,26 @@ import {
   computeProportionalExtraBatch,
   countLeeches,
   createInitialAnkiCardState,
-  DAY_MS,
   defaultClozeStage,
   ensurePaceTarget,
+  getMaxIntervalForHorizon,
+  getReserveDaysForHorizon,
   isLeech,
   isRecitationCard,
   loadAnkiCardStates,
   loadAnkiConfig,
   loadAnkiStats,
   loadMnemonicNotes,
-  PACE_DEFAULT_HORIZON_DAYS,
+  MAX_NEW_CARDS_PER_DAY,
+  MAX_REVIEWS_PER_DAY,
+  PACE_HORIZON_OPTIONS,
   previewAnkiIntervals,
   saveAnkiCardStates,
   saveAnkiConfig,
   saveAnkiStats,
   saveMnemonicNote,
   scheduleAnkiCard,
+  setPaceHorizon,
 } from "./scheduler.js";
 import {
   buildLocalStorageSnapshot,
@@ -49,6 +53,7 @@ import type {
   AnkiStats,
   CardTier,
   Lang,
+  PaceHorizonDays,
   StudyFilterMode,
 } from "./types.js";
 
@@ -66,9 +71,23 @@ interface AbhiSrsStrings {
   retentionToday: string;
   streak: string;
   daysUnit: string;
+  daysWord: string;
   newPerDay: string;
+  reviewsPerDayLabel: string;
+  reviewsMaxBadge: string;
+  reviewOnlyOption: string;
+  maxNewTag: string;
   paceAuto: string;
   unlimited: string;
+  clinicalToggleOn: string;
+  clinicalToggleOff: string;
+  clinicalGradingHint: string;
+  horizonGroupLabel: string;
+  horizonSubFmt: string;
+  horizonReserveFmt: string;
+  planReviewsMaxLabel: string;
+  planReviewsMaxValue: string;
+  planProtocolSummary: string;
   tierAtom: string;
   tierStructure: string;
   tierHouse: string;
@@ -172,9 +191,9 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
   pt: {
     moduleTitle: "Abhidhammatthasaṅgaha — Repetição Espaçada (Anki SRS)",
     moduleSubtitle:
-      "Memorização completa do Abhidhammatthasaṅgaha Mūla por capítulos ou em trilha diária de 90 dias, apoiada nas estruturas matemáticas das listas canônicas.",
+      "Memorização completa do Abhidhammatthasaṅgaha Mūla (357 cartas) em 30, 60 ou 90 dias: teto rígido de até 12 novas/dia e revisões máximas (9999/dia) para retenção sem falhas.",
     modeChapters: "📚 Por Capítulos",
-    modePlan90: "📅 Trilha 90 Dias",
+    modePlan90: "📅 Trilha {days} Dias",
     studyAllUnlocked: "Estudar Todos Desbloqueados",
     studyTodayDose: "Estudar Dose de Hoje",
     studyChapter: "Estudar Capítulo",
@@ -184,9 +203,25 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
     retentionToday: "Retenção Hoje",
     streak: "Sequência",
     daysUnit: "d",
-    newPerDay: "Novas/dia",
+    daysWord: "dias",
+    newPerDay: "Novas/dia (máx. 12)",
+    reviewsPerDayLabel: "Rev./dia",
+    reviewsMaxBadge: "9999 (Máx.)",
+    reviewOnlyOption: "0 (Só revisão)",
+    maxNewTag: "máx.",
     paceAuto: "Auto",
-    unlimited: "Ilimitado",
+    unlimited: "9999 (Máx.)",
+    clinicalToggleOn: "🎯 Avaliação Clínica (De novo / Bom)",
+    clinicalToggleOff: "🎛 Anki Clássico (4 botões)",
+    clinicalGradingHint:
+      "Avaliação clínica: exatidão instantânea = Bom · qualquer lapso ou dúvida = De novo (sem negociar com Difícil).",
+    horizonGroupLabel: "Escolher prazo da trilha de memorização",
+    horizonSubFmt: "{quota} novas/d · rev. ≤{cap}d",
+    horizonReserveFmt: "+{res}d só revisão",
+    planReviewsMaxLabel: "Revisões máximas/dia",
+    planReviewsMaxValue: "9999 (teto ≤{cap}d)",
+    planProtocolSummary:
+      "Protocolo ativo: teto de {maxNew} novas/dia · fila de revisões ilimitada (9999/dia, zerar todo dia) · intervalo máximo de {cap}d.",
     tierAtom: "Tijolo (Átomo)",
     tierStructure: "Estrutura",
     tierHouse: "Casa (Síntese)",
@@ -205,7 +240,7 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
     countReview: "Revisar",
     countMastered: "Dominadas",
     showAnswer: "Mostrar Resposta [Espaço]",
-    again: "Errei",
+    again: "De novo",
     hard: "Difícil",
     good: "Bom",
     easy: "Fácil",
@@ -222,29 +257,29 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
     sessionCompleteDesc: "Todas as cartas devidas e a cota atual deste escopo foram revisadas.",
     reviewedTodayLabel: "Revisadas hoje",
     newTodayLabel: "Novas estudadas hoje",
-    studyMoreNew: "Estudar Lote Extra Proporcional",
+    studyMoreNew: "Estudar Mais (≤12 novas/d + Revisão Máxima)",
     studyExtraBatch: "⚡ Dose concluída · Estudar Mais",
-    reviewAheadBtn: "🔁 Revisar Antecipado",
+    reviewAheadBtn: "🔁 Revisão Máxima",
     doseDoneLabel: "Dose do dia concluída!",
     loadingDataset: "Carregando tratado e baralho canônico…",
     loadError: "Não foi possível carregar o baralho do Abhidhammatthasaṅgaha.",
     allScopeTitle: "Todos os Capítulos Desbloqueados",
-    plan90ScopeTitle: "Trilha Diária · 90 Dias",
+    plan90ScopeTitle: "Trilha Diária · {days} Dias",
     chapterPrefix: "Cap.",
     resetProgress: "Resetar Progresso",
     resetConfirm: "Tem certeza que deseja zerar todo o histórico Anki do Abhidhammatthasaṅgaha?",
-    plan90Title: "Plano Estruturado — 90 Dias",
+    plan90Title: "Plano Estruturado — {days} Dias",
     plan90Desc:
-      "Distribui automaticamente todo o conteúdo (conceitos, listas, estruturas matemáticas, enumerações, sequências e confundíveis) com reserva final de 12 dias só para consolidação e freio automático contra acúmulo de revisões.",
+      "Cota matemática rigorosa (máx. 12 novas/dia) com revisões máximas ilimitadas (9999/dia) e teto de intervalo ajustado ao prazo para zerar a fila de revisão todo dia sem esquecer.",
     plan90DayLabel: "Dia",
     plan90DaysLeft: "Dias restantes",
-    plan90PhaseBuild: "Fase de Construção (Novas + Revisão)",
-    plan90PhaseConsolidate: "Fase de Consolidação Final (Só Revisão)",
-    plan90DailyTarget: "Cota diária automática",
+    plan90PhaseBuild: "Fase de Carga (Novas ≤12/d + Revisão Máxima)",
+    plan90PhaseConsolidate: "Fase de Consolidação Final (100% Revisão)",
+    plan90DailyTarget: "Novas/dia (teto 12)",
     plan90RemainingNew: "Cartas novas restantes",
     plan90DoseToday: "Dose restante de hoje",
-    plan90RestartDate: "Reiniciar contagem dos 90 dias a partir de hoje",
-    plan90RestartConfirm: "Redefinir o início da trilha de 90 dias para hoje (mantendo suas cartas já memorizadas)?",
+    plan90RestartDate: "Reiniciar contagem dos {days} dias a partir de hoje",
+    plan90RestartConfirm: "Redefinir o início da trilha de {days} dias para hoje (mantendo suas cartas já memorizadas)?",
     filterLeeches: "🩸 Sanguessugas",
     modeChecksum: "📐 Estrutura Matemática",
     modeEnumeration: "☑ Enumeração",
@@ -284,9 +319,9 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
   en: {
     moduleTitle: "Abhidhammatthasaṅgaha — Spaced Repetition (Anki SRS)",
     moduleSubtitle:
-      "Complete mastery of the Abhidhammatthasaṅgaha Mūla by chapters or on a structured 90-day daily track, grounded in the mathematical construction of its canonical lists.",
+      "Complete mastery of the Abhidhammatthasaṅgaha Mūla (357 cards) in 30, 60, or 90 days: strict cap of 12 new/day max and unlimited reviews (9999/day) so nothing is forgotten.",
     modeChapters: "📚 By Chapters",
-    modePlan90: "📅 90-Day Track",
+    modePlan90: "📅 {days}-Day Track",
     studyAllUnlocked: "Study All Unlocked",
     studyTodayDose: "Study Today's Dose",
     studyChapter: "Study Chapter",
@@ -296,9 +331,25 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
     retentionToday: "Retention Today",
     streak: "Streak",
     daysUnit: "d",
-    newPerDay: "New/day",
+    daysWord: "days",
+    newPerDay: "New/day (max 12)",
+    reviewsPerDayLabel: "Rev./day",
+    reviewsMaxBadge: "9999 (Max)",
+    reviewOnlyOption: "0 (Review only)",
+    maxNewTag: "max",
     paceAuto: "Auto",
-    unlimited: "Unlimited",
+    unlimited: "9999 (Max)",
+    clinicalToggleOn: "🎯 Clinical Grading (Again / Good)",
+    clinicalToggleOff: "🎛 Classic Anki (4 buttons)",
+    clinicalGradingHint:
+      "Clinical grading: instant exact recall = Good · any lapse or hesitation = Again (no negotiating with Hard).",
+    horizonGroupLabel: "Choose memorization track duration",
+    horizonSubFmt: "{quota} new/d · rev. ≤{cap}d",
+    horizonReserveFmt: "+{res}d review-only",
+    planReviewsMaxLabel: "Max reviews/day",
+    planReviewsMaxValue: "9999 (cap ≤{cap}d)",
+    planProtocolSummary:
+      "Active protocol: strict {maxNew} new/day cap · unlimited review queue (9999/day, clear daily) · max review interval {cap}d.",
     tierAtom: "Brick (Atom)",
     tierStructure: "Structure",
     tierHouse: "House (Synthesis)",
@@ -334,29 +385,29 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
     sessionCompleteDesc: "All due cards and today's new card quota in this scope have been completed.",
     reviewedTodayLabel: "Reviewed today",
     newTodayLabel: "New studied today",
-    studyMoreNew: "Study Proportional Extra Batch",
+    studyMoreNew: "Study More (≤12 new/d + Maximum Review)",
     studyExtraBatch: "⚡ Dose Done · Study More",
-    reviewAheadBtn: "🔁 Review Ahead",
+    reviewAheadBtn: "🔁 Maximum Review",
     doseDoneLabel: "Today's dose complete!",
     loadingDataset: "Loading canonical treatise deck…",
     loadError: "Failed to load the Abhidhammatthasaṅgaha deck.",
     allScopeTitle: "All Unlocked Chapters",
-    plan90ScopeTitle: "Daily Track · 90 Days",
+    plan90ScopeTitle: "Daily Track · {days} Days",
     chapterPrefix: "Ch.",
     resetProgress: "Reset Progress",
     resetConfirm: "Are you sure you want to reset all Abhidhammatthasaṅgaha Anki SRS progress?",
-    plan90Title: "Structured Plan — 90 Days",
+    plan90Title: "Structured Plan — {days} Days",
     plan90Desc:
-      "Automatically paces all content (concepts, lists, mathematical structures, enumerations, sequences, and confusables) with a 12-day final consolidation reserve and an automatic brake if reviews pile up.",
+      "Exact mathematical daily quota (max 12 new/day) paired with unlimited reviews (9999/day) and a horizon-matched interval cap so you clear every review daily without forgetting.",
     plan90DayLabel: "Day",
     plan90DaysLeft: "Days left",
-    plan90PhaseBuild: "Building Phase (New + Review)",
-    plan90PhaseConsolidate: "Final Consolidation Phase (Review Only)",
-    plan90DailyTarget: "Automatic daily quota",
+    plan90PhaseBuild: "Building Phase (New ≤12/d + Maximum Review)",
+    plan90PhaseConsolidate: "Final Consolidation Phase (100% Review)",
+    plan90DailyTarget: "New/day (max 12)",
     plan90RemainingNew: "Remaining new cards",
     plan90DoseToday: "Today's remaining dose",
-    plan90RestartDate: "Restart 90-day clock from today",
-    plan90RestartConfirm: "Reset the 90-day start date to today (keeping all memorized cards)?",
+    plan90RestartDate: "Restart {days}-day clock from today",
+    plan90RestartConfirm: "Reset the {days}-day start date to today (keeping all memorized cards)?",
     filterLeeches: "🩸 Leeches",
     modeChecksum: "📐 Math Structure",
     modeEnumeration: "☑ Enumeration",
@@ -396,9 +447,9 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
   es: {
     moduleTitle: "Abhidhammatthasaṅgaha — Repetición Espaciada (Anki SRS)",
     moduleSubtitle:
-      "Memorización completa del Abhidhammatthasaṅgaha Mūla por capítulos o en ruta diaria de 90 días, apoyada en las estructuras matemáticas de las listas canónicas.",
+      "Memorización completa del Abhidhammatthasaṅgaha Mūla (357 tarjetas) en 30, 60 o 90 días: tope estricto de 12 nuevas/día y repasos máximos (9999/día) para no olvidar.",
     modeChapters: "📚 Por Capítulos",
-    modePlan90: "📅 Ruta 90 Días",
+    modePlan90: "📅 Ruta {days} Días",
     studyAllUnlocked: "Estudiar Todos Desbloqueados",
     studyTodayDose: "Estudiar Dosis de Hoy",
     studyChapter: "Estudiar Capítulo",
@@ -408,9 +459,25 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
     retentionToday: "Retención Hoy",
     streak: "Racha",
     daysUnit: "d",
-    newPerDay: "Nuevas/día",
+    daysWord: "días",
+    newPerDay: "Nuevas/día (máx. 12)",
+    reviewsPerDayLabel: "Rep./día",
+    reviewsMaxBadge: "9999 (Máx.)",
+    reviewOnlyOption: "0 (Solo repaso)",
+    maxNewTag: "máx.",
     paceAuto: "Auto",
-    unlimited: "Ilimitado",
+    unlimited: "9999 (Máx.)",
+    clinicalToggleOn: "🎯 Evaluación Clínica (Otra vez / Bien)",
+    clinicalToggleOff: "🎛 Anki Clásico (4 botones)",
+    clinicalGradingHint:
+      "Evaluación clínica: exactitud instantánea = Bien · cualquier duda o lapso = Otra vez (sin negociar con Difícil).",
+    horizonGroupLabel: "Elegir plazo de la ruta de memorización",
+    horizonSubFmt: "{quota} nuevas/d · rep. ≤{cap}d",
+    horizonReserveFmt: "+{res}d solo repaso",
+    planReviewsMaxLabel: "Repasos máximos/día",
+    planReviewsMaxValue: "9999 (tope ≤{cap}d)",
+    planProtocolSummary:
+      "Protocolo activo: tope de {maxNew} nuevas/día · cola de repasos ilimitada (9999/día, vaciar a diario) · intervalo máximo de {cap}d.",
     tierAtom: "Ladrillo (Átomo)",
     tierStructure: "Estructura",
     tierHouse: "Casa (Síntesis)",
@@ -446,29 +513,29 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
     sessionCompleteDesc: "Todas las tarjetas pendientes y la cuota diaria de este ámbito se han completado.",
     reviewedTodayLabel: "Revisadas hoy",
     newTodayLabel: "Nuevas estudiadas hoy",
-    studyMoreNew: "Estudiar Lote Extra Proporcional",
+    studyMoreNew: "Estudiar Más (≤12 nuevas/d + Repaso Máximo)",
     studyExtraBatch: "⚡ Dosis completada · Estudiar Más",
-    reviewAheadBtn: "🔁 Repasar Anticipado",
+    reviewAheadBtn: "🔁 Repaso Máximo",
     doseDoneLabel: "¡Dosis del día completada!",
     loadingDataset: "Cargando baraja canónica del tratado…",
     loadError: "No se pudo cargar la baraja del Abhidhammatthasaṅgaha.",
     allScopeTitle: "Todos los Capítulos Desbloqueados",
-    plan90ScopeTitle: "Ruta Diaria · 90 Días",
+    plan90ScopeTitle: "Ruta Diaria · {days} Días",
     chapterPrefix: "Cap.",
     resetProgress: "Reiniciar Progreso",
     resetConfirm: "¿Seguro que deseas borrar todo el progreso Anki del Abhidhammatthasaṅgaha?",
-    plan90Title: "Plan Estructurado — 90 Días",
+    plan90Title: "Plan Estructurado — {days} Días",
     plan90Desc:
-      "Distribuye automáticamente todo el contenido (conceptos, listas, estructuras matemáticas, enumeraciones, secuencias y confundibles) con reserva final de 12 días solo para consolidación y freno automático ante acumulación de repasos.",
+      "Cuota matemática rigurosa (máx. 12 nuevas/día) con repasos máximos ilimitados (9999/día) y tope de intervalo ajustado al plazo para vaciar la cola de repaso cada día sin olvidar.",
     plan90DayLabel: "Día",
     plan90DaysLeft: "Días restantes",
-    plan90PhaseBuild: "Fase de Construcción (Nuevas + Repaso)",
-    plan90PhaseConsolidate: "Fase de Consolidación Final (Solo Repaso)",
-    plan90DailyTarget: "Cuota diaria automática",
+    plan90PhaseBuild: "Fase de Carga (Nuevas ≤12/d + Repaso Máximo)",
+    plan90PhaseConsolidate: "Fase de Consolidación Final (100% Repaso)",
+    plan90DailyTarget: "Nuevas/día (tope 12)",
     plan90RemainingNew: "Tarjetas nuevas restantes",
     plan90DoseToday: "Dosis restante de hoy",
-    plan90RestartDate: "Reiniciar conteo de 90 días desde hoy",
-    plan90RestartConfirm: "¿Restablecer el inicio de la ruta de 90 días a hoy (conservando las tarjetas ya memorizadas)?",
+    plan90RestartDate: "Reiniciar conteo de {days} días desde hoy",
+    plan90RestartConfirm: "¿Restablecer el inicio de la ruta de {days} días a hoy (conservando las tarjetas ya memorizadas)?",
     filterLeeches: "🩸 Sanguijuelas",
     modeChecksum: "📐 Estructura Matemática",
     modeEnumeration: "☑ Enumeración",
@@ -513,6 +580,10 @@ function esc(s: string): string {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function fmt(template: string, vars: Record<string, string | number>): string {
+  return template.replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? ""));
 }
 
 function tierBadge(card: AbhidhammaCard, lang: Lang): string {
@@ -718,10 +789,15 @@ export class AbhidhammaSrsUI {
         e.preventDefault();
         this.flipCard();
       } else if (this.isFlipped) {
-        if (e.key === "1") this.rateCard(1);
-        else if (e.key === "2") this.rateCard(2);
-        else if (e.key === "3") this.rateCard(3);
-        else if (e.key === "4") this.rateCard(4);
+        if (this.config.strictClinicalGrading) {
+          if (e.key === "1") this.rateCard(1);
+          else if (e.key === "2" || e.key === "3") this.rateCard(3);
+        } else {
+          if (e.key === "1") this.rateCard(1);
+          else if (e.key === "2") this.rateCard(2);
+          else if (e.key === "3") this.rateCard(3);
+          else if (e.key === "4") this.rateCard(4);
+        }
       }
     });
   }
@@ -752,6 +828,7 @@ export class AbhidhammaSrsUI {
   private startProportionalExtraBatch(chapter: number | null, fromPlan90: boolean): void {
     if (!this.dataset) return;
     const now = Date.now();
+    this.stats = loadAnkiStats(now);
     this.scopeChapter = chapter;
     this.studyFromPlan90 = fromPlan90;
     if (fromPlan90) {
@@ -762,7 +839,8 @@ export class AbhidhammaSrsUI {
       this.dataset.cards,
       this.states,
       chapter,
-      now
+      now,
+      this.stats
     );
     if (batch.extraNew > 0) {
       const today = new Date(now).toISOString().slice(0, 10);
@@ -770,7 +848,7 @@ export class AbhidhammaSrsUI {
       this.config = {
         ...this.config,
         extraNewDate: today,
-        extraNewCount: (sameDay ? this.config.extraNewCount : 0) + batch.extraNew,
+        extraNewCount: Math.min(MAX_NEW_CARDS_PER_DAY, (sameDay ? this.config.extraNewCount : 0) + batch.extraNew),
       };
       saveAnkiConfig(this.config);
       void this.flushOfflineVault(undefined, now);
@@ -801,7 +879,7 @@ export class AbhidhammaSrsUI {
       this.dataset.cards,
       this.states,
       chapter,
-      10,
+      MAX_REVIEWS_PER_DAY,
       now
     );
     this.bonusReviewQueue = early.map((c) => c.id);
@@ -890,8 +968,9 @@ export class AbhidhammaSrsUI {
     };
     void this.flushOfflineVault(logEntry, now);
 
-    if (this.bonusReviewQueue[0] === this.activeCard.id) {
-      this.bonusReviewQueue.shift();
+    const bonusIdx = this.bonusReviewQueue.indexOf(this.activeCard.id);
+    if (bonusIdx !== -1) {
+      this.bonusReviewQueue.splice(bonusIdx, 1);
     }
 
     this.refreshQueueAndShowNext();
@@ -946,18 +1025,27 @@ export class AbhidhammaSrsUI {
       dataset.cards,
       this.states,
       null,
-      now
+      now,
+      this.stats
     );
     const canStudyExtra = extraBatch.hasMoreNew || extraBatch.hasReviewable;
     const extraSummaryParts: string[] = [];
     if (extraBatch.extraNew > 0) extraSummaryParts.push(`+${extraBatch.extraNew} ${s.countNew.toLowerCase()}`);
     if (extraBatch.earlyReviews > 0) extraSummaryParts.push(`${extraBatch.earlyReviews} ${s.countReview.toLowerCase()}`);
     const extraSummaryLabel = extraSummaryParts.length > 0 ? ` (${extraSummaryParts.join(" + ")})` : "";
+    const extraPrimaryLabel =
+      extraBatch.extraNew > 0
+        ? `${s.studyExtraBatch}${extraSummaryLabel}`
+        : `${s.reviewAheadBtn}${extraBatch.earlyReviews > 0 ? ` (${extraBatch.earlyReviews})` : ""}`;
 
-    const dailyQuota = computeDailyNewQuota(dataset.cards, this.states, this.stats, this.config, now);
-    const presetLimits = Array.from(new Set([10, 20, 25, 40, 60, 9999, this.config.newCardsPerDay])).sort(
-      (a, b) => a - b
-    );
+    const horizonQuotas = new Map<PaceHorizonDays, number>();
+    for (const h of PACE_HORIZON_OPTIONS) {
+      const hCfg = setPaceHorizon(this.config, h, now);
+      horizonQuotas.set(h, computeDailyNewQuota(dataset.cards, this.states, this.stats, hCfg, now));
+    }
+    const presetLimits = Array.from(
+      new Set([0, 4, 6, 8, 10, MAX_NEW_CARDS_PER_DAY, Math.min(MAX_NEW_CARDS_PER_DAY, this.config.newCardsPerDay)])
+    ).sort((a, b) => a - b);
 
     let totalCards = 0;
     let totalMemorized = 0;
@@ -1028,16 +1116,41 @@ export class AbhidhammaSrsUI {
       })
       .join("");
 
+    const activeHorizon = plan90.totalDays;
+    const horizonButtonsHtml = PACE_HORIZON_OPTIONS.map((h) => {
+      const selected = h === activeHorizon;
+      const q = horizonQuotas.get(h) ?? MAX_NEW_CARDS_PER_DAY;
+      const cap = getMaxIntervalForHorizon(h);
+      const res = getReserveDaysForHorizon(h);
+      const sub = fmt(s.horizonSubFmt, { quota: q, cap });
+      const resNote = res > 0 ? ` · ${fmt(s.horizonReserveFmt, { res })}` : "";
+      return `
+        <button
+          type="button"
+          class="abhi-horizon-btn ${selected ? "active" : ""}"
+          data-horizon="${h}"
+          aria-pressed="${selected ? "true" : "false"}"
+        >
+          <span class="abhi-horizon-days">${h} ${esc(s.daysWord)}</span>
+          <span class="abhi-horizon-meta">${esc(sub + resNote)}</span>
+        </button>
+      `;
+    }).join("");
+
     const plan90PanelHtml = `
       <div class="abhi-plan90-card">
         <div class="abhi-plan90-head">
           <div>
-            <h3 class="abhi-plan90-title">📅 ${esc(s.plan90Title)}</h3>
+            <h3 class="abhi-plan90-title">📅 ${esc(fmt(s.plan90Title, { days: activeHorizon }))}</h3>
             <p class="abhi-plan90-desc">${esc(s.plan90Desc)}</p>
           </div>
           <span class="abhi-plan90-phase ${plan90.isConsolidationPhase ? "consolidate" : ""}">
             ${esc(plan90.isConsolidationPhase ? s.plan90PhaseConsolidate : s.plan90PhaseBuild)}
           </span>
+        </div>
+
+        <div class="abhi-horizon-bar" role="group" aria-label="${esc(s.horizonGroupLabel)}">
+          ${horizonButtonsHtml}
         </div>
 
         <div class="abhi-ch-progress-bar">
@@ -1058,6 +1171,10 @@ export class AbhidhammaSrsUI {
             <strong>${plan90.dailyNewTarget} ${esc(s.countNew.toLowerCase())}/d</strong>
           </div>
           <div class="abhi-plan90-stat">
+            <span>${esc(s.planReviewsMaxLabel)}</span>
+            <strong>${esc(fmt(s.planReviewsMaxValue, { cap: plan90.maxIntervalDays }))}</strong>
+          </div>
+          <div class="abhi-plan90-stat">
             <span>${esc(s.plan90DoseToday)}</span>
             <strong>${plan90Queue.dueLearning.length + plan90Queue.dueReview.length} ${esc(s.countReview.toLowerCase())} + ${plan90Queue.newUnlocked.length} ${esc(s.countNew.toLowerCase())}</strong>
           </div>
@@ -1067,6 +1184,10 @@ export class AbhidhammaSrsUI {
           </div>
         </div>
 
+        <div class="abhi-plan-protocol">${esc(
+          fmt(s.planProtocolSummary, { maxNew: MAX_NEW_CARDS_PER_DAY, cap: plan90.maxIntervalDays })
+        )}</div>
+
         <div class="abhi-plan90-actions">
           <button type="button" class="abhi-btn-primary abhi-btn-study-plan90" ${
             plan90Queue.queue.length === 0 && !canStudyExtra ? "disabled" : ""
@@ -1074,16 +1195,16 @@ export class AbhidhammaSrsUI {
             ${
               plan90Queue.queue.length > 0
                 ? `🧠 ${esc(s.studyTodayDose)} (${plan90Queue.queue.length})`
-                : `${esc(s.studyExtraBatch)}${esc(extraSummaryLabel)}`
+                : esc(extraPrimaryLabel)
             }
           </button>
           ${
             extraBatch.hasReviewable
-              ? `<button type="button" class="abhi-btn-secondary abhi-btn-review-ahead-plan90">${esc(s.reviewAheadBtn)}</button>`
+              ? `<button type="button" class="abhi-btn-secondary abhi-btn-review-ahead-plan90">${esc(s.reviewAheadBtn)} (${extraBatch.earlyReviews})</button>`
               : ""
           }
           <button type="button" class="abhi-btn-link abhi-btn-restart-plan90">
-            ↺ ${esc(s.plan90RestartDate)}
+            ↺ ${esc(fmt(s.plan90RestartDate, { days: activeHorizon }))}
           </button>
         </div>
       </div>
@@ -1097,15 +1218,23 @@ export class AbhidhammaSrsUI {
             <p class="abhi-srs-subtitle">${esc(s.moduleSubtitle)}</p>
           </div>
           <div class="abhi-srs-actions">
-            <label class="abhi-limit-label">
+            <label class="abhi-limit-label" for="abhi-limit-select">
               <span>${esc(s.newPerDay)}:</span>
-              <select class="abhi-limit-select">
-                <option value="auto" ${this.config.adaptivePace ? "selected" : ""}>${esc(s.paceAuto)} (${dailyQuota})</option>
+              <select id="abhi-limit-select" class="abhi-limit-select">
+                ${PACE_HORIZON_OPTIONS.map((h) => {
+                  const q = horizonQuotas.get(h) ?? MAX_NEW_CARDS_PER_DAY;
+                  const sel = this.config.adaptivePace && this.config.paceHorizonDays === h;
+                  return `<option value="auto-${h}" ${sel ? "selected" : ""}>${esc(s.paceAuto)} · ${h}${esc(s.daysUnit)} (${q}/d)</option>`;
+                }).join("")}
                 ${presetLimits
                   .map(
                     (val) =>
                       `<option value="${val}" ${!this.config.adaptivePace && this.config.newCardsPerDay === val ? "selected" : ""}>${
-                        val >= 9999 ? s.unlimited : val
+                        val === 0
+                          ? esc(s.reviewOnlyOption)
+                          : val === MAX_NEW_CARDS_PER_DAY
+                            ? `${val} (${esc(s.maxNewTag)})`
+                            : val
                       }</option>`
                   )
                   .join("")}
@@ -1117,7 +1246,7 @@ export class AbhidhammaSrsUI {
               ${
                 globalQueue.queue.length > 0
                   ? `🧠 ${esc(s.studyAllUnlocked)} (${globalQueue.queue.length})`
-                  : `${esc(s.studyExtraBatch)}${esc(extraSummaryLabel)}`
+                  : esc(extraPrimaryLabel)
               }
             </button>
           </div>
@@ -1126,6 +1255,7 @@ export class AbhidhammaSrsUI {
         <div class="abhi-telemetry-bar">
           <div class="abhi-tele-pill"><span>📚 ${esc(s.memorized)}:</span><strong>${totalMemorized}/${totalCards} (${globalPct}%)</strong></div>
           <div class="abhi-tele-pill"><span>⏳ ${esc(s.dueNow)}:</span><strong>${totalDue}</strong></div>
+          <div class="abhi-tele-pill"><span>🔁 ${esc(s.reviewsPerDayLabel)}:</span><strong>${esc(s.reviewsMaxBadge)}</strong></div>
           <div class="abhi-tele-pill"><span>🎯 ${esc(s.retentionToday)}:</span><strong>${retention}%</strong></div>
           <div class="abhi-tele-pill"><span>🔥 ${esc(s.streak)}:</span><strong>${this.stats.streak}${esc(s.daysUnit)}</strong></div>
           ${leeches > 0 ? `<div class="abhi-tele-pill abhi-tele-leech"><span>🩸 ${esc(s.leechesLabel)}:</span><strong>${leeches}</strong></div>` : ""}
@@ -1134,15 +1264,20 @@ export class AbhidhammaSrsUI {
         <div class="abhi-method-strip">
           <div class="abhi-track-tabs">
             <button type="button" class="abhi-track-tab ${this.overviewTrack === "chapters" ? "active" : ""}" data-track="chapters">${esc(s.modeChapters)}</button>
-            <button type="button" class="abhi-track-tab ${this.overviewTrack === "plan90" ? "active" : ""}" data-track="plan90">${esc(s.modePlan90)}</button>
+            <button type="button" class="abhi-track-tab ${this.overviewTrack === "plan90" ? "active" : ""}" data-track="plan90">${esc(fmt(s.modePlan90, { days: activeHorizon }))}</button>
           </div>
-          ${
-            leeches > 0
-              ? `<div class="abhi-filter-group">
-                   <button type="button" class="abhi-filter-pill" data-filter="leeches">${esc(s.filterLeeches)} (${leeches})</button>
-                 </div>`
-              : ""
-          }
+          <div class="abhi-filter-group">
+            <button
+              type="button"
+              class="abhi-filter-pill abhi-btn-clinical-toggle ${this.config.strictClinicalGrading ? "active" : ""}"
+              aria-pressed="${this.config.strictClinicalGrading ? "true" : "false"}"
+            >${esc(this.config.strictClinicalGrading ? s.clinicalToggleOn : s.clinicalToggleOff)}</button>
+            ${
+              leeches > 0
+                ? `<button type="button" class="abhi-filter-pill" data-filter="leeches">${esc(s.filterLeeches)} (${leeches})</button>`
+                : ""
+            }
+          </div>
         </div>
 
         ${
@@ -1192,13 +1327,32 @@ export class AbhidhammaSrsUI {
       this.startEarlyReviewOnly(null, true);
     });
 
-    this.container.querySelector(".abhi-btn-restart-plan90")?.addEventListener("click", () => {
-      if (typeof window.confirm === "function" && !window.confirm(s.plan90RestartConfirm)) return;
+    this.container.querySelectorAll<HTMLButtonElement>("[data-horizon]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const h = Number(btn.dataset.horizon) as PaceHorizonDays;
+        if (h === 30 || h === 60 || h === 90) {
+          this.config = setPaceHorizon(this.config, h, Date.now());
+          saveAnkiConfig(this.config);
+          void this.flushOfflineVault();
+          this.render();
+        }
+      });
+    });
+
+    this.container.querySelector(".abhi-btn-clinical-toggle")?.addEventListener("click", () => {
       this.config = {
         ...this.config,
-        adaptivePace: true,
-        paceTargetMs: Date.now() + PACE_DEFAULT_HORIZON_DAYS * DAY_MS,
+        strictClinicalGrading: !this.config.strictClinicalGrading,
       };
+      saveAnkiConfig(this.config);
+      void this.flushOfflineVault();
+      this.render();
+    });
+
+    this.container.querySelector(".abhi-btn-restart-plan90")?.addEventListener("click", () => {
+      const confirmMsg = fmt(s.plan90RestartConfirm, { days: activeHorizon });
+      if (typeof window.confirm === "function" && !window.confirm(confirmMsg)) return;
+      this.config = setPaceHorizon(this.config, this.config.paceHorizonDays, Date.now());
       saveAnkiConfig(this.config);
       void this.flushOfflineVault();
       this.render();
@@ -1232,8 +1386,11 @@ export class AbhidhammaSrsUI {
 
     const limitSel = this.container.querySelector<HTMLSelectElement>(".abhi-limit-select");
     limitSel?.addEventListener("change", () => {
-      if (limitSel.value === "auto") {
-        this.config = ensurePaceTarget({ ...this.config, adaptivePace: true });
+      if (limitSel.value.startsWith("auto")) {
+        const parsedH = parseInt(limitSel.value.replace("auto-", ""), 10) as PaceHorizonDays;
+        const nextHorizon: PaceHorizonDays =
+          parsedH === 30 || parsedH === 60 || parsedH === 90 ? parsedH : this.config.paceHorizonDays;
+        this.config = setPaceHorizon(this.config, nextHorizon, Date.now());
         saveAnkiConfig(this.config);
         void this.flushOfflineVault();
         this.render();
@@ -1241,7 +1398,8 @@ export class AbhidhammaSrsUI {
       }
       const val = parseInt(limitSel.value, 10);
       if (!Number.isNaN(val)) {
-        this.config = { ...this.config, adaptivePace: false, newCardsPerDay: val };
+        const clamped = Math.max(0, Math.min(MAX_NEW_CARDS_PER_DAY, val));
+        this.config = { ...this.config, adaptivePace: false, newCardsPerDay: clamped };
         saveAnkiConfig(this.config);
         void this.flushOfflineVault();
         this.render();
@@ -1330,7 +1488,7 @@ export class AbhidhammaSrsUI {
       this.filterMode === "leeches"
         ? s.filterLeeches
         : this.studyFromPlan90
-          ? s.plan90ScopeTitle
+          ? fmt(s.plan90ScopeTitle, { days: this.config.paceHorizonDays })
           : this.scopeChapter === null
             ? s.allScopeTitle
             : (() => {
@@ -1357,7 +1515,8 @@ export class AbhidhammaSrsUI {
         dataset.cards,
         this.states,
         this.scopeChapter,
-        now
+        now,
+        this.stats
       );
       const batchParts: string[] = [];
       if (scopedBatch.extraNew > 0) batchParts.push(`+${scopedBatch.extraNew} ${s.countNew.toLowerCase()}`);
@@ -1373,20 +1532,18 @@ export class AbhidhammaSrsUI {
             <p>${esc(s.sessionCompleteDesc)}</p>
             <div class="abhi-complete-stats">
               <span>${esc(s.reviewedTodayLabel)}: <strong>${this.stats.reviewedToday}</strong></span>
-              <span>${esc(s.newTodayLabel)}: <strong>${this.stats.newStudiedToday} / ${
-                quotaToday >= 9999 ? "∞" : quotaToday
-              }</strong></span>
+              <span>${esc(s.newTodayLabel)}: <strong>${this.stats.newStudiedToday} / ${quotaToday} (${esc(s.maxNewTag)} ${MAX_NEW_CARDS_PER_DAY})</strong></span>
             </div>
             <div class="abhi-complete-actions">
               <button type="button" class="abhi-btn-back-main abhi-btn-secondary">${esc(s.backToChapters)}</button>
               ${
-                scopedBatch.hasMoreNew || scopedBatch.hasReviewable
+                scopedBatch.hasMoreNew
                   ? `<button type="button" class="abhi-btn-more-new abhi-btn-primary">⚡ ${esc(s.studyMoreNew)}${esc(batchSuffix)}</button>`
                   : ""
               }
               ${
                 scopedBatch.hasReviewable
-                  ? `<button type="button" class="abhi-btn-review-ahead abhi-btn-secondary">${esc(s.reviewAheadBtn)}</button>`
+                  ? `<button type="button" class="abhi-btn-review-ahead ${scopedBatch.hasMoreNew ? "abhi-btn-secondary" : "abhi-btn-primary"}">${esc(s.reviewAheadBtn)} (${scopedBatch.earlyReviews})</button>`
                   : ""
               }
             </div>
@@ -1676,7 +1833,21 @@ export class AbhidhammaSrsUI {
 
         ${
           this.isFlipped
-            ? `
+            ? this.config.strictClinicalGrading
+              ? `
+          <div class="abhi-clinical-hint">${esc(s.clinicalGradingHint)}</div>
+          <div class="abhi-anki-ratings clinical-2">
+            <button type="button" class="abhi-rate-btn rate-1" data-rate="1">
+              <span class="rate-lbl">[1] ${esc(s.again)}</span>
+              <span class="rate-int">${esc(intervals[1])}</span>
+            </button>
+            <button type="button" class="abhi-rate-btn rate-3" data-rate="3">
+              <span class="rate-lbl">[2] ${esc(s.good)}</span>
+              <span class="rate-int">${esc(intervals[3])}</span>
+            </button>
+          </div>
+        `
+              : `
           <div class="abhi-anki-ratings">
             <button type="button" class="abhi-rate-btn rate-1" data-rate="1">
               <span class="rate-lbl">[1] ${esc(s.again)}</span>

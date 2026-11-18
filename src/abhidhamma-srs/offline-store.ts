@@ -4,6 +4,7 @@ import {
   loadAnkiConfig,
   loadAnkiStats,
   loadMnemonicNotes,
+  normalizeAnkiConfig,
   saveAnkiCardStates,
   saveAnkiConfig,
   saveAnkiStats,
@@ -146,11 +147,11 @@ function mergeConfig(a: AnkiConfig, b: AnkiConfig, aUpdated: number, bUpdated: n
       : secondary.paceTargetMs > 0
         ? secondary.paceTargetMs
         : 0;
-  return {
+  return normalizeAnkiConfig({
     ...DEFAULT_ANKI_CONFIG,
     ...primary,
     paceTargetMs,
-  };
+  });
 }
 
 /**
@@ -659,7 +660,7 @@ export function parseProgressBackup(rawJson: string): AnkiProgressSnapshot {
     updatedAt: typeof parsed.updatedAt === "number" ? parsed.updatedAt : now,
     states: parsed.states,
     stats: parsed.stats ?? loadAnkiStats(now),
-    config: { ...DEFAULT_ANKI_CONFIG, ...(parsed.config ?? {}) },
+    config: normalizeAnkiConfig(parsed.config),
     mnemonics: parsed.mnemonics && typeof parsed.mnemonics === "object" ? parsed.mnemonics : {},
     reviewLogCount: typeof parsed.reviewLogCount === "number" ? parsed.reviewLogCount : Object.keys(parsed.states).length,
     recentLog: Array.isArray(parsed.recentLog) ? parsed.recentLog.slice(-MAX_SNAPSHOT_LOG) : [],

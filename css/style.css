@@ -2935,6 +2935,81 @@ details[open] > summary::before { transform: rotate(90deg); }
   align-items: center;
   gap: 14px;
 }
+.abhi-horizon-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 10px;
+}
+.abhi-horizon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 10px 13px;
+  min-block-size: 48px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-content);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+.abhi-horizon-btn:hover {
+  border-color: var(--accent);
+}
+.abhi-horizon-btn:focus-visible,
+.abhi-filter-pill:focus-visible,
+.abhi-track-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.abhi-horizon-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.abhi-horizon-days {
+  font-size: 14.5px;
+  font-weight: 700;
+}
+.abhi-horizon-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+.abhi-horizon-btn.active .abhi-horizon-meta {
+  color: rgba(255, 255, 255, 0.9);
+}
+.abhi-plan-protocol {
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px dashed var(--border);
+  background: var(--bg-content);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+.abhi-clinical-hint {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin: 4px 0 8px;
+  line-height: 1.4;
+}
+.abhi-anki-ratings.clinical-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 520px;
+  margin-inline: auto;
+  width: 100%;
+}
+@media (pointer: coarse) {
+  .abhi-horizon-btn,
+  .abhi-filter-pill,
+  .abhi-track-tab {
+    min-block-size: 44px;
+  }
+}
 
 /* Mathematical List Structure Callout */
 .abhi-math-box {
@@ -3279,6 +3354,10 @@ details[open] > summary::before { transform: rotate(90deg); }
   }
   .abhi-plan90-card {
     padding: 14px;
+  }
+  .abhi-horizon-bar {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
   .abhi-plan90-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));

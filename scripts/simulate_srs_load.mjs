@@ -1,5 +1,5 @@
 // Simula N dias de estudo com o scheduler REAL compilado do app (js/abhidhamma-srs/scheduler.js).
-// Uso: node scripts/simulate_srs_load.mjs [dias=90] [retencao=0.9] [segundosPorCarta=14]
+// Uso: node scripts/simulate_srs_load.mjs [dias=30|60|90] [retencao=0.9] [segundosPorCarta=14]
 import fs from "node:fs";
 import {
   buildStudyQueue,
@@ -8,12 +8,12 @@ import {
   createInitialAnkiStats,
   DAY_MS,
   DEFAULT_ANKI_CONFIG,
-  ensurePaceTarget,
   isCardMemorized,
   scheduleAnkiCard,
+  setPaceHorizon,
 } from "../js/abhidhamma-srs/scheduler.js";
 
-const days = Number(process.argv[2] ?? 90);
+const days = Number(process.argv[2] ?? 30);
 const retention = Number(process.argv[3] ?? 0.9);
 const secPerCard = Number(process.argv[4] ?? 14);
 const ds = JSON.parse(fs.readFileSync(new URL("../data/srs/abhidhamma_cards.json", import.meta.url), "utf8"));
@@ -22,7 +22,8 @@ let seed = 42;
 const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 2 ** 32);
 
 const t0 = Date.UTC(2026, 10, 18, 12, 0, 0);
-const config = ensurePaceTarget({ ...DEFAULT_ANKI_CONFIG }, t0);
+const horizon = days === 30 || days === 60 || days === 90 ? days : 30;
+const config = setPaceHorizon(DEFAULT_ANKI_CONFIG, horizon, t0);
 const states = {};
 const rows = [];
 
