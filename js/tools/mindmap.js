@@ -1,6 +1,6 @@
-import { settings } from "../state.js?v=fedab02c";
-import { t } from "../i18n.js?v=fedab02c";
-import { registerToolModule } from "./tools.js?v=fedab02c";
+import { settings } from "../state.js?v=ab67c570";
+import { t } from "../i18n.js?v=ab67c570";
+import { registerToolModule } from "./tools.js?v=ab67c570";
 function getLabel(n) {
     const lang = settings.translationLang;
     if (lang === "pt" && n.labelPt)

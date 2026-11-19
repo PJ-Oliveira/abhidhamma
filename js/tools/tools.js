@@ -1,6 +1,6 @@
-import { t } from "../i18n.js?v=fedab02c";
-import { settings } from "../state.js?v=fedab02c";
-import { createLogger } from "../logger.js?v=fedab02c";
+import { t } from "../i18n.js?v=ab67c570";
+import { settings } from "../state.js?v=ab67c570";
+import { createLogger } from "../logger.js?v=ab67c570";
 const log = createLogger("tools");
 const TABS = [
     { id: "mindmap", icon: "🗺", i18nKey: "toolMindmap", init: null, loaded: false },

@@ -45,6 +45,10 @@ type PhalanxMode = "open" | "blind" | "sequence";
 interface LabStrings {
   title: string;
   subtitle: string;
+  memoryAidNotice: string;
+  binAidNotice: string;
+  perAidNotice: string;
+  phaAidNotice: string;
   streak: string;
   bestStreak: string;
   mastered: string;
@@ -85,6 +89,7 @@ interface LabStrings {
   perFilterAkusala: string;
   perFilterSobhana: string;
   perFilterRupa: string;
+  perFilterAnipphanna: string;
   perFilterNibbana: string;
   perWhy72Title: string;
   perWhy72Body: string;
@@ -144,6 +149,7 @@ interface LabStrings {
   eqSenses: string;
   eqStages: string;
   avinTag: string;
+  anipphannaTag: string;
   valenceLabel: string;
   fixedCoreLabel: string;
   totalSangahaLabel: string;
@@ -153,7 +159,11 @@ interface LabStrings {
 const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
   pt: {
     title: "🧮 Laboratório Mnêmico do Abhidhammatthasaṅgaha",
-    subtitle: "1. Descompactação Binária (89/121) · 2. Tabela Periódica (72 Realidades) · 3. Ábaco Tátil nas Falanges",
+    subtitle: "1. Descompactação Binária (89/121) · 2. Tabela Periódica (72 Sabhāva + 10 Anipphanna = 82) · 3. Ábaco Tátil nas Falanges",
+    memoryAidNotice: "Isto não é o Abhidhamma em si, mas apenas um auxílio de memorização.",
+    binAidNotice: "Auxílio de memorização (não o Abhidhamma em si): matrizes combinatórias para reconstruir as 89/121 Cittas.",
+    perAidNotice: "Auxílio de memorização (não o Abhidhamma em si): atlas visual das 82 realidades (72 Sabhāva + 10 Anipphanna) e síntese do Saṅgaha-naya.",
+    phaAidNotice: "Auxílio de memorização (não o Abhidhamma em si): ábaco espacial nas falanges para recordar listas canônicas em ordem.",
     streak: "Sequência",
     bestStreak: "Recorde",
     mastered: "Dominados",
@@ -163,7 +173,7 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
     lvl2: "2 · Canônico (Tradução ↔ Estrutura)",
     lvl3: "3 · Rigor Pāli (Sem Dicas / Mão Cega)",
     tabBinary: "⚡ 1. Descompactador Binário (89/121)",
-    tabPeriodic: "🧪 2. Tabela Periódica (72 Realidades)",
+    tabPeriodic: "🧪 2. Tabela Periódica (72 / 82 Realidades)",
     tabPhalanx: "🖐 3. Ábaco das Falanges (5 Mapas)",
     binModeExplore: "🔬 Explorador de Matrizes & Gerador",
     binModeChallenge: "🎯 Desafio: Decodificador Binário",
@@ -184,17 +194,18 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
     binCorrectMsg: "✅ Codificação Exata! Você reconstruiu a Citta pela fórmula geradora.",
     binWrongMsg: "❌ As chaves atuais geram outra Citta. Compare os bits abaixo:",
     binEquationBoxTitle: "Equação de Descompactação Canônica (54 + 15 + 12 + 8 [40] = 89 [121]):",
-    perModeAtlas: "🗺 Atlas Interativo das 72 Realidades (Sabhāva)",
+    perModeAtlas: "🗺 Atlas Interativo das 82 Realidades (72 Sabhāva + 10 Anipphanna)",
     perModeAlchemy: "⚗️ Jogo: Alquimia do Saṅgaha-naya & Colisões",
-    perFilterAll: "Todas as 72 Realidades",
+    perFilterAll: "Todas as 82 (72 Sabhāva + 10 Anipphanna)",
     perFilterCitta: "1 Citta",
     perFilterNeutral: "13 Cetasikas Neutros (7+6)",
     perFilterAkusala: "14 Cetasikas Insalubres (4+3+4+2+1)",
     perFilterSobhana: "25 Cetasikas Belos (19+3+2+1)",
-    perFilterRupa: "18 Rūpas Concretos (Octeto Inseparável ★)",
+    perFilterRupa: "18 Nipphanna-Rūpas Concretos (Octeto ★)",
+    perFilterAnipphanna: "10 Anipphanna-Rūpas Não-Concretos (1+2+3+4)",
     perFilterNibbana: "1 Nibbāna",
-    perWhy72Title: "Por que 72 Realidades (Sabhāva-dhammas) e não 82? (AS VII.2)",
-    perWhy72Body: "Porque 1 Citta + 52 Cetasikas + 18 Nipphanna-Rūpas (materialidades concretas) + 1 Nibbāna = 72 realidades com natureza própria (sabhāva). As outras 10 materialidades (Anipphanna-rūpa: espaço delimitante [1], intimações [2], mutabilidades [3] e fases temporais [4]) são apenas modos ou limites das 18 concretas.",
+    perWhy72Title: "Por que 72 Realidades (Sabhāva-dhammas) e 82 Subdivisões Totais? (AS VI.2–5 / VII.41)",
+    perWhy72Body: "1 Citta (#1) + 52 Cetasikas (#2–#53) + 18 Nipphanna-Rūpas concretos (#54–#71) + 1 Nibbāna (#72) = 72 realidades com natureza própria (sabhāva-dhammas / vatthu-dhammas). Somando os 10 Anipphanna-rūpas (#73–#82: 1 espaço delimitante [Pariccheda] + 2 intimações [Viññatti] + 3 mutabilidades [Vikāra] + 4 fases temporais [Lakkhaṇa]), completam-se todas as 82 subdivisões dos 4 Paramatthas (1 + 52 + 28 + 1 = 82)!",
     perTargetTitle: "Sintetize os Cetasikas desta Citta (Saṅgaha-naya):",
     perMacroBlocks: "Atalhos de Blocos Químicos (Liga/Desliga família inteira):",
     perBlockUniv7: "+7 Universais (Sabbacitta)",
@@ -250,6 +261,7 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
     eqSenses: "10 Sentidos",
     eqStages: "4 Graus × 2 (× 5 Jhānas)",
     avinTag: "★ Avinibbhoga-rūpa (Octeto Inseparável)",
+    anipphannaTag: "◇ Anipphanna-rūpa (Não-Concreto · 10 de 82)",
     valenceLabel: "Sampayoga / Valência:",
     fixedCoreLabel: "Base Fixa:",
     totalSangahaLabel: "Total Saṅgaha:",
@@ -257,7 +269,11 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
   },
   en: {
     title: "🧮 Abhidhammatthasaṅgaha Mnemonic Lab",
-    subtitle: "1. Binary Decompression (89/121) · 2. Periodic Table (72 Realities) · 3. Phalanx Tactile Abacus",
+    subtitle: "1. Binary Decompression (89/121) · 2. Periodic Table (72 Sabhāva + 10 Anipphanna = 82) · 3. Phalanx Tactile Abacus",
+    memoryAidNotice: "This is not the Abhidhamma itself, but memory aids only.",
+    binAidNotice: "Memory aid only (not the Abhidhamma itself): combinatorial matrices to reconstruct all 89/121 Cittas.",
+    perAidNotice: "Memory aid only (not the Abhidhamma itself): visual atlas of the 82 realities (72 Sabhāva + 10 Anipphanna) and Saṅgaha-naya synthesis.",
+    phaAidNotice: "Memory aid only (not the Abhidhamma itself): finger-phalanx spatial abacus for recalling canonical lists in order.",
     streak: "Streak",
     bestStreak: "Best",
     mastered: "Mastered",
@@ -267,7 +283,7 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
     lvl2: "2 · Canonical (Translation ↔ Structure)",
     lvl3: "3 · Pāli Rigor (No Hints / Blind Hand)",
     tabBinary: "⚡ 1. Binary Decompressor (89/121)",
-    tabPeriodic: "🧪 2. Periodic Table (72 Realities)",
+    tabPeriodic: "🧪 2. Periodic Table (72 / 82 Realities)",
     tabPhalanx: "🖐 3. Phalanx Abacus (5 Maps)",
     binModeExplore: "🔬 Matrix Explorer & Live Generator",
     binModeChallenge: "🎯 Challenge: Binary Decoder",
@@ -288,17 +304,18 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
     binCorrectMsg: "✅ Exact Encoding! You reconstructed the Citta via its generator formula.",
     binWrongMsg: "❌ Current switches generate a different Citta. Compare the bits below:",
     binEquationBoxTitle: "Canonical Decompression Equation (54 + 15 + 12 + 8 [40] = 89 [121]):",
-    perModeAtlas: "🗺 Interactive Atlas of the 72 Realities (Sabhāva)",
+    perModeAtlas: "🗺 Interactive Atlas of the 82 Realities (72 Sabhāva + 10 Anipphanna)",
     perModeAlchemy: "⚗️ Game: Saṅgaha-naya Alchemy & Collisions",
-    perFilterAll: "All 72 Realities",
+    perFilterAll: "All 82 (72 Sabhāva + 10 Anipphanna)",
     perFilterCitta: "1 Citta",
     perFilterNeutral: "13 Ethically Variable Cetasikas (7+6)",
     perFilterAkusala: "14 Unwholesome Cetasikas (4+3+4+2+1)",
     perFilterSobhana: "25 Beautiful Cetasikas (19+3+2+1)",
-    perFilterRupa: "18 Concrete Rūpas (Inseparable Octad ★)",
+    perFilterRupa: "18 Concrete Nipphanna-Rūpas (Octad ★)",
+    perFilterAnipphanna: "10 Non-Concrete Anipphanna-Rūpas (1+2+3+4)",
     perFilterNibbana: "1 Nibbāna",
-    perWhy72Title: "Why 72 Realities (Sabhāva-dhammas) instead of 82? (AS VII.2)",
-    perWhy72Body: "Because 1 Citta + 52 Cetasikas + 18 Nipphanna-Rūpas (concretely produced matter) + 1 Nibbāna = 72 realities possessing intrinsic nature (sabhāva). The remaining 10 materialities (Anipphanna-rūpa: delimiting space [1], intimations [2], mutabilities [3], and temporal phases [4]) are merely modes or boundaries of the 18 concrete realities.",
+    perWhy72Title: "Why 72 Realities (Sabhāva-dhammas) and 82 Total Subdivisions? (AS VI.2–5 / VII.41)",
+    perWhy72Body: "1 Citta (#1) + 52 Cetasikas (#2–#53) + 18 concrete Nipphanna-Rūpas (#54–#71) + 1 Nibbāna (#72) = 72 realities possessing intrinsic nature (sabhāva-dhammas / vatthu-dhammas). Adding the 10 Anipphanna-rūpas (#73–#82: 1 delimiting space [Pariccheda] + 2 intimations [Viññatti] + 3 mutabilities [Vikāra] + 4 temporal phases [Lakkhaṇa]) completes all 82 subdivisions of the 4 Paramatthas (1 + 52 + 28 + 1 = 82)!",
     perTargetTitle: "Synthesize the Cetasikas of this Citta (Saṅgaha-naya):",
     perMacroBlocks: "Chemical Block Shortcuts (Toggle entire family at once):",
     perBlockUniv7: "+7 Universals (Sabbacitta)",
@@ -354,6 +371,7 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
     eqSenses: "10 Senses",
     eqStages: "4 Stages × 2 (× 5 Jhānas)",
     avinTag: "★ Avinibbhoga-rūpa (Inseparable Octad)",
+    anipphannaTag: "◇ Anipphanna-rūpa (Non-Concrete · 10 of 82)",
     valenceLabel: "Sampayoga / Valence:",
     fixedCoreLabel: "Fixed Core:",
     totalSangahaLabel: "Total Saṅgaha:",
@@ -361,7 +379,11 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
   },
   es: {
     title: "🧮 Laboratorio Mnemónico del Abhidhammatthasaṅgaha",
-    subtitle: "1. Descompresión Binaria (89/121) · 2. Tabla Periódica (72 Realidades) · 3. Ábaco Táctil en las Falanges",
+    subtitle: "1. Descompresión Binaria (89/121) · 2. Tabla Periódica (72 Sabhāva + 10 Anipphanna = 82) · 3. Ábaco Táctil en las Falanges",
+    memoryAidNotice: "Esto no es el Abhidhamma en sí, sino solo una ayuda de memorización.",
+    binAidNotice: "Solo ayuda de memorización (no el Abhidhamma en sí): matrices combinatorias para reconstruir las 89/121 Cittas.",
+    perAidNotice: "Solo ayuda de memorización (no el Abhidhamma en sí): atlas visual de las 82 realidades (72 Sabhāva + 10 Anipphanna) y síntesis del Saṅgaha-naya.",
+    phaAidNotice: "Solo ayuda de memorización (no el Abhidhamma en sí): ábaco espacial en las falanges para recordar listas canónicas en orden.",
     streak: "Racha",
     bestStreak: "Récord",
     mastered: "Dominados",
@@ -371,7 +393,7 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
     lvl2: "2 · Canónico (Traducción ↔ Estructura)",
     lvl3: "3 · Rigor Pāli (Sin Pistas / Mano Ciega)",
     tabBinary: "⚡ 1. Descompresor Binario (89/121)",
-    tabPeriodic: "🧪 2. Tabla Periódica (72 Realidades)",
+    tabPeriodic: "🧪 2. Tabla Periódica (72 / 82 Realidades)",
     tabPhalanx: "🖐 3. Ábaco de Falanges (5 Mapas)",
     binModeExplore: "🔬 Explorador de Matrices y Generador",
     binModeChallenge: "🎯 Desafío: Decodificador Binario",
@@ -392,17 +414,18 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
     binCorrectMsg: "✅ ¡Codificación Exacta! Reconstruiste la Citta mediante su fórmula generadora.",
     binWrongMsg: "❌ Los interruptores actuales generan otra Citta. Compara los bits abajo:",
     binEquationBoxTitle: "Ecuación de Descompresión Canónica (54 + 15 + 12 + 8 [40] = 89 [121]):",
-    perModeAtlas: "🗺 Atlas Interactivo de las 72 Realidades (Sabhāva)",
+    perModeAtlas: "🗺 Atlas Interactivo de las 82 Realidades (72 Sabhāva + 10 Anipphanna)",
     perModeAlchemy: "⚗️ Juego: Alquimia del Saṅgaha-naya y Colisiones",
-    perFilterAll: "Todas las 72 Realidades",
+    perFilterAll: "Todas las 82 (72 Sabhāva + 10 Anipphanna)",
     perFilterCitta: "1 Citta",
     perFilterNeutral: "13 Cetasikas Neutros (7+6)",
     perFilterAkusala: "14 Cetasikas Insaludables (4+3+4+2+1)",
     perFilterSobhana: "25 Cetasikas Bellos (19+3+2+1)",
-    perFilterRupa: "18 Rūpas Concretos (Octeto Inseparable ★)",
+    perFilterRupa: "18 Nipphanna-Rūpas Concretos (Octeto ★)",
+    perFilterAnipphanna: "10 Anipphanna-Rūpas No Concretos (1+2+3+4)",
     perFilterNibbana: "1 Nibbāna",
-    perWhy72Title: "¿Por qué 72 Realidades (Sabhāva-dhammas) y no 82? (AS VII.2)",
-    perWhy72Body: "Porque 1 Citta + 52 Cetasikas + 18 Nipphanna-Rūpas (materialidades concretas) + 1 Nibbāna = 72 realidades con naturaleza propia (sabhāva). Las otras 10 materialidades (Anipphanna-rūpa: espacio delimitante [1], intimaciones [2], mutabilidades [3] y fases temporales [4]) son solo modos o límites de las 18 concretas.",
+    perWhy72Title: "¿Por qué 72 Realidades (Sabhāva-dhammas) y 82 Subdivisiones Totales? (AS VI.2–5 / VII.41)",
+    perWhy72Body: "1 Citta (#1) + 52 Cetasikas (#2–#53) + 18 Nipphanna-Rūpas concretos (#54–#71) + 1 Nibbāna (#72) = 72 realidades con naturaleza propia (sabhāva-dhammas / vatthu-dhammas). Sumando los 10 Anipphanna-rūpas (#73–#82: 1 espacio delimitante [Pariccheda] + 2 intimaciones [Viññatti] + 3 mutabilidades [Vikāra] + 4 fases temporales [Lakkhaṇa]), se completan todas las 82 subdivisiones de los 4 Paramatthas (1 + 52 + 28 + 1 = 82)!",
     perTargetTitle: "Sintetiza los Cetasikas de esta Citta (Saṅgaha-naya):",
     perMacroBlocks: "Atajos de Bloques Químicos (Activa/Desactiva familia entera):",
     perBlockUniv7: "+7 Universales (Sabbacitta)",
@@ -458,6 +481,7 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
     eqSenses: "10 Sentidos",
     eqStages: "4 Grados × 2 (× 5 Jhānas)",
     avinTag: "★ Avinibbhoga-rūpa (Octeto Inseparable)",
+    anipphannaTag: "◇ Anipphanna-rūpa (No Concreto · 10 de 82)",
     valenceLabel: "Sampayoga / Valencia:",
     fixedCoreLabel: "Base Fija:",
     totalSangahaLabel: "Total Saṅgaha:",
@@ -483,7 +507,7 @@ export class MnemonicLabUI {
 
   // Pillar 2 State
   private perMode: PeriodicMode = "atlas";
-  private perFilter: "all" | "citta" | "neutral" | "akusala" | "sobhana" | "rupa" | "nibbana" = "all";
+  private perFilter: "all" | "citta" | "neutral" | "akusala" | "sobhana" | "rupa" | "anipphanna" | "nibbana" = "all";
   private selectedAtom: SabhavaElement = PERIODIC_ELEMENTS_72[0]!;
   private chemTargetCitta: CanonicalCitta;
   private activeChemSet: Set<number> = new Set([1, 2, 3, 4, 5, 6, 7]);
@@ -539,6 +563,7 @@ export class MnemonicLabUI {
           <div class="mnem-title-block">
             <h2 class="mnem-title">${esc(s.title)}</h2>
             <p class="mnem-subtitle">${esc(s.subtitle)}</p>
+            <p class="mnem-aid-disclaimer"><strong>ℹ️ ${esc(s.memoryAidNotice)}</strong></p>
           </div>
           <div class="mnem-stats-row">
             <div class="mnem-stat-pill" title="${esc(s.bestStreak)}: ${this.progress.bestStreak}">
@@ -670,6 +695,7 @@ export class MnemonicLabUI {
           ${esc(s.binModeChallenge)}
         </button>
       </div>
+      <div class="mnem-aid-note"><strong>ℹ️ ${esc(s.binAidNotice)}</strong></div>
 
       <div class="mnem-equation-banner">
         <div class="mnem-eq-title">${esc(s.binEquationBoxTitle)}</div>
@@ -993,6 +1019,7 @@ export class MnemonicLabUI {
           ${esc(s.perModeAlchemy)}
         </button>
       </div>
+      <div class="mnem-aid-note"><strong>ℹ️ ${esc(s.perAidNotice)}</strong></div>
 
       ${this.perMode === "atlas" ? this.renderPeriodicAtlas(s) : this.renderPeriodicAlchemy(s)}
     `;
@@ -1005,7 +1032,8 @@ export class MnemonicLabUI {
       if (this.perFilter === "neutral") return el.block === "sabbacitta" || el.block === "pakinnaka";
       if (this.perFilter === "akusala") return el.block.startsWith("akusala_");
       if (this.perFilter === "sobhana") return el.block.startsWith("sobhana_");
-      if (this.perFilter === "rupa") return el.paramattha === "rupa";
+      if (this.perFilter === "rupa") return el.paramattha === "rupa" && !el.isAnipphanna;
+      if (this.perFilter === "anipphanna") return Boolean(el.isAnipphanna);
       if (this.perFilter === "nibbana") return el.paramattha === "nibbana";
       return true;
     });
@@ -1021,6 +1049,7 @@ export class MnemonicLabUI {
           { id: "akusala", lbl: s.perFilterAkusala },
           { id: "sobhana", lbl: s.perFilterSobhana },
           { id: "rupa", lbl: s.perFilterRupa },
+          { id: "anipphanna", lbl: s.perFilterAnipphanna },
           { id: "nibbana", lbl: s.perFilterNibbana },
         ] as const)
           .map(
@@ -1042,6 +1071,7 @@ export class MnemonicLabUI {
           <div class="mnem-atom-title">
             <strong lang="pi">${esc(atom.pali)}</strong> — <span>${esc(atom.name[this.lang])}</span>
             ${atom.isAvinibbhoga ? `<span class="mnem-avin-tag">${esc(s.avinTag)}</span>` : ""}
+            ${atom.isAnipphanna ? `<span class="mnem-anipphanna-tag">${esc(s.anipphannaTag)}</span>` : ""}
           </div>
           <div class="mnem-atom-lak"><strong>Lakkhaṇa:</strong> ${esc(atom.lakkhana[this.lang])}</div>
           <div class="mnem-atom-val"><strong>${esc(s.valenceLabel)}</strong> ${esc(atom.valenceRule[this.lang])}</div>
@@ -1053,10 +1083,10 @@ export class MnemonicLabUI {
           .map((el) => {
             const isSel = el.atomicNumber === atom.atomicNumber;
             return `
-              <button type="button" class="mnem-element-tile mnem-block-${el.block} ${isSel ? "selected" : ""}" data-atom-num="${el.atomicNumber}" aria-pressed="${isSel}">
+              <button type="button" class="mnem-element-tile mnem-block-${el.block} ${el.isAnipphanna ? "mnem-tile-anipphanna" : ""} ${isSel ? "selected" : ""}" data-atom-num="${el.atomicNumber}" aria-pressed="${isSel}">
                 <span class="mnem-tile-top">
                   <span class="mnem-tile-num">${el.atomicNumber}</span>
-                  ${el.cittaCount89 ? `<span class="mnem-tile-val">${el.cittaCount89}c</span>` : el.isAvinibbhoga ? `<span class="mnem-tile-val">★8</span>` : ""}
+                  ${el.cittaCount89 ? `<span class="mnem-tile-val">${el.cittaCount89}c</span>` : el.isAvinibbhoga ? `<span class="mnem-tile-val">★8</span>` : el.isAnipphanna ? `<span class="mnem-tile-val">◇10</span>` : ""}
                 </span>
                 <strong class="mnem-tile-sym">${esc(el.symbol)}</strong>
                 <span class="mnem-tile-pali" lang="pi">${esc(el.pali.split(" ")[0]!)}</span>
@@ -1274,6 +1304,8 @@ export class MnemonicLabUI {
           </button>
         </div>
       </div>
+
+      <div class="mnem-aid-note"><strong>ℹ️ ${esc(s.phaAidNotice)}</strong></div>
 
       <div class="mnem-map-summary-banner">
         <strong>${esc(mapSpec.title[this.lang])} (${esc(mapSpec.asRef)}):</strong>

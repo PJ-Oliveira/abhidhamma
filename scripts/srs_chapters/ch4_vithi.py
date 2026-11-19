@@ -1,17 +1,17 @@
-"""Chapter 4: Vīthipariccheda — 17-Cittakkhaṇa Five-Door Process & Abbreviated Mind-Door Process."""
+"""Chapter 4: Vīthipariccheda — Compendium of Cognitive Processes (Five-Door & Mind-Door Processes)."""
 
 CHAPTER_META = {
     "chapter": 4,
     "paliTitle": "Vīthipariccheda",
     "title": {
-        "pt": "Cap. 4: Processos Cognitivos (Vīthi — 17 Momentos)",
-        "en": "Ch. 4: Cognitive Processes (Vīthi — 17 Moments)",
-        "es": "Cap. 4: Procesos Cognitivos (Vīthi — 17 Momentos)",
+        "pt": "Cap. 4: Compêndio dos Processos Cognitivos (Vīthi)",
+        "en": "Ch. 4: Compendium of Cognitive Processes (Vīthi)",
+        "es": "Cap. 4: Compendio de los Procesos Cognitivos (Vīthi)",
     },
     "subtitle": {
-        "pt": "Execução dos 17 cittakkhaṇas na porta dos sentidos, graus de intensidade e processo abreviado da porta mental.",
-        "en": "Execution of the 17 cittakkhaṇas in the five-door process, intensity grades, and abbreviated mind-door process.",
-        "es": "Ejecución de los 17 cittakkhaṇas en la puerta sensorial, grados de intensidad y proceso abreviado de puerta mental.",
+        "pt": "Processos das cinco portas sensoriais (4 graus de apresentação), processos da porta da mente (kāmajavana e appanā-javana), leis de javana e tadārammaṇa.",
+        "en": "Five-sense-door processes (4 grades of object presentation), mind-door processes (kāmajavana and appanā-javana), and rules of javana and tadārammaṇa.",
+        "es": "Procesos de las cinco puertas sensoriales (4 grados de presentación), procesos de la puerta mental (kāmajavana y appanā-javana), leyes de javana y tadārammaṇa.",
     },
     "unlockPrevAtomPct": 80,
     "houseUnlockAtomPct": 75,

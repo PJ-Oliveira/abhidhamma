@@ -68,12 +68,16 @@ export type PeriodicBlockId =
   | "rupa_hadaya"
   | "rupa_jivita"
   | "rupa_ahara"
+  | "rupa_pariccheda"
+  | "rupa_vinnatti"
+  | "rupa_vikara"
+  | "rupa_lakkhana"
   | "nibbana";
 
 export interface SabhavaElement {
-  /** Número atômico na Tabela Periódica das 72 Realidades (1..72) */
+  /** Número atômico na Tabela Periódica das 82 Realidades (1..72 Sabhāva + 73..82 Anipphanna-rūpa) */
   readonly atomicNumber: number;
-  /** Se for Cetasika, seu ID canônico (1..52); se Rūpa concreto, (1..18) */
+  /** Se for Cetasika, seu ID canônico (1..52); se Rūpa, (1..28: 1..18 Nipphanna + 19..28 Anipphanna) */
   readonly subId: number;
   readonly paramattha: "citta" | "cetasika" | "rupa" | "nibbana";
   readonly block: PeriodicBlockId;
@@ -86,6 +90,7 @@ export interface SabhavaElement {
   readonly cittaCount89?: number;
   readonly cittaCount121?: number;
   readonly isAvinibbhoga?: boolean; // Octeto inseparável da matéria
+  readonly isAnipphanna?: boolean; // 10 Rūpas não-concretos (AS VI.4)
 }
 
 export interface OntologicalCollisionRule {
@@ -1358,7 +1363,7 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
     isAvinibbhoga: item.avin,
   })),
 
-  // 72: 1 NIBBĀNA (O Incondicionado)
+  // 72: 1 NIBBĀNA (O Incondicionado — fecha os 72 Sabhāva/Vatthu-dhammas)
   {
     atomicNumber: 72,
     subId: 1,
@@ -1373,12 +1378,179 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
       es: "Paz suprema (santi-lakkhaṇa), inmortalidad (accuti-rasa), ausencia de signos condicionados (animitta-paccupaṭṭhāna)",
     },
     valenceRule: {
-      pt: "A 72ª realidade última: única realidade incondicionada (asaṅkhata), objeto direto das 8 (40) Lokuttara Cittas.",
-      en: "The 72nd ultimate reality: the sole unconditioned reality (asaṅkhata), direct object of the 8 (40) Lokuttara Cittas.",
-      es: "La 72.ª realidad última: única realidad incondicionada (asaṅkhata), objeto directo de las 8 (40) Lokuttara Cittas.",
+      pt: "A 72ª realidade com natureza própria (sabhāva/vatthu-dhamma): única realidade incondicionada (asaṅkhata), objeto direto das 8 (40) Lokuttara Cittas.",
+      en: "The 72nd reality with intrinsic nature (sabhāva/vatthu-dhamma): the sole unconditioned reality (asaṅkhata), direct object of the 8 (40) Lokuttara Cittas.",
+      es: "La 72.ª realidad con naturaleza propia (sabhāva/vatthu-dhamma): única realidad incondicionada (asaṅkhata), objeto directo de las 8 (40) Lokuttara Cittas.",
     },
   },
+
+  // 73..82: 10 ANIPPHANNA-RŪPAS (Materialidades Não-Concretas = 1 + 2 + 3 + 4 → fecha as 82 Subdivisões de Paramattha)
+  ...[
+    {
+      sub: 19,
+      sym: "Āk",
+      block: "rupa_pariccheda" as const,
+      pali: "Ākāsa-dhātu (Pariccheda-rūpa)",
+      pt: "Elemento Espaço (Matéria Delimitante)",
+      en: "Space Element (Delimiting Matter)",
+      es: "Elemento Espacio (Materia Delimitante)",
+      lakPt: "Delimitar a matéria (rūpa-paricchedana), demarcando as fronteiras entre os kalāpas para que não se fundam",
+      lakEn: "Delimiting matter (rūpa-paricchedana), demarcating boundaries between kalāpas so they do not fuse",
+      lakEs: "Delimitar la materia (rūpa-paricchedana), demarcando los límites entre los kalāpas para que no se fusionen",
+      valPt: "Anipphanna-rūpa (1/10 · Pariccheda-rūpa 1/1): interstício entre os kalāpas das 4 origens (AS VI.4).",
+      valEn: "Anipphanna-rūpa (1/10 · Pariccheda-rūpa 1/1): interstice between kalāpas born of all 4 origins (AS VI.4).",
+      valEs: "Anipphanna-rūpa (1/10 · Pariccheda-rūpa 1/1): intersticio entre los kalāpas nacidos de los 4 orígenes (AS VI.4).",
+    },
+    {
+      sub: 20,
+      sym: "Kv",
+      block: "rupa_vinnatti" as const,
+      pali: "Kāya-viññatti",
+      pt: "Intimação Corporal",
+      en: "Bodily Intimation",
+      es: "Intimación Corporal",
+      lakPt: "Modo especial do elemento vento originado pela mente (cittaja-vāyo) que move o corpo e comunica intenção",
+      lakEn: "Special mode of mind-born wind element (cittaja-vāyo) moving the body and communicating intention",
+      lakEs: "Modo especial del elemento viento nacido de la mente (cittaja-vāyo) que mueve el cuerpo y comunica intención",
+      valPt: "Anipphanna-rūpa (2/10 · Viññatti-rūpa 1/2): surge exclusivamente por Citta (cittaja) e dura apenas 1 cittakkhaṇa (AS VI.4).",
+      valEn: "Anipphanna-rūpa (2/10 · Viññatti-rūpa 1/2): strictly mind-born (cittaja) and lasts only 1 cittakkhaṇa (AS VI.4).",
+      valEs: "Anipphanna-rūpa (2/10 · Viññatti-rūpa 1/2): surge exclusivamente por Citta (cittaja) y dura solo 1 cittakkhaṇa (AS VI.4).",
+    },
+    {
+      sub: 21,
+      sym: "Vv",
+      block: "rupa_vinnatti" as const,
+      pali: "Vacī-viññatti",
+      pt: "Intimação Vocal",
+      en: "Vocal Intimation",
+      es: "Intimación Vocal",
+      lakPt: "Modo especial do elemento terra originado pela mente (cittaja-paṭhavī) no aparelho vocal que produz fala articulada",
+      lakEn: "Special mode of mind-born earth element (cittaja-paṭhavī) striking vocal organs to produce articulated speech",
+      lakEs: "Modo especial del elemento tierra nacido de la mente (cittaja-paṭhavī) en el aparato vocal que produce el habla",
+      valPt: "Anipphanna-rūpa (3/10 · Viññatti-rūpa 2/2): surge exclusivamente por Citta (cittaja) junto ao som da fala e dura 1 cittakkhaṇa (AS VI.4).",
+      valEn: "Anipphanna-rūpa (3/10 · Viññatti-rūpa 2/2): strictly mind-born (cittaja) alongside speech-sound and lasts 1 cittakkhaṇa (AS VI.4).",
+      valEs: "Anipphanna-rūpa (3/10 · Viññatti-rūpa 2/2): surge exclusivamente por Citta (cittaja) con el sonido del habla y dura 1 cittakkhaṇa (AS VI.4).",
+    },
+    {
+      sub: 22,
+      sym: "Lh",
+      block: "rupa_vikara" as const,
+      pali: "Lahutā (Rūpassa lahutā)",
+      pt: "Leveza da Matéria",
+      en: "Lightness of Matter",
+      es: "Ligereza de la Materia",
+      lakPt: "Não-lentidão e agilidade física da matéria viva (adandhatā), removendo o peso corporal",
+      lakEn: "Non-sluggishness and buoyancy of living matter (adandhatā), dispelling physical heaviness",
+      lakEs: "No-lentitud y agilidad física de la materia viva (adandhatā), disipando la pesadez corporal",
+      valPt: "Anipphanna-rūpa (4/10 · Vikāra-rūpa 1/3): mutabilidade originada por Citta, Utu e Āhāra (nunca por Kamma) (AS VI.4).",
+      valEn: "Anipphanna-rūpa (4/10 · Vikāra-rūpa 1/3): mutability born of Citta, Utu, and Āhāra (never Kamma-born) (AS VI.4).",
+      valEs: "Anipphanna-rūpa (4/10 · Vikāra-rūpa 1/3): mutabilidad originada por Citta, Utu y Āhāra (nunca por Kamma) (AS VI.4).",
+    },
+    {
+      sub: 23,
+      sym: "Mr",
+      block: "rupa_vikara" as const,
+      pali: "Mudutā (Rūpassa mudutā)",
+      pt: "Maleabilidade da Matéria",
+      en: "Malleability of Matter",
+      es: "Maleabilidad de la Materia",
+      lakPt: "Não-rigidez e flexibilidade física da matéria viva (athaddhatā), como couro bem curtido",
+      lakEn: "Non-stiffness and pliancy of living matter (athaddhatā), like well-tanned leather",
+      lakEs: "No-rigidez y flexibilidad física de la materia viva (athaddhatā), como cuero bien curtido",
+      valPt: "Anipphanna-rūpa (5/10 · Vikāra-rūpa 2/3): surge sempre em tríade inseparável com Lahutā e Kammaññatā por Citta, Utu e Āhāra (AS VI.4).",
+      valEn: "Anipphanna-rūpa (5/10 · Vikāra-rūpa 2/3): always arises as an inseparable triad with Lahutā and Kammaññatā via Citta, Utu, and Āhāra (AS VI.4).",
+      valEs: "Anipphanna-rūpa (5/10 · Vikāra-rūpa 2/3): surge siempre en tríada inseparable con Lahutā y Kammaññatā por Citta, Utu y Āhāra (AS VI.4).",
+    },
+    {
+      sub: 24,
+      sym: "Kr",
+      block: "rupa_vikara" as const,
+      pali: "Kammaññatā (Rūpassa kammaññatā)",
+      pt: "Adaptabilidade da Matéria",
+      en: "Wieldiness of Matter",
+      es: "Manejabilidad de la Materia",
+      lakPt: "Prontidão e manejabilidade física (kammaññabhāva) favorável às ações corporais, como ouro refinado",
+      lakEn: "Physical workability and serviceability (kammaññabhāva) favorable to bodily action, like refined gold",
+      lakEs: "Disposición y manejabilidad física (kammaññabhāva) favorable a las acciones corporales, como oro refinado",
+      valPt: "Anipphanna-rūpa (6/10 · Vikāra-rūpa 3/3): fecha os 5 Vikāra-rūpas em sentido amplo (2 Viññatti + 3 Vikāra = 5) (AS VI.4).",
+      valEn: "Anipphanna-rūpa (6/10 · Vikāra-rūpa 3/3): completes the 5 Vikāra-rūpas in the broad sense (2 Viññatti + 3 Vikāra = 5) (AS VI.4).",
+      valEs: "Anipphanna-rūpa (6/10 · Vikāra-rūpa 3/3): completa los 5 Vikāra-rūpas en sentido amplio (2 Viññatti + 3 Vikāra = 5) (AS VI.4).",
+    },
+    {
+      sub: 25,
+      sym: "Up",
+      block: "rupa_lakkhana" as const,
+      pali: "Upacaya (Rūpassa upacaya)",
+      pt: "Produção / Crescimento da Matéria",
+      en: "Production / Integration of Matter",
+      es: "Producción / Crecimiento de la Materia",
+      lakPt: "Surgimento inicial da matéria na concepção e acumulação (ācaya) até a completude das faculdades",
+      lakEn: "Initial arising of matter at conception and accumulation (ācaya) until faculties are complete",
+      lakEs: "Surgimiento inicial de la materia en la concepción y acumulación (ācaya) hasta completar las facultades",
+      valPt: "Anipphanna-rūpa (7/10 · Lakkhaṇa-rūpa 1/4): corresponde ao submomento de surgimento (uppāda) dos 18 Nipphanna-rūpas (AS VI.4).",
+      valEn: "Anipphanna-rūpa (7/10 · Lakkhaṇa-rūpa 1/4): corresponds to the arising sub-moment (uppāda) of the 18 Nipphanna-rūpas (AS VI.4).",
+      valEs: "Anipphanna-rūpa (7/10 · Lakkhaṇa-rūpa 1/4): corresponde al submomento de surgimiento (uppāda) de los 18 Nipphanna-rūpas (AS VI.4).",
+    },
+    {
+      sub: 26,
+      sym: "Sn",
+      block: "rupa_lakkhana" as const,
+      pali: "Santati (Rūpassa santati)",
+      pt: "Continuidade da Matéria",
+      en: "Continuity of Matter",
+      es: "Continuidad de la Materia",
+      lakPt: "Surgimento contínuo e sucessivo (pavatti) de novos kalāpas após a formação completa das faculdades",
+      lakEn: "Continuous successive arising (pavatti) of new kalāpas after faculties are fully developed",
+      lakEs: "Surgimiento continuo y sucesivo (pavatti) de nuevos kalāpas tras el desarrollo completo de las facultades",
+      valPt: "Anipphanna-rūpa (8/10 · Lakkhaṇa-rūpa 2/4): tanto Upacaya quanto Santati designam o submomento genético (uppāda) da matéria concreta (AS VI.4).",
+      valEn: "Anipphanna-rūpa (8/10 · Lakkhaṇa-rūpa 2/4): both Upacaya and Santati denote the genetic sub-moment (uppāda) of concrete matter (AS VI.4).",
+      valEs: "Anipphanna-rūpa (8/10 · Lakkhaṇa-rūpa 2/4): tanto Upacaya como Santati designan el submomento genético (uppāda) de la materia concreta (AS VI.4).",
+    },
+    {
+      sub: 27,
+      sym: "Ja",
+      block: "rupa_lakkhana" as const,
+      pali: "Jaratā (Rūpassa jaratā)",
+      pt: "Envelhecimento / Decadência da Matéria",
+      en: "Decay / Aging of Matter",
+      es: "Envejecimiento / Decadencia de la Materia",
+      lakPt: "Amadurecimento e desgaste (paripāka) da matéria concreta sem perda de sua natureza intrínseca",
+      lakEn: "Maturing and aging (paripāka) of concrete matter without loss of its intrinsic nature",
+      lakEs: "Maduración y desgaste (paripāka) de la materia concreta sin pérdida de su naturaleza intrínseca",
+      valPt: "Anipphanna-rūpa (9/10 · Lakkhaṇa-rūpa 3/4): corresponde à fase de presença/duração (ṭhiti = 49 submomentos) dos 18 Nipphanna-rūpas (AS VI.4).",
+      valEn: "Anipphanna-rūpa (9/10 · Lakkhaṇa-rūpa 3/4): corresponds to the presence/standing phase (ṭhiti = 49 sub-moments) of the 18 Nipphanna-rūpas (AS VI.4).",
+      valEs: "Anipphanna-rūpa (9/10 · Lakkhaṇa-rūpa 3/4): corresponde a la fase de presencia/duración (ṭhiti = 49 submomentos) de los 18 Nipphanna-rūpas (AS VI.4).",
+    },
+    {
+      sub: 28,
+      sym: "Ac",
+      block: "rupa_lakkhana" as const,
+      pali: "Aniccatā (Rūpassa aniccatā)",
+      pt: "Impermanência da Matéria",
+      en: "Impermanence of Matter",
+      es: "Impermanencia de la Materia",
+      lakPt: "Dissolução e quebra completa (paribheda) dos fenômenos materiais concretos",
+      lakEn: "Complete breakup and dissolution (paribheda) of concrete material phenomena",
+      lakEs: "Disolución y ruptura completa (paribheda) de los fenómenos materiales concretos",
+      valPt: "Anipphanna-rūpa (10/10 · Lakkhaṇa-rūpa 4/4): corresponde ao submomento de dissolução (bhaṅga) dos 18 Nipphanna-rūpas (AS VI.4).",
+      valEn: "Anipphanna-rūpa (10/10 · Lakkhaṇa-rūpa 4/4): corresponds to the dissolution sub-moment (bhaṅga) of the 18 Nipphanna-rūpas (AS VI.4).",
+      valEs: "Anipphanna-rūpa (10/10 · Lakkhaṇa-rūpa 4/4): corresponde al submomento de disolución (bhaṅga) de los 18 Nipphanna-rūpas (AS VI.4).",
+    },
+  ].map((item): SabhavaElement => ({
+    atomicNumber: 54 + item.sub, // 73..82
+    subId: item.sub, // 19..28
+    paramattha: "rupa",
+    block: item.block,
+    symbol: item.sym,
+    pali: item.pali,
+    name: { pt: item.pt, en: item.en, es: item.es },
+    lakkhana: { pt: item.lakPt, en: item.lakEn, es: item.lakEs },
+    valenceRule: { pt: item.valPt, en: item.valEn, es: item.valEs },
+    isAnipphanna: true,
+  })),
 ];
+
+export const PERIODIC_ELEMENTS_82 = PERIODIC_ELEMENTS_72;
 
 // ── AS 8 LEIS CANÔNICAS DE COLISÃO ONTOLÓGICA (AS II.10–17) ─────────────────
 

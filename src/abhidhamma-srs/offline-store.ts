@@ -18,7 +18,7 @@ import type {
   AnkiStats,
 } from "./types.js";
 
-export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v26";
+export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v27";
 /** Cache permanente de progresso do usuário — nunca apagado por atualizações do Service Worker. */
 export const VAULT_CACHE_NAME = "abhidhamma-anki-vault-v1";
 export const VAULT_SNAPSHOT_PATH = "/_offline_vault/abhidhamma-anki-progress.json";

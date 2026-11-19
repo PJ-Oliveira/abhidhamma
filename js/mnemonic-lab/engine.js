@@ -1,4 +1,4 @@
-import { CANONICAL_CITTAS_89, ONTOLOGICAL_COLLISION_RULES, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=fedab02c";
+import { CANONICAL_CITTAS_89, ONTOLOGICAL_COLLISION_RULES, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=ab67c570";
 export const MNEMONIC_STORAGE_KEY = "abhidhamma_mnemonic_lab_v1";
 export function createInitialProgress() {
     return {

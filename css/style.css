@@ -3574,6 +3574,23 @@ details[open] > summary::before { transform: rotate(90deg); }
   gap: 14px;
 }
 
+.mnem-aid-disclaimer {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.mnem-aid-note {
+  background: var(--bg-panel);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 /* Submode Bar & Buttons */
 .mnem-submode-bar {
   display: flex;
@@ -3966,6 +3983,22 @@ details[open] > summary::before { transform: rotate(90deg); }
   margin-left: 6px;
 }
 
+.mnem-anipphanna-tag {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px dashed #0284c7;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+.mnem-tile-anipphanna {
+  border-style: dashed;
+}
+
 .mnem-periodic-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
@@ -4053,6 +4086,10 @@ details[open] > summary::before { transform: rotate(90deg); }
 .mnem-block-rupa_hadaya,
 .mnem-block-rupa_jivita,
 .mnem-block-rupa_ahara { border-top: 4px solid #d97706; }
+.mnem-block-rupa_pariccheda,
+.mnem-block-rupa_vinnatti,
+.mnem-block-rupa_vikara,
+.mnem-block-rupa_lakkhana { border-top: 4px solid #0284c7; }
 .mnem-block-nibbana { border-top: 4px solid #eab308; }
 
 .mnem-collision-alert {

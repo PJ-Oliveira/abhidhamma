@@ -1,6 +1,6 @@
-import { lookupPali } from "./dictionary.js?v=fedab02c";
-import { settings } from "./state.js?v=fedab02c";
-import { t } from "./i18n.js?v=fedab02c";
+import { lookupPali } from "./dictionary.js?v=ab67c570";
+import { settings } from "./state.js?v=ab67c570";
+import { t } from "./i18n.js?v=ab67c570";
 let currentHighlight = null;
 let selectedWordSpans = [];
 let popoverEl = null;

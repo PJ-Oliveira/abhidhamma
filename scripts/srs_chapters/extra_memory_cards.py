@@ -72,15 +72,15 @@ def build_cards() -> list[dict]:
         _card(
             "c0.chk_paramattha_4", 0, "paramattha", "structure", "checksum",
             ["c0.citta_atom", "c0.cetasika_atom", "c0.rupa_atom", "c0.nibbana_atom"],
-            "4 = 3 Saṅkhata + 1 Asaṅkhata",
+            "4 = 3 Saṅkhata + 1 Asaṅkhata · 72 Sabhāva + 10 Anipphanna = 82",
             CAT_CHK,
-            T("Decomponha o checksum dos 4 Paramatthas: quantos são condicionados (saṅkhata), quantos são mentais (nāma) e qual é incondicionado?",
-              "Decompose the checksum of the 4 Paramatthas: how many are conditioned (saṅkhata), how many are mental (nāma), and which is unconditioned?",
-              "Descomponga el checksum de los 4 Paramatthas: ¿cuántos son condicionados (saṅkhata), cuántos son mentales (nāma) y cuál es incondicionado?"),
-            T("4 = 3 condicionados (Citta, Cetasika, Rūpa) + 1 incondicionado (Nibbāna). Na divisão mente/matéria: 2 mentais condicionados (Citta + Cetasika) + 1 matéria (Rūpa) + 1 Nibbāna (arūpa/nāma incondicionado).",
-              "4 = 3 conditioned (Citta, Cetasika, Rūpa) + 1 unconditioned (Nibbāna). By mind/matter: 2 conditioned mental (Citta + Cetasika) + 1 matter (Rūpa) + 1 Nibbāna (unconditioned non-material).",
-              "4 = 3 condicionados (Citta, Cetasika, Rūpa) + 1 incondicionado (Nibbāna). Por mente/materia: 2 mentales condicionados (Citta + Cetasika) + 1 materia (Rūpa) + 1 Nibbāna (incondicionado)."),
-            {"as": "I.2", "cma": "I §2", "segId": 7},
+            T("Decomponha o checksum dos 4 Paramatthas: quantos são condicionados (saṅkhata), quantos formam as 72 realidades com sabhāva (vatthu-dhammas) e como chegam às 82 subdivisões?",
+              "Decompose the checksum of the 4 Paramatthas: how many are conditioned (saṅkhata), how do they sum to 72 realities with intrinsic nature (vatthu-dhammas), and how do they reach 82 subdivisions?",
+              "Descomponga el checksum de los 4 Paramatthas: ¿cuántos son condicionados (saṅkhata), cómo suman 72 realidades con naturaleza propia (vatthu-dhammas) y cómo llegan a 82 subdivisiones?"),
+            T("4 = 3 condicionados (Citta, Cetasika, Rūpa) + 1 incondicionado (Nibbāna). 72 vatthu-dhammas (com sabhāva) = 1 Citta + 52 Cetasikas + 18 Nipphanna-rūpas + 1 Nibbāna (AS VII.41). Somando os 10 Anipphanna-rūpas (1+2+3+4) = 82 subdivisões totais (1 + 52 + 28 + 1 = 82).",
+              "4 = 3 conditioned (Citta, Cetasika, Rūpa) + 1 unconditioned (Nibbāna). 72 vatthu-dhammas (possessing sabhāva) = 1 Citta + 52 Cetasikas + 18 Nipphanna-rūpas + 1 Nibbāna (AS VII.41). Adding the 10 Anipphanna-rūpas (1+2+3+4) yields 82 total subdivisions (1 + 52 + 28 + 1 = 82).",
+              "4 = 3 condicionados (Citta, Cetasika, Rūpa) + 1 incondicionado (Nibbāna). 72 vatthu-dhammas (con sabhāva) = 1 Citta + 52 Cetasikas + 18 Nipphanna-rūpas + 1 Nibbāna (AS VII.41). Sumando los 10 Anipphanna-rūpas (1+2+3+4) = 82 subdivisiones totales (1 + 52 + 28 + 1 = 82)."),
+            {"as": "I.2; VII.41", "cma": "I §2; VII §40", "segId": 7},
         ),
         _card(
             "c1.chk_89_planes", 1, "citta", "structure", "checksum",
@@ -1078,6 +1078,15 @@ def attach_math_structures(cards: list[dict]) -> None:
         m = re.match(r"^c6\.rupa_(\d+)$", cid)
         if m:
             c["mathStructure"] = _rupa_math(int(m.group(1)))
+            continue
+        m = re.match(r"^c3\.vedana_(\d+)$", cid)
+        if m:
+            idx = int(m.group(1))
+            c["mathStructure"] = T(
+                f"5 Vedanās (Indriya-bheda, de 3 por sabhāva) · #{idx}/5 · soma nos 121 cittas: 1 Sukha + 1 Dukkha + 62 Somanassa (18+12+32) + 2 Domanassa + 55 Upekkhā (32+3+12+8) = 121.",
+                f"5 Vedanās (Indriya-bheda, from 3 by sabhāva) · #{idx}/5 · sum across 121 cittas: 1 Sukha + 1 Dukkha + 62 Somanassa (18+12+32) + 2 Domanassa + 55 Upekkhā (32+3+12+8) = 121.",
+                f"5 Vedanās (Indriya-bheda, de 3 por sabhāva) · #{idx}/5 · suma en 121 cittas: 1 Sukha + 1 Dukkha + 62 Somanassa (18+12+32) + 2 Domanassa + 55 Upekkhā (32+3+12+8) = 121.",
+            )
             continue
         m = re.match(r"^c3\.hetu_(\d+)$", cid)
         if m:

@@ -38,6 +38,7 @@ describe("Abhidhammatthasaṅgaha Anki SRS Engine & Exhaustive Dataset", () => {
     expect(matchCount(/^c1\.citta_\d+$/)).toBe(89);
     expect(matchCount(/^c2\.cet_\d+$/)).toBe(52);
     expect(matchCount(/^c6\.rupa_\d+$/)).toBe(28);
+    expect(matchCount(/^c3\.vedana_\d+$/)).toBe(5);
     expect(matchCount(/^c3\.hetu_\d+$/)).toBe(6);
     expect(matchCount(/^c3\.kicca_\d+$/)).toBe(14);
     expect(matchCount(/^c3\.dvara_\d+$/)).toBe(6);
@@ -46,6 +47,16 @@ describe("Abhidhammatthasaṅgaha Anki SRS Engine & Exhaustive Dataset", () => {
     expect(matchCount(/^c8\.ps_\d+$/)).toBe(12);
     expect(matchCount(/^c8\.pat_\d+$/)).toBe(24);
     expect(matchCount(/^c6\.nibbana_\d+/)).toBeGreaterThanOrEqual(4);
+
+    const ch3 = dataset.chapters.find((c) => c.chapter === 3)!;
+    const ch4 = dataset.chapters.find((c) => c.chapter === 4)!;
+    const ch6 = dataset.chapters.find((c) => c.chapter === 6)!;
+    expect(ch3.subtitle.pt).toContain("5 sensações (vedanā)");
+    expect(ch3.subtitle.en).toContain("5 feelings (vedanā)");
+    expect(ch4.title.en).not.toContain("17 Moments");
+    expect(ch4.title.pt).not.toContain("17 Momentos");
+    expect(ch6.title.en).not.toContain("17:1");
+    expect(ch6.title.pt).not.toContain("17:1");
 
     // Check 121-citta expansion, 17:1 asymmetry, non-cognitive Nibbāna, 17-moment Vīthi
     expect(ids.has("c1.house_121_expansion")).toBe(true);
@@ -241,6 +252,13 @@ describe("Abhidhammatthasaṅgaha Anki SRS Engine & Exhaustive Dataset", () => {
     await ui.init();
 
     expect(mount.textContent).toContain("Foundations: The Four Ultimate Realities");
+    expect(mount.textContent).toContain("(362 cards)");
+    expect(mount.textContent).toContain("This is not the Abhidhamma itself, but memory aids only.");
+    ui.setLang("es");
+    expect(mount.textContent).toContain("Esto no es el Abhidhamma en sí, sino solo una ayuda de memorización.");
+    ui.setLang("pt");
+    expect(mount.textContent).toContain("Isto não é o Abhidhamma em si, mas apenas um auxílio de memorização.");
+    ui.setLang("en");
     mount.querySelector<HTMLButtonElement>('[data-study-chapter="0"]')!.click();
     mount.querySelector<HTMLButtonElement>(".abhi-btn-reveal")!.click();
     expect(mount.querySelector('.abhi-rate-btn[data-rate="1"]')!.textContent).toContain("Again");

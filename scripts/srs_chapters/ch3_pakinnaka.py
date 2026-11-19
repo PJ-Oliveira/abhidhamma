@@ -1,17 +1,17 @@
-"""Chapter 3: Pakiṇṇakapariccheda — All 6 Roots, 14 Functions, 6 Doors, 6 Objects, 6 Bases, and Feelings."""
+"""Chapter 3: Pakiṇṇakapariccheda — All 5 Feelings (Vedanā), 6 Roots (Hetu), 14 Functions (Kicca), 6 Doors (Dvāra), 6 Objects (Ārammaṇa), and 6 Bases (Vatthu)."""
 
 CHAPTER_META = {
     "chapter": 3,
     "paliTitle": "Pakiṇṇakapariccheda",
     "title": {
-        "pt": "Cap. 3: Grelhas Logísticas (Pakiṇṇaka)",
-        "en": "Ch. 3: Compendium of Miscellaneous (Pakiṇṇaka)",
-        "es": "Cap. 3: Compendio de los Diversos (Pakiṇṇaka)",
+        "pt": "Cap. 3: Compêndio da Miscelânea (Pakiṇṇaka)",
+        "en": "Ch. 3: Compendium of the Miscellaneous (Pakiṇṇaka)",
+        "es": "Cap. 3: Compendio de la Miscelánea (Pakiṇṇaka)",
     },
     "subtitle": {
-        "pt": "Mapeamento item a item: 6 raízes (hetu), 14 funções (kicca), 6 portas (dvāra), 6 objetos (ārammaṇa) e 6 bases (vatthu).",
-        "en": "Item-by-item mapping: 6 roots (hetu), 14 functions (kicca), 6 doors (dvāra), 6 objects (ārammaṇa), and 6 bases (vatthu).",
-        "es": "Mapeo ítem por ítem: 6 raíces (hetu), 14 funciones (kicca), 6 puertas (dvāra), 6 objetos (ārammaṇa) y 6 bases (vatthu).",
+        "pt": "As 6 análises canônicas: 5 sensações (vedanā), 6 raízes (hetu), 14 funções (kicca), 6 portas (dvāra), 6 objetos (ārammaṇa) e 6 bases (vatthu).",
+        "en": "The 6 canonical analyses: 5 feelings (vedanā), 6 roots (hetu), 14 functions (kicca), 6 doors (dvāra), 6 objects (ārammaṇa), and 6 bases (vatthu).",
+        "es": "Los 6 análisis canónicos: 5 sensaciones (vedanā), 6 raíces (hetu), 14 funciones (kicca), 6 puertas (dvāra), 6 objetos (ārammaṇa) y 6 bases (vatthu).",
     },
     "unlockPrevAtomPct": 80,
     "houseUnlockAtomPct": 75,
@@ -21,7 +21,52 @@ CHAPTER_META = {
 def build_cards():
     cards = []
 
-    # ── 6 Roots (Hetu) ───────────────────────────────────────────────────────
+    # ── 1. 5 Feelings (Vedanā-saṅgaha, AS III.2–4) ───────────────────────────
+    vedanas = [
+        (1, "Sukha", "Prazer Corporal", "Bodily Pleasure", "Placer Corporal", "Kāyika-sukha · Sukhindriya (1/5)",
+         ("Sensação agradável física (kāyika sukha): experimenta o impacto de um objeto tangível desejável ou moderadamente desejável no corpo. Surge em 1 única citta entre as 89/121: a consciência tátil resultante salubre (sukha-sahagata kusala-vipāka kāya-viññāṇa, #24).",
+          "Bodily pleasant feeling (kāyika sukha): experiences a desirable or moderately desirable tangible impingement on the body. Arises in 1 single citta out of 89/121: wholesome-resultant body-consciousness (sukha-sahagata kusala-vipāka kāya-viññāṇa, #24).",
+          "Sensación agradable física (kāyika sukha): experimenta un impacto tangible deseable en el cuerpo. Surge en 1 única citta de las 89/121: la conciencia táctil resultante saludable (sukha-sahagata kusala-vipāka kāya-viññāṇa, #24).")),
+        (2, "Dukkha", "Dor Corporal", "Bodily Pain", "Dolor Corporal", "Kāyika-dukkha · Dukkhindriya (2/5)",
+         ("Sensação dolorosa física (kāyika dukkha): experimenta o impacto de um objeto tangível indesejável na sensibilidade corporal. Surge em 1 única citta entre as 89/121: a consciência tátil resultante insalubre (dukkha-sahagata akusala-vipāka kāya-viññāṇa, #17).",
+          "Bodily painful feeling (kāyika dukkha): experiences an undesirable tangible impingement on body-sensitivity. Arises in 1 single citta out of 89/121: unwholesome-resultant body-consciousness (dukkha-sahagata akusala-vipāka kāya-viññāṇa, #17).",
+          "Sensación dolorosa física (kāyika dukkha): experimenta un impacto tangible indeseable en el cuerpo. Surge en 1 única citta de las 89/121: la conciencia táctil resultante insaludable (dukkha-sahagata akusala-vipāka kāya-viññāṇa, #17).")),
+        (3, "Somanassa", "Prazer Mental / Alegria", "Mental Pleasure / Joy", "Placer Mental / Alegría", "Cetasika-sukha · Somanassindriya (3/5)",
+         ("Sensação agradável mental (cetasika sukha): saboreia a qualidade desejável do objeto na mente. Surge em 62 cittas na contagem de 121: 18 kāmāvacara (4 lobha-mūla + 1 somanassa-santīraṇa #27 + 1 hasituppāda #30 + 12 kāmasobhana) + 12 rūpāvacara (1º ao 4º jhāna × 3) + 32 lokuttara (1º ao 4º jhāna × 8).",
+          "Mental pleasant feeling (cetasika sukha): savors the desirable aspect of an object mentally. Arises in 62 cittas in the 121 reckoning: 18 sense-sphere (4 lobha-mūla + 1 somanassa-santīraṇa #27 + 1 hasituppāda #30 + 12 kāmasobhana) + 12 fine-material (1st–4th jhāna × 3) + 32 supramundane (1st–4th jhāna × 8).",
+          "Sensación agradable mental (cetasika sukha): saborea mentalmente el aspecto deseable del objeto. Surge en 62 cittas en el cómputo de 121: 18 kāmāvacara (4 lobha-mūla + 1 somanassa-santīraṇa #27 + 1 hasituppāda #30 + 12 kāmasobhana) + 12 rūpāvacara (1.º–4.º jhāna × 3) + 32 lokuttara (1.º–4.º jhāna × 8).")),
+        (4, "Domanassa", "Desprazer Mental", "Mental Displeasure", "Displacer Mental", "Cetasika-dukkha · Domanassindriya (4/5)",
+         ("Sensação dolorosa/aflitiva mental (cetasika dukkha): experimenta o objeto sob aversão ou contrariedade subjetiva. Surge exclusivamente nas 2 consciências enraizadas em aversão (dosa-mūla cittas #9 asaṅkhārika e #10 sasaṅkhārika), sempre acompanhada de paṭigha.",
+          "Mental painful feeling (cetasika dukkha): experiences an object with subjective affliction. Arises exclusively in the 2 aversion-rooted consciousnesses (dosa-mūla cittas #9 unprompted and #10 prompted), always conjoined with paṭigha.",
+          "Sensación dolorosa mental (cetasika dukkha): experimenta el objeto con aflicción subjetiva. Surge exclusivamente en las 2 conciencias enraizadas en aversión (dosa-mūla cittas #9 y #10), siempre unida a paṭigha.")),
+        (5, "Upekkhā (Adukkhamasukha)", "Sensação Equânime / Neutra", "Equanimous / Neutral Feeling", "Sensación Ecuánime / Neutra", "Adukkhamasukha · Upekkhindriya (5/5)",
+         ("Sensação neutra (nem dolorosa nem agradável; distinta de tatramajjhattatā do agregado saṅkhāra). Surge em 55 cittas na contagem de 121: 32 kāmāvacara (4 lobha + 2 moha + 14 ahetuka + 12 kāmasobhana) + 3 rūpāvacara (5º jhāna) + 12 arūpāvacara + 8 lokuttara (5º jhāna).",
+          "Neutral feeling (neither-painful-nor-pleasant; distinct from tatramajjhattatā in saṅkhāra-kkhandha). Arises in 55 cittas in the 121 reckoning: 32 sense-sphere (4 lobha + 2 moha + 14 rootless + 12 kāmasobhana) + 3 fine-material (5th jhāna) + 12 immaterial + 8 supramundane (5th jhāna).",
+          "Sensación neutra (ni dolorosa ni agradable; distinta de tatramajjhattatā en saṅkhāra-kkhandha). Surge en 55 cittas en el cómputo de 121: 32 kāmāvacara (4 lobha + 2 moha + 14 ahetuka + 12 kāmasobhana) + 3 rūpāvacara (5.º jhāna) + 12 arūpāvacara + 8 lokuttara (5.º jhāna).")),
+    ]
+    for idx, pali_n, pt_n, en_n, es_n, sub, desc in vedanas:
+        cards.append({
+            "id": f"c3.vedana_{idx:02d}",
+            "chapter": 3,
+            "axis": "pakinnaka",
+            "tier": "atom",
+            "requires": [],
+            "paliTerm": {
+                "pt": f"Vedanā {idx}/5: {pali_n} ({pt_n})",
+                "en": f"Vedanā {idx}/5: {pali_n} ({en_n})",
+                "es": f"Vedanā {idx}/5: {pali_n} ({es_n})",
+            },
+            "categoryLabel": {"pt": f"Pakiṇṇaka · Sensações ({sub})", "en": f"Pakiṇṇaka · Feelings ({sub})", "es": f"Pakiṇṇaka · Sensaciones ({sub})"},
+            "prompt": {
+                "pt": f"Defina a sensação (vedanā) {pali_n} ({pt_n}) segundo o Vedanā-saṅgaha (AS III.2–4) e indique exatamente em quantas e quais classes de citta ela ocorre.",
+                "en": f"Define the feeling (vedanā) {pali_n} ({en_n}) according to the Vedanā-saṅgaha (AS III.2–4) and state the exact count and classes of citta in which it arises.",
+                "es": f"Defina la sensación (vedanā) {pali_n} ({es_n}) según el Vedanā-saṅgaha (AS III.2–4) e indique en cuántas y qué clases de citta ocurre.",
+            },
+            "answer": {"pt": desc[0], "en": desc[1], "es": desc[2]},
+            "source": {"as": "III.2–4", "cma": "III §2–4", "segId": 183},
+        })
+
+    # ── 2. 6 Roots (Hetu-saṅgaha, AS III.5–7) ────────────────────────────────
     hetus = [
         (1, "Lobha", "Avidez", "Greed", "Avidez", "Akusala-hetu (1/3)",
          ("Raiz prejudicial da avidez/cobiça: apega-se ao objeto desejável. Ocorre nos 8 Lobha-mūla-cittas.",
@@ -307,22 +352,22 @@ def build_cards():
             "chapter": 3,
             "axis": "pakinnaka",
             "tier": "structure",
-            "requires": ["c3.hetu_01", "c3.kicca_08"],
+            "requires": [f"c3.vedana_{i:02d}" for i in range(1, 6)],
             "paliTerm": {
-                "pt": "Vedanā-saṅgaha (5 Sensações)",
-                "en": "Vedanā-saṅgaha (5 Feelings)",
-                "es": "Vedanā-saṅgaha (5 Sensaciones)",
+                "pt": "Vedanā-saṅgaha (3 por Natureza · 5 por Faculdade)",
+                "en": "Vedanā-saṅgaha (3 by Nature · 5 by Faculty)",
+                "es": "Vedanā-saṅgaha (3 por Naturaleza · 5 por Facultad)",
             },
-            "categoryLabel": {"pt": "Pakiṇṇaka · Sensações", "en": "Pakiṇṇaka · Feelings", "es": "Pakiṇṇaka · Sensaciones"},
+            "categoryLabel": {"pt": "Pakiṇṇaka · Síntese das Sensações", "en": "Pakiṇṇaka · Feelings Synthesis", "es": "Pakiṇṇaka · Síntesis de Sensaciones"},
             "prompt": {
-                "pt": "Como se distribuem as 5 sensações (Sukha, Dukkha, Somanassa, Domanassa, Upekkhā) pelos 89 cittas?",
-                "en": "How are the 5 feelings (Sukha, Dukkha, Somanassa, Domanassa, Upekkhā) distributed across the 89 cittas?",
-                "es": "¿Cómo se distribuyen las 5 sensaciones (Sukha, Dukkha, Somanassa, Domanassa, Upekkhā) entre los 89 cittas?",
+                "pt": "Como o Vedanā-saṅgaha (AS III.2–4) classifica a sensação em 3 e em 5 tipos, e como as 5 sensações se distribuem exatamente nas 89 e nas 121 cittas?",
+                "en": "How does the Vedanā-saṅgaha (AS III.2–4) classify feeling into 3 and 5 kinds, and how are the 5 feelings distributed across the 89 and 121 cittas?",
+                "es": "¿Cómo clasifica el Vedanā-saṅgaha (AS III.2–4) la sensación en 3 y 5 tipos, y cómo se distribuyen las 5 sensaciones en las 89 y 121 cittas?",
             },
             "answer": {
-                "pt": "Sukha (prazer físico) = 1 (kusala-vipāka kāyaviññāṇa) | Dukkha (dor física) = 1 (akusala-vipāka kāyaviññāṇa) | Domanassa (desprazer mental) = 2 (dosa-mūla) | Somanassa (alegria mental) = 18 (4 lobha + 1 somanassa-santīraṇa + 1 hasituppāda + 12 kāmāvacara sobhana) + 12 (1º–4º rūpa jhāna × 3) [= 30? Wait: 18 + 12 + ... Let's count exact: 4 lobha + 2 ahetuka + 12 kāmasobhana + 12 rūpāvacara (4×3) + 32? No, in 89: 4+2+12+12+0+0 = 30? No: 18+12 = 30, wait: 1º-4º Lokuttara in 121! In 89: 4 lobha + 1 somanassa-santīraṇa + 1 hasituppāda + 12 kāma sobhana + 12 rūpāvacara (1st-4th × 3) = 30, or 18+12? Wait: in Abhidhamma: Sukha=1, Dukkha=1, Domanassa=2, Somanassa=62 in 121 (18 + 12 + 32 lokuttara) or 30? Wait: Lokuttara in 89 has 8, 5th jhāna is upekkhā, 1st-4th are somanassa, so in 89 brief: 18 + 12 = 30 + (no single fixed in brief lokuttara unless counted as 62 in 121). Let's state the exact canonical numbers: in 121: Sukha=1, Dukkha=1, Domanassa=2, Somanassa=62 (18 kāma + 12 rūpa + 32 lokuttara), Upekkhā=55 (32 kāma + 3 rūpa + 12 arūpa + 8 lokuttara 5th jhāna)! Sum: 1+1+2+62+55 = 121!]",
-                "en": "In the 121-citta reckoning: Sukha = 1 (kusala kāyaviññāṇa), Dukkha = 1 (akusala kāyaviññāṇa), Domanassa = 2 (dosa-mūla), Somanassa = 62 (18 sense + 12 rūpa 1st–4th jhāna + 32 lokuttara 1st–4th jhāna), Upekkhā = 55 (32 sense + 3 rūpa 5th jhāna + 12 arūpa + 8 lokuttara 5th jhāna). Total = 121.",
-                "es": "En el cómputo de 121: Sukha = 1, Dukkha = 1, Domanassa = 2, Somanassa = 62 (18 sensoriales + 12 rūpa 1.º–4.º jhāna + 32 lokuttara), Upekkhā = 55 (32 sensoriales + 3 rūpa 5.º jhāna + 12 arūpa + 8 lokuttara 5.º jhāna). Total = 121.",
+                "pt": "Por natureza (sabhāva) são 3 (sukha, dukkha, adukkhamasukha); por faculdade (indriya-bheda) dividem-se em 5 ao separar o prazer e a dor corporais dos mentais: Sukha corporal = 1 (kusala-vipāka kāyaviññāṇa #24) | Dukkha corporal = 1 (akusala-vipāka kāyaviññāṇa #17) | Domanassa mental = 2 (dosa-mūla #9–#10) | Somanassa mental = 62 em 121 (18 kāmāvacara + 12 rūpāvacara 1º–4º jhāna + 32 lokuttara 1º–4º jhāna; ou 30 mundanas + lokuttara em 89) | Upekkhā = 55 em 121 (32 kāmāvacara + 3 rūpāvacara 5º jhāna + 12 arūpāvacara + 8 lokuttara 5º jhāna; ou 47 mundanas + lokuttara em 89). Soma = 1 + 1 + 2 + 62 + 55 = 121.",
+                "en": "By intrinsic nature (sabhāva) there are 3 (sukha, dukkha, adukkhamasukha); by governing faculty (indriya-bheda) they become 5 by splitting bodily vs. mental pleasure and pain: Bodily Sukha = 1 (kusala-vipāka kāyaviññāṇa #24) | Bodily Dukkha = 1 (akusala-vipāka kāyaviññāṇa #17) | Mental Domanassa = 2 (dosa-mūla #9–#10) | Mental Somanassa = 62 in 121 (18 sense-sphere + 12 rūpa 1st–4th jhāna + 32 lokuttara 1st–4th jhāna; 30 mundane in 89) | Upekkhā = 55 in 121 (32 sense-sphere + 3 rūpa 5th jhāna + 12 arūpa + 8 lokuttara 5th jhāna; 47 mundane in 89). Total = 1 + 1 + 2 + 62 + 55 = 121.",
+                "es": "Por naturaleza (sabhāva) son 3 (sukha, dukkha, adukkhamasukha); por facultad (indriya-bheda) son 5 al distinguir placer y dolor corporales de los mentales: Sukha corporal = 1 (#24) | Dukkha corporal = 1 (#17) | Domanassa mental = 2 (dosa-mūla #9–#10) | Somanassa mental = 62 en 121 (18 sensoriales + 12 rūpa 1.º–4.º jhāna + 32 lokuttara 1.º–4.º jhāna) | Upekkhā = 55 en 121 (32 sensoriales + 3 rūpa 5.º jhāna + 12 arūpa + 8 lokuttara 5.º jhāna). Suma = 1 + 1 + 2 + 62 + 55 = 121.",
             },
             "source": {"as": "III.2–4", "cma": "III §2–4", "segId": 183},
         },
@@ -356,6 +401,7 @@ def build_cards():
             "axis": "pakinnaka",
             "tier": "house",
             "requires": [
+                "c3.struct_vedana_5",
                 "c3.struct_hetu_distribution",
                 "c3.kicca_11",
                 "c3.kicca_12",
@@ -364,33 +410,23 @@ def build_cards():
                 "c3.vatthu_06",
             ],
             "paliTerm": {
-                "pt": "Integração das 6 Grelhas de Pakiṇṇaka",
-                "en": "Integration of the 6 Pakiṇṇaka Grids",
-                "es": "Integración de las 6 Rejillas de Pakiṇṇaka",
+                "pt": "Integração das 6 Análises de Pakiṇṇaka (Vedanā · Hetu · Kicca · Dvāra · Ārammaṇa · Vatthu)",
+                "en": "Integration of the 6 Pakiṇṇaka Analyses (Vedanā · Hetu · Kicca · Dvāra · Ārammaṇa · Vatthu)",
+                "es": "Integración de los 6 Análisis de Pakiṇṇaka (Vedanā · Hetu · Kicca · Dvāra · Ārammaṇa · Vatthu)",
             },
             "categoryLabel": {"pt": "Síntese Arquitetônica (Casa)", "en": "Architectural Synthesis (House)", "es": "Síntesis Arquitectónica (Casa)"},
             "prompt": {
-                "pt": "Sintetize as exceções estruturais que conectam Kicca, Dvāra, Ārammaṇa e Vatthu: (1) cittas dvāravimutta, (2) cittas avatthuka e (3) citta dual āvajjana/voṭṭhapana.",
-                "en": "Synthesize the structural cross-rules linking Kicca, Dvāra, Ārammaṇa, and Vatthu: (1) dvāravimutta cittas, (2) avatthuka cittas, and (3) the dual āvajjana/voṭṭhapana citta.",
-                "es": "Sintetice las reglas cruzadas que conectan Kicca, Dvāra, Ārammaṇa y Vatthu: (1) cittas dvāravimutta, (2) cittas avatthuka y (3) el citta dual āvajjana/voṭṭhapana.",
+                "pt": "Sintetize as exceções estruturais que conectam as 6 análises de Pakiṇṇaka: (1) vedanā corporal vs. mental, (2) cittas dvāravimutta, (3) cittas avatthuka e (4) citta dual āvajjana/voṭṭhapana.",
+                "en": "Synthesize the structural cross-rules linking the 6 Pakiṇṇaka analyses: (1) bodily vs. mental vedanā, (2) dvāravimutta cittas, (3) avatthuka cittas, and (4) the dual āvajjana/voṭṭhapana citta.",
+                "es": "Sintetice las reglas cruzadas que conectan los 6 análisis de Pakiṇṇaka: (1) vedanā corporal vs. mental, (2) cittas dvāravimutta, (3) cittas avatthuka y (4) el citta dual āvajjana/voṭṭhapana.",
             },
             "answer": {
-                "pt": "(1) Os 19 cittas de Paṭisandhi/Bhavaṅga/Cuti operam fora das 6 portas (dvāravimutta), tomando kamma, kammanimitta ou gatinimitta; (2) Os 4 Arūpāvacara Vipākas (e todos os cittas na esfera Arūpa) operam sem base física (avatthuka); (3) O Manodvārāvajjana atua tanto como āvajjana na porta mental quanto como voṭṭhapana na porta dos 5 sentidos.",
-                "en": "(1) The 19 Paṭisandhi/Bhavaṅga/Cuti cittas operate outside the 6 doors (dvāravimutta); (2) The 4 Arūpāvacara Vipākas (and all cittas in Arūpa realms) operate without physical base (avatthuka); (3) Manodvārāvajjana acts as both āvajjana in mind-door and voṭṭhapana in 5-sense-door processes.",
-                "es": "(1) Los 19 cittas de Paṭisandhi/Bhavaṅga/Cuti operan fuera de las 6 puertas (dvāravimutta); (2) Los 4 Arūpāvacara Vipākas operan sin base física (avatthuka); (3) Manodvārāvajjana actúa como āvajjana en puerta mental y como voṭṭhapana en 5 sentidos.",
+                "pt": "(1) Apenas os 2 kāya-viññāṇas experimentam sukha (#24) e dukkha (#17) corporais; os outros 8 dvipañcaviññāṇas têm sempre upekkhā; (2) Os 19 cittas de Paṭisandhi/Bhavaṅga/Cuti operam fora das 6 portas (dvāravimutta); (3) Os 4 Arūpāvacara Vipākas (e todos os cittas na esfera Arūpa) operam sem base física (avatthuka); (4) O Manodvārāvajjana atua tanto como āvajjana na porta mental quanto como voṭṭhapana nas 5 portas sensoriais.",
+                "en": "(1) Only the 2 kāya-viññāṇas experience bodily sukha (#24) and dukkha (#17), whereas the other 8 sense-cognitions always have upekkhā; (2) The 19 Paṭisandhi/Bhavaṅga/Cuti cittas operate outside the 6 doors (dvāravimutta); (3) The 4 Arūpāvacara Vipākas (and all cittas in Arūpa realms) operate without physical base (avatthuka); (4) Manodvārāvajjana acts as both āvajjana in mind-door and voṭṭhapana in 5-sense-door processes.",
+                "es": "(1) Solo los 2 kāya-viññāṇas experimentan sukha (#24) y dukkha (#17) corporales, mientras que las otras 8 conciencias sensoriales tienen siempre upekkhā; (2) Los 19 cittas de Paṭisandhi/Bhavaṅga/Cuti operan fuera de las 6 puertas (dvāravimutta); (3) Los 4 Arūpāvacara Vipākas operan sin base física (avatthuka); (4) Manodvārāvajjana actúa como āvajjana en puerta mental y como voṭṭhapana en 5 sentidos.",
             },
-            "source": {"as": "III.8–22", "cma": "III §8–22", "segId": 178},
+            "source": {"as": "III.1–22", "cma": "III §1–22", "segId": 178},
         },
     ])
-
-    # Fix clean PT answer for c3.struct_vedana_5 without draft note
-    for c in cards:
-        if c["id"] == "c3.struct_vedana_5":
-            c["answer"]["pt"] = (
-                "Na contagem detalhada de 121 cittas: Sukha (prazer físico) = 1 (kusala-vipāka kāyaviññāṇa) | "
-                "Dukkha (dor física) = 1 (akusala-vipāka kāyaviññāṇa) | Domanassa (desprazer mental) = 2 (dosa-mūla) | "
-                "Somanassa (alegria mental) = 62 (18 kāmāvacara + 12 rūpāvacara 1º–4º jhāna + 32 lokuttara 1º–4º jhāna) | "
-                "Upekkhā (equanimidade) = 55 (32 kāmāvacara + 3 rūpāvacara 5º jhāna + 12 arūpāvacara + 8 lokuttara 5º jhāna). Soma = 121."
-            )
 
     return cards

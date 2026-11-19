@@ -1,17 +1,17 @@
-"""Chapter 6: Rūpapariccheda & Nibbāna — All 28 Rūpas, 17:1 Temporal Asymmetry, and Unconditioned Nibbāna."""
+"""Chapter 6: Rūpapariccheda & Nibbāna — All 28 Rūpas (18 Nipphanna + 10 Anipphanna), 4 Origins, 21 Kalāpas, and Unconditioned Nibbāna."""
 
 CHAPTER_META = {
     "chapter": 6,
     "paliTitle": "Rūpapariccheda · Nibbāna",
     "title": {
-        "pt": "Cap. 6: Materialidade (28 Rūpas, 17:1) & Nibbāna Asaṅkhata",
-        "en": "Ch. 6: Matter (28 Rūpas, 17:1 Ratio) & Unconditioned Nibbāna",
-        "es": "Cap. 6: Materialidad (28 Rūpas, 17:1) y Nibbāna Asaṅkhata",
+        "pt": "Cap. 6: Compêndio da Materialidade (28 Rūpas) & Nibbāna Asaṅkhata",
+        "en": "Ch. 6: Compendium of Matter (28 Rūpas) & Unconditioned Nibbāna",
+        "es": "Cap. 6: Compendio de la Materialidad (28 Rūpas) y Nibbāna Asaṅkhata",
     },
     "subtitle": {
-        "pt": "4 Mahābhūtas + 24 Upādāya rūpas individuais, assimetria temporal 17:1, kalāpas e o Nibbāna não-cognitivo.",
-        "en": "4 Mahābhūtas + 24 Upādāya rūpas individually, 17:1 temporal asymmetry, kalāpas, and non-cognitive Nibbāna.",
-        "es": "4 Mahābhūtas + 24 Upādāya rūpas individuales, asimetría temporal 17:1, kalāpas y Nibbāna no cognitivo.",
+        "pt": "4 Mahābhūtas + 24 Upādāya rūpas (18 Nipphanna + 10 Anipphanna), classificações, 4 origens (samuṭṭhāna), 21 kalāpas e o Nibbāna não-cognitivo.",
+        "en": "4 Mahābhūtas + 24 Upādāya rūpas (18 Nipphanna + 10 Anipphanna), classifications, 4 origins (samuṭṭhāna), 21 kalāpas, and non-cognitive Nibbāna.",
+        "es": "4 Mahābhūtas + 24 Upādāya rūpas (18 Nipphanna + 10 Anipphanna), clasificaciones, 4 orígenes (samuṭṭhāna), 21 kalāpas y Nibbāna no cognitivo.",
     },
     "unlockPrevAtomPct": 80,
     "houseUnlockAtomPct": 75,
@@ -266,9 +266,9 @@ def build_cards():
                 "es": "¿Cuál es la razón temporal exacta entre la duración de una unidad material (rūpa) y un momento de conciencia (cittakkhaṇa), incluyendo submomentos?",
             },
             "answer": {
-                "pt": "Uma unidade material (nipphanna-rūpa) perdura por EXATAMENTE 17 momentos de consciência (cittakkhaṇas) = 51 submomentos menores (1 uppāda + 49 ṭhiti + 1 bhaṅga). Como cada citta dura 1 cittakkhaṇa (3 submomentos), a materialidade itera 17 vezes mais lentamente que a mentalidade.",
-                "en": "One material unit (nipphanna-rūpa) lasts for EXACTLY 17 consciousness-moments (cittakkhaṇas) = 51 minor sub-moments (1 uppāda + 49 ṭhiti + 1 bhaṅga). Since each citta lasts 1 cittakkhaṇa (3 sub-moments), materiality iterates 17× slower than mentality.",
-                "es": "Una unidad material dura EXACTAMENTE 17 momentos de conciencia (cittakkhaṇas) = 51 submomentos menores (1 uppāda + 49 ṭhiti + 1 bhaṅga). La materialidad itera 17 veces más lento que la mentalidad.",
+                "pt": "Uma unidade material concreta (18 nipphanna-rūpa, junto com ākāsa e os 3 vikāras que acompanham seus kalāpas) perdura por EXATAMENTE 17 momentos de consciência (cittakkhaṇas) = 51 submomentos (1 uppāda + 49 ṭhiti + 1 bhaṅga). Exceções nos anipphanna-rūpas: os 2 viññatti-rūpas duram apenas 1 cittakkhaṇa (coextensivos com a citta que os gera), e os 4 lakkhaṇa-rūpas correspondem a fases isoladas (upacaya/santati = 1 submomento uppāda; jaratā = 49 submomentos ṭhiti; aniccatā = 1 submomento bhaṅga).",
+                "en": "One concrete material unit (18 nipphanna-rūpas, along with ākāsa and the 3 vikāras tracking their kalāpas) lasts for EXACTLY 17 consciousness-moments (cittakkhaṇas) = 51 sub-moments (1 uppāda + 49 ṭhiti + 1 bhaṅga). Exceptions among the 10 anipphanna-rūpas: the 2 viññatti-rūpas last only 1 cittakkhaṇa (co-extensive with their originating citta), and the 4 lakkhaṇa-rūpas denote single phases (upacaya/santati = 1 uppāda sub-moment; jaratā = 49 ṭhiti sub-moments; aniccatā = 1 bhaṅga sub-moment).",
+                "es": "Una unidad material concreta (18 nipphanna-rūpas, junto con ākāsa y los 3 vikāras) dura EXACTAMENTE 17 momentos de conciencia (cittakkhaṇas) = 51 submomentos (1 uppāda + 49 ṭhiti + 1 bhaṅga). Excepciones en los anipphanna-rūpas: los 2 viññatti-rūpas duran solo 1 cittakkhaṇa, y los 4 lakkhaṇa-rūpas designan fases individuales (upacaya/santati = 1 submomento uppāda; jaratā = 49 submomentos ṭhiti; aniccatā = 1 submomento bhaṅga).",
             },
             "mechanics": {
                 "pt": "Por isso um processo sensorial completo de 17 momentos (Pañcadvāra-vīthi) consegue apreender o mesmo objeto físico 'presente' do momento 1 ao 17.",

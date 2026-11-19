@@ -59,11 +59,15 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     expect(CANONICAL_CITTAS_89.find((c) => c.id === 82)?.totalSangahaCount).toBe(36); // Sotāpatti-magga (1st Jhāna)
   });
 
-  it("validates the Periodic Table of 72 Sabhāva-dhammas (1 + 52 + 18 + 1 = 72) and the 8 Avinibbhoga-rūpas", () => {
-    expect(PERIODIC_ELEMENTS_72.length).toBe(72);
+  it("validates the Periodic Table of 82 Realities (72 Sabhāva-dhammas + 10 Anipphanna-rūpas) and the 8 Avinibbhoga-rūpas", () => {
+    expect(PERIODIC_ELEMENTS_72.length).toBe(82);
+    expect(PERIODIC_ELEMENTS_72.filter((e) => !e.isAnipphanna).length).toBe(72);
+    expect(PERIODIC_ELEMENTS_72.filter((e) => e.isAnipphanna).length).toBe(10);
     expect(PERIODIC_ELEMENTS_72.filter((e) => e.paramattha === "citta").length).toBe(1);
     expect(PERIODIC_ELEMENTS_72.filter((e) => e.paramattha === "cetasika").length).toBe(52);
-    expect(PERIODIC_ELEMENTS_72.filter((e) => e.paramattha === "rupa").length).toBe(18);
+    expect(PERIODIC_ELEMENTS_72.filter((e) => e.paramattha === "rupa" && !e.isAnipphanna).length).toBe(18);
+    expect(PERIODIC_ELEMENTS_72.filter((e) => e.paramattha === "rupa" && e.isAnipphanna).length).toBe(10);
+    expect(PERIODIC_ELEMENTS_72.filter((e) => e.paramattha === "rupa").length).toBe(28);
     expect(PERIODIC_ELEMENTS_72.filter((e) => e.paramattha === "nibbana").length).toBe(1);
     expect(PERIODIC_ELEMENTS_72.filter((e) => e.isAvinibbhoga).length).toBe(8);
   });
@@ -161,12 +165,15 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     ui.init();
 
     expect(host.textContent).toContain("Laboratório Mnêmico do Abhidhammatthasaṅgaha");
+    expect(host.textContent).toContain("Isto não é o Abhidhamma em si, mas apenas um auxílio de memorização.");
 
     // Switch language to English and Spanish
     ui.setLang("en");
     expect(host.textContent).toContain("Abhidhammatthasaṅgaha Mnemonic Lab");
+    expect(host.textContent).toContain("This is not the Abhidhamma itself, but memory aids only.");
     ui.setLang("es");
     expect(host.textContent).toContain("Laboratorio Mnemónico del Abhidhammatthasaṅgaha");
+    expect(host.textContent).toContain("Esto no es el Abhidhamma en sí, sino solo una ayuda de memorización.");
     ui.setLang("pt");
 
     // Pillar 1: Challenge mode & verify

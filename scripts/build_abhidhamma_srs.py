@@ -115,6 +115,7 @@ def validate_dataset(chapters, cards):
     cittas = [c for c in cards if re.match(r"^c1\.citta_\d+$", c["id"])]
     cetasikas = [c for c in cards if re.match(r"^c2\.cet_\d+$", c["id"])]
     rupas = [c for c in cards if re.match(r"^c6\.rupa_\d+$", c["id"])]
+    vedanas = [c for c in cards if re.match(r"^c3\.vedana_\d+$", c["id"])]
     hetus = [c for c in cards if re.match(r"^c3\.hetu_\d+$", c["id"])]
     kiccas = [c for c in cards if re.match(r"^c3\.kicca_\d+$", c["id"])]
     dvaras = [c for c in cards if re.match(r"^c3\.dvara_\d+$", c["id"])]
@@ -127,6 +128,7 @@ def validate_dataset(chapters, cards):
     assert len(cittas) == 89, f"Expected 89 cittas, got {len(cittas)}"
     assert len(cetasikas) == 52, f"Expected 52 cetasikas, got {len(cetasikas)}"
     assert len(rupas) == 28, f"Expected 28 rupas, got {len(rupas)}"
+    assert len(vedanas) == 5, f"Expected 5 vedanas, got {len(vedanas)}"
     assert len(hetus) == 6, f"Expected 6 hetus, got {len(hetus)}"
     assert len(kiccas) == 14, f"Expected 14 kiccas, got {len(kiccas)}"
     assert len(dvaras) == 6, f"Expected 6 dvaras, got {len(dvaras)}"

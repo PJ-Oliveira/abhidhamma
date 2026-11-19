@@ -60,6 +60,7 @@ import type {
 interface AbhiSrsStrings {
   moduleTitle: string;
   moduleSubtitle: string;
+  memoryAidNotice: string;
   modeChapters: string;
   modePlan90: string;
   studyAllUnlocked: string;
@@ -191,7 +192,8 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
   pt: {
     moduleTitle: "Abhidhammatthasaṅgaha — Repetição Espaçada (Anki SRS)",
     moduleSubtitle:
-      "Memorização completa do Abhidhammatthasaṅgaha Mūla (357 cartas) em 30, 60 ou 90 dias: teto rígido de até 12 novas/dia e revisões máximas (9999/dia) para retenção sem falhas.",
+      "Memorização completa do Abhidhammatthasaṅgaha Mūla ({total} cartas) em 30, 60 ou 90 dias: teto rígido de até 12 novas/dia e revisões máximas (9999/dia) para retenção sem falhas.",
+    memoryAidNotice: "Isto não é o Abhidhamma em si, mas apenas um auxílio de memorização.",
     modeChapters: "📚 Por Capítulos",
     modePlan90: "📅 Trilha {days} Dias",
     studyAllUnlocked: "Estudar Todos Desbloqueados",
@@ -319,7 +321,8 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
   en: {
     moduleTitle: "Abhidhammatthasaṅgaha — Spaced Repetition (Anki SRS)",
     moduleSubtitle:
-      "Complete mastery of the Abhidhammatthasaṅgaha Mūla (357 cards) in 30, 60, or 90 days: strict cap of 12 new/day max and unlimited reviews (9999/day) so nothing is forgotten.",
+      "Complete mastery of the Abhidhammatthasaṅgaha Mūla ({total} cards) in 30, 60, or 90 days: strict cap of 12 new/day max and unlimited reviews (9999/day) so nothing is forgotten.",
+    memoryAidNotice: "This is not the Abhidhamma itself, but memory aids only.",
     modeChapters: "📚 By Chapters",
     modePlan90: "📅 {days}-Day Track",
     studyAllUnlocked: "Study All Unlocked",
@@ -447,7 +450,8 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
   es: {
     moduleTitle: "Abhidhammatthasaṅgaha — Repetición Espaciada (Anki SRS)",
     moduleSubtitle:
-      "Memorización completa del Abhidhammatthasaṅgaha Mūla (357 tarjetas) en 30, 60 o 90 días: tope estricto de 12 nuevas/día y repasos máximos (9999/día) para no olvidar.",
+      "Memorización completa del Abhidhammatthasaṅgaha Mūla ({total} tarjetas) en 30, 60 o 90 días: tope estricto de 12 nuevas/día y repasos máximos (9999/día) para no olvidar.",
+    memoryAidNotice: "Esto no es el Abhidhamma en sí, sino solo una ayuda de memorización.",
     modeChapters: "📚 Por Capítulos",
     modePlan90: "📅 Ruta {days} Días",
     studyAllUnlocked: "Estudiar Todos Desbloqueados",
@@ -1215,7 +1219,7 @@ export class AbhidhammaSrsUI {
         <div class="abhi-srs-header">
           <div>
             <h2 class="abhi-srs-title">${esc(s.moduleTitle)}</h2>
-            <p class="abhi-srs-subtitle">${esc(s.moduleSubtitle)}</p>
+            <p class="abhi-srs-subtitle">${esc(fmt(s.moduleSubtitle, { total: totalCards }))} <strong>ℹ️ ${esc(s.memoryAidNotice)}</strong></p>
           </div>
           <div class="abhi-srs-actions">
             <label class="abhi-limit-label" for="abhi-limit-select">

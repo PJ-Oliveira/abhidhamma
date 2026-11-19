@@ -1,4 +1,4 @@
-const CACHE_NAME = 'abhidhamma-cache-v26';
+const CACHE_NAME = 'abhidhamma-cache-v27';
 const VAULT_CACHE_NAME = 'abhidhamma-anki-vault-v1';
 const PROTECTED_CACHES = new Set([CACHE_NAME, VAULT_CACHE_NAME]);
 
@@ -133,8 +133,8 @@ self.addEventListener('fetch', (event) => {
   }
   const isLocalhost = url.hostname === 'localhost' || url.hostname === '127.0.0.1';
 
-  // Network-first on localhost or for app code/HTML so updates appear immediately
-  if (isLocalhost || url.pathname.endsWith('.js') || url.pathname.endsWith('.css') || url.pathname.endsWith('.html') || url.pathname === '/') {
+  // Network-first on localhost or for app code/HTML/SRS deck so updates appear immediately
+  if (isLocalhost || url.pathname.endsWith('.js') || url.pathname.endsWith('.css') || url.pathname.endsWith('.html') || url.pathname.endsWith('abhidhamma_cards.json') || url.pathname === '/') {
     event.respondWith(
       fetch(event.request)
         .then((networkResponse) => {

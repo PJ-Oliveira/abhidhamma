@@ -43,9 +43,9 @@ def build_cards():
                 "es": "Un paramattha dhamma existe por su naturaleza intrínseca irreductible (sabhāva), resiste la disección analítica y es verificable directamente por la sabiduría. Paññatti (concepto convencional) es una construcción mental/lingüística sin naturaleza intrínseca.",
             },
             "mechanics": {
-                "pt": "Os 4 paramatthas esgotam tudo o que existe ultimamente: Citta, Cetasika, Rūpa (condicionados/saṅkhata) e Nibbāna (incondicionado/asaṅkhata).",
-                "en": "The 4 paramatthas exhaust everything that ultimately exists: Citta, Cetasika, Rūpa (conditioned/saṅkhata) and Nibbāna (unconditioned/asaṅkhata).",
-                "es": "Los 4 paramatthas agotan todo lo que existe últimamente: Citta, Cetasika, Rūpa (condicionados/saṅkhata) y Nibbāna (incondicionado/asaṅkhata).",
+                "pt": "Os 4 paramatthas esgotam tudo o que existe ultimamente: 72 realidades com sabhāva próprio (1 Citta + 52 Cetasikas + 18 Nipphanna-rūpas + 1 Nibbāna = 72 vatthu-dhammas) mais os 10 Anipphanna-rūpas = 82 subdivisões (AS VI.2–5 / VII.41).",
+                "en": "The 4 paramatthas exhaust everything that ultimately exists: 72 realities with intrinsic sabhāva (1 Citta + 52 Cetasikas + 18 Nipphanna-rūpas + 1 Nibbāna = 72 vatthu-dhammas) plus the 10 Anipphanna-rūpas = 82 subdivisions (AS VI.2–5 / VII.41).",
+                "es": "Los 4 paramatthas agotan todo lo que existe últimamente: 72 realidades con sabhāva propio (1 Citta + 52 Cetasikas + 18 Nipphanna-rūpas + 1 Nibbāna = 72 vatthu-dhammas) más los 10 Anipphanna-rūpas = 82 subdivisiones (AS VI.2–5 / VII.41).",
             },
             "source": {"as": "I.2", "cma": "I §2", "segId": 7},
         },
