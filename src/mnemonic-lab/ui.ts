@@ -21,6 +21,17 @@ import {
   type SabhavaElement,
 } from "./data.js";
 import {
+  CANONICAL_CHAPTERS_META,
+  ALL_NARY_CHAPTER_ITEMS,
+  CHAPTER_2_ITEMS,
+  type CanonicalChapterNum,
+  type NaryChallengeItem,
+} from "./nary-chapters-data.js";
+import {
+  defaultNarySwitchesForChapter,
+  evaluateNaryChallenge,
+  getNaryItemsForChapter,
+  pickNextNaryChapterChallenge,
   defaultSwitchStateForFamily,
   evaluateChemicalSynthesis,
   getPhalanxMapById,
@@ -625,11 +636,15 @@ export class MnemonicLabUI {
   // Pillar 1 State
   private binMode: BinaryMode = "explore";
   private binEnumMode: 89 | 121 = 121;
+  private binActiveChapter: CanonicalChapterNum = 1;
   private switches: BinarySwitchState = defaultSwitchStateForFamily("lobha");
   private binTargetCitta: CanonicalCitta;
   private binFamilyScope: CittaFamilyId | "all" = "all";
   private autoAlignFamily = true;
   private binFeedback: { isCorrect: boolean; synthesized: CanonicalCitta | null } | null = null;
+  private binTargetNaryItem: NaryChallengeItem;
+  private narySwitches: Record<string, string | number>;
+  private naryFeedback: { isCorrect: boolean; matchedKeys: string[]; mismatchedKeys: string[] } | null = null;
 
   // Pillar 2 State
   private perMode: PeriodicMode = "atlas";
@@ -663,6 +678,8 @@ export class MnemonicLabUI {
     }
     this.chemTargetCitta = pickNextPeriodicChallenge(this.progress);
     this.blindTargetSlot = pickNextPhalanxSlot(this.progress, getPhalanxMapById(this.phaMapId));
+    this.binTargetNaryItem = pickNextNaryChapterChallenge(2, this.progress);
+    this.narySwitches = defaultNarySwitchesForChapter(2);
   }
 
   public init(): void {

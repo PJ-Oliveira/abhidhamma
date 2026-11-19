@@ -19,6 +19,20 @@ import {
   type SankharaBit,
   type VedanaBit,
 } from "./data.js";
+import {
+  CANONICAL_CHAPTERS_META,
+  ALL_NARY_CHAPTER_ITEMS,
+  CHAPTER_2_ITEMS,
+  CHAPTER_3_ITEMS,
+  CHAPTER_4_ITEMS,
+  CHAPTER_5_ITEMS,
+  CHAPTER_6_ITEMS,
+  CHAPTER_7_ITEMS,
+  CHAPTER_8_ITEMS,
+  CHAPTER_9_ITEMS,
+  type CanonicalChapterNum,
+  type NaryChallengeItem,
+} from "./nary-chapters-data.js";
 
 export const MNEMONIC_STORAGE_KEY = "abhidhamma_mnemonic_lab_v1";
 
@@ -513,4 +527,93 @@ export function pickNextPhalanxSlot(
   const topBucket = sorted.slice(0, Math.min(4, sorted.length));
   const idx = (progress.totalAttempts + (currentSlotIndex ?? 0)) % topBucket.length;
   return topBucket[idx] ?? slots[0]!;
+}
+
+// ── N-ARY MULTI-CHAPTER ENGINE (NAVA PARICCHEDĀ 1..9) ────────────────────────
+
+export function getNaryItemsForChapter(chapterNum: CanonicalChapterNum): readonly NaryChallengeItem[] {
+  switch (chapterNum) {
+    case 2:
+      return CHAPTER_2_ITEMS;
+    case 3:
+      return CHAPTER_3_ITEMS;
+    case 4:
+      return CHAPTER_4_ITEMS;
+    case 5:
+      return CHAPTER_5_ITEMS;
+    case 6:
+      return CHAPTER_6_ITEMS;
+    case 7:
+      return CHAPTER_7_ITEMS;
+    case 8:
+      return CHAPTER_8_ITEMS;
+    case 9:
+      return CHAPTER_9_ITEMS;
+    default:
+      return [];
+  }
+}
+
+export function pickNextNaryChapterChallenge(
+  chapterNum: CanonicalChapterNum,
+  progress: MnemonicProgressState,
+  currentItemId?: string
+): NaryChallengeItem {
+  const items = getNaryItemsForChapter(chapterNum);
+  if (items.length === 0) return CHAPTER_2_ITEMS[0]!;
+  const candidates =
+    items.length > 1 && currentItemId != null ? items.filter((i) => i.id !== currentItemId) : items;
+  const sorted = [...candidates].sort((a, b) => {
+    const scoreA = progress.masteredBinary[`chap${chapterNum}:${a.id}`] ?? 0;
+    const scoreB = progress.masteredBinary[`chap${chapterNum}:${b.id}`] ?? 0;
+    if (scoreA !== scoreB) return scoreA - scoreB;
+    return a.id.localeCompare(b.id);
+  });
+  const topBucket = sorted.slice(0, Math.min(4, sorted.length));
+  const idx = (progress.totalAttempts + (currentItemId ? currentItemId.length : 0)) % topBucket.length;
+  return topBucket[idx] ?? items[0]!;
+}
+
+export function defaultNarySwitchesForChapter(
+  chapterNum: CanonicalChapterNum
+): Record<string, string | number> {
+  switch (chapterNum) {
+    case 2:
+      return { group: "aññasamana", sub: "sabbacitta", slot: 1, sampayoga: 121 };
+    case 3:
+      return { category: "vedana", item: "somanassa", count: 62 };
+    case 4:
+      return { door: "pancadvara", vara: "tadarammana", moments: 17 };
+    case 5:
+      return { tetrad: "bhumi", realm: "apaya", count: 4 };
+    case 6:
+      return { type: "mahabhuta", status: "nipphanna", samutthana: "catusamutthana" };
+    case 7:
+      return { compendium: "bodhipakkhiya", group: "satipatthana", count: 4 };
+    case 8:
+      return { method: "patthana", index: 1, type: "sahajata" };
+    case 9:
+    default:
+      return { wing: "samatha", group: "kasina", maxJhana: 5, carita: "all", nimitta: 3 };
+  }
+}
+
+export function evaluateNaryChallenge(
+  target: NaryChallengeItem,
+  switches: Record<string, string | number>
+): { isCorrect: boolean; matchedKeys: string[]; mismatchedKeys: string[] } {
+  const targetSwitches = target.switches;
+  const matchedKeys: string[] = [];
+  const mismatchedKeys: string[] = [];
+
+  for (const [key, val] of Object.entries(targetSwitches)) {
+    if (String(switches[key]) === String(val)) {
+      matchedKeys.push(key);
+    } else {
+      mismatchedKeys.push(key);
+    }
+  }
+
+  const isCorrect = mismatchedKeys.length === 0;
+  return { isCorrect, matchedKeys, mismatchedKeys };
 }
