@@ -1,9 +1,9 @@
-import { settings } from "../state.js?v=19a04341";
-import { registerToolModule } from "../tools/tools.js?v=19a04341";
-import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=19a04341";
-import { CANONICAL_CHAPTERS_META, } from "./nary-chapters-data.js?v=19a04341";
-import { defaultNarySwitchesForChapter, evaluateNaryChallenge, getNaryItemsForChapter, pickNextNaryChapterChallenge, defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=19a04341";
-import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=19a04341";
+import { settings } from "../state.js?v=bdb199e1";
+import { registerToolModule } from "../tools/tools.js?v=bdb199e1";
+import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=bdb199e1";
+import { CANONICAL_CHAPTERS_META, } from "./nary-chapters-data.js?v=bdb199e1";
+import { defaultNarySwitchesForChapter, evaluateNaryChallenge, getNaryItemsForChapter, pickNextNaryChapterChallenge, defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=bdb199e1";
+import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=bdb199e1";
 const LAB_STRINGS = {
     pt: {
         title: "🧮 Laboratório Mnêmico do Abhidhammatthasaṅgaha",
@@ -1193,7 +1193,7 @@ export class MnemonicLabUI {
                     ? this.naryFeedback.matchedKeys
                         .map((k) => `<span class="mnem-rel-chip" style="color:var(--text-color, #1e4620);background:rgba(46,125,50,0.18);">✓ ${esc(k)}</span>`)
                         .join("")
-                    : `<span style="font-size:0.8rem;color:var(--text-muted, #64748b);">${esc(s.naryNone)}</span>`}
+                    : `<span style="font-size:0.8rem;color:var(--text-muted, #6f5c48);">${esc(s.naryNone)}</span>`}
             </div>
             <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
               <span style="font-size:0.82rem;font-weight:600;">${esc(s.naryDivergentParams)}</span>
@@ -1257,7 +1257,7 @@ export class MnemonicLabUI {
           </div>
         `
             : `
-          <div class="mnem-synth-name" style="color:var(--text-muted, #64748b);font-style:italic;">
+          <div class="mnem-synth-name" style="color:var(--text-muted, #6f5c48);font-style:italic;">
             ${esc(s.naryCurrentCombo)} ${Object.entries(this.narySwitches)
                 .map(([k, v]) => `<strong>${esc(k)}</strong>: ${esc(String(v))}`)
                 .join(" · ")}
@@ -1280,7 +1280,7 @@ export class MnemonicLabUI {
                     <span class="mnem-cell-code">${esc(item.asRef)}</span>
                   </span>
                   <span class="mnem-cell-pali" lang="pi">${esc(item.pali)}</span>
-                  <div style="font-size:0.75rem;color:var(--text-muted, #64748b);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                  <div style="font-size:0.75rem;color:var(--text-muted, #6f5c48);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
                     ${esc(item.name[this.lang])}
                   </div>
                   <div style="margin-top:6px;">

@@ -3799,6 +3799,7 @@ details[open] > summary::before { transform: rotate(90deg); }
 /* Synthesized Citta Result Card */
 .mnem-synthesized-card,
 .mnem-challenge-box,
+.mnem-challenge-card,
 .mnem-alchemy-header {
   background: var(--bg-panel);
   border: 2px solid var(--accent);
@@ -3997,7 +3998,8 @@ details[open] > summary::before { transform: rotate(90deg); }
   color: var(--accent);
 }
 
-.mnem-feedback {
+.mnem-feedback,
+.mnem-challenge-feedback {
   border-radius: 8px;
   padding: 10px 14px;
   font-size: 0.88rem;
@@ -4006,13 +4008,15 @@ details[open] > summary::before { transform: rotate(90deg); }
   gap: 6px;
 }
 
-.mnem-feedback-ok {
+.mnem-feedback-ok,
+.mnem-challenge-feedback.ok {
   background: #e6f4ea;
   border: 1px solid #34a853;
   color: #135325;
 }
 
-.mnem-feedback-err {
+.mnem-feedback-err,
+.mnem-challenge-feedback.err {
   background: #fce8e6;
   border: 1px solid #d93025;
   color: #7a1c16;
@@ -4535,23 +4539,23 @@ details[open] > summary::before { transform: rotate(90deg); }
   }
 }
 
-/* ── Mnemonic Lab Chapter Bar (Nava Paricchedā) ── */
+/* ── Mnemonic Lab Chapter Bar (Nava Paricchedā - Cappuccino Palette) ── */
 .mnem-chapter-bar {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: var(--bg-card, #fff);
-  border: 1px solid var(--border-color, #e2e8f0);
-  border-radius: 12px;
-  padding: 10px 14px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
   margin-bottom: 14px;
 }
 .mnem-chapter-bar-title {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text-muted, #64748b);
+  color: var(--accent);
 }
 .mnem-chapter-btn-group {
   display: flex;
@@ -4563,19 +4567,22 @@ details[open] > summary::before { transform: rotate(90deg); }
   font-size: 0.82rem;
   font-weight: 600;
   border-radius: 8px;
-  border: 1px solid var(--border-color, #cbd5e1);
-  background: var(--bg-secondary, #f8fafc);
-  color: var(--text-main, #334155);
+  border: 1px solid var(--border);
+  background: var(--bg-content);
+  color: var(--text);
   cursor: pointer;
   transition: all 0.15s ease-in-out;
   min-height: 38px;
 }
 .mnem-chapter-btn:hover {
-  background: var(--bg-hover, #e2e8f0);
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
 }
-.mnem-chapter-btn.active {
-  background: var(--accent-primary, #854d0e);
+.mnem-chapter-btn.active,
+.mnem-chapter-btn[aria-pressed="true"] {
+  background: var(--accent);
   color: #fff;
-  border-color: var(--accent-primary, #854d0e);
-  box-shadow: 0 2px 6px rgba(133, 77, 14, 0.25);
+  border-color: var(--accent);
+  box-shadow: 0 2px 6px rgba(179, 102, 63, 0.28);
 }

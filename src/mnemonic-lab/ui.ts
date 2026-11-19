@@ -1486,7 +1486,7 @@ export class MnemonicLabUI {
                   ? this.naryFeedback.matchedKeys
                       .map((k) => `<span class="mnem-rel-chip" style="color:var(--text-color, #1e4620);background:rgba(46,125,50,0.18);">✓ ${esc(k)}</span>`)
                       .join("")
-                  : `<span style="font-size:0.8rem;color:var(--text-muted, #64748b);">${esc(s.naryNone)}</span>`
+                  : `<span style="font-size:0.8rem;color:var(--text-muted, #6f5c48);">${esc(s.naryNone)}</span>`
               }
             </div>
             <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
@@ -1555,7 +1555,7 @@ export class MnemonicLabUI {
           </div>
         `
             : `
-          <div class="mnem-synth-name" style="color:var(--text-muted, #64748b);font-style:italic;">
+          <div class="mnem-synth-name" style="color:var(--text-muted, #6f5c48);font-style:italic;">
             ${esc(s.naryCurrentCombo)} ${Object.entries(this.narySwitches)
               .map(([k, v]) => `<strong>${esc(k)}</strong>: ${esc(String(v))}`)
               .join(" · ")}
@@ -1579,7 +1579,7 @@ export class MnemonicLabUI {
                     <span class="mnem-cell-code">${esc(item.asRef)}</span>
                   </span>
                   <span class="mnem-cell-pali" lang="pi">${esc(item.pali)}</span>
-                  <div style="font-size:0.75rem;color:var(--text-muted, #64748b);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                  <div style="font-size:0.75rem;color:var(--text-muted, #6f5c48);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
                     ${esc(item.name[this.lang])}
                   </div>
                   <div style="margin-top:6px;">
