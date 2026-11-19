@@ -1,4 +1,5 @@
-import { DEFAULT_ANKI_CONFIG, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, normalizeAnkiConfig, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, STORAGE_MNEMONICS_KEY, } from "./scheduler.js?v=ab67c570";
+import { DEFAULT_ANKI_CONFIG, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, normalizeAnkiConfig, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, STORAGE_MNEMONICS_KEY, } from "./scheduler.js?v=ab78e3e8";
+import { loadMnemonicProgress, mergeMnemonicProgress, normalizeMnemonicProgress, saveMnemonicProgress, } from "../mnemonic-lab/engine.js?v=ab78e3e8";
 export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v27";
 export const VAULT_CACHE_NAME = "abhidhamma-anki-vault-v1";
 export const VAULT_SNAPSHOT_PATH = "/_offline_vault/abhidhamma-anki-progress.json";
@@ -101,6 +102,7 @@ export function mergeSnapshots(a, b) {
     const stats = mergeStats(a.stats, b.stats);
     const config = mergeConfig(a.config, b.config, a.updatedAt, b.updatedAt);
     const reviewLogCount = Math.max(a.reviewLogCount, b.reviewLogCount, recentLog.length, stats.totalReviewed);
+    const mnemonicLab = mergeMnemonicProgress(a.mnemonicLab, b.mnemonicLab);
     return {
         schemaVersion: 1,
         updatedAt: Math.max(a.updatedAt, b.updatedAt),
@@ -108,6 +110,7 @@ export function mergeSnapshots(a, b) {
         stats,
         config,
         mnemonics,
+        mnemonicLab,
         reviewLogCount,
         recentLog,
     };
@@ -117,6 +120,7 @@ export function buildLocalStorageSnapshot(recentLog = [], reviewLogCount, nowMs 
     const stats = loadAnkiStats(nowMs);
     const config = loadAnkiConfig();
     const mnemonics = loadMnemonicNotes();
+    const mnemonicLab = loadMnemonicProgress();
     let maxCardTs = 0;
     for (const st of Object.values(states)) {
         if (st.lastReviewAt > maxCardTs)
@@ -130,6 +134,7 @@ export function buildLocalStorageSnapshot(recentLog = [], reviewLogCount, nowMs 
         stats,
         config,
         mnemonics,
+        mnemonicLab,
         reviewLogCount: Math.max(reviewLogCount ?? 0, recentLog.length, stats.totalReviewed),
         recentLog: recentLog.slice(-MAX_SNAPSHOT_LOG),
     };
@@ -142,6 +147,9 @@ function writeToLocalStorage(snap) {
         localStorage.setItem(STORAGE_MNEMONICS_KEY, JSON.stringify(snap.mnemonics));
     }
     catch {
+    }
+    if (snap.mnemonicLab) {
+        saveMnemonicProgress(snap.mnemonicLab);
     }
 }
 function openVaultDb() {
@@ -462,6 +470,10 @@ export async function persistOfflineProgress(states, stats, config, mnemonics, r
         writeCacheVaultSnapshot(snap),
         writeOpfsSnapshot(snap),
     ]);
+    broadcastVaultUpdate(snap);
+    return snap;
+}
+function broadcastVaultUpdate(snap) {
     try {
         if (typeof BroadcastChannel !== "undefined") {
             const ch = new BroadcastChannel(VAULT_BROADCAST_CHANNEL);
@@ -471,7 +483,6 @@ export async function persistOfflineProgress(states, stats, config, mnemonics, r
     }
     catch {
     }
-    return snap;
 }
 export async function resetOfflineVault() {
     await Promise.all([clearIdbVault(), clearCacheVault(), clearOpfsVault()]);
@@ -530,11 +541,28 @@ export function parseProgressBackup(rawJson) {
         stats: parsed.stats ?? loadAnkiStats(now),
         config: normalizeAnkiConfig(parsed.config),
         mnemonics: parsed.mnemonics && typeof parsed.mnemonics === "object" ? parsed.mnemonics : {},
+        mnemonicLab: parsed.mnemonicLab && typeof parsed.mnemonicLab === "object" ? normalizeMnemonicProgress(parsed.mnemonicLab) : undefined,
         reviewLogCount: typeof parsed.reviewLogCount === "number" ? parsed.reviewLogCount : Object.keys(parsed.states).length,
         recentLog: Array.isArray(parsed.recentLog) ? parsed.recentLog.slice(-MAX_SNAPSHOT_LOG) : [],
     };
 }
 export function serializeProgressBackup(snap) {
     return JSON.stringify(snap, null, 2);
+}
+export async function persistMnemonicOfflineVault(labState) {
+    try {
+        saveMnemonicProgress(labState);
+        const snap = buildLocalStorageSnapshot([], undefined, Date.now());
+        await Promise.allSettled([
+            writeIdbSnapshot(snap),
+            writeCacheVaultSnapshot(snap),
+            writeOpfsSnapshot(snap),
+        ]);
+        broadcastVaultUpdate(snap);
+        return true;
+    }
+    catch {
+        return false;
+    }
 }
 //# sourceMappingURL=offline-store.js.map

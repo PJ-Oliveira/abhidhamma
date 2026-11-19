@@ -1,6 +1,6 @@
-import { settings } from "./state.js?v=ab67c570";
-import { createLogger } from "./logger.js?v=ab67c570";
-import { t } from "./i18n.js?v=ab67c570";
+import { settings } from "./state.js?v=ab78e3e8";
+import { createLogger } from "./logger.js?v=ab78e3e8";
+import { t } from "./i18n.js?v=ab78e3e8";
 const log = createLogger("reader");
 const chunkCache = new Map();
 export async function loadChunk(workId, partKey, fileName) {

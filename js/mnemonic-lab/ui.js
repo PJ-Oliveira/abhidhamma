@@ -1,7 +1,8 @@
-import { settings } from "../state.js?v=ab67c570";
-import { registerToolModule } from "../tools/tools.js?v=ab67c570";
-import { CANONICAL_CITTAS_89, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=ab67c570";
-import { defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=ab67c570";
+import { settings } from "../state.js?v=ab78e3e8";
+import { registerToolModule } from "../tools/tools.js?v=ab78e3e8";
+import { CANONICAL_CITTAS_89, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=ab78e3e8";
+import { defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=ab78e3e8";
+import { hydrateOfflineVault, persistMnemonicOfflineVault, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=ab78e3e8";
 const LAB_STRINGS = {
     pt: {
         title: "🧮 Laboratório Mnêmico do Abhidhammatthasaṅgaha",
@@ -112,6 +113,13 @@ const LAB_STRINGS = {
         fixedCoreLabel: "Base Fixa:",
         totalSangahaLabel: "Total Saṅgaha:",
         anchorLabel: "Âncora Mnêmica:",
+        vaultPillLabel: "Cofre Offline",
+        vaultPillTitle: "Respostas salvas em 4 camadas (localStorage, IndexedDB, Cache Storage e OPFS)",
+        binScopeLabel: "Filtrar Família do Desafio:",
+        binScopeAll: "🌐 Todas as 89",
+        familyMismatchNotice: "Atenção: o alvo pertence à matriz",
+        alignFamilyBtn: "Alinhar Chaves com o Alvo",
+        autoAlignToggleLabel: "Auto-alinhar matriz ao avançar",
     },
     en: {
         title: "🧮 Abhidhammatthasaṅgaha Mnemonic Lab",
@@ -222,6 +230,13 @@ const LAB_STRINGS = {
         fixedCoreLabel: "Fixed Core:",
         totalSangahaLabel: "Total Saṅgaha:",
         anchorLabel: "Mnemonic Anchor:",
+        vaultPillLabel: "Offline Vault",
+        vaultPillTitle: "Answers cached across 4 layers (localStorage, IndexedDB, Cache Storage & OPFS)",
+        binScopeLabel: "Filter Challenge Family:",
+        binScopeAll: "🌐 All 89",
+        familyMismatchNotice: "Notice: target belongs to matrix",
+        alignFamilyBtn: "Align Controls with Target",
+        autoAlignToggleLabel: "Auto-sync matrix on next",
     },
     es: {
         title: "🧮 Laboratorio Mnemónico del Abhidhammatthasaṅgaha",
@@ -332,6 +347,13 @@ const LAB_STRINGS = {
         fixedCoreLabel: "Base Fija:",
         totalSangahaLabel: "Total Saṅgaha:",
         anchorLabel: "Ancla Mnemónica:",
+        vaultPillLabel: "Bóveda Offline",
+        vaultPillTitle: "Respuestas guardadas en 4 capas (localStorage, IndexedDB, Cache Storage y OPFS)",
+        binScopeLabel: "Filtrar Familia del Desafío:",
+        binScopeAll: "🌐 Todas las 89",
+        familyMismatchNotice: "Aviso: el objetivo pertenece a la matriz",
+        alignFamilyBtn: "Alinear Controles con Objetivo",
+        autoAlignToggleLabel: "Auto-sincronizar matriz al avanzar",
     },
 };
 function esc(s) {
@@ -345,6 +367,8 @@ export class MnemonicLabUI {
     binMode = "explore";
     switches = defaultSwitchStateForFamily("lobha");
     binTargetCitta;
+    binFamilyScope = "all";
+    autoAlignFamily = true;
     binFeedback = null;
     perMode = "atlas";
     perFilter = "all";
@@ -362,12 +386,43 @@ export class MnemonicLabUI {
         this.container = container;
         this.lang = lang;
         this.progress = loadMnemonicProgress();
-        this.binTargetCitta = pickNextBinaryChallenge(this.progress, "all");
+        this.binTargetCitta = pickNextBinaryChallenge(this.progress, this.binFamilyScope);
+        this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
         this.chemTargetCitta = pickNextPeriodicChallenge(this.progress);
         this.blindTargetSlot = pickNextPhalanxSlot(this.progress, getPhalanxMapById(this.phaMapId));
     }
     init() {
         this.render();
+        void this.hydrateFromVault();
+        try {
+            if (typeof BroadcastChannel !== "undefined") {
+                const ch = new BroadcastChannel(VAULT_BROADCAST_CHANNEL);
+                ch.addEventListener("message", () => {
+                    this.progress = mergeMnemonicProgress(this.progress, loadMnemonicProgress());
+                    this.render();
+                });
+            }
+        }
+        catch {
+        }
+    }
+    async hydrateFromVault() {
+        try {
+            const res = await hydrateOfflineVault();
+            if (res.snapshot.mnemonicLab) {
+                const merged = mergeMnemonicProgress(this.progress, res.snapshot.mnemonicLab);
+                if (merged.totalAttempts !== this.progress.totalAttempts || merged.level !== this.progress.level) {
+                    this.progress = merged;
+                    saveMnemonicProgress(merged);
+                    this.render();
+                }
+            }
+        }
+        catch {
+        }
+    }
+    syncVault() {
+        void persistMnemonicOfflineVault(this.progress);
     }
     setLang(lang) {
         if (this.lang === lang)
@@ -407,6 +462,10 @@ export class MnemonicLabUI {
             <div class="mnem-stat-pill">
               <span class="mnem-stat-lbl">🎯 ${esc(s.accuracy)}</span>
               <strong class="mnem-stat-val">${acc}%</strong>
+            </div>
+            <div class="mnem-stat-pill" title="${esc(s.vaultPillTitle)}">
+              <span class="mnem-stat-lbl">🔒 ${esc(s.vaultPillLabel)}</span>
+              <strong class="mnem-stat-val">${this.progress.totalAttempts}</strong>
             </div>
             <div class="mnem-level-ctrl">
               <label for="mnem-rigor-select" class="mnem-level-lbl">${esc(s.rigorLevel)}</label>
@@ -492,8 +551,35 @@ export class MnemonicLabUI {
           `;
                 }
             }
+            const getFamLabel = (f) => familyLabels[f]?.[this.lang] ?? f;
+            const getFamShortLabel = (f) => getFamLabel(f).split("(")[0]?.trim() ?? f;
+            let mismatchHtml = "";
+            if (sw.family !== target.family) {
+                mismatchHtml = `
+          <div class="mnem-family-mismatch-banner" role="alert">
+            <div class="mnem-mismatch-text">
+              ⚠️ ${esc(s.familyMismatchNotice)}: <strong>${esc(getFamLabel(target.family))}</strong>
+            </div>
+            <button type="button" class="mnem-btn mnem-btn-secondary mnem-btn-sm" id="mnem-bin-align-family">
+              ⚡ ${esc(s.alignFamilyBtn)} (${esc(getFamShortLabel(target.family))})
+            </button>
+          </div>
+        `;
+            }
             challengeHtml = `
         <div class="mnem-challenge-box">
+          <div class="mnem-challenge-scope-bar">
+            <span class="mnem-scope-label">${esc(s.binScopeLabel)}</span>
+            <button type="button" class="mnem-scope-btn ${this.binFamilyScope === "all" ? "active" : ""}" data-bin-scope="all">
+              ${esc(s.binScopeAll)}
+            </button>
+            ${["lobha", "dosa", "moha", "ahetuka", "kamasobhana", "rupavacara", "arupavacara", "lokuttara"]
+                .map((fam) => `
+                <button type="button" class="mnem-scope-btn ${this.binFamilyScope === fam ? "active" : ""}" data-bin-scope="${fam}">
+                  ${esc(getFamShortLabel(fam))} (${fam === "lobha" ? "8" : fam === "dosa" ? "2" : fam === "moha" ? "2" : fam === "ahetuka" ? "18" : fam === "kamasobhana" ? "24" : fam === "rupavacara" ? "15" : fam === "arupavacara" ? "12" : "8/40"})
+                </button>`)
+                .join("")}
+          </div>
           <div class="mnem-challenge-head">
             <span class="mnem-challenge-kicker">🎯 ${esc(s.binChallengeTitle)} (${esc(target.asRef)})</span>
             <div class="mnem-challenge-prompt">${promptTitle}</div>
@@ -501,7 +587,12 @@ export class MnemonicLabUI {
           <div class="mnem-challenge-actions">
             <button type="button" class="mnem-btn mnem-btn-primary" id="mnem-bin-verify">${esc(s.binVerifyBtn)}</button>
             <button type="button" class="mnem-btn mnem-btn-secondary" id="mnem-bin-next">${esc(s.binNextBtn)}</button>
+            <label class="mnem-autoalign-label" title="${esc(s.autoAlignToggleLabel)}">
+              <input type="checkbox" id="mnem-bin-autoalign-toggle" ${this.autoAlignFamily ? "checked" : ""} />
+              <span>${esc(s.autoAlignToggleLabel)}</span>
+            </label>
           </div>
+          ${mismatchHtml}
           ${feedbackHtml}
         </div>
       `;
@@ -536,10 +627,14 @@ export class MnemonicLabUI {
           <span class="mnem-switch-label">${esc(s.binFamilyLabel)}</span>
           <div class="mnem-switch-row">
             ${["lobha", "dosa", "moha", "ahetuka", "kamasobhana", "rupavacara", "arupavacara", "lokuttara"]
-            .map((fam) => `
-                <button type="button" class="mnem-bit-btn ${sw.family === fam ? "active" : ""}" data-bin-family="${fam}" aria-pressed="${sw.family === fam}">
-                  ${esc(familyLabels[fam][this.lang])}
-                </button>`)
+            .map((fam) => {
+            const isTargetFam = this.binMode === "challenge" && this.binTargetCitta.family === fam;
+            const isMismatched = isTargetFam && sw.family !== fam;
+            return `
+                  <button type="button" class="mnem-bit-btn ${sw.family === fam ? "active" : ""} ${isTargetFam ? "target-family" : ""}" data-bin-family="${fam}" aria-pressed="${sw.family === fam}">
+                    ${esc(familyLabels[fam][this.lang])}${isMismatched ? " 🎯" : ""}
+                  </button>`;
+        })
             .join("")}
           </div>
         </div>
@@ -1180,6 +1275,7 @@ export class MnemonicLabUI {
             if (val === 1 || val === 2 || val === 3) {
                 this.progress = { ...this.progress, level: val };
                 saveMnemonicProgress(this.progress);
+                this.syncVault();
                 this.render();
             }
         });
@@ -1213,9 +1309,38 @@ export class MnemonicLabUI {
                 if (mode) {
                     this.binMode = mode;
                     this.binFeedback = null;
+                    if (mode === "challenge" && this.autoAlignFamily) {
+                        this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
+                    }
                     this.render();
                 }
             });
+        });
+        this.container.querySelectorAll("[data-bin-scope]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const sc = btn.dataset.binScope;
+                if (sc) {
+                    this.binFamilyScope = sc;
+                    this.binTargetCitta = pickNextBinaryChallenge(this.progress, this.binFamilyScope);
+                    this.binFeedback = null;
+                    if (this.autoAlignFamily) {
+                        this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
+                    }
+                    this.render();
+                }
+            });
+        });
+        this.container.querySelector("#mnem-bin-align-family")?.addEventListener("click", () => {
+            this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
+            this.binFeedback = null;
+            this.render();
+        });
+        this.container.querySelector("#mnem-bin-autoalign-toggle")?.addEventListener("change", (e) => {
+            this.autoAlignFamily = e.target.checked;
+            if (this.autoAlignFamily && this.switches.family !== this.binTargetCitta.family) {
+                this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
+            }
+            this.render();
         });
         this.container.querySelectorAll("[data-bin-family]").forEach((btn) => {
             btn.addEventListener("click", () => {
@@ -1339,11 +1464,15 @@ export class MnemonicLabUI {
             const isCorrect = synth?.id === this.binTargetCitta.id;
             this.binFeedback = { isCorrect, synthesized: synth };
             this.progress = recordMnemonicAttempt(this.progress, "binary", `citta:${this.binTargetCitta.id}`, isCorrect);
+            this.syncVault();
             this.render();
         });
         this.container.querySelector("#mnem-bin-next")?.addEventListener("click", () => {
-            this.binTargetCitta = pickNextBinaryChallenge(this.progress, "all", this.binTargetCitta.id);
+            this.binTargetCitta = pickNextBinaryChallenge(this.progress, this.binFamilyScope, this.binTargetCitta.id);
             this.binFeedback = null;
+            if (this.autoAlignFamily) {
+                this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
+            }
             this.render();
         });
         this.container.querySelectorAll("[data-per-mode]").forEach((btn) => {
@@ -1423,6 +1552,7 @@ export class MnemonicLabUI {
             const res = evaluateChemicalSynthesis(this.chemTargetCitta, this.activeChemSet);
             this.chemVerified = true;
             this.progress = recordMnemonicAttempt(this.progress, "periodic", `chem:${this.chemTargetCitta.id}`, res.isValidConfiguration);
+            this.syncVault();
             this.render();
         });
         this.container.querySelector("#mnem-chem-next")?.addEventListener("click", () => {
@@ -1466,6 +1596,7 @@ export class MnemonicLabUI {
                     if (isCorrect) {
                         this.blindTargetSlot = pickNextPhalanxSlot(this.progress, mapSpec, targetIdx);
                     }
+                    this.syncVault();
                 }
                 else if (this.phaMode === "sequence") {
                     if (idx === this.sequenceStep) {
@@ -1475,6 +1606,7 @@ export class MnemonicLabUI {
                     else {
                         this.progress = recordMnemonicAttempt(this.progress, "phalanx", `${mapSpec.id}:${this.sequenceStep}`, false);
                     }
+                    this.syncVault();
                 }
                 this.render();
             });

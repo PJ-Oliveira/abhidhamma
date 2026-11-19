@@ -183,6 +183,32 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     verifyBinBtn.click();
     expect(host.querySelector(".mnem-feedback")).not.toBeNull();
 
+    // Challenge family scope filtering & automatic family switch synchronization
+    const dosaScopeBtn = host.querySelector<HTMLButtonElement>('[data-bin-scope="dosa"]')!;
+    dosaScopeBtn.click();
+    // Scope filtered to Dosa: target is Dosa (#9 or #10) and switchboard is automatically aligned to Dosa
+    expect(host.querySelector(".mnem-challenge-head")?.textContent).toMatch(/Dosa|Aversion|AS I\.5/i);
+    const activeFamBtn = host.querySelector<HTMLButtonElement>('.mnem-bit-btn[data-bin-family="dosa"].active');
+    expect(activeFamBtn).not.toBeNull();
+    // Verify Dosa switches are displayed (Asaṅkhārika #9 vs Sasaṅkhārika #10)
+    expect(host.textContent).toContain("Asaṅkhārika (#9)");
+    expect(host.textContent).toContain("Sasaṅkhārika (#10)");
+
+    // If student manually selects another family (e.g., Lobha), mismatch alert banner appears with quick align button
+    const lobhaBtn = host.querySelector<HTMLButtonElement>('.mnem-bit-btn[data-bin-family="lobha"]')!;
+    lobhaBtn.click();
+    expect(host.querySelector(".mnem-family-mismatch-banner")).not.toBeNull();
+    const alignBtn = host.querySelector<HTMLButtonElement>("#mnem-bin-align-family")!;
+    alignBtn.click();
+    // Realigned to Dosa
+    expect(host.querySelector('.mnem-bit-btn[data-bin-family="dosa"].active')).not.toBeNull();
+    expect(host.querySelector(".mnem-family-mismatch-banner")).toBeNull();
+
+    // Advancing with Next Challenge keeps family switches automatically synchronized
+    const nextBinBtn = host.querySelector<HTMLButtonElement>("#mnem-bin-next")!;
+    nextBinBtn.click();
+    expect(host.querySelector('.mnem-bit-btn[data-bin-family="dosa"].active')).not.toBeNull();
+
     // Pillar 2: Switch to Periodic Table tab & test Alchemy mode
     const tabPeriodic = host.querySelector<HTMLButtonElement>('#mnem-tab-periodic')!;
     tabPeriodic.click();

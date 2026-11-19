@@ -1,4 +1,4 @@
-import { CANONICAL_CITTAS_89, ONTOLOGICAL_COLLISION_RULES, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=ab67c570";
+import { CANONICAL_CITTAS_89, ONTOLOGICAL_COLLISION_RULES, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=ab78e3e8";
 export const MNEMONIC_STORAGE_KEY = "abhidhamma_mnemonic_lab_v1";
 export function createInitialProgress() {
     return {
@@ -12,23 +12,63 @@ export function createInitialProgress() {
         masteredPhalanx: {},
     };
 }
+export function normalizeMnemonicProgress(parsed) {
+    if (!parsed || typeof parsed !== "object")
+        return createInitialProgress();
+    const lvl = parsed.level === 1 || parsed.level === 2 || parsed.level === 3 ? parsed.level : 1;
+    return {
+        level: lvl,
+        streak: typeof parsed.streak === "number" ? parsed.streak : 0,
+        bestStreak: typeof parsed.bestStreak === "number" ? parsed.bestStreak : 0,
+        totalCorrect: typeof parsed.totalCorrect === "number" ? parsed.totalCorrect : 0,
+        totalAttempts: typeof parsed.totalAttempts === "number" ? parsed.totalAttempts : 0,
+        masteredBinary: parsed.masteredBinary && typeof parsed.masteredBinary === "object" ? parsed.masteredBinary : {},
+        masteredPeriodic: parsed.masteredPeriodic && typeof parsed.masteredPeriodic === "object" ? parsed.masteredPeriodic : {},
+        masteredPhalanx: parsed.masteredPhalanx && typeof parsed.masteredPhalanx === "object" ? parsed.masteredPhalanx : {},
+    };
+}
+export function hasMnemonicProgressData(state) {
+    if (!state)
+        return false;
+    return (state.totalAttempts > 0 ||
+        Object.keys(state.masteredBinary).length > 0 ||
+        Object.keys(state.masteredPeriodic).length > 0 ||
+        Object.keys(state.masteredPhalanx).length > 0);
+}
+export function mergeMnemonicProgress(a, b) {
+    const sa = normalizeMnemonicProgress(a);
+    const sb = normalizeMnemonicProgress(b);
+    if (!hasMnemonicProgressData(sa))
+        return sb;
+    if (!hasMnemonicProgressData(sb))
+        return sa;
+    const mergeMasteredMap = (m1, m2) => {
+        const out = { ...m1 };
+        for (const [k, v] of Object.entries(m2)) {
+            out[k] = Math.max(out[k] ?? 0, typeof v === "number" ? v : 0);
+        }
+        return out;
+    };
+    const primary = sa.totalAttempts >= sb.totalAttempts ? sa : sb;
+    const totalCorrect = Math.max(sa.totalCorrect, sb.totalCorrect);
+    const totalAttempts = Math.max(sa.totalAttempts, sb.totalAttempts, totalCorrect);
+    return {
+        level: primary.level,
+        streak: primary.streak,
+        bestStreak: Math.max(sa.bestStreak, sb.bestStreak, primary.streak),
+        totalCorrect,
+        totalAttempts,
+        masteredBinary: mergeMasteredMap(sa.masteredBinary, sb.masteredBinary),
+        masteredPeriodic: mergeMasteredMap(sa.masteredPeriodic, sb.masteredPeriodic),
+        masteredPhalanx: mergeMasteredMap(sa.masteredPhalanx, sb.masteredPhalanx),
+    };
+}
 export function loadMnemonicProgress() {
     try {
         const raw = localStorage.getItem(MNEMONIC_STORAGE_KEY);
         if (!raw)
             return createInitialProgress();
-        const parsed = JSON.parse(raw);
-        const lvl = parsed.level === 1 || parsed.level === 2 || parsed.level === 3 ? parsed.level : 1;
-        return {
-            level: lvl,
-            streak: typeof parsed.streak === "number" ? parsed.streak : 0,
-            bestStreak: typeof parsed.bestStreak === "number" ? parsed.bestStreak : 0,
-            totalCorrect: typeof parsed.totalCorrect === "number" ? parsed.totalCorrect : 0,
-            totalAttempts: typeof parsed.totalAttempts === "number" ? parsed.totalAttempts : 0,
-            masteredBinary: parsed.masteredBinary && typeof parsed.masteredBinary === "object" ? parsed.masteredBinary : {},
-            masteredPeriodic: parsed.masteredPeriodic && typeof parsed.masteredPeriodic === "object" ? parsed.masteredPeriodic : {},
-            masteredPhalanx: parsed.masteredPhalanx && typeof parsed.masteredPhalanx === "object" ? parsed.masteredPhalanx : {},
-        };
+        return normalizeMnemonicProgress(JSON.parse(raw));
     }
     catch {
         return createInitialProgress();
