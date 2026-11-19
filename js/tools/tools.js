@@ -1,6 +1,6 @@
-import { t } from "../i18n.js?v=6819cf1b";
-import { settings } from "../state.js?v=6819cf1b";
-import { createLogger } from "../logger.js?v=6819cf1b";
+import { t } from "../i18n.js?v=d3104d40";
+import { settings } from "../state.js?v=d3104d40";
+import { createLogger } from "../logger.js?v=d3104d40";
 const log = createLogger("tools");
 const TABS = [
     { id: "mindmap", icon: "🗺", i18nKey: "toolMindmap", init: null, loaded: false },
@@ -8,6 +8,7 @@ const TABS = [
     { id: "vithi", icon: "🔄", i18nKey: "toolVithi", init: null, loaded: false },
     { id: "matikas", icon: "📖", i18nKey: "toolMatikas", init: null, loaded: false },
     { id: "cetasika", icon: "🧬", i18nKey: "toolCetasika", init: null, loaded: false },
+    { id: "mnemonic", icon: "🧮", i18nKey: "toolMnemonic", init: null, loaded: false },
 ];
 export function registerToolModule(id, initFn) {
     const tab = TABS.find((t) => t.id === id);
@@ -36,7 +37,7 @@ export function initToolsPanel(container) {
         const btn = document.createElement("button");
         btn.className = "tools-tab-btn";
         btn.dataset.tab = tab.id;
-        btn.innerHTML = `<span class="tools-tab-icon">${tab.icon}</span><span class="tools-tab-label">${t(tab.i18nKey, settings.uiLang)}</span>`;
+        btn.innerHTML = `<span class="tools-tab-icon">${tab.icon}</span><span class="tools-tab-label" data-i18n="${tab.i18nKey}">${t(tab.i18nKey, settings.uiLang)}</span>`;
         btn.addEventListener("click", () => switchTab(tab.id));
         tabBar.appendChild(btn);
         buttons.push(btn);

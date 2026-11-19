@@ -2815,6 +2815,12 @@ details[open] > summary::before { transform: rotate(90deg); }
     font-size: 11px;
     min-width: 0;
   }
+  .srs-tab-label {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 /* ── Abhidhamma SRS: Two-Track (Chapters & 90-Day Plan), Math Box & Recall ── */
@@ -3307,8 +3313,9 @@ details[open] > summary::before { transform: rotate(90deg); }
 }
 
 @media (max-width: 768px) {
-  /* Hide floating Debate FAB inside SRS/Anki on small screens so it never blocks rating or action buttons */
-  body:has(#reader-srs:not([style*="display: none"])) #btn-toggle-interlocutor {
+  /* Hide floating Debate FAB inside SRS/Anki/Tools on small screens so it never blocks rating or action buttons */
+  body:has(#reader-srs:not([style*="display: none"])) #btn-toggle-interlocutor,
+  body:has(#reader-tools:not([style*="display: none"])) #btn-toggle-interlocutor {
     display: none !important;
   }
 
@@ -3410,5 +3417,904 @@ details[open] > summary::before { transform: rotate(90deg); }
 @media (min-width: 769px) {
   .abhi-vault-bar {
     padding-right: 132px; /* Always clears floating Debate button on desktop/laptop */
+  }
+}
+
+/* ============================================================================
+   LABORATÓRIO MNÊMICO (Binary Decompressor · Periodic Table 72 · Phalanx Abacus)
+   ============================================================================ */
+
+#reader-tools {
+  padding: 0 !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  overflow: hidden !important;
+}
+
+#srs-mnemonic-main,
+#tools-panel-mnemonic {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-content);
+  padding: 0;
+}
+
+.mnem-lab-root {
+  max-width: 1220px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 18px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mnem-lab-root :where(button, select):focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.mnem-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.mnem-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.mnem-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.mnem-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.mnem-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.82rem;
+}
+
+.mnem-stat-val {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.mnem-level-ctrl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+}
+
+.mnem-level-select,
+.mnem-map-select {
+  background: var(--bg-content);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  min-block-size: 32px;
+}
+
+/* Pillar Tabs (WAI-ARIA Tablist Pattern) */
+.mnem-pillar-tabs {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 2px solid var(--border);
+  background: var(--bg-panel);
+  border-radius: 8px 8px 0 0;
+  scroll-snap-type: inline proximity;
+}
+
+.mnem-pillar-tab {
+  position: relative;
+  flex: none;
+  scroll-snap-align: start;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 12px 18px;
+  font-size: 0.92rem;
+  cursor: pointer;
+  min-block-size: 42px;
+  white-space: nowrap;
+}
+
+.mnem-pillar-tab:hover {
+  color: var(--text);
+  background: rgba(179, 102, 63, 0.08);
+}
+
+.mnem-pillar-tab[aria-selected="true"] {
+  color: var(--accent);
+}
+
+.mnem-pillar-tab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  border-block-end: 3px solid var(--accent);
+}
+
+/* Tabpanel must not carry padding/border directly (per modern-web-guidance tabs guide) */
+.mnem-tabpanel {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.mnem-tabpanel-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Submode Bar & Buttons */
+.mnem-submode-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mnem-submode-btn {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-block-size: 36px;
+}
+
+.mnem-submode-btn.active,
+.mnem-submode-btn[aria-pressed="true"] {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.mnem-btn {
+  border-radius: 7px;
+  padding: 8px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-block-size: 36px;
+  border: 1px solid var(--border);
+}
+
+.mnem-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.mnem-btn-secondary {
+  background: var(--bg-panel);
+  color: var(--text);
+}
+
+/* Equation Banner */
+.mnem-equation-banner,
+.mnem-map-summary-banner,
+.mnem-why72-box {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.mnem-eq-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+.mnem-eq-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mnem-eq-chip {
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+}
+
+/* Switchboard (Pillar 1) */
+.mnem-switchboard {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mnem-switch-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.mnem-switch-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mnem-bits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.mnem-bit-card {
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.mnem-bit-toggle-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.mnem-bit-btn {
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 7px 11px;
+  font-size: 0.84rem;
+  cursor: pointer;
+  min-block-size: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.mnem-bit-btn.active,
+.mnem-bit-btn[aria-pressed="true"] {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.mnem-bit-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-family: monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* Synthesized Citta Result Card */
+.mnem-synthesized-card,
+.mnem-challenge-box,
+.mnem-alchemy-header {
+  background: var(--bg-panel);
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mnem-synth-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.mnem-synth-code,
+.mnem-challenge-kicker {
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+.mnem-synth-pali,
+.mnem-pali-badge {
+  font-family: "Gentium Book Plus", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.mnem-synth-name {
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.mnem-synth-formula,
+.mnem-formula-note {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.mnem-challenge-actions,
+.mnem-alchemy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.mnem-feedback {
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mnem-feedback-ok {
+  background: #e6f4ea;
+  border: 1px solid #34a853;
+  color: #135325;
+}
+
+.mnem-feedback-err {
+  background: #fce8e6;
+  border: 1px solid #d93025;
+  color: #7a1c16;
+}
+
+/* Combinatorial Matrix Grid */
+.mnem-section-h3 {
+  margin: 6px 0 8px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.mnem-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: 8px;
+}
+
+.mnem-matrix-cell {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mnem-matrix-cell.selected {
+  border: 2px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+.mnem-matrix-cell.mastered {
+  border-left: 4px solid #34a853;
+}
+
+.mnem-cell-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.mnem-cell-pali {
+  font-family: "Gentium Book Plus", Georgia, serif;
+  font-size: 0.86rem;
+  color: var(--text);
+}
+
+.mnem-cell-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Pillar 2: Periodic Table of 72 Realities */
+.mnem-filter-bar,
+.mnem-macro-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.mnem-filter-chip,
+.mnem-macro-btn {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  min-block-size: 30px;
+}
+
+.mnem-filter-chip.active,
+.mnem-filter-chip[aria-pressed="true"] {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.mnem-atom-inspector,
+.mnem-slot-inspector {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.mnem-atom-badge {
+  width: 68px;
+  height: 68px;
+  border-radius: 10px;
+  border: 2px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--bg-content);
+}
+
+.mnem-atom-num {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.mnem-atom-sym {
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+.mnem-atom-param {
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.mnem-atom-details {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.86rem;
+}
+
+.mnem-avin-tag {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #f59e0b;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+.mnem-periodic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+  gap: 8px;
+}
+
+.mnem-element-tile {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  text-align: left;
+  min-height: 86px;
+  transition: transform 0.1s, border-color 0.1s;
+}
+
+.mnem-element-tile:hover {
+  border-color: var(--accent);
+}
+
+.mnem-element-tile.selected,
+.mnem-element-tile.chem-active {
+  border: 2px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+.mnem-element-tile.chem-inactive {
+  opacity: 0.68;
+}
+
+.mnem-tile-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.mnem-tile-val,
+.mnem-tile-check {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.mnem-tile-sym {
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.mnem-tile-pali {
+  font-family: "Gentium Book Plus", Georgia, serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.mnem-tile-name {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.25;
+}
+
+/* Block Color Accents */
+.mnem-block-citta { border-top: 4px solid #7c3aed; }
+.mnem-block-sabbacitta { border-top: 4px solid #2563eb; }
+.mnem-block-pakinnaka { border-top: 4px solid #0891b2; }
+.mnem-block-akusala_univ,
+.mnem-block-akusala_lobha,
+.mnem-block-akusala_dosa,
+.mnem-block-akusala_thina,
+.mnem-block-akusala_vicikiccha { border-top: 4px solid #dc2626; }
+.mnem-block-sobhana_univ,
+.mnem-block-sobhana_virati,
+.mnem-block-sobhana_appamanna,
+.mnem-block-sobhana_panna { border-top: 4px solid #16a34a; }
+.mnem-block-rupa_mahabhuta,
+.mnem-block-rupa_pasada,
+.mnem-block-rupa_gocara,
+.mnem-block-rupa_bhava,
+.mnem-block-rupa_hadaya,
+.mnem-block-rupa_jivita,
+.mnem-block-rupa_ahara { border-top: 4px solid #d97706; }
+.mnem-block-nibbana { border-top: 4px solid #eab308; }
+
+.mnem-collision-alert {
+  background: #fff4e5;
+  border: 2px solid #e65100;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #662200;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.86rem;
+}
+
+.mnem-collision-head {
+  font-weight: 700;
+  color: #bf360c;
+}
+
+.mnem-collision-ok {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.83rem;
+  color: var(--translation-bar);
+  font-weight: 600;
+}
+
+/* Pillar 3: Phalanx Abacus (Hands & Joints) */
+.mnem-phalanx-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.mnem-hands-stage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 16px;
+}
+
+.mnem-hand-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.mnem-hand-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.mnem-fingers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  align-items: end;
+}
+
+.mnem-finger-col {
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 26px 26px 8px 8px;
+  padding: 8px 6px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.mnem-fingernail {
+  width: 28px;
+  height: 14px;
+  border-radius: 12px 12px 4px 4px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+
+.mnem-finger-name {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.mnem-joints-stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mnem-joint-empty {
+  min-height: 62px;
+  border-radius: 6px;
+  border: 1px dashed var(--border);
+  opacity: 0.35;
+}
+
+.mnem-phalanx-btn {
+  width: 100%;
+  min-height: 68px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  text-align: center;
+}
+
+.mnem-phalanx-btn:hover {
+  border-color: var(--accent);
+}
+
+.mnem-phalanx-btn.selected {
+  border: 2px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+.mnem-phalanx-btn.mastered {
+  border-bottom: 3px solid #34a853;
+}
+
+.mnem-phalanx-btn.gold-target {
+  border: 2px solid #d97706;
+  background: #fef3c7;
+}
+
+.mnem-phalanx-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.mnem-phalanx-num {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.mnem-phalanx-code {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.mnem-phalanx-pali {
+  font-family: "Gentium Book Plus", Georgia, serif;
+  font-size: 0.76rem;
+  color: var(--accent);
+}
+
+.mnem-phalanx-hidden {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.mnem-sandhi-dot {
+  font-size: 0.65rem;
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #f59e0b;
+  border-radius: 10px;
+  padding: 1px 5px;
+  font-weight: 700;
+}
+
+.mnem-slot-badge {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.mnem-slot-body {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.88rem;
+}
+
+.mnem-slot-sandhi {
+  color: #b45309;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  #srs-mnemonic-main {
+    padding: 0;
+  }
+  .mnem-lab-root {
+    padding: 10px 8px 84px;
+  }
+  .mnem-hands-stage {
+    grid-template-columns: 1fr;
+  }
+  .mnem-hand-card {
+    padding: 10px 6px;
+    min-width: 0;
+  }
+  .mnem-finger-col,
+  .mnem-slot-body,
+  .mnem-atom-details {
+    min-width: 0;
+  }
+  .mnem-finger-col {
+    padding: 6px 3px 4px;
+    border-radius: 16px 16px 6px 6px;
+  }
+  .mnem-finger-name {
+    font-size: 0.64rem;
+    letter-spacing: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mnem-fingers-grid {
+    gap: 4px;
+  }
+  .mnem-phalanx-btn {
+    padding: 4px 2px;
+    min-height: 60px;
+    overflow: hidden;
+  }
+  .mnem-phalanx-top {
+    font-size: 0.6rem;
+    gap: 2px;
+  }
+  .mnem-phalanx-jname {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mnem-phalanx-code {
+    font-size: 0.72rem;
+  }
+  .mnem-phalanx-pali {
+    max-width: 100%;
+    font-size: 0.68rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mnem-periodic-grid {
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
   }
 }

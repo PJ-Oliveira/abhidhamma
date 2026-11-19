@@ -4,7 +4,7 @@ import { createLogger } from "../logger.js";
 
 const log = createLogger("tools");
 
-type TabId = "mindmap" | "patthana" | "vithi" | "matikas" | "cetasika";
+type TabId = "mindmap" | "patthana" | "vithi" | "matikas" | "cetasika" | "mnemonic";
 
 interface Tab {
   id: TabId;
@@ -20,6 +20,7 @@ const TABS: Tab[] = [
   { id: "vithi",    icon: "🔄", i18nKey: "toolVithi",    init: null, loaded: false },
   { id: "matikas",  icon: "📖", i18nKey: "toolMatikas",  init: null, loaded: false },
   { id: "cetasika", icon: "🧬", i18nKey: "toolCetasika", init: null, loaded: false },
+  { id: "mnemonic", icon: "🧮", i18nKey: "toolMnemonic", init: null, loaded: false },
 ];
 
 // Module registrations (called from each module's init)
@@ -59,7 +60,7 @@ export function initToolsPanel(container: HTMLElement): void {
     const btn = document.createElement("button");
     btn.className = "tools-tab-btn";
     btn.dataset.tab = tab.id;
-    btn.innerHTML = `<span class="tools-tab-icon">${tab.icon}</span><span class="tools-tab-label">${t(tab.i18nKey, settings.uiLang)}</span>`;
+    btn.innerHTML = `<span class="tools-tab-icon">${tab.icon}</span><span class="tools-tab-label" data-i18n="${tab.i18nKey}">${t(tab.i18nKey, settings.uiLang)}</span>`;
     btn.addEventListener("click", () => switchTab(tab.id));
     tabBar.appendChild(btn);
     buttons.push(btn);

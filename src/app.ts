@@ -14,7 +14,6 @@ import { initDictionaryPanel } from "./dictionary.js";
 import { initSearchPanel } from "./search.js";
 import { initExportPanel } from "./export.js";
 import { initSrsPanel } from "./srs.js";
-import { TetrisUI } from "./tetris/ui.js";
 import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js";
 import {
   APP_OFFLINE_CACHE_NAME,
@@ -27,6 +26,7 @@ import "./tools/patthana.js";
 import "./tools/vithi.js";
 import "./tools/matikas.js";
 import "./tools/cetasika.js";
+import { MnemonicLabUI } from "./mnemonic-lab/ui.js";
 import { initSelectionHandler, clearSelection } from "./selection.js";
 import { createLogger } from "./logger.js";
 import type { Manifest, WorkEntry, WorkPart, Segment, TranslationLang, UiLang, CommentaryMode } from "./types.js";
@@ -156,7 +156,7 @@ function updateHash(): void {
   const panel = activeBtn ? (activeBtn.dataset.panel || "tipitaka") : "tipitaka";
   
   let base = `#/${panel}`;
-  if (panel !== "srs" && panel !== "tetris" && state.work && state.partKey && state.chunkIndex !== undefined) {
+  if (panel !== "srs" && state.work && state.partKey && state.chunkIndex !== undefined) {
     base += `/${state.work.id}/${state.partKey}/${state.chunkIndex}`;
   }
   
@@ -528,7 +528,7 @@ function wireIconRail(): void {
     if (w >= MIN_W) root.style.setProperty("--panel-w", w + "px");
   }
 
-  const FULLSCREEN_PANELS = new Set(["srs", "tools", "tetris", "abhidhamma-srs"]);
+  const FULLSCREEN_PANELS = new Set(["srs", "tools", "abhidhamma-srs", "mnemonic-srs"]);
   const readerHeader = el("reader-header");
   const readerContent = el("content");
   const tocNav = el("toc-nav");
@@ -540,17 +540,10 @@ function wireIconRail(): void {
     readerHeader.style.display = isFullscreen ? "none" : "";
     readerContent.style.display = isFullscreen ? "none" : "";
     tocNav.style.display = isFullscreen ? "none" : "";
-    const isSrsOrTetris = target === "srs" || target === "tetris" || target === "abhidhamma-srs";
-    readerSrs.style.display = isSrsOrTetris ? "flex" : "none";
+    const isSrsOverlay =
+      target === "srs" || target === "abhidhamma-srs" || target === "mnemonic-srs";
+    readerSrs.style.display = isSrsOverlay ? "flex" : "none";
     readerTools.style.display = target === "tools" ? "flex" : "none";
-    if (isSrsOrTetris) {
-      const activeBtn = document.querySelector<HTMLButtonElement>(".srs-tab-btn.active, .srs-menu-item.active");
-      const isTetris = target === "tetris" || (target !== "srs" && target !== "abhidhamma-srs" && activeBtn?.dataset.srsMode === "tetris");
-      readerSrs.classList.toggle("tetris-mode", isTetris);
-      document.body.classList.toggle("tetris-active", isTetris);
-    } else {
-      document.body.classList.remove("tetris-active");
-    }
   }
 
   switchPanel = (target: string, skipHashUpdate = false) => {
@@ -564,21 +557,24 @@ function wireIconRail(): void {
         doExpand();
       }
 
-      const railTarget = target === "abhidhamma-srs" ? "srs" : target;
+      const railTarget = target === "abhidhamma-srs" || target === "mnemonic-srs" ? "srs" : target;
       buttons.forEach((b) => {
         const isActive = b.dataset.panel === railTarget;
         b.classList.toggle("active", isActive);
         if (isActive && isMobile) {
-          b.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+          b.scrollIntoView?.({ behavior: "smooth", block: "nearest", inline: "center" });
         }
       });
-      const panelIdTarget = target === "tetris" ? "panel-tetris" : target === "abhidhamma-srs" ? "panel-srs" : `panel-${target}`;
+      const panelIdTarget =
+        target === "abhidhamma-srs" || target === "mnemonic-srs"
+          ? "panel-srs"
+          : `panel-${target}`;
       panels.forEach((p) => p.classList.toggle("active", p.id === panelIdTarget));
       toggleReaderOverlay(target);
-      if (target === "tetris") {
-        setSrsModeGlobal?.("tetris", false);
-      } else if (target === "abhidhamma-srs") {
+      if (target === "abhidhamma-srs") {
         setSrsModeGlobal?.("abhidhamma", false);
+      } else if (target === "mnemonic-srs") {
+        setSrsModeGlobal?.("mnemonic", false);
       } else if (target === "srs") {
         setSrsModeGlobal?.("vocab", false);
       }
@@ -728,7 +724,9 @@ async function cacheAllForOffline(btn: HTMLButtonElement): Promise<void> {
       './js/abhidhamma-srs/scheduler.js',
       './js/abhidhamma-srs/offline-store.js',
       './js/abhidhamma-srs/ui.js',
-      './data/tetris/index.json',
+      './js/mnemonic-lab/data.js',
+      './js/mnemonic-lab/engine.js',
+      './js/mnemonic-lab/ui.js',
     ];
     if (state.manifest?.groups) {
       for (const group of Object.values(state.manifest.groups)) {
@@ -888,17 +886,17 @@ function applyStaticI18n(): void {
   updateSettingsLabels();
 }
 
-let tetrisUiInstance: TetrisUI | null = null;
 let abhidhammaSrsInstance: AbhidhammaSrsUI | null = null;
+let mnemonicLabInstance: MnemonicLabUI | null = null;
 
 function refreshLocalizedUI(): void {
   applyStaticI18n();
   updateSettingsLabels();
-  if (tetrisUiInstance) {
-    tetrisUiInstance.setLang(settings.uiLang as any);
-  }
   if (abhidhammaSrsInstance) {
     abhidhammaSrsInstance.setLang(settings.uiLang);
+  }
+  if (mnemonicLabInstance) {
+    mnemonicLabInstance.setLang(settings.uiLang);
   }
   if (!state.manifest) return;
   renderTree(state.manifest, el("tree"), (workId, partKey, chunkIndex) => void selectWork(workId, partKey, chunkIndex));
@@ -938,8 +936,7 @@ function wireSrsNavigation(): void {
   const menuItems = document.querySelectorAll<HTMLButtonElement>(".srs-menu-item, .srs-tab-btn");
   const vocabPanel = document.getElementById("srs-full-body");
   const abhidhammaPanel = document.getElementById("srs-abhidhamma-main");
-  const tetrisPanel = document.getElementById("srs-tetris-main");
-  const readerSrs = document.getElementById("reader-srs");
+  const mnemonicPanel = document.getElementById("srs-mnemonic-main");
 
   const setMode = (mode: string, updateHashRoute = true) => {
     menuItems.forEach((b) => {
@@ -950,50 +947,9 @@ function wireSrsNavigation(): void {
       }
     });
 
-    const railSrs = document.querySelector<HTMLButtonElement>('.rail-btn[data-panel="srs"]');
-    const railTetris = document.querySelector<HTMLButtonElement>('.rail-btn[data-panel="tetris"]');
-    if (railSrs && railTetris) {
-      if (mode === "tetris") {
-        railSrs.classList.remove("active");
-        railTetris.classList.add("active");
-      } else {
-        railTetris.classList.remove("active");
-        railSrs.classList.add("active");
-      }
-    }
-
-    const panelSrs = document.getElementById("panel-srs");
-    const panelTetris = document.getElementById("panel-tetris");
-    if (panelSrs && panelTetris) {
-      if (mode === "tetris") {
-        panelSrs.classList.remove("active");
-        panelTetris.classList.add("active");
-      } else {
-        panelTetris.classList.remove("active");
-        panelSrs.classList.add("active");
-      }
-    }
-
-    if (mode === "tetris") {
-      readerSrs?.classList.add("tetris-mode");
-      document.body.classList.add("tetris-active");
+    if (mode === "abhidhamma") {
       if (vocabPanel) vocabPanel.style.display = "none";
-      if (abhidhammaPanel) abhidhammaPanel.style.display = "none";
-      if (tetrisPanel) {
-        tetrisPanel.style.display = "flex";
-        if (!tetrisUiInstance) {
-          tetrisUiInstance = new TetrisUI(tetrisPanel, settings.uiLang as any);
-          void tetrisUiInstance.init();
-        }
-      }
-      if (updateHashRoute) {
-        history.replaceState(null, "", "#/tetris");
-      }
-    } else if (mode === "abhidhamma") {
-      readerSrs?.classList.remove("tetris-mode");
-      document.body.classList.remove("tetris-active");
-      if (vocabPanel) vocabPanel.style.display = "none";
-      if (tetrisPanel) tetrisPanel.style.display = "none";
+      if (mnemonicPanel) mnemonicPanel.style.display = "none";
       if (abhidhammaPanel) {
         abhidhammaPanel.style.display = "flex";
         if (!abhidhammaSrsInstance) {
@@ -1004,11 +960,22 @@ function wireSrsNavigation(): void {
       if (updateHashRoute) {
         history.replaceState(null, "", "#/srs/abhidhamma");
       }
-    } else {
-      readerSrs?.classList.remove("tetris-mode");
-      document.body.classList.remove("tetris-active");
-      if (tetrisPanel) tetrisPanel.style.display = "none";
+    } else if (mode === "mnemonic") {
+      if (vocabPanel) vocabPanel.style.display = "none";
       if (abhidhammaPanel) abhidhammaPanel.style.display = "none";
+      if (mnemonicPanel) {
+        mnemonicPanel.style.display = "flex";
+        if (!mnemonicLabInstance) {
+          mnemonicLabInstance = new MnemonicLabUI(mnemonicPanel, settings.uiLang);
+          mnemonicLabInstance.init();
+        }
+      }
+      if (updateHashRoute) {
+        history.replaceState(null, "", "#/srs/mnemonic");
+      }
+    } else {
+      if (abhidhammaPanel) abhidhammaPanel.style.display = "none";
+      if (mnemonicPanel) mnemonicPanel.style.display = "none";
       if (vocabPanel) vocabPanel.style.display = "flex";
       if (updateHashRoute) {
         history.replaceState(null, "", "#/srs");
@@ -1027,10 +994,10 @@ function wireSrsNavigation(): void {
   });
 
   const activeBtn = document.querySelector<HTMLButtonElement>(".srs-tab-btn.active, .srs-menu-item.active");
-  if (activeBtn?.dataset.srsMode === "tetris") {
-    setMode("tetris", false);
-  } else if (activeBtn?.dataset.srsMode === "abhidhamma") {
+  if (activeBtn?.dataset.srsMode === "abhidhamma") {
     setMode("abhidhamma", false);
+  } else if (activeBtn?.dataset.srsMode === "mnemonic") {
+    setMode("mnemonic", false);
   }
 }
 
@@ -1053,15 +1020,15 @@ function parseHash(): Route | null {
   let panel = "tipitaka";
   let workId, partKey, chunkIndexStr;
   
-  const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools", "tetris", "abhidhamma-srs"]);
-  if (parts[0] === "srs" && parts[1] === "tetris") {
-    parts.shift();
-    parts.shift();
-    panel = "tetris";
-  } else if (parts[0] === "srs" && parts[1] === "abhidhamma") {
+  const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools", "abhidhamma-srs", "mnemonic-srs"]);
+  if (parts[0] === "srs" && parts[1] === "abhidhamma") {
     parts.shift();
     parts.shift();
     panel = "abhidhamma-srs";
+  } else if (parts[0] === "srs" && parts[1] === "mnemonic") {
+    parts.shift();
+    parts.shift();
+    panel = "mnemonic-srs";
   } else if (parts[0] && knownPanels.has(parts[0])) {
     panel = parts.shift() as string;
   }
@@ -1096,16 +1063,16 @@ function wireRouting(): void {
     
     // Check panel switch
     const activeBtn = document.querySelector(".rail-btn.active") as HTMLElement;
-    if (!activeBtn || activeBtn.dataset.panel !== route.panel || route.panel === "abhidhamma-srs") {
+    if (!activeBtn || activeBtn.dataset.panel !== route.panel || route.panel === "abhidhamma-srs" || route.panel === "mnemonic-srs") {
        switchPanel?.(route.panel, true);
     }
     
     if (route.workId && route.partKey && route.chunkIndex !== undefined) {
-      if (window.innerWidth <= 860) {
-        collapseSidePanel?.();
-      }
       if (state.work?.id === route.workId && state.partKey === route.partKey && state.chunkIndex === route.chunkIndex) {
          if (route.segId != null) {
+            if (window.innerWidth <= 860) {
+              collapseSidePanel?.();
+            }
             const target = el("content").querySelector<HTMLElement>(`.seg[data-seg-id="${route.segId}"]`);
             if (target) {
               target.scrollIntoView({ block: "center" });
@@ -1166,15 +1133,15 @@ async function init(): Promise<void> {
   initSrsPanel(el("srs-full-body"));
   initToolsPanel(el("tools-full-body"));
 
-  const tetrisMount = document.getElementById("srs-tetris-main");
-  if (tetrisMount) {
-    tetrisUiInstance = new TetrisUI(tetrisMount, settings.uiLang as any);
-    void tetrisUiInstance.init();
-  }
   const abhidhammaMount = document.getElementById("srs-abhidhamma-main");
   if (abhidhammaMount) {
     abhidhammaSrsInstance = new AbhidhammaSrsUI(abhidhammaMount, settings.uiLang);
     void abhidhammaSrsInstance.init();
+  }
+  const mnemonicMount = document.getElementById("srs-mnemonic-main");
+  if (mnemonicMount) {
+    mnemonicLabInstance = new MnemonicLabUI(mnemonicMount, settings.uiLang);
+    mnemonicLabInstance.init();
   }
   wireSrsNavigation();
 

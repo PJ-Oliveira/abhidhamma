@@ -1,0 +1,433 @@
+/**
+ * Motor Combinatório, Validador Ontológico e Agendador de Maestria do Laboratório Mnêmico.
+ */
+
+import {
+  CANONICAL_CITTAS_89,
+  ONTOLOGICAL_COLLISION_RULES,
+  PERIODIC_ELEMENTS_72,
+  PHALANX_MAPS,
+  type CanonicalCitta,
+  type CittaFamilyId,
+  type CognitiveBit,
+  type JatiId,
+  type OntologicalCollisionRule,
+  type PhalanxMapSpec,
+  type PhalanxSlot,
+  type SabhavaElement,
+  type SankharaBit,
+  type VedanaBit,
+} from "./data.js";
+
+export const MNEMONIC_STORAGE_KEY = "abhidhamma_mnemonic_lab_v1";
+
+export type DifficultyLevel = 1 | 2 | 3;
+
+export interface MnemonicProgressState {
+  readonly level: DifficultyLevel;
+  readonly streak: number;
+  readonly bestStreak: number;
+  readonly totalCorrect: number;
+  readonly totalAttempts: number;
+  /** IDs de Cittas dominadas no Descompactador Binário (ex.: "citta:1") */
+  readonly masteredBinary: Readonly<Record<string, number>>;
+  /** IDs de Cittas/Elementos dominados na Tabela Periódica (ex.: "chem:1") */
+  readonly masteredPeriodic: Readonly<Record<string, number>>;
+  /** IDs de falanges dominadas no Ábaco (ex.: "akusala12:1") */
+  readonly masteredPhalanx: Readonly<Record<string, number>>;
+}
+
+export function createInitialProgress(): MnemonicProgressState {
+  return {
+    level: 1,
+    streak: 0,
+    bestStreak: 0,
+    totalCorrect: 0,
+    totalAttempts: 0,
+    masteredBinary: {},
+    masteredPeriodic: {},
+    masteredPhalanx: {},
+  };
+}
+
+export function loadMnemonicProgress(): MnemonicProgressState {
+  try {
+    const raw = localStorage.getItem(MNEMONIC_STORAGE_KEY);
+    if (!raw) return createInitialProgress();
+    const parsed = JSON.parse(raw) as Partial<MnemonicProgressState>;
+    const lvl = parsed.level === 1 || parsed.level === 2 || parsed.level === 3 ? parsed.level : 1;
+    return {
+      level: lvl,
+      streak: typeof parsed.streak === "number" ? parsed.streak : 0,
+      bestStreak: typeof parsed.bestStreak === "number" ? parsed.bestStreak : 0,
+      totalCorrect: typeof parsed.totalCorrect === "number" ? parsed.totalCorrect : 0,
+      totalAttempts: typeof parsed.totalAttempts === "number" ? parsed.totalAttempts : 0,
+      masteredBinary: parsed.masteredBinary && typeof parsed.masteredBinary === "object" ? parsed.masteredBinary : {},
+      masteredPeriodic: parsed.masteredPeriodic && typeof parsed.masteredPeriodic === "object" ? parsed.masteredPeriodic : {},
+      masteredPhalanx: parsed.masteredPhalanx && typeof parsed.masteredPhalanx === "object" ? parsed.masteredPhalanx : {},
+    };
+  } catch {
+    return createInitialProgress();
+  }
+}
+
+export function saveMnemonicProgress(state: MnemonicProgressState): void {
+  try {
+    localStorage.setItem(MNEMONIC_STORAGE_KEY, JSON.stringify(state));
+  } catch {
+    // Ignore storage quota errors in restricted environments
+  }
+}
+
+export function recordMnemonicAttempt(
+  state: MnemonicProgressState,
+  pillar: "binary" | "periodic" | "phalanx",
+  itemKey: string,
+  isCorrect: boolean
+): MnemonicProgressState {
+  const nextStreak = isCorrect ? state.streak + 1 : 0;
+  const nextBest = Math.max(state.bestStreak, nextStreak);
+  const nextCorrect = state.totalCorrect + (isCorrect ? 1 : 0);
+  const nextAttempts = state.totalAttempts + 1;
+
+  const updateMap = (map: Readonly<Record<string, number>>): Record<string, number> => {
+    const copy = { ...map };
+    const prev = copy[itemKey] ?? 0;
+    copy[itemKey] = isCorrect ? prev + 1 : Math.max(0, prev - 1);
+    return copy;
+  };
+
+  const next: MnemonicProgressState = {
+    ...state,
+    streak: nextStreak,
+    bestStreak: nextBest,
+    totalCorrect: nextCorrect,
+    totalAttempts: nextAttempts,
+    masteredBinary: pillar === "binary" ? updateMap(state.masteredBinary) : state.masteredBinary,
+    masteredPeriodic: pillar === "periodic" ? updateMap(state.masteredPeriodic) : state.masteredPeriodic,
+    masteredPhalanx: pillar === "phalanx" ? updateMap(state.masteredPhalanx) : state.masteredPhalanx,
+  };
+
+  saveMnemonicProgress(next);
+  return next;
+}
+
+// ── PILAR 1: MOTOR DO DESCOMPACTADOR BINÁRIO E COMBINATÓRIO ──────────────────
+
+export interface BinarySwitchState {
+  readonly family: CittaFamilyId;
+  readonly jati: JatiId;
+  readonly bitVedana: VedanaBit;
+  readonly bitCognitive: CognitiveBit;
+  readonly bitSankhara: SankharaBit;
+  readonly jhanaStage: 1 | 2 | 3 | 4 | 5;
+  readonly arupaBase: 1 | 2 | 3 | 4;
+  readonly maggaStage: 1 | 2 | 3 | 4;
+}
+
+export function defaultSwitchStateForFamily(family: CittaFamilyId): BinarySwitchState {
+  switch (family) {
+    case "lobha":
+      return { family, jati: "akusala", bitVedana: 1, bitCognitive: 1, bitSankhara: 1, jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
+    case "dosa":
+      return { family, jati: "akusala", bitVedana: "domanassa", bitCognitive: "patigha", bitSankhara: 1, jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
+    case "moha":
+      return { family, jati: "akusala", bitVedana: 0, bitCognitive: "vicikiccha", bitSankhara: "fixed", jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
+    case "kamasobhana":
+      return { family, jati: "kusala", bitVedana: 1, bitCognitive: 1, bitSankhara: 1, jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
+    case "rupavacara":
+      return { family, jati: "kusala", bitVedana: 1, bitCognitive: 1, bitSankhara: "fixed", jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
+    case "arupavacara":
+      return { family, jati: "kusala", bitVedana: 0, bitCognitive: 1, bitSankhara: "fixed", jhanaStage: 5, arupaBase: 1, maggaStage: 1 };
+    case "lokuttara":
+      return { family, jati: "kusala", bitVedana: 1, bitCognitive: 1, bitSankhara: "fixed", jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
+    case "ahetuka":
+    default:
+      return { family: "lobha", jati: "akusala", bitVedana: 1, bitCognitive: 1, bitSankhara: 1, jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
+  }
+}
+
+export function resolveCittaFromSwitches(sw: BinarySwitchState): CanonicalCitta | null {
+  switch (sw.family) {
+    case "lobha":
+      return (
+        CANONICAL_CITTAS_89.find(
+          (c) =>
+            c.family === "lobha" &&
+            c.bitVedana === sw.bitVedana &&
+            c.bitCognitive === sw.bitCognitive &&
+            c.bitSankhara === sw.bitSankhara
+        ) ?? null
+      );
+    case "dosa":
+      return (
+        CANONICAL_CITTAS_89.find((c) => c.family === "dosa" && c.bitSankhara === sw.bitSankhara) ?? null
+      );
+    case "moha":
+      return (
+        CANONICAL_CITTAS_89.find((c) => c.family === "moha" && c.bitCognitive === sw.bitCognitive) ?? null
+      );
+    case "kamasobhana":
+      return (
+        CANONICAL_CITTAS_89.find(
+          (c) =>
+            c.family === "kamasobhana" &&
+            c.jati === sw.jati &&
+            c.bitVedana === sw.bitVedana &&
+            c.bitCognitive === sw.bitCognitive &&
+            c.bitSankhara === sw.bitSankhara
+        ) ?? null
+      );
+    case "rupavacara":
+      return (
+        CANONICAL_CITTAS_89.find(
+          (c) => c.family === "rupavacara" && c.jati === sw.jati && c.jhanaStage === sw.jhanaStage
+        ) ?? null
+      );
+    case "arupavacara":
+      return (
+        CANONICAL_CITTAS_89.find(
+          (c) => c.family === "arupavacara" && c.jati === sw.jati && c.arupaBase === sw.arupaBase
+        ) ?? null
+      );
+    case "lokuttara":
+      return (
+        CANONICAL_CITTAS_89.find(
+          (c) => c.family === "lokuttara" && c.jati === sw.jati && c.maggaStage === sw.maggaStage
+        ) ?? null
+      );
+    default:
+      return null;
+  }
+}
+
+export function getSynthesizableCittas(familyFilter?: CittaFamilyId | "all"): CanonicalCitta[] {
+  const pool = CANONICAL_CITTAS_89.filter((c) => c.family !== "ahetuka");
+  if (!familyFilter || familyFilter === "all") return pool;
+  return pool.filter((c) => c.family === familyFilter);
+}
+
+export function pickNextBinaryChallenge(
+  progress: MnemonicProgressState,
+  familyFilter: CittaFamilyId | "all",
+  currentId?: number
+): CanonicalCitta {
+  const pool = getSynthesizableCittas(familyFilter);
+  const candidates = pool.length > 1 && currentId != null ? pool.filter((c) => c.id !== currentId) : pool;
+  // Sort by lowest mastery score first, with deterministic tie-breaker or slight shuffle
+  const sorted = [...candidates].sort((a, b) => {
+    const scoreA = progress.masteredBinary[`citta:${a.id}`] ?? 0;
+    const scoreB = progress.masteredBinary[`citta:${b.id}`] ?? 0;
+    if (scoreA !== scoreB) return scoreA - scoreB;
+    return a.id - b.id;
+  });
+  const topBucket = sorted.slice(0, Math.min(4, sorted.length));
+  const idx = (progress.totalAttempts + (currentId ?? 0)) % topBucket.length;
+  return topBucket[idx] ?? pool[0]!;
+}
+
+// ── PILAR 2: MOTOR DE SÍNTESE QUÍMICA E DETECTOR DE COLISÃO ONTOLÓGICA ───────
+
+export interface ChemicalEvaluationResult {
+  readonly isExactFixedMatch: boolean;
+  readonly isExactFullSangahaMatch: boolean;
+  readonly isValidConfiguration: boolean;
+  readonly collisions: readonly OntologicalCollisionRule[];
+  readonly missingFixed: readonly SabhavaElement[];
+  readonly extraForbidden: readonly SabhavaElement[];
+  readonly selectedOptional: readonly SabhavaElement[];
+  readonly missingOptional: readonly SabhavaElement[];
+  readonly simultaneousOptionalNote: boolean;
+}
+
+export function getCetasikaElementBySubId(cetasikaId: number): SabhavaElement | undefined {
+  return PERIODIC_ELEMENTS_72.find((el) => el.paramattha === "cetasika" && el.subId === cetasikaId);
+}
+
+export function detectOntologicalCollisions(
+  selectedCetasikaIds: ReadonlySet<number>,
+  targetCitta?: CanonicalCitta
+): OntologicalCollisionRule[] {
+  const rules: OntologicalCollisionRule[] = [];
+  const has = (id: number) => selectedCetasikaIds.has(id);
+  const hasAny = (ids: readonly number[]) => ids.some((id) => selectedCetasikaIds.has(id));
+
+  const hasAkusala = hasAny([14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]);
+  const hasSobhana = hasAny([
+    28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52,
+  ]);
+
+  // 1. Akusala × Sobhana
+  if (hasAkusala && hasSobhana) {
+    rules.push(ONTOLOGICAL_COLLISION_RULES.akusala_sobhana!);
+  }
+
+  // 2. Diṭṭhi (#19) × Māna (#20)
+  if (has(19) && has(20)) {
+    rules.push(ONTOLOGICAL_COLLISION_RULES.ditthi_mana!);
+  }
+
+  // 3. Lobha-trika (#18..20) × Dosa-catukka (#21..24)
+  if (hasAny([18, 19, 20]) && hasAny([21, 22, 23, 24])) {
+    rules.push(ONTOLOGICAL_COLLISION_RULES.lobha_dosa!);
+  }
+
+  // 4. Adhimokkha (#10) × Vicikicchā (#27)
+  if (has(10) && has(27)) {
+    rules.push(ONTOLOGICAL_COLLISION_RULES.adhimokkha_vicikiccha!);
+  }
+
+  // 5. Pīti (#12) em Dosa (#21..24) ou em Citta alvo sem Somanassa / 4º-5º Jhāna
+  const targetForbidsPiti =
+    targetCitta != null && !targetCitta.fixedCetasikas.includes(12) && !targetCitta.optionalCetasikas.includes(12);
+  if (has(12) && (hasAny([21, 22, 23, 24, 27]) || targetForbidsPiti)) {
+    rules.push(ONTOLOGICAL_COLLISION_RULES.piti_feeling!);
+  }
+
+  // 6. Thīna-Middha (#25, #26) em Citta Asaṅkhārika (não-instigada)
+  if (
+    hasAny([25, 26]) &&
+    targetCitta != null &&
+    (targetCitta.bitSankhara === 1 ||
+      (!targetCitta.optionalCetasikas.includes(25) && !targetCitta.fixedCetasikas.includes(25)))
+  ) {
+    rules.push(ONTOLOGICAL_COLLISION_RULES.thina_asankharika!);
+  }
+
+  // 7. Issā (#22) × Macchariya (#23) × Kukkucca (#24) quando fora do modo Saṅgaha-naya de Dosa
+  const dosaSecCount = [22, 23, 24].filter((id) => has(id)).length;
+  if (dosaSecCount > 1 && (!targetCitta || targetCitta.family !== "dosa")) {
+    rules.push(ONTOLOGICAL_COLLISION_RULES.dosa_secondaries!);
+  }
+
+  // 8. Karuṇā (#50) × Muditā (#51) quando em Citta que não admite Appamaññā (ex. Lokuttara, Vipāka, 5º Jhāna)
+  const appaCount = [50, 51].filter((id) => has(id)).length;
+  const targetAllowsAppa = targetCitta != null && targetCitta.optionalCetasikas.includes(50);
+  if ((appaCount > 0 && targetCitta != null && !targetAllowsAppa) || (appaCount > 1 && !targetAllowsAppa)) {
+    rules.push(ONTOLOGICAL_COLLISION_RULES.karuna_mudita!);
+  }
+
+  // 9. Thīna (#25) e Middha (#26) separados
+  if (has(25) !== has(26)) {
+    rules.push(ONTOLOGICAL_COLLISION_RULES.thina_pair_split!);
+  }
+
+  return rules;
+}
+
+export function evaluateChemicalSynthesis(
+  targetCitta: CanonicalCitta,
+  selectedCetasikaIds: ReadonlySet<number>
+): ChemicalEvaluationResult {
+  const allowedSet = new Set([...targetCitta.fixedCetasikas, ...targetCitta.optionalCetasikas]);
+
+  const missingFixed: SabhavaElement[] = [];
+  for (const fid of targetCitta.fixedCetasikas) {
+    if (!selectedCetasikaIds.has(fid)) {
+      const el = getCetasikaElementBySubId(fid);
+      if (el) missingFixed.push(el);
+    }
+  }
+
+  const extraForbidden: SabhavaElement[] = [];
+  for (const sid of selectedCetasikaIds) {
+    if (!allowedSet.has(sid)) {
+      const el = getCetasikaElementBySubId(sid);
+      if (el) extraForbidden.push(el);
+    }
+  }
+
+  const selectedOptional: SabhavaElement[] = [];
+  const missingOptional: SabhavaElement[] = [];
+  for (const oid of targetCitta.optionalCetasikas) {
+    const el = getCetasikaElementBySubId(oid);
+    if (!el) continue;
+    if (selectedCetasikaIds.has(oid)) {
+      selectedOptional.push(el);
+    } else {
+      missingOptional.push(el);
+    }
+  }
+
+  // Check if Thīna (25) and Middha (26) are split (only one selected)
+  const has25 = selectedCetasikaIds.has(25);
+  const has26 = selectedCetasikaIds.has(26);
+  const thinaSplit = has25 !== has26;
+
+  const collisions = detectOntologicalCollisions(selectedCetasikaIds, targetCitta);
+
+  const isExactFixedMatch =
+    missingFixed.length === 0 && extraForbidden.length === 0 && selectedOptional.length === 0;
+  const isExactFullSangahaMatch =
+    missingFixed.length === 0 && extraForbidden.length === 0 && missingOptional.length === 0;
+  const isValidConfiguration =
+    missingFixed.length === 0 && extraForbidden.length === 0 && !thinaSplit && collisions.length === 0;
+
+  const dosaSecCount = [22, 23, 24].filter((id) => selectedCetasikaIds.has(id)).length;
+  const appaCount = [50, 51].filter((id) => selectedCetasikaIds.has(id)).length;
+  const viratiInKamaCount =
+    targetCitta.bhumi === "kama" ? [47, 48, 49].filter((id) => selectedCetasikaIds.has(id)).length : 0;
+
+  const simultaneousOptionalNote = dosaSecCount > 1 || appaCount > 1 || viratiInKamaCount > 1;
+
+  return {
+    isExactFixedMatch,
+    isExactFullSangahaMatch,
+    isValidConfiguration,
+    collisions,
+    missingFixed,
+    extraForbidden,
+    selectedOptional,
+    missingOptional,
+    simultaneousOptionalNote,
+  };
+}
+
+/** Lista curada de Cittas arquetípicas para o desafio de Síntese Química (cobrindo todas as famílias) */
+export const CHEMICAL_CHALLENGE_CITTA_IDS: readonly number[] = [
+  1, 2, 3, 5, 8, 9, 10, 11, 12, 13, 18, 27, 29, 30, 31, 33, 35, 39, 47, 55, 56, 57, 58, 59, 70, 82, 86,
+];
+
+export function pickNextPeriodicChallenge(
+  progress: MnemonicProgressState,
+  currentCittaId?: number
+): CanonicalCitta {
+  const pool = CHEMICAL_CHALLENGE_CITTA_IDS.map((id) => CANONICAL_CITTAS_89.find((c) => c.id === id)!).filter(
+    Boolean
+  );
+  const candidates = pool.length > 1 && currentCittaId != null ? pool.filter((c) => c.id !== currentCittaId) : pool;
+  const sorted = [...candidates].sort((a, b) => {
+    const scoreA = progress.masteredPeriodic[`chem:${a.id}`] ?? 0;
+    const scoreB = progress.masteredPeriodic[`chem:${b.id}`] ?? 0;
+    if (scoreA !== scoreB) return scoreA - scoreB;
+    return a.id - b.id;
+  });
+  const topBucket = sorted.slice(0, Math.min(4, sorted.length));
+  const idx = (progress.totalAttempts + (currentCittaId ?? 0)) % topBucket.length;
+  return topBucket[idx] ?? pool[0]!;
+}
+
+// ── PILAR 3: MOTOR DO ÁBACO NAS FALANGES ─────────────────────────────────────
+
+export function getPhalanxMapById(id: PhalanxMapSpec["id"]): PhalanxMapSpec {
+  return PHALANX_MAPS.find((m) => m.id === id) ?? PHALANX_MAPS[0]!;
+}
+
+export function pickNextPhalanxSlot(
+  progress: MnemonicProgressState,
+  mapSpec: PhalanxMapSpec,
+  currentSlotIndex?: number
+): PhalanxSlot {
+  const slots = mapSpec.slots;
+  const candidates =
+    slots.length > 1 && currentSlotIndex != null ? slots.filter((s) => s.index !== currentSlotIndex) : slots;
+  const sorted = [...candidates].sort((a, b) => {
+    const scoreA = progress.masteredPhalanx[`${mapSpec.id}:${a.index}`] ?? 0;
+    const scoreB = progress.masteredPhalanx[`${mapSpec.id}:${b.index}`] ?? 0;
+    if (scoreA !== scoreB) return scoreA - scoreB;
+    return a.index - b.index;
+  });
+  const topBucket = sorted.slice(0, Math.min(4, sorted.length));
+  const idx = (progress.totalAttempts + (currentSlotIndex ?? 0)) % topBucket.length;
+  return topBucket[idx] ?? slots[0]!;
+}
