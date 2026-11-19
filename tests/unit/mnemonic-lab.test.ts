@@ -17,6 +17,13 @@ import {
   resolveCittaFromSwitches,
 } from "../../src/mnemonic-lab/engine.js";
 import { MnemonicLabUI } from "../../src/mnemonic-lab/ui.js";
+import {
+  buildLocalStorageSnapshot,
+  hydrateOfflineVault,
+  parseProgressBackup,
+  persistMnemonicOfflineVault,
+  serializeProgressBackup,
+} from "../../src/abhidhamma-srs/offline-store.js";
 
 describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trilingual UI", () => {
   beforeEach(() => {
@@ -232,5 +239,70 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     const firstJoint = host.querySelector<HTMLButtonElement>('[data-phalanx-idx="1"]')!;
     firstJoint.click();
     expect(host.textContent).toContain("(2 / 12)");
+  });
+
+  it("integrates Mnemonic Lab into the 4-layer Offline Vault, serializes JSON backups, and auto-heals after wipe", async () => {
+    localStorage.clear();
+
+    const cacheMap = new Map<string, string>();
+    const prevCaches = (globalThis as any).caches;
+    (globalThis as any).caches = {
+      open: async () => ({
+        match: async (url: string) => {
+          const body = cacheMap.get(url);
+          if (!body) return undefined;
+          return new Response(body, { status: 200, headers: { "Content-Type": "application/json" } });
+        },
+        put: async (url: string, resp: Response) => {
+          const text = await resp.text();
+          cacheMap.set(url, text);
+        },
+        delete: async (url: string) => {
+          cacheMap.delete(url);
+        },
+      }),
+    };
+
+    try {
+      // 1) User answers challenges in Mnemonic Lab
+      let prog = createInitialProgress();
+      prog = recordMnemonicAttempt(prog, "binary", "citta:1", true);
+      prog = recordMnemonicAttempt(prog, "binary", "citta:9", true);
+      prog = recordMnemonicAttempt(prog, "periodic", "chem:1", true);
+      prog = recordMnemonicAttempt(prog, "phalanx", "akusala12:1", true);
+
+      // Persist across the 4 offline layers
+      const saved = await persistMnemonicOfflineVault(prog);
+      expect(saved).toBe(true);
+
+      // Verify localStorage has it
+      expect(localStorage.getItem("abhidhamma_mnemonic_lab_v1")).toContain("citta:9");
+
+      // Verify buildLocalStorageSnapshot serializes mnemonicLab
+      const snap = buildLocalStorageSnapshot();
+      expect(snap.mnemonicLab?.masteredBinary["citta:9"]).toBe(1);
+
+      // Verify JSON backup export
+      const backupJson = serializeProgressBackup(snap);
+      expect(backupJson).toContain("citta:9");
+      expect(backupJson).toContain("akusala12:1");
+
+      // Verify JSON backup import / parse
+      const parsed = parseProgressBackup(backupJson);
+      expect(parsed.mnemonicLab?.masteredBinary["citta:1"]).toBe(1);
+
+      // 2) SIMULATE ACCIDENTAL LOCALSTORAGE WIPE
+      localStorage.clear();
+      expect(localStorage.getItem("abhidhamma_mnemonic_lab_v1")).toBeNull();
+
+      // 3) Auto-heal from Offline Vault (Cache API / IDB)
+      const healed = await hydrateOfflineVault();
+      expect(healed.snapshot.mnemonicLab?.masteredBinary["citta:9"]).toBe(1);
+
+      // Auto-healed back into localStorage!
+      expect(localStorage.getItem("abhidhamma_mnemonic_lab_v1")).toContain("citta:9");
+    } finally {
+      (globalThis as any).caches = prevCaches;
+    }
   });
 });

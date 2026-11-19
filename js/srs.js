@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=ab78e3e8";
-import { settings } from "./state.js?v=ab78e3e8";
-import { createLogger } from "./logger.js?v=ab78e3e8";
+import { t } from "./i18n.js?v=aa8613a5";
+import { settings } from "./state.js?v=aa8613a5";
+import { createLogger } from "./logger.js?v=aa8613a5";
 const log = createLogger("srs");
 const SRS_KEY = "atp.srs.v1";
 const SRS_STATS_KEY = "atp.srs.stats.v1";

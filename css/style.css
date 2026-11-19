@@ -3503,6 +3503,33 @@ details[open] > summary::before { transform: rotate(90deg); }
   font-size: 0.95rem;
 }
 
+.mnem-vault-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mnem-vault-btn {
+  background: var(--bg-content);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+
+.mnem-vault-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .mnem-level-ctrl {
   display: inline-flex;
   align-items: center;

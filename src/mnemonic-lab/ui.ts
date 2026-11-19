@@ -38,8 +38,12 @@ import {
   type MnemonicProgressState,
 } from "./engine.js";
 import {
+  buildLocalStorageSnapshot,
   hydrateOfflineVault,
+  mergeSnapshots,
+  parseProgressBackup,
   persistMnemonicOfflineVault,
+  serializeProgressBackup,
   VAULT_BROADCAST_CHANNEL,
 } from "../abhidhamma-srs/offline-store.js";
 
@@ -167,6 +171,12 @@ interface LabStrings {
   familyMismatchNotice: string;
   alignFamilyBtn: string;
   autoAlignToggleLabel: string;
+  exportVaultBtn: string;
+  exportVaultTitle: string;
+  importVaultBtn: string;
+  importVaultTitle: string;
+  vaultImportOk: string;
+  vaultImportErr: string;
 }
 
 const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
@@ -286,6 +296,12 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
     familyMismatchNotice: "Atenção: o alvo pertence à matriz",
     alignFamilyBtn: "Alinhar Chaves com o Alvo",
     autoAlignToggleLabel: "Auto-alinhar matriz ao avançar",
+    exportVaultBtn: "Backup",
+    exportVaultTitle: "Exportar backup completo em JSON (Cofre Offline 4 camadas)",
+    importVaultBtn: "Restaurar",
+    importVaultTitle: "Importar backup (.json) e mesclar com o cofre offline",
+    vaultImportOk: "✅ Backup restaurado e sincronizado nas 4 camadas com sucesso!",
+    vaultImportErr: "❌ Arquivo de backup inválido.",
   },
   en: {
     title: "🧮 Abhidhammatthasaṅgaha Mnemonic Lab",
@@ -403,6 +419,12 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
     familyMismatchNotice: "Notice: target belongs to matrix",
     alignFamilyBtn: "Align Controls with Target",
     autoAlignToggleLabel: "Auto-sync matrix on next",
+    exportVaultBtn: "Backup",
+    exportVaultTitle: "Export full backup in JSON (4-layer Offline Vault)",
+    importVaultBtn: "Restore",
+    importVaultTitle: "Import backup (.json) and merge with offline vault",
+    vaultImportOk: "✅ Backup restored and synced across all 4 layers successfully!",
+    vaultImportErr: "❌ Invalid backup file.",
   },
   es: {
     title: "🧮 Laboratorio Mnemónico del Abhidhammatthasaṅgaha",
@@ -520,6 +542,12 @@ const LAB_STRINGS: Readonly<Record<UiLang, LabStrings>> = {
     familyMismatchNotice: "Aviso: el objetivo pertenece a la matriz",
     alignFamilyBtn: "Alinear Controles con Objetivo",
     autoAlignToggleLabel: "Auto-sincronizar matriz al avanzar",
+    exportVaultBtn: "Copia",
+    exportVaultTitle: "Exportar copia completa en JSON (Bóveda Offline 4 capas)",
+    importVaultBtn: "Restaurar",
+    importVaultTitle: "Importar copia (.json) y fusionar con la bóveda offline",
+    vaultImportOk: "✅ ¡Copia restaurada y sincronizada en las 4 capas con éxito!",
+    vaultImportErr: "❌ Archivo de copia inválido.",
   },
 };
 
@@ -650,6 +678,15 @@ export class MnemonicLabUI {
             <div class="mnem-stat-pill" title="${esc(s.vaultPillTitle)}">
               <span class="mnem-stat-lbl">🔒 ${esc(s.vaultPillLabel)}</span>
               <strong class="mnem-stat-val">${this.progress.totalAttempts}</strong>
+            </div>
+            <div class="mnem-vault-actions">
+              <button type="button" class="mnem-vault-btn" id="mnem-vault-export" title="${esc(s.exportVaultTitle)}">
+                💾 ${esc(s.exportVaultBtn)}
+              </button>
+              <button type="button" class="mnem-vault-btn" id="mnem-vault-import" title="${esc(s.importVaultTitle)}">
+                📂 ${esc(s.importVaultBtn)}
+              </button>
+              <input type="file" id="mnem-vault-file-input" accept=".json" style="display:none;" />
             </div>
             <div class="mnem-level-ctrl">
               <label for="mnem-rigor-select" class="mnem-level-lbl">${esc(s.rigorLevel)}</label>
@@ -1543,6 +1580,44 @@ export class MnemonicLabUI {
         this.syncVault();
         this.render();
       }
+    });
+
+    // Vault Export & Import
+    this.container.querySelector("#mnem-vault-export")?.addEventListener("click", () => {
+      const snap = buildLocalStorageSnapshot();
+      const blob = new Blob([serializeProgressBackup(snap)], { type: "application/json;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `abhidhamma-vault-backup-${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    const fileInput = this.container.querySelector<HTMLInputElement>("#mnem-vault-file-input");
+    this.container.querySelector("#mnem-vault-import")?.addEventListener("click", () => {
+      fileInput?.click();
+    });
+    fileInput?.addEventListener("change", async () => {
+      const file = fileInput.files?.[0];
+      if (!file) return;
+      try {
+        const text = await file.text();
+        const incoming = parseProgressBackup(text);
+        const current = buildLocalStorageSnapshot();
+        const merged = mergeSnapshots(current, incoming);
+        if (merged.mnemonicLab) {
+          this.progress = mergeMnemonicProgress(this.progress, merged.mnemonicLab);
+          saveMnemonicProgress(this.progress);
+          await persistMnemonicOfflineVault(this.progress);
+        }
+        alert((LAB_STRINGS[this.lang] ?? LAB_STRINGS.pt).vaultImportOk);
+      } catch {
+        alert((LAB_STRINGS[this.lang] ?? LAB_STRINGS.pt).vaultImportErr);
+      }
+      this.render();
     });
 
     // Pillar Tabs (with arrow key support per WAI-ARIA tablist guidance)

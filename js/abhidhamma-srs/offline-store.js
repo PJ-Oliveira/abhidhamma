@@ -1,5 +1,5 @@
-import { DEFAULT_ANKI_CONFIG, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, normalizeAnkiConfig, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, STORAGE_MNEMONICS_KEY, } from "./scheduler.js?v=ab78e3e8";
-import { loadMnemonicProgress, mergeMnemonicProgress, normalizeMnemonicProgress, saveMnemonicProgress, } from "../mnemonic-lab/engine.js?v=ab78e3e8";
+import { DEFAULT_ANKI_CONFIG, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, normalizeAnkiConfig, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, STORAGE_MNEMONICS_KEY, } from "./scheduler.js?v=aa8613a5";
+import { hasMnemonicProgressData, loadMnemonicProgress, mergeMnemonicProgress, normalizeMnemonicProgress, saveMnemonicProgress, } from "../mnemonic-lab/engine.js?v=aa8613a5";
 export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v27";
 export const VAULT_CACHE_NAME = "abhidhamma-anki-vault-v1";
 export const VAULT_SNAPSHOT_PATH = "/_offline_vault/abhidhamma-anki-progress.json";
@@ -31,7 +31,8 @@ function hasProgressData(snap) {
     return (Object.keys(snap.states).length > 0 ||
         snap.stats.totalReviewed > 0 ||
         Object.keys(snap.mnemonics).length > 0 ||
-        snap.recentLog.length > 0);
+        snap.recentLog.length > 0 ||
+        hasMnemonicProgressData(snap.mnemonicLab));
 }
 function snapshotKey() {
     try {
@@ -126,7 +127,11 @@ export function buildLocalStorageSnapshot(recentLog = [], reviewLogCount, nowMs 
         if (st.lastReviewAt > maxCardTs)
             maxCardTs = st.lastReviewAt;
     }
-    const updatedAt = maxCardTs > 0 ? maxCardTs : stats.totalReviewed > 0 ? nowMs : 0;
+    const updatedAt = maxCardTs > 0
+        ? maxCardTs
+        : stats.totalReviewed > 0 || hasMnemonicProgressData(mnemonicLab)
+            ? nowMs
+            : 0;
     return {
         schemaVersion: 1,
         updatedAt,
@@ -454,6 +459,7 @@ export async function persistOfflineProgress(states, stats, config, mnemonics, r
     const nextLog = newLogEntry
         ? [...recentLog, newLogEntry].slice(-MAX_SNAPSHOT_LOG)
         : recentLog.slice(-MAX_SNAPSHOT_LOG);
+    const mnemonicLab = loadMnemonicProgress();
     const snap = {
         schemaVersion: 1,
         updatedAt: nowMs,
@@ -461,6 +467,7 @@ export async function persistOfflineProgress(states, stats, config, mnemonics, r
         stats,
         config,
         mnemonics: { ...mnemonics },
+        mnemonicLab,
         reviewLogCount: Math.max(stats.totalReviewed, nextLog.length),
         recentLog: nextLog,
     };

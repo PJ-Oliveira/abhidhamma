@@ -18,6 +18,7 @@ import type {
   AnkiStats,
 } from "./types.js";
 import {
+  hasMnemonicProgressData,
   loadMnemonicProgress,
   mergeMnemonicProgress,
   normalizeMnemonicProgress,
@@ -104,7 +105,8 @@ function hasProgressData(snap: AnkiProgressSnapshot | null | undefined): snap is
     Object.keys(snap.states).length > 0 ||
     snap.stats.totalReviewed > 0 ||
     Object.keys(snap.mnemonics).length > 0 ||
-    snap.recentLog.length > 0
+    snap.recentLog.length > 0 ||
+    hasMnemonicProgressData(snap.mnemonicLab)
   );
 }
 
@@ -218,7 +220,12 @@ export function buildLocalStorageSnapshot(
   for (const st of Object.values(states)) {
     if (st.lastReviewAt > maxCardTs) maxCardTs = st.lastReviewAt;
   }
-  const updatedAt = maxCardTs > 0 ? maxCardTs : stats.totalReviewed > 0 ? nowMs : 0;
+  const updatedAt =
+    maxCardTs > 0
+      ? maxCardTs
+      : stats.totalReviewed > 0 || hasMnemonicProgressData(mnemonicLab)
+      ? nowMs
+      : 0;
   return {
     schemaVersion: 1,
     updatedAt,
@@ -579,6 +586,7 @@ export async function persistOfflineProgress(
     ? [...recentLog, newLogEntry].slice(-MAX_SNAPSHOT_LOG)
     : recentLog.slice(-MAX_SNAPSHOT_LOG);
 
+  const mnemonicLab = loadMnemonicProgress();
   const snap: AnkiProgressSnapshot = {
     schemaVersion: 1,
     updatedAt: nowMs,
@@ -586,6 +594,7 @@ export async function persistOfflineProgress(
     stats,
     config,
     mnemonics: { ...mnemonics },
+    mnemonicLab,
     reviewLogCount: Math.max(stats.totalReviewed, nextLog.length),
     recentLog: nextLog,
   };
