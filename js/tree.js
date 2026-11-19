@@ -1,5 +1,5 @@
-import { t } from "./i18n.js?v=d3104d40";
-import { settings } from "./state.js?v=d3104d40";
+import { t } from "./i18n.js?v=fedab02c";
+import { settings } from "./state.js?v=fedab02c";
 const GROUP_ORDER = ["abhidhamma", "outros", "visuddhimagga", "comentarios"];
 export function renderTree(manifest, container, onSelect) {
     container.innerHTML = "";

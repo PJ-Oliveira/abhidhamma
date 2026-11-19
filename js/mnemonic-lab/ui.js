@@ -1,7 +1,7 @@
-import { settings } from "../state.js?v=d3104d40";
-import { registerToolModule } from "../tools/tools.js?v=d3104d40";
-import { CANONICAL_CITTAS_89, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=d3104d40";
-import { defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=d3104d40";
+import { settings } from "../state.js?v=fedab02c";
+import { registerToolModule } from "../tools/tools.js?v=fedab02c";
+import { CANONICAL_CITTAS_89, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=fedab02c";
+import { defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=fedab02c";
 const LAB_STRINGS = {
     pt: {
         title: "🧮 Laboratório Mnêmico do Abhidhammatthasaṅgaha",
@@ -435,7 +435,7 @@ export class MnemonicLabUI {
             lobha: { pt: "Lobha-mūla (8 = 2³)", en: "Lobha-mūla (8 = 2³)", es: "Lobha-mūla (8 = 2³)" },
             dosa: { pt: "Dosa-mūla (2 = 1×1×2)", en: "Dosa-mūla (2 = 1×1×2)", es: "Dosa-mūla (2 = 1×1×2)" },
             moha: { pt: "Moha-mūla (2 = 1×2)", en: "Moha-mūla (2 = 1×2)", es: "Moha-mūla (2 = 1×2)" },
-            ahetuka: { pt: "Ahetuka (18)", en: "Ahetuka (18)", es: "Ahetuka (18)" },
+            ahetuka: { pt: "Ahetuka (18 = 7 + 8 + 3)", en: "Ahetuka (18 = 7 + 8 + 3)", es: "Ahetuka (18 = 7 + 8 + 3)" },
             kamasobhana: { pt: "Kāmasobhana (24 = 2³ × 3)", en: "Kāmasobhana (24 = 2³ × 3)", es: "Kāmasobhana (24 = 2³ × 3)" },
             rupavacara: { pt: "Rūpāvacara (15 = 5 × 3)", en: "Rūpāvacara (15 = 5 × 3)", es: "Rūpāvacara (15 = 5 × 3)" },
             arupavacara: { pt: "Arūpāvacara (12 = 4 × 3)", en: "Arūpāvacara (12 = 4 × 3)", es: "Arūpāvacara (12 = 4 × 3)" },
@@ -515,7 +515,7 @@ export class MnemonicLabUI {
         <div class="mnem-switch-group">
           <span class="mnem-switch-label">${esc(s.binFamilyLabel)}</span>
           <div class="mnem-switch-row">
-            ${["lobha", "dosa", "moha", "kamasobhana", "rupavacara", "arupavacara", "lokuttara"]
+            ${["lobha", "dosa", "moha", "ahetuka", "kamasobhana", "rupavacara", "arupavacara", "lokuttara"]
             .map((fam) => `
                 <button type="button" class="mnem-bit-btn ${sw.family === fam ? "active" : ""}" data-bin-family="${fam}" aria-pressed="${sw.family === fam}">
                   ${esc(familyLabels[fam][this.lang])}
@@ -611,6 +611,62 @@ export class MnemonicLabUI {
               </button>
             </div>
           </div>`
+            : ""}
+
+        ${sw.family === "ahetuka"
+            ? (() => {
+                const subLabels = {
+                    akusala_vipaka: { pt: "1 · Akusala-vipāka (7)", en: "1 · Akusala-vipāka (7)", es: "1 · Akusala-vipāka (7)" },
+                    kusala_vipaka: { pt: "2 · Kusala-vipāka (8)", en: "2 · Kusala-vipāka (8)", es: "2 · Kusala-vipāka (8)" },
+                    kiriya: { pt: "3 · Ahetuka-kiriya (3)", en: "3 · Ahetuka-kiriya (3)", es: "3 · Ahetuka-kiriya (3)" },
+                };
+                const senseDoors = [
+                    { pt: "1. Cakkhu (Olho · Upe)", en: "1. Cakkhu (Eye · Upe)", es: "1. Cakkhu (Ojo · Upe)" },
+                    { pt: "2. Sota (Ouvido · Upe)", en: "2. Sota (Ear · Upe)", es: "2. Sota (Oído · Upe)" },
+                    { pt: "3. Ghāna (Nariz · Upe)", en: "3. Ghāna (Nose · Upe)", es: "3. Ghāna (Nariz · Upe)" },
+                    { pt: "4. Jivhā (Língua · Upe)", en: "4. Jivhā (Tongue · Upe)", es: "4. Jivhā (Lengua · Upe)" },
+                ];
+                const slotOpts = sw.ahetukaSubgroup === "akusala_vipaka"
+                    ? [
+                        ...senseDoors.map((d) => d[this.lang]),
+                        this.lang === "en" ? "5. Kāya (Body · Dukkha)" : this.lang === "es" ? "5. Kāya (Cuerpo · Dukkha)" : "5. Kāya (Corpo · Dukkha)",
+                        "6. Sampaṭicchana (Upe)",
+                        "7. Santīraṇa (Upe)",
+                    ]
+                    : sw.ahetukaSubgroup === "kusala_vipaka"
+                        ? [
+                            ...senseDoors.map((d) => d[this.lang]),
+                            this.lang === "en" ? "5. Kāya (Body · Sukha)" : this.lang === "es" ? "5. Kāya (Cuerpo · Sukha)" : "5. Kāya (Corpo · Sukha)",
+                            "6. Sampaṭicchana (Upe)",
+                            "7. Santīraṇa (Upe)",
+                            "8. Santīraṇa (Som)",
+                        ]
+                        : [
+                            "1. Pañcadvārāvajjana (Upe)",
+                            "2. Manodvārāvajjana (Upe)",
+                            "3. Hasituppāda (Som)",
+                        ];
+                return `
+                  <div class="mnem-switch-group">
+                    <span class="mnem-switch-label">${esc(s.binJatiLabel)}</span>
+                    <div class="mnem-switch-row">
+                      ${["akusala_vipaka", "kusala_vipaka", "kiriya"]
+                    .map((sg) => `
+                          <button type="button" class="mnem-bit-btn ${sw.ahetukaSubgroup === sg ? "active" : ""}" data-ahetuka-sub="${sg}" aria-pressed="${sw.ahetukaSubgroup === sg}">
+                            ${esc(subLabels[sg][this.lang])}
+                          </button>`)
+                    .join("")}
+                    </div>
+                    <div class="mnem-switch-row" style="margin-top:8px;">
+                      ${slotOpts
+                    .map((lbl, idx) => `
+                          <button type="button" class="mnem-bit-btn ${sw.ahetukaSlot === idx ? "active" : ""}" data-ahetuka-slot="${idx}" aria-pressed="${sw.ahetukaSlot === idx}">
+                            ${esc(lbl)}
+                          </button>`)
+                    .join("")}
+                    </div>
+                  </div>`;
+            })()
             : ""}
 
         ${sw.family === "rupavacara"
@@ -1186,6 +1242,24 @@ export class MnemonicLabUI {
                 this.render();
             });
         });
+        this.container.querySelectorAll("[data-ahetuka-sub]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const sg = btn.dataset.ahetukaSub;
+                if (sg) {
+                    this.switches = { ...this.switches, ahetukaSubgroup: sg, ahetukaSlot: 0 };
+                    this.binFeedback = null;
+                    this.render();
+                }
+            });
+        });
+        this.container.querySelectorAll("[data-ahetuka-slot]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const slot = Number(btn.dataset.ahetukaSlot);
+                this.switches = { ...this.switches, ahetukaSlot: slot };
+                this.binFeedback = null;
+                this.render();
+            });
+        });
         this.container.querySelectorAll("[data-bin-jhana]").forEach((btn) => {
             btn.addEventListener("click", () => {
                 const j = Number(btn.dataset.binJhana);
@@ -1215,6 +1289,8 @@ export class MnemonicLabUI {
                 const id = Number(btn.dataset.loadCitta);
                 const found = CANONICAL_CITTAS_89.find((c) => c.id === id);
                 if (found) {
+                    const ahetukaSubgroup = found.id >= 28 ? "kiriya" : found.id >= 20 ? "kusala_vipaka" : "akusala_vipaka";
+                    const ahetukaSlot = found.id >= 28 ? found.id - 28 : found.id >= 20 ? found.id - 20 : Math.max(0, found.id - 13);
                     this.switches = {
                         family: found.family,
                         jati: found.jati,
@@ -1224,6 +1300,8 @@ export class MnemonicLabUI {
                         jhanaStage: found.jhanaStage ?? 1,
                         arupaBase: found.arupaBase ?? 1,
                         maggaStage: found.maggaStage ?? 1,
+                        ahetukaSubgroup,
+                        ahetukaSlot,
                     };
                     this.render();
                 }

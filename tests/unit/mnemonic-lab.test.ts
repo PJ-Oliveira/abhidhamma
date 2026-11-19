@@ -134,6 +134,11 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     const resolved = resolveCittaFromSwitches(sw);
     expect(resolved?.id).toBe(6); // 6th Lobhamūla [0·1·0]
 
+    // Verify all 18 Ahetuka Cittas (#13..#30) are synthesizable
+    expect(resolveCittaFromSwitches({ ...defaultSwitchStateForFamily("ahetuka"), ahetukaSubgroup: "akusala_vipaka", ahetukaSlot: 4 })?.id).toBe(17); // Kāya-viññāṇa dukkha
+    expect(resolveCittaFromSwitches({ ...defaultSwitchStateForFamily("ahetuka"), ahetukaSubgroup: "kusala_vipaka", ahetukaSlot: 7 })?.id).toBe(27); // Somanassa-santīraṇa
+    expect(resolveCittaFromSwitches({ ...defaultSwitchStateForFamily("ahetuka"), ahetukaSubgroup: "kiriya", ahetukaSlot: 2 })?.id).toBe(30); // Hasituppāda
+
     const evalFixed = evaluateChemicalSynthesis(resolved!, new Set(resolved!.fixedCetasikas));
     expect(evalFixed.isExactFixedMatch).toBe(true);
     expect(evalFixed.isValidConfiguration).toBe(true);

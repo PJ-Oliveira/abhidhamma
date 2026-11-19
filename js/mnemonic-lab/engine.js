@@ -1,4 +1,4 @@
-import { CANONICAL_CITTAS_89, ONTOLOGICAL_COLLISION_RULES, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=d3104d40";
+import { CANONICAL_CITTAS_89, ONTOLOGICAL_COLLISION_RULES, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=fedab02c";
 export const MNEMONIC_STORAGE_KEY = "abhidhamma_mnemonic_lab_v1";
 export function createInitialProgress() {
     return {
@@ -68,22 +68,22 @@ export function recordMnemonicAttempt(state, pillar, itemKey, isCorrect) {
 export function defaultSwitchStateForFamily(family) {
     switch (family) {
         case "lobha":
-            return { family, jati: "akusala", bitVedana: 1, bitCognitive: 1, bitSankhara: 1, jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
+            return { family, jati: "akusala", bitVedana: 1, bitCognitive: 1, bitSankhara: 1, jhanaStage: 1, arupaBase: 1, maggaStage: 1, ahetukaSubgroup: "akusala_vipaka", ahetukaSlot: 0 };
         case "dosa":
-            return { family, jati: "akusala", bitVedana: "domanassa", bitCognitive: "patigha", bitSankhara: 1, jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
+            return { family, jati: "akusala", bitVedana: "domanassa", bitCognitive: "patigha", bitSankhara: 1, jhanaStage: 1, arupaBase: 1, maggaStage: 1, ahetukaSubgroup: "akusala_vipaka", ahetukaSlot: 0 };
         case "moha":
-            return { family, jati: "akusala", bitVedana: 0, bitCognitive: "vicikiccha", bitSankhara: "fixed", jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
-        case "kamasobhana":
-            return { family, jati: "kusala", bitVedana: 1, bitCognitive: 1, bitSankhara: 1, jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
-        case "rupavacara":
-            return { family, jati: "kusala", bitVedana: 1, bitCognitive: 1, bitSankhara: "fixed", jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
-        case "arupavacara":
-            return { family, jati: "kusala", bitVedana: 0, bitCognitive: 1, bitSankhara: "fixed", jhanaStage: 5, arupaBase: 1, maggaStage: 1 };
-        case "lokuttara":
-            return { family, jati: "kusala", bitVedana: 1, bitCognitive: 1, bitSankhara: "fixed", jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
+            return { family, jati: "akusala", bitVedana: 0, bitCognitive: "vicikiccha", bitSankhara: "fixed", jhanaStage: 1, arupaBase: 1, maggaStage: 1, ahetukaSubgroup: "akusala_vipaka", ahetukaSlot: 0 };
         case "ahetuka":
+            return { family, jati: "vipaka", bitVedana: 0, bitCognitive: 0, bitSankhara: "fixed", jhanaStage: 1, arupaBase: 1, maggaStage: 1, ahetukaSubgroup: "akusala_vipaka", ahetukaSlot: 0 };
+        case "kamasobhana":
+            return { family, jati: "kusala", bitVedana: 1, bitCognitive: 1, bitSankhara: 1, jhanaStage: 1, arupaBase: 1, maggaStage: 1, ahetukaSubgroup: "akusala_vipaka", ahetukaSlot: 0 };
+        case "rupavacara":
+            return { family, jati: "kusala", bitVedana: 1, bitCognitive: 1, bitSankhara: "fixed", jhanaStage: 1, arupaBase: 1, maggaStage: 1, ahetukaSubgroup: "akusala_vipaka", ahetukaSlot: 0 };
+        case "arupavacara":
+            return { family, jati: "kusala", bitVedana: 0, bitCognitive: 1, bitSankhara: "fixed", jhanaStage: 5, arupaBase: 1, maggaStage: 1, ahetukaSubgroup: "akusala_vipaka", ahetukaSlot: 0 };
+        case "lokuttara":
         default:
-            return { family: "lobha", jati: "akusala", bitVedana: 1, bitCognitive: 1, bitSankhara: 1, jhanaStage: 1, arupaBase: 1, maggaStage: 1 };
+            return { family: "lokuttara", jati: "kusala", bitVedana: 1, bitCognitive: 1, bitSankhara: "fixed", jhanaStage: 1, arupaBase: 1, maggaStage: 1, ahetukaSubgroup: "akusala_vipaka", ahetukaSlot: 0 };
     }
 }
 export function resolveCittaFromSwitches(sw) {
@@ -97,6 +97,14 @@ export function resolveCittaFromSwitches(sw) {
             return (CANONICAL_CITTAS_89.find((c) => c.family === "dosa" && c.bitSankhara === sw.bitSankhara) ?? null);
         case "moha":
             return (CANONICAL_CITTAS_89.find((c) => c.family === "moha" && c.bitCognitive === sw.bitCognitive) ?? null);
+        case "ahetuka": {
+            const targetId = sw.ahetukaSubgroup === "akusala_vipaka"
+                ? 13 + Math.max(0, Math.min(6, sw.ahetukaSlot))
+                : sw.ahetukaSubgroup === "kusala_vipaka"
+                    ? 20 + Math.max(0, Math.min(7, sw.ahetukaSlot))
+                    : 28 + Math.max(0, Math.min(2, sw.ahetukaSlot));
+            return CANONICAL_CITTAS_89.find((c) => c.id === targetId) ?? null;
+        }
         case "kamasobhana":
             return (CANONICAL_CITTAS_89.find((c) => c.family === "kamasobhana" &&
                 c.jati === sw.jati &&
@@ -114,10 +122,9 @@ export function resolveCittaFromSwitches(sw) {
     }
 }
 export function getSynthesizableCittas(familyFilter) {
-    const pool = CANONICAL_CITTAS_89.filter((c) => c.family !== "ahetuka");
     if (!familyFilter || familyFilter === "all")
-        return pool;
-    return pool.filter((c) => c.family === familyFilter);
+        return [...CANONICAL_CITTAS_89];
+    return CANONICAL_CITTAS_89.filter((c) => c.family === familyFilter);
 }
 export function pickNextBinaryChallenge(progress, familyFilter, currentId) {
     const pool = getSynthesizableCittas(familyFilter);
