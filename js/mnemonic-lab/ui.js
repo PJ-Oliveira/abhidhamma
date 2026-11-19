@@ -1,8 +1,9 @@
-import { settings } from "../state.js?v=0cb21ab6";
-import { registerToolModule } from "../tools/tools.js?v=0cb21ab6";
-import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=0cb21ab6";
-import { defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=0cb21ab6";
-import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=0cb21ab6";
+import { settings } from "../state.js?v=18b088dd";
+import { registerToolModule } from "../tools/tools.js?v=18b088dd";
+import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=18b088dd";
+import { CANONICAL_CHAPTERS_META, } from "./nary-chapters-data.js?v=18b088dd";
+import { defaultNarySwitchesForChapter, evaluateNaryChallenge, getNaryItemsForChapter, pickNextNaryChapterChallenge, defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=18b088dd";
+import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=18b088dd";
 const LAB_STRINGS = {
     pt: {
         title: "🧮 Laboratório Mnêmico do Abhidhammatthasaṅgaha",
@@ -420,7 +421,7 @@ const LAB_STRINGS = {
     },
 };
 function esc(s) {
-    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    return (s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 export class MnemonicLabUI {
     container;
@@ -429,11 +430,15 @@ export class MnemonicLabUI {
     activePillar = "binary";
     binMode = "explore";
     binEnumMode = 121;
+    binActiveChapter = 1;
     switches = defaultSwitchStateForFamily("lobha");
     binTargetCitta;
     binFamilyScope = "all";
     autoAlignFamily = true;
     binFeedback = null;
+    binTargetNaryItem;
+    narySwitches;
+    naryFeedback = null;
     perMode = "atlas";
     perFilter = "all";
     selectedAtom = PERIODIC_ELEMENTS_72[0];
@@ -462,6 +467,8 @@ export class MnemonicLabUI {
         }
         this.chemTargetCitta = pickNextPeriodicChallenge(this.progress);
         this.blindTargetSlot = pickNextPhalanxSlot(this.progress, getPhalanxMapById(this.phaMapId));
+        this.binTargetNaryItem = pickNextNaryChapterChallenge(2, this.progress);
+        this.narySwitches = defaultNarySwitchesForChapter(2);
     }
     init() {
         this.render();
@@ -587,6 +594,23 @@ export class MnemonicLabUI {
         this.wireEvents();
     }
     renderBinaryPillar(s) {
+        const chapterBarHtml = `
+      <div class="mnem-chapter-bar" role="navigation" aria-label="Nava Paricchedā (9 Capítulos)">
+        <div class="mnem-chapter-bar-title">🏛️ <strong>Nava Paricchedā (9 Capítulos do Abhidhammatthasaṅgaha):</strong></div>
+        <div class="mnem-chapter-btn-group">
+          ${CANONICAL_CHAPTERS_META.map((ch) => `
+            <button type="button" class="mnem-chapter-btn ${this.binActiveChapter === ch.num ? "active" : ""}" data-bin-chapter="${ch.num}" aria-pressed="${this.binActiveChapter === ch.num}">
+              ${esc(ch.shortLabel[this.lang])}
+            </button>`).join("")}
+        </div>
+      </div>
+    `;
+        if (this.binActiveChapter > 1) {
+            return `
+        ${chapterBarHtml}
+        ${this.renderNaryChapterDecoder(s)}
+      `;
+        }
         const currentCitta = resolveCittaFromSwitches(this.switches, this.binEnumMode);
         const familyCittas = getSynthesizableCittas(this.switches.family, this.binEnumMode);
         const sw = this.switches;
@@ -699,6 +723,7 @@ export class MnemonicLabUI {
       `;
         }
         return `
+      ${chapterBarHtml}
       <div class="mnem-submode-bar">
         <button type="button" class="mnem-submode-btn ${this.binMode === "explore" ? "active" : ""}" data-bin-mode="explore" aria-pressed="${this.binMode === "explore"}">
           ${esc(s.binModeExplore)}
@@ -1029,6 +1054,537 @@ export class MnemonicLabUI {
         </div>
       </div>
     `;
+    }
+    renderNaryChapterDecoder(s) {
+        const meta = CANONICAL_CHAPTERS_META.find((m) => m.num === this.binActiveChapter) ??
+            CANONICAL_CHAPTERS_META[1];
+        const chapterItems = getNaryItemsForChapter(this.binActiveChapter);
+        let target = this.binTargetNaryItem;
+        if (!target || target.chapter !== this.binActiveChapter) {
+            target = pickNextNaryChapterChallenge(this.binActiveChapter, this.progress);
+            this.binTargetNaryItem = target;
+            this.narySwitches = defaultNarySwitchesForChapter(this.binActiveChapter);
+            this.naryFeedback = null;
+        }
+        const synthItem = chapterItems.find((item) => {
+            return Object.entries(item.switches).every(([k, v]) => String(this.narySwitches[k]) === String(v));
+        });
+        let feedbackHtml = "";
+        if (this.naryFeedback) {
+            if (this.naryFeedback.isCorrect) {
+                feedbackHtml = `
+          <div class="mnem-challenge-feedback ok" style="margin-top:12px;">
+            <div style="font-size:1.05rem;font-weight:700;">${esc(s.binCorrectMsg)}</div>
+            <div style="margin-top:4px;">
+              <strong>${esc(target.code)}</strong> · <span lang="pi"><strong>${esc(target.pali)}</strong></span> — ${esc(target.name[this.lang])}
+            </div>
+            <div style="margin-top:4px;font-size:0.88rem;opacity:0.9;">
+              📐 <em>${esc(target.formulaNote[this.lang])}</em> (${esc(target.asRef)})
+            </div>
+          </div>
+        `;
+            }
+            else {
+                feedbackHtml = `
+          <div class="mnem-challenge-feedback err" style="margin-top:12px;">
+            <div style="font-weight:700;">${esc(s.binWrongMsg)}</div>
+            <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
+              <span style="font-size:0.82rem;font-weight:600;">Parâmetros Corretos:</span>
+              ${this.naryFeedback.matchedKeys.length > 0
+                    ? this.naryFeedback.matchedKeys
+                        .map((k) => `<span class="mnem-rel-chip" style="color:var(--text-color, #1e4620);background:rgba(46,125,50,0.18);">✓ ${esc(k)}</span>`)
+                        .join("")
+                    : `<span style="font-size:0.8rem;color:var(--text-muted, #64748b);">Nenhum</span>`}
+            </div>
+            <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
+              <span style="font-size:0.82rem;font-weight:600;">Parâmetros Divergentes:</span>
+              ${this.naryFeedback.mismatchedKeys
+                    .map((k) => `
+                <span class="mnem-rel-chip" style="color:var(--danger, #b71c1c);background:rgba(183,28,28,0.18);">
+                  ✗ ${esc(k)} (atual: ${esc(String(this.narySwitches[k] ?? "-"))} · esperado: ${esc(String(target.switches[k]))})
+                </span>`)
+                    .join("")}
+            </div>
+          </div>
+        `;
+            }
+        }
+        return `
+      <div class="mnem-equation-banner">
+        <div class="mnem-eq-title">🏛️ ${esc(meta.title[this.lang])} · <span lang="pi">${esc(meta.paliTitle)}</span> (${esc(meta.asRef)})</div>
+        <div class="mnem-eq-chips">
+          <span class="mnem-eq-chip highlight">📐 <strong>${esc(meta.equation[this.lang])}</strong></span>
+        </div>
+      </div>
+
+      <div class="mnem-challenge-card" style="margin-bottom:16px;">
+        <div class="mnem-challenge-head">
+          <span class="mnem-challenge-kicker">🎯 ${esc(meta.shortLabel[this.lang])} · ${esc(target.code)} (${esc(target.asRef)})</span>
+          <div class="mnem-challenge-prompt">
+            <span lang="pi" style="font-weight:700;">${esc(target.pali)}</span> — ${esc(target.name[this.lang])}
+          </div>
+          <div class="mnem-challenge-rel-grid" style="margin-top:8px;">
+            <span class="mnem-rel-chip">🏷️ <strong>Grupo:</strong> ${esc(target.primaryGroup)}</span>
+            <span class="mnem-rel-chip">📂 <strong>Subdivisão:</strong> ${esc(target.secondaryGroup)}</span>
+          </div>
+          <div class="mnem-rel-eradication-box" style="margin-top:8px;">
+            📐 <strong>Fórmula Canônica / Âncora Mnêmica:</strong> ${esc(target.formulaNote[this.lang])}
+          </div>
+        </div>
+        <div class="mnem-challenge-actions">
+          <button type="button" class="mnem-btn mnem-btn-primary" id="mnem-nary-verify">${esc(s.binVerifyBtn)}</button>
+          <button type="button" class="mnem-btn mnem-btn-secondary" id="mnem-nary-next">${esc(s.binNextBtn)}</button>
+        </div>
+        ${feedbackHtml}
+      </div>
+
+      <div class="mnem-switchboard">
+        ${this.renderNarySwitchControls(this.binActiveChapter, this.narySwitches, s)}
+      </div>
+
+      <div class="mnem-synthesized-card" style="margin-top:16px;">
+        <div class="mnem-synth-header">
+          <span class="mnem-synth-kicker">Realidade Sintetizada pelas Chaves Atuais (N-ary Signature):</span>
+          <span class="mnem-synth-code">${synthItem ? `${esc(synthItem.code)} (${esc(synthItem.asRef)})` : "Configuração em Edição"}</span>
+        </div>
+        ${synthItem
+            ? `
+          <div class="mnem-synth-pali" lang="pi">${esc(synthItem.pali)}</div>
+          <div class="mnem-synth-name">${esc(synthItem.name[this.lang])}</div>
+          <div class="mnem-synth-formula">📐 ${esc(synthItem.formulaNote[this.lang])}</div>
+          <div class="mnem-challenge-rel-grid" style="margin-top:8px;">
+            <span class="mnem-rel-chip">🏷️ <strong>Grupo:</strong> ${esc(synthItem.primaryGroup)}</span>
+            <span class="mnem-rel-chip">📂 <strong>Subdivisão:</strong> ${esc(synthItem.secondaryGroup)}</span>
+          </div>
+        `
+            : `
+          <div class="mnem-synth-name" style="color:var(--text-muted, #64748b);font-style:italic;">
+            Combinação atual: ${Object.entries(this.narySwitches)
+                .map(([k, v]) => `<strong>${esc(k)}</strong>: ${esc(String(v))}`)
+                .join(" · ")}
+          </div>
+        `}
+      </div>
+
+      <div class="mnem-matrix-section" style="margin-top:20px;">
+        <h3 class="mnem-section-h3">Catálogo Canônico do Capítulo ${this.binActiveChapter} (${chapterItems.length} Itens Mūla):</h3>
+        <div class="mnem-matrix-grid">
+          ${chapterItems
+            .map((item) => {
+            const isTarget = target.id === item.id;
+            const isSelected = synthItem?.id === item.id;
+            const isMastered = (this.progress.masteredBinary[`nary:${item.id}`] ?? 0) >= 1;
+            return `
+                <div class="mnem-matrix-cell ${isTarget ? "target-family" : ""} ${isSelected ? "selected" : ""} ${isMastered ? "mastered" : ""}">
+                  <span class="mnem-cell-top">
+                    <span class="mnem-cell-id">${esc(item.code)}</span>
+                    <span class="mnem-cell-code">${esc(item.asRef)}</span>
+                  </span>
+                  <span class="mnem-cell-pali" lang="pi">${esc(item.pali)}</span>
+                  <div style="font-size:0.75rem;color:var(--text-muted, #64748b);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                    ${esc(item.name[this.lang])}
+                  </div>
+                  <div style="margin-top:6px;">
+                    <button type="button" class="mnem-bit-btn" style="padding:2px 8px;font-size:0.72rem;min-height:24px;width:100%;" data-nary-load-item="${esc(item.id)}">
+                      ${esc(s.binLoadIntoSwitches)}
+                    </button>
+                  </div>
+                </div>
+              `;
+        })
+            .join("")}
+        </div>
+      </div>
+    `;
+    }
+    renderNarySwitchControls(chapter, sw, _s) {
+        const renderRow = (label, key, options) => {
+            return `
+        <div class="mnem-switch-group">
+          <span class="mnem-switch-label">${esc(label)}</span>
+          <div class="mnem-switch-row">
+            ${options
+                .map((opt) => `
+              <button type="button" class="mnem-bit-btn ${String(sw[key]) === String(opt.val) ? "active" : ""}" data-nary-key="${esc(key)}" data-nary-val="${esc(String(opt.val))}" aria-pressed="${String(sw[key]) === String(opt.val)}">
+                ${esc(opt.label)}
+              </button>`)
+                .join("")}
+          </div>
+        </div>
+      `;
+        };
+        switch (chapter) {
+            case 2: {
+                const groupOptions = [
+                    { val: "aññasamana", label: "Aññasamāna (13 Neutros: 7+6)" },
+                    { val: "akusala", label: "Akusala (14 Insalubres: 4+3+4+2+1)" },
+                    { val: "sobhana", label: "Sobhana (25 Belos: 19+3+2+1)" },
+                ];
+                const currentGroup = String(sw.group ?? "aññasamana");
+                let subOptions = [];
+                if (currentGroup === "aññasamana") {
+                    subOptions = [
+                        { val: "sabbacitta", label: "Sabbacittasādhāraṇa (7 Universais)" },
+                        { val: "pakinnaka", label: "Pakiṇṇaka (6 Particulares)" },
+                    ];
+                }
+                else if (currentGroup === "akusala") {
+                    subOptions = [
+                        { val: "moha", label: "Moha-catukka (4 Universais Insalubres)" },
+                        { val: "lobha", label: "Lobha-tríade (3 Raiz Apego)" },
+                        { val: "dosa", label: "Dosa-catukka (4 Raiz Aversão)" },
+                        { val: "thina", label: "Thīna-duka (2 Torpor/Lentidão)" },
+                        { val: "vicikiccha", label: "Vicikicchā (1 Dúvida Cética)" },
+                    ];
+                }
+                else {
+                    subOptions = [
+                        { val: "sadharana", label: "Sobhanasādhāraṇa (19 Universais Belos)" },
+                        { val: "virati", label: "Virati (3 Abstenções Éticas)" },
+                        { val: "appamanna", label: "Appamaññā (2 Ilimitados: Compaixão/Alegria)" },
+                        { val: "panna", label: "Paññindriya (1 Faculdade da Sabedoria)" },
+                    ];
+                }
+                const currentSub = String(sw.sub ?? (subOptions[0]?.val ?? "sabbacitta"));
+                let maxSlots = 7;
+                if (currentSub === "sabbacitta")
+                    maxSlots = 7;
+                else if (currentSub === "pakinnaka")
+                    maxSlots = 6;
+                else if (currentSub === "moha")
+                    maxSlots = 4;
+                else if (currentSub === "lobha")
+                    maxSlots = 3;
+                else if (currentSub === "dosa")
+                    maxSlots = 4;
+                else if (currentSub === "thina")
+                    maxSlots = 2;
+                else if (currentSub === "vicikiccha")
+                    maxSlots = 1;
+                else if (currentSub === "sadharana")
+                    maxSlots = 19;
+                else if (currentSub === "virati")
+                    maxSlots = 3;
+                else if (currentSub === "appamanna")
+                    maxSlots = 2;
+                else if (currentSub === "panna")
+                    maxSlots = 1;
+                const slotOptions = Array.from({ length: maxSlots }, (_, i) => ({
+                    val: i + 1,
+                    label: `Posição #${i + 1}`,
+                }));
+                const sampayogaOptions = [
+                    { val: 121, label: "121 (Sabbacitta)" },
+                    { val: 110, label: "110 (Chanda)" },
+                    { val: 105, label: "105 (Viriya)" },
+                    { val: 101, label: "101 (Adhimokkha)" },
+                    { val: 91, label: "91 (19 Sobhana)" },
+                    { val: 79, label: "79 (Paññā)" },
+                    { val: 66, label: "66 (Pīti)" },
+                    { val: 55, label: "55 (Vitakka)" },
+                    { val: 28, label: "28 (Appamaññā)" },
+                    { val: 12, label: "12 (Moha-catukka)" },
+                    { val: 8, label: "8 (Lobha)" },
+                    { val: 4, label: "4 (Diṭṭhi)" },
+                    { val: 2, label: "2 (Dosa / Paṭigha)" },
+                    { val: 1, label: "1 (Vicikicchā)" },
+                ];
+                return `
+          ${renderRow("1. Grupo Canônico Principal (Cetasika-bheda):", "group", groupOptions)}
+          ${renderRow("2. Subfamília / Bloco:", "sub", subOptions)}
+          ${renderRow("3. Posição no Bloco (Slot):", "slot", slotOptions)}
+          ${renderRow("4. Valência / Associação de Cittas (Sampayoga):", "sampayoga", sampayogaOptions)}
+        `;
+            }
+            case 3: {
+                const catOptions = [
+                    { val: "vedana", label: "Vedanā (5 Sensações)" },
+                    { val: "hetu", label: "Hetu (6 Raízes)" },
+                    { val: "kicca", label: "Kicca (14 Funções)" },
+                    { val: "dvara", label: "Dvāra (6 Portas)" },
+                    { val: "arammana", label: "Ālambaṇa (6 Objetos)" },
+                    { val: "vatthu", label: "Vatthu (6 Bases Físicas)" },
+                ];
+                const currentCat = String(sw.category ?? "vedana");
+                let itemOptions = [];
+                if (currentCat === "vedana") {
+                    itemOptions = [
+                        { val: "somanassa", label: "Somanassa (Agradável mental)" },
+                        { val: "domanassa", label: "Domanassa (Desagradável mental)" },
+                        { val: "sukha", label: "Sukha (Agradável corporal)" },
+                        { val: "dukkha", label: "Dukkha (Dor corporal)" },
+                        { val: "upekkha", label: "Upekkhā (Equanimidade neutra)" },
+                    ];
+                }
+                else if (currentCat === "hetu") {
+                    itemOptions = [
+                        { val: "lobha", label: "Lobha (Apego)" },
+                        { val: "dosa", label: "Dosa (Aversão)" },
+                        { val: "moha", label: "Moha (Delusão)" },
+                        { val: "alobha", label: "Alobha (Não-apego / Generosidade)" },
+                        { val: "adosa", label: "Adosa (Não-aversão / Metta)" },
+                        { val: "amoha", label: "Amoha (Não-delusão / Sabedoria)" },
+                        { val: "ahetuka", label: "Ahetuka (Sem Raiz · 18 Cittas)" },
+                    ];
+                }
+                else if (currentCat === "kicca") {
+                    itemOptions = [
+                        { val: "patisandhi", label: "1. Paṭisandhi (Renascimento)" },
+                        { val: "bhavanga", label: "2. Bhavaṅga (Fluxo vital)" },
+                        { val: "avajjana", label: "3. Āvajjana (Adverting)" },
+                        { val: "dassana", label: "4. Dassana (Visão)" },
+                        { val: "sampaticchana", label: "5. Sampaṭicchana (Recepção)" },
+                        { val: "santirana", label: "6. Santīraṇa (Investigação)" },
+                        { val: "votthabbana", label: "7. Voṭṭhabbana (Determinação)" },
+                        { val: "javana", label: "8. Javana (Ação moral/imoral)" },
+                        { val: "tadarammana", label: "9. Tadārammaṇa (Registro)" },
+                        { val: "cuti", label: "10. Cuti (Morte)" },
+                    ];
+                }
+                else {
+                    itemOptions = [
+                        { val: "cakkhu", label: "Cakkhu (Olho/Visual)" },
+                        { val: "sota", label: "Sota (Ouvido/Auditivo)" },
+                        { val: "ghana", label: "Ghāna (Nariz/Olfativo)" },
+                        { val: "jivha", label: "Jivhā (Língua/Gustativo)" },
+                        { val: "kaya", label: "Kāya (Corpo/Tátil)" },
+                        { val: "mano", label: "Mano (Mente/Mental)" },
+                    ];
+                }
+                const countOptions = [
+                    { val: 1, label: "1 Citta" },
+                    { val: 2, label: "2 Cittas" },
+                    { val: 11, label: "11 Cittas" },
+                    { val: 18, label: "18 Cittas" },
+                    { val: 19, label: "19 Cittas" },
+                    { val: 55, label: "55 Cittas" },
+                    { val: 62, label: "62 Cittas" },
+                    { val: 79, label: "79 Cittas" },
+                ];
+                return `
+          ${renderRow("1. Categoria Mista (Pakiṇṇaka):", "category", catOptions)}
+          ${renderRow("2. Fator Específico:", "item", itemOptions)}
+          ${renderRow("3. Contagem de Cittas Correspondentes:", "count", countOptions)}
+        `;
+            }
+            case 4: {
+                const doorOptions = [
+                    { val: "pancadvara", label: "Pañcadvāra (5 Portas dos Sentidos)" },
+                    { val: "manodvara", label: "Manodvāra (Porta da Mente)" },
+                ];
+                const varaOptions = [
+                    { val: "tadarammana", label: "Tadārammaṇavāra (Objeto Muito Grande · 17 Momentos)" },
+                    { val: "javana", label: "Javanavāra (Objeto Grande · 14 Momentos)" },
+                    { val: "votthabbana", label: "Voṭṭhabbanavāra (Objeto Pequeno · 3 Momentos)" },
+                    { val: "appana", label: "Appanāvīthi (Processos de Absorção Jhāna/Magga)" },
+                ];
+                const momentsOptions = [
+                    { val: 17, label: "17 Momentos de Citta (Vida da Matéria)" },
+                    { val: 14, label: "14 Momentos (Até Javana)" },
+                    { val: 7, label: "7 Momentos (Javanas Comuns)" },
+                    { val: 3, label: "3 Momentos (Apenas Determinação)" },
+                    { val: 0, label: "0 Momentos de Vīthicitta (Moghavāra)" },
+                ];
+                return `
+          ${renderRow("1. Porta de Entrada (Dvāra):", "door", doorOptions)}
+          ${renderRow("2. Extensão do Processo (Vāra):", "vara", varaOptions)}
+          ${renderRow("3. Duração Temporal (Momentos de Citta):", "moments", momentsOptions)}
+        `;
+            }
+            case 5: {
+                const tetradOptions = [
+                    { val: "bhumi", label: "1. Bhūmi-catukka (4 Planos / 31 Reinos)" },
+                    { val: "kamma", label: "2. Kamma-catukka (4 Ordens de Kamma)" },
+                    { val: "patisandhi", label: "3. Paṭisandhi-catukka (4 Modos de Renascimento)" },
+                    { val: "marana", label: "4. Maraṇuppatti-catukka (4 Ocasiões de Morte)" },
+                ];
+                const currentTetrad = String(sw.tetrad ?? "bhumi");
+                let realmRoleOptions = [];
+                if (currentTetrad === "bhumi") {
+                    realmRoleOptions = [
+                        { val: "apaya", label: "Apāyabhūmi (4 Reinos Inferiores)" },
+                        { val: "kamasugati", label: "Kāmasugatibhūmi (7 Reinos Felizes Sensuais)" },
+                        { val: "rupabhumi", label: "Rūpabhūmi (16 Reinos da Matéria Sutil)" },
+                        { val: "arupabhumi", label: "Arūpabhūmi (4 Reinos Imateriais)" },
+                    ];
+                }
+                else {
+                    realmRoleOptions = [
+                        { val: "janaka", label: "Janaka-kamma (Kamma Gerador)" },
+                        { val: "upatthambhaka", label: "Upatthambhaka-kamma (Kamma Sustentador)" },
+                        { val: "upapilaka", label: "Upapīḷaka-kamma (Kamma Opressor)" },
+                        { val: "upaghataka", label: "Upaghātaka-kamma (Kamma Destruidor)" },
+                        { val: "garuka", label: "Garuka-kamma (Kamma Grave / Prioritário)" },
+                        { val: "asanna", label: "Āsanna-kamma (Kamma na Hora da Morte)" },
+                        { val: "acinna", label: "Āciṇṇa-kamma (Kamma Habitual)" },
+                        { val: "katatta", label: "Katattā-kamma (Kamma Cumulativo Menor)" },
+                    ];
+                }
+                const countOptions = [
+                    { val: 4, label: "4 Planos / Tipos" },
+                    { val: 7, label: "7 Planos Felizes" },
+                    { val: 16, label: "16 Planos Rūpa" },
+                    { val: 19, label: "19 Cittas de Renascimento" },
+                    { val: 31, label: "31 Reinos de Existência" },
+                ];
+                return `
+          ${renderRow("1. Tétrada Fora do Processo (Catukka):", "tetrad", tetradOptions)}
+          ${renderRow("2. Domínio ou Papel Kármico:", currentTetrad === "bhumi" ? "realm" : "role", realmRoleOptions)}
+          ${renderRow("3. Quantificação Canônica:", "count", countOptions)}
+        `;
+            }
+            case 6: {
+                const typeOptions = [
+                    { val: "mahabhuta", label: "Mahābhūta (4 Grandes Elementos Primários)" },
+                    { val: "upada", label: "Upādā-rūpa (24 Matérias Derivadas)" },
+                    { val: "asankhata", label: "Asaṅkhata (Nibbāna · Não-Condicionado)" },
+                ];
+                const statusOptions = [
+                    { val: "nipphanna", label: "Nipphanna (18 Rūpas Concretos Produzidos)" },
+                    { val: "anipphanna", label: "Anipphanna (10 Rūpas Abstratos/Não-Concretos)" },
+                    { val: "santi", label: "Santilakkhaṇa (Paz Extrema · Nibbāna)" },
+                ];
+                const samutthanaOptions = [
+                    { val: "catusamutthana", label: "4 Origens (Kamma, Citta, Utu, Āhāra)" },
+                    { val: "kammaja", label: "Origem Exclusiva em Kamma (Pasāda, Hadaya, Bhāva, Jīvita)" },
+                    { val: "cittaja", label: "Origem em Citta (Viññatti, etc.)" },
+                    { val: "utuja", label: "Origem em Utu (Temperatura/Clima)" },
+                    { val: "aharaja", label: "Origem em Āhāra (Nutrição)" },
+                    { val: "asamkhata", label: "Asaṅkhata (Sem Origem Causal · Nibbāna)" },
+                ];
+                return `
+          ${renderRow("1. Natureza Ontológica (Rūpa-vibhāga):", "type", typeOptions)}
+          ${renderRow("2. Status Estrutural:", "status", statusOptions)}
+          ${renderRow("3. Origem Causal (Samuṭṭhāna):", "samutthana", samutthanaOptions)}
+        `;
+            }
+            case 7: {
+                const compOptions = [
+                    { val: "akusala", label: "Akusala-samuccaya (9 Categorias Insalubres)" },
+                    { val: "missaka", label: "Missaka-samuccaya (7 Categorias Mistas)" },
+                    { val: "bodhipakkhiya", label: "Bodhipakkhiya (7 Grupos / 37 Fatores do Despertar)" },
+                    { val: "sabba", label: "Sabba-saṅgaha (4 Sínteses Universais: Khandha, etc.)" },
+                ];
+                const groupOptions = [
+                    { val: "satipatthana", label: "4 Satipaṭṭhāna (Fundamentos da Atenção)" },
+                    { val: "sammappadhana", label: "4 Sammappadhāna (Esforços Corretos)" },
+                    { val: "iddhipada", label: "4 Iddhipāda (Bases do Poder Espiritual)" },
+                    { val: "bojjhanga", label: "7 Bojjhaṅga (Fatores de Iluminação)" },
+                    { val: "magganga", label: "8 Maggaṅga (Fatores do Nobre Óctuplo Caminho)" },
+                    { val: "asava", label: "4 Āsava (Fermentações/Poluições)" },
+                    { val: "nivarana", label: "6 Nīvaraṇa (Obstáculos Mentais)" },
+                ];
+                const countOptions = [
+                    { val: 4, label: "4 Fatores" },
+                    { val: 5, label: "5 Fatores" },
+                    { val: 6, label: "6 Fatores" },
+                    { val: 7, label: "7 Fatores" },
+                    { val: 8, label: "8 Fatores" },
+                    { val: 9, label: "9 Fatores" },
+                    { val: 10, label: "10 Fatores" },
+                ];
+                return `
+          ${renderRow("1. Compêndio de Categorias (Samuccaya):", "compendium", compOptions)}
+          ${renderRow("2. Grupo Doutrinário:", "group", groupOptions)}
+          ${renderRow("3. Quantidade de Fatores no Grupo:", "count", countOptions)}
+        `;
+            }
+            case 8: {
+                const methodOptions = [
+                    { val: "patthana", label: "Paṭṭhāna (As 24 Condições de Relação Causal)" },
+                    { val: "paticcasamuppada", label: "Paṭiccasamuppāda (Origem Dependente dos 12 Elos)" },
+                ];
+                const typeOptions = [
+                    { val: "sahajata", label: "Sahajāta (Conascença / Simultaneidade)" },
+                    { val: "arammana", label: "Ārammaṇa (Objeto / Condição Objetiva)" },
+                    { val: "kamma", label: "Kamma (Ação e Consequência)" },
+                    { val: "anantara", label: "Anantara (Proximidade Imediata Sem Intervalo)" },
+                    { val: "nissaya", label: "Nissaya (Suporte / Apoio Físico ou Mental)" },
+                    { val: "purejata", label: "Purejāta (Pré-nascença / Base Preexistente)" },
+                ];
+                const indexOptions = [
+                    { val: 1, label: "#1 Hetu (Raiz)" },
+                    { val: 2, label: "#2 Ārammaṇa (Objeto)" },
+                    { val: 6, label: "#6 Sahajāta (Conascença)" },
+                    { val: 13, label: "#13 Kamma (Ação)" },
+                ];
+                return `
+          ${renderRow("1. Método Causal:", "method", methodOptions)}
+          ${renderRow("2. Vetor Relacional (Relação de Força):", "type", typeOptions)}
+          ${renderRow("3. Índice Canônico no Paṭṭhāna (1..24):", "index", indexOptions)}
+        `;
+            }
+            case 9:
+            default: {
+                const wingOptions = [
+                    { val: "samatha", label: "Samatha-bhāvanā (Tranquilidade · 40 Kammaṭṭhānas)" },
+                    { val: "vipassana", label: "Vipassanā-bhāvanā (Insight · 7 Visuddhis & 10 Ñāṇas)" },
+                ];
+                const currentWing = String(sw.wing ?? "samatha");
+                if (currentWing === "samatha") {
+                    const groupOptions = [
+                        { val: "kasina", label: "10 Kasiṇas (Terra, Água, Fogo, Ar, etc.)" },
+                        { val: "asubha", label: "10 Asubhas (Contemplação das Impurezas)" },
+                        { val: "anussati", label: "10 Anussatis (Rememorações do Buddha, Dhamma, etc.)" },
+                        { val: "brahmavihara", label: "4 Brahmavihāras (Amor, Compaixão, Alegria, Equanimidade)" },
+                        { val: "aruppa", label: "4 Āruppas (Bases Imateriais)" },
+                    ];
+                    const jhanaOptions = [
+                        { val: 5, label: "Até o 5º Jhāna (Todos os 5)" },
+                        { val: 4, label: "Até o 4º Jhāna" },
+                        { val: 1, label: "Apenas 1º Jhāna (Asubhas & Kāyagatāsati)" },
+                        { val: 0, label: "Apenas Upacāra-samādhi (Anussatis 1-8)" },
+                    ];
+                    const caritaOptions = [
+                        { val: "all", label: "Todos os Temperamentos" },
+                        { val: "raga", label: "Rāgacarita (Apego / Desejo)" },
+                        { val: "dosa", label: "Dosacarita (Aversão / Irritação)" },
+                        { val: "moha_vitakka", label: "Moha / Vitakkacarita (Confusão / Distração)" },
+                        { val: "saddha", label: "Saddhācarita (Fé e Devoção)" },
+                        { val: "buddhi", label: "Buddhicarita (Intelecto e Sabedoria)" },
+                    ];
+                    const nimittaOptions = [
+                        { val: 1, label: "1. Parikamma-nimitta (Sinal Preliminar)" },
+                        { val: 2, label: "2. Uggaha-nimitta (Sinal Adquirido / Imagem Mental)" },
+                        { val: 3, label: "3. Paṭibhāga-nimitta (Sinal Contraparte Cristalino)" },
+                    ];
+                    return `
+            ${renderRow("1. Asa de Meditação (Bhāvanā-naya):", "wing", wingOptions)}
+            ${renderRow("2. Grupo dos 40 Objetos de Meditação (Kammaṭṭhāna):", "group", groupOptions)}
+            ${renderRow("3. Alcance Máximo de Concentração (Jhāna-bhūmi):", "maxJhana", jhanaOptions)}
+            ${renderRow("4. Temperamento Adequado (Sappāyabheda):", "carita", caritaOptions)}
+            ${renderRow("5. Nível do Sinal Meditativo (Nimitta):", "nimitta", nimittaOptions)}
+          `;
+                }
+                else {
+                    const visuddhiOptions = [
+                        { val: 3, label: "3. Diṭṭhivisuddhi (Purificação da Visão: Nome e Forma)" },
+                        { val: 4, label: "4. Kaṅkhāvitaraṇavisuddhi (Superação da Dúvida: Causas)" },
+                        { val: 6, label: "6. Paṭipadāñāṇadassanavisuddhi (Caminho dos 9 Conhecimentos)" },
+                        { val: 7, label: "7. Ñāṇadassanavisuddhi (Visão de Sabedoria: 4 Maggas)" },
+                    ];
+                    const stageOptions = [
+                        { val: "nama_rupa", label: "Nāmarūpapariccheda (Delimitação de Nome e Forma)" },
+                        { val: "paccaya", label: "Paccayapariggaha (Discernimento das Causas e Efeitos)" },
+                        { val: "udayabbaya", label: "Udayabbayañāṇa (Visão do Surgimento e Dissolução)" },
+                        { val: "sankharupekkha", label: "Saṅkhārupekkhāñāṇa (Equanimidade com as Formações)" },
+                        { val: "nirodha", label: "Nirodhasamāpatti (Realização da Cessação Suprema)" },
+                    ];
+                    const vimokkhaOptions = [
+                        { val: "sunnata", label: "Suññatā (Vazio pelo Contemplação de Anattā)" },
+                        { val: "animitta", label: "Animitta (Sem Sinal pela Contemplação de Anicca)" },
+                        { val: "appanihita", label: "Appaṇihita (Sem Desejo pela Contemplação de Dukkha)" },
+                        { val: "nirodha", label: "Nirodha (Cessação Suprema de Citta e Cetasikas)" },
+                    ];
+                    return `
+            ${renderRow("1. Asa de Meditação (Bhāvanā-naya):", "wing", wingOptions)}
+            ${renderRow("2. Nível das 7 Visuddhis (Purificações):", "visuddhi", visuddhiOptions)}
+            ${renderRow("3. Estágio / Conhecimento de Insight (Vipassanā-ñāṇa):", "stage", stageOptions)}
+            ${renderRow("4. Porta de Libertação (Vimokkhamukha):", "vimokkha", vimokkhaOptions)}
+          `;
+                }
+            }
+        }
     }
     renderPeriodicPillar(s) {
         return `
@@ -1709,6 +2265,58 @@ export class MnemonicLabUI {
                 }
             }
             this.render();
+        });
+        this.container.querySelectorAll("[data-bin-chapter]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const ch = Number(btn.dataset.binChapter);
+                if (ch >= 1 && ch <= 9 && ch !== this.binActiveChapter) {
+                    this.binActiveChapter = ch;
+                    if (ch > 1) {
+                        this.binTargetNaryItem = pickNextNaryChapterChallenge(ch, this.progress);
+                        this.narySwitches = defaultNarySwitchesForChapter(ch);
+                        this.naryFeedback = null;
+                    }
+                    this.render();
+                }
+            });
+        });
+        this.container.querySelectorAll("[data-nary-key]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const key = btn.dataset.naryKey;
+                const rawVal = btn.dataset.naryVal;
+                if (!key || rawVal === undefined)
+                    return;
+                const val = /^-?\d+$/.test(rawVal) ? Number(rawVal) : rawVal;
+                this.narySwitches = { ...this.narySwitches, [key]: val };
+                this.naryFeedback = null;
+                this.render();
+            });
+        });
+        this.container.querySelector("#mnem-nary-verify")?.addEventListener("click", () => {
+            if (!this.binTargetNaryItem)
+                return;
+            const res = evaluateNaryChallenge(this.binTargetNaryItem, this.narySwitches);
+            this.naryFeedback = res;
+            const itemId = this.binTargetNaryItem.id;
+            this.progress = recordMnemonicAttempt(this.progress, "binary", `nary:${itemId}`, res.isCorrect);
+            this.syncVault();
+            this.render();
+        });
+        this.container.querySelector("#mnem-nary-next")?.addEventListener("click", () => {
+            this.binTargetNaryItem = pickNextNaryChapterChallenge(this.binActiveChapter, this.progress, this.binTargetNaryItem?.id);
+            this.naryFeedback = null;
+            this.render();
+        });
+        this.container.querySelectorAll("[data-nary-load-item]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const id = btn.dataset.naryLoadItem;
+                const item = getNaryItemsForChapter(this.binActiveChapter).find((i) => i.id === id);
+                if (item) {
+                    this.narySwitches = { ...item.switches };
+                    this.naryFeedback = null;
+                    this.render();
+                }
+            });
         });
         this.container.querySelectorAll("[data-per-mode]").forEach((btn) => {
             btn.addEventListener("click", () => {

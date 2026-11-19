@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=0cb21ab6";
-import { settings } from "./state.js?v=0cb21ab6";
-import { createLogger } from "./logger.js?v=0cb21ab6";
+import { t } from "./i18n.js?v=18b088dd";
+import { settings } from "./state.js?v=18b088dd";
+import { createLogger } from "./logger.js?v=18b088dd";
 const log = createLogger("search");
 const MAX_RESULTS = 50;
 let shardManifest = null;

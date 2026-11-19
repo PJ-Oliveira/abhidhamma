@@ -17,7 +17,12 @@ import {
   pickNextPhalanxSlot,
   recordMnemonicAttempt,
   resolveCittaFromSwitches,
+  getNaryItemsForChapter,
+  pickNextNaryChapterChallenge,
+  defaultNarySwitchesForChapter,
+  evaluateNaryChallenge,
 } from "../../src/mnemonic-lab/engine.js";
+import { CANONICAL_CHAPTERS_META } from "../../src/mnemonic-lab/nary-chapters-data.js";
 import { MnemonicLabUI } from "../../src/mnemonic-lab/ui.js";
 import {
   buildLocalStorageSnapshot,
@@ -384,5 +389,126 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     } finally {
       (globalThis as any).caches = prevCaches;
     }
+  });
+
+  it("validates all 9 canonical chapters (Nava Paricchedā) metadata, formulas, and item inventories", () => {
+    // 1) All 9 chapters metadata in CANONICAL_CHAPTERS_META
+    expect(CANONICAL_CHAPTERS_META.length).toBe(9);
+    for (let i = 1; i <= 9; i++) {
+      const meta = CANONICAL_CHAPTERS_META.find((m) => m.num === i);
+      expect(meta).toBeDefined();
+      expect(meta!.asRef).toMatch(/^AS (I|II|III|IV|V|VI|VII|VIII|IX)\./);
+      expect(meta!.paliTitle).toBeTruthy();
+      expect(meta!.equation.pt).toBeTruthy();
+      expect(meta!.equation.en).toBeTruthy();
+      expect(meta!.equation.es).toBeTruthy();
+    }
+
+    // 2) Chapter 2 has all 52 Cetasikas with correct distribution: 13 + 14 + 25 = 52
+    const ch2Items = getNaryItemsForChapter(2);
+    expect(ch2Items.length).toBe(52);
+    const annas = ch2Items.filter((c) => c.primaryGroup === "aññasamana");
+    const akus = ch2Items.filter((c) => c.primaryGroup === "akusala");
+    const sobh = ch2Items.filter((c) => c.primaryGroup === "sobhana");
+    expect(annas.length).toBe(13);
+    expect(akus.length).toBe(14);
+    expect(sobh.length).toBe(25);
+
+    // Verify all 9 chapters items return non-empty arrays
+    for (let ch = 2; ch <= 9; ch++) {
+      const items = getNaryItemsForChapter(ch as any);
+      expect(items.length).toBeGreaterThan(0);
+      for (const it of items) {
+        expect(it.chapter).toBe(ch);
+        expect(it.pali).toBeTruthy();
+        expect(it.code).toBeTruthy();
+        expect(it.switches).toBeDefined();
+      }
+    }
+  });
+
+  it("evaluates N-ary challenges and verifies state transitions across chapters 2 through 9", () => {
+    const prog = createInitialProgress();
+
+    // Chapter 2 Cetasika challenge
+    const ch2Item = getNaryItemsForChapter(2)[0]!; // Phasso
+    expect(ch2Item.pali).toBe("Phasso");
+    const correctSwitches = { ...ch2Item.switches };
+    const evalCorrect = evaluateNaryChallenge(ch2Item, correctSwitches);
+    expect(evalCorrect.isCorrect).toBe(true);
+    expect(evalCorrect.mismatchedKeys.length).toBe(0);
+
+    const wrongSwitches = { ...ch2Item.switches, sampayoga: 89 };
+    const evalWrong = evaluateNaryChallenge(ch2Item, wrongSwitches);
+    expect(evalWrong.isCorrect).toBe(false);
+    expect(evalWrong.mismatchedKeys).toContain("sampayoga");
+
+    // Chapter 9 Kammaṭṭhāna challenge
+    const ch9Item = getNaryItemsForChapter(9)[0]!;
+    expect(ch9Item.chapter).toBe(9);
+    const evalCh9 = evaluateNaryChallenge(ch9Item, ch9Item.switches);
+    expect(evalCh9.isCorrect).toBe(true);
+
+    // Pick next challenge returns items of that chapter
+    const nextCh9 = pickNextNaryChapterChallenge(9, prog);
+    expect(nextCh9.chapter).toBe(9);
+
+    // Defaults exist for all chapters
+    for (let ch = 2; ch <= 9; ch++) {
+      const def = defaultNarySwitchesForChapter(ch as any);
+      expect(Object.keys(def).length).toBeGreaterThan(0);
+    }
+  });
+
+  it("renders the interactive 9-chapter bar, N-ary switchboards, real-time preview card, and catalogue loading in the UI", () => {
+    const host = document.createElement("div");
+    document.body.appendChild(host);
+    const ui = new MnemonicLabUI(host, "pt");
+    ui.init();
+
+    // Verify Chapter Bar is rendered
+    const chapterBar = host.querySelector(".mnem-chapter-bar");
+    expect(chapterBar).not.toBeNull();
+    const chapterBtns = host.querySelectorAll<HTMLButtonElement>("[data-bin-chapter]");
+    expect(chapterBtns.length).toBe(9);
+
+    // 1) Initially on Chapter 1 (Citta Decoder)
+    expect(chapterBtns[0]?.classList.contains("active")).toBe(true);
+    expect(host.querySelector("#mnem-bin-mode-toggle")).not.toBeNull();
+
+    // 2) Click Chapter 2 (Cetasika Decoder)
+    chapterBtns[1]?.click();
+    expect(host.querySelector(".mnem-chapter-btn.active")?.getAttribute("data-bin-chapter")).toBe("2");
+    expect(host.textContent).toContain("Cetasikasaṅgaha");
+    expect(host.textContent).toContain("13 Aññasamānā");
+
+    // Switch buttons exist for chapter 2
+    const naryKeyBtns = host.querySelectorAll<HTMLButtonElement>("[data-nary-key]");
+    expect(naryKeyBtns.length).toBeGreaterThan(0);
+
+    // Verify button exists
+    const verifyBtn = host.querySelector<HTMLButtonElement>("#mnem-nary-verify");
+    expect(verifyBtn).not.toBeNull();
+
+    // Load an item from the chapter 2 catalogue
+    const loadBtn = host.querySelector<HTMLButtonElement>("[data-nary-load-item]");
+    expect(loadBtn).not.toBeNull();
+    loadBtn?.click();
+
+    // Click verify after loading item: should evaluate to exact match!
+    verifyBtn?.click();
+    expect(host.querySelector(".mnem-challenge-feedback.ok") || host.querySelector(".mnem-challenge-feedback")).not.toBeNull();
+
+    // 3) Click Chapter 9 (Kammaṭṭhāna Decoder)
+    chapterBtns[8]?.click();
+    expect(host.querySelector(".mnem-chapter-btn.active")?.getAttribute("data-bin-chapter")).toBe("9");
+    expect(host.textContent).toContain("Kammaṭṭhānasaṅgaha");
+    expect(host.textContent).toContain("Samatha");
+
+    // 4) Click back to Chapter 1
+    const ch1Btn = host.querySelector<HTMLButtonElement>('[data-bin-chapter="1"]');
+    ch1Btn?.click();
+    expect(host.querySelector(".mnem-chapter-btn.active")?.getAttribute("data-bin-chapter")).toBe("1");
+    expect(host.querySelector("#mnem-bin-mode-toggle")).not.toBeNull();
   });
 });

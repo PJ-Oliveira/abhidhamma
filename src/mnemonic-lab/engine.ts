@@ -20,8 +20,6 @@ import {
   type VedanaBit,
 } from "./data.js";
 import {
-  CANONICAL_CHAPTERS_META,
-  ALL_NARY_CHAPTER_ITEMS,
   CHAPTER_2_ITEMS,
   CHAPTER_3_ITEMS,
   CHAPTER_4_ITEMS,
