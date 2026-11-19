@@ -511,4 +511,109 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     expect(host.querySelector(".mnem-chapter-btn.active")?.getAttribute("data-bin-chapter")).toBe("1");
     expect(host.querySelector("#mnem-bin-mode-toggle")).not.toBeNull();
   });
+
+  it("enforces N-ary terminology and strict multilingual purity across EN, PT, and ES without cross-language pollution", () => {
+    // 1) Test English mode
+    const hostEn = document.createElement("div");
+    document.body.appendChild(hostEn);
+    const uiEn = new MnemonicLabUI(hostEn, "en");
+    uiEn.init();
+
+    // Verify Tab and Challenge Button renamed to N-ary
+    expect(hostEn.textContent).toContain("N-ary Decompressor");
+    expect(hostEn.textContent).toContain("Challenge: N-ary Decoder");
+    expect(hostEn.textContent).not.toContain("Binary Decompressor");
+    expect(hostEn.textContent).not.toContain("Binary Decoder");
+
+    // Click Chapter 2 in English mode
+    const ch2BtnEn = hostEn.querySelectorAll<HTMLButtonElement>("[data-bin-chapter]")[1];
+    ch2BtnEn?.click();
+
+    const enText = hostEn.textContent ?? "";
+    // English + Pāḷi only: must contain English terms
+    expect(enText).toContain("Unwholesome");
+    expect(enText).toContain("Ethically Variable");
+    expect(enText).toContain("Group:");
+    expect(enText).toContain("Subdivision:");
+    expect(enText).toContain("Canonical Formula / Mnemonic Anchor:");
+    expect(enText).toContain("Position #1");
+    expect(enText).toContain("Load into Switches");
+
+    // English mode MUST NOT contain Portuguese terms
+    expect(enText).not.toContain("Insalubres");
+    expect(enText).not.toContain("Neutros: 7+6");
+    expect(enText).not.toContain("Subdivisão:");
+    expect(enText).not.toContain("Fórmula Canônica / Âncora Mnêmica:");
+    expect(enText).not.toContain("Posição #1");
+    expect(enText).not.toContain("Carregar nas Chaves");
+    expect(enText).not.toContain("Realidade Sintetizada pelas Chaves Atuais");
+
+    // English mode MUST NOT contain Spanish terms
+    expect(enText).not.toContain("Subdivisión:");
+    expect(enText).not.toContain("Ancla Mnemónica:");
+    expect(enText).not.toContain("Cargar en Interruptores");
+
+    // 2) Test Portuguese mode
+    const hostPt = document.createElement("div");
+    document.body.appendChild(hostPt);
+    const uiPt = new MnemonicLabUI(hostPt, "pt");
+    uiPt.init();
+
+    expect(hostPt.textContent).toContain("Descompactador N-ário");
+    expect(hostPt.textContent).toContain("Desafio: Decodificador N-ário");
+    expect(hostPt.textContent).not.toContain("Binary Decompressor");
+
+    const ch2BtnPt = hostPt.querySelectorAll<HTMLButtonElement>("[data-bin-chapter]")[1];
+    ch2BtnPt?.click();
+
+    const ptText = hostPt.textContent ?? "";
+    // Portuguese + Pāḷi only
+    expect(ptText).toContain("Insalubres");
+    expect(ptText).toContain("Neutros: 7+6");
+    expect(ptText).toContain("Subdivisão:");
+    expect(ptText).toContain("Fórmula Canônica / Âncora Mnêmica:");
+    expect(ptText).toContain("Posição #1");
+    expect(ptText).toContain("Carregar nas Chaves");
+
+    // Portuguese mode MUST NOT contain English terms
+    expect(ptText).not.toContain("Unwholesome: 4+3");
+    expect(ptText).not.toContain("Ethically Variable: 7+6");
+    expect(ptText).not.toContain("Subdivision:");
+    expect(ptText).not.toContain("Canonical Formula / Mnemonic Anchor:");
+    expect(ptText).not.toContain("Load into Switches");
+
+    // 3) Test Spanish mode
+    const hostEs = document.createElement("div");
+    document.body.appendChild(hostEs);
+    const uiEs = new MnemonicLabUI(hostEs, "es");
+    uiEs.init();
+
+    expect(hostEs.textContent).toContain("Descompresor N-ario");
+    expect(hostEs.textContent).toContain("Desafío: Decodificador N-ario");
+    expect(hostEs.textContent).not.toContain("Binary Decompressor");
+
+    const ch2BtnEs = hostEs.querySelectorAll<HTMLButtonElement>("[data-bin-chapter]")[1];
+    ch2BtnEs?.click();
+
+    const esText = hostEs.textContent ?? "";
+    // Spanish + Pāḷi only
+    expect(esText).toContain("Inhábiles");
+    expect(esText).toContain("Subdivisión:");
+    expect(esText).toContain("Fórmula Canónica / Ancla Mnemónica:");
+    expect(esText).toContain("Posición #1");
+    expect(esText).toContain("Cargar en Interruptores");
+
+    // Spanish mode MUST NOT contain Portuguese terms
+    expect(esText).not.toContain("Insalubres: 4+3");
+    expect(esText).not.toContain("Subdivisão:");
+    expect(esText).not.toContain("Fórmula Canônica / Âncora Mnêmica:");
+    expect(esText).not.toContain("Posição #1");
+    expect(esText).not.toContain("Carregar nas Chaves");
+
+    // Spanish mode MUST NOT contain English terms
+    expect(esText).not.toContain("Unwholesome: 4+3");
+    expect(esText).not.toContain("Ethically Variable: 7+6");
+    expect(esText).not.toContain("Subdivision:");
+    expect(esText).not.toContain("Load into Switches");
+  });
 });

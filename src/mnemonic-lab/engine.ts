@@ -42,7 +42,7 @@ export interface MnemonicProgressState {
   readonly bestStreak: number;
   readonly totalCorrect: number;
   readonly totalAttempts: number;
-  /** IDs de Cittas dominadas no Descompactador Binário (ex.: "citta:1") */
+  /** IDs de Cittas e Itens dominados no Decodificador N-ário (ex.: "citta:1", "nary:cet:1") */
   readonly masteredBinary: Readonly<Record<string, number>>;
   /** IDs de Cittas/Elementos dominados na Tabela Periódica (ex.: "chem:1") */
   readonly masteredPeriodic: Readonly<Record<string, number>>;
@@ -175,7 +175,7 @@ export function recordMnemonicAttempt(
   return next;
 }
 
-// ── PILAR 1: MOTOR DO DESCOMPACTADOR BINÁRIO E COMBINATÓRIO ──────────────────
+// ── PILAR 1: MOTOR DO DESCOMPACTADOR & DECODIFICADOR N-ÁRIO ──────────────────
 
 export type AhetukaSubgroupId = "akusala_vipaka" | "kusala_vipaka" | "kiriya";
 
