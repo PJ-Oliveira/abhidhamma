@@ -1,4 +1,4 @@
-import { CANONICAL_CITTAS_89, ONTOLOGICAL_COLLISION_RULES, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=aa8613a5";
+import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, ONTOLOGICAL_COLLISION_RULES, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=0cb21ab6";
 export const MNEMONIC_STORAGE_KEY = "abhidhamma_mnemonic_lab_v1";
 export function createInitialProgress() {
     return {
@@ -126,48 +126,56 @@ export function defaultSwitchStateForFamily(family) {
             return { family: "lokuttara", jati: "kusala", bitVedana: 1, bitCognitive: 1, bitSankhara: "fixed", jhanaStage: 1, arupaBase: 1, maggaStage: 1, ahetukaSubgroup: "akusala_vipaka", ahetukaSlot: 0 };
     }
 }
-export function resolveCittaFromSwitches(sw) {
+export function resolveCittaFromSwitches(sw, mode = 121) {
+    const pool = mode === 121 ? CANONICAL_CITTAS_121 : CANONICAL_CITTAS_89;
     switch (sw.family) {
         case "lobha":
-            return (CANONICAL_CITTAS_89.find((c) => c.family === "lobha" &&
+            return (pool.find((c) => c.family === "lobha" &&
                 c.bitVedana === sw.bitVedana &&
                 c.bitCognitive === sw.bitCognitive &&
                 c.bitSankhara === sw.bitSankhara) ?? null);
         case "dosa":
-            return (CANONICAL_CITTAS_89.find((c) => c.family === "dosa" && c.bitSankhara === sw.bitSankhara) ?? null);
+            return (pool.find((c) => c.family === "dosa" && c.bitSankhara === sw.bitSankhara) ?? null);
         case "moha":
-            return (CANONICAL_CITTAS_89.find((c) => c.family === "moha" && c.bitCognitive === sw.bitCognitive) ?? null);
+            return (pool.find((c) => c.family === "moha" && c.bitCognitive === sw.bitCognitive) ?? null);
         case "ahetuka": {
             const targetId = sw.ahetukaSubgroup === "akusala_vipaka"
                 ? 13 + Math.max(0, Math.min(6, sw.ahetukaSlot))
                 : sw.ahetukaSubgroup === "kusala_vipaka"
                     ? 20 + Math.max(0, Math.min(7, sw.ahetukaSlot))
                     : 28 + Math.max(0, Math.min(2, sw.ahetukaSlot));
-            return CANONICAL_CITTAS_89.find((c) => c.id === targetId) ?? null;
+            return pool.find((c) => c.id === targetId) ?? null;
         }
         case "kamasobhana":
-            return (CANONICAL_CITTAS_89.find((c) => c.family === "kamasobhana" &&
+            return (pool.find((c) => c.family === "kamasobhana" &&
                 c.jati === sw.jati &&
                 c.bitVedana === sw.bitVedana &&
                 c.bitCognitive === sw.bitCognitive &&
                 c.bitSankhara === sw.bitSankhara) ?? null);
         case "rupavacara":
-            return (CANONICAL_CITTAS_89.find((c) => c.family === "rupavacara" && c.jati === sw.jati && c.jhanaStage === sw.jhanaStage) ?? null);
+            return (pool.find((c) => c.family === "rupavacara" && c.jati === sw.jati && c.jhanaStage === sw.jhanaStage) ?? null);
         case "arupavacara":
-            return (CANONICAL_CITTAS_89.find((c) => c.family === "arupavacara" && c.jati === sw.jati && c.arupaBase === sw.arupaBase) ?? null);
+            return (pool.find((c) => c.family === "arupavacara" && c.jati === sw.jati && c.arupaBase === sw.arupaBase) ?? null);
         case "lokuttara":
+            if (mode === 121 || (sw.jhanaStage != null && sw.jhanaStage > 1)) {
+                return (CANONICAL_CITTAS_121.find((c) => c.family === "lokuttara" &&
+                    c.jati === sw.jati &&
+                    c.maggaStage === sw.maggaStage &&
+                    c.jhanaStage === sw.jhanaStage) ?? null);
+            }
             return (CANONICAL_CITTAS_89.find((c) => c.family === "lokuttara" && c.jati === sw.jati && c.maggaStage === sw.maggaStage) ?? null);
         default:
             return null;
     }
 }
-export function getSynthesizableCittas(familyFilter) {
+export function getSynthesizableCittas(familyFilter, mode = 121) {
+    const pool = mode === 121 ? CANONICAL_CITTAS_121 : CANONICAL_CITTAS_89;
     if (!familyFilter || familyFilter === "all")
-        return [...CANONICAL_CITTAS_89];
-    return CANONICAL_CITTAS_89.filter((c) => c.family === familyFilter);
+        return [...pool];
+    return pool.filter((c) => c.family === familyFilter);
 }
-export function pickNextBinaryChallenge(progress, familyFilter, currentId) {
-    const pool = getSynthesizableCittas(familyFilter);
+export function pickNextBinaryChallenge(progress, familyFilter, currentId, mode = 121) {
+    const pool = getSynthesizableCittas(familyFilter, mode);
     const candidates = pool.length > 1 && currentId != null ? pool.filter((c) => c.id !== currentId) : pool;
     const sorted = [...candidates].sort((a, b) => {
         const scoreA = progress.masteredBinary[`citta:${a.id}`] ?? 0;

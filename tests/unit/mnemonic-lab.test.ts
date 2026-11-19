@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import {
   CANONICAL_CITTAS_89,
+  CANONICAL_CITTAS_121,
   PERIODIC_ELEMENTS_72,
   PHALANX_MAPS,
 } from "../../src/mnemonic-lab/data.js";
@@ -10,6 +11,7 @@ import {
   detectOntologicalCollisions,
   evaluateChemicalSynthesis,
   getPhalanxMapById,
+  getSynthesizableCittas,
   pickNextBinaryChallenge,
   pickNextPeriodicChallenge,
   pickNextPhalanxSlot,
@@ -64,6 +66,65 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     expect(CANONICAL_CITTAS_89.find((c) => c.id === 59)?.totalSangahaCount).toBe(30); // 5th Jhāna Rūpāvacara
     expect(CANONICAL_CITTAS_89.find((c) => c.id === 70)?.totalSangahaCount).toBe(30); // Arūpāvacara
     expect(CANONICAL_CITTAS_89.find((c) => c.id === 82)?.totalSangahaCount).toBe(36); // Sotāpatti-magga (1st Jhāna)
+  });
+
+  it("validates the complete Vitthāra 121 Cittas system and all 40 Lokuttara Cittas (AS I.38-43 & II.36-37)", () => {
+    expect(CANONICAL_CITTAS_121.length).toBe(121);
+
+    const lokuttara121 = CANONICAL_CITTAS_121.filter((c) => c.family === "lokuttara");
+    expect(lokuttara121.length).toBe(40);
+
+    const magga = lokuttara121.filter((c) => c.jati === "kusala");
+    const phala = lokuttara121.filter((c) => c.jati === "vipaka");
+    expect(magga.length).toBe(20);
+    expect(phala.length).toBe(20);
+
+    // Verify all 4 stages have 5 Jhānas each for Magga (20) and Phala (20)
+    for (const stage of [1, 2, 3, 4] as const) {
+      const stageMagga = magga.filter((c) => c.maggaStage === stage);
+      const stagePhala = phala.filter((c) => c.maggaStage === stage);
+      expect(stageMagga.length).toBe(5);
+      expect(stagePhala.length).toBe(5);
+
+      // Verify exact Saṅgaha-naya count per Jhāna: 36, 35, 34, 33, 33 (AS II.37)
+      expect(stageMagga.map((c) => c.totalSangahaCount)).toEqual([36, 35, 34, 33, 33]);
+      expect(stagePhala.map((c) => c.totalSangahaCount)).toEqual([36, 35, 34, 33, 33]);
+
+      // Verify 5th Jhāna has Upekkhā (bitVedana = 0) and 1st-4th have Somanassa (bitVedana = 1)
+      expect(stageMagga.map((c) => c.bitVedana)).toEqual([1, 1, 1, 1, 0]);
+      expect(stagePhala.map((c) => c.bitVedana)).toEqual([1, 1, 1, 1, 0]);
+
+      // Verify canonical relations for every Lokuttara citta
+      for (const c of [...stageMagga, ...stagePhala]) {
+        expect(c.bhumi).toBe("lokuttara");
+        expect(c.hetuType).toBe("tihetuka");
+        expect(c.kiccaPali).toMatch(/javana/i);
+        expect(c.dvaraPali).toMatch(/ekadvārika/i);
+        expect(c.arammanaPali).toMatch(/asaṅkhata-dhātu/i);
+        expect(c.vatthuPali).toMatch(/hadayavatthu/i);
+        expect(c.eradicationNote).toBeDefined();
+      }
+    }
+
+    // Verify resolveCittaFromSwitches in 121 mode can synthesize all 40 Lokuttara cittas
+    for (const jati of ["kusala", "vipaka"] as const) {
+      for (const maggaStage of [1, 2, 3, 4] as const) {
+        for (const jhanaStage of [1, 2, 3, 4, 5] as const) {
+          const sw = {
+            ...defaultSwitchStateForFamily("lokuttara"),
+            jati,
+            maggaStage,
+            jhanaStage,
+          };
+          const resolved = resolveCittaFromSwitches(sw, 121);
+          expect(resolved).not.toBeNull();
+          expect(resolved?.family).toBe("lokuttara");
+          expect(resolved?.jati).toBe(jati);
+          expect(resolved?.maggaStage).toBe(maggaStage);
+          expect(resolved?.jhanaStage).toBe(jhanaStage);
+        }
+      }
+    }
   });
 
   it("validates the Periodic Table of 82 Realities (72 Sabhāva-dhammas + 10 Anipphanna-rūpas) and the 8 Avinibbhoga-rūpas", () => {
@@ -215,6 +276,25 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     const nextBinBtn = host.querySelector<HTMLButtonElement>("#mnem-bin-next")!;
     nextBinBtn.click();
     expect(host.querySelector('.mnem-bit-btn[data-bin-family="dosa"].active')).not.toBeNull();
+
+    // Lokuttara scope in 121 mode (all 40 Lokuttara cittas available)
+    const lokuScopeBtn = host.querySelector<HTMLButtonElement>('[data-bin-scope="lokuttara"]')!;
+    lokuScopeBtn.click();
+    expect(host.querySelector(".mnem-challenge-head")?.textContent).toMatch(/Lok-Mag|Lok-Pha|Sotāpatti|Sakadāgāmī|Anāgāmī|Arahatta|Supramundane/i);
+    expect(host.querySelector('.mnem-bit-btn[data-bin-family="lokuttara"].active')).not.toBeNull();
+    // 5-Jhāna selector buttons are present in 121 mode for Lokuttara
+    expect(host.querySelectorAll('[data-bin-jhana]').length).toBe(5);
+
+    // Toggle mode to 89
+    let modeToggleBtn = host.querySelector<HTMLButtonElement>("#mnem-bin-mode-toggle")!;
+    expect(modeToggleBtn.textContent).toContain("121");
+    modeToggleBtn.click();
+    modeToggleBtn = host.querySelector<HTMLButtonElement>("#mnem-bin-mode-toggle")!;
+    expect(modeToggleBtn.textContent).toContain("89");
+    // Toggle back to 121
+    modeToggleBtn.click();
+    modeToggleBtn = host.querySelector<HTMLButtonElement>("#mnem-bin-mode-toggle")!;
+    expect(modeToggleBtn.textContent).toContain("121");
 
     // Pillar 2: Switch to Periodic Table tab & test Alchemy mode
     const tabPeriodic = host.querySelector<HTMLButtonElement>('#mnem-tab-periodic')!;

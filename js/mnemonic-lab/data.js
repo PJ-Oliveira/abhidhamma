@@ -21,7 +21,7 @@ function jhanaPakinnakas(stage) {
             return [10, 11, 13];
     }
 }
-function buildCanonicalCittas() {
+function buildCommonMundaneCittas() {
     const list = [];
     const lobhaSpecs = [
         { id: 1, v: 1, d: 1, s: 1 },
@@ -584,14 +584,62 @@ function buildCanonicalCittas() {
             });
         }
     }
-    const maggaStages = [
-        { idx: 1, pali: "Sotāpatti", pt: "Entrada na Corrente (Sotāpatti)", en: "Stream-entry (Sotāpatti)", es: "Entrada en la Corriente (Sotāpatti)" },
-        { idx: 2, pali: "Sakadāgāmi", pt: "Um-Retorno (Sakadāgāmī)", en: "Once-return (Sakadāgāmī)", es: "Un-Retorno (Sakadāgāmī)" },
-        { idx: 3, pali: "Anāgāmi", pt: "Não-Retorno (Anāgāmī)", en: "Non-return (Anāgāmī)", es: "No-Retorno (Anāgāmī)" },
-        { idx: 4, pali: "Arahatta", pt: "Estado de Arahant (Arahatta)", en: "Arahantship (Arahatta)", es: "Estado de Arahant (Arahatta)" },
+    return list;
+}
+function buildCanonicalCittas89() {
+    const list = buildCommonMundaneCittas();
+    const maggaStages89 = [
+        {
+            idx: 1,
+            pali: "Sotāpatti",
+            pt: "Entrada na Corrente (Sotāpatti)",
+            en: "Stream-entry (Sotāpatti)",
+            es: "Entrada en la Corriente (Sotāpatti)",
+            eradication: {
+                pt: "Erradica Diṭṭhi (todas as visões errôneas: 4 Lobha #1, #2, #5, #6) e Vicikicchā (dúvida cética: Moha #11). Fecha os 4 Apāyas. Máximo 7 vidas.",
+                en: "Eradicates Diṭṭhi (all wrong views: 4 Lobha #1, #2, #5, #6) and Vicikicchā (skeptical doubt: Moha #11). Closes the 4 Apāyas. Maximum 7 rebirths.",
+                es: "Erradica Diṭṭhi (todas las visiones erróneas: 4 Lobha #1, #2, #5, #6) y Vicikicchā (duda escéptica: Moha #11). Cierra los 4 Apāyas. Máximo 7 vidas.",
+            },
+        },
+        {
+            idx: 2,
+            pali: "Sakadāgāmi",
+            pt: "Um-Retorno (Sakadāgāmī)",
+            en: "Once-return (Sakadāgāmī)",
+            es: "Un-Retorno (Sakadāgāmī)",
+            eradication: {
+                pt: "Atenua o apego sensual grosseiro (kāmarāga) e a aversão grosseira (paṭigha). No máximo 1 retorno ao plano sensorial humano.",
+                en: "Attenuates coarse sensual lust (kāmarāga) and coarse ill-will (paṭigha). At most 1 return to the human sense sphere.",
+                es: "Atenúa el apego sensual grosero (kāmarāga) y la aversión grosera (paṭigha). A lo sumo 1 retorno al plano sensorial humano.",
+            },
+        },
+        {
+            idx: 3,
+            pali: "Anāgāmi",
+            pt: "Não-Retorno (Anāgāmī)",
+            en: "Non-return (Anāgāmī)",
+            es: "No-Retorno (Anāgāmī)",
+            eradication: {
+                pt: "Erradica completamente todo o apego sensual (kāmarāga) e a aversão (ambas as 2 Dosa-mūla #9 e #10). Renasce apenas nos Suddhāvāsa.",
+                en: "Completely eradicates sensual craving (kāmarāga) and ill-will (both 2 Dosa-mūla #9 and #10). Reborn solely in Suddhāvāsa.",
+                es: "Erradica completamente el apego sensual (kāmarāga) y la aversión (ambas 2 Dosa-mūla #9 y #10). Renace sólo en Suddhāvāsa.",
+            },
+        },
+        {
+            idx: 4,
+            pali: "Arahatta",
+            pt: "Estado de Arahant (Arahatta)",
+            en: "Arahantship (Arahatta)",
+            es: "Estado de Arahant (Arahatta)",
+            eradication: {
+                pt: "Erradica todas as amarras superiores (rūparāga, arūparāga, māna, uddhacca, avijjā). Elimina as 4 Lobha restantes (#3, #4, #7, #8) e Moha #12.",
+                en: "Eradicates all higher fetters (rūparāga, arūparāga, māna, uddhacca, avijjā). Eliminates the remaining 4 Lobha (#3, #4, #7, #8) and Moha #12.",
+                es: "Erradica todos los grilletes superiores (rūparāga, arūparāga, māna, uddhacca, avijjā). Elimina las 4 Lobha restantes (#3, #4, #7, #8) y Moha #12.",
+            },
+        },
     ];
     for (const kind of ["magga", "phala"]) {
-        for (const st of maggaStages) {
+        for (const st of maggaStages89) {
             const id = (kind === "magga" ? 81 : 85) + st.idx;
             const fixed = [...UNIV_7, ...PAK_ALL_6, ...SOBHANA_UNIV_19, ...VIRATI_3, ...PANNA_1];
             list.push({
@@ -612,20 +660,183 @@ function buildCanonicalCittas() {
                 jhanaStage: 1,
                 maggaStage: st.idx,
                 formulaNote: {
-                    pt: "Em Lokuttara, o objeto é Nibbāna (por isso exclui Karuṇā e Muditā, que tomam seres convencionais) e as 3 Abstinências (Virati) tornam-se FIXAS (niyata) e simultâneas! No 1º Jhāna: 7 + 6 + 19 + 3 Virati + 1 Paññā = 36 cetasikas (e 35, 34, 33, 33 nos Jhānas 2–5).",
-                    en: "In Lokuttara, the object is Nibbāna (excluding Karuṇā and Muditā, which take conventional beings) and all 3 Abstinences (Virati) become FIXED (niyata) and simultaneous! At 1st Jhāna: 7 + 6 + 19 + 3 Virati + 1 Paññā = 36 cetasikas (and 35, 34, 33, 33 in Jhānas 2–5).",
-                    es: "En Lokuttara, el objeto es Nibbāna (excluyendo Karuṇā y Muditā, que toman seres convencionales) y las 3 Abstinencias (Virati) se vuelven FIJAS (niyata) y simultáneas. En el 1.er Jhāna: 7 + 6 + 19 + 3 Virati + 1 Paññā = 36 cetasikas (y 35, 34, 33, 33 en los Jhānas 2–5).",
+                    pt: "Na enumeração resumida (Saṅkhepa de 89 cittas), as 8 Lokuttara são tomadas no 1º Jhāna: 7 Universais + 6 Particulares + 19 Belos Universais + 3 Viratis (fixas e simultâneas) + 1 Paññā = 36 cetasikas (AS I.18 / II.36).",
+                    en: "In the summary enumeration (Saṅkhepa of 89 cittas), the 8 Supramundane are taken at 1st Jhāna: 7 Universals + 6 Particulars + 19 Beautiful Universals + 3 Viratis (fixed & simultaneous) + 1 Paññā = 36 cetasikas (AS I.18 / II.36).",
+                    es: "En la enumeración resumida (Saṅkhepa de 89 cittas), las 8 Supramundanas se toman en el 1.er Jhāna: 7 Universales + 6 Particulares + 19 Bellos Universales + 3 Viratis (fijas y simultáneas) + 1 Paññā = 36 cetasikas (AS I.18 / II.36).",
                 },
                 fixedCetasikas: fixed,
                 optionalCetasikas: [],
                 totalSangahaCount: 36,
                 asRef: "AS I.18 / II.19",
+                hetuType: "tihetuka",
+                kiccaPali: kind === "magga" ? "Javana (Corte de Kamma)" : "Javana (Phalasamāpatti)",
+                dvaraPali: "Ekadvārika (Manodvāra)",
+                arammanaPali: "Asaṅkhata-dhātu / Nibbāna (exclusivo)",
+                vatthuPali: "Hadayavatthu",
+                jhanaFactorsPali: "Vitakka, Vicāra, Pīti, Sukha, Ekaggatā",
+                eradicationNote: st.eradication,
             });
         }
     }
     return list;
 }
-export const CANONICAL_CITTAS_89 = buildCanonicalCittas();
+function buildCanonicalCittas121() {
+    const list = buildCommonMundaneCittas();
+    const jhanaInfo = {
+        1: {
+            paliPrefix: "Paṭhamajjhāna",
+            factorsPt: "Vitakka, Vicāra, Pīti, Sukha, Ekaggatā",
+            factorsEn: "Vitakka, Vicāra, Pīti, Sukha, Ekaggatā",
+            factorsEs: "Vitakka, Vicāra, Pīti, Sukha, Ekaggatā",
+            factorsPali: "Vitakka, Vicāra, Pīti, Sukha, Ekaggatā",
+            cetasikaCount: 36,
+            vedanaBit: 1,
+            pakIds: [8, 9, 10, 11, 12, 13],
+        },
+        2: {
+            paliPrefix: "Dutiyajjhāna",
+            factorsPt: "Vicāra, Pīti, Sukha, Ekaggatā (vitakkavajjā: sem Vitakka)",
+            factorsEn: "Vicāra, Pīti, Sukha, Ekaggatā (vitakkavajjā: without Vitakka)",
+            factorsEs: "Vicāra, Pīti, Sukha, Ekaggatā (vitakkavajjā: sin Vitakka)",
+            factorsPali: "Vicāra, Pīti, Sukha, Ekaggatā",
+            cetasikaCount: 35,
+            vedanaBit: 1,
+            pakIds: [9, 10, 11, 12, 13],
+        },
+        3: {
+            paliPrefix: "Tatiyajjhāna",
+            factorsPt: "Pīti, Sukha, Ekaggatā (vitakkavicāravajjā: sem Vitakka e Vicāra)",
+            factorsEn: "Pīti, Sukha, Ekaggatā (vitakkavicāravajjā: without Vitakka & Vicāra)",
+            factorsEs: "Pīti, Sukha, Ekaggatā (vitakkavicāravajjā: sin Vitakka ni Vicāra)",
+            factorsPali: "Pīti, Sukha, Ekaggatā",
+            cetasikaCount: 34,
+            vedanaBit: 1,
+            pakIds: [10, 11, 12, 13],
+        },
+        4: {
+            paliPrefix: "Catutthajjhāna",
+            factorsPt: "Sukha, Ekaggatā (vitakkavicārapītivajjā: sem Vitakka, Vicāra e Pīti)",
+            factorsEn: "Sukha, Ekaggatā (vitakkavicārapītivajjā: without Vitakka, Vicāra & Pīti)",
+            factorsEs: "Sukha, Ekaggatā (vitakkavicārapītivajjā: sin Vitakka, Vicāra ni Pīti)",
+            factorsPali: "Sukha, Ekaggatā",
+            cetasikaCount: 33,
+            vedanaBit: 1,
+            pakIds: [10, 11, 13],
+        },
+        5: {
+            paliPrefix: "Pañcamajjhāna",
+            factorsPt: "Upekkhā, Ekaggatā (upekkhāsahagatā: com Upekkhā ao invés de Sukha)",
+            factorsEn: "Upekkhā, Ekaggatā (upekkhāsahagatā: with Upekkhā instead of Sukha)",
+            factorsEs: "Upekkhā, Ekaggatā (upekkhāsahagatā: con Upekkhā en vez de Sukha)",
+            factorsPali: "Upekkhā, Ekaggatā",
+            cetasikaCount: 33,
+            vedanaBit: 0,
+            pakIds: [10, 11, 13],
+        },
+    };
+    const maggaStages121 = [
+        {
+            idx: 1,
+            pali: "sotāpatti",
+            codeTag: "Sot",
+            pt: "Entrada na Corrente (Sotāpatti)",
+            en: "Stream-entry (Sotāpatti)",
+            es: "Entrada en la Corriente (Sotāpatti)",
+            eradication: {
+                pt: "Erradica definitivamente Diṭṭhi (todas as visões errôneas: 4 Lobha #1, #2, #5, #6) e Vicikicchā (dúvida cética: Moha #11). Fecha para sempre os 4 Apāyas. Máximo 7 vidas (sattakkhattu-parama).",
+                en: "Permanently eradicates Diṭṭhi (all wrong views: 4 Lobha #1, #2, #5, #6) and Vicikicchā (skeptical doubt: Moha #11). Forever seals the 4 Apāyas. Max 7 lifetimes (sattakkhattu-parama).",
+                es: "Erradica definitivamente Diṭṭhi (todas las visiones erróneas: 4 Lobha #1, #2, #5, #6) y Vicikicchā (duda escéptica: Moha #11). Cierra para siempre los 4 Apāyas. Máximo 7 vidas (sattakkhattu-parama).",
+            },
+        },
+        {
+            idx: 2,
+            pali: "sakadāgāmi",
+            codeTag: "Sak",
+            pt: "Um-Retorno (Sakadāgāmī)",
+            en: "Once-return (Sakadāgāmī)",
+            es: "Un-Retorno (Sakadāgāmī)",
+            eradication: {
+                pt: "Atenua significativamente (tanukaraṇa) o apego sensorial grosseiro (kāmarāga) e a aversão/repulsa grosseira (paṭigha). Retorna no máximo mais uma única vez à esfera sensorial humana.",
+                en: "Significantly attenuates (tanukaraṇa) coarse sensual lust (kāmarāga) and coarse ill-will (paṭigha). Returns at most once more to the sense-sphere.",
+                es: "Atenúa significativamente (tanukaraṇa) el apego sensorial grosero (kāmarāga) y la aversión grosera (paṭigha). Retorna a lo sumo una sola vez más a la esfera sensorial.",
+            },
+        },
+        {
+            idx: 3,
+            pali: "anāgāmi",
+            codeTag: "Ana",
+            pt: "Não-Retorno (Anāgāmī)",
+            en: "Non-return (Anāgāmī)",
+            es: "No-Retorno (Anāgāmī)",
+            eradication: {
+                pt: "Erradica completamente todo o apego sensorial residual (kāmarāga) e toda aversão/irritação (paṭigha — eliminando ambas as 2 Dosa-mūla #9 e #10). Renasce apenas nos Suddhāvāsa de Rūpa Brahma.",
+                en: "Completely eradicates all residual sensual craving (kāmarāga) and all ill-will (paṭigha — eliminating both 2 Dosa-mūla #9 and #10). Reborn solely in Suddhāvāsa of Rūpa Brahma.",
+                es: "Erradica completamente todo el apego sensorial residual (kāmarāga) y toda aversión (paṭigha — eliminando ambas 2 Dosa-mūla #9 y #10). Renace sólo en Suddhāvāsa de Rūpa Brahma.",
+            },
+        },
+        {
+            idx: 4,
+            pali: "arahatta",
+            codeTag: "Ara",
+            pt: "Estado de Arahant (Arahatta)",
+            en: "Arahantship (Arahatta)",
+            es: "Estado de Arahant (Arahatta)",
+            eradication: {
+                pt: "Erradica todas as amarras superiores (rūparāga, arūparāga, māna, uddhacca, avijjā). Elimina as 4 Lobha restantes (#3, #4, #7, #8) e Moha #12. Fim absoluto do saṃsāra.",
+                en: "Eradicates all higher fetters (rūparāga, arūparāga, māna, uddhacca, avijjā). Eliminates the remaining 4 Lobha (#3, #4, #7, #8) and Moha #12. Absolute end of saṃsāra.",
+                es: "Erradica todos los grilletes superiores (rūparāga, arūparāga, māna, uddhacca, avijjā). Elimina las 4 Lobha restantes (#3, #4, #7, #8) y Moha #12. Fin absoluto del saṃsāra.",
+            },
+        },
+    ];
+    for (const kind of ["magga", "phala"]) {
+        for (const st of maggaStages121) {
+            for (const jh of [1, 2, 3, 4, 5]) {
+                const id = (kind === "magga" ? 81 : 101) + (st.idx - 1) * 5 + jh;
+                const jhMeta = jhanaInfo[jh];
+                const fixed = [...UNIV_7, ...jhMeta.pakIds, ...SOBHANA_UNIV_19, ...VIRATI_3, ...PANNA_1];
+                const code = `Lok-${kind === "magga" ? "Mag" : "Pha"}-${st.codeTag}-J${jh}`;
+                const pali = `${jhMeta.paliPrefix}-${st.pali}${kind}cittaṃ`;
+                list.push({
+                    id,
+                    code,
+                    family: "lokuttara",
+                    bhumi: "lokuttara",
+                    jati: kind === "magga" ? "kusala" : "vipaka",
+                    pali,
+                    name: {
+                        pt: `Consciência Supramundana do ${kind === "magga" ? "Caminho (Magga)" : "Fruto (Phala)"} de ${st.pt} — ${jh}º Jhāna (#${id})`,
+                        en: `Supramundane ${st.en} ${kind === "magga" ? "Path (Magga)" : "Fruition (Phala)"} consciousness — ${jh}${jh === 1 ? "st" : jh === 2 ? "nd" : jh === 3 ? "rd" : "th"} Jhāna (#${id})`,
+                        es: `Conciencia Supramundana del ${kind === "magga" ? "Camino (Magga)" : "Fruto (Phala)"} de ${st.es} — ${jh}.º Jhāna (#${id})`,
+                    },
+                    bitVedana: jhMeta.vedanaBit,
+                    bitCognitive: 1,
+                    bitSankhara: "fixed",
+                    jhanaStage: jh,
+                    maggaStage: st.idx,
+                    formulaNote: {
+                        pt: `Na enumeração detalhada (Vitthāra de 121 cittas, AS I.38-43): o ${jh}º Jhāna de ${st.pt} (${kind === "magga" ? "Magga" : "Phala"}) contém 7 Universais + ${jhMeta.pakIds.length} Particulares + 19 Belos Universais + 3 Viratis (FIXAS e simultâneas no objeto Nibbāna) + 1 Paññindriya = ${jhMeta.cetasikaCount} cetasikas (AS II.36-37: "Chattiṃsa pañcatiṃsa ca, catuttiṃsa yathākkamaṃ. Tettiṃsadvayamiccevaṃ, pañcadhānuttare ṭhitā").`,
+                        en: `In the detailed enumeration (Vitthāra of 121 cittas, AS I.38-43): the ${jh}${jh === 1 ? "st" : jh === 2 ? "nd" : jh === 3 ? "rd" : "th"} Jhāna of ${st.en} (${kind === "magga" ? "Path" : "Fruition"}) contains 7 Universals + ${jhMeta.pakIds.length} Particulars + 19 Beautiful Universals + 3 Viratis (FIXED & simultaneous on Nibbāna) + 1 Paññindriya = ${jhMeta.cetasikaCount} cetasikas (AS II.36-37).`,
+                        es: `En la enumeración detallada (Vitthāra de 121 cittas, AS I.38-43): el ${jh}.º Jhāna de ${st.es} (${kind === "magga" ? "Camino" : "Fruto"}) contiene 7 Universales + ${jhMeta.pakIds.length} Particulares + 19 Bellos Universales + 3 Viratis (FIJAS y simultáneas en Nibbāna) + 1 Paññindriya = ${jhMeta.cetasikaCount} cetasikas (AS II.36-37).`,
+                    },
+                    fixedCetasikas: fixed,
+                    optionalCetasikas: [],
+                    totalSangahaCount: jhMeta.cetasikaCount,
+                    asRef: "AS I.38 / II.36",
+                    hetuType: "tihetuka",
+                    kiccaPali: kind === "magga" ? "Javana (Corte de Kamma Supramundano)" : "Javana (em fruição e Phalasamāpatti)",
+                    dvaraPali: "Ekadvārika (Manodvāra)",
+                    arammanaPali: "Asaṅkhata-dhātu / Nibbāna (exclusivo)",
+                    vatthuPali: "Hadayavatthu",
+                    jhanaFactorsPali: jhMeta.factorsPali,
+                    eradicationNote: st.eradication,
+                });
+            }
+        }
+    }
+    return list;
+}
+export const CANONICAL_CITTAS_89 = buildCanonicalCittas89();
+export const CANONICAL_CITTAS_121 = buildCanonicalCittas121();
 export const PERIODIC_ELEMENTS_72 = [
     {
         atomicNumber: 1,

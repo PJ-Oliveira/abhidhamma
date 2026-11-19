@@ -4,6 +4,7 @@
 
 import {
   CANONICAL_CITTAS_89,
+  CANONICAL_CITTAS_121,
   ONTOLOGICAL_COLLISION_RULES,
   PERIODIC_ELEMENTS_72,
   PHALANX_MAPS,
@@ -201,11 +202,15 @@ export function defaultSwitchStateForFamily(family: CittaFamilyId): BinarySwitch
   }
 }
 
-export function resolveCittaFromSwitches(sw: BinarySwitchState): CanonicalCitta | null {
+export function resolveCittaFromSwitches(
+  sw: BinarySwitchState,
+  mode: 89 | 121 = 121
+): CanonicalCitta | null {
+  const pool = mode === 121 ? CANONICAL_CITTAS_121 : CANONICAL_CITTAS_89;
   switch (sw.family) {
     case "lobha":
       return (
-        CANONICAL_CITTAS_89.find(
+        pool.find(
           (c) =>
             c.family === "lobha" &&
             c.bitVedana === sw.bitVedana &&
@@ -215,11 +220,11 @@ export function resolveCittaFromSwitches(sw: BinarySwitchState): CanonicalCitta 
       );
     case "dosa":
       return (
-        CANONICAL_CITTAS_89.find((c) => c.family === "dosa" && c.bitSankhara === sw.bitSankhara) ?? null
+        pool.find((c) => c.family === "dosa" && c.bitSankhara === sw.bitSankhara) ?? null
       );
     case "moha":
       return (
-        CANONICAL_CITTAS_89.find((c) => c.family === "moha" && c.bitCognitive === sw.bitCognitive) ?? null
+        pool.find((c) => c.family === "moha" && c.bitCognitive === sw.bitCognitive) ?? null
       );
     case "ahetuka": {
       const targetId =
@@ -228,11 +233,11 @@ export function resolveCittaFromSwitches(sw: BinarySwitchState): CanonicalCitta 
           : sw.ahetukaSubgroup === "kusala_vipaka"
           ? 20 + Math.max(0, Math.min(7, sw.ahetukaSlot))
           : 28 + Math.max(0, Math.min(2, sw.ahetukaSlot));
-      return CANONICAL_CITTAS_89.find((c) => c.id === targetId) ?? null;
+      return pool.find((c) => c.id === targetId) ?? null;
     }
     case "kamasobhana":
       return (
-        CANONICAL_CITTAS_89.find(
+        pool.find(
           (c) =>
             c.family === "kamasobhana" &&
             c.jati === sw.jati &&
@@ -243,17 +248,28 @@ export function resolveCittaFromSwitches(sw: BinarySwitchState): CanonicalCitta 
       );
     case "rupavacara":
       return (
-        CANONICAL_CITTAS_89.find(
+        pool.find(
           (c) => c.family === "rupavacara" && c.jati === sw.jati && c.jhanaStage === sw.jhanaStage
         ) ?? null
       );
     case "arupavacara":
       return (
-        CANONICAL_CITTAS_89.find(
+        pool.find(
           (c) => c.family === "arupavacara" && c.jati === sw.jati && c.arupaBase === sw.arupaBase
         ) ?? null
       );
     case "lokuttara":
+      if (mode === 121 || (sw.jhanaStage != null && sw.jhanaStage > 1)) {
+        return (
+          CANONICAL_CITTAS_121.find(
+            (c) =>
+              c.family === "lokuttara" &&
+              c.jati === sw.jati &&
+              c.maggaStage === sw.maggaStage &&
+              c.jhanaStage === sw.jhanaStage
+          ) ?? null
+        );
+      }
       return (
         CANONICAL_CITTAS_89.find(
           (c) => c.family === "lokuttara" && c.jati === sw.jati && c.maggaStage === sw.maggaStage
@@ -264,17 +280,22 @@ export function resolveCittaFromSwitches(sw: BinarySwitchState): CanonicalCitta 
   }
 }
 
-export function getSynthesizableCittas(familyFilter?: CittaFamilyId | "all"): CanonicalCitta[] {
-  if (!familyFilter || familyFilter === "all") return [...CANONICAL_CITTAS_89];
-  return CANONICAL_CITTAS_89.filter((c) => c.family === familyFilter);
+export function getSynthesizableCittas(
+  familyFilter?: CittaFamilyId | "all",
+  mode: 89 | 121 = 121
+): CanonicalCitta[] {
+  const pool = mode === 121 ? CANONICAL_CITTAS_121 : CANONICAL_CITTAS_89;
+  if (!familyFilter || familyFilter === "all") return [...pool];
+  return pool.filter((c) => c.family === familyFilter);
 }
 
 export function pickNextBinaryChallenge(
   progress: MnemonicProgressState,
   familyFilter: CittaFamilyId | "all",
-  currentId?: number
+  currentId?: number,
+  mode: 89 | 121 = 121
 ): CanonicalCitta {
-  const pool = getSynthesizableCittas(familyFilter);
+  const pool = getSynthesizableCittas(familyFilter, mode);
   const candidates = pool.length > 1 && currentId != null ? pool.filter((c) => c.id !== currentId) : pool;
   // Sort by lowest mastery score first, with deterministic tie-breaker or slight shuffle
   const sorted = [...candidates].sort((a, b) => {

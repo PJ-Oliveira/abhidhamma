@@ -3943,6 +3943,60 @@ details[open] > summary::before { transform: rotate(90deg); }
   min-height: 28px;
 }
 
+/* Canonical Relations Grid & Chips */
+.mnem-challenge-rel-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.mnem-rel-chip {
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mnem-rel-chip strong {
+  color: var(--text);
+}
+
+.mnem-rel-chip.highlight {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.mnem-rel-eradication-box {
+  background: var(--bg-content);
+  border: 1px solid var(--accent-gold, #c89b3c);
+  border-left: 3px solid var(--accent-gold, #c89b3c);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  color: var(--text);
+  margin-top: 8px;
+  line-height: 1.45;
+}
+
+.mnem-enum-mode-btn {
+  font-weight: 700;
+  margin-left: auto;
+}
+
+.mnem-enum-mode-btn.mode-121 {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .mnem-feedback {
   border-radius: 8px;
   padding: 10px 14px;

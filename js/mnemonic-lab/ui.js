@@ -1,8 +1,8 @@
-import { settings } from "../state.js?v=aa8613a5";
-import { registerToolModule } from "../tools/tools.js?v=aa8613a5";
-import { CANONICAL_CITTAS_89, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=aa8613a5";
-import { defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=aa8613a5";
-import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=aa8613a5";
+import { settings } from "../state.js?v=0cb21ab6";
+import { registerToolModule } from "../tools/tools.js?v=0cb21ab6";
+import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=0cb21ab6";
+import { defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=0cb21ab6";
+import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=0cb21ab6";
 const LAB_STRINGS = {
     pt: {
         title: "🧮 Laboratório Mnêmico do Abhidhammatthasaṅgaha",
@@ -41,6 +41,21 @@ const LAB_STRINGS = {
         binCorrectMsg: "✅ Codificação Exata! Você reconstruiu a Citta pela fórmula geradora.",
         binWrongMsg: "❌ As chaves atuais geram outra Citta. Compare os bits abaixo:",
         binEquationBoxTitle: "Equação de Descompactação Canônica (54 + 15 + 12 + 8 [40] = 89 [121]):",
+        binMode121Label: "Modo: 121 Cittas (Vitthāra · 40 Lokuttara)",
+        binMode89Label: "Modo: 89 Cittas (Saṅkhepa · 8 Lokuttara)",
+        binScopeAll121: "🌐 Todas 121 (Vitthāra)",
+        binScopeAll89: "🌐 Todas 89 (Saṅkhepa)",
+        binJhanaLokuttaraLabel: "Fatores dos 5 Jhānas em Lokuttara (Vitthāra):",
+        binRelBhumi: "Plano (Bhūmi)",
+        binRelJati: "Natureza (Jāti)",
+        binRelVedana: "Sensação (Vedanā)",
+        binRelHetu: "Raízes (Hetu)",
+        binRelKicca: "Função (Kicca)",
+        binRelDvara: "Porta (Dvāra)",
+        binRelArammana: "Objeto (Ālambaṇa)",
+        binRelVatthu: "Base Física (Vatthu)",
+        binRelEradication: "Erradicação Canônica (Samuccheda)",
+        binRelSangaha: "Cetasikas (Saṅgaha)",
         perModeAtlas: "🗺 Atlas Interativo das 82 Realidades (72 Sabhāva + 10 Anipphanna)",
         perModeAlchemy: "⚗️ Jogo: Alquimia do Saṅgaha-naya & Colisões",
         perFilterAll: "Todas as 82 (72 Sabhāva + 10 Anipphanna)",
@@ -164,6 +179,21 @@ const LAB_STRINGS = {
         binCorrectMsg: "✅ Exact Encoding! You reconstructed the Citta via its generator formula.",
         binWrongMsg: "❌ Current switches generate a different Citta. Compare the bits below:",
         binEquationBoxTitle: "Canonical Decompression Equation (54 + 15 + 12 + 8 [40] = 89 [121]):",
+        binMode121Label: "Mode: 121 Cittas (Vitthāra · 40 Lokuttara)",
+        binMode89Label: "Mode: 89 Cittas (Saṅkhepa · 8 Lokuttara)",
+        binScopeAll121: "🌐 All 121 (Vitthāra)",
+        binScopeAll89: "🌐 All 89 (Saṅkhepa)",
+        binJhanaLokuttaraLabel: "5 Jhāna Factors in Lokuttara (Vitthāra):",
+        binRelBhumi: "Plane (Bhūmi)",
+        binRelJati: "Nature (Jāti)",
+        binRelVedana: "Feeling (Vedanā)",
+        binRelHetu: "Roots (Hetu)",
+        binRelKicca: "Function (Kicca)",
+        binRelDvara: "Door (Dvāra)",
+        binRelArammana: "Object (Ālambaṇa)",
+        binRelVatthu: "Physical Base (Vatthu)",
+        binRelEradication: "Canonical Eradication (Samuccheda)",
+        binRelSangaha: "Mental Factors (Saṅgaha)",
         perModeAtlas: "🗺 Interactive Atlas of the 82 Realities (72 Sabhāva + 10 Anipphanna)",
         perModeAlchemy: "⚗️ Game: Saṅgaha-naya Alchemy & Collisions",
         perFilterAll: "All 82 (72 Sabhāva + 10 Anipphanna)",
@@ -287,6 +317,21 @@ const LAB_STRINGS = {
         binCorrectMsg: "✅ ¡Codificación Exacta! Reconstruiste la Citta mediante su fórmula generadora.",
         binWrongMsg: "❌ Los interruptores actuales generan otra Citta. Compara los bits abajo:",
         binEquationBoxTitle: "Ecuación de Descompresión Canónica (54 + 15 + 12 + 8 [40] = 89 [121]):",
+        binMode121Label: "Modo: 121 Cittas (Vitthāra · 40 Lokuttara)",
+        binMode89Label: "Modo: 89 Cittas (Saṅkhepa · 8 Lokuttara)",
+        binScopeAll121: "🌐 Todas 121 (Vitthāra)",
+        binScopeAll89: "🌐 Todas 89 (Saṅkhepa)",
+        binJhanaLokuttaraLabel: "Factores de los 5 Jhānas en Lokuttara (Vitthāra):",
+        binRelBhumi: "Plano (Bhūmi)",
+        binRelJati: "Naturaleza (Jāti)",
+        binRelVedana: "Sensación (Vedanā)",
+        binRelHetu: "Raíces (Hetu)",
+        binRelKicca: "Función (Kicca)",
+        binRelDvara: "Puerta (Dvāra)",
+        binRelArammana: "Objeto (Ālambaṇa)",
+        binRelVatthu: "Base Física (Vatthu)",
+        binRelEradication: "Erradicación Canónica (Samuccheda)",
+        binRelSangaha: "Factores Mentales (Saṅgaha)",
         perModeAtlas: "🗺 Atlas Interactivo de las 82 Realidades (72 Sabhāva + 10 Anipphanna)",
         perModeAlchemy: "⚗️ Juego: Alquimia del Saṅgaha-naya y Colisiones",
         perFilterAll: "Todas las 82 (72 Sabhāva + 10 Anipphanna)",
@@ -383,6 +428,7 @@ export class MnemonicLabUI {
     progress;
     activePillar = "binary";
     binMode = "explore";
+    binEnumMode = 121;
     switches = defaultSwitchStateForFamily("lobha");
     binTargetCitta;
     binFamilyScope = "all";
@@ -404,8 +450,16 @@ export class MnemonicLabUI {
         this.container = container;
         this.lang = lang;
         this.progress = loadMnemonicProgress();
-        this.binTargetCitta = pickNextBinaryChallenge(this.progress, this.binFamilyScope);
+        this.binTargetCitta = pickNextBinaryChallenge(this.progress, this.binFamilyScope, undefined, this.binEnumMode);
         this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
+        if (this.binTargetCitta.family === "lokuttara") {
+            this.switches = {
+                ...this.switches,
+                jati: this.binTargetCitta.jati,
+                maggaStage: this.binTargetCitta.maggaStage ?? 1,
+                jhanaStage: this.binTargetCitta.jhanaStage ?? 1,
+            };
+        }
         this.chemTargetCitta = pickNextPeriodicChallenge(this.progress);
         this.blindTargetSlot = pickNextPhalanxSlot(this.progress, getPhalanxMapById(this.phaMapId));
     }
@@ -533,8 +587,8 @@ export class MnemonicLabUI {
         this.wireEvents();
     }
     renderBinaryPillar(s) {
-        const currentCitta = resolveCittaFromSwitches(this.switches);
-        const familyCittas = getSynthesizableCittas(this.switches.family);
+        const currentCitta = resolveCittaFromSwitches(this.switches, this.binEnumMode);
+        const familyCittas = getSynthesizableCittas(this.switches.family, this.binEnumMode);
         const sw = this.switches;
         const familyLabels = {
             lobha: { pt: "Lobha-mūla (8 = 2³)", en: "Lobha-mūla (8 = 2³)", es: "Lobha-mūla (8 = 2³)" },
@@ -544,7 +598,11 @@ export class MnemonicLabUI {
             kamasobhana: { pt: "Kāmasobhana (24 = 2³ × 3)", en: "Kāmasobhana (24 = 2³ × 3)", es: "Kāmasobhana (24 = 2³ × 3)" },
             rupavacara: { pt: "Rūpāvacara (15 = 5 × 3)", en: "Rūpāvacara (15 = 5 × 3)", es: "Rūpāvacara (15 = 5 × 3)" },
             arupavacara: { pt: "Arūpāvacara (12 = 4 × 3)", en: "Arūpāvacara (12 = 4 × 3)", es: "Arūpāvacara (12 = 4 × 3)" },
-            lokuttara: { pt: "Lokuttara (8 = 4×2 ou 40 = 8×5)", en: "Lokuttara (8 = 4×2 or 40 = 8×5)", es: "Lokuttara (8 = 4×2 o 40 = 8×5)" },
+            lokuttara: {
+                pt: this.binEnumMode === 121 ? "Lokuttara (40 = 4×2×5)" : "Lokuttara (8 = 4×2)",
+                en: this.binEnumMode === 121 ? "Lokuttara (40 = 4×2×5)" : "Lokuttara (8 = 4×2)",
+                es: this.binEnumMode === 121 ? "Lokuttara (40 = 4×2×5)" : "Lokuttara (8 = 4×2)",
+            },
         };
         const showThreeBits = sw.family === "lobha" || sw.family === "kamasobhana";
         const showJatiTriad = sw.family === "kamasobhana" || sw.family === "rupavacara" || sw.family === "arupavacara";
@@ -598,18 +656,34 @@ export class MnemonicLabUI {
           <div class="mnem-challenge-scope-bar">
             <span class="mnem-scope-label">${esc(s.binScopeLabel)}</span>
             <button type="button" class="mnem-scope-btn ${this.binFamilyScope === "all" ? "active" : ""}" data-bin-scope="all">
-              ${esc(s.binScopeAll)}
+              ${this.binEnumMode === 121 ? esc(s.binScopeAll121) : esc(s.binScopeAll89)}
             </button>
             ${["lobha", "dosa", "moha", "ahetuka", "kamasobhana", "rupavacara", "arupavacara", "lokuttara"]
                 .map((fam) => `
                 <button type="button" class="mnem-scope-btn ${this.binFamilyScope === fam ? "active" : ""}" data-bin-scope="${fam}">
-                  ${esc(getFamShortLabel(fam))} (${fam === "lobha" ? "8" : fam === "dosa" ? "2" : fam === "moha" ? "2" : fam === "ahetuka" ? "18" : fam === "kamasobhana" ? "24" : fam === "rupavacara" ? "15" : fam === "arupavacara" ? "12" : "8/40"})
+                  ${esc(getFamShortLabel(fam))} (${fam === "lobha" ? "8" : fam === "dosa" ? "2" : fam === "moha" ? "2" : fam === "ahetuka" ? "18" : fam === "kamasobhana" ? "24" : fam === "rupavacara" ? "15" : fam === "arupavacara" ? "12" : (this.binEnumMode === 121 ? "40" : "8")})
                 </button>`)
                 .join("")}
           </div>
           <div class="mnem-challenge-head">
             <span class="mnem-challenge-kicker">🎯 ${esc(s.binChallengeTitle)} (${esc(target.asRef)})</span>
             <div class="mnem-challenge-prompt">${promptTitle}</div>
+            <div class="mnem-challenge-rel-grid">
+              <span class="mnem-rel-chip">🏛️ <strong>${esc(s.binRelBhumi)}:</strong> ${esc(target.bhumi)}</span>
+              <span class="mnem-rel-chip">⚖️ <strong>${esc(s.binRelJati)}:</strong> ${esc(target.jati)}</span>
+              ${target.jhanaStage ? `<span class="mnem-rel-chip">🧘 <strong>Jhāna:</strong> ${target.jhanaStage}º Jhāna</span>` : ""}
+              <span class="mnem-rel-chip">🌊 <strong>${esc(s.binRelVedana)}:</strong> ${target.bitVedana === 1 ? "Somanassa" : target.bitVedana === "domanassa" ? "Domanassa" : target.bitVedana === "dukkha" ? "Dukkha" : target.bitVedana === "sukha" ? "Sukha" : "Upekkhā"}</span>
+              ${target.hetuType ? `<span class="mnem-rel-chip">🌱 <strong>${esc(s.binRelHetu)}:</strong> ${esc(target.hetuType)}</span>` : ""}
+              ${target.kiccaPali ? `<span class="mnem-rel-chip">⚙️ <strong>${esc(s.binRelKicca)}:</strong> <span lang="pi">${esc(target.kiccaPali)}</span></span>` : ""}
+              ${target.dvaraPali ? `<span class="mnem-rel-chip">🚪 <strong>${esc(s.binRelDvara)}:</strong> <span lang="pi">${esc(target.dvaraPali)}</span></span>` : ""}
+              ${target.arammanaPali ? `<span class="mnem-rel-chip">🎯 <strong>${esc(s.binRelArammana)}:</strong> <span lang="pi">${esc(target.arammanaPali)}</span></span>` : ""}
+              ${target.vatthuPali ? `<span class="mnem-rel-chip">🫀 <strong>${esc(s.binRelVatthu)}:</strong> <span lang="pi">${esc(target.vatthuPali)}</span></span>` : ""}
+              <span class="mnem-rel-chip highlight">🧪 <strong>${esc(s.binRelSangaha)}:</strong> ${target.totalSangahaCount} cetasikas</span>
+            </div>
+            ${target.eradicationNote ? `
+              <div class="mnem-rel-eradication-box">
+                ⚔️ <strong>${esc(s.binRelEradication)}:</strong> ${esc(target.eradicationNote[this.lang])}
+              </div>` : ""}
           </div>
           <div class="mnem-challenge-actions">
             <button type="button" class="mnem-btn mnem-btn-primary" id="mnem-bin-verify">${esc(s.binVerifyBtn)}</button>
@@ -631,6 +705,9 @@ export class MnemonicLabUI {
         </button>
         <button type="button" class="mnem-submode-btn ${this.binMode === "challenge" ? "active" : ""}" data-bin-mode="challenge" aria-pressed="${this.binMode === "challenge"}">
           ${esc(s.binModeChallenge)}
+        </button>
+        <button type="button" class="mnem-submode-btn mnem-enum-mode-btn ${this.binEnumMode === 121 ? "mode-121" : "mode-89"}" id="mnem-bin-mode-toggle" title="Alternar entre contagem resumida (89) e detalhada (121)">
+          ${this.binEnumMode === 121 ? esc(s.binMode121Label) : esc(s.binMode89Label)}
         </button>
       </div>
       <div class="mnem-aid-note"><strong>ℹ️ ${esc(s.binAidNotice)}</strong></div>
@@ -877,6 +954,26 @@ export class MnemonicLabUI {
                   </button>`)
                 .join("")}
             </div>
+            ${this.binEnumMode === 121
+                ? `
+            <div style="margin-top:10px;">
+              <span class="mnem-switch-label">${esc(s.binJhanaLokuttaraLabel)}</span>
+              <div class="mnem-switch-row" style="margin-top:4px;">
+                ${[
+                    { st: 1, lbl: "1º Jhāna (36: Vt·Vc·Pī·Su·Ek)" },
+                    { st: 2, lbl: "2º Jhāna (35: −Vitakka)" },
+                    { st: 3, lbl: "3º Jhāna (34: −Vicāra)" },
+                    { st: 4, lbl: "4º Jhāna (33: −Pīti)" },
+                    { st: 5, lbl: "5º Jhāna (33: Upekkhā·Ek)" },
+                ]
+                    .map((j) => `
+                    <button type="button" class="mnem-bit-btn ${sw.jhanaStage === j.st ? "active" : ""}" data-bin-jhana="${j.st}" aria-pressed="${sw.jhanaStage === j.st}">
+                      ${esc(j.lbl)}
+                    </button>`)
+                    .join("")}
+              </div>
+            </div>`
+                : ""}
           </div>`
             : ""}
       </div>
@@ -891,6 +988,22 @@ export class MnemonicLabUI {
           <div class="mnem-synth-pali" lang="pi">${esc(currentCitta.pali)}</div>
           <div class="mnem-synth-name">${esc(currentCitta.name[this.lang])}</div>
           <div class="mnem-synth-formula">📐 ${esc(currentCitta.formulaNote[this.lang])}</div>
+          <div class="mnem-challenge-rel-grid" style="margin-top:10px;">
+            <span class="mnem-rel-chip">🏛️ <strong>${esc(s.binRelBhumi)}:</strong> ${esc(currentCitta.bhumi)}</span>
+            <span class="mnem-rel-chip">⚖️ <strong>${esc(s.binRelJati)}:</strong> ${esc(currentCitta.jati)}</span>
+            ${currentCitta.jhanaStage ? `<span class="mnem-rel-chip">🧘 <strong>Jhāna:</strong> ${currentCitta.jhanaStage}º Jhāna</span>` : ""}
+            <span class="mnem-rel-chip">🌊 <strong>${esc(s.binRelVedana)}:</strong> ${currentCitta.bitVedana === 1 ? "Somanassa" : currentCitta.bitVedana === "domanassa" ? "Domanassa" : currentCitta.bitVedana === "dukkha" ? "Dukkha" : currentCitta.bitVedana === "sukha" ? "Sukha" : "Upekkhā"}</span>
+            ${currentCitta.hetuType ? `<span class="mnem-rel-chip">🌱 <strong>${esc(s.binRelHetu)}:</strong> ${esc(currentCitta.hetuType)}</span>` : ""}
+            ${currentCitta.kiccaPali ? `<span class="mnem-rel-chip">⚙️ <strong>${esc(s.binRelKicca)}:</strong> <span lang="pi">${esc(currentCitta.kiccaPali)}</span></span>` : ""}
+            ${currentCitta.dvaraPali ? `<span class="mnem-rel-chip">🚪 <strong>${esc(s.binRelDvara)}:</strong> <span lang="pi">${esc(currentCitta.dvaraPali)}</span></span>` : ""}
+            ${currentCitta.arammanaPali ? `<span class="mnem-rel-chip">🎯 <strong>${esc(s.binRelArammana)}:</strong> <span lang="pi">${esc(currentCitta.arammanaPali)}</span></span>` : ""}
+            ${currentCitta.vatthuPali ? `<span class="mnem-rel-chip">🫀 <strong>${esc(s.binRelVatthu)}:</strong> <span lang="pi">${esc(currentCitta.vatthuPali)}</span></span>` : ""}
+            <span class="mnem-rel-chip highlight">🧪 <strong>${esc(s.binRelSangaha)}:</strong> ${currentCitta.totalSangahaCount} cetasikas</span>
+          </div>
+          ${currentCitta.eradicationNote ? `
+            <div class="mnem-rel-eradication-box" style="margin-top:8px;">
+              ⚔️ <strong>${esc(s.binRelEradication)}:</strong> ${esc(currentCitta.eradicationNote[this.lang])}
+            </div>` : ""}
         </div>`
             : ""}
 
@@ -1367,6 +1480,23 @@ export class MnemonicLabUI {
                 }
             });
         });
+        this.container.querySelector("#mnem-bin-mode-toggle")?.addEventListener("click", () => {
+            this.binEnumMode = this.binEnumMode === 121 ? 89 : 121;
+            this.binTargetCitta = pickNextBinaryChallenge(this.progress, this.binFamilyScope, undefined, this.binEnumMode);
+            this.binFeedback = null;
+            if (this.autoAlignFamily) {
+                this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
+                if (this.binTargetCitta.family === "lokuttara") {
+                    this.switches = {
+                        ...this.switches,
+                        maggaStage: this.binTargetCitta.maggaStage ?? 1,
+                        jhanaStage: this.binTargetCitta.jhanaStage ?? 1,
+                        jati: this.binTargetCitta.jati,
+                    };
+                }
+            }
+            this.render();
+        });
         this.container.querySelectorAll("[data-bin-mode]").forEach((btn) => {
             btn.addEventListener("click", () => {
                 const mode = btn.dataset.binMode;
@@ -1375,6 +1505,14 @@ export class MnemonicLabUI {
                     this.binFeedback = null;
                     if (mode === "challenge" && this.autoAlignFamily) {
                         this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
+                        if (this.binTargetCitta.family === "lokuttara") {
+                            this.switches = {
+                                ...this.switches,
+                                maggaStage: this.binTargetCitta.maggaStage ?? 1,
+                                jhanaStage: this.binTargetCitta.jhanaStage ?? 1,
+                                jati: this.binTargetCitta.jati,
+                            };
+                        }
                     }
                     this.render();
                 }
@@ -1385,10 +1523,18 @@ export class MnemonicLabUI {
                 const sc = btn.dataset.binScope;
                 if (sc) {
                     this.binFamilyScope = sc;
-                    this.binTargetCitta = pickNextBinaryChallenge(this.progress, this.binFamilyScope);
+                    this.binTargetCitta = pickNextBinaryChallenge(this.progress, this.binFamilyScope, undefined, this.binEnumMode);
                     this.binFeedback = null;
                     if (this.autoAlignFamily) {
                         this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
+                        if (this.binTargetCitta.family === "lokuttara") {
+                            this.switches = {
+                                ...this.switches,
+                                maggaStage: this.binTargetCitta.maggaStage ?? 1,
+                                jhanaStage: this.binTargetCitta.jhanaStage ?? 1,
+                                jati: this.binTargetCitta.jati,
+                            };
+                        }
                     }
                     this.render();
                 }
@@ -1396,6 +1542,14 @@ export class MnemonicLabUI {
         });
         this.container.querySelector("#mnem-bin-align-family")?.addEventListener("click", () => {
             this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
+            if (this.binTargetCitta.family === "lokuttara") {
+                this.switches = {
+                    ...this.switches,
+                    maggaStage: this.binTargetCitta.maggaStage ?? 1,
+                    jhanaStage: this.binTargetCitta.jhanaStage ?? 1,
+                    jati: this.binTargetCitta.jati,
+                };
+            }
             this.binFeedback = null;
             this.render();
         });
@@ -1403,6 +1557,14 @@ export class MnemonicLabUI {
             this.autoAlignFamily = e.target.checked;
             if (this.autoAlignFamily && this.switches.family !== this.binTargetCitta.family) {
                 this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
+                if (this.binTargetCitta.family === "lokuttara") {
+                    this.switches = {
+                        ...this.switches,
+                        maggaStage: this.binTargetCitta.maggaStage ?? 1,
+                        jhanaStage: this.binTargetCitta.jhanaStage ?? 1,
+                        jati: this.binTargetCitta.jati,
+                    };
+                }
             }
             this.render();
         });
@@ -1503,7 +1665,8 @@ export class MnemonicLabUI {
         this.container.querySelectorAll("[data-load-citta]").forEach((btn) => {
             btn.addEventListener("click", () => {
                 const id = Number(btn.dataset.loadCitta);
-                const found = CANONICAL_CITTAS_89.find((c) => c.id === id);
+                const pool = this.binEnumMode === 121 ? CANONICAL_CITTAS_121 : CANONICAL_CITTAS_89;
+                const found = pool.find((c) => c.id === id);
                 if (found) {
                     const ahetukaSubgroup = found.id >= 28 ? "kiriya" : found.id >= 20 ? "kusala_vipaka" : "akusala_vipaka";
                     const ahetukaSlot = found.id >= 28 ? found.id - 28 : found.id >= 20 ? found.id - 20 : Math.max(0, found.id - 13);
@@ -1524,7 +1687,7 @@ export class MnemonicLabUI {
             });
         });
         this.container.querySelector("#mnem-bin-verify")?.addEventListener("click", () => {
-            const synth = resolveCittaFromSwitches(this.switches);
+            const synth = resolveCittaFromSwitches(this.switches, this.binEnumMode);
             const isCorrect = synth?.id === this.binTargetCitta.id;
             this.binFeedback = { isCorrect, synthesized: synth };
             this.progress = recordMnemonicAttempt(this.progress, "binary", `citta:${this.binTargetCitta.id}`, isCorrect);
@@ -1532,10 +1695,18 @@ export class MnemonicLabUI {
             this.render();
         });
         this.container.querySelector("#mnem-bin-next")?.addEventListener("click", () => {
-            this.binTargetCitta = pickNextBinaryChallenge(this.progress, this.binFamilyScope, this.binTargetCitta.id);
+            this.binTargetCitta = pickNextBinaryChallenge(this.progress, this.binFamilyScope, this.binTargetCitta.id, this.binEnumMode);
             this.binFeedback = null;
             if (this.autoAlignFamily) {
                 this.switches = defaultSwitchStateForFamily(this.binTargetCitta.family);
+                if (this.binTargetCitta.family === "lokuttara") {
+                    this.switches = {
+                        ...this.switches,
+                        maggaStage: this.binTargetCitta.maggaStage ?? 1,
+                        jhanaStage: this.binTargetCitta.jhanaStage ?? 1,
+                        jati: this.binTargetCitta.jati,
+                    };
+                }
             }
             this.render();
         });
