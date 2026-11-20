@@ -1,6 +1,6 @@
-import { settings } from "../state.js?v=ba4a55dc";
-import { t } from "../i18n.js?v=ba4a55dc";
-import { registerToolModule } from "./tools.js?v=ba4a55dc";
+import { settings } from "../state.js?v=e14b20e3";
+import { t } from "../i18n.js?v=e14b20e3";
+import { registerToolModule } from "./tools.js?v=e14b20e3";
 function escHtml(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }

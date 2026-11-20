@@ -386,7 +386,7 @@ const STRINGS: Record<UiLang, Strings> = {
     debate_defeat_title: "Niggahaṭṭhāna (Motivo de Derrota)",
     debate_logical_context: "Vāda / Aṭṭhakathā (Contexto Lógico)",
     debate_epistemology: "Meta-lógica (Epistemología Theravāda)",
-    debate_paradox_title: "El Paradoja / Refutación",
+    debate_paradox_title: "La Paradoja / Refutación",
     debate_formal_syllogism: "Silogismo Formal",
     debate_pedagogical_analogy: "Analogía Pedagógica",
     debate_detailed_breakdown: "Análisis Detallado",

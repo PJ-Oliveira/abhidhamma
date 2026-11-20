@@ -8,6 +8,8 @@ import {
   buildGlossaryHtml, 
   linkifyText, 
   segToHtml, 
+  fieldHtml,
+  sliceSegmentsByChapterRange,
   crc32, 
   buildZip 
 } from '../../src/export';
@@ -148,6 +150,84 @@ describe('Export Module', () => {
     expect(html).toContain('<span class="paranum-badge">1.</span>');
     expect(html).toContain("<strong>bold</strong>");
     expect(html).not.toContain("var-note");
+  });
+
+  it('produces strict XHTML5 (no <div> or <aside> nested inside <p> or <h1..h4>), strips illegal XML control chars, and balances inline tags', () => {
+    const segWithNotesAndCtrl = {
+      id: 7,
+      rend: "bodytext",
+      pali: "Cittaṃ\x01\x10 <b>unclosed bold <i>italics</b>",
+      pt: "Consciência\x02 pura",
+      notes: ["Nota canônica 1"],
+    } as any;
+    const html = segToHtml(segWithNotesAndCtrl, "pali+pt", undefined, "glossary.xhtml", "sec_a1", "part_mula_s0");
+    expect(html).not.toMatch(/[\x00-\x08\x0b\x0c\x0e-\x1f]/);
+    expect(html).not.toMatch(/<p\b[^>]*>(?:(?!<\/p>)[\s\S])*?<div\b/);
+    expect(html).not.toMatch(/<p\b[^>]*>(?:(?!<\/p>)[\s\S])*?<aside\b/);
+    expect(html).toContain('<aside epub:type="footnote" id="part_mula_s0_note_7_0"');
+    expect(fieldHtml("<b><i>abc</b>")).toBe("<strong><em>abc</em></strong>");
+
+    const headingHtml = segToHtml(dummyContent[0], "pali+pt", undefined, "glossary.xhtml", "ch1");
+    expect(headingHtml).not.toMatch(/<h2\b[^>]*>[\s\S]*?<div\b/);
+    expect(headingHtml).toContain('<span class="line pali"');
+  });
+
+  it('guarantees EPUB 3 OCF mimetype flags=0, matching OPF/NCX UIDs, conditional fonts/glossary, and deduplicated consecutive running titles in TOC', () => {
+    const dupHeadings = [
+      { id: 1, rend: "title", pali: "2. Dutiyavaggo", pt: "2. Segundo Capítulo" },
+      { id: 2, rend: "subhead", pali: "(11) Aññāṇakathā", pt: "(11) Debate" },
+      { id: 3, rend: "title", pali: "2. Dutiyavaggo", pt: "2. Segundo Capítulo" },
+      { id: 4, rend: "subhead", pali: "(12) Kaṅkhākathā", pt: "(12) Dúvida" },
+    ] as any;
+    const built = buildSectionBodyAndToc(dupHeadings, "pali+pt", new Map(), "part_mula", "");
+    expect(built.chapters.length).toBe(1);
+    expect(built.chapters[0]!.subchapters.length).toBe(2);
+
+    // Build EPUB with empty fonts & empty glossary -> must NOT declare font/glossary in OPF manifest
+    const epub = buildEpub(dupHeadings, "Kathāvatthu", "en", "", new Map(), new Uint8Array(), new Uint8Array(), "kathavatthu", "abhidhamma");
+    const view = new DataView(epub.buffer, epub.byteOffset, epub.byteLength);
+    expect(view.getUint16(6, true)).toBe(0); // OCF 3.2 mimetype flags === 0
+    const text = new TextDecoder().decode(epub);
+    expect(text).not.toContain('id="font-reg"');
+    expect(text).not.toContain('id="glossary"');
+    expect(text).toContain("<dc:language>en</dc:language>");
+    const opfUid = text.match(/<dc:identifier id="uid">([^<]+)<\/dc:identifier>/)?.[1];
+    const ncxUid = text.match(/<meta name="dtb:uid" content="([^"]+)"\/>/)?.[1];
+    expect(opfUid).toBeTruthy();
+    expect(ncxUid).toBe(opfUid);
+
+    // Glossary duplicate headwordBase must produce unique IDs
+    const dupGlossary = [
+      { h: "dhamma", pt: "realidade", en: "reality" },
+      { h: "dhamma / dhammā", pt: "realidades", en: "realities" },
+    ] as any;
+    const gMap = new Map<string, string>();
+    const gHtml = buildGlossaryHtml(dupGlossary, "pt", gMap);
+    const ids = [...gHtml.matchAll(/id="([^"]+)"/g)].map((m) => m[1]);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  it('slices chapter ranges accurately across multi-volume ID resets and reversed selections', () => {
+    const multiVolSegs = [
+      { id: 1, rend: "chapter", pali: "Vol 1 Ch 1" },
+      { id: 2, rend: "bodytext", pali: "V1C1 body" },
+      { id: 3, rend: "chapter", pali: "Vol 1 Ch 2" },
+      { id: 4, rend: "bodytext", pali: "V1C2 body" },
+      // Volume 2 resets seg.id back to 1!
+      { id: 1, rend: "chapter", pali: "Vol 2 Ch 1" },
+      { id: 2, rend: "bodytext", pali: "V2C1 body" },
+    ] as any;
+    const toc = [
+      { id: 1, rend: "chapter", text: "Vol 1 Ch 1" },
+      { id: 3, rend: "chapter", text: "Vol 1 Ch 2" },
+      { id: 1, rend: "chapter", text: "Vol 2 Ch 1" },
+    ] as any;
+
+    const onlyVol2 = sliceSegmentsByChapterRange(multiVolSegs, toc, 2, 2);
+    expect(onlyVol2.map((s) => s.pali)).toEqual(["Vol 2 Ch 1", "V2C1 body"]);
+
+    const reversed = sliceSegmentsByChapterRange(multiVolSegs, toc, 2, 1);
+    expect(reversed.map((s) => s.pali)).toEqual(["Vol 1 Ch 2", "V1C2 body", "Vol 2 Ch 1", "V2C1 body"]);
   });
 });
 

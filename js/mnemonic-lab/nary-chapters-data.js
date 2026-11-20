@@ -1,11 +1,11 @@
-import { CHAPTER_2_SANGAHA_33_ITEMS } from "./chapters/ch2-sangaha.js?v=ba4a55dc";
-import { CHAPTER_3_PAKINNAKA_ITEMS } from "./chapters/ch3-pakinnaka.js?v=ba4a55dc";
-import { CHAPTER_4_VITHI_ITEMS } from "./chapters/ch4-vithi.js?v=ba4a55dc";
-import { CHAPTER_5_VITHIMUTTA_ITEMS } from "./chapters/ch5-vithimutta.js?v=ba4a55dc";
-import { CHAPTER_6_RUPA_ITEMS } from "./chapters/ch6-rupa.js?v=ba4a55dc";
-import { CHAPTER_7_SAMUCCAYA_ITEMS } from "./chapters/ch7-samuccaya.js?v=ba4a55dc";
-import { CHAPTER_8_PACCAYA_ITEMS } from "./chapters/ch8-paccaya.js?v=ba4a55dc";
-import { CHAPTER_9_KAMMATTHANA_ITEMS } from "./chapters/ch9-kammatthana.js?v=ba4a55dc";
+import { CHAPTER_2_SANGAHA_33_ITEMS } from "./chapters/ch2-sangaha.js?v=e14b20e3";
+import { CHAPTER_3_PAKINNAKA_ITEMS } from "./chapters/ch3-pakinnaka.js?v=e14b20e3";
+import { CHAPTER_4_VITHI_ITEMS } from "./chapters/ch4-vithi.js?v=e14b20e3";
+import { CHAPTER_5_VITHIMUTTA_ITEMS } from "./chapters/ch5-vithimutta.js?v=e14b20e3";
+import { CHAPTER_6_RUPA_ITEMS } from "./chapters/ch6-rupa.js?v=e14b20e3";
+import { CHAPTER_7_SAMUCCAYA_ITEMS } from "./chapters/ch7-samuccaya.js?v=e14b20e3";
+import { CHAPTER_8_PACCAYA_ITEMS } from "./chapters/ch8-paccaya.js?v=e14b20e3";
+import { CHAPTER_9_KAMMATTHANA_ITEMS } from "./chapters/ch9-kammatthana.js?v=e14b20e3";
 export const CANONICAL_CHAPTERS_META = [
     {
         num: 1,

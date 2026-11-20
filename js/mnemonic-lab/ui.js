@@ -1,9 +1,9 @@
-import { settings } from "../state.js?v=ba4a55dc";
-import { registerToolModule } from "../tools/tools.js?v=ba4a55dc";
-import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=ba4a55dc";
-import { CANONICAL_CHAPTERS_META, getSubmatricesForChapter, } from "./nary-chapters-data.js?v=ba4a55dc";
-import { defaultNarySwitchesForChapter, defaultNarySwitchesForSubmatrix, evaluateNaryChallenge, getNaryItemsForChapter, pickNextNaryChapterChallenge, defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=ba4a55dc";
-import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=ba4a55dc";
+import { settings } from "../state.js?v=e14b20e3";
+import { registerToolModule } from "../tools/tools.js?v=e14b20e3";
+import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=e14b20e3";
+import { CANONICAL_CHAPTERS_META, getSubmatricesForChapter, } from "./nary-chapters-data.js?v=e14b20e3";
+import { defaultNarySwitchesForChapter, defaultNarySwitchesForSubmatrix, evaluateNaryChallenge, getNaryItemsForChapter, pickNextNaryChapterChallenge, defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=e14b20e3";
+import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=e14b20e3";
 const LAB_STRINGS = {
     pt: {
         title: "🧮 Laboratório Mnêmico do Abhidhammatthasaṅgaha",

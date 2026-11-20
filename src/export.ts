@@ -67,23 +67,132 @@ export function collectUsedTerms(segs: Segment[], glossary: GlossEntry[]): Gloss
     .map((g) => ({ ...g, entry: g }));
 }
 
+const XML_INVALID_CTRL_RE = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\uFFFE\uFFFF]/g;
+
+export function stripInvalidXmlChars(s: string): string {
+  return s.replace(XML_INVALID_CTRL_RE, "");
+}
+
+function getDocLangCode(langMode: LangMode): "pt" | "en" | "es" {
+  if (langMode.includes("pt")) return "pt";
+  if (langMode.includes("es")) return "es";
+  return "en";
+}
+
+interface ExportDocLabels {
+  docLang: "pt" | "en" | "es";
+  glossaryTitle: string;
+  tocTitleSingle: string;
+  tocTitleFull: string;
+  navAnalyticalTitle: string;
+  navFullAnalyticalTitle: string;
+  navShortOverviewTitle: string;
+  localPartTocTitle: string;
+  goToToc: string;
+  backToToc: string;
+  goToFullToc: string;
+  backToFullToc: string;
+  coverSubtitleSingle: string;
+  coverTitleFull: string;
+  coverSubtitleFull: string;
+  landmarkToc: string;
+  landmarkStart: string;
+  landmarkStartCorpus: string;
+}
+
+function getExportDocLabels(langMode: LangMode): ExportDocLabels {
+  const docLang = getDocLangCode(langMode);
+  if (docLang === "en") {
+    return {
+      docLang,
+      glossaryTitle: "Pāḷi Glossary",
+      tocTitleSingle: "Table of Contents (Parts, Chapters & Sections)",
+      tocTitleFull: "General Table of Contents — Treatises, Works, Commentaries, Chapters & Sections",
+      navAnalyticalTitle: "Analytical Index (Parts, Chapters & Subchapters)",
+      navFullAnalyticalTitle: "Complete Analytical Index (Treatises, Works, Commentaries, Chapters & Subchapters)",
+      navShortOverviewTitle: "Quick Overview of Treatises, Works & Commentaries",
+      localPartTocTitle: "Contents of this Part (Chapters & Subchapters)",
+      goToToc: "↑ Go to Table of Contents",
+      backToToc: "↑ Back to Table of Contents",
+      goToFullToc: "↑ Go to General Index",
+      backToFullToc: "↑ Back to General Index",
+      coverSubtitleSingle: "Tipiṭaka Chaṭṭha Saṅgāyana Edition — Pāḷi & Translation",
+      coverTitleFull: "Abhidhamma Piṭaka — Complete Collection",
+      coverSubtitleFull: "Canonical Texts (Mūla), Commentaries (Aṭṭhakathā), Subcommentaries (Ṭīkā & Anuṭīkā), Treatises & Visuddhimagga",
+      landmarkToc: "Table of Contents",
+      landmarkStart: "Start of Text",
+      landmarkStartCorpus: "Start of Corpus",
+    };
+  }
+  if (docLang === "es") {
+    return {
+      docLang,
+      glossaryTitle: "Glosario Pāḷi",
+      tocTitleSingle: "Índice General (Partes, Capítulos y Subcapítulos)",
+      tocTitleFull: "Índice General — Tratados, Obras, Comentarios, Capítulos y Subcapítulos",
+      navAnalyticalTitle: "Índice Analítico (Partes, Capítulos y Subcapítulos)",
+      navFullAnalyticalTitle: "Índice Analítico Completo (Tratados, Obras, Comentarios, Capítulos y Subcapítulos)",
+      navShortOverviewTitle: "Vista Rápida de Tratados, Obras y Comentarios",
+      localPartTocTitle: "Sumario de esta Parte (Capítulos y Subcapítulos)",
+      goToToc: "↑ Ir al Índice General",
+      backToToc: "↑ Volver al Índice General",
+      goToFullToc: "↑ Ir al Índice General de la Colección",
+      backToFullToc: "↑ Volver al Índice General de la Colección",
+      coverSubtitleSingle: "Edición Tipiṭaka Chaṭṭha Saṅgāyana — Pāḷi y Traducción",
+      coverTitleFull: "Abhidhamma Piṭaka — Colección Completa",
+      coverSubtitleFull: "Textos Canónicos (Mūla), Comentarios (Aṭṭhakathā), Subcomentarios (Ṭīkā y Anuṭīkā), Tratados y Visuddhimagga",
+      landmarkToc: "Índice",
+      landmarkStart: "Inicio del Texto",
+      landmarkStartCorpus: "Inicio del Corpus",
+    };
+  }
+  return {
+    docLang,
+    glossaryTitle: "Glossário Pāḷi",
+    tocTitleSingle: "Índice Geral (Obras, Comentários, Capítulos e Subcapítulos)",
+    tocTitleFull: "Índice Geral — Tratados, Obras, Comentários, Capítulos e Subcapítulos",
+    navAnalyticalTitle: "Índice Analítico (Partes, Capítulos e Subcapítulos)",
+    navFullAnalyticalTitle: "Índice Analítico Completo (Tratados, Obras, Comentários, Capítulos e Subcapítulos)",
+    navShortOverviewTitle: "Visão Rápida de Tratados, Obras e Comentários",
+    localPartTocTitle: "Sumário desta Parte (Capítulos e Subcapítulos)",
+    goToToc: "↑ Ir para o Índice Geral",
+    backToToc: "↑ Voltar ao Índice Geral",
+    goToFullToc: "↑ Ir para o Índice Geral da Coleção",
+    backToFullToc: "↑ Voltar ao Índice Geral da Coleção",
+    coverSubtitleSingle: "Edição Tipiṭaka Chaṭṭha Saṅgāyana — Pāḷi & Tradução",
+    coverTitleFull: "Abhidhamma Piṭaka — Coleção Completa",
+    coverSubtitleFull: "Textos Canônicos (Mūla), Comentários (Aṭṭhakathā), Subcomentários (Ṭīkā & Anuṭīkā), Tratados e Visuddhimagga",
+    landmarkToc: "Índice",
+    landmarkStart: "Início do Texto",
+    landmarkStartCorpus: "Início do Corpus",
+  };
+}
+
 export function buildGlossaryHtml(
   terms: GlossEntry[],
   langMode: LangMode,
   termsMap: Map<string, string>
 ): string {
   if (terms.length === 0) return "";
+  const labels = getExportDocLabels(langMode);
   const mode = langMode as string;
   const showEn = mode.includes("en");
   const showPt = mode.includes("pt");
   const showEs = mode.includes("es");
+  const usedIds = new Set<string>();
   const rows = terms.map((term, idx) => {
     const headwordBase = term.h.split(" / ")[0]!.split(" ")[0]!.toLowerCase().normalize("NFC");
     let tId = termsMap.get(headwordBase);
-    if (!tId) {
+    if (!tId || usedIds.has(tId)) {
       tId = String(idx);
-      termsMap.set(headwordBase, tId);
+      while (usedIds.has(tId)) {
+        tId = `${tId}_${idx}`;
+      }
+      if (!termsMap.has(headwordBase)) {
+        termsMap.set(headwordBase, tId);
+      }
     }
+    usedIds.add(tId);
     const parts: string[] = [`<strong>${escHtml(term.h)}</strong>`];
     if (term.pos) parts.push(`<em>(${escHtml(term.pos)})</em>`);
     if (showEn || (!showPt && !showEs)) parts.push(escHtml(term.en));
@@ -93,7 +202,7 @@ export function buildGlossaryHtml(
   });
   return `
 <section class="glossary-appendix" epub:type="glossary" id="glossary_section">
-<h2 class="chapter" style="page-break-before:always;" id="glossary_title">Pāḷi Glossary / Glossário Pāḷi</h2>
+<h2 class="chapter glossary-heading" id="glossary_title">${escHtml(labels.glossaryTitle)}</h2>
 ${rows.join("\n")}
 </section>`;
 }
@@ -227,19 +336,21 @@ export function writeUint32LE(view: DataView, offset: number, value: number): vo
 
 export function buildZip(entries: ZipEntry[]): Uint8Array {
   const enc = new TextEncoder();
-  const fileData: Array<{ name: Uint8Array; data: Uint8Array; crc: number; offset: number }> = [];
+  const fileData: Array<{ name: Uint8Array; data: Uint8Array; crc: number; offset: number; flags: number }> = [];
   const parts: Uint8Array[] = [];
   let offset = 0;
 
   for (const entry of entries) {
     const nameBytes = enc.encode(entry.name);
+    const isAsciiName = /^[\x20-\x7E]*$/.test(entry.name);
+    const flags = isAsciiName ? 0x0000 : 0x0800; // OCF 3.2: mimetype must have 0 flags; UTF-8 flag only when needed
     const data = entry.data;
     const crc = crc32(data);
     const localHeader = new Uint8Array(30 + nameBytes.length);
     const lv = new DataView(localHeader.buffer);
     writeUint32LE(lv, 0, 0x04034b50);
     writeUint16LE(lv, 4, 20);
-    writeUint16LE(lv, 6, 0x0800); // UTF-8 filename flag
+    writeUint16LE(lv, 6, flags);
     writeUint16LE(lv, 8, 0);      // store
     writeUint16LE(lv, 10, 0);
     writeUint16LE(lv, 12, 0);
@@ -250,20 +361,20 @@ export function buildZip(entries: ZipEntry[]): Uint8Array {
     writeUint16LE(lv, 28, 0);
     localHeader.set(nameBytes, 30);
 
-    fileData.push({ name: nameBytes, data, crc, offset });
+    fileData.push({ name: nameBytes, data, crc, offset, flags });
     parts.push(localHeader, data);
     offset += localHeader.length + data.length;
   }
 
   const cdParts: Uint8Array[] = [];
   const cdStart = offset;
-  for (const { name, data, crc, offset: fileOffset } of fileData) {
+  for (const { name, data, crc, offset: fileOffset, flags } of fileData) {
     const cd = new Uint8Array(46 + name.length);
     const cv = new DataView(cd.buffer);
     writeUint32LE(cv, 0, 0x02014b50);
     writeUint16LE(cv, 4, 20);
     writeUint16LE(cv, 6, 20);
-    writeUint16LE(cv, 8, 0x0800); // UTF-8 filename flag
+    writeUint16LE(cv, 8, flags);
     writeUint16LE(cv, 10, 0);
     writeUint16LE(cv, 12, 0);
     writeUint16LE(cv, 14, 0);
@@ -307,7 +418,7 @@ export function buildZip(entries: ZipEntry[]): Uint8Array {
 // ── Segment → XHTML / HTML ───────────────────────────────────────────────────
 
 export function escHtml(s: unknown): string {
-  return String(s ?? "")
+  return stripInvalidXmlChars(String(s ?? ""))
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
@@ -373,16 +484,25 @@ export function fieldHtml(
   linkPrefix: string = "glossary.xhtml"
 ): string {
   if (!raw) return "";
-  const cleaned = String(raw)
+  const cleaned = stripInvalidXmlChars(String(raw))
     .replace(/<sup[^>]*class=["']?var-note["']?[^>]*>[\s\S]*?<\/sup>/gi, "")
     .replace(/<p\s+rend=["'][^"']*["']\s*\/>/gi, "");
   if (!cleaned.includes("<")) return linkifyText(cleaned, termsMap, linkPrefix);
 
-  // Fast inline HTML sanitizer without DOMParser allocation overhead
+  // Strict stack-balanced inline XHTML sanitizer (guarantees well-formed XML 1.0)
   const tokenRegex = /(<\/?[a-zA-Z0-9]+[^>]*>)/g;
   const tokens = cleaned.split(tokenRegex);
   let out = "";
-  const openSpanStack: boolean[] = [];
+  const tagStack: string[] = [];
+
+  const closeTag = (expected: string) => {
+    const idx = tagStack.lastIndexOf(expected);
+    if (idx === -1) return;
+    while (tagStack.length > idx) {
+      const popped = tagStack.pop()!;
+      out += `</${popped}>`;
+    }
+  };
 
   for (let i = 0; i < tokens.length; i++) {
     const tok = tokens[i] || "";
@@ -390,42 +510,42 @@ export function fieldHtml(
       out += linkifyText(tok, termsMap, linkPrefix);
     } else {
       const lowerTag = tok.toLowerCase();
-      if (lowerTag === "<b>" || lowerTag === "<strong>") {
+      if (/^<(?:b|strong)(?:\s[^>]*)?>$/.test(lowerTag)) {
         out += "<strong>";
+        tagStack.push("strong");
       } else if (lowerTag === "</b>" || lowerTag === "</strong>") {
-        out += "</strong>";
-      } else if (lowerTag === "<i>" || lowerTag === "<em>") {
+        closeTag("strong");
+      } else if (/^<(?:i|em)(?:\s[^>]*)?>$/.test(lowerTag)) {
         out += "<em>";
+        tagStack.push("em");
       } else if (lowerTag === "</i>" || lowerTag === "</em>") {
-        out += "</em>";
-      } else if (lowerTag === "<sup>") {
+        closeTag("em");
+      } else if (/^<sup(?:\s[^>]*)?>$/.test(lowerTag)) {
         out += "<sup>";
+        tagStack.push("sup");
       } else if (lowerTag === "</sup>") {
-        out += "</sup>";
-      } else if (lowerTag === "<br>" || lowerTag === "<br/>" || lowerTag === "<br />") {
+        closeTag("sup");
+      } else if (/^<br\s*\/?>$/.test(lowerTag)) {
         out += "<br/>";
-      } else if (lowerTag.startsWith("<p")) {
+      } else if (/^<p(?:\s[^>]*)?>$/.test(lowerTag)) {
         const rendMatch = tok.match(/rend=["']([^"']+)["']/i);
         const cls = rendMatch ? ` class="rend-${escHtml(rendMatch[1])}"` : "";
         out += `<br/><span${cls}>`;
-        openSpanStack.push(true);
+        tagStack.push("span");
       } else if (lowerTag === "</p>") {
-        if (openSpanStack.length > 0) {
-          openSpanStack.pop();
-          out += "</span>";
-        }
+        closeTag("span");
       }
     }
   }
-  while (openSpanStack.length > 0) {
-    openSpanStack.pop();
-    out += "</span>";
+  while (tagStack.length > 0) {
+    const popped = tagStack.pop()!;
+    out += `</${popped}>`;
   }
   return out;
 }
 
 function hasMappedTerm(text: string, termsMap?: Map<string, string>): boolean {
-  if (!text || !termsMap || termsMap.size === 0 || termsMap.size > 10) return false;
+  if (!text || !termsMap || termsMap.size === 0 || termsMap.size > 3) return false;
   const words = text.toLowerCase().normalize("NFC").match(/[\p{L}\p{M}]+/gu) || [];
   return words.some((w) => termsMap.has(w));
 }
@@ -435,7 +555,8 @@ export function segToHtml(
   langMode: LangMode,
   termsMap?: Map<string, string>,
   linkPrefix: string = "glossary.xhtml",
-  anchorId?: string
+  anchorId?: string,
+  notePrefix: string = ""
 ): string {
   const rend = seg.rend;
   const paliText = seg.pali != null ? String(seg.pali) : "";
@@ -456,6 +577,21 @@ export function segToHtml(
   const showPt = langMode === "pali+en+pt" || langMode === "pt" || langMode === "pali+pt";
   const showEs = langMode === "es" || langMode === "pali+es" || langMode === "pali+en+es";
 
+  const isPhrasingContainer =
+    rend === "book" ||
+    rend === "title" ||
+    rend === "nikaya" ||
+    rend === "chapter" ||
+    rend === "subhead" ||
+    rend === "subsubhead" ||
+    (rend !== "hangnum" &&
+      rend !== "indent" &&
+      rend !== "footnote" &&
+      rend !== "centre" &&
+      rend !== "glossary" &&
+      !(rend && rend.startsWith("gatha")));
+  const lineTag = isPhrasingContainer ? "span" : "div";
+
   let inner = "";
   const paranumPrefix =
     seg.paranum != null && String(seg.paranum) !== ""
@@ -465,32 +601,34 @@ export function segToHtml(
   if (showPali && paliText) {
     const linkedPali = fieldHtml(paliText, forcePaliLinkTest ? termsMap : undefined, linkPrefix);
     const baseLangAttr = isEnglishBase ? "en" : "pi";
-    inner += `<div class="line pali" lang="${baseLangAttr}">${paranumPrefix}${linkedPali}</div>`;
+    inner += `<${lineTag} class="line pali" lang="${baseLangAttr}">${paranumPrefix}${linkedPali}</${lineTag}>`;
   }
 
   if (showEn) {
     const textToUse = enText || paliText;
     if (textToUse && !(showPali && textToUse === paliText)) {
       const prefix = !showPali ? paranumPrefix : "";
-      inner += `<div class="line en" lang="en">${prefix}${fieldHtml(textToUse, termsMap, linkPrefix)}</div>`;
+      inner += `<${lineTag} class="line en" lang="en">${prefix}${fieldHtml(textToUse, termsMap, linkPrefix)}</${lineTag}>`;
     }
   }
 
   if (showPt && ptText) {
     const prefix = !showPali && !showEn ? paranumPrefix : "";
-    inner += `<div class="line pt" lang="pt">${prefix}${fieldHtml(ptText, termsMap, linkPrefix)}</div>`;
+    inner += `<${lineTag} class="line pt" lang="pt">${prefix}${fieldHtml(ptText, termsMap, linkPrefix)}</${lineTag}>`;
   }
 
   if (showEs && esText) {
     const prefix = !showPali && !showEn && !showPt ? paranumPrefix : "";
-    inner += `<div class="line es" lang="es">${prefix}${fieldHtml(esText, termsMap, linkPrefix)}</div>`;
+    inner += `<${lineTag} class="line es" lang="es">${prefix}${fieldHtml(esText, termsMap, linkPrefix)}</${lineTag}>`;
   }
 
+  let asidesHtml = "";
   if (seg.notes && seg.notes.length > 0) {
+    const safeSegId = String(seg.id).replace(/[^a-zA-Z0-9_-]/g, "_");
     seg.notes.forEach((note, idx) => {
-      const noteId = `note_${seg.id}_${idx}`;
+      const noteId = notePrefix ? `${notePrefix}_note_${safeSegId}_${idx}` : `note_${safeSegId}_${idx}`;
       inner += ` <a epub:type="noteref" class="footnote-ref" href="#${noteId}"><sup>[${idx + 1}]</sup></a>`;
-      inner += `<aside epub:type="footnote" id="${noteId}" class="epub-footnote"><p>${escHtml(note)}</p></aside>`;
+      asidesHtml += `\n<aside epub:type="footnote" id="${noteId}" class="epub-footnote"><p>${escHtml(note)}</p></aside>`;
     });
   }
 
@@ -498,18 +636,21 @@ export function segToHtml(
 
   const idAttr = anchorId ? ` id="${escHtml(anchorId)}"` : "";
 
+  let block = "";
   if (rend === "book" || rend === "title" || rend === "nikaya")
-    return `<h1 class="seg title"${idAttr}>${inner}</h1>`;
-  if (rend === "chapter") return `<h2 class="seg chapter"${idAttr}>${inner}</h2>`;
-  if (rend === "subhead") return `<h3 class="seg subhead"${idAttr}>${inner}</h3>`;
-  if (rend === "subsubhead") return `<h4 class="seg subsubhead"${idAttr}>${inner}</h4>`;
-  if (rend === "hangnum") return `<div class="seg hangnum"${idAttr}>${inner}</div>`;
-  if (rend === "indent") return `<blockquote class="seg indent"${idAttr}>${inner}</blockquote>`;
-  if (rend === "footnote") return `<div class="seg footnote"${idAttr}>${inner}</div>`;
-  if (rend === "centre") return `<div class="seg centre"${idAttr}>${inner}</div>`;
-  if (rend === "glossary") return `<div class="seg glossary"${idAttr}>${inner}</div>`;
-  if (rend && rend.startsWith("gatha")) return `<div class="seg gatha ${escHtml(rend)}"${idAttr}>${inner}</div>`;
-  return `<p class="seg bodytext"${idAttr}><span class="seg-inner">${inner}</span></p>`;
+    block = `<h1 class="seg title"${idAttr}>${inner}</h1>`;
+  else if (rend === "chapter") block = `<h2 class="seg chapter"${idAttr}>${inner}</h2>`;
+  else if (rend === "subhead") block = `<h3 class="seg subhead"${idAttr}>${inner}</h3>`;
+  else if (rend === "subsubhead") block = `<h4 class="seg subsubhead"${idAttr}>${inner}</h4>`;
+  else if (rend === "hangnum") block = `<div class="seg hangnum"${idAttr}>${inner}</div>`;
+  else if (rend === "indent") block = `<blockquote class="seg indent"${idAttr}>${inner}</blockquote>`;
+  else if (rend === "footnote") block = `<div class="seg footnote"${idAttr}>${inner}</div>`;
+  else if (rend === "centre") block = `<div class="seg centre"${idAttr}>${inner}</div>`;
+  else if (rend === "glossary") block = `<div class="seg glossary"${idAttr}>${inner}</div>`;
+  else if (rend && rend.startsWith("gatha")) block = `<div class="seg gatha ${escHtml(rend)}"${idAttr}>${inner}</div>`;
+  else block = `<p class="seg bodytext"${idAttr}><span class="seg-inner">${inner}</span></p>`;
+
+  return block + asidesHtml;
 }
 
 // ── Heading extraction & Hierarchical TOC structures ─────────────────────────
@@ -603,7 +744,8 @@ export function buildSectionBodyAndToc(
   let chCounter = 0;
   let subCounter = 0;
 
-  for (const seg of segs) {
+  for (let segIdx = 0; segIdx < segs.length; segIdx++) {
+    const seg = segs[segIdx]!;
     const rend = seg.rend;
     const isChapter =
       rend === "chapter" || rend === "book" || rend === "title" || rend === "nikaya";
@@ -611,10 +753,18 @@ export function buildSectionBodyAndToc(
 
     let anchorId: string | undefined;
     if (isChapter) {
-      chCounter++;
-      anchorId = `${idPrefix}_ch${chCounter}`;
       const label = extractHeadingLabel(seg, langMode);
-      if (label) {
+      const prevChapter = chapters[chapters.length - 1];
+      // Skip consecutive duplicate running headers (e.g., Chaṭṭha Saṅgāyana repeated vagga/title headers in Kathāvatthu/Paṭṭhāna)
+      const isDuplicateRunningTitle =
+        rend === "title" &&
+        prevChapter != null &&
+        label !== "" &&
+        prevChapter.label.toLowerCase() === label.toLowerCase();
+
+      if (label && !isDuplicateRunningTitle) {
+        chCounter++;
+        anchorId = `${idPrefix}_ch${chCounter}`;
         chapters.push({
           id: anchorId,
           label,
@@ -623,8 +773,6 @@ export function buildSectionBodyAndToc(
         });
       }
     } else if (isSubchapter) {
-      subCounter++;
-      anchorId = `${idPrefix}_sub${subCounter}`;
       const label = extractHeadingLabel(seg, langMode);
       if (label) {
         if (chapters.length === 0) {
@@ -639,6 +787,8 @@ export function buildSectionBodyAndToc(
           });
           anchorId = implicitId;
         } else {
+          subCounter++;
+          anchorId = `${idPrefix}_sub${subCounter}`;
           chapters[chapters.length - 1]!.subchapters.push({
             id: anchorId,
             label,
@@ -648,7 +798,7 @@ export function buildSectionBodyAndToc(
       }
     }
 
-    const html = segToHtml(seg, langMode, termsMap, linkPrefix, anchorId);
+    const html = segToHtml(seg, langMode, termsMap, linkPrefix, anchorId, `${idPrefix}_s${segIdx}`);
     if (html) bodyParts.push(html);
   }
 
@@ -881,6 +1031,7 @@ h1.title {
 }
 h2.chapter {
   page-break-before: always;
+  break-before: page;
   font-size: 15pt;
   font-weight: 700;
   color: #6b3614;
@@ -893,8 +1044,10 @@ h2.chapter {
   break-after: avoid;
   hyphens: none;
 }
-h2.chapter:first-of-type {
-  page-break-before: avoid;
+h2.chapter:first-of-type,
+h2.glossary-heading {
+  page-break-before: auto;
+  break-before: auto;
 }
 h3.subhead {
   font-size: 13.5pt;
@@ -938,6 +1091,7 @@ p.bodytext, div.seg {
   margin-right: 0.25em;
 }
 .line {
+  display: block;
   font-size: 13pt;
   line-height: 1.68;
   text-align: justify;
@@ -1079,6 +1233,16 @@ h2, h2.chapter {
   border-top: 1px solid #dfd0bc;
   line-height: 1.36;
   text-align: left;
+  page-break-before: always;
+  break-before: page;
+}
+
+h2.chapter:first-of-type,
+h2.glossary-heading,
+.local-toc h2,
+.toc-header h2 {
+  page-break-before: auto;
+  break-before: auto;
 }
 
 h3, h3.subhead {
@@ -1124,6 +1288,7 @@ p, p.bodytext, div.seg {
 }
 
 .line {
+  display: block;
   font-family: 'Gentium Book Plus', 'Noto Serif Pali', Georgia, serif;
   font-size: 13pt;
   line-height: 1.68;
@@ -1369,6 +1534,7 @@ export function buildPrintHtml(
   const author = getAuthor(workId ?? "", group ?? "");
   const baseHref = getBaseHref();
   const css = buildPrintCss(baseHref);
+  const labels = getExportDocLabels(langMode);
 
   let tocInnerHtml = "";
   let mainBodyHtml = "";
@@ -1395,7 +1561,7 @@ export function buildPrintHtml(
     }
 
     if (glossaryHtml) {
-      partTocItems.push(`<li><a class="toc-part-title" href="#glossary_title">Glossário Pāḷi</a></li>`);
+      partTocItems.push(`<li><a class="toc-part-title" href="#glossary_title">${escHtml(labels.glossaryTitle)}</a></li>`);
     }
     tocInnerHtml = `<ol>\n${partTocItems.join("\n")}\n</ol>`;
     mainBodyHtml = bodyBlocks.join("\n");
@@ -1404,13 +1570,13 @@ export function buildPrintHtml(
     const chListHtml = renderChaptersTocListHtml(chapters, "");
     tocInnerHtml = chListHtml;
     if (glossaryHtml) {
-      tocInnerHtml += `\n<ol><li><a class="toc-part-title" href="#glossary_title">Glossário Pāḷi</a></li></ol>`;
+      tocInnerHtml += `\n<ol><li><a class="toc-part-title" href="#glossary_title">${escHtml(labels.glossaryTitle)}</a></li></ol>`;
     }
     mainBodyHtml = bodyHtml;
   }
 
   return `<!DOCTYPE html>
-<html lang="pi">
+<html lang="${labels.docLang}">
 <head>
 <meta charset="utf-8"/>
 <base href="${escHtml(baseHref)}"/>
@@ -1421,11 +1587,11 @@ export function buildPrintHtml(
 <body>
 <div class="print-cover">
   <h1>${escHtml(title)}</h1>
-  <p class="subtitle">Edição Tipiṭaka Chaṭṭha Saṅgāyana — Pāḷi &amp; Tradução</p>
+  <p class="subtitle">${escHtml(labels.coverSubtitleSingle)}</p>
   <p class="author">${escHtml(author)}</p>
 </div>
 <nav class="print-toc" id="toc_top">
-  <h1>Índice Geral (Obras, Comentários, Capítulos e Subcapítulos)</h1>
+  <h1>${escHtml(labels.tocTitleSingle)}</h1>
   ${tocInnerHtml}
 </nav>
 <main>
@@ -1451,11 +1617,12 @@ export async function buildFullCorpusPrintHtml(
 ): Promise<string> {
   const baseHref = getBaseHref();
   const css = buildPrintCss(baseHref);
+  const labels = getExportDocLabels(langMode);
   const rawGlossary = await loadGlossary();
   const termsMap = new Map<string, string>();
   rawGlossary.forEach((entry, idx) => {
     const headword = entry.h.split(" / ")[0]!.split(" ")[0]!.toLowerCase().normalize("NFC");
-    termsMap.set(headword, String(idx));
+    if (!termsMap.has(headword)) termsMap.set(headword, String(idx));
   });
 
   const groupTocLis: string[] = [];
@@ -1538,25 +1705,25 @@ export async function buildFullCorpusPrintHtml(
 
   const glossaryHtml = buildGlossaryHtml(rawGlossary, langMode, termsMap);
   if (glossaryHtml) {
-    groupTocLis.push(`<li><a class="toc-group-title" href="#glossary_title">Glossário Pāḷi</a></li>`);
+    groupTocLis.push(`<li><a class="toc-group-title" href="#glossary_title">${escHtml(labels.glossaryTitle)}</a></li>`);
   }
 
   return `<!DOCTYPE html>
-<html lang="pi">
+<html lang="${labels.docLang}">
 <head>
 <meta charset="utf-8"/>
 <base href="${escHtml(baseHref)}"/>
-<title>Abhidhamma Piṭaka — Coleção Completa</title>
+<title>${escHtml(labels.coverTitleFull)}</title>
 <style>${css}</style>
 </head>
 <body>
 <div class="print-cover">
-  <h1>Abhidhamma Piṭaka — Coleção Completa</h1>
-  <p class="subtitle">Textos Canônicos (Mūla), Comentários (Aṭṭhakathā), Subcomentários (Ṭīkā &amp; Anuṭīkā), Tratados e Visuddhimagga</p>
+  <h1>${escHtml(labels.coverTitleFull)}</h1>
+  <p class="subtitle">${escHtml(labels.coverSubtitleFull)}</p>
   <p class="author">Tipiṭaka Chaṭṭha Saṅgāyana · Buddhaghosa · Dhammapāla · Anuruddha · Buddhadatta</p>
 </div>
 <nav class="print-toc" id="toc_top">
-  <h1>Índice Geral — Tratados, Obras, Comentários, Capítulos e Subcapítulos</h1>
+  <h1>${escHtml(labels.tocTitleFull)}</h1>
   <ol>
     ${groupTocLis.join("\n")}
   </ol>
@@ -1624,10 +1791,14 @@ ${subPoints ? subPoints + "\n" : ""}${indent}</navPoint>`;
     .join("\n");
 }
 
-function renderLocalPartTocXhtml(chapters: ChapterTocNode[], hrefPrefix: string = ""): string {
+function renderLocalPartTocXhtml(
+  chapters: ChapterTocNode[],
+  hrefPrefix: string = "",
+  headingTitle: string = "Sumário desta Parte (Capítulos e Subcapítulos)"
+): string {
   if (chapters.length === 0) return "";
   return `<div class="local-toc">
-  <h2>Sumário desta Parte (Capítulos e Subcapítulos)</h2>
+  <h2>${escHtml(headingTitle)}</h2>
   ${renderChaptersTocListHtml(chapters, hrefPrefix)}
 </div>`;
 }
@@ -1647,6 +1818,9 @@ export function buildEpub(
   const enc = new TextEncoder();
   const author = getAuthor(workId ?? "", group ?? "");
   const grpTitle = group ? getGroupDisplayTitle(group) : "Abhidhamma Piṭaka";
+  const labels = getExportDocLabels(langMode);
+  const bookUid = `abhidhamma-export-${Date.now()}`;
+  const hasGlossary = glossaryHtml.trim().length > 0;
 
   const sections: PartExportSection[] =
     partSections && partSections.length > 0
@@ -1657,7 +1831,7 @@ export function buildEpub(
             langMode,
             termsMap,
             "content",
-            "glossary.xhtml"
+            hasGlossary ? "glossary.xhtml" : ""
           );
           return [
             {
@@ -1675,10 +1849,10 @@ export function buildEpub(
   const navPartLis: string[] = [];
 
   for (const sec of sections) {
-    const localToc = renderLocalPartTocXhtml(sec.chapters, "");
+    const localToc = renderLocalPartTocXhtml(sec.chapters, "", labels.localPartTocTitle);
     const pageXhtml = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="pi" xml:lang="pi">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="${labels.docLang}" xml:lang="${labels.docLang}">
 <head>
 <meta charset="utf-8"/>
 <title>${escHtml(title)} — ${escHtml(sec.partTitle)}</title>
@@ -1691,10 +1865,10 @@ export function buildEpub(
     <h1 id="title_header">${escHtml(title)}</h1>
     <div class="part-subtitle">${escHtml(sec.partTitle)}</div>
   </div>
-  <p style="text-align:center;margin:0.4em 0 1em 0;"><a class="back-to-toc" style="margin-top:0;border-top:none;padding-top:0;" href="nav.xhtml">↑ Ir para o Índice Geral</a></p>
+  <p style="text-align:center;margin:0.4em 0 1em 0;"><a class="back-to-toc" style="margin-top:0;border-top:none;padding-top:0;" href="nav.xhtml">${escHtml(labels.goToToc)}</a></p>
   ${localToc}
   ${sec.bodyHtml}
-  <a class="back-to-toc" href="nav.xhtml">↑ Voltar ao Índice Geral</a>
+  <a class="back-to-toc" href="nav.xhtml">${escHtml(labels.backToToc)}</a>
 </section>
 </body>
 </html>`;
@@ -1708,26 +1882,28 @@ export function buildEpub(
     );
   }
 
-  const glossaryXhtml = `<?xml version="1.0" encoding="UTF-8"?>
+  const glossaryXhtml = hasGlossary
+    ? `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="pi" xml:lang="pi">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="${labels.docLang}" xml:lang="${labels.docLang}">
 <head>
 <meta charset="utf-8"/>
-<title>Glossário Pāḷi</title>
+<title>${escHtml(labels.glossaryTitle)}</title>
 <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body epub:type="backmatter">
 ${glossaryHtml}
-<a class="back-to-toc" href="nav.xhtml">↑ Voltar ao Índice Geral</a>
+<a class="back-to-toc" href="nav.xhtml">${escHtml(labels.backToToc)}</a>
 </body>
-</html>`;
+</html>`
+    : "";
 
   const navXhtml = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="pi" xml:lang="pi">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="${labels.docLang}" xml:lang="${labels.docLang}">
 <head>
 <meta charset="utf-8"/>
-<title>${escHtml(title)} — Índice</title>
+<title>${escHtml(title)} — ${escHtml(labels.landmarkToc)}</title>
 <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body epub:type="frontmatter">
@@ -1737,21 +1913,29 @@ ${glossaryHtml}
   <div class="part-subtitle">${escHtml(author)}</div>
 </div>
 <nav epub:type="toc" id="toc">
-  <h1>Índice Analítico (Partes, Capítulos e Subcapítulos)</h1>
+  <h1>${escHtml(labels.navAnalyticalTitle)}</h1>
   <ol>
 ${navPartLis.join("\n")}
-    <li><a class="toc-part-label" href="glossary.xhtml">Glossário Pāḷi</a></li>
+${hasGlossary ? `    <li><a class="toc-part-label" href="glossary.xhtml">${escHtml(labels.glossaryTitle)}</a></li>` : ""}
   </ol>
 </nav>
 <nav epub:type="landmarks" hidden="hidden">
   <ol>
-    <li><a epub:type="toc" href="nav.xhtml">Índice</a></li>
-    <li><a epub:type="bodymatter" href="${sections[0]!.href}">Início do Texto</a></li>
-    <li><a epub:type="glossary" href="glossary.xhtml">Glossário Pāḷi</a></li>
+    <li><a epub:type="toc" href="nav.xhtml">${escHtml(labels.landmarkToc)}</a></li>
+    <li><a epub:type="bodymatter" href="${sections[0]!.href}">${escHtml(labels.landmarkStart)}</a></li>
+${hasGlossary ? `    <li><a epub:type="glossary" href="glossary.xhtml">${escHtml(labels.glossaryTitle)}</a></li>` : ""}
   </ol>
 </nav>
 </body>
 </html>`;
+
+  const fontManifestLines: string[] = [];
+  if (fontReg.length > 0) {
+    fontManifestLines.push(`  <item id="font-reg" href="fonts/GentiumBookPlus-Regular.ttf" media-type="font/ttf"/>`);
+  }
+  if (fontIta.length > 0) {
+    fontManifestLines.push(`  <item id="font-ita" href="fonts/GentiumBookPlus-Italic.ttf" media-type="font/ttf"/>`);
+  }
 
   const manifestItems = xhtmlFiles
     .map((f) => `  <item id="${f.id}" href="${f.href}" media-type="application/xhtml+xml"/>`)
@@ -1763,23 +1947,22 @@ ${navPartLis.join("\n")}
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
   <dc:title>${escHtml(title)}</dc:title>
   <dc:creator>${escHtml(author)}</dc:creator>
-  <dc:language>pi</dc:language>
-  <dc:identifier id="uid">abhidhamma-export-${Date.now()}</dc:identifier>
+  <dc:language>${labels.docLang}</dc:language>
+  <dc:identifier id="uid">${bookUid}</dc:identifier>
   <meta property="dcterms:modified">${new Date().toISOString().replace(/\.\d+Z$/, "Z")}</meta>
 </metadata>
 <manifest>
-  <item id="font-reg" href="fonts/GentiumBookPlus-Regular.ttf" media-type="font/ttf"/>
-  <item id="font-ita" href="fonts/GentiumBookPlus-Italic.ttf" media-type="font/ttf"/>
+${fontManifestLines.join("\n")}
   <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
   <item id="css" href="style.css" media-type="text/css"/>
   <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
 ${manifestItems}
-  <item id="glossary" href="glossary.xhtml" media-type="application/xhtml+xml"/>
+${hasGlossary ? `  <item id="glossary" href="glossary.xhtml" media-type="application/xhtml+xml"/>` : ""}
 </manifest>
 <spine toc="ncx">
   <itemref idref="nav"/>
 ${spineItems}
-  <itemref idref="glossary"/>
+${hasGlossary ? `  <itemref idref="glossary"/>` : ""}
 </spine>
 </package>`;
 
@@ -1797,17 +1980,25 @@ ${chPoints ? chPoints + "\n" : ""}    </navPoint>`;
     })
     .join("\n");
 
-  const glossPo = nextPlayOrder();
+  const glossNcxPoint = hasGlossary
+    ? `  <navPoint id="nav_glossary" playOrder="${nextPlayOrder()}">
+    <navLabel><text>${escHtml(labels.glossaryTitle)}</text></navLabel>
+    <content src="glossary.xhtml"/>
+  </navPoint>`
+    : "";
+
   const ncx = `<?xml version="1.0" encoding="UTF-8"?>
 <ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
-<head><meta name="dtb:uid" content="abhidhamma-export"/></head>
+<head>
+  <meta name="dtb:uid" content="${bookUid}"/>
+  <meta name="dtb:depth" content="3"/>
+  <meta name="dtb:totalPageCount" content="0"/>
+  <meta name="dtb:maxPageNumber" content="0"/>
+</head>
 <docTitle><text>${escHtml(title)}</text></docTitle>
 <navMap>
 ${ncxPartPoints}
-  <navPoint id="glossary" playOrder="${glossPo}">
-    <navLabel><text>Glossário Pāḷi</text></navLabel>
-    <content src="glossary.xhtml"/>
-  </navPoint>
+${glossNcxPoint}
 </navMap>
 </ncx>`;
 
@@ -1829,7 +2020,9 @@ ${ncxPartPoints}
   for (const f of xhtmlFiles) {
     zipEntries.push({ name: `OEBPS/${f.href}`, data: enc.encode(f.content) });
   }
-  zipEntries.push({ name: "OEBPS/glossary.xhtml", data: enc.encode(glossaryXhtml) });
+  if (hasGlossary) {
+    zipEntries.push({ name: "OEBPS/glossary.xhtml", data: enc.encode(glossaryXhtml) });
+  }
   if (fontReg.length > 0) zipEntries.push({ name: "OEBPS/fonts/GentiumBookPlus-Regular.ttf", data: fontReg });
   if (fontIta.length > 0) zipEntries.push({ name: "OEBPS/fonts/GentiumBookPlus-Italic.ttf", data: fontIta });
 
@@ -1869,6 +2062,8 @@ export async function buildFullCorpusEpub(
   onProgress: (msg: string) => void
 ): Promise<Uint8Array> {
   const enc = new TextEncoder();
+  const labels = getExportDocLabels(langMode);
+  const bookUid = `abhidhamma-full-${Date.now()}`;
   const partFiles: CorpusPartChapterFile[] = [];
   let workIdx = 0;
 
@@ -1888,8 +2083,10 @@ export async function buildFullCorpusEpub(
   const termsMap = new Map<string, string>();
   rawGlossary.forEach((entry, idx) => {
     const headword = entry.h.split(" / ")[0]!.split(" ")[0]!.toLowerCase().normalize("NFC");
-    termsMap.set(headword, String(idx));
+    if (!termsMap.has(headword)) termsMap.set(headword, String(idx));
   });
+  const glossaryInnerHtml = buildGlossaryHtml(rawGlossary, langMode, termsMap);
+  const hasGlossary = glossaryInnerHtml.trim().length > 0;
 
   for (const [group, works] of orderedGroupEntries(manifest)) {
     const groupTitle = getGroupDisplayTitle(group);
@@ -1925,14 +2122,14 @@ export async function buildFullCorpusEpub(
           langMode,
           termsMap,
           fileId,
-          "glossary.xhtml"
+          hasGlossary ? "glossary.xhtml" : ""
         );
 
-        const localToc = renderLocalPartTocXhtml(chapters, "");
+        const localToc = renderLocalPartTocXhtml(chapters, "", labels.localPartTocTitle);
 
         const xhtml = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="pi" xml:lang="pi">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="${labels.docLang}" xml:lang="${labels.docLang}">
 <head>
 <meta charset="utf-8"/>
 <title>${escHtml(work.title)} — ${escHtml(partTitle)}</title>
@@ -1945,10 +2142,10 @@ export async function buildFullCorpusEpub(
     <h1>${escHtml(work.title)}</h1>
     <div class="part-subtitle">${escHtml(partTitle)}</div>
   </div>
-  <p style="text-align:center;margin:0.4em 0 1em 0;"><a class="back-to-toc" style="margin-top:0;border-top:none;padding-top:0;" href="nav.xhtml">↑ Ir para o Índice Geral da Coleção</a></p>
+  <p style="text-align:center;margin:0.4em 0 1em 0;"><a class="back-to-toc" style="margin-top:0;border-top:none;padding-top:0;" href="nav.xhtml">${escHtml(labels.goToFullToc)}</a></p>
   ${localToc}
   ${bodyHtml}
-  <a class="back-to-toc" href="nav.xhtml">↑ Voltar ao Índice Geral da Coleção</a>
+  <a class="back-to-toc" href="nav.xhtml">${escHtml(labels.backToFullToc)}</a>
 </section>
 </body>
 </html>`;
@@ -1969,28 +2166,18 @@ export async function buildFullCorpusEpub(
     }
   }
 
-  // ── Build Glossary XHTML ──
-  let glossaryRows = "";
-  rawGlossary.forEach((term, idx) => {
-    const parts: string[] = [`<strong>${escHtml(term.h)}</strong>`];
-    if (term.pos) parts.push(`<em>(${escHtml(term.pos)})</em>`);
-    parts.push(escHtml(term.en));
-    parts.push(escHtml(term.pt));
-    if (term.es) parts.push(escHtml(term.es));
-    glossaryRows += `<p class="glossary-entry" id="dict_${idx}">${parts.join(" — ")}</p>\n`;
-  });
-  const glossaryXhtml = `<?xml version="1.0" encoding="UTF-8"?>
+  // ── Build Glossary XHTML (respecting langMode & unique IDs) ──
+  const glossaryXhtml = hasGlossary
+    ? `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="pi" xml:lang="pi">
-<head><meta charset="utf-8"/><title>Glossário Pāḷi</title>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="${labels.docLang}" xml:lang="${labels.docLang}">
+<head><meta charset="utf-8"/><title>${escHtml(labels.glossaryTitle)}</title>
 <link rel="stylesheet" type="text/css" href="style.css"/></head>
 <body epub:type="backmatter">
-<section epub:type="glossary" id="glossary_section">
-<h1 id="glossary_title">Glossário Pāḷi</h1>
-${glossaryRows}
-<a class="back-to-toc" href="nav.xhtml">↑ Voltar ao Índice Geral</a>
-</section>
-</body></html>`;
+${glossaryInnerHtml}
+<a class="back-to-toc" href="nav.xhtml">${escHtml(labels.backToToc)}</a>
+</body></html>`
+    : "";
 
   // ── Group partFiles by Group → Work → Part ──
   const groupMap = new Map<string, { groupTitle: string; works: Map<string, { workTitle: string; parts: CorpusPartChapterFile[] }> }>();
@@ -2043,17 +2230,25 @@ ${ncxWorkPoints.join("\n")}
     </navPoint>`);
   }
 
-  const glossPo = nextPlayOrder();
+  const glossNcxPoint = hasGlossary
+    ? `  <navPoint id="ncx_glossary" playOrder="${nextPlayOrder()}">
+    <navLabel><text>${escHtml(labels.glossaryTitle)}</text></navLabel>
+    <content src="glossary.xhtml"/>
+  </navPoint>`
+    : "";
+
   const ncx = `<?xml version="1.0" encoding="UTF-8"?>
 <ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
-<head><meta name="dtb:uid" content="abhidhamma-full"/></head>
-<docTitle><text>Abhidhamma Piṭaka — Coleção Completa</text></docTitle>
+<head>
+  <meta name="dtb:uid" content="${bookUid}"/>
+  <meta name="dtb:depth" content="5"/>
+  <meta name="dtb:totalPageCount" content="0"/>
+  <meta name="dtb:maxPageNumber" content="0"/>
+</head>
+<docTitle><text>${escHtml(labels.coverTitleFull)}</text></docTitle>
 <navMap>
 ${ncxGroupPoints.join("\n")}
-  <navPoint id="ncx_glossary" playOrder="${glossPo}">
-    <navLabel><text>Glossário Pāḷi</text></navLabel>
-    <content src="glossary.xhtml"/>
-  </navPoint>
+${glossNcxPoint}
 </navMap>
 </ncx>`;
 
@@ -2110,47 +2305,54 @@ ${fullWorkLis.join("\n")}
     );
   }
 
-  const firstBodyHref = partFiles[0]?.href ?? "glossary.xhtml";
+  const firstBodyHref = partFiles[0]?.href ?? (hasGlossary ? "glossary.xhtml" : "nav.xhtml");
   const navXhtml = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="pi" xml:lang="pi">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="${labels.docLang}" xml:lang="${labels.docLang}">
 <head>
 <meta charset="utf-8"/>
-<title>Abhidhamma Piṭaka — Índice Geral</title>
+<title>${escHtml(labels.coverTitleFull)} — ${escHtml(labels.landmarkToc)}</title>
 <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body epub:type="frontmatter">
 <div class="part-header-box">
   <div class="breadcrumb-line">Tipiṭaka Chaṭṭha Saṅgāyana</div>
-  <h1>Abhidhamma Piṭaka — Coleção Completa</h1>
-  <div class="part-subtitle">Mūla · Aṭṭhakathā · Ṭīkā · Anuṭīkā · Tratados · Visuddhimagga</div>
+  <h1>${escHtml(labels.coverTitleFull)}</h1>
+  <div class="part-subtitle">Mūla · Aṭṭhakathā · Ṭīkā · Anuṭīkā · Visuddhimagga</div>
 </div>
 <div class="toc-header">
-  <h2>Visão Rápida de Tratados, Obras e Comentários</h2>
+  <h2>${escHtml(labels.navShortOverviewTitle)}</h2>
   <ol class="toc-short">
 ${shortNavLists.join("\n")}
-    <li><a class="toc-grp-label" href="glossary.xhtml">Glossário Pāḷi</a></li>
+${hasGlossary ? `    <li><a class="toc-grp-label" href="glossary.xhtml">${escHtml(labels.glossaryTitle)}</a></li>` : ""}
   </ol>
 </div>
 <hr/>
 <nav epub:type="toc" id="toc">
-  <h1>Índice Analítico Completo (Tratados, Obras, Comentários, Capítulos e Subcapítulos)</h1>
+  <h1>${escHtml(labels.navFullAnalyticalTitle)}</h1>
   <ol>
 ${fullNavLists.join("\n")}
-    <li><a class="toc-grp-label" href="glossary.xhtml">Glossário Pāḷi</a></li>
+${hasGlossary ? `    <li><a class="toc-grp-label" href="glossary.xhtml">${escHtml(labels.glossaryTitle)}</a></li>` : ""}
   </ol>
 </nav>
 <nav epub:type="landmarks" hidden="hidden">
   <ol>
-    <li><a epub:type="toc" href="nav.xhtml">Índice Geral</a></li>
-    <li><a epub:type="bodymatter" href="${firstBodyHref}">Início do Corpus</a></li>
-    <li><a epub:type="glossary" href="glossary.xhtml">Glossário Pāḷi</a></li>
+    <li><a epub:type="toc" href="nav.xhtml">${escHtml(labels.landmarkToc)}</a></li>
+    <li><a epub:type="bodymatter" href="${firstBodyHref}">${escHtml(labels.landmarkStartCorpus)}</a></li>
+${hasGlossary ? `    <li><a epub:type="glossary" href="glossary.xhtml">${escHtml(labels.glossaryTitle)}</a></li>` : ""}
   </ol>
 </nav>
 </body>
 </html>`;
 
   // ── Build OPF manifest + spine ──
+  const fontManifestLines: string[] = [];
+  if (fontReg.length > 0) {
+    fontManifestLines.push(`  <item id="font-reg" href="fonts/GentiumBookPlus-Regular.ttf" media-type="font/ttf"/>`);
+  }
+  if (fontIta.length > 0) {
+    fontManifestLines.push(`  <item id="font-ita" href="fonts/GentiumBookPlus-Italic.ttf" media-type="font/ttf"/>`);
+  }
   const manifestItems = partFiles
     .map((c) => `  <item id="${c.fileId}" href="${c.href}" media-type="application/xhtml+xml"/>`)
     .join("\n");
@@ -2159,25 +2361,24 @@ ${fullNavLists.join("\n")}
   const opf = `<?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uid" version="3.0">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <dc:title>Abhidhamma Piṭaka — Coleção Completa</dc:title>
+  <dc:title>${escHtml(labels.coverTitleFull)}</dc:title>
   <dc:creator>Buddha; Buddhaghosa; Dhammapāla; Anuruddha; Buddhadatta; Nina van Gorkom</dc:creator>
-  <dc:language>pi</dc:language>
-  <dc:identifier id="uid">abhidhamma-full-${Date.now()}</dc:identifier>
+  <dc:language>${labels.docLang}</dc:language>
+  <dc:identifier id="uid">${bookUid}</dc:identifier>
   <meta property="dcterms:modified">${new Date().toISOString().replace(/\.\d+Z$/, "Z")}</meta>
 </metadata>
 <manifest>
-  <item id="font-reg" href="fonts/GentiumBookPlus-Regular.ttf" media-type="font/ttf"/>
-  <item id="font-ita" href="fonts/GentiumBookPlus-Italic.ttf" media-type="font/ttf"/>
+${fontManifestLines.join("\n")}
   <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
   <item id="css" href="style.css" media-type="text/css"/>
   <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
-  <item id="glossary" href="glossary.xhtml" media-type="application/xhtml+xml"/>
+${hasGlossary ? `  <item id="glossary" href="glossary.xhtml" media-type="application/xhtml+xml"/>` : ""}
 ${manifestItems}
 </manifest>
 <spine toc="ncx">
   <itemref idref="nav"/>
 ${spineItems}
-  <itemref idref="glossary"/>
+${hasGlossary ? `  <itemref idref="glossary"/>` : ""}
 </spine>
 </package>`;
 
@@ -2194,9 +2395,11 @@ ${spineItems}
     { name: "OEBPS/content.opf", data: enc.encode(opf) },
     { name: "OEBPS/toc.ncx", data: enc.encode(ncx) },
     { name: "OEBPS/nav.xhtml", data: enc.encode(navXhtml) },
-    { name: "OEBPS/glossary.xhtml", data: enc.encode(glossaryXhtml) },
     { name: "OEBPS/style.css", data: enc.encode(EPUB_CSS) },
   ];
+  if (hasGlossary) {
+    zipEntries.push({ name: "OEBPS/glossary.xhtml", data: enc.encode(glossaryXhtml) });
+  }
   if (fontReg.length > 0) zipEntries.push({ name: "OEBPS/fonts/GentiumBookPlus-Regular.ttf", data: fontReg });
   if (fontIta.length > 0) zipEntries.push({ name: "OEBPS/fonts/GentiumBookPlus-Italic.ttf", data: fontIta });
 
@@ -2210,13 +2413,71 @@ ${spineItems}
   return buildZip(zipEntries);
 }
 
-// ── Fetch segments ────────────────────────────────────────────────────────────
+// ── Fetch & Slice Segments (Position-based, immune to multi-volume ID resets) ─
+
+export function sliceSegmentsByChapterRange(
+  all: Segment[],
+  chapters: TocEntry[],
+  fromChapIdx: number | null,
+  toChapIdx: number | null
+): Segment[] {
+  if (fromChapIdx == null && toChapIdx == null) return all;
+  if (chapters.length === 0 || all.length === 0) return all;
+
+  // Locate the exact sequential array index of each TOC chapter in `all`,
+  // advancing monotonically so multi-volume ID resets (Yamaka, Paṭṭhāna, Visuddhimagga)
+  // and chunk ID overlaps (Buddhism in Daily Life) never mix or omit sections.
+  const chapterPositions: number[] = [];
+  let cursor = 0;
+  for (const ch of chapters) {
+    let found = -1;
+    for (let i = cursor; i < all.length; i++) {
+      const seg = all[i]!;
+      if (String(seg.id) === String(ch.id) && seg.rend === ch.rend) {
+        found = i;
+        break;
+      }
+    }
+    if (found === -1) {
+      for (let i = cursor; i < all.length; i++) {
+        if (String(all[i]!.id) === String(ch.id)) {
+          found = i;
+          break;
+        }
+      }
+    }
+    chapterPositions.push(found);
+    if (found !== -1) cursor = found + 1;
+  }
+
+  let effFrom = fromChapIdx;
+  let effTo = toChapIdx;
+  if (effFrom != null && effTo != null && effFrom > effTo) {
+    const tmp = effFrom;
+    effFrom = effTo;
+    effTo = tmp;
+  }
+
+  const startPos =
+    effFrom != null && effFrom >= 0 && effFrom < chapterPositions.length && chapterPositions[effFrom]! >= 0
+      ? chapterPositions[effFrom]!
+      : 0;
+
+  let endPos = all.length;
+  if (effTo != null && effTo >= 0 && effTo + 1 < chapterPositions.length) {
+    const nextPos = chapterPositions[effTo + 1]!;
+    if (nextPos >= startPos) endPos = nextPos;
+  }
+
+  return all.slice(startPos, endPos);
+}
 
 async function fetchWorkSegments(
   workId: string,
   files: string[],
-  fromSegId: number | null,
-  toSegId: number | null
+  chapters: TocEntry[],
+  fromChapIdx: number | null,
+  toChapIdx: number | null
 ): Promise<Segment[]> {
   const all: Segment[] = [];
   for (const file of files) {
@@ -2225,12 +2486,7 @@ async function fetchWorkSegments(
     const segs = (await res.json()) as Segment[];
     all.push(...segs);
   }
-  if (fromSegId == null && toSegId == null) return all;
-  return all.filter(
-    (s) =>
-      (fromSegId == null || s.id >= fromSegId) &&
-      (toSegId == null || s.id <= toSegId)
-  );
+  return sliceSegmentsByChapterRange(all, chapters, fromChapIdx, toChapIdx);
 }
 
 // ── UI helpers ────────────────────────────────────────────────────────────────
@@ -2427,9 +2683,10 @@ export function initExportPanel(
       allOpt.value = "";
       allOpt.textContent = t("exportAllChapters", settings.uiLang);
       sel.appendChild(allOpt);
-      for (const ch of chapters) {
+      for (let i = 0; i < chapters.length; i++) {
+        const ch = chapters[i]!;
         const opt = document.createElement("option");
-        opt.value = String(ch.id);
+        opt.value = String(i);
         opt.textContent = ch.text.slice(0, 60);
         sel.appendChild(opt);
       }
@@ -2519,21 +2776,13 @@ export function initExportPanel(
       return;
     }
 
-    let fromSegId: number | null = null;
-    let toSegId: number | null = null;
+    let fromChapIdx: number | null = null;
+    let toChapIdx: number | null = null;
     if (partKeys.length === 1 && chapDiv.style.display !== "none") {
       const fromVal = chapFromSel.value;
       const toVal = chapToSel.value;
-      if (fromVal) fromSegId = Number(fromVal);
-      if (toVal) {
-        const partKey = partKeys[0]!;
-        const chapters = getChapterToc(work, partKey);
-        const toIdx = chapters.findIndex((c) => String(c.id) === toVal);
-        if (toIdx >= 0) {
-          const nextChapter = chapters[toIdx + 1];
-          toSegId = nextChapter ? nextChapter.id - 1 : null;
-        }
-      }
+      if (fromVal !== "") fromChapIdx = Number(fromVal);
+      if (toVal !== "") toChapIdx = Number(toVal);
     }
 
     statusDiv.textContent = t("exportBuilding", settings.uiLang);
@@ -2550,11 +2799,13 @@ export function initExportPanel(
         if (!part) continue;
         const pTitle = getPartDisplayTitle(partKey, part.label);
         partLabel += (partLabel ? " + " : "") + pTitle;
+        const partChapters = getChapterToc(work, partKey);
         const segs = await fetchWorkSegments(
           work.id,
           part.files,
-          partKeys.length === 1 ? fromSegId : null,
-          partKeys.length === 1 ? toSegId : null
+          partChapters,
+          partKeys.length === 1 ? fromChapIdx : null,
+          partKeys.length === 1 ? toChapIdx : null
         );
         allSegs = allSegs.concat(segs);
         partSegsList.push({ partKey, partTitle: pTitle, segs });
@@ -2570,12 +2821,12 @@ export function initExportPanel(
       const termsMap = new Map<string, string>();
       usedTerms.forEach((entry, idx) => {
         const headword = entry.h.split(" / ")[0]!.split(" ")[0]!.toLowerCase().normalize("NFC");
-        termsMap.set(headword, String(idx));
+        if (!termsMap.has(headword)) termsMap.set(headword, String(idx));
       });
       const glossaryHtml = buildGlossaryHtml(usedTerms, langMode, termsMap);
       const workGroup = allWorks.find((w) => w.work.id === work.id)?.group ?? "";
 
-      const linkTarget = format === "pdf" ? "" : "glossary.xhtml";
+      const linkTarget = format === "pdf" ? "" : glossaryHtml ? "glossary.xhtml" : "";
       const partSections: PartExportSection[] = partSegsList.map((item) => {
         const fileId = `part_${item.partKey}`;
         const { bodyHtml, chapters } = buildSectionBodyAndToc(
