@@ -725,6 +725,7 @@ async function cacheAllForOffline(btn: HTMLButtonElement): Promise<void> {
       './js/abhidhamma-srs/offline-store.js',
       './js/abhidhamma-srs/ui.js',
       './js/mnemonic-lab/data.js',
+      './js/mnemonic-lab/nary-chapters-data.js',
       './js/mnemonic-lab/engine.js',
       './js/mnemonic-lab/ui.js',
     ];

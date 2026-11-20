@@ -271,14 +271,14 @@ export function resolveCittaFromSwitches(
         ) ?? null
       );
     case "lokuttara":
-      if (mode === 121 || (sw.jhanaStage != null && sw.jhanaStage > 1)) {
+      if (mode === 121) {
         return (
           CANONICAL_CITTAS_121.find(
             (c) =>
               c.family === "lokuttara" &&
               c.jati === sw.jati &&
               c.maggaStage === sw.maggaStage &&
-              c.jhanaStage === sw.jhanaStage
+              c.jhanaStage === (sw.jhanaStage ?? 1)
           ) ?? null
         );
       }
@@ -463,7 +463,8 @@ export function evaluateChemicalSynthesis(
   const viratiInKamaCount =
     targetCitta.bhumi === "kama" ? [47, 48, 49].filter((id) => selectedCetasikaIds.has(id)).length : 0;
 
-  const simultaneousOptionalNote = dosaSecCount > 1 || appaCount > 1 || viratiInKamaCount > 1;
+  const simultaneousOptionalNote =
+    dosaSecCount > 1 || appaCount + viratiInKamaCount > 1;
 
   return {
     isExactFixedMatch,
@@ -562,8 +563,8 @@ export function pickNextNaryChapterChallenge(
   const candidates =
     items.length > 1 && currentItemId != null ? items.filter((i) => i.id !== currentItemId) : items;
   const sorted = [...candidates].sort((a, b) => {
-    const scoreA = progress.masteredBinary[`chap${chapterNum}:${a.id}`] ?? 0;
-    const scoreB = progress.masteredBinary[`chap${chapterNum}:${b.id}`] ?? 0;
+    const scoreA = progress.masteredBinary[`nary:${a.id}`] ?? 0;
+    const scoreB = progress.masteredBinary[`nary:${b.id}`] ?? 0;
     if (scoreA !== scoreB) return scoreA - scoreB;
     return a.id.localeCompare(b.id);
   });
@@ -581,15 +582,15 @@ export function defaultNarySwitchesForChapter(
     case 3:
       return { category: "vedana", item: "somanassa", count: 62 };
     case 4:
-      return { door: "pancadvara", vara: "tadarammana", moments: 17 };
+      return { door: "pancadvara", vara: "tadarammana", vithicittas: 14 };
     case 5:
-      return { tetrad: "bhumi", realm: "apaya", count: 4 };
+      return { tetrad: "bhumi", subtype: "apaya", count: 4 };
     case 6:
-      return { type: "mahabhuta", status: "nipphanna", samutthana: "catusamutthana" };
+      return { type: "mahabhuta", heading: "pathavi", status: "nipphanna", samutthana: "catusamutthana" };
     case 7:
       return { compendium: "bodhipakkhiya", group: "satipatthana", count: 4 };
     case 8:
-      return { method: "patthana", index: 1, type: "sahajata" };
+      return { method: "patthana", type: "sahajata", index: 1 };
     case 9:
     default:
       return { wing: "samatha", group: "kasina", maxJhana: 5, carita: "all", nimitta: 3 };

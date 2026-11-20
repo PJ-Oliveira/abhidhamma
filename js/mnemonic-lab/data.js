@@ -292,57 +292,57 @@ function buildCommonMundaneCittas() {
         fixedCetasikas: [...UNIV_7, 8, 9, 10],
         optionalCetasikas: [],
         totalSangahaCount: 10,
-        asRef: "AS I.9 / II.24",
+        asRef: "AS I.10 / II.56",
     });
     list.push({
         id: 26,
-        code: "Ahetuka #14 (St-Ku-Upe)",
-        family: "ahetuka",
-        bhumi: "kama",
-        jati: "vipaka",
-        pali: "Upekkhā-sahagataṃ santīraṇa-cittaṃ (kusala-vipākaṃ)",
-        name: {
-            pt: "Consciência de investigação resultante salubre c/ equanimidade (#26) — exerce 5 funções",
-            en: "Wholesome-resultant investigating consciousness w/ equanimity (#26) — performs 5 functions",
-            es: "Conciencia de investigación resultante saludable con ecuanimidad (#26) — ejerce 5 funciones",
-        },
-        bitVedana: 0,
-        bitCognitive: 0,
-        bitSankhara: "fixed",
-        formulaNote: {
-            pt: "7 Universais + 3 Particulares (Vitakka, Vicāra, Adhimokkha) = 10 cetasikas.",
-            en: "7 Universals + 3 Particulars (Vitakka, Vicāra, Adhimokkha) = 10 cetasikas.",
-            es: "7 Universales + 3 Particulares (Vitakka, Vicāra, Adhimokkha) = 10 cetasikas.",
-        },
-        fixedCetasikas: [...UNIV_7, 8, 9, 10],
-        optionalCetasikas: [],
-        totalSangahaCount: 10,
-        asRef: "AS I.9 / II.24",
-    });
-    list.push({
-        id: 27,
-        code: "Ahetuka #15 (St-Ku-Som)",
+        code: "Ahetuka #14 (St-Ku-Som)",
         family: "ahetuka",
         bhumi: "kama",
         jati: "vipaka",
         pali: "Somanassa-sahagataṃ santīraṇa-cittaṃ (kusala-vipākaṃ)",
         name: {
-            pt: "Consciência de investigação resultante salubre c/ prazer (#27) — objetos muito desejáveis",
-            en: "Wholesome-resultant investigating consciousness w/ joy (#27) — very desirable objects",
-            es: "Conciencia de investigación resultante saludable con placer (#27) — objetos muy deseables",
+            pt: "Consciência de investigação resultante salubre c/ prazer (#26) — objetos muito desejáveis",
+            en: "Wholesome-resultant investigating consciousness w/ joy (#26) — very desirable objects",
+            es: "Conciencia de investigación resultante saludable con placer (#26) — objetos muy deseables",
         },
         bitVedana: 1,
         bitCognitive: 0,
         bitSankhara: "fixed",
         formulaNote: {
-            pt: "Como possui Somanassa, adiciona Pīti: 7 Universais + 4 Particulares (Vitakka, Vicāra, Adhimokkha, Pīti) = 11 cetasikas.",
-            en: "Because it has Somanassa, it adds Pīti: 7 Universals + 4 Particulars (Vitakka, Vicāra, Adhimokkha, Pīti) = 11 cetasikas.",
-            es: "Como posee Somanassa, añade Pīti: 7 Universales + 4 Particulares (Vitakka, Vicāra, Adhimokkha, Pīti) = 11 cetasikas.",
+            pt: "Como possui Somanassa, adiciona Pīti: 7 Universais + 4 Particulares (Vitakka, Vicāra, Adhimokkha, Pīti) = 11 cetasikas. Exerce 2 funções (Santīraṇa, Tadārammaṇa).",
+            en: "Because it has Somanassa, it adds Pīti: 7 Universals + 4 Particulars (Vitakka, Vicāra, Adhimokkha, Pīti) = 11 cetasikas. Performs 2 functions (Santīraṇa, Tadārammaṇa).",
+            es: "Como posee Somanassa, añade Pīti: 7 Universales + 4 Particulares (Vitakka, Vicāra, Adhimokkha, Pīti) = 11 cetasikas. Ejerce 2 funciones (Santīraṇa, Tadārammaṇa).",
         },
         fixedCetasikas: [...UNIV_7, 8, 9, 10, 12],
         optionalCetasikas: [],
         totalSangahaCount: 11,
-        asRef: "AS I.9 / II.24",
+        asRef: "AS I.10 / II.55",
+    });
+    list.push({
+        id: 27,
+        code: "Ahetuka #15 (St-Ku-Upe)",
+        family: "ahetuka",
+        bhumi: "kama",
+        jati: "vipaka",
+        pali: "Upekkhā-sahagataṃ santīraṇa-cittaṃ (kusala-vipākaṃ)",
+        name: {
+            pt: "Consciência de investigação resultante salubre c/ equanimidade (#27) — exerce 5 funções",
+            en: "Wholesome-resultant investigating consciousness w/ equanimity (#27) — performs 5 functions",
+            es: "Conciencia de investigación resultante saludable con ecuanimidad (#27) — ejerce 5 funciones",
+        },
+        bitVedana: 0,
+        bitCognitive: 0,
+        bitSankhara: "fixed",
+        formulaNote: {
+            pt: "7 Universais + 3 Particulares (Vitakka, Vicāra, Adhimokkha) = 10 cetasikas. Exerce 5 funções (Paṭisandhi ahetuka em Kāmasugati, Bhavaṅga, Cuti, Santīraṇa, Tadārammaṇa).",
+            en: "7 Universals + 3 Particulars (Vitakka, Vicāra, Adhimokkha) = 10 cetasikas. Performs 5 functions (rootless Paṭisandhi in Kāmasugati, Bhavaṅga, Cuti, Santīraṇa, Tadārammaṇa).",
+            es: "7 Universales + 3 Particulares (Vitakka, Vicāra, Adhimokkha) = 10 cetasikas. Ejerce 5 funciones (Paṭisandhi ahetuka en Kāmasugati, Bhavaṅga, Cuti, Santīraṇa, Tadārammaṇa).",
+        },
+        fixedCetasikas: [...UNIV_7, 8, 9, 10],
+        optionalCetasikas: [],
+        totalSangahaCount: 10,
+        asRef: "AS I.10 / II.56",
     });
     list.push({
         id: 28,
@@ -512,6 +512,7 @@ function buildCommonMundaneCittas() {
             const fixed = [...UNIV_7, ...pak, ...SOBHANA_UNIV_19, ...PANNA_1];
             const opt = jh < 5 ? [...APPAMANNA_2] : [];
             const totalCount = fixed.length + opt.length;
+            const enOrd = jh === 1 ? "1st" : jh === 2 ? "2nd" : jh === 3 ? "3rd" : `${jh}th`;
             list.push({
                 id,
                 code: `${rj.code} J${jh}`,
@@ -521,7 +522,7 @@ function buildCommonMundaneCittas() {
                 pali: `${jhanaPaliFormula[jh]}-${rj.pali}-cittaṃ`,
                 name: {
                     pt: `${rj.pt} — ${jh}º Jhāna (#${id})`,
-                    en: `${rj.en} — ${jh}th Jhāna (#${id})`,
+                    en: `${rj.en} — ${enOrd} Jhāna (#${id})`,
                     es: `${rj.es} — ${jh}.º Jhāna (#${id})`,
                 },
                 bitVedana: jh < 5 ? 1 : 0,
@@ -530,13 +531,13 @@ function buildCommonMundaneCittas() {
                 jhanaStage: jh,
                 formulaNote: {
                     pt: `Escada do ${jh}º Jhāna: 7 Universais + ${pak.length} Particulares + 19 Belos + 1 Paññā${jh < 5 ? " + 2 Appamaññā (Karuṇā/Muditā)" : " (5º Jhāna exclui Appamaññā pois já está em Upekkhā)"} = ${totalCount} cetasikas.`,
-                    en: `${jh}th Jhāna Ladder: 7 Universals + ${pak.length} Particulars + 19 Beautiful + 1 Paññā${jh < 5 ? " + 2 Appamaññā (Karuṇā/Muditā)" : " (5th Jhāna excludes Appamaññā as it has Upekkhā)"} = ${totalCount} cetasikas.`,
+                    en: `${enOrd} Jhāna Ladder: 7 Universals + ${pak.length} Particulars + 19 Beautiful + 1 Paññā${jh < 5 ? " + 2 Appamaññā (Karuṇā/Muditā)" : " (5th Jhāna excludes Appamaññā as it has Upekkhā)"} = ${totalCount} cetasikas.`,
                     es: `Escalera del ${jh}.º Jhāna: 7 Universales + ${pak.length} Particulares + 19 Bellos + 1 Paññā${jh < 5 ? " + 2 Appamaññā (Karuṇā/Muditā)" : " (5.º Jhāna excluye Appamaññā pues tiene Upekkhā)"} = ${totalCount} cetasikas.`,
                 },
                 fixedCetasikas: fixed,
                 optionalCetasikas: opt,
                 totalSangahaCount: totalCount,
-                asRef: "AS I.14 / II.20",
+                asRef: "AS I.21–24 / II.38–39",
             });
         }
     }
@@ -620,9 +621,9 @@ function buildCanonicalCittas89() {
             en: "Non-return (Anāgāmī)",
             es: "No-Retorno (Anāgāmī)",
             eradication: {
-                pt: "Erradica completamente todo o apego sensual (kāmarāga) e a aversão (ambas as 2 Dosa-mūla #9 e #10). Renasce apenas nos Suddhāvāsa.",
-                en: "Completely eradicates sensual craving (kāmarāga) and ill-will (both 2 Dosa-mūla #9 and #10). Reborn solely in Suddhāvāsa.",
-                es: "Erradica completamente el apego sensual (kāmarāga) y la aversión (ambas 2 Dosa-mūla #9 y #10). Renace sólo en Suddhāvāsa.",
+                pt: "Erradica completamente todo o apego sensual (kāmarāga) e a aversão (ambas as 2 Dosa-mūla #9 e #10). Jamais retorna a Kāmaloka; renasce nos reinos Brahma (em especial nos 5 Suddhāvāsa, se dotado do 5º Jhāna).",
+                en: "Completely eradicates sensual craving (kāmarāga) and ill-will (both 2 Dosa-mūla #9 and #10). Never returns to Kāmaloka; reborn in Brahma realms (especially the 5 Suddhāvāsa Pure Abodes with 5th Jhāna).",
+                es: "Erradica completamente el apego sensual (kāmarāga) y la aversión (ambas 2 Dosa-mūla #9 y #10). Jamás retorna a Kāmaloka; renace en los reinos Brahma (en especial en los 5 Suddhāvāsa con 5.º Jhāna).",
             },
         },
         {
@@ -660,19 +661,21 @@ function buildCanonicalCittas89() {
                 jhanaStage: 1,
                 maggaStage: st.idx,
                 formulaNote: {
-                    pt: "Na enumeração resumida (Saṅkhepa de 89 cittas), as 8 Lokuttara são tomadas no 1º Jhāna: 7 Universais + 6 Particulares + 19 Belos Universais + 3 Viratis (fixas e simultâneas) + 1 Paññā = 36 cetasikas (AS I.18 / II.36).",
-                    en: "In the summary enumeration (Saṅkhepa of 89 cittas), the 8 Supramundane are taken at 1st Jhāna: 7 Universals + 6 Particulars + 19 Beautiful Universals + 3 Viratis (fixed & simultaneous) + 1 Paññā = 36 cetasikas (AS I.18 / II.36).",
-                    es: "En la enumeración resumida (Saṅkhepa de 89 cittas), las 8 Supramundanas se toman en el 1.er Jhāna: 7 Universales + 6 Particulares + 19 Bellos Universales + 3 Viratis (fijas y simultáneas) + 1 Paññā = 36 cetasikas (AS I.18 / II.36).",
+                    pt: "Na enumeração resumida (Saṅkhepa de 89 cittas), as 8 Lokuttara são tomadas no 1º Jhāna: 7 Universais + 6 Particulares + 19 Belos Universais + 3 Viratis (fixas e simultâneas) + 1 Paññā = 36 cetasikas (AS I.31–34 / II.36).",
+                    en: "In the summary enumeration (Saṅkhepa of 89 cittas), the 8 Supramundane are taken at 1st Jhāna: 7 Universals + 6 Particulars + 19 Beautiful Universals + 3 Viratis (fixed & simultaneous) + 1 Paññā = 36 cetasikas (AS I.31–34 / II.36).",
+                    es: "En la enumeración resumida (Saṅkhepa de 89 cittas), las 8 Supramundanas se toman en el 1.er Jhāna: 7 Universales + 6 Particulares + 19 Bellos Universales + 3 Viratis (fijas y simultáneas) + 1 Paññā = 36 cetasikas (AS I.31–34 / II.36).",
                 },
                 fixedCetasikas: fixed,
                 optionalCetasikas: [],
                 totalSangahaCount: 36,
-                asRef: "AS I.18 / II.19",
+                asRef: "AS I.31–34 / II.36",
                 hetuType: "tihetuka",
-                kiccaPali: kind === "magga" ? "Javana (Corte de Kamma)" : "Javana (Phalasamāpatti)",
+                kiccaPali: kind === "magga" ? "Javana (Maggakicca)" : "Javana (Phalasamāpatti)",
                 dvaraPali: "Ekadvārika (Manodvāra)",
-                arammanaPali: "Asaṅkhata-dhātu / Nibbāna (exclusivo)",
-                vatthuPali: "Hadayavatthu",
+                arammanaPali: "Asaṅkhata-dhātu (Nibbāna)",
+                vatthuPali: kind === "magga" && st.idx === 1
+                    ? "Hadayavatthu (ekantena)"
+                    : "Hadayavatthu (nissāya vā anissāya vā)",
                 jhanaFactorsPali: "Vitakka, Vicāra, Pīti, Sukha, Ekaggatā",
                 eradicationNote: st.eradication,
             });
@@ -769,9 +772,9 @@ function buildCanonicalCittas121() {
             en: "Non-return (Anāgāmī)",
             es: "No-Retorno (Anāgāmī)",
             eradication: {
-                pt: "Erradica completamente todo o apego sensorial residual (kāmarāga) e toda aversão/irritação (paṭigha — eliminando ambas as 2 Dosa-mūla #9 e #10). Renasce apenas nos Suddhāvāsa de Rūpa Brahma.",
-                en: "Completely eradicates all residual sensual craving (kāmarāga) and all ill-will (paṭigha — eliminating both 2 Dosa-mūla #9 and #10). Reborn solely in Suddhāvāsa of Rūpa Brahma.",
-                es: "Erradica completamente todo el apego sensorial residual (kāmarāga) y toda aversión (paṭigha — eliminando ambas 2 Dosa-mūla #9 y #10). Renace sólo en Suddhāvāsa de Rūpa Brahma.",
+                pt: "Erradica completamente todo o apego sensorial residual (kāmarāga) e toda aversão/irritação (paṭigha — eliminando ambas as 2 Dosa-mūla #9 e #10). Jamais retorna a Kāmaloka; renasce nos reinos Brahma (em especial nos 5 Suddhāvāsa, se dotado do 5º Jhāna).",
+                en: "Completely eradicates all residual sensual craving (kāmarāga) and all ill-will (paṭigha — eliminating both 2 Dosa-mūla #9 and #10). Never returns to Kāmaloka; reborn in Brahma realms (especially the 5 Suddhāvāsa Pure Abodes with 5th Jhāna).",
+                es: "Erradica completamente todo el apego sensual residual (kāmarāga) y toda aversión (paṭigha — eliminando ambas 2 Dosa-mūla #9 y #10). Jamás retorna a Kāmaloka; renace en los reinos Brahma (en especial en los 5 Suddhāvāsa con 5.º Jhāna).",
             },
         },
         {
@@ -821,12 +824,14 @@ function buildCanonicalCittas121() {
                     fixedCetasikas: fixed,
                     optionalCetasikas: [],
                     totalSangahaCount: jhMeta.cetasikaCount,
-                    asRef: "AS I.38 / II.36",
+                    asRef: "AS I.38–40 / II.36–37",
                     hetuType: "tihetuka",
-                    kiccaPali: kind === "magga" ? "Javana (Corte de Kamma Supramundano)" : "Javana (em fruição e Phalasamāpatti)",
+                    kiccaPali: kind === "magga" ? "Javana (Maggakicca)" : "Javana (Phalasamāpatti)",
                     dvaraPali: "Ekadvārika (Manodvāra)",
-                    arammanaPali: "Asaṅkhata-dhātu / Nibbāna (exclusivo)",
-                    vatthuPali: "Hadayavatthu",
+                    arammanaPali: "Asaṅkhata-dhātu (Nibbāna)",
+                    vatthuPali: kind === "magga" && st.idx === 1
+                        ? "Hadayavatthu (ekantena)"
+                        : "Hadayavatthu (nissāya vā anissāya vā)",
                     jhanaFactorsPali: jhMeta.factorsPali,
                     eradicationNote: st.eradication,
                 });

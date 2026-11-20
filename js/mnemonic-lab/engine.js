@@ -1,5 +1,5 @@
-import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, ONTOLOGICAL_COLLISION_RULES, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=bdb199e1";
-import { CHAPTER_2_ITEMS, CHAPTER_3_ITEMS, CHAPTER_4_ITEMS, CHAPTER_5_ITEMS, CHAPTER_6_ITEMS, CHAPTER_7_ITEMS, CHAPTER_8_ITEMS, CHAPTER_9_ITEMS, } from "./nary-chapters-data.js?v=bdb199e1";
+import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, ONTOLOGICAL_COLLISION_RULES, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=f5a29153";
+import { CHAPTER_2_ITEMS, CHAPTER_3_ITEMS, CHAPTER_4_ITEMS, CHAPTER_5_ITEMS, CHAPTER_6_ITEMS, CHAPTER_7_ITEMS, CHAPTER_8_ITEMS, CHAPTER_9_ITEMS, } from "./nary-chapters-data.js?v=f5a29153";
 export const MNEMONIC_STORAGE_KEY = "abhidhamma_mnemonic_lab_v1";
 export function createInitialProgress() {
     return {
@@ -158,11 +158,11 @@ export function resolveCittaFromSwitches(sw, mode = 121) {
         case "arupavacara":
             return (pool.find((c) => c.family === "arupavacara" && c.jati === sw.jati && c.arupaBase === sw.arupaBase) ?? null);
         case "lokuttara":
-            if (mode === 121 || (sw.jhanaStage != null && sw.jhanaStage > 1)) {
+            if (mode === 121) {
                 return (CANONICAL_CITTAS_121.find((c) => c.family === "lokuttara" &&
                     c.jati === sw.jati &&
                     c.maggaStage === sw.maggaStage &&
-                    c.jhanaStage === sw.jhanaStage) ?? null);
+                    c.jhanaStage === (sw.jhanaStage ?? 1)) ?? null);
             }
             return (CANONICAL_CITTAS_89.find((c) => c.family === "lokuttara" && c.jati === sw.jati && c.maggaStage === sw.maggaStage) ?? null);
         default:
@@ -277,7 +277,7 @@ export function evaluateChemicalSynthesis(targetCitta, selectedCetasikaIds) {
     const dosaSecCount = [22, 23, 24].filter((id) => selectedCetasikaIds.has(id)).length;
     const appaCount = [50, 51].filter((id) => selectedCetasikaIds.has(id)).length;
     const viratiInKamaCount = targetCitta.bhumi === "kama" ? [47, 48, 49].filter((id) => selectedCetasikaIds.has(id)).length : 0;
-    const simultaneousOptionalNote = dosaSecCount > 1 || appaCount > 1 || viratiInKamaCount > 1;
+    const simultaneousOptionalNote = dosaSecCount > 1 || appaCount + viratiInKamaCount > 1;
     return {
         isExactFixedMatch,
         isExactFullSangahaMatch,
@@ -352,8 +352,8 @@ export function pickNextNaryChapterChallenge(chapterNum, progress, currentItemId
         return CHAPTER_2_ITEMS[0];
     const candidates = items.length > 1 && currentItemId != null ? items.filter((i) => i.id !== currentItemId) : items;
     const sorted = [...candidates].sort((a, b) => {
-        const scoreA = progress.masteredBinary[`chap${chapterNum}:${a.id}`] ?? 0;
-        const scoreB = progress.masteredBinary[`chap${chapterNum}:${b.id}`] ?? 0;
+        const scoreA = progress.masteredBinary[`nary:${a.id}`] ?? 0;
+        const scoreB = progress.masteredBinary[`nary:${b.id}`] ?? 0;
         if (scoreA !== scoreB)
             return scoreA - scoreB;
         return a.id.localeCompare(b.id);
@@ -369,15 +369,15 @@ export function defaultNarySwitchesForChapter(chapterNum) {
         case 3:
             return { category: "vedana", item: "somanassa", count: 62 };
         case 4:
-            return { door: "pancadvara", vara: "tadarammana", moments: 17 };
+            return { door: "pancadvara", vara: "tadarammana", vithicittas: 14 };
         case 5:
-            return { tetrad: "bhumi", realm: "apaya", count: 4 };
+            return { tetrad: "bhumi", subtype: "apaya", count: 4 };
         case 6:
-            return { type: "mahabhuta", status: "nipphanna", samutthana: "catusamutthana" };
+            return { type: "mahabhuta", heading: "pathavi", status: "nipphanna", samutthana: "catusamutthana" };
         case 7:
             return { compendium: "bodhipakkhiya", group: "satipatthana", count: 4 };
         case 8:
-            return { method: "patthana", index: 1, type: "sahajata" };
+            return { method: "patthana", type: "sahajata", index: 1 };
         case 9:
         default:
             return { wing: "samatha", group: "kasina", maxJhana: 5, carita: "all", nimitta: 3 };

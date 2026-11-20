@@ -211,9 +211,10 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     const resolved = resolveCittaFromSwitches(sw);
     expect(resolved?.id).toBe(6); // 6th Lobhamūla [0·1·0]
 
-    // Verify all 18 Ahetuka Cittas (#13..#30) are synthesizable
+    // Verify all 18 Ahetuka Cittas (#13..#30) are synthesizable in exact Mūla order (AS I.9-11)
     expect(resolveCittaFromSwitches({ ...defaultSwitchStateForFamily("ahetuka"), ahetukaSubgroup: "akusala_vipaka", ahetukaSlot: 4 })?.id).toBe(17); // Kāya-viññāṇa dukkha
-    expect(resolveCittaFromSwitches({ ...defaultSwitchStateForFamily("ahetuka"), ahetukaSubgroup: "kusala_vipaka", ahetukaSlot: 7 })?.id).toBe(27); // Somanassa-santīraṇa
+    expect(resolveCittaFromSwitches({ ...defaultSwitchStateForFamily("ahetuka"), ahetukaSubgroup: "kusala_vipaka", ahetukaSlot: 6 })?.id).toBe(26); // Somanassa-santīraṇa (AS I.10)
+    expect(resolveCittaFromSwitches({ ...defaultSwitchStateForFamily("ahetuka"), ahetukaSubgroup: "kusala_vipaka", ahetukaSlot: 7 })?.id).toBe(27); // Upekkhā-santīraṇa (AS I.10)
     expect(resolveCittaFromSwitches({ ...defaultSwitchStateForFamily("ahetuka"), ahetukaSubgroup: "kiriya", ahetukaSlot: 2 })?.id).toBe(30); // Hasituppāda
 
     const evalFixed = evaluateChemicalSynthesis(resolved!, new Set(resolved!.fixedCetasikas));
@@ -615,5 +616,172 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     expect(esText).not.toContain("Ethically Variable: 7+6");
     expect(esText).not.toContain("Subdivision:");
     expect(esText).not.toContain("Load into Switches");
+  });
+
+  it("verifies doctrinal fidelity to Abhidhammatthasaṅgaha Mūla (Ch. 1–9) and engine invariants", () => {
+    // 1) AS I.10: Kusala-vipāka Somanassa-santīraṇa (#26, 11 cetasikas) precedes Upekkhā-santīraṇa (#27, 10 cetasikas)
+    const c26 = CANONICAL_CITTAS_89.find((c) => c.id === 26)!;
+    const c27 = CANONICAL_CITTAS_89.find((c) => c.id === 27)!;
+    expect(c26.bitVedana).toBe(1);
+    expect(c26.totalSangahaCount).toBe(11);
+    expect(c27.bitVedana).toBe(0);
+    expect(c27.totalSangahaCount).toBe(10);
+
+    // 2) AS III.70-71: Only Paṭhamamagga (Sotāpattimagga) depends exclusively on Hadayavatthu;
+    //    the remaining 7 Lokuttara cittas (35 in 121-mode) are nissāya vā anissāya vā!
+    const lok89 = CANONICAL_CITTAS_89.filter((c) => c.family === "lokuttara");
+    expect(lok89.find((c) => c.jati === "kusala" && c.maggaStage === 1)?.vatthuPali).toBe("Hadayavatthu (ekantena)");
+    for (const c of lok89.filter((x) => !(x.jati === "kusala" && x.maggaStage === 1))) {
+      expect(c.vatthuPali).toBe("Hadayavatthu (nissāya vā anissāya vā)");
+    }
+    const lok121 = CANONICAL_CITTAS_121.filter((c) => c.family === "lokuttara");
+    expect(lok121.filter((c) => c.vatthuPali === "Hadayavatthu (ekantena)").length).toBe(5);
+    expect(lok121.filter((c) => c.vatthuPali === "Hadayavatthu (nissāya vā anissāya vā)").length).toBe(35);
+
+    // 3) Pure Pāli metadata fields (zero Portuguese leakage in *Pali fields)
+    for (const c of [...CANONICAL_CITTAS_89, ...CANONICAL_CITTAS_121]) {
+      expect(c.kiccaPali ?? "").not.toMatch(/Corte de Kamma|Supramundano|fruição/i);
+      expect(c.arammanaPali ?? "").not.toMatch(/exclusivo/i);
+      expect(c.name.en).not.toMatch(/\b(1th|2th|3th)\b/);
+      expect(c.formulaNote.en).not.toMatch(/\b(1th|2th|3th)\b/);
+    }
+
+    // 4) Engine 89-mode isolation: never leaks 121-mode cittas when mode === 89
+    const lok89Res = resolveCittaFromSwitches(
+      { ...defaultSwitchStateForFamily("lokuttara"), jati: "vipaka", maggaStage: 4, jhanaStage: 5 },
+      89
+    );
+    expect(lok89Res?.id).toBe(89);
+
+    // 5) AS II.40: In Kāmāvacara kusala, Virati + Appamaññā (all 5) are mutually exclusive with each other
+    const mk1 = CANONICAL_CITTAS_89.find((c) => c.id === 31)!;
+    const evalMixed = evaluateChemicalSynthesis(mk1, new Set([...mk1.fixedCetasikas, 47, 50])); // Sammā-vācā + Karuṇā
+    expect(evalMixed.isValidConfiguration).toBe(true);
+    expect(evalMixed.simultaneousOptionalNote).toBe(true);
+
+    // 6) Spaced-repetition mastery key sync in pickNextNaryChapterChallenge (`nary:<id>`)
+    let prog = createInitialProgress();
+    const ch2 = getNaryItemsForChapter(2);
+    for (const item of ch2.slice(0, 4)) {
+      prog = recordMnemonicAttempt(prog, "binary", `nary:${item.id}`, true);
+    }
+    const nextCh2 = pickNextNaryChapterChallenge(2, prog);
+    expect(prog.masteredBinary[`nary:${nextCh2.id}`] ?? 0).toBe(0);
+  });
+
+  it("guarantees every single N-ary item across Chapters 2–9 has a unique signature and is 100% solvable via UI controls", () => {
+    const host = document.createElement("div");
+    document.body.appendChild(host);
+    const ui = new MnemonicLabUI(host, "en");
+    ui.init();
+
+    for (let ch = 2; ch <= 9; ch++) {
+      const items = getNaryItemsForChapter(ch as any);
+      expect(items.length).toBeGreaterThan(0);
+
+      // Verify uniqueness of switch signatures within each chapter
+      const sigs = new Set<string>();
+      for (const item of items) {
+        const key = Object.entries(item.switches)
+          .sort(([a], [b]) => a.localeCompare(b))
+          .map(([k, v]) => `${k}=${v}`)
+          .join("|");
+        expect(sigs.has(key), `Duplicate switch signature in Ch.${ch} for ${item.id}: ${key}`).toBe(false);
+        sigs.add(key);
+      }
+
+      // Verify every single item can be dialed strictly by clicking rendered UI switch buttons
+      host.querySelector<HTMLButtonElement>(`[data-bin-chapter="${ch}"]`)!.click();
+
+      for (const item of items) {
+        for (const [k, v] of Object.entries(item.switches)) {
+          const btn = host.querySelector<HTMLButtonElement>(
+            `[data-nary-key="${k}"][data-nary-val="${String(v)}"]`
+          );
+          expect(
+            btn,
+            `Missing UI button in Ch.${ch} for ${item.id}: data-nary-key="${k}" data-nary-val="${String(v)}"`
+          ).not.toBeNull();
+          if (btn!.getAttribute("aria-pressed") !== "true") {
+            btn!.click();
+          }
+        }
+        // Synthesized preview card must resolve to this exact item!
+        expect(host.querySelector(".mnem-synthesized-card")?.textContent).toContain(item.code);
+      }
+    }
+    host.remove();
+  }, 30000);
+
+  it("enforces strict single-language + Pāli purity across ALL 9 chapters, ALL 3 pillars, and error feedback in EN, PT, and ES", () => {
+    const forbiddenByLang: Record<"en" | "pt" | "es", RegExp[]> = {
+      en: [
+        /\b(1º|2º|3º|4º|5º)\b/,
+        /\b(1th|2th|3th)\b/,
+        /\b(Insalubres|Salubre|Subdivisão|Posição|Carregar nas Chaves|Fórmula Canônica|Âncora Mnêmica|Corte de Kamma|Supramundano|fruição|exclusivo|Descompactador)\b/,
+        /\b(Subdivisión|Posición|Cargar en Interruptores|Ancla Mnemónica|Inhábiles|Descompresor|Tétrada)\b/,
+      ],
+      pt: [
+        /\b(1st|2nd|3rd|4th|5th)\b/,
+        /\b(Tetrads|Adverting|Slot|Insight|Backup|Offline|Volúpia|Doutilidade|Transluecent)\b/,
+        /\b(Unwholesome|Ethically Variable|Subdivision:|Load into Switches|Verify Encoding|Next Challenge)\b/,
+        /\b(Subdivisión|Posición|Cargar en Interruptores|Ancla Mnemónica|Inhábiles|Descompresor)\b/,
+      ],
+      es: [
+        /\b(1st|2nd|3rd|4th|5th)\b/,
+        /\b(Tetrads|Adverting|Slot|Insight|Backup|Offline|Desejo)\b/,
+        /\b(Unwholesome|Ethically Variable|Subdivision:|Load into Switches|Verify Encoding|Next Challenge)\b/,
+        /\b(Insalubres|Subdivisão|Posição|Carregar nas Chaves|Fórmula Canônica|Âncora Mnêmica|Descompactador)\b/,
+      ],
+    };
+
+    for (const lang of ["en", "pt", "es"] as const) {
+      const host = document.createElement("div");
+      document.body.appendChild(host);
+      const ui = new MnemonicLabUI(host, lang);
+      ui.init();
+
+      const assertPure = (context: string) => {
+        const txt = host.textContent ?? "";
+        for (const rx of forbiddenByLang[lang]) {
+          expect(txt, `Language leak (${lang}) in ${context}: matched ${rx}`).not.toMatch(rx);
+        }
+      };
+
+      // Pillar 1 — Chapter 1 (Explore & Challenge across all families including Rūpāvacara & Lokuttara)
+      assertPure("P1 Ch1 explore");
+      for (const fam of ["lobha", "dosa", "moha", "ahetuka", "kamasobhana", "rupavacara", "arupavacara", "lokuttara"]) {
+        host.querySelector<HTMLButtonElement>(`[data-bin-family="${fam}"]`)!.click();
+        assertPure(`P1 Ch1 explore family=${fam}`);
+      }
+      host.querySelector<HTMLButtonElement>('[data-bin-mode="challenge"]')!.click();
+      assertPure("P1 Ch1 challenge");
+      host.querySelector<HTMLButtonElement>("#mnem-bin-verify")!.click();
+      assertPure("P1 Ch1 challenge feedback");
+
+      // Pillar 1 — Chapters 2 through 9 (including error feedback to ensure no raw English switch keys leak in PT/ES!)
+      for (let ch = 2; ch <= 9; ch++) {
+        host.querySelector<HTMLButtonElement>(`[data-bin-chapter="${ch}"]`)!.click();
+        assertPure(`P1 Ch${ch} initial`);
+        host.querySelector<HTMLButtonElement>("#mnem-nary-verify")!.click();
+        assertPure(`P1 Ch${ch} verify feedback`);
+      }
+
+      // Pillar 2 — Periodic Table (Atlas & Alchemy)
+      host.querySelector<HTMLButtonElement>("#mnem-tab-periodic")!.click();
+      assertPure("P2 atlas");
+      host.querySelector<HTMLButtonElement>('[data-per-mode="alchemy"]')!.click();
+      assertPure("P2 alchemy");
+
+      // Pillar 3 — Phalanx Abacus (all 5 maps & 3 modes)
+      host.querySelector<HTMLButtonElement>("#mnem-tab-phalanx")!.click();
+      assertPure("P3 open");
+      host.querySelector<HTMLButtonElement>('[data-pha-mode="blind"]')!.click();
+      assertPure("P3 blind");
+      host.querySelector<HTMLButtonElement>('[data-pha-mode="sequence"]')!.click();
+      assertPure("P3 sequence");
+
+      host.remove();
+    }
   });
 });

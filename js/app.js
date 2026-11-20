@@ -1,22 +1,22 @@
-import { t } from "./i18n.js?v=bdb199e1";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=bdb199e1";
-import { renderTree, markActiveLeaf } from "./tree.js?v=bdb199e1";
-import { loadChunk, renderSegments } from "./reader.js?v=bdb199e1";
-import { initDictionaryPanel } from "./dictionary.js?v=bdb199e1";
-import { initSearchPanel } from "./search.js?v=bdb199e1";
-import { initExportPanel } from "./export.js?v=bdb199e1";
-import { initSrsPanel } from "./srs.js?v=bdb199e1";
-import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=bdb199e1";
-import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=bdb199e1";
-import { initToolsPanel } from "./tools/tools.js?v=bdb199e1";
-import "./tools/mindmap.js?v=bdb199e1";
-import "./tools/patthana.js?v=bdb199e1";
-import "./tools/vithi.js?v=bdb199e1";
-import "./tools/matikas.js?v=bdb199e1";
-import "./tools/cetasika.js?v=bdb199e1";
-import { MnemonicLabUI } from "./mnemonic-lab/ui.js?v=bdb199e1";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=bdb199e1";
-import { createLogger } from "./logger.js?v=bdb199e1";
+import { t } from "./i18n.js?v=f5a29153";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=f5a29153";
+import { renderTree, markActiveLeaf } from "./tree.js?v=f5a29153";
+import { loadChunk, renderSegments } from "./reader.js?v=f5a29153";
+import { initDictionaryPanel } from "./dictionary.js?v=f5a29153";
+import { initSearchPanel } from "./search.js?v=f5a29153";
+import { initExportPanel } from "./export.js?v=f5a29153";
+import { initSrsPanel } from "./srs.js?v=f5a29153";
+import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=f5a29153";
+import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=f5a29153";
+import { initToolsPanel } from "./tools/tools.js?v=f5a29153";
+import "./tools/mindmap.js?v=f5a29153";
+import "./tools/patthana.js?v=f5a29153";
+import "./tools/vithi.js?v=f5a29153";
+import "./tools/matikas.js?v=f5a29153";
+import "./tools/cetasika.js?v=f5a29153";
+import { MnemonicLabUI } from "./mnemonic-lab/ui.js?v=f5a29153";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=f5a29153";
+import { createLogger } from "./logger.js?v=f5a29153";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -674,6 +674,7 @@ async function cacheAllForOffline(btn) {
             './js/abhidhamma-srs/offline-store.js',
             './js/abhidhamma-srs/ui.js',
             './js/mnemonic-lab/data.js',
+            './js/mnemonic-lab/nary-chapters-data.js',
             './js/mnemonic-lab/engine.js',
             './js/mnemonic-lab/ui.js',
         ];

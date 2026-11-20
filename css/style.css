@@ -3444,11 +3444,19 @@ details[open] > summary::before { transform: rotate(90deg); }
 .mnem-lab-root {
   max-width: 1220px;
   width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
   margin: 0 auto;
   padding: 18px 20px 80px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.mnem-lab-root *,
+.mnem-lab-root *::before,
+.mnem-lab-root *::after {
+  box-sizing: border-box;
 }
 
 .mnem-lab-root :where(button, select):focus-visible {
@@ -3546,6 +3554,12 @@ details[open] > summary::before { transform: rotate(90deg); }
   padding: 6px 10px;
   font-size: 0.85rem;
   min-block-size: 32px;
+  max-width: 100%;
+}
+
+.mnem-map-select-wrap {
+  max-width: 100%;
+  min-width: 0;
 }
 
 /* Pillar Tabs (WAI-ARIA Tablist Pattern) */
@@ -4022,6 +4036,39 @@ details[open] > summary::before { transform: rotate(90deg); }
   color: #7a1c16;
 }
 
+.mnem-param-ok {
+  color: #135325 !important;
+  background: rgba(52, 168, 83, 0.18) !important;
+  border-color: rgba(52, 168, 83, 0.45) !important;
+  font-weight: 600;
+}
+
+.mnem-param-err {
+  color: #7a1c16 !important;
+  background: rgba(217, 48, 37, 0.14) !important;
+  border-color: rgba(217, 48, 37, 0.45) !important;
+  font-weight: 600;
+}
+
+.mnem-synth-pali,
+.mnem-pali-badge,
+.mnem-challenge-prompt,
+.mnem-cell-pali,
+.mnem-rel-chip,
+.mnem-eq-chip,
+.mnem-bit-btn {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.mnem-matrix-cell,
+.mnem-bit-card,
+.mnem-switch-group,
+.mnem-switchboard,
+.mnem-tabpanel-inner {
+  min-width: 0;
+}
+
 /* Combinatorial Matrix Grid */
 .mnem-section-h3 {
   margin: 6px 0 8px;
@@ -4313,7 +4360,7 @@ details[open] > summary::before { transform: rotate(90deg); }
 
 .mnem-hands-stage {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
   gap: 16px;
 }
 
@@ -4322,6 +4369,7 @@ details[open] > summary::before { transform: rotate(90deg); }
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 14px;
+  min-width: 0;
 }
 
 .mnem-hand-title {
@@ -4334,7 +4382,7 @@ details[open] > summary::before { transform: rotate(90deg); }
 
 .mnem-fingers-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
   align-items: end;
 }
@@ -4348,6 +4396,7 @@ details[open] > summary::before { transform: rotate(90deg); }
   flex-direction: column;
   align-items: center;
   gap: 6px;
+  min-width: 0;
 }
 
 .mnem-fingernail {
@@ -4363,10 +4412,15 @@ details[open] > summary::before { transform: rotate(90deg); }
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .mnem-joints-stack {
   width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -4381,6 +4435,7 @@ details[open] > summary::before { transform: rotate(90deg); }
 
 .mnem-phalanx-btn {
   width: 100%;
+  min-width: 0;
   min-height: 68px;
   background: var(--bg-panel);
   border: 1px solid var(--border);
@@ -4393,6 +4448,7 @@ details[open] > summary::before { transform: rotate(90deg); }
   justify-content: center;
   gap: 2px;
   text-align: center;
+  overflow: hidden;
 }
 
 .mnem-phalanx-btn:hover {
@@ -4435,6 +4491,10 @@ details[open] > summary::before { transform: rotate(90deg); }
   font-family: "Gentium Book Plus", Georgia, serif;
   font-size: 0.76rem;
   color: var(--accent);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .mnem-phalanx-hidden {
@@ -4536,6 +4596,39 @@ details[open] > summary::before { transform: rotate(90deg); }
   }
   .mnem-periodic-grid {
     grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  }
+  .mnem-level-ctrl,
+  .mnem-map-select-wrap {
+    width: 100%;
+  }
+  .mnem-level-select,
+  .mnem-map-select {
+    width: 100%;
+    max-width: 100%;
+  }
+  .mnem-enum-mode-btn {
+    margin-left: 0;
+  }
+  .mnem-autoalign-label {
+    margin-left: 0;
+    width: 100%;
+  }
+  .mnem-bits-grid {
+    grid-template-columns: 1fr;
+  }
+  .mnem-matrix-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 440px) {
+  .mnem-bit-toggle-pair {
+    grid-template-columns: 1fr;
+  }
+  .mnem-chapter-btn {
+    padding: 6px 8px;
+    font-size: 0.76rem;
+    min-height: 34px;
   }
 }
 
