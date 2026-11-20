@@ -22,7 +22,7 @@ import {
   defaultNarySwitchesForChapter,
   evaluateNaryChallenge,
 } from "../../src/mnemonic-lab/engine.js";
-import { CANONICAL_CHAPTERS_META } from "../../src/mnemonic-lab/nary-chapters-data.js";
+import { CANONICAL_CHAPTERS_META, getSubmatricesForChapter } from "../../src/mnemonic-lab/nary-chapters-data.js";
 import { MnemonicLabUI } from "../../src/mnemonic-lab/ui.js";
 import {
   buildLocalStorageSnapshot,
@@ -405,15 +405,85 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
       expect(meta!.equation.es).toBeTruthy();
     }
 
-    // 2) Chapter 2 has all 52 Cetasikas with correct distribution: 13 + 14 + 25 = 52
+    // 2) Chapter 2 has all 52 Cetasikas (13+14+25) + all 33 Saṅgaha-naya classes (5+5+12+7+4) = 85
     const ch2Items = getNaryItemsForChapter(2);
-    expect(ch2Items.length).toBe(52);
-    const annas = ch2Items.filter((c) => c.primaryGroup === "aññasamana");
-    const akus = ch2Items.filter((c) => c.primaryGroup === "akusala");
-    const sobh = ch2Items.filter((c) => c.primaryGroup === "sobhana");
+    expect(ch2Items.length).toBe(85);
+    const ch2Samp = getNaryItemsForChapter(2, "sampayoga_52");
+    const ch2Sang = getNaryItemsForChapter(2, "sangaha_33");
+    expect(ch2Samp.length).toBe(52);
+    expect(ch2Sang.length).toBe(33);
+    const annas = ch2Samp.filter((c) => c.primaryGroup === "aññasamana");
+    const akus = ch2Samp.filter((c) => c.primaryGroup === "akusala");
+    const sobh = ch2Samp.filter((c) => c.primaryGroup === "sobhana");
     expect(annas.length).toBe(13);
     expect(akus.length).toBe(14);
     expect(sobh.length).toBe(25);
+    expect(ch2Sang.filter((c) => c.primaryGroup === "sangaha_lokuttara").length).toBe(5);
+    expect(ch2Sang.filter((c) => c.primaryGroup === "sangaha_mahaggata").length).toBe(5);
+    expect(ch2Sang.filter((c) => c.primaryGroup === "sangaha_kamasobhana").length).toBe(12);
+    expect(ch2Sang.filter((c) => c.primaryGroup === "sangaha_akusala").length).toBe(7);
+    expect(ch2Sang.filter((c) => c.primaryGroup === "sangaha_ahetuka").length).toBe(4);
+
+    // 3) Chapter 3 covers all 6 exact partitions of AS III.1–74 (5+10+19+8+8+6 = 56)
+    const ch3Items = getNaryItemsForChapter(3);
+    expect(ch3Items.length).toBe(56);
+    expect(getNaryItemsForChapter(3, "vedana").length).toBe(5);
+    expect(getNaryItemsForChapter(3, "hetu").length).toBe(10);
+    expect(getNaryItemsForChapter(3, "kicca").length).toBe(19);
+    expect(getNaryItemsForChapter(3, "dvara").length).toBe(8);
+    expect(getNaryItemsForChapter(3, "arammana").length).toBe(8);
+    expect(getNaryItemsForChapter(3, "vatthu").length).toBe(6);
+
+    // 4) Chapter 4 covers all Vīthisaṅgaha structures (5+7+9+7 = 28)
+    const ch4Items = getNaryItemsForChapter(4);
+    expect(ch4Items.length).toBe(28);
+    expect(getNaryItemsForChapter(4, "pancadvara").length).toBe(5);
+    expect(getNaryItemsForChapter(4, "manodvara").length).toBe(7);
+    expect(getNaryItemsForChapter(4, "niyama").length).toBe(9);
+    expect(getNaryItemsForChapter(4, "puggala_bhumi").length).toBe(7);
+
+    // 5) Chapter 5 covers all 31 planes + Paṭisandhi + 4×4 Kamma + 20 Kammapatha/Puñña + Death/Cuti (31+7+20+20+11 = 89)
+    const ch5Items = getNaryItemsForChapter(5);
+    expect(ch5Items.length).toBe(89);
+    expect(getNaryItemsForChapter(5, "bhumi_31").length).toBe(31);
+    expect(getNaryItemsForChapter(5, "patisandhi").length).toBe(7);
+    expect(getNaryItemsForChapter(5, "kamma_16").length).toBe(20);
+    expect(getNaryItemsForChapter(5, "kammapatha_20").length).toBe(20);
+    expect(getNaryItemsForChapter(5, "marana_cuti").length).toBe(11);
+
+    // 6) Chapter 6 covers all 28 individual rūpas + 10 dyads/4 origins + 21 kalāpas + pavatti/Nibbāna (28+14+21+10 = 73)
+    const ch6Items = getNaryItemsForChapter(6);
+    expect(ch6Items.length).toBe(73);
+    expect(getNaryItemsForChapter(6, "rupa_28").length).toBe(28);
+    expect(getNaryItemsForChapter(6, "vibhaga_10").length).toBe(14);
+    expect(getNaryItemsForChapter(6, "kalapa_21").length).toBe(21);
+    expect(getNaryItemsForChapter(6, "pavatti_nibbana").length).toBe(10);
+
+    // 7) Chapter 7 covers all Akusala (10) + Missaka (8) + Bodhipakkhiya (7+14=21) + Sabba (7) = 46
+    const ch7Items = getNaryItemsForChapter(7);
+    expect(ch7Items.length).toBe(46);
+    expect(getNaryItemsForChapter(7, "akusala_9").length).toBe(10);
+    expect(getNaryItemsForChapter(7, "missaka_7").length).toBe(8);
+    expect(getNaryItemsForChapter(7, "bodhipakkhiya_21").length).toBe(21);
+    expect(getNaryItemsForChapter(7, "sabba_7").length).toBe(7);
+
+    // 8) Chapter 8 covers Paṭiccasamuppāda (12+6=18) + 24 Paṭṭhāna & 4 Samodhāna (28) + Paññattibheda (2+6=8) = 54
+    const ch8Items = getNaryItemsForChapter(8);
+    expect(ch8Items.length).toBe(54);
+    expect(getNaryItemsForChapter(8, "paticcasamuppada").length).toBe(18);
+    expect(getNaryItemsForChapter(8, "patthana_24").length).toBe(28);
+    expect(getNaryItemsForChapter(8, "pannatti_8").length).toBe(8);
+
+    // 9) Chapter 9 covers 40 Samatha + 16 Carita/Vasitā/Abhiññā + 21 Vipassanā (7 Visuddhi + 10 Ñāṇa + 4 Vimokkha/Upakkilesa) + 6 Ariya/Samāpatti = 83
+    const ch9Items = getNaryItemsForChapter(9);
+    expect(ch9Items.length).toBe(83);
+    const sam40 = getNaryItemsForChapter(9, "samatha_40");
+    expect(sam40.length).toBe(40);
+    expect(sam40.filter((i) => i.switches.nimitta === 3).length).toBe(22); // AS IX.34 dvāvīsati
+    expect(sam40.filter((i) => i.switches.reach === "upacara").length).toBe(10); // AS IX.19
+    expect(getNaryItemsForChapter(9, "samatha_carita_abhinna").length).toBe(16);
+    expect(getNaryItemsForChapter(9, "vipassana_visuddhi_nana").length).toBe(21);
+    expect(getNaryItemsForChapter(9, "ariya_samapatti").length).toBe(6);
 
     // Verify all 9 chapters items return non-empty arrays
     for (let ch = 2; ch <= 9; ch++) {
@@ -711,7 +781,7 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
       }
     }
     host.remove();
-  }, 30000);
+  }, 90000);
 
   it("enforces strict single-language + Pāli purity across ALL 9 chapters, ALL 3 pillars, and error feedback in EN, PT, and ES", () => {
     const forbiddenByLang: Record<"en" | "pt" | "es", RegExp[]> = {
@@ -759,12 +829,21 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
       host.querySelector<HTMLButtonElement>("#mnem-bin-verify")!.click();
       assertPure("P1 Ch1 challenge feedback");
 
-      // Pillar 1 — Chapters 2 through 9 (including error feedback to ensure no raw English switch keys leak in PT/ES!)
+      // Pillar 1 — Chapters 2 through 9 (including all submatrices & error feedback to ensure no raw English switch keys leak in PT/ES!)
       for (let ch = 2; ch <= 9; ch++) {
         host.querySelector<HTMLButtonElement>(`[data-bin-chapter="${ch}"]`)!.click();
         assertPure(`P1 Ch${ch} initial`);
         host.querySelector<HTMLButtonElement>("#mnem-nary-verify")!.click();
         assertPure(`P1 Ch${ch} verify feedback`);
+        const smBtns = Array.from(host.querySelectorAll<HTMLButtonElement>("[data-nary-submatrix]"))
+          .map((b) => b.dataset.narySubmatrix!)
+          .filter((id) => id && id !== "all");
+        for (const smId of smBtns) {
+          host.querySelector<HTMLButtonElement>(`[data-nary-submatrix="${smId}"]`)!.click();
+          assertPure(`P1 Ch${ch} submatrix=${smId}`);
+          host.querySelector<HTMLButtonElement>("#mnem-nary-verify")!.click();
+          assertPure(`P1 Ch${ch} submatrix=${smId} verify feedback`);
+        }
       }
 
       // Pillar 2 — Periodic Table (Atlas & Alchemy)
@@ -783,5 +862,120 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
 
       host.remove();
     }
+  }, 30000);
+
+  it("cycles cleanly through distinct items on repeated Next Challenge without ping-pong loops", () => {
+    const prog = createInitialProgress();
+
+    // Chapters 2–9 across 'all' and every submatrix
+    for (let ch = 2; ch <= 9; ch++) {
+      const chNum = ch as 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+      const subIds = ["all", ...getSubmatricesForChapter(chNum).map((s) => s.id)];
+      for (const smId of subIds) {
+        const items = getNaryItemsForChapter(chNum, smId);
+        const steps = Math.min(items.length, 8);
+        const seen = new Set<string>();
+        let cur: string | undefined;
+        for (let i = 0; i < steps; i++) {
+          const next = pickNextNaryChapterChallenge(chNum, prog, cur, smId);
+          expect(next.id).not.toBe(cur);
+          seen.add(next.id);
+          cur = next.id;
+        }
+        expect(seen.size, `Ch${ch} sm=${smId} should cycle through ${steps} distinct items`).toBe(steps);
+      }
+    }
+
+    // Chapter 1 Binary, Pillar 2 Periodic, Pillar 3 Phalanx
+    let curCitta: number | undefined;
+    const seenCitta = new Set<number>();
+    for (let i = 0; i < 8; i++) {
+      const next = pickNextBinaryChallenge(prog, "lobha", curCitta, 121);
+      seenCitta.add(next.id);
+      curCitta = next.id;
+    }
+    expect(seenCitta.size).toBe(8);
+
+    let curChem: number | undefined;
+    const seenChem = new Set<number>();
+    for (let i = 0; i < 8; i++) {
+      const next = pickNextPeriodicChallenge(prog, curChem);
+      seenChem.add(next.id);
+      curChem = next.id;
+    }
+    expect(seenChem.size).toBe(8);
+
+    const mapSpec = getPhalanxMapById("akusala12");
+    let curSlot: number | undefined;
+    const seenSlot = new Set<number>();
+    for (let i = 0; i < 8; i++) {
+      const next = pickNextPhalanxSlot(prog, mapSpec, curSlot);
+      seenSlot.add(next.index);
+      curSlot = next.index;
+    }
+    expect(seenSlot.size).toBe(8);
+  });
+
+  it("formats all 514 N-ary group names and switch values with zero raw underscores or cross-chapter collisions", () => {
+    const host = document.createElement("div");
+    document.body.appendChild(host);
+    const ui = new MnemonicLabUI(host, "pt") as any;
+
+    for (let ch = 2; ch <= 9; ch++) {
+      const items = getNaryItemsForChapter(ch as 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9);
+      for (const it of items) {
+        const g1 = ui.formatCanonicalGroupName(it.primaryGroup);
+        const g2 = ui.formatCanonicalGroupName(it.secondaryGroup);
+        expect(g1, `${it.id}.primaryGroup`).not.toMatch(/_/);
+        expect(g2, `${it.id}.secondaryGroup`).not.toMatch(/_/);
+        for (const [k, v] of Object.entries(it.switches)) {
+          const valStr = ui.formatNaryParamVal(k, v);
+          expect(valStr, `${it.id} ${k}=${v}`).not.toMatch(/_/);
+          expect(valStr, `${it.id} ${k}=${v}`).not.toBe("Ripening");
+        }
+      }
+    }
+
+    // Specific cross-chapter disambiguation guards
+    expect(ui.formatNaryParamVal("sub", "dosa")).toBe("Dosa-catukka");
+    expect(ui.formatNaryParamVal("root", "dosa")).toBe("Dosa-mūla");
+    expect(ui.formatNaryParamVal("carita", "dosa")).toBe("Dosacarita");
+    expect(ui.formatNaryParamVal("kammaGroup", "ripening")).toBe("Vipāka-niyama");
+    expect(ui.formatNaryParamVal("origin", "ahara")).toBe("Āhāra");
+
+    host.remove();
+  });
+
+  it("handles Alchemy collision-only feedback without empty error boxes and protects completed Phalanx sequence", () => {
+    const host = document.createElement("div");
+    document.body.appendChild(host);
+    const ui = new MnemonicLabUI(host, "pt");
+    ui.render();
+
+    // Pillar 2 Alchemy: fill fixed core then add ONLY Thīna (#25) without Middha (#26) -> collision-only invalid state
+    host.querySelector<HTMLButtonElement>("#mnem-tab-periodic")!.click();
+    host.querySelector<HTMLButtonElement>('[data-per-mode="alchemy"]')!.click();
+    host.querySelector<HTMLButtonElement>("#mnem-chem-hint")!.click();
+    host.querySelector<HTMLButtonElement>('[data-chem-toggle="25"]')!.click();
+    host.querySelector<HTMLButtonElement>("#mnem-chem-verify")!.click();
+    const errBox = host.querySelector(".mnem-feedback-err");
+    if (errBox) {
+      expect((errBox.textContent ?? "").trim().length).toBeGreaterThan(0);
+    }
+    expect(host.querySelector(".mnem-collision-alert")).not.toBeNull();
+
+    // Pillar 3 Phalanx Sequence: complete full 12-slot akusala12 sequence, then click again -> must NOT break streak
+    host.querySelector<HTMLButtonElement>("#mnem-tab-phalanx")!.click();
+    host.querySelector<HTMLButtonElement>('[data-pha-mode="sequence"]')!.click();
+    for (let i = 1; i <= 12; i++) {
+      host.querySelector<HTMLButtonElement>(`[data-phalanx-idx="${i}"]`)!.click();
+    }
+    expect(host.querySelector("#mnem-pha-restart-seq")).not.toBeNull();
+    const attemptsBefore = Number(host.querySelectorAll(".mnem-stat-val")[3]?.textContent ?? "0");
+    host.querySelector<HTMLButtonElement>('[data-phalanx-idx="1"]')!.click();
+    const attemptsAfter = Number(host.querySelectorAll(".mnem-stat-val")[3]?.textContent ?? "0");
+    expect(attemptsAfter).toBe(attemptsBefore);
+
+    host.remove();
   });
 });

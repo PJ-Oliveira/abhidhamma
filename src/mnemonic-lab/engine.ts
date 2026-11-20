@@ -28,6 +28,7 @@ import {
   CHAPTER_7_ITEMS,
   CHAPTER_8_ITEMS,
   CHAPTER_9_ITEMS,
+  getSubmatricesForChapter,
   type CanonicalChapterNum,
   type NaryChallengeItem,
 } from "./nary-chapters-data.js";
@@ -308,17 +309,25 @@ export function pickNextBinaryChallenge(
   mode: 89 | 121 = 121
 ): CanonicalCitta {
   const pool = getSynthesizableCittas(familyFilter, mode);
-  const candidates = pool.length > 1 && currentId != null ? pool.filter((c) => c.id !== currentId) : pool;
-  // Sort by lowest mastery score first, with deterministic tie-breaker or slight shuffle
-  const sorted = [...candidates].sort((a, b) => {
+  if (pool.length === 0) return CANONICAL_CITTAS_121[0]!;
+  const sorted = [...pool].sort((a, b) => {
     const scoreA = progress.masteredBinary[`citta:${a.id}`] ?? 0;
     const scoreB = progress.masteredBinary[`citta:${b.id}`] ?? 0;
     if (scoreA !== scoreB) return scoreA - scoreB;
     return a.id - b.id;
   });
-  const topBucket = sorted.slice(0, Math.min(4, sorted.length));
-  const idx = (progress.totalAttempts + (currentId ?? 0)) % topBucket.length;
-  return topBucket[idx] ?? pool[0]!;
+  const minScore = progress.masteredBinary[`citta:${sorted[0]!.id}`] ?? 0;
+  const lowestPool = sorted.filter((c) => (progress.masteredBinary[`citta:${c.id}`] ?? 0) === minScore);
+  const activePool = lowestPool.length > 1 ? lowestPool : sorted;
+  if (currentId != null) {
+    const curIdx = activePool.findIndex((c) => c.id === currentId);
+    if (curIdx >= 0) {
+      return activePool[(curIdx + 1) % activePool.length]!;
+    }
+  }
+  const filtered = activePool.length > 1 && currentId != null ? activePool.filter((c) => c.id !== currentId) : activePool;
+  const idx = progress.totalAttempts % filtered.length;
+  return filtered[idx] ?? pool[0]!;
 }
 
 // ── PILAR 2: MOTOR DE SÍNTESE QUÍMICA E DETECTOR DE COLISÃO ONTOLÓGICA ───────
@@ -491,16 +500,25 @@ export function pickNextPeriodicChallenge(
   const pool = CHEMICAL_CHALLENGE_CITTA_IDS.map((id) => CANONICAL_CITTAS_89.find((c) => c.id === id)!).filter(
     Boolean
   );
-  const candidates = pool.length > 1 && currentCittaId != null ? pool.filter((c) => c.id !== currentCittaId) : pool;
-  const sorted = [...candidates].sort((a, b) => {
+  if (pool.length === 0) return CANONICAL_CITTAS_89[0]!;
+  const sorted = [...pool].sort((a, b) => {
     const scoreA = progress.masteredPeriodic[`chem:${a.id}`] ?? 0;
     const scoreB = progress.masteredPeriodic[`chem:${b.id}`] ?? 0;
     if (scoreA !== scoreB) return scoreA - scoreB;
     return a.id - b.id;
   });
-  const topBucket = sorted.slice(0, Math.min(4, sorted.length));
-  const idx = (progress.totalAttempts + (currentCittaId ?? 0)) % topBucket.length;
-  return topBucket[idx] ?? pool[0]!;
+  const minScore = progress.masteredPeriodic[`chem:${sorted[0]!.id}`] ?? 0;
+  const lowestPool = sorted.filter((c) => (progress.masteredPeriodic[`chem:${c.id}`] ?? 0) === minScore);
+  const activePool = lowestPool.length > 1 ? lowestPool : sorted;
+  if (currentCittaId != null) {
+    const curIdx = activePool.findIndex((c) => c.id === currentCittaId);
+    if (curIdx >= 0) {
+      return activePool[(curIdx + 1) % activePool.length]!;
+    }
+  }
+  const filtered = activePool.length > 1 && currentCittaId != null ? activePool.filter((c) => c.id !== currentCittaId) : activePool;
+  const idx = progress.totalAttempts % filtered.length;
+  return filtered[idx] ?? pool[0]!;
 }
 
 // ── PILAR 3: MOTOR DO ÁBACO NAS FALANGES ─────────────────────────────────────
@@ -515,62 +533,104 @@ export function pickNextPhalanxSlot(
   currentSlotIndex?: number
 ): PhalanxSlot {
   const slots = mapSpec.slots;
-  const candidates =
-    slots.length > 1 && currentSlotIndex != null ? slots.filter((s) => s.index !== currentSlotIndex) : slots;
-  const sorted = [...candidates].sort((a, b) => {
+  const sorted = [...slots].sort((a, b) => {
     const scoreA = progress.masteredPhalanx[`${mapSpec.id}:${a.index}`] ?? 0;
     const scoreB = progress.masteredPhalanx[`${mapSpec.id}:${b.index}`] ?? 0;
     if (scoreA !== scoreB) return scoreA - scoreB;
     return a.index - b.index;
   });
-  const topBucket = sorted.slice(0, Math.min(4, sorted.length));
-  const idx = (progress.totalAttempts + (currentSlotIndex ?? 0)) % topBucket.length;
-  return topBucket[idx] ?? slots[0]!;
+  const minScore = progress.masteredPhalanx[`${mapSpec.id}:${sorted[0]!.index}`] ?? 0;
+  const lowestPool = sorted.filter((s) => (progress.masteredPhalanx[`${mapSpec.id}:${s.index}`] ?? 0) === minScore);
+  const activePool = lowestPool.length > 1 ? lowestPool : sorted;
+  if (currentSlotIndex != null) {
+    const curIdx = activePool.findIndex((s) => s.index === currentSlotIndex);
+    if (curIdx >= 0) {
+      return activePool[(curIdx + 1) % activePool.length]!;
+    }
+  }
+  const filtered = activePool.length > 1 && currentSlotIndex != null ? activePool.filter((s) => s.index !== currentSlotIndex) : activePool;
+  const idx = progress.totalAttempts % filtered.length;
+  return filtered[idx] ?? slots[0]!;
 }
 
 // ── N-ARY MULTI-CHAPTER ENGINE (NAVA PARICCHEDĀ 1..9) ────────────────────────
 
-export function getNaryItemsForChapter(chapterNum: CanonicalChapterNum): readonly NaryChallengeItem[] {
+export function getNaryItemsForChapter(
+  chapterNum: CanonicalChapterNum,
+  submatrixId?: string
+): readonly NaryChallengeItem[] {
+  let all: readonly NaryChallengeItem[];
   switch (chapterNum) {
     case 2:
-      return CHAPTER_2_ITEMS;
+      all = CHAPTER_2_ITEMS;
+      break;
     case 3:
-      return CHAPTER_3_ITEMS;
+      all = CHAPTER_3_ITEMS;
+      break;
     case 4:
-      return CHAPTER_4_ITEMS;
+      all = CHAPTER_4_ITEMS;
+      break;
     case 5:
-      return CHAPTER_5_ITEMS;
+      all = CHAPTER_5_ITEMS;
+      break;
     case 6:
-      return CHAPTER_6_ITEMS;
+      all = CHAPTER_6_ITEMS;
+      break;
     case 7:
-      return CHAPTER_7_ITEMS;
+      all = CHAPTER_7_ITEMS;
+      break;
     case 8:
-      return CHAPTER_8_ITEMS;
+      all = CHAPTER_8_ITEMS;
+      break;
     case 9:
-      return CHAPTER_9_ITEMS;
+      all = CHAPTER_9_ITEMS;
+      break;
     default:
-      return [];
+      all = [];
+      break;
   }
+  if (!submatrixId || submatrixId === "all") return all;
+  const filtered = all.filter((item) => (item.submatrix ?? item.primaryGroup) === submatrixId);
+  return filtered.length > 0 ? filtered : all;
 }
 
 export function pickNextNaryChapterChallenge(
   chapterNum: CanonicalChapterNum,
   progress: MnemonicProgressState,
-  currentItemId?: string
+  currentItemId?: string,
+  submatrixId?: string
 ): NaryChallengeItem {
-  const items = getNaryItemsForChapter(chapterNum);
+  const items = getNaryItemsForChapter(chapterNum, submatrixId);
   if (items.length === 0) return CHAPTER_2_ITEMS[0]!;
-  const candidates =
-    items.length > 1 && currentItemId != null ? items.filter((i) => i.id !== currentItemId) : items;
-  const sorted = [...candidates].sort((a, b) => {
+  const sorted = [...items].sort((a, b) => {
     const scoreA = progress.masteredBinary[`nary:${a.id}`] ?? 0;
     const scoreB = progress.masteredBinary[`nary:${b.id}`] ?? 0;
     if (scoreA !== scoreB) return scoreA - scoreB;
     return a.id.localeCompare(b.id);
   });
-  const topBucket = sorted.slice(0, Math.min(4, sorted.length));
-  const idx = (progress.totalAttempts + (currentItemId ? currentItemId.length : 0)) % topBucket.length;
-  return topBucket[idx] ?? items[0]!;
+  const minScore = progress.masteredBinary[`nary:${sorted[0]!.id}`] ?? 0;
+  const lowestPool = sorted.filter((i) => (progress.masteredBinary[`nary:${i.id}`] ?? 0) === minScore);
+  const activePool = lowestPool.length > 1 ? lowestPool : sorted;
+  if (currentItemId != null) {
+    const curIdx = activePool.findIndex((i) => i.id === currentItemId);
+    if (curIdx >= 0) {
+      return activePool[(curIdx + 1) % activePool.length]!;
+    }
+  }
+  const filtered = activePool.length > 1 && currentItemId != null ? activePool.filter((i) => i.id !== currentItemId) : activePool;
+  const idx = progress.totalAttempts % filtered.length;
+  return filtered[idx] ?? items[0]!;
+}
+
+export function defaultNarySwitchesForSubmatrix(
+  chapterNum: CanonicalChapterNum,
+  submatrixId?: string
+): Record<string, string | number> {
+  if (submatrixId && submatrixId !== "all") {
+    const sm = getSubmatricesForChapter(chapterNum).find((m) => m.id === submatrixId);
+    if (sm) return { ...sm.defaultSwitches };
+  }
+  return defaultNarySwitchesForChapter(chapterNum);
 }
 
 export function defaultNarySwitchesForChapter(
@@ -578,22 +638,22 @@ export function defaultNarySwitchesForChapter(
 ): Record<string, string | number> {
   switch (chapterNum) {
     case 2:
-      return { group: "aññasamana", sub: "sabbacitta", slot: 1, sampayoga: 121 };
+      return { lens: "sampayoga", group: "aññasamana", sub: "sabbacitta", slot: 1, sampayoga: 121 };
     case 3:
       return { category: "vedana", item: "somanassa", count: 62 };
     case 4:
       return { door: "pancadvara", vara: "tadarammana", vithicittas: 14 };
     case 5:
-      return { tetrad: "bhumi", subtype: "apaya", count: 4 };
+      return { tetrad: "bhumi_31", planeGroup: "apaya", slot: 1, lifespan: "unfixed" };
     case 6:
-      return { type: "mahabhuta", heading: "pathavi", status: "nipphanna", samutthana: "catusamutthana" };
+      return { section: "rupa_28", heading: "mahabhuta", slot: 1, samutthana: "catusamutthana" };
     case 7:
-      return { compendium: "bodhipakkhiya", group: "satipatthana", count: 4 };
+      return { compendium: "akusala_9", group: "asava", vatthuto: 3 };
     case 8:
-      return { method: "patthana", type: "sahajata", index: 1 };
+      return { method: "paticcasamuppada", psMode: "links12", slot: 1, addha: "atita", vatta: "kilesavatta" };
     case 9:
     default:
-      return { wing: "samatha", group: "kasina", maxJhana: 5, carita: "all", nimitta: 3 };
+      return { wing: "samatha_40", group: "kasina", slot: 1, reach: "jhana_5", nimitta: 3 };
   }
 }
 
