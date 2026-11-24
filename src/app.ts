@@ -872,6 +872,7 @@ function wireSettingsPanel(): void {
 }
 
 function applyStaticI18n(): void {
+  document.documentElement.lang = settings.uiLang;
   document.querySelectorAll<HTMLElement>("[data-i18n]").forEach((node) => {
     const key = node.dataset.i18n;
     if (key) node.textContent = t(key, settings.uiLang);
@@ -893,6 +894,18 @@ let mnemonicLabInstance: MnemonicLabUI | null = null;
 function refreshLocalizedUI(): void {
   applyStaticI18n();
   updateSettingsLabels();
+  const welcomeTextEl = document.querySelector<HTMLElement>("#content .welcome-text");
+  if (welcomeTextEl) {
+    welcomeTextEl.textContent = t("welcomeBody", settings.uiLang);
+  }
+  const debateBtn = document.getElementById("btn-toggle-interlocutor");
+  const debateBox = document.getElementById("interlocutor-container");
+  if (debateBtn && debateBox) {
+    debateBtn.textContent =
+      debateBox.style.display === "block"
+        ? t("debate_btn_close", settings.uiLang)
+        : t("debate_btn_open", settings.uiLang);
+  }
   if (abhidhammaSrsInstance) {
     abhidhammaSrsInstance.setLang(settings.uiLang);
   }
@@ -1179,7 +1192,7 @@ if (toggleInterlocutorBtn && interlocutorContainer) {
     let isInterlocutorLoaded = false;
     toggleInterlocutorBtn.addEventListener('click', async () => {
         if (!isInterlocutorLoaded) {
-            toggleInterlocutorBtn.textContent = '⏳ Loading...';
+            toggleInterlocutorBtn.textContent = t('debate_btn_loading', settings.uiLang);
             try {
                 // Dynamically import the isolated UI module
                 const { initInterlocutorPanel } = await import('./ai-feature/ui.js');
@@ -1192,7 +1205,7 @@ if (toggleInterlocutorBtn && interlocutorContainer) {
                 });
             } catch (err) {
                 console.error('Failed to load Abhidhammika Interlocutor:', err);
-                toggleInterlocutorBtn.textContent = '❌ Error';
+                toggleInterlocutorBtn.textContent = t('debate_btn_error', settings.uiLang);
                 return;
             }
         }
@@ -1200,10 +1213,10 @@ if (toggleInterlocutorBtn && interlocutorContainer) {
         // Toggle visibility
         if (interlocutorContainer.style.display === 'none') {
             interlocutorContainer.style.display = 'block';
-            toggleInterlocutorBtn.textContent = '❌ Close Debate';
+            toggleInterlocutorBtn.textContent = t('debate_btn_close', settings.uiLang);
         } else {
             interlocutorContainer.style.display = 'none';
-            toggleInterlocutorBtn.textContent = '💬 Debate';
+            toggleInterlocutorBtn.textContent = t('debate_btn_open', settings.uiLang);
         }
     });
 }

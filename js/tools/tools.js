@@ -1,6 +1,6 @@
-import { t } from "../i18n.js?v=e14b20e3";
-import { settings } from "../state.js?v=e14b20e3";
-import { createLogger } from "../logger.js?v=e14b20e3";
+import { t } from "../i18n.js?v=3f76b330";
+import { settings } from "../state.js?v=3f76b330";
+import { createLogger } from "../logger.js?v=3f76b330";
 const log = createLogger("tools");
 const TABS = [
     { id: "mindmap", icon: "🗺", i18nKey: "toolMindmap", init: null, loaded: false },
@@ -15,8 +15,17 @@ export function registerToolModule(id, initFn) {
     if (tab)
         tab.init = initFn;
 }
+let activeHashListener = null;
+let activeLangListener = null;
 export function initToolsPanel(container) {
     container.innerHTML = "";
+    for (const tab of TABS) {
+        tab.loaded = false;
+    }
+    if (activeHashListener)
+        window.removeEventListener("hashchange", activeHashListener);
+    if (activeLangListener)
+        window.removeEventListener("languageChanged", activeLangListener);
     const tabBar = document.createElement("div");
     tabBar.className = "tools-tab-bar";
     container.appendChild(tabBar);
@@ -74,7 +83,20 @@ export function initToolsPanel(container) {
             }
         }
     };
+    const syncLang = () => {
+        for (const tab of TABS) {
+            if (tab.loaded && tab.init) {
+                const panel = panels.get(tab.id);
+                if (panel) {
+                    tab.init(panel);
+                }
+            }
+        }
+    };
+    activeHashListener = syncFromUrl;
+    activeLangListener = syncLang;
     window.addEventListener("hashchange", syncFromUrl);
+    window.addEventListener("languageChanged", syncLang);
     const parts = (location.hash.replace(/^#\/?/, "").split('?')[0] || "").split('/');
     const p1_init = parts[1];
     if ((parts[0] || "") === "tools" && p1_init && TABS.some(t => t.id === p1_init)) {

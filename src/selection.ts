@@ -126,7 +126,7 @@ async function handleMouseUp(e: MouseEvent): Promise<void> {
       } else {
         const text = range.startContainer.textContent || "";
         const offset = range.startOffset;
-        const wordRegex = /[A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]/i;
+        const wordRegex = /[A-Za-zāīūṃṁṅñṭḍṇḷĀĪŪṂṀṄÑṬḌṆḶçÇéáíóúüãõâêôÁÉÍÓÚÜÃÕÂÊÔ]/i;
 
         if (wordRegex.test(text[offset] || text[offset - 1] || "")) {
           let start = offset;

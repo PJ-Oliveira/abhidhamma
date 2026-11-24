@@ -143,7 +143,35 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
         return obj[lang] || obj['en'] || defaultText;
     };
 
-    let verdict = 'Aviññātatthaṃ (The Unintelligible)';
+    const VERDICTS: Record<string, Record<'en'|'pt'|'es', string>> = {
+        patinnavirodho: {
+            en: 'Paṭiññāvirodho (Contradicting the Proposition)',
+            pt: 'Paṭiññāvirodho (Contradição à Proposição)',
+            es: 'Paṭiññāvirodho (Contradicción de la Proposición)',
+        },
+        apasiddhantaram: {
+            en: 'Apasiddhantaraṃ (Deviation from Doctrine)',
+            pt: 'Apasiddhantaraṃ (Desvio da Doutrina)',
+            es: 'Apasiddhantaraṃ (Desviación de la Doctrina)',
+        },
+        vikkhepo: {
+            en: 'Vikkhepo (Evasion) / Appaṭibhā (Inability to reply)',
+            pt: 'Vikkhepo (Evasão) / Appaṭibhā (Incapacidade de responder)',
+            es: 'Vikkhepo (Evasión) / Appaṭibhā (Incapacidad de responder)',
+        },
+        asambandhattham: {
+            en: 'Asambandhatthaṃ (The Incoherent)',
+            pt: 'Asambandhatthaṃ (O Incoerente)',
+            es: 'Asambandhatthaṃ (Lo Incoherente)',
+        },
+        avinnatattham: {
+            en: 'Aviññātatthaṃ (The Unintelligible)',
+            pt: 'Aviññātatthaṃ (O Ininteligível)',
+            es: 'Aviññātatthaṃ (Lo Ininteligible)',
+        },
+    };
+
+    let verdict = VERDICTS.avinnatattham![lang];
     
     // We import t from i18n but since it's an ontology file it's better to avoid UI dependencies.
     // So we just localize here.
@@ -158,29 +186,29 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
 
     if (scenarioId === 'puggala_vada') {
         const ctx = AtthakathaOntology['puggala'];
-        verdict = 'Paṭiññāvirodho (Contradicting the Proposition)';
+        verdict = VERDICTS.patinnavirodho![lang];
         if (lang === 'pt') {
             paradox = `<em>"Se a entidade for idêntica aos agregados, é impermanente. Se for distinta, deve ser apreensível de forma independente. Nenhuma das duas opções é verdadeira."</em>`;
             logic = `
 1. <strong>Paṭiññā (Proposição):</strong> A Pessoa (Puggala) é conhecida num sentido último.
-2. <strong>Hetu (Razão):</strong> Porque o Buda usou o termo "Pessoa".
+2. <strong>Hetu (Razão):</strong> Porque o Buddha usou o termo "Pessoa".
 3. <strong>Udāharaṇa (Exemplo):</strong> Como o termo "Citta" (Consciência).
-4. <strong>Upanaya (Aplicação):</strong> Mas a Pessoa não pode ser classificada dentro dos 5 Agregados.
+4. <strong>Upanaya (Aplicação):</strong> Mas a Pessoa não pode ser classificada dentro dos 5 Agregados (Khandhas).
 5. <strong>Niggamana (Conclusão):</strong> Portanto, a Proposição é falsa.
             `;
-            pedagogicalAnalogy = ctx?.pedagogicalAnalogy || 'N/A';
-            detailedSyllogismBreakdown = ctx?.detailedSyllogismBreakdown || 'N/A';
+            pedagogicalAnalogy = 'Analogia da Carruagem (Ratha-vinīta / Milindapañhā): Assim como a palavra "carruagem" é apenas um conceito (paññatti) aplicado quando eixo, rodas e armação estão reunidos, "Pessoa" (puggala) é um rótulo aplicado quando os 5 Agregados (Khandhas) estão presentes. Não existe uma "carruagem" independente.';
+            detailedSyllogismBreakdown = 'No passo 4 (Upanaya): se examinarmos a "Pessoa" com a precisão de um microscópio (visão de vipassanā), encontraremos apenas Rūpa, Vedanā, Saññā, Saṅkhārā e Viññāṇa. Não há uma sexta realidade chamada "Pessoa". Assim, o argumento original falha em sua base empírica.';
         } else if (lang === 'es') {
             paradox = `<em>"Si la entidad es idéntica a los agregados, es impermanente. Si es distinta, debe ser aprehensible de forma independiente. Ninguna de las dos es cierta."</em>`;
             logic = `
 1. <strong>Paṭiññā (Proposición):</strong> La Persona (Puggala) se conoce en un sentido último.
-2. <strong>Hetu (Razón):</strong> Porque el Buda usó el término "Persona".
+2. <strong>Hetu (Razón):</strong> Porque el Buddha usó el término "Persona".
 3. <strong>Udāharaṇa (Ejemplo):</strong> Como el término "Citta" (Conciencia).
-4. <strong>Upanaya (Aplicación):</strong> Pero la Persona no puede ser clasificada dentro de los 5 Agregados.
+4. <strong>Upanaya (Aplicación):</strong> Pero la Persona no puede ser clasificada dentro de los 5 Agregados (Khandhas).
 5. <strong>Niggamana (Conclusión):</strong> Por lo tanto, la Proposición es falsa.
             `;
-            pedagogicalAnalogy = ctx?.pedagogicalAnalogy || 'N/A';
-            detailedSyllogismBreakdown = ctx?.detailedSyllogismBreakdown || 'N/A';
+            pedagogicalAnalogy = 'Analogía del Carro (Ratha-vinīta / Milindapañhā): Así como la palabra "carro" es solo un concepto (paññatti) aplicado cuando el eje, las ruedas y el armazón están ensamblados, "Persona" (puggala) es una designación aplicada cuando los 5 Agregados (Khandhas) están presentes. No existe un "carro" independiente.';
+            detailedSyllogismBreakdown = 'En el paso 4 (Upanaya): si examinamos la "Persona" con la precisión de un microscopio (visión de vipassanā), hallaremos únicamente Rūpa, Vedanā, Saññā, Saṅkhārā y Viññāṇa. No existe una sexta realidad llamada "Persona". Por tanto, el argumento original fracasa en su base empírica.';
         } else {
             paradox = `<em>"If the entity is identical to the aggregates, it is impermanent. If distinct, it must be apprehendable independently. Neither is true."</em>`;
             logic = `
@@ -196,7 +224,7 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
     } 
     else if (scenarioId === 'kāla_vada') {
         const ctx = AtthakathaOntology['kāla'];
-        verdict = 'Paṭiññāvirodho (Contradicting the Proposition)';
+        verdict = VERDICTS.patinnavirodho![lang];
         if (lang === 'pt') {
             paradox = `<em>"Se o passado existe, ele não cessou. Mas 'passado' significa aquilo que cessou."</em>`;
             logic = `
@@ -205,6 +233,8 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
 3. <strong>Upanaya (Aplicação):</strong> Mas se um Dhamma existe no passado e no presente, a sua natureza intrínseca (Sabhāva) mudou.
 4. <strong>Niggamana (Conclusão):</strong> Portanto, o Tempo é um conceito (Paññatti), não uma realidade última.
             `;
+            pedagogicalAnalogy = 'Analogia da Sombra: O tempo não é uma "caixa" onde os eventos acontecem; é como a sombra de uma árvore em crescimento. A sombra (tempo) existe apenas conceitualmente (paññatti) em razão da árvore (dhammas reais surgindo e cessando). Removidos os dhammas, não resta nenhuma dimensão temporal independente.';
+            detailedSyllogismBreakdown = 'O silogismo prova que, se "o passado existe" (como afirmam os oponentes), então o passado não deixou de existir. Contudo, a definição de passado é precisamente aquilo que cessou. Trata-se de uma contradição lógica fatal (Paṭiññāvirodho): A não pode ser ¬A ao mesmo tempo.';
         } else if (lang === 'es') {
             paradox = `<em>"Si el pasado existe, no ha cesado. Pero 'pasado' significa aquello que ha cesado."</em>`;
             logic = `
@@ -213,6 +243,8 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
 3. <strong>Upanaya (Aplicación):</strong> Pero si un Dhamma existe en el pasado y en el presente, su naturaleza intrínseca (Sabhāva) ha cambiado.
 4. <strong>Niggamana (Conclusión):</strong> Por lo tanto, el Tiempo es un concepto (Paññatti), no una realidad última.
             `;
+            pedagogicalAnalogy = 'Analogía de la Sombra: El tiempo no es una "caja" donde ocurren los sucesos; es como la sombra de un árbol que crece. La sombra (el tiempo) existe solo conceptualmente (paññatti) a causa del árbol (dhammas reales que surgen y cesan). Si se retiran los dhammas, no queda ninguna dimensión temporal independiente.';
+            detailedSyllogismBreakdown = 'El silogismo demuestra que, si "el pasado existe" (como afirman los oponentes), entonces el pasado no ha dejado de existir. Sin embargo, la definición de pasado es precisamente aquello que ha cesado. Es una contradicción lógica fatal (Paṭiññāvirodho): A no puede ser ¬A al mismo tiempo.';
         } else {
             paradox = `<em>"If the past exists, it has not ceased. But 'past' means that which has ceased."</em>`;
             logic = `
@@ -221,12 +253,12 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
 3. <strong>Upanaya (Application):</strong> But if a Dhamma exists in the past and present, its intrinsic nature (Sabhāva) mutated.
 4. <strong>Niggamana (Conclusion):</strong> Therefore, Time is a concept (Paññatti), not an ultimate reality.
             `;
+            pedagogicalAnalogy = ctx?.pedagogicalAnalogy || 'N/A';
+            detailedSyllogismBreakdown = ctx?.detailedSyllogismBreakdown || 'N/A';
         }
-        pedagogicalAnalogy = ctx?.pedagogicalAnalogy || 'N/A';
-        detailedSyllogismBreakdown = ctx?.detailedSyllogismBreakdown || 'N/A';
     }
     else if (scenarioId === 'sassata_vada') {
-        verdict = 'Apasiddhantaraṃ (Deviation from Doctrine)';
+        verdict = VERDICTS.apasiddhantaram![lang];
         if (lang === 'pt') {
             paradox = `<em>"Se a alma é eterna e separada, as ações do corpo não a afetam, anulando o kamma."</em>`;
             logic = `
@@ -257,7 +289,7 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
         }
     }
     else if (scenarioId === 'ekacca_sassata_vada') {
-        verdict = 'Apasiddhantaraṃ (Deviation from Doctrine)';
+        verdict = VERDICTS.apasiddhantaram![lang];
         if (lang === 'pt') {
             paradox = '<em>"Se a Mente é eterna mas o Corpo impermanente, como um observador eterno interage com um objeto momentâneo sem se alterar?"</em>';
             logic = `
@@ -288,12 +320,12 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
         }
     }
     else if (scenarioId === 'amara_vikkhepa_vada') {
-        verdict = 'Vikkhepo (Evasion) / Appaṭibhā (Inability to reply)';
+        verdict = VERDICTS.vikkhepo![lang];
         if (lang === 'pt') {
             paradox = '<em>"Ao recusar tomar posição, ele tenta escapar da verdade, mas num universo finito, recusar (A) e recusar (¬A) viola a Lei do Terceiro Excluído."</em>';
             logic = `
-1. <strong>Anuloma:</strong> A proposição P é verdadeira? (Não digo que é assim).
-2. <strong>Paṭikamma:</strong> A proposição P é falsa? (Não digo que é assado).
+1. <strong>Anuloma:</strong> A proposição P é verdadeira? (Não digo que seja assim).
+2. <strong>Paṭikamma:</strong> A proposição P é falsa? (Não digo que seja de outro modo).
 3. <strong>Niggaha:</strong> Na ontologia Abhidhamma, todo Dhamma ou possui uma característica (Sabhāva) ou não possui.
 4. <strong>Upanaya:</strong> Recusar afirmar ou negar destrói a possibilidade de conhecimento (Ñāṇa).
             `;
@@ -303,11 +335,11 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
             paradox = '<em>"Al negarse a tomar posición, intenta escapar de la verdad, pero en un universo finito, rechazar (A) y rechazar (¬A) viola la Ley del Tercero Excluido."</em>';
             logic = `
 1. <strong>Anuloma:</strong> ¿Es la proposición P verdadera? (No digo que sea así).
-2. <strong>Paṭikamma:</strong> ¿Es la proposición P falsa? (No digo que sea asado).
+2. <strong>Paṭikamma:</strong> ¿Es la proposición P falsa? (No digo que sea de otro modo).
 3. <strong>Niggaha:</strong> En la ontología Abhidhamma, todo Dhamma o posee una característica (Sabhāva) o no la posee.
 4. <strong>Upanaya:</strong> Negarse a afirmar o negar destruye la posibilidad de conocimiento (Ñāṇa).
             `;
-            pedagogicalAnalogy = 'El Tribunal: Como un testigo que se niega a decir Sí o No por miedo, la Anguila no puede participar en el tribunal de la lógica.';
+            pedagogicalAnalogy = 'El Tribunal: Como un testigo que se niega a decir Sí o No por miedo, el Amarāvikkhepika no puede participar en el tribunal de la lógica.';
             detailedSyllogismBreakdown = 'Lógica Formal: P ∨ ¬P debe ser Verdadero (Tercero Excluido). El oponente afirma ¬P ∧ ¬(¬P), una contradicción directa (Falso) bajo la Ley de No Contradicción.';
         } else {
             paradox = '<em>"By refusing to take any position, the Eel-wriggler attempts to escape truth, but in a finite universe, refusing (A) and refusing (¬A) violates the Law of Excluded Middle."</em>';
@@ -322,7 +354,7 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
         }
     }
     else if (scenarioId === 'adhicca_samuppanna_vada') {
-        verdict = 'Paṭiññāvirodho (Contradicting the Proposition)';
+        verdict = VERDICTS.patinnavirodho![lang];
         if (lang === 'pt') {
             paradox = '<em>"Se as coisas surgem sem causa, qualquer coisa poderia surgir em qualquer lugar. A ordem do universo é destruída."</em>';
             logic = `
@@ -331,7 +363,7 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
 3. <strong>Niggaha:</strong> Observamos estrita condicionalidade (Paṭiccasamuppāda).
 4. <strong>Niggamana:</strong> Portanto, a origem sem causa é empírica e logicamente falsa.
             `;
-            pedagogicalAnalogy = 'A Loteria: Até uma loteria não é "sem causa". Causelessness verdadeira significa mágica sem mágico, impossível na matriz do Paṭṭhāna.';
+            pedagogicalAnalogy = 'A Loteria: Até uma loteria não é "sem causa". Ausência absoluta de causa significa mágica sem mágico, impossível na matriz do Paṭṭhāna.';
             detailedSyllogismBreakdown = 'Se o Efeito E ocorre sem Causa C, a probabilidade de E ocorrer é uniforme e infinita. Empiricamente, E só ocorre quando C está presente (Kāraṇaniyāma).';
         } else if (lang === 'es') {
             paradox = '<em>"Si las cosas surgen sin causa, cualquier cosa podría surgir en cualquier lugar. El orden del universo se destruye."</em>';
@@ -358,7 +390,7 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
 
 
     else if (scenarioId === 'vipaka_citta') {
-        verdict = 'Asambandhatthaṃ (The Incoherent)';
+        verdict = VERDICTS.asambandhattham![lang];
         if (lang === 'pt') {
             paradox = '<em>"Se um resultado (vipāka) produz um resultado, então uma ação causa infinitos resultados eternos."</em>';
             logic = `

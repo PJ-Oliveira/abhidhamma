@@ -7,6 +7,7 @@ interface VithiStep {
   label: string;
   labelEn: string;
   labelPt: string;
+  labelEs?: string;
   abbrev: string;
   type: string;
   color: string;
@@ -18,6 +19,7 @@ interface Door {
   label: string;
   labelEn: string;
   labelPt: string;
+  labelEs?: string;
   icon: string;
   sequence: VithiStep[];
 }
@@ -70,13 +72,19 @@ function initVithi(container: HTMLElement): void {
       infoPanel.className = "vithi-info";
       container.appendChild(infoPanel);
 
+      const pickLabel = (item: { labelEn: string; labelPt?: string; labelEs?: string }): string => {
+        if (lang === "pt" && item.labelPt) return item.labelPt;
+        if (lang === "es" && item.labelEs) return item.labelEs;
+        return item.labelEn;
+      };
+
       // Controls
       const controls = document.createElement("div");
       controls.className = "vithi-controls";
       controls.innerHTML = `
         <button class="vithi-btn" id="vithi-play">▶ ${t("toolVithiPlay", settings.uiLang)}</button>
         <button class="vithi-btn" id="vithi-pause" style="display:none">⏸ ${t("toolVithiPause", settings.uiLang)}</button>
-        <button class="vithi-btn" id="vithi-reset">⟲ Reset</button>
+        <button class="vithi-btn" id="vithi-reset">⟲ ${t("toolVithiReset", settings.uiLang)}</button>
         <label class="vithi-speed-label">${t("toolVithiSpeed", settings.uiLang)}
           <input type="range" id="vithi-speed" min="1" max="10" value="5" />
         </label>
@@ -93,7 +101,7 @@ function initVithi(container: HTMLElement): void {
         const btn = document.createElement("button");
         btn.className = "vithi-door-btn";
         btn.dataset.door = door.id;
-        btn.innerHTML = `${door.icon} ${lang === "pt" && door.labelPt ? door.labelPt : door.labelEn}`;
+        btn.innerHTML = `${door.icon} ${escHtml(pickLabel(door))}`;
         btn.addEventListener("click", () => selectDoor(door));
         doorBar.appendChild(btn);
       }
@@ -128,7 +136,7 @@ function initVithi(container: HTMLElement): void {
           box.style.borderColor = step.color;
           if (i === animIndex) box.style.backgroundColor = step.color + "33";
           
-          const labelTrans = lang === "pt" && step.labelPt ? step.labelPt : step.labelEn;
+          const labelTrans = pickLabel(step);
           box.innerHTML = `
             <div class="vithi-abbrev" style="color:${step.color}">${escHtml(step.abbrev)}</div>
             <div class="vithi-label">${escHtml(step.label)}</div>
@@ -159,14 +167,16 @@ function initVithi(container: HTMLElement): void {
 
       function showInfo(step: VithiStep): void {
         const info = data.cittaInfo?.[step.id];
-        const label = lang === "pt" && step.labelPt ? step.labelPt : step.labelEn;
+        const label = pickLabel(step);
         let html = `<h4>${escHtml(step.label)}</h4><p>${escHtml(label)}</p>`;
         if (info) {
           html += `<p class="vithi-cetasika-count">${info.cetasikaCount} cetasikas</p>`;
           html += `<div class="vithi-cetasika-list">${info.cetasikas.map((cName: string) => {
             const cet = cetLookup[cName.toLowerCase()];
             const pali = cet ? cet.name : cName;
-            const trans = cet ? (lang === "pt" ? cet.namePt : cet.nameEn) : "";
+            const trans = cet
+              ? (lang === "pt" ? cet.namePt : lang === "es" ? (cet.nameEs || cet.nameEn) : cet.nameEn)
+              : "";
             if (trans) {
               return '<span class="vithi-cetasika-tag">' +
                 '<span class="cet-tag-pali">' + escHtml(pali) + '</span>' +

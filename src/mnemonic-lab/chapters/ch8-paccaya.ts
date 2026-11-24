@@ -383,7 +383,7 @@ export const CHAPTER_8_PACCAYA_ITEMS: readonly NaryChallengeItem[] = [
     id: "pac:sam:3", chapter: 8, submatrix: "patthana_24", asRef: "AS VIII.35", code: "Sam-03",
     pali: "Samodhāna 3 · Kamma (#13)",
     name: { pt: "Síntese 3 · Kamma (Volição Nānākkhaṇika & Sahajāta)", en: "Synthesis 3 · Kamma (Asynchronous & Conascent Volition)", es: "Síntesis 3 · Kamma (Volición Nānākkhaṇika y Sahajāta)" },
-    formulaNote: { pt: "Pilar 3 da redução 24 → 4 (AS VIII.35): engloba o poder kármico assíncrono (Nānākkhaṇika-kamma) que gera Vipāka futuro.", en: "Pillar 3 of the 24 → 4 reduction (AS VIII.35): captures asynchronous kammic volition producing future Vipāka.", es: "Pilar 3 de la reducción 24 → 4 (AS VIII.35): captura el poder kármico asincrónico que produce Vipāka futuro." },
+    formulaNote: { pt: "Pilar 3 da redução 24 → 4 (AS VIII.35): engloba o poder kâmmico assíncrono (Nānākkhaṇika-kamma) que gera Vipāka futuro.", en: "Pillar 3 of the 24 → 4 reduction (AS VIII.35): captures asynchronous kammic volition producing future Vipāka.", es: "Pilar 3 de la reducción 24 → 4 (AS VIII.35): captura el poder kámmico asincrónico que produce Vipāka futuro." },
     primaryGroup: "patthana_24", secondaryGroup: "samodhana_4",
     switches: { method: "patthana_24", direction: "samodhana_4", index: 13 },
   },

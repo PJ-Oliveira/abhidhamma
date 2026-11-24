@@ -23,7 +23,7 @@
   --translation-bar: #5a7a5f;
 
   /* dimensões fluidas: escalam com a viewport, sem quebrar em faixas fixas */
-  --rail-w: clamp(56px, 7vw, 76px);
+  --rail-w: clamp(64px, 7.5vw, 82px);
   --panel-w: clamp(240px, 30vw, 320px);
   --pad-sm: clamp(10px, 2vw, 16px);
   --pad-md: clamp(14px, 3vw, 24px);
@@ -74,6 +74,7 @@ html, body {
 .rail-btn .icon { font-size: clamp(18px, 2.2vw, 21px); }
 .rail-btn:hover { color: var(--text); }
 .rail-btn.active { color: var(--accent); border-left: 3px solid var(--accent); }
+.rail-btn .lbl { font-size: 11px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* ---- side panel ---- */
 #side-panel {

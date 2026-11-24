@@ -454,14 +454,14 @@
       "h": "dhamma",
       "pos": "m./nt.",
       "en": "phenomenon; mental/physical state; quality; teaching; the Dhamma (the Buddha's teaching)",
-      "pt": "realidade última discreta (paramattha-dhamma); estado mental/físico; qualidade; ensinamento; o Dhamma (o ensinamento do Buda)",
-      "es": "fenómeno; estado mental/físico; cualidad; enseñanza; el Dhamma (la enseñanza del Buda)",
+      "pt": "realidade última discreta (paramattha-dhamma); estado mental/físico; qualidade; ensinamento; o Dhamma (o ensinamento do Buddha)",
+      "es": "realidad última discreta (paramattha-dhamma); estado mental/físico; cualidad; enseñanza; el Dhamma (la enseñanza del Buddha)",
       "root": "√dhar (sustentar, manter)",
       "syn": [
         "sabhāva",
         "guṇa"
       ],
-      "usage": "Termo mais central de todo o Abhidhamma: designa a unidade discreta de realidade última (paramattha-dhamma) nas análises do Piṭaka, e o corpo de ensinamentos do Buda nos Nikāyas. Nunca traduzir como \"fealidade\" neste corpus.",
+      "usage": "Termo mais central de todo o Abhidhamma: designa a unidade discreta de realidade última (paramattha-dhamma) nas análises do Piṭaka, e o corpo de ensinamentos do Buddha nos Nikāyas. Nunca traduzir como \"fenômeno\" neste corpus.",
       "freq": 13876
     },
     {
@@ -484,7 +484,7 @@
       "pos": "nt.",
       "en": "materiality; matter; physical phenomenon; form",
       "pt": "materialidade; matéria; rūpa; forma",
-      "es": "materialidad; materia; fenómeno físico; forma",
+      "es": "materialidad; materia; rūpa; forma",
       "syn": [
         "mahābhūta (elemento material)"
       ],
@@ -1530,8 +1530,8 @@
       "h": "vipākapaccaya",
       "pos": "m.",
       "en": "kamma-result condition (14th of the 24 paccayas)",
-      "pt": "condição de resultado kármico (14º dos 24 paccayas)",
-      "es": "condición de resultado kármico (14º de los 24 paccayas)",
+      "pt": "condição de resultado de kamma (14º dos 24 paccayas)",
+      "es": "condición de resultado de kamma (14.º de los 24 paccayas)",
       "usage": "Um citta/cetasika resultante (vipāka) condiciona os fatores mentais coexistentes."
     },
     {

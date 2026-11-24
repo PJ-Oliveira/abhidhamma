@@ -12574,7 +12574,7 @@
           "root": "√dhar 1",
           "en": "mental phenomena; thoughts",
           "pt": "dhammas mentais; pensamentos",
-          "es": "fenómenos mentales; pensamientos"
+          "es": "dhammas mentales; pensamientos"
         },
         {
           "id": "1.05",
@@ -12592,7 +12592,7 @@
           "root": "√dhar 1",
           "en": "matter; thing; phenomenon",
           "pt": "matéria; coisa; dhamma",
-          "es": "materia; cosa; fenómeno"
+          "es": "materia; cosa; dhamma"
         },
         {
           "id": "1.07",
@@ -13262,7 +13262,7 @@
           "grammar": "fem, from dhamma",
           "en": "phenomena; mind-objects; teachings",
           "pt": "dhammas; objetos mentais; ensinamentos",
-          "es": "fenómenos; objetos mentales; enseñanzas",
+          "es": "dhammas; objetos mentales; enseñanzas",
           "root": "dhar"
         }
       ]
@@ -15775,7 +15775,7 @@
           "root": "√kar",
           "en": "action; deed; volitional action (karma)",
           "pt": "ação; feito; ação volicional (carma)",
-          "es": "acción; hecho; acción volitiva (karma)",
+          "es": "acción; hecho; acción volitiva (kamma)",
           "ant": "akamma"
         },
         {
@@ -18544,7 +18544,7 @@
           "root": "√rūp",
           "en": "formless state; formless phenomenon; formless attainment",
           "pt": "estado imaterial; dhamma sem forma; realização imaterial",
-          "es": "estado inmaterial; fenómeno sin forma; realización inmaterial",
+          "es": "estado inmaterial; dhamma sin forma; realización inmaterial",
           "ant": "rūpa"
         }
       ]
@@ -18697,7 +18697,7 @@
           "grammar": "substantivo neutro composto",
           "en": "the mental-phenomena sense base — one of the twelve sense bases",
           "pt": "a base sensorial dos dhammas mentais — uma das doze bases sensoriais",
-          "es": "la base sensorial de los fenómenos mentales — una de las doce bases sensoriales"
+          "es": "la base sensorial de los dhammas mentales — una de las doce bases sensoriales"
         }
       ]
     },
@@ -24771,7 +24771,7 @@
           "grammar": "substantivo masculino, composto",
           "en": "phenomena which is neither a consequence nor generates consequences",
           "pt": "dhamma que não é resultado nem gera resultado (categoria causalmente neutra)",
-          "es": "fenómeno que no es resultado ni genera resultado (categoría causalmente neutra)"
+          "es": "dhamma que no es resultado ni genera resultado (categoría causalmente neutra)"
         }
       ]
     },
@@ -26194,7 +26194,7 @@
           "grammar": "substantivo neutro, composto de upādā + rūpa",
           "en": "derived matter; accessory form; co-nascent material phenomena",
           "pt": "matéria derivada; forma acessória; dhammas materiais coenascentes",
-          "es": "materia derivada; forma accesoria; fenómenos materiales conascentes"
+          "es": "materia derivada; forma accesoria; dhammas materiales conascentes"
         }
       ]
     },
@@ -27479,7 +27479,7 @@
           "grammar": "substantivo neutro, composto",
           "en": "name and form; naming and materiality; mental and physical phenomena; mental and physical objects of consciousness",
           "pt": "nome e forma; dhammas mentais e físicos; mente e matéria",
-          "es": "nombre y forma; fenómenos mentales y físicos; mente y materia"
+          "es": "nombre y forma; dhammas mentales y físicos; mente y materia"
         },
         {
           "id": "2",
@@ -34944,7 +34944,7 @@
           "grammar": "fem, abstr, comp",
           "en": "phenomena; element; mental phenomena",
           "pt": "dhammas; Elemento; dhammas mentais",
-          "es": "fenómenos; Elemento; fenómenos mentales",
+          "es": "dhammas; Elemento; dhammas mentales",
           "root": "dhamma + dhātu"
         }
       ]
@@ -40831,7 +40831,7 @@
           "grammar": "ind, adv, comp, abl sg of nāmarūpapaccaya",
           "en": "dependent on mind and body; due to mental and physical phenomena",
           "pt": "dependente de mente e corpo; devido a mental e físico dhammas",
-          "es": "dependiente de mente y cuerpo; debido a mental y físico fenómenos",
+          "es": "dependiente de mente y cuerpo; debido a mental y físico dhammas",
           "root": "nāmarūpa + paccaya + ā"
         }
       ]
@@ -43803,7 +43803,7 @@
           "grammar": "fem, abstr, comp",
           "en": "craving for mental phenomena",
           "pt": "desejo para mental dhammas",
-          "es": "ansia para mental fenómenos",
+          "es": "ansia para mental dhammas",
           "root": "dhamma + taṇhā"
         }
       ]
@@ -51102,7 +51102,7 @@
           "grammar": "adj, comp",
           "en": "observing phenomena; who watches mental phenomena; (or) observing the nature of things",
           "pt": "observando dhammas; quem vigílias mental dhammas; (ou) observando o nature de coisas",
-          "es": "observando fenómenos; quién vigilias mental fenómenos; (o) observando el nature de cosas",
+          "es": "observando dhammas; quién vigilias mental dhammas; (o) observando el nature de cosas",
           "root": "dhamma + anupassī"
         }
       ]
@@ -59780,7 +59780,7 @@
           "grammar": "fem, abstr, comp",
           "en": "regularity of natural principles; stability of the Dhamma",
           "pt": "regularidade de natural determinações; stabilidade do dhamma",
-          "es": "regularidad de natural virtuosas; stabilidad del fenómeno",
+          "es": "regularidad de natural virtuosas; stabilidad del dhamma",
           "root": "dhamma + ṭhitatā"
         }
       ]
@@ -67588,7 +67588,7 @@
           "grammar": "fem, abstr, from dhamma",
           "en": "universal law; nature of the Dhamma",
           "pt": "universais law; natureza do dhamma",
-          "es": "universales law; naturaleza del fenómeno",
+          "es": "universales law; naturaleza del dhamma",
           "root": "dhar"
         },
         {
@@ -69719,7 +69719,7 @@
           "grammar": "fem, act, comp",
           "en": "Dhamma talk; teaching the Dhamma",
           "pt": "dhamma fala; ensinamento o dhamma",
-          "es": "fenómeno charla; enseñanza el fenómeno",
+          "es": "dhamma charla; enseñanza el dhamma",
           "root": "dhamma + desanā"
         }
       ]
@@ -71215,7 +71215,7 @@
           "grammar": "f. comp. (dhamma + saṅgaṇī)",
           "en": "Enumeration of Phenomena (first book of the Abhidhamma Piṭaka)",
           "pt": "Enumeração dos Dhammas (primeiro livro do Abhidhamma Piṭaka)",
-          "es": "Enumeración de los Fenómenos (primer libro del Abhidhamma Piṭaka)",
+          "es": "Enumeración de los Dhammas (primer libro del Abhidhamma Piṭaka)",
           "root": "",
           "syn": "",
           "ant": ""
@@ -75352,7 +75352,7 @@
           "grammar": "fem, comp",
           "en": "Dhamma discourse; discussion about the nature of things",
           "pt": "dhamma discurso; discussão sobre o nature de coisas",
-          "es": "fenómeno discurso; discusión sobre el nature de cosas",
+          "es": "dhamma discurso; discusión sobre el nature de cosas",
           "root": "dhamma + kathā"
         }
       ]
@@ -80092,7 +80092,7 @@
           "grammar": "masc, comp",
           "en": "lord of the Dhamma; master of reality",
           "pt": "lord do dhamma; mestre de realidade",
-          "es": "lord del fenómeno; maestro de realidad",
+          "es": "lord del dhamma; maestro de realidad",
           "root": "dhamma + sāmī"
         }
       ]
@@ -85576,7 +85576,7 @@
           "grammar": "fem, abstr, comp",
           "en": "fact of valuing the real Dhamma; fact of giving weight to the true teaching",
           "pt": "fato de valor o real dhamma; fato de dando valoriza para o verdadeiro ensinamento",
-          "es": "hecho de valor el real fenómeno; hecho de dando desprenden para el verdadero enseñanza",
+          "es": "hecho de valor el real dhamma; hecho de dando desprenden para el verdadero enseñanza",
           "root": "saddhamma + garutā"
         }
       ]
@@ -87896,7 +87896,7 @@
           "grammar": "fem, comp",
           "en": "real nature of the Dhamma",
           "pt": "real nature do dhamma",
-          "es": "real nature del fenómeno"
+          "es": "real nature del dhamma"
         }
       ]
     },
@@ -87911,7 +87911,7 @@
           "grammar": "fem, act, comp",
           "en": "following mental phenomena; contemplating qualia",
           "pt": "seguindo mental dhammas; contemplando qualia",
-          "es": "siguiendo mental fenómenos; contemplando qualia",
+          "es": "siguiendo mental dhammas; contemplando qualia",
           "root": "dhamma + anupassanā"
         }
       ]
@@ -91288,7 +91288,7 @@
           "grammar": "fem, comp",
           "en": "discussion about the Dhamma; detailed talk about the teaching",
           "pt": "discussão sobre o dhamma; detalhadamente fala sobre o ensinamento",
-          "es": "discusión sobre el fenómeno; detalladamente charla acerca del enseñanza",
+          "es": "discusión sobre el dhamma; detalladamente charla acerca del enseñanza",
           "root": "abhidhamma + kathā"
         }
       ]
@@ -91431,7 +91431,7 @@
           "grammar": "fem, comp",
           "en": "conduct not in line with the Dhamma; unethical conduct; unlawful behaviour; misconduct",
           "pt": "conduta não em linha com o dhamma; não ética conduta; unlawful comportamento; conduta",
-          "es": "conducta no en línea con el fenómeno; no ética conducta; unlawful comportamiento; conducta",
+          "es": "conducta no en línea con el dhamma; no ética conducta; unlawful comportamiento; conducta",
           "root": "na > a + dhamma + cariyā",
           "syn": "adhammacaraṇa",
           "ant": "dhammacariyā"
@@ -92420,7 +92420,7 @@
           "grammar": "nt, comp",
           "en": "knowledge of the stability of the Dhamma",
           "pt": "conhecimento do stabilidade do dhamma",
-          "es": "conocimiento del stabilidad del fenómeno",
+          "es": "conocimiento del stabilidad del dhamma",
           "root": "dhammaṭṭhiti + ñāṇa"
         }
       ]
@@ -97899,7 +97899,7 @@
           "grammar": "masc, comp",
           "en": "Dhamma general; epithet of Sāriputta",
           "pt": "dhamma geral; epíteto de Sāriputta",
-          "es": "fenómeno general; epíteto de Sāriputta",
+          "es": "dhamma general; epíteto de Sāriputta",
           "root": "dhamma + senāpati"
         },
         {
@@ -97908,7 +97908,7 @@
           "grammar": "masc, comp",
           "en": "Dhamma general; epithet of the Buddha",
           "pt": "dhamma geral; epíteto do Buda",
-          "es": "fenómeno general; epíteto del Buda",
+          "es": "dhamma general; epíteto del Buda",
           "root": "dhamma + senāpati"
         }
       ]
@@ -103465,7 +103465,7 @@
           "grammar": "fem, abstr, comp",
           "en": "deep understanding and insight into phenomena; (comm) insight knowledge which grasps conditioned phenomena",
           "pt": "profundo compreensão e visão profunda em dhammas; (coment.) visão profunda conhecimento qual agarram condicionado dhammas",
-          "es": "profundo comprensión y visión profunda en fenómenos; (coment.) visión profunda conocimiento cuál gran condicionado fenómenos",
+          "es": "profundo comprensión y visión profunda en dhammas; (coment.) visión profunda conocimiento cuál gran condicionado dhammas",
           "root": "adhipaññā + dhammavipassanā"
         }
       ]
@@ -105414,7 +105414,7 @@
           "grammar": "ger of dhammaṃ ājānāti, comp vb",
           "en": "understanding the Dhamma; comprehending the teaching",
           "pt": "compreensão o dhamma; compreender o ensinamento",
-          "es": "comprensión el fenómeno; comprensión el enseñanza",
+          "es": "comprensión el dhamma; comprensión el enseñanza",
           "root": "dhammaṃ + aññāya"
         }
       ]
@@ -105430,7 +105430,7 @@
           "grammar": "sandhi, masc + ind",
           "en": "only the Dhamma; just the teaching",
           "pt": "apenas o dhamma; apenas o ensinamento",
-          "es": "solo el fenómeno; solo el enseñanza",
+          "es": "solo el dhamma; solo el enseñanza",
           "root": "dhamma + eva"
         }
       ]
@@ -114962,7 +114962,7 @@
           "grammar": "fem, comp",
           "en": "thoughts about mental phenomena; intention regarding thoughts",
           "pt": "pensamentos sobre mental dhammas; intenção a respeito de pensamentos",
-          "es": "pensamientos acerca de mental fenómenos; intención respecto a pensamientos",
+          "es": "pensamientos acerca de mental dhammas; intención respecto a pensamientos",
           "root": "dhamma + sañcetanā"
         }
       ]
@@ -114978,7 +114978,7 @@
           "grammar": "fem, abstr, comp",
           "en": "recognition of mental activity; perception of mental phenomena",
           "pt": "recognição de mental atividade; percepção de dhammas mentais",
-          "es": "recognición de mental actividad; percepción de fenómenos mentales",
+          "es": "recognición de mental actividad; percepción de dhammas mentales",
           "root": "dhamma + saññā"
         }
       ]
@@ -114994,7 +114994,7 @@
           "grammar": "fem, comp",
           "en": "agreement about the Dhamma; concord regarding the teaching",
           "pt": "aprovação sobre o dhamma; concórdia a respeito do ensinamento",
-          "es": "aprobación acerca del fenómeno; concordia respecto al enseñanza",
+          "es": "aprobación acerca del dhamma; concordia respecto al enseñanza",
           "root": "dhamma + sāmaggī"
         }
       ]
@@ -119881,7 +119881,7 @@
           "grammar": "masc, pp of pūrati",
           "en": "name of a Sakyan arahant monk; great disciple of the Buddha; foremost monk in giving Dhamma talks; Puṇṇa Mantāṇiputta",
           "pt": "nome de um(a) Sakyan arahant monge; grande discípulo do Buda; força monge em dando dhamma fala; Puṇṇa Mantāṇiputta",
-          "es": "nombre de un(a) Sakyan arahant monje; gran discípulo del Buda; formaciones monje en dando fenómeno charla; Puṇṇa Mantāṇiputta",
+          "es": "nombre de un(a) Sakyan arahant monje; gran discípulo del Buda; formaciones monje en dando dhamma charla; Puṇṇa Mantāṇiputta",
           "root": "pūr"
         },
         {
@@ -124491,8 +124491,8 @@
           "pos": "m.",
           "grammar": "masc, from ārabhati",
           "en": "mental activity; karmic action; intentional behaviour",
-          "pt": "atividade mental; cármicos ação; intencional comportamento",
-          "es": "actividad mental; kármicos acción; intencional comportamiento",
+          "pt": "atividade mental; kâmmicos ação; intencional comportamento",
+          "es": "actividad mental; kámmicos acción; intencional comportamiento",
           "root": "rabh",
           "ant": "anārambha"
         },
@@ -126109,7 +126109,7 @@
           "grammar": "fem, abstr, comp",
           "en": "successive insight into phenomena; sequential discernment of mental states",
           "pt": "sucessivas visão profunda em dhammas; sequencial discernimento de mental estados",
-          "es": "sucesivas visión profunda en fenómenos; secuencial discernimiento de mental estados",
+          "es": "sucesivas visión profunda en dhammas; secuencial discernimiento de mental estados",
           "root": "anupada + dhammavipassanā"
         }
       ]
@@ -128321,7 +128321,7 @@
           "grammar": "fem, comp",
           "en": "profundity of the Dhamma; depth of the teaching",
           "pt": "profundidade do dhamma; sondar do ensinamento",
-          "es": "profundidad del fenómeno; sumergida del enseñanza",
+          "es": "profundidad del dhamma; sumergida del enseñanza",
           "root": "dhamma + gambhīratā"
         }
       ]
@@ -128337,7 +128337,7 @@
           "grammar": "masc, comp",
           "en": "inspiration from the teaching; enthusiasm from the Dhamma",
           "pt": "inspiração do ensinamento; entusiasmo do dhamma",
-          "es": "inspiración del enseñanza; entusiasmo del fenómeno",
+          "es": "inspiración del enseñanza; entusiasmo del dhamma",
           "root": "dhamma + veda"
         }
       ]
@@ -128353,7 +128353,7 @@
           "grammar": "adj, comp",
           "en": "who speaks about Dhamma; who speaks according to the teaching",
           "pt": "quem fala sobre dhamma; quem fala acordo para o ensinamento",
-          "es": "quién habla acerca de fenómeno; quién habla acuerdo para el enseñanza",
+          "es": "quién habla acerca de dhamma; quién habla acuerdo para el enseñanza",
           "root": "dhamma + vādī"
         },
         {
@@ -128378,7 +128378,7 @@
           "grammar": "adj, comp",
           "en": "based on mental phenomena; related to thought processes",
           "pt": "baseado em dhammas mentais; relacionado a pensamento processos",
-          "es": "basado en fenómenos mentales; relacionado con pensamiento procesos",
+          "es": "basado en dhammas mentales; relacionado con pensamiento procesos",
           "root": "dhamma + ārammaṇa"
         }
       ]
@@ -134865,8 +134865,8 @@
           "pos": "m.",
           "grammar": "masc, comp",
           "en": "meritorious intention; positive karmic formations; wholesome intentional activity",
-          "pt": "meritório intenção; positivo cármicos formações; benéfico intencional atividade",
-          "es": "meritorio intención; directo kármicos formaciones; saludable intencional actividad",
+          "pt": "meritório intenção; positivo kâmmicos formações; benéfico intencional atividade",
+          "es": "meritorio intención; directo kámmicos formaciones; saludable intencional actividad",
           "root": "puñña + abhisaṅkhāra"
         }
       ]
@@ -135518,7 +135518,7 @@
           "grammar": "masc pl, comp, gen pl of sabbadhammā, irreg form of sabbadhammānaṃ",
           "en": "of everything; of all things; of all mental phenomena; of all states of mind",
           "pt": "de tudo; de todo coisas; de todo mental dhammas; de todo estados de mente",
-          "es": "de todo; de todo cosas; de todo mental fenómenos; de todo estados de mente",
+          "es": "de todo; de todo cosas; de todo mental dhammas; de todo estados de mente",
           "root": "sabba + dhammā + ānaṃ"
         }
       ]
@@ -140403,7 +140403,7 @@
           "grammar": "adj, comp",
           "en": "according to the Dhamma; in accordance with the teaching",
           "pt": "segundo o dhamma; de acordo com o ensinamento",
-          "es": "según el fenómeno; de acuerdo con el enseñanza",
+          "es": "según el dhamma; de acuerdo con el enseñanza",
           "root": "yathā + dhamma"
         }
       ]
@@ -146839,7 +146839,7 @@
           "grammar": "adj, comp",
           "en": "seeing the Dhamma; perceiving the nature of things",
           "pt": "visão o dhamma; percebendo o nature de coisas",
-          "es": "visión el fenómeno; percibiendo el nature de cosas",
+          "es": "visión el dhamma; percibiendo el nature de cosas",
           "root": "dhamma + dassī"
         }
       ]
@@ -146855,7 +146855,7 @@
           "grammar": "ind, adv, comp",
           "en": "to give a Dhamma talk",
           "pt": "para dar um dhamma fala",
-          "es": "para dar un fenómeno charla",
+          "es": "para dar un dhamma charla",
           "root": "dhammadesanā + attha + aṃ"
         }
       ]
@@ -146871,7 +146871,7 @@
           "grammar": "adj, comp",
           "en": "stingy with (sharing) the teaching; selfish about (teaching) Dhamma",
           "pt": "mesquinho com (partilha) o ensinamento; egoísta sobre (ensinamento) dhamma",
-          "es": "mezquino con (compartir) el enseñanza; egoísta acerca de (enseñanza) fenómeno",
+          "es": "mezquino con (compartir) el enseñanza; egoísta acerca de (enseñanza) dhamma",
           "root": "dhamma + maccharī"
         }
       ]
@@ -146902,7 +146902,7 @@
           "grammar": "adj, from dhamma",
           "en": "righteous; religious; moral; related to the Dhamma",
           "pt": "justa; religiosa; moral; relacionado a o dhamma",
-          "es": "justa; religiosa; moral; relacionado con el fenómeno",
+          "es": "justa; religiosa; moral; relacionado con el dhamma",
           "root": "dhar",
           "syn": "dhammaṭṭha, dhammika, dhammiya"
         },
@@ -169689,8 +169689,8 @@
           "pos": "ind.",
           "grammar": "ind, adv, comp, abl sg of ārambhapaccaya",
           "en": "dependent on activity; due to karmic action",
-          "pt": "dependente de atividade; devido a cármicos ação",
-          "es": "dependiente de actividad; debido a kármicos acción",
+          "pt": "dependente de atividade; devido a kâmmicos ação",
+          "es": "dependiente de actividad; debido a kámmicos acción",
           "root": "ārambha + paccaya + ā"
         }
       ]
@@ -174737,7 +174737,7 @@
           "grammar": "ind, adv, comp",
           "en": "due to an appropriate Dhamma discourse",
           "pt": "devido a um appropriate dhamma discurso",
-          "es": "debido a un appropriate fenómeno discurso",
+          "es": "debido a un appropriate dhamma discurso",
           "root": "anukūla + dhammadesana + attha + aṃ"
         }
       ]
@@ -179755,7 +179755,7 @@
           "grammar": "fem, comp",
           "en": "reason for an occurrence; occasion for the arising (of a Dhamma discourse)",
           "pt": "reason para um ocorrência; occasão para o surgimento (de um dhamma discurso)",
-          "es": "reason para un ocurrencia; occasión para el surgimiento (de un fenómeno discurso)",
+          "es": "reason para un ocurrencia; occasión para el surgimiento (de un dhamma discurso)",
           "root": "aṭṭha + uppatti"
         }
       ]
@@ -181493,7 +181493,7 @@
           "grammar": "masc pl, comp",
           "en": "qualities of the Buddha, Dhamma and Saṅgha",
           "pt": "qualidades do Buda, dhamma e Saṅgha",
-          "es": "cualidades del Buda, fenómeno y Saṅgha",
+          "es": "cualidades del Buda, dhamma y Saṅgha",
           "root": "buddha + dhamma + saṅgha + guṇa + ā"
         }
       ]
@@ -184462,7 +184462,7 @@
           "grammar": "adj, comp",
           "en": "who lives the Dhamma; who practices the teaching; who walks in truth",
           "pt": "quem vive o dhamma; quem prática o ensinamento; quem caminha em verdade",
-          "es": "quién vive el fenómeno; quién práctica el enseñanza; quién camina en verdad",
+          "es": "quién vive el dhamma; quién práctica el enseñanza; quién camina en verdad",
           "root": "dhamma + cārī",
           "ant": "adhammacārī"
         },
@@ -184499,7 +184499,7 @@
           "grammar": "fem, comp",
           "en": "name of an arahant nun; great disciple of the Buddha; foremost nun in giving Dhamma talks",
           "pt": "nome de um(a) arahant monja; grande discípulo do Buda; força monja em dando dhamma fala",
-          "es": "nombre de un(a) arahant monja; gran discípulo del Buda; formaciones monja en dando fenómeno charla",
+          "es": "nombre de un(a) arahant monja; gran discípulo del Buda; formaciones monja en dando dhamma charla",
           "root": "dhamma + dinna + ā"
         }
       ]
@@ -184515,7 +184515,7 @@
           "grammar": "adj, comp",
           "en": "with respect for the teaching; giving weight to the Dhamma",
           "pt": "com respeito para o ensinamento; dando valoriza para o dhamma",
-          "es": "con respeto para el enseñanza; dando desprenden para el fenómeno",
+          "es": "con respeto para el enseñanza; dando desprenden para el dhamma",
           "root": "dhamma + garu"
         }
       ]
@@ -184531,7 +184531,7 @@
           "grammar": "masc, agent, comp",
           "en": "Dhamma preacher; Dhamma teacher",
           "pt": "dhamma pregador; dhamma mestre",
-          "es": "fenómeno predicador; fenómeno maestro",
+          "es": "dhamma predicador; dhamma maestro",
           "root": "dhamma + kathika"
         },
         {
@@ -184540,7 +184540,7 @@
           "grammar": "adj, comp",
           "en": "preaching the Dhamma; teaching the Dhamma",
           "pt": "preaching o dhamma; ensinamento o dhamma",
-          "es": "preaching el fenómeno; enseñanza el fenómeno",
+          "es": "preaching el dhamma; enseñanza el dhamma",
           "root": "dhamma + kathika"
         }
       ]
@@ -184556,7 +184556,7 @@
           "grammar": "nt, act, comp",
           "en": "preaching of the Dhamma; exposition of the teaching",
           "pt": "preaching do dhamma; exposição do ensinamento",
-          "es": "preaching del fenómeno; exposición del enseñanza",
+          "es": "preaching del dhamma; exposición del enseñanza",
           "root": "dhamma + akkhāna"
         }
       ]
@@ -184572,7 +184572,7 @@
           "grammar": "aor, comp vb",
           "en": "explained the teaching (to); clarified the Dhamma (for)",
           "pt": "explicado o ensinamento (a/para); esclarecer o dhamma (para)",
-          "es": "explicado el enseñanza (a/para); clarificar el fenómeno (para)",
+          "es": "explicado el enseñanza (a/para); clarificar el dhamma (para)",
           "root": "dhammaṃ + akkhāsi"
         }
       ]
@@ -184635,7 +184635,7 @@
           "grammar": "masc, comp",
           "en": "taste of the Dhamma; flavour of the Dhamma",
           "pt": "sabor do dhamma; quádrupla do dhamma",
-          "es": "sabor del fenómeno; comentarios del fenómeno",
+          "es": "sabor del dhamma; comentarios del dhamma",
           "root": "dhamma + rasa"
         }
       ]
@@ -184651,7 +184651,7 @@
           "grammar": "nt, comp",
           "en": "treasure of the teaching; jewel of the Dhamma",
           "pt": "tesouro do ensinamento; joia do dhamma",
-          "es": "tesoro del enseñanza; joya del fenómeno",
+          "es": "tesoro del enseñanza; joya del dhamma",
           "root": "dhamma + ratana",
           "ant": "āmisaratana"
         }
@@ -184700,7 +184700,7 @@
           "grammar": "f. comp.",
           "en": "Canonical Text of the Enumeration of Phenomena (Dhammasaṅgaṇī Pāḷi)",
           "pt": "Texto Canônico da Enumeração dos Dhammas (Dhammasaṅgaṇī Pāḷi)",
-          "es": "Texto Canónico de la Enumeración de los Fenómenos (Dhammasaṅgaṇī Pāḷi)",
+          "es": "Texto Canónico de la Enumeración de los Dhammas (Dhammasaṅgaṇī Pāḷi)",
           "root": "",
           "syn": "",
           "ant": ""
@@ -184718,7 +184718,7 @@
           "grammar": "fem, abstr, comp",
           "en": "excellence of the teaching; superb nature of the Dhamma",
           "pt": "excelência do ensinamento; superb nature do dhamma",
-          "es": "excelencia del enseñanza; superb nature del fenómeno",
+          "es": "excelencia del enseñanza; superb nature del dhamma",
           "root": "dhamma + sudhammatā"
         }
       ]
@@ -184734,7 +184734,7 @@
           "grammar": "fem, comp",
           "en": "talking about the Dhamma; Dhamma discussion",
           "pt": "lisonjeira sobre o dhamma; dhamma discussão",
-          "es": "lapan acerca del fenómeno; fenómeno discussión",
+          "es": "lapan acerca del dhamma; dhamma discussión",
           "root": "dhamma + sākacchā"
         }
       ]
@@ -184750,7 +184750,7 @@
           "grammar": "masc, comp",
           "en": "master of the Dhamma; lord of the teaching; epithet of the Buddha",
           "pt": "mestre do dhamma; lord do ensinamento; epíteto do Buda",
-          "es": "maestro del fenómeno; lord del enseñanza; epíteto del Buda",
+          "es": "maestro del dhamma; lord del enseñanza; epíteto del Buda",
           "root": "dhamma + sāmī"
         }
       ]
@@ -184781,7 +184781,7 @@
           "grammar": "masc, comp",
           "en": "pondering about mental phenomena; contemplating things",
           "pt": "pondering sobre mental dhammas; contemplando coisas",
-          "es": "pondering acerca de mental fenómenos; contemplando cosas",
+          "es": "pondering acerca de mental dhammas; contemplando cosas",
           "root": "dhamma + vicāra"
         }
       ]
@@ -184797,7 +184797,7 @@
           "grammar": "nt, abstr, comp",
           "en": "fact of taking Dhamma as an authority; putting the teaching in charge",
           "pt": "fato de tomando dhamma como um authoridade; colocando o ensinamento em acusam",
-          "es": "hecho de tomando fenómeno como un authoridad; poniendo el enseñanza en acusan",
+          "es": "hecho de tomando dhamma como un authoridad; poniendo el enseñanza en acusan",
           "root": "dhamma + ādhipateyya"
         },
         {
@@ -184806,7 +184806,7 @@
           "grammar": "adj, comp",
           "en": "with Dhamma as one's authority",
           "pt": "com dhamma como one's authoridade",
-          "es": "con fenómeno como one's authoridad",
+          "es": "con dhamma como one's authoridad",
           "root": "dhamma + ādhipateyya"
         }
       ]
@@ -184822,7 +184822,7 @@
           "grammar": "adj, comp",
           "en": "connected with the teaching; concerning the Dhamma; for the Dhamma",
           "pt": "conectado com o ensinamento; acerca do dhamma; para o dhamma",
-          "es": "conectado con el enseñanza; acerca del fenómeno; para el fenómeno",
+          "es": "conectado con el enseñanza; acerca del dhamma; para el dhamma",
           "root": "dhamma + upasaṃhita"
         }
       ]
@@ -195250,7 +195250,7 @@
           "grammar": "masc, comp",
           "en": "worldly phenomenon; common condition; (comm) crumbling character of the five aggregates",
           "pt": "mundano dhamma; comum condição; (coment.) desintegrar character do cinco agregados",
-          "es": "mundano fenómeno; común condición; (coment.) frágil character del cinco agregados",
+          "es": "mundano dhamma; común condición; (coment.) frágil character del cinco agregados",
           "root": "loka + dhamma"
         }
       ]
@@ -195816,7 +195816,7 @@
           "grammar": "masc",
           "en": "Mahinda Mahāthera who brought the Dhamma to Sri Lanka",
           "pt": "mahinda Mahāthera quem trazido o dhamma para ceilão lanka",
-          "es": "mahinda Mahāthera quién traído el fenómeno para sri lanka"
+          "es": "mahinda Mahāthera quién traído el dhamma para sri lanka"
         }
       ]
     },
@@ -200856,7 +200856,7 @@
           "grammar": "masc, comp",
           "en": "ending of name and form; cessation of individual existence; end of mental and physical phenomena",
           "pt": "fim de nome e forma; cessação de indivíduo existência; fim de mental e físico dhammas",
-          "es": "final de nombre y forma; cesación de individuo existencia; fin de mental y físico fenómenos",
+          "es": "final de nombre y forma; cesación de individuo existencia; fin de mental y físico dhammas",
           "root": "nāmarūpa + nirodha",
           "ant": "nāmarūpasamudaya"
         }
@@ -204665,7 +204665,7 @@
           "grammar": "abs of parijappati",
           "en": "having prayed (for); having made an incantation; having muttered a mantra",
           "pt": "tendo prayed (para); tendo feito um incantação; tendo ramo um mantra",
-          "es": "teniendo prayed (para); teniendo hecho un incantación; teniendo bodhisattvas un mantra",
+          "es": "teniendo prayed (para); teniendo hecho un incantación; teniendo bodhisattas un mantra",
           "root": "japp"
         }
       ]
@@ -228974,8 +228974,8 @@
           "pos": "m.",
           "grammar": "m.",
           "en": "kamma-result condition (14th of the 24 paccayas)",
-          "pt": "condição de resultado kármico (14º dos 24 paccayas)",
-          "es": "condición de resultado kármico (14º de los 24 paccayas)",
+          "pt": "condição de resultado kâmmico (14º dos 24 paccayas)",
+          "es": "condición de resultado kámmico (14º de los 24 paccayas)",
           "root": "",
           "syn": "",
           "ant": ""
@@ -242000,7 +242000,7 @@
           "grammar": "adj, comp",
           "en": "connected with marvellous and wonderful phenomena",
           "pt": "conectado com marvelloso e cheio de porventura dhammas",
-          "es": "conectado con marvelloso y lleno de interrogativa fenómenos",
+          "es": "conectado con marvelloso y lleno de interrogativa dhammas",
           "root": "acchariya + abbhuta + dhamma + paṭisaṃyutta"
         }
       ]
@@ -251394,7 +251394,7 @@
           "grammar": "adj, comp",
           "en": "not originating from karma",
           "pt": "não originando-se de kamma",
-          "es": "no originándose de karma",
+          "es": "no originándose de kamma",
           "root": "na > a + kamma + ja"
         }
       ]
@@ -261618,7 +261618,7 @@
           "grammar": "masc, comp",
           "en": "impermanent phenomenon",
           "pt": "impermanente dhamma",
-          "es": "impermanente fenómeno",
+          "es": "impermanente dhamma",
           "root": "anicca + dhamma"
         }
       ]
@@ -265664,7 +265664,7 @@
           "grammar": "adj, from dhamma",
           "en": "according to Dhamma; in line with the teaching",
           "pt": "segundo dhamma; em linha com o ensinamento",
-          "es": "según fenómeno; en línea con el enseñanza",
+          "es": "según dhamma; en línea con el enseñanza",
           "root": "dhar"
         },
         {
@@ -272023,8 +272023,8 @@
           "pos": "m.",
           "grammar": "masc, from na ārabhati",
           "en": "non-activity; which has no karmic activity; epithet of Nibbāna",
-          "pt": "não-atividade; qual tem não cármicos atividade; epíteto do Nibbāna",
-          "es": "no-actividad; cuál tiene no kármicos actividad; epíteto del Nibbāna",
+          "pt": "não-atividade; qual tem não kâmmicos atividade; epíteto do Nibbāna",
+          "es": "no-actividad; cuál tiene no kámmicos actividad; epíteto del Nibbāna",
           "root": "rabh",
           "ant": "ārambha"
         }
@@ -280973,8 +280973,8 @@
           "pos": "m.",
           "grammar": "masc, comp",
           "en": "demeritorious intention; negative karmic formations; unwholesome intentional activities",
-          "pt": "demérito intenção; negativo cármicos formações; prejudicial intencional atividades",
-          "es": "demérito intención; negativo kármicos formaciones; perjudicial intencional actividades",
+          "pt": "demérito intenção; negativo kâmmicos formações; prejudicial intencional atividades",
+          "es": "demérito intención; negativo kámmicos formaciones; perjudicial intencional actividades",
           "root": "apuñña + abhisaṅkhāra"
         }
       ]
@@ -283009,7 +283009,7 @@
           "grammar": "masc, comp",
           "en": "formless phenomenon",
           "pt": "dhamma sem forma",
-          "es": "fenómeno sin forma",
+          "es": "dhamma sin forma",
           "root": "arūpa + dhamma"
         }
       ]
@@ -294670,7 +294670,7 @@
           "grammar": "masc, comp",
           "en": "part of the phenomenon",
           "pt": "parte do dhamma",
-          "es": "parte del fenómeno"
+          "es": "parte del dhamma"
         }
       ]
     },
@@ -297056,7 +297056,7 @@
           "grammar": "masc, comp",
           "en": "true Dhamma; immutable reality",
           "pt": "verdadeiro dhamma; imutável realidade",
-          "es": "verdadero fenómeno; abrigo realidad",
+          "es": "verdadero dhamma; abrigo realidad",
           "root": "aviparīta + dhamma"
         }
       ]
@@ -297072,7 +297072,7 @@
           "grammar": "fem, act, comp",
           "en": "teaching the true Dhamma",
           "pt": "ensinamento o verdadeiro dhamma",
-          "es": "enseñanza el verdadero fenómeno",
+          "es": "enseñanza el verdadero dhamma",
           "root": "aviparītadhamma + desanā"
         }
       ]
@@ -320967,7 +320967,7 @@
           "grammar": "masc, comp",
           "en": "intentional phenomenon",
           "pt": "intencional dhamma",
-          "es": "intencional fenómeno",
+          "es": "intencional dhamma",
           "root": "cetanā + dhamma"
         }
       ]
@@ -330316,7 +330316,7 @@
           "grammar": "masc, comp",
           "en": "dhamma meaning teaching",
           "pt": "dhamma significado ensinamento",
-          "es": "fenómeno significado enseñanza",
+          "es": "dhamma significado enseñanza",
           "root": "desanā + dhamma"
         }
       ]
@@ -331605,7 +331605,7 @@
           "grammar": "masc, comp",
           "en": "treasurer of the Dhamma; epithet of Ānanda",
           "pt": "tesoureiro do dhamma; epíteto de Ānanda",
-          "es": "tesorero del fenómeno; epíteto de Ānanda",
+          "es": "tesorero del dhamma; epíteto de Ānanda",
           "root": "dhamma + bhaṇḍāgārika"
         }
       ]
@@ -331637,7 +331637,7 @@
           "grammar": "nt, comp",
           "en": "Dhamma teaching",
           "pt": "dhamma ensinamento",
-          "es": "fenómeno enseñanza",
+          "es": "dhamma enseñanza",
           "root": "dhamma + cakka"
         }
       ]
@@ -331653,7 +331653,7 @@
           "grammar": "nt, act, comp",
           "en": "rolling the wheel of Dhamma forward; turning the wheel of the teaching",
           "pt": "rolando o roda de dhamma direta; direcionamento o roda do ensinamento",
-          "es": "ponen el rueda de fenómeno directo; monarca el rueda del enseñanza",
+          "es": "ponen el rueda de dhamma directo; monarca el rueda del enseñanza",
           "root": "dhammacakka + pavattana"
         }
       ]
@@ -331685,7 +331685,7 @@
           "grammar": "masc, comp",
           "en": "interest in mental phenomena; desire for thoughts",
           "pt": "interesse em mental dhammas; desejo para pensamentos",
-          "es": "interés en mental fenómenos; deseo para pensamientos",
+          "es": "interés en mental dhammas; deseo para pensamientos",
           "root": "dhamma + chanda"
         }
       ]
@@ -331717,7 +331717,7 @@
           "grammar": "nt, act, comp",
           "en": "seeing the Dhamma; understanding the teaching",
           "pt": "visão o dhamma; compreensão o ensinamento",
-          "es": "visión el fenómeno; comprensión el enseñanza",
+          "es": "visión el dhamma; comprensión el enseñanza",
           "root": "dhamma + dassana"
         }
       ]
@@ -331733,7 +331733,7 @@
           "grammar": "adj, comp",
           "en": "who knows the Dhamma by heart",
           "pt": "quem conhece o dhamma por coração",
-          "es": "quién conoce el fenómeno por corazón",
+          "es": "quién conoce el dhamma por corazón",
           "root": "dhamma + dhara"
         }
       ]
@@ -331749,7 +331749,7 @@
           "grammar": "nt, comp",
           "en": "gift of Dhamma; gift of the teaching",
           "pt": "dádiva de dhamma; dádiva do ensinamento",
-          "es": "don de fenómeno; don del enseñanza",
+          "es": "don de dhamma; don del enseñanza",
           "root": "dhamma + dāna",
           "ant": "āmisadāna"
         }
@@ -331766,7 +331766,7 @@
           "grammar": "adj, comp",
           "en": "spiritual heir; inheritor of the Dhamma",
           "pt": "espiritual herdeiro; inheritor do dhamma",
-          "es": "espiritual heredero; inheritor del fenómeno",
+          "es": "espiritual heredero; inheritor del dhamma",
           "root": "dhamma + dāyāda",
           "ant": "āmisadāyāda"
         }
@@ -331799,7 +331799,7 @@
           "grammar": "adj, comp",
           "en": "immersed in the teaching; focused on the Dhamma",
           "pt": "imersos no ensinamento; focada sobre o dhamma",
-          "es": "inmersos en el enseñanza; quietud sobre el fenómeno",
+          "es": "inmersos en el enseñanza; quietud sobre el dhamma",
           "root": "dhamma + gata"
         }
       ]
@@ -331815,7 +331815,7 @@
           "grammar": "adj, comp",
           "en": "guarded by the Dhamma; protected by the teaching",
           "pt": "guardado pelo dhamma; protegido pelo ensinamento",
-          "es": "guardado por el fenómeno; protegido por el enseñanza",
+          "es": "guardado por el dhamma; protegido por el enseñanza",
           "root": "dhamma + gutta"
         }
       ]
@@ -331831,7 +331831,7 @@
           "grammar": "masc, comp",
           "en": "qualities of the Dhamma",
           "pt": "qualidades do dhamma",
-          "es": "cualidades del fenómeno",
+          "es": "cualidades del dhamma",
           "root": "dhamma + guṇa"
         }
       ]
@@ -331847,7 +331847,7 @@
           "grammar": "nt, comp",
           "en": "respect for the Dhamma; reverence towards the teaching",
           "pt": "respeito para o dhamma; reverência em direção a o ensinamento",
-          "es": "respeto para el fenómeno; reverencia hacia el enseñanza",
+          "es": "respeto para el dhamma; reverencia hacia el enseñanza",
           "root": "dhamma + gārava"
         },
         {
@@ -331856,7 +331856,7 @@
           "grammar": "adj, comp",
           "en": "respectful towards the teaching; giving weight to the Dhamma",
           "pt": "respeitoso em direção a o ensinamento; dando valoriza para o dhamma",
-          "es": "respetuoso hacia el enseñanza; dando desprenden para el fenómeno",
+          "es": "respetuoso hacia el enseñanza; dando desprenden para el dhamma",
           "root": "dhamma + gārava",
           "ant": "adhammagārava"
         }
@@ -331873,7 +331873,7 @@
           "grammar": "masc, comp",
           "en": "kind of Dhamma; variety of teaching",
           "pt": "bondoso de dhamma; variedade de ensinamento",
-          "es": "bondadoso de fenómeno; variedad de enseñanza",
+          "es": "bondadoso de dhamma; variedad de enseñanza",
           "root": "dhamma + jāta"
         }
       ]
@@ -331904,7 +331904,7 @@
           "grammar": "masc, comp",
           "en": "portion of the teaching; division of the Dhamma",
           "pt": "porção do ensinamento; divisão do dhamma",
-          "es": "porción del enseñanza; división del fenómeno",
+          "es": "porción del enseñanza; división del dhamma",
           "root": "dhamma + khandha"
         }
       ]
@@ -331936,7 +331936,7 @@
           "grammar": "masc, comp",
           "en": "embodiment of the Dhamma",
           "pt": "embodimento do dhamma",
-          "es": "embodimiento del fenómeno",
+          "es": "embodimiento del dhamma",
           "root": "dhammakāya"
         }
       ]
@@ -331952,7 +331952,7 @@
           "grammar": "nt, abstr, comp",
           "en": "stinginess about the Dhamma; selfishness with the teaching",
           "pt": "mesquinhez sobre o dhamma; qualidade de egoísta com o ensinamento",
-          "es": "mezquindad acerca del fenómeno; cualidad de egoísta con el enseñanza",
+          "es": "mezquindad acerca del dhamma; cualidad de egoísta con el enseñanza",
           "root": "dhamma + macchariya"
         }
       ]
@@ -331968,7 +331968,7 @@
           "grammar": "ind, adv, comp",
           "en": "concerning the teaching; about the Dhamma",
           "pt": "acerca do ensinamento; sobre o dhamma",
-          "es": "acerca del enseñanza; acerca del fenómeno",
+          "es": "acerca del enseñanza; acerca del dhamma",
           "root": "dhammaṃ + ārabbha"
         }
       ]
@@ -331984,7 +331984,7 @@
           "grammar": "fem, comp",
           "en": "guidelines of the teaching; Dhamma as a guide",
           "pt": "guidelines do ensinamento; dhamma como um guia",
-          "es": "guidelines del enseñanza; fenómeno como un guía",
+          "es": "guidelines del enseñanza; dhamma como un guía",
           "root": "dhamma + netti"
         }
       ]
@@ -332024,7 +332024,7 @@
           "grammar": "nt, comp",
           "en": "mental representation of phenomena; mental image",
           "pt": "mental representação de dhammas; mental imagem",
-          "es": "mental representación de fenómenos; mental imagen",
+          "es": "mental representación de dhammas; mental imagen",
           "root": "dhamma + nimitta"
         }
       ]
@@ -332040,7 +332040,7 @@
           "grammar": "masc, comp",
           "en": "order of the Dhamma",
           "pt": "ordem do dhamma",
-          "es": "orden del fenómeno"
+          "es": "orden del dhamma"
         }
       ]
     },
@@ -332055,7 +332055,7 @@
           "grammar": "masc, comp",
           "en": "student of the Dhamma",
           "pt": "estudante do dhamma",
-          "es": "estudiante del fenómeno",
+          "es": "estudiante del dhamma",
           "root": "dhamma + antevāsika"
         }
       ]
@@ -332071,7 +332071,7 @@
           "grammar": "masc, comp",
           "en": "inference about the Dhamma; understanding about the teaching (for someone regarding someone)",
           "pt": "inference sobre o dhamma; compreensão sobre o ensinamento (para alguém a respeito de alguém)",
-          "es": "inference acerca del fenómeno; comprensión acerca del enseñanza (para alguien respecto a alguien)",
+          "es": "inference acerca del dhamma; comprensión acerca del enseñanza (para alguien respecto a alguien)",
           "root": "dhamma + anvaya"
         },
         {
@@ -332095,7 +332095,7 @@
           "grammar": "nt, comp",
           "en": "verse of the teaching; line of Dhamma; religious saying",
           "pt": "verso do ensinamento; linha de dhamma; religiosa dizendo",
-          "es": "verso del enseñanza; línea de fenómeno; religiosa diciendo",
+          "es": "verso del enseñanza; línea de dhamma; religiosa diciendo",
           "root": "dhamma + pada"
         },
         {
@@ -332104,7 +332104,7 @@
           "grammar": "nt, comp",
           "en": "path of Dhamma; way of the teaching; (comm) state of awakening",
           "pt": "caminho de dhamma; caminho do ensinamento; (coment.) condição de despertar",
-          "es": "camino de fenómeno; camino del enseñanza; (coment.) condición de despertar",
+          "es": "camino de dhamma; camino del enseñanza; (coment.) condición de despertar",
           "root": "dhamma + pada"
         },
         {
@@ -332138,7 +332138,7 @@
           "grammar": "masc, comp",
           "en": "generosity with the teaching; Dhamma sharing",
           "pt": "generosidade com o ensinamento; dhamma partilha",
-          "es": "generosidad con el enseñanza; fenómeno compartir",
+          "es": "generosidad con el enseñanza; dhamma compartir",
           "root": "dhamma + pariccāga",
           "syn": "dhammacāga",
           "ant": "āmisapariccāga"
@@ -332156,7 +332156,7 @@
           "grammar": "masc, comp",
           "en": "Dhamma discourse; method of teaching",
           "pt": "dhamma discurso; método de ensinamento",
-          "es": "fenómeno discurso; método de enseñanza",
+          "es": "dhamma discurso; método de enseñanza",
           "root": "dhamma + pariyāya"
         }
       ]
@@ -332188,7 +332188,7 @@
           "grammar": "fem, comp",
           "en": "teaching the Dhamma; communicating the teaching",
           "pt": "ensinamento o dhamma; comunicam o ensinamento",
-          "es": "enseñanza el fenómeno; comunican el enseñanza",
+          "es": "enseñanza el dhamma; comunican el enseñanza",
           "root": "dhamma + paññatti"
         }
       ]
@@ -332222,7 +332222,7 @@
           "grammar": "adj, comp",
           "en": "experiencing the teaching; sensitive to the Dhamma; (comm) knowing the text",
           "pt": "experienciar o ensinamento; sensível para o dhamma; (coment.) conhecendo o texto",
-          "es": "experimentar el enseñanza; sensible para el fenómeno; (coment.) conociendo el texto",
+          "es": "experimentar el enseñanza; sensible para el dhamma; (coment.) conociendo el texto",
           "root": "dhamma + paṭisaṃvedī"
         }
       ]
@@ -332238,7 +332238,7 @@
           "grammar": "adj, comp",
           "en": "connected with dhamma",
           "pt": "conectado com dhamma",
-          "es": "conectado con fenómeno"
+          "es": "conectado con dhamma"
         }
       ]
     },
@@ -332253,7 +332253,7 @@
           "grammar": "fem, abstr, act, comp",
           "en": "illuminating the Dhamma; explaining the teaching",
           "pt": "iluminando o dhamma; explicando o ensinamento",
-          "es": "iluminando el fenómeno; explicando el enseñanza",
+          "es": "iluminando el dhamma; explicando el enseñanza",
           "root": "dhamma + pakāsanā"
         }
       ]
@@ -332269,7 +332269,7 @@
           "grammar": "adj, comp",
           "en": "who measures by teaching; appraising by Dhamma; who judges on the basis of instruction",
           "pt": "quem avalia por ensinamento; appraising por dhamma; quem experimentará sobre o basis de instrução",
-          "es": "quién juzga por enseñanza; appraising por fenómeno; quién sufrirán sobre el basis de instrucción",
+          "es": "quién juzga por enseñanza; appraising por dhamma; quién sufrirán sobre el basis de instrucción",
           "root": "dhamma + pamāṇa"
         }
       ]
@@ -332285,7 +332285,7 @@
           "grammar": "adj, comp",
           "en": "who has confidence in teaching; whose faith is based on Dhamma; pleased by instruction",
           "pt": "que tem confiança em ensinamento; cujo fé é base sobre dhamma; satisfeito por instrução",
-          "es": "que tiene confianza en enseñanza; cuyo fe es base sobre fenómeno; satisfecho por instrucción",
+          "es": "que tiene confianza en enseñanza; cuyo fe es base sobre dhamma; satisfecho por instrucción",
           "root": "dhamma + pasanna"
         }
       ]
@@ -332301,7 +332301,7 @@
           "grammar": "masc, comp",
           "en": "master of the Dhamma",
           "pt": "mestre do dhamma",
-          "es": "maestro del fenómeno",
+          "es": "maestro del dhamma",
           "root": "dhamma + pati",
           "syn": "dhammasāmī"
         }
@@ -332318,7 +332318,7 @@
           "grammar": "adj, comp",
           "en": "having the teaching as a refuge; with the Dhamma as one's support",
           "pt": "tendo o ensinamento como um refúgio; com o dhamma como one's suporte",
-          "es": "teniendo el enseñanza como un refugio; con el fenómeno como one's soporte",
+          "es": "teniendo el enseñanza como un refugio; con el dhamma como one's soporte",
           "root": "dhamma + paṭisaraṇa"
         }
       ]
@@ -332334,7 +332334,7 @@
           "grammar": "nt, comp",
           "en": "mere heap of phenomena",
           "pt": "mere heap de dhammas",
-          "es": "mere heap de fenómenos"
+          "es": "mere heap de dhammas"
         }
       ]
     },
@@ -332401,7 +332401,7 @@
           "grammar": "adj, comp",
           "en": "lover of the teaching; devoted to the Dhamma",
           "pt": "amor do ensinamento; devotado a o dhamma",
-          "es": "amor del enseñanza; dedicado al fenómeno",
+          "es": "amor del enseñanza; dedicado al dhamma",
           "root": "dhamma + rata"
         },
         {
@@ -332410,7 +332410,7 @@
           "grammar": "adj, comp",
           "en": "taking pleasure in mental phenomena; pleased by thinking",
           "pt": "tomando prazer em mental dhammas; satisfeito por pensamento",
-          "es": "tomando placer en mental fenómenos; satisfecho por pensamiento",
+          "es": "tomando placer en mental dhammas; satisfecho por pensamiento",
           "root": "dhamma + rata"
         }
       ]
@@ -332435,7 +332435,7 @@
           "grammar": "adj, comp",
           "en": "who likes the Dhamma; who prefers ethical behaviour",
           "pt": "quem aprecia o dhamma; quem preferem ética comportamento",
-          "es": "quién aprecia el fenómeno; quién prefirieron ética comportamiento",
+          "es": "quién aprecia el dhamma; quién prefirieron ética comportamiento",
           "root": "dhamma + ruci"
         }
       ]
@@ -332460,7 +332460,7 @@
           "grammar": "masc, atta group, comp",
           "en": "king of the Dhamma; epithet of the Buddha",
           "pt": "rei do dhamma; epíteto do Buda",
-          "es": "rey del fenómeno; epíteto del Buda",
+          "es": "rey del dhamma; epíteto del Buda",
           "root": "dhamma + rāja"
         }
       ]
@@ -332476,7 +332476,7 @@
           "grammar": "fem, comp",
           "en": "Dhamma Hall; preaching hall",
           "pt": "dhamma salão; preaching salão",
-          "es": "fenómeno salón; preaching salón",
+          "es": "dhamma salón; preaching salón",
           "root": "dhamma + sabhā"
         }
       ]
@@ -332492,7 +332492,7 @@
           "grammar": "masc, comp",
           "en": "the word 'dhamma'",
           "pt": "o palavra dhamma",
-          "es": "el palabra fenómeno",
+          "es": "el palabra dhamma",
           "root": "dhamma + sadda"
         },
         {
@@ -332517,7 +332517,7 @@
           "grammar": "adj, comp",
           "en": "pleased with mental phenomena; enjoying thinking",
           "pt": "satisfeito com dhammas mentais; desfrutando pensamento",
-          "es": "complacido con fenómenos mentales; disfrutando pensamiento",
+          "es": "complacido con dhammas mentales; disfrutando pensamiento",
           "root": "dhamma + sammudita"
         }
       ]
@@ -332533,7 +332533,7 @@
           "grammar": "masc, comp",
           "en": "arising of phenomena; origination of causes",
           "pt": "surgimento de dhammas; originação de causas",
-          "es": "surgimiento de fenómenos; originación de causas",
+          "es": "surgimiento de dhammas; originación de causas",
           "root": "dhamma + samuppāda"
         }
       ]
@@ -332565,7 +332565,7 @@
           "grammar": "nt, comp",
           "en": "body of the Dhamma; essence of the teaching",
           "pt": "corpo do dhamma; essência do ensinamento",
-          "es": "cuerpo del fenómeno; esencia del enseñanza",
+          "es": "cuerpo del dhamma; esencia del enseñanza",
           "root": "dhamma + sarīra"
         }
       ]
@@ -332597,7 +332597,7 @@
           "grammar": "nt, comp",
           "en": "hearing of the Dhamma",
           "pt": "audição do dhamma",
-          "es": "audición del fenómeno"
+          "es": "audición del dhamma"
         }
       ]
     },
@@ -332612,7 +332612,7 @@
           "grammar": "masc, comp",
           "en": "sharing the Dhamma",
           "pt": "partilha o dhamma",
-          "es": "compartir el fenómeno",
+          "es": "compartir el dhamma",
           "root": "dhamma + saṃvibhāga"
         }
       ]
@@ -332660,7 +332660,7 @@
           "grammar": "nt, comp",
           "en": "hearing the teaching; hearing a sermon; listening to the Dhamma",
           "pt": "audição o ensinamento; audição um sermon; ouvindo para o dhamma",
-          "es": "audición el enseñanza; audición un sermon; escuchando para el fenómeno",
+          "es": "audición el enseñanza; audición un sermon; escuchando para el dhamma",
           "root": "dhamma + savana"
         }
       ]
@@ -332692,7 +332692,7 @@
           "grammar": "masc, comp",
           "en": "essence of the Dhamma; the core of the teaching",
           "pt": "essência do dhamma; o dono do ensinamento",
-          "es": "esencia del fenómeno; el inmutable del enseñanza",
+          "es": "esencia del dhamma; el inmutable del enseñanza",
           "root": "dhamma + sāra"
         }
       ]
@@ -332708,7 +332708,7 @@
           "grammar": "masc, comp",
           "en": "realizing the essence of the Dhamma; reaching the core of the teaching",
           "pt": "realize o essência do dhamma; alcançando o dono do ensinamento",
-          "es": "realizando el esencia del fenómeno; alcanzando el inmutable del enseñanza",
+          "es": "realizando el esencia del dhamma; alcanzando el inmutable del enseñanza",
           "root": "dhamma + sāra + adhigama"
         }
       ]
@@ -332739,7 +332739,7 @@
           "grammar": "masc, comp",
           "en": "meaning of the Dhamma; (comm) truth",
           "pt": "significado do dhamma; (coment.) Verdade",
-          "es": "significado del fenómeno; (coment.) Verdad",
+          "es": "significado del dhamma; (coment.) Verdad",
           "root": "dhamma + attha"
         }
       ]
@@ -332755,7 +332755,7 @@
           "grammar": "fem, act, comp",
           "en": "discourse on the meaning of the Dhamma",
           "pt": "discurso sobre o significado do dhamma",
-          "es": "discurso sobre el significado del fenómeno"
+          "es": "discurso sobre el significado del dhamma"
         }
       ]
     },
@@ -332770,7 +332770,7 @@
           "grammar": "nt, act, comp",
           "en": "defining mental phenomena",
           "pt": "definindo mental dhammas",
-          "es": "definiendo mental fenómenos",
+          "es": "definiendo mental dhammas",
           "root": "dhamma + vavatthāna"
         }
       ]
@@ -332818,7 +332818,7 @@
           "grammar": "masc, comp",
           "en": "prescribed method; formulation of the Dhamma",
           "pt": "forma prescrita anteriormente; formulação do dhamma",
-          "es": "forma prescrita anteriormente; formulación del fenómeno",
+          "es": "forma prescrita anteriormente; formulación del dhamma",
           "root": "dhamma + vidhi"
         }
       ]
@@ -332850,7 +332850,7 @@
           "grammar": "masc, comp",
           "en": "discrimination of mental phenomena; evaluation of mental processes; investigation of reality",
           "pt": "analítico de mental dhammas; evaluação de mental processos; investigação de realidade",
-          "es": "discriminación de mental fenómenos; evaluación de mental procesos; investigación de realidad",
+          "es": "discriminación de mental dhammas; evaluación de mental procesos; investigación de realidad",
           "root": "dhamma + vinicchaya"
         }
       ]
@@ -332866,7 +332866,7 @@
           "grammar": "fem, abstr, comp, in comps",
           "en": "insight into phenomena",
           "pt": "visão profunda em dhammas",
-          "es": "visión profunda en fenómenos",
+          "es": "visión profunda en dhammas",
           "root": "dhamma + vipassanā"
         }
       ]
@@ -332882,7 +332882,7 @@
           "grammar": "masc, comp",
           "en": "thoughts about the Dhamma; thinking about the teaching",
           "pt": "pensamentos sobre o dhamma; pensamento sobre o ensinamento",
-          "es": "pensamientos acerca del fenómeno; pensamiento acerca del enseñanza",
+          "es": "pensamientos acerca del dhamma; pensamiento acerca del enseñanza",
           "root": "dhamma + vitakka"
         },
         {
@@ -332891,7 +332891,7 @@
           "grammar": "masc, comp",
           "en": "thoughts about the mental phenomena; thinking about qualia",
           "pt": "pensamentos sobre o mental dhammas; pensamento sobre qualia",
-          "es": "pensamientos acerca del mental fenómenos; pensamiento acerca de qualia",
+          "es": "pensamientos acerca del mental dhammas; pensamiento acerca de qualia",
           "root": "dhamma + vitakka"
         }
       ]
@@ -332939,7 +332939,7 @@
           "grammar": "adj, comp",
           "en": "firmly established in the Dhamma; righteous; just; moral; virtuous",
           "pt": "firmeza estabelecido no dhamma; justa; justamente; moral; virtuoso",
-          "es": "firmeza establecido en el fenómeno; justa; justamente; moral; virtuoso",
+          "es": "firmeza establecido en el dhamma; justa; justamente; moral; virtuoso",
           "root": "dhamma + ṭha",
           "syn": "dhammika, dhammiya, dhammī, sīlavatī, sīlavant, sugatī"
         },
@@ -333042,7 +333042,7 @@
           "grammar": "nt, abstr, comp",
           "en": "fact of being master of the Dhamma",
           "pt": "fato de ser mestre do dhamma",
-          "es": "hecho de ser maestro del fenómeno",
+          "es": "hecho de ser maestro del dhamma",
           "root": "dhamma + issaratta"
         }
       ]
@@ -333058,7 +333058,7 @@
           "grammar": "adj, from dhamma",
           "en": "righteous; religious; moral; related to the Dhamma",
           "pt": "justa; religiosa; moral; relacionado a o dhamma",
-          "es": "justa; religiosa; moral; relacionado con el fenómeno",
+          "es": "justa; religiosa; moral; relacionado con el dhamma",
           "root": "dhar",
           "syn": "dhammaṭṭha, dhammī"
         }
@@ -333075,7 +333075,7 @@
           "grammar": "masc, comp",
           "en": "summary of the teaching; teaching in brief; Dhamma point",
           "pt": "summary do ensinamento; ensinamento em brief; dhamma apontar",
-          "es": "summary del enseñanza; enseñanza en brief; fenómeno señalar",
+          "es": "summary del enseñanza; enseñanza en brief; dhamma señalar",
           "root": "dhamma + uddesa"
         }
       ]
@@ -333106,7 +333106,7 @@
           "grammar": "adj, comp",
           "en": "seized by agitation regarding the Dhamma; (comm) seized by agitation about the corruptions of insight",
           "pt": "agarrar por agitação a respeito do dhamma; (coment.) agarrar por agitação sobre o imperfeições de visão profunda",
-          "es": "agarrar por agitación respecto al fenómeno; (coment.) agarrar por agitación acerca del imperfecciones de visión profunda",
+          "es": "agarrar por agitación respecto al dhamma; (coment.) agarrar por agitación acerca del imperfecciones de visión profunda",
           "root": "dhamma + uddhacca + viggahita"
         }
       ]
@@ -333122,7 +333122,7 @@
           "grammar": "masc, comp",
           "en": "complete comprehension of the Dhamma; total understanding of reality",
           "pt": "completo compreensão do dhamma; total compreensão de realidade",
-          "es": "completo comprensión del fenómeno; total comprensión de realidad",
+          "es": "completo comprensión del dhamma; total comprensión de realidad",
           "root": "dhamma + abhisamaya"
         }
       ]
@@ -333138,7 +333138,7 @@
           "grammar": "masc, comp",
           "en": "what is and what is not Dhamma; what is real and what is not",
           "pt": "o que é e o que é não dhamma; o que é real e o que é não",
-          "es": "lo que es y qué es no fenómeno; lo que es real y qué es no",
+          "es": "lo que es y qué es no dhamma; lo que es real y qué es no",
           "root": "dhamma + adhamma"
         }
       ]
@@ -333186,7 +333186,7 @@
           "grammar": "adj, comp",
           "en": "respecting of Dhamma as one's guide",
           "pt": "respeito de dhamma como one's guia",
-          "es": "respeto de fenómeno como one's guía",
+          "es": "respeto de dhamma como one's guía",
           "root": "dhamma + adhipati"
         }
       ]
@@ -333202,7 +333202,7 @@
           "grammar": "adj, comp",
           "en": "with respect to the teaching; relevant to the Dhamma",
           "pt": "com respeito para o ensinamento; relevant para o dhamma",
-          "es": "con respeto para el enseñanza; relevant para el fenómeno",
+          "es": "con respeto para el enseñanza; relevant para el dhamma",
           "root": "dhamma + adhiṭṭhāna"
         }
       ]
@@ -333218,7 +333218,7 @@
           "grammar": "nt, comp",
           "en": "nectar of the Dhamma",
           "pt": "nectar do dhamma",
-          "es": "nectar del fenómeno",
+          "es": "nectar del dhamma",
           "root": "dhamma + amata"
         }
       ]
@@ -333251,7 +333251,7 @@
           "grammar": "adj, comp",
           "en": "practising the teaching according to the teaching; following the Dhamma accordingly",
           "pt": "praticando o ensinamento acordo para o ensinamento; seguindo o dhamma cabível",
-          "es": "practicando el enseñanza acuerdo para el enseñanza; siguiendo el fenómeno acción",
+          "es": "practicando el enseñanza acuerdo para el enseñanza; siguiendo el dhamma acción",
           "root": "dhammānudhamma + paṭipanna"
         }
       ]
@@ -333267,7 +333267,7 @@
           "grammar": "adj, comp",
           "en": "practising correctly; following the teaching properly; practising the Dhamma properly",
           "pt": "praticando corretamente; seguindo o ensinamento de modo apropriado; praticando o dhamma de modo apropriado",
-          "es": "practicando correctamente; siguiendo el enseñanza de modo apropiado; practicando el fenómeno de modo apropiado",
+          "es": "practicando correctamente; siguiendo el enseñanza de modo apropiado; practicando el dhamma de modo apropiado",
           "root": "dhamma + anudhamma + paṭipanna"
         }
       ]
@@ -333283,7 +333283,7 @@
           "grammar": "fem, abstr, comp",
           "en": "practice of the teaching according to the teaching; accordant following of the Dhamma",
           "pt": "prática do ensinamento acordo para o ensinamento; accordant seguindo do dhamma",
-          "es": "práctica del enseñanza acuerdo para el enseñanza; accordant siguiendo del fenómeno",
+          "es": "práctica del enseñanza acuerdo para el enseñanza; accordant siguiendo del dhamma",
           "root": "dhamma + anudhamma + paṭipatti"
         }
       ]
@@ -333299,7 +333299,7 @@
           "grammar": "masc, comp",
           "en": "assistance with the Dhamma; support with the teaching",
           "pt": "assistência com o dhamma; suporte com o ensinamento",
-          "es": "asistencia con el fenómeno; soporte con el enseñanza",
+          "es": "asistencia con el dhamma; soporte con el enseñanza",
           "root": "dhamma + anuggaha"
         }
       ]
@@ -333315,7 +333315,7 @@
           "grammar": "adj, comp",
           "en": "enjoying the Dhamma; taking pleasure in the Dhamma; fond of the teaching",
           "pt": "desfrutando o dhamma; tomando prazer no dhamma; gosta do ensinamento",
-          "es": "disfrutando el fenómeno; tomando placer en el fenómeno; gusta del enseñanza",
+          "es": "disfrutando el dhamma; tomando placer en el dhamma; gusta del enseñanza",
           "root": "dhamma + ārāma"
         },
         {
@@ -333324,7 +333324,7 @@
           "grammar": "adj, comp",
           "en": "enjoying mental phenomena; taking pleasure in thought",
           "pt": "desfrutando mental dhammas; tomando prazer em pensamento",
-          "es": "disfrutando mental fenómenos; tomando placer en pensamiento",
+          "es": "disfrutando mental dhammas; tomando placer en pensamiento",
           "root": "dhamma + ārāma"
         }
       ]
@@ -333340,7 +333340,7 @@
           "grammar": "nt, comp",
           "en": "Dhamma seat; preacher's seat",
           "pt": "dhamma assento; preacher's assento",
-          "es": "fenómeno asiento; preacher's asiento",
+          "es": "dhamma asiento; preacher's asiento",
           "root": "dhamma + āsana"
         }
       ]
@@ -333356,7 +333356,7 @@
           "grammar": "adj, comp",
           "en": "concerning the teaching; regarding the Dhamma; for the Dhamma; (comm) connected with the Pāli text and the commentary",
           "pt": "acerca do ensinamento; a respeito do dhamma; para o dhamma; (coment.) conectado com o Pāli texto e o comentário",
-          "es": "acerca del enseñanza; respecto al fenómeno; para el fenómeno; (coment.) conectado con el Pāli texto y el comentario",
+          "es": "acerca del enseñanza; respecto al dhamma; para el dhamma; (coment.) conectado con el Pāli texto y el comentario",
           "root": "dhamma + upasañhita"
         }
       ]
@@ -336941,7 +336941,7 @@
           "grammar": "adj, comp",
           "en": "who has seen the Dhamma; who has perceived reality",
           "pt": "que tem visto o dhamma; que tem percebido realidade",
-          "es": "que tiene visto el fenómeno; que tiene percibido realidad",
+          "es": "que tiene visto el dhamma; que tiene percibido realidad",
           "root": "diṭṭha + dhamma"
         },
         {
@@ -336950,7 +336950,7 @@
           "grammar": "masc, comp",
           "en": "the Dhamma which has been seen; the perceived truth",
           "pt": "o dhamma qual tem sido visto; o percebido verdade",
-          "es": "el fenómeno cuál tiene sido visto; el percibido verdad",
+          "es": "el dhamma cuál tiene sido visto; el percibido verdad",
           "root": "diṭṭha + dhamma"
         }
       ]
@@ -339166,7 +339166,7 @@
           "grammar": "nt, comp",
           "en": "uncomfortable phenomenon; painful experience; state of suffering",
           "pt": "não confortável dhamma; doloroso experiência; condição de sofrimento",
-          "es": "no cómodo fenómeno; doloroso experiencia; condición de sufrimiento",
+          "es": "no cómodo dhamma; doloroso experiencia; condición de sufrimiento",
           "root": "dukkha + dhamma",
           "ant": "sukhadhamma"
         },
@@ -367211,7 +367211,7 @@
           "grammar": "nt",
           "en": "whispering; muttered prayer or spell",
           "pt": "sussurrando; ramo prayer ou mantra",
-          "es": "argumentos; bodhisattvas prayer o mantras",
+          "es": "argumentos; bodhisattas prayer o mantras",
           "root": "japp"
         },
         {
@@ -373557,7 +373557,7 @@
           "grammar": "nt, comp",
           "en": "power of karma",
           "pt": "poder de carma",
-          "es": "poder de karma"
+          "es": "poder de kamma"
         }
       ]
     },
@@ -373921,7 +373921,7 @@
           "grammar": "adj, comp",
           "en": "produced through karma",
           "pt": "produzido através de kamma",
-          "es": "producido a través de karma"
+          "es": "producido a través de kamma"
         }
       ]
     },
@@ -374032,7 +374032,7 @@
           "grammar": "nt, comp",
           "en": "manifoldness of karma",
           "pt": "qualidade de múltiplo de kamma",
-          "es": "cualidad de múltiple de karma"
+          "es": "cualidad de múltiple de kamma"
         }
       ]
     },
@@ -374095,8 +374095,8 @@
           "pos": "nt.",
           "grammar": "nt, comp",
           "en": "fruit of actions; result of deeds; karmic consequences",
-          "pt": "fruto de ações; resultado de ações; cármicos consequências",
-          "es": "fruto de acciones; resultado de actos; kármicos consecuencias",
+          "pt": "fruto de ações; resultado de ações; kâmmicos consequências",
+          "es": "fruto de acciones; resultado de actos; kámmicos consecuencias",
           "root": "kamma + phala"
         }
       ]
@@ -374112,7 +374112,7 @@
           "grammar": "adj, comp",
           "en": "having karma as the basis",
           "pt": "tendo kamma como o basis",
-          "es": "teniendo karma como el basis"
+          "es": "teniendo kamma como el basis"
         }
       ]
     },
@@ -374159,7 +374159,7 @@
           "grammar": "adj, comp",
           "en": "produced by karma",
           "pt": "produzido por carma",
-          "es": "producido por karma"
+          "es": "producido por kamma"
         }
       ]
     },
@@ -374207,7 +374207,7 @@
           "grammar": "adj, comp",
           "en": "arising from karma, kamma-originated",
           "pt": "surgimento de kamma, kamma originado",
-          "es": "surgimiento de karma, kamma originado"
+          "es": "surgimiento de kamma, kamma originado"
         }
       ]
     },
@@ -374284,7 +374284,7 @@
           "grammar": "masc, comp",
           "en": "impetus of karma",
           "pt": "impetus de kamma",
-          "es": "impetus de karma"
+          "es": "impetus de kamma"
         }
       ]
     },
@@ -374711,7 +374711,7 @@
           "grammar": "nt, act, comp",
           "en": "heaping of karmas",
           "pt": "heaping de kammas",
-          "es": "heaping de karmas"
+          "es": "heaping de kammas"
         }
       ]
     },
@@ -387616,7 +387616,7 @@
           "grammar": "nt",
           "en": "(comm) action; karma",
           "pt": "(coment.) ação; carma",
-          "es": "(coment.) acción; karma",
+          "es": "(coment.) acción; kamma",
           "root": "kus"
         },
         {
@@ -398550,7 +398550,7 @@
           "grammar": "masc, comp",
           "en": "mundane and supermundane phenomena; worldly and transcendental things",
           "pt": "mundane e supermundane dhammas; mundano e transcendental coisas",
-          "es": "mundane y supermundane fenómenos; mundano y trascendental cosas",
+          "es": "mundane y supermundane dhammas; mundano y trascendental cosas",
           "root": "lokiyalokuttara + dhamma"
         }
       ]
@@ -401143,7 +401143,7 @@
           "grammar": "fem, comp",
           "en": "sweet Dhamma discourse; lovely teaching of the Dhamma",
           "pt": "doce dhamma discurso; atraentes ensinamento do dhamma",
-          "es": "dulce fenómeno discurso; encantadora enseñanza del fenómeno",
+          "es": "dulce dhamma discurso; encantadora enseñanza del dhamma",
           "root": "madhura + dhammakathā"
         }
       ]
@@ -407623,7 +407623,7 @@
           "grammar": "masc, comp, matr",
           "en": "family name of a Sakyan arahant monk; great disciple of the Buddha; foremost monk in giving Dhamma talks",
           "pt": "família nome de um Sakyan arahant monge; grande discípulo do Buda; força monge em dando dhamma fala",
-          "es": "familia nombre de un Sakyan arahant monje; gran discípulo del Buda; formaciones monje en dando fenómeno charla",
+          "es": "familia nombre de un Sakyan arahant monje; gran discípulo del Buda; formaciones monje en dando dhamma charla",
           "root": "mantāṇi + putta",
           "syn": "puṇṇa"
         }
@@ -416258,7 +416258,7 @@
           "grammar": "masc, comp",
           "en": "expert in the Abhidhamma; (comm) who knows the two Pātimokkha; who knows the summaries of the Dhamma and Vinaya",
           "pt": "expert no abhidhamma; (coment.) quem conhece o dois Pātimokkha; quem conhece o conexões do dhamma e vinaya",
-          "es": "expert en el abhidhamma; (coment.) quién conoce el dos Pātimokkha; quién conoce el períodos del fenómeno y vinaya",
+          "es": "expert en el abhidhamma; (coment.) quién conoce el dos Pātimokkha; quién conoce el períodos del dhamma y vinaya",
           "root": "mātikā + dhara"
         }
       ]
@@ -418588,8 +418588,8 @@
           "pos": "m.",
           "grammar": "masc, comp",
           "en": "delight and desire; (or) delighting in desire; (comm) three karmic intentions",
-          "pt": "deleite e desejo; (ou) deleitando-se em desejo; (coment.) três cármicos gestual",
-          "es": "deleite y deseo; (o) deleitándose en deseo; (coment.) tres kármicos gestual",
+          "pt": "deleite e desejo; (ou) deleitando-se em desejo; (coment.) três kâmmicos gestual",
+          "es": "deleite y deseo; (o) deleitándose en deseo; (coment.) tres kámmicos gestual",
           "root": "nandī + rāga"
         }
       ]
@@ -432739,7 +432739,7 @@
           "grammar": "masc, from na dhamma",
           "en": "not against the Dhamma; not something opposed to the teaching",
           "pt": "não contra o dhamma; não algo universais para o ensinamento",
-          "es": "no contra el fenómeno; no algo hermosos para el enseñanza",
+          "es": "no contra el dhamma; no algo hermosos para el enseñanza",
           "root": "dhar",
           "ant": "adhamma"
         }
@@ -433722,7 +433722,7 @@
           "grammar": "masc, comp",
           "en": "source of name and form; origination of mental and physical phenomena",
           "pt": "fonte de nome e forma; originação de mental e físico dhammas",
-          "es": "fuente de nombre y forma; originación de mental y físico fenómenos",
+          "es": "fuente de nombre y forma; originación de mental y físico dhammas",
           "root": "nāmarūpa + samudaya",
           "ant": "nāmarūpanirodha"
         },
@@ -446887,7 +446887,7 @@
           "grammar": "masc, comp",
           "en": "phenomena to be abandoned",
           "pt": "dhammas para ser abandonado",
-          "es": "fenómenos para ser abandonado"
+          "es": "dhammas para ser abandonado"
         }
       ]
     },
@@ -451282,7 +451282,7 @@
           "grammar": "masc pl, comp",
           "en": "another's mental phenomena; phenomenology of another person",
           "pt": "another's mental dhammas; phenomenology de outro pessoa",
-          "es": "another's mental fenómenos; phenomenology de otro persona",
+          "es": "another's mental dhammas; phenomenology de otro persona",
           "root": "para + dhamma + ā"
         }
       ]
@@ -458208,7 +458208,7 @@
           "grammar": "masc, comp",
           "en": "scriptural learning; Dhamma study",
           "pt": "estudo learning; dhamma study",
-          "es": "pariyatti learning; fenómeno study",
+          "es": "pariyatti learning; dhamma study",
           "root": "pariyatti + dhamma"
         }
       ]
@@ -465494,7 +465494,7 @@
           "grammar": "masc, comp",
           "en": "phenomena of the five aggregates",
           "pt": "dhammas do cinco agregados",
-          "es": "fenómenos del cinco agregados",
+          "es": "dhammas del cinco agregados",
           "root": "pañcakkhandha + dhamma"
         }
       ]
@@ -491617,7 +491617,7 @@
           "grammar": "nt, comp",
           "en": "Triple Gem; Three Treasures; Buddha, Dhamma and Saṅgha",
           "pt": "triplo joia; três tesouros; Buda, dhamma e Saṅgha",
-          "es": "triple gema; tres tesoros; Buda, fenómeno y Saṅgha",
+          "es": "triple gema; tres tesoros; Buda, dhamma y Saṅgha",
           "root": "ratana + taya"
         }
       ]
@@ -491633,7 +491633,7 @@
           "grammar": "masc, comp",
           "en": "qualities of the Triple Gem; virtues of the Buddha, Dhamma and Saṅgha",
           "pt": "qualidades do triplo joia; virtudes do Buda, dhamma e Saṅgha",
-          "es": "cualidades del triple gema; virtudes del Buda, fenómeno y Saṅgha",
+          "es": "cualidades del triple gema; virtudes del Buda, dhamma y Saṅgha",
           "root": "ratanattaya + guṇa"
         }
       ]
@@ -495553,7 +495553,7 @@
           "grammar": "masc, comp",
           "en": "material phenomenon; physical object",
           "pt": "dhamma material; físico objeto",
-          "es": "fenómeno material; físico objeto",
+          "es": "dhamma material; físico objeto",
           "root": "rūpa + dhamma"
         }
       ]
@@ -496146,7 +496146,7 @@
           "grammar": "masc, comp",
           "en": "material and immaterial phenomena",
           "pt": "material e imaterial dhammas",
-          "es": "material y inmaterial fenómenos",
+          "es": "material y inmaterial dhammas",
           "root": "rūpārūpa + dhamma"
         }
       ]
@@ -496370,7 +496370,7 @@
           "grammar": "masc, comp",
           "en": "everything; all things; all mental phenomena; all states of mind; all teachings",
           "pt": "tudo; todo coisas; todo mental dhammas; todo estados de mente; todo ensinamentos",
-          "es": "todo; todo cosas; todo mental fenómenos; todo estados de mente; todo enseñanzas",
+          "es": "todo; todo cosas; todo mental dhammas; todo estados de mente; todo enseñanzas",
           "root": "sabba + dhamma"
         }
       ]
@@ -497842,7 +497842,7 @@
           "grammar": "masc, comp",
           "en": "phenomena of the same kind; kindred quality",
           "pt": "dhammas do mesmo bondoso; kindred qualidade",
-          "es": "fenómenos del mismo bondadoso; kindred qualidad",
+          "es": "dhammas del mismo bondadoso; kindred qualidad",
           "root": "sabhāga + dhammā"
         }
       ]
@@ -498927,7 +498927,7 @@
           "grammar": "adj, comp",
           "en": "respecting the true doctrine; giving weight to the real Dhamma",
           "pt": "respeito o verdadeiro doutrina; dando valoriza para o real dhamma",
-          "es": "respeto el verdadero doctrina; dando desprenden para el real fenómeno",
+          "es": "respeto el verdadero doctrina; dando desprenden para el real dhamma",
           "root": "saddhamma + garu",
           "ant": "āmisagaru"
         }
@@ -500377,7 +500377,7 @@
           "grammar": "masc, comp",
           "en": "phenomenon and its cause; causal nature of a thing",
           "pt": "dhamma e seu causa; causal nature de um thing",
-          "es": "fenómeno y su causa; causal nature de un thing",
+          "es": "dhamma y su causa; causal nature de un thing",
           "root": "sahetu + dhamma"
         }
       ]
@@ -503678,7 +503678,7 @@
           "grammar": "masc, comp",
           "en": "phenomena of calm and insight",
           "pt": "dhammas de calma e visão profunda",
-          "es": "fenómenos de calma y visión profunda",
+          "es": "dhammas de calma y visión profunda",
           "root": "samatha + vipassanā + dhamma"
         }
       ]
@@ -505072,7 +505072,7 @@
           "grammar": "pr",
           "en": "associates (with); (comm) recites Dhamma (with)",
           "pt": "associa (com); (coment.) recita dhamma (com)",
-          "es": "asocia (con); (coment.) recita fenómeno (con)",
+          "es": "asocia (con); (coment.) recita dhamma (con)",
           "root": "bhuj"
         },
         {
@@ -508084,7 +508084,7 @@
           "grammar": "masc, comp",
           "en": "associated state; connected phenomenon",
           "pt": "associado estado; conectado dhamma",
-          "es": "asociado estado; conectado fenómeno",
+          "es": "asociado estado; conectado dhamma",
           "root": "sampayutta + dhamma"
         }
       ]
@@ -509065,7 +509065,7 @@
           "grammar": "masc, comp",
           "en": "an arising phenomenon",
           "pt": "um surgimento dhamma",
-          "es": "un surgimiento fenómeno",
+          "es": "un surgimiento dhamma",
           "root": "samudaya + dhamma"
         }
       ]
@@ -509081,7 +509081,7 @@
           "grammar": "adj, comp",
           "en": "seeing the arising of phenomena (in); (or) contemplating the nature of arising (in)",
           "pt": "visão o surgimento de dhammas (em); (ou) contemplando o nature de surgimento (em)",
-          "es": "visión el surgimiento de fenómenos (en); (o) contemplando el nature de surgimiento (en)",
+          "es": "visión el surgimiento de dhammas (en); (o) contemplando el nature de surgimiento (en)",
           "root": "samudaya + dhammānupassī"
         }
       ]
@@ -524848,7 +524848,7 @@
           "grammar": "masc, comp",
           "en": "conditioned phenomenon",
           "pt": "condicionado dhamma",
-          "es": "condicionado fenómeno",
+          "es": "condicionado dhamma",
           "root": "saṅkhata + dhamma"
         }
       ]
@@ -537016,7 +537016,7 @@
           "grammar": "adj, comp",
           "en": "learned in Dhamma",
           "pt": "aprendido em dhamma",
-          "es": "aprendido en fenómeno"
+          "es": "aprendido en dhamma"
         }
       ]
     },
@@ -538435,7 +538435,7 @@
           "grammar": "adj, comp",
           "en": "who has explained the teaching well; who has preached the Dhamma perfectly",
           "pt": "que tem explicado o ensinamento poço; que tem preached o dhamma perfeitamente",
-          "es": "que tiene explicado el enseñanza pozo; que tiene preached el fenómeno perfectamente",
+          "es": "que tiene explicado el enseñanza pozo; que tiene preached el dhamma perfectamente",
           "root": "svākkhāta + dhamma"
         }
       ]
@@ -543587,7 +543587,7 @@
           "pos": "nt.",
           "grammar": "nt, abstr, from sūra",
           "en": "heroism; valour; courage; (comm) fearlessness",
-          "pt": "heroismo; valour; coragem; (coment.) kármicas",
+          "pt": "heroismo; valour; coragem; (coment.) kâmmicas",
           "es": "heroismo; valour; valor; coraje; (coment.) temeridad",
           "root": "sur"
         }
@@ -548868,7 +548868,7 @@
           "grammar": "masc, comp",
           "en": "phenomena in the three realms of existence",
           "pt": "dhammas no três reinos de existência",
-          "es": "fenómenos en el tres reinos de existencia",
+          "es": "dhammas en el tres reinos de existencia",
           "root": "tebhūmaka + dhamma"
         }
       ]
@@ -552127,7 +552127,7 @@
           "grammar": "fem, abstr, comp",
           "en": "understanding not related to Dhamma; science; worldly knowledge",
           "pt": "compreensão não related para dhamma; ciência; mundano conhecimento",
-          "es": "comprensión no related para fenómeno; ciencia; mundano conocimiento",
+          "es": "comprensión no related para dhamma; ciencia; mundano conocimiento",
           "root": "tiracchāna + vijjā"
         }
       ]
@@ -558402,7 +558402,7 @@
           "grammar": "adj, comp",
           "en": "contrary to the teaching; opposed to the Dhamma",
           "pt": "contrary para o ensinamento; universais para o dhamma",
-          "es": "contrary para el enseñanza; hermosos para el fenómeno",
+          "es": "contrary para el enseñanza; hermosos para el dhamma",
           "root": "ud + dhamma"
         }
       ]
@@ -564745,7 +564745,7 @@
           "grammar": "fem, comp",
           "en": "Dhamma talk delivered to someone close at hand",
           "pt": "dhamma fala prometida para alguém close em mão",
-          "es": "fenómeno charla prometido para alguien close en mano",
+          "es": "dhamma charla prometido para alguien close en mano",
           "root": "upanisinnaka + kathā"
         }
       ]
@@ -577032,7 +577032,7 @@
           "grammar": "nt, comp",
           "en": "triple gem (Buddha, Dhamma and Saṅgha)",
           "pt": "triplo joia (Buda, dhamma e Saṅgha)",
-          "es": "triple gema (Buda, fenómeno y Saṅgha)",
+          "es": "triple gema (Buda, dhamma y Saṅgha)",
           "root": "vatthu + taya"
         }
       ]
@@ -583226,7 +583226,7 @@
           "grammar": "adj, comp",
           "en": "who has understood the Dhamma",
           "pt": "que tem compreendido o dhamma",
-          "es": "que tiene comprendido el fenómeno",
+          "es": "que tiene comprendido el dhamma",
           "root": "vidita + dhamma"
         }
       ]
@@ -619358,7 +619358,7 @@
           "grammar": "adj, comp",
           "en": "requested to teach the Dhamma (by)",
           "pt": "pedido para ensinar o dhamma (por)",
-          "es": "petición para enseñar el fenómeno (por)",
+          "es": "petición para enseñar el dhamma (por)",
           "root": "āyācita + dhammadesanā + a"
         }
       ]

@@ -1,6 +1,6 @@
-import { settings } from "./state.js?v=fa47fb44";
-import { createLogger } from "./logger.js?v=fa47fb44";
-import { t } from "./i18n.js?v=fa47fb44";
+import { settings } from "./state.js?v=3f76b330";
+import { createLogger } from "./logger.js?v=3f76b330";
+import { t } from "./i18n.js?v=3f76b330";
 const log = createLogger("reader");
 const chunkCache = new Map();
 export async function loadChunk(workId, partKey, fileName) {
@@ -17,7 +17,7 @@ export async function loadChunk(workId, partKey, fileName) {
     chunkCache.set(cacheKey, data);
     return data;
 }
-const PALI_WORD_RE = /[A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]+(?:[’'][A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]+)*/g;
+const PALI_WORD_RE = /[A-Za-zāīūṃṁṅñṭḍṇḷĀĪŪṂṀṄÑṬḌṆḶçÇéáíóúüãõâêôÁÉÍÓÚÜÃÕÂÊÔ]+(?:[’'][A-Za-zāīūṃṁṅñṭḍṇḷĀĪŪṂṀṄÑṬḌṆḶçÇéáíóúüãõâêôÁÉÍÓÚÜÃÕÂÊÔ]+)*/g;
 function wrapPaliWords(root) {
     const textNodes = [];
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);

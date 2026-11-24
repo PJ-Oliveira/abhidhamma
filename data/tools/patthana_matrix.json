@@ -3,67 +3,80 @@
     {
       "id": "akusala-citta",
       "label": "Akusala Citta",
-      "labelPt": "Cittas Insalubres"
+      "labelPt": "Cittas Insalubres",
+      "labelEs": "Cittas Insaludables"
     },
     {
       "id": "ahetuka-citta",
       "label": "Ahetuka Citta",
-      "labelPt": "Cittas sem Raiz"
+      "labelPt": "Cittas sem Raiz",
+      "labelEs": "Cittas sin Raíz"
     },
     {
       "id": "kamavacara-kusala",
       "label": "Kāmāvacara Kusala",
-      "labelPt": "Kusala da Esfera Sensorial"
+      "labelPt": "Kusala da Esfera Sensorial",
+      "labelEs": "Kusala de la Esfera Sensorial"
     },
     {
       "id": "kamavacara-vipaka",
       "label": "Kāmāvacara Vipāka",
-      "labelPt": "Vipāka da Esfera Sensorial"
+      "labelPt": "Vipāka da Esfera Sensorial",
+      "labelEs": "Vipāka de la Esfera Sensorial"
     },
     {
       "id": "kamavacara-kiriya",
       "label": "Kāmāvacara Kiriya",
-      "labelPt": "Kiriya da Esfera Sensorial"
+      "labelPt": "Kiriya da Esfera Sensorial",
+      "labelEs": "Kiriya de la Esfera Sensorial"
     },
     {
       "id": "rupavacara",
       "label": "Rūpāvacara Citta",
-      "labelPt": "Cittas da Esfera Material"
+      "labelPt": "Cittas da Esfera Material",
+      "labelEs": "Cittas de la Esfera de la Forma"
     },
     {
       "id": "arupavacara",
       "label": "Arūpāvacara Citta",
-      "labelPt": "Cittas da Esfera Imaterial"
+      "labelPt": "Cittas da Esfera Imaterial",
+      "labelEs": "Cittas de la Esfera Inmaterial"
     },
     {
       "id": "lokuttara",
       "label": "Lokuttara Citta",
-      "labelPt": "Cittas Supramundanos"
+      "labelPt": "Cittas Supramundanos",
+      "labelEs": "Cittas Supramundanos"
     },
     {
       "id": "sabbacitta-cetasika",
       "label": "Sabbacitta Cetasika",
-      "labelPt": "Cetasikas Universais"
+      "labelPt": "Cetasikas Universais",
+      "labelEs": "Cetasikas Universales"
     },
     {
       "id": "akusala-cetasika",
       "label": "Akusala Cetasika",
-      "labelPt": "Cetasikas Insalubres"
+      "labelPt": "Cetasikas Insalubres",
+      "labelEs": "Cetasikas Insaludables"
     },
     {
       "id": "sobhana-cetasika",
       "label": "Sobhana Cetasika",
-      "labelPt": "Cetasikas Belos"
+      "labelPt": "Cetasikas Belos",
+      "labelEs": "Cetasikas Bellos"
     },
     {
       "id": "mahabhuta",
       "label": "Mahābhūta Rūpa",
-      "labelPt": "Rūpas Primários"
+      "labelPt": "Rūpas Primários",
+      "labelEs": "Rūpas Primarios"
     },
     {
       "id": "upadarupa",
       "label": "Upādā Rūpa",
-      "labelPt": "Rūpas Derivados"
+      "labelPt": "Rūpas Derivados",
+      "labelEs": "Rūpas Derivados"
     }
   ],
   "conditions": [
@@ -71,145 +84,169 @@
       "id": "hetu",
       "label": "Hetu-paccaya",
       "labelEn": "Root Condition",
-      "labelPt": "Condição de Raiz"
+      "labelPt": "Condição de Raiz",
+      "labelEs": "Condición de Raíz"
     },
     {
       "id": "arammana",
       "label": "Ārammaṇa-paccaya",
       "labelEn": "Object Condition",
-      "labelPt": "Condição de Objeto"
+      "labelPt": "Condição de Objeto",
+      "labelEs": "Condición de Objeto"
     },
     {
       "id": "adhipati",
       "label": "Adhipati-paccaya",
       "labelEn": "Predominance Condition",
-      "labelPt": "Condição de Predominância"
+      "labelPt": "Condição de Predominância",
+      "labelEs": "Condición de Predominio"
     },
     {
       "id": "anantara",
       "label": "Anantara-paccaya",
       "labelEn": "Proximity Condition",
-      "labelPt": "Condição de Proximidade"
+      "labelPt": "Condição de Proximidade",
+      "labelEs": "Condición de Proximidad"
     },
     {
       "id": "samanantara",
       "label": "Samanantara-paccaya",
       "labelEn": "Contiguity Condition",
-      "labelPt": "Condição de Contiguidade"
+      "labelPt": "Condição de Contiguidade",
+      "labelEs": "Condición de Contigüidad"
     },
     {
       "id": "sahajata",
       "label": "Sahajāta-paccaya",
       "labelEn": "Conascence Condition",
-      "labelPt": "Condição de Conascimento"
+      "labelPt": "Condição de Conascimento",
+      "labelEs": "Condición de Conacimiento"
     },
     {
       "id": "annamanna",
       "label": "Aññamañña-paccaya",
       "labelEn": "Mutuality Condition",
-      "labelPt": "Condição de Mutualidade"
+      "labelPt": "Condição de Mutualidade",
+      "labelEs": "Condición de Mutualidad"
     },
     {
       "id": "nissaya",
       "label": "Nissaya-paccaya",
       "labelEn": "Support Condition",
-      "labelPt": "Condição de Suporte"
+      "labelPt": "Condição de Suporte",
+      "labelEs": "Condición de Soporte"
     },
     {
       "id": "upanissaya",
       "label": "Upanissaya-paccaya",
       "labelEn": "Decisive Support Condition",
-      "labelPt": "Condição de Suporte Decisivo"
+      "labelPt": "Condição de Suporte Decisivo",
+      "labelEs": "Condición de Soporte Decisivo"
     },
     {
       "id": "purejata",
       "label": "Purejāta-paccaya",
       "labelEn": "Prenascence Condition",
-      "labelPt": "Condição de Prenascimento"
+      "labelPt": "Condição de Prenascimento",
+      "labelEs": "Condición de Prenacimiento"
     },
     {
       "id": "pacchajata",
       "label": "Pacchājāta-paccaya",
       "labelEn": "Postnascence Condition",
-      "labelPt": "Condição de Pós-nascimento"
+      "labelPt": "Condição de Pós-nascimento",
+      "labelEs": "Condición de Posnacimiento"
     },
     {
       "id": "asevana",
       "label": "Āsevana-paccaya",
       "labelEn": "Repetition Condition",
-      "labelPt": "Condição de Repetição"
+      "labelPt": "Condição de Repetição",
+      "labelEs": "Condición de Repetición"
     },
     {
       "id": "kamma",
       "label": "Kamma-paccaya",
       "labelEn": "Kamma Condition",
-      "labelPt": "Condição de Kamma"
+      "labelPt": "Condição de Kamma",
+      "labelEs": "Condición de Kamma"
     },
     {
       "id": "vipaka",
       "label": "Vipāka-paccaya",
       "labelEn": "Result Condition",
-      "labelPt": "Condição de Resultado"
+      "labelPt": "Condição de Resultado",
+      "labelEs": "Condición de Resultado"
     },
     {
       "id": "ahara",
       "label": "Āhāra-paccaya",
       "labelEn": "Nutriment Condition",
-      "labelPt": "Condição de Alimento"
+      "labelPt": "Condição de Alimento",
+      "labelEs": "Condición de Alimento"
     },
     {
       "id": "indriya",
       "label": "Indriya-paccaya",
       "labelEn": "Faculty Condition",
-      "labelPt": "Condição de Faculdade"
+      "labelPt": "Condição de Faculdade",
+      "labelEs": "Condición de Facultad"
     },
     {
       "id": "jhana",
       "label": "Jhāna-paccaya",
       "labelEn": "Jhāna Condition",
-      "labelPt": "Condição de Jhāna"
+      "labelPt": "Condição de Jhāna",
+      "labelEs": "Condición de Jhāna"
     },
     {
       "id": "magga",
       "label": "Magga-paccaya",
       "labelEn": "Path Condition",
-      "labelPt": "Condição de Caminho"
+      "labelPt": "Condição de Caminho",
+      "labelEs": "Condición de Camino"
     },
     {
       "id": "sampayutta",
       "label": "Sampayutta-paccaya",
       "labelEn": "Association Condition",
-      "labelPt": "Condição de Associação"
+      "labelPt": "Condição de Associação",
+      "labelEs": "Condición de Asociación"
     },
     {
       "id": "vippayutta",
       "label": "Vippayutta-paccaya",
       "labelEn": "Dissociation Condition",
-      "labelPt": "Condição de Dissociação"
+      "labelPt": "Condição de Dissociação",
+      "labelEs": "Condición de Disociación"
     },
     {
       "id": "atthi",
       "label": "Atthi-paccaya",
       "labelEn": "Presence Condition",
-      "labelPt": "Condição de Presença"
+      "labelPt": "Condição de Presença",
+      "labelEs": "Condición de Presencia"
     },
     {
       "id": "natthi",
       "label": "Natthi-paccaya",
       "labelEn": "Absence Condition",
-      "labelPt": "Condição de Ausência"
+      "labelPt": "Condição de Ausência",
+      "labelEs": "Condición de Ausencia"
     },
     {
       "id": "vigata",
       "label": "Vigata-paccaya",
       "labelEn": "Disappearance Condition",
-      "labelPt": "Condição de Desaparecimento"
+      "labelPt": "Condição de Desaparecimento",
+      "labelEs": "Condición de Desaparición"
     },
     {
       "id": "avigata",
       "label": "Avigata-paccaya",
       "labelEn": "Non-disappearance Condition",
-      "labelPt": "Condição de Não-desaparecimento"
+      "labelPt": "Condição de Não-desaparecimento",
+      "labelEs": "Condición de No Desaparición"
     }
   ],
   "matrix": [

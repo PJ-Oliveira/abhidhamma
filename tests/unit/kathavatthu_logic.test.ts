@@ -56,4 +56,30 @@ describe('Kathavatthu Logic Engine', () => {
         const res = evaluateScenario('nonexistent_scenario');
         expect(res.verdict).toContain('Aviññātatthaṃ');
     });
+
+    it('localizes all canonical debate scenarios cleanly in PT and ES with zero English leaks, mistranslations, or Sanskritisms', () => {
+        const ids = ['puggala_vada', 'kāla_vada', 'sassata_vada', 'ekacca_sassata_vada', 'amara_vikkhepa_vada', 'adhicca_samuppanna_vada'];
+        for (const id of ids) {
+            const pt = evaluateScenario(id, 'pt');
+            const es = evaluateScenario(id, 'es');
+            const ptAll = JSON.stringify(pt);
+            const esAll = JSON.stringify(es);
+
+            // Verdicts must be localized (never English parentheticals)
+            expect(pt.verdict).not.toContain('Contradicting the Proposition');
+            expect(pt.verdict).not.toContain('Deviation from Doctrine');
+            expect(pt.verdict).not.toContain('Evasion');
+            expect(es.verdict).not.toContain('Contradicting the Proposition');
+            expect(es.verdict).not.toContain('Deviation from Doctrine');
+            expect(es.verdict).not.toContain('Evasion');
+
+            // No English leaks, typos, or mistranslations
+            expect(ptAll).not.toMatch(/Inrrespondível|jhānic|Causelessness|Catuṣkoṭi|\bassado\b|Chariot Analogy|Shadow Analogy/);
+            expect(esAll).not.toMatch(/jhānic|Catuṣkoṭi|\bsea asado\b|Chariot Analogy|Shadow Analogy/);
+
+            // Pedagogical analogy & breakdown must be localized and non-empty
+            expect(pt.pedagogicalAnalogy.length).toBeGreaterThan(20);
+            expect(es.pedagogicalAnalogy.length).toBeGreaterThan(20);
+        }
+    });
 });

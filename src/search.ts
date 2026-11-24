@@ -118,5 +118,12 @@ export function initSearchPanel(
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(run, 250);
   });
+  window.addEventListener("languageChanged", () => {
+    if (!inputEl.value.trim()) {
+      renderEmpty(shardManifest ? "typeToSearch" : "dictNotReady");
+    } else if (resultsEl.querySelector(".side-empty")) {
+      void run();
+    }
+  });
   void run();
 }

@@ -107,6 +107,8 @@ def main():
                                 capped_tokens.add((key, tok))
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    for old_shard in OUT_DIR.glob("shard_*.json"):
+        old_shard.unlink()
     shard_files = {}
     total_tokens = 0
     for key in sorted(shard_postings):

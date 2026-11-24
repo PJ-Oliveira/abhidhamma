@@ -1,4 +1,4 @@
-const CACHE_NAME = 'abhidhamma-cache-v28';
+const CACHE_NAME = 'abhidhamma-cache-v29';
 const VAULT_CACHE_NAME = 'abhidhamma-anki-vault-v1';
 const PROTECTED_CACHES = new Set([CACHE_NAME, VAULT_CACHE_NAME]);
 

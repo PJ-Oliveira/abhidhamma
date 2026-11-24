@@ -9,21 +9,26 @@
         {
           "pali": "Kusalā dhammā",
           "en": "Wholesome dhammas",
-          "pt": "Realidades salubres"
+          "pt": "Dhammas salubres",
+          "es": "Dhammas saludables"
         },
         {
           "pali": "Akusalā dhammā",
           "en": "Unwholesome dhammas",
-          "pt": "Realidades insalubres"
+          "pt": "Dhammas insalubres",
+          "es": "Dhammas insaludables"
         },
         {
           "pali": "Abyākatā dhammā",
           "en": "Indeterminate dhammas",
-          "pt": "Realidades indeterminadas"
+          "pt": "Dhammas indeterminados",
+          "es": "Dhammas indeterminados"
         }
       ],
       "definition": "The most fundamental classification of all dhammas into wholesome, unwholesome and indeterminate.",
-      "definitionPt": "A classificação mais fundamental de todas as realidades em salubres, insalubres e indeterminadas."
+      "definitionPt": "A classificação mais fundamental de todos os dhammas em salubres, insalubres e indeterminados.",
+      "titleEs": "Tríada de lo Saludable",
+      "definitionEs": "La clasificación más fundamental de todos los dhammas en saludables, insaludables e indeterminados."
     },
     {
       "id": 2,
@@ -34,21 +39,26 @@
         {
           "pali": "Sukhāya vedanāya sampayuttā dhammā",
           "en": "Dhammas associated with pleasant feeling",
-          "pt": "Realidades associadas à sensação agradável"
+          "pt": "Dhammas associados à sensação agradável",
+          "es": "Dhammas asociados con sensación agradable"
         },
         {
           "pali": "Dukkhāya vedanāya sampayuttā dhammā",
           "en": "Dhammas associated with painful feeling",
-          "pt": "Realidades associadas à sensação dolorosa"
+          "pt": "Dhammas associados à sensação dolorosa",
+          "es": "Dhammas asociados con sensación dolorosa"
         },
         {
           "pali": "Adukkhamasukhāya vedanāya sampayuttā dhammā",
           "en": "Dhammas associated with neither-painful-nor-pleasant feeling",
-          "pt": "Realidades associadas à sensação nem dolorosa nem agradável"
+          "pt": "Dhammas associados à sensação nem dolorosa nem agradável",
+          "es": "Dhammas asociados con sensación ni dolorosa ni agradable"
         }
       ],
       "definition": "Classification based on the type of feeling associated with the dhamma.",
-      "definitionPt": "Classificação baseada no tipo de sensação associada à realidade."
+      "definitionPt": "Classificação baseada no tipo de sensação associada ao dhamma.",
+      "titleEs": "Tríada de la Sensación",
+      "definitionEs": "Clasificación basada en el tipo de sensación (vedanā) asociada con el dhamma."
     },
     {
       "id": 3,
@@ -59,21 +69,26 @@
         {
           "pali": "Vipākā dhammā",
           "en": "Resultant dhammas",
-          "pt": "Realidades resultantes"
+          "pt": "Dhammas resultantes",
+          "es": "Dhammas resultantes"
         },
         {
           "pali": "Vipākadhammadhammā",
           "en": "Dhammas subject to resultant dhammas",
-          "pt": "Realidades sujeitas a produzir realidades resultantes"
+          "pt": "Dhammas sujeitos a produzir dhammas resultantes",
+          "es": "Dhammas sujetos a producir resultantes"
         },
         {
           "pali": "Nevavipākanavipākadhammadhammā",
           "en": "Dhammas neither resultant nor subject to resultant",
-          "pt": "Realidades nem resultantes nem sujeitas a produzir resultantes"
+          "pt": "Dhammas nem resultantes nem sujeitos a produzir resultantes",
+          "es": "Dhammas ni resultantes ni sujetos a producir resultantes"
         }
       ],
-      "definition": "Classification based on karmic results.",
-      "definitionPt": "Classificação baseada em resultados cármicos."
+      "definition": "Classification based on kammic results.",
+      "definitionPt": "Classificação baseada em resultados de kamma.",
+      "titleEs": "Tríada Resultante",
+      "definitionEs": "Clasificación basada en los resultados de kamma (vipāka)."
     },
     {
       "id": 4,
@@ -84,21 +99,26 @@
         {
           "pali": "Upādinnupādāniyā dhammā",
           "en": "Grasped and favorable to grasping",
-          "pt": "Agarradas e favoráveis ao apego"
+          "pt": "Agarradas e favoráveis ao apego",
+          "es": "Aferrados por kamma y favorables al apego"
         },
         {
           "pali": "Anupādinnupādāniyā dhammā",
           "en": "Not grasped but favorable to grasping",
-          "pt": "Não agarradas mas favoráveis ao apego"
+          "pt": "Não agarradas mas favoráveis ao apego",
+          "es": "No aferrados por kamma pero favorables al apego"
         },
         {
           "pali": "Anupādinnānupādāniyā dhammā",
           "en": "Not grasped and not favorable to grasping",
-          "pt": "Não agarradas e não favoráveis ao apego"
+          "pt": "Não agarradas e não favoráveis ao apego",
+          "es": "No aferrados por kamma ni favorables al apego"
         }
       ],
       "definition": "Classification relating to kammic acquisition and clinging.",
-      "definitionPt": "Classificação relacionada à aquisição cármica e ao apego."
+      "definitionPt": "Classificação relacionada à aquisição kâmmica e ao apego.",
+      "titleEs": "Tríada del Apego",
+      "definitionEs": "Clasificación relativa a la adquisición kammica y al aferramiento (upādāna)."
     },
     {
       "id": 5,
@@ -109,21 +129,26 @@
         {
           "pali": "Saṃkiliṭṭhasaṃkilesikā dhammā",
           "en": "Defiled and subject to defilement",
-          "pt": "Contaminadas e sujeitas a contaminação"
+          "pt": "Contaminadas e sujeitas a contaminação",
+          "es": "Contaminados y sujetos a contaminación"
         },
         {
           "pali": "Asaṃkiliṭṭhasaṃkilesikā dhammā",
           "en": "Undefiled but subject to defilement",
-          "pt": "Não contaminadas mas sujeitas a contaminação"
+          "pt": "Não contaminadas mas sujeitas a contaminação",
+          "es": "No contaminados pero sujetos a contaminación"
         },
         {
           "pali": "Asaṃkiliṭṭhāsaṃkilesikā dhammā",
           "en": "Undefiled and not subject to defilement",
-          "pt": "Não contaminadas e não sujeitas a contaminação"
+          "pt": "Não contaminadas e não sujeitas a contaminação",
+          "es": "No contaminados ni sujetos a contaminación"
         }
       ],
       "definition": "Classification based on defilements (kilesa).",
-      "definitionPt": "Classificação baseada nas contaminações (kilesa)."
+      "definitionPt": "Classificação baseada nas contaminações (kilesa).",
+      "titleEs": "Tríada de la Contaminación",
+      "definitionEs": "Clasificación basada en las contaminaciones (kilesa)."
     },
     {
       "id": 6,
@@ -134,21 +159,26 @@
         {
           "pali": "Savitakkasavicārā dhammā",
           "en": "With initial and sustained application",
-          "pt": "Com aplicação inicial e sustentada"
+          "pt": "Com aplicação inicial e sustentada",
+          "es": "Con aplicación inicial y sostenida"
         },
         {
           "pali": "Avitakkavicāramattā dhammā",
           "en": "Without initial but with sustained application",
-          "pt": "Sem aplicação inicial mas com aplicação sustentada"
+          "pt": "Sem aplicação inicial mas com aplicação sustentada",
+          "es": "Sin aplicación inicial pero con aplicación sostenida"
         },
         {
           "pali": "Avitakkaavicārā dhammā",
           "en": "Without initial and sustained application",
-          "pt": "Sem aplicação inicial e sustentada"
+          "pt": "Sem aplicação inicial e sustentada",
+          "es": "Sin aplicación inicial ni sostenida"
         }
       ],
       "definition": "Classification based on jhanic factors of thinking and pondering.",
-      "definitionPt": "Classificação baseada nos fatores de absorção de pensamento e ponderação."
+      "definitionPt": "Classificação baseada nos fatores de absorção de pensamento e ponderação.",
+      "titleEs": "Tríada de la Aplicación Inicial",
+      "definitionEs": "Clasificación basada en los factores de jhāna de aplicación inicial y sostenida (vitakka y vicāra)."
     },
     {
       "id": 7,
@@ -159,21 +189,26 @@
         {
           "pali": "Pītisahagatā dhammā",
           "en": "Accompanied by zest",
-          "pt": "Acompanhadas de êxtase"
+          "pt": "Acompanhadas de êxtase",
+          "es": "Acompañados de entusiasmo (pīti)"
         },
         {
           "pali": "Sukhasahagatā dhammā",
           "en": "Accompanied by happiness",
-          "pt": "Acompanhadas de felicidade"
+          "pt": "Acompanhadas de felicidade",
+          "es": "Acompañados de felicidad (sukha)"
         },
         {
           "pali": "Upekkhāsahagatā dhammā",
           "en": "Accompanied by equanimity",
-          "pt": "Acompanhadas de equanimidade"
+          "pt": "Acompanhadas de equanimidade",
+          "es": "Acompañados de ecuanimidad (upekkhā)"
         }
       ],
       "definition": "Classification by joy, happiness, and equanimity.",
-      "definitionPt": "Classificação por alegria, felicidade e equanimidade."
+      "definitionPt": "Classificação por alegria, felicidade e equanimidade.",
+      "titleEs": "Tríada del Entusiasmo (Pīti)",
+      "definitionEs": "Clasificación según el entusiasmo (pīti), la felicidad (sukha) y la ecuanimidad (upekkhā)."
     },
     {
       "id": 8,
@@ -184,21 +219,26 @@
         {
           "pali": "Dassanena pahātabbā dhammā",
           "en": "Abandoned by vision",
-          "pt": "Abandonadas pela visão (1º caminho)"
+          "pt": "Abandonadas pela visão (1º caminho)",
+          "es": "Abandonados por la visión (1.er camino)"
         },
         {
           "pali": "Bhāvanāya pahātabbā dhammā",
           "en": "Abandoned by development",
-          "pt": "Abandonadas pelo desenvolvimento (caminhos superiores)"
+          "pt": "Abandonadas pelo desenvolvimento (caminhos superiores)",
+          "es": "Abandonados por el desarrollo (caminos superiores)"
         },
         {
           "pali": "Neva dassanena na bhāvanāya pahātabbā dhammā",
           "en": "Abandoned neither by vision nor development",
-          "pt": "Não abandonadas nem pela visão nem pelo desenvolvimento"
+          "pt": "Não abandonadas nem pela visão nem pelo desenvolvimento",
+          "es": "No abandonados ni por la visión ni por el desarrollo"
         }
       ],
       "definition": "Classification by how unwholesome states are eliminated on the paths.",
-      "definitionPt": "Classificação por como os estados insalubres são eliminados nos caminhos."
+      "definitionPt": "Classificação por como os estados insalubres são eliminados nos caminhos.",
+      "titleEs": "Tríada de la Visión",
+      "definitionEs": "Clasificación según cómo se eliminan los dhammas insaludables en los caminos nobles."
     },
     {
       "id": 9,
@@ -209,21 +249,26 @@
         {
           "pali": "Dassanena pahātabbahetukā dhammā",
           "en": "With roots abandoned by vision",
-          "pt": "Com raízes abandonadas pela visão"
+          "pt": "Com raízes abandonadas pela visão",
+          "es": "Con raíces abandonadas por la visión"
         },
         {
           "pali": "Bhāvanāya pahātabbahetukā dhammā",
           "en": "With roots abandoned by development",
-          "pt": "Com raízes abandonadas pelo desenvolvimento"
+          "pt": "Com raízes abandonadas pelo desenvolvimento",
+          "es": "Con raíces abandonadas por el desarrollo"
         },
         {
           "pali": "Neva dassanena na bhāvanāya pahātabbahetukā dhammā",
           "en": "With roots abandoned neither by vision nor development",
-          "pt": "Com raízes não abandonadas nem pela visão nem pelo desenvolvimento"
+          "pt": "Com raízes não abandonadas nem pela visão nem pelo desenvolvimento",
+          "es": "Con raíces no abandonadas ni por la visión ni por el desarrollo"
         }
       ],
       "definition": "Classification concerning the roots (hetu) of what is to be abandoned.",
-      "definitionPt": "Classificação referente às raízes (hetu) do que deve ser abandonado."
+      "definitionPt": "Classificação referente às raízes (hetu) do que deve ser abandonado.",
+      "titleEs": "Tríada de la Raíz Abandonada por la Visión",
+      "definitionEs": "Clasificación relativa a las raíces (hetu) de lo que debe abandonarse."
     },
     {
       "id": 10,
@@ -234,21 +279,26 @@
         {
           "pali": "Ācayagāmino dhammā",
           "en": "Leading to accumulation (of rebirth)",
-          "pt": "Levando ao acúmulo (de renascimentos)"
+          "pt": "Levando ao acúmulo (de renascimentos)",
+          "es": "Que conducen a la acumulación (de renacimientos)"
         },
         {
           "pali": "Apacayagāmino dhammā",
           "en": "Leading to dispersal (of rebirth)",
-          "pt": "Levando à dispersão (de renascimentos)"
+          "pt": "Levando à dispersão (de renascimentos)",
+          "es": "Que conducen a la dispersión (de renacimientos)"
         },
         {
           "pali": "Nevācayagāminonāpacayagāmino dhammā",
           "en": "Leading neither to accumulation nor dispersal",
-          "pt": "Não levando nem ao acúmulo nem à dispersão"
+          "pt": "Não levando nem ao acúmulo nem à dispersão",
+          "es": "Que no conducen ni a la acumulación ni a la dispersión"
         }
       ],
-      "definition": "Relates to the building up or tearing down of samsaric existence.",
-      "definitionPt": "Relaciona-se à construção ou destruição da existência samsárica."
+      "definition": "Relates to the building up or tearing down of existence in saṃsāra.",
+      "definitionPt": "Refere-se ao acúmulo ou à dispersão da existência no saṃsāra.",
+      "titleEs": "Tríada de la Acumulación",
+      "definitionEs": "Relativa a la acumulación o dispersión de la existencia en el saṃsāra."
     },
     {
       "id": 11,
@@ -259,21 +309,26 @@
         {
           "pali": "Sekkhā dhammā",
           "en": "Of a trainee",
-          "pt": "De um aprendiz (sekkha)"
+          "pt": "De um aprendiz (sekkha)",
+          "es": "De un aprendiz (sekkha)"
         },
         {
           "pali": "Asekkhā dhammā",
           "en": "Of an adept",
-          "pt": "De um adepto (asekkha/Arahant)"
+          "pt": "De um adepto (asekkha/Arahant)",
+          "es": "De un adepto (asekkha / Arahant)"
         },
         {
           "pali": "Nevasekkhānāsekkhā dhammā",
           "en": "Of neither trainee nor adept",
-          "pt": "Nem de aprendiz nem de adepto"
+          "pt": "Nem de aprendiz nem de adepto",
+          "es": "Ni de aprendiz ni de adepto"
         }
       ],
       "definition": "Classification according to the stages of noble attainment.",
-      "definitionPt": "Classificação de acordo com os estágios de realização nobre."
+      "definitionPt": "Classificação de acordo com os estágios de realização nobre.",
+      "titleEs": "Tríada del Aprendiz (Sekkha)",
+      "definitionEs": "Clasificación según los grados de realización noble."
     },
     {
       "id": 12,
@@ -284,21 +339,26 @@
         {
           "pali": "Parittā dhammā",
           "en": "Limited",
-          "pt": "Limitadas (esfera dos sentidos)"
+          "pt": "Limitadas (esfera dos sentidos)",
+          "es": "Limitados (esfera sensorial)"
         },
         {
           "pali": "Mahaggatā dhammā",
           "en": "Exalted",
-          "pt": "Exaltadas (esferas de forma e sem forma)"
+          "pt": "Exaltadas (esferas de forma e sem forma)",
+          "es": "Exaltados (esferas de la forma e inmaterial)"
         },
         {
           "pali": "Appamāṇā dhammā",
           "en": "Immeasurable",
-          "pt": "Imensuráveis (supramundanas)"
+          "pt": "Imensuráveis (supramundanas)",
+          "es": "Inmensurables (supramundanos)"
         }
       ],
       "definition": "Classification by the planes of existence.",
-      "definitionPt": "Classificação pelos planos de existência."
+      "definitionPt": "Classificação pelos planos de existência.",
+      "titleEs": "Tríada de lo Limitado",
+      "definitionEs": "Clasificación según los planos de existencia."
     },
     {
       "id": 13,
@@ -309,21 +369,26 @@
         {
           "pali": "Parittārammaṇā dhammā",
           "en": "With limited objects",
-          "pt": "Com objetos limitados"
+          "pt": "Com objetos limitados",
+          "es": "Con objetos limitados"
         },
         {
           "pali": "Mahaggatārammaṇā dhammā",
           "en": "With exalted objects",
-          "pt": "Com objetos exaltados"
+          "pt": "Com objetos exaltados",
+          "es": "Con objetos exaltados"
         },
         {
           "pali": "Appamāṇārammaṇā dhammā",
           "en": "With immeasurable objects",
-          "pt": "Com objetos imensuráveis"
+          "pt": "Com objetos imensuráveis",
+          "es": "Con objetos inmensurables"
         }
       ],
       "definition": "Classification based on the object of consciousness.",
-      "definitionPt": "Classificação baseada no objeto da consciência."
+      "definitionPt": "Classificação baseada no objeto da consciência.",
+      "titleEs": "Tríada del Objeto Limitado",
+      "definitionEs": "Clasificación basada en el objeto de la conciencia."
     },
     {
       "id": 14,
@@ -334,21 +399,26 @@
         {
           "pali": "Hīnā dhammā",
           "en": "Inferior",
-          "pt": "Inferiores"
+          "pt": "Inferiores",
+          "es": "Inferiores"
         },
         {
           "pali": "Majjhimā dhammā",
           "en": "Medium",
-          "pt": "Médias"
+          "pt": "Médias",
+          "es": "Medios"
         },
         {
           "pali": "Paṇītā dhammā",
           "en": "Superior",
-          "pt": "Superiores"
+          "pt": "Superiores",
+          "es": "Superiores"
         }
       ],
       "definition": "Classification by qualitative value.",
-      "definitionPt": "Classificação por valor qualitativo."
+      "definitionPt": "Classificação por valor qualitativo.",
+      "titleEs": "Tríada de lo Inferior",
+      "definitionEs": "Clasificación según su valor cualitativo."
     },
     {
       "id": 15,
@@ -359,21 +429,26 @@
         {
           "pali": "Micchattaniyatā dhammā",
           "en": "Fixed in wrongness",
-          "pt": "Fixas no erro (destino maligno fixo)"
+          "pt": "Fixas no erro (destino maligno fixo)",
+          "es": "Fijos en el error (destino erróneo fijo)"
         },
         {
           "pali": "Sammattaniyatā dhammā",
           "en": "Fixed in rightness",
-          "pt": "Fixas na retidão (destino nobre fixo)"
+          "pt": "Fixas na retidão (destino nobre fixo)",
+          "es": "Fijos en la rectitud (destino noble fijo)"
         },
         {
           "pali": "Aniyatā dhammā",
           "en": "Unfixed",
-          "pt": "Não fixas"
+          "pt": "Não fixas",
+          "es": "No fijos"
         }
       ],
       "definition": "Classification by destiny (niyāma).",
-      "definitionPt": "Classificação por destino (niyāma)."
+      "definitionPt": "Classificação por destino (niyāma).",
+      "titleEs": "Tríada del Destino Fijo",
+      "definitionEs": "Clasificación según el destino fijo (niyāma)."
     },
     {
       "id": 16,
@@ -384,21 +459,26 @@
         {
           "pali": "Maggārammaṇā dhammā",
           "en": "With path as object",
-          "pt": "Com o caminho como objeto"
+          "pt": "Com o caminho como objeto",
+          "es": "Con el camino como objeto"
         },
         {
           "pali": "Maggahetukā dhammā",
           "en": "With path as root",
-          "pt": "Com o caminho como raiz"
+          "pt": "Com o caminho como raiz",
+          "es": "Con el camino como raíz"
         },
         {
           "pali": "Maggādhipatino dhammā",
           "en": "With path as predominant factor",
-          "pt": "Com o caminho como fator predominante"
+          "pt": "Com o caminho como fator predominante",
+          "es": "Con el camino como factor predominante"
         }
       ],
       "definition": "Classification in relation to the noble path.",
-      "definitionPt": "Classificação em relação ao caminho nobre."
+      "definitionPt": "Classificação em relação ao caminho nobre.",
+      "titleEs": "Tríada del Objeto del Camino",
+      "definitionEs": "Clasificación en relación con el noble camino (magga)."
     },
     {
       "id": 17,
@@ -409,21 +489,26 @@
         {
           "pali": "Uppannā dhammā",
           "en": "Arisen",
-          "pt": "Surgidas"
+          "pt": "Surgidas",
+          "es": "Surgidos"
         },
         {
           "pali": "Anuppannā dhammā",
           "en": "Unarisen",
-          "pt": "Não surgidas"
+          "pt": "Não surgidas",
+          "es": "No surgidos"
         },
         {
           "pali": "Uppādinā dhammā",
           "en": "Bound to arise",
-          "pt": "Destinadas a surgir"
+          "pt": "Destinadas a surgir",
+          "es": "Destinados a surgir"
         }
       ],
       "definition": "Classification by temporal state of arising.",
-      "definitionPt": "Classificação pelo estado temporal de surgimento."
+      "definitionPt": "Classificação pelo estado temporal de surgimento.",
+      "titleEs": "Tríada de lo Surgido",
+      "definitionEs": "Clasificación según el estado temporal de surgimiento."
     },
     {
       "id": 18,
@@ -434,21 +519,26 @@
         {
           "pali": "Atītā dhammā",
           "en": "Past",
-          "pt": "Passadas"
+          "pt": "Passadas",
+          "es": "Pasados"
         },
         {
           "pali": "Anāgatā dhammā",
           "en": "Future",
-          "pt": "Futuras"
+          "pt": "Futuras",
+          "es": "Futuros"
         },
         {
           "pali": "Paccuppannā dhammā",
           "en": "Present",
-          "pt": "Presentes"
+          "pt": "Presentes",
+          "es": "Presentes"
         }
       ],
       "definition": "Classification by time period.",
-      "definitionPt": "Classificação por período de tempo."
+      "definitionPt": "Classificação por período de tempo.",
+      "titleEs": "Tríada del Pasado",
+      "definitionEs": "Clasificación según el período temporal."
     },
     {
       "id": 19,
@@ -459,21 +549,26 @@
         {
           "pali": "Atītārammaṇā dhammā",
           "en": "With past object",
-          "pt": "Com objeto passado"
+          "pt": "Com objeto passado",
+          "es": "Con objeto pasado"
         },
         {
           "pali": "Anāgatārammaṇā dhammā",
           "en": "With future object",
-          "pt": "Com objeto futuro"
+          "pt": "Com objeto futuro",
+          "es": "Con objeto futuro"
         },
         {
           "pali": "Paccuppannārammaṇā dhammā",
           "en": "With present object",
-          "pt": "Com objeto presente"
+          "pt": "Com objeto presente",
+          "es": "Con objeto presente"
         }
       ],
       "definition": "Classification by the time period of the object.",
-      "definitionPt": "Classificação pelo período de tempo do objeto."
+      "definitionPt": "Classificação pelo período de tempo do objeto.",
+      "titleEs": "Tríada del Objeto Pasado",
+      "definitionEs": "Clasificación según el período temporal del objeto."
     },
     {
       "id": 20,
@@ -484,21 +579,26 @@
         {
           "pali": "Ajjhattā dhammā",
           "en": "Internal",
-          "pt": "Internas"
+          "pt": "Internas",
+          "es": "Internos"
         },
         {
           "pali": "Bahiddhā dhammā",
           "en": "External",
-          "pt": "Externas"
+          "pt": "Externas",
+          "es": "Externos"
         },
         {
           "pali": "Ajjhattabahiddhā dhammā",
           "en": "Internal and external",
-          "pt": "Internas e externas"
+          "pt": "Internas e externas",
+          "es": "Internos y externos"
         }
       ],
       "definition": "Classification by locus (within oneself or outside).",
-      "definitionPt": "Classificação por locus (dentro de si ou fora)."
+      "definitionPt": "Classificação por locus (dentro de si ou fora).",
+      "titleEs": "Tríada de lo Interno",
+      "definitionEs": "Clasificación según la ubicación (en uno mismo o en el exterior)."
     },
     {
       "id": 21,
@@ -509,21 +609,26 @@
         {
           "pali": "Ajjhattārammaṇā dhammā",
           "en": "With internal object",
-          "pt": "Com objeto interno"
+          "pt": "Com objeto interno",
+          "es": "Con objeto interno"
         },
         {
           "pali": "Bahiddhārammaṇā dhammā",
           "en": "With external object",
-          "pt": "Com objeto externo"
+          "pt": "Com objeto externo",
+          "es": "Con objeto externo"
         },
         {
           "pali": "Ajjhattabahiddhārammaṇā dhammā",
           "en": "With internal and external object",
-          "pt": "Com objeto interno e externo"
+          "pt": "Com objeto interno e externo",
+          "es": "Con objeto interno y externo"
         }
       ],
       "definition": "Classification by the locus of the object.",
-      "definitionPt": "Classificação pelo locus do objeto."
+      "definitionPt": "Classificação pelo locus do objeto.",
+      "titleEs": "Tríada del Objeto Interno",
+      "definitionEs": "Clasificación según la ubicación del objeto."
     },
     {
       "id": 22,
@@ -534,21 +639,26 @@
         {
           "pali": "Sanidassanasappaṭighā dhammā",
           "en": "Visible and resisting",
-          "pt": "Visíveis e com resistência"
+          "pt": "Visíveis e com resistência",
+          "es": "Visibles y con impacto"
         },
         {
           "pali": "Anidassanasappaṭighā dhammā",
           "en": "Invisible and resisting",
-          "pt": "Invisíveis e com resistência"
+          "pt": "Invisíveis e com resistência",
+          "es": "Invisibles y con impacto"
         },
         {
           "pali": "Anidassanaappaṭighā dhammā",
           "en": "Invisible and unresisting",
-          "pt": "Invisíveis e sem resistência"
+          "pt": "Invisíveis e sem resistência",
+          "es": "Invisibles y sin impacto"
         }
       ],
       "definition": "Classification by visibility and impact.",
-      "definitionPt": "Classificação por visibilidade e impacto."
+      "definitionPt": "Classificação por visibilidade e impacto.",
+      "titleEs": "Tríada de lo Visible",
+      "definitionEs": "Clasificación según la visibilidad y el impacto (paṭigha)."
     }
   ],
   "dukas": [
@@ -561,16 +671,20 @@
         {
           "pali": "Hetū dhammā",
           "en": "Roots",
-          "pt": "Raízes"
+          "pt": "Raízes",
+          "es": "Raíces"
         },
         {
           "pali": "Na-hetū dhammā",
           "en": "Not roots",
-          "pt": "Não raízes"
+          "pt": "Não raízes",
+          "es": "No raíces"
         }
       ],
       "definition": "Classification related to roots.",
-      "definitionPt": "Classificação relacionada a raízes."
+      "definitionPt": "Classificação relacionada a raízes.",
+      "titleEs": "Díade de la Raíz",
+      "definitionEs": "Clasificación relacionada con díade de la raíz."
     },
     {
       "id": 2,
@@ -581,16 +695,20 @@
         {
           "pali": "Sahetukā dhammā",
           "en": "With roots",
-          "pt": "Com raízes"
+          "pt": "Com raízes",
+          "es": "Con raíces"
         },
         {
           "pali": "Ahetukā dhammā",
           "en": "Without roots",
-          "pt": "Sem raízes"
+          "pt": "Sem raízes",
+          "es": "Sin raíces"
         }
       ],
       "definition": "Classification related to with roots.",
-      "definitionPt": "Classificação relacionada a com raízes."
+      "definitionPt": "Classificação relacionada a com raízes.",
+      "titleEs": "Díade con Raíces",
+      "definitionEs": "Clasificación relacionada con díade con raíces."
     },
     {
       "id": 3,
@@ -601,16 +719,20 @@
         {
           "pali": "Hetusampayuttā dhammā",
           "en": "Associated with roots",
-          "pt": "Associadas a raízes"
+          "pt": "Associadas a raízes",
+          "es": "Asociados con raíces"
         },
         {
           "pali": "Hetuvippayuttā dhammā",
           "en": "Dissociated from roots",
-          "pt": "Dissociadas de raízes"
+          "pt": "Dissociadas de raízes",
+          "es": "Disociados de raíces"
         }
       ],
       "definition": "Classification related to associated with roots.",
-      "definitionPt": "Classificação relacionada a associadas a raízes."
+      "definitionPt": "Classificação relacionada a associadas a raízes.",
+      "titleEs": "Díade Asociada con Raíces",
+      "definitionEs": "Clasificación relacionada con díade asociada con raíces."
     },
     {
       "id": 4,
@@ -621,16 +743,20 @@
         {
           "pali": "Hetū ceva sahetukā ca dhammā",
           "en": "Roots and with roots",
-          "pt": "Raízes e com raízes"
+          "pt": "Raízes e com raízes",
+          "es": "Raíces y con raíces"
         },
         {
           "pali": "Sahetukā ceva na ca hetū dhammā",
           "en": "With roots but not roots",
-          "pt": "Com raízes mas não raízes"
+          "pt": "Com raízes mas não raízes",
+          "es": "Con raíces pero no raíces"
         }
       ],
       "definition": "Classification related to roots and with roots.",
-      "definitionPt": "Classificação relacionada a raízes e com raízes."
+      "definitionPt": "Classificação relacionada a raízes e com raízes.",
+      "titleEs": "Díade de Raíces y con Raíces",
+      "definitionEs": "Clasificación relacionada con díade de raíces y con raíces."
     },
     {
       "id": 5,
@@ -641,16 +767,20 @@
         {
           "pali": "Hetū ceva hetusampayuttā ca dhammā",
           "en": "Roots and associated with roots",
-          "pt": "Raízes e associadas a raízes"
+          "pt": "Raízes e associadas a raízes",
+          "es": "Raíces y asociados con raíces"
         },
         {
           "pali": "Hetusampayuttā ceva na ca hetū dhammā",
           "en": "Associated with roots but not roots",
-          "pt": "Associadas a raízes mas não raízes"
+          "pt": "Associadas a raízes mas não raízes",
+          "es": "Asociados con raíces pero no raíces"
         }
       ],
       "definition": "Classification related to roots and associated with roots.",
-      "definitionPt": "Classificação relacionada a raízes e associadas a raízes."
+      "definitionPt": "Classificação relacionada a raízes e associadas a raízes.",
+      "titleEs": "Díade de Raíces y Asociada con Raíces",
+      "definitionEs": "Clasificación relacionada con díade de raíces y asociada con raíces."
     },
     {
       "id": 6,
@@ -661,16 +791,20 @@
         {
           "pali": "Na hetū sahetukā dhammā",
           "en": "Not roots but with roots",
-          "pt": "Não raízes mas com raízes"
+          "pt": "Não raízes mas com raízes",
+          "es": "No raíces pero con raíces"
         },
         {
           "pali": "Na hetū ahetukā dhammā",
           "en": "Not roots and without roots",
-          "pt": "Não raízes e sem raízes"
+          "pt": "Não raízes e sem raízes",
+          "es": "No raíces y sin raíces"
         }
       ],
       "definition": "Classification related to not roots but with roots.",
-      "definitionPt": "Classificação relacionada a não raízes mas com raízes."
+      "definitionPt": "Classificação relacionada a não raízes mas com raízes.",
+      "titleEs": "Díade No Raíces pero con Raíces",
+      "definitionEs": "Clasificación relacionada con díade no raíces pero con raíces."
     },
     {
       "id": 7,
@@ -681,16 +815,20 @@
         {
           "pali": "Sappaccayā dhammā",
           "en": "With conditions",
-          "pt": "Com condições"
+          "pt": "Com condições",
+          "es": "Con condiciones"
         },
         {
           "pali": "Appaccayā dhammā",
           "en": "Without conditions",
-          "pt": "Sem condições"
+          "pt": "Sem condições",
+          "es": "Sin condiciones"
         }
       ],
       "definition": "Classification related to with conditions.",
-      "definitionPt": "Classificação relacionada a com condições."
+      "definitionPt": "Classificação relacionada a com condições.",
+      "titleEs": "Díade con Condiciones",
+      "definitionEs": "Clasificación relacionada con díade con condiciones."
     },
     {
       "id": 8,
@@ -701,16 +839,20 @@
         {
           "pali": "Saṅkhatā dhammā",
           "en": "Conditioned",
-          "pt": "Condicionadas"
+          "pt": "Condicionadas",
+          "es": "Condicionados"
         },
         {
           "pali": "Asaṅkhatā dhammā",
           "en": "Unconditioned",
-          "pt": "Incondicionadas"
+          "pt": "Incondicionadas",
+          "es": "Incondicionados"
         }
       ],
       "definition": "Classification related to conditioned.",
-      "definitionPt": "Classificação relacionada a condicionadas."
+      "definitionPt": "Classificação relacionada a condicionadas.",
+      "titleEs": "Díade Condicionada",
+      "definitionEs": "Clasificación relacionada con díade condicionada."
     },
     {
       "id": 9,
@@ -721,16 +863,20 @@
         {
           "pali": "Sanidassanā dhammā",
           "en": "Visible",
-          "pt": "Visíveis"
+          "pt": "Visíveis",
+          "es": "Visibles"
         },
         {
           "pali": "Anidassanā dhammā",
           "en": "Invisible",
-          "pt": "Invisíveis"
+          "pt": "Invisíveis",
+          "es": "Invisibles"
         }
       ],
       "definition": "Classification related to visible.",
-      "definitionPt": "Classificação relacionada a visíveis."
+      "definitionPt": "Classificação relacionada a visíveis.",
+      "titleEs": "Díade Visible",
+      "definitionEs": "Clasificación relacionada con díade visible."
     },
     {
       "id": 10,
@@ -741,16 +887,20 @@
         {
           "pali": "Sappaṭighā dhammā",
           "en": "Impinging",
-          "pt": "Com impacto"
+          "pt": "Com impacto",
+          "es": "Con impacto"
         },
         {
           "pali": "Appaṭighā dhammā",
           "en": "Non-impinging",
-          "pt": "Sem impacto"
+          "pt": "Sem impacto",
+          "es": "Sin impacto"
         }
       ],
       "definition": "Classification related to impinging.",
-      "definitionPt": "Classificação relacionada a com impacto."
+      "definitionPt": "Classificação relacionada a com impacto.",
+      "titleEs": "Díade con Impacto",
+      "definitionEs": "Clasificación relacionada con díade con impacto."
     },
     {
       "id": 11,
@@ -761,16 +911,20 @@
         {
           "pali": "Rūpino dhammā",
           "en": "Material",
-          "pt": "Materiais"
+          "pt": "Materiais",
+          "es": "Materiales"
         },
         {
           "pali": "Arūpino dhammā",
           "en": "Immaterial",
-          "pt": "Imateriais"
+          "pt": "Imateriais",
+          "es": "Inmateriales"
         }
       ],
       "definition": "Classification related to material.",
-      "definitionPt": "Classificação relacionada a materiais."
+      "definitionPt": "Classificação relacionada a materiais.",
+      "titleEs": "Díade Material",
+      "definitionEs": "Clasificación relacionada con díade material."
     },
     {
       "id": 12,
@@ -781,16 +935,20 @@
         {
           "pali": "Lokiyā dhammā",
           "en": "Mundane",
-          "pt": "Mundanas"
+          "pt": "Mundanas",
+          "es": "Mundanos"
         },
         {
           "pali": "Lokuttarā dhammā",
           "en": "Supramundane",
-          "pt": "Supramundanas"
+          "pt": "Supramundanas",
+          "es": "Supramundanos"
         }
       ],
       "definition": "Classification related to mundane.",
-      "definitionPt": "Classificação relacionada a mundanas."
+      "definitionPt": "Classificação relacionada a mundanas.",
+      "titleEs": "Díade Mundana",
+      "definitionEs": "Clasificación relacionada con díade mundana."
     },
     {
       "id": 13,
@@ -801,16 +959,20 @@
         {
           "pali": "Kenaci viññeyyā dhammā",
           "en": "Cognizable by some consciousness",
-          "pt": "Cognoscíveis por alguma consciência"
+          "pt": "Cognoscíveis por alguma consciência",
+          "es": "Cognoscibles por alguna conciencia"
         },
         {
           "pali": "Kenaci na viññeyyā dhammā",
           "en": "Not cognizable by some consciousness",
-          "pt": "Não cognoscíveis por alguma consciência"
+          "pt": "Não cognoscíveis por alguma consciência",
+          "es": "No cognoscibles por alguna conciencia"
         }
       ],
       "definition": "Classification related to cognizable by some consciousness.",
-      "definitionPt": "Classificação relacionada a cognoscíveis por alguma consciência."
+      "definitionPt": "Classificação relacionada a cognoscíveis por alguma consciência.",
+      "titleEs": "Díade Cognoscible por Alguna Conciencia",
+      "definitionEs": "Clasificación relacionada con díade cognoscible por alguna conciencia."
     },
     {
       "id": 14,
@@ -821,16 +983,20 @@
         {
           "pali": "Āsavā dhammā",
           "en": "Taints",
-          "pt": "Máculas"
+          "pt": "Máculas",
+          "es": "Máculas (āsava)"
         },
         {
           "pali": "No āsavā dhammā",
           "en": "Not taints",
-          "pt": "Não máculas"
+          "pt": "Não máculas",
+          "es": "No máculas"
         }
       ],
       "definition": "Classification related to taints.",
-      "definitionPt": "Classificação relacionada a máculas."
+      "definitionPt": "Classificação relacionada a máculas.",
+      "titleEs": "Díade de la Mácula (Āsava)",
+      "definitionEs": "Clasificación relacionada con díade de la mácula (āsava)."
     },
     {
       "id": 15,
@@ -841,16 +1007,20 @@
         {
           "pali": "Sāsavā dhammā",
           "en": "Subject to taints",
-          "pt": "Sujeitas a máculas"
+          "pt": "Sujeitas a máculas",
+          "es": "Sujetos a máculas"
         },
         {
           "pali": "Anāsavā dhammā",
           "en": "Free from taints",
-          "pt": "Livres de máculas"
+          "pt": "Livres de máculas",
+          "es": "Libres de máculas"
         }
       ],
       "definition": "Classification related to subject to taints.",
-      "definitionPt": "Classificação relacionada a sujeitas a máculas."
+      "definitionPt": "Classificação relacionada a sujeitas a máculas.",
+      "titleEs": "Díade Sujeta a Máculas",
+      "definitionEs": "Clasificación relacionada con díade sujeta a máculas."
     },
     {
       "id": 16,
@@ -861,16 +1031,20 @@
         {
           "pali": "Āsavasampayuttā dhammā",
           "en": "Associated with taints",
-          "pt": "Associadas a máculas"
+          "pt": "Associadas a máculas",
+          "es": "Asociados con máculas"
         },
         {
           "pali": "Āsavavippayuttā dhammā",
           "en": "Dissociated from taints",
-          "pt": "Dissociadas de máculas"
+          "pt": "Dissociadas de máculas",
+          "es": "Disociados de máculas"
         }
       ],
       "definition": "Classification related to associated with taints.",
-      "definitionPt": "Classificação relacionada a associadas a máculas."
+      "definitionPt": "Classificação relacionada a associadas a máculas.",
+      "titleEs": "Díade Asociada con Máculas",
+      "definitionEs": "Clasificación relacionada con díade asociada con máculas."
     },
     {
       "id": 17,
@@ -881,16 +1055,20 @@
         {
           "pali": "Āsavā ceva sāsavā ca dhammā",
           "en": "Taints and subject to taints",
-          "pt": "Máculas e sujeitas a máculas"
+          "pt": "Máculas e sujeitas a máculas",
+          "es": "Máculas y sujetos a máculas"
         },
         {
           "pali": "Sāsavā ceva no ca āsavā dhammā",
           "en": "Subject to taints but not taints",
-          "pt": "Sujeitas a máculas mas não máculas"
+          "pt": "Sujeitas a máculas mas não máculas",
+          "es": "Sujetos a máculas pero no máculas"
         }
       ],
       "definition": "Classification related to taints and subject to taints.",
-      "definitionPt": "Classificação relacionada a máculas e sujeitas a máculas."
+      "definitionPt": "Classificação relacionada a máculas e sujeitas a máculas.",
+      "titleEs": "Díade de Máculas y Sujeta a Máculas",
+      "definitionEs": "Clasificación relacionada con díade de máculas y sujeta a máculas."
     },
     {
       "id": 18,
@@ -901,16 +1079,20 @@
         {
           "pali": "Āsavā ceva āsavasampayuttā ca dhammā",
           "en": "Taints and associated with taints",
-          "pt": "Máculas e associadas a máculas"
+          "pt": "Máculas e associadas a máculas",
+          "es": "Máculas y asociados con máculas"
         },
         {
           "pali": "Āsavasampayuttā ceva no ca āsavā dhammā",
           "en": "Associated with taints but not taints",
-          "pt": "Associadas a máculas mas não máculas"
+          "pt": "Associadas a máculas mas não máculas",
+          "es": "Asociados con máculas pero no máculas"
         }
       ],
       "definition": "Classification related to taints and associated with taints.",
-      "definitionPt": "Classificação relacionada a máculas e associadas a máculas."
+      "definitionPt": "Classificação relacionada a máculas e associadas a máculas.",
+      "titleEs": "Díade de Máculas y Asociada con Máculas",
+      "definitionEs": "Clasificación relacionada con díade de máculas y asociada con máculas."
     },
     {
       "id": 19,
@@ -921,16 +1103,20 @@
         {
           "pali": "Āsavavippayuttā sāsavā dhammā",
           "en": "Dissociated from taints but subject to taints",
-          "pt": "Dissociadas de máculas mas sujeitas a máculas"
+          "pt": "Dissociadas de máculas mas sujeitas a máculas",
+          "es": "Disociados de máculas pero sujetos a máculas"
         },
         {
           "pali": "Āsavavippayuttā anāsavā dhammā",
           "en": "Dissociated from taints and free from taints",
-          "pt": "Dissociadas de máculas e livres de máculas"
+          "pt": "Dissociadas de máculas e livres de máculas",
+          "es": "Disociados de máculas y libres de máculas"
         }
       ],
       "definition": "Classification related to dissociated from taints but subject to taints.",
-      "definitionPt": "Classificação relacionada a dissociadas de máculas mas sujeitas a máculas."
+      "definitionPt": "Classificação relacionada a dissociadas de máculas mas sujeitas a máculas.",
+      "titleEs": "Díade Disociada de Máculas pero Sujeta a Máculas",
+      "definitionEs": "Clasificación relacionada con díade disociada de máculas pero sujeta a máculas."
     },
     {
       "id": 20,
@@ -941,16 +1127,20 @@
         {
           "pali": "Saññojanā dhammā",
           "en": "Fetters",
-          "pt": "Grilhões"
+          "pt": "Grilhões",
+          "es": "Grilletes (saññojana)"
         },
         {
           "pali": "No saññojanā dhammā",
           "en": "Not fetters",
-          "pt": "Não grilhões"
+          "pt": "Não grilhões",
+          "es": "No grilletes"
         }
       ],
       "definition": "Classification related to fetters.",
-      "definitionPt": "Classificação relacionada a grilhões."
+      "definitionPt": "Classificação relacionada a grilhões.",
+      "titleEs": "Díade del Grillete (Saññojana)",
+      "definitionEs": "Clasificación relacionada con díade del grillete (saññojana)."
     },
     {
       "id": 21,
@@ -961,16 +1151,20 @@
         {
           "pali": "Sasaññojaniyā dhammā",
           "en": "Subject to fetters",
-          "pt": "Sujeitas a grilhões"
+          "pt": "Sujeitas a grilhões",
+          "es": "Sujetos a grilletes"
         },
         {
           "pali": "Asaññojaniyā dhammā",
           "en": "Free from fetters",
-          "pt": "Livres de grilhões"
+          "pt": "Livres de grilhões",
+          "es": "Libres de grilletes"
         }
       ],
       "definition": "Classification related to subject to fetters.",
-      "definitionPt": "Classificação relacionada a sujeitas a grilhões."
+      "definitionPt": "Classificação relacionada a sujeitas a grilhões.",
+      "titleEs": "Díade Sujeta a Grilletes",
+      "definitionEs": "Clasificación relacionada con díade sujeta a grilletes."
     },
     {
       "id": 22,
@@ -981,16 +1175,20 @@
         {
           "pali": "Saññojanasampayuttā dhammā",
           "en": "Associated with fetters",
-          "pt": "Associadas a grilhões"
+          "pt": "Associadas a grilhões",
+          "es": "Asociados con grilletes"
         },
         {
           "pali": "Saññojanavippayuttā dhammā",
           "en": "Dissociated from fetters",
-          "pt": "Dissociadas de grilhões"
+          "pt": "Dissociadas de grilhões",
+          "es": "Disociados de grilletes"
         }
       ],
       "definition": "Classification related to associated with fetters.",
-      "definitionPt": "Classificação relacionada a associadas a grilhões."
+      "definitionPt": "Classificação relacionada a associadas a grilhões.",
+      "titleEs": "Díade Asociada con Grilletes",
+      "definitionEs": "Clasificación relacionada con díade asociada con grilletes."
     },
     {
       "id": 23,
@@ -1001,16 +1199,20 @@
         {
           "pali": "Saññojanā ceva sasaññojaniyā ca dhammā",
           "en": "Fetters and subject to fetters",
-          "pt": "Grilhões e sujeitas a grilhões"
+          "pt": "Grilhões e sujeitas a grilhões",
+          "es": "Grilletes y sujetos a grilletes"
         },
         {
           "pali": "Sasaññojaniyā ceva no ca saññojanā dhammā",
           "en": "Subject to fetters but not fetters",
-          "pt": "Sujeitas a grilhões mas não grilhões"
+          "pt": "Sujeitas a grilhões mas não grilhões",
+          "es": "Sujetos a grilletes pero no grilletes"
         }
       ],
       "definition": "Classification related to fetters and subject to fetters.",
-      "definitionPt": "Classificação relacionada a grilhões e sujeitas a grilhões."
+      "definitionPt": "Classificação relacionada a grilhões e sujeitas a grilhões.",
+      "titleEs": "Díade de Grilletes y Sujeta a Grilletes",
+      "definitionEs": "Clasificación relacionada con díade de grilletes y sujeta a grilletes."
     },
     {
       "id": 24,
@@ -1021,16 +1223,20 @@
         {
           "pali": "Saññojanā ceva saññojanasampayuttā ca dhammā",
           "en": "Fetters and associated with fetters",
-          "pt": "Grilhões e associadas a grilhões"
+          "pt": "Grilhões e associadas a grilhões",
+          "es": "Grilletes y asociados con grilletes"
         },
         {
           "pali": "Saññojanasampayuttā ceva no ca saññojanā dhammā",
           "en": "Associated with fetters but not fetters",
-          "pt": "Associadas a grilhões mas não grilhões"
+          "pt": "Associadas a grilhões mas não grilhões",
+          "es": "Asociados con grilletes pero no grilletes"
         }
       ],
       "definition": "Classification related to fetters and associated with fetters.",
-      "definitionPt": "Classificação relacionada a grilhões e associadas a grilhões."
+      "definitionPt": "Classificação relacionada a grilhões e associadas a grilhões.",
+      "titleEs": "Díade de Grilletes y Asociada con Grilletes",
+      "definitionEs": "Clasificación relacionada con díade de grilletes y asociada con grilletes."
     },
     {
       "id": 25,
@@ -1041,16 +1247,20 @@
         {
           "pali": "Saññojanavippayuttā sasaññojaniyā dhammā",
           "en": "Dissociated from fetters but subject to fetters",
-          "pt": "Dissociadas de grilhões mas sujeitas a grilhões"
+          "pt": "Dissociadas de grilhões mas sujeitas a grilhões",
+          "es": "Disociados de grilletes pero sujetos a grilletes"
         },
         {
           "pali": "Saññojanavippayuttā asaññojaniyā dhammā",
           "en": "Dissociated from fetters and free from fetters",
-          "pt": "Dissociadas de grilhões e livres de grilhões"
+          "pt": "Dissociadas de grilhões e livres de grilhões",
+          "es": "Disociados de grilletes y libres de grilletes"
         }
       ],
       "definition": "Classification related to dissociated from fetters but subject to fetters.",
-      "definitionPt": "Classificação relacionada a dissociadas de grilhões mas sujeitas a grilhões."
+      "definitionPt": "Classificação relacionada a dissociadas de grilhões mas sujeitas a grilhões.",
+      "titleEs": "Díade Disociada de Grilletes pero Sujeta a Grilletes",
+      "definitionEs": "Clasificación relacionada con díade disociada de grilletes pero sujeta a grilletes."
     },
     {
       "id": 26,
@@ -1061,16 +1271,20 @@
         {
           "pali": "Ganthā dhammā",
           "en": "Ties",
-          "pt": "Laços"
+          "pt": "Laços",
+          "es": "Nudos (gantha)"
         },
         {
           "pali": "No ganthā dhammā",
           "en": "Not ties",
-          "pt": "Não laços"
+          "pt": "Não laços",
+          "es": "No nudos"
         }
       ],
       "definition": "Classification related to ties.",
-      "definitionPt": "Classificação relacionada a laços."
+      "definitionPt": "Classificação relacionada a laços.",
+      "titleEs": "Díade del Nudo (Gantha)",
+      "definitionEs": "Clasificación relacionada con díade del nudo (gantha)."
     },
     {
       "id": 27,
@@ -1081,16 +1295,20 @@
         {
           "pali": "Ganthaniyā dhammā",
           "en": "Subject to ties",
-          "pt": "Sujeitas a laços"
+          "pt": "Sujeitas a laços",
+          "es": "Sujetos a nudos"
         },
         {
           "pali": "Aganthaniyā dhammā",
           "en": "Free from ties",
-          "pt": "Livres de laços"
+          "pt": "Livres de laços",
+          "es": "Libres de nudos"
         }
       ],
       "definition": "Classification related to subject to ties.",
-      "definitionPt": "Classificação relacionada a sujeitas a laços."
+      "definitionPt": "Classificação relacionada a sujeitas a laços.",
+      "titleEs": "Díade Sujeta a Nudos",
+      "definitionEs": "Clasificación relacionada con díade sujeta a nudos."
     },
     {
       "id": 28,
@@ -1101,16 +1319,20 @@
         {
           "pali": "Ganthasampayuttā dhammā",
           "en": "Associated with ties",
-          "pt": "Associadas a laços"
+          "pt": "Associadas a laços",
+          "es": "Asociados con nudos"
         },
         {
           "pali": "Ganthavippayuttā dhammā",
           "en": "Dissociated from ties",
-          "pt": "Dissociadas de laços"
+          "pt": "Dissociadas de laços",
+          "es": "Disociados de nudos"
         }
       ],
       "definition": "Classification related to associated with ties.",
-      "definitionPt": "Classificação relacionada a associadas a laços."
+      "definitionPt": "Classificação relacionada a associadas a laços.",
+      "titleEs": "Díade Asociada con Nudos",
+      "definitionEs": "Clasificación relacionada con díade asociada con nudos."
     },
     {
       "id": 29,
@@ -1121,16 +1343,20 @@
         {
           "pali": "Ganthā ceva ganthaniyā ca dhammā",
           "en": "Ties and subject to ties",
-          "pt": "Laços e sujeitas a laços"
+          "pt": "Laços e sujeitas a laços",
+          "es": "Nudos y sujetos a nudos"
         },
         {
           "pali": "Ganthaniyā ceva no ca ganthā dhammā",
           "en": "Subject to ties but not ties",
-          "pt": "Sujeitas a laços mas não laços"
+          "pt": "Sujeitas a laços mas não laços",
+          "es": "Sujetos a nudos pero no nudos"
         }
       ],
       "definition": "Classification related to ties and subject to ties.",
-      "definitionPt": "Classificação relacionada a laços e sujeitas a laços."
+      "definitionPt": "Classificação relacionada a laços e sujeitas a laços.",
+      "titleEs": "Díade de Nudos y Sujeta a Nudos",
+      "definitionEs": "Clasificación relacionada con díade de nudos y sujeta a nudos."
     },
     {
       "id": 30,
@@ -1141,16 +1367,20 @@
         {
           "pali": "Ganthā ceva ganthasampayuttā ca dhammā",
           "en": "Ties and associated with ties",
-          "pt": "Laços e associadas a laços"
+          "pt": "Laços e associadas a laços",
+          "es": "Nudos y asociados con nudos"
         },
         {
           "pali": "Ganthasampayuttā ceva no ca ganthā dhammā",
           "en": "Associated with ties but not ties",
-          "pt": "Associadas a laços mas não laços"
+          "pt": "Associadas a laços mas não laços",
+          "es": "Asociados con nudos pero no nudos"
         }
       ],
       "definition": "Classification related to ties and associated with ties.",
-      "definitionPt": "Classificação relacionada a laços e associadas a laços."
+      "definitionPt": "Classificação relacionada a laços e associadas a laços.",
+      "titleEs": "Díade de Nudos y Asociada con Nudos",
+      "definitionEs": "Clasificación relacionada con díade de nudos y asociada con nudos."
     },
     {
       "id": 31,
@@ -1161,16 +1391,20 @@
         {
           "pali": "Ganthavippayuttā ganthaniyā dhammā",
           "en": "Dissociated from ties but subject to ties",
-          "pt": "Dissociadas de laços mas sujeitas a laços"
+          "pt": "Dissociadas de laços mas sujeitas a laços",
+          "es": "Disociados de nudos pero sujetos a nudos"
         },
         {
           "pali": "Ganthavippayuttā aganthaniyā dhammā",
           "en": "Dissociated from ties and free from ties",
-          "pt": "Dissociadas de laços e livres de laços"
+          "pt": "Dissociadas de laços e livres de laços",
+          "es": "Disociados de nudos y libres de nudos"
         }
       ],
       "definition": "Classification related to dissociated from ties but subject to ties.",
-      "definitionPt": "Classificação relacionada a dissociadas de laços mas sujeitas a laços."
+      "definitionPt": "Classificação relacionada a dissociadas de laços mas sujeitas a laços.",
+      "titleEs": "Díade Disociada de Nudos pero Sujeta a Nudos",
+      "definitionEs": "Clasificación relacionada con díade disociada de nudos pero sujeta a nudos."
     },
     {
       "id": 32,
@@ -1181,16 +1415,20 @@
         {
           "pali": "Oghā dhammā",
           "en": "Floods",
-          "pt": "Inundações"
+          "pt": "Inundações",
+          "es": "Inundaciones (ogha)"
         },
         {
           "pali": "No oghā dhammā",
           "en": "Not floods",
-          "pt": "Não inundações"
+          "pt": "Não inundações",
+          "es": "No inundaciones"
         }
       ],
       "definition": "Classification related to floods.",
-      "definitionPt": "Classificação relacionada a inundações."
+      "definitionPt": "Classificação relacionada a inundações.",
+      "titleEs": "Díade de la Inundación (Ogha)",
+      "definitionEs": "Clasificación relacionada con díade de la inundación (ogha)."
     },
     {
       "id": 33,
@@ -1201,16 +1439,20 @@
         {
           "pali": "Oghaniyā dhammā",
           "en": "Subject to floods",
-          "pt": "Sujeitas a inundações"
+          "pt": "Sujeitas a inundações",
+          "es": "Sujetos a inundaciones"
         },
         {
           "pali": "Anoghaniyā dhammā",
           "en": "Free from floods",
-          "pt": "Livres de inundações"
+          "pt": "Livres de inundações",
+          "es": "Libres de inundaciones"
         }
       ],
       "definition": "Classification related to subject to floods.",
-      "definitionPt": "Classificação relacionada a sujeitas a inundações."
+      "definitionPt": "Classificação relacionada a sujeitas a inundações.",
+      "titleEs": "Díade Sujeta a Inundaciones",
+      "definitionEs": "Clasificación relacionada con díade sujeta a inundaciones."
     },
     {
       "id": 34,
@@ -1221,16 +1463,20 @@
         {
           "pali": "Oghasampayuttā dhammā",
           "en": "Associated with floods",
-          "pt": "Associadas a inundações"
+          "pt": "Associadas a inundações",
+          "es": "Asociados con inundaciones"
         },
         {
           "pali": "Oghavippayuttā dhammā",
           "en": "Dissociated from floods",
-          "pt": "Dissociadas de inundações"
+          "pt": "Dissociadas de inundações",
+          "es": "Disociados de inundaciones"
         }
       ],
       "definition": "Classification related to associated with floods.",
-      "definitionPt": "Classificação relacionada a associadas a inundações."
+      "definitionPt": "Classificação relacionada a associadas a inundações.",
+      "titleEs": "Díade Asociada con Inundaciones",
+      "definitionEs": "Clasificación relacionada con díade asociada con inundaciones."
     },
     {
       "id": 35,
@@ -1241,16 +1487,20 @@
         {
           "pali": "Oghā ceva oghaniyā ca dhammā",
           "en": "Floods and subject to floods",
-          "pt": "Inundações e sujeitas a inundações"
+          "pt": "Inundações e sujeitas a inundações",
+          "es": "Inundaciones y sujetos a inundaciones"
         },
         {
           "pali": "Oghaniyā ceva no ca oghā dhammā",
           "en": "Subject to floods but not floods",
-          "pt": "Sujeitas a inundações mas não inundações"
+          "pt": "Sujeitas a inundações mas não inundações",
+          "es": "Sujetos a inundaciones pero no inundaciones"
         }
       ],
       "definition": "Classification related to floods and subject to floods.",
-      "definitionPt": "Classificação relacionada a inundações e sujeitas a inundações."
+      "definitionPt": "Classificação relacionada a inundações e sujeitas a inundações.",
+      "titleEs": "Díade de Inundaciones y Sujeta a Inundaciones",
+      "definitionEs": "Clasificación relacionada con díade de inundaciones y sujeta a inundaciones."
     },
     {
       "id": 36,
@@ -1261,16 +1511,20 @@
         {
           "pali": "Oghā ceva oghasampayuttā ca dhammā",
           "en": "Floods and associated with floods",
-          "pt": "Inundações e associadas a inundações"
+          "pt": "Inundações e associadas a inundações",
+          "es": "Inundaciones y asociados con inundaciones"
         },
         {
           "pali": "Oghasampayuttā ceva no ca oghā dhammā",
           "en": "Associated with floods but not floods",
-          "pt": "Associadas a inundações mas não inundações"
+          "pt": "Associadas a inundações mas não inundações",
+          "es": "Asociados con inundaciones pero no inundaciones"
         }
       ],
       "definition": "Classification related to floods and associated with floods.",
-      "definitionPt": "Classificação relacionada a inundações e associadas a inundações."
+      "definitionPt": "Classificação relacionada a inundações e associadas a inundações.",
+      "titleEs": "Díade de Inundaciones y Asociada con Inundaciones",
+      "definitionEs": "Clasificación relacionada con díade de inundaciones y asociada con inundaciones."
     },
     {
       "id": 37,
@@ -1281,16 +1535,20 @@
         {
           "pali": "Oghavippayuttā oghaniyā dhammā",
           "en": "Dissociated from floods but subject to floods",
-          "pt": "Dissociadas de inundações mas sujeitas a inundações"
+          "pt": "Dissociadas de inundações mas sujeitas a inundações",
+          "es": "Disociados de inundaciones pero sujetos a inundaciones"
         },
         {
           "pali": "Oghavippayuttā anoghaniyā dhammā",
           "en": "Dissociated from floods and free from floods",
-          "pt": "Dissociadas de inundações e livres de inundações"
+          "pt": "Dissociadas de inundações e livres de inundações",
+          "es": "Disociados de inundaciones y libres de inundaciones"
         }
       ],
       "definition": "Classification related to dissociated from floods but subject to floods.",
-      "definitionPt": "Classificação relacionada a dissociadas de inundações mas sujeitas a inundações."
+      "definitionPt": "Classificação relacionada a dissociadas de inundações mas sujeitas a inundações.",
+      "titleEs": "Díade Disociada de Inundaciones pero Sujeta a Inundaciones",
+      "definitionEs": "Clasificación relacionada con díade disociada de inundaciones pero sujeta a inundaciones."
     },
     {
       "id": 38,
@@ -1301,16 +1559,20 @@
         {
           "pali": "Yogā dhammā",
           "en": "Bonds",
-          "pt": "Amarras"
+          "pt": "Amarras",
+          "es": "Yugos (yoga)"
         },
         {
           "pali": "No yogā dhammā",
           "en": "Not bonds",
-          "pt": "Não amarras"
+          "pt": "Não amarras",
+          "es": "No yugos"
         }
       ],
       "definition": "Classification related to bonds.",
-      "definitionPt": "Classificação relacionada a amarras."
+      "definitionPt": "Classificação relacionada a amarras.",
+      "titleEs": "Díade del Yugo (Yoga)",
+      "definitionEs": "Clasificación relacionada con díade del yugo (yoga)."
     },
     {
       "id": 39,
@@ -1321,16 +1583,20 @@
         {
           "pali": "Yoganiyā dhammā",
           "en": "Subject to bonds",
-          "pt": "Sujeitas a amarras"
+          "pt": "Sujeitas a amarras",
+          "es": "Sujetos a yugos"
         },
         {
           "pali": "Ayoganiyā dhammā",
           "en": "Free from bonds",
-          "pt": "Livres de amarras"
+          "pt": "Livres de amarras",
+          "es": "Libres de yugos"
         }
       ],
       "definition": "Classification related to subject to bonds.",
-      "definitionPt": "Classificação relacionada a sujeitas a amarras."
+      "definitionPt": "Classificação relacionada a sujeitas a amarras.",
+      "titleEs": "Díade Sujeta a Yugos",
+      "definitionEs": "Clasificación relacionada con díade sujeta a yugos."
     },
     {
       "id": 40,
@@ -1341,16 +1607,20 @@
         {
           "pali": "Yogasampayuttā dhammā",
           "en": "Associated with bonds",
-          "pt": "Associadas a amarras"
+          "pt": "Associadas a amarras",
+          "es": "Asociados con yugos"
         },
         {
           "pali": "Yogavippayuttā dhammā",
           "en": "Dissociated from bonds",
-          "pt": "Dissociadas de amarras"
+          "pt": "Dissociadas de amarras",
+          "es": "Disociados de yugos"
         }
       ],
       "definition": "Classification related to associated with bonds.",
-      "definitionPt": "Classificação relacionada a associadas a amarras."
+      "definitionPt": "Classificação relacionada a associadas a amarras.",
+      "titleEs": "Díade Asociada con Yugos",
+      "definitionEs": "Clasificación relacionada con díade asociada con yugos."
     },
     {
       "id": 41,
@@ -1361,16 +1631,20 @@
         {
           "pali": "Yogā ceva yoganiyā ca dhammā",
           "en": "Bonds and subject to bonds",
-          "pt": "Amarras e sujeitas a amarras"
+          "pt": "Amarras e sujeitas a amarras",
+          "es": "Yugos y sujetos a yugos"
         },
         {
           "pali": "Yoganiyā ceva no ca yogā dhammā",
           "en": "Subject to bonds but not bonds",
-          "pt": "Sujeitas a amarras mas não amarras"
+          "pt": "Sujeitas a amarras mas não amarras",
+          "es": "Sujetos a yugos pero no yugos"
         }
       ],
       "definition": "Classification related to bonds and subject to bonds.",
-      "definitionPt": "Classificação relacionada a amarras e sujeitas a amarras."
+      "definitionPt": "Classificação relacionada a amarras e sujeitas a amarras.",
+      "titleEs": "Díade de Yugos y Sujeta a Yugos",
+      "definitionEs": "Clasificación relacionada con díade de yugos y sujeta a yugos."
     },
     {
       "id": 42,
@@ -1381,16 +1655,20 @@
         {
           "pali": "Yogā ceva yogasampayuttā ca dhammā",
           "en": "Bonds and associated with bonds",
-          "pt": "Amarras e associadas a amarras"
+          "pt": "Amarras e associadas a amarras",
+          "es": "Yugos y asociados con yugos"
         },
         {
           "pali": "Yogasampayuttā ceva no ca yogā dhammā",
           "en": "Associated with bonds but not bonds",
-          "pt": "Associadas a amarras mas não amarras"
+          "pt": "Associadas a amarras mas não amarras",
+          "es": "Asociados con yugos pero no yugos"
         }
       ],
       "definition": "Classification related to bonds and associated with bonds.",
-      "definitionPt": "Classificação relacionada a amarras e associadas a amarras."
+      "definitionPt": "Classificação relacionada a amarras e associadas a amarras.",
+      "titleEs": "Díade de Yugos y Asociada con Yugos",
+      "definitionEs": "Clasificación relacionada con díade de yugos y asociada con yugos."
     },
     {
       "id": 43,
@@ -1401,16 +1679,20 @@
         {
           "pali": "Vijjābhāgiyā dhammā",
           "en": "Partaking of true knowledge",
-          "pt": "Que participam do verdadeiro conhecimento"
+          "pt": "Que participam do verdadeiro conhecimento",
+          "es": "Que participan del verdadero conocimiento"
         },
         {
           "pali": "Avijjābhāgiyā dhammā",
           "en": "Partaking of ignorance",
-          "pt": "Que participam da ignorância"
+          "pt": "Que participam da ignorância",
+          "es": "Que participan de la ignorancia"
         }
       ],
       "definition": "Suttanta classification related to partaking of true knowledge.",
-      "definitionPt": "Classificação do Suttanta relacionada a que participam do verdadeiro conhecimento."
+      "definitionPt": "Classificação do Suttanta relacionada a que participam do verdadeiro conhecimento.",
+      "titleEs": "Díade que Participa del Verdadero Conocimiento",
+      "definitionEs": "Clasificación relacionada con díade que participa del verdadero conocimiento."
     },
     {
       "id": 44,
@@ -1421,16 +1703,20 @@
         {
           "pali": "Vijjūpamā dhammā",
           "en": "Lightning-like",
-          "pt": "Semelhantes ao relâmpago"
+          "pt": "Semelhantes ao relâmpago",
+          "es": "Semejantes al relámpago"
         },
         {
           "pali": "Vajirūpamā dhammā",
           "en": "Diamond-like",
-          "pt": "Semelhantes ao diamante"
+          "pt": "Semelhantes ao diamante",
+          "es": "Semejantes al diamante"
         }
       ],
       "definition": "Suttanta classification related to lightning-like.",
-      "definitionPt": "Classificação do Suttanta relacionada a semelhantes ao relâmpago."
+      "definitionPt": "Classificação do Suttanta relacionada a semelhantes ao relâmpago.",
+      "titleEs": "Díade Semejante al Relámpago",
+      "definitionEs": "Clasificación relacionada con díade semejante al relámpago."
     },
     {
       "id": 45,
@@ -1441,16 +1727,20 @@
         {
           "pali": "Bālā dhammā",
           "en": "Foolish",
-          "pt": "Tolas"
+          "pt": "Tolas",
+          "es": "Necios"
         },
         {
           "pali": "Paṇḍitā dhammā",
           "en": "Wise",
-          "pt": "Sábias"
+          "pt": "Sábias",
+          "es": "Sabios"
         }
       ],
       "definition": "Suttanta classification related to foolish.",
-      "definitionPt": "Classificação do Suttanta relacionada a tolas."
+      "definitionPt": "Classificação do Suttanta relacionada a tolas.",
+      "titleEs": "Díade del Necio y del Sabio",
+      "definitionEs": "Clasificación relacionada con díade del necio y del sabio."
     },
     {
       "id": 46,
@@ -1461,16 +1751,20 @@
         {
           "pali": "Kaṇhā dhammā",
           "en": "Dark",
-          "pt": "Obscuras"
+          "pt": "Obscuras",
+          "es": "Oscuros"
         },
         {
           "pali": "Sukkā dhammā",
           "en": "Bright",
-          "pt": "Luminosas"
+          "pt": "Luminosas",
+          "es": "Luminosos"
         }
       ],
       "definition": "Suttanta classification related to dark.",
-      "definitionPt": "Classificação do Suttanta relacionada a obscuras."
+      "definitionPt": "Classificação do Suttanta relacionada a obscuras.",
+      "titleEs": "Díade de lo Oscuro y lo Luminoso",
+      "definitionEs": "Clasificación relacionada con díade de lo oscuro y lo luminoso."
     },
     {
       "id": 47,
@@ -1481,16 +1775,20 @@
         {
           "pali": "Tapanīyā dhammā",
           "en": "Tormenting",
-          "pt": "Atormentadoras"
+          "pt": "Atormentadoras",
+          "es": "Atormentadores"
         },
         {
           "pali": "Atapanīyā dhammā",
           "en": "Not tormenting",
-          "pt": "Não atormentadoras"
+          "pt": "Não atormentadoras",
+          "es": "No atormentadores"
         }
       ],
       "definition": "Suttanta classification related to tormenting.",
-      "definitionPt": "Classificação do Suttanta relacionada a atormentadoras."
+      "definitionPt": "Classificação do Suttanta relacionada a atormentadoras.",
+      "titleEs": "Díade Atormentadora",
+      "definitionEs": "Clasificación relacionada con díade atormentadora."
     },
     {
       "id": 48,
@@ -1501,16 +1799,20 @@
         {
           "pali": "Adhivacanā dhammā",
           "en": "Designations",
-          "pt": "Designações"
+          "pt": "Designações",
+          "es": "Designaciones"
         },
         {
           "pali": "Adhivacanapathā dhammā",
           "en": "Paths of designation",
-          "pt": "Caminhos de designação"
+          "pt": "Caminhos de designação",
+          "es": "Caminos de designación"
         }
       ],
       "definition": "Suttanta classification related to designations.",
-      "definitionPt": "Classificação do Suttanta relacionada a designações."
+      "definitionPt": "Classificação do Suttanta relacionada a designações.",
+      "titleEs": "Díade de la Designación",
+      "definitionEs": "Clasificación relacionada con díade de la designación."
     },
     {
       "id": 49,
@@ -1521,16 +1823,20 @@
         {
           "pali": "Niruttī dhammā",
           "en": "Language",
-          "pt": "Linguagem"
+          "pt": "Linguagem",
+          "es": "Lenguaje"
         },
         {
           "pali": "Niruttipathā dhammā",
           "en": "Paths of language",
-          "pt": "Caminhos da linguagem"
+          "pt": "Caminhos da linguagem",
+          "es": "Caminos del lenguaje"
         }
       ],
       "definition": "Suttanta classification related to language.",
-      "definitionPt": "Classificação do Suttanta relacionada a linguagem."
+      "definitionPt": "Classificação do Suttanta relacionada a linguagem.",
+      "titleEs": "Díade del Lenguaje",
+      "definitionEs": "Clasificación relacionada con díade del lenguaje."
     },
     {
       "id": 50,
@@ -1541,16 +1847,20 @@
         {
           "pali": "Paññattī dhammā",
           "en": "Concepts",
-          "pt": "Conceitos"
+          "pt": "Conceitos",
+          "es": "Conceptos (paññatti)"
         },
         {
           "pali": "Paññattipathā dhammā",
           "en": "Paths of concept",
-          "pt": "Caminhos do conceito"
+          "pt": "Caminhos do conceito",
+          "es": "Caminos de concepto"
         }
       ],
       "definition": "Suttanta classification related to concepts.",
-      "definitionPt": "Classificação do Suttanta relacionada a conceitos."
+      "definitionPt": "Classificação do Suttanta relacionada a conceitos.",
+      "titleEs": "Díade del Concepto (Paññatti)",
+      "definitionEs": "Clasificación relacionada con díade del concepto (paññatti)."
     },
     {
       "id": 51,
@@ -1561,16 +1871,20 @@
         {
           "pali": "Nāmañca",
           "en": "Mind",
-          "pt": "Mente"
+          "pt": "Mente",
+          "es": "Mente (nāma)"
         },
         {
           "pali": "Rūpañca",
           "en": "Matter",
-          "pt": "Matéria"
+          "pt": "Matéria",
+          "es": "Materia (rūpa)"
         }
       ],
       "definition": "Suttanta classification related to mind.",
-      "definitionPt": "Classificação do Suttanta relacionada a mente."
+      "definitionPt": "Classificação do Suttanta relacionada a mente.",
+      "titleEs": "Díade de Mente y Materia (Nāmarūpa)",
+      "definitionEs": "Clasificación relacionada con díade de mente y materia (nāmarūpa)."
     },
     {
       "id": 52,
@@ -1581,16 +1895,20 @@
         {
           "pali": "Avijjā ca",
           "en": "Ignorance",
-          "pt": "Ignorância"
+          "pt": "Ignorância",
+          "es": "Ignorancia (avijjā)"
         },
         {
           "pali": "Bhavataṇhā ca",
           "en": "Craving for existence",
-          "pt": "Desejo por existência"
+          "pt": "Desejo por existência",
+          "es": "Deseo por la existencia (bhavataṇhā)"
         }
       ],
       "definition": "Suttanta classification related to ignorance.",
-      "definitionPt": "Classificação do Suttanta relacionada a ignorância."
+      "definitionPt": "Classificação do Suttanta relacionada a ignorância.",
+      "titleEs": "Díade de la Ignorancia y el Deseo por la Existencia",
+      "definitionEs": "Clasificación relacionada con díade de la ignorancia y el deseo por la existencia."
     },
     {
       "id": 53,
@@ -1601,16 +1919,20 @@
         {
           "pali": "Bhavadiṭṭhi ca",
           "en": "View of existence",
-          "pt": "Visão da existência"
+          "pt": "Visão da existência",
+          "es": "Visión de la existencia"
         },
         {
           "pali": "Vibhavadiṭṭhi ca",
           "en": "View of non-existence",
-          "pt": "Visão da não-existência"
+          "pt": "Visão da não-existência",
+          "es": "Visión de la no existencia"
         }
       ],
       "definition": "Suttanta classification related to view of existence.",
-      "definitionPt": "Classificação do Suttanta relacionada a visão da existência."
+      "definitionPt": "Classificação do Suttanta relacionada a visão da existência.",
+      "titleEs": "Díade de la Visión de Existencia y No Existencia",
+      "definitionEs": "Clasificación relacionada con díade de la visión de existencia y no existencia."
     },
     {
       "id": 54,
@@ -1621,16 +1943,20 @@
         {
           "pali": "Sassatadiṭṭhi ca",
           "en": "Eternalism view",
-          "pt": "Visão do eternalismo"
+          "pt": "Visão do eternalismo",
+          "es": "Visión del eternalismo"
         },
         {
           "pali": "Ucchedadiṭṭhi ca",
           "en": "Annihilationism view",
-          "pt": "Visão do aniquilacionismo"
+          "pt": "Visão do aniquilacionismo",
+          "es": "Visión del aniquilacionismo"
         }
       ],
       "definition": "Suttanta classification related to eternalism view.",
-      "definitionPt": "Classificação do Suttanta relacionada a visão do eternalismo."
+      "definitionPt": "Classificação do Suttanta relacionada a visão do eternalismo.",
+      "titleEs": "Díade del Eternalismo y el Aniquilacionismo",
+      "definitionEs": "Clasificación relacionada con díade del eternalismo y el aniquilacionismo."
     },
     {
       "id": 55,
@@ -1641,16 +1967,20 @@
         {
           "pali": "Antavā diṭṭhi ca",
           "en": "Finitism view",
-          "pt": "Visão do finitismo"
+          "pt": "Visão do finitismo",
+          "es": "Visión del finitismo"
         },
         {
           "pali": "Anantavā diṭṭhi ca",
           "en": "Infinitism view",
-          "pt": "Visão do infinitismo"
+          "pt": "Visão do infinitismo",
+          "es": "Visión del infinitismo"
         }
       ],
       "definition": "Suttanta classification related to finitism view.",
-      "definitionPt": "Classificação do Suttanta relacionada a visão do finitismo."
+      "definitionPt": "Classificação do Suttanta relacionada a visão do finitismo.",
+      "titleEs": "Díade del Finitismo y el Infinitismo",
+      "definitionEs": "Clasificación relacionada con díade del finitismo y el infinitismo."
     },
     {
       "id": 56,
@@ -1661,16 +1991,20 @@
         {
           "pali": "Pubbantānudiṭṭhi ca",
           "en": "View of the past",
-          "pt": "Visão do passado"
+          "pt": "Visão do passado",
+          "es": "Visión del pasado"
         },
         {
           "pali": "Aparantānudiṭṭhi ca",
           "en": "View of the future",
-          "pt": "Visão do futuro"
+          "pt": "Visão do futuro",
+          "es": "Visión del futuro"
         }
       ],
       "definition": "Suttanta classification related to view of the past.",
-      "definitionPt": "Classificação do Suttanta relacionada a visão do passado."
+      "definitionPt": "Classificação do Suttanta relacionada a visão do passado.",
+      "titleEs": "Díade de la Visión del Pasado y del Futuro",
+      "definitionEs": "Clasificación relacionada con díade de la visión del pasado y del futuro."
     },
     {
       "id": 57,
@@ -1681,16 +2015,20 @@
         {
           "pali": "Ahirikañca",
           "en": "Shamelessness",
-          "pt": "Falta de vergonha"
+          "pt": "Falta de vergonha",
+          "es": "Falta de vergüenza moral"
         },
         {
           "pali": "Anotappañca",
           "en": "Fearlessness of wrongdoing",
-          "pt": "Destemor do erro"
+          "pt": "Destemor do erro",
+          "es": "Falta de temor moral"
         }
       ],
       "definition": "Suttanta classification related to shamelessness.",
-      "definitionPt": "Classificação do Suttanta relacionada a falta de vergonha."
+      "definitionPt": "Classificação do Suttanta relacionada a falta de vergonha.",
+      "titleEs": "Díade de Falta de Vergüenza y Falta de Temor Moral",
+      "definitionEs": "Clasificación relacionada con díade de falta de vergüenza y falta de temor moral."
     },
     {
       "id": 58,
@@ -1701,16 +2039,20 @@
         {
           "pali": "Hirī ca",
           "en": "Shame",
-          "pt": "Vergonha"
+          "pt": "Vergonha",
+          "es": "Vergüenza moral"
         },
         {
           "pali": "Otappañca",
           "en": "Fear of wrongdoing",
-          "pt": "Temor do erro"
+          "pt": "Temor do erro",
+          "es": "Temor moral"
         }
       ],
       "definition": "Suttanta classification related to shame.",
-      "definitionPt": "Classificação do Suttanta relacionada a vergonha."
+      "definitionPt": "Classificação do Suttanta relacionada a vergonha.",
+      "titleEs": "Díade de Vergüenza y Temor Moral",
+      "definitionEs": "Clasificación relacionada con díade de vergüenza y temor moral."
     },
     {
       "id": 59,
@@ -1721,16 +2063,20 @@
         {
           "pali": "Dovacassatā ca",
           "en": "Contumacy",
-          "pt": "Obstinação"
+          "pt": "Obstinação",
+          "es": "Obstinación"
         },
         {
           "pali": "Pāpamittatā ca",
           "en": "Bad friendship",
-          "pt": "Má amizade"
+          "pt": "Má amizade",
+          "es": "Mala amistad"
         }
       ],
       "definition": "Suttanta classification related to contumacy.",
-      "definitionPt": "Classificação do Suttanta relacionada a obstinação."
+      "definitionPt": "Classificação do Suttanta relacionada a obstinação.",
+      "titleEs": "Díade de la Obstinación y la Mala Amistad",
+      "definitionEs": "Clasificación relacionada con díade de la obstinación y la mala amistad."
     },
     {
       "id": 60,
@@ -1741,16 +2087,20 @@
         {
           "pali": "Sovacassatā ca",
           "en": "Compliance",
-          "pt": "Complacência"
+          "pt": "Complacência",
+          "es": "Docilidad"
         },
         {
           "pali": "Kalyāṇamittatā ca",
           "en": "Good friendship",
-          "pt": "Boa amizade"
+          "pt": "Boa amizade",
+          "es": "Buena amistad"
         }
       ],
       "definition": "Suttanta classification related to compliance.",
-      "definitionPt": "Classificação do Suttanta relacionada a complacência."
+      "definitionPt": "Classificação do Suttanta relacionada a complacência.",
+      "titleEs": "Díade de la Docilidad y la Buena Amistad",
+      "definitionEs": "Clasificación relacionada con díade de la docilidad y la buena amistad."
     },
     {
       "id": 61,
@@ -1761,16 +2111,20 @@
         {
           "pali": "Āpattikusalatā ca",
           "en": "Skill in offenses",
-          "pt": "Habilidade nas ofensas"
+          "pt": "Habilidade nas ofensas",
+          "es": "Habilidad en las faltas"
         },
         {
           "pali": "Āpattivuṭṭhānakusalatā ca",
           "en": "Skill in rehabilitation from offenses",
-          "pt": "Habilidade na reabilitação de ofensas"
+          "pt": "Habilidade na reabilitação de ofensas",
+          "es": "Habilidad en la rehabilitación de las faltas"
         }
       ],
       "definition": "Suttanta classification related to skill in offenses.",
-      "definitionPt": "Classificação do Suttanta relacionada a habilidade nas ofensas."
+      "definitionPt": "Classificação do Suttanta relacionada a habilidade nas ofensas.",
+      "titleEs": "Díade de la Habilidad en las Faltas y en la Rehabilitación",
+      "definitionEs": "Clasificación relacionada con díade de la habilidad en las faltas y en la rehabilitación."
     },
     {
       "id": 62,
@@ -1781,16 +2135,20 @@
         {
           "pali": "Samāpattikusalatā ca",
           "en": "Skill in attainment",
-          "pt": "Habilidade na realização"
+          "pt": "Habilidade na realização",
+          "es": "Habilidad en los logros"
         },
         {
           "pali": "Samāpattivuṭṭhānakusalatā ca",
           "en": "Skill in emergence from attainment",
-          "pt": "Habilidade na emergência da realização"
+          "pt": "Habilidade na emergência da realização",
+          "es": "Habilidad en la emergencia de los logros"
         }
       ],
       "definition": "Suttanta classification related to skill in attainment.",
-      "definitionPt": "Classificação do Suttanta relacionada a habilidade na realização."
+      "definitionPt": "Classificação do Suttanta relacionada a habilidade na realização.",
+      "titleEs": "Díade de la Habilidad en los Logros y en la Emergencia",
+      "definitionEs": "Clasificación relacionada con díade de la habilidad en los logros y en la emergencia."
     },
     {
       "id": 63,
@@ -1801,16 +2159,20 @@
         {
           "pali": "Duka 63 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 63 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 63",
-      "definitionPt": "Definição da díade 63"
+      "definitionPt": "Definição da díade 63",
+      "titleEs": "Díade 63",
+      "definitionEs": "Clasificación de la díade 63."
     },
     {
       "id": 64,
@@ -1821,16 +2183,20 @@
         {
           "pali": "Duka 64 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 64 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 64",
-      "definitionPt": "Definição da díade 64"
+      "definitionPt": "Definição da díade 64",
+      "titleEs": "Díade 64",
+      "definitionEs": "Clasificación de la díade 64."
     },
     {
       "id": 65,
@@ -1841,16 +2207,20 @@
         {
           "pali": "Duka 65 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 65 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 65",
-      "definitionPt": "Definição da díade 65"
+      "definitionPt": "Definição da díade 65",
+      "titleEs": "Díade 65",
+      "definitionEs": "Clasificación de la díade 65."
     },
     {
       "id": 66,
@@ -1861,16 +2231,20 @@
         {
           "pali": "Duka 66 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 66 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 66",
-      "definitionPt": "Definição da díade 66"
+      "definitionPt": "Definição da díade 66",
+      "titleEs": "Díade 66",
+      "definitionEs": "Clasificación de la díade 66."
     },
     {
       "id": 67,
@@ -1881,16 +2255,20 @@
         {
           "pali": "Duka 67 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 67 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 67",
-      "definitionPt": "Definição da díade 67"
+      "definitionPt": "Definição da díade 67",
+      "titleEs": "Díade 67",
+      "definitionEs": "Clasificación de la díade 67."
     },
     {
       "id": 68,
@@ -1901,16 +2279,20 @@
         {
           "pali": "Duka 68 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 68 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 68",
-      "definitionPt": "Definição da díade 68"
+      "definitionPt": "Definição da díade 68",
+      "titleEs": "Díade 68",
+      "definitionEs": "Clasificación de la díade 68."
     },
     {
       "id": 69,
@@ -1921,16 +2303,20 @@
         {
           "pali": "Duka 69 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 69 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 69",
-      "definitionPt": "Definição da díade 69"
+      "definitionPt": "Definição da díade 69",
+      "titleEs": "Díade 69",
+      "definitionEs": "Clasificación de la díade 69."
     },
     {
       "id": 70,
@@ -1941,16 +2327,20 @@
         {
           "pali": "Duka 70 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 70 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 70",
-      "definitionPt": "Definição da díade 70"
+      "definitionPt": "Definição da díade 70",
+      "titleEs": "Díade 70",
+      "definitionEs": "Clasificación de la díade 70."
     },
     {
       "id": 71,
@@ -1961,16 +2351,20 @@
         {
           "pali": "Duka 71 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 71 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 71",
-      "definitionPt": "Definição da díade 71"
+      "definitionPt": "Definição da díade 71",
+      "titleEs": "Díade 71",
+      "definitionEs": "Clasificación de la díade 71."
     },
     {
       "id": 72,
@@ -1981,16 +2375,20 @@
         {
           "pali": "Duka 72 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 72 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 72",
-      "definitionPt": "Definição da díade 72"
+      "definitionPt": "Definição da díade 72",
+      "titleEs": "Díade 72",
+      "definitionEs": "Clasificación de la díade 72."
     },
     {
       "id": 73,
@@ -2001,16 +2399,20 @@
         {
           "pali": "Duka 73 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 73 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 73",
-      "definitionPt": "Definição da díade 73"
+      "definitionPt": "Definição da díade 73",
+      "titleEs": "Díade 73",
+      "definitionEs": "Clasificación de la díade 73."
     },
     {
       "id": 74,
@@ -2021,16 +2423,20 @@
         {
           "pali": "Duka 74 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 74 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 74",
-      "definitionPt": "Definição da díade 74"
+      "definitionPt": "Definição da díade 74",
+      "titleEs": "Díade 74",
+      "definitionEs": "Clasificación de la díade 74."
     },
     {
       "id": 75,
@@ -2041,16 +2447,20 @@
         {
           "pali": "Duka 75 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 75 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 75",
-      "definitionPt": "Definição da díade 75"
+      "definitionPt": "Definição da díade 75",
+      "titleEs": "Díade 75",
+      "definitionEs": "Clasificación de la díade 75."
     },
     {
       "id": 76,
@@ -2061,16 +2471,20 @@
         {
           "pali": "Duka 76 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 76 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 76",
-      "definitionPt": "Definição da díade 76"
+      "definitionPt": "Definição da díade 76",
+      "titleEs": "Díade 76",
+      "definitionEs": "Clasificación de la díade 76."
     },
     {
       "id": 77,
@@ -2081,16 +2495,20 @@
         {
           "pali": "Duka 77 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 77 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 77",
-      "definitionPt": "Definição da díade 77"
+      "definitionPt": "Definição da díade 77",
+      "titleEs": "Díade 77",
+      "definitionEs": "Clasificación de la díade 77."
     },
     {
       "id": 78,
@@ -2101,16 +2519,20 @@
         {
           "pali": "Duka 78 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 78 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 78",
-      "definitionPt": "Definição da díade 78"
+      "definitionPt": "Definição da díade 78",
+      "titleEs": "Díade 78",
+      "definitionEs": "Clasificación de la díade 78."
     },
     {
       "id": 79,
@@ -2121,16 +2543,20 @@
         {
           "pali": "Duka 79 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 79 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 79",
-      "definitionPt": "Definição da díade 79"
+      "definitionPt": "Definição da díade 79",
+      "titleEs": "Díade 79",
+      "definitionEs": "Clasificación de la díade 79."
     },
     {
       "id": 80,
@@ -2141,16 +2567,20 @@
         {
           "pali": "Duka 80 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 80 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 80",
-      "definitionPt": "Definição da díade 80"
+      "definitionPt": "Definição da díade 80",
+      "titleEs": "Díade 80",
+      "definitionEs": "Clasificación de la díade 80."
     },
     {
       "id": 81,
@@ -2161,16 +2591,20 @@
         {
           "pali": "Duka 81 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 81 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 81",
-      "definitionPt": "Definição da díade 81"
+      "definitionPt": "Definição da díade 81",
+      "titleEs": "Díade 81",
+      "definitionEs": "Clasificación de la díade 81."
     },
     {
       "id": 82,
@@ -2181,16 +2615,20 @@
         {
           "pali": "Duka 82 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 82 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 82",
-      "definitionPt": "Definição da díade 82"
+      "definitionPt": "Definição da díade 82",
+      "titleEs": "Díade 82",
+      "definitionEs": "Clasificación de la díade 82."
     },
     {
       "id": 83,
@@ -2201,16 +2639,20 @@
         {
           "pali": "Duka 83 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 83 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 83",
-      "definitionPt": "Definição da díade 83"
+      "definitionPt": "Definição da díade 83",
+      "titleEs": "Díade 83",
+      "definitionEs": "Clasificación de la díade 83."
     },
     {
       "id": 84,
@@ -2221,16 +2663,20 @@
         {
           "pali": "Duka 84 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 84 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 84",
-      "definitionPt": "Definição da díade 84"
+      "definitionPt": "Definição da díade 84",
+      "titleEs": "Díade 84",
+      "definitionEs": "Clasificación de la díade 84."
     },
     {
       "id": 85,
@@ -2241,16 +2687,20 @@
         {
           "pali": "Duka 85 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 85 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 85",
-      "definitionPt": "Definição da díade 85"
+      "definitionPt": "Definição da díade 85",
+      "titleEs": "Díade 85",
+      "definitionEs": "Clasificación de la díade 85."
     },
     {
       "id": 86,
@@ -2261,16 +2711,20 @@
         {
           "pali": "Duka 86 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 86 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 86",
-      "definitionPt": "Definição da díade 86"
+      "definitionPt": "Definição da díade 86",
+      "titleEs": "Díade 86",
+      "definitionEs": "Clasificación de la díade 86."
     },
     {
       "id": 87,
@@ -2281,16 +2735,20 @@
         {
           "pali": "Duka 87 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 87 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 87",
-      "definitionPt": "Definição da díade 87"
+      "definitionPt": "Definição da díade 87",
+      "titleEs": "Díade 87",
+      "definitionEs": "Clasificación de la díade 87."
     },
     {
       "id": 88,
@@ -2301,16 +2759,20 @@
         {
           "pali": "Duka 88 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 88 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 88",
-      "definitionPt": "Definição da díade 88"
+      "definitionPt": "Definição da díade 88",
+      "titleEs": "Díade 88",
+      "definitionEs": "Clasificación de la díade 88."
     },
     {
       "id": 89,
@@ -2321,16 +2783,20 @@
         {
           "pali": "Duka 89 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 89 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 89",
-      "definitionPt": "Definição da díade 89"
+      "definitionPt": "Definição da díade 89",
+      "titleEs": "Díade 89",
+      "definitionEs": "Clasificación de la díade 89."
     },
     {
       "id": 90,
@@ -2341,16 +2807,20 @@
         {
           "pali": "Duka 90 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 90 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 90",
-      "definitionPt": "Definição da díade 90"
+      "definitionPt": "Definição da díade 90",
+      "titleEs": "Díade 90",
+      "definitionEs": "Clasificación de la díade 90."
     },
     {
       "id": 91,
@@ -2361,16 +2831,20 @@
         {
           "pali": "Duka 91 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 91 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 91",
-      "definitionPt": "Definição da díade 91"
+      "definitionPt": "Definição da díade 91",
+      "titleEs": "Díade 91",
+      "definitionEs": "Clasificación de la díade 91."
     },
     {
       "id": 92,
@@ -2381,16 +2855,20 @@
         {
           "pali": "Duka 92 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 92 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 92",
-      "definitionPt": "Definição da díade 92"
+      "definitionPt": "Definição da díade 92",
+      "titleEs": "Díade 92",
+      "definitionEs": "Clasificación de la díade 92."
     },
     {
       "id": 93,
@@ -2401,16 +2879,20 @@
         {
           "pali": "Duka 93 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 93 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 93",
-      "definitionPt": "Definição da díade 93"
+      "definitionPt": "Definição da díade 93",
+      "titleEs": "Díade 93",
+      "definitionEs": "Clasificación de la díade 93."
     },
     {
       "id": 94,
@@ -2421,16 +2903,20 @@
         {
           "pali": "Duka 94 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 94 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 94",
-      "definitionPt": "Definição da díade 94"
+      "definitionPt": "Definição da díade 94",
+      "titleEs": "Díade 94",
+      "definitionEs": "Clasificación de la díade 94."
     },
     {
       "id": 95,
@@ -2441,16 +2927,20 @@
         {
           "pali": "Duka 95 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 95 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 95",
-      "definitionPt": "Definição da díade 95"
+      "definitionPt": "Definição da díade 95",
+      "titleEs": "Díade 95",
+      "definitionEs": "Clasificación de la díade 95."
     },
     {
       "id": 96,
@@ -2461,16 +2951,20 @@
         {
           "pali": "Duka 96 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 96 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 96",
-      "definitionPt": "Definição da díade 96"
+      "definitionPt": "Definição da díade 96",
+      "titleEs": "Díade 96",
+      "definitionEs": "Clasificación de la díade 96."
     },
     {
       "id": 97,
@@ -2481,16 +2975,20 @@
         {
           "pali": "Duka 97 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 97 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 97",
-      "definitionPt": "Definição da díade 97"
+      "definitionPt": "Definição da díade 97",
+      "titleEs": "Díade 97",
+      "definitionEs": "Clasificación de la díade 97."
     },
     {
       "id": 98,
@@ -2501,16 +2999,20 @@
         {
           "pali": "Duka 98 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 98 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 98",
-      "definitionPt": "Definição da díade 98"
+      "definitionPt": "Definição da díade 98",
+      "titleEs": "Díade 98",
+      "definitionEs": "Clasificación de la díade 98."
     },
     {
       "id": 99,
@@ -2521,16 +3023,20 @@
         {
           "pali": "Duka 99 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 99 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 99",
-      "definitionPt": "Definição da díade 99"
+      "definitionPt": "Definição da díade 99",
+      "titleEs": "Díade 99",
+      "definitionEs": "Clasificación de la díade 99."
     },
     {
       "id": 100,
@@ -2541,16 +3047,20 @@
         {
           "pali": "Duka 100 term 1",
           "en": "Term 1",
-          "pt": "Termo 1"
+          "pt": "Termo 1",
+          "es": "Término 1"
         },
         {
           "pali": "Duka 100 term 2",
           "en": "Term 2",
-          "pt": "Termo 2"
+          "pt": "Termo 2",
+          "es": "Término 2"
         }
       ],
       "definition": "Definition of duka 100",
-      "definitionPt": "Definição da díade 100"
+      "definitionPt": "Definição da díade 100",
+      "titleEs": "Díade 100",
+      "definitionEs": "Clasificación de la díade 100."
     }
   ]
 }

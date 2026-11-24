@@ -1,6 +1,6 @@
-import { settings } from "../state.js?v=fa47fb44";
-import { t } from "../i18n.js?v=fa47fb44";
-import { registerToolModule } from "./tools.js?v=fa47fb44";
+import { settings } from "../state.js?v=3f76b330";
+import { t } from "../i18n.js?v=3f76b330";
+import { registerToolModule } from "./tools.js?v=3f76b330";
 function escHtml(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -37,14 +37,18 @@ function initCetasika(container) {
         function getCittaLabel(c) {
             if (lang === "pt" && c.namePt)
                 return c.namePt;
-            if (lang === "en" && c.nameEn)
+            if (lang === "es" && c.nameEs)
+                return c.nameEs;
+            if (c.nameEn)
                 return c.nameEn;
             return c.name;
         }
         function getCetLabel(c) {
             if (lang === "pt" && c.namePt)
                 return c.namePt;
-            if (lang === "en" && c.nameEn)
+            if (lang === "es" && c.nameEs)
+                return c.nameEs;
+            if (c.nameEn)
                 return c.nameEn;
             return c.name;
         }
@@ -75,7 +79,11 @@ function initCetasika(container) {
             const cetasikaSet = new Set(citta.cetasikaIds);
             let html = `<div class="cet-count">${citta.cetasikaIds.length} cetasikas</div>`;
             for (const group of data.groups) {
-                const glabel = lang === "pt" && group.labelPt ? group.labelPt : (lang === "en" && group.labelEn ? group.labelEn : group.label);
+                const glabel = lang === "pt" && group.labelPt
+                    ? group.labelPt
+                    : lang === "es" && group.labelEs
+                        ? group.labelEs
+                        : group.labelEn || group.label;
                 html += `<div class="cet-group-header">${escHtml(group.label)} — ${escHtml(glabel)}</div>`;
                 html += `<div class="cet-grid">`;
                 for (const cet of data.cetasikas.filter((c) => c.group === group.id)) {
@@ -122,9 +130,8 @@ function initCetasika(container) {
             const common = data.cetasikas.filter((c) => setA.has(c.id) && setB.has(c.id));
             const onlyA = data.cetasikas.filter((c) => setA.has(c.id) && !setB.has(c.id));
             const onlyB = data.cetasikas.filter((c) => !setA.has(c.id) && setB.has(c.id));
-            const lang = settings.translationLang;
             const renderList = (items, cls) => items.map((c) => {
-                const trans = lang === "pt" ? c.namePt : c.nameEn;
+                const trans = getCetLabel(c);
                 return `<span class="cet-tag ${cls}">
             <span class="cet-tag-pali">${escHtml(c.name)}</span>
             <span class="cet-tag-trans">${escHtml(trans)}</span>

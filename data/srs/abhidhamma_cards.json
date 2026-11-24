@@ -314,9 +314,9 @@
         "es": "¿Cuál es la definición exacta de Rūpa (materialidad) y su diferencia funcional fundamental respecto a Citta y Cetasika?"
       },
       "answer": {
-        "pt": "Rūpa (28 fenômenos materiais) é a realidade última não-cognitiva caracterizada por ser alterada, deformada ou perturbada (ruppana) por condições opostas (frio, calor, etc.). Ao contrário de nāma (citta e cetasika), rūpa é incapaz de conhecer qualquer objeto (anārammaṇa).",
+        "pt": "Rūpa (28 dhammas materiais) é a realidade última não-cognitiva caracterizada por ser alterada, deformada ou perturbada (ruppana) por condições opostas (frio, calor, etc.). Ao contrário de nāma (citta e cetasika), rūpa é incapaz de conhecer qualquer objeto (anārammaṇa).",
         "en": "Rūpa (28 material phenomena) is non-cognitive ultimate reality characterized by being molested, deformed, or altered (ruppana) by adverse physical conditions (cold, heat, etc.). Unlike nāma (citta and cetasika), rūpa cannot cognize any object (anārammaṇa).",
-        "es": "Rūpa (28 fenómenos materiales) es la realidad última no cognitiva caracterizada por ser alterada o perturbada (ruppana) por condiciones adversas (frío, calor, etc.). A diferencia de nāma (citta y cetasika), rūpa no puede conocer objeto alguno (anārammaṇa)."
+        "es": "Rūpa (28 dhammas materiales) es la realidad última no cognitiva caracterizada por ser alterada o perturbada (ruppana) por condiciones adversas (frío, calor, etc.). A diferencia de nāma (citta y cetasika), rūpa no puede conocer objeto alguno (anārammaṇa)."
       },
       "mechanics": {
         "pt": "Assimetria temporal: 1 unidade de rūpa perdura por 17 momentos de consciência (cittakkhaṇas), iterando 17× mais devagar que a mente.",
@@ -5420,7 +5420,7 @@
       "answer": {
         "pt": "Visão errônea: interpretação distorcida que toma o impermanente/insatisfatório/não-eu como permanente, satisfatório ou eu.",
         "en": "Wrong view: distorted misapprehension taking conditioned phenomena as permanent, pleasurable, or self.",
-        "es": "Visión errónea: interpretación distorsionada que toma los fenómenos como permanentes, satisfactorios o un yo."
+        "es": "Visión errónea: interpretación distorsionada que toma los dhammas como permanentes, satisfactorios o un yo."
       },
       "characteristics": {
         "lakkhana": {
@@ -7202,7 +7202,7 @@
       "answer": {
         "pt": "Faculdade da Sabedoria (Não-ilusão): compreensão penetrante das coisas tal como realmente são (anicca, dukkha, anattā e 4 Nobres Verdades).",
         "en": "Wisdom faculty (Non-delusion): penetrating comprehension of phenomena as they truly are (Three Marks & Four Noble Truths).",
-        "es": "Facultad de la Sabiduría (No-ilusión): comprensión penetrante de los fenómenos tal como son en realidad."
+        "es": "Facultad de la Sabiduría (No-ilusión): comprensión penetrante de los dhammas tal como son en realidad."
       },
       "characteristics": {
         "lakkhana": {
@@ -9877,12 +9877,12 @@
       "prompt": {
         "pt": "Defina o elemento material #1/28 (Pathavī-dhātu), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #1/28 (Pathavī-dhātu), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #1/28 (Pathavī-dhātu), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #1/28 (Pathavī-dhātu), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
-        "pt": "Elemento Terra (solidez/extensão): o princípio de dureza ou suavidade que serve de suporte aos demais fenômenos materiais no mesmo kalāpa.",
+        "pt": "Elemento Terra (solidez/extensão): o princípio de dureza ou suavidade que serve de suporte aos demais dhammas materiais no mesmo kalāpa.",
         "en": "Earth Element (solidity/extension): hardness or softness acting as foundation/support for co-arisen matter in a kalāpa.",
-        "es": "Elemento Tierra (solidez/extensión): dureza o suavidad que sirve de soporte a los demás fenómenos materiales."
+        "es": "Elemento Tierra (solidez/extensión): dureza o suavidad que sirve de soporte a los demás dhammas materiales."
       },
       "characteristics": {
         "lakkhana": {
@@ -9931,7 +9931,7 @@
       "prompt": {
         "pt": "Defina o elemento material #2/28 (Āpo-dhātu), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #2/28 (Āpo-dhātu), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #2/28 (Āpo-dhātu), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #2/28 (Āpo-dhātu), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Elemento Água (coesão/fluidez): o princípio aglutinante que mantém unidas as partículas materiais (NÃO é percebido pelo tato, apenas pela porta mental!).",
@@ -9985,7 +9985,7 @@
       "prompt": {
         "pt": "Defina o elemento material #3/28 (Tejo-dhātu), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #3/28 (Tejo-dhātu), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #3/28 (Tejo-dhātu), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #3/28 (Tejo-dhātu), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Elemento Fogo (calor/frio): energia térmica de maturação e digestão que amadurece e preserva ou consome a matéria.",
@@ -9999,9 +9999,9 @@
           "es": "Calor o frío (uṇhatta)."
         },
         "rasa": {
-          "pt": "Amadurecer os fenômenos materiais (paripācana).",
+          "pt": "Amadurecer os dhammas materiais (paripācana).",
           "en": "Maturing / ripening material phenomena (paripācana).",
-          "es": "Madurar los fenómenos materiales (paripācana)."
+          "es": "Madurar los dhammas materiales (paripācana)."
         }
       },
       "mechanics": {
@@ -10039,7 +10039,7 @@
       "prompt": {
         "pt": "Defina o elemento material #4/28 (Vāyo-dhātu), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #4/28 (Vāyo-dhātu), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #4/28 (Vāyo-dhātu), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #4/28 (Vāyo-dhātu), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Elemento Ar (distensão/movimento): princípio de suporte tensivo, pressão e deslocamento no espaço.",
@@ -10093,7 +10093,7 @@
       "prompt": {
         "pt": "Defina o elemento material #5/28 (Cakkhu-pasāda), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #5/28 (Cakkhu-pasāda), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #5/28 (Cakkhu-pasāda), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #5/28 (Cakkhu-pasāda), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Matéria sensitiva ocular (gerada exclusivamente por kamma): localizada na retina, sensível ao impacto da forma visível (rūpārammaṇa) e base do cakkhu-viññāṇa.",
@@ -10147,7 +10147,7 @@
       "prompt": {
         "pt": "Defina o elemento material #6/28 (Sota-pasāda), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #6/28 (Sota-pasāda), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #6/28 (Sota-pasāda), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #6/28 (Sota-pasāda), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Matéria sensitiva auditiva (gerada apenas por kamma): localizada no interior do canal auditivo, sensível ao som e base do sota-viññāṇa.",
@@ -10201,7 +10201,7 @@
       "prompt": {
         "pt": "Defina o elemento material #7/28 (Ghāna-pasāda), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #7/28 (Ghāna-pasāda), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #7/28 (Ghāna-pasāda), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #7/28 (Ghāna-pasāda), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Matéria sensitiva olfativa (gerada apenas por kamma): localizada na cavidade nasal, sensível ao odor e base do ghāna-viññāṇa.",
@@ -10255,7 +10255,7 @@
       "prompt": {
         "pt": "Defina o elemento material #8/28 (Jivhā-pasāda), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #8/28 (Jivhā-pasāda), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #8/28 (Jivhā-pasāda), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #8/28 (Jivhā-pasāda), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Matéria sensitiva gustativa (gerada apenas por kamma): localizada na superfície da língua, sensível ao sabor e base do jivhā-viññāṇa.",
@@ -10309,7 +10309,7 @@
       "prompt": {
         "pt": "Defina o elemento material #9/28 (Kāya-pasāda), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #9/28 (Kāya-pasāda), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #9/28 (Kāya-pasāda), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #9/28 (Kāya-pasāda), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Matéria sensitiva tátil (gerada apenas por kamma): difundida por todo o corpo sensível (exceto pontas de pelos/unhas/pele morta), sensível ao tangível e base do kāya-viññāṇa.",
@@ -10363,7 +10363,7 @@
       "prompt": {
         "pt": "Defina o elemento material #10/28 (Rūpa (Vaṇṇa)), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #10/28 (Rūpa (Vaṇṇa)), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #10/28 (Rūpa (Vaṇṇa)), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #10/28 (Rūpa (Vaṇṇa)), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Forma visível / Cor (Vaṇṇa): realidade derivada presente em todo rūpa-kalāpa (avinibbhoga); objeto exclusivo da consciência visual.",
@@ -10417,7 +10417,7 @@
       "prompt": {
         "pt": "Defina o elemento material #11/28 (Sadda), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #11/28 (Sadda), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #11/28 (Sadda), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #11/28 (Sadda), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Som: realidade derivada produzida exclusivamente por consciência (citta, ex.: fala) ou temperatura (utu, ex.: vento/trovão); objeto da consciência auditiva.",
@@ -10471,7 +10471,7 @@
       "prompt": {
         "pt": "Defina o elemento material #12/28 (Gandha), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #12/28 (Gandha), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #12/28 (Gandha), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #12/28 (Gandha), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Odor: realidade derivada inseparável presente em todo rūpa-kalāpa (avinibbhoga); objeto da consciência olfativa.",
@@ -10525,7 +10525,7 @@
       "prompt": {
         "pt": "Defina o elemento material #13/28 (Rasa), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #13/28 (Rasa), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #13/28 (Rasa), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #13/28 (Rasa), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Sabor: realidade derivada inseparável presente em todo rūpa-kalāpa; objeto da consciência gustativa. (Nota: o objeto tangível phoṭṭhabba não é um 5º gocara separado porque é formado por 3 Mahābhūtas: pathavī, tejo, vāyo.)",
@@ -10579,7 +10579,7 @@
       "prompt": {
         "pt": "Defina o elemento material #14/28 (Itthibhāva-rūpa (Itthindriya)), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #14/28 (Itthibhāva-rūpa (Itthindriya)), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #14/28 (Itthibhāva-rūpa (Itthindriya)), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #14/28 (Itthibhāva-rūpa (Itthindriya)), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Faculdade sexual feminina (gerada apenas por kamma): difunde-se pelo corpo determinando traços, voz e comportamento femininos.",
@@ -10633,7 +10633,7 @@
       "prompt": {
         "pt": "Defina o elemento material #15/28 (Pumbhāva-rūpa (Purisindriya)), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #15/28 (Pumbhāva-rūpa (Purisindriya)), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #15/28 (Pumbhāva-rūpa (Purisindriya)), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #15/28 (Pumbhāva-rūpa (Purisindriya)), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Faculdade sexual masculina (gerada apenas por kamma): difunde-se pelo corpo determinando traços, voz e conformação masculinos.",
@@ -10687,7 +10687,7 @@
       "prompt": {
         "pt": "Defina o elemento material #16/28 (Hadaya-vatthu), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #16/28 (Hadaya-vatthu), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #16/28 (Hadaya-vatthu), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #16/28 (Hadaya-vatthu), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Base do coração (gerada apenas por kamma): localizada no sangue contido na cavidade do coração; suporte físico exclusivo de manodhātu e manoviññāṇadhātu nos planos com matéria.",
@@ -10741,10 +10741,10 @@
       "prompt": {
         "pt": "Defina o elemento material #17/28 (Jīvitindriya (Rūpa-jīvita)), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #17/28 (Jīvitindriya (Rūpa-jīvita)), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #17/28 (Jīvitindriya (Rūpa-jīvita)), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #17/28 (Jīvitindriya (Rūpa-jīvita)), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
-        "pt": "Faculdade vital material (gerada apenas por kamma): sustenta a vitalidade dos fenômenos materiais nascidos do kamma (como água que nutre o lótus).",
+        "pt": "Faculdade vital material (gerada apenas por kamma): sustenta a vitalidade dos dhammas materiais nascidos do kamma (como água que nutre o lótus).",
         "en": "Material life faculty (kamma-born only): maintains and preserves kamma-born material phenomena in the same kalāpa.",
         "es": "Facultad vital material (nacida solo de kamma): sostiene la vitalidad de la materia nacida de kamma."
       },
@@ -10795,7 +10795,7 @@
       "prompt": {
         "pt": "Defina o elemento material #18/28 (Kabaḷīkārāhāra (Oja)), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #18/28 (Kabaḷīkārāhāra (Oja)), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #18/28 (Kabaḷīkārāhāra (Oja)), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #18/28 (Kabaḷīkārāhāra (Oja)), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Essência nutritiva (Oja): oitavo elemento inseparável (avinibbhoga) presente em todo rūpa-kalāpa; sustenta e gera matéria originada por alimento (āhāraja-rūpa).",
@@ -10849,7 +10849,7 @@
       "prompt": {
         "pt": "Defina o elemento material #19/28 (Ākāsa-dhātu (Pariccheda-rūpa)), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #19/28 (Ākāsa-dhātu (Pariccheda-rūpa)), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #19/28 (Ākāsa-dhātu (Pariccheda-rūpa)), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #19/28 (Ākāsa-dhātu (Pariccheda-rūpa)), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Elemento espaço / matéria limitante: os intervalos microscópicos vazios que delimitam e separam cada rūpa-kalāpa para que não se fundam num bloco sólido contínuo.",
@@ -10903,7 +10903,7 @@
       "prompt": {
         "pt": "Defina o elemento material #20/28 (Kāya-viññatti), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #20/28 (Kāya-viññatti), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #20/28 (Kāya-viññatti), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #20/28 (Kāya-viññatti), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Intimação / comunicação corporal: modo particular de tensão e movimento dos elementos originados pela mente (cittaja-vāyo) para comunicar intenção por gestos.",
@@ -10957,7 +10957,7 @@
       "prompt": {
         "pt": "Defina o elemento material #21/28 (Vacī-viññatti), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #21/28 (Vacī-viññatti), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #21/28 (Vacī-viññatti), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #21/28 (Vacī-viññatti), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Intimação / comunicação vocal: modo particular dos elementos originados pela mente (cittaja-pathavī) que produz fala articulada comunicando intenção.",
@@ -11011,10 +11011,10 @@
       "prompt": {
         "pt": "Defina o elemento material #22/28 (Rūpassa Lahutā), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #22/28 (Rūpassa Lahutā), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #22/28 (Rūpassa Lahutā), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #22/28 (Rūpassa Lahutā), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
-        "pt": "Leveza da matéria: ausência de peso/letargia nos fenômenos materiais vivos originados por citta, utu e āhāra (nunca nos gerados apenas por kamma).",
+        "pt": "Leveza da matéria: ausência de peso/letargia nos dhammas materiais vivos originados por citta, utu e āhāra (nunca nos gerados apenas por kamma).",
         "en": "Lightness of matter: buoyancy/non-sluggishness in living matter born of citta, utu, and āhāra (never in kamma-born matter alone).",
         "es": "Ligereza de la materia: ausencia de pesadez en la materia viva originada por citta, utu y āhāra."
       },
@@ -11065,7 +11065,7 @@
       "prompt": {
         "pt": "Defina o elemento material #23/28 (Rūpassa Mudutā), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #23/28 (Rūpassa Mudutā), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #23/28 (Rūpassa Mudutā), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #23/28 (Rūpassa Mudutā), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Maleabilidade da matéria: flexibilidade e não-rigidez física nos elementos originados por citta, utu e āhāra.",
@@ -11119,7 +11119,7 @@
       "prompt": {
         "pt": "Defina o elemento material #24/28 (Rūpassa Kammaññatā), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #24/28 (Rūpassa Kammaññatā), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #24/28 (Rūpassa Kammaññatā), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #24/28 (Rūpassa Kammaññatā), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Manejabilidade da matéria: aptidão trabalhável do corpo físico para ações hábeis e prática meditativa.",
@@ -11173,7 +11173,7 @@
       "prompt": {
         "pt": "Defina o elemento material #25/28 (Rūpassa Upacaya), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #25/28 (Rūpassa Upacaya), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #25/28 (Rūpassa Upacaya), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #25/28 (Rūpassa Upacaya), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Produção / Crescimento da matéria: fase inicial de surgimento da matéria na concepção e seu acúmulo até a completude das faculdades.",
@@ -11227,7 +11227,7 @@
       "prompt": {
         "pt": "Defina o elemento material #26/28 (Rūpassa Santati), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #26/28 (Rūpassa Santati), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #26/28 (Rūpassa Santati), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #26/28 (Rūpassa Santati), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Continuidade da matéria: surgimento contínuo e sucessivo de novos kalāpas após a maturação completa das faculdades.",
@@ -11281,7 +11281,7 @@
       "prompt": {
         "pt": "Defina o elemento material #27/28 (Rūpassa Jaratā), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #27/28 (Rūpassa Jaratā), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #27/28 (Rūpassa Jaratā), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #27/28 (Rūpassa Jaratā), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Decadência / Envelhecimento da matéria: fase de duração (ṭhiti) correspondente aos 49 submomentos de amadurecimento/desgaste antes da dissolução.",
@@ -11295,9 +11295,9 @@
           "es": "Maduración y desgaste (paripāka)."
         },
         "rasa": {
-          "pt": "Conduzir os fenômenos materiais à dissolução.",
+          "pt": "Conduzir os dhammas materiais à dissolução.",
           "en": "Leading material phenomena toward breakup.",
-          "es": "Conducir los fenómenos materiales a la disolución."
+          "es": "Conducir los dhammas materiales a la disolución."
         }
       },
       "mechanics": {
@@ -11335,7 +11335,7 @@
       "prompt": {
         "pt": "Defina o elemento material #28/28 (Rūpassa Aniccatā), sua característica (lakkhaṇa) e função (rasa).",
         "en": "Define material phenomenon #28/28 (Rūpassa Aniccatā), its characteristic (lakkhaṇa), and function (rasa).",
-        "es": "Defina el fenómeno material #28/28 (Rūpassa Aniccatā), su característica (lakkhaṇa) y función (rasa)."
+        "es": "Defina el dhamma material #28/28 (Rūpassa Aniccatā), su característica (lakkhaṇa) y función (rasa)."
       },
       "answer": {
         "pt": "Impermanência da matéria: dissolução / cessação (bhaṅga) ao término exato do 17º cittakkhaṇa.",
@@ -11499,7 +11499,7 @@
         "es": "¿Por qué es un error categórico grave clasificar Nibbāna como 'conciencia cósmica' o 'estado cognitivo trascendente'?"
       },
       "answer": {
-        "pt": "Porque conhecer um objeto é característica exclusiva de Citta e Cetasikas (fenômenos condicionados/saṅkhata que duram 1 cittakkhaṇa). Nibbāna carece em absoluto de capacidade de experiência subjetiva ou cognição: ele é exclusivamente o ALVO OBJETIVO (ārammaṇa) conhecido pelos Lokuttara cittas (Magga e Phala).",
+        "pt": "Porque conhecer um objeto é característica exclusiva de Citta e Cetasikas (dhammas condicionados/saṅkhata que duram 1 cittakkhaṇa). Nibbāna carece em absoluto de capacidade de experiência subjetiva ou cognição: ele é exclusivamente o ALVO OBJETIVO (ārammaṇa) conhecido pelos Lokuttara cittas (Magga e Phala).",
         "en": "Because cognizing an object belongs exclusively to conditioned Citta and Cetasikas (which arise and cease in 1 cittakkhaṇa). Nibbāna utterly lacks subjective experience or cognitive agency: it is strictly the OBJECTIVE REFERENT (ārammaṇa) cognized by Lokuttara cittas (Magga and Phala).",
         "es": "Porque conocer pertenece exclusivamente a Citta y Cetasikas condicionados. Nibbāna carece en absoluto de experiencia subjetiva o agencia cognitiva: es estrictamente el OBJETO (ārammaṇa) conocido por los Lokuttara cittas."
       },
@@ -12856,9 +12856,9 @@
         "es": "¿Cuál es la definición exacta de la 10.ª relación condicional del Paṭṭhāna (Purejāta-paccaya — Condición de Prenacimiento) y cuáles son sus dhammas condicionantes y condicionados?"
       },
       "answer": {
-        "pt": "Um fenômeno MATERIAL que surgiu ANTES (no ṭhiti, portanto ainda presente dentro dos seus 17 cittakkhaṇas) condiciona a consciência que surge depois: (1) Vatthu-purejāta (as 6 bases durante a vida); (2) Ārammaṇa-purejāta (os 5 objetos sensoriais presentes).",
+        "pt": "Um dhamma MATERIAL que surgiu ANTES (no ṭhiti, portanto ainda presente dentro dos seus 17 cittakkhaṇas) condiciona a consciência que surge depois: (1) Vatthu-purejāta (as 6 bases durante a vida); (2) Ārammaṇa-purejāta (os 5 objetos sensoriais presentes).",
         "en": "A MATERIAL dhamma that arose EARLIER (still present within its 17-cittakkhaṇa lifespan) conditions later consciousness: (1) Base-prenascence (6 bases in life); (2) Object-prenascence (present sense objects).",
-        "es": "Un fenómeno MATERIAL surgido ANTES (aún presente dentro de sus 17 cittakkhaṇas) condiciona conciencia posterior: (1) Base-prenaciente; (2) Objeto-prenaciente."
+        "es": "Un dhamma MATERIAL surgido ANTES (aún presente dentro de sus 17 cittakkhaṇas) condiciona conciencia posterior: (1) Base-prenaciente; (2) Objeto-prenaciente."
       },
       "mechanics": {
         "pt": "Depende diretamente da assimetria 17:1: como rūpa dura 17× mais, permanece vivo para suportar os cittas subsequentes.",
@@ -12900,7 +12900,7 @@
         "es": "¿Cuál es la definición exacta de la 11.ª relación condicional del Paṭṭhāna (Pacchājāta-paccaya — Condición de Posnacimiento) y cuáles son sus dhammas condicionantes y condicionados?"
       },
       "answer": {
-        "pt": "Citta e cetasikas nascidos DEPOIS sustentam e consolidam os fenômenos materiais previamente nascidos (do kamma, citta, utu e āhāra), assim como a chuva posterior nutre vegetação já brotada.",
+        "pt": "Citta e cetasikas nascidos DEPOIS sustentam e consolidam os dhammas materiais previamente nascidos (do kamma, citta, utu e āhāra), assim como a chuva posterior nutre vegetação já brotada.",
         "en": "Later-arisen citta and cetasikas support and consolidate previously arisen physical matter of the body (like later rain nourishing young shoots).",
         "es": "Citta y cetasikas nacidos DESPUÉS sostienen y consolidan la materia corporal previamente nacida (como lluvia posterior nutre brotes)."
       },
@@ -13032,7 +13032,7 @@
         "es": "¿Cuál es la definición exacta de la 14.ª relación condicional del Paṭṭhāna (Vipāka-paccaya — Condición de Resultado) y cuáles son sus dhammas condicionantes y condicionados?"
       },
       "answer": {
-        "pt": "Os 36 cittas vipākas e seus cetasikas condicionados passivamente apoiam-se mutuamente por sua natureza pacífica e sem esforço, estendendo tranquilidade aos fenômenos materiais co-surgidos.",
+        "pt": "Os 36 cittas vipākas e seus cetasikas condicionados passivamente apoiam-se mutuamente por sua natureza pacífica e sem esforço, estendendo tranquilidade aos dhammas materiais co-surgidos.",
         "en": "The 36 vipāka cittas and their cetasikas condition one another and co-arisen matter through their passive, effortless resultant nature.",
         "es": "Los 36 cittas vipāka y sus cetasikas se condicionan mutuamente y a la materia co-surgida por su naturaleza pasiva sin esfuerzo."
       },
@@ -13257,7 +13257,7 @@
         "es": "Los 4 agregados mentales (citta + cetasikas) se condicionan mutuamente mediante sincronismo cuádruple estricto."
       },
       "mechanics": {
-        "pt": "Exclusivamente entre fenômenos mentais (nāma ↔ nāma); nunca envolve rūpa nem Nibbāna.",
+        "pt": "Exclusivamente entre dhammas mentais (nāma ↔ nāma); nunca envolve rūpa nem Nibbāna.",
         "en": "Strictly mental-to-mental (nāma ↔ nāma); never involves rūpa or Nibbāna.",
         "es": "Estrictamente mental-a-mental (nāma ↔ nāma); nunca involucra rūpa ni Nibbāna."
       },
@@ -13296,9 +13296,9 @@
         "es": "¿Cuál es la definición exacta de la 20.ª relación condicional del Paṭṭhāna (Vippayutta-paccaya — Condición de Disociación) y cuáles son sus dhammas condicionantes y condicionados?"
       },
       "answer": {
-        "pt": "Fenômenos mentais (nāma) condicionam fenômenos materiais (rūpa) — ou vice-versa — SEM compartilhar natureza mental nem base/objeto idênticos: (1) Sahajāta-vippayutta (na paṭisandhi / cittaja-rūpa); (2) Purejāta-vippayutta (vatthus para cittas); (3) Pacchājāta-vippayutta (cittas para o corpo).",
+        "pt": "Dhammas mentais (nāma) condicionam dhammas materiais (rūpa) — ou vice-versa — SEM compartilhar natureza mental nem base/objeto idênticos: (1) Sahajāta-vippayutta (na paṭisandhi / cittaja-rūpa); (2) Purejāta-vippayutta (vatthus para cittas); (3) Pacchājāta-vippayutta (cittas para o corpo).",
         "en": "Mental phenomena condition material phenomena — or vice versa — WITHOUT sharing mental association: conascent, prenascent (bases→mind), and postnascent (mind→body).",
-        "es": "Fenómenos mentales condicionan materiales (o viceversa) SIN asociación mental compartida: conascente, prenaciente y posnaciente."
+        "es": "Dhammas mentales condicionan materiales (o viceversa) SIN asociación mental compartida: conascente, prenaciente y posnaciente."
       },
       "mechanics": {
         "pt": "Sempre cruza a fronteira Nāma ↔ Rūpa (jamais nāma→nāma nem rūpa→rūpa).",
@@ -13472,7 +13472,7 @@
         "es": "¿Cuál es la definición exacta de la 24.ª relación condicional del Paṭṭhāna (Avigata-paccaya — Condición de No-desaparición) y cuáles son sus dhammas condicionantes y condicionados?"
       },
       "answer": {
-        "pt": "Um dhamma que, por não ter ainda desaparecido (permanecendo presente), sustenta os fenômenos condicionados (como o oceano sustenta peixes e ondas). Mesma extensão que Atthi-paccaya.",
+        "pt": "Um dhamma que, por não ter ainda desaparecido (permanecendo presente), sustenta os dhammas condicionados (como o oceano sustenta peixes e ondas). Mesma extensão que Atthi-paccaya.",
         "en": "A dhamma that, by not yet having vanished, continues to sustain conditioned states (like the ocean sustaining waves). Same extension as Atthi-paccaya.",
         "es": "Un dhamma que, al no haber desaparecido aún, sostiene los estados condicionados. Misma extensión que Atthi-paccaya."
       },

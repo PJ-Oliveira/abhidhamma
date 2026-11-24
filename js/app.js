@@ -1,22 +1,22 @@
-import { t } from "./i18n.js?v=e14b20e3";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=e14b20e3";
-import { renderTree, markActiveLeaf } from "./tree.js?v=e14b20e3";
-import { loadChunk, renderSegments } from "./reader.js?v=e14b20e3";
-import { initDictionaryPanel } from "./dictionary.js?v=e14b20e3";
-import { initSearchPanel } from "./search.js?v=e14b20e3";
-import { initExportPanel } from "./export.js?v=e14b20e3";
-import { initSrsPanel } from "./srs.js?v=e14b20e3";
-import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=e14b20e3";
-import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=e14b20e3";
-import { initToolsPanel } from "./tools/tools.js?v=e14b20e3";
-import "./tools/mindmap.js?v=e14b20e3";
-import "./tools/patthana.js?v=e14b20e3";
-import "./tools/vithi.js?v=e14b20e3";
-import "./tools/matikas.js?v=e14b20e3";
-import "./tools/cetasika.js?v=e14b20e3";
-import { MnemonicLabUI } from "./mnemonic-lab/ui.js?v=e14b20e3";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=e14b20e3";
-import { createLogger } from "./logger.js?v=e14b20e3";
+import { t } from "./i18n.js?v=3f76b330";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=3f76b330";
+import { renderTree, markActiveLeaf } from "./tree.js?v=3f76b330";
+import { loadChunk, renderSegments } from "./reader.js?v=3f76b330";
+import { initDictionaryPanel } from "./dictionary.js?v=3f76b330";
+import { initSearchPanel } from "./search.js?v=3f76b330";
+import { initExportPanel } from "./export.js?v=3f76b330";
+import { initSrsPanel } from "./srs.js?v=3f76b330";
+import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=3f76b330";
+import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=3f76b330";
+import { initToolsPanel } from "./tools/tools.js?v=3f76b330";
+import "./tools/mindmap.js?v=3f76b330";
+import "./tools/patthana.js?v=3f76b330";
+import "./tools/vithi.js?v=3f76b330";
+import "./tools/matikas.js?v=3f76b330";
+import "./tools/cetasika.js?v=3f76b330";
+import { MnemonicLabUI } from "./mnemonic-lab/ui.js?v=3f76b330";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=3f76b330";
+import { createLogger } from "./logger.js?v=3f76b330";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -823,6 +823,7 @@ function wireSettingsPanel() {
     });
 }
 function applyStaticI18n() {
+    document.documentElement.lang = settings.uiLang;
     document.querySelectorAll("[data-i18n]").forEach((node) => {
         const key = node.dataset.i18n;
         if (key)
@@ -845,6 +846,18 @@ let mnemonicLabInstance = null;
 function refreshLocalizedUI() {
     applyStaticI18n();
     updateSettingsLabels();
+    const welcomeTextEl = document.querySelector("#content .welcome-text");
+    if (welcomeTextEl) {
+        welcomeTextEl.textContent = t("welcomeBody", settings.uiLang);
+    }
+    const debateBtn = document.getElementById("btn-toggle-interlocutor");
+    const debateBox = document.getElementById("interlocutor-container");
+    if (debateBtn && debateBox) {
+        debateBtn.textContent =
+            debateBox.style.display === "block"
+                ? t("debate_btn_close", settings.uiLang)
+                : t("debate_btn_open", settings.uiLang);
+    }
     if (abhidhammaSrsInstance) {
         abhidhammaSrsInstance.setLang(settings.uiLang);
     }
@@ -1116,7 +1129,7 @@ if (toggleInterlocutorBtn && interlocutorContainer) {
     let isInterlocutorLoaded = false;
     toggleInterlocutorBtn.addEventListener('click', async () => {
         if (!isInterlocutorLoaded) {
-            toggleInterlocutorBtn.textContent = '⏳ Loading...';
+            toggleInterlocutorBtn.textContent = t('debate_btn_loading', settings.uiLang);
             try {
                 const { initInterlocutorPanel } = await import('./ai-feature/ui.js');
                 initInterlocutorPanel(interlocutorContainer);
@@ -1127,17 +1140,17 @@ if (toggleInterlocutorBtn && interlocutorContainer) {
             }
             catch (err) {
                 console.error('Failed to load Abhidhammika Interlocutor:', err);
-                toggleInterlocutorBtn.textContent = '❌ Error';
+                toggleInterlocutorBtn.textContent = t('debate_btn_error', settings.uiLang);
                 return;
             }
         }
         if (interlocutorContainer.style.display === 'none') {
             interlocutorContainer.style.display = 'block';
-            toggleInterlocutorBtn.textContent = '❌ Close Debate';
+            toggleInterlocutorBtn.textContent = t('debate_btn_close', settings.uiLang);
         }
         else {
             interlocutorContainer.style.display = 'none';
-            toggleInterlocutorBtn.textContent = '💬 Debate';
+            toggleInterlocutorBtn.textContent = t('debate_btn_open', settings.uiLang);
         }
     });
 }

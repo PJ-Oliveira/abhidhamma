@@ -1,11 +1,11 @@
-import { CHAPTER_2_SANGAHA_33_ITEMS } from "./chapters/ch2-sangaha.js?v=e14b20e3";
-import { CHAPTER_3_PAKINNAKA_ITEMS } from "./chapters/ch3-pakinnaka.js?v=e14b20e3";
-import { CHAPTER_4_VITHI_ITEMS } from "./chapters/ch4-vithi.js?v=e14b20e3";
-import { CHAPTER_5_VITHIMUTTA_ITEMS } from "./chapters/ch5-vithimutta.js?v=e14b20e3";
-import { CHAPTER_6_RUPA_ITEMS } from "./chapters/ch6-rupa.js?v=e14b20e3";
-import { CHAPTER_7_SAMUCCAYA_ITEMS } from "./chapters/ch7-samuccaya.js?v=e14b20e3";
-import { CHAPTER_8_PACCAYA_ITEMS } from "./chapters/ch8-paccaya.js?v=e14b20e3";
-import { CHAPTER_9_KAMMATTHANA_ITEMS } from "./chapters/ch9-kammatthana.js?v=e14b20e3";
+import { CHAPTER_2_SANGAHA_33_ITEMS } from "./chapters/ch2-sangaha.js?v=3f76b330";
+import { CHAPTER_3_PAKINNAKA_ITEMS } from "./chapters/ch3-pakinnaka.js?v=3f76b330";
+import { CHAPTER_4_VITHI_ITEMS } from "./chapters/ch4-vithi.js?v=3f76b330";
+import { CHAPTER_5_VITHIMUTTA_ITEMS } from "./chapters/ch5-vithimutta.js?v=3f76b330";
+import { CHAPTER_6_RUPA_ITEMS } from "./chapters/ch6-rupa.js?v=3f76b330";
+import { CHAPTER_7_SAMUCCAYA_ITEMS } from "./chapters/ch7-samuccaya.js?v=3f76b330";
+import { CHAPTER_8_PACCAYA_ITEMS } from "./chapters/ch8-paccaya.js?v=3f76b330";
+import { CHAPTER_9_KAMMATTHANA_ITEMS } from "./chapters/ch9-kammatthana.js?v=3f76b330";
 export const CANONICAL_CHAPTERS_META = [
     {
         num: 1,
@@ -844,8 +844,8 @@ const CHAPTER_2_CETASIKAS_52 = [
         name: { pt: "Destemor Moral (Anottappa)", en: "Fearlessness of wrong (Anottappa)", es: "Temeridad Moral (Anottappa)" },
         formulaNote: {
             pt: "Tāsalakkhaṇa-virahitaṃ (ausência de temor das consequências do kamma). Em todas as 12 Akusala.",
-            en: "Characteristic of lack of dread regarding karmic consequences. In all 12 Akusala.",
-            es: "Característica de no temer las consecuencias kármicas del mal. En las 12 Akusala.",
+            en: "Characteristic of lack of dread regarding kammic consequences. In all 12 Akusala.",
+            es: "Característica de no temer las consecuencias kámmicas del mal. En las 12 Akusala.",
         },
         primaryGroup: "akusala",
         secondaryGroup: "moha_catukka",
@@ -1085,7 +1085,7 @@ const CHAPTER_2_CETASIKAS_52 = [
         formulaNote: {
             pt: "Pāpato uttāsalakkhaṇaṃ (temor reverente das consequências e da reprovação dos sábios). Em 59/91 Cittas.",
             en: "Characteristic of dread of wrongdoing and blame by the wise. In 59/91 Cittas.",
-            es: "Característica de prudente temor al daño kármico y reproche ajeno. En 59/91 Cittas.",
+            es: "Característica de prudente temor al daño kámmico y reproche ajeno. En 59/91 Cittas.",
         },
         primaryGroup: "sobhana",
         secondaryGroup: "sobhana_sadharana",

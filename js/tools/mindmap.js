@@ -1,18 +1,22 @@
-import { settings } from "../state.js?v=e14b20e3";
-import { t } from "../i18n.js?v=e14b20e3";
-import { registerToolModule } from "./tools.js?v=e14b20e3";
+import { settings } from "../state.js?v=3f76b330";
+import { t } from "../i18n.js?v=3f76b330";
+import { registerToolModule } from "./tools.js?v=3f76b330";
 function getLabel(n) {
     const lang = settings.translationLang;
     if (lang === "pt" && n.labelPt)
         return n.labelPt;
+    if (lang === "es" && n.labelEs)
+        return n.labelEs;
     if (lang === "en" && n.labelEn)
         return n.labelEn;
-    return n.label;
+    return n.labelEn || n.label;
 }
 function getDesc(n) {
     const lang = settings.translationLang;
     if (lang === "pt" && n.descPt)
         return n.descPt;
+    if (lang === "es" && n.descEs)
+        return n.descEs;
     return n.desc || "";
 }
 function escHtml(s) {

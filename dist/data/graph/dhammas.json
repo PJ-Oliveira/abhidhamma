@@ -9,7 +9,8 @@
       "group": "citta",
       "khandha": "vinnana",
       "ayatana": "manayatana",
-      "dhatu": "manovinnanadhatu"
+      "dhatu": "manovinnanadhatu",
+      "labelEs": "Citta Insaludable"
     },
     {
       "id": "ahetuka-citta",
@@ -20,7 +21,8 @@
       "group": "citta",
       "khandha": "vinnana",
       "ayatana": "manayatana",
-      "dhatu": "manovinnanadhatu"
+      "dhatu": "manovinnanadhatu",
+      "labelEs": "Citta sin Raíz"
     },
     {
       "id": "kamavacara-kusala",
@@ -31,7 +33,8 @@
       "group": "citta",
       "khandha": "vinnana",
       "ayatana": "manayatana",
-      "dhatu": "manovinnanadhatu"
+      "dhatu": "manovinnanadhatu",
+      "labelEs": "Kusala de la Esfera Sensorial"
     },
     {
       "id": "kamavacara-vipaka",
@@ -42,7 +45,8 @@
       "group": "citta",
       "khandha": "vinnana",
       "ayatana": "manayatana",
-      "dhatu": "manovinnanadhatu"
+      "dhatu": "manovinnanadhatu",
+      "labelEs": "Vipāka de la Esfera Sensorial"
     },
     {
       "id": "kamavacara-kiriya",
@@ -53,7 +57,8 @@
       "group": "citta",
       "khandha": "vinnana",
       "ayatana": "manayatana",
-      "dhatu": "manovinnanadhatu"
+      "dhatu": "manovinnanadhatu",
+      "labelEs": "Kiriya de la Esfera Sensorial"
     },
     {
       "id": "rupavacara-citta",
@@ -64,7 +69,8 @@
       "group": "citta",
       "khandha": "vinnana",
       "ayatana": "manayatana",
-      "dhatu": "manovinnanadhatu"
+      "dhatu": "manovinnanadhatu",
+      "labelEs": "Citta de la Esfera de la Forma"
     },
     {
       "id": "arupavacara-citta",
@@ -75,7 +81,8 @@
       "group": "citta",
       "khandha": "vinnana",
       "ayatana": "manayatana",
-      "dhatu": "manovinnanadhatu"
+      "dhatu": "manovinnanadhatu",
+      "labelEs": "Citta de la Esfera Inmaterial"
     },
     {
       "id": "lokuttara-citta",
@@ -86,7 +93,8 @@
       "group": "citta",
       "khandha": "vinnana",
       "ayatana": "manayatana",
-      "dhatu": "manovinnanadhatu"
+      "dhatu": "manovinnanadhatu",
+      "labelEs": "Citta Supramundano"
     },
     {
       "id": "phassa",
@@ -97,7 +105,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Contacto"
     },
     {
       "id": "vedana",
@@ -108,7 +117,8 @@
       "khandha": "vedana",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Sensación"
     },
     {
       "id": "sanna",
@@ -119,7 +129,8 @@
       "khandha": "sanna",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Percepción"
     },
     {
       "id": "cetana",
@@ -130,7 +141,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Volición"
     },
     {
       "id": "ekaggata",
@@ -141,7 +153,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Unificación mental"
     },
     {
       "id": "jivitindriya-cetasika",
@@ -152,7 +165,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Facultad vital"
     },
     {
       "id": "manasikara",
@@ -163,7 +177,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Atención"
     },
     {
       "id": "vitakka",
@@ -174,7 +189,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Aplicación inicial"
     },
     {
       "id": "vicara",
@@ -185,7 +201,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Aplicación sostenida"
     },
     {
       "id": "adhimokkha",
@@ -196,18 +213,20 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Decisión"
     },
     {
       "id": "viriya",
-      "label": "Vīriya",
+      "label": "Viriya",
       "labelPt": "Energia",
       "labelEn": "Energy",
       "subgroup": "annasamana-pakinnaka",
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Energía"
     },
     {
       "id": "piti",
@@ -218,7 +237,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Alegría entusiasta"
     },
     {
       "id": "chanda",
@@ -229,7 +249,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Deseo de actuar"
     },
     {
       "id": "moha",
@@ -240,7 +261,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Delusión"
     },
     {
       "id": "ahirika",
@@ -251,7 +273,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Falta de vergüenza moral"
     },
     {
       "id": "anottappa",
@@ -262,7 +285,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Falta de temor moral"
     },
     {
       "id": "uddhacca",
@@ -273,7 +297,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Inquietud"
     },
     {
       "id": "lobha",
@@ -284,7 +309,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Codicia"
     },
     {
       "id": "ditthi",
@@ -295,7 +321,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Visión errónea"
     },
     {
       "id": "mana",
@@ -306,7 +333,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Presunción"
     },
     {
       "id": "dosa",
@@ -317,7 +345,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Odio"
     },
     {
       "id": "issa",
@@ -328,7 +357,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Envidia"
     },
     {
       "id": "macchariya",
@@ -339,7 +369,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Avaricia"
     },
     {
       "id": "kukkucca",
@@ -350,7 +381,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Remordimiento"
     },
     {
       "id": "thina",
@@ -361,7 +393,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Pereza"
     },
     {
       "id": "middha",
@@ -372,7 +405,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Letargo"
     },
     {
       "id": "vicikiccha",
@@ -383,7 +417,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Duda"
     },
     {
       "id": "saddha",
@@ -394,7 +429,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Fe"
     },
     {
       "id": "sati",
@@ -405,7 +441,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Atención plena"
     },
     {
       "id": "hiri",
@@ -416,7 +453,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Vergüenza moral"
     },
     {
       "id": "ottappa",
@@ -427,7 +465,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Temor moral"
     },
     {
       "id": "alobha",
@@ -438,7 +477,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "No codicia"
     },
     {
       "id": "adosa",
@@ -449,7 +489,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "No odio"
     },
     {
       "id": "tatramajjhattata",
@@ -460,18 +501,20 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Neutralidad mental"
     },
     {
       "id": "kayapassaddhi",
       "label": "Kāyapassaddhi",
-      "labelPt": "Tranquilidade do Corpo Mentais",
+      "labelPt": "Tranquilidade do Corpo Mental",
       "labelEn": "Tranquillity of Mental Body",
       "subgroup": "sobhana-sadharana",
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Tranquilidad del cuerpo mental"
     },
     {
       "id": "cittapassaddhi",
@@ -482,18 +525,20 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Tranquilidad de la conciencia"
     },
     {
       "id": "kayalahuta",
       "label": "Kāyalahutā",
-      "labelPt": "Leveza do Corpo Mentais",
+      "labelPt": "Leveza do Corpo Mental",
       "labelEn": "Lightness of Mental Body",
       "subgroup": "sobhana-sadharana",
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Ligereza del cuerpo mental"
     },
     {
       "id": "cittalahuta",
@@ -504,18 +549,20 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Ligereza de la conciencia"
     },
     {
       "id": "kayamuduta",
       "label": "Kāyamudutā",
-      "labelPt": "Maleabilidade do Corpo Mentais",
+      "labelPt": "Maleabilidade do Corpo Mental",
       "labelEn": "Malleability of Mental Body",
       "subgroup": "sobhana-sadharana",
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Maleabilidad del cuerpo mental"
     },
     {
       "id": "cittamuduta",
@@ -526,18 +573,20 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Maleabilidad de la conciencia"
     },
     {
       "id": "kayakammannata",
       "label": "Kāyakammaññatā",
-      "labelPt": "Prontidão do Corpo Mentais",
+      "labelPt": "Prontidão do Corpo Mental",
       "labelEn": "Wieldiness of Mental Body",
       "subgroup": "sobhana-sadharana",
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Manejabilidad del cuerpo mental"
     },
     {
       "id": "cittakammannata",
@@ -548,18 +597,20 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Manejabilidad de la conciencia"
     },
     {
       "id": "kayapagunnata",
       "label": "Kāyapāguññatā",
-      "labelPt": "Proficiência do Corpo Mentais",
+      "labelPt": "Proficiência do Corpo Mental",
       "labelEn": "Proficiency of Mental Body",
       "subgroup": "sobhana-sadharana",
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Pericia del cuerpo mental"
     },
     {
       "id": "cittapagunnata",
@@ -570,18 +621,20 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Pericia de la conciencia"
     },
     {
       "id": "kayajukata",
       "label": "Kāyujukatā",
-      "labelPt": "Retidão do Corpo Mentais",
+      "labelPt": "Retidão do Corpo Mental",
       "labelEn": "Rectitude of Mental Body",
       "subgroup": "sobhana-sadharana",
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Rectitud del cuerpo mental"
     },
     {
       "id": "cittujukata",
@@ -592,7 +645,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Rectitud de la conciencia"
     },
     {
       "id": "sammavaca",
@@ -603,7 +657,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Habla correcta"
     },
     {
       "id": "sammakammanta",
@@ -614,7 +669,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Acción correcta"
     },
     {
       "id": "samma-ajiva",
@@ -625,7 +681,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Modo de vida correcto"
     },
     {
       "id": "karuna",
@@ -636,7 +693,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Compasión"
     },
     {
       "id": "mudita",
@@ -647,7 +705,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Alegría altruista"
     },
     {
       "id": "panna",
@@ -658,7 +717,8 @@
       "khandha": "sankhara",
       "group": "cetasika",
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Facultad de la sabiduría"
     },
     {
       "id": "pathavi",
@@ -669,7 +729,8 @@
       "khandha": "rupa",
       "group": "rupa",
       "ayatana": "photthabbayatana",
-      "dhatu": "photthabbadhatu"
+      "dhatu": "photthabbadhatu",
+      "labelEs": "Tierra"
     },
     {
       "id": "apo",
@@ -680,7 +741,8 @@
       "khandha": "rupa",
       "group": "rupa",
       "ayatana": "photthabbayatana",
-      "dhatu": "photthabbadhatu"
+      "dhatu": "photthabbadhatu",
+      "labelEs": "Agua"
     },
     {
       "id": "tejo",
@@ -691,7 +753,8 @@
       "khandha": "rupa",
       "group": "rupa",
       "ayatana": "photthabbayatana",
-      "dhatu": "photthabbadhatu"
+      "dhatu": "photthabbadhatu",
+      "labelEs": "Fuego"
     },
     {
       "id": "vayo",
@@ -702,7 +765,8 @@
       "khandha": "rupa",
       "group": "rupa",
       "ayatana": "photthabbayatana",
-      "dhatu": "photthabbadhatu"
+      "dhatu": "photthabbadhatu",
+      "labelEs": "Aire"
     },
     {
       "id": "cakkhu",
@@ -713,7 +777,8 @@
       "khandha": "rupa",
       "ayatana": "cakkhayatana",
       "dhatu": "cakkhudhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Ojo"
     },
     {
       "id": "sota",
@@ -724,7 +789,8 @@
       "khandha": "rupa",
       "ayatana": "sotayatana",
       "dhatu": "sotadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Oído"
     },
     {
       "id": "ghana",
@@ -735,7 +801,8 @@
       "khandha": "rupa",
       "ayatana": "ghanayatana",
       "dhatu": "ghanadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Nariz"
     },
     {
       "id": "jivha",
@@ -746,7 +813,8 @@
       "khandha": "rupa",
       "ayatana": "jivhayatana",
       "dhatu": "jivhadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Lengua"
     },
     {
       "id": "kaya",
@@ -757,7 +825,8 @@
       "khandha": "rupa",
       "ayatana": "kayayatana",
       "dhatu": "kayadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Cuerpo"
     },
     {
       "id": "ruparammana",
@@ -768,7 +837,8 @@
       "khandha": "rupa",
       "ayatana": "rupayatana",
       "dhatu": "rupadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Forma visible"
     },
     {
       "id": "sadda",
@@ -779,7 +849,8 @@
       "khandha": "rupa",
       "ayatana": "saddayatana",
       "dhatu": "saddadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Sonido"
     },
     {
       "id": "gandha",
@@ -790,7 +861,8 @@
       "khandha": "rupa",
       "ayatana": "gandhayatana",
       "dhatu": "gandhadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Olor"
     },
     {
       "id": "rasa",
@@ -801,7 +873,8 @@
       "khandha": "rupa",
       "ayatana": "rasayatana",
       "dhatu": "rasadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Sabor"
     },
     {
       "id": "itthibhava",
@@ -812,7 +885,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Feminidad"
     },
     {
       "id": "purisabhava",
@@ -823,7 +897,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Masculinidad"
     },
     {
       "id": "hadayavatthu",
@@ -834,7 +909,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Base del corazón"
     },
     {
       "id": "jivitindriya-rupa",
@@ -845,7 +921,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Facultad vital material"
     },
     {
       "id": "oja",
@@ -856,7 +933,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Nutrimento"
     },
     {
       "id": "akasa",
@@ -867,7 +945,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Espacio"
     },
     {
       "id": "kayavinnatti",
@@ -878,7 +957,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Intimación corporal"
     },
     {
       "id": "vacivinnatti",
@@ -889,7 +969,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Intimación verbal"
     },
     {
       "id": "rupa-lahuta",
@@ -900,7 +981,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Ligereza material"
     },
     {
       "id": "rupa-muduta",
@@ -911,7 +993,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Maleabilidad material"
     },
     {
       "id": "rupa-kammannata",
@@ -922,7 +1005,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Manejabilidad material"
     },
     {
       "id": "upacaya",
@@ -933,7 +1017,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Producción"
     },
     {
       "id": "santati",
@@ -944,7 +1029,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Continuidad"
     },
     {
       "id": "jarata",
@@ -955,7 +1041,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Decaimiento"
     },
     {
       "id": "aniccata",
@@ -966,7 +1053,8 @@
       "khandha": "rupa",
       "ayatana": "dhammayatana",
       "dhatu": "dhammadhatu",
-      "group": "rupa"
+      "group": "rupa",
+      "labelEs": "Impermanencia"
     },
     {
       "id": "nibbana",
@@ -977,7 +1065,8 @@
       "subgroup": "asankhata",
       "khandha": null,
       "ayatana": "dhammayatana",
-      "dhatu": "dhammadhatu"
+      "dhatu": "dhammadhatu",
+      "labelEs": "Nibbāna"
     }
   ],
   "edges": [
@@ -987,7 +1076,8 @@
       "type": "hetu",
       "label": "Hetu-paccaya",
       "labelPt": "Condição de causa-raiz",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Raíz"
     },
     {
       "from": "dosa",
@@ -995,7 +1085,8 @@
       "type": "hetu",
       "label": "Hetu-paccaya",
       "labelPt": "Condição de causa-raiz",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Raíz"
     },
     {
       "from": "moha",
@@ -1003,7 +1094,8 @@
       "type": "hetu",
       "label": "Hetu-paccaya",
       "labelPt": "Condição de causa-raiz",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Raíz"
     },
     {
       "from": "alobha",
@@ -1011,7 +1103,8 @@
       "type": "hetu",
       "label": "Hetu-paccaya",
       "labelPt": "Condição de causa-raiz",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Raíz"
     },
     {
       "from": "adosa",
@@ -1019,7 +1112,8 @@
       "type": "hetu",
       "label": "Hetu-paccaya",
       "labelPt": "Condição de causa-raiz",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Raíz"
     },
     {
       "from": "panna",
@@ -1027,7 +1121,8 @@
       "type": "hetu",
       "label": "Hetu-paccaya",
       "labelPt": "Condição de causa-raiz",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Raíz"
     },
     {
       "from": "alobha",
@@ -1035,7 +1130,8 @@
       "type": "hetu",
       "label": "Hetu-paccaya",
       "labelPt": "Condição de causa-raiz",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Raíz"
     },
     {
       "from": "cetana",
@@ -1043,7 +1139,8 @@
       "type": "kamma",
       "label": "Kamma-paccaya",
       "labelPt": "Condição de Kamma",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Kamma"
     },
     {
       "from": "cetana",
@@ -1051,7 +1148,8 @@
       "type": "kamma",
       "label": "Kamma-paccaya",
       "labelPt": "Condição de Kamma",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Kamma"
     },
     {
       "from": "ruparammana",
@@ -1059,7 +1157,8 @@
       "type": "arammana",
       "label": "Ārammaṇa-paccaya",
       "labelPt": "Condição de Objeto",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Objeto"
     },
     {
       "from": "sadda",
@@ -1067,7 +1166,8 @@
       "type": "arammana",
       "label": "Ārammaṇa-paccaya",
       "labelPt": "Condição de Objeto",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Objeto"
     },
     {
       "from": "nibbana",
@@ -1075,7 +1175,8 @@
       "type": "arammana",
       "label": "Ārammaṇa-paccaya",
       "labelPt": "Condição de Objeto",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Objeto"
     },
     {
       "from": "hadayavatthu",
@@ -1083,7 +1184,8 @@
       "type": "nissaya",
       "label": "Nissaya-paccaya",
       "labelPt": "Condição de Suporte",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Soporte"
     },
     {
       "from": "hadayavatthu",
@@ -1091,7 +1193,8 @@
       "type": "nissaya",
       "label": "Nissaya-paccaya",
       "labelPt": "Condição de Suporte",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Soporte"
     },
     {
       "from": "cakkhu",
@@ -1099,7 +1202,8 @@
       "type": "nissaya",
       "label": "Nissaya-paccaya",
       "labelPt": "Condição de Suporte",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Soporte"
     },
     {
       "from": "pathavi",
@@ -1107,7 +1211,8 @@
       "type": "sahajata",
       "label": "Sahajāta-paccaya",
       "labelPt": "Condição de Conascimento",
-      "dir": "bi"
+      "dir": "bi",
+      "labelEs": "Condición de Conacimiento"
     },
     {
       "from": "tejo",
@@ -1115,7 +1220,8 @@
       "type": "sahajata",
       "label": "Sahajāta-paccaya",
       "labelPt": "Condição de Conascimento",
-      "dir": "bi"
+      "dir": "bi",
+      "labelEs": "Condición de Conacimiento"
     },
     {
       "from": "phassa",
@@ -1123,7 +1229,8 @@
       "type": "sahajata",
       "label": "Sahajāta-paccaya",
       "labelPt": "Condição de Conascimento",
-      "dir": "bi"
+      "dir": "bi",
+      "labelEs": "Condición de Conacimiento"
     },
     {
       "from": "kamavacara-kusala",
@@ -1131,7 +1238,8 @@
       "type": "anantara",
       "label": "Anantara-paccaya",
       "labelPt": "Condição de Proximidade",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Proximidad"
     },
     {
       "from": "akusala-citta",
@@ -1139,7 +1247,8 @@
       "type": "anantara",
       "label": "Anantara-paccaya",
       "labelPt": "Condição de Proximidade",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Proximidad"
     },
     {
       "from": "jivitindriya-cetasika",
@@ -1147,7 +1256,8 @@
       "type": "indriya",
       "label": "Indriya-paccaya",
       "labelPt": "Condição de Faculdade",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Facultad"
     },
     {
       "from": "jivitindriya-rupa",
@@ -1155,7 +1265,8 @@
       "type": "indriya",
       "label": "Indriya-paccaya",
       "labelPt": "Condição de Faculdade",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Facultad"
     },
     {
       "from": "vitakka",
@@ -1163,7 +1274,8 @@
       "type": "jhana",
       "label": "Jhāna-paccaya",
       "labelPt": "Condição de Jhāna",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Jhāna"
     },
     {
       "from": "vicara",
@@ -1171,7 +1283,8 @@
       "type": "jhana",
       "label": "Jhāna-paccaya",
       "labelPt": "Condição de Jhāna",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Jhāna"
     },
     {
       "from": "piti",
@@ -1179,7 +1292,8 @@
       "type": "jhana",
       "label": "Jhāna-paccaya",
       "labelPt": "Condição de Jhāna",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Jhāna"
     },
     {
       "from": "ekaggata",
@@ -1187,7 +1301,8 @@
       "type": "jhana",
       "label": "Jhāna-paccaya",
       "labelPt": "Condição de Jhāna",
-      "dir": "uni"
+      "dir": "uni",
+      "labelEs": "Condición de Jhāna"
     }
   ],
   "filters": {

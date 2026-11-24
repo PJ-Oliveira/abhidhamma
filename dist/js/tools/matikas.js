@@ -1,6 +1,6 @@
-import { settings } from "../state.js?v=fa47fb44";
-import { t } from "../i18n.js?v=fa47fb44";
-import { registerToolModule } from "./tools.js?v=fa47fb44";
+import { settings } from "../state.js?v=3f76b330";
+import { t } from "../i18n.js?v=3f76b330";
+import { registerToolModule } from "./tools.js?v=3f76b330";
 function escHtml(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -32,10 +32,18 @@ function initMatikas(container) {
         dukasDiv.style.display = "none";
         container.appendChild(dukasDiv);
         function renderMatika(m) {
-            const title = lang === "pt" && m.titlePt ? m.titlePt : (lang === "en" && m.titleEn ? m.titleEn : m.title);
-            const def = lang === "pt" && m.definitionPt ? m.definitionPt : (m.definition || "");
+            const title = lang === "pt" && m.titlePt
+                ? m.titlePt
+                : lang === "es" && m.titleEs
+                    ? m.titleEs
+                    : m.titleEn || m.title;
+            const def = lang === "pt" && m.definitionPt
+                ? m.definitionPt
+                : lang === "es" && m.definitionEs
+                    ? m.definitionEs
+                    : m.definition || "";
             const termsHtml = m.terms.map((term) => {
-                const trans = lang === "pt" ? term.pt : term.en;
+                const trans = lang === "pt" ? term.pt : lang === "es" ? (term.es || term.en) : term.en;
                 return `<div class="mat-term">
             <span class="mat-pali">${escHtml(term.pali)}</span>
             <span class="mat-trans">${escHtml(trans)}</span>

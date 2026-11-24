@@ -29,8 +29,16 @@ export function registerToolModule(id: TabId, initFn: (container: HTMLElement) =
   if (tab) tab.init = initFn;
 }
 
+let activeHashListener: (() => void) | null = null;
+let activeLangListener: (() => void) | null = null;
+
 export function initToolsPanel(container: HTMLElement): void {
   container.innerHTML = "";
+  for (const tab of TABS) {
+    tab.loaded = false;
+  }
+  if (activeHashListener) window.removeEventListener("hashchange", activeHashListener);
+  if (activeLangListener) window.removeEventListener("languageChanged", activeLangListener);
 
   // Tab bar
   const tabBar = document.createElement("div");
@@ -104,7 +112,20 @@ export function initToolsPanel(container: HTMLElement): void {
     }
   };
   
+  const syncLang = () => {
+    for (const tab of TABS) {
+      if (tab.loaded && tab.init) {
+        const panel = panels.get(tab.id);
+        if (panel) {
+          tab.init(panel);
+        }
+      }
+    }
+  };
+  activeHashListener = syncFromUrl;
+  activeLangListener = syncLang;
   window.addEventListener("hashchange", syncFromUrl);
+  window.addEventListener("languageChanged", syncLang);
 
   // Activate first tab based on URL or default
   const parts = (location.hash.replace(/^#\/?/, "").split('?')[0] || "").split('/');

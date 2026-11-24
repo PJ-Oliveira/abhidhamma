@@ -227,7 +227,7 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
     tierAtom: "Tijolo (Átomo)",
     tierStructure: "Estrutura",
     tierHouse: "Casa (Síntese)",
-    tierLegend: "🧱 Tijolos (unidades) → 🏗 Estruturas, Checksums & Confundíveis → 🏛 Casa (sínteses)",
+    tierLegend: "🧱 Tijolos (unidades) → 🏗 Estruturas, Fórmulas Matemáticas e Confundíveis → 🏛 Casa (sínteses)",
     unlocked: "Desbloqueado",
     locked: "Bloqueado",
     unlockHintPrefix: "Exige ≥",
@@ -485,7 +485,7 @@ const UI_STRINGS: Record<Lang, AbhiSrsStrings> = {
     tierAtom: "Ladrillo (Átomo)",
     tierStructure: "Estructura",
     tierHouse: "Casa (Síntesis)",
-    tierLegend: "🧱 Ladrillos (unidades) → 🏗 Estructuras, Checksums y Confundibles → 🏛 Casa (síntesis)",
+    tierLegend: "🧱 Ladrillos (unidades) → 🏗 Estructuras, Fórmulas Matemáticas y Confundibles → 🏛 Casa (síntesis)",
     unlocked: "Desbloqueado",
     locked: "Bloqueado",
     unlockHintPrefix: "Requiere ≥",
@@ -1420,7 +1420,7 @@ export class AbhidhammaSrsUI {
       document.body.appendChild(a);
       a.click();
       a.remove();
-      URL.revokeObjectURL(url);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
     });
 
     const fileInput = this.container.querySelector<HTMLInputElement>(".abhi-vault-file-input");
@@ -1444,6 +1444,8 @@ export class AbhidhammaSrsUI {
         this.vaultNotice = s.vaultImportOk;
       } catch {
         this.vaultNotice = s.vaultImportErr;
+      } finally {
+        fileInput.value = "";
       }
       this.render();
     });

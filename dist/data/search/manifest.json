@@ -13,7 +13,6 @@
     "k": "shard_k.json",
     "l": "shard_l.json",
     "m": "shard_m.json",
-    "misc": "shard_misc.json",
     "n": "shard_n.json",
     "o": "shard_o.json",
     "p": "shard_p.json",
@@ -37,21 +36,14 @@
     "ó": "shard_ó.json",
     "ô": "shard_ô.json",
     "õ": "shard_õ.json",
-    "ù": "shard_ù.json",
     "ú": "shard_ú.json",
     "ā": "shard_ā.json",
     "ī": "shard_ī.json",
-    "ı": "shard_ı.json",
     "ś": "shard_ś.json",
-    "ũ": "shard_ũ.json",
     "ū": "shard_ū.json",
-    "ခ": "shard_ခ.json",
-    "ထ": "shard_ထ.json",
-    "ᅇ": "shard_ᅇ.json",
     "ḍ": "shard_ḍ.json",
     "ṇ": "shard_ṇ.json",
     "ṛ": "shard_ṛ.json",
-    "ṭ": "shard_ṭ.json",
-    "硔": "shard_硔.json"
+    "ṭ": "shard_ṭ.json"
   }
 }

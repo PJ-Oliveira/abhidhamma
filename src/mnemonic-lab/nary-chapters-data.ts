@@ -911,8 +911,8 @@ const CHAPTER_2_CETASIKAS_52: readonly NaryChallengeItem[] = [
     name: { pt: "Destemor Moral (Anottappa)", en: "Fearlessness of wrong (Anottappa)", es: "Temeridad Moral (Anottappa)" },
     formulaNote: {
       pt: "Tāsalakkhaṇa-virahitaṃ (ausência de temor das consequências do kamma). Em todas as 12 Akusala.",
-      en: "Characteristic of lack of dread regarding karmic consequences. In all 12 Akusala.",
-      es: "Característica de no temer las consecuencias kármicas del mal. En las 12 Akusala.",
+      en: "Characteristic of lack of dread regarding kammic consequences. In all 12 Akusala.",
+      es: "Característica de no temer las consecuencias kámmicas del mal. En las 12 Akusala.",
     },
     primaryGroup: "akusala",
     secondaryGroup: "moha_catukka",
@@ -1154,7 +1154,7 @@ const CHAPTER_2_CETASIKAS_52: readonly NaryChallengeItem[] = [
     formulaNote: {
       pt: "Pāpato uttāsalakkhaṇaṃ (temor reverente das consequências e da reprovação dos sábios). Em 59/91 Cittas.",
       en: "Characteristic of dread of wrongdoing and blame by the wise. In 59/91 Cittas.",
-      es: "Característica de prudente temor al daño kármico y reproche ajeno. En 59/91 Cittas.",
+      es: "Característica de prudente temor al daño kámmico y reproche ajeno. En 59/91 Cittas.",
     },
     primaryGroup: "sobhana",
     secondaryGroup: "sobhana_sadharana",

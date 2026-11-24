@@ -1,14 +1,21 @@
 import { describe, it, expect } from 'vitest';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 import { 
   EPUB_CSS,
+  buildEpubCss,
   buildEpub, 
+  buildFullCorpusEpub,
   buildSectionBodyAndToc,
   buildPrintHtml, 
   collectUsedTerms, 
   buildGlossaryHtml, 
+  getGroupDisplayTitle,
+  getPartDisplayTitle,
   linkifyText, 
   segToHtml, 
   fieldHtml,
+  stripInvalidXmlChars,
   sliceSegmentsByChapterRange,
   crc32, 
   buildZip 
@@ -228,6 +235,195 @@ describe('Export Module', () => {
 
     const reversed = sliceSegmentsByChapterRange(multiVolSegs, toc, 2, 1);
     expect(reversed.map((s) => s.pali)).toEqual(["Vol 1 Ch 2", "V1C2 body", "Vol 2 Ch 1", "V2C1 body"]);
+  });
+
+  it('ships only valid TrueType fonts with full Pāli/PT/ES diacritic glyph coverage and emits clean @font-face rules', () => {
+    const fontsDir = path.resolve(__dirname, '../../fonts');
+    const ttfFiles = fs.readdirSync(fontsDir).filter((f) => f.endsWith('.ttf'));
+    expect(ttfFiles).toContain('GentiumBookPlus-Regular.ttf');
+    expect(ttfFiles).toContain('GentiumBookPlus-Italic.ttf');
+
+    const parseTtfCmap = (buf: Buffer): Set<number> => {
+      const cps = new Set<number>();
+      const numTables = buf.readUInt16BE(4);
+      let cmapOff = -1;
+      for (let i = 0; i < numTables; i++) {
+        const off = 12 + i * 16;
+        if (buf.subarray(off, off + 4).toString('ascii') === 'cmap') {
+          cmapOff = buf.readUInt32BE(off + 8);
+          break;
+        }
+      }
+      if (cmapOff < 0) return cps;
+      const numSub = buf.readUInt16BE(cmapOff + 2);
+      for (let i = 0; i < numSub; i++) {
+        const sub = cmapOff + buf.readUInt32BE(cmapOff + 4 + i * 8 + 4);
+        const fmt = buf.readUInt16BE(sub);
+        if (fmt === 4) {
+          const segCountX2 = buf.readUInt16BE(sub + 6);
+          const segCount = segCountX2 / 2;
+          for (let s = 0; s < segCount; s++) {
+            const endCode = buf.readUInt16BE(sub + 14 + s * 2);
+            const startCode = buf.readUInt16BE(sub + 16 + segCountX2 + s * 2);
+            const idDelta = buf.readInt16BE(sub + 16 + 2 * segCountX2 + s * 2);
+            const idRangeOff = buf.readUInt16BE(sub + 16 + 3 * segCountX2 + s * 2);
+            if (startCode === 0xffff && endCode === 0xffff) continue;
+            for (let cp = startCode; cp <= endCode; cp++) {
+              let gid = 0;
+              if (idRangeOff === 0) {
+                gid = (cp + idDelta) & 0xffff;
+              } else {
+                const roPos = sub + 16 + 3 * segCountX2 + s * 2;
+                const gPos = roPos + idRangeOff + (cp - startCode) * 2;
+                gid = buf.readUInt16BE(gPos);
+                if (gid !== 0) gid = (gid + idDelta) & 0xffff;
+              }
+              if (gid !== 0) cps.add(cp);
+            }
+          }
+        }
+      }
+      return cps;
+    };
+
+    const requiredChars = 'āīūṅñṭḍṇḷṃṁĀĪŪṄÑṬḌṆḶṂṀáéíóúâêôãõçü¿¡—–…↑↔→‘’“”';
+    for (const file of ttfFiles) {
+      const buf = fs.readFileSync(path.join(fontsDir, file));
+      // Must have genuine TrueType sfnt magic (0x00010000), never HTML!
+      expect(buf.readUInt32BE(0)).toBe(0x00010000);
+      const cmap = parseTtfCmap(buf);
+      for (const ch of requiredChars) {
+        expect(cmap.has(ch.codePointAt(0)!), `Missing glyph ${ch} in ${file}`).toBe(true);
+      }
+    }
+
+    const pdfHtml = buildPrintHtml(dummyContent, "Pāli Diacritics Test", "pt", "", new Map());
+    expect(pdfHtml).not.toContain('NotoSerifPali');
+    expect(pdfHtml).toContain('GentiumBookPlus-Regular.ttf');
+    expect(pdfHtml).toContain('a[href*="#dict_"]');
+
+    // When fonts are omitted, buildEpubCss & buildEpub must not emit dangling @font-face rules
+    expect(buildEpubCss(false, false)).not.toContain('@font-face');
+    expect(buildEpubCss(true, false)).toContain('GentiumBookPlus-Regular.ttf');
+    expect(buildEpubCss(true, false)).not.toContain('GentiumBookPlus-Italic.ttf');
+    const epubNoFonts = new TextDecoder().decode(
+      buildEpub(dummyContent, "No Fonts", "pt", "", new Map(), new Uint8Array(), new Uint8Array())
+    );
+    expect(epubNoFonts).not.toContain('@font-face');
+  });
+
+  it('localizes group/part titles in PT/EN/ES, strips C1 controls, handles short English commentary headings, glossary ES fallback, and avoids blank PDF separator pages', async () => {
+    // 1. Group & part titles localized across PT / EN / ES without Portuguese leaks in EN/ES
+    expect(getGroupDisplayTitle('abhidhamma', 'es')).toContain('Textos Canónicos');
+    expect(getGroupDisplayTitle('abhidhamma', 'en')).toContain('Canonical Texts');
+    expect(getGroupDisplayTitle('visuddhimagga', 'es')).toContain('El Camino de la Purificación');
+    expect(getPartDisplayTitle('mula', undefined, 'es')).toBe('Mūla (Texto Raíz)');
+    expect(getPartDisplayTitle('mula', undefined, 'en')).toBe('Mūla (Root Text)');
+    expect(getPartDisplayTitle('attha', undefined, 'es')).toBe('Aṭṭhakathā (Comentario)');
+
+    const esEpubText = new TextDecoder().decode(
+      buildEpub(dummyContent, 'Dhammasaṅgaṇī', 'pali+es', '', new Map(), new Uint8Array(), new Uint8Array(), 'dhammasangani', 'abhidhamma')
+    );
+    expect(esEpubText).toContain('<dc:language>es</dc:language>');
+    expect(esEpubText).toContain('Textos Canónicos');
+    expect(esEpubText).not.toContain('Textos Canônicos');
+    expect(esEpubText).toContain('Índice Analítico');
+
+    const enEpubText = new TextDecoder().decode(
+      buildEpub(dummyContent, 'Dhammasaṅgaṇī', 'pali+en', '', new Map(), new Uint8Array(), new Uint8Array(), 'dhammasangani', 'abhidhamma')
+    );
+    expect(enEpubText).toContain('<dc:language>en</dc:language>');
+    expect(enEpubText).toContain('Canonical Texts');
+    expect(enEpubText).not.toContain('Textos Canônicos');
+
+    // 2. C1 controls and replacement character U+FFFD stripped
+    expect(stripInvalidXmlChars('Dhamma\x81\x92\x93\uFFFD ok')).toBe('Dhamma ok');
+
+    // 3. Short English commentary heading without 'the/and/is/of/to' gets lang="en" when isCommentary=true
+    const shortHeading = { id: 1, rend: 'chapter', pali: 'Preface', pt: 'Prefácio', es: 'Prefacio' } as any;
+    const commHtml = segToHtml(shortHeading, 'pali+es', undefined, '', 'ch1', '', true);
+    expect(commHtml).toContain('lang="en"');
+    expect(commHtml).not.toContain('lang="pi"');
+
+    // 4. Glossary in ES falls back cleanly to EN if term.es is missing
+    const noEsGloss = [{ h: 'citta', pos: 'n.', en: 'consciousness', pt: 'consciência' }] as any;
+    const gEs = buildGlossaryHtml(noEsGloss, 'es', new Map());
+    expect(gEs).toContain('consciousness');
+
+    // 5. PDF CSS avoids blank separator pages between consecutive banners
+    const pdfHtml = buildPrintHtml(dummyContent, 'Test', 'es', '', new Map());
+    expect(pdfHtml).toContain('.group-banner + .work-banner');
+    expect(pdfHtml).toContain('.work-banner + .part-section .part-banner');
+    expect(pdfHtml).toContain('<html lang="es">');
+
+    // 6. Full-corpus EPUB with empty manifest produces non-empty valid <ol> in nav.xhtml
+    const emptyCorpusBytes = await buildFullCorpusEpub({ groups: {} } as any, 'es', () => {});
+    const emptyCorpusText = new TextDecoder().decode(emptyCorpusBytes);
+    expect(emptyCorpusText).toContain('<dc:language>es</dc:language>');
+    expect(emptyCorpusText).toContain('<li><a href="nav.xhtml">Índice</a></li>');
+  });
+
+  it('embeds self-contained base64 Gentium Book Plus TTF fonts in PDF print HTML when provided', () => {
+    const htmlWithEmbedded = buildPrintHtml(
+      dummyContent,
+      'Dhammasaṅgaṇī',
+      'pali+es',
+      '',
+      new Map(),
+      'dhammasangani',
+      'abhidhamma',
+      undefined,
+      {
+        regDataUri: 'data:font/ttf;base64,AAEAAA==',
+        itaDataUri: 'data:font/ttf;base64,AAEAAB==',
+      }
+    );
+    expect(htmlWithEmbedded).toContain("src: url('data:font/ttf;base64,AAEAAA==') format('truetype');");
+    expect(htmlWithEmbedded).toContain("src: url('data:font/ttf;base64,AAEAAB==') format('truetype');");
+    expect(htmlWithEmbedded).not.toContain('fonts/GentiumBookPlus-Regular.ttf');
+    expect(htmlWithEmbedded).not.toContain('fonts/GentiumBookPlus-Italic.ttf');
+
+    // Without embeddedFonts, falls back gracefully to URL paths
+    const htmlFallback = buildPrintHtml(dummyContent, 'Dhammasaṅgaṇī', 'pali+pt', '', new Map());
+    expect(htmlFallback).toContain('fonts/GentiumBookPlus-Regular.ttf');
+    expect(htmlFallback).toContain('fonts/GentiumBookPlus-Italic.ttf');
+  });
+
+  it('prevents false-positive Pāli glossary hyperlinks on PT/ES/EN stopwords while preserving genuine Pāli term links in translations', () => {
+    const termsMap = new Map<string, string>([
+      ['no', '1'],
+      ['na', '2'],
+      ['ka', '3'],
+      ['yo', '4'],
+      ['mano', '5'],
+      ['tato', '6'],
+      ['dhamma', '7'],
+      ['nibbāna', '8'],
+      ['bhikkhu', '9'],
+    ]);
+    const seg = {
+      id: 1,
+      rend: 'bodytext',
+      pali: 'No ca kho bhikkhu nibbānaṃ.',
+      es: '(Ka) Oír y ver no ocurren en la mano del bhikkhu, yo estudio dhamma y nibbāna.',
+      pt: 'O tato na mente não nega dhamma nem nibbāna.',
+    } as any;
+
+    const htmlEs = segToHtml(seg, 'pali+es', termsMap, '');
+    // Translation must NOT link Spanish stopwords (no, ka, yo, mano)
+    expect(htmlEs).not.toContain('href="#dict_1">no</a>');
+    expect(htmlEs).not.toContain('href="#dict_3">Ka</a>');
+    expect(htmlEs).not.toContain('href="#dict_4">yo</a>');
+    expect(htmlEs).not.toContain('href="#dict_5">mano</a>');
+    // Translation MUST still link genuine Pāli technical terms
+    expect(htmlEs).toContain('href="#dict_7">dhamma</a>');
+    expect(htmlEs).toContain('href="#dict_8">nibbāna</a>');
+    expect(htmlEs).toContain('href="#dict_9">bhikkhu</a>');
+
+    const htmlPt = segToHtml(seg, 'pali+pt', termsMap, '');
+    expect(htmlPt).not.toContain('href="#dict_2">na</a>');
+    expect(htmlPt).not.toContain('href="#dict_6">tato</a>');
+    expect(htmlPt).toContain('href="#dict_7">dhamma</a>');
   });
 });
 

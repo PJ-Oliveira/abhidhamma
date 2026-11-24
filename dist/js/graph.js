@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=fa47fb44";
-import { settings } from "./state.js?v=fa47fb44";
-import { createLogger } from "./logger.js?v=fa47fb44";
+import { t } from "./i18n.js?v=3f76b330";
+import { settings } from "./state.js?v=3f76b330";
+import { createLogger } from "./logger.js?v=3f76b330";
 const log = createLogger("graph");
 const GROUP_COLORS = {
     citta: "#c96b32",
@@ -202,7 +202,13 @@ function drawGraph(ctx, data, w, h, hoveredNode, zoom, panX, panY) {
         ctx.strokeStyle = "#fff";
         ctx.lineWidth = 2;
         ctx.stroke();
-        const fullLbl = lang === "pt" && node.labelPt ? node.labelPt : (lang === "en" && node.labelEn ? node.labelEn : node.label);
+        const fullLbl = lang === "pt" && node.labelPt
+            ? node.labelPt
+            : lang === "es" && node.labelEs
+                ? node.labelEs
+                : lang === "en" && node.labelEn
+                    ? node.labelEn
+                    : node.label;
         const lbl = fullLbl.length > 18 ? fullLbl.slice(0, 16) + "…" : fullLbl;
         const isHov = hoveredNode === node;
         const displayLbl = isHov ? fullLbl : lbl;

@@ -1,6 +1,6 @@
-import { lookupPali } from "./dictionary.js?v=fa47fb44";
-import { settings } from "./state.js?v=fa47fb44";
-import { t } from "./i18n.js?v=fa47fb44";
+import { lookupPali } from "./dictionary.js?v=3f76b330";
+import { settings } from "./state.js?v=3f76b330";
+import { t } from "./i18n.js?v=3f76b330";
 let currentHighlight = null;
 let selectedWordSpans = [];
 let popoverEl = null;
@@ -116,7 +116,7 @@ async function handleMouseUp(e) {
             else {
                 const text = range.startContainer.textContent || "";
                 const offset = range.startOffset;
-                const wordRegex = /[A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]/i;
+                const wordRegex = /[A-Za-zāīūṃṁṅñṭḍṇḷĀĪŪṂṀṄÑṬḌṆḶçÇéáíóúüãõâêôÁÉÍÓÚÜÃÕÂÊÔ]/i;
                 if (wordRegex.test(text[offset] || text[offset - 1] || "")) {
                     let start = offset;
                     let end = offset;

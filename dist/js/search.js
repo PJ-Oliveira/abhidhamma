@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=fa47fb44";
-import { settings } from "./state.js?v=fa47fb44";
-import { createLogger } from "./logger.js?v=fa47fb44";
+import { t } from "./i18n.js?v=3f76b330";
+import { settings } from "./state.js?v=3f76b330";
+import { createLogger } from "./logger.js?v=3f76b330";
 const log = createLogger("search");
 const MAX_RESULTS = 50;
 let shardManifest = null;
@@ -103,6 +103,14 @@ export function initSearchPanel(inputEl, resultsEl, onOpenResult) {
     inputEl.addEventListener("input", () => {
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(run, 250);
+    });
+    window.addEventListener("languageChanged", () => {
+        if (!inputEl.value.trim()) {
+            renderEmpty(shardManifest ? "typeToSearch" : "dictNotReady");
+        }
+        else if (resultsEl.querySelector(".side-empty")) {
+            void run();
+        }
     });
     void run();
 }

@@ -1,6 +1,6 @@
-import { t } from "../i18n.js?v=fa47fb44";
-import { settings } from "../state.js?v=fa47fb44";
-import { createLogger } from "../logger.js?v=fa47fb44";
+import { t } from "../i18n.js?v=3f76b330";
+import { settings } from "../state.js?v=3f76b330";
+import { createLogger } from "../logger.js?v=3f76b330";
 const log = createLogger("tools");
 const TABS = [
     { id: "mindmap", icon: "🗺", i18nKey: "toolMindmap", init: null, loaded: false },
@@ -8,14 +8,24 @@ const TABS = [
     { id: "vithi", icon: "🔄", i18nKey: "toolVithi", init: null, loaded: false },
     { id: "matikas", icon: "📖", i18nKey: "toolMatikas", init: null, loaded: false },
     { id: "cetasika", icon: "🧬", i18nKey: "toolCetasika", init: null, loaded: false },
+    { id: "mnemonic", icon: "🧮", i18nKey: "toolMnemonic", init: null, loaded: false },
 ];
 export function registerToolModule(id, initFn) {
     const tab = TABS.find((t) => t.id === id);
     if (tab)
         tab.init = initFn;
 }
+let activeHashListener = null;
+let activeLangListener = null;
 export function initToolsPanel(container) {
     container.innerHTML = "";
+    for (const tab of TABS) {
+        tab.loaded = false;
+    }
+    if (activeHashListener)
+        window.removeEventListener("hashchange", activeHashListener);
+    if (activeLangListener)
+        window.removeEventListener("languageChanged", activeLangListener);
     const tabBar = document.createElement("div");
     tabBar.className = "tools-tab-bar";
     container.appendChild(tabBar);
@@ -36,7 +46,7 @@ export function initToolsPanel(container) {
         const btn = document.createElement("button");
         btn.className = "tools-tab-btn";
         btn.dataset.tab = tab.id;
-        btn.innerHTML = `<span class="tools-tab-icon">${tab.icon}</span><span class="tools-tab-label">${t(tab.i18nKey, settings.uiLang)}</span>`;
+        btn.innerHTML = `<span class="tools-tab-icon">${tab.icon}</span><span class="tools-tab-label" data-i18n="${tab.i18nKey}">${t(tab.i18nKey, settings.uiLang)}</span>`;
         btn.addEventListener("click", () => switchTab(tab.id));
         tabBar.appendChild(btn);
         buttons.push(btn);
@@ -73,7 +83,20 @@ export function initToolsPanel(container) {
             }
         }
     };
+    const syncLang = () => {
+        for (const tab of TABS) {
+            if (tab.loaded && tab.init) {
+                const panel = panels.get(tab.id);
+                if (panel) {
+                    tab.init(panel);
+                }
+            }
+        }
+    };
+    activeHashListener = syncFromUrl;
+    activeLangListener = syncLang;
     window.addEventListener("hashchange", syncFromUrl);
+    window.addEventListener("languageChanged", syncLang);
     const parts = (location.hash.replace(/^#\/?/, "").split('?')[0] || "").split('/');
     const p1_init = parts[1];
     if ((parts[0] || "") === "tools" && p1_init && TABS.some(t => t.id === p1_init)) {

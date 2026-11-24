@@ -1,4 +1,6 @@
-const CACHE_NAME = 'abhidhamma-cache-v16';
+const CACHE_NAME = 'abhidhamma-cache-v29';
+const VAULT_CACHE_NAME = 'abhidhamma-anki-vault-v1';
+const PROTECTED_CACHES = new Set([CACHE_NAME, VAULT_CACHE_NAME]);
 
 // App shell files to cache on install
 const CORE_ASSETS = [
@@ -27,24 +29,23 @@ const CORE_ASSETS = [
   './js/state.js',
   './js/tree.js',
   './js/types.js',
-  './js/tetris/index.js',
-  './js/tetris/ui.js',
-  './js/tetris/engine.js',
-  './js/tetris/curriculum.js',
-  './js/tetris/taxonomy.js',
-  './js/tetris/scheduler.js',
-  './js/tetris/types.js',
-  './data/tetris/index.json',
-  './data/tetris/unit-1.json',
-  './data/tetris/unit-2.json',
-  './data/tetris/unit-3.json',
-  './data/tetris/unit-4.json',
-  './data/tetris/unit-5.json',
-  './data/tetris/unit-6.json',
-  './data/tetris/unit-7.json',
-  './data/tetris/unit-8.json',
-  './data/tetris/unit-9.json',
-  './data/tetris/unit-10.json'
+  './js/abhidhamma-srs/types.js',
+  './js/abhidhamma-srs/scheduler.js',
+  './js/abhidhamma-srs/offline-store.js',
+  './js/abhidhamma-srs/ui.js',
+  './js/mnemonic-lab/data.js',
+  './js/mnemonic-lab/nary-chapters-data.js',
+  './js/mnemonic-lab/chapters/ch2-sangaha.js',
+  './js/mnemonic-lab/chapters/ch3-pakinnaka.js',
+  './js/mnemonic-lab/chapters/ch4-vithi.js',
+  './js/mnemonic-lab/chapters/ch5-vithimutta.js',
+  './js/mnemonic-lab/chapters/ch6-rupa.js',
+  './js/mnemonic-lab/chapters/ch7-samuccaya.js',
+  './js/mnemonic-lab/chapters/ch8-paccaya.js',
+  './js/mnemonic-lab/chapters/ch9-kammatthana.js',
+  './js/mnemonic-lab/engine.js',
+  './js/mnemonic-lab/ui.js',
+  './data/srs/abhidhamma_cards.json',
 ];
 
 async function precacheAllData() {
@@ -106,7 +107,7 @@ self.addEventListener('activate', (event) => {
     const cacheNames = await caches.keys();
     let deletedOld = false;
     for (const name of cacheNames) {
-      if (name !== CACHE_NAME) {
+      if (!PROTECTED_CACHES.has(name)) {
         deletedOld = true;
         await caches.delete(name);
       }
@@ -130,10 +131,19 @@ self.addEventListener('fetch', (event) => {
   if (!event.request.url.startsWith('http')) return;
 
   const url = new URL(event.request.url);
+  if (url.pathname.endsWith('/_offline_vault/abhidhamma-anki-progress.json')) {
+    event.respondWith(
+      caches.open(VAULT_CACHE_NAME).then((c) => c.match(event.request)).then((hit) => {
+        if (hit) return hit;
+        return new Response('null', { status: 404, headers: { 'Content-Type': 'application/json' } });
+      })
+    );
+    return;
+  }
   const isLocalhost = url.hostname === 'localhost' || url.hostname === '127.0.0.1';
 
-  // Network-first on localhost or for app code/HTML so updates appear immediately
-  if (isLocalhost || url.pathname.endsWith('.js') || url.pathname.endsWith('.css') || url.pathname.endsWith('.html') || url.pathname === '/') {
+  // Network-first on localhost or for app code/HTML/SRS deck so updates appear immediately
+  if (isLocalhost || url.pathname.endsWith('.js') || url.pathname.endsWith('.css') || url.pathname.endsWith('.html') || url.pathname.endsWith('abhidhamma_cards.json') || url.pathname === '/') {
     event.respondWith(
       fetch(event.request)
         .then((networkResponse) => {

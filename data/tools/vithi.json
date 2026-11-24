@@ -15,7 +15,8 @@
           "abbrev": "Bh",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Pasado"
         },
         {
           "id": "bhavanga-calana",
@@ -25,7 +26,8 @@
           "abbrev": "Bc",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Vibrante"
         },
         {
           "id": "bhavanga-upaccheda",
@@ -35,7 +37,8 @@
           "abbrev": "Bu",
           "type": "bhavanga",
           "color": "#95a5a6",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Interrumpido"
         },
         {
           "id": "pancadvaravajjana",
@@ -45,7 +48,8 @@
           "abbrev": "Pv",
           "type": "avajjana",
           "color": "#3498db",
-          "count": 1
+          "count": 1,
+          "labelEs": "Advertencia de las Cinco Puertas"
         },
         {
           "id": "cakkhu-vinnana",
@@ -55,7 +59,8 @@
           "abbrev": "Cv",
           "type": "vinnana",
           "color": "#e74c3c",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Visual"
         },
         {
           "id": "sampaticchana",
@@ -65,7 +70,8 @@
           "abbrev": "Sp",
           "type": "sampaticchana",
           "color": "#9b59b6",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Receptora"
         },
         {
           "id": "santiirana",
@@ -75,7 +81,8 @@
           "abbrev": "St",
           "type": "santiirana",
           "color": "#f39c12",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Investigadora"
         },
         {
           "id": "votthapana",
@@ -85,7 +92,8 @@
           "abbrev": "Vt",
           "type": "votthapana",
           "color": "#1abc9c",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Determinadora"
         },
         {
           "id": "javana",
@@ -95,7 +103,8 @@
           "abbrev": "J",
           "type": "javana",
           "color": "#2ecc71",
-          "count": 7
+          "count": 7,
+          "labelEs": "Impulsión (Javana)"
         },
         {
           "id": "tadarammana",
@@ -105,7 +114,8 @@
           "abbrev": "T",
           "type": "tadarammana",
           "color": "#f1c40f",
-          "count": 2
+          "count": 2,
+          "labelEs": "Conciencia Registradora"
         },
         {
           "id": "bhavanga",
@@ -115,9 +125,11 @@
           "abbrev": "Bh",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Continuo Vital (Bhavaṅga)"
         }
-      ]
+      ],
+      "labelEs": "Proceso de la Puerta del Ojo"
     },
     {
       "id": "sota",
@@ -134,7 +146,8 @@
           "abbrev": "Bh",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Pasado"
         },
         {
           "id": "bhavanga-calana",
@@ -144,7 +157,8 @@
           "abbrev": "Bc",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Vibrante"
         },
         {
           "id": "bhavanga-upaccheda",
@@ -154,7 +168,8 @@
           "abbrev": "Bu",
           "type": "bhavanga",
           "color": "#95a5a6",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Interrumpido"
         },
         {
           "id": "pancadvaravajjana",
@@ -164,7 +179,8 @@
           "abbrev": "Pv",
           "type": "avajjana",
           "color": "#3498db",
-          "count": 1
+          "count": 1,
+          "labelEs": "Advertencia de las Cinco Puertas"
         },
         {
           "id": "sota-vinnana",
@@ -174,7 +190,8 @@
           "abbrev": "Sv",
           "type": "vinnana",
           "color": "#e74c3c",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Auditiva"
         },
         {
           "id": "sampaticchana",
@@ -184,7 +201,8 @@
           "abbrev": "Sp",
           "type": "sampaticchana",
           "color": "#9b59b6",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Receptora"
         },
         {
           "id": "santiirana",
@@ -194,7 +212,8 @@
           "abbrev": "St",
           "type": "santiirana",
           "color": "#f39c12",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Investigadora"
         },
         {
           "id": "votthapana",
@@ -204,7 +223,8 @@
           "abbrev": "Vt",
           "type": "votthapana",
           "color": "#1abc9c",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Determinadora"
         },
         {
           "id": "javana",
@@ -214,7 +234,8 @@
           "abbrev": "J",
           "type": "javana",
           "color": "#2ecc71",
-          "count": 7
+          "count": 7,
+          "labelEs": "Impulsión (Javana)"
         },
         {
           "id": "tadarammana",
@@ -224,7 +245,8 @@
           "abbrev": "T",
           "type": "tadarammana",
           "color": "#f1c40f",
-          "count": 2
+          "count": 2,
+          "labelEs": "Conciencia Registradora"
         },
         {
           "id": "bhavanga",
@@ -234,9 +256,11 @@
           "abbrev": "Bh",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Continuo Vital (Bhavaṅga)"
         }
-      ]
+      ],
+      "labelEs": "Proceso de la Puerta del Oído"
     },
     {
       "id": "ghana",
@@ -253,7 +277,8 @@
           "abbrev": "Bh",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Pasado"
         },
         {
           "id": "bhavanga-calana",
@@ -263,7 +288,8 @@
           "abbrev": "Bc",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Vibrante"
         },
         {
           "id": "bhavanga-upaccheda",
@@ -273,7 +299,8 @@
           "abbrev": "Bu",
           "type": "bhavanga",
           "color": "#95a5a6",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Interrumpido"
         },
         {
           "id": "pancadvaravajjana",
@@ -283,7 +310,8 @@
           "abbrev": "Pv",
           "type": "avajjana",
           "color": "#3498db",
-          "count": 1
+          "count": 1,
+          "labelEs": "Advertencia de las Cinco Puertas"
         },
         {
           "id": "ghana-vinnana",
@@ -293,7 +321,8 @@
           "abbrev": "Gv",
           "type": "vinnana",
           "color": "#e74c3c",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Olfativa"
         },
         {
           "id": "sampaticchana",
@@ -303,7 +332,8 @@
           "abbrev": "Sp",
           "type": "sampaticchana",
           "color": "#9b59b6",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Receptora"
         },
         {
           "id": "santiirana",
@@ -313,7 +343,8 @@
           "abbrev": "St",
           "type": "santiirana",
           "color": "#f39c12",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Investigadora"
         },
         {
           "id": "votthapana",
@@ -323,7 +354,8 @@
           "abbrev": "Vt",
           "type": "votthapana",
           "color": "#1abc9c",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Determinadora"
         },
         {
           "id": "javana",
@@ -333,7 +365,8 @@
           "abbrev": "J",
           "type": "javana",
           "color": "#2ecc71",
-          "count": 7
+          "count": 7,
+          "labelEs": "Impulsión (Javana)"
         },
         {
           "id": "tadarammana",
@@ -343,7 +376,8 @@
           "abbrev": "T",
           "type": "tadarammana",
           "color": "#f1c40f",
-          "count": 2
+          "count": 2,
+          "labelEs": "Conciencia Registradora"
         },
         {
           "id": "bhavanga",
@@ -353,9 +387,11 @@
           "abbrev": "Bh",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Continuo Vital (Bhavaṅga)"
         }
-      ]
+      ],
+      "labelEs": "Proceso de la Puerta de la Nariz"
     },
     {
       "id": "jivha",
@@ -372,7 +408,8 @@
           "abbrev": "Bh",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Pasado"
         },
         {
           "id": "bhavanga-calana",
@@ -382,7 +419,8 @@
           "abbrev": "Bc",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Vibrante"
         },
         {
           "id": "bhavanga-upaccheda",
@@ -392,7 +430,8 @@
           "abbrev": "Bu",
           "type": "bhavanga",
           "color": "#95a5a6",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Interrumpido"
         },
         {
           "id": "pancadvaravajjana",
@@ -402,7 +441,8 @@
           "abbrev": "Pv",
           "type": "avajjana",
           "color": "#3498db",
-          "count": 1
+          "count": 1,
+          "labelEs": "Advertencia de las Cinco Puertas"
         },
         {
           "id": "jivha-vinnana",
@@ -412,7 +452,8 @@
           "abbrev": "Jv",
           "type": "vinnana",
           "color": "#e74c3c",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Gustativa"
         },
         {
           "id": "sampaticchana",
@@ -422,7 +463,8 @@
           "abbrev": "Sp",
           "type": "sampaticchana",
           "color": "#9b59b6",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Receptora"
         },
         {
           "id": "santiirana",
@@ -432,7 +474,8 @@
           "abbrev": "St",
           "type": "santiirana",
           "color": "#f39c12",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Investigadora"
         },
         {
           "id": "votthapana",
@@ -442,7 +485,8 @@
           "abbrev": "Vt",
           "type": "votthapana",
           "color": "#1abc9c",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Determinadora"
         },
         {
           "id": "javana",
@@ -452,7 +496,8 @@
           "abbrev": "J",
           "type": "javana",
           "color": "#2ecc71",
-          "count": 7
+          "count": 7,
+          "labelEs": "Impulsión (Javana)"
         },
         {
           "id": "tadarammana",
@@ -462,7 +507,8 @@
           "abbrev": "T",
           "type": "tadarammana",
           "color": "#f1c40f",
-          "count": 2
+          "count": 2,
+          "labelEs": "Conciencia Registradora"
         },
         {
           "id": "bhavanga",
@@ -472,9 +518,11 @@
           "abbrev": "Bh",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Continuo Vital (Bhavaṅga)"
         }
-      ]
+      ],
+      "labelEs": "Proceso de la Puerta de la Lengua"
     },
     {
       "id": "kaya",
@@ -491,7 +539,8 @@
           "abbrev": "Bh",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Pasado"
         },
         {
           "id": "bhavanga-calana",
@@ -501,7 +550,8 @@
           "abbrev": "Bc",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Vibrante"
         },
         {
           "id": "bhavanga-upaccheda",
@@ -511,7 +561,8 @@
           "abbrev": "Bu",
           "type": "bhavanga",
           "color": "#95a5a6",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Interrumpido"
         },
         {
           "id": "pancadvaravajjana",
@@ -521,7 +572,8 @@
           "abbrev": "Pv",
           "type": "avajjana",
           "color": "#3498db",
-          "count": 1
+          "count": 1,
+          "labelEs": "Advertencia de las Cinco Puertas"
         },
         {
           "id": "kaya-vinnana",
@@ -531,7 +583,8 @@
           "abbrev": "Kv",
           "type": "vinnana",
           "color": "#e74c3c",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Táctil"
         },
         {
           "id": "sampaticchana",
@@ -541,7 +594,8 @@
           "abbrev": "Sp",
           "type": "sampaticchana",
           "color": "#9b59b6",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Receptora"
         },
         {
           "id": "santiirana",
@@ -551,7 +605,8 @@
           "abbrev": "St",
           "type": "santiirana",
           "color": "#f39c12",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Investigadora"
         },
         {
           "id": "votthapana",
@@ -561,7 +616,8 @@
           "abbrev": "Vt",
           "type": "votthapana",
           "color": "#1abc9c",
-          "count": 1
+          "count": 1,
+          "labelEs": "Conciencia Determinadora"
         },
         {
           "id": "javana",
@@ -571,7 +627,8 @@
           "abbrev": "J",
           "type": "javana",
           "color": "#2ecc71",
-          "count": 7
+          "count": 7,
+          "labelEs": "Impulsión (Javana)"
         },
         {
           "id": "tadarammana",
@@ -581,7 +638,8 @@
           "abbrev": "T",
           "type": "tadarammana",
           "color": "#f1c40f",
-          "count": 2
+          "count": 2,
+          "labelEs": "Conciencia Registradora"
         },
         {
           "id": "bhavanga",
@@ -591,9 +649,11 @@
           "abbrev": "Bh",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Continuo Vital (Bhavaṅga)"
         }
-      ]
+      ],
+      "labelEs": "Proceso de la Puerta del Cuerpo"
     },
     {
       "id": "mano",
@@ -610,7 +670,8 @@
           "abbrev": "Bc",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Vibrante"
         },
         {
           "id": "bhavanga-upaccheda",
@@ -620,7 +681,8 @@
           "abbrev": "Bu",
           "type": "bhavanga",
           "color": "#95a5a6",
-          "count": 1
+          "count": 1,
+          "labelEs": "Bhavaṅga Interrumpido"
         },
         {
           "id": "manodvaravajjana",
@@ -630,7 +692,8 @@
           "abbrev": "Mv",
           "type": "avajjana",
           "color": "#3498db",
-          "count": 1
+          "count": 1,
+          "labelEs": "Advertencia de la Puerta Mental"
         },
         {
           "id": "javana",
@@ -640,7 +703,8 @@
           "abbrev": "J",
           "type": "javana",
           "color": "#2ecc71",
-          "count": 7
+          "count": 7,
+          "labelEs": "Impulsión (Javana)"
         },
         {
           "id": "tadarammana",
@@ -650,7 +714,8 @@
           "abbrev": "T",
           "type": "tadarammana",
           "color": "#f1c40f",
-          "count": 2
+          "count": 2,
+          "labelEs": "Conciencia Registradora"
         },
         {
           "id": "bhavanga",
@@ -660,42 +725,138 @@
           "abbrev": "Bh",
           "type": "bhavanga",
           "color": "#7f8c8d",
-          "count": 1
+          "count": 1,
+          "labelEs": "Continuo Vital (Bhavaṅga)"
         }
-      ]
+      ],
+      "labelEs": "Proceso de la Puerta de la Mente"
     }
   ],
   "cittaInfo": {
     "bhavanga": {
-      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha", "viriya"],
+      "cetasikas": [
+        "phassa",
+        "vedana",
+        "sanna",
+        "cetana",
+        "ekaggata",
+        "jivitindriya",
+        "manasikara",
+        "vitakka",
+        "vicara",
+        "adhimokkha",
+        "viriya"
+      ],
       "cetasikaCount": 11
     },
     "avajjana": {
-      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha", "viriya"],
+      "cetasikas": [
+        "phassa",
+        "vedana",
+        "sanna",
+        "cetana",
+        "ekaggata",
+        "jivitindriya",
+        "manasikara",
+        "vitakka",
+        "vicara",
+        "adhimokkha",
+        "viriya"
+      ],
       "cetasikaCount": 11
     },
     "vinnana": {
-      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara"],
+      "cetasikas": [
+        "phassa",
+        "vedana",
+        "sanna",
+        "cetana",
+        "ekaggata",
+        "jivitindriya",
+        "manasikara"
+      ],
       "cetasikaCount": 7
     },
     "sampaticchana": {
-      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha"],
+      "cetasikas": [
+        "phassa",
+        "vedana",
+        "sanna",
+        "cetana",
+        "ekaggata",
+        "jivitindriya",
+        "manasikara",
+        "vitakka",
+        "vicara",
+        "adhimokkha"
+      ],
       "cetasikaCount": 10
     },
     "santiirana": {
-      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha", "piti"],
+      "cetasikas": [
+        "phassa",
+        "vedana",
+        "sanna",
+        "cetana",
+        "ekaggata",
+        "jivitindriya",
+        "manasikara",
+        "vitakka",
+        "vicara",
+        "adhimokkha",
+        "piti"
+      ],
       "cetasikaCount": 11
     },
     "votthapana": {
-      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha", "viriya"],
+      "cetasikas": [
+        "phassa",
+        "vedana",
+        "sanna",
+        "cetana",
+        "ekaggata",
+        "jivitindriya",
+        "manasikara",
+        "vitakka",
+        "vicara",
+        "adhimokkha",
+        "viriya"
+      ],
       "cetasikaCount": 11
     },
     "javana": {
-      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha", "viriya", "piti", "chanda", "kusala/akusala cetasikas"],
+      "cetasikas": [
+        "phassa",
+        "vedana",
+        "sanna",
+        "cetana",
+        "ekaggata",
+        "jivitindriya",
+        "manasikara",
+        "vitakka",
+        "vicara",
+        "adhimokkha",
+        "viriya",
+        "piti",
+        "chanda",
+        "kusala/akusala cetasikas"
+      ],
       "cetasikaCount": 34
     },
     "tadarammana": {
-      "cetasikas": ["phassa", "vedana", "sanna", "cetana", "ekaggata", "jivitindriya", "manasikara", "vitakka", "vicara", "adhimokkha", "piti"],
+      "cetasikas": [
+        "phassa",
+        "vedana",
+        "sanna",
+        "cetana",
+        "ekaggata",
+        "jivitindriya",
+        "manasikara",
+        "vitakka",
+        "vicara",
+        "adhimokkha",
+        "piti"
+      ],
       "cetasikaCount": 11
     }
   }

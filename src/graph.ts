@@ -11,6 +11,7 @@ interface GraphNode {
   label: string;
   labelPt: string;
   labelEn: string;
+  labelEs?: string;
   group: string;
   subgroup: string;
   khandha: string;
@@ -30,6 +31,7 @@ interface GraphEdge {
   type: string;
   label: string;
   labelPt: string;
+  labelEs?: string;
   dir: string;
   visible: boolean;
 }
@@ -300,7 +302,14 @@ function drawGraph(
     ctx.stroke();
 
     // Label
-    const fullLbl = lang === "pt" && node.labelPt ? node.labelPt : (lang === "en" && node.labelEn ? node.labelEn : node.label);
+    const fullLbl =
+      lang === "pt" && node.labelPt
+        ? node.labelPt
+        : lang === "es" && node.labelEs
+          ? node.labelEs
+          : lang === "en" && node.labelEn
+            ? node.labelEn
+            : node.label;
     const lbl = fullLbl.length > 18 ? fullLbl.slice(0, 16) + "…" : fullLbl;
     const isHov = hoveredNode === node;
     const displayLbl = isHov ? fullLbl : lbl;

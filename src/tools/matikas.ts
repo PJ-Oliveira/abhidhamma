@@ -6,6 +6,7 @@ interface MatikaTerm {
   pali: string;
   en: string;
   pt: string;
+  es?: string;
 }
 
 interface Matika {
@@ -13,9 +14,11 @@ interface Matika {
   title: string;
   titleEn?: string;
   titlePt?: string;
+  titleEs?: string;
   terms: MatikaTerm[];
   definition?: string;
   definitionPt?: string;
+  definitionEs?: string;
 }
 
 interface MatikasData {
@@ -64,11 +67,21 @@ function initMatikas(container: HTMLElement): void {
       container.appendChild(dukasDiv);
 
       function renderMatika(m: Matika): string {
-        const title = lang === "pt" && m.titlePt ? m.titlePt : (lang === "en" && m.titleEn ? m.titleEn : m.title);
-        const def = lang === "pt" && m.definitionPt ? m.definitionPt : (m.definition || "");
+        const title =
+          lang === "pt" && m.titlePt
+            ? m.titlePt
+            : lang === "es" && m.titleEs
+              ? m.titleEs
+              : m.titleEn || m.title;
+        const def =
+          lang === "pt" && m.definitionPt
+            ? m.definitionPt
+            : lang === "es" && m.definitionEs
+              ? m.definitionEs
+              : m.definition || "";
         
         const termsHtml = m.terms.map((term) => {
-          const trans = lang === "pt" ? term.pt : term.en;
+          const trans = lang === "pt" ? term.pt : lang === "es" ? (term.es || term.en) : term.en;
           return `<div class="mat-term">
             <span class="mat-pali">${escHtml(term.pali)}</span>
             <span class="mat-trans">${escHtml(trans)}</span>

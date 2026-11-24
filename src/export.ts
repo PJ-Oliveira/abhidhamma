@@ -33,7 +33,7 @@ async function loadGlossary(): Promise<GlossEntry[]> {
   }
 }
 
-export function collectUsedTerms(segs: Segment[], glossary: GlossEntry[]): GlossEntry[] {
+export function collectUsedTerms(segs: Segment[], glossary: GlossEntry[], isCommentary: boolean = false): GlossEntry[] {
   const found = new Set<string>();
   const wordRegex = /[\p{L}\p{M}]+/gu;
   const allPaliWords = new Set<string>();
@@ -53,9 +53,10 @@ export function collectUsedTerms(segs: Segment[], glossary: GlossEntry[]): Gloss
     if (found.has(key)) continue;
     const headwordBase = key.split(" / ")[0]!.split(" ")[0]!.trim();
     if (!headwordBase) continue;
+    if (isCommentary && !isSafeTranslationGlossaryTerm(headwordBase)) continue;
     if (
       allPaliWords.has(headwordBase) ||
-      (headwordBase.length >= 3 && paliWordList.some((w) => w.startsWith(headwordBase)))
+      (!isCommentary && headwordBase.length >= 3 && paliWordList.some((w) => w.startsWith(headwordBase)))
     ) {
       found.add(key);
     }
@@ -67,7 +68,7 @@ export function collectUsedTerms(segs: Segment[], glossary: GlossEntry[]): Gloss
     .map((g) => ({ ...g, entry: g }));
 }
 
-const XML_INVALID_CTRL_RE = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\uFFFE\uFFFF]/g;
+const XML_INVALID_CTRL_RE = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F\uFFFD\uFFFE\uFFFF]/g;
 
 export function stripInvalidXmlChars(s: string): string {
   return s.replace(XML_INVALID_CTRL_RE, "");
@@ -196,8 +197,14 @@ export function buildGlossaryHtml(
     const parts: string[] = [`<strong>${escHtml(term.h)}</strong>`];
     if (term.pos) parts.push(`<em>(${escHtml(term.pos)})</em>`);
     if (showEn || (!showPt && !showEs)) parts.push(escHtml(term.en));
-    if (showPt) parts.push(escHtml(term.pt));
-    if (showEs && term.es) parts.push(escHtml(term.es));
+    if (showPt) {
+      const ptDef = term.pt || term.en;
+      if (ptDef) parts.push(escHtml(ptDef));
+    }
+    if (showEs) {
+      const esDef = term.es || term.en;
+      if (esDef) parts.push(escHtml(esDef));
+    }
     return `<p class="glossary-entry" id="dict_${tId}">${parts.join(" — ")}</p>`;
   });
   return `
@@ -222,28 +229,64 @@ export type LangMode =
 const CANONICAL_GROUP_ORDER = ["abhidhamma", "outros", "visuddhimagga", "comentarios"];
 const CANONICAL_PART_ORDER = ["mula", "nidanakatha", "attha", "tika", "anutika", "texto"];
 
-const GROUP_TITLES_PT: Record<string, string> = {
-  abhidhamma: "Abhidhamma Piṭaka (Textos Canônicos, Comentários e Subcomentários)",
-  outros: "Tratados e Compêndios de Abhidhamma",
-  visuddhimagga: "Visuddhimagga (O Caminho da Purificação e Mahāṭīkā)",
-  comentarios: "Comentários e Estudos Contemporâneos",
+const GROUP_TITLES_BY_LANG: Record<"pt" | "en" | "es", Record<string, string>> = {
+  pt: {
+    abhidhamma: "Abhidhamma Piṭaka (Textos Canônicos, Comentários e Subcomentários)",
+    outros: "Tratados e Compêndios de Abhidhamma",
+    visuddhimagga: "Visuddhimagga (O Caminho da Purificação e Mahāṭīkā)",
+    comentarios: "Comentários e Estudos Contemporâneos",
+  },
+  en: {
+    abhidhamma: "Abhidhamma Piṭaka (Canonical Texts, Commentaries & Subcommentaries)",
+    outros: "Abhidhamma Treatises & Compendia",
+    visuddhimagga: "Visuddhimagga (The Path of Purification & Mahāṭīkā)",
+    comentarios: "Contemporary Commentaries & Studies",
+  },
+  es: {
+    abhidhamma: "Abhidhamma Piṭaka (Textos Canónicos, Comentarios y Subcomentarios)",
+    outros: "Tratados y Compendios de Abhidhamma",
+    visuddhimagga: "Visuddhimagga (El Camino de la Purificación y Mahāṭīkā)",
+    comentarios: "Comentarios y Estudios Contemporáneos",
+  },
 };
 
-const PART_TITLES_PT: Record<string, string> = {
-  mula: "Mūla (Texto Raiz)",
-  nidanakatha: "Nidānakathā (Introdução Comentarial)",
-  attha: "Aṭṭhakathā (Comentário)",
-  tika: "Ṭīkā (Subcomentário)",
-  anutika: "Anuṭīkā (Sub-subcomentário)",
-  texto: "Texto Integral",
+const PART_TITLES_BY_LANG: Record<"pt" | "en" | "es", Record<string, string>> = {
+  pt: {
+    mula: "Mūla (Texto Raiz)",
+    nidanakatha: "Nidānakathā (Introdução Comentarial)",
+    attha: "Aṭṭhakathā (Comentário)",
+    tika: "Ṭīkā (Subcomentário)",
+    anutika: "Anuṭīkā (Sub-subcomentário)",
+    texto: "Texto Integral",
+  },
+  en: {
+    mula: "Mūla (Root Text)",
+    nidanakatha: "Nidānakathā (Commentarial Introduction)",
+    attha: "Aṭṭhakathā (Commentary)",
+    tika: "Ṭīkā (Subcommentary)",
+    anutika: "Anuṭīkā (Sub-subcommentary)",
+    texto: "Full Text",
+  },
+  es: {
+    mula: "Mūla (Texto Raíz)",
+    nidanakatha: "Nidānakathā (Introducción Comentarial)",
+    attha: "Aṭṭhakathā (Comentario)",
+    tika: "Ṭīkā (Subcomentario)",
+    anutika: "Anuṭīkā (Sub-subcomentario)",
+    texto: "Texto Integral",
+  },
 };
 
-function getGroupDisplayTitle(group: string): string {
-  return GROUP_TITLES_PT[group] || t(`groupTitle_${group}`, settings.uiLang) || group;
+export function getGroupDisplayTitle(group: string, docLang: "pt" | "en" | "es" = settings.uiLang): string {
+  return GROUP_TITLES_BY_LANG[docLang]?.[group] || t(`groupTitle_${group}`, docLang) || group;
 }
 
-function getPartDisplayTitle(partKey: string, fallbackLabel?: string): string {
-  return PART_TITLES_PT[partKey] || t(`part_${partKey}`, settings.uiLang) || fallbackLabel || partKey;
+export function getPartDisplayTitle(
+  partKey: string,
+  fallbackLabel?: string,
+  docLang: "pt" | "en" | "es" = settings.uiLang
+): string {
+  return PART_TITLES_BY_LANG[docLang]?.[partKey] || t(`part_${partKey}`, docLang) || fallbackLabel || partKey;
 }
 
 function orderedGroupEntries(manifest: Manifest): Array<[string, WorkEntry[]]> {
@@ -425,10 +468,22 @@ export function escHtml(s: unknown): string {
     .replace(/"/g, "&quot;");
 }
 
+const TRANSLATION_GLOSSARY_SKIP = new Set([
+  "mano", "tato", "sota", "nava", "pana", "dasa", "tena",
+  "viya", "yadi", "catu", "deti", "ettha", "hoti", "idha", "atha",
+]);
+const PALI_DIACRITIC_RE = /[āīūṅñṭḍṇḷṃṁ]/;
+
+function isSafeTranslationGlossaryTerm(lowerWord: string): boolean {
+  if (PALI_DIACRITIC_RE.test(lowerWord)) return true;
+  return lowerWord.length >= 4 && !TRANSLATION_GLOSSARY_SKIP.has(lowerWord);
+}
+
 export function linkifyText(
   text: string,
   termsMap?: Map<string, string>,
-  linkPrefix: string = "glossary.xhtml"
+  linkPrefix: string = "glossary.xhtml",
+  isTranslation: boolean = false
 ): string {
   if (!text) return "";
   if (!termsMap || termsMap.size === 0) return escHtml(text);
@@ -442,7 +497,7 @@ export function linkifyText(
     } else {
       const word = parts[i] || "";
       const lower = word.toLowerCase().normalize("NFC");
-      const termId = termsMap.get(lower);
+      const termId = (!isTranslation || isSafeTranslationGlossaryTerm(lower)) ? termsMap.get(lower) : undefined;
       if (termId) {
         out += `<a epub:type="glossref" href="${linkPrefix}#dict_${termId}">${escHtml(word)}</a>`;
       } else {
@@ -456,15 +511,16 @@ export function linkifyText(
 export function walkNode(
   node: Node,
   termsMap?: Map<string, string>,
-  linkPrefix: string = "glossary.xhtml"
+  linkPrefix: string = "glossary.xhtml",
+  isTranslation: boolean = false
 ): string {
-  if (node.nodeType === Node.TEXT_NODE) return linkifyText(node.textContent ?? "", termsMap, linkPrefix);
+  if (node.nodeType === Node.TEXT_NODE) return linkifyText(node.textContent ?? "", termsMap, linkPrefix, isTranslation);
   if (node.nodeType !== Node.ELEMENT_NODE) return "";
   const el = node as Element;
   const tag = el.tagName.toLowerCase();
   if (el.classList?.contains("var-note")) return "";
   const inner = Array.from(el.childNodes)
-    .map((n) => walkNode(n, termsMap, linkPrefix))
+    .map((n) => walkNode(n, termsMap, linkPrefix, isTranslation))
     .join("");
   if (tag === "b" || tag === "strong") return `<strong>${inner}</strong>`;
   if (tag === "i" || tag === "em") return `<em>${inner}</em>`;
@@ -481,13 +537,14 @@ export function walkNode(
 export function fieldHtml(
   raw: string,
   termsMap?: Map<string, string>,
-  linkPrefix: string = "glossary.xhtml"
+  linkPrefix: string = "glossary.xhtml",
+  isTranslation: boolean = false
 ): string {
   if (!raw) return "";
   const cleaned = stripInvalidXmlChars(String(raw))
     .replace(/<sup[^>]*class=["']?var-note["']?[^>]*>[\s\S]*?<\/sup>/gi, "")
     .replace(/<p\s+rend=["'][^"']*["']\s*\/>/gi, "");
-  if (!cleaned.includes("<")) return linkifyText(cleaned, termsMap, linkPrefix);
+  if (!cleaned.includes("<")) return linkifyText(cleaned, termsMap, linkPrefix, isTranslation);
 
   // Strict stack-balanced inline XHTML sanitizer (guarantees well-formed XML 1.0)
   const tokenRegex = /(<\/?[a-zA-Z0-9]+[^>]*>)/g;
@@ -507,7 +564,7 @@ export function fieldHtml(
   for (let i = 0; i < tokens.length; i++) {
     const tok = tokens[i] || "";
     if (i % 2 === 0) {
-      out += linkifyText(tok, termsMap, linkPrefix);
+      out += linkifyText(tok, termsMap, linkPrefix, isTranslation);
     } else {
       const lowerTag = tok.toLowerCase();
       if (/^<(?:b|strong)(?:\s[^>]*)?>$/.test(lowerTag)) {
@@ -556,7 +613,8 @@ export function segToHtml(
   termsMap?: Map<string, string>,
   linkPrefix: string = "glossary.xhtml",
   anchorId?: string,
-  notePrefix: string = ""
+  notePrefix: string = "",
+  isCommentary: boolean = false
 ): string {
   const rend = seg.rend;
   const paliText = seg.pali != null ? String(seg.pali) : "";
@@ -565,7 +623,10 @@ export function segToHtml(
   const esText = seg.es != null ? String(seg.es) : "";
 
   const isEnglishBase = Boolean(
-    paliText && (paliText === enText || (!enText && /\b(the|and|is|of|to)\b/i.test(paliText)))
+    paliText &&
+      (isCommentary ||
+        paliText === enText ||
+        (!enText && /\b(the|and|is|of|to|chapter|preface|introduction|part|appendix|contents)\b/i.test(paliText)))
   );
   const forcePaliLinkTest = !isEnglishBase && !langMode.startsWith("pali") && hasMappedTerm(paliText, termsMap);
   const showPali = langMode.startsWith("pali") || forcePaliLinkTest;
@@ -599,7 +660,7 @@ export function segToHtml(
       : "";
 
   if (showPali && paliText) {
-    const linkedPali = fieldHtml(paliText, forcePaliLinkTest ? termsMap : undefined, linkPrefix);
+    const linkedPali = fieldHtml(paliText, forcePaliLinkTest ? termsMap : undefined, linkPrefix, isEnglishBase);
     const baseLangAttr = isEnglishBase ? "en" : "pi";
     inner += `<${lineTag} class="line pali" lang="${baseLangAttr}">${paranumPrefix}${linkedPali}</${lineTag}>`;
   }
@@ -608,18 +669,18 @@ export function segToHtml(
     const textToUse = enText || paliText;
     if (textToUse && !(showPali && textToUse === paliText)) {
       const prefix = !showPali ? paranumPrefix : "";
-      inner += `<${lineTag} class="line en" lang="en">${prefix}${fieldHtml(textToUse, termsMap, linkPrefix)}</${lineTag}>`;
+      inner += `<${lineTag} class="line en" lang="en">${prefix}${fieldHtml(textToUse, termsMap, linkPrefix, true)}</${lineTag}>`;
     }
   }
 
   if (showPt && ptText) {
     const prefix = !showPali && !showEn ? paranumPrefix : "";
-    inner += `<${lineTag} class="line pt" lang="pt">${prefix}${fieldHtml(ptText, termsMap, linkPrefix)}</${lineTag}>`;
+    inner += `<${lineTag} class="line pt" lang="pt">${prefix}${fieldHtml(ptText, termsMap, linkPrefix, true)}</${lineTag}>`;
   }
 
   if (showEs && esText) {
     const prefix = !showPali && !showEn && !showPt ? paranumPrefix : "";
-    inner += `<${lineTag} class="line es" lang="es">${prefix}${fieldHtml(esText, termsMap, linkPrefix)}</${lineTag}>`;
+    inner += `<${lineTag} class="line es" lang="es">${prefix}${fieldHtml(esText, termsMap, linkPrefix, true)}</${lineTag}>`;
   }
 
   let asidesHtml = "";
@@ -737,7 +798,8 @@ export function buildSectionBodyAndToc(
   langMode: LangMode,
   termsMap: Map<string, string>,
   idPrefix: string,
-  linkPrefix: string
+  linkPrefix: string,
+  isCommentary: boolean = false
 ): { bodyHtml: string; chapters: ChapterTocNode[] } {
   const chapters: ChapterTocNode[] = [];
   const bodyParts: string[] = [];
@@ -798,7 +860,7 @@ export function buildSectionBodyAndToc(
       }
     }
 
-    const html = segToHtml(seg, langMode, termsMap, linkPrefix, anchorId, `${idPrefix}_s${segIdx}`);
+    const html = segToHtml(seg, langMode, termsMap, linkPrefix, anchorId, `${idPrefix}_s${segIdx}`, isCommentary);
     if (html) bodyParts.push(html);
   }
 
@@ -815,29 +877,64 @@ function getBaseHref(): string {
   return "./";
 }
 
-function buildPrintCss(baseHref: string): string {
+export interface EmbeddedPrintFonts {
+  regDataUri?: string;
+  itaDataUri?: string;
+}
+
+let cachedPrintFonts: EmbeddedPrintFonts | null = null;
+
+function uint8ToBase64(bytes: Uint8Array): string {
+  let binary = "";
+  const chunk = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunk) {
+    binary += String.fromCharCode.apply(null, Array.from(bytes.subarray(i, i + chunk)));
+  }
+  return btoa(binary);
+}
+
+async function loadEmbeddedPrintFonts(): Promise<EmbeddedPrintFonts> {
+  if (cachedPrintFonts) return cachedPrintFonts;
+  const result: EmbeddedPrintFonts = {};
+  try {
+    const [regRes, itaRes] = await Promise.all([
+      fetch("fonts/GentiumBookPlus-Regular.ttf"),
+      fetch("fonts/GentiumBookPlus-Italic.ttf"),
+    ]);
+    if (regRes.ok && typeof regRes.arrayBuffer === "function") {
+      const regBytes = new Uint8Array(await regRes.arrayBuffer());
+      if (regBytes.length > 0 && regBytes[0] === 0x00 && regBytes[1] === 0x01) {
+        result.regDataUri = `data:font/ttf;base64,${uint8ToBase64(regBytes)}`;
+      }
+    }
+    if (itaRes.ok && typeof itaRes.arrayBuffer === "function") {
+      const itaBytes = new Uint8Array(await itaRes.arrayBuffer());
+      if (itaBytes.length > 0 && itaBytes[0] === 0x00 && itaBytes[1] === 0x01) {
+        result.itaDataUri = `data:font/ttf;base64,${uint8ToBase64(itaBytes)}`;
+      }
+    }
+  } catch (e) {
+    console.warn("Could not embed print fonts as base64:", e);
+  }
+  if (result.regDataUri || result.itaDataUri) {
+    cachedPrintFonts = result;
+  }
+  return result;
+}
+
+function buildPrintCss(baseHref: string, embeddedFonts?: EmbeddedPrintFonts): string {
+  const regSrc = embeddedFonts?.regDataUri || `${baseHref}fonts/GentiumBookPlus-Regular.ttf`;
+  const itaSrc = embeddedFonts?.itaDataUri || `${baseHref}fonts/GentiumBookPlus-Italic.ttf`;
   return `
 @font-face {
   font-family: 'Gentium Book Plus';
-  src: url('${baseHref}fonts/GentiumBookPlus-Regular.ttf') format('truetype');
+  src: url('${regSrc}') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Gentium Book Plus';
-  src: url('${baseHref}fonts/GentiumBookPlus-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Noto Serif Pali';
-  src: url('${baseHref}fonts/NotoSerifPali-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Noto Serif Pali';
-  src: url('${baseHref}fonts/NotoSerifPali-Italic.ttf') format('truetype');
+  src: url('${itaSrc}') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
@@ -849,14 +946,14 @@ function buildPrintCss(baseHref: string): string {
     content: counter(page);
     font-size: 9.5pt;
     color: #555;
-    font-family: 'Gentium Book Plus', 'Noto Serif Pali', Georgia, serif;
+    font-family: 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   }
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Gentium Book Plus', 'Noto Serif Pali', 'Noto Serif', Georgia, serif;
+  font-family: 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   font-size: 13pt;
   line-height: 1.68;
   color: #181410;
@@ -965,10 +1062,13 @@ nav.print-toc a:hover {
 
 .group-banner {
   page-break-before: always;
+  break-before: page;
+  page-break-after: avoid;
+  break-after: avoid;
   text-align: center;
-  padding: 1.8cm 0.5cm 1cm 0.5cm;
+  padding: 1.4cm 0.5cm 0.8cm 0.5cm;
   border-bottom: 2px solid #8b4513;
-  margin-bottom: 1.2cm;
+  margin-bottom: 0.8cm;
   hyphens: none;
 }
 .group-banner h1 {
@@ -981,11 +1081,18 @@ nav.print-toc a:hover {
 
 .work-banner {
   page-break-before: always;
+  break-before: page;
+  page-break-after: avoid;
+  break-after: avoid;
   text-align: center;
-  padding: 1cm 0 0.6cm 0;
+  padding: 0.8cm 0 0.5cm 0;
   border-bottom: 1.5px solid #bfa588;
-  margin-bottom: 1cm;
+  margin-bottom: 0.8cm;
   hyphens: none;
+}
+.group-banner + .work-banner {
+  page-break-before: auto;
+  break-before: auto;
 }
 .work-banner h1 {
   font-size: 18pt;
@@ -995,6 +1102,7 @@ nav.print-toc a:hover {
 
 .part-banner {
   page-break-before: always;
+  break-before: page;
   text-align: center;
   padding: 0.6cm 0.4cm;
   margin: 1.2em 0 1em 0;
@@ -1004,6 +1112,11 @@ nav.print-toc a:hover {
   page-break-after: avoid;
   break-after: avoid;
   hyphens: none;
+}
+.work-banner + .part-section .part-banner,
+main > .part-section:first-child .part-banner {
+  page-break-before: auto;
+  break-before: auto;
 }
 .part-banner h2 {
   font-size: 15.5pt;
@@ -1098,19 +1211,28 @@ p.bodytext, div.seg {
   margin-bottom: 0.25em;
 }
 .line.pali {
-  font-family: 'Gentium Book Plus', 'Noto Serif Pali', 'Noto Serif', Georgia, serif;
+  font-family: 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   font-size: 13pt;
   font-style: italic;
   color: #2b2118;
   margin-bottom: 0.25em;
 }
 .line.en, .line.pt, .line.es {
-  font-family: 'Gentium Book Plus', 'Noto Serif Pali', 'Noto Serif', Georgia, serif;
+  font-family: 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   font-size: 13pt;
   color: #181410;
   margin-top: 0.12em;
   margin-bottom: 0.55em;
   text-align: justify;
+}
+a[href*="#dict_"] {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted #9e8870;
+}
+a.footnote-ref {
+  color: #7a3e18;
+  text-decoration: none;
 }
 .line.pali + .line.en,
 .line.pali + .line.pt,
@@ -1186,7 +1308,7 @@ export const EPUB_CSS = `
 }
 
 html, body {
-  font-family: 'Gentium Book Plus', 'Noto Serif Pali', 'Noto Serif', Georgia, serif;
+  font-family: 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   font-size: 13pt;
   line-height: 1.68;
   margin: 4% 5%;
@@ -1203,7 +1325,7 @@ html, body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Gentium Book Plus', 'Noto Serif Pali', Georgia, serif;
+  font-family: 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   hyphens: none;
   -webkit-hyphens: none;
   page-break-after: avoid;
@@ -1267,7 +1389,7 @@ h4, h4.subsubhead {
 }
 
 p, p.bodytext, div.seg {
-  font-family: 'Gentium Book Plus', 'Noto Serif Pali', Georgia, serif;
+  font-family: 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   font-size: 13pt;
   line-height: 1.68;
   margin: 0.68em 0;
@@ -1289,7 +1411,7 @@ p, p.bodytext, div.seg {
 
 .line {
   display: block;
-  font-family: 'Gentium Book Plus', 'Noto Serif Pali', Georgia, serif;
+  font-family: 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   font-size: 13pt;
   line-height: 1.68;
   text-align: justify;
@@ -1297,7 +1419,7 @@ p, p.bodytext, div.seg {
 }
 
 .line.pali {
-  font-family: 'Gentium Book Plus', 'Noto Serif Pali', Georgia, serif;
+  font-family: 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   font-size: 13pt;
   font-style: italic;
   color: #2b2118;
@@ -1305,7 +1427,7 @@ p, p.bodytext, div.seg {
 }
 
 .line.en, .line.pt, .line.es {
-  font-family: 'Gentium Book Plus', 'Noto Serif Pali', Georgia, serif;
+  font-family: 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   font-size: 13pt;
   color: #181410;
   margin-top: 0.12em;
@@ -1494,7 +1616,27 @@ nav#toc a, .toc-short a {
   line-height: 1.58;
   text-align: justify;
 }
+a[href*="#dict_"] {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted #9e8870;
+}
+a.footnote-ref {
+  color: #7a3e18;
+  text-decoration: none;
+}
 `;
+
+export function buildEpubCss(hasRegFont: boolean, hasItaFont: boolean): string {
+  let css = EPUB_CSS;
+  if (!hasRegFont) {
+    css = css.replace(/@font-face\s*\{[^}]*GentiumBookPlus-Regular\.ttf[^}]*\}\s*/g, "");
+  }
+  if (!hasItaFont) {
+    css = css.replace(/@font-face\s*\{[^}]*GentiumBookPlus-Italic\.ttf[^}]*\}\s*/g, "");
+  }
+  return css;
+}
 
 // ── Render Hierarchical TOC HTML for Print/PDF & EPUB ────────────────────────
 
@@ -1529,11 +1671,12 @@ export function buildPrintHtml(
   termsMap: Map<string, string>,
   workId?: string,
   group?: string,
-  partSections?: PartExportSection[]
+  partSections?: PartExportSection[],
+  embeddedFonts?: EmbeddedPrintFonts
 ): string {
   const author = getAuthor(workId ?? "", group ?? "");
   const baseHref = getBaseHref();
-  const css = buildPrintCss(baseHref);
+  const css = buildPrintCss(baseHref, embeddedFonts);
   const labels = getExportDocLabels(langMode);
 
   let tocInnerHtml = "";
@@ -1566,7 +1709,14 @@ export function buildPrintHtml(
     tocInnerHtml = `<ol>\n${partTocItems.join("\n")}\n</ol>`;
     mainBodyHtml = bodyBlocks.join("\n");
   } else {
-    const { bodyHtml, chapters } = buildSectionBodyAndToc(segs, langMode, termsMap, "doc", "");
+    const { bodyHtml, chapters } = buildSectionBodyAndToc(
+      segs,
+      langMode,
+      termsMap,
+      "doc",
+      "",
+      group === "comentarios"
+    );
     const chListHtml = renderChaptersTocListHtml(chapters, "");
     tocInnerHtml = chListHtml;
     if (glossaryHtml) {
@@ -1613,10 +1763,12 @@ window.addEventListener("load", function() {
 export async function buildFullCorpusPrintHtml(
   manifest: Manifest,
   langMode: LangMode,
-  onProgress: (msg: string) => void
+  onProgress: (msg: string) => void,
+  embeddedFonts?: EmbeddedPrintFonts
 ): Promise<string> {
   const baseHref = getBaseHref();
-  const css = buildPrintCss(baseHref);
+  const fonts = embeddedFonts ?? (await loadEmbeddedPrintFonts());
+  const css = buildPrintCss(baseHref, fonts);
   const labels = getExportDocLabels(langMode);
   const rawGlossary = await loadGlossary();
   const termsMap = new Map<string, string>();
@@ -1630,9 +1782,10 @@ export async function buildFullCorpusPrintHtml(
   let workCounter = 0;
 
   for (const [group, works] of orderedGroupEntries(manifest)) {
-    const grpTitle = getGroupDisplayTitle(group);
+    const grpTitle = getGroupDisplayTitle(group, labels.docLang);
     const grpAnchor = `grp_${group}`;
     const workTocLis: string[] = [];
+    const isCommentaryGroup = group === "comentarios";
 
     bodyBlocks.push(`<div class="group-banner" id="${grpAnchor}"><h1>${escHtml(grpTitle)}</h1></div>`);
 
@@ -1640,7 +1793,7 @@ export async function buildFullCorpusPrintHtml(
       workCounter++;
       const workPrefix = `w${String(workCounter).padStart(2, "0")}`;
       const workAnchor = `${workPrefix}_top`;
-      onProgress(`Preparando PDF: ${work.title}…`);
+      onProgress(`${t("exportPreparingPdf", settings.uiLang)} ${work.title}…`);
       await new Promise((r) => setTimeout(r, 10));
 
       bodyBlocks.push(`<div class="work-banner" id="${workAnchor}"><h1>${escHtml(work.title)}</h1></div>`);
@@ -1651,7 +1804,7 @@ export async function buildFullCorpusPrintHtml(
         if (!part) continue;
         const partPrefix = `${workPrefix}_${partKey}`;
         const partAnchor = `${partPrefix}_top`;
-        const partTitle = getPartDisplayTitle(partKey, part.label);
+        const partTitle = getPartDisplayTitle(partKey, part.label, labels.docLang);
 
         const segs: Segment[] = [];
         for (const file of part.files) {
@@ -1672,7 +1825,8 @@ export async function buildFullCorpusPrintHtml(
           langMode,
           termsMap,
           partPrefix,
-          ""
+          "",
+          isCommentaryGroup
         );
 
         const chListHtml = renderChaptersTocListHtml(chapters, "");
@@ -1757,7 +1911,7 @@ function openPrintWindow(html: string, title: string): void {
     a.click();
     document.body.removeChild(a);
     setTimeout(() => URL.revokeObjectURL(url), 10_000);
-    alert("Pop-up blocked. The HTML file has been downloaded — open it in your browser and press Ctrl+P (or ⌘+P) to save as PDF.");
+    alert(t("exportPopupBlocked", settings.uiLang));
     return;
   }
   setTimeout(() => URL.revokeObjectURL(url), 120_000);
@@ -1817,8 +1971,8 @@ export function buildEpub(
 ): Uint8Array {
   const enc = new TextEncoder();
   const author = getAuthor(workId ?? "", group ?? "");
-  const grpTitle = group ? getGroupDisplayTitle(group) : "Abhidhamma Piṭaka";
   const labels = getExportDocLabels(langMode);
+  const grpTitle = group ? getGroupDisplayTitle(group, labels.docLang) : "Abhidhamma Piṭaka";
   const bookUid = `abhidhamma-export-${Date.now()}`;
   const hasGlossary = glossaryHtml.trim().length > 0;
 
@@ -1831,7 +1985,8 @@ export function buildEpub(
             langMode,
             termsMap,
             "content",
-            hasGlossary ? "glossary.xhtml" : ""
+            hasGlossary ? "glossary.xhtml" : "",
+            group === "comentarios"
           );
           return [
             {
@@ -2015,7 +2170,7 @@ ${glossNcxPoint}
     { name: "OEBPS/content.opf", data: enc.encode(opf) },
     { name: "OEBPS/toc.ncx", data: enc.encode(ncx) },
     { name: "OEBPS/nav.xhtml", data: enc.encode(navXhtml) },
-    { name: "OEBPS/style.css", data: enc.encode(EPUB_CSS) },
+    { name: "OEBPS/style.css", data: enc.encode(buildEpubCss(fontReg.length > 0, fontIta.length > 0)) },
   ];
   for (const f of xhtmlFiles) {
     zipEntries.push({ name: `OEBPS/${f.href}`, data: enc.encode(f.content) });
@@ -2067,7 +2222,7 @@ export async function buildFullCorpusEpub(
   const partFiles: CorpusPartChapterFile[] = [];
   let workIdx = 0;
 
-  onProgress("Incorporando fonte tipográfica Pāḷi (Gentium Book Plus 13pt)...");
+  onProgress(t("exportEmbeddingFont", settings.uiLang));
   let fontReg = new Uint8Array();
   let fontIta = new Uint8Array();
   try {
@@ -2089,11 +2244,12 @@ export async function buildFullCorpusEpub(
   const hasGlossary = glossaryInnerHtml.trim().length > 0;
 
   for (const [group, works] of orderedGroupEntries(manifest)) {
-    const groupTitle = getGroupDisplayTitle(group);
+    const groupTitle = getGroupDisplayTitle(group, labels.docLang);
+    const isCommentaryGroup = group === "comentarios";
     for (const work of works) {
       workIdx++;
       const workCode = `work_${String(workIdx).padStart(3, "0")}`;
-      onProgress(`Processando: ${work.title}…`);
+      onProgress(`${t("exportProcessingWork", settings.uiLang)} ${work.title}…`);
       await new Promise((r) => setTimeout(r, 10));
 
       for (const partKey of orderedPartKeys(work.parts)) {
@@ -2101,7 +2257,7 @@ export async function buildFullCorpusEpub(
         if (!part) continue;
         const fileId = `${workCode}_${partKey}`;
         const href = `${fileId}.xhtml`;
-        const partTitle = getPartDisplayTitle(partKey, part.label);
+        const partTitle = getPartDisplayTitle(partKey, part.label, labels.docLang);
 
         const partSegs: Segment[] = [];
         for (const file of part.files) {
@@ -2122,7 +2278,8 @@ export async function buildFullCorpusEpub(
           langMode,
           termsMap,
           fileId,
-          hasGlossary ? "glossary.xhtml" : ""
+          hasGlossary ? "glossary.xhtml" : "",
+          isCommentaryGroup
         );
 
         const localToc = renderLocalPartTocXhtml(chapters, "", labels.localPartTocTitle);
@@ -2306,6 +2463,10 @@ ${fullWorkLis.join("\n")}
   }
 
   const firstBodyHref = partFiles[0]?.href ?? (hasGlossary ? "glossary.xhtml" : "nav.xhtml");
+  const navTocFallbackLi =
+    fullNavLists.length === 0 && !hasGlossary
+      ? `    <li><a href="nav.xhtml">${escHtml(labels.landmarkToc)}</a></li>`
+      : "";
   const navXhtml = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="${labels.docLang}" xml:lang="${labels.docLang}">
@@ -2325,6 +2486,7 @@ ${fullWorkLis.join("\n")}
   <ol class="toc-short">
 ${shortNavLists.join("\n")}
 ${hasGlossary ? `    <li><a class="toc-grp-label" href="glossary.xhtml">${escHtml(labels.glossaryTitle)}</a></li>` : ""}
+${navTocFallbackLi}
   </ol>
 </div>
 <hr/>
@@ -2333,6 +2495,7 @@ ${hasGlossary ? `    <li><a class="toc-grp-label" href="glossary.xhtml">${escHtm
   <ol>
 ${fullNavLists.join("\n")}
 ${hasGlossary ? `    <li><a class="toc-grp-label" href="glossary.xhtml">${escHtml(labels.glossaryTitle)}</a></li>` : ""}
+${navTocFallbackLi}
   </ol>
 </nav>
 <nav epub:type="landmarks" hidden="hidden">
@@ -2395,7 +2558,7 @@ ${hasGlossary ? `  <itemref idref="glossary"/>` : ""}
     { name: "OEBPS/content.opf", data: enc.encode(opf) },
     { name: "OEBPS/toc.ncx", data: enc.encode(ncx) },
     { name: "OEBPS/nav.xhtml", data: enc.encode(navXhtml) },
-    { name: "OEBPS/style.css", data: enc.encode(EPUB_CSS) },
+    { name: "OEBPS/style.css", data: enc.encode(buildEpubCss(fontReg.length > 0, fontIta.length > 0)) },
   ];
   if (hasGlossary) {
     zipEntries.push({ name: "OEBPS/glossary.xhtml", data: enc.encode(glossaryXhtml) });
@@ -2407,7 +2570,7 @@ ${hasGlossary ? `  <itemref idref="glossary"/>` : ""}
     zipEntries.push({ name: `OEBPS/${pf.href}`, data: enc.encode(pf.xhtml) });
   }
 
-  onProgress("Finalizando pacote EPUB 3...");
+  onProgress(t("exportFinalizingEpub", settings.uiLang));
   await new Promise((r) => setTimeout(r, 40));
 
   return buildZip(zipEntries);
@@ -2737,29 +2900,30 @@ export function initExportPanel(
   workSel.dispatchEvent(new Event("change"));
 
   async function runExport(format: "pdf" | "epub"): Promise<void> {
-    const langMode = langSel.value as LangMode;
+    const langMode = (langSel.value || langSel.options[0]?.value || "pali+pt") as LangMode;
 
     // ── Full Corpus Export (EPUB or PDF) ──
     if (workSel.value === "all_works") {
       statusDiv.textContent = t("exportBuilding", settings.uiLang);
       pdfBtn.disabled = true;
       epubBtn.disabled = true;
+      const fullBaseName = t("exportFullFilename", getDocLangCode(langMode));
       try {
         if (format === "epub") {
           const bytes = await buildFullCorpusEpub(manifest, langMode, (msg) => {
             statusDiv.textContent = msg;
           });
-          downloadBlob(bytes, "Abhidhamma_Colecao_Completa.epub", "application/epub+zip");
+          downloadBlob(bytes, `${fullBaseName}.epub`, "application/epub+zip");
         } else {
           const html = await buildFullCorpusPrintHtml(manifest, langMode, (msg) => {
             statusDiv.textContent = msg;
           });
-          openPrintWindow(html, "Abhidhamma_Colecao_Completa");
+          openPrintWindow(html, fullBaseName);
         }
         statusDiv.textContent = "";
       } catch (err) {
         log.error("full corpus export failed", err);
-        statusDiv.textContent = "Export failed. See console.";
+        statusDiv.textContent = t("exportFailed", settings.uiLang);
       } finally {
         pdfBtn.disabled = false;
         epubBtn.disabled = false;
@@ -2772,7 +2936,7 @@ export function initExportPanel(
     if (!work) return;
     const partKeys = getSelectedPartKeys();
     if (partKeys.length === 0) {
-      statusDiv.textContent = "Select at least one part.";
+      statusDiv.textContent = t("exportSelectPart", settings.uiLang);
       return;
     }
 
@@ -2790,6 +2954,7 @@ export function initExportPanel(
     epubBtn.disabled = true;
 
     try {
+      const docLang = getDocLangCode(langMode);
       let allSegs: Segment[] = [];
       let partLabel = "";
       const partSegsList: Array<{ partKey: string; partTitle: string; segs: Segment[] }> = [];
@@ -2797,7 +2962,7 @@ export function initExportPanel(
       for (const partKey of partKeys) {
         const part = work.parts[partKey];
         if (!part) continue;
-        const pTitle = getPartDisplayTitle(partKey, part.label);
+        const pTitle = getPartDisplayTitle(partKey, part.label, docLang);
         partLabel += (partLabel ? " + " : "") + pTitle;
         const partChapters = getChapterToc(work, partKey);
         const segs = await fetchWorkSegments(
@@ -2816,15 +2981,17 @@ export function initExportPanel(
           ? `${work.title} — ${partLabel}`
           : work.title;
 
+      const workGroup = allWorks.find((w) => w.work.id === work.id)?.group ?? "";
+      const isCommentaryWork = workGroup === "comentarios";
+
       const glossary = await loadGlossary();
-      const usedTerms = collectUsedTerms(allSegs, glossary);
+      const usedTerms = collectUsedTerms(allSegs, glossary, isCommentaryWork);
       const termsMap = new Map<string, string>();
       usedTerms.forEach((entry, idx) => {
         const headword = entry.h.split(" / ")[0]!.split(" ")[0]!.toLowerCase().normalize("NFC");
         if (!termsMap.has(headword)) termsMap.set(headword, String(idx));
       });
       const glossaryHtml = buildGlossaryHtml(usedTerms, langMode, termsMap);
-      const workGroup = allWorks.find((w) => w.work.id === work.id)?.group ?? "";
 
       const linkTarget = format === "pdf" ? "" : glossaryHtml ? "glossary.xhtml" : "";
       const partSections: PartExportSection[] = partSegsList.map((item) => {
@@ -2834,7 +3001,8 @@ export function initExportPanel(
           langMode,
           termsMap,
           fileId,
-          linkTarget
+          linkTarget,
+          isCommentaryWork
         );
         return {
           partKey: item.partKey,
@@ -2847,6 +3015,9 @@ export function initExportPanel(
       });
 
       if (format === "pdf") {
+        statusDiv.textContent = t("exportEmbeddingFont", settings.uiLang);
+        const embeddedFonts = await loadEmbeddedPrintFonts();
+        statusDiv.textContent = t("exportPreparingPdf", settings.uiLang);
         const html = buildPrintHtml(
           allSegs,
           title,
@@ -2855,11 +3026,12 @@ export function initExportPanel(
           termsMap,
           work.id,
           workGroup,
-          partSections
+          partSections,
+          embeddedFonts
         );
         openPrintWindow(html, title);
       } else {
-        statusDiv.textContent = "Incorporando fonte tipográfica Pāḷi (Gentium Book Plus 13pt)...";
+        statusDiv.textContent = t("exportEmbeddingFont", settings.uiLang);
         let fontReg = new Uint8Array();
         let fontIta = new Uint8Array();
         try {
@@ -2870,7 +3042,7 @@ export function initExportPanel(
         } catch (e) {
           console.warn("Fonts not found", e);
         }
-        statusDiv.textContent = "Gerando EPUB 3...";
+        statusDiv.textContent = t("exportGeneratingEpub", settings.uiLang);
         const bytes = buildEpub(
           allSegs,
           title,
@@ -2889,7 +3061,7 @@ export function initExportPanel(
       statusDiv.textContent = "";
     } catch (err) {
       log.error("export failed", err);
-      statusDiv.textContent = "Export failed. See console.";
+      statusDiv.textContent = t("exportFailed", settings.uiLang);
     } finally {
       pdfBtn.disabled = false;
       epubBtn.disabled = false;

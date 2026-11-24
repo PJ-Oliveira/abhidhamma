@@ -7,8 +7,10 @@ interface MindmapNode {
   label: string;
   labelEn?: string;
   labelPt?: string;
+  labelEs?: string;
   desc?: string;
   descPt?: string;
+  descEs?: string;
   count?: number;
   children?: MindmapNode[];
 }
@@ -20,13 +22,15 @@ interface MindmapData {
 function getLabel(n: MindmapNode): string {
   const lang = settings.translationLang;
   if (lang === "pt" && n.labelPt) return n.labelPt;
+  if (lang === "es" && n.labelEs) return n.labelEs;
   if (lang === "en" && n.labelEn) return n.labelEn;
-  return n.label;
+  return n.labelEn || n.label;
 }
 
 function getDesc(n: MindmapNode): string {
   const lang = settings.translationLang;
   if (lang === "pt" && n.descPt) return n.descPt;
+  if (lang === "es" && n.descEs) return n.descEs;
   return n.desc || "";
 }
 

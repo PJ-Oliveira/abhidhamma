@@ -1,20 +1,22 @@
-import { t } from "./i18n.js?v=fa47fb44";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=fa47fb44";
-import { renderTree, markActiveLeaf } from "./tree.js?v=fa47fb44";
-import { loadChunk, renderSegments } from "./reader.js?v=fa47fb44";
-import { initDictionaryPanel } from "./dictionary.js?v=fa47fb44";
-import { initSearchPanel } from "./search.js?v=fa47fb44";
-import { initExportPanel } from "./export.js?v=fa47fb44";
-import { initSrsPanel } from "./srs.js?v=fa47fb44";
-import { TetrisUI } from "./tetris/ui.js?v=fa47fb44";
-import { initToolsPanel } from "./tools/tools.js?v=fa47fb44";
-import "./tools/mindmap.js?v=fa47fb44";
-import "./tools/patthana.js?v=fa47fb44";
-import "./tools/vithi.js?v=fa47fb44";
-import "./tools/matikas.js?v=fa47fb44";
-import "./tools/cetasika.js?v=fa47fb44";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=fa47fb44";
-import { createLogger } from "./logger.js?v=fa47fb44";
+import { t } from "./i18n.js?v=3f76b330";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=3f76b330";
+import { renderTree, markActiveLeaf } from "./tree.js?v=3f76b330";
+import { loadChunk, renderSegments } from "./reader.js?v=3f76b330";
+import { initDictionaryPanel } from "./dictionary.js?v=3f76b330";
+import { initSearchPanel } from "./search.js?v=3f76b330";
+import { initExportPanel } from "./export.js?v=3f76b330";
+import { initSrsPanel } from "./srs.js?v=3f76b330";
+import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=3f76b330";
+import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=3f76b330";
+import { initToolsPanel } from "./tools/tools.js?v=3f76b330";
+import "./tools/mindmap.js?v=3f76b330";
+import "./tools/patthana.js?v=3f76b330";
+import "./tools/vithi.js?v=3f76b330";
+import "./tools/matikas.js?v=3f76b330";
+import "./tools/cetasika.js?v=3f76b330";
+import { MnemonicLabUI } from "./mnemonic-lab/ui.js?v=3f76b330";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=3f76b330";
+import { createLogger } from "./logger.js?v=3f76b330";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -123,7 +125,7 @@ function updateHash() {
     const activeBtn = document.querySelector(".rail-btn.active");
     const panel = activeBtn ? (activeBtn.dataset.panel || "tipitaka") : "tipitaka";
     let base = `#/${panel}`;
-    if (panel !== "srs" && panel !== "tetris" && state.work && state.partKey && state.chunkIndex !== undefined) {
+    if (panel !== "srs" && state.work && state.partKey && state.chunkIndex !== undefined) {
         base += `/${state.work.id}/${state.partKey}/${state.chunkIndex}`;
     }
     if (location.hash !== base) {
@@ -233,6 +235,31 @@ function closeChapterNav() {
         btn.setAttribute("aria-expanded", "false");
     }
 }
+function clampChapterNavList(list) {
+    list.style.left = "";
+    list.style.right = "";
+    list.style.transform = "";
+    const vw = window.innerWidth;
+    if (vw <= 0)
+        return;
+    const rect = list.getBoundingClientRect();
+    if (rect.width <= 0)
+        return;
+    const margin = 8;
+    let dx = 0;
+    if (rect.left < margin) {
+        dx = margin - rect.left;
+    }
+    else if (rect.right > vw - margin) {
+        dx = (vw - margin) - rect.right;
+        if (rect.left + dx < margin) {
+            dx = margin - rect.left;
+        }
+    }
+    if (dx !== 0) {
+        list.style.transform = `translateX(${Math.round(dx)}px)`;
+    }
+}
 function renderChapterNav() {
     const navEl = el("chapter-nav");
     navEl.innerHTML = "";
@@ -306,6 +333,8 @@ function renderChapterNav() {
         list.hidden = !opening;
         btn.classList.toggle("open", opening);
         btn.setAttribute("aria-expanded", String(opening));
+        if (opening)
+            clampChapterNavList(list);
         e.stopPropagation();
     });
     navEl.appendChild(btn);
@@ -419,6 +448,7 @@ function renderBookmarks() {
     }
 }
 let switchPanel;
+let collapseSidePanel;
 function wireIconRail() {
     const buttons = document.querySelectorAll(".rail-btn");
     const panels = document.querySelectorAll(".panel");
@@ -445,13 +475,14 @@ function wireIconRail() {
         sidePanel.classList.remove("collapsed");
         collapseBtn.textContent = "‹";
     }
+    collapseSidePanel = doCollapse;
     const savedW = localStorage.getItem("panelW");
     if (savedW) {
         const w = parseInt(savedW, 10);
         if (w >= MIN_W)
             root.style.setProperty("--panel-w", w + "px");
     }
-    const FULLSCREEN_PANELS = new Set(["srs", "tools", "tetris"]);
+    const FULLSCREEN_PANELS = new Set(["srs", "tools", "abhidhamma-srs", "mnemonic-srs"]);
     const readerHeader = el("reader-header");
     const readerContent = el("content");
     const tocNav = el("toc-nav");
@@ -462,42 +493,40 @@ function wireIconRail() {
         readerHeader.style.display = isFullscreen ? "none" : "";
         readerContent.style.display = isFullscreen ? "none" : "";
         tocNav.style.display = isFullscreen ? "none" : "";
-        const isSrsOrTetris = target === "srs" || target === "tetris";
-        readerSrs.style.display = isSrsOrTetris ? "flex" : "none";
+        const isSrsOverlay = target === "srs" || target === "abhidhamma-srs" || target === "mnemonic-srs";
+        readerSrs.style.display = isSrsOverlay ? "flex" : "none";
         readerTools.style.display = target === "tools" ? "flex" : "none";
-        if (isSrsOrTetris) {
-            const activeBtn = document.querySelector(".srs-tab-btn.active, .srs-menu-item.active");
-            const isTetris = target === "tetris" || (target !== "srs" && activeBtn?.dataset.srsMode === "tetris");
-            readerSrs.classList.toggle("tetris-mode", isTetris);
-            document.body.classList.toggle("tetris-active", isTetris);
-        }
-        else {
-            document.body.classList.remove("tetris-active");
-        }
     }
     switchPanel = (target, skipHashUpdate = false) => {
         if (!target)
             return;
         const isMobile = window.innerWidth <= 860;
         const isFullscreen = FULLSCREEN_PANELS.has(target);
-        if (isMobile && isFullscreen) {
+        if (isFullscreen) {
             if (!sidePanel.classList.contains("collapsed"))
                 doCollapse();
         }
         else {
             doExpand();
         }
+        const railTarget = target === "abhidhamma-srs" || target === "mnemonic-srs" ? "srs" : target;
         buttons.forEach((b) => {
-            const isActive = b.dataset.panel === target;
+            const isActive = b.dataset.panel === railTarget;
             b.classList.toggle("active", isActive);
             if (isActive && isMobile) {
-                b.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+                b.scrollIntoView?.({ behavior: "smooth", block: "nearest", inline: "center" });
             }
         });
-        panels.forEach((p) => p.classList.toggle("active", p.id === (target === "tetris" ? "panel-tetris" : `panel-${target}`)));
+        const panelIdTarget = target === "abhidhamma-srs" || target === "mnemonic-srs"
+            ? "panel-srs"
+            : `panel-${target}`;
+        panels.forEach((p) => p.classList.toggle("active", p.id === panelIdTarget));
         toggleReaderOverlay(target);
-        if (target === "tetris") {
-            setSrsModeGlobal?.("tetris", false);
+        if (target === "abhidhamma-srs") {
+            setSrsModeGlobal?.("abhidhamma", false);
+        }
+        else if (target === "mnemonic-srs") {
+            setSrsModeGlobal?.("mnemonic", false);
         }
         else if (target === "srs") {
             setSrsModeGlobal?.("vocab", false);
@@ -530,6 +559,11 @@ function wireIconRail() {
         if (sidePanel.classList.contains("collapsed"))
             doExpand();
         else
+            doCollapse();
+    });
+    const sideCloseBtn = document.getElementById("side-panel-close");
+    sideCloseBtn?.addEventListener("click", () => {
+        if (!sidePanel.classList.contains("collapsed"))
             doCollapse();
     });
     const resizer = el("panel-resizer");
@@ -624,7 +658,8 @@ async function cacheAllForOffline(btn) {
     const origHtml = btn.innerHTML;
     btn.disabled = true;
     try {
-        const cache = await caches.open('abhidhamma-cache-v14');
+        void requestPersistentStorage();
+        const cache = await caches.open(APP_OFFLINE_CACHE_NAME);
         const urls = [
             './',
             './index.html',
@@ -633,6 +668,15 @@ async function cacheAllForOffline(btn) {
             './data/manifest.json',
             './data/dictionary/pali_core.json',
             './data/dictionary/common_pali.json',
+            './data/srs/abhidhamma_cards.json',
+            './js/abhidhamma-srs/types.js',
+            './js/abhidhamma-srs/scheduler.js',
+            './js/abhidhamma-srs/offline-store.js',
+            './js/abhidhamma-srs/ui.js',
+            './js/mnemonic-lab/data.js',
+            './js/mnemonic-lab/nary-chapters-data.js',
+            './js/mnemonic-lab/engine.js',
+            './js/mnemonic-lab/ui.js',
         ];
         if (state.manifest?.groups) {
             for (const group of Object.values(state.manifest.groups)) {
@@ -779,6 +823,7 @@ function wireSettingsPanel() {
     });
 }
 function applyStaticI18n() {
+    document.documentElement.lang = settings.uiLang;
     document.querySelectorAll("[data-i18n]").forEach((node) => {
         const key = node.dataset.i18n;
         if (key)
@@ -796,12 +841,28 @@ function applyStaticI18n() {
     });
     updateSettingsLabels();
 }
-let tetrisUiInstance = null;
+let abhidhammaSrsInstance = null;
+let mnemonicLabInstance = null;
 function refreshLocalizedUI() {
     applyStaticI18n();
     updateSettingsLabels();
-    if (tetrisUiInstance) {
-        tetrisUiInstance.setLang(settings.uiLang);
+    const welcomeTextEl = document.querySelector("#content .welcome-text");
+    if (welcomeTextEl) {
+        welcomeTextEl.textContent = t("welcomeBody", settings.uiLang);
+    }
+    const debateBtn = document.getElementById("btn-toggle-interlocutor");
+    const debateBox = document.getElementById("interlocutor-container");
+    if (debateBtn && debateBox) {
+        debateBtn.textContent =
+            debateBox.style.display === "block"
+                ? t("debate_btn_close", settings.uiLang)
+                : t("debate_btn_open", settings.uiLang);
+    }
+    if (abhidhammaSrsInstance) {
+        abhidhammaSrsInstance.setLang(settings.uiLang);
+    }
+    if (mnemonicLabInstance) {
+        mnemonicLabInstance.setLang(settings.uiLang);
     }
     if (!state.manifest)
         return;
@@ -839,8 +900,8 @@ let setSrsModeGlobal = null;
 function wireSrsNavigation() {
     const menuItems = document.querySelectorAll(".srs-menu-item, .srs-tab-btn");
     const vocabPanel = document.getElementById("srs-full-body");
-    const tetrisPanel = document.getElementById("srs-tetris-main");
-    const readerSrs = document.getElementById("reader-srs");
+    const abhidhammaPanel = document.getElementById("srs-abhidhamma-main");
+    const mnemonicPanel = document.getElementById("srs-mnemonic-main");
     const setMode = (mode, updateHashRoute = true) => {
         menuItems.forEach((b) => {
             const active = b.dataset.srsMode === mode;
@@ -849,51 +910,43 @@ function wireSrsNavigation() {
                 b.setAttribute("aria-selected", active ? "true" : "false");
             }
         });
-        const railSrs = document.querySelector('.rail-btn[data-panel="srs"]');
-        const railTetris = document.querySelector('.rail-btn[data-panel="tetris"]');
-        if (railSrs && railTetris) {
-            if (mode === "tetris") {
-                railSrs.classList.remove("active");
-                railTetris.classList.add("active");
-            }
-            else {
-                railTetris.classList.remove("active");
-                railSrs.classList.add("active");
-            }
-        }
-        const panelSrs = document.getElementById("panel-srs");
-        const panelTetris = document.getElementById("panel-tetris");
-        if (panelSrs && panelTetris) {
-            if (mode === "tetris") {
-                panelSrs.classList.remove("active");
-                panelTetris.classList.add("active");
-            }
-            else {
-                panelTetris.classList.remove("active");
-                panelSrs.classList.add("active");
-            }
-        }
-        if (mode === "tetris") {
-            readerSrs?.classList.add("tetris-mode");
-            document.body.classList.add("tetris-active");
+        if (mode === "abhidhamma") {
             if (vocabPanel)
                 vocabPanel.style.display = "none";
-            if (tetrisPanel) {
-                tetrisPanel.style.display = "flex";
-                if (!tetrisUiInstance) {
-                    tetrisUiInstance = new TetrisUI(tetrisPanel, settings.uiLang);
-                    void tetrisUiInstance.init();
+            if (mnemonicPanel)
+                mnemonicPanel.style.display = "none";
+            if (abhidhammaPanel) {
+                abhidhammaPanel.style.display = "flex";
+                if (!abhidhammaSrsInstance) {
+                    abhidhammaSrsInstance = new AbhidhammaSrsUI(abhidhammaPanel, settings.uiLang);
+                    void abhidhammaSrsInstance.init();
                 }
             }
             if (updateHashRoute) {
-                history.replaceState(null, "", "#/tetris");
+                history.replaceState(null, "", "#/srs/abhidhamma");
+            }
+        }
+        else if (mode === "mnemonic") {
+            if (vocabPanel)
+                vocabPanel.style.display = "none";
+            if (abhidhammaPanel)
+                abhidhammaPanel.style.display = "none";
+            if (mnemonicPanel) {
+                mnemonicPanel.style.display = "flex";
+                if (!mnemonicLabInstance) {
+                    mnemonicLabInstance = new MnemonicLabUI(mnemonicPanel, settings.uiLang);
+                    mnemonicLabInstance.init();
+                }
+            }
+            if (updateHashRoute) {
+                history.replaceState(null, "", "#/srs/mnemonic");
             }
         }
         else {
-            readerSrs?.classList.remove("tetris-mode");
-            document.body.classList.remove("tetris-active");
-            if (tetrisPanel)
-                tetrisPanel.style.display = "none";
+            if (abhidhammaPanel)
+                abhidhammaPanel.style.display = "none";
+            if (mnemonicPanel)
+                mnemonicPanel.style.display = "none";
             if (vocabPanel)
                 vocabPanel.style.display = "flex";
             if (updateHashRoute) {
@@ -906,11 +959,15 @@ function wireSrsNavigation() {
         btn.addEventListener("click", () => {
             const mode = btn.dataset.srsMode || "vocab";
             setMode(mode, true);
+            collapseSidePanel?.();
         });
     });
     const activeBtn = document.querySelector(".srs-tab-btn.active, .srs-menu-item.active");
-    if (activeBtn?.dataset.srsMode === "tetris") {
-        setMode("tetris", false);
+    if (activeBtn?.dataset.srsMode === "abhidhamma") {
+        setMode("abhidhamma", false);
+    }
+    else if (activeBtn?.dataset.srsMode === "mnemonic") {
+        setMode("mnemonic", false);
     }
 }
 function parseHash() {
@@ -922,11 +979,16 @@ function parseHash() {
         return null;
     let panel = "tipitaka";
     let workId, partKey, chunkIndexStr;
-    const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools", "tetris"]);
-    if (parts[0] === "srs" && parts[1] === "tetris") {
+    const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools", "abhidhamma-srs", "mnemonic-srs"]);
+    if (parts[0] === "srs" && parts[1] === "abhidhamma") {
         parts.shift();
         parts.shift();
-        panel = "tetris";
+        panel = "abhidhamma-srs";
+    }
+    else if (parts[0] === "srs" && parts[1] === "mnemonic") {
+        parts.shift();
+        parts.shift();
+        panel = "mnemonic-srs";
     }
     else if (parts[0] && knownPanels.has(parts[0])) {
         panel = parts.shift();
@@ -958,12 +1020,15 @@ function wireRouting() {
         if (!route)
             return;
         const activeBtn = document.querySelector(".rail-btn.active");
-        if (!activeBtn || activeBtn.dataset.panel !== route.panel) {
+        if (!activeBtn || activeBtn.dataset.panel !== route.panel || route.panel === "abhidhamma-srs" || route.panel === "mnemonic-srs") {
             switchPanel?.(route.panel, true);
         }
         if (route.workId && route.partKey && route.chunkIndex !== undefined) {
             if (state.work?.id === route.workId && state.partKey === route.partKey && state.chunkIndex === route.chunkIndex) {
                 if (route.segId != null) {
+                    if (window.innerWidth <= 860) {
+                        collapseSidePanel?.();
+                    }
                     const target = el("content").querySelector(`.seg[data-seg-id="${route.segId}"]`);
                     if (target) {
                         target.scrollIntoView({ block: "center" });
@@ -983,7 +1048,7 @@ async function init() {
         if ('caches' in window) {
             caches.keys().then((keys) => {
                 for (const k of keys) {
-                    if (k !== 'abhidhamma-cache-v14')
+                    if (k !== APP_OFFLINE_CACHE_NAME && k !== VAULT_CACHE_NAME)
                         void caches.delete(k);
                 }
             }).catch(() => { });
@@ -1022,10 +1087,15 @@ async function init() {
     initExportPanel(state.manifest, el("export-panel-body"), () => state.work?.id ?? null);
     initSrsPanel(el("srs-full-body"));
     initToolsPanel(el("tools-full-body"));
-    const tetrisMount = document.getElementById("srs-tetris-main");
-    if (tetrisMount) {
-        tetrisUiInstance = new TetrisUI(tetrisMount, settings.uiLang);
-        void tetrisUiInstance.init();
+    const abhidhammaMount = document.getElementById("srs-abhidhamma-main");
+    if (abhidhammaMount) {
+        abhidhammaSrsInstance = new AbhidhammaSrsUI(abhidhammaMount, settings.uiLang);
+        void abhidhammaSrsInstance.init();
+    }
+    const mnemonicMount = document.getElementById("srs-mnemonic-main");
+    if (mnemonicMount) {
+        mnemonicLabInstance = new MnemonicLabUI(mnemonicMount, settings.uiLang);
+        mnemonicLabInstance.init();
     }
     wireSrsNavigation();
     const route = parseHash();
@@ -1059,7 +1129,7 @@ if (toggleInterlocutorBtn && interlocutorContainer) {
     let isInterlocutorLoaded = false;
     toggleInterlocutorBtn.addEventListener('click', async () => {
         if (!isInterlocutorLoaded) {
-            toggleInterlocutorBtn.textContent = '⏳ Loading...';
+            toggleInterlocutorBtn.textContent = t('debate_btn_loading', settings.uiLang);
             try {
                 const { initInterlocutorPanel } = await import('./ai-feature/ui.js');
                 initInterlocutorPanel(interlocutorContainer);
@@ -1070,17 +1140,17 @@ if (toggleInterlocutorBtn && interlocutorContainer) {
             }
             catch (err) {
                 console.error('Failed to load Abhidhammika Interlocutor:', err);
-                toggleInterlocutorBtn.textContent = '❌ Error';
+                toggleInterlocutorBtn.textContent = t('debate_btn_error', settings.uiLang);
                 return;
             }
         }
         if (interlocutorContainer.style.display === 'none') {
             interlocutorContainer.style.display = 'block';
-            toggleInterlocutorBtn.textContent = '❌ Close Debate';
+            toggleInterlocutorBtn.textContent = t('debate_btn_close', settings.uiLang);
         }
         else {
             interlocutorContainer.style.display = 'none';
-            toggleInterlocutorBtn.textContent = '💬 Debate';
+            toggleInterlocutorBtn.textContent = t('debate_btn_open', settings.uiLang);
         }
     });
 }

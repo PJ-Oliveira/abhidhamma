@@ -835,9 +835,9 @@
       "freq": 2688,
       "vibFreq": 231,
       "en": "volition; intention; the mental factor of willing that coordinates and activates the mind toward an object; one of the seven universal cetasikas (sabbacittasādhāraṇa); the most important cetasika for kamma: the Buddha explicitly stated 'cetanāhaṃ bhikkhave kammaṃ vadāmi — I say, monks, volition is kamma' (AN 6.63); three ethical qualities: kusala (wholesome), akusala (unwholesome), or kiriya (functional, kamma-neutral); three types: kāyasañcetanā (bodily volition), vacīsañcetanā (verbal), manosañcetanā (mental); in the Dhammasaṅgaṇī, defined as the state of intending and willing that accomplishes and coordinates associated mental factors",
-      "pt": "volição; intenção; o fator mental de querer que coordena e ativa a mente em direção a um objeto; um dos sete cetasikas universais (sabbacittasādhāraṇa); o cetasika mais importante para o karma: o Buddha declarou explicitamente 'cetanāhaṃ bhikkhave kammaṃ vadāmi — eu digo, monges, a volição é o karma' (AN 6.63); três qualidades éticas: kusala (saudável), akusala (insalubre) ou kiriya (funcional, karmicamente neutro); três tipos: kāyasañcetanā, vacīsañcetanā, manosañcetanā",
+      "pt": "volição; intenção; o fator mental de querer que coordena e ativa a mente em direção a um objeto; um dos sete cetasikas universais (sabbacittasādhāraṇa); o cetasika mais importante para o kamma: o Buddha declarou explicitamente 'cetanāhaṃ bhikkhave kammaṃ vadāmi — eu digo, monges, a volição é o kamma' (AN 6.63); três qualidades éticas: kusala (saudável), akusala (insalubre) ou kiriya (funcional, karmicamente neutro); três tipos: kāyasañcetanā, vacīsañcetanā, manosañcetanā",
       "es": "volición; intención; el factor mental de querer que coordina y activa la mente hacia un objeto; uno de los siete cetasikas universales (sabbacittasādhāraṇa); el Buda declaró 'cetanāhaṃ bhikkhave kammaṃ vadāmi — digo, monjes, la volición es el kamma' (AN 6.63); tres calidades éticas: kusala, akusala, kiriya; tres tipos: kāyasañcetanā, vacīsañcetanā, manosañcetanā",
-      "usage": "Volição; intenção; o cetasika gerador de karma; um dos sete cetasikas universais (sabbacittasādhāraṇa); o Buddha declarou: 'cetanāhaṃ bhikkhave kammaṃ vadāmi' (AN 6.63).",
+      "usage": "Volição; intenção; o cetasika gerador de kamma; um dos sete cetasikas universais (sabbacittasādhāraṇa); o Buddha declarou: 'cetanāhaṃ bhikkhave kammaṃ vadāmi' (AN 6.63).",
       "grammar": "substantivo feminino, ā-stem",
       "root": "√cit 1",
       "compounds": [
@@ -1584,7 +1584,7 @@
       "en": "action; deed; volitional action | work; job; occupation | (grammar) the object of the verb; passive voice",
       "pt": "ação; feito; ação volicional | trabalho; ofício; ocupação | (gramática) o objeto do verbo; voz passiva",
       "es": "acción; hecho; acción volitiva | trabajo; oficio; ocupación | (gramática) el objeto del verbo; voz pasiva",
-      "usage": "Um dos conceitos centrais do budismo: a ação volicional e sua lei de resultados; também termo gramatical para \"objeto\". Em português da tradição Theravāda clássica, sempre \"kamma\" — nunca \"karma\" (sânscrito) nem \"carma\" (ortografia portuguesa do sânscrito).",
+      "usage": "Um dos conceitos centrais do budismo: a ação volicional e sua lei de resultados; também termo gramatical para \"objeto\". Em português da tradição Theravāda clássica, sempre \"kamma\" — nunca \"kamma\" (sânscrito) nem \"carma\" (ortografia portuguesa do sânscrito).",
       "grammar": "substantivo neutro irregular, de karoti / substantivo neutro irregular, de karoti",
       "root": "√kar",
       "rank": 86
@@ -2101,7 +2101,7 @@
       "en": "nature; character | quality; characteristic; trait; inherent quality | teaching; discourse; doctrine",
       "pt": "natureza; caráter | qualidade; característica; traço; qualidade inerente | ensinamento; discurso; doutrina",
       "es": "naturaleza; carácter | cualidad; característica; rasgo; cualidad inherente | enseñanza; discurso; doctrina",
-      "usage": "Termo mais central do Abhidhamma: nas análises do Piṭaka, dhamma designa a unidade discreta de realidade última (paramattha-dhamma) — citta, cetasika, rūpa ou nibbāna — e NÃO deve ser traduzido como 'fenômeno' (que remete à aparência grega/ocidental, não à realidade operacional budista). No plural dhammā classifica todas as categorias do sistema. Nos Nikāyas, também significa o Ensinamento do Buda. O sentido exato depende sempre do contexto.",
+      "usage": "Termo mais central do Abhidhamma: nas análises do Piṭaka, dhamma designa a unidade discreta de realidade última (paramattha-dhamma) — citta, cetasika, rūpa ou nibbāna — e NÃO deve ser traduzido como 'dhamma' (que remete à aparência grega/ocidental, não à realidade operacional budista). No plural dhammā classifica todas as categorias do sistema. Nos Nikāyas, também significa o Ensinamento do Buda. O sentido exato depende sempre do contexto.",
       "grammar": "masc., de dharati / masc., de dharati",
       "root": "√dhar 1",
       "compounds": [
@@ -2316,7 +2316,7 @@
       "vibFreq": 76,
       "en": "name and form; naming and materiality; mental and physical phenomena; mental and physical objects of consciousness | term for 5 khandhas as used in the Commentaries",
       "pt": "nome e forma; dhammas mentais e físicos; mente e matéria | (coment.) termo para os cinco agregados (khandha)",
-      "es": "nombre y forma; fenómenos mentales y físicos; mente y materia | (com.) término para los cinco agregados (khandha)",
+      "es": "nombre y forma; dhammas mentales y físicos; mente y materia | (com.) término para los cinco agregados (khandha)",
       "usage": "Substantivo neutro composto (nāma + rūpa) \"nome e forma\", termo técnico central do Abhidhamma para os dhammas mentais e físicos, um dos elos da originação dependente (paṭiccasamuppāda).",
       "grammar": "substantivo neutro, composto / substantivo neutro, composto",
       "rank": 129
@@ -4383,7 +4383,7 @@
       "en": "not-self; non-self; without self; without a personal entity — the third of the three characteristics of existence (tilakkhaṇa), alongside impermanence (anicca) and unsatisfactoriness (dukkha)",
       "pt": "não-eu; sem eu; sem si-mesmo; sem entidade pessoal — a terceira das três características da existência (tilakkhaṇa), ao lado da impermanência (anicca) e da insatisfatoriedade (dukkha)",
       "es": "no-yo; sin yo; sin sí-mismo; sin entidad personal — la tercera de las tres características de la existencia (tilakkhaṇa), junto a la impermanencia (anicca) y la insatisfactoriedad (dukkha)",
-      "usage": "Composto an+attā (não-eu; não-si-mesmo). Terceira das três características da existência (tilakkhaṇa), ao lado de anicca (impermanência) e dukkha (insatisfatoriedade). No Abhidhamma, todos os fenômenos condicionados (saṅkhāra) são analisados como anattā porque nenhum deles constitui um si-mesmo ou alma permanente.",
+      "usage": "Composto an+attā (não-eu; não-si-mesmo). Terceira das três características da existência (tilakkhaṇa), ao lado de anicca (impermanência) e dukkha (insatisfatoriedade). No Abhidhamma, todos os dhammas condicionados (saṅkhāra) são analisados como anattā porque nenhum deles constitui um si-mesmo ou alma permanente.",
       "grammar": "adjetivo/predicativo, an+attā",
       "root": "√as",
       "rank": 253
@@ -6138,7 +6138,7 @@
       "vibFreq": 16,
       "en": "formless; immaterial; insubstantial | formless state; formless phenomenon; formless attainment",
       "pt": "sem forma; imaterial; insubstancial | estado imaterial; entidade imaterial; realização imaterial",
-      "es": "sin forma; inmaterial; insustancial | estado inmaterial; fenómeno sin forma; realización inmaterial",
+      "es": "sin forma; inmaterial; insustancial | estado inmaterial; dhamma sin forma; realización inmaterial",
       "usage": "Termo técnico do Abhidhamma: \"sem forma, imaterial\" (a + rūpa), designando a esfera/estado imaterial de existência.",
       "grammar": "adjetivo, de na rūpa / substantivo masculino, de na rūpa",
       "root": "√rūp",
@@ -8254,7 +8254,7 @@
       "en": "having a root-cause; accompanied by a causal root",
       "pt": "com causa-raiz; acompanhado de uma raiz causal",
       "es": "con causa-raíz; acompañado de una raíz causal",
-      "usage": "Termo técnico abhidhâmmico: \"com causa-raiz\" (sa + hetuka), classificando estados de consciência acompanhados por raízes cármicas.",
+      "usage": "Termo técnico abhidhâmmico: \"com causa-raiz\" (sa + hetuka), classificando estados de consciência acompanhados por raízes kâmmicas.",
       "grammar": "adjetivo, de hetu",
       "root": "√hi 2",
       "compounds": [
@@ -8295,7 +8295,7 @@
       "en": "causeless; without a root-cause; without basis",
       "pt": "sem causa-raiz; sem base causal",
       "es": "sin causa-raíz; sin base causal",
-      "usage": "Termo técnico abhidhâmmico: \"sem causa-raiz\" (a + hetuka), classificando estados de consciência não acompanhados por raízes cármicas — antônimo de sahetuka.",
+      "usage": "Termo técnico abhidhâmmico: \"sem causa-raiz\" (a + hetuka), classificando estados de consciência não acompanhados por raízes kâmmicas — antônimo de sahetuka.",
       "grammar": "adjetivo, de na + hetu",
       "root": "√hi 2",
       "rank": 490
@@ -8969,7 +8969,7 @@
       "vibFreq": 5,
       "en": "phenomena which is neither a consequence nor generates consequences",
       "pt": "dhamma que não é resultado nem gera resultado (categoria causalmente neutra)",
-      "es": "fenómeno que no es resultado ni genera resultado (categoría causalmente neutra)",
+      "es": "dhamma que no es resultado ni genera resultado (categoría causalmente neutra)",
       "usage": "Substantivo masculino composto extenso (neva + vipāka + na + vipākadhamma + dhamma) \"dhamma que não é resultado nem gera resultado\", categoria técnica do Abhidhamma para os dhammas causalmente neutros.",
       "grammar": "substantivo masculino, composto",
       "rank": 530
@@ -9899,7 +9899,7 @@
       "vibFreq": 3,
       "en": "derived matter; accessory form; co-nascent material phenomena",
       "pt": "matéria derivada; forma acessória; rūpas coenascentes",
-      "es": "materia derivada; forma accesoria; fenómenos materiales conascentes",
+      "es": "materia derivada; forma accesoria; dhammas materiales conascentes",
       "usage": "Substantivo neutro composto (upādā + rūpa) \"matéria derivada\".",
       "grammar": "substantivo neutro, composto de upādā + rūpa",
       "rank": 587
@@ -10971,7 +10971,7 @@
       "vibFreq": 1,
       "en": "object-as-dominance; object-as-master — the mode of the dominance condition (ādhipati-paccaya) in which a strongly desired object of attention exerts governing influence over associated mental phenomena",
       "pt": "objeto-como-dominância — o modo da condição de dominância (ādhipati-paccaya) em que o objeto de atenção intensamente desejado exerce influência dominante sobre os dhammas mentais associados",
-      "es": "objeto-como-dominancia — el modo de la condición de dominancia (ādhipati-paccaya) en el que un objeto de atención intensamente deseado ejerce influencia dominante sobre los fenómenos mentales asociados",
+      "es": "objeto-como-dominancia — el modo de la condición de dominancia (ādhipati-paccaya) en el que un objeto de atención intensamente deseado ejerce influencia dominante sobre los dhammas mentales asociados",
       "usage": "Composto ārammaṇa+ādhipati (objeto+dominação). Uma das duas formas do ādhipati-paccaya (condição de dominância) nas vinte e quatro condições do Paṭṭhāna: o objeto-de-atenção torna-se dominante quando é desejado intensamente, exercendo influência sobre os dhammas associados. Contrapart: sahajātādhipati.",
       "grammar": "substantivo masculino, composto ārammaṇa+ādhipati",
       "root": "√pat 1",

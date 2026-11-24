@@ -272,4 +272,52 @@ describe("Abhidhammatthasaṅgaha Anki SRS Engine & Exhaustive Dataset", () => {
     expect(mount.querySelector('.abhi-rate-btn[data-rate="1"]')!.textContent).toContain("De novo");
     expect(mount.querySelector('.abhi-rate-btn[data-rate="3"]')!.textContent).toContain("Bom");
   });
+
+  it("defers Blob URL revocation on JSON backup export, preserves Pāli diacritics in backup payload, and avoids English leaks in PT/ES", async () => {
+    const mount = document.createElement("div");
+    document.body.appendChild(mount);
+    const ui = new AbhidhammaSrsUI(mount, "es");
+    await ui.init();
+
+    // No English "Checksums" leak in ES or PT
+    expect(mount.textContent).not.toContain("Checksums");
+    ui.setLang("pt");
+    expect(mount.textContent).not.toContain("Checksums");
+
+    // Verify JSON backup export creates valid UTF-8 Blob and does NOT revoke synchronously
+    let capturedBlob: Blob | null = null;
+    const origCreate = URL.createObjectURL;
+    const origRevoke = URL.revokeObjectURL;
+    const revokedUrls: string[] = [];
+    URL.createObjectURL = ((b: Blob) => {
+      capturedBlob = b;
+      return "blob:abhi-test-backup";
+    }) as any;
+    URL.revokeObjectURL = ((u: string) => {
+      revokedUrls.push(u);
+    }) as any;
+
+    try {
+      const exportBtn = mount.querySelector<HTMLButtonElement>(".abhi-btn-export-vault");
+      expect(exportBtn).toBeTruthy();
+      exportBtn!.click();
+
+      expect(capturedBlob).toBeTruthy();
+      // Must NOT revoke synchronously immediately after click (would abort browser download)
+      expect(revokedUrls.length).toBe(0);
+
+      const jsonText = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result));
+        reader.onerror = reject;
+        reader.readAsText(capturedBlob!);
+      });
+      const parsed = JSON.parse(jsonText);
+      expect(parsed).toHaveProperty("states");
+      expect(parsed).toHaveProperty("config");
+    } finally {
+      URL.createObjectURL = origCreate;
+      URL.revokeObjectURL = origRevoke;
+    }
+  });
 });

@@ -7,12 +7,14 @@ interface Condition {
   label: string;
   labelEn: string;
   labelPt: string;
+  labelEs?: string;
 }
 
 interface Group {
   id: string;
   label: string;
   labelPt?: string;
+  labelEs?: string;
 }
 
 interface MatrixData {
@@ -45,7 +47,13 @@ function initPatthana(container: HTMLElement): void {
       const headerRow = document.createElement("tr");
       headerRow.innerHTML = `<th class="patt-corner"></th>`;
       for (const cond of data.conditions) {
-        headerRow.innerHTML += `<th class="patt-col-header" title="${escHtml(cond.label)} — ${escHtml(cond.labelEn)} — ${escHtml(cond.labelPt)}"><div class="patt-col-text">${escHtml(cond.id)}</div></th>`;
+        const condLoc =
+          lang === "pt"
+            ? cond.labelPt
+            : lang === "es"
+              ? cond.labelEs || cond.labelEn
+              : cond.labelEn;
+        headerRow.innerHTML += `<th class="patt-col-header" title="${escHtml(cond.label)} — ${escHtml(condLoc)}"><div class="patt-col-text">${escHtml(cond.id)}</div></th>`;
       }
       thead.appendChild(headerRow);
       table.appendChild(thead);
@@ -55,7 +63,12 @@ function initPatthana(container: HTMLElement): void {
       for (let i = 0; i < data.groups.length; i++) {
         const group = data.groups[i]!;
         const row = document.createElement("tr");
-        const glabel = lang === "pt" && group.labelPt ? group.labelPt : group.label;
+        const glabel =
+          lang === "pt" && group.labelPt
+            ? group.labelPt
+            : lang === "es" && group.labelEs
+              ? group.labelEs
+              : group.label;
         row.innerHTML = `<td class="patt-row-label" title="${escHtml(group.label)}">${escHtml(glabel)}</td>`;
         
         const rowData = data.matrix[i] || [];

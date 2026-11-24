@@ -1,6 +1,6 @@
-import { buildEarlyReviewQueue, buildProgressiveCloze, buildStudyQueue, computeAllChapterProgress, computeDailyNewQuota, computePlan90Summary, computeProportionalExtraBatch, countLeeches, createInitialAnkiCardState, defaultClozeStage, ensurePaceTarget, getMaxIntervalForHorizon, getReserveDaysForHorizon, isLeech, isRecitationCard, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, MAX_NEW_CARDS_PER_DAY, MAX_REVIEWS_PER_DAY, PACE_HORIZON_OPTIONS, previewAnkiIntervals, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, saveMnemonicNote, scheduleAnkiCard, setPaceHorizon, } from "./scheduler.js?v=e14b20e3";
-import { buildLocalStorageSnapshot, fetchDeckWithOfflineCache, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistOfflineProgress, resetOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "./offline-store.js?v=e14b20e3";
-import { settings } from "../state.js?v=e14b20e3";
+import { buildEarlyReviewQueue, buildProgressiveCloze, buildStudyQueue, computeAllChapterProgress, computeDailyNewQuota, computePlan90Summary, computeProportionalExtraBatch, countLeeches, createInitialAnkiCardState, defaultClozeStage, ensurePaceTarget, getMaxIntervalForHorizon, getReserveDaysForHorizon, isLeech, isRecitationCard, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, MAX_NEW_CARDS_PER_DAY, MAX_REVIEWS_PER_DAY, PACE_HORIZON_OPTIONS, previewAnkiIntervals, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, saveMnemonicNote, scheduleAnkiCard, setPaceHorizon, } from "./scheduler.js?v=3f76b330";
+import { buildLocalStorageSnapshot, fetchDeckWithOfflineCache, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistOfflineProgress, resetOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "./offline-store.js?v=3f76b330";
+import { settings } from "../state.js?v=3f76b330";
 const UI_STRINGS = {
     pt: {
         moduleTitle: "Abhidhammatthasaṅgaha — Repetição Espaçada (Anki SRS)",
@@ -37,7 +37,7 @@ const UI_STRINGS = {
         tierAtom: "Tijolo (Átomo)",
         tierStructure: "Estrutura",
         tierHouse: "Casa (Síntese)",
-        tierLegend: "🧱 Tijolos (unidades) → 🏗 Estruturas, Checksums & Confundíveis → 🏛 Casa (sínteses)",
+        tierLegend: "🧱 Tijolos (unidades) → 🏗 Estruturas, Fórmulas Matemáticas e Confundíveis → 🏛 Casa (sínteses)",
         unlocked: "Desbloqueado",
         locked: "Bloqueado",
         unlockHintPrefix: "Exige ≥",
@@ -287,7 +287,7 @@ const UI_STRINGS = {
         tierAtom: "Ladrillo (Átomo)",
         tierStructure: "Estructura",
         tierHouse: "Casa (Síntesis)",
-        tierLegend: "🧱 Ladrillos (unidades) → 🏗 Estructuras, Checksums y Confundibles → 🏛 Casa (síntesis)",
+        tierLegend: "🧱 Ladrillos (unidades) → 🏗 Estructuras, Fórmulas Matemáticas y Confundibles → 🏛 Casa (síntesis)",
         unlocked: "Desbloqueado",
         locked: "Bloqueado",
         unlockHintPrefix: "Requiere ≥",
@@ -1112,7 +1112,7 @@ export class AbhidhammaSrsUI {
             document.body.appendChild(a);
             a.click();
             a.remove();
-            URL.revokeObjectURL(url);
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
         });
         const fileInput = this.container.querySelector(".abhi-vault-file-input");
         this.container.querySelector(".abhi-btn-import-vault")?.addEventListener("click", () => {
@@ -1137,6 +1137,9 @@ export class AbhidhammaSrsUI {
             }
             catch {
                 this.vaultNotice = s.vaultImportErr;
+            }
+            finally {
+                fileInput.value = "";
             }
             this.render();
         });

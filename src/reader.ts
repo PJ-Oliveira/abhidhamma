@@ -32,7 +32,7 @@ export interface RenderSegmentsOptions {
   showTranslationOverride?: boolean;
 }
 
-const PALI_WORD_RE = /[A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]+(?:[’'][A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶçéáíóúãõâêô]+)*/g;
+const PALI_WORD_RE = /[A-Za-zāīūṃṁṅñṭḍṇḷĀĪŪṂṀṄÑṬḌṆḶçÇéáíóúüãõâêôÁÉÍÓÚÜÃÕÂÊÔ]+(?:[’'][A-Za-zāīūṃṁṅñṭḍṇḷĀĪŪṂṀṄÑṬḌṆḶçÇéáíóúüãõâêôÁÉÍÓÚÜÃÕÂÊÔ]+)*/g;
 
 function wrapPaliWords(root: HTMLElement): void {
   const textNodes: Text[] = [];

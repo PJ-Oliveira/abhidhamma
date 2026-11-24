@@ -47,7 +47,7 @@ export function initInterlocutorPanel(container: HTMLElement): void {
             <!-- DEFEAT HEADER -->
             <div style="background-color: #8c2a2a; color: #fdf6e3; padding: 14px 16px; border-bottom: 2px solid #5a1919;">
                 <div style="font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.9; margin-bottom: 4px;">${t('debate_defeat_title', settings.uiLang)}</div>
-                <div id="refutation-verdict" style="font-size: 1.2em; font-weight: bold;">Paṭiññāvirodho (Contradicting the Proposition)</div>
+                <div id="refutation-verdict" style="font-size: 1.2em; font-weight: bold;"></div>
             </div>
             
             <div style="padding: 20px; background-color: var(--bg, #ecdcc9); color: var(--text, #33261a); display: flex; flex-direction: column; gap: 16px;">
@@ -83,7 +83,7 @@ export function initInterlocutorPanel(container: HTMLElement): void {
                 <!-- PEDAGOGICAL EXPANSION (Hidden by default) -->
                 <div id="pedagogical-display" style="display: none; background: var(--accent-soft, #e6cead); padding: 16px; border: 1px solid var(--accent, #b3663f); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                     <h4 style="margin: 0 0 12px 0; color: var(--text, #33261a); font-size: 1em; display: flex; align-items: center; gap: 8px;">
-                        <span>📖</span> Abhidhammika Exegesis (${t('debate_pedagogical_breakdown', settings.uiLang)})
+                        <span>📖</span> ${t('debate_exegesis_header', settings.uiLang)} (${t('debate_pedagogical_breakdown', settings.uiLang)})
                     </h4>
                     <h5 style="margin: 0 0 4px 0; color: var(--accent, #b3663f); font-size: 0.9em;">${t('debate_classical_analogy', settings.uiLang)}:</h5>
                     <p id="pedagogical-analogy" style="margin: 0 0 12px 0; font-size: 0.95em; line-height: 1.5; color: var(--text, #33261a);"></p>
@@ -149,7 +149,7 @@ export function initInterlocutorPanel(container: HTMLElement): void {
             
             // Visual feedback
             const origText = submitBtn.textContent;
-            submitBtn.textContent = 'Analyzing Logic...';
+            submitBtn.textContent = t('debate_analyzing', settings.uiLang);
             submitBtn.disabled = true;
 
             // Simular a latência do WebWorker/LLM e exibir a refutação detalhada
