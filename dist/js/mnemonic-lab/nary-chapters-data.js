@@ -1,11 +1,14 @@
-import { CHAPTER_2_SANGAHA_33_ITEMS } from "./chapters/ch2-sangaha.js?v=3f76b330";
-import { CHAPTER_3_PAKINNAKA_ITEMS } from "./chapters/ch3-pakinnaka.js?v=3f76b330";
-import { CHAPTER_4_VITHI_ITEMS } from "./chapters/ch4-vithi.js?v=3f76b330";
-import { CHAPTER_5_VITHIMUTTA_ITEMS } from "./chapters/ch5-vithimutta.js?v=3f76b330";
-import { CHAPTER_6_RUPA_ITEMS } from "./chapters/ch6-rupa.js?v=3f76b330";
-import { CHAPTER_7_SAMUCCAYA_ITEMS } from "./chapters/ch7-samuccaya.js?v=3f76b330";
-import { CHAPTER_8_PACCAYA_ITEMS } from "./chapters/ch8-paccaya.js?v=3f76b330";
-import { CHAPTER_9_KAMMATTHANA_ITEMS } from "./chapters/ch9-kammatthana.js?v=3f76b330";
+import { CHAPTER_2_SANGAHA_33_ITEMS } from "./chapters/ch2-sangaha.js?v=ec96663c";
+import { CHAPTER_2_LAWS_ITEMS } from "./chapters/ch2-laws.js?v=ec96663c";
+import { CHAPTER_3_PAKINNAKA_ITEMS } from "./chapters/ch3-pakinnaka.js?v=ec96663c";
+import { CHAPTER_4_VITHI_ITEMS } from "./chapters/ch4-vithi.js?v=ec96663c";
+import { CHAPTER_5_VITHIMUTTA_ITEMS } from "./chapters/ch5-vithimutta.js?v=ec96663c";
+import { CHAPTER_6_RUPA_ITEMS } from "./chapters/ch6-rupa.js?v=ec96663c";
+import { CHAPTER_7_SAMUCCAYA_ITEMS } from "./chapters/ch7-samuccaya.js?v=ec96663c";
+import { CHAPTER_7_GRANULAR_ITEMS } from "./chapters/ch7-granular.js?v=ec96663c";
+import { CHAPTER_8_PACCAYA_ITEMS } from "./chapters/ch8-paccaya.js?v=ec96663c";
+import { CHAPTER_9_KAMMATTHANA_ITEMS } from "./chapters/ch9-kammatthana.js?v=ec96663c";
+import { CHAPTER_3_SUPPLEMENT_ITEMS, CHAPTER_4_SUPPLEMENT_ITEMS, CHAPTER_5_SUPPLEMENT_ITEMS, CHAPTER_6_SUPPLEMENT_ITEMS, CHAPTER_8_SUPPLEMENT_ITEMS, CHAPTER_9_SUPPLEMENT_ITEMS, } from "./chapters/mula-supplements.js?v=ec96663c";
 export const CANONICAL_CHAPTERS_META = [
     {
         num: 1,
@@ -38,16 +41,16 @@ export const CANONICAL_CHAPTERS_META = [
             es: "Cap. 2 · Cetasikasaṅgaha (52 Cetasikas · Sampayoga y 33 Saṅgaha)",
         },
         shortLabel: {
-            pt: "2. Cetasikas (52+33)",
-            en: "2. Cetasikas (52+33)",
-            es: "2. Cetasikas (52+33)",
+            pt: "2. Cetasikas (97)",
+            en: "2. Cetasikas (97)",
+            es: "2. Cetasikas (97)",
         },
         equation: {
-            pt: "13 Aññasamānā + 14 Akusala + 25 Sobhana = 52 Cetasikas · 5+5+12+7+4 = 33 Saṅgaha",
-            en: "13 Aññasamānā + 14 Akusala + 25 Sobhana = 52 Cetasikas · 5+5+12+7+4 = 33 Saṅgaha",
-            es: "13 Aññasamānā + 14 Akusala + 25 Sobhana = 52 Cetasikas · 5+5+12+7+4 = 33 Saṅgaha",
+            pt: "13+14+25 = 52 Cetasikas (41 Niyata + 11 Aniyata) · 33 Saṅgaha · 12 Leis",
+            en: "13+14+25 = 52 Cetasikas (41 Niyata + 11 Aniyata) · 33 Saṅgaha · 12 Laws",
+            es: "13+14+25 = 52 Cetasikas (41 Niyata + 11 Aniyata) · 33 Saṅgaha · 12 Leyes",
         },
-        totalItems: 85,
+        totalItems: 97,
     },
     {
         num: 3,
@@ -59,16 +62,16 @@ export const CANONICAL_CHAPTERS_META = [
             es: "Cap. 3 · Pakiṇṇakasaṅgaha (Las 6 Categorías Misceláneas)",
         },
         shortLabel: {
-            pt: "3. Pakiṇṇaka (56)",
-            en: "3. Pakiṇṇaka (56)",
-            es: "3. Pakiṇṇaka (56)",
+            pt: "3. Pakiṇṇaka (73)",
+            en: "3. Pakiṇṇaka (73)",
+            es: "3. Pakiṇṇaka (73)",
         },
         equation: {
-            pt: "5 Vedanā + 6 Hetu (18+2+22+47) + 14 Kicca (68+2+9+8+2) + 6 Dvāra (36+3+31+10+9) + 7 Ālambaṇa (91) + 6 Vatthu (43+42+4)",
-            en: "5 Vedanā + 6 Hetu (18+2+22+47) + 14 Kicca (68+2+9+8+2) + 6 Dvāra (36+3+31+10+9) + 7 Ālambaṇa (91) + 6 Vatthu (43+42+4)",
-            es: "5 Vedanā + 6 Hetu (18+2+22+47) + 14 Kicca (68+2+9+8+2) + 6 Dvāra (36+3+31+10+9) + 7 Ālambaṇa (91) + 6 Vatthu (43+42+4)",
+            pt: "Vedanā (5+3) · Hetu (6+4) · Kicca (14/10 Ṭhāna) · Dvāra (46/54/67/19) · Ālambaṇa (7+6+3) · Vatthu (43+42+4 · 7/4/1)",
+            en: "Vedanā (5+3) · Hetu (6+4) · Kicca (14/10 Ṭhāna) · Dvāra (46/54/67/19) · Ālambaṇa (7+6+3) · Vatthu (43+42+4 · 7/4/1)",
+            es: "Vedanā (5+3) · Hetu (6+4) · Kicca (14/10 Ṭhāna) · Dvāra (46/54/67/19) · Ālambaṇa (7+6+3) · Vatthu (43+42+4 · 7/4/1)",
         },
-        totalItems: 56,
+        totalItems: 73,
     },
     {
         num: 4,
@@ -80,16 +83,16 @@ export const CANONICAL_CHAPTERS_META = [
             es: "Cap. 4 · Vīthisaṅgaha (Los Procesos Cognitivos)",
         },
         shortLabel: {
-            pt: "4. Vīthi (28)",
-            en: "4. Vīthi (28)",
-            es: "4. Vīthi (28)",
+            pt: "4. Vīthi (43)",
+            en: "4. Vīthi (43)",
+            es: "4. Vīthi (43)",
         },
         equation: {
-            pt: "t + 2 + n ≤ 17 (4 Vāras) · Appanā (32+12+8+6=58) · Javana (7/5/4/1/2/∞) · Puggala (44/56/54) · Bhūmi (80/64/42/0)",
-            en: "t + 2 + n ≤ 17 (4 Vāras) · Appanā (32+12+8+6=58) · Javana (7/5/4/1/2/∞) · Puggala (44/56/54) · Bhūmi (80/64/42/0)",
-            es: "t + 2 + n ≤ 17 (4 Vāras) · Appanā (32+12+8+6=58) · Javana (7/5/4/1/2/∞) · Puggala (44/56/54) · Bhūmi (80/64/42/0)",
+            pt: "6 Chakka · t+2+n ≤ 17 (4 Vāras) · Appanā (58) · Javana (7/5/4/1/2/∞) · Puggala & Bhūmi (80/64/42/0)",
+            en: "6 Chakka · t+2+n ≤ 17 (4 Vāras) · Appanā (58) · Javana (7/5/4/1/2/∞) · Puggala & Bhūmi (80/64/42/0)",
+            es: "6 Chakka · t+2+n ≤ 17 (4 Vāras) · Appanā (58) · Javana (7/5/4/1/2/∞) · Puggala y Bhūmi (80/64/42/0)",
         },
-        totalItems: 28,
+        totalItems: 43,
     },
     {
         num: 5,
@@ -101,16 +104,16 @@ export const CANONICAL_CHAPTERS_META = [
             es: "Cap. 5 · Vīthimuttasaṅgaha (Fuera del Proceso: Las 4 Tétradas)",
         },
         shortLabel: {
-            pt: "5. Vīthimutta (89)",
-            en: "5. Vīthimutta (89)",
-            es: "5. Vīthimutta (89)",
+            pt: "5. Vīthimutta (96)",
+            en: "5. Vīthimutta (96)",
+            es: "5. Vīthimutta (96)",
         },
         equation: {
-            pt: "31 Planos (4+7+16+4) · 4 Paṭisandhi (1+9+6+4) · 4×4 Kamma + 10 Akusala + 10 Puñña · 4 Maraṇa + Cuti→Paṭisandhi",
-            en: "31 Planes (4+7+16+4) · 4 Paṭisandhi (1+9+6+4) · 4×4 Kamma + 10 Akusala + 10 Puñña · 4 Maraṇa + Cuti→Paṭisandhi",
-            es: "31 Planos (4+7+16+4) · 4 Paṭisandhi (1+9+6+4) · 4×4 Kamma + 10 Akusala + 10 Puñña · 4 Maraṇa + Cuti→Paṭisandhi",
+            pt: "31 Planos · 4 Paṭisandhi & Leis · 4×4 Kamma + Maturação (Kecana/Jhāna) · 10+10 Kammapatha · Morte & Cuti",
+            en: "31 Planes · 4 Paṭisandhi & Laws · 4×4 Kamma + Ripening (Kecana/Jhāna) · 10+10 Kammapatha · Death & Cuti",
+            es: "31 Planos · 4 Paṭisandhi y Leyes · 4×4 Kamma + Maduración (Kecana/Jhāna) · 10+10 Kammapatha · Muerte y Cuti",
         },
-        totalItems: 89,
+        totalItems: 96,
     },
     {
         num: 6,
@@ -122,58 +125,58 @@ export const CANONICAL_CHAPTERS_META = [
             es: "Cap. 6 · Rūpasaṅgaha (Las 28 Materias y Nibbāna)",
         },
         shortLabel: {
-            pt: "6. Rūpa (73)",
-            en: "6. Rūpa (73)",
-            es: "6. Rūpa (73)",
+            pt: "6. Rūpa (84)",
+            en: "6. Rūpa (84)",
+            es: "6. Rūpa (84)",
         },
         equation: {
-            pt: "28 Rūpas (18+10) · 10 Díades & 4 Samuṭṭhānas (18/15/13/12) · 21 Kalāpas (9+6+4+2) · Pavatti (28/23/17/0) & Nibbāna (1/2/3)",
-            en: "28 Rūpas (18+10) · 10 Dyads & 4 Samuṭṭhānas (18/15/13/12) · 21 Kalāpas (9+6+4+2) · Pavatti (28/23/17/0) & Nibbāna (1/2/3)",
-            es: "28 Rūpas (18+10) · 10 Díadas y 4 Samuṭṭhānas (18/15/13/12) · 21 Kalāpas (9+6+4+2) · Pavatti (28/23/17/0) y Nibbāna (1/2/3)",
+            pt: "28 Rūpas · 10 Díades & 4 Samuṭṭhānas · 21 Kalāpas · Pavatti (28/23/17/0) · Nibbāna (1/2/3/4) · 11 Leis",
+            en: "28 Rūpas · 10 Dyads & 4 Origins · 21 Kalāpas · Pavatti (28/23/17/0) · Nibbāna (1/2/3/4) · 11 Laws",
+            es: "28 Rūpas · 10 Díadas y 4 Orígenes · 21 Kalāpas · Pavatti (28/23/17/0) · Nibbāna (1/2/3/4) · 11 Leyes",
         },
-        totalItems: 73,
+        totalItems: 84,
     },
     {
         num: 7,
         asRef: "AS VII.1–53",
         paliTitle: "Samuccayasaṅgahavibhāgo",
         title: {
-            pt: "Cap. 7 · Samuccayasaṅgaha (Enumerações Categóricas & 37 Bodhi)",
-            en: "Ch. 7 · Samuccayasaṅgaha (Categorical Compendium & 37 Bodhi)",
-            es: "Cap. 7 · Samuccayasaṅgaha (Enumeraciones Categóricas y 37 Bodhi)",
+            pt: "Cap. 7 · Samuccayasaṅgaha (Compêndio Categórico & Granular)",
+            en: "Ch. 7 · Samuccayasaṅgaha (Categorical & Granular Compendium)",
+            es: "Cap. 7 · Samuccayasaṅgaha (Compendio Categórico y Granular)",
         },
         shortLabel: {
-            pt: "7. Samuccaya (46)",
-            en: "7. Samuccaya (46)",
-            es: "7. Samuccaya (46)",
+            pt: "7. Samuccaya (196)",
+            en: "7. Samuccaya (196)",
+            es: "7. Samuccaya (196)",
         },
         equation: {
-            pt: "Akusala (9→Vatthuto) + Missaka (7→Vatthuto) + Bodhi (7 grupos=37 · 14 Sabhāva) + Sabba (5 · Dhammāyatana 69)",
-            en: "Akusala (9→Vatthuto) + Missaka (7→Vatthuto) + Bodhi (7 groups=37 · 14 Sabhāva) + Sabba (5 · Dhammāyatana 69)",
-            es: "Akusala (9→Vatthuto) + Missaka (7→Vatthuto) + Bodhi (7 grupos=37 · 14 Sabhāva) + Sabba (5 · Dhammāyatana 69)",
+            pt: "Akusala (9+34) · Missaka (7+51: 22 Indriyas, 12 Maggaṅgas) · 37 Bodhipakkhiya (21+37) · Sabba (7+28)",
+            en: "Akusala (9+34) · Missaka (7+51: 22 Indriyas, 12 Maggaṅgas) · 37 Bodhipakkhiya (21+37) · Sabba (7+28)",
+            es: "Akusala (9+34) · Missaka (7+51: 22 Indriyas, 12 Maggaṅgas) · 37 Bodhipakkhiya (21+37) · Sabba (7+28)",
         },
-        totalItems: 46,
+        totalItems: 196,
     },
     {
         num: 8,
         asRef: "AS VIII.1–43",
         paliTitle: "Paccayasaṅgahavibhāgo",
         title: {
-            pt: "Cap. 8 · Paccayasaṅgaha (Paṭiccasamuppāda & As 24 Condições do Paṭṭhāna)",
-            en: "Ch. 8 · Paccayasaṅgaha (Paṭiccasamuppāda & The 24 Conditions of Paṭṭhāna)",
-            es: "Cap. 8 · Paccayasaṅgaha (Paṭiccasamuppāda y Las 24 Condiciones del Paṭṭhāna)",
+            pt: "Cap. 8 · Paccayasaṅgaha (Paṭiccasamuppāda, 24 Paṭṭhāna & Paññatti)",
+            en: "Ch. 8 · Paccayasaṅgaha (Paṭiccasamuppāda, 24 Paṭṭhāna & Paññatti)",
+            es: "Cap. 8 · Paccayasaṅgaha (Paṭiccasamuppāda, 24 Paṭṭhāna y Paññatti)",
         },
         shortLabel: {
-            pt: "8. Paccaya (Paṭṭhāna 24)",
-            en: "8. Paccaya (Paṭṭhāna 24)",
-            es: "8. Paccaya (Paṭṭhāna 24)",
+            pt: "8. Paccaya (72)",
+            en: "8. Paccaya (72)",
+            es: "8. Paccaya (72)",
         },
         equation: {
-            pt: "12 Elos + 6 Análises (20 Ākārā, 3 Vaṭṭā) · 24 Paṭṭhāna (6+5+1+1+2+9 → 4 Samodhāna) · Paññatti (2 + 6)",
-            en: "12 Links + 6 Analyses (20 Ākārā, 3 Vaṭṭā) · 24 Paṭṭhāna (6+5+1+1+2+9 → 4 Samodhāna) · Paññatti (2 + 6)",
-            es: "12 Eslabones + 6 Análisis (20 Ākārā, 3 Vaṭṭā) · 24 Paṭṭhāna (6+5+1+1+2+9 → 4 Samodhāna) · Paññatti (2 + 6)",
+            pt: "12 Elos + 6 Análises · 24 Paṭṭhāna (6+5+1+1+2+9 → 4) · 12 Submodos & 6 Atthapaññatti · 6 Nāmapaññatti",
+            en: "12 Links + 6 Analyses · 24 Paṭṭhāna (6+5+1+1+2+9 → 4) · 12 Submodes & 6 Atthapaññatti · 6 Nāmapaññatti",
+            es: "12 Eslabones + 6 Análisis · 24 Paṭṭhāna (6+5+1+1+2+9 → 4) · 12 Submodos y 6 Atthapaññatti · 6 Nāmapaññatti",
         },
-        totalItems: 54,
+        totalItems: 72,
     },
     {
         num: 9,
@@ -185,16 +188,16 @@ export const CANONICAL_CHAPTERS_META = [
             es: "Cap. 9 · Kammaṭṭhānasaṅgaha (Meditación: Samatha y Vipassanā)",
         },
         shortLabel: {
-            pt: "9. Kammaṭṭhāna (Meditação)",
-            en: "9. Kammaṭṭhāna (Meditation)",
-            es: "9. Kammaṭṭhāna (Meditación)",
+            pt: "9. Kammaṭṭhāna (106)",
+            en: "9. Kammaṭṭhāna (106)",
+            es: "9. Kammaṭṭhāna (106)",
         },
         equation: {
-            pt: "40 Samatha (10+10+10+4+1+1+4 · 22 Paṭibhāga) · 6 Caritas · 5 Vasitās · 5 Abhiññās · 7 Visuddhis · 10 Ñāṇas · 4 Ariyas · 2 Samāpattis",
-            en: "40 Samatha (10+10+10+4+1+1+4 · 22 Paṭibhāga) · 6 Caritas · 5 Vasitās · 5 Abhiññās · 7 Visuddhis · 10 Ñāṇas · 4 Ariyas · 2 Samāpattis",
-            es: "40 Samatha (10+10+10+4+1+1+4 · 22 Paṭibhāga) · 6 Caritas · 5 Vasitās · 5 Abhiññās · 7 Visuddhis · 10 Ñāṇas · 4 Ariyas · 2 Samāpattis",
+            pt: "40 Samatha · 6 Caritas · 5 Vasitās · 5 Abhiññās · 7 Visuddhis · 10 Ñāṇas · 4 Ariyas · 23 Detalhes (Sīla 4 · Upakkilesa 10 · Paccavekkhaṇā)",
+            en: "40 Samatha · 6 Caritas · 5 Vasitās · 5 Abhiññās · 7 Visuddhis · 10 Ñāṇas · 4 Ariyas · 23 Details (Sīla 4 · Upakkilesa 10 · Paccavekkhaṇā)",
+            es: "40 Samatha · 6 Caritas · 5 Vasitās · 5 Abhiññās · 7 Visuddhis · 10 Ñāṇas · 4 Ariyas · 23 Detalles (Sīla 4 · Upakkilesa 10 · Paccavekkhaṇā)",
         },
-        totalItems: 83,
+        totalItems: 106,
     },
 ];
 export const CANONICAL_SUBMATRICES = [
@@ -212,7 +215,7 @@ export const CANONICAL_SUBMATRICES = [
             en: "Rows of 52×121 Matrix: 13 Aññasamānā (7+6) + 14 Akusala (4+3+4+2+1) + 25 Sobhana (19+3+2+1) = 52",
             es: "Filas de la Matriz 52×121: 13 Aññasamānā (7+6) + 14 Akusala (4+3+4+2+1) + 25 Sobhana (19+3+2+1) = 52",
         },
-        defaultSwitches: { lens: "sampayoga", group: "aññasamana", sub: "sabbacitta", slot: 1, sampayoga: 121 },
+        defaultSwitches: { lens: "sampayoga", group: "aññasamana", sub: "sabbacitta", slot: 1, yogita: "niyata", sampayoga: 121 },
     },
     {
         id: "sangaha_33",
@@ -229,6 +232,22 @@ export const CANONICAL_SUBMATRICES = [
             es: "Columnas de la Matriz 52×121 (Tettiṃsavidha-saṅgaha): 5 Lokuttara + 5 Mahaggata + 12 Kāmasobhana + 7 Akusala + 4 Ahetuka = 33",
         },
         defaultSwitches: { lens: "sangaha", sphere: "lokuttara", slot: 1, cetasikas: 36 },
+    },
+    {
+        id: "cetasika_laws",
+        chapter: 2,
+        asRef: "AS II.1, 19, 33–34, 42, 52",
+        label: {
+            pt: "Leis de Sampayoga & Aniyata (12)",
+            en: "Sampayoga & Aniyata Laws (12)",
+            es: "Leyes de Sampayoga y Aniyata (12)",
+        },
+        equation: {
+            pt: "4 Marcas (AS II.1) · 6 Exclusões Pakiṇṇaka (66, 55, 11, 16, 70, 20) · 11 Aniyata vs. 41 Niyata · 14 Sabbākusalayogino",
+            en: "4 Marks (AS II.1) · 6 Pakiṇṇaka Exclusions (66, 55, 11, 16, 70, 20) · 11 Aniyata vs. 41 Niyata · 14 All-Unwholesome",
+            es: "4 Marcas (AS II.1) · 6 Exclusiones Pakiṇṇaka (66, 55, 11, 16, 70, 20) · 11 Aniyata vs. 41 Niyata · 14 Sabbākusalayogino",
+        },
+        defaultSwitches: { lens: "laws", lawGroup: "sampayoga_marks4", slot: 1, metric: 4 },
     },
     {
         id: "vedana",
@@ -301,6 +320,18 @@ export const CANONICAL_SUBMATRICES = [
             es: "Partición: 43 Nissāya + 42 Nissāya/Anissāya + 4 Anissita = 89 · Reinos: Kāma 6, Rūpa 3, Arūpa 0",
         },
         defaultSwitches: { category: "vatthu", item: "nissaya", count: 43 },
+    },
+    {
+        id: "chakka_6",
+        chapter: 4,
+        asRef: "AS IV.2–6",
+        label: { pt: "0. 6 Hêxades / Chakka (6)", en: "0. 6 Hexads / Chakka (6)", es: "0. 6 Héxadas / Chakka (6)" },
+        equation: {
+            pt: "6 Vatthu · 6 Dvāra · 6 Ārammaṇa · 6 Viññāṇa · 6 Vīthi · 6 Visayappavatti (4 Pañca + 2 Mano)",
+            en: "6 Vatthu · 6 Dvāra · 6 Ārammaṇa · 6 Viññāṇa · 6 Vīthi · 6 Visayappavatti (4 Five-Door + 2 Mind-Door)",
+            es: "6 Vatthu · 6 Dvāra · 6 Ārammaṇa · 6 Viññāṇa · 6 Vīthi · 6 Visayappavatti (4 Pañca + 2 Mano)",
+        },
+        defaultSwitches: { door: "chakka_6", vara: "ch_vatthu", vithicittas: 6 },
     },
     {
         id: "pancadvara",
@@ -408,7 +439,7 @@ export const CANONICAL_SUBMATRICES = [
             en: "4 Maraṇuppattis + 3 Signs (Kamma, Kammanimitta, Gatinimitta) + Cuti → Paṭisandhi Transition Matrix (4 Laws)",
             es: "4 Maraṇuppattis + 3 Signos (Kamma, Kammanimitta, Gatinimitta) + Matriz de Transición Cuti → Paṭisandhi (4 Leyes)",
         },
-        defaultSwitches: { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "ayukkhaya" },
+        defaultSwitches: { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "ayukkhaya", rule: "wick_ends" },
     },
     {
         id: "rupa_28",
@@ -459,6 +490,18 @@ export const CANONICAL_SUBMATRICES = [
         defaultSwitches: { section: "pavatti_nibbana", topic: "pav_kama", value: 28 },
     },
     {
+        id: "rupa_laws",
+        chapter: 6,
+        asRef: "AS VI.11, 16, 18, 30–34, 50–54, 65",
+        label: { pt: "5. Leis de Rūpa & Nibbāna (11)", en: "5. Rūpa & Nibbāna Laws (11)", es: "5. Leyes de Rūpa y Nibbāna (11)" },
+        equation: {
+            pt: "8 Universais · 5 Sinônimos · 25 Kammas · 75 Cittaja · 32 Viññatti · 13 Hasana · 4 Nascimentos · 4 Epítetos Nibbāna",
+            en: "8 Universals · 5 Synonyms · 25 Kammas · 75 Cittaja · 32 Viññatti · 13 Laughter · 4 Birth Modes · 4 Nibbāna Epithets",
+            es: "8 Universales · 5 Sinónimos · 25 Kammas · 75 Cittaja · 32 Viññatti · 13 Risa · 4 Nacimientos · 4 Epítetos Nibbāna",
+        },
+        defaultSwitches: { section: "rupa_laws", law: "univ_8", value: 8 },
+    },
+    {
         id: "akusala_9",
         chapter: 7,
         asRef: "AS VII.3–14",
@@ -507,6 +550,54 @@ export const CANONICAL_SUBMATRICES = [
         defaultSwitches: { compendium: "sabba_7", group: "khandha", count: 5 },
     },
     {
+        id: "akusala_members",
+        chapter: 7,
+        asRef: "AS VII.3–14",
+        label: { pt: "5. Akusala Granular (34)", en: "5. Granular Akusala (34)", es: "5. Akusala Granular (34)" },
+        equation: {
+            pt: "Membros individuais de Āsava/Ogha/Yoga (4) · Gantha (4) · Upādāna (4) · Nīvaraṇa (6) · Anusaya (7) · Delta Saṃyojana (6) · Kilesa (3) → Cetasika real",
+            en: "Individual members of Āsava/Ogha/Yoga (4) · Gantha (4) · Upādāna (4) · Nīvaraṇa (6) · Anusaya (7) · Fetter Delta (6) · Kilesa (3) → Real Cetasika",
+            es: "Miembros individuales de Āsava/Ogha/Yoga (4) · Gantha (4) · Upādāna (4) · Nīvaraṇa (6) · Anusaya (7) · Delta Saṃyojana (6) · Kilesa (3)",
+        },
+        defaultSwitches: { compendium: "akusala_members", akSet: "asava_ogha_yoga", slot: 1, realDhamma: "lobha" },
+    },
+    {
+        id: "missaka_members",
+        chapter: 7,
+        asRef: "AS VII.15–28",
+        label: { pt: "6. Missaka Granular: 22 Indriyas & 12 Magga (51)", en: "6. Granular Missaka: 22 Indriyas & 12 Path (51)", es: "6. Missaka Granular: 22 Indriyas y 12 Magga (51)" },
+        equation: {
+            pt: "22 Indriyas (→16) + 12 Maggaṅgas (→9) + 4 Balas + 4 Adhipatis + 4 Āhāras + 5 Leis de Exclusão = 51",
+            en: "22 Indriyas (→16) + 12 Path Factors (→9) + 4 Balas + 4 Adhipatis + 4 Āhāras + 5 Exclusion Laws = 51",
+            es: "22 Indriyas (→16) + 12 Maggaṅgas (→9) + 4 Balas + 4 Adhipatis + 4 Āhāras + 5 Leyes de Exclusión = 51",
+        },
+        defaultSwitches: { compendium: "missaka_members", miSet: "indriya22", slot: 1, realClass: "pasada_5" },
+    },
+    {
+        id: "bodhi_37",
+        chapter: 7,
+        asRef: "AS VII.30–40",
+        label: { pt: "7. 37 Bodhipakkhiyas Individuais (37)", en: "7. 37 Individual Bodhipakkhiyas (37)", es: "7. 37 Bodhipakkhiyas Individuales (37)" },
+        equation: {
+            pt: "Todos os 37 fatores (4+4+4+5+5+7+8) mapeados individualmente aos 14 Sabhāva-dhammas reais",
+            en: "All 37 factors (4+4+4+5+5+7+8) mapped individually to the 14 real Sabhāva-dhammas",
+            es: "Los 37 factores (4+4+4+5+5+7+8) mapeados individualmente a los 14 Sabhāva-dhammas reales",
+        },
+        defaultSwitches: { compendium: "bodhi_37", bGroup: "satipatthana", slot: 1, sabhava: "sati" },
+    },
+    {
+        id: "sabba_members",
+        chapter: 7,
+        asRef: "AS VII.42–53",
+        label: { pt: "8. Sabba Granular: Khandha · Āyatana · Dhātu · Sacca (28)", en: "8. Granular Sabba: Khandha · Āyatana · Dhātu · Sacca (28)", es: "8. Sabba Granular: Khandha · Āyatana · Dhātu · Sacca (28)" },
+        equation: {
+            pt: "5 Khandhas + 12 Āyatanas + 7 Viññāṇadhātus (2×5+3+76=89) + 4 Ariyasaccas = 28 itens individuais",
+            en: "5 Khandhas + 12 Āyatanas + 7 Viññāṇadhātus (2×5+3+76=89) + 4 Noble Truths = 28 individual items",
+            es: "5 Khandhas + 12 Āyatanas + 7 Viññāṇadhātus (2×5+3+76=89) + 4 Ariyasaccas = 28 ítems individuales",
+        },
+        defaultSwitches: { compendium: "sabba_members", sbSet: "khandha5", slot: 1, paramatthaMap: "rupa_28" },
+    },
+    {
         id: "paticcasamuppada",
         chapter: 8,
         asRef: "AS VIII.4–13",
@@ -543,6 +634,18 @@ export const CANONICAL_SUBMATRICES = [
         defaultSwitches: { method: "pannatti_8", panType: "atthapannatti", arity: 6 },
     },
     {
+        id: "patthana_submodes",
+        chapter: 8,
+        asRef: "AS VIII.21–38, 40",
+        label: { pt: "4. Submodos Paṭṭhāna & 6 Atthapaññatti (18)", en: "4. Paṭṭhāna Submodes & 6 Atthapaññatti (18)", es: "4. Submodos Paṭṭhāna y 6 Atthapaññatti (18)" },
+        equation: {
+            pt: "12 subdivisões internas (Upanissaya 3 · Adhipati 2 · Sahajāta/Aññamañña/Nissaya 3 · Atthi 5 · Nāma 5) + 6 Atthapaññattis (AS VIII.40)",
+            en: "12 internal subdivisions (Upanissaya 3 · Adhipati 2 · Sahajāta/Aññamañña/Nissaya 3 · Atthi 5 · Nāma 5) + 6 Atthapaññattis (AS VIII.40)",
+            es: "12 subdivisiones internas (Upanissaya 3 · Adhipati 2 · Atthi 5 · Nāma 5) + 6 Atthapaññattis (AS VIII.40)",
+        },
+        defaultSwitches: { method: "patthana_submodes", subGroup: "paccaya_modes", topic: "sub_upanissaya", modes: 3 },
+    },
+    {
         id: "samatha_40",
         chapter: 9,
         asRef: "AS IX.2, 6–27, 34–40",
@@ -564,7 +667,7 @@ export const CANONICAL_SUBMATRICES = [
             en: "6 Temperaments (Sappāyabheda) + 5 Jhāna Masteries (Vasitā) + 5 Direct Knowledges (Abhiññā) = 16",
             es: "6 Temperamentos (Sappāyabheda) + 5 Maestrías del Jhāna (Vasitā) + 5 Conocimientos Directos (Abhiññā) = 16",
         },
-        defaultSwitches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 1 },
+        defaultSwitches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 1, prop: "sappaya_11" },
     },
     {
         id: "vipassana_visuddhi_nana",
@@ -588,7 +691,19 @@ export const CANONICAL_SUBMATRICES = [
             en: "4 Noble Ones (Sotāpanna, Sakadāgāmī, Anāgāmī, Arahā) + 2 Attainments (Phala-samāpatti & Nirodha-samāpatti)",
             es: "4 Nobles (Sotāpanna, Sakadāgāmī, Anāgāmī, Arahā) + 2 Realizaciones (Phala-samāpatti y Nirodha-samāpatti)",
         },
-        defaultSwitches: { wing: "ariya_samapatti", ariyaGroup: "puggala_4", slot: 1 },
+        defaultSwitches: { wing: "ariya_samapatti", ariyaGroup: "puggala_4", slot: 1, prop: "cut_ditthi_vicikiccha" },
+    },
+    {
+        id: "kammatthana_details",
+        chapter: 9,
+        asRef: "AS IX.4–5, 36–39, 49, 53, 60",
+        label: { pt: "5. Bhāvanā · Nimitta · Sīla 4 · Upakkilesa 10 · Paccavekkhaṇā (23)", en: "5. Bhāvanā · Nimitta · 4 Sīla · 10 Upakkilesas · Reviewing (23)", es: "5. Bhāvanā · Nimitta · 4 Sīla · 10 Upakkilesas · Paccavekkhaṇā (23)" },
+        equation: {
+            pt: "3 Bhāvanās + 3 Nimittas + 4 Catupārisuddhisīla + 10 Upakkilesas individuais + 2 Paccavekkhaṇā (19) + 9 Kasiṇas → 4 Āruppas",
+            en: "3 Bhāvanās + 3 Nimittas + 4 Pārisuddhisīla + 10 individual Upakkilesas + 2 Reviewing Laws (19) + 9 Kasiṇas → 4 Āruppas",
+            es: "3 Bhāvanās + 3 Nimittas + 4 Catupārisuddhisīla + 10 Upakkilesas individuales + 2 Paccavekkhaṇā (19) + 9 Kasiṇas → 4 Āruppas",
+        },
+        defaultSwitches: { wing: "kammatthana_details", detGroup: "bhavana_3", slot: 1, role: "all_40" },
     },
 ];
 export function getSubmatricesForChapter(chapterNum) {
@@ -1428,21 +1543,62 @@ const CHAPTER_2_CETASIKAS_52 = [
         switches: { group: "sobhana", sub: "panna", slot: 1, sampayoga: 79 },
     },
 ];
+const ANIYATA_NANA_IDS = new Set([
+    "cet:20",
+    "cet:22",
+    "cet:23",
+    "cet:24",
+    "cet:47",
+    "cet:48",
+    "cet:49",
+    "cet:50",
+    "cet:51",
+]);
+const ANIYATA_SAHA_IDS = new Set(["cet:25", "cet:26"]);
 export const CHAPTER_2_ITEMS = [
-    ...CHAPTER_2_CETASIKAS_52.map((item) => ({
-        ...item,
-        submatrix: "sampayoga_52",
-        switches: { lens: "sampayoga", ...item.switches },
-    })),
+    ...CHAPTER_2_CETASIKAS_52.map((item) => {
+        const yogita = ANIYATA_SAHA_IDS.has(item.id)
+            ? "aniyata_saha"
+            : ANIYATA_NANA_IDS.has(item.id)
+                ? "aniyata_nana"
+                : "niyata";
+        return {
+            ...item,
+            submatrix: "sampayoga_52",
+            switches: { lens: "sampayoga", ...item.switches, yogita },
+        };
+    }),
     ...CHAPTER_2_SANGAHA_33_ITEMS,
+    ...CHAPTER_2_LAWS_ITEMS,
 ];
-export const CHAPTER_3_ITEMS = CHAPTER_3_PAKINNAKA_ITEMS;
-export const CHAPTER_4_ITEMS = CHAPTER_4_VITHI_ITEMS;
-export const CHAPTER_5_ITEMS = CHAPTER_5_VITHIMUTTA_ITEMS;
-export const CHAPTER_6_ITEMS = CHAPTER_6_RUPA_ITEMS;
-export const CHAPTER_7_ITEMS = CHAPTER_7_SAMUCCAYA_ITEMS;
-export const CHAPTER_8_ITEMS = CHAPTER_8_PACCAYA_ITEMS;
-export const CHAPTER_9_ITEMS = CHAPTER_9_KAMMATTHANA_ITEMS;
+export const CHAPTER_3_ITEMS = [
+    ...CHAPTER_3_PAKINNAKA_ITEMS,
+    ...CHAPTER_3_SUPPLEMENT_ITEMS,
+];
+export const CHAPTER_4_ITEMS = [
+    ...CHAPTER_4_VITHI_ITEMS,
+    ...CHAPTER_4_SUPPLEMENT_ITEMS,
+];
+export const CHAPTER_5_ITEMS = [
+    ...CHAPTER_5_VITHIMUTTA_ITEMS,
+    ...CHAPTER_5_SUPPLEMENT_ITEMS,
+];
+export const CHAPTER_6_ITEMS = [
+    ...CHAPTER_6_RUPA_ITEMS,
+    ...CHAPTER_6_SUPPLEMENT_ITEMS,
+];
+export const CHAPTER_7_ITEMS = [
+    ...CHAPTER_7_SAMUCCAYA_ITEMS,
+    ...CHAPTER_7_GRANULAR_ITEMS,
+];
+export const CHAPTER_8_ITEMS = [
+    ...CHAPTER_8_PACCAYA_ITEMS,
+    ...CHAPTER_8_SUPPLEMENT_ITEMS,
+];
+export const CHAPTER_9_ITEMS = [
+    ...CHAPTER_9_KAMMATTHANA_ITEMS,
+    ...CHAPTER_9_SUPPLEMENT_ITEMS,
+];
 export const ALL_NARY_CHAPTER_ITEMS = [
     ...CHAPTER_2_ITEMS,
     ...CHAPTER_3_ITEMS,

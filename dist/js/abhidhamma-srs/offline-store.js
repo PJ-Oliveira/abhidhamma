@@ -1,6 +1,6 @@
-import { DEFAULT_ANKI_CONFIG, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, normalizeAnkiConfig, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, STORAGE_MNEMONICS_KEY, } from "./scheduler.js?v=3f76b330";
-import { hasMnemonicProgressData, loadMnemonicProgress, mergeMnemonicProgress, normalizeMnemonicProgress, saveMnemonicProgress, } from "../mnemonic-lab/engine.js?v=3f76b330";
-export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v28";
+import { DEFAULT_ANKI_CONFIG, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, normalizeAnkiConfig, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, STORAGE_MNEMONICS_KEY, } from "./scheduler.js?v=ec96663c";
+import { hasMnemonicProgressData, loadMnemonicProgress, mergeMnemonicProgress, normalizeMnemonicProgress, saveMnemonicProgress, } from "../mnemonic-lab/engine.js?v=ec96663c";
+export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v32";
 export const VAULT_CACHE_NAME = "abhidhamma-anki-vault-v1";
 export const VAULT_SNAPSHOT_PATH = "/_offline_vault/abhidhamma-anki-progress.json";
 export const VAULT_OPFS_FILENAME = "abhidhamma-anki-progress.json";

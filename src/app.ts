@@ -20,12 +20,6 @@ import {
   requestPersistentStorage,
   VAULT_CACHE_NAME,
 } from "./abhidhamma-srs/offline-store.js";
-import { initToolsPanel } from "./tools/tools.js";
-import "./tools/mindmap.js";
-import "./tools/patthana.js";
-import "./tools/vithi.js";
-import "./tools/matikas.js";
-import "./tools/cetasika.js";
 import { MnemonicLabUI } from "./mnemonic-lab/ui.js";
 import { initSelectionHandler, clearSelection } from "./selection.js";
 import { createLogger } from "./logger.js";
@@ -528,12 +522,11 @@ function wireIconRail(): void {
     if (w >= MIN_W) root.style.setProperty("--panel-w", w + "px");
   }
 
-  const FULLSCREEN_PANELS = new Set(["srs", "tools", "abhidhamma-srs", "mnemonic-srs"]);
+  const FULLSCREEN_PANELS = new Set(["srs", "abhidhamma-srs", "mnemonic-srs"]);
   const readerHeader = el("reader-header");
   const readerContent = el("content");
   const tocNav = el("toc-nav");
   const readerSrs = el("reader-srs");
-  const readerTools = el("reader-tools");
 
   function toggleReaderOverlay(target: string | undefined): void {
     const isFullscreen = target && FULLSCREEN_PANELS.has(target);
@@ -543,7 +536,6 @@ function wireIconRail(): void {
     const isSrsOverlay =
       target === "srs" || target === "abhidhamma-srs" || target === "mnemonic-srs";
     readerSrs.style.display = isSrsOverlay ? "flex" : "none";
-    readerTools.style.display = target === "tools" ? "flex" : "none";
   }
 
   switchPanel = (target: string, skipHashUpdate = false) => {
@@ -726,6 +718,18 @@ async function cacheAllForOffline(btn: HTMLButtonElement): Promise<void> {
       './js/abhidhamma-srs/ui.js',
       './js/mnemonic-lab/data.js',
       './js/mnemonic-lab/nary-chapters-data.js',
+      './js/mnemonic-lab/chapters/ch0-synthesis.js',
+      './js/mnemonic-lab/chapters/ch2-laws.js',
+      './js/mnemonic-lab/chapters/ch2-sangaha.js',
+      './js/mnemonic-lab/chapters/ch3-pakinnaka.js',
+      './js/mnemonic-lab/chapters/ch4-vithi.js',
+      './js/mnemonic-lab/chapters/ch5-vithimutta.js',
+      './js/mnemonic-lab/chapters/ch6-rupa.js',
+      './js/mnemonic-lab/chapters/ch7-granular.js',
+      './js/mnemonic-lab/chapters/ch7-samuccaya.js',
+      './js/mnemonic-lab/chapters/ch8-paccaya.js',
+      './js/mnemonic-lab/chapters/ch9-kammatthana.js',
+      './js/mnemonic-lab/chapters/mula-supplements.js',
       './js/mnemonic-lab/engine.js',
       './js/mnemonic-lab/ui.js',
     ];
@@ -1034,12 +1038,12 @@ function parseHash(): Route | null {
   let panel = "tipitaka";
   let workId, partKey, chunkIndexStr;
   
-  const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools", "abhidhamma-srs", "mnemonic-srs"]);
+  const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "abhidhamma-srs", "mnemonic-srs"]);
   if (parts[0] === "srs" && parts[1] === "abhidhamma") {
     parts.shift();
     parts.shift();
     panel = "abhidhamma-srs";
-  } else if (parts[0] === "srs" && parts[1] === "mnemonic") {
+  } else if ((parts[0] === "srs" || parts[0] === "tools") && parts[1] === "mnemonic") {
     parts.shift();
     parts.shift();
     panel = "mnemonic-srs";
@@ -1145,7 +1149,6 @@ async function init(): Promise<void> {
   initSelectionHandler(el("content"));
   initExportPanel(state.manifest, el("export-panel-body"), () => state.work?.id ?? null);
   initSrsPanel(el("srs-full-body"));
-  initToolsPanel(el("tools-full-body"));
 
   const abhidhammaMount = document.getElementById("srs-abhidhamma-main");
   if (abhidhammaMount) {

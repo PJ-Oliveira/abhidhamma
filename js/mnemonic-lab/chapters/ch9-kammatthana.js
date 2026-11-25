@@ -325,7 +325,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Carita 1 · Temperamento de Apego (Rāgacarita → 11 Objetos)", en: "Carita 1 · Greedy Temperament (Rāgacarita → 11 Subjects)", es: "Carita 1 · Temperamento de Apego (Rāgacarita → 11 Objetos)" },
         formulaNote: { pt: "10 Asubhas + Kāyagatāsati (32 partes) = 11 objetos adequados (AS IX.13).", en: "10 Asubhas + Kāyagatāsati (bodily parts) = 11 suitable subjects (AS IX.13).", es: "10 Asubhas + Kāyagatāsati (partes del cuerpo) = 11 objetos adecuados (AS IX.13)." },
         primaryGroup: "samatha_carita_abhinna", secondaryGroup: "carita_6",
-        switches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 1 },
+        switches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 1, prop: "sappaya_11" },
     },
     {
         id: "kam:cva:c2", chapter: 9, submatrix: "samatha_carita_abhinna", asRef: "AS IX.3, 14", code: "Car-02",
@@ -333,7 +333,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Carita 2 · Temperamento de Aversão (Dosacarita → 8 Objetos)", en: "Carita 2 · Hating Temperament (Dosacarita → 8 Subjects)", es: "Carita 2 · Temperamento de Aversión (Dosacarita → 8 Objetos)" },
         formulaNote: { pt: "4 Appamaññās + 4 Kasiṇas de cor (Nīla, Pīta, Lohita, Odāta) = 8 objetos adequados (AS IX.14).", en: "4 Illimitables + 4 color Kasiṇas (Blue, Yellow, Red, White) = 8 suitable subjects (AS IX.14).", es: "4 Appamaññās + 4 Kasiṇas de color (Nīla..Odāta) = 8 objetos adecuados (AS IX.14)." },
         primaryGroup: "samatha_carita_abhinna", secondaryGroup: "carita_6",
-        switches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 2 },
+        switches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 2, prop: "sappaya_8" },
     },
     {
         id: "kam:cva:c3", chapter: 9, submatrix: "samatha_carita_abhinna", asRef: "AS IX.3, 15, 18", code: "Car-03",
@@ -341,7 +341,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Carita 3 · Temperamento de Ilusão (Mohacarita → Respiração / Kasiṇa Amplo)", en: "Carita 3 · Deluded Temperament (Mohacarita → Breathing / Large Kasiṇa)", es: "Carita 3 · Temperamento de Engaño (Mohacarita → Respiración / Kasiṇa Amplio)" },
         formulaNote: { pt: "Ānāpānassati (AS IX.15) e, entre os Kasiṇas, um Kasiṇa amplo (Puthula, AS IX.18).", en: "Ānāpānassati (AS IX.15) and, among Kasiṇas, a large Kasiṇa (Puthula, AS IX.18).", es: "Ānāpānassati (AS IX.15) y, entre los Kasiṇas, uno amplio (Puthula, AS IX.18)." },
         primaryGroup: "samatha_carita_abhinna", secondaryGroup: "carita_6",
-        switches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 3 },
+        switches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 3, prop: "sappaya_anapana_large" },
     },
     {
         id: "kam:cva:c4", chapter: 9, submatrix: "samatha_carita_abhinna", asRef: "AS IX.3, 16", code: "Car-04",
@@ -349,7 +349,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Carita 4 · Temperamento de Fé (Saddhācarita → 6 Anussatis)", en: "Carita 4 · Faithful Temperament (Saddhācarita → 6 Recollections)", es: "Carita 4 · Temperamento de Fe (Saddhācarita → 6 Anussatis)" },
         formulaNote: { pt: "As 6 primeiras Anussatis: Buddha, Dhamma, Saṅgha, Sīla, Cāga, Devatā (AS IX.16).", en: "First 6 Recollections: Buddha, Dhamma, Saṅgha, Virtue, Generosity, Deities (AS IX.16).", es: "Primeras 6 Anussatis: Buddha, Dhamma, Saṅgha, Sīla, Cāga, Devatā (AS IX.16)." },
         primaryGroup: "samatha_carita_abhinna", secondaryGroup: "carita_6",
-        switches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 4 },
+        switches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 4, prop: "sappaya_6" },
     },
     {
         id: "kam:cva:c5", chapter: 9, submatrix: "samatha_carita_abhinna", asRef: "AS IX.3, 17", code: "Car-05",
@@ -357,7 +357,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Carita 5 · Temperamento Intelectual (Buddhicarita → 4 Objetos)", en: "Carita 5 · Intelligent Temperament (Buddhicarita → 4 Subjects)", es: "Carita 5 · Temperamento Intelectual (Buddhicarita → 4 Objetos)" },
         formulaNote: { pt: "Maraṇānussati, Upasamānussati, Āhāre paṭikūlasaññā e Catudhātuvavatthāna = 4 objetos analíticos (AS IX.17).", en: "Death, Peace, Repulsiveness of food, and Four Elements defining = 4 analytical subjects (AS IX.17).", es: "Maraṇa, Upasama, Āhāre paṭikūlasaññā y Catudhātuvavatthāna = 4 objetos analíticos (AS IX.17)." },
         primaryGroup: "samatha_carita_abhinna", secondaryGroup: "carita_6",
-        switches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 5 },
+        switches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 5, prop: "sappaya_4" },
     },
     {
         id: "kam:cva:c6", chapter: 9, submatrix: "samatha_carita_abhinna", asRef: "AS IX.3, 15, 18", code: "Car-06",
@@ -365,7 +365,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Carita 6 · Temperamento Discursivo (Vitakkacarita → Respiração / Kasiṇa Pequeno)", en: "Carita 6 · Discursive Temperament (Vitakkacarita → Breathing / Small Kasiṇa)", es: "Carita 6 · Temperamento Discursivo (Vitakkacarita → Respiración / Kasiṇa Pequeño)" },
         formulaNote: { pt: "Ānāpānassati (AS IX.15) e, entre os Kasiṇas, um Kasiṇa pequeno (Khuddaka, AS IX.18).", en: "Ānāpānassati (AS IX.15) and, among Kasiṇas, a small Kasiṇa (Khuddaka, AS IX.18).", es: "Ānāpānassati (AS IX.15) y, entre los Kasiṇas, uno pequeño (Khuddaka, AS IX.18)." },
         primaryGroup: "samatha_carita_abhinna", secondaryGroup: "carita_6",
-        switches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 6 },
+        switches: { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 6, prop: "sappaya_anapana_small" },
     },
     {
         id: "kam:cva:v1", chapter: 9, submatrix: "samatha_carita_abhinna", asRef: "AS IX.33", code: "Vas-01",
@@ -509,7 +509,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Ñāṇa 1 · Conhecimento por Compreensão em Grupos (Sammasana)", en: "Ñāṇa 1 · Knowledge of Comprehension (Sammasana)", es: "Ñāṇa 1 · Conocimiento de Comprensión (Sammasana)" },
         formulaNote: { pt: "Contempla as formações dos 3 planos por grupos (Kalāpa) como Anicca, Dukkha e Anatta por duração, continuidade ou momento (AS IX.53).", en: "Investigates 3-plane formations by groups (Kalāpa) as impermanent, suffering, non-self by duration, continuity, or moment (AS IX.53).", es: "Investiga las formaciones de los 3 planos por grupos como Anicca, Dukkha y Anatta (AS IX.53)." },
         primaryGroup: "vipassana_visuddhi_nana", secondaryGroup: "nana_10",
-        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 1 },
+        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 1, stage: "v5_maggamagga" },
     },
     {
         id: "kam:vip:n2", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.46, 53–54", code: "Nan-02",
@@ -517,7 +517,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Ñāṇa 2 · Surgimento e Dissolução (Udayabbaya)", en: "Ñāṇa 2 · Arising and Passing Away (Udayabbaya)", es: "Ñāṇa 2 · Surgimiento y Disolución (Udayabbaya)" },
         formulaNote: { pt: "Observa surgimento e cessação por condições e momentos. Livre dos 10 Upakkilesas, inaugura Visuddhi #6 (AS IX.53–54).", en: "Observes arising & passing by conditions and moments. Freed from 10 Upakkilesas, opens Visuddhi #6 (AS IX.53–54).", es: "Observa surgimiento y cese por condiciones y momentos. Libre de 10 Upakkilesas, abre Visuddhi #6." },
         primaryGroup: "vipassana_visuddhi_nana", secondaryGroup: "nana_10",
-        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 2 },
+        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 2, stage: "v5_v6_bridge" },
     },
     {
         id: "kam:vip:n3", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.46, 54", code: "Nan-03",
@@ -525,7 +525,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Ñāṇa 3 · Conhecimento da Dissolução (Bhaṅga)", en: "Ñāṇa 3 · Knowledge of Dissolution (Bhaṅga)", es: "Ñāṇa 3 · Conocimiento de la Disolución (Bhaṅga)" },
         formulaNote: { pt: "2.º dos 9 conhecimentos de Paṭipadāñāṇadassana-visuddhi: foca exclusivamente na dissolução contínua das formações.", en: "2nd of 9 knowledges of Visuddhi #6: focuses directly on the continuous breakup/dissolution of formations.", es: "2.º de 9 conocimientos de Visuddhi #6: se centra en la disolución continua de las formaciones." },
         primaryGroup: "vipassana_visuddhi_nana", secondaryGroup: "nana_10",
-        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 3 },
+        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 3, stage: "v6_patipada" },
     },
     {
         id: "kam:vip:n4", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.46, 54", code: "Nan-04",
@@ -533,7 +533,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Ñāṇa 4 · Conhecimento do Temível (Bhaya)", en: "Ñāṇa 4 · Knowledge of Fearfulness (Bhaya)", es: "Ñāṇa 4 · Conocimiento del Temor (Bhaya)" },
         formulaNote: { pt: "3.º dos 9 de Visuddhi #6: todas as formações em dissolução manifestam-se como intrinsecamente temíveis (Bhayatupaṭṭhāna).", en: "3rd of 9 in Visuddhi #6: all dissolving formations appear inherently fearful (Bhayatupaṭṭhāna).", es: "3.º de 9 en Visuddhi #6: todas las formaciones en disolución aparecen como temibles." },
         primaryGroup: "vipassana_visuddhi_nana", secondaryGroup: "nana_10",
-        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 4 },
+        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 4, stage: "v6_patipada" },
     },
     {
         id: "kam:vip:n5", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.46, 54", code: "Nan-05",
@@ -541,7 +541,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Ñāṇa 5 · Conhecimento do Perigo (Ādīnava)", en: "Ñāṇa 5 · Knowledge of Danger (Ādīnava)", es: "Ñāṇa 5 · Conocimiento del Peligro (Ādīnava)" },
         formulaNote: { pt: "4.º dos 9 de Visuddhi #6: vê claramente o perigo, a falha e a ausência de refúgio em toda existência condicionada.", en: "4th of 9 in Visuddhi #6: clearly sees danger, peril, and lack of refuge in all conditioned existence.", es: "4.º de 9 en Visuddhi #6: ve el peligro y falta de refugio en toda existencia condicionada." },
         primaryGroup: "vipassana_visuddhi_nana", secondaryGroup: "nana_10",
-        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 5 },
+        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 5, stage: "v6_patipada" },
     },
     {
         id: "kam:vip:n6", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.46, 54", code: "Nan-06",
@@ -549,7 +549,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Ñāṇa 6 · Conhecimento do Desencanto (Nibbidā)", en: "Ñāṇa 6 · Knowledge of Disenchantment (Nibbidā)", es: "Ñāṇa 6 · Conocimiento del Desencanto (Nibbidā)" },
         formulaNote: { pt: "5.º dos 9 de Visuddhi #6: desapego e desilusão lúcida frente a todas as formações dos 3 planos.", en: "5th of 9 in Visuddhi #6: lucid disenchantment and weariness towards all formations of the 3 planes.", es: "5.º de 9 en Visuddhi #6: desencanto lúcido ante todas las formaciones de los 3 planos." },
         primaryGroup: "vipassana_visuddhi_nana", secondaryGroup: "nana_10",
-        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 6 },
+        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 6, stage: "v6_patipada" },
     },
     {
         id: "kam:vip:n7", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.46, 54", code: "Nan-07",
@@ -557,7 +557,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Ñāṇa 7 · Desejo de Libertação (Muccitukamyatā)", en: "Ñāṇa 7 · Desire for Deliverance (Muccitukamyatā)", es: "Ñāṇa 7 · Deseo de Liberación (Muccitukamyatā)" },
         formulaNote: { pt: "6.º dos 9 de Visuddhi #6: forte aspiração de libertar-se completamente da rede de formações condicionadas.", en: "6th of 9 in Visuddhi #6: strong aspiration to be delivered from the entire network of conditioned formations.", es: "6.º de 9 en Visuddhi #6: fuerte aspiración de liberarse de todas las formaciones condicionadas." },
         primaryGroup: "vipassana_visuddhi_nana", secondaryGroup: "nana_10",
-        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 7 },
+        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 7, stage: "v6_patipada" },
     },
     {
         id: "kam:vip:n8", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.46, 54", code: "Nan-08",
@@ -565,7 +565,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Ñāṇa 8 · Conhecimento da Re-observação (Paṭisaṅkhā)", en: "Ñāṇa 8 · Knowledge of Re-observation (Paṭisaṅkhā)", es: "Ñāṇa 8 · Conocimiento de Re-observación (Paṭisaṅkhā)" },
         formulaNote: { pt: "7.º dos 9 de Visuddhi #6: reexamina as formações sob as 3 marcas para encontrar o meio de libertação.", en: "7th of 9 in Visuddhi #6: re-examines formations under the 3 marks to find the means of release.", es: "7.º de 9 en Visuddhi #6: reexamina las formaciones bajo las 3 marcas para hallar la liberación." },
         primaryGroup: "vipassana_visuddhi_nana", secondaryGroup: "nana_10",
-        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 8 },
+        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 8, stage: "v6_patipada" },
     },
     {
         id: "kam:vip:n9", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.46, 54–56", code: "Nan-09",
@@ -573,7 +573,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Ñāṇa 9 · Equanimidade quanto às Formações (Saṅkhārupekkhā)", en: "Ñāṇa 9 · Equanimity Towards Formations (Saṅkhārupekkhā)", es: "Ñāṇa 9 · Ecuanimidad hacia las Formaciones (Saṅkhārupekkhā)" },
         formulaNote: { pt: "8.º dos 9 de Visuddhi #6: supera tanto o temor quanto o deleite; no ápice (+Anuloma) = Vuṭṭhānagāminī-vipassanā (AS IX.56).", en: "8th of 9 in Visuddhi #6: transcends both fear and delight; at peak (+Anuloma) = Vuṭṭhānagāminī-vipassanā (AS IX.56).", es: "8.º de 9 en Visuddhi #6: trasciende temor y deleite; en su cima (+Anuloma) = Vuṭṭhānagāminī-vipassanā." },
         primaryGroup: "vipassana_visuddhi_nana", secondaryGroup: "nana_10",
-        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 9 },
+        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 9, stage: "v6_vutthanagamini" },
     },
     {
         id: "kam:vip:n10", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.46, 54–57", code: "Nan-10",
@@ -581,7 +581,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Ñāṇa 10 · Conhecimento de Adaptação / Conformidade (Anuloma)", en: "Ñāṇa 10 · Knowledge of Conformity / Adaptation (Anuloma)", es: "Ñāṇa 10 · Conocimiento de Conformidad (Anuloma)" },
         formulaNote: { pt: "9.º e último de Visuddhi #6: conforma-se aos 8 conhecimentos anteriores e aos 37 Bodhipakkhiyas, precedendo Gotrabhū e Magga (AS IX.55–57).", en: "9th & final in Visuddhi #6: conforms to prior knowledges & 37 Bodhipakkhiyas, immediately preceding Gotrabhū and Path (AS IX.55–57).", es: "9.º y último de Visuddhi #6: precede directamente a Gotrabhū y Magga (AS IX.55–57)." },
         primaryGroup: "vipassana_visuddhi_nana", secondaryGroup: "nana_10",
-        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 10 },
+        switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 10, stage: "v6_vutthanagamini" },
     },
     {
         id: "kam:vip:m1", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.44–48, 62, 65", code: "Vim-01",
@@ -621,7 +621,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Nobre 1 · Entrante na Corrente (Sotāpanna · Máx. 7 Vidas)", en: "Noble 1 · Stream-Enterer (Sotāpanna · Max 7 Lives)", es: "Noble 1 · Entrante en la Corriente (Sotāpanna · Máx. 7 Vidas)" },
         formulaNote: { pt: "AS IX.68: abandona Diṭṭhi e Vicikicchā; livre de renascer nos 4 Apāyas; no máximo 7 vidas (Sattakkhattuparama).", en: "AS IX.68: abandons Wrong View & Doubt; freed from the 4 lower realms; at most 7 more existences.", es: "AS IX.68: abandona Diṭṭhi y Vicikicchā; libre de los 4 Apāyas; máximo 7 existencias." },
         primaryGroup: "ariya_samapatti", secondaryGroup: "puggala_4",
-        switches: { wing: "ariya_samapatti", ariyaGroup: "puggala_4", slot: 1 },
+        switches: { wing: "ariya_samapatti", ariyaGroup: "puggala_4", slot: 1, prop: "cut_ditthi_vicikiccha" },
     },
     {
         id: "kam:ari:2", chapter: 9, submatrix: "ariya_samapatti", asRef: "AS IX.69", code: "Ari-02",
@@ -629,7 +629,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Nobre 2 · Que Retorna Uma Vez (Sakadāgāmī)", en: "Noble 2 · Once-Returner (Sakadāgāmī)", es: "Noble 2 · Que Retorna Una Vez (Sakadāgāmī)" },
         formulaNote: { pt: "AS IX.69: atenua Rāga, Dosa e Moha grosseiros; retorna a este plano sensual apenas mais uma vez (Sakideva).", en: "AS IX.69: attenuates gross greed, hatred, and delusion; returns to this world only once more.", es: "AS IX.69: atenúa Rāga, Dosa y Moha; regresa a este mundo una sola vez más." },
         primaryGroup: "ariya_samapatti", secondaryGroup: "puggala_4",
-        switches: { wing: "ariya_samapatti", ariyaGroup: "puggala_4", slot: 2 },
+        switches: { wing: "ariya_samapatti", ariyaGroup: "puggala_4", slot: 2, prop: "attenuate_3" },
     },
     {
         id: "kam:ari:3", chapter: 9, submatrix: "ariya_samapatti", asRef: "AS IX.70", code: "Ari-03",
@@ -637,7 +637,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Nobre 3 · Que Não Retorna (Anāgāmī)", en: "Noble 3 · Non-Returner (Anāgāmī)", es: "Noble 3 · Que No Retorna (Anāgāmī)" },
         formulaNote: { pt: "AS IX.70: erradica sem resíduo Kāmarāga (desejo sensual) e Byāpāda (má vontade); não retorna mais ao Kāmaloka.", en: "AS IX.70: eradicates sensual desire (Kāmarāga) and ill will (Byāpāda) without remainder; never returns to Kāmaloka.", es: "AS IX.70: erradica sin residuo Kāmarāga y Byāpāda; no vuelve al Kāmaloka." },
         primaryGroup: "ariya_samapatti", secondaryGroup: "puggala_4",
-        switches: { wing: "ariya_samapatti", ariyaGroup: "puggala_4", slot: 3 },
+        switches: { wing: "ariya_samapatti", ariyaGroup: "puggala_4", slot: 3, prop: "cut_kamaraga_byapada" },
     },
     {
         id: "kam:ari:4", chapter: 9, submatrix: "ariya_samapatti", asRef: "AS IX.71", code: "Ari-04",
@@ -645,7 +645,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Nobre 4 · Arahant (Khīṇāsava — Impurezas Extintas)", en: "Noble 4 · Arahant (Khīṇāsava — Taints Destroyed)", es: "Noble 4 · Arahant (Khīṇāsava — Impurezas Extinguidas)" },
         formulaNote: { pt: "AS IX.71: erradica todas as impurezas restantes (Rūpa/Arūparāga, Māna, Uddhacca, Avijjā); digno supremo de oferendas.", en: "AS IX.71: eradicates all remaining defilements without remainder; taints destroyed (Khīṇāsava).", es: "AS IX.71: erradica todas las impurezas restantes sin residuo; Khīṇāsava." },
         primaryGroup: "ariya_samapatti", secondaryGroup: "puggala_4",
-        switches: { wing: "ariya_samapatti", ariyaGroup: "puggala_4", slot: 4 },
+        switches: { wing: "ariya_samapatti", ariyaGroup: "puggala_4", slot: 4, prop: "cut_all_remaining" },
     },
     {
         id: "kam:ari:5", chapter: 9, submatrix: "ariya_samapatti", asRef: "AS IX.67, 72", code: "Sam-01",
@@ -653,7 +653,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Samāpatti 1 · Realização do Fruto (Phala-samāpatti)", en: "Samāpatti 1 · Fruition Attainment (Phala-samāpatti)", es: "Samāpatti 1 · Realización del Fruto (Phala-samāpatti)" },
         formulaNote: { pt: "AS IX.72: acessível a todos os 4 Ariyas, cada um entrando repetidamente em seu respectivo Phala-citta (com Nibbāna por objeto).", en: "AS IX.72: common to all 4 Noble Ones, each entering their own respective Fruition-consciousness with Nibbāna as object.", es: "AS IX.72: común a los 4 Nobles, entrando cada uno en su respectivo Phala-citta." },
         primaryGroup: "ariya_samapatti", secondaryGroup: "samapatti_2",
-        switches: { wing: "ariya_samapatti", ariyaGroup: "samapatti_2", slot: 1 },
+        switches: { wing: "ariya_samapatti", ariyaGroup: "samapatti_2", slot: 1, prop: "access_4_ariyas" },
     },
     {
         id: "kam:ari:6", chapter: 9, submatrix: "ariya_samapatti", asRef: "AS IX.73–74", code: "Sam-02",
@@ -661,7 +661,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS = [
         name: { pt: "Samāpatti 2 · Realização da Cessação (Nirodha-samāpatti)", en: "Samāpatti 2 · Attainment of Cessation (Nirodha-samāpatti)", es: "Samāpatti 2 · Realización de la Cesación (Nirodha-samāpatti)" },
         formulaNote: { pt: "AS IX.73–74: exclusiva de Anāgāmīs e Arahants com as 8 absorções; após 2 javanas do 4.º Āruppa, Citta cessa; ao sair, 1 Phala + Bhavaṅga + Paccavekkhaṇā.", en: "AS IX.73–74: exclusive to Anāgāmīs & Arahants mastering all 8 attainments; after 2 4th-Āruppa javanas mind stops; exits via 1 Fruit + Bhavaṅga + Reviewing.", es: "AS IX.73–74: exclusiva de Anāgāmīs y Arahants con las 8 absorciones; tras 2 javanas del 4.º Āruppa cesa Citta; al salir, 1 Phala + Bhavaṅga." },
         primaryGroup: "ariya_samapatti", secondaryGroup: "samapatti_2",
-        switches: { wing: "ariya_samapatti", ariyaGroup: "samapatti_2", slot: 2 },
+        switches: { wing: "ariya_samapatti", ariyaGroup: "samapatti_2", slot: 2, prop: "access_anagami_arahant" },
     },
 ];
 //# sourceMappingURL=ch9-kammatthana.js.map

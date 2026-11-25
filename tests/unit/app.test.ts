@@ -103,13 +103,17 @@ describe('App Integration & User Journeys', () => {
     dictInput.dispatchEvent(new Event('input'));
     await new Promise(r => setTimeout(r, 400));
     
-    // 4. Tools
-    const toolsBtn = document.querySelector('[data-panel="tools"]') as HTMLElement;
-    toolsBtn.click();
-    const toolsBody = document.getElementById('tools-full-body');
-    const toolBtns = toolsBody?.querySelectorAll('.tools-tab-btn');
-    toolBtns?.forEach(b => (b as HTMLElement).click());
-    await new Promise(r => setTimeout(r, 400));
+    // 4. Tools removed & Mnemonic Lab stays intact in SRS
+    expect(document.querySelector('[data-panel="tools"]')).toBeNull();
+    expect(document.getElementById('panel-tools')).toBeNull();
+    expect(document.getElementById('reader-tools')).toBeNull();
+    const srsBtn = document.querySelector('[data-panel="srs"]') as HTMLElement;
+    srsBtn.click();
+    const mnemTab = document.querySelector('.srs-tab-btn[data-srs-mode="mnemonic"]') as HTMLElement;
+    mnemTab?.click();
+    await new Promise(r => setTimeout(r, 200));
+    const mnemMain = document.getElementById('srs-mnemonic-main');
+    expect(mnemMain?.querySelector('.mnem-lab-root')).toBeTruthy();
 
     // 5. Reader Navigation
     const nextBtn = document.getElementById('next-chunk') as HTMLButtonElement;

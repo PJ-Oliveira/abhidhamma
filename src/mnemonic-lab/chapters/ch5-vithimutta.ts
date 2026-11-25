@@ -1372,7 +1372,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     },
     primaryGroup: "marana_cuti",
     secondaryGroup: "marana_4",
-    switches: { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "ayukkhaya" },
+    switches: { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "ayukkhaya", rule: "wick_ends" },
   },
   {
     id: "mut:mar:2",
@@ -1389,7 +1389,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     },
     primaryGroup: "marana_cuti",
     secondaryGroup: "marana_4",
-    switches: { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "kammakkhaya" },
+    switches: { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "kammakkhaya", rule: "oil_ends" },
   },
   {
     id: "mut:mar:3",
@@ -1406,7 +1406,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     },
     primaryGroup: "marana_cuti",
     secondaryGroup: "marana_4",
-    switches: { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "ubhayakkhaya" },
+    switches: { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "ubhayakkhaya", rule: "both_end" },
   },
   {
     id: "mut:mar:4",
@@ -1423,7 +1423,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     },
     primaryGroup: "marana_cuti",
     secondaryGroup: "marana_4",
-    switches: { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "upacchedaka" },
+    switches: { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "upacchedaka", rule: "wind_gust" },
   },
   {
     id: "mut:nim:1",
@@ -1440,7 +1440,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     },
     primaryGroup: "marana_cuti",
     secondaryGroup: "nimitta_3",
-    switches: { tetrad: "marana_cuti", mGroup: "nimitta_3", subtype: "sign_kamma" },
+    switches: { tetrad: "marana_cuti", mGroup: "nimitta_3", subtype: "sign_kamma", rule: "past_mind_only" },
   },
   {
     id: "mut:nim:2",
@@ -1457,7 +1457,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     },
     primaryGroup: "marana_cuti",
     secondaryGroup: "nimitta_3",
-    switches: { tetrad: "marana_cuti", mGroup: "nimitta_3", subtype: "sign_kammanimitta" },
+    switches: { tetrad: "marana_cuti", mGroup: "nimitta_3", subtype: "sign_kammanimitta", rule: "six_doors_any" },
   },
   {
     id: "mut:nim:3",
@@ -1474,7 +1474,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     },
     primaryGroup: "marana_cuti",
     secondaryGroup: "nimitta_3",
-    switches: { tetrad: "marana_cuti", mGroup: "nimitta_3", subtype: "sign_gatinimitta" },
+    switches: { tetrad: "marana_cuti", mGroup: "nimitta_3", subtype: "sign_gatinimitta", rule: "present_kama_only" },
   },
   {
     id: "mut:cut:arupa",
@@ -1491,7 +1491,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     },
     primaryGroup: "marana_cuti",
     secondaryGroup: "cuti_matrix",
-    switches: { tetrad: "marana_cuti", mGroup: "cuti_matrix", subtype: "cuti_arupa" },
+    switches: { tetrad: "marana_cuti", mGroup: "cuti_matrix", subtype: "cuti_arupa", rule: "dest_arupa_kama3" },
   },
   {
     id: "mut:cut:rupa",
@@ -1508,7 +1508,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     },
     primaryGroup: "marana_cuti",
     secondaryGroup: "cuti_matrix",
-    switches: { tetrad: "marana_cuti", mGroup: "cuti_matrix", subtype: "cuti_rupa" },
+    switches: { tetrad: "marana_cuti", mGroup: "cuti_matrix", subtype: "cuti_rupa", rule: "dest_no_ahetuka" },
   },
   {
     id: "mut:cut:kama3",
@@ -1525,7 +1525,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     },
     primaryGroup: "marana_cuti",
     secondaryGroup: "cuti_matrix",
-    switches: { tetrad: "marana_cuti", mGroup: "cuti_matrix", subtype: "cuti_kama3" },
+    switches: { tetrad: "marana_cuti", mGroup: "cuti_matrix", subtype: "cuti_kama3", rule: "dest_all_4" },
   },
   {
     id: "mut:cut:kama_other",
@@ -1542,6 +1542,6 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     },
     primaryGroup: "marana_cuti",
     secondaryGroup: "cuti_matrix",
-    switches: { tetrad: "marana_cuti", mGroup: "cuti_matrix", subtype: "cuti_kama_other" },
+    switches: { tetrad: "marana_cuti", mGroup: "cuti_matrix", subtype: "cuti_kama_other", rule: "dest_kama_only" },
   },
 ];

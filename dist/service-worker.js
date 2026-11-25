@@ -1,4 +1,4 @@
-const CACHE_NAME = 'abhidhamma-cache-v29';
+const CACHE_NAME = 'abhidhamma-cache-v32';
 const VAULT_CACHE_NAME = 'abhidhamma-anki-vault-v1';
 const PROTECTED_CACHES = new Set([CACHE_NAME, VAULT_CACHE_NAME]);
 
@@ -35,14 +35,18 @@ const CORE_ASSETS = [
   './js/abhidhamma-srs/ui.js',
   './js/mnemonic-lab/data.js',
   './js/mnemonic-lab/nary-chapters-data.js',
+  './js/mnemonic-lab/chapters/ch0-synthesis.js',
+  './js/mnemonic-lab/chapters/ch2-laws.js',
   './js/mnemonic-lab/chapters/ch2-sangaha.js',
   './js/mnemonic-lab/chapters/ch3-pakinnaka.js',
   './js/mnemonic-lab/chapters/ch4-vithi.js',
   './js/mnemonic-lab/chapters/ch5-vithimutta.js',
   './js/mnemonic-lab/chapters/ch6-rupa.js',
+  './js/mnemonic-lab/chapters/ch7-granular.js',
   './js/mnemonic-lab/chapters/ch7-samuccaya.js',
   './js/mnemonic-lab/chapters/ch8-paccaya.js',
   './js/mnemonic-lab/chapters/ch9-kammatthana.js',
+  './js/mnemonic-lab/chapters/mula-supplements.js',
   './js/mnemonic-lab/engine.js',
   './js/mnemonic-lab/ui.js',
   './data/srs/abhidhamma_cards.json',

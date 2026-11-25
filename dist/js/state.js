@@ -1,4 +1,4 @@
-import { createLogger } from "./logger.js?v=3f76b330";
+import { createLogger } from "./logger.js?v=ec96663c";
 const log = createLogger("state");
 const SETTINGS_KEY = "atp.settings.v1";
 const HISTORY_KEY = "atp.history.v1";

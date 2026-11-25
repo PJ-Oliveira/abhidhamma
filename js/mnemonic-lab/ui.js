@@ -1,9 +1,9 @@
-import { settings } from "../state.js?v=3f76b330";
-import { registerToolModule } from "../tools/tools.js?v=3f76b330";
-import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=3f76b330";
-import { CANONICAL_CHAPTERS_META, getSubmatricesForChapter, } from "./nary-chapters-data.js?v=3f76b330";
-import { defaultNarySwitchesForChapter, defaultNarySwitchesForSubmatrix, evaluateNaryChallenge, getNaryItemsForChapter, pickNextNaryChapterChallenge, defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=3f76b330";
-import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=3f76b330";
+import { settings } from "../state.js?v=ec96663c";
+import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=ec96663c";
+import { CANONICAL_CHAPTERS_META, getSubmatricesForChapter, } from "./nary-chapters-data.js?v=ec96663c";
+import { MULA_SYNTHESIS_ITEMS, SYNTHESIS_AXIS_META, } from "./chapters/ch0-synthesis.js?v=ec96663c";
+import { buildReverseChoices, computeChapterScopeProgress, computeMnemonicProgressSummary, computePhalanxMapProgress, computeProgressMetric, defaultNarySwitchesForChapter, defaultNarySwitchesForSubmatrix, evaluateNaryChallenge, getMasteryScoreForLevel, getNaryItemsForChapter, pickNextNaryChapterChallenge, defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=ec96663c";
+import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=ec96663c";
 const LAB_STRINGS = {
     pt: {
         title: "🧮 Laboratório Mnêmico do Abhidhammatthasaṅgaha",
@@ -160,6 +160,40 @@ const LAB_STRINGS = {
         narySubmatrixScopeLabel: "Lente Matemática (Submatriz):",
         narySubmatrixAll: (count) => `🌐 Todas (${count})`,
         narySubmatrixEqLabel: "Fórmula da Submatriz:",
+        globalProgressLabel: "Progresso Global do Laboratório",
+        pillarShortNary: "Decodificador N-ário",
+        pillarShortAlchemy: "Alquimia",
+        pillarShortPhalanx: "Falanges",
+        naryGlobalProgressLabel: "Avanço Global — Decodificador N-ário (9 Capítulos)",
+        naryChaptersCompleted: (done, total) => `${done}/${total} capítulos concluídos`,
+        naryChapterProgressLabel: (ch) => `Avanço do Cap. ${ch}`,
+        naryScopeProgressLabel: "Escopo Atual",
+        naryGlobalShortLabel: "Global (9 Cap.)",
+        naryChallengesMastered: (mastered, total) => `${mastered} de ${total} desafios dominados`,
+        perAlchemyProgressLabel: "Avanço da Alquimia (Saṅgaha-naya)",
+        phaMapProgressLabel: "Avanço deste Mapa",
+        phaAllMapsProgressLabel: "Global dos 5 Mapas",
+        sealEasy: "Fácil",
+        sealMedium: "Médio",
+        sealHard: "Difícil",
+        drillEncodeBtn: "🎛️ Codificar (Dhamma → Chaves)",
+        drillReverseBtn: "🔄 Reverso (Chaves → Dhamma)",
+        drillSynthesisBtn: "🌐 Prólogo & Síntese (Mūla 0–9)",
+        catalogueToggleLabel: "Explorar Catálogo Canônico",
+        level2CueHidden: "Nível 2 (Canônico): pistas estruturais e fórmula reveladas após verificar.",
+        level3BlindCue: "Nível 3 (Rigor Pāli): decodificação cega sem tradução nem pré-visualização.",
+        level3SynthMasked: "Pré-visualização oculta no Nível 3 — clique em Verificar Codificação para revelar.",
+        reverseKicker: "Decodificação Reversa (Assinatura N-ária → Dhamma):",
+        reverseInstruction: "Dado este vetor canônico de chaves, identifique exatamente qual dhamma do Mūla ele codifica:",
+        reverseCorrectMsg: "✅ Decodificação Reversa Exata! Você reconheceu o dhamma pela sua assinatura estrutural.",
+        reverseWrongMsg: "❌ Dhamma diferente. Confira a correspondência canônica abaixo:",
+        synthesisTitle: "Prólogo (4 Paramatthas), Somas do Cap. 1 & Análogos Inter-Capítulos:",
+        synthesisAllAxes: (count) => `🌐 Todos (${count})`,
+        synthesisProgressLabel: "Avanço em Prólogo & Síntese",
+        synthesisChaptersLinked: "Capítulos conectados:",
+        synthesisCorrectMsg: "✅ Síntese Doutrinária Exata!",
+        synthesisWrongMsg: "❌ Resposta incorreta. Veja a lei canônica abaixo:",
+        srsReviewBadge: "🔁 Revisão Adaptativa",
     },
     en: {
         title: "🧮 Abhidhammatthasaṅgaha Mnemonic Lab",
@@ -316,6 +350,40 @@ const LAB_STRINGS = {
         narySubmatrixScopeLabel: "Mathematical Lens (Submatrix):",
         narySubmatrixAll: (count) => `🌐 All (${count})`,
         narySubmatrixEqLabel: "Submatrix Formula:",
+        globalProgressLabel: "Global Lab Progress",
+        pillarShortNary: "N-ary Decoder",
+        pillarShortAlchemy: "Alchemy",
+        pillarShortPhalanx: "Phalanges",
+        naryGlobalProgressLabel: "Global Progress — N-ary Decoder (9 Chapters)",
+        naryChaptersCompleted: (done, total) => `${done}/${total} chapters completed`,
+        naryChapterProgressLabel: (ch) => `Ch. ${ch} Progress`,
+        naryScopeProgressLabel: "Current Scope",
+        naryGlobalShortLabel: "Global (9 Ch.)",
+        naryChallengesMastered: (mastered, total) => `${mastered} of ${total} challenges mastered`,
+        perAlchemyProgressLabel: "Alchemy Progress (Saṅgaha-naya)",
+        phaMapProgressLabel: "Current Map Progress",
+        phaAllMapsProgressLabel: "All 5 Maps Global",
+        sealEasy: "Easy",
+        sealMedium: "Medium",
+        sealHard: "Hard",
+        drillEncodeBtn: "🎛️ Encode (Dhamma → Switches)",
+        drillReverseBtn: "🔄 Reverse (Switches → Dhamma)",
+        drillSynthesisBtn: "🌐 Prologue & Synthesis (Mūla 0–9)",
+        catalogueToggleLabel: "Explore Canonical Catalogue",
+        level2CueHidden: "Level 2 (Canonical): structural cues and formula revealed after verification.",
+        level3BlindCue: "Level 3 (Pāli Rigor): blind decoding without translation or live preview.",
+        level3SynthMasked: "Live preview hidden on Level 3 — click Verify Encoding to reveal.",
+        reverseKicker: "Reverse Decoding (N-ary Signature → Dhamma):",
+        reverseInstruction: "Given this canonical switch vector, identify which exact Mūla dhamma it encodes:",
+        reverseCorrectMsg: "✅ Exact Reverse Decoding! You recognized the dhamma from its structural signature.",
+        reverseWrongMsg: "❌ Different dhamma. Review the canonical match below:",
+        synthesisTitle: "Prologue (4 Paramatthas), Ch. 1 Sums & Cross-Chapter Analogues:",
+        synthesisAllAxes: (count) => `🌐 All (${count})`,
+        synthesisProgressLabel: "Prologue & Synthesis Progress",
+        synthesisChaptersLinked: "Linked chapters:",
+        synthesisCorrectMsg: "✅ Exact Doctrinal Synthesis!",
+        synthesisWrongMsg: "❌ Incorrect choice. Review the canonical law below:",
+        srsReviewBadge: "🔁 Adaptive Review",
     },
     es: {
         title: "🧮 Laboratorio Mnemónico del Abhidhammatthasaṅgaha",
@@ -472,17 +540,54 @@ const LAB_STRINGS = {
         narySubmatrixScopeLabel: "Lente Matemática (Submatriz):",
         narySubmatrixAll: (count) => `🌐 Todas (${count})`,
         narySubmatrixEqLabel: "Fórmula de la Submatriz:",
+        globalProgressLabel: "Progreso Global del Laboratorio",
+        pillarShortNary: "Decodificador N-ario",
+        pillarShortAlchemy: "Alquimia",
+        pillarShortPhalanx: "Falanges",
+        naryGlobalProgressLabel: "Avance Global — Decodificador N-ario (9 Capítulos)",
+        naryChaptersCompleted: (done, total) => `${done}/${total} capítulos completados`,
+        naryChapterProgressLabel: (ch) => `Avance del Cap. ${ch}`,
+        naryScopeProgressLabel: "Ámbito Actual",
+        naryGlobalShortLabel: "Global (9 Cap.)",
+        naryChallengesMastered: (mastered, total) => `${mastered} de ${total} desafíos dominados`,
+        perAlchemyProgressLabel: "Avance de la Alquimia (Saṅgaha-naya)",
+        phaMapProgressLabel: "Avance de este Mapa",
+        phaAllMapsProgressLabel: "Global de los 5 Mapas",
+        sealEasy: "Fácil",
+        sealMedium: "Medio",
+        sealHard: "Difícil",
+        drillEncodeBtn: "🎛️ Codificar (Dhamma → Interruptores)",
+        drillReverseBtn: "🔄 Reverso (Interruptores → Dhamma)",
+        drillSynthesisBtn: "🌐 Prólogo y Síntesis (Mūla 0–9)",
+        catalogueToggleLabel: "Explorar Catálogo Canónico",
+        level2CueHidden: "Nivel 2 (Canónico): pistas estructurales y fórmula reveladas al verificar.",
+        level3BlindCue: "Nivel 3 (Rigor Pāli): decodificación ciega sin traducción ni vista previa.",
+        level3SynthMasked: "Vista previa oculta en Nivel 3 — pulsa Verificar Codificación para revelar.",
+        reverseKicker: "Decodificación Reversa (Firma N-aria → Dhamma):",
+        reverseInstruction: "Dado este vector canónico de interruptores, identifica exactamente qué dhamma del Mūla codifica:",
+        reverseCorrectMsg: "✅ ¡Decodificación Reversa Exacta! Reconociste el dhamma por su firma estructural.",
+        reverseWrongMsg: "❌ Dhamma distinto. Revisa la correspondencia canónica abajo:",
+        synthesisTitle: "Prólogo (4 Paramatthas), Sumas del Cap. 1 y Análogos Inter-Capítulos:",
+        synthesisAllAxes: (count) => `🌐 Todos (${count})`,
+        synthesisProgressLabel: "Avance en Prólogo y Síntesis",
+        synthesisChaptersLinked: "Capítulos conectados:",
+        synthesisCorrectMsg: "✅ ¡Síntesis Doctrinal Exacta!",
+        synthesisWrongMsg: "❌ Respuesta incorrecta. Revisa la ley canónica abajo:",
+        srsReviewBadge: "🔁 Revisión Adaptativa",
     },
 };
+let mnemonicInstanceSeq = 0;
 function esc(s) {
     return (s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 export class MnemonicLabUI {
+    uid = ++mnemonicInstanceSeq;
     container;
     lang;
     progress;
     activePillar = "binary";
     binMode = "explore";
+    naryDrillMode = "encode";
     binEnumMode = 121;
     binActiveChapter = 1;
     switches = defaultSwitchStateForFamily("lobha");
@@ -494,6 +599,10 @@ export class MnemonicLabUI {
     narySubmatrixScope = "all";
     narySwitches;
     naryFeedback = null;
+    reverseFeedback = null;
+    synthesisAxis = "all";
+    synthesisTarget = MULA_SYNTHESIS_ITEMS[0];
+    synthesisFeedback = null;
     perMode = "atlas";
     perFilter = "all";
     selectedAtom = PERIODIC_ELEMENTS_72[0];
@@ -777,8 +886,57 @@ export class MnemonicLabUI {
             ariya_samapatti: "Ariyapuggala & Samāpatti (6)",
             puggala_4: "Cattāro Ariyapuggalā (4)",
             samapatti_2: "Samāpattibheda (2)",
+            sampayoga_52: "Sampayoga-naya (52)",
+            cetasika_laws: "Cetasika-niyama (12)",
+            sampayoga_marks4: "Catulakkhaṇa (AS II.1)",
+            pakinnaka_excl6: "Pakiṇṇaka-vajjita (6)",
+            regularity_laws: "Aniyata / Niyata (11 / 41)",
+            vedana_3: "Tividhā Vedanā (3)",
+            dhammarammana_sub: "Chabbidha Dhammārammaṇa",
+            arammana_time: "Kāla-niyama (Ālambaṇa)",
+            chakka_6: "Cha Chakkāni (6 Hêxades)",
+            chakka_hexads: "Cha Chakkāni",
+            puggala_bheda: "Puggalabheda",
+            bhumi_vibhaga: "Bhūmivibhāga",
+            rupa_laws: "Rūpa & Nibbāna Niyama",
+            rupa_laws_core: "Rūpa-sabhāva Niyama",
+            rupa_laws_origins: "Rūpa-samuṭṭhāna Niyama",
+            akusala_members: "Akusala-saṅgaha (34 Membros)",
+            missaka_members: "Missaka-saṅgaha (51 Membros)",
+            bodhi_37: "Sattatiṃsa Bodhipakkhiyā (37)",
+            sabba_members: "Sabba-saṅgaha (28 Membros)",
+            asava_ogha_yoga: "Āsava · Ogha · Yoga",
+            samyojana_delta: "Saṃyojana (Suttanta vs. Abhidhamma)",
+            kilesa_extra: "Kilesa (Extras · 10)",
+            bala_extra: "Bala (6–9)",
+            excl_laws5: "Missaka-niyama (5)",
+            khandha5: "Pañcakkhandhā (5)",
+            ayatana12: "Dvādasāyatanāni (12)",
+            vinnana_dhatu7: "Satta Viññāṇadhātuyo (7)",
+            ariyasacca4: "Cattāri Ariyasaccāni (4)",
+            patthana_submodes: "Paṭṭhāna & Atthapaññatti",
+            paccaya_modes: "Paccaya-vibhāga (12)",
+            atthapannatti_6: "Chabbidhā Atthapaññatti (6)",
+            kammatthana_details: "Bhāvanā · Sīla · Upakkilesa",
+            bhavana_3: "Tividhā Bhāvanā (3)",
+            parisuddhisila_4: "Catupārisuddhisīla (4)",
+            upakkilesa_10: "Dasa Vipassanupakkilesā (10)",
+            paccavekkhana_aruppa: "Paccavekkhaṇā & Āruppa",
         };
-        return map[name] ?? (name.charAt(0).toUpperCase() + name.slice(1));
+        const hit = map[name];
+        if (hit)
+            return hit;
+        const cleaned = name.replace(/_/g, " ");
+        return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+    }
+    stripPromptSpoilers(text) {
+        const stripped = text
+            .replace(/\s*\([^)]*(?:\d|→|−|Vatthuto|Cittas?|Rūpas?|Jhāna|Sabhāva|Real|Reais|Reales|Niyata|Aniyata|Akusala|Sobhana|Kāma|Rūpa|Arūpa|Ahetuka|Tihetuka|Dvihetuka|Upacāra|Appanā|Suttanta|Abhidhamma|Excl\.|Sem |Sin |No |Só |Solo |Only)[^)]*\)/gi, "")
+            .replace(/\s*\[[^\]]*\d[^\]]*\]/g, "")
+            .replace(/\s+—\s*(?:\d.*|Tríade.*|Triad.*|Tríada.*)/gi, "")
+            .replace(/\s{2,}/g, " ")
+            .trim();
+        return stripped.length >= 3 ? stripped : text;
     }
     formatNaryParamKey(key) {
         const map = {
@@ -788,7 +946,10 @@ export class MnemonicLabUI {
             group: ["Grupo", "Group", "Grupo"],
             sub: ["Subfamília", "Subfamily", "Subfamilia"],
             slot: ["Posição", "Position", "Posición"],
+            yogita: ["Regularidade (Yogitā)", "Regularity (Yogitā)", "Regularidad (Yogitā)"],
             sampayoga: ["Sampayoga", "Sampayoga", "Sampayoga"],
+            lawGroup: ["Grupo de Leis", "Law Group", "Grupo de Leyes"],
+            metric: ["Métrica Canônica", "Canonical Metric", "Métrica Canónica"],
             category: ["Categoria", "Category", "Categoría"],
             item: ["Fator", "Factor", "Factor"],
             count: ["Contagem", "Count", "Conteo"],
@@ -802,6 +963,7 @@ export class MnemonicLabUI {
             kpathGroup: ["Porta / Classe", "Door / Class", "Puerta / Clase"],
             root: ["Raiz / Pilar", "Root / Pillar", "Raíz / Pilar"],
             mGroup: ["Seção (Morte/Transição)", "Section (Death/Transition)", "Sección (Muerte/Transición)"],
+            rule: ["Regra Canônica", "Canonical Rule", "Regla Canónica"],
             subtype: ["Subtipo", "Subtype", "Subtipo"],
             type: ["Natureza", "Nature", "Naturaleza"],
             heading: ["Rūpa / Classe", "Rūpa / Class", "Rūpa / Clase"],
@@ -811,10 +973,19 @@ export class MnemonicLabUI {
             origin: ["Origem do Kalāpa", "Kalāpa Origin", "Origen del Kalāpa"],
             size: ["Rūpas no Kalāpa", "Rūpas in Kalāpa", "Rūpas en Kalāpa"],
             topic: ["Tópico / Plano", "Topic / Plane", "Tema / Plano"],
+            law: ["Lei Canônica", "Canonical Law", "Ley Canónica"],
             value: ["Valor Canônico", "Canonical Value", "Valor Canónico"],
             compendium: ["Saṅgaha", "Compendium", "Compendio"],
             vatthuto: ["Real (Vatthuto)", "Real (Vatthuto)", "Real (Vatthuto)"],
             bodhiMode: ["Eixo Bodhipakkhiya", "Bodhipakkhiya Axis", "Eje Bodhipakkhiya"],
+            akSet: ["Conjunto Akusala", "Unwholesome Set", "Conjunto Akusala"],
+            realDhamma: ["Dhamma Real (Vatthuto)", "Real Dhamma (Vatthuto)", "Dhamma Real (Vatthuto)"],
+            miSet: ["Conjunto Missaka", "Mixed Set", "Conjunto Missaka"],
+            realClass: ["Classe Real (Vatthuto)", "Real Class (Vatthuto)", "Clase Real (Vatthuto)"],
+            bGroup: ["Grupo Bodhipakkhiya", "Bodhipakkhiya Group", "Grupo Bodhipakkhiya"],
+            sabhava: ["Sabhāva-dhamma (14)", "Sabhāva-dhamma (14)", "Sabhāva-dhamma (14)"],
+            sbSet: ["Conjunto Sabba", "Universal Set", "Conjunto Sabba"],
+            paramatthaMap: ["Mapeamento Paramattha", "Paramattha Mapping", "Mapeo Paramattha"],
             method: ["Método", "Method", "Método"],
             psMode: ["Eixo Paṭiccasamuppāda", "Paṭiccasamuppāda Axis", "Eje Paṭiccasamuppāda"],
             addha: ["Período (Addhā)", "Time Period (Addhā)", "Período (Addhā)"],
@@ -822,17 +993,22 @@ export class MnemonicLabUI {
             direction: ["Matriz Direcional", "Directional Matrix", "Matriz Direccional"],
             panType: ["Tipo de Paññatti", "Paññatti Type", "Tipo de Paññatti"],
             arity: ["Aridade / Modos", "Arity / Modes", "Aridad / Modos"],
+            subGroup: ["Subgrupo", "Subgroup", "Subgrupo"],
+            modes: ["Modos / Índice", "Modes / Index", "Modos / Índice"],
             index: ["Índice", "Index", "Índice"],
             wing: ["Bhāvanā", "Bhāvanā Wing", "Bhāvanā"],
             reach: ["Alcance (Bhāvanā)", "Reach (Bhāvanā)", "Alcance (Bhāvanā)"],
             topicGroup: ["Subgrupo Samatha", "Samatha Subgroup", "Subgrupo Samatha"],
             vipGroup: ["Subgrupo Vipassanā", "Vipassanā Subgroup", "Subgrupo Vipassanā"],
             ariyaGroup: ["Subgrupo Ariya", "Ariya Subgroup", "Subgrupo Ariya"],
+            prop: ["Propriedade Canônica", "Canonical Property", "Propiedad Canónica"],
+            detGroup: ["Eixo Detalhado", "Detail Axis", "Eje Detallado"],
+            role: ["Função / Escopo", "Role / Scope", "Función / Ámbito"],
             maxJhana: ["Jhāna máx.", "Max Jhāna", "Jhāna máx."],
             carita: ["Carita", "Carita", "Carita"],
             nimitta: ["Nimitta", "Nimitta", "Nimitta"],
             visuddhi: ["Visuddhi", "Visuddhi", "Visuddhi"],
-            stage: ["Estágio", "Stage", "Etapa"],
+            stage: ["Estágio (Visuddhi)", "Stage (Visuddhi)", "Etapa (Visuddhi)"],
             section: ["Seção", "Section", "Sección"],
         };
         const entry = map[key];
@@ -1147,6 +1323,167 @@ export class MnemonicLabUI {
             jhana_5_only: "Pañcamajjhāna (5)",
             jhana_5: "Pañcakajjhāna (1–5)",
             aruppa_4: "Āruppajjhāna (4)",
+            laws: ["Leis do Cap. 2 (12)", "Ch. 2 Laws (12)", "Leyes del Cap. 2 (12)"],
+            niyata: ["Niyata (Fixo · 41)", "Niyata (Fixed · 41)", "Niyata (Fijo · 41)"],
+            aniyata_nana: ["Aniyata Separado (9)", "Aniyata Separate (9)", "Aniyata Separado (9)"],
+            aniyata_saha: ["Aniyata Conjunto (2)", "Aniyata Paired (2)", "Aniyata Conjunto (2)"],
+            triad_sukha: "Sukhavedanā (Tríade)",
+            triad_dukkha: "Dukkhavedanā (Tríade)",
+            triad_adukkhamasukha: "Adukkhamasukhā-vedanā",
+            thana_10: "Dasa Ṭhānāni (10)",
+            per_sense_46: ["46 por Porta Sensorial", "46 per Sense-Door", "46 por Puerta Sensorial"],
+            dh_pasada: "Pasādarūpa (5)",
+            dh_sukhuma: "Sukhumarūpa (16)",
+            dh_citta: "Citta (89)",
+            dh_cetasika: "Cetasika (52)",
+            dh_nibbana: "Nibbāna (1)",
+            dh_pannatti: "Paññatti (0)",
+            time_5doors: ["5 Portas (Só Presente)", "5 Doors (Present Only)", "5 Puertas (Solo Presente)"],
+            time_mind: ["Porta Mental (4 Modos)", "Mind-Door (4 Modes)", "Puerta Mental (4 Modos)"],
+            time_vimutta: ["Livres de Porta (3 Signos)", "Door-Free (3 Signs)", "Libres de Puerta (3 Signos)"],
+            dhatu_kama: "Kāmaloka (7 Dhātus)",
+            dhatu_rupa: "Rūpaloka (4 Dhātus)",
+            dhatu_arupa: "Arūpaloka (1 Dhātu)",
+            ch_vatthu: "Vatthuchakka (6)",
+            ch_dvara: "Dvārachakka (6)",
+            ch_arammana: "Ārammaṇachakka (6)",
+            ch_vinnana: "Viññāṇachakka (6)",
+            ch_vithi: "Vīthichakka (6)",
+            ch_visaya: "Visayappavattichakka (6)",
+            gotrabhu_vodana: "Gotrabhū / Vodāna",
+            magga_phala_ratio: "1 Magga → 2/3 Phala",
+            pug_ahetuka: "Ahetuka-puggala",
+            pug_dvihetuka: "Dvihetuka-puggala",
+            pug_sotapanna: "Sotāpanna / Sakadāgāmī",
+            pug_anagami: "Anāgāmī-puggala",
+            excl_kama: "Kāmaloka-vajjita",
+            excl_rupa: "Rūpaloka-vajjita",
+            excl_arupa: "Arūpaloka-vajjita",
+            ariya_plane_rules: "Suddhāvāsa / Apāya / Asañña",
+            pat_bha_cuti_unity: "Paṭisandhi = Bhavaṅga = Cuti",
+            kecana_12_10_8: "Kecana-vāda (12/10/8)",
+            jhana_degrees_9: "Paritta·Majjhima·Paṇīta (9)",
+            jhana5_vehapphala: "Pañcamajjhāna → Vehapphala",
+            sannaviraga_asanna: "Saññāvirāga → Asaññasatta",
+            anagami_suddhavasa: "Anāgāmī → 5 Suddhāvāsā",
+            wick_ends: ["Pavio acaba (Āyu)", "Wick expires (Āyu)", "Mecha agotada (Āyu)"],
+            oil_ends: ["Óleo acaba (Kamma)", "Oil expires (Kamma)", "Aceite agotado (Kamma)"],
+            both_end: ["Pavio e Óleo acabam", "Wick & Oil expire", "Mecha y Aceite agotados"],
+            wind_gust: ["Rajada de vento (Corte)", "Gust of wind (Cutoff)", "Ráfaga de viento (Corte)"],
+            past_mind_only: ["Passado · Só Porta Mental", "Past · Mind-Door Only", "Pasado · Solo Puerta Mental"],
+            six_doors_any: ["6 Portas · Qualquer Tempo", "6 Doors · Any Time", "6 Puertas · Cualquier Tiempo"],
+            present_kama_only: ["Presente · Só Kāmaloka", "Present · Kāmaloka Only", "Presente · Solo Kāmaloka"],
+            dest_arupa_kama3: ["Arūpa Sup./Igual ou Kāma 3r", "Same/Higher Arūpa or 3-Root Kāma", "Arūpa Igual/Sup. o Kāma 3r"],
+            dest_no_ahetuka: ["Qualquer exceto Ahetuka", "Any except Rootless", "Cualquiera excepto Ahetuka"],
+            dest_all_4: ["Todos os 4 Planos", "All 4 Planes", "Los 4 Planos"],
+            dest_kama_only: ["Somente Kāmaloka", "Kāmaloka Only", "Solo Kāmaloka"],
+            univ_8: ["8 Atributos Universais", "8 Universal Attributes", "8 Atributos Universales"],
+            syn_5: ["5 Sinônimos Nipphanna", "5 Nipphanna Synonyms", "5 Sinónimos Nipphanna"],
+            kamma_25: "25 Kammaja-cetanā",
+            citta_75: "75 Cittaja-cittas",
+            vinnatti_32: "32 Viññatti-cittas",
+            hasana_13: "13 Hasana-cittas",
+            iriyapatha_26: "26 Appanā-iriyāpatha",
+            birth_4: ["4 Modos de Nascimento", "4 Birth Modes", "4 Modos de Nacimiento"],
+            ext_kalapa_2: ["2 Kalāpas Externos", "2 External Kalāpas", "2 Kalāpas Externos"],
+            nib_epithets_4: ["4 Epítetos de Nibbāna", "4 Nibbāna Epithets", "4 Epítetos de Nibbāna"],
+            jati_2: "Jāti = Upacaya + Santati",
+            ditthi: "Diṭṭhi",
+            mana: "Māna",
+            uddhacca: "Uddhacca",
+            uddhacca_kukkucca: "Uddhacca + Kukkucca (2)",
+            issa: "Issā",
+            macchariya: "Macchariya",
+            ahirika: "Ahirika",
+            anottappa: "Anottappa",
+            pasada_5: "5 Pasādarūpa",
+            bhava_2: "2 Bhāvarūpa",
+            jivita_2: "Jīvita (Rūpa + Nāma = 2)",
+            citta_1: "Citta (1)",
+            sobhana_5: "5 Indriya (Saddhā..Paññā)",
+            lokuttara_panna_3: "3 Lokuttara → Paññā",
+            vitakka: "Vitakka",
+            virati_3: "3 Virati",
+            viriya: "Vīriya",
+            sati: "Sati",
+            ekaggata: "Ekaggatā",
+            hiri_ottappa: "Hiri / Ottappa (Sobhana)",
+            ahirika_anottappa: "Ahirika / Anottappa (Akusala)",
+            chanda: "Chanda",
+            oja_rupa: "Ojā (Rūpa)",
+            phassa: "Phassa",
+            cetana: "Cetanā",
+            no_jhananga_10: "10 Sentidos → 0 Jhānaṅga",
+            no_bala_16: "16 Avīriya → 0 Bala",
+            no_magga_18: "18 Ahetuka → 0 Maggaṅga",
+            doubt_ekaggata: "#11 Vicikicchā (Ekaggatā)",
+            one_adhipati: "1 Adhipati / 52 Javana",
+            citta: "Citta",
+            samadhi: "Samādhi (Ekaggatā)",
+            piti: "Pīti",
+            passaddhi: "Passaddhi",
+            sammavaca: "Sammāvācā",
+            sammakammanta: "Sammākammanta",
+            samma_ajiva: "Sammā-ājīva",
+            vedana_1: "Vedanā (1)",
+            sanna_1: "Saññā (1)",
+            sankhara_50: "Saṅkhāra (50)",
+            citta_89: "Citta (89 / 121)",
+            pasada_1: "Pasādarūpa (1)",
+            gocara_1: "Gocararūpa (1)",
+            bhuta_3: "3 Mahābhūta (Pathavī·Tejo·Vāyo)",
+            dhamma_69: "69 (52+16+1)",
+            sense_pair_2: "Par Sensorial (2)",
+            manodhatu_3: "Manodhātu (3)",
+            manovinnana_76: "Manoviññāṇadhātu (76)",
+            tebhumaka_excl_lobha: "81 Citta + 51 Cet + 28 Rūpa",
+            lobha_tanha: "Lobha / Taṇhā (1)",
+            nibbana_1: "Nibbāna (1)",
+            magga_factors_8: "8 Maggaṅga (4 Magga)",
+            sub_upanissaya: "Upanissaya (3)",
+            sub_adhipati: "Adhipati (2)",
+            sub_kamma: "Kamma (2)",
+            sub_sahajata: "Sahajāta (3)",
+            sub_annamanna: "Aññamañña (3)",
+            sub_nissaya: "Nissaya (3)",
+            sub_ahara: "Āhāra (2)",
+            sub_indriya: "Indriya (3)",
+            sub_vippayutta: "Vippayutta (3)",
+            sub_atthi5: "Atthi / Avigata (5)",
+            sub_sahajatarupa2: "Sahajāta-rūpa (2)",
+            sub_nama5: "Pañcavidha Nāma (5)",
+            att_bhumi: "Bhūmi / Pabbata",
+            att_geha: "Geha / Ratha",
+            att_purisa: "Purisa / Puggala",
+            att_disa: "Disā / Kāla",
+            att_kupa: "Kūpa / Guhā",
+            att_kasina: "Kasiṇa-nimitta",
+            sappaya_11: ["11 (10 Asubha + Kāyagatā)", "11 (10 Asubha + Kāyagatā)", "11 (10 Asubha + Kāyagatā)"],
+            sappaya_8: ["8 (4 Brahmavihāra + 4 Cor)", "8 (4 Brahmavihāra + 4 Color)", "8 (4 Brahmavihāra + 4 Color)"],
+            sappaya_anapana_large: ["Ānāpāna · Kasiṇa Grande", "Ānāpāna · Large Kasiṇa", "Ānāpāna · Kasiṇa Grande"],
+            sappaya_6: ["6 Primeiras Anussatis", "First 6 Anussatis", "Primeras 6 Anussatis"],
+            sappaya_4: ["4 (Maraṇa·Upasama·Āhāra·Dhātu)", "4 (Maraṇa·Upasama·Āhāra·Dhātu)", "4 (Maraṇa·Upasama·Āhāra·Dhātu)"],
+            sappaya_anapana_small: ["Ānāpāna · Kasiṇa Pequeno", "Ānāpāna · Small Kasiṇa", "Ānāpāna · Kasiṇa Pequeño"],
+            v5_maggamagga: "Visuddhi #5 (Maggāmagga)",
+            v5_v6_bridge: ["Ponte Visuddhi #5 → #6", "Visuddhi #5 → #6 Bridge", "Puente Visuddhi #5 → #6"],
+            v6_patipada: "Visuddhi #6 (Paṭipadā)",
+            v6_vutthanagamini: "Visuddhi #6 (Vuṭṭhānagāminī)",
+            cut_ditthi_vicikiccha: ["Corta Diṭṭhi + Vicikicchā", "Cuts Diṭṭhi + Vicikicchā", "Corta Diṭṭhi + Vicikicchā"],
+            attenuate_3: ["Atenua Rāga·Dosa·Moha", "Attenuates Rāga·Dosa·Moha", "Atenúa Rāga·Dosa·Moha"],
+            cut_kamaraga_byapada: ["Corta Kāmarāga + Byāpāda", "Cuts Kāmarāga + Byāpāda", "Corta Kāmarāga + Byāpāda"],
+            cut_all_remaining: ["Corta Todas as Impurezas", "Cuts All Remaining Defilements", "Corta Todas las Impurezas"],
+            access_4_ariyas: ["Todos os 4 Ariyas", "All 4 Noble Ones", "Los 4 Ariyas"],
+            access_anagami_arahant: ["Só Anāgāmī & Arahant (8 Jhānas)", "Anāgāmī & Arahant Only (8 Jhānas)", "Solo Anāgāmī y Arahant (8 Jhānas)"],
+            all_40: ["Todos os 40 Objetos", "All 40 Subjects", "Los 40 Objetos"],
+            upacara_10: ["10 Só Upacāra", "10 Upacāra Only", "10 Solo Upacāra"],
+            appana_30: ["30 Alcançam Appanā", "30 Reach Appanā", "30 Alcanzan Appanā"],
+            patibhaga_22: ["22 Geram Paṭibhāga", "22 Yield Paṭibhāga", "22 Generan Paṭibhāga"],
+            sila_visuddhi: "Sīla-visuddhi (#1)",
+            upakkilesa_v5: "Visuddhi #5 (Upakkilesa)",
+            upakkilesa_akusala: ["Visuddhi #5 (Único Akusala)", "Visuddhi #5 (Sole Unwholesome)", "Visuddhi #5 (Único Akusala)"],
+            review_mandatory: ["Obrigatórias (3)", "Mandatory (3)", "Obligatorias (3)"],
+            review_optional_19: ["Opcionais (2 · Total 19)", "Optional (2 · Total 19)", "Opcionales (2 · Total 19)"],
+            aruppa_9_kasinas: ["9 Kasiṇas (Sem Ākāsa)", "9 Kasiṇas (Excl. Space)", "9 Kasiṇas (Sin Ākāsa)"],
         };
         if (key === "maxJhana" && s === "0") {
             return "Upacāra-samādhi";
@@ -1162,6 +1499,27 @@ export class MnemonicLabUI {
         }
         if (key === "root" && s === "lobha") {
             return "Lobha-mūla";
+        }
+        if ((key === "realDhamma" || key === "realClass" || key === "sabhava") && s === "dosa") {
+            return "Dosa";
+        }
+        if ((key === "realDhamma" || key === "realClass" || key === "sabhava") && s === "lobha") {
+            return "Lobha";
+        }
+        if ((key === "realDhamma" || key === "realClass" || key === "sabhava") && s === "moha") {
+            return "Moha";
+        }
+        if ((key === "realDhamma" || key === "realClass" || key === "sabhava") && s === "thina") {
+            return "Thīna";
+        }
+        if ((key === "realDhamma" || key === "realClass" || key === "sabhava") && s === "panna") {
+            return "Paññā";
+        }
+        if (key === "sabhava" && s === "saddha") {
+            return "Saddhā";
+        }
+        if (key === "carita" && s === "saddha") {
+            return "Saddhācarita";
         }
         if (key === "kammaGroup" && s === "kicca") {
             return "Kicca-catukka";
@@ -1185,9 +1543,19 @@ export class MnemonicLabUI {
                 if (val === "sangaha") {
                     return { lens: "sangaha", sphere: "lokuttara", slot: 1, cetasikas: 36 };
                 }
-                return { lens: "sampayoga", group: "aññasamana", sub: "sabbacitta", slot: 1, sampayoga: 121 };
+                if (val === "laws") {
+                    return { lens: "laws", lawGroup: "sampayoga_marks4", slot: 1, metric: 4 };
+                }
+                return { lens: "sampayoga", group: "aññasamana", sub: "sabbacitta", slot: 1, yogita: "niyata", sampayoga: 121 };
             }
-            if (String(next.lens ?? "sampayoga") === "sangaha") {
+            const curLens = String(next.lens ?? "sampayoga");
+            if (curLens === "laws") {
+                if (key === "lawGroup") {
+                    next.slot = 1;
+                    next.metric = val === "sampayoga_marks4" ? 4 : val === "pakinnaka_excl6" ? 66 : 11;
+                }
+            }
+            else if (curLens === "sangaha") {
                 if (key === "sphere") {
                     const spDefaults = {
                         lokuttara: 36,
@@ -1207,6 +1575,7 @@ export class MnemonicLabUI {
                     const subDefault = val === "aññasamana" ? "sabbacitta" : val === "akusala" ? "moha" : "sadharana";
                     next.sub = subDefault;
                     next.slot = 1;
+                    next.yogita = "niyata";
                     next.sampayoga = val === "aññasamana" ? 121 : val === "akusala" ? 12 : 91;
                 }
                 else if (key === "sub") {
@@ -1230,7 +1599,11 @@ export class MnemonicLabUI {
             }
         }
         else if (chapter === 4 && key === "door") {
-            if (val === "pancadvara") {
+            if (val === "chakka_6") {
+                next.vara = "ch_vatthu";
+                next.vithicittas = 6;
+            }
+            else if (val === "pancadvara") {
                 next.vara = "tadarammana";
                 next.vithicittas = 14;
             }
@@ -1257,7 +1630,7 @@ export class MnemonicLabUI {
                     return { tetrad: "kamma_16", kammaGroup: "kicca", subtype: "janaka", count: 1 };
                 if (val === "kammapatha_20")
                     return { tetrad: "kammapatha_20", kpathGroup: "akusala_kaya", slot: 1, root: "dosa" };
-                return { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "ayukkhaya" };
+                return { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "ayukkhaya", rule: "wick_ends" };
             }
             if (key === "planeGroup") {
                 next.slot = 1;
@@ -1289,7 +1662,18 @@ export class MnemonicLabUI {
                 next.root = val === "punna_10" ? "dana" : val === "akusala_kaya" ? "dosa" : val === "akusala_vaci" ? "two_roots" : "lobha";
             }
             else if (key === "mGroup") {
-                next.subtype = val === "marana_4" ? "ayukkhaya" : val === "nimitta_3" ? "sign_kamma" : "cuti_arupa";
+                if (val === "marana_4") {
+                    next.subtype = "ayukkhaya";
+                    next.rule = "wick_ends";
+                }
+                else if (val === "nimitta_3") {
+                    next.subtype = "sign_kamma";
+                    next.rule = "past_mind_only";
+                }
+                else {
+                    next.subtype = "cuti_arupa";
+                    next.rule = "dest_arupa_kama3";
+                }
             }
         }
         else if (chapter === 6) {
@@ -1300,6 +1684,8 @@ export class MnemonicLabUI {
                     return { section: "vibhaga_10", dyad: "ajjhattika", count: 5 };
                 if (val === "kalapa_21")
                     return { section: "kalapa_21", origin: "kamma", slot: 1, size: 10 };
+                if (val === "rupa_laws")
+                    return { section: "rupa_laws", law: "univ_8", value: 8 };
                 return { section: "pavatti_nibbana", topic: "pav_kama", value: 28 };
             }
             if (key === "heading") {
@@ -1328,10 +1714,18 @@ export class MnemonicLabUI {
             if (key === "compendium") {
                 if (val === "akusala_9")
                     return { compendium: "akusala_9", group: "asava", vatthuto: 3 };
+                if (val === "akusala_members")
+                    return { compendium: "akusala_members", akSet: "asava_ogha_yoga", slot: 1, realDhamma: "lobha" };
                 if (val === "missaka_7")
                     return { compendium: "missaka_7", group: "hetu6", vatthuto: 6 };
+                if (val === "missaka_members")
+                    return { compendium: "missaka_members", miSet: "indriya22", slot: 1, realClass: "pasada_5" };
                 if (val === "bodhipakkhiya_21")
                     return { compendium: "bodhipakkhiya_21", bodhiMode: "groups", item: "satipatthana", count: 4 };
+                if (val === "bodhi_37")
+                    return { compendium: "bodhi_37", bGroup: "satipatthana", slot: 1, sabhava: "sati" };
+                if (val === "sabba_members")
+                    return { compendium: "sabba_members", sbSet: "khandha5", slot: 1, paramatthaMap: "rupa_28" };
                 return { compendium: "sabba_7", group: "khandha", count: 5 };
             }
             if (key === "bodhiMode") {
@@ -1344,6 +1738,45 @@ export class MnemonicLabUI {
                     next.count = 4;
                 }
             }
+            else if (key === "akSet") {
+                next.slot = 1;
+                next.realDhamma = val === "kilesa_extra" ? "thina" : "lobha";
+            }
+            else if (key === "miSet") {
+                next.slot = 1;
+                const miDef = {
+                    indriya22: "pasada_5",
+                    magganga12: "panna",
+                    bala_extra: "hiri_ottappa",
+                    adhipati4: "chanda",
+                    ahara4: "oja_rupa",
+                    excl_laws5: "no_jhananga_10",
+                };
+                next.realClass = miDef[String(val)] ?? "pasada_5";
+            }
+            else if (key === "bGroup") {
+                next.slot = 1;
+                const bDef = {
+                    satipatthana: "sati",
+                    sammappadhana: "viriya",
+                    iddhipada: "chanda",
+                    indriya5: "saddha",
+                    bala5: "saddha",
+                    bojjhanga: "sati",
+                    magganga: "panna",
+                };
+                next.sabhava = bDef[String(val)] ?? "sati";
+            }
+            else if (key === "sbSet") {
+                next.slot = 1;
+                const sbDef = {
+                    khandha5: "rupa_28",
+                    ayatana12: "pasada_1",
+                    vinnana_dhatu7: "sense_pair_2",
+                    ariyasacca4: "tebhumaka_excl_lobha",
+                };
+                next.paramatthaMap = sbDef[String(val)] ?? "rupa_28";
+            }
         }
         else if (chapter === 8) {
             if (key === "method") {
@@ -1353,6 +1786,9 @@ export class MnemonicLabUI {
                 if (val === "patthana_24") {
                     return { method: "patthana_24", direction: "nama_nama", index: 4 };
                 }
+                if (val === "patthana_submodes") {
+                    return { method: "patthana_submodes", subGroup: "paccaya_modes", topic: "sub_upanissaya", modes: 3 };
+                }
                 return { method: "pannatti_8", panType: "atthapannatti", arity: 6 };
             }
             if (key === "psMode") {
@@ -1361,17 +1797,29 @@ export class MnemonicLabUI {
                 }
                 return { method: "paticcasamuppada", psMode: "links12", slot: 1, addha: "atita", vatta: "kilesavatta" };
             }
+            if (key === "subGroup") {
+                if (val === "atthapannatti_6") {
+                    next.topic = "att_bhumi";
+                    next.modes = 1;
+                }
+                else {
+                    next.topic = "sub_upanissaya";
+                    next.modes = 3;
+                }
+            }
             if (key === "direction") {
-                const dirDef = {
-                    nama_nama: 4,
-                    nama_namarupa: 1,
-                    nama_rupa: 11,
-                    rupa_nama: 10,
-                    pannatti_nama: 2,
-                    namarupa_namarupa: 3,
-                    samodhana_4: 2,
-                };
-                next.index = dirDef[String(val)] ?? 4;
+                if (this.progress.level < 3 || val === "samodhana_4") {
+                    const dirDef = {
+                        nama_nama: 4,
+                        nama_namarupa: 1,
+                        nama_rupa: 11,
+                        rupa_nama: 10,
+                        pannatti_nama: 2,
+                        namarupa_namarupa: 3,
+                        samodhana_4: 2,
+                    };
+                    next.index = dirDef[String(val)] ?? 4;
+                }
             }
         }
         else if (chapter === 9) {
@@ -1380,12 +1828,15 @@ export class MnemonicLabUI {
                     return { wing: "samatha_40", group: "kasina", slot: 1, reach: "jhana_5", nimitta: 3 };
                 }
                 if (val === "samatha_carita_abhinna") {
-                    return { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 1 };
+                    return { wing: "samatha_carita_abhinna", topicGroup: "carita_6", slot: 1, prop: "sappaya_11" };
                 }
                 if (val === "vipassana_visuddhi_nana") {
                     return { wing: "vipassana_visuddhi_nana", vipGroup: "visuddhi_7", slot: 1 };
                 }
-                return { wing: "ariya_samapatti", ariyaGroup: "puggala_4", slot: 1 };
+                if (val === "kammatthana_details") {
+                    return { wing: "kammatthana_details", detGroup: "bhavana_3", slot: 1, role: "all_40" };
+                }
+                return { wing: "ariya_samapatti", ariyaGroup: "puggala_4", slot: 1, prop: "cut_ditthi_vicikiccha" };
             }
             if (key === "group") {
                 next.slot = 1;
@@ -1403,24 +1854,73 @@ export class MnemonicLabUI {
                     next.nimitta = d.nimitta;
                 }
             }
-            else if (key === "topicGroup" || key === "vipGroup" || key === "ariyaGroup") {
+            else if (key === "topicGroup") {
                 next.slot = 1;
+                if (val === "carita_6") {
+                    next.prop = "sappaya_11";
+                }
+                else {
+                    delete next.prop;
+                }
+            }
+            else if (key === "vipGroup") {
+                next.slot = 1;
+                if (val === "nana_10") {
+                    next.stage = "v5_maggamagga";
+                }
+                else {
+                    delete next.stage;
+                }
+            }
+            else if (key === "ariyaGroup") {
+                next.slot = 1;
+                next.prop = val === "puggala_4" ? "cut_ditthi_vicikiccha" : "access_4_ariyas";
+            }
+            else if (key === "detGroup") {
+                next.slot = 1;
+                const detDef = {
+                    bhavana_3: "all_40",
+                    nimitta_3: "all_40",
+                    parisuddhisila_4: "sila_visuddhi",
+                    upakkilesa_10: "upakkilesa_v5",
+                    paccavekkhana_aruppa: "review_mandatory",
+                };
+                next.role = detDef[String(val)] ?? "all_40";
             }
         }
         return next;
     }
-    countTotalMastered() {
-        const countMap = (m) => Object.values(m).filter((v) => v >= 1).length;
-        return (countMap(this.progress.masteredBinary) +
-            countMap(this.progress.masteredPeriodic) +
-            countMap(this.progress.masteredPhalanx));
+    formatPercent(percent) {
+        const rounded = Math.round(percent * 10) / 10;
+        if (Number.isInteger(rounded))
+            return `${rounded}%`;
+        const str = rounded.toFixed(1);
+        return this.lang === "en" ? `${str}%` : `${str.replace(".", ",")}%`;
+    }
+    renderProgressMeter(idSuffix, roleKey, label, metric, extraMeta, compact = false) {
+        const lblId = `mnem-prog-${this.uid}-${idSuffix}`;
+        const isComplete = metric.total > 0 && metric.mastered >= metric.total;
+        const pctText = this.formatPercent(metric.percent);
+        return `
+      <div class="mnem-progress-meter ${compact ? "compact" : ""} ${isComplete ? "is-complete" : ""}" data-progress-role="${esc(roleKey)}">
+        <div class="mnem-progress-head">
+          <span class="mnem-progress-lbl" id="${esc(lblId)}">${esc(label)}</span>
+          <span class="mnem-progress-vals">
+            <strong class="mnem-progress-pct">${esc(pctText)}</strong>
+            <span class="mnem-progress-frac">(${metric.mastered}/${metric.total})</span>
+            ${extraMeta ? `<span class="mnem-progress-meta">· ${esc(extraMeta)}</span>` : ""}
+          </span>
+        </div>
+        <progress class="mnem-progress-bar ${isComplete ? "is-complete" : ""}" max="${Math.max(1, metric.total)}" value="${metric.mastered}" aria-labelledby="${esc(lblId)}"></progress>
+      </div>
+    `;
     }
     render() {
         const s = LAB_STRINGS[this.lang] ?? LAB_STRINGS.pt;
         const acc = this.progress.totalAttempts > 0
             ? Math.round((this.progress.totalCorrect / this.progress.totalAttempts) * 100)
             : 100;
-        const masteredCount = this.countTotalMastered();
+        const summary = computeMnemonicProgressSummary(this.progress, this.binEnumMode);
         this.container.innerHTML = `
       <div class="mnem-lab-root">
         <header class="mnem-header">
@@ -1434,9 +1934,9 @@ export class MnemonicLabUI {
               <span class="mnem-stat-lbl">🔥 ${esc(s.streak)}</span>
               <strong class="mnem-stat-val">${this.progress.streak}</strong>
             </div>
-            <div class="mnem-stat-pill">
+            <div class="mnem-stat-pill" title="${esc(s.naryChallengesMastered(summary.overall.mastered, summary.overall.total))}">
               <span class="mnem-stat-lbl">⭐ ${esc(s.mastered)}</span>
-              <strong class="mnem-stat-val">${masteredCount}</strong>
+              <strong class="mnem-stat-val">${summary.overall.mastered}/${summary.overall.total}</strong>
             </div>
             <div class="mnem-stat-pill">
               <span class="mnem-stat-lbl">🎯 ${esc(s.accuracy)}</span>
@@ -1464,6 +1964,20 @@ export class MnemonicLabUI {
               </select>
             </div>
           </div>
+          <div class="mnem-global-progress-strip">
+            ${this.renderProgressMeter("global-lab", "global-lab", `📊 ${s.globalProgressLabel}`, summary.overall, s.naryChallengesMastered(summary.overall.mastered, summary.overall.total))}
+            <div class="mnem-pillar-progress-chips">
+              <span class="mnem-pillar-prog-chip ${summary.naryGlobal.percent >= 100 ? "is-complete" : ""}">
+                ⚡ ${esc(s.pillarShortNary)}: <strong>${esc(this.formatPercent(summary.naryGlobal.percent))}</strong> (${summary.naryGlobal.mastered}/${summary.naryGlobal.total})
+              </span>
+              <span class="mnem-pillar-prog-chip ${summary.periodic.percent >= 100 ? "is-complete" : ""}">
+                🧪 ${esc(s.pillarShortAlchemy)}: <strong>${esc(this.formatPercent(summary.periodic.percent))}</strong> (${summary.periodic.mastered}/${summary.periodic.total})
+              </span>
+              <span class="mnem-pillar-prog-chip ${summary.phalanx.percent >= 100 ? "is-complete" : ""}">
+                🖐 ${esc(s.pillarShortPhalanx)}: <strong>${esc(this.formatPercent(summary.phalanx.percent))}</strong> (${summary.phalanx.mastered}/${summary.phalanx.total})
+              </span>
+            </div>
+          </div>
         </header>
 
         <div class="mnem-pillar-tabs" role="tablist" aria-label="${esc(s.title)}">
@@ -1480,40 +1994,96 @@ export class MnemonicLabUI {
 
         <div class="mnem-panel-host">
           <div role="tabpanel" aria-labelledby="mnem-tab-binary" class="mnem-tabpanel" ${this.activePillar === "binary" ? "" : "hidden"}>
-            <div class="mnem-tabpanel-inner">${this.activePillar === "binary" ? this.renderBinaryPillar(s) : ""}</div>
+            <div class="mnem-tabpanel-inner">${this.activePillar === "binary" ? this.renderBinaryPillar(s, summary) : ""}</div>
           </div>
           <div role="tabpanel" aria-labelledby="mnem-tab-periodic" class="mnem-tabpanel" ${this.activePillar === "periodic" ? "" : "hidden"}>
-            <div class="mnem-tabpanel-inner">${this.activePillar === "periodic" ? this.renderPeriodicPillar(s) : ""}</div>
+            <div class="mnem-tabpanel-inner">${this.activePillar === "periodic" ? this.renderPeriodicPillar(s, summary) : ""}</div>
           </div>
           <div role="tabpanel" aria-labelledby="mnem-tab-phalanx" class="mnem-tabpanel" ${this.activePillar === "phalanx" ? "" : "hidden"}>
-            <div class="mnem-tabpanel-inner">${this.activePillar === "phalanx" ? this.renderPhalanxPillar(s) : ""}</div>
+            <div class="mnem-tabpanel-inner">${this.activePillar === "phalanx" ? this.renderPhalanxPillar(s, summary) : ""}</div>
           </div>
         </div>
       </div>
     `;
         this.wireEvents();
     }
-    renderBinaryPillar(s) {
+    renderBinaryPillar(s, summary) {
+        const levelSealsHtml = `
+      <div class="mnem-level-seals" role="group" aria-label="${esc(s.rigorLevel)}">
+        ${([
+            { lvl: 1, medal: "🥉", lbl: s.sealEasy },
+            { lvl: 2, medal: "🥈", lbl: s.sealMedium },
+            { lvl: 3, medal: "🥇", lbl: s.sealHard },
+        ]).map(({ lvl, medal, lbl }) => {
+            const m = summary.naryByLevel[lvl];
+            const isCurrent = this.progress.level === lvl;
+            const isDone = m.total > 0 && m.mastered >= m.total;
+            return `
+            <button type="button" class="mnem-level-seal ${isCurrent ? "active" : ""} ${isDone ? "is-complete" : ""}" data-set-level="${lvl}" aria-pressed="${isCurrent}">
+              <span class="mnem-seal-medal">${medal}</span>
+              <span class="mnem-seal-lbl">${lvl} · ${esc(lbl)}</span>
+              <strong class="mnem-seal-pct">${esc(this.formatPercent(m.percent))}</strong>
+              <span class="mnem-seal-frac">(${m.mastered}/${m.total})</span>
+            </button>`;
+        }).join("")}
+      </div>
+    `;
         const chapterBarHtml = `
       <div class="mnem-chapter-bar" role="navigation" aria-label="${esc(s.navaParicchedaTitle)}">
         <div class="mnem-chapter-bar-title">🏛️ <strong>${esc(s.navaParicchedaTitle)}</strong></div>
+        <div class="mnem-nary-global-bar">
+          ${this.renderProgressMeter("nary-global", "nary-global", `🧭 ${s.naryGlobalProgressLabel}`, summary.naryGlobal, s.naryChaptersCompleted(summary.naryChaptersCompleted, 9))}
+          ${levelSealsHtml}
+        </div>
         <div class="mnem-chapter-btn-group">
-          ${CANONICAL_CHAPTERS_META.map((ch) => `
-            <button type="button" class="mnem-chapter-btn ${this.binActiveChapter === ch.num ? "active" : ""}" data-bin-chapter="${ch.num}" aria-pressed="${this.binActiveChapter === ch.num}">
-              ${esc(ch.shortLabel[this.lang])}
-            </button>`).join("")}
+          ${CANONICAL_CHAPTERS_META.map((ch) => {
+            const chProg = summary.chapters[ch.num];
+            const isDone = chProg.total > 0 && chProg.mastered >= chProg.total;
+            const chLabel = ch.num === 1 ? `1. Cittas (${this.binEnumMode})` : ch.shortLabel[this.lang];
+            return `
+            <button type="button" class="mnem-chapter-btn ${this.binActiveChapter === ch.num && this.naryDrillMode !== "synthesis" ? "active" : ""} ${isDone ? "is-complete" : ""}" data-bin-chapter="${ch.num}" aria-pressed="${this.binActiveChapter === ch.num && this.naryDrillMode !== "synthesis"}">
+              <span class="mnem-chapter-btn-lbl">${esc(chLabel)}</span>
+              <span class="mnem-chapter-btn-prog">${isDone ? "✓ " : ""}${chProg.mastered}/${chProg.total} · ${esc(this.formatPercent(chProg.percent))}</span>
+            </button>`;
+        }).join("")}
+        </div>
+        <div class="mnem-drill-mode-bar" role="group" aria-label="${esc(s.pillarShortNary)}">
+          <button type="button" class="mnem-drill-mode-btn ${this.naryDrillMode === "encode" ? "active" : ""}" data-nary-drill="encode" aria-pressed="${this.naryDrillMode === "encode"}">
+            ${esc(s.drillEncodeBtn)}
+          </button>
+          <button type="button" class="mnem-drill-mode-btn ${this.naryDrillMode === "reverse" ? "active" : ""}" data-nary-drill="reverse" aria-pressed="${this.naryDrillMode === "reverse"}">
+            ${esc(s.drillReverseBtn)}
+          </button>
+          <button type="button" class="mnem-drill-mode-btn ${this.naryDrillMode === "synthesis" ? "active" : ""}" data-nary-drill="synthesis" aria-pressed="${this.naryDrillMode === "synthesis"}">
+            ${esc(s.drillSynthesisBtn)}
+          </button>
         </div>
       </div>
     `;
+        if (this.naryDrillMode === "synthesis") {
+            return `
+        ${chapterBarHtml}
+        ${this.renderSynthesisMode(s, summary)}
+      `;
+        }
+        if (this.naryDrillMode === "reverse") {
+            return `
+        ${chapterBarHtml}
+        ${this.renderReverseChallenge(s, summary)}
+      `;
+        }
         if (this.binActiveChapter > 1) {
             return `
         ${chapterBarHtml}
-        ${this.renderNaryChapterDecoder(s)}
+        ${this.renderNaryChapterDecoder(s, summary)}
       `;
         }
         const currentCitta = resolveCittaFromSwitches(this.switches, this.binEnumMode);
         const familyCittas = getSynthesizableCittas(this.switches.family, this.binEnumMode);
         const sw = this.switches;
+        const lvl = this.progress.level;
+        const isChallengeActive = this.binMode === "challenge";
+        const isChallengeRevealed = this.binFeedback !== null;
         const familyLabels = {
             lobha: { pt: "Lobha-mūla (8 = 2³)", en: "Lobha-mūla (8 = 2³)", es: "Lobha-mūla (8 = 2³)" },
             dosa: { pt: "Dosa-mūla (2 = 1×1×2)", en: "Dosa-mūla (2 = 1×1×2)", es: "Dosa-mūla (2 = 1×1×2)" },
@@ -1531,11 +2101,12 @@ export class MnemonicLabUI {
         const showThreeBits = sw.family === "lobha" || sw.family === "kamasobhana";
         const showJatiTriad = sw.family === "kamasobhana" || sw.family === "rupavacara" || sw.family === "arupavacara";
         let challengeHtml = "";
-        if (this.binMode === "challenge") {
+        if (isChallengeActive) {
             const target = this.binTargetCitta;
-            const lvl = this.progress.level;
+            const isSrsTarget = (this.progress.missedQueue ?? []).includes(`citta:${target.id}`);
+            const showCh1Cues = lvl === 1 || isChallengeRevealed;
             const promptTitle = lvl === 3
-                ? `<span lang="pi" class="mnem-pali-badge">${esc(target.pali)}</span> <span class="mnem-id-tag">Citta #${target.id}</span>`
+                ? `<span lang="pi" class="mnem-pali-badge">${esc(target.pali)}</span>`
                 : lvl === 2
                     ? `<strong>${esc(target.name[this.lang])}</strong>`
                     : `<strong>${esc(target.name[this.lang])}</strong><div class="mnem-hint-line">💡 <span lang="pi">${esc(target.code)}</span> — ${esc(target.pali)}</div>`;
@@ -1545,6 +2116,7 @@ export class MnemonicLabUI {
                     feedbackHtml = `
             <div class="mnem-feedback mnem-feedback-ok" aria-live="polite">
               <div><strong>${esc(s.binCorrectMsg)}</strong></div>
+              <div><strong>#${target.id} ${esc(target.code)}</strong> · <span lang="pi">${esc(target.pali)}</span> — ${esc(target.name[this.lang])}</div>
               <div class="mnem-formula-note">${esc(target.formulaNote[this.lang])}</div>
             </div>
           `;
@@ -1554,8 +2126,9 @@ export class MnemonicLabUI {
                     feedbackHtml = `
             <div class="mnem-feedback mnem-feedback-err" aria-live="polite">
               <div><strong>${esc(s.binWrongMsg)}</strong></div>
-              <div>${esc(s.targetLabel)} <strong>#${target.id} ${esc(target.code)}</strong> (<span lang="pi">${esc(target.pali)}</span>)</div>
+              <div>${esc(s.targetLabel)} <strong>#${target.id} ${esc(target.code)}</strong> (<span lang="pi">${esc(target.pali)}</span> — ${esc(target.name[this.lang])})</div>
               <div>${esc(s.currentLabel)} <strong>${got ? `#${got.id} ${esc(got.code)}` : "—"}</strong></div>
+              <div class="mnem-formula-note">${esc(target.formulaNote[this.lang])}</div>
             </div>
           `;
                 }
@@ -1563,7 +2136,7 @@ export class MnemonicLabUI {
             const getFamLabel = (f) => familyLabels[f]?.[this.lang] ?? f;
             const getFamShortLabel = (f) => getFamLabel(f).split("(")[0]?.trim() ?? f;
             let mismatchHtml = "";
-            if (sw.family !== target.family) {
+            if (sw.family !== target.family && (lvl === 1 || isChallengeRevealed)) {
                 mismatchHtml = `
           <div class="mnem-family-mismatch-banner" role="alert">
             <div class="mnem-mismatch-text">
@@ -1575,23 +2148,19 @@ export class MnemonicLabUI {
           </div>
         `;
             }
-            challengeHtml = `
-        <div class="mnem-challenge-box">
-          <div class="mnem-challenge-scope-bar">
-            <span class="mnem-scope-label">${esc(s.binScopeLabel)}</span>
-            <button type="button" class="mnem-scope-btn ${this.binFamilyScope === "all" ? "active" : ""}" data-bin-scope="all">
-              ${this.binEnumMode === 121 ? esc(s.binScopeAll121) : esc(s.binScopeAll89)}
-            </button>
-            ${["lobha", "dosa", "moha", "ahetuka", "kamasobhana", "rupavacara", "arupavacara", "lokuttara"]
-                .map((fam) => `
-                <button type="button" class="mnem-scope-btn ${this.binFamilyScope === fam ? "active" : ""}" data-bin-scope="${fam}">
-                  ${esc(getFamShortLabel(fam))} (${fam === "lobha" ? "8" : fam === "dosa" ? "2" : fam === "moha" ? "2" : fam === "ahetuka" ? "18" : fam === "kamasobhana" ? "24" : fam === "rupavacara" ? "15" : fam === "arupavacara" ? "12" : (this.binEnumMode === 121 ? "40" : "8")})
-                </button>`)
-                .join("")}
-          </div>
-          <div class="mnem-challenge-head">
-            <span class="mnem-challenge-kicker">🎯 ${esc(s.binChallengeTitle)} (${esc(target.asRef)})</span>
-            <div class="mnem-challenge-prompt">${promptTitle}</div>
+            const ch1Prog = summary.chapters[1];
+            const ch1ScopeProg = computeChapterScopeProgress(this.progress, 1, this.binFamilyScope, this.binEnumMode);
+            const ch1ProgressStripHtml = `
+        <div class="mnem-challenge-progress-strip">
+          ${this.binFamilyScope !== "all"
+                ? this.renderProgressMeter("ch1-scope", "nary-scope", `${s.naryScopeProgressLabel}: ${getFamShortLabel(this.binFamilyScope)}`, ch1ScopeProg, undefined, true)
+                : ""}
+          ${this.renderProgressMeter("ch1-chapter", "nary-chapter", s.naryChapterProgressLabel(1), ch1Prog, undefined, true)}
+          ${this.renderProgressMeter("ch1-global", "nary-challenge-global", s.naryGlobalShortLabel, summary.naryGlobal, undefined, true)}
+        </div>
+      `;
+            const ch1RelCuesHtml = showCh1Cues
+                ? `
             <div class="mnem-challenge-rel-grid">
               <span class="mnem-rel-chip">🏛️ <strong>${esc(s.binRelBhumi)}:</strong> <span lang="pi">${esc(this.formatBhumiPali(target.bhumi))}</span></span>
               <span class="mnem-rel-chip">⚖️ <strong>${esc(s.binRelJati)}:</strong> <span lang="pi">${esc(this.formatJatiPali(target.jati))}</span></span>
@@ -1608,6 +2177,33 @@ export class MnemonicLabUI {
               <div class="mnem-rel-eradication-box">
                 ⚔️ <strong>${esc(s.binRelEradication)}:</strong> ${esc(target.eradicationNote[this.lang])}
               </div>` : ""}
+        `
+                : `<div class="mnem-rigor-cue-banner">🔒 ${esc(lvl === 3 ? s.level3BlindCue : s.level2CueHidden)}</div>`;
+            challengeHtml = `
+        <div class="mnem-challenge-box">
+          ${ch1ProgressStripHtml}
+          <div class="mnem-challenge-scope-bar">
+            <span class="mnem-scope-label">${esc(s.binScopeLabel)}</span>
+            <button type="button" class="mnem-scope-btn ${this.binFamilyScope === "all" ? "active" : ""}" data-bin-scope="all">
+              ${this.binEnumMode === 121 ? esc(s.binScopeAll121) : esc(s.binScopeAll89)} (${ch1Prog.mastered}/${ch1Prog.total})
+            </button>
+            ${["lobha", "dosa", "moha", "ahetuka", "kamasobhana", "rupavacara", "arupavacara", "lokuttara"]
+                .map((fam) => {
+                const famProg = computeChapterScopeProgress(this.progress, 1, fam, this.binEnumMode);
+                return `
+                <button type="button" class="mnem-scope-btn ${this.binFamilyScope === fam ? "active" : ""} ${famProg.percent >= 100 ? "is-complete" : ""}" data-bin-scope="${fam}">
+                  ${esc(getFamShortLabel(fam))} (${famProg.mastered}/${famProg.total})
+                </button>`;
+            })
+                .join("")}
+          </div>
+          <div class="mnem-challenge-head">
+            <span class="mnem-challenge-kicker">
+              🎯 ${esc(s.binChallengeTitle)} (${esc(target.asRef)})
+              ${isSrsTarget ? `<span class="mnem-srs-badge">${esc(s.srsReviewBadge)}</span>` : ""}
+            </span>
+            <div class="mnem-challenge-prompt">${promptTitle}</div>
+            ${ch1RelCuesHtml}
           </div>
           <div class="mnem-challenge-actions">
             <button type="button" class="mnem-btn mnem-btn-primary" id="mnem-bin-verify">${esc(s.binVerifyBtn)}</button>
@@ -1622,6 +2218,42 @@ export class MnemonicLabUI {
         </div>
       `;
         }
+        const maskCh1Synth = isChallengeActive && lvl === 3 && !isChallengeRevealed;
+        const ch1MatrixGridHtml = `
+        <div class="mnem-matrix-grid">
+          ${familyCittas
+            .map((c) => {
+            const isSelected = currentCitta?.id === c.id;
+            const isMastered = (this.progress.masteredBinary[`citta:${c.id}`] ?? 0) >= 1;
+            return `
+                <button type="button" class="mnem-matrix-cell ${isSelected ? "selected" : ""} ${isMastered ? "mastered" : ""}" data-load-citta="${c.id}">
+                  <span class="mnem-cell-top">
+                    <span class="mnem-cell-id">#${c.id}</span>
+                    <span class="mnem-cell-code">${esc(c.code)}</span>
+                  </span>
+                  <span class="mnem-cell-pali" lang="pi">${esc(c.pali)}</span>
+                  <span class="mnem-cell-count">${c.totalSangahaCount} cetasikas ${isMastered ? "★" : ""}</span>
+                </button>
+              `;
+        })
+            .join("")}
+        </div>
+    `;
+        const ch1CatalogueSectionHtml = isChallengeActive && lvl === 3 && !isChallengeRevealed
+            ? ""
+            : isChallengeActive && lvl === 2
+                ? `
+      <div class="mnem-matrix-section">
+        <details class="mnem-catalogue-details">
+          <summary class="mnem-catalogue-summary"><span>📚 ${esc(s.catalogueToggleLabel)} — ${esc(s.binMatrixHeader)}</span></summary>
+          <div class="mnem-catalogue-body">${ch1MatrixGridHtml}</div>
+        </details>
+      </div>`
+                : `
+      <div class="mnem-matrix-section">
+        <h3 class="mnem-section-h3">${esc(s.binMatrixHeader)}</h3>
+        ${ch1MatrixGridHtml}
+      </div>`;
         return `
       ${chapterBarHtml}
       <div class="mnem-submode-bar">
@@ -1657,7 +2289,7 @@ export class MnemonicLabUI {
           <div class="mnem-switch-row">
             ${["lobha", "dosa", "moha", "ahetuka", "kamasobhana", "rupavacara", "arupavacara", "lokuttara"]
             .map((fam) => {
-            const isTargetFam = this.binMode === "challenge" && this.binTargetCitta.family === fam;
+            const isTargetFam = isChallengeActive && lvl === 1 && this.binTargetCitta.family === fam;
             const isMismatched = isTargetFam && sw.family !== fam;
             return `
                   <button type="button" class="mnem-bit-btn ${sw.family === fam ? "active" : ""} ${isTargetFam ? "target-family" : ""}" data-bin-family="${fam}" aria-pressed="${sw.family === fam}">
@@ -1903,8 +2535,19 @@ export class MnemonicLabUI {
             : ""}
       </div>
 
-      ${currentCitta
+      ${maskCh1Synth
             ? `
+        <div class="mnem-synthesized-card mnem-synth-masked">
+          <div class="mnem-synth-header">
+            <span class="mnem-synth-kicker">${esc(s.binSynthesizedTitle)}</span>
+            <span class="mnem-synth-code">🔒 L3</span>
+          </div>
+          <div class="mnem-synth-name" style="color:var(--text-muted, #6f5c48);font-style:italic;">
+            ${esc(s.level3SynthMasked)}
+          </div>
+        </div>`
+            : currentCitta
+                ? `
         <div class="mnem-synthesized-card">
           <div class="mnem-synth-header">
             <span class="mnem-synth-kicker">${esc(s.binSynthesizedTitle)}</span>
@@ -1930,32 +2573,12 @@ export class MnemonicLabUI {
               ⚔️ <strong>${esc(s.binRelEradication)}:</strong> ${esc(currentCitta.eradicationNote[this.lang])}
             </div>` : ""}
         </div>`
-            : ""}
+                : ""}
 
-      <div class="mnem-matrix-section">
-        <h3 class="mnem-section-h3">${esc(s.binMatrixHeader)}</h3>
-        <div class="mnem-matrix-grid">
-          ${familyCittas
-            .map((c) => {
-            const isSelected = currentCitta?.id === c.id;
-            const isMastered = (this.progress.masteredBinary[`citta:${c.id}`] ?? 0) >= 1;
-            return `
-                <button type="button" class="mnem-matrix-cell ${isSelected ? "selected" : ""} ${isMastered ? "mastered" : ""}" data-load-citta="${c.id}">
-                  <span class="mnem-cell-top">
-                    <span class="mnem-cell-id">#${c.id}</span>
-                    <span class="mnem-cell-code">${esc(c.code)}</span>
-                  </span>
-                  <span class="mnem-cell-pali" lang="pi">${esc(c.pali)}</span>
-                  <span class="mnem-cell-count">${c.totalSangahaCount} cetasikas ${isMastered ? "★" : ""}</span>
-                </button>
-              `;
-        })
-            .join("")}
-        </div>
-      </div>
+      ${ch1CatalogueSectionHtml}
     `;
     }
-    renderNaryChapterDecoder(s) {
+    renderNaryChapterDecoder(s, summary) {
         const meta = CANONICAL_CHAPTERS_META.find((m) => m.num === this.binActiveChapter) ??
             CANONICAL_CHAPTERS_META[1];
         const submatrices = getSubmatricesForChapter(this.binActiveChapter);
@@ -1978,6 +2601,9 @@ export class MnemonicLabUI {
         const synthItem = allChapterItems.find((item) => {
             return Object.entries(item.switches).every(([k, v]) => String(this.narySwitches[k]) === String(v));
         });
+        const lvl = this.progress.level;
+        const isRevealed = this.naryFeedback !== null;
+        const isSrsTarget = (this.progress.missedQueue ?? []).includes(`nary:${target.id}`);
         let feedbackHtml = "";
         if (this.naryFeedback) {
             if (this.naryFeedback.isCorrect) {
@@ -2014,6 +2640,10 @@ export class MnemonicLabUI {
                 </span>`)
                     .join("")}
             </div>
+            <div style="margin-top:8px;font-size:0.86rem;opacity:0.95;">
+              📐 <strong>${esc(target.code)}</strong> · <span lang="pi">${esc(target.pali)}</span> — ${esc(target.name[this.lang])}<br/>
+              <em>${esc(target.formulaNote[this.lang])}</em> (${esc(target.asRef)})
+            </div>
           </div>
         `;
             }
@@ -2040,24 +2670,14 @@ export class MnemonicLabUI {
         </div>
       </div>`
             : "";
-        return `
-      <div class="mnem-equation-banner">
-        <div class="mnem-eq-title">🏛️ ${esc(meta.title[this.lang])} · <span lang="pi">${esc(meta.paliTitle)}</span> (${esc(meta.asRef)})</div>
-        <div class="mnem-eq-chips">
-          <span class="mnem-eq-chip highlight">📐 <strong>${esc(meta.equation[this.lang])}</strong></span>
-          ${activeSubmatrixMeta
-            ? `<span class="mnem-eq-chip">🧮 <strong>${esc(s.narySubmatrixEqLabel)}</strong> ${esc(activeSubmatrixMeta.equation[this.lang])} (${esc(activeSubmatrixMeta.asRef)})</span>`
-            : ""}
-        </div>
-      </div>
-      ${submatrixBarHtml}
-
-      <div class="mnem-challenge-card" style="margin-bottom:16px;">
-        <div class="mnem-challenge-head">
-          <span class="mnem-challenge-kicker">🎯 ${esc(meta.shortLabel[this.lang])} · ${esc(target.code)} (${esc(target.asRef)})</span>
-          <div class="mnem-challenge-prompt">
-            <span lang="pi" style="font-weight:700;">${esc(target.pali)}</span> — ${esc(target.name[this.lang])}
-          </div>
+        const promptHtml = lvl === 3
+            ? `<span lang="pi" class="mnem-pali-badge" style="font-weight:700;">${esc(this.stripPromptSpoilers(target.pali))}</span>`
+            : lvl === 2
+                ? `<span lang="pi" style="font-weight:700;">${esc(this.stripPromptSpoilers(target.pali))}</span> — ${esc(this.stripPromptSpoilers(target.name[this.lang]))}`
+                : `<span lang="pi" style="font-weight:700;">${esc(target.pali)}</span> — ${esc(target.name[this.lang])}`;
+        const showCues = lvl === 1 || isRevealed;
+        const cuesHtml = showCues
+            ? `
           <div class="mnem-challenge-rel-grid" style="margin-top:8px;">
             <span class="mnem-rel-chip">🏷️ <strong>${esc(s.naryGroupLabel)}</strong> ${esc(this.formatCanonicalGroupName(target.primaryGroup))}</span>
             <span class="mnem-rel-chip">📂 <strong>${esc(s.narySubdivisionLabel)}</strong> ${esc(this.formatCanonicalGroupName(target.secondaryGroup))}</span>
@@ -2065,49 +2685,15 @@ export class MnemonicLabUI {
           <div class="mnem-rel-eradication-box" style="margin-top:8px;">
             📐 <strong>${esc(s.naryFormulaAnchor)}</strong> ${esc(target.formulaNote[this.lang])}
           </div>
-        </div>
-        <div class="mnem-challenge-actions">
-          <button type="button" class="mnem-btn mnem-btn-primary" id="mnem-nary-verify">${esc(s.binVerifyBtn)}</button>
-          <button type="button" class="mnem-btn mnem-btn-secondary" id="mnem-nary-next">${esc(s.binNextBtn)}</button>
-        </div>
-        ${feedbackHtml}
-      </div>
-
-      <div class="mnem-switchboard">
-        ${this.renderNarySwitchControls(this.binActiveChapter, this.narySwitches, s)}
-      </div>
-
-      <div class="mnem-synthesized-card" style="margin-top:16px;">
-        <div class="mnem-synth-header">
-          <span class="mnem-synth-kicker">${esc(s.narySynthKicker)}</span>
-          <span class="mnem-synth-code">${synthItem ? `${esc(synthItem.code)} (${esc(synthItem.asRef)})` : esc(s.naryEditingConfig)}</span>
-        </div>
-        ${synthItem
-            ? `
-          <div class="mnem-synth-pali" lang="pi">${esc(synthItem.pali)}</div>
-          <div class="mnem-synth-name">${esc(synthItem.name[this.lang])}</div>
-          <div class="mnem-synth-formula">📐 ${esc(synthItem.formulaNote[this.lang])}</div>
-          <div class="mnem-challenge-rel-grid" style="margin-top:8px;">
-            <span class="mnem-rel-chip">🏷️ <strong>${esc(s.naryGroupLabel)}</strong> ${esc(this.formatCanonicalGroupName(synthItem.primaryGroup))}</span>
-            <span class="mnem-rel-chip">📂 <strong>${esc(s.narySubdivisionLabel)}</strong> ${esc(this.formatCanonicalGroupName(synthItem.secondaryGroup))}</span>
-          </div>
-        `
-            : `
-          <div class="mnem-synth-name" style="color:var(--text-muted, #6f5c48);font-style:italic;">
-            ${esc(s.naryCurrentCombo)} ${Object.entries(this.narySwitches)
-                .map(([k, v]) => `<strong>${esc(this.formatNaryParamKey(k))}</strong>: ${esc(this.formatNaryParamVal(k, v))}`)
-                .join(" · ")}
-          </div>
-        `}
-      </div>
-
-      <div class="mnem-matrix-section" style="margin-top:20px;">
-        <h3 class="mnem-section-h3">${esc(s.naryCatalogueTitle(this.binActiveChapter, chapterItems.length))}</h3>
+      `
+            : `<div class="mnem-rigor-cue-banner">🔒 ${esc(lvl === 3 ? s.level3BlindCue : s.level2CueHidden)}</div>`;
+        const maskSynth = lvl === 3 && !isRevealed;
+        const catalogueCardsHtml = `
         <div class="mnem-matrix-grid">
           ${chapterItems
             .map((item) => {
-            const isTarget = target.id === item.id;
-            const isSelected = synthItem?.id === item.id;
+            const isTarget = lvl === 1 && target.id === item.id;
+            const isSelected = !maskSynth && synthItem?.id === item.id;
             const isMastered = (this.progress.masteredBinary[`nary:${item.id}`] ?? 0) >= 1;
             return `
                 <div class="mnem-matrix-cell ${isTarget ? "target-family" : ""} ${isSelected ? "selected" : ""} ${isMastered ? "mastered" : ""}">
@@ -2129,10 +2715,340 @@ export class MnemonicLabUI {
         })
             .join("")}
         </div>
+    `;
+        const catalogueSectionHtml = lvl === 3 && !isRevealed
+            ? ""
+            : lvl === 2
+                ? `
+      <div class="mnem-matrix-section" style="margin-top:20px;">
+        <details class="mnem-catalogue-details">
+          <summary class="mnem-catalogue-summary"><span>📚 ${esc(s.catalogueToggleLabel)} — ${esc(s.naryCatalogueTitle(this.binActiveChapter, chapterItems.length))}</span></summary>
+          <div class="mnem-catalogue-body">${catalogueCardsHtml}</div>
+        </details>
+      </div>`
+                : `
+      <div class="mnem-matrix-section" style="margin-top:20px;">
+        <h3 class="mnem-section-h3">${esc(s.naryCatalogueTitle(this.binActiveChapter, chapterItems.length))}</h3>
+        ${catalogueCardsHtml}
+      </div>`;
+        return `
+      <div class="mnem-equation-banner">
+        <div class="mnem-eq-title">🏛️ ${esc(meta.title[this.lang])} · <span lang="pi">${esc(meta.paliTitle)}</span> (${esc(meta.asRef)})</div>
+        <div class="mnem-eq-chips">
+          <span class="mnem-eq-chip highlight">📐 <strong>${esc(meta.equation[this.lang])}</strong></span>
+          ${activeSubmatrixMeta && (lvl === 1 || this.narySubmatrixScope !== "all" || isRevealed)
+            ? `<span class="mnem-eq-chip">🧮 <strong>${esc(s.narySubmatrixEqLabel)}</strong> ${esc(activeSubmatrixMeta.equation[this.lang])} (${esc(activeSubmatrixMeta.asRef)})</span>`
+            : ""}
+        </div>
+      </div>
+      ${submatrixBarHtml}
+
+      <div class="mnem-challenge-card" style="margin-bottom:16px;">
+        <div class="mnem-challenge-progress-strip">
+          ${this.narySubmatrixScope !== "all" && activeSubmatrixMeta
+            ? this.renderProgressMeter(`ch${this.binActiveChapter}-scope`, "nary-scope", `${s.naryScopeProgressLabel}: ${activeSubmatrixMeta.label[this.lang]}`, computeChapterScopeProgress(this.progress, this.binActiveChapter, this.narySubmatrixScope, this.binEnumMode), undefined, true)
+            : ""}
+          ${this.renderProgressMeter(`ch${this.binActiveChapter}-chapter`, "nary-chapter", s.naryChapterProgressLabel(this.binActiveChapter), summary.chapters[this.binActiveChapter], undefined, true)}
+          ${this.renderProgressMeter(`ch${this.binActiveChapter}-global`, "nary-challenge-global", s.naryGlobalShortLabel, summary.naryGlobal, undefined, true)}
+        </div>
+        <div class="mnem-challenge-head">
+          <span class="mnem-challenge-kicker">
+            🎯 ${esc(meta.shortLabel[this.lang])}${lvl < 3 ? ` · ${esc(target.code)}` : ""} (${esc(target.asRef)})
+            ${isSrsTarget ? `<span class="mnem-srs-badge">${esc(s.srsReviewBadge)}</span>` : ""}
+          </span>
+          <div class="mnem-challenge-prompt">${promptHtml}</div>
+          ${cuesHtml}
+        </div>
+        <div class="mnem-challenge-actions">
+          <button type="button" class="mnem-btn mnem-btn-primary" id="mnem-nary-verify">${esc(s.binVerifyBtn)}</button>
+          <button type="button" class="mnem-btn mnem-btn-secondary" id="mnem-nary-next">${esc(s.binNextBtn)}</button>
+        </div>
+        ${feedbackHtml}
+      </div>
+
+      <div class="mnem-switchboard">
+        ${this.renderNarySwitchControls(this.binActiveChapter, this.narySwitches, s)}
+      </div>
+
+      <div class="mnem-synthesized-card ${maskSynth ? "mnem-synth-masked" : ""}" style="margin-top:16px;">
+        <div class="mnem-synth-header">
+          <span class="mnem-synth-kicker">${esc(s.narySynthKicker)}</span>
+          <span class="mnem-synth-code">${maskSynth ? "🔒 L3" : synthItem ? `${esc(synthItem.code)} (${esc(synthItem.asRef)})` : esc(s.naryEditingConfig)}</span>
+        </div>
+        ${maskSynth
+            ? `
+          <div class="mnem-synth-name" style="color:var(--text-muted, #6f5c48);font-style:italic;">
+            ${esc(s.level3SynthMasked)}<br/>
+            ${esc(s.naryCurrentCombo)} ${Object.entries(this.narySwitches)
+                .map(([k, v]) => `<strong>${esc(this.formatNaryParamKey(k))}</strong>: ${esc(this.formatNaryParamVal(k, v))}`)
+                .join(" · ")}
+          </div>`
+            : synthItem
+                ? `
+          <div class="mnem-synth-pali" lang="pi">${esc(synthItem.pali)}</div>
+          <div class="mnem-synth-name">${esc(synthItem.name[this.lang])}</div>
+          <div class="mnem-synth-formula">📐 ${esc(synthItem.formulaNote[this.lang])}</div>
+          <div class="mnem-challenge-rel-grid" style="margin-top:8px;">
+            <span class="mnem-rel-chip">🏷️ <strong>${esc(s.naryGroupLabel)}</strong> ${esc(this.formatCanonicalGroupName(synthItem.primaryGroup))}</span>
+            <span class="mnem-rel-chip">📂 <strong>${esc(s.narySubdivisionLabel)}</strong> ${esc(this.formatCanonicalGroupName(synthItem.secondaryGroup))}</span>
+          </div>
+        `
+                : `
+          <div class="mnem-synth-name" style="color:var(--text-muted, #6f5c48);font-style:italic;">
+            ${esc(s.naryCurrentCombo)} ${Object.entries(this.narySwitches)
+                    .map(([k, v]) => `<strong>${esc(this.formatNaryParamKey(k))}</strong>: ${esc(this.formatNaryParamVal(k, v))}`)
+                    .join(" · ")}
+          </div>
+        `}
+      </div>
+
+      ${catalogueSectionHtml}
+    `;
+    }
+    renderReverseChallenge(s, summary) {
+        const lvl = this.progress.level;
+        const choiceCount = lvl === 3 ? 6 : 4;
+        const seed = this.progress.totalAttempts + this.binActiveChapter * 97 + lvl * 31;
+        if (this.binActiveChapter === 1) {
+            const pool = getSynthesizableCittas(this.binFamilyScope, this.binEnumMode);
+            const target = this.binTargetCitta;
+            const choices = buildReverseChoices(target, pool.length >= choiceCount ? pool : this.binEnumMode === 121 ? CANONICAL_CITTAS_121 : CANONICAL_CITTAS_89, choiceCount, (c) => String(c.id), (cand, tgt) => {
+                let score = 0;
+                if (cand.family === tgt.family)
+                    score += 4;
+                if (cand.jati === tgt.jati)
+                    score += 2;
+                if (cand.bitVedana === tgt.bitVedana)
+                    score += 1;
+                if (cand.jhanaStage && cand.jhanaStage === tgt.jhanaStage)
+                    score += 1;
+                return score;
+            }, seed);
+            const fb = this.reverseFeedback;
+            return `
+        <div class="mnem-challenge-card mnem-reverse-card">
+          <div class="mnem-challenge-progress-strip">
+            ${this.renderProgressMeter("rev-ch1", "nary-chapter", s.naryChapterProgressLabel(1), summary.chapters[1], undefined, true)}
+            ${this.renderProgressMeter("rev-global", "nary-challenge-global", s.naryGlobalShortLabel, summary.naryGlobal, undefined, true)}
+          </div>
+          <div class="mnem-challenge-head">
+            <span class="mnem-challenge-kicker">🔄 ${esc(s.reverseKicker)} (${esc(target.asRef)})</span>
+            <p class="mnem-reverse-instruction">${esc(s.reverseInstruction)}</p>
+          </div>
+          <div class="mnem-reverse-vector-card">
+            <span class="mnem-rel-chip">🏛️ <strong>${esc(s.binRelBhumi)}:</strong> <span lang="pi">${esc(this.formatBhumiPali(target.bhumi))}</span></span>
+            <span class="mnem-rel-chip">⚖️ <strong>${esc(s.binRelJati)}:</strong> <span lang="pi">${esc(this.formatJatiPali(target.jati))}</span></span>
+            <span class="mnem-rel-chip">🌊 <strong>${esc(s.binRelVedana)}:</strong> <span lang="pi">${target.bitVedana === 1 ? "Somanassa" : target.bitVedana === "domanassa" ? "Domanassa" : target.bitVedana === "dukkha" ? "Dukkha" : target.bitVedana === "sukha" ? "Sukha" : "Upekkhā"}</span></span>
+            ${target.bitCognitive === 1 || target.bitCognitive === 0 ? `<span class="mnem-rel-chip">🧠 <strong>${esc(s.binBit2Label)}</strong> <span lang="pi">${target.family === "lobha" ? (target.bitCognitive === 1 ? "Diṭṭhi-sampayutta" : "Diṭṭhi-vippayutta") : (target.bitCognitive === 1 ? "Ñāṇa-sampayutta" : "Ñāṇa-vippayutta")}</span></span>` : target.bitCognitive === "patigha" ? `<span class="mnem-rel-chip">🧠 <span lang="pi">Paṭigha-sampayutta</span></span>` : target.bitCognitive === "vicikiccha" ? `<span class="mnem-rel-chip">🧠 <span lang="pi">Vicikicchā-sampayutta</span></span>` : target.bitCognitive === "uddhacca" ? `<span class="mnem-rel-chip">🧠 <span lang="pi">Uddhacca-sampayutta</span></span>` : ""}
+            ${target.bitSankhara === 1 || target.bitSankhara === 0 ? `<span class="mnem-rel-chip">⚡ <strong>Saṅkhāra:</strong> <span lang="pi">${target.bitSankhara === 1 ? "Asaṅkhārika" : "Sasaṅkhārika"}</span></span>` : ""}
+            ${target.jhanaStage ? `<span class="mnem-rel-chip">🧘 <strong>Jhāna:</strong> ${target.jhanaStage}</span>` : ""}
+            ${target.arupaBase ? `<span class="mnem-rel-chip">🌌 <strong>Arūpa:</strong> #${target.arupaBase}</span>` : ""}
+            ${target.maggaStage ? `<span class="mnem-rel-chip">✨ <strong>Magga/Phala:</strong> #${target.maggaStage}</span>` : ""}
+            ${target.hetuType ? `<span class="mnem-rel-chip">🌱 <strong>${esc(s.binRelHetu)}:</strong> <span lang="pi">${esc(this.formatHetuPali(target.hetuType))}</span></span>` : ""}
+            <span class="mnem-rel-chip highlight">🧪 <strong>${esc(s.binRelSangaha)}:</strong> ${target.totalSangahaCount} cetasikas</span>
+          </div>
+          <div class="mnem-choice-grid" role="group" aria-label="${esc(s.reverseKicker)}">
+            ${choices
+                .map((c) => {
+                const cid = String(c.id);
+                const isSelected = fb?.selectedId === cid;
+                const isTarget = cid === String(target.id);
+                const stateCls = fb ? (isTarget ? "is-correct" : isSelected ? "is-wrong" : "is-muted") : "";
+                return `
+                  <button type="button" class="mnem-choice-btn ${stateCls}" data-reverse-choice="${esc(cid)}" ${fb ? "disabled" : ""}>
+                    <span class="mnem-choice-pali" lang="pi">${esc(c.pali)}</span>
+                    ${lvl < 3 ? `<span class="mnem-choice-name">${esc(c.name[this.lang])}</span>` : ""}
+                  </button>`;
+            })
+                .join("")}
+          </div>
+          ${fb
+                ? `
+            <div class="mnem-challenge-feedback ${fb.isCorrect ? "ok" : "err"}" style="margin-top:12px;" aria-live="polite">
+              <div style="font-weight:700;">${esc(fb.isCorrect ? s.reverseCorrectMsg : s.reverseWrongMsg)}</div>
+              <div style="margin-top:4px;"><strong>#${target.id} ${esc(target.code)}</strong> · <span lang="pi"><strong>${esc(target.pali)}</strong></span> — ${esc(target.name[this.lang])}</div>
+              <div style="margin-top:4px;font-size:0.88rem;">📐 <em>${esc(target.formulaNote[this.lang])}</em> (${esc(target.asRef)})</div>
+            </div>`
+                : ""}
+          <div class="mnem-challenge-actions" style="margin-top:12px;">
+            <button type="button" class="mnem-btn mnem-btn-primary" id="mnem-reverse-next">${esc(s.binNextBtn)}</button>
+          </div>
+        </div>
+      `;
+        }
+        const meta = CANONICAL_CHAPTERS_META.find((m) => m.num === this.binActiveChapter) ?? CANONICAL_CHAPTERS_META[1];
+        const allItems = getNaryItemsForChapter(this.binActiveChapter);
+        const scopeItems = getNaryItemsForChapter(this.binActiveChapter, this.narySubmatrixScope);
+        let target = this.binTargetNaryItem;
+        if (!target || target.chapter !== this.binActiveChapter) {
+            target = pickNextNaryChapterChallenge(this.binActiveChapter, this.progress, undefined, this.narySubmatrixScope);
+            this.binTargetNaryItem = target;
+            this.reverseFeedback = null;
+        }
+        const choicePool = scopeItems.length >= choiceCount ? scopeItems : allItems;
+        const choices = buildReverseChoices(target, choicePool, choiceCount, (it) => it.id, (cand, tgt) => {
+            let score = 0;
+            if (cand.submatrix === tgt.submatrix)
+                score += 4;
+            if (cand.secondaryGroup === tgt.secondaryGroup)
+                score += 3;
+            if (cand.primaryGroup === tgt.primaryGroup)
+                score += 2;
+            return score;
+        }, seed);
+        const fb = this.reverseFeedback;
+        return `
+      <div class="mnem-challenge-card mnem-reverse-card">
+        <div class="mnem-challenge-progress-strip">
+          ${this.renderProgressMeter(`rev-ch${this.binActiveChapter}`, "nary-chapter", s.naryChapterProgressLabel(this.binActiveChapter), summary.chapters[this.binActiveChapter], undefined, true)}
+          ${this.renderProgressMeter("rev-global", "nary-challenge-global", s.naryGlobalShortLabel, summary.naryGlobal, undefined, true)}
+        </div>
+        <div class="mnem-challenge-head">
+          <span class="mnem-challenge-kicker">🔄 ${esc(s.reverseKicker)} ${esc(meta.shortLabel[this.lang])} (${esc(target.asRef)})</span>
+          <p class="mnem-reverse-instruction">${esc(s.reverseInstruction)}</p>
+        </div>
+        <div class="mnem-reverse-vector-card">
+          ${Object.entries(target.switches)
+            .map(([k, v]) => `
+            <span class="mnem-rel-chip">
+              <strong>${esc(this.formatNaryParamKey(k))}:</strong> ${esc(this.formatNaryParamVal(k, v))}
+            </span>`)
+            .join("")}
+        </div>
+        ${lvl === 1
+            ? `<div class="mnem-rel-eradication-box" style="margin-top:8px;">📐 <strong>${esc(s.naryFormulaAnchor)}</strong> ${esc(target.formulaNote[this.lang])}</div>`
+            : ""}
+        <div class="mnem-choice-grid" role="group" aria-label="${esc(s.reverseKicker)}">
+          ${choices
+            .map((it) => {
+            const isSelected = fb?.selectedId === it.id;
+            const isTarget = it.id === target.id;
+            const stateCls = fb ? (isTarget ? "is-correct" : isSelected ? "is-wrong" : "is-muted") : "";
+            return `
+                <button type="button" class="mnem-choice-btn ${stateCls}" data-reverse-choice="${esc(it.id)}" ${fb ? "disabled" : ""}>
+                  <span class="mnem-choice-pali" lang="pi">${esc(lvl === 3 ? this.stripPromptSpoilers(it.pali) : it.pali)}</span>
+                  ${lvl < 3 ? `<span class="mnem-choice-name">${esc(lvl === 2 ? this.stripPromptSpoilers(it.name[this.lang]) : it.name[this.lang])}</span>` : ""}
+                </button>`;
+        })
+            .join("")}
+        </div>
+        ${fb
+            ? `
+          <div class="mnem-challenge-feedback ${fb.isCorrect ? "ok" : "err"}" style="margin-top:12px;" aria-live="polite">
+            <div style="font-weight:700;">${esc(fb.isCorrect ? s.reverseCorrectMsg : s.reverseWrongMsg)}</div>
+            <div style="margin-top:4px;"><strong>${esc(target.code)}</strong> · <span lang="pi"><strong>${esc(target.pali)}</strong></span> — ${esc(target.name[this.lang])}</div>
+            <div style="margin-top:4px;font-size:0.88rem;">📐 <em>${esc(target.formulaNote[this.lang])}</em> (${esc(target.asRef)})</div>
+          </div>`
+            : ""}
+        <div class="mnem-challenge-actions" style="margin-top:12px;">
+          <button type="button" class="mnem-btn mnem-btn-primary" id="mnem-reverse-next">${esc(s.binNextBtn)}</button>
+        </div>
+      </div>
+    `;
+    }
+    getSynthesisPool() {
+        if (this.synthesisAxis === "all")
+            return MULA_SYNTHESIS_ITEMS;
+        const filtered = MULA_SYNTHESIS_ITEMS.filter((it) => it.axis === this.synthesisAxis);
+        return filtered.length > 0 ? filtered : MULA_SYNTHESIS_ITEMS;
+    }
+    pickNextSynthesisItem(currentId) {
+        const pool = this.getSynthesisPool();
+        const lvl = this.progress.level;
+        const sorted = [...pool].sort((a, b) => {
+            const sa = getMasteryScoreForLevel(this.progress, a.id, lvl);
+            const sb = getMasteryScoreForLevel(this.progress, b.id, lvl);
+            if (sa !== sb)
+                return sa - sb;
+            return a.id.localeCompare(b.id);
+        });
+        const minScore = getMasteryScoreForLevel(this.progress, sorted[0].id, lvl);
+        const lowest = sorted.filter((it) => getMasteryScoreForLevel(this.progress, it.id, lvl) === minScore);
+        const active = lowest.length > 1 ? lowest : sorted;
+        if (currentId) {
+            const idx = active.findIndex((it) => it.id === currentId);
+            if (idx >= 0)
+                return active[(idx + 1) % active.length];
+        }
+        return active[this.progress.totalAttempts % active.length] ?? pool[0];
+    }
+    renderSynthesisMode(s, summary) {
+        const pool = this.getSynthesisPool();
+        if (!pool.some((it) => it.id === this.synthesisTarget.id)) {
+            this.synthesisTarget = this.pickNextSynthesisItem();
+            this.synthesisFeedback = null;
+        }
+        const target = this.synthesisTarget;
+        const lvl = this.progress.level;
+        const synMastered = MULA_SYNTHESIS_ITEMS.filter((it) => (this.progress.masteredBinary[it.id] ?? 0) >= 1).length;
+        const synMetric = computeProgressMetric(synMastered, MULA_SYNTHESIS_ITEMS.length);
+        const choiceCount = lvl === 3 ? 5 : 4;
+        const choices = buildReverseChoices(target, MULA_SYNTHESIS_ITEMS, choiceCount, (it) => it.id, (cand, tgt) => (cand.axis === tgt.axis ? 5 : 1), this.progress.totalAttempts + lvl * 17);
+        const fb = this.synthesisFeedback;
+        return `
+      <div class="mnem-challenge-card mnem-synthesis-card">
+        <div class="mnem-challenge-progress-strip">
+          ${this.renderProgressMeter("syn-progress", "nary-synthesis", `🌐 ${s.synthesisProgressLabel}`, synMetric, undefined, true)}
+          ${this.renderProgressMeter("syn-global", "nary-challenge-global", s.naryGlobalShortLabel, summary.naryGlobal, undefined, true)}
+        </div>
+        <div class="mnem-scope-bar" style="margin-bottom:12px;">
+          <div class="mnem-switch-row">
+            <button type="button" class="mnem-bit-btn ${this.synthesisAxis === "all" ? "active" : ""}" data-syn-axis="all" aria-pressed="${this.synthesisAxis === "all"}">
+              ${esc(s.synthesisAllAxes(MULA_SYNTHESIS_ITEMS.length))}
+            </button>
+            ${SYNTHESIS_AXIS_META.map((ax) => {
+            const axItems = MULA_SYNTHESIS_ITEMS.filter((it) => it.axis === ax.id);
+            const axDone = axItems.filter((it) => (this.progress.masteredBinary[it.id] ?? 0) >= 1).length;
+            return `
+                <button type="button" class="mnem-bit-btn ${this.synthesisAxis === ax.id ? "active" : ""}" data-syn-axis="${ax.id}" aria-pressed="${this.synthesisAxis === ax.id}">
+                  ${esc(ax.label[this.lang])} (${axDone}/${axItems.length})
+                </button>`;
+        }).join("")}
+          </div>
+        </div>
+        <div class="mnem-challenge-head">
+          <span class="mnem-challenge-kicker">🌐 ${esc(s.synthesisTitle)} ${esc(target.code)} (${esc(target.asRef)})</span>
+          <div class="mnem-challenge-prompt">
+            ${lvl === 3 ? `<span lang="pi" class="mnem-pali-badge">${esc(target.promptPali)}</span>` : `<strong>${esc(target.prompt[this.lang])}</strong>`}
+          </div>
+        </div>
+        <div class="mnem-choice-grid" role="group" aria-label="${esc(s.synthesisTitle)}">
+          ${choices
+            .map((it) => {
+            const isSelected = fb?.selectedId === it.id;
+            const isTarget = it.id === target.id;
+            const stateCls = fb ? (isTarget ? "is-correct" : isSelected ? "is-wrong" : "is-muted") : "";
+            return `
+                <button type="button" class="mnem-choice-btn ${stateCls}" data-syn-choice="${esc(it.id)}" ${fb ? "disabled" : ""}>
+                  ${lvl === 3
+                ? `<span class="mnem-choice-pali" lang="pi">${esc(it.answerPali)}</span>`
+                : `<span class="mnem-choice-name"><strong>${esc(it.answer[this.lang])}</strong></span>`}
+                </button>`;
+        })
+            .join("")}
+        </div>
+        ${fb
+            ? `
+          <div class="mnem-challenge-feedback ${fb.isCorrect ? "ok" : "err"}" style="margin-top:12px;" aria-live="polite">
+            <div style="font-weight:700;">${esc(fb.isCorrect ? s.synthesisCorrectMsg : s.synthesisWrongMsg)}</div>
+            <div style="margin-top:4px;"><span lang="pi"><strong>${esc(target.pali)}</strong></span> — ${esc(target.answer[this.lang])}</div>
+            <div style="margin-top:4px;font-size:0.88rem;">📐 <em>${esc(target.explanation[this.lang])}</em> (${esc(target.asRef)})</div>
+            <div class="mnem-chapter-pill-links" style="margin-top:8px;">
+              <span style="font-size:0.8rem;font-weight:600;">${esc(s.synthesisChaptersLinked)}</span>
+              ${target.chaptersLinked
+                .map((ch) => `<button type="button" class="mnem-rel-chip mnem-chapter-jump-chip" data-bin-chapter="${ch}">${this.loc(`Cap. ${ch}`, `Ch. ${ch}`, `Cap. ${ch}`)} →</button>`)
+                .join("")}
+            </div>
+          </div>`
+            : ""}
+        <div class="mnem-challenge-actions" style="margin-top:12px;">
+          <button type="button" class="mnem-btn mnem-btn-primary" id="mnem-syn-next">${esc(s.binNextBtn)}</button>
+        </div>
       </div>
     `;
     }
     renderNarySwitchControls(chapter, sw, _s) {
+        const clean = this.progress.level >= 2;
         const renderRow = (label, key, options) => {
             return `
         <div class="mnem-switch-group">
@@ -2153,17 +3069,39 @@ export class MnemonicLabUI {
                 const lensOptions = [
                     { val: "sampayoga", label: this.loc("Sampayoga-naya (52 Cetasikas · Linhas)", "Sampayoga-naya (52 Cetasikas · Rows)", "Sampayoga-naya (52 Cetasikas · Filas)") },
                     { val: "sangaha", label: this.loc("Saṅgaha-naya (33 Classes · Colunas)", "Saṅgaha-naya (33 Classes · Columns)", "Saṅgaha-naya (33 Clases · Columnas)") },
+                    { val: "laws", label: this.loc("Leis de Sampayoga & Aniyata (12)", "Sampayoga & Aniyata Laws (12)", "Leyes de Sampayoga y Aniyata (12)") },
                 ];
                 const currentLens = String(sw.lens ?? "sampayoga");
+                if (currentLens === "laws") {
+                    const lawGroupOptions = [
+                        { val: "sampayoga_marks4", label: this.loc("4 Marcas de Sampayoga (AS II.1)", "4 Sampayoga Marks (AS II.1)", "4 Marcas de Sampayoga (AS II.1)") },
+                        { val: "pakinnaka_excl6", label: this.loc("6 Exclusões dos Pakiṇṇakas (AS II.19)", "6 Pakiṇṇaka Exclusions (AS II.19)", "6 Exclusiones de Pakiṇṇakas (AS II.19)") },
+                        { val: "regularity_laws", label: this.loc("Regularidade & Diferenciais (11 / 14)", "Regularity & Differentials (11 / 14)", "Regularidad y Diferenciales (11 / 14)") },
+                    ];
+                    const curLg = String(sw.lawGroup ?? "sampayoga_marks4");
+                    const maxLawSlots = curLg === "pakinnaka_excl6" ? 6 : curLg === "sampayoga_marks4" ? 4 : 2;
+                    const slotOptions = Array.from({ length: maxLawSlots }, (_, i) => ({
+                        val: i + 1,
+                        label: this.loc(`Lei #${i + 1}`, `Law #${i + 1}`, `Ley #${i + 1}`),
+                    }));
+                    const metricVals = curLg === "sampayoga_marks4" ? [4] : curLg === "pakinnaka_excl6" ? [66, 55, 11, 16, 70, 20] : [11, 14];
+                    const metricOptions = metricVals.map((n) => ({ val: n, label: `${n}` }));
+                    return `
+            ${renderRow(this.loc("1. Método Canônico do Cap. 2 (Naya):", "1. Canonical Method of Ch. 2 (Naya):", "1. Método Canónico del Cap. 2 (Naya):"), "lens", lensOptions)}
+            ${renderRow(this.loc("2. Grupo de Leis do Cap. 2:", "2. Ch. 2 Law Group:", "2. Grupo de Leyes del Cap. 2:"), "lawGroup", lawGroupOptions)}
+            ${renderRow(this.loc("3. Posição na Lei:", "3. Position in Law:", "3. Posición en la Ley:"), "slot", slotOptions)}
+            ${renderRow(this.loc("4. Métrica Canônica (Exclusão / Total):", "4. Canonical Metric (Exclusion / Total):", "4. Métrica Canónica (Exclusión / Total):"), "metric", metricOptions)}
+          `;
+                }
                 if (currentLens === "sangaha") {
                     const sphereOptions = [
-                        { val: "lokuttara", label: this.loc("Lokuttara (5 Jhānas: 36–33)", "Lokuttara (5 Jhānas: 36–33)", "Lokuttara (5 Jhānas: 36–33)") },
-                        { val: "mahaggata", label: this.loc("Mahaggata (5 Jhānas: 35–30)", "Mahaggata (5 Jhānas: 35–30)", "Mahaggata (5 Jhānas: 35–30)") },
-                        { val: "kamasobhana_kusala", label: this.loc("Mahākusala (4 Pares: 38–36)", "Mahākusala (4 Pairs: 38–36)", "Mahākusala (4 Pares: 38–36)") },
-                        { val: "kamasobhana_kiriya", label: this.loc("Mahākiriya (4 Pares: 35–33)", "Mahākiriya (4 Pairs: 35–33)", "Mahākiriya (4 Pares: 35–33)") },
-                        { val: "kamasobhana_vipaka", label: this.loc("Mahāvipāka (4 Pares: 33–31)", "Mahāvipāka (4 Pairs: 33–31)", "Mahāvipāka (4 Pares: 33–31)") },
-                        { val: "akusala", label: this.loc("Akusala (7 Classes: 19–15)", "Akusala (7 Classes: 19–15)", "Akusala (7 Clases: 19–15)") },
-                        { val: "ahetuka", label: this.loc("Ahetuka (4 Classes: 12–7)", "Ahetuka (4 Classes: 12–7)", "Ahetuka (4 Clases: 12–7)") },
+                        { val: "lokuttara", label: clean ? "Lokuttara" : this.loc("Lokuttara (5 Jhānas: 36–33)", "Lokuttara (5 Jhānas: 36–33)", "Lokuttara (5 Jhānas: 36–33)") },
+                        { val: "mahaggata", label: clean ? "Mahaggata" : this.loc("Mahaggata (5 Jhānas: 35–30)", "Mahaggata (5 Jhānas: 35–30)", "Mahaggata (5 Jhānas: 35–30)") },
+                        { val: "kamasobhana_kusala", label: clean ? "Mahākusala" : this.loc("Mahākusala (4 Pares: 38–36)", "Mahākusala (4 Pairs: 38–36)", "Mahākusala (4 Pares: 38–36)") },
+                        { val: "kamasobhana_kiriya", label: clean ? "Mahākiriya" : this.loc("Mahākiriya (4 Pares: 35–33)", "Mahākiriya (4 Pairs: 35–33)", "Mahākiriya (4 Pares: 35–33)") },
+                        { val: "kamasobhana_vipaka", label: clean ? "Mahāvipāka" : this.loc("Mahāvipāka (4 Pares: 33–31)", "Mahāvipāka (4 Pairs: 33–31)", "Mahāvipāka (4 Pares: 33–31)") },
+                        { val: "akusala", label: clean ? "Akusala" : this.loc("Akusala (7 Classes: 19–15)", "Akusala (7 Classes: 19–15)", "Akusala (7 Clases: 19–15)") },
+                        { val: "ahetuka", label: clean ? "Ahetuka" : this.loc("Ahetuka (4 Classes: 12–7)", "Ahetuka (4 Classes: 12–7)", "Ahetuka (4 Clases: 12–7)") },
                     ];
                     const currentSphere = String(sw.sphere ?? "lokuttara");
                     let slotOptions = [];
@@ -2171,10 +3109,10 @@ export class MnemonicLabUI {
                     if (currentSphere === "lokuttara" || currentSphere === "mahaggata") {
                         slotOptions = [
                             { val: 1, label: this.loc("1.º Jhāna", "1st Jhāna", "1.er Jhāna") },
-                            { val: 2, label: this.loc("2.º Jhāna (−Vitakka)", "2nd Jhāna (−Vitakka)", "2.º Jhāna (−Vitakka)") },
-                            { val: 3, label: this.loc("3.º Jhāna (−Vicāra)", "3rd Jhāna (−Vicāra)", "3.er Jhāna (−Vicāra)") },
-                            { val: 4, label: this.loc("4.º Jhāna (−Pīti)", "4th Jhāna (−Pīti)", "4.º Jhāna (−Pīti)") },
-                            { val: 5, label: this.loc("5.º Jhāna (Upekkhā)", "5th Jhāna (Upekkhā)", "5.º Jhāna (Upekkhā)") },
+                            { val: 2, label: clean ? this.loc("2.º Jhāna", "2nd Jhāna", "2.º Jhāna") : this.loc("2.º Jhāna (−Vitakka)", "2nd Jhāna (−Vitakka)", "2.º Jhāna (−Vitakka)") },
+                            { val: 3, label: clean ? this.loc("3.º Jhāna", "3rd Jhāna", "3.er Jhāna") : this.loc("3.º Jhāna (−Vicāra)", "3rd Jhāna (−Vicāra)", "3.er Jhāna (−Vicāra)") },
+                            { val: 4, label: clean ? this.loc("4.º Jhāna", "4th Jhāna", "4.º Jhāna") : this.loc("4.º Jhāna (−Pīti)", "4th Jhāna (−Pīti)", "4.º Jhāna (−Pīti)") },
+                            { val: 5, label: clean ? this.loc("5.º Jhāna", "5th Jhāna", "5.º Jhāna") : this.loc("5.º Jhāna (Upekkhā)", "5th Jhāna (Upekkhā)", "5.º Jhāna (Upekkhā)") },
                         ];
                         cetCountVals = currentSphere === "lokuttara" ? [36, 35, 34, 33] : [35, 34, 33, 32, 30];
                     }
@@ -2227,33 +3165,33 @@ export class MnemonicLabUI {
           `;
                 }
                 const groupOptions = [
-                    { val: "aññasamana", label: this.loc("Aññasamāna (13 Neutros: 7+6)", "Aññasamāna (13 Ethically Variable: 7+6)", "Aññasamāna (13 Neutros: 7+6)") },
-                    { val: "akusala", label: this.loc("Akusala (14 Insalubres: 4+3+4+2+1)", "Akusala (14 Unwholesome: 4+3+4+2+1)", "Akusala (14 Inhábiles: 4+3+4+2+1)") },
-                    { val: "sobhana", label: this.loc("Sobhana (25 Belos: 19+3+2+1)", "Sobhana (25 Beautiful: 19+3+2+1)", "Sobhana (25 Hermosos: 19+3+2+1)") },
+                    { val: "aññasamana", label: clean ? "Aññasamāna" : this.loc("Aññasamāna (13 Neutros: 7+6)", "Aññasamāna (13 Ethically Variable: 7+6)", "Aññasamāna (13 Neutros: 7+6)") },
+                    { val: "akusala", label: clean ? "Akusala" : this.loc("Akusala (14 Insalubres: 4+3+4+2+1)", "Akusala (14 Unwholesome: 4+3+4+2+1)", "Akusala (14 Inhábiles: 4+3+4+2+1)") },
+                    { val: "sobhana", label: clean ? "Sobhana" : this.loc("Sobhana (25 Belos: 19+3+2+1)", "Sobhana (25 Beautiful: 19+3+2+1)", "Sobhana (25 Hermosos: 19+3+2+1)") },
                 ];
                 const currentGroup = String(sw.group ?? "aññasamana");
                 let subOptions = [];
                 if (currentGroup === "aññasamana") {
                     subOptions = [
-                        { val: "sabbacitta", label: this.loc("Sabbacittasādhāraṇa (7 Universais)", "Sabbacittasādhāraṇa (7 Universals)", "Sabbacittasādhāraṇa (7 Universales)") },
-                        { val: "pakinnaka", label: this.loc("Pakiṇṇaka (6 Particulares)", "Pakiṇṇaka (6 Occasionals)", "Pakiṇṇaka (6 Particulares)") },
+                        { val: "sabbacitta", label: clean ? "Sabbacittasādhāraṇa" : this.loc("Sabbacittasādhāraṇa (7 Universais)", "Sabbacittasādhāraṇa (7 Universals)", "Sabbacittasādhāraṇa (7 Universales)") },
+                        { val: "pakinnaka", label: clean ? "Pakiṇṇaka" : this.loc("Pakiṇṇaka (6 Particulares)", "Pakiṇṇaka (6 Occasionals)", "Pakiṇṇaka (6 Particulares)") },
                     ];
                 }
                 else if (currentGroup === "akusala") {
                     subOptions = [
-                        { val: "moha", label: this.loc("Moha-catukka (4 Universais Insalubres)", "Moha-catukka (4 Unwholesome Universals)", "Moha-catukka (4 Universales Inhábiles)") },
-                        { val: "lobha", label: this.loc("Lobha-tríade (3 Raiz Apego)", "Lobha-triad (3 Greed Root)", "Tríada de Lobha (3 Raíz Apego)") },
-                        { val: "dosa", label: this.loc("Dosa-catukka (4 Raiz Aversão)", "Dosa-catukka (4 Hatred Root)", "Dosa-catukka (4 Raíz Aversión)") },
-                        { val: "thina", label: this.loc("Thīna-duka (2 Torpor/Lentidão)", "Thīna-duka (2 Sloth & Torpor)", "Thīna-duka (2 Pereza/Torpor)") },
-                        { val: "vicikiccha", label: this.loc("Vicikicchā (1 Dúvida Cética)", "Vicikicchā (1 Skeptical Doubt)", "Vicikicchā (1 Duda Escéptica)") },
+                        { val: "moha", label: clean ? "Moha-catukka" : this.loc("Moha-catukka (4 Universais Insalubres)", "Moha-catukka (4 Unwholesome Universals)", "Moha-catukka (4 Universales Inhábiles)") },
+                        { val: "lobha", label: clean ? "Lobha-tika" : this.loc("Lobha-tríade (3 Raiz Apego)", "Lobha-triad (3 Greed Root)", "Tríada de Lobha (3 Raíz Apego)") },
+                        { val: "dosa", label: clean ? "Dosa-catukka" : this.loc("Dosa-catukka (4 Raiz Aversão)", "Dosa-catukka (4 Hatred Root)", "Dosa-catukka (4 Raíz Aversión)") },
+                        { val: "thina", label: clean ? "Thīna-duka" : this.loc("Thīna-duka (2 Torpor/Lentidão)", "Thīna-duka (2 Sloth & Torpor)", "Thīna-duka (2 Pereza/Torpor)") },
+                        { val: "vicikiccha", label: clean ? "Vicikicchā" : this.loc("Vicikicchā (1 Dúvida Cética)", "Vicikicchā (1 Skeptical Doubt)", "Vicikicchā (1 Duda Escéptica)") },
                     ];
                 }
                 else {
                     subOptions = [
-                        { val: "sadharana", label: this.loc("Sobhanasādhāraṇa (19 Universais Belos)", "Sobhanasādhāraṇa (19 Beautiful Universals)", "Sobhanasādhāraṇa (19 Universales Hermosos)") },
-                        { val: "virati", label: this.loc("Virati (3 Abstenções Éticas)", "Virati (3 Ethical Abstinences)", "Virati (3 Abstenciones Éticas)") },
-                        { val: "appamanna", label: this.loc("Appamaññā (2 Ilimitados: Compaixão/Alegria)", "Appamaññā (2 Illimitables: Compassion/Joy)", "Appamaññā (2 Ilimitables: Compasión/Alegría)") },
-                        { val: "panna", label: this.loc("Paññindriya (1 Faculdade da Sabedoria)", "Paññindriya (1 Wisdom Faculty)", "Paññindriya (1 Facultad de Sabiduría)") },
+                        { val: "sadharana", label: clean ? "Sobhanasādhāraṇa" : this.loc("Sobhanasādhāraṇa (19 Universais Belos)", "Sobhanasādhāraṇa (19 Beautiful Universals)", "Sobhanasādhāraṇa (19 Universales Hermosos)") },
+                        { val: "virati", label: clean ? "Virati" : this.loc("Virati (3 Abstenções Éticas)", "Virati (3 Ethical Abstinences)", "Virati (3 Abstenciones Éticas)") },
+                        { val: "appamanna", label: clean ? "Appamaññā" : this.loc("Appamaññā (2 Ilimitados: Compaixão/Alegria)", "Appamaññā (2 Illimitables: Compassion/Joy)", "Appamaññā (2 Ilimitables: Compasión/Alegría)") },
+                        { val: "panna", label: clean ? "Paññindriya" : this.loc("Paññindriya (1 Faculdade da Sabedoria)", "Paññindriya (1 Wisdom Faculty)", "Paññindriya (1 Facultad de Sabiduría)") },
                     ];
                 }
                 const currentSub = String(sw.sub ?? (subOptions[0]?.val ?? "sabbacitta"));
@@ -2284,41 +3222,47 @@ export class MnemonicLabUI {
                     val: i + 1,
                     label: this.loc(`Posição #${i + 1}`, `Position #${i + 1}`, `Posición #${i + 1}`),
                 }));
+                const yogitaOptions = [
+                    { val: "niyata", label: clean ? "Niyata" : this.loc("Niyata (Fixo · 41)", "Niyata (Fixed · 41)", "Niyata (Fijo · 41)") },
+                    { val: "aniyata_nana", label: clean ? "Aniyata (Nānā)" : this.loc("Aniyata Separado (9)", "Aniyata Separate (9)", "Aniyata Separado (9)") },
+                    { val: "aniyata_saha", label: clean ? "Aniyata (Saha)" : this.loc("Aniyata Conjunto (2 · Thīna-Middha)", "Aniyata Paired (2 · Thīna-Middha)", "Aniyata Conjunto (2 · Thīna-Middha)") },
+                ];
                 const sampayogaOptions = [
-                    { val: 121, label: "121 (Sabbacitta)" },
-                    { val: 110, label: "110 (Adhimokkha)" },
-                    { val: 105, label: "105 (Vīriya)" },
-                    { val: 101, label: "101 (Chanda)" },
-                    { val: 91, label: "91 (19 Sobhanasādhāraṇa)" },
-                    { val: 79, label: "79 (Paññindriya)" },
-                    { val: 66, label: "66 (Vicāra)" },
-                    { val: 55, label: "55 (Vitakka)" },
-                    { val: 51, label: "51 (Pīti)" },
-                    { val: 48, label: "48 (3 Virati)" },
-                    { val: 28, label: "28 (2 Appamaññā)" },
-                    { val: 12, label: "12 (Moha-catukka)" },
-                    { val: 8, label: "8 (Lobha)" },
-                    { val: 5, label: "5 (Thīna-Middha)" },
-                    { val: 4, label: "4 (Diṭṭhi / Māna)" },
-                    { val: 2, label: "2 (Dosa-catukka)" },
-                    { val: 1, label: "1 (Vicikicchā)" },
+                    { val: 121, label: clean ? "121" : "121 (Sabbacitta)" },
+                    { val: 110, label: clean ? "110" : "110 (Adhimokkha)" },
+                    { val: 105, label: clean ? "105" : "105 (Vīriya)" },
+                    { val: 101, label: clean ? "101" : "101 (Chanda)" },
+                    { val: 91, label: clean ? "91" : "91 (19 Sobhanasādhāraṇa)" },
+                    { val: 79, label: clean ? "79" : "79 (Paññindriya)" },
+                    { val: 66, label: clean ? "66" : "66 (Vicāra)" },
+                    { val: 55, label: clean ? "55" : "55 (Vitakka)" },
+                    { val: 51, label: clean ? "51" : "51 (Pīti)" },
+                    { val: 48, label: clean ? "48" : "48 (3 Virati)" },
+                    { val: 28, label: clean ? "28" : "28 (2 Appamaññā)" },
+                    { val: 12, label: clean ? "12" : "12 (Moha-catukka)" },
+                    { val: 8, label: clean ? "8" : "8 (Lobha)" },
+                    { val: 5, label: clean ? "5" : "5 (Thīna-Middha)" },
+                    { val: 4, label: clean ? "4" : "4 (Diṭṭhi / Māna)" },
+                    { val: 2, label: clean ? "2" : "2 (Dosa-catukka)" },
+                    { val: 1, label: clean ? "1" : "1 (Vicikicchā)" },
                 ];
                 return `
           ${renderRow(this.loc("1. Método Canônico do Cap. 2 (Naya):", "1. Canonical Method of Ch. 2 (Naya):", "1. Método Canónico del Cap. 2 (Naya):"), "lens", lensOptions)}
           ${renderRow(this.loc("2. Grupo Canônico Principal (Cetasika-bheda):", "2. Main Canonical Group (Cetasika-bheda):", "2. Grupo Canónico Principal (Cetasika-bheda):"), "group", groupOptions)}
           ${renderRow(this.loc("3. Subfamília / Bloco:", "3. Subfamily / Block:", "3. Subfamilia / Bloque:"), "sub", subOptions)}
           ${renderRow(this.loc("4. Posição no Bloco:", "4. Slot Position:", "4. Posición en el Bloque:"), "slot", slotOptions)}
-          ${renderRow(this.loc("5. Valência / Associação de Cittas (Sampayoga — 121):", "5. Valence / Association with Cittas (Sampayoga — 121):", "5. Valencia / Asociación de Cittas (Sampayoga — 121):"), "sampayoga", sampayogaOptions)}
+          ${renderRow(this.loc("5. Regularidade (AS II.33–34 — Niyata vs. Aniyata):", "5. Regularity (AS II.33–34 — Fixed vs. Occasional):", "5. Regularidad (AS II.33–34 — Niyata vs. Aniyata):"), "yogita", yogitaOptions)}
+          ${renderRow(this.loc("6. Valência / Associação de Cittas (Sampayoga — 121):", "6. Valence / Association with Cittas (Sampayoga — 121):", "6. Valencia / Asociación de Cittas (Sampayoga — 121):"), "sampayoga", sampayogaOptions)}
         `;
             }
             case 3: {
                 const catOptions = [
-                    { val: "vedana", label: this.loc("1. Vedanā (5 Sensações · 121)", "1. Vedanā (5 Feelings · 121)", "1. Vedanā (5 Sensaciones · 121)") },
-                    { val: "hetu", label: this.loc("2. Hetu (6 Raízes & Partição 89)", "2. Hetu (6 Roots & 89-Partition)", "2. Hetu (6 Raíces y Partición 89)") },
-                    { val: "kicca", label: this.loc("3. Kicca (14 Funções & Multiplicidade)", "3. Kicca (14 Functions & Multiplicity)", "3. Kicca (14 Funciones y Multiplicidad)") },
-                    { val: "dvara", label: this.loc("4. Dvāra (6 Portas & Partição 5-vias)", "4. Dvāra (6 Doors & 5-Way Partition)", "4. Dvāra (6 Puertas y Partición 5-vías)") },
-                    { val: "arammana", label: this.loc("5. Ālambaṇa (7 Classes · 91 & 6 Objetos)", "5. Ālambaṇa (7 Classes · 91 & 6 Objects)", "5. Ālambaṇa (7 Clases · 91 y 6 Objetos)") },
-                    { val: "vatthu", label: this.loc("6. Vatthu (43+42+4 & 6/3/0 nos Reinos)", "6. Vatthu (43+42+4 & 6/3/0 in Realms)", "6. Vatthu (43+42+4 y 6/3/0 en Reinos)") },
+                    { val: "vedana", label: clean ? "1. Vedanā" : this.loc("1. Vedanā (5 Sensações + Tríade)", "1. Vedanā (5 Feelings + Triad)", "1. Vedanā (5 Sensaciones + Tríada)") },
+                    { val: "hetu", label: clean ? "2. Hetu" : this.loc("2. Hetu (6 Raízes & Partição 89)", "2. Hetu (6 Roots & 89-Partition)", "2. Hetu (6 Raíces y Partición 89)") },
+                    { val: "kicca", label: clean ? "3. Kicca" : this.loc("3. Kicca (14 Funções · 10 Ṭhānas)", "3. Kicca (14 Functions · 10 Ṭhānas)", "3. Kicca (14 Funciones · 10 Ṭhānas)") },
+                    { val: "dvara", label: clean ? "4. Dvāra" : this.loc("4. Dvāra (6 Portas · 46/porta)", "4. Dvāra (6 Doors · 46/door)", "4. Dvāra (6 Puertas · 46/puerta)") },
+                    { val: "arammana", label: clean ? "5. Ālambaṇa" : this.loc("5. Ālambaṇa (7 Classes · 6 Objetos · Tempo)", "5. Ālambaṇa (7 Classes · 6 Objects · Time)", "5. Ālambaṇa (7 Clases · 6 Objetos · Tiempo)") },
+                    { val: "vatthu", label: clean ? "6. Vatthu" : this.loc("6. Vatthu (43+42+4 · 6/3/0 · 7/4/1)", "6. Vatthu (43+42+4 · 6/3/0 · 7/4/1)", "6. Vatthu (43+42+4 · 6/3/0 · 7/4/1)") },
                 ];
                 const currentCat = String(sw.category ?? "vedana");
                 let itemOptions = [];
@@ -2330,8 +3274,11 @@ export class MnemonicLabUI {
                         { val: "sukha", label: this.loc("Sukha (Prazer corporal)", "Sukha (Bodily pleasure)", "Sukha (Placer corporal)") },
                         { val: "dukkha", label: this.loc("Dukkha (Dor corporal)", "Dukkha (Bodily pain)", "Dukkha (Dolor corporal)") },
                         { val: "upekkha", label: this.loc("Upekkhā (Equanimidade)", "Upekkhā (Equanimity)", "Upekkhā (Ecuanimidad)") },
+                        { val: "triad_sukha", label: this.loc("Tríade: Sukhavedanā (Agradável)", "Triad: Sukhavedanā (Pleasant)", "Tríada: Sukhavedanā (Agradable)") },
+                        { val: "triad_dukkha", label: this.loc("Tríade: Dukkhavedanā (Desagradável)", "Triad: Dukkhavedanā (Painful)", "Tríada: Dukkhavedanā (Desagradable)") },
+                        { val: "triad_adukkhamasukha", label: this.loc("Tríade: Adukkhamasukhā (Neutra)", "Triad: Adukkhamasukhā (Neutral)", "Tríada: Adukkhamasukhā (Neutra)") },
                     ];
-                    countVals = [1, 2, 55, 62];
+                    countVals = [1, 2, 3, 55, 62, 63];
                 }
                 else if (currentCat === "hetu") {
                     itemOptions = [
@@ -2364,17 +3311,19 @@ export class MnemonicLabUI {
                         { val: "javana", label: this.loc("12. Javana (Impulsão)", "12. Javana (Impulsion)", "12. Javana (Impulsión)") },
                         { val: "tadarammana", label: this.loc("13. Tadārammaṇa (Registro)", "13. Tadārammaṇa (Registration)", "13. Tadārammaṇa (Registro)") },
                         { val: "cuti", label: this.loc("14. Cuti (Morte)", "14. Cuti (Decease)", "14. Cuti (Muerte)") },
+                        { val: "thana_10", label: this.loc("Estações: Ṭhāna (14 → Estações)", "Stations: Ṭhāna (14 → Stations)", "Estaciones: Ṭhāna (14 → Estaciones)") },
                         { val: "ekakicca", label: this.loc("Partição: Ekakicca (1 Função)", "Partition: Ekakicca (1 Function)", "Partición: Ekakicca (1 Función)") },
                         { val: "dukicca", label: this.loc("Partição: Dukicca (2 Funções)", "Partition: Dukicca (2 Functions)", "Partición: Dukicca (2 Funciones)") },
                         { val: "tikicca", label: this.loc("Partição: Tikicca (3 Funções)", "Partition: Tikicca (3 Functions)", "Partición: Tikicca (3 Funciones)") },
                         { val: "catukicca", label: this.loc("Partição: Catukicca (4 Funções)", "Partition: Catukicca (4 Functions)", "Partición: Catukicca (4 Funciones)") },
                         { val: "pancakicca", label: this.loc("Partição: Pañcakicca (5 Funções)", "Partition: Pañcakicca (5 Functions)", "Partición: Pañcakicca (5 Funciones)") },
                     ];
-                    countVals = [1, 2, 3, 8, 9, 11, 19, 55, 68];
+                    countVals = [1, 2, 3, 8, 9, 10, 11, 19, 55, 68];
                 }
                 else if (currentCat === "dvara") {
                     itemOptions = [
                         { val: "pancadvara", label: this.loc("Total: Pañcadvāra (5 Portas)", "Total: Pañcadvāra (5 Doors)", "Total: Pañcadvāra (5 Puertas)") },
+                        { val: "per_sense_46", label: this.loc("Por Porta Sensorial Isolada (Ekekasmiṃ Dvāre)", "Per Single Sense-Door (Ekekasmiṃ Dvāre)", "Por Puerta Sensorial Aislada (Ekekasmiṃ Dvāre)") },
                         { val: "manodvara", label: this.loc("Total: Manodvāra (Porta Mental)", "Total: Manodvāra (Mind Door)", "Total: Manodvāra (Puerta Mental)") },
                         { val: "dvaravimutta", label: this.loc("Total: Dvāravimutta (Livre)", "Total: Dvāravimutta (Door-Free)", "Total: Dvāravimutta (Libre)") },
                         { val: "ekadvarika", label: this.loc("Partição: Ekadvārika (1 Porta)", "Partition: Ekadvārika (1 Door)", "Partición: Ekadvārika (1 Puerta)") },
@@ -2383,7 +3332,7 @@ export class MnemonicLabUI {
                         { val: "chadvarika_vimutta", label: this.loc("Partição: 6 Portas e Livre", "Partition: 6 Doors & Free", "Partición: 6 Puertas y Libre") },
                         { val: "sabbatha_vimutta", label: this.loc("Partição: Sempre Livre", "Partition: Always Free", "Partición: Siempre Libre") },
                     ];
-                    countVals = [3, 9, 10, 19, 31, 36, 54, 67];
+                    countVals = [3, 9, 10, 19, 31, 36, 46, 54, 67];
                 }
                 else if (currentCat === "arammana") {
                     itemOptions = [
@@ -2394,28 +3343,42 @@ export class MnemonicLabUI {
                         { val: "lokuttara_vajjita", label: this.loc("5. Tudo Exceto Lokuttara", "5. All Except Supramundane", "5. Todo Excepto Lokuttara") },
                         { val: "arahatta_vajjita", label: this.loc("6. Tudo Exceto Magga/Phala Arahant", "6. All Except Arahant Path/Fruit", "6. Todo Excepto Magga/Phala Arahant") },
                         { val: "sabbarammana", label: this.loc("7. Sabbārammaṇa (Todos os Objetos)", "7. Sabbārammaṇa (All Objects)", "7. Sabbārammaṇa (Todos los Objetos)") },
-                        { val: "dhammarammana_6", label: this.loc("6 Componentes de Dhammārammaṇa", "6 Constituents of Dhammārammaṇa", "6 Componentes de Dhammārammaṇa") },
+                        { val: "dhammarammana_6", label: this.loc("Síntese: Dhammārammaṇa", "Summary: Dhammārammaṇa", "Síntesis: Dhammārammaṇa") },
+                        { val: "dh_pasada", label: "Dhammārammaṇa: Pasādarūpa" },
+                        { val: "dh_sukhuma", label: "Dhammārammaṇa: Sukhumarūpa" },
+                        { val: "dh_citta", label: "Dhammārammaṇa: Citta" },
+                        { val: "dh_cetasika", label: "Dhammārammaṇa: Cetasika" },
+                        { val: "dh_nibbana", label: "Dhammārammaṇa: Nibbāna" },
+                        { val: "dh_pannatti", label: "Dhammārammaṇa: Paññatti" },
+                        { val: "time_5doors", label: this.loc("Tempo: 5 Portas (Paccuppanna)", "Time: 5 Doors (Present)", "Tiempo: 5 Puertas (Presente)") },
+                        { val: "time_mind", label: this.loc("Tempo: Porta Mental (Tekālika+Vimutta)", "Time: Mind-Door (3 Times+Timeless)", "Tiempo: Puerta Mental (4 Modos)") },
+                        { val: "time_vimutta", label: this.loc("Tempo: Livres de Porta (Signos)", "Time: Door-Free (Death-Signs)", "Tiempo: Libres de Puerta (Signos)") },
                     ];
-                    countVals = [5, 6, 8, 20, 21, 25];
+                    countVals = [0, 1, 3, 4, 5, 6, 8, 16, 20, 21, 25, 52, 89];
                 }
                 else {
                     itemOptions = [
                         { val: "nissaya", label: this.loc("Nissāya (Sempre c/ Base)", "Nissāya (Always Base-Dependent)", "Nissāya (Siempre con Base)") },
                         { val: "nissaya_anissaya", label: this.loc("Nissāya vā Anissāya vā (Com ou Sem)", "Nissāya vā Anissāya vā (With or Without)", "Nissāya vā Anissāya vā (Con o Sin)") },
                         { val: "anissita", label: this.loc("Anissita (Nunca c/ Base)", "Anissita (Never Base-Dependent)", "Anissita (Nunca con Base)") },
-                        { val: "vatthu_kamaloka", label: this.loc("Reino: Kāmaloka (6 Vatthus)", "Realm: Kāmaloka (6 Bases)", "Reino: Kāmaloka (6 Bases)") },
-                        { val: "vatthu_rupaloka", label: this.loc("Reino: Rūpaloka (3 Vatthus)", "Realm: Rūpaloka (3 Bases)", "Reino: Rūpaloka (3 Bases)") },
-                        { val: "vatthu_arupaloka", label: this.loc("Reino: Arūpaloka (0 Vatthus)", "Realm: Arūpaloka (0 Bases)", "Reino: Arūpaloka (0 Bases)") },
+                        { val: "vatthu_kamaloka", label: clean ? "Vatthu: Kāmaloka" : this.loc("Reino: Kāmaloka (6 Vatthus)", "Realm: Kāmaloka (6 Bases)", "Reino: Kāmaloka (6 Bases)") },
+                        { val: "vatthu_rupaloka", label: clean ? "Vatthu: Rūpaloka" : this.loc("Reino: Rūpaloka (3 Vatthus)", "Realm: Rūpaloka (3 Bases)", "Reino: Rūpaloka (3 Bases)") },
+                        { val: "vatthu_arupaloka", label: clean ? "Vatthu: Arūpaloka" : this.loc("Reino: Arūpaloka (0 Vatthus)", "Realm: Arūpaloka (0 Bases)", "Reino: Arūpaloka (0 Bases)") },
+                        { val: "dhatu_kama", label: clean ? "Dhātus: Kāmaloka" : this.loc("Dhātus: Kāmaloka (7 Viññāṇadhātus)", "Dhātus: Kāmaloka (7 Elements)", "Dhātus: Kāmaloka (7 Elementos)") },
+                        { val: "dhatu_rupa", label: clean ? "Dhātus: Rūpaloka" : this.loc("Dhātus: Rūpaloka (4 Viññāṇadhātus)", "Dhātus: Rūpaloka (4 Elements)", "Dhātus: Rūpaloka (4 Elementos)") },
+                        { val: "dhatu_arupa", label: clean ? "Dhātus: Arūpaloka" : this.loc("Dhātus: Arūpaloka (1 Manoviññāṇa)", "Dhātus: Arūpaloka (1 Element)", "Dhātus: Arūpaloka (1 Elemento)") },
                     ];
-                    countVals = [0, 3, 4, 6, 42, 43];
+                    countVals = [0, 1, 3, 4, 6, 7, 42, 43];
                 }
                 const countOptions = countVals.map((n) => ({
                     val: n,
-                    label: currentCat === "vatthu" && (n === 0 || n === 3 || n === 6)
-                        ? this.loc(`${n} Vatthus`, `${n} Bases`, `${n} Bases`)
-                        : n === 1
-                            ? "1 Citta"
-                            : `${n} Cittas`,
+                    label: clean
+                        ? `${n}`
+                        : currentCat === "vatthu" && (n === 0 || n === 3 || n === 6)
+                            ? this.loc(`${n} Vatthus`, `${n} Bases`, `${n} Bases`)
+                            : n === 1
+                                ? "1"
+                                : `${n}`,
                 }));
                 return `
           ${renderRow(this.loc("1. Categoria Mista (Pakiṇṇaka):", "1. Miscellaneous Category (Pakiṇṇaka):", "1. Categoría Mixta (Pakiṇṇaka):"), "category", catOptions)}
@@ -2425,47 +3388,63 @@ export class MnemonicLabUI {
             }
             case 4: {
                 const doorOptions = [
-                    { val: "pancadvara", label: this.loc("1. Pañcadvāra (5 Portas · 4 Vāras)", "1. Pañcadvāra (5 Doors · 4 Vāras)", "1. Pañcadvāra (5 Puertas · 4 Vāras)") },
-                    { val: "manodvara", label: this.loc("2. Manodvāra & Appanā (32/12/8/6)", "2. Manodvāra & Appanā (32/12/8/6)", "2. Manodvāra y Appanā (32/12/8/6)") },
-                    { val: "niyama", label: this.loc("3. Tadārammaṇa & Javana-niyama", "3. Tadārammaṇa & Javana Laws", "3. Leyes Tadārammaṇa y Javana") },
-                    { val: "puggala_bhumi", label: this.loc("4. Puggalabheda & Bhūmivibhāga", "4. Puggalabheda & Bhūmivibhāga", "4. Puggalabheda y Bhūmivibhāga") },
+                    { val: "chakka_6", label: clean ? "1. Cha Chakkāni" : this.loc("1. 6 Hêxades (Chakka · AS IV.2)", "1. 6 Hexads (Chakka · AS IV.2)", "1. 6 Héxadas (Chakka · AS IV.2)") },
+                    { val: "pancadvara", label: clean ? "2. Pañcadvāra" : this.loc("2. Pañcadvāra (5 Portas · 4 Vāras)", "2. Pañcadvāra (5 Doors · 4 Vāras)", "2. Pañcadvāra (5 Puertas · 4 Vāras)") },
+                    { val: "manodvara", label: clean ? "3. Manodvāra & Appanā" : this.loc("3. Manodvāra & Appanā (32/12/8/6)", "3. Manodvāra & Appanā (32/12/8/6)", "3. Manodvāra y Appanā (32/12/8/6)") },
+                    { val: "niyama", label: this.loc("4. Tadārammaṇa & Javana-niyama", "4. Tadārammaṇa & Javana Laws", "4. Leyes Tadārammaṇa y Javana") },
+                    { val: "puggala_bhumi", label: this.loc("5. Puggalabheda & Bhūmivibhāga", "5. Puggalabheda & Bhūmivibhāga", "5. Puggalabheda y Bhūmivibhāga") },
                 ];
                 const currentDoor = String(sw.door ?? "pancadvara");
                 let varaOptions = [];
                 let vithicittaOptions = [];
-                if (currentDoor === "pancadvara") {
+                if (currentDoor === "chakka_6") {
                     varaOptions = [
-                        { val: "tadarammana", label: this.loc("Tadārammaṇavāra (Atimahanta · até Registro)", "Tadārammaṇavāra (Atimahanta · to Registration)", "Tadārammaṇavāra (Atimahanta · hasta Registro)") },
-                        { val: "javana", label: this.loc("Javanavāra (Mahanta · até Javana)", "Javanavāra (Mahanta · to Javana)", "Javanavāra (Mahanta · hasta Javana)") },
-                        { val: "votthabbana", label: this.loc("Voṭṭhabbanavāra (Paritta · até Determinação)", "Voṭṭhabbanavāra (Paritta · to Determining)", "Voṭṭhabbanavāra (Paritta · hasta Determinación)") },
-                        { val: "mogha", label: this.loc("Moghavāra (Atiparitta · Sem Vīthicitta)", "Moghavāra (Atiparitta · Futile Course)", "Moghavāra (Atiparitta · Curso Fútil)") },
-                        { val: "summary_54", label: this.loc("Síntese Pañcadvāra (7·14·54 · 17 Cittakkhaṇas)", "Pañcadvāra Summary (7·14·54 · 17 Cittakkhaṇas)", "Síntesis Pañcadvāra (7·14·54 · 17 Cittakkhaṇas)") },
+                        { val: "ch_vatthu", label: "1. Vatthuchakka" },
+                        { val: "ch_dvara", label: "2. Dvārachakka" },
+                        { val: "ch_arammana", label: "3. Ārammaṇachakka" },
+                        { val: "ch_vinnana", label: "4. Viññāṇachakka" },
+                        { val: "ch_vithi", label: "5. Vīthichakka" },
+                        { val: "ch_visaya", label: "6. Visayappavattichakka" },
+                    ];
+                    vithicittaOptions = [{ val: 6, label: "6" }];
+                }
+                else if (currentDoor === "pancadvara") {
+                    varaOptions = [
+                        { val: "tadarammana", label: clean ? "Tadārammaṇavāra" : this.loc("Tadārammaṇavāra (Atimahanta · até Registro)", "Tadārammaṇavāra (Atimahanta · to Registration)", "Tadārammaṇavāra (Atimahanta · hasta Registro)") },
+                        { val: "javana", label: clean ? "Javanavāra" : this.loc("Javanavāra (Mahanta · até Javana)", "Javanavāra (Mahanta · to Javana)", "Javanavāra (Mahanta · hasta Javana)") },
+                        { val: "votthabbana", label: clean ? "Voṭṭhabbanavāra" : this.loc("Voṭṭhabbanavāra (Paritta · até Determinação)", "Voṭṭhabbanavāra (Paritta · to Determining)", "Voṭṭhabbanavāra (Paritta · hasta Determinación)") },
+                        { val: "mogha", label: clean ? "Moghavāra" : this.loc("Moghavāra (Atiparitta · Sem Vīthicitta)", "Moghavāra (Atiparitta · Futile Course)", "Moghavāra (Atiparitta · Curso Fútil)") },
+                        { val: "summary_54", label: clean ? "Pañcadvāra-saṅgaha" : this.loc("Síntese Pañcadvāra (7·14·54 · 17 Cittakkhaṇas)", "Pañcadvāra Summary (7·14·54 · 17 Cittakkhaṇas)", "Síntesis Pañcadvāra (7·14·54 · 17 Cittakkhaṇas)") },
                     ];
                     vithicittaOptions = [
-                        { val: 14, label: "14 Vīthicittas (Atimahanta)" },
-                        { val: 12, label: "12 Vīthicittas (Mahanta)" },
-                        { val: 6, label: "6–7 Vīthicittas (Paritta)" },
-                        { val: 0, label: "0 Vīthicittas (Moghavāra)" },
-                        { val: 54, label: this.loc("54 Cittas (Síntese das 5 Portas)", "54 Cittas (5-Door Total)", "54 Cittas (Síntesis de 5 Puertas)") },
+                        { val: 14, label: clean ? "14" : "14 Vīthicittas (Atimahanta)" },
+                        { val: 12, label: clean ? "12" : "12 Vīthicittas (Mahanta)" },
+                        { val: 6, label: clean ? "6" : "6–7 Vīthicittas (Paritta)" },
+                        { val: 0, label: clean ? "0" : "0 Vīthicittas (Moghavāra)" },
+                        { val: 54, label: clean ? "54" : this.loc("54 Cittas (Síntese das 5 Portas)", "54 Cittas (5-Door Total)", "54 Cittas (Síntesis de 5 Puertas)") },
                     ];
                 }
                 else if (currentDoor === "manodvara") {
                     varaOptions = [
-                        { val: "tadarammana", label: this.loc("Vibhūtārammaṇa (Claro · até Tadārammaṇa)", "Vibhūtārammaṇa (Clear · to Tadārammaṇa)", "Vibhūtārammaṇa (Claro · hasta Tadārammaṇa)") },
-                        { val: "javana", label: this.loc("Avibhūtārammaṇa (Obscuro · até Javana)", "Avibhūtārammaṇa (Obscure · to Javana)", "Avibhūtārammaṇa (Oscuro · hasta Javana)") },
-                        { val: "appana", label: this.loc("Appanāvīthi (Estágios Preliminares + Absorção)", "Appanāvīthi (Preliminary Stages + Absorption)", "Appanāvīthi (Etapas Preliminares + Absorción)") },
+                        { val: "tadarammana", label: clean ? "Vibhūtārammaṇa" : this.loc("Vibhūtārammaṇa (Claro · até Tadārammaṇa)", "Vibhūtārammaṇa (Clear · to Tadārammaṇa)", "Vibhūtārammaṇa (Claro · hasta Tadārammaṇa)") },
+                        { val: "javana", label: clean ? "Avibhūtārammaṇa" : this.loc("Avibhūtārammaṇa (Obscuro · até Javana)", "Avibhūtārammaṇa (Obscure · to Javana)", "Avibhūtārammaṇa (Oscuro · hasta Javana)") },
+                        { val: "appana", label: clean ? "Appanāvīthi" : this.loc("Appanāvīthi (Estágios Preliminares + Absorção)", "Appanāvīthi (Preliminary Stages + Absorption)", "Appanāvīthi (Etapas Preliminares + Absorción)") },
                         { val: "appana_som_kus", label: this.loc("Transição: Mahākusala Somanassa → Appanā", "Transition: Somanassa Mahākusala → Appanā", "Transición: Mahākusala Somanassa → Appanā") },
                         { val: "appana_upe_kus", label: this.loc("Transição: Mahākusala Upekkhā → Appanā", "Transition: Upekkhā Mahākusala → Appanā", "Transición: Mahākusala Upekkhā → Appanā") },
                         { val: "appana_som_kir", label: this.loc("Transição: Mahākiriya Somanassa → Appanā", "Transition: Somanassa Mahākiriya → Appanā", "Transición: Mahākiriya Somanassa → Appanā") },
                         { val: "appana_upe_kir", label: this.loc("Transição: Mahākiriya Upekkhā → Appanā", "Transition: Upekkhā Mahākiriya → Appanā", "Transición: Mahākiriya Upekkhā → Appanā") },
+                        { val: "gotrabhu_vodana", label: "Gotrabhū / Vodāna" },
+                        { val: "magga_phala_ratio", label: this.loc("Lei: 1 Magga → 2/3 Phalas", "Law: 1 Path → 2/3 Fruits", "Ley: 1 Magga → 2/3 Phalas") },
                     ];
                     vithicittaOptions = [
-                        { val: 10, label: "10 Vīthicittas (Vibhūta)" },
-                        { val: 8, label: "8 (Avibhūta / Kiriya Som → Appanā)" },
-                        { val: 5, label: this.loc("5+ Estágios (Appanāvīthi)", "5+ Stages (Appanāvīthi)", "5+ Etapas (Appanāvīthi)") },
-                        { val: 32, label: "32 Appanā (Kusala Somanassa)" },
-                        { val: 12, label: "12 Appanā (Kusala Upekkhā)" },
-                        { val: 6, label: "6 Appanā (Kiriya Upekkhā)" },
+                        { val: 1, label: clean ? "1" : "1 (Gotrabhū / Vodāna)" },
+                        { val: 3, label: clean ? "3" : "3 (2/3 Phalas)" },
+                        { val: 5, label: clean ? "5" : this.loc("5+ Estágios (Appanāvīthi)", "5+ Stages (Appanāvīthi)", "5+ Etapas (Appanāvīthi)") },
+                        { val: 6, label: clean ? "6" : "6 Appanā (Kiriya Upekkhā)" },
+                        { val: 8, label: clean ? "8" : "8 (Avibhūta / Kiriya Som → Appanā)" },
+                        { val: 10, label: clean ? "10" : "10 Vīthicittas (Vibhūta)" },
+                        { val: 12, label: clean ? "12" : "12 Appanā (Kusala Upekkhā)" },
+                        { val: 32, label: clean ? "32" : "32 Appanā (Kusala Somanassa)" },
                     ];
                 }
                 else if (currentDoor === "niyama") {
@@ -2481,13 +3460,13 @@ export class MnemonicLabUI {
                         { val: "jav_samapatti", label: this.loc("Samāpattivīthi (Absorção Sustentada)", "Samāpattivīthi (Sustained Attainment)", "Samāpattivīthi (Absorción Sostenida)") },
                     ];
                     vithicittaOptions = [
-                        { val: 1, label: this.loc("1 Momento (Magga / Abhiññā / Āgantuka)", "1 Moment (Path / Abhiññā / Āgantuka)", "1 Momento (Magga / Abhiññā / Āgantuka)") },
-                        { val: 2, label: this.loc("2 Momentos (Tadārammaṇa / Nirodha)", "2 Moments (Tadārammaṇa / Nirodha)", "2 Momentos (Tadārammaṇa / Nirodha)") },
-                        { val: 3, label: this.loc("3 Graus (Aniṭṭha / Iṭṭha / Ati-iṭṭha)", "3 Grades (Aniṭṭha / Iṭṭha / Ati-iṭṭha)", "3 Grados (Aniṭṭha / Iṭṭha / Ati-iṭṭha)") },
-                        { val: 4, label: this.loc("4–5 Momentos (Milagre Duplo)", "4–5 Moments (Twin Miracle)", "4–5 Momentos (Milagro Doble)") },
-                        { val: 5, label: this.loc("5 Momentos (Maraṇakāla)", "5 Moments (Near Death)", "5 Momentos (Maraṇakāla)") },
-                        { val: 7, label: this.loc("7 (ou 6) Momentos (Normal)", "7 (or 6) Moments (Normal)", "7 (o 6) Momentos (Normal)") },
-                        { val: 99, label: this.loc("∞ Incontáveis (Samāpatti)", "∞ Innumerable (Samāpatti)", "∞ Incontables (Samāpatti)") },
+                        { val: 1, label: clean ? "1" : this.loc("1 Momento (Magga / Abhiññā / Āgantuka)", "1 Moment (Path / Abhiññā / Āgantuka)", "1 Momento (Magga / Abhiññā / Āgantuka)") },
+                        { val: 2, label: clean ? "2" : this.loc("2 Momentos (Tadārammaṇa / Nirodha)", "2 Moments (Tadārammaṇa / Nirodha)", "2 Momentos (Tadārammaṇa / Nirodha)") },
+                        { val: 3, label: clean ? "3" : this.loc("3 Graus (Aniṭṭha / Iṭṭha / Ati-iṭṭha)", "3 Grades (Aniṭṭha / Iṭṭha / Ati-iṭṭha)", "3 Grados (Aniṭṭha / Iṭṭha / Ati-iṭṭha)") },
+                        { val: 4, label: clean ? "4–5" : this.loc("4–5 Momentos (Milagre Duplo)", "4–5 Moments (Twin Miracle)", "4–5 Momentos (Milagro Doble)") },
+                        { val: 5, label: clean ? "5" : this.loc("5 Momentos (Maraṇakāla)", "5 Moments (Near Death)", "5 Momentos (Maraṇakāla)") },
+                        { val: 7, label: clean ? "7" : this.loc("7 (ou 6) Momentos (Normal)", "7 (or 6) Moments (Normal)", "7 (o 6) Momentos (Normal)") },
+                        { val: 99, label: clean ? "∞" : this.loc("∞ Incontáveis (Samāpatti)", "∞ Innumerable (Samāpatti)", "∞ Incontables (Samāpatti)") },
                     ];
                 }
                 else {
@@ -2495,19 +3474,33 @@ export class MnemonicLabUI {
                         { val: "pug_asekkha", label: this.loc("Indivíduo: Asekkha (Arahant)", "Individual: Asekkha (Arahant)", "Individuo: Asekkha (Arahant)") },
                         { val: "pug_sekkha", label: this.loc("Indivíduo: Sekkha (Nobre Aprendiz)", "Individual: Sekkha (Noble Trainee)", "Individuo: Sekkha (Noble Aprendiz)") },
                         { val: "pug_puthujjana", label: this.loc("Indivíduo: Puthujjana (Comum)", "Individual: Puthujjana (Worldling)", "Individuo: Puthujjana (Común)") },
+                        { val: "pug_ahetuka", label: "Indivíduo: Ahetuka" },
+                        { val: "pug_dvihetuka", label: "Indivíduo: Dvihetuka" },
+                        { val: "pug_sotapanna", label: "Sotāpanna / Sakadāgāmī" },
+                        { val: "pug_anagami", label: "Anāgāmī" },
                         { val: "bhu_kama", label: this.loc("Plano: Kāmāvacarabhūmi", "Plane: Kāmāvacarabhūmi", "Plano: Kāmāvacarabhūmi") },
                         { val: "bhu_rupa", label: this.loc("Plano: Rūpāvacarabhūmi", "Plane: Rūpāvacarabhūmi", "Plano: Rūpāvacarabhūmi") },
                         { val: "bhu_arupa", label: this.loc("Plano: Arūpāvacarabhūmi", "Plane: Arūpāvacarabhūmi", "Plano: Arūpāvacarabhūmi") },
                         { val: "bhu_asanna", label: this.loc("Plano: Asaññasattabhūmi", "Plane: Asaññasattabhūmi", "Plano: Asaññasattabhūmi") },
+                        { val: "excl_kama", label: this.loc("Exclusões: Kāmaloka", "Exclusions: Kāmaloka", "Exclusiones: Kāmaloka") },
+                        { val: "excl_rupa", label: this.loc("Exclusões: Rūpaloka", "Exclusions: Rūpaloka", "Exclusiones: Rūpaloka") },
+                        { val: "excl_arupa", label: this.loc("Exclusões: Arūpaloka", "Exclusions: Arūpaloka", "Exclusiones: Arūpaloka") },
                     ];
                     vithicittaOptions = [
-                        { val: 44, label: "44 Cittas (Asekkha)" },
-                        { val: 56, label: "56 Cittas (Sekkha)" },
-                        { val: 54, label: "54 Cittas (Puthujjana)" },
-                        { val: 80, label: "80 Vīthicittas (Kāma)" },
-                        { val: 64, label: "64 Vīthicittas (Rūpa)" },
-                        { val: 42, label: "42 Vīthicittas (Arūpa)" },
-                        { val: 0, label: "0 Vīthicittas (Asaññasatta)" },
+                        { val: 0, label: clean ? "0" : "0 (Asaññasatta)" },
+                        { val: 9, label: clean ? "9" : "9 (Excl. Kāma)" },
+                        { val: 16, label: clean ? "16" : "16 (Excl. Rūpa)" },
+                        { val: 37, label: clean ? "37" : "37 (Ahetuka)" },
+                        { val: 38, label: clean ? "38" : "38 (Excl. Arūpa)" },
+                        { val: 41, label: clean ? "41" : "41 (Dvihetuka)" },
+                        { val: 42, label: clean ? "42" : "42 (Arūpa)" },
+                        { val: 44, label: clean ? "44" : "44 (Asekkha)" },
+                        { val: 48, label: clean ? "48" : "48 (Anāgāmī)" },
+                        { val: 50, label: clean ? "50" : "50 (Sotāpanna)" },
+                        { val: 54, label: clean ? "54" : "54 (Puthujjana)" },
+                        { val: 56, label: clean ? "56" : "56 (Sekkha)" },
+                        { val: 64, label: clean ? "64" : "64 (Rūpa)" },
+                        { val: 80, label: clean ? "80" : "80 (Kāma)" },
                     ];
                 }
                 return `
@@ -2594,15 +3587,17 @@ export class MnemonicLabUI {
                 }
                 if (currentTetrad === "patisandhi") {
                     const subtypeOptions = [
-                        { val: "apaya_patisandhi", label: "Apāya-paṭisandhi (#19)" },
-                        { val: "kamasugati_patisandhi", label: "Kāmasugati-paṭisandhi (#27 + 8 Mahāvipāka)" },
-                        { val: "rupa_patisandhi", label: "Rūpāvacara-paṭisandhi (5 + Jīvitanavaka)" },
-                        { val: "arupa_patisandhi", label: "Arūpāvacara-paṭisandhi (4 Vipāka)" },
-                        { val: "pat_ara_kama", label: this.loc("Objeto de Kāma-paṭisandhi (3 Signos)", "Kāma-paṭisandhi Object (3 Signs)", "Objeto de Kāma-paṭisandhi (3 Signos)") },
-                        { val: "pat_ara_mah", label: this.loc("Objeto de Rūpa/Arūpa (Só Kammanimitta)", "Rūpa/Arūpa Object (Kammanimitta Only)", "Objeto de Rūpa/Arūpa (Solo Kammanimitta)") },
+                        { val: "apaya_patisandhi", label: clean ? "Apāya-paṭisandhi" : "Apāya-paṭisandhi (#19)" },
+                        { val: "kamasugati_patisandhi", label: clean ? "Kāmasugati-paṭisandhi" : "Kāmasugati-paṭisandhi (#27 + 8 Mahāvipāka)" },
+                        { val: "rupa_patisandhi", label: clean ? "Rūpāvacara-paṭisandhi" : "Rūpāvacara-paṭisandhi (5 + Jīvitanavaka)" },
+                        { val: "arupa_patisandhi", label: clean ? "Arūpāvacara-paṭisandhi" : "Arūpāvacara-paṭisandhi (4 Vipāka)" },
+                        { val: "pat_ara_kama", label: this.loc("Objeto de Kāma-paṭisandhi", "Kāma-paṭisandhi Object", "Objeto de Kāma-paṭisandhi") },
+                        { val: "pat_ara_mah", label: this.loc("Objeto de Rūpa/Arūpa", "Rūpa/Arūpa Object", "Objeto de Rūpa/Arūpa") },
                         { val: "pat_const3", label: this.loc("Tríade: Rūpa / Arūpa / Rūpārūpa", "Triad: Rūpa / Arūpa / Rūpārūpa", "Tríada: Rūpa / Arūpa / Rūpārūpa") },
+                        { val: "ariya_plane_rules", label: this.loc("Restrições de Ariyas (Suddhāvāsa / Apāya)", "Ariya Plane Rules (Pure Abodes / Apāya)", "Restricciones de Ariyas (Suddhāvāsa / Apāya)") },
+                        { val: "pat_bha_cuti_unity", label: "Paṭisandhi = Bhavaṅga = Cuti" },
                     ];
-                    const countOptions = [1, 2, 3, 4, 6, 9].map((n) => ({
+                    const countOptions = [1, 2, 3, 4, 5, 6, 9].map((n) => ({
                         val: n,
                         label: `${n}`,
                     }));
@@ -2617,8 +3612,8 @@ export class MnemonicLabUI {
                         { val: "kicca", label: this.loc("1. Kicca (Por Função: 4)", "1. Kicca (By Function: 4)", "1. Kicca (Por Función: 4)") },
                         { val: "pakadana", label: this.loc("2. Pākadāna (Por Prioridade: 4)", "2. Pākadāna (By Priority: 4)", "2. Pākadāna (Por Prioridad: 4)") },
                         { val: "pakakala", label: this.loc("3. Pākakāla (Por Tempo: 4)", "3. Pākakāla (By Time: 4)", "3. Pākakāla (Por Tiempo: 4)") },
-                        { val: "pakathana", label: this.loc("4. Pākaṭhāna (Por Plano: 12/8/5/4)", "4. Pākaṭhāna (By Place: 12/8/5/4)", "4. Pākaṭhāna (Por Lugar: 12/8/5/4)") },
-                        { val: "ripening", label: this.loc("5. Maturação (Vipāka: 7/16/12/8)", "5. Ripening (Vipāka: 7/16/12/8)", "5. Maduración (Vipāka: 7/16/12/8)") },
+                        { val: "pakathana", label: this.loc("4. Pākaṭhāna (Por Plano)", "4. Pākaṭhāna (By Place)", "4. Pākaṭhāna (Por Lugar)") },
+                        { val: "ripening", label: this.loc("5. Maturação (Vipāka & Brahmā)", "5. Ripening (Vipāka & Brahmā)", "5. Maduración (Vipāka y Brahmā)") },
                     ];
                     const curKg = String(sw.kammaGroup ?? "kicca");
                     let subOpts = [];
@@ -2649,31 +3644,36 @@ export class MnemonicLabUI {
                     }
                     else if (curKg === "pakathana") {
                         subOpts = [
-                            { val: "place_akusala", label: "Akusala (12)" },
-                            { val: "place_kama", label: "Kāmāvacara-kusala (8)" },
-                            { val: "place_rupa", label: "Rūpāvacara-kusala (5)" },
-                            { val: "place_arupa", label: "Arūpāvacara-kusala (4)" },
+                            { val: "place_akusala", label: clean ? "Akusala" : "Akusala (12)" },
+                            { val: "place_kama", label: clean ? "Kāmāvacara-kusala" : "Kāmāvacara-kusala (8)" },
+                            { val: "place_rupa", label: clean ? "Rūpāvacara-kusala" : "Rūpāvacara-kusala (5)" },
+                            { val: "place_arupa", label: clean ? "Arūpāvacara-kusala" : "Arūpāvacara-kusala (4)" },
                         ];
                         cVals = [12, 8, 5, 4];
                     }
                     else {
                         subOpts = [
-                            { val: "rip_akusala", label: "Akusala (11→Apāya · 12→7)" },
-                            { val: "rip_ti_ukk", label: this.loc("Tihetuka Superior (16)", "Superior 3-Root (16)", "Tihetuka Superior (16)") },
-                            { val: "rip_dvi_12", label: this.loc("Tihetuka Inf. / Dvihetuka Sup. (12)", "Inferior 3-Root / Superior 2-Root (12)", "Tihetuka Inf. / Dvihetuka Sup. (12)") },
-                            { val: "rip_ahe_8", label: this.loc("Dvihetuka Inferior (8)", "Inferior 2-Root (8)", "Dvihetuka Inferior (8)") },
+                            { val: "rip_akusala", label: clean ? "Akusala-vipāka" : "Akusala (11→Apāya · 12→7)" },
+                            { val: "rip_ti_ukk", label: clean ? "Tihetuka-ukkaṭṭha" : this.loc("Tihetuka Superior (16)", "Superior 3-Root (16)", "Tihetuka Superior (16)") },
+                            { val: "rip_dvi_12", label: clean ? "Tihetuka-omaka / Dvihetuka-ukkaṭṭha" : this.loc("Tihetuka Inf. / Dvihetuka Sup. (12)", "Inferior 3-Root / Superior 2-Root (12)", "Tihetuka Inf. / Dvihetuka Sup. (12)") },
+                            { val: "rip_ahe_8", label: clean ? "Dvihetuka-omaka" : this.loc("Dvihetuka Inferior (8)", "Inferior 2-Root (8)", "Dvihetuka Inferior (8)") },
+                            { val: "kecana_12_10_8", label: clean ? "Kecana-vāda" : "Kecana-vāda (12/10/8)" },
+                            { val: "jhana_degrees_9", label: clean ? "Paritta·Majjhima·Paṇīta" : this.loc("3 Graus × 3 Níveis Jhāna → 9 Planos", "3 Degrees × 3 Jhāna Tiers → 9 Planes", "3 Grados × 3 Niveles Jhāna → 9 Planos") },
+                            { val: "jhana5_vehapphala", label: "Pañcamajjhāna → Vehapphala" },
+                            { val: "sannaviraga_asanna", label: "Saññāvirāga → Asaññasatta" },
+                            { val: "anagami_suddhavasa", label: "Anāgāmī → Suddhāvāsā" },
                         ];
-                        cVals = [7, 16, 12, 8];
+                        cVals = [1, 5, 7, 8, 9, 10, 12, 16];
                     }
                     const cOpts = cVals.map((n) => ({
                         val: n,
-                        label: curKg === "pakathana" || curKg === "ripening" ? `${n} Cittas` : `#${n}`,
+                        label: curKg === "pakathana" || curKg === "ripening" ? `${n}` : `#${n}`,
                     }));
                     return `
             ${renderRow(this.loc("1. Seção do Cap. 5 (Vīthimutta):", "1. Ch. 5 Section (Vīthimutta):", "1. Sección del Cap. 5 (Vīthimutta):"), "tetrad", tetradOptions)}
             ${renderRow(this.loc("2. Tétrade / Lei de Kamma:", "2. Kamma Tetrad / Law:", "2. Tétrada / Ley de Kamma:"), "kammaGroup", kgOptions)}
             ${renderRow(this.loc("3. Tipo Específico:", "3. Specific Type:", "3. Tipo Específico:"), "subtype", subOpts)}
-            ${renderRow(this.loc("4. Ordem / Contagem de Cittas:", "4. Order / Citta Count:", "4. Orden / Conteo de Cittas:"), "count", cOpts)}
+            ${renderRow(this.loc("4. Ordem / Contagem Canônica:", "4. Order / Canonical Count:", "4. Orden / Conteo Canónico:"), "count", cOpts)}
           `;
                 }
                 if (currentTetrad === "kammapatha_20") {
@@ -2696,9 +3696,9 @@ export class MnemonicLabUI {
                             { val: "bhavana", label: this.loc("Pilar: Bhāvanā (Desenvolvimento)", "Pillar: Bhāvanā (Development)", "Pilar: Bhāvanā (Desarrollo)") },
                         ]
                         : [
-                            { val: "dosa", label: this.loc("Raiz Dosa (Aversão · 3)", "Dosa Root (Hatred · 3)", "Raíz Dosa (Aversión · 3)") },
-                            { val: "lobha", label: this.loc("Raiz Lobha (Apego · 3)", "Lobha Root (Greed · 3)", "Raíz Lobha (Apego · 3)") },
-                            { val: "two_roots", label: this.loc("2 Raízes (Lobha ou Dosa · 4)", "2 Roots (Lobha or Dosa · 4)", "2 Raíces (Lobha o Dosa · 4)") },
+                            { val: "dosa", label: this.loc("Raiz Dosa (Aversão)", "Dosa Root (Hatred)", "Raíz Dosa (Aversión)") },
+                            { val: "lobha", label: this.loc("Raiz Lobha (Apego)", "Lobha Root (Greed)", "Raíz Lobha (Apego)") },
+                            { val: "two_roots", label: this.loc("2 Raízes (Lobha ou Dosa)", "2 Roots (Lobha or Dosa)", "2 Raíces (Lobha o Dosa)") },
                         ];
                     return `
             ${renderRow(this.loc("1. Seção do Cap. 5 (Vīthimutta):", "1. Ch. 5 Section (Vīthimutta):", "1. Sección del Cap. 5 (Vīthimutta):"), "tetrad", tetradOptions)}
@@ -2715,27 +3715,47 @@ export class MnemonicLabUI {
                 const curMg = String(sw.mGroup ?? "marana_4");
                 const mSubOptions = curMg === "marana_4"
                     ? [
-                        { val: "ayukkhaya", label: this.loc("1. Āyukkhaya (Exaustão da Longevidade)", "1. Āyukkhaya (Lifespan Exhaustion)", "1. Āyukkhaya (Agotamiento Vital)") },
-                        { val: "kammakkhaya", label: this.loc("2. Kammakkhaya (Exaustão do Kamma)", "2. Kammakkhaya (Kamma Exhaustion)", "2. Kammakkhaya (Agotamiento del Kamma)") },
-                        { val: "ubhayakkhaya", label: this.loc("3. Ubhayakkhaya (Exaustão de Ambos)", "3. Ubhayakkhaya (Both Exhausted)", "3. Ubhayakkhaya (Agotamiento de Ambos)") },
-                        { val: "upacchedaka", label: this.loc("4. Upacchedakakamma (Destrutivo)", "4. Upacchedakakamma (Destructive)", "4. Upacchedakakamma (Destructor)") },
+                        { val: "ayukkhaya", label: "1. Āyukkhaya" },
+                        { val: "kammakkhaya", label: "2. Kammakkhaya" },
+                        { val: "ubhayakkhaya", label: "3. Ubhayakkhaya" },
+                        { val: "upacchedaka", label: "4. Upacchedakakamma" },
                     ]
                     : curMg === "nimitta_3"
                         ? [
-                            { val: "sign_kamma", label: this.loc("1. Kamma (Volição Passada)", "1. Kamma (Past Volition)", "1. Kamma (Volición Pasada)") },
-                            { val: "sign_kammanimitta", label: this.loc("2. Kammanimitta (Signo do Kamma)", "2. Kammanimitta (Sign of Kamma)", "2. Kammanimitta (Signo del Kamma)") },
-                            { val: "sign_gatinimitta", label: this.loc("3. Gatinimitta (Signo do Destino)", "3. Gatinimitta (Sign of Destiny)", "3. Gatinimitta (Signo del Destino)") },
+                            { val: "sign_kamma", label: "1. Kamma" },
+                            { val: "sign_kammanimitta", label: "2. Kammanimitta" },
+                            { val: "sign_gatinimitta", label: "3. Gatinimitta" },
                         ]
                         : [
-                            { val: "cuti_arupa", label: this.loc("Arūpa-cuti → Arūpa Igual/Sup. ou Kāma 3r", "Arūpa-cuti → Same/Higher Arūpa or 3-Root Kāma", "Arūpa-cuti → Arūpa Igual/Sup. o Kāma 3r") },
-                            { val: "cuti_rupa", label: this.loc("Rūpa-cuti → Qualquer Exceto Ahetuka", "Rūpa-cuti → Any Except Rootless", "Rūpa-cuti → Cualquiera Excepto Ahetuka") },
-                            { val: "cuti_kama3", label: this.loc("Kāma Tihetuka → Todos os 4 Planos", "Kāma 3-Root → All 4 Realms", "Kāma Tihetuka → Los 4 Planos") },
-                            { val: "cuti_kama_other", label: this.loc("Kāma Ahetuka/Dvihetuka → Só Kāma", "Kāma 0/2-Root → Kāma Only", "Kāma Ahetuka/Dvihetuka → Solo Kāma") },
+                            { val: "cuti_arupa", label: "1. Arūpa-cuti" },
+                            { val: "cuti_rupa", label: "2. Rūpa-cuti" },
+                            { val: "cuti_kama3", label: "3. Kāma Tihetuka-cuti" },
+                            { val: "cuti_kama_other", label: "4. Itara Kāma-cuti" },
+                        ];
+                const mRuleOptions = curMg === "marana_4"
+                    ? [
+                        { val: "wick_ends", label: this.loc("Símile: Pavio acaba (Āyu)", "Simile: Wick expires (Āyu)", "Símil: Mecha agotada (Āyu)") },
+                        { val: "oil_ends", label: this.loc("Símile: Óleo acaba (Kamma)", "Simile: Oil expires (Kamma)", "Símil: Aceite agotado (Kamma)") },
+                        { val: "both_end", label: this.loc("Símile: Pavio e Óleo acabam", "Simile: Wick & Oil expire", "Símil: Mecha y Aceite agotados") },
+                        { val: "wind_gust", label: this.loc("Símile: Rajada de vento (Corte)", "Simile: Gust of wind (Cutoff)", "Símil: Ráfaga de viento (Corte)") },
+                    ]
+                    : curMg === "nimitta_3"
+                        ? [
+                            { val: "past_mind_only", label: this.loc("Passado · Só Porta Mental", "Past · Mind-Door Only", "Pasado · Solo Puerta Mental") },
+                            { val: "six_doors_any", label: this.loc("6 Portas · Qualquer Tempo", "6 Doors · Any Time", "6 Puertas · Cualquier Tiempo") },
+                            { val: "present_kama_only", label: this.loc("Presente · Só Kāmaloka", "Present · Kāmaloka Only", "Presente · Solo Kāmaloka") },
+                        ]
+                        : [
+                            { val: "dest_arupa_kama3", label: this.loc("→ Arūpa Igual/Sup. ou Kāma 3r", "→ Same/Higher Arūpa or 3-Root Kāma", "→ Arūpa Igual/Sup. o Kāma 3r") },
+                            { val: "dest_no_ahetuka", label: this.loc("→ Qualquer exceto Ahetuka", "→ Any except Rootless", "→ Cualquiera excepto Ahetuka") },
+                            { val: "dest_all_4", label: this.loc("→ Todos os 4 Planos", "→ All 4 Planes", "→ Los 4 Planos") },
+                            { val: "dest_kama_only", label: this.loc("→ Somente Kāmaloka", "→ Kāmaloka Only", "→ Solo Kāmaloka") },
                         ];
                 return `
           ${renderRow(this.loc("1. Seção do Cap. 5 (Vīthimutta):", "1. Ch. 5 Section (Vīthimutta):", "1. Sección del Cap. 5 (Vīthimutta):"), "tetrad", tetradOptions)}
           ${renderRow(this.loc("2. Domínio de Morte / Transição:", "2. Death / Transition Domain:", "2. Dominio de Muerte / Transición:"), "mGroup", mGroupOptions)}
-          ${renderRow(this.loc("3. Regra / Fator Específico:", "3. Specific Rule / Factor:", "3. Regla / Factor Específico:"), "subtype", mSubOptions)}
+          ${renderRow(this.loc("3. Fator / Tipo:", "3. Factor / Type:", "3. Factor / Tipo:"), "subtype", mSubOptions)}
+          ${renderRow(this.loc("4. Símile / Porta / Destino Canônico:", "4. Canonical Simile / Door / Destination:", "4. Símil / Puerta / Destino Canónico:"), "rule", mRuleOptions)}
         `;
             }
             case 6: {
@@ -2744,8 +3764,30 @@ export class MnemonicLabUI {
                     { val: "vibhaga_10", label: this.loc("2. 10 Díades & 4 Samuṭṭhānas", "2. 10 Dyads & 4 Origins", "2. 10 Díadas y 4 Orígenes") },
                     { val: "kalapa_21", label: this.loc("3. 21 Rūpakalāpas (Álgebra Octeto)", "3. 21 Rūpakalāpas (Octad Algebra)", "3. 21 Rūpakalāpas (Álgebra Octeto)") },
                     { val: "pavatti_nibbana", label: this.loc("4. Pavattikkama & Nibbāna", "4. Pavattikkama & Nibbāna", "4. Pavattikkama y Nibbāna") },
+                    { val: "rupa_laws", label: this.loc("5. Leis de Rūpa & Nibbāna (11)", "5. Rūpa & Nibbāna Laws (11)", "5. Leyes de Rūpa y Nibbāna (11)") },
                 ];
                 const curSec = String(sw.section ?? "rupa_28");
+                if (curSec === "rupa_laws") {
+                    const lawOptions = [
+                        { val: "univ_8", label: this.loc("8 Propriedades Universais (AS VI.18)", "8 Universal Properties (AS VI.18)", "8 Propiedades Universales (AS VI.18)") },
+                        { val: "syn_5", label: this.loc("5 Sinônimos de Nipphanna (AS VI.11)", "5 Nipphanna Synonyms (AS VI.11)", "5 Sinónimos de Nipphanna (AS VI.11)") },
+                        { val: "kamma_25", label: this.loc("Kammas Geradores de Matéria (AS VI.30)", "Matter-Generating Kammas (AS VI.30)", "Kammas Generadores de Materia (AS VI.30)") },
+                        { val: "citta_75", label: this.loc("Cittas Geradoras de Matéria (AS VI.31)", "Matter-Generating Cittas (AS VI.31)", "Cittas Generadoras de Materia (AS VI.31)") },
+                        { val: "vinnatti_32", label: this.loc("Cittas de Viññatti (AS VI.33)", "Viññatti-Generating Cittas (AS VI.33)", "Cittas de Viññatti (AS VI.33)") },
+                        { val: "hasana_13", label: this.loc("Cittas de Riso / Hasana (AS VI.34)", "Laughter-Producing Cittas (AS VI.34)", "Cittas de Risa / Hasana (AS VI.34)") },
+                        { val: "iriyapatha_26", label: this.loc("Appanā-javanas & Postura (AS VI.32)", "Appanā-javanas & Posture (AS VI.32)", "Appanā-javanas y Postura (AS VI.32)") },
+                        { val: "birth_4", label: this.loc("4 Modos de Nascimento (AS VI.52)", "4 Birth Modes (AS VI.52)", "4 Modos de Nacimiento (AS VI.52)") },
+                        { val: "ext_kalapa_2", label: this.loc("Kalāpas Externos / Inanimados (AS VI.50)", "External Inanimate Kalāpas (AS VI.50)", "Kalāpas Externos / Inanimados (AS VI.50)") },
+                        { val: "nib_epithets_4", label: this.loc("Epítetos de Nibbāna (AS VI.65)", "Epithets of Nibbāna (AS VI.65)", "Epítetos de Nibbāna (AS VI.65)") },
+                        { val: "jati_2", label: this.loc("Jāti-rūpa: Upacaya + Santati (AS VI.16)", "Jāti-rūpa: Upacaya + Santati (AS VI.16)", "Jāti-rūpa: Upacaya + Santati (AS VI.16)") },
+                    ];
+                    const valOpts = [2, 4, 5, 8, 13, 25, 26, 32, 75].map((n) => ({ val: n, label: `${n}` }));
+                    return `
+            ${renderRow(this.loc("1. Seção do Cap. 6 (Rūpasaṅgaha):", "1. Ch. 6 Section (Rūpasaṅgaha):", "1. Sección del Cap. 6 (Rūpasaṅgaha):"), "section", secOptions)}
+            ${renderRow(this.loc("2. Lei de Rūpa / Nibbāna:", "2. Rūpa / Nibbāna Law:", "2. Ley de Rūpa / Nibbāna:"), "law", lawOptions)}
+            ${renderRow(this.loc("3. Valor Canônico:", "3. Canonical Value:", "3. Valor Canónico:"), "value", valOpts)}
+          `;
+                }
                 if (curSec === "rupa_28") {
                     const headingOptions = [
                         { val: "mahabhuta", label: this.loc("1. Mahābhūta (4 Elementos)", "1. Mahābhūta (4 Primary)", "1. Mahābhūta (4 Elementos)") },
@@ -2770,12 +3812,12 @@ export class MnemonicLabUI {
                         label: this.loc(`Rūpa #${i + 1}`, `Rūpa #${i + 1}`, `Rūpa #${i + 1}`),
                     }));
                     const samOptions = [
-                        { val: "catusamutthana", label: this.loc("4 Origens (Kamma·Citta·Utu·Āhāra)", "4 Origins (Kamma·Citta·Utu·Āhāra)", "4 Orígenes (Kamma·Citta·Utu·Āhāra)") },
-                        { val: "kammaja", label: this.loc("Só Kamma (8 Indriya + Hadaya)", "Kamma Only (8 Indriya + Hadaya)", "Solo Kamma (8 Indriya + Hadaya)") },
-                        { val: "cittaja", label: this.loc("Só Citta (2 Viññatti)", "Citta Only (2 Viññatti)", "Solo Citta (2 Viññatti)") },
-                        { val: "cittotuja", label: this.loc("Citta + Utu (Sadda / Som)", "Citta + Utu (Sadda / Sound)", "Citta + Utu (Sadda / Sonido)") },
-                        { val: "utucittahara", label: this.loc("Utu + Citta + Āhāra (3 Vikāra)", "Utu + Citta + Āhāra (3 Vikāra)", "Utu + Citta + Āhāra (3 Vikāra)") },
-                        { val: "none_lakkhana", label: this.loc("0 Origens (4 Lakkhaṇa)", "0 Origins (4 Lakkhaṇa)", "0 Orígenes (4 Lakkhaṇa)") },
+                        { val: "catusamutthana", label: clean ? "4 Samuṭṭhāna" : this.loc("4 Origens (Kamma·Citta·Utu·Āhāra)", "4 Origins (Kamma·Citta·Utu·Āhāra)", "4 Orígenes (Kamma·Citta·Utu·Āhāra)") },
+                        { val: "kammaja", label: clean ? "Kammaja" : this.loc("Só Kamma (8 Indriya + Hadaya)", "Kamma Only (8 Indriya + Hadaya)", "Solo Kamma (8 Indriya + Hadaya)") },
+                        { val: "cittaja", label: clean ? "Cittaja" : this.loc("Só Citta (2 Viññatti)", "Citta Only (2 Viññatti)", "Solo Citta (2 Viññatti)") },
+                        { val: "cittotuja", label: clean ? "Citta + Utu" : this.loc("Citta + Utu (Sadda / Som)", "Citta + Utu (Sadda / Sound)", "Citta + Utu (Sadda / Sonido)") },
+                        { val: "utucittahara", label: clean ? "Utu + Citta + Āhāra" : this.loc("Utu + Citta + Āhāra (3 Vikāra)", "Utu + Citta + Āhāra (3 Vikāra)", "Utu + Citta + Āhāra (3 Vikāra)") },
+                        { val: "none_lakkhana", label: clean ? "0 Samuṭṭhāna" : this.loc("0 Origens (4 Lakkhaṇa)", "0 Origins (4 Lakkhaṇa)", "0 Orígenes (4 Lakkhaṇa)") },
                     ];
                     return `
             ${renderRow(this.loc("1. Seção do Cap. 6 (Rūpasaṅgaha):", "1. Ch. 6 Section (Rūpasaṅgaha):", "1. Sección del Cap. 6 (Rūpasaṅgaha):"), "section", secOptions)}
@@ -2813,10 +3855,10 @@ export class MnemonicLabUI {
                 }
                 if (curSec === "kalapa_21") {
                     const originOptions = [
-                        { val: "kamma", label: this.loc("Kamma (9 Kalāpas: 8 Décadas + 1 Nônada)", "Kamma (9 Kalāpas: 8 Decads + 1 Nonad)", "Kamma (9 Kalāpas: 8 Décadas + 1 Nónada)") },
-                        { val: "citta", label: this.loc("Citta (6 Kalāpas: 3×2 · 8 a 13 Rūpas)", "Citta (6 Kalāpas: 3×2 · 8 to 13 Rūpas)", "Citta (6 Kalāpas: 3×2 · 8 a 13 Rūpas)") },
-                        { val: "utu", label: this.loc("Utu (4 Kalāpas: 2×2 · 2 Externos)", "Utu (4 Kalāpas: 2×2 · 2 External)", "Utu (4 Kalāpas: 2×2 · 2 Externos)") },
-                        { val: "ahara", label: this.loc("Āhāra (2 Kalāpas: 1×2 · 8 e 11)", "Āhāra (2 Kalāpas: 1×2 · 8 & 11)", "Āhāra (2 Kalāpas: 1×2 · 8 y 11)") },
+                        { val: "kamma", label: clean ? "Kamma (9)" : this.loc("Kamma (9 Kalāpas: 8 Décadas + 1 Nônada)", "Kamma (9 Kalāpas: 8 Decads + 1 Nonad)", "Kamma (9 Kalāpas: 8 Décadas + 1 Nónada)") },
+                        { val: "citta", label: clean ? "Citta (6)" : this.loc("Citta (6 Kalāpas: 3×2 · 8 a 13 Rūpas)", "Citta (6 Kalāpas: 3×2 · 8 to 13 Rūpas)", "Citta (6 Kalāpas: 3×2 · 8 a 13 Rūpas)") },
+                        { val: "utu", label: clean ? "Utu (4)" : this.loc("Utu (4 Kalāpas: 2×2 · 2 Externos)", "Utu (4 Kalāpas: 2×2 · 2 External)", "Utu (4 Kalāpas: 2×2 · 2 Externos)") },
+                        { val: "ahara", label: clean ? "Āhāra (2)" : this.loc("Āhāra (2 Kalāpas: 1×2 · 8 e 11)", "Āhāra (2 Kalāpas: 1×2 · 8 & 11)", "Āhāra (2 Kalāpas: 1×2 · 8 y 11)") },
                     ];
                     const curOrg = String(sw.origin ?? "kamma");
                     const maxSlot = curOrg === "kamma" ? 9 : curOrg === "citta" ? 6 : curOrg === "utu" ? 4 : 2;
@@ -2843,16 +3885,16 @@ export class MnemonicLabUI {
           `;
                 }
                 const topicOptions = [
-                    { val: "pav_kama", label: this.loc("Pavatti: Kāmaloka (7 / 3 Décadas)", "Pavatti: Kāmaloka (7 / 3 Decads)", "Pavatti: Kāmaloka (7 / 3 Décadas)") },
-                    { val: "pav_rupa", label: this.loc("Pavatti: Rūpaloka (4 Kalāpas)", "Pavatti: Rūpaloka (4 Kalāpas)", "Pavatti: Rūpaloka (4 Kalāpas)") },
-                    { val: "pav_asanna", label: this.loc("Pavatti: Asaññasatta (Jīvitanavaka)", "Pavatti: Asaññasatta (Vital Nonad)", "Pavatti: Asaññasatta (Jīvitanavaka)") },
-                    { val: "pav_arupa", label: this.loc("Pavatti: Arūpaloka (Sem Matéria)", "Pavatti: Arūpaloka (No Matter)", "Pavatti: Arūpaloka (Sin Materia)") },
-                    { val: "pav_start4", label: this.loc("Cronologia dos 4 Inícios (AS VI.55)", "Timeline of 4 Starts (AS VI.55)", "Cronología de 4 Inicios (AS VI.55)") },
+                    { val: "pav_kama", label: this.loc("Pavatti: Kāmaloka", "Pavatti: Kāmaloka", "Pavatti: Kāmaloka") },
+                    { val: "pav_rupa", label: this.loc("Pavatti: Rūpaloka", "Pavatti: Rūpaloka", "Pavatti: Rūpaloka") },
+                    { val: "pav_asanna", label: this.loc("Pavatti: Asaññasatta", "Pavatti: Asaññasatta", "Pavatti: Asaññasatta") },
+                    { val: "pav_arupa", label: this.loc("Pavatti: Arūpaloka", "Pavatti: Arūpaloka", "Pavatti: Arūpaloka") },
+                    { val: "pav_start4", label: this.loc("Cronologia dos Inícios (AS VI.55)", "Timeline of Starts (AS VI.55)", "Cronología de Inicios (AS VI.55)") },
                     { val: "pav_death17", label: this.loc("Cessação na Morte (AS VI.56)", "Cessation at Death (AS VI.56)", "Cesación en la Muerte (AS VI.56)") },
                     { val: "pav_absent4", label: this.loc("Ausentes em Paṭisandhi (AS VI.61)", "Absent at Rebirth (AS VI.61)", "Ausentes en Paṭisandhi (AS VI.61)") },
-                    { val: "nib_one", label: this.loc("Nibbāna: 1 Natureza (Asaṅkhata)", "Nibbāna: 1 Nature (Unconditioned)", "Nibbāna: 1 Naturaleza (Asaṅkhata)") },
-                    { val: "nib_two", label: this.loc("Nibbāna: 2 Modos (Sa/Anupādisesa)", "Nibbāna: 2 Modes (Sa/Anupādisesa)", "Nibbāna: 2 Modos (Sa/Anupādisesa)") },
-                    { val: "nib_three", label: this.loc("Nibbāna: 3 Aspectos (Suññata/Animitta/Appaṇihita)", "Nibbāna: 3 Aspects (Empty/Signless/Undirected)", "Nibbāna: 3 Aspectos (Vacío/Sin-Signo/Sin-Deseo)") },
+                    { val: "nib_one", label: this.loc("Nibbāna: Natureza Única (Asaṅkhata)", "Nibbāna: Single Nature (Unconditioned)", "Nibbāna: Naturaleza Única (Asaṅkhata)") },
+                    { val: "nib_two", label: this.loc("Nibbāna: Modos (Sa/Anupādisesa)", "Nibbāna: Modes (Sa/Anupādisesa)", "Nibbāna: Modos (Sa/Anupādisesa)") },
+                    { val: "nib_three", label: this.loc("Nibbāna: Aspectos (Suññata/Animitta/Appaṇihita)", "Nibbāna: Aspects (Empty/Signless/Undirected)", "Nibbāna: Aspectos (Vacío/Sin-Signo/Sin-Deseo)") },
                 ];
                 const valueOptions = [0, 1, 2, 3, 4, 17, 23, 28].map((n) => ({
                     val: n,
@@ -2866,12 +3908,214 @@ export class MnemonicLabUI {
             }
             case 7: {
                 const compOptions = [
-                    { val: "akusala_9", label: this.loc("1. Akusala-saṅgaha (9 Grupos · Redução Vatthuto)", "1. Akusala-saṅgaha (9 Groups · Vatthuto Reduction)", "1. Akusala-saṅgaha (9 Grupos · Reducción Vatthuto)") },
-                    { val: "missaka_7", label: this.loc("2. Missaka-saṅgaha (7 Grupos + Leis)", "2. Missaka-saṅgaha (7 Groups + Laws)", "2. Missaka-saṅgaha (7 Grupos + Leyes)") },
-                    { val: "bodhipakkhiya_21", label: this.loc("3. Bodhipakkhiya (7 Grupos = 37 → 14 Sabhāva)", "3. Bodhipakkhiya (7 Groups = 37 → 14 Sabhāva)", "3. Bodhipakkhiya (7 Grupos = 37 → 14 Sabhāva)") },
-                    { val: "sabba_7", label: this.loc("4. Sabba-saṅgaha (5 Sínteses + 69 & 29)", "4. Sabba-saṅgaha (5 Syntheses + 69 & 29)", "4. Sabba-saṅgaha (5 Síntesis + 69 y 29)") },
+                    { val: "akusala_9", label: this.loc("1. Akusala-saṅgaha (9 Grupos)", "1. Akusala-saṅgaha (9 Groups)", "1. Akusala-saṅgaha (9 Grupos)") },
+                    { val: "akusala_members", label: this.loc("2. Akusala Granular (34 Membros)", "2. Akusala Granular (34 Members)", "2. Akusala Granular (34 Miembros)") },
+                    { val: "missaka_7", label: this.loc("3. Missaka-saṅgaha (7 Grupos)", "3. Missaka-saṅgaha (7 Groups)", "3. Missaka-saṅgaha (7 Grupos)") },
+                    { val: "missaka_members", label: this.loc("4. Missaka Granular (51 Membros)", "4. Missaka Granular (51 Members)", "4. Missaka Granular (51 Miembros)") },
+                    { val: "bodhipakkhiya_21", label: this.loc("5. Bodhipakkhiya (7 Grupos & 14 Sabhāva)", "5. Bodhipakkhiya (7 Groups & 14 Sabhāva)", "5. Bodhipakkhiya (7 Grupos y 14 Sabhāva)") },
+                    { val: "bodhi_37", label: this.loc("6. 37 Bodhipakkhiyas Individuais", "6. 37 Individual Bodhipakkhiyas", "6. 37 Bodhipakkhiyas Individuales") },
+                    { val: "sabba_7", label: this.loc("7. Sabba-saṅgaha (5 Sínteses)", "7. Sabba-saṅgaha (5 Syntheses)", "7. Sabba-saṅgaha (5 Síntesis)") },
+                    { val: "sabba_members", label: this.loc("8. Sabba Granular (28 Membros)", "8. Sabba Granular (28 Members)", "8. Sabba Granular (28 Miembros)") },
                 ];
                 const currentComp = String(sw.compendium ?? "akusala_9");
+                if (currentComp === "akusala_members") {
+                    const akSetOpts = [
+                        { val: "asava_ogha_yoga", label: "Āsava · Ogha · Yoga (4)" },
+                        { val: "gantha", label: "Gantha (4)" },
+                        { val: "upadana", label: "Upādāna (4)" },
+                        { val: "nivarana", label: "Nīvaraṇa (6)" },
+                        { val: "anusaya", label: "Anusaya (7)" },
+                        { val: "samyojana_delta", label: "Saṃyojana: Suttanta vs. Abhidhamma (6)" },
+                        { val: "kilesa_extra", label: "Kilesa Extras (3)" },
+                    ];
+                    const curSet = String(sw.akSet ?? "asava_ogha_yoga");
+                    const maxMap = {
+                        asava_ogha_yoga: 4, gantha: 4, upadana: 4, nivarana: 6, anusaya: 7, samyojana_delta: 6, kilesa_extra: 3,
+                    };
+                    const slotOpts = Array.from({ length: maxMap[curSet] ?? 4 }, (_, i) => ({
+                        val: i + 1,
+                        label: `#${i + 1}`,
+                    }));
+                    const realOpts = [
+                        { val: "lobha", label: "Lobha" },
+                        { val: "dosa", label: "Dosa" },
+                        { val: "moha", label: "Moha" },
+                        { val: "ditthi", label: "Diṭṭhi" },
+                        { val: "mana", label: "Māna" },
+                        { val: "vicikiccha", label: "Vicikicchā" },
+                        { val: "thina", label: "Thīna" },
+                        { val: "thina_middha", label: "Thīna + Middha (2)" },
+                        { val: "uddhacca", label: "Uddhacca" },
+                        { val: "uddhacca_kukkucca", label: "Uddhacca + Kukkucca (2)" },
+                        { val: "issa", label: "Issā" },
+                        { val: "macchariya", label: "Macchariya" },
+                        { val: "ahirika", label: "Ahirika" },
+                        { val: "anottappa", label: "Anottappa" },
+                    ];
+                    return `
+            ${renderRow(this.loc("1. Compêndio (Samuccaya):", "1. Compendium (Samuccaya):", "1. Compendio (Samuccaya):"), "compendium", compOptions)}
+            ${renderRow(this.loc("2. Conjunto Insalubre:", "2. Unwholesome Set:", "2. Conjunto Akusala:"), "akSet", akSetOpts)}
+            ${renderRow(this.loc("3. Posição do Membro:", "3. Member Position:", "3. Posición del Miembro:"), "slot", slotOpts)}
+            ${renderRow(this.loc("4. Dhamma Real (Vatthuto — AS VII.13–14):", "4. Real Dhamma (Vatthuto — AS VII.13–14):", "4. Dhamma Real (Vatthuto — AS VII.13–14):"), "realDhamma", realOpts)}
+          `;
+                }
+                if (currentComp === "missaka_members") {
+                    const miSetOpts = [
+                        { val: "indriya22", label: "22 Indriyāni" },
+                        { val: "magganga12", label: "12 Maggaṅgāni" },
+                        { val: "bala_extra", label: "Bala 6–9 (4 Extras)" },
+                        { val: "adhipati4", label: "4 Adhipatī" },
+                        { val: "ahara4", label: "4 Āhārā" },
+                        { val: "excl_laws5", label: this.loc("5 Leis de Exclusão (AS VII.26–28)", "5 Exclusion Laws (AS VII.26–28)", "5 Leyes de Exclusión (AS VII.26–28)") },
+                    ];
+                    const curSet = String(sw.miSet ?? "indriya22");
+                    const maxMap = {
+                        indriya22: 22, magganga12: 12, bala_extra: 4, adhipati4: 4, ahara4: 4, excl_laws5: 5,
+                    };
+                    const slotOpts = Array.from({ length: maxMap[curSet] ?? 4 }, (_, i) => ({
+                        val: i + 1,
+                        label: `#${i + 1}`,
+                    }));
+                    const classBySet = {
+                        indriya22: [
+                            { val: "pasada_5", label: "5 Pasādarūpa" },
+                            { val: "bhava_2", label: "2 Bhāvarūpa" },
+                            { val: "jivita_2", label: "Jīvita (Rūpa + Nāma = 2)" },
+                            { val: "citta_1", label: "Citta (1)" },
+                            { val: "vedana_5", label: "5 → 1 Vedanā" },
+                            { val: "sobhana_5", label: "5 Indriya (Saddhā..Paññā)" },
+                            { val: "lokuttara_panna_3", label: "3 Lokuttara → Paññā" },
+                        ],
+                        magganga12: [
+                            { val: "panna", label: "Paññā" },
+                            { val: "vitakka", label: "Vitakka" },
+                            { val: "virati_3", label: "3 Virati" },
+                            { val: "viriya", label: "Vīriya" },
+                            { val: "sati", label: "Sati" },
+                            { val: "ekaggata", label: "Ekaggatā" },
+                            { val: "ditthi", label: "Diṭṭhi" },
+                        ],
+                        bala_extra: [
+                            { val: "hiri_ottappa", label: "Hiri / Ottappa (Sobhana)" },
+                            { val: "ahirika_anottappa", label: "Ahirika / Anottappa (Akusala)" },
+                        ],
+                        adhipati4: [
+                            { val: "chanda", label: "Chanda" },
+                            { val: "viriya", label: "Vīriya" },
+                            { val: "citta_1", label: "Citta (1)" },
+                            { val: "panna", label: "Paññā" },
+                        ],
+                        ahara4: [
+                            { val: "oja_rupa", label: "Ojā (Rūpa)" },
+                            { val: "phassa", label: "Phassa" },
+                            { val: "cetana", label: "Cetanā" },
+                            { val: "citta_1", label: "Citta (1)" },
+                        ],
+                        excl_laws5: [
+                            { val: "no_jhananga_10", label: "10 Sentidos → 0 Jhānaṅga" },
+                            { val: "no_bala_16", label: "16 Avīriya → 0 Bala" },
+                            { val: "no_magga_18", label: "18 Ahetuka → 0 Maggaṅga" },
+                            { val: "doubt_ekaggata", label: "#11 Vicikicchā (Ekaggatā)" },
+                            { val: "one_adhipati", label: "1 Adhipati / 52 Javana" },
+                        ],
+                    };
+                    return `
+            ${renderRow(this.loc("1. Compêndio (Samuccaya):", "1. Compendium (Samuccaya):", "1. Compendio (Samuccaya):"), "compendium", compOptions)}
+            ${renderRow(this.loc("2. Conjunto Misto (Missaka):", "2. Mixed Set (Missaka):", "2. Conjunto Mixto (Missaka):"), "miSet", miSetOpts)}
+            ${renderRow(this.loc("3. Posição do Membro:", "3. Member Position:", "3. Posición del Miembro:"), "slot", slotOpts)}
+            ${renderRow(this.loc("4. Redução / Classe Real (Vatthuto):", "4. Real Reduction / Class (Vatthuto):", "4. Reducción / Clase Real (Vatthuto):"), "realClass", classBySet[curSet] ?? classBySet.indriya22)}
+          `;
+                }
+                if (currentComp === "bodhi_37") {
+                    const bGroupOpts = [
+                        { val: "satipatthana", label: "1. Satipaṭṭhāna (4)" },
+                        { val: "sammappadhana", label: "2. Sammappadhāna (4)" },
+                        { val: "iddhipada", label: "3. Iddhipāda (4)" },
+                        { val: "indriya5", label: "4. Indriya (5)" },
+                        { val: "bala5", label: "5. Bala (5)" },
+                        { val: "bojjhanga", label: "6. Bojjhaṅga (7)" },
+                        { val: "magganga", label: "7. Maggaṅga (8)" },
+                    ];
+                    const curBg = String(sw.bGroup ?? "satipatthana");
+                    const maxMap = {
+                        satipatthana: 4, sammappadhana: 4, iddhipada: 4, indriya5: 5, bala5: 5, bojjhanga: 7, magganga: 8,
+                    };
+                    const slotOpts = Array.from({ length: maxMap[curBg] ?? 4 }, (_, i) => ({
+                        val: i + 1,
+                        label: `#${i + 1}`,
+                    }));
+                    const sabhavaOpts = [
+                        { val: "viriya", label: "Vīriya" },
+                        { val: "sati", label: "Sati" },
+                        { val: "panna", label: "Paññā" },
+                        { val: "samadhi", label: "Samādhi (Ekaggatā)" },
+                        { val: "saddha", label: "Saddhā" },
+                        { val: "vitakka", label: "Vitakka (Saṅkappa)" },
+                        { val: "passaddhi", label: "Passaddhi" },
+                        { val: "piti", label: "Pīti" },
+                        { val: "upekkha", label: "Upekkhā (Tatramajjhattatā)" },
+                        { val: "chanda", label: "Chanda" },
+                        { val: "citta", label: "Citta" },
+                        { val: "sammavaca", label: "Sammāvācā" },
+                        { val: "sammakammanta", label: "Sammākammanta" },
+                        { val: "samma_ajiva", label: "Sammā-ājīva" },
+                    ];
+                    return `
+            ${renderRow(this.loc("1. Compêndio (Samuccaya):", "1. Compendium (Samuccaya):", "1. Compendio (Samuccaya):"), "compendium", compOptions)}
+            ${renderRow(this.loc("2. Grupo Bodhipakkhiya (7 Grupos = 37):", "2. Bodhipakkhiya Group (7 Groups = 37):", "2. Grupo Bodhipakkhiya (7 Grupos = 37):"), "bGroup", bGroupOpts)}
+            ${renderRow(this.loc("3. Fator no Grupo:", "3. Factor in Group:", "3. Factor en el Grupo:"), "slot", slotOpts)}
+            ${renderRow(this.loc("4. Sabhāva-dhamma Real (14 — AS VII.37–40):", "4. Real Sabhāva-dhamma (14 — AS VII.37–40):", "4. Sabhāva-dhamma Real (14 — AS VII.37–40):"), "sabhava", sabhavaOpts)}
+          `;
+                }
+                if (currentComp === "sabba_members") {
+                    const sbSetOpts = [
+                        { val: "khandha5", label: "5 Khandhā" },
+                        { val: "ayatana12", label: "12 Āyatanāni" },
+                        { val: "vinnana_dhatu7", label: "7 Viññāṇadhātuyo" },
+                        { val: "ariyasacca4", label: "4 Ariyasaccāni" },
+                    ];
+                    const curSet = String(sw.sbSet ?? "khandha5");
+                    const maxMap = {
+                        khandha5: 5, ayatana12: 12, vinnana_dhatu7: 7, ariyasacca4: 4,
+                    };
+                    const slotOpts = Array.from({ length: maxMap[curSet] ?? 5 }, (_, i) => ({
+                        val: i + 1,
+                        label: `#${i + 1}`,
+                    }));
+                    const mapBySet = {
+                        khandha5: [
+                            { val: "rupa_28", label: "28 Rūpa" },
+                            { val: "vedana_1", label: "Vedanā (1)" },
+                            { val: "sanna_1", label: "Saññā (1)" },
+                            { val: "sankhara_50", label: "Saṅkhāra (50)" },
+                            { val: "citta_89", label: "Citta (89 / 121)" },
+                        ],
+                        ayatana12: [
+                            { val: "pasada_1", label: "Pasādarūpa (1)" },
+                            { val: "citta_89", label: "Citta (89 / 121)" },
+                            { val: "gocara_1", label: "Gocararūpa (1)" },
+                            { val: "bhuta_3", label: "3 Mahābhūta (Pathavī·Tejo·Vāyo)" },
+                            { val: "dhamma_69", label: "69 (52+16+1)" },
+                        ],
+                        vinnana_dhatu7: [
+                            { val: "sense_pair_2", label: "Par Sensorial (2)" },
+                            { val: "manodhatu_3", label: "Manodhātu (3)" },
+                            { val: "manovinnana_76", label: "Manoviññāṇadhātu (76)" },
+                        ],
+                        ariyasacca4: [
+                            { val: "tebhumaka_excl_lobha", label: "81 Citta + 51 Cet + 28 Rūpa" },
+                            { val: "lobha_tanha", label: "Lobha / Taṇhā (1)" },
+                            { val: "nibbana_1", label: "Nibbāna (1)" },
+                            { val: "magga_factors_8", label: "8 Maggaṅga (4 Magga)" },
+                        ],
+                    };
+                    return `
+            ${renderRow(this.loc("1. Compêndio (Samuccaya):", "1. Compendium (Samuccaya):", "1. Compendio (Samuccaya):"), "compendium", compOptions)}
+            ${renderRow(this.loc("2. Conjunto Universal (Sabba):", "2. Universal Set (Sabba):", "2. Conjunto Universal (Sabba):"), "sbSet", sbSetOpts)}
+            ${renderRow(this.loc("3. Posição do Membro:", "3. Member Position:", "3. Posición del Miembro:"), "slot", slotOpts)}
+            ${renderRow(this.loc("4. Equivalência em Paramatthas:", "4. Paramattha Equivalence:", "4. Equivalencia en Paramatthas:"), "paramatthaMap", mapBySet[curSet] ?? mapBySet.khandha5)}
+          `;
+                }
                 if (currentComp === "akusala_9") {
                     const groupOptions = [
                         { val: "asava", label: this.loc("1. 4 Āsavā (Efluências)", "1. 4 Āsavā (Taints)", "1. 4 Āsavā (Efluencias)") },
@@ -2926,13 +4170,13 @@ export class MnemonicLabUI {
                     let cVals = [];
                     if (curMode === "groups") {
                         itemOpts = [
-                            { val: "satipatthana", label: this.loc("1. 4 Satipaṭṭhānā (Atenção Plena)", "1. 4 Satipaṭṭhānā (Mindfulness)", "1. 4 Satipaṭṭhānā (Atención Plena)") },
-                            { val: "sammappadhana", label: this.loc("2. 4 Sammappadhānā (Esforços)", "2. 4 Sammappadhānā (Right Strivings)", "2. 4 Sammappadhānā (Esfuerzos)") },
-                            { val: "iddhipada", label: this.loc("3. 4 Iddhipādā (Bases do Poder)", "3. 4 Iddhipādā (Bases of Power)", "3. 4 Iddhipādā (Bases del Poder)") },
-                            { val: "indriya5", label: this.loc("4. 5 Indriyāni (Faculdades)", "4. 5 Indriyāni (Faculties)", "4. 5 Indriyāni (Facultades)") },
-                            { val: "bala5", label: this.loc("5. 5 Balāni (Poderes)", "5. 5 Balāni (Powers)", "5. 5 Balāni (Poderes)") },
-                            { val: "bojjhanga", label: this.loc("6. 7 Bojjhaṅgā (Iluminação)", "6. 7 Bojjhaṅgā (Enlightenment)", "6. 7 Bojjhaṅgā (Iluminación)") },
-                            { val: "magganga", label: this.loc("7. 8 Maggaṅgāni (Caminho Óctuplo)", "7. 8 Maggaṅgāni (Eightfold Path)", "7. 8 Maggaṅgāni (Óctuple Sendero)") },
+                            { val: "satipatthana", label: clean ? "1. Satipaṭṭhāna" : this.loc("1. 4 Satipaṭṭhānā (Atenção Plena)", "1. 4 Satipaṭṭhānā (Mindfulness)", "1. 4 Satipaṭṭhānā (Atención Plena)") },
+                            { val: "sammappadhana", label: clean ? "2. Sammappadhāna" : this.loc("2. 4 Sammappadhānā (Esforços)", "2. 4 Sammappadhānā (Right Strivings)", "2. 4 Sammappadhānā (Esfuerzos)") },
+                            { val: "iddhipada", label: clean ? "3. Iddhipāda" : this.loc("3. 4 Iddhipādā (Bases do Poder)", "3. 4 Iddhipādā (Bases of Power)", "3. 4 Iddhipādā (Bases del Poder)") },
+                            { val: "indriya5", label: clean ? "4. Indriya" : this.loc("4. 5 Indriyāni (Faculdades)", "4. 5 Indriyāni (Faculties)", "4. 5 Indriyāni (Facultades)") },
+                            { val: "bala5", label: clean ? "5. Bala" : this.loc("5. 5 Balāni (Poderes)", "5. 5 Balāni (Powers)", "5. 5 Balāni (Poderes)") },
+                            { val: "bojjhanga", label: clean ? "6. Bojjhaṅga" : this.loc("6. 7 Bojjhaṅgā (Iluminação)", "6. 7 Bojjhaṅgā (Enlightenment)", "6. 7 Bojjhaṅgā (Iluminación)") },
+                            { val: "magganga", label: clean ? "7. Maggaṅga" : this.loc("7. 8 Maggaṅgāni (Caminho Óctuplo)", "7. 8 Maggaṅgāni (Eightfold Path)", "7. 8 Maggaṅgāni (Óctuple Sendero)") },
                         ];
                         cVals = [4, 5, 7, 8];
                     }
@@ -2967,12 +4211,12 @@ export class MnemonicLabUI {
           `;
                 }
                 const sabbaOpts = [
-                    { val: "khandha", label: this.loc("1. 5 Khandhā (Agregados)", "1. 5 Khandhā (Aggregates)", "1. 5 Khandhā (Agregados)") },
-                    { val: "upadanakkhandha", label: this.loc("2. 5 Upādānakkhandhā (De Apego)", "2. 5 Upādānakkhandhā (Of Clinging)", "2. 5 Upādānakkhandhā (De Apego)") },
-                    { val: "ayatana", label: this.loc("3. 12 Āyatanāni (Bases)", "3. 12 Āyatanāni (Sense Bases)", "3. 12 Āyatanāni (Bases)") },
-                    { val: "dhatu", label: this.loc("4. 18 Dhātuyo (Elementos)", "4. 18 Dhātuyo (Elements)", "4. 18 Dhātuyo (Elementos)") },
-                    { val: "ariyasacca", label: this.loc("5. 4 Ariyasaccāni (Nobres Verdades)", "5. 4 Ariyasaccāni (Noble Truths)", "5. 4 Ariyasaccāni (Nobles Verdades)") },
-                    { val: "dhammayatana_69", label: this.loc("Dhammāyatana / Dhātu (52+16+1)", "Dhammāyatana / Dhātu (52+16+1)", "Dhammāyatana / Dhātu (52+16+1)") },
+                    { val: "khandha", label: clean ? "1. Khandhā" : this.loc("1. 5 Khandhā (Agregados)", "1. 5 Khandhā (Aggregates)", "1. 5 Khandhā (Agregados)") },
+                    { val: "upadanakkhandha", label: clean ? "2. Upādānakkhandhā" : this.loc("2. 5 Upādānakkhandhā (De Apego)", "2. 5 Upādānakkhandhā (Of Clinging)", "2. 5 Upādānakkhandhā (De Apego)") },
+                    { val: "ayatana", label: clean ? "3. Āyatanāni" : this.loc("3. 12 Āyatanāni (Bases)", "3. 12 Āyatanāni (Sense Bases)", "3. 12 Āyatanāni (Bases)") },
+                    { val: "dhatu", label: clean ? "4. Dhātuyo" : this.loc("4. 18 Dhātuyo (Elementos)", "4. 18 Dhātuyo (Elements)", "4. 18 Dhātuyo (Elementos)") },
+                    { val: "ariyasacca", label: clean ? "5. Ariyasaccāni" : this.loc("5. 4 Ariyasaccāni (Nobres Verdades)", "5. 4 Ariyasaccāni (Noble Truths)", "5. 4 Ariyasaccāni (Nobles Verdades)") },
+                    { val: "dhammayatana_69", label: clean ? "6. Dhammāyatana / Dhātu" : this.loc("Dhammāyatana / Dhātu (52+16+1)", "Dhammāyatana / Dhātu (52+16+1)", "Dhammāyatana / Dhātu (52+16+1)") },
                     { val: "sacca_excl", label: this.loc("Excluídos das 4 Verdades (AS VII.53)", "Excluded from 4 Truths (AS VII.53)", "Excluidos de 4 Verdades (AS VII.53)") },
                 ];
                 const countOptions = [4, 5, 12, 18, 29, 69].map((n) => ({
@@ -2989,9 +4233,48 @@ export class MnemonicLabUI {
                 const methodOptions = [
                     { val: "paticcasamuppada", label: this.loc("1. Paṭiccasamuppāda (12 Elos + 6 Análises)", "1. Paṭiccasamuppāda (12 Links + 6 Analyses)", "1. Paṭiccasamuppāda (12 Eslabones + 6 Análisis)") },
                     { val: "patthana_24", label: this.loc("2. 24 Paṭṭhāna (6 Vias + 4 Samodhāna)", "2. 24 Paṭṭhāna (6 Ways + 4 Samodhāna)", "2. 24 Paṭṭhāna (6 Vías + 4 Samodhāna)") },
-                    { val: "pannatti_8", label: this.loc("3. Paññattibheda (Attha & 6 Nāmapaññatti)", "3. Paññattibheda (Attha & 6 Nāmapaññatti)", "3. Paññattibheda (Attha y 6 Nāmapaññatti)") },
+                    { val: "patthana_submodes", label: this.loc("3. Submodos Paṭṭhāna & 6 Atthapaññatti (18)", "3. Paṭṭhāna Submodes & 6 Atthapaññatti (18)", "3. Submodos Paṭṭhāna y 6 Atthapaññatti (18)") },
+                    { val: "pannatti_8", label: this.loc("4. Paññattibheda (Attha & 6 Nāmapaññatti)", "4. Paññattibheda (Attha & 6 Nāmapaññatti)", "4. Paññattibheda (Attha y 6 Nāmapaññatti)") },
                 ];
                 const currentMethod = String(sw.method ?? "paticcasamuppada");
+                if (currentMethod === "patthana_submodes") {
+                    const sgOpts = [
+                        { val: "paccaya_modes", label: this.loc("12 Submodos & Leis do Paṭṭhāna (AS VIII.17–38)", "12 Paṭṭhāna Submodes & Laws (AS VIII.17–38)", "12 Submodos y Leyes del Paṭṭhāna (AS VIII.17–38)") },
+                        { val: "atthapannatti_6", label: this.loc("6 Modos de Atthapaññatti (AS VIII.40)", "6 Modes of Atthapaññatti (AS VIII.40)", "6 Modos de Atthapaññatti (AS VIII.40)") },
+                    ];
+                    const curSg = String(sw.subGroup ?? "paccaya_modes");
+                    const topicOpts = curSg === "atthapannatti_6"
+                        ? [
+                            { val: "att_bhumi", label: "1. Bhūmi / Pabbata" },
+                            { val: "att_geha", label: "2. Geha / Ratha" },
+                            { val: "att_purisa", label: "3. Purisa / Puggala" },
+                            { val: "att_disa", label: "4. Disā / Kāla" },
+                            { val: "att_kupa", label: "5. Kūpa / Guhā" },
+                            { val: "att_kasina", label: "6. Kasiṇa-nimitta" },
+                        ]
+                        : [
+                            { val: "sub_upanissaya", label: "Upanissaya" },
+                            { val: "sub_adhipati", label: "Adhipati" },
+                            { val: "sub_kamma", label: "Kamma" },
+                            { val: "sub_sahajata", label: "Sahajāta" },
+                            { val: "sub_annamanna", label: "Aññamañña" },
+                            { val: "sub_nissaya", label: "Nissaya" },
+                            { val: "sub_ahara", label: "Āhāra" },
+                            { val: "sub_indriya", label: "Indriya" },
+                            { val: "sub_vippayutta", label: "Vippayutta" },
+                            { val: "sub_atthi5", label: "Atthi & Avigata" },
+                            { val: "sub_sahajatarupa2", label: "Sahajāta-rūpa (Pavatti / Paṭisandhi)" },
+                            { val: "sub_nama5", label: "Nāma / Arūpa (AS VIII.38)" },
+                        ];
+                    const modeVals = curSg === "atthapannatti_6" ? [1, 2, 3, 4, 5, 6] : [2, 3, 5];
+                    const modeOpts = modeVals.map((n) => ({ val: n, label: `${n}` }));
+                    return `
+            ${renderRow(this.loc("1. Método Causal (Cap. 8):", "1. Causal Method (Ch. 8):", "1. Método Causal (Cap. 8):"), "method", methodOptions)}
+            ${renderRow(this.loc("2. Subgrupo (Paṭṭhāna / Atthapaññatti):", "2. Subgroup (Paṭṭhāna / Atthapaññatti):", "2. Subgrupo (Paṭṭhāna / Atthapaññatti):"), "subGroup", sgOpts)}
+            ${renderRow(this.loc("3. Tópico Canônico:", "3. Canonical Topic:", "3. Tema Canónico:"), "topic", topicOpts)}
+            ${renderRow(this.loc("4. Modos / Índice:", "4. Modes / Index:", "4. Modos / Índice:"), "modes", modeOpts)}
+          `;
+                }
                 if (currentMethod === "paticcasamuppada") {
                     const psModeOpts = [
                         { val: "links12", label: this.loc("12 Elos Individuais (Avijjā → Jarāmaraṇa)", "12 Individual Links (Avijjā → Jarāmaraṇa)", "12 Eslabones Individuales (Avijjā → Jarāmaraṇa)") },
@@ -3024,12 +4307,12 @@ export class MnemonicLabUI {
             `;
                     }
                     const topicOpts = [
-                        { val: "addha_3", label: this.loc("Tayo Addhā (3 Períodos)", "Tayo Addhā (3 Periods)", "Tayo Addhā (3 Períodos)") },
-                        { val: "akara_20", label: this.loc("Vīsatākārā (20 Modos)", "Vīsatākārā (20 Modes)", "Vīsatākārā (20 Modos)") },
-                        { val: "sandhi_3", label: this.loc("Tisandhi (3 Junções)", "Tisandhi (3 Connections)", "Tisandhi (3 Conexiones)") },
-                        { val: "sankhepa_4", label: this.loc("Catusaṅkhepā (4 Blocos)", "Catusaṅkhepā (4 Summaries)", "Catusaṅkhepā (4 Bloques)") },
-                        { val: "vatta_3", label: this.loc("Tīṇi Vaṭṭāni (3 Rodas)", "Tīṇi Vaṭṭāni (3 Rounds)", "Tīṇi Vaṭṭāni (3 Ruedas)") },
-                        { val: "mula_2", label: this.loc("Dve Mūlāni (2 Raízes)", "Dve Mūlāni (2 Roots)", "Dve Mūlāni (2 Raíces)") },
+                        { val: "addha_3", label: clean ? "Tayo Addhā" : this.loc("Tayo Addhā (3 Períodos)", "Tayo Addhā (3 Periods)", "Tayo Addhā (3 Períodos)") },
+                        { val: "akara_20", label: clean ? "Vīsatākārā" : this.loc("Vīsatākārā (20 Modos)", "Vīsatākārā (20 Modes)", "Vīsatākārā (20 Modos)") },
+                        { val: "sandhi_3", label: clean ? "Tisandhi" : this.loc("Tisandhi (3 Junções)", "Tisandhi (3 Connections)", "Tisandhi (3 Conexiones)") },
+                        { val: "sankhepa_4", label: clean ? "Catusaṅkhepā" : this.loc("Catusaṅkhepā (4 Blocos)", "Catusaṅkhepā (4 Summaries)", "Catusaṅkhepā (4 Bloques)") },
+                        { val: "vatta_3", label: clean ? "Tīṇi Vaṭṭāni" : this.loc("Tīṇi Vaṭṭāni (3 Rodas)", "Tīṇi Vaṭṭāni (3 Rounds)", "Tīṇi Vaṭṭāni (3 Ruedas)") },
+                        { val: "mula_2", label: clean ? "Dve Mūlāni" : this.loc("Dve Mūlāni (2 Raízes)", "Dve Mūlāni (2 Roots)", "Dve Mūlāni (2 Raíces)") },
                     ];
                     const countOpts = [2, 3, 4, 20].map((n) => ({ val: n, label: `${n}` }));
                     return `
@@ -3050,6 +4333,32 @@ export class MnemonicLabUI {
                         { val: "samodhana_4", label: this.loc("Síntese: 4 Samodhāna (AS VIII.35)", "Synthesis: 4 Samodhāna (AS VIII.35)", "Síntesis: 4 Samodhāna (AS VIII.35)") },
                     ];
                     const curDir = String(sw.direction ?? "nama_nama");
+                    const all24Conditions = [
+                        { val: 1, label: "#1 Hetu" },
+                        { val: 2, label: "#2 Ārammaṇa" },
+                        { val: 3, label: "#3 Adhipati" },
+                        { val: 4, label: "#4 Anantara" },
+                        { val: 5, label: "#5 Samanantara" },
+                        { val: 6, label: "#6 Sahajāta" },
+                        { val: 7, label: "#7 Aññamañña" },
+                        { val: 8, label: "#8 Nissaya" },
+                        { val: 9, label: "#9 Upanissaya" },
+                        { val: 10, label: "#10 Purejāta" },
+                        { val: 11, label: "#11 Pacchājāta" },
+                        { val: 12, label: "#12 Āsevana" },
+                        { val: 13, label: "#13 Kamma" },
+                        { val: 14, label: "#14 Vipāka" },
+                        { val: 15, label: "#15 Āhāra" },
+                        { val: 16, label: "#16 Indriya" },
+                        { val: 17, label: "#17 Jhāna" },
+                        { val: 18, label: "#18 Magga" },
+                        { val: 19, label: "#19 Sampayutta" },
+                        { val: 20, label: "#20 Vippayutta" },
+                        { val: 21, label: "#21 Atthi" },
+                        { val: 22, label: "#22 Natthi" },
+                        { val: 23, label: "#23 Vigata" },
+                        { val: 24, label: "#24 Avigata" },
+                    ];
                     const dirConditions = {
                         nama_nama: [
                             { val: 4, label: "#4 Anantara" },
@@ -3090,7 +4399,9 @@ export class MnemonicLabUI {
                             { val: 21, label: "4. Atthi (#21)" },
                         ],
                     };
-                    const idxOpts = dirConditions[curDir] ?? dirConditions.nama_nama;
+                    const idxOpts = this.progress.level === 3 && curDir !== "samodhana_4"
+                        ? all24Conditions
+                        : dirConditions[curDir] ?? dirConditions.nama_nama;
                     return `
             ${renderRow(this.loc("1. Método Causal (Cap. 8):", "1. Causal Method (Ch. 8):", "1. Método Causal (Cap. 8):"), "method", methodOptions)}
             ${renderRow(this.loc("2. Matriz Direcional (6+5+1+1+2+9 = 24):", "2. Directional Matrix (6+5+1+1+2+9 = 24):", "2. Matriz Direccional (6+5+1+1+2+9 = 24):"), "direction", dirOpts)}
@@ -3098,14 +4409,14 @@ export class MnemonicLabUI {
           `;
                 }
                 const panTypeOpts = [
-                    { val: "atthapannatti", label: this.loc("Classe: Atthapaññatti (Significado · 6)", "Class: Atthapaññatti (Meaning · 6)", "Clase: Atthapaññatti (Significado · 6)") },
-                    { val: "namapannatti", label: this.loc("Classe: Nāmapaññatti (Nome · 6)", "Class: Nāmapaññatti (Name · 6)", "Clase: Nāmapaññatti (Nombre · 6)") },
-                    { val: "v_only", label: "1. Vijjamānapaññatti (Rūpa)" },
-                    { val: "a_only", label: "2. Avijjamānapaññatti (Bhūmi)" },
-                    { val: "v_to_a", label: "3. Vijjamānena Avijjamāna (Chaḷabhiñño)" },
-                    { val: "a_to_v", label: "4. Avijjamānena Vijjamāna (Itthisaddo)" },
-                    { val: "v_to_v", label: "5. Vijjamānena Vijjamāna (Cakkhuviññāṇaṃ)" },
-                    { val: "a_to_a", label: "6. Avijjamānena Avijjamāna (Rājaputto)" },
+                    { val: "atthapannatti", label: this.loc("Classe: Atthapaññatti (Significado)", "Class: Atthapaññatti (Meaning)", "Clase: Atthapaññatti (Significado)") },
+                    { val: "namapannatti", label: this.loc("Classe: Nāmapaññatti (Nome)", "Class: Nāmapaññatti (Name)", "Clase: Nāmapaññatti (Nombre)") },
+                    { val: "v_only", label: clean ? "1. Vijjamānapaññatti" : "1. Vijjamānapaññatti (Rūpa)" },
+                    { val: "a_only", label: clean ? "2. Avijjamānapaññatti" : "2. Avijjamānapaññatti (Bhūmi)" },
+                    { val: "v_to_a", label: clean ? "3. Vijjamānena Avijjamāna" : "3. Vijjamānena Avijjamāna (Chaḷabhiñño)" },
+                    { val: "a_to_v", label: clean ? "4. Avijjamānena Vijjamāna" : "4. Avijjamānena Vijjamāna (Itthisaddo)" },
+                    { val: "v_to_v", label: clean ? "5. Vijjamānena Vijjamāna" : "5. Vijjamānena Vijjamāna (Cakkhuviññāṇaṃ)" },
+                    { val: "a_to_a", label: clean ? "6. Avijjamānena Avijjamāna" : "6. Avijjamānena Avijjamāna (Rājaputto)" },
                 ];
                 const arityOpts = [
                     { val: 1, label: this.loc("1 · Unário (Simples)", "1 · Unary (Simple)", "1 · Unario (Simple)") },
@@ -3125,15 +4436,62 @@ export class MnemonicLabUI {
                     { val: "samatha_carita_abhinna", label: this.loc("2. 6 Caritas · 5 Vasitās · 5 Abhiññās", "2. 6 Caritas · 5 Vasitās · 5 Abhiññās", "2. 6 Caritas · 5 Vasitās · 5 Abhiññās") },
                     { val: "vipassana_visuddhi_nana", label: this.loc("3. 7 Visuddhis · 10 Ñāṇas · Vimokkha", "3. 7 Visuddhis · 10 Ñāṇas · Vimokkha", "3. 7 Visuddhis · 10 Ñāṇas · Vimokkha") },
                     { val: "ariya_samapatti", label: this.loc("4. 4 Ariyas & 2 Samāpattis", "4. 4 Ariyas & 2 Samāpattis", "4. 4 Ariyas y 2 Samāpattis") },
+                    { val: "kammatthana_details", label: this.loc("5. Bhāvanā · Nimitta · Sīla 4 · Upakkilesa 10 (23)", "5. Bhāvanā · Nimitta · Sīla 4 · Upakkilesa 10 (23)", "5. Bhāvanā · Nimitta · Sīla 4 · Upakkilesa 10 (23)") },
                 ];
                 const currentWing = String(sw.wing ?? "samatha_40");
+                if (currentWing === "kammatthana_details") {
+                    const detGroupOpts = [
+                        { val: "bhavana_3", label: "3 Bhāvanā" },
+                        { val: "nimitta_3", label: "3 Nimitta" },
+                        { val: "parisuddhisila_4", label: "4 Catupārisuddhisīla" },
+                        { val: "upakkilesa_10", label: "10 Vipassanupakkilesā" },
+                        { val: "paccavekkhana_aruppa", label: "Paccavekkhaṇā & 9 Kasiṇas" },
+                    ];
+                    const curDg = String(sw.detGroup ?? "bhavana_3");
+                    const maxMap = {
+                        bhavana_3: 3, nimitta_3: 3, parisuddhisila_4: 4, upakkilesa_10: 10, paccavekkhana_aruppa: 3,
+                    };
+                    const slotOpts = Array.from({ length: maxMap[curDg] ?? 3 }, (_, i) => ({
+                        val: i + 1,
+                        label: `#${i + 1}`,
+                    }));
+                    const rolesByDg = {
+                        bhavana_3: [
+                            { val: "all_40", label: this.loc("Todos os 40 Objetos", "All 40 Subjects", "Los 40 Objetos") },
+                            { val: "upacara_10", label: this.loc("10 Só Upacāra", "10 Upacāra Only", "10 Solo Upacāra") },
+                            { val: "appana_30", label: this.loc("30 Alcançam Appanā", "30 Reach Appanā", "30 Alcanzan Appanā") },
+                        ],
+                        nimitta_3: [
+                            { val: "all_40", label: this.loc("Todos os 40 Objetos", "All 40 Subjects", "Los 40 Objetos") },
+                            { val: "patibhaga_22", label: this.loc("22 Geram Paṭibhāga", "22 Yield Paṭibhāga", "22 Generan Paṭibhāga") },
+                        ],
+                        parisuddhisila_4: [
+                            { val: "sila_visuddhi", label: "Sīla-visuddhi (#1)" },
+                        ],
+                        upakkilesa_10: [
+                            { val: "upakkilesa_v5", label: "Visuddhi #5 (Upakkilesa)" },
+                            { val: "upakkilesa_akusala", label: this.loc("Visuddhi #5 (Único Akusala)", "Visuddhi #5 (Sole Unwholesome)", "Visuddhi #5 (Único Akusala)") },
+                        ],
+                        paccavekkhana_aruppa: [
+                            { val: "review_mandatory", label: this.loc("Obrigatórias (3)", "Mandatory (3)", "Obligatorias (3)") },
+                            { val: "review_optional_19", label: this.loc("Opcionais (2 · Total 19)", "Optional (2 · Total 19)", "Opcionales (2 · Total 19)") },
+                            { val: "aruppa_9_kasinas", label: this.loc("9 Kasiṇas (Sem Ākāsa)", "9 Kasiṇas (Excl. Space)", "9 Kasiṇas (Sin Ākāsa)") },
+                        ],
+                    };
+                    return `
+            ${renderRow(this.loc("1. Seção do Cap. 9 (Kammaṭṭhāna):", "1. Ch. 9 Section (Kammaṭṭhāna):", "1. Sección del Cap. 9 (Kammaṭṭhāna):"), "wing", wingOptions)}
+            ${renderRow(this.loc("2. Eixo Detalhado:", "2. Detail Axis:", "2. Eje Detallado:"), "detGroup", detGroupOpts)}
+            ${renderRow(this.loc("3. Item Canônico:", "3. Canonical Item:", "3. Ítem Canónico:"), "slot", slotOpts)}
+            ${renderRow(this.loc("4. Função / Escopo Canônico:", "4. Canonical Role / Scope:", "4. Función / Ámbito Canónico:"), "role", rolesByDg[curDg] ?? rolesByDg.bhavana_3)}
+          `;
+                }
                 if (currentWing === "samatha_40") {
                     const groupOptions = [
-                        { val: "kasina", label: this.loc("10 Kasiṇas (5 Jhānas · Paṭibhāga)", "10 Kasiṇas (5 Jhānas · Paṭibhāga)", "10 Kasiṇas (5 Jhānas · Paṭibhāga)") },
-                        { val: "asubha", label: this.loc("10 Asubhas (1.º Jhāna · Paṭibhāga)", "10 Asubhas (1st Jhāna · Paṭibhāga)", "10 Asubhas (1.er Jhāna · Paṭibhāga)") },
-                        { val: "anussati", label: this.loc("10 Anussatis (8 Upacāra · 1.º · 5)", "10 Anussatis (8 Upacāra · 1st · 5)", "10 Anussatis (8 Upacāra · 1.º · 5)") },
+                        { val: "kasina", label: clean ? "10 Kasiṇas" : this.loc("10 Kasiṇas (5 Jhānas · Paṭibhāga)", "10 Kasiṇas (5 Jhānas · Paṭibhāga)", "10 Kasiṇas (5 Jhānas · Paṭibhāga)") },
+                        { val: "asubha", label: clean ? "10 Asubhas" : this.loc("10 Asubhas (1.º Jhāna · Paṭibhāga)", "10 Asubhas (1st Jhāna · Paṭibhāga)", "10 Asubhas (1.er Jhāna · Paṭibhāga)") },
+                        { val: "anussati", label: clean ? "10 Anussatis" : this.loc("10 Anussatis (8 Upacāra · 1.º · 5)", "10 Anussatis (8 Upacāra · 1st · 5)", "10 Anussatis (8 Upacāra · 1.º · 5)") },
                         { val: "brahmavihara", label: this.loc("4 Appamaññā / Brahmavihāra", "4 Appamaññā / Brahmavihāra", "4 Appamaññā / Brahmavihāra") },
-                        { val: "sanna_vavatthana", label: this.loc("1 Saññā + 1 Vavatthāna (Upacāra)", "1 Saññā + 1 Vavatthāna (Upacāra)", "1 Saññā + 1 Vavatthāna (Upacāra)") },
+                        { val: "sanna_vavatthana", label: clean ? "1 Saññā + 1 Vavatthāna" : this.loc("1 Saññā + 1 Vavatthāna (Upacāra)", "1 Saññā + 1 Vavatthāna (Upacāra)", "1 Saññā + 1 Vavatthāna (Upacāra)") },
                         { val: "aruppa", label: this.loc("4 Āruppas (Imateriais)", "4 Āruppas (Immaterial)", "4 Āruppas (Inmateriales)") },
                     ];
                     const curGrp = String(sw.group ?? "kasina");
@@ -3150,16 +4508,16 @@ export class MnemonicLabUI {
                         label: lbl,
                     }));
                     const reachOptions = [
-                        { val: "upacara", label: this.loc("Upacāra (Só Acesso · 10)", "Upacāra (Access Only · 10)", "Upacāra (Solo Acceso · 10)") },
-                        { val: "jhana_1", label: this.loc("1.º Jhāna (Paṭhamajjhāna · 11)", "1st Jhāna Only (Paṭhamajjhāna · 11)", "Solo 1.er Jhāna (Paṭhamajjhāna · 11)") },
-                        { val: "jhana_4", label: this.loc("1.º–4.º Jhāna (Catukkajjhāna · 3)", "1st–4th Jhāna (Catukkajjhāna · 3)", "1.º–4.º Jhāna (Catukkajjhāna · 3)") },
-                        { val: "jhana_5_only", label: this.loc("Só 5.º Jhāna (Pañcamajjhāna · 1)", "5th Jhāna Only (Pañcamajjhāna · 1)", "Solo 5.º Jhāna (Pañcamajjhāna · 1)") },
-                        { val: "jhana_5", label: this.loc("Todos 5 Jhānas (Pañcakajjhāna · 11)", "All 5 Jhānas (Pañcakajjhāna · 11)", "Los 5 Jhānas (Pañcakajjhāna · 11)") },
-                        { val: "aruppa_4", label: this.loc("4 Āruppas (Āruppajjhāna · 4)", "4 Āruppas (Āruppajjhāna · 4)", "4 Āruppas (Āruppajjhāna · 4)") },
+                        { val: "upacara", label: this.loc("Upacāra (Só Acesso)", "Upacāra (Access Only)", "Upacāra (Solo Acceso)") },
+                        { val: "jhana_1", label: this.loc("1.º Jhāna (Paṭhamajjhāna)", "1st Jhāna Only (Paṭhamajjhāna)", "Solo 1.er Jhāna (Paṭhamajjhāna)") },
+                        { val: "jhana_4", label: this.loc("1.º–4.º Jhāna (Catukkajjhāna)", "1st–4th Jhāna (Catukkajjhāna)", "1.º–4.º Jhāna (Catukkajjhāna)") },
+                        { val: "jhana_5_only", label: this.loc("Só 5.º Jhāna (Pañcamajjhāna)", "5th Jhāna Only (Pañcamajjhāna)", "Solo 5.º Jhāna (Pañcamajjhāna)") },
+                        { val: "jhana_5", label: this.loc("Todos 5 Jhānas (Pañcakajjhāna)", "All 5 Jhānas (Pañcakajjhāna)", "Los 5 Jhānas (Pañcakajjhāna)") },
+                        { val: "aruppa_4", label: this.loc("4 Āruppas (Āruppajjhāna)", "4 Āruppas (Āruppajjhāna)", "4 Āruppas (Āruppajjhāna)") },
                     ];
                     const nimittaOptions = [
-                        { val: 2, label: this.loc("2 Nimittas (Sem Paṭibhāga · 18)", "2 Nimittas (No Paṭibhāga · 18)", "2 Nimittas (Sin Paṭibhāga · 18)") },
-                        { val: 3, label: this.loc("3 Nimittas (Com Paṭibhāga · 22)", "3 Nimittas (With Paṭibhāga · 22)", "3 Nimittas (Con Paṭibhāga · 22)") },
+                        { val: 2, label: this.loc("2 Nimittas (Sem Paṭibhāga)", "2 Nimittas (No Paṭibhāga)", "2 Nimittas (Sin Paṭibhāga)") },
+                        { val: 3, label: this.loc("3 Nimittas (Com Paṭibhāga)", "3 Nimittas (With Paṭibhāga)", "3 Nimittas (Con Paṭibhāga)") },
                     ];
                     return `
             ${renderRow(this.loc("1. Seção do Cap. 9 (Kammaṭṭhāna):", "1. Ch. 9 Section (Kammaṭṭhāna):", "1. Sección del Cap. 9 (Kammaṭṭhāna):"), "wing", wingOptions)}
@@ -3182,10 +4540,19 @@ export class MnemonicLabUI {
                         abhinna_5: ["1. Iddhividha", "2. Dibbasota", "3. Paracittavijānana", "4. Pubbenivāsānussati", "5. Dibbacakkhu"],
                     };
                     const slotOpts = (slotsMap[curTg] ?? slotsMap.carita_6).map((lbl, i) => ({ val: i + 1, label: lbl }));
+                    const caritaPropOpts = [
+                        { val: "sappaya_11", label: this.loc("11 Objetos (10 Asubha + Kāyagatā)", "11 Subjects (10 Asubha + Kāyagatā)", "11 Objetos (10 Asubha + Kāyagatā)") },
+                        { val: "sappaya_8", label: this.loc("8 Objetos (4 Brahmavihāra + 4 Cor)", "8 Subjects (4 Brahmavihāra + 4 Color)", "8 Objetos (4 Brahmavihāra + 4 Color)") },
+                        { val: "sappaya_anapana_large", label: this.loc("Ānāpāna · Kasiṇa Grande", "Ānāpāna · Large Kasiṇa", "Ānāpāna · Kasiṇa Grande") },
+                        { val: "sappaya_6", label: this.loc("6 Primeiras Anussatis", "First 6 Anussatis", "Primeras 6 Anussatis") },
+                        { val: "sappaya_4", label: this.loc("4 (Maraṇa·Upasama·Āhāra·Dhātu)", "4 (Maraṇa·Upasama·Āhāra·Dhātu)", "4 (Maraṇa·Upasama·Āhāra·Dhātu)") },
+                        { val: "sappaya_anapana_small", label: this.loc("Ānāpāna · Kasiṇa Pequeno", "Ānāpāna · Small Kasiṇa", "Ānāpāna · Kasiṇa Pequeño") },
+                    ];
                     return `
             ${renderRow(this.loc("1. Seção do Cap. 9 (Kammaṭṭhāna):", "1. Ch. 9 Section (Kammaṭṭhāna):", "1. Sección del Cap. 9 (Kammaṭṭhāna):"), "wing", wingOptions)}
             ${renderRow(this.loc("2. Subgrupo (Carita / Vasitā / Abhiññā):", "2. Subgroup (Carita / Vasitā / Abhiññā):", "2. Subgrupo (Carita / Vasitā / Abhiññā):"), "topicGroup", tgOpts)}
             ${renderRow(this.loc("3. Item Canônico:", "3. Canonical Item:", "3. Ítem Canónico:"), "slot", slotOpts)}
+            ${curTg === "carita_6" ? renderRow(this.loc("4. Objetos Adequados (Sappāyabheda — AS IX.15–18):", "4. Suitable Subjects (Sappāyabheda — AS IX.15–18):", "4. Objetos Idóneos (Sappāyabheda — AS IX.15–18):"), "prop", caritaPropOpts) : ""}
           `;
                 }
                 if (currentWing === "vipassana_visuddhi_nana") {
@@ -3201,10 +4568,17 @@ export class MnemonicLabUI {
                         vimokkha_4: ["1. Anicca → Animitta", "2. Dukkha → Appaṇihita", "3. Anatta → Suññata", "4. 10 Vipassanupakkilesā"],
                     };
                     const slotOpts = (slotsMap[curVg] ?? slotsMap.visuddhi_7).map((lbl, i) => ({ val: i + 1, label: lbl }));
+                    const stageOpts = [
+                        { val: "v5_maggamagga", label: "Visuddhi #5 (Maggāmagga)" },
+                        { val: "v5_v6_bridge", label: this.loc("Ponte Visuddhi #5 → #6", "Visuddhi #5 → #6 Bridge", "Puente Visuddhi #5 → #6") },
+                        { val: "v6_patipada", label: "Visuddhi #6 (Paṭipadā)" },
+                        { val: "v6_vutthanagamini", label: "Visuddhi #6 (Vuṭṭhānagāminī)" },
+                    ];
                     return `
             ${renderRow(this.loc("1. Seção do Cap. 9 (Kammaṭṭhāna):", "1. Ch. 9 Section (Kammaṭṭhāna):", "1. Sección del Cap. 9 (Kammaṭṭhāna):"), "wing", wingOptions)}
             ${renderRow(this.loc("2. Eixo de Vipassanā:", "2. Vipassanā Axis:", "2. Eje de Vipassanā:"), "vipGroup", vgOpts)}
             ${renderRow(this.loc("3. Estágio / Conhecimento / Tríade:", "3. Stage / Knowledge / Triad:", "3. Etapa / Conocimiento / Tríada:"), "slot", slotOpts)}
+            ${curVg === "nana_10" ? renderRow(this.loc("4. Purificação Correspondente (Visuddhi #5 / #6):", "4. Corresponding Purification (Visuddhi #5 / #6):", "4. Purificación Correspondiente (Visuddhi #5 / #6):"), "stage", stageOpts) : ""}
           `;
                 }
                 const agOpts = [
@@ -3223,15 +4597,27 @@ export class MnemonicLabUI {
                         { val: 1, label: "1. Phala-samāpatti" },
                         { val: 2, label: "2. Nirodha-samāpatti" },
                     ];
+                const ariyaPropOpts = curAg === "puggala_4"
+                    ? [
+                        { val: "cut_ditthi_vicikiccha", label: this.loc("Corta Diṭṭhi + Vicikicchā", "Cuts Diṭṭhi + Vicikicchā", "Corta Diṭṭhi + Vicikicchā") },
+                        { val: "attenuate_3", label: this.loc("Atenua Rāga·Dosa·Moha", "Attenuates Rāga·Dosa·Moha", "Atenúa Rāga·Dosa·Moha") },
+                        { val: "cut_kamaraga_byapada", label: this.loc("Corta Kāmarāga + Byāpāda", "Cuts Kāmarāga + Byāpāda", "Corta Kāmarāga + Byāpāda") },
+                        { val: "cut_all_remaining", label: this.loc("Corta Todas as Impurezas", "Cuts All Remaining Defilements", "Corta Todas las Impurezas") },
+                    ]
+                    : [
+                        { val: "access_4_ariyas", label: this.loc("Todos os 4 Ariyas", "All 4 Noble Ones", "Los 4 Ariyas") },
+                        { val: "access_anagami_arahant", label: this.loc("Só Anāgāmī & Arahant (8 Jhānas)", "Anāgāmī & Arahant Only (8 Jhānas)", "Solo Anāgāmī y Arahant (8 Jhānas)") },
+                    ];
                 return `
           ${renderRow(this.loc("1. Seção do Cap. 9 (Kammaṭṭhāna):", "1. Ch. 9 Section (Kammaṭṭhāna):", "1. Sección del Cap. 9 (Kammaṭṭhāna):"), "wing", wingOptions)}
           ${renderRow(this.loc("2. Subgrupo (Ariya / Samāpatti):", "2. Subgroup (Ariya / Samāpatti):", "2. Subgrupo (Ariya / Samāpatti):"), "ariyaGroup", agOpts)}
           ${renderRow(this.loc("3. Grau Nobre / Realização:", "3. Noble Grade / Attainment:", "3. Grado Noble / Realización:"), "slot", slotOpts)}
+          ${renderRow(this.loc("4. Erradicação / Critério de Acesso:", "4. Eradication / Access Criterion:", "4. Erradicación / Criterio de Acceso:"), "prop", ariyaPropOpts)}
         `;
             }
         }
     }
-    renderPeriodicPillar(s) {
+    renderPeriodicPillar(s, summary) {
         return `
       <div class="mnem-submode-bar">
         <button type="button" class="mnem-submode-btn ${this.perMode === "atlas" ? "active" : ""}" data-per-mode="atlas" aria-pressed="${this.perMode === "atlas"}">
@@ -3243,7 +4629,7 @@ export class MnemonicLabUI {
       </div>
       <div class="mnem-aid-note"><strong>ℹ️ ${esc(s.perAidNotice)}</strong></div>
 
-      ${this.perMode === "atlas" ? this.renderPeriodicAtlas(s) : this.renderPeriodicAlchemy(s)}
+      ${this.perMode === "atlas" ? this.renderPeriodicAtlas(s) : this.renderPeriodicAlchemy(s, summary)}
     `;
     }
     renderPeriodicAtlas(s) {
@@ -3328,7 +4714,7 @@ export class MnemonicLabUI {
       </div>
     `;
     }
-    renderPeriodicAlchemy(s) {
+    renderPeriodicAlchemy(s, summary) {
         const target = this.chemTargetCitta;
         const evalRes = evaluateChemicalSynthesis(target, this.activeChemSet);
         const cetasikaElements = PERIODIC_ELEMENTS_72.filter((el) => el.paramattha === "cetasika");
@@ -3379,6 +4765,10 @@ export class MnemonicLabUI {
         const optCount = target.optionalCetasikas.length;
         return `
       <div class="mnem-alchemy-header">
+        <div class="mnem-challenge-progress-strip">
+          ${this.renderProgressMeter("alchemy", "alchemy", s.perAlchemyProgressLabel, summary.periodic, undefined, true)}
+          ${this.renderProgressMeter("alchemy-global", "global-lab-inline", s.globalProgressLabel, summary.overall, undefined, true)}
+        </div>
         <div class="mnem-alchemy-target">
           <span class="mnem-challenge-kicker">⚗️ ${esc(s.perTargetTitle)} (${esc(target.asRef)})</span>
           <div class="mnem-alchemy-citta-title">
@@ -3432,8 +4822,9 @@ export class MnemonicLabUI {
       </div>
     `;
     }
-    renderPhalanxPillar(s) {
+    renderPhalanxPillar(s, summary) {
         const mapSpec = getPhalanxMapById(this.phaMapId);
+        const mapProg = computePhalanxMapProgress(this.progress, this.phaMapId);
         const activeSlot = mapSpec.slots.find((sl) => sl.index === this.selectedSlotIndex) ?? mapSpec.slots[0];
         let challengeBannerHtml = "";
         if (this.phaMode === "blind") {
@@ -3513,6 +4904,10 @@ export class MnemonicLabUI {
       <div class="mnem-map-summary-banner">
         <strong>${esc(mapSpec.title[this.lang])} (${esc(mapSpec.asRef)}):</strong>
         <span>${esc(mapSpec.formulaSummary[this.lang])}</span>
+        <div class="mnem-challenge-progress-strip" style="margin-top:10px;">
+          ${this.renderProgressMeter("phalanx-map", "phalanx-map", s.phaMapProgressLabel, mapProg, undefined, true)}
+          ${this.renderProgressMeter("phalanx-global", "phalanx-global", s.phaAllMapsProgressLabel, summary.phalanx, undefined, true)}
+        </div>
       </div>
 
       ${challengeBannerHtml}
@@ -3615,10 +5010,29 @@ export class MnemonicLabUI {
             const val = Number(rigorSel.value);
             if (val === 1 || val === 2 || val === 3) {
                 this.progress = { ...this.progress, level: val };
+                this.binFeedback = null;
+                this.naryFeedback = null;
+                this.reverseFeedback = null;
+                this.synthesisFeedback = null;
                 saveMnemonicProgress(this.progress);
                 this.syncVault();
                 this.render();
             }
+        });
+        this.container.querySelectorAll("[data-set-level]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const val = Number(btn.dataset.setLevel);
+                if ((val === 1 || val === 2 || val === 3) && val !== this.progress.level) {
+                    this.progress = { ...this.progress, level: val };
+                    this.binFeedback = null;
+                    this.naryFeedback = null;
+                    this.reverseFeedback = null;
+                    this.synthesisFeedback = null;
+                    saveMnemonicProgress(this.progress);
+                    this.syncVault();
+                    this.render();
+                }
+            });
         });
         this.container.querySelector("#mnem-vault-export")?.addEventListener("click", () => {
             const snap = buildLocalStorageSnapshot();
@@ -3870,12 +5284,27 @@ export class MnemonicLabUI {
             }
             this.render();
         });
+        this.container.querySelectorAll("[data-nary-drill]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const dm = btn.dataset.naryDrill;
+                if (dm && dm !== this.naryDrillMode) {
+                    this.naryDrillMode = dm;
+                    this.reverseFeedback = null;
+                    this.synthesisFeedback = null;
+                    this.render();
+                }
+            });
+        });
         this.container.querySelectorAll("[data-bin-chapter]").forEach((btn) => {
             btn.addEventListener("click", () => {
                 const ch = Number(btn.dataset.binChapter);
-                if (ch >= 1 && ch <= 9 && ch !== this.binActiveChapter) {
+                if (ch >= 1 && ch <= 9 && (ch !== this.binActiveChapter || this.naryDrillMode === "synthesis")) {
+                    if (this.naryDrillMode === "synthesis") {
+                        this.naryDrillMode = "encode";
+                    }
                     this.binActiveChapter = ch;
                     this.narySubmatrixScope = "all";
+                    this.reverseFeedback = null;
                     if (ch > 1) {
                         this.binTargetNaryItem = pickNextNaryChapterChallenge(ch, this.progress, undefined, "all");
                         this.narySwitches = defaultNarySwitchesForChapter(ch);
@@ -3884,6 +5313,62 @@ export class MnemonicLabUI {
                     this.render();
                 }
             });
+        });
+        this.container.querySelectorAll("[data-reverse-choice]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                if (this.reverseFeedback)
+                    return;
+                const selectedId = btn.dataset.reverseChoice;
+                if (!selectedId)
+                    return;
+                const targetId = this.binActiveChapter === 1 ? String(this.binTargetCitta.id) : this.binTargetNaryItem.id;
+                const isCorrect = selectedId === targetId;
+                this.reverseFeedback = { isCorrect, selectedId, targetId };
+                const key = this.binActiveChapter === 1 ? `rev:citta:${targetId}` : `rev:nary:${targetId}`;
+                this.progress = recordMnemonicAttempt(this.progress, "binary", key, isCorrect);
+                this.syncVault();
+                this.render();
+            });
+        });
+        this.container.querySelector("#mnem-reverse-next")?.addEventListener("click", () => {
+            this.reverseFeedback = null;
+            if (this.binActiveChapter === 1) {
+                this.binTargetCitta = pickNextBinaryChallenge(this.progress, this.binFamilyScope, this.binTargetCitta.id, this.binEnumMode);
+            }
+            else {
+                this.binTargetNaryItem = pickNextNaryChapterChallenge(this.binActiveChapter, this.progress, this.binTargetNaryItem?.id, this.narySubmatrixScope);
+            }
+            this.render();
+        });
+        this.container.querySelectorAll("[data-syn-axis]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const ax = btn.dataset.synAxis;
+                if (ax && ax !== this.synthesisAxis) {
+                    this.synthesisAxis = ax;
+                    this.synthesisTarget = this.pickNextSynthesisItem();
+                    this.synthesisFeedback = null;
+                    this.render();
+                }
+            });
+        });
+        this.container.querySelectorAll("[data-syn-choice]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                if (this.synthesisFeedback)
+                    return;
+                const selectedId = btn.dataset.synChoice;
+                if (!selectedId)
+                    return;
+                const isCorrect = selectedId === this.synthesisTarget.id;
+                this.synthesisFeedback = { isCorrect, selectedId };
+                this.progress = recordMnemonicAttempt(this.progress, "binary", this.synthesisTarget.id, isCorrect);
+                this.syncVault();
+                this.render();
+            });
+        });
+        this.container.querySelector("#mnem-syn-next")?.addEventListener("click", () => {
+            this.synthesisTarget = this.pickNextSynthesisItem(this.synthesisTarget.id);
+            this.synthesisFeedback = null;
+            this.render();
         });
         this.container.querySelectorAll("[data-nary-submatrix]").forEach((btn) => {
             btn.addEventListener("click", () => {
@@ -4079,20 +5564,4 @@ export class MnemonicLabUI {
         });
     }
 }
-let toolsMnemonicInstance = null;
-let toolsMnemonicContainer = null;
-let mnemonicLangListenerBound = false;
-registerToolModule("mnemonic", (container) => {
-    toolsMnemonicContainer = container;
-    toolsMnemonicInstance = new MnemonicLabUI(container, settings.uiLang);
-    toolsMnemonicInstance.init();
-    if (!mnemonicLangListenerBound) {
-        mnemonicLangListenerBound = true;
-        window.addEventListener("languageChanged", () => {
-            if (toolsMnemonicInstance && toolsMnemonicContainer?.isConnected) {
-                toolsMnemonicInstance.setLang(settings.uiLang);
-            }
-        });
-    }
-});
 //# sourceMappingURL=ui.js.map

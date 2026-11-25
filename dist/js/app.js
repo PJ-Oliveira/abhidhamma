@@ -1,22 +1,16 @@
-import { t } from "./i18n.js?v=3f76b330";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=3f76b330";
-import { renderTree, markActiveLeaf } from "./tree.js?v=3f76b330";
-import { loadChunk, renderSegments } from "./reader.js?v=3f76b330";
-import { initDictionaryPanel } from "./dictionary.js?v=3f76b330";
-import { initSearchPanel } from "./search.js?v=3f76b330";
-import { initExportPanel } from "./export.js?v=3f76b330";
-import { initSrsPanel } from "./srs.js?v=3f76b330";
-import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=3f76b330";
-import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=3f76b330";
-import { initToolsPanel } from "./tools/tools.js?v=3f76b330";
-import "./tools/mindmap.js?v=3f76b330";
-import "./tools/patthana.js?v=3f76b330";
-import "./tools/vithi.js?v=3f76b330";
-import "./tools/matikas.js?v=3f76b330";
-import "./tools/cetasika.js?v=3f76b330";
-import { MnemonicLabUI } from "./mnemonic-lab/ui.js?v=3f76b330";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=3f76b330";
-import { createLogger } from "./logger.js?v=3f76b330";
+import { t } from "./i18n.js?v=ec96663c";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=ec96663c";
+import { renderTree, markActiveLeaf } from "./tree.js?v=ec96663c";
+import { loadChunk, renderSegments } from "./reader.js?v=ec96663c";
+import { initDictionaryPanel } from "./dictionary.js?v=ec96663c";
+import { initSearchPanel } from "./search.js?v=ec96663c";
+import { initExportPanel } from "./export.js?v=ec96663c";
+import { initSrsPanel } from "./srs.js?v=ec96663c";
+import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=ec96663c";
+import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=ec96663c";
+import { MnemonicLabUI } from "./mnemonic-lab/ui.js?v=ec96663c";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=ec96663c";
+import { createLogger } from "./logger.js?v=ec96663c";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -482,12 +476,11 @@ function wireIconRail() {
         if (w >= MIN_W)
             root.style.setProperty("--panel-w", w + "px");
     }
-    const FULLSCREEN_PANELS = new Set(["srs", "tools", "abhidhamma-srs", "mnemonic-srs"]);
+    const FULLSCREEN_PANELS = new Set(["srs", "abhidhamma-srs", "mnemonic-srs"]);
     const readerHeader = el("reader-header");
     const readerContent = el("content");
     const tocNav = el("toc-nav");
     const readerSrs = el("reader-srs");
-    const readerTools = el("reader-tools");
     function toggleReaderOverlay(target) {
         const isFullscreen = target && FULLSCREEN_PANELS.has(target);
         readerHeader.style.display = isFullscreen ? "none" : "";
@@ -495,7 +488,6 @@ function wireIconRail() {
         tocNav.style.display = isFullscreen ? "none" : "";
         const isSrsOverlay = target === "srs" || target === "abhidhamma-srs" || target === "mnemonic-srs";
         readerSrs.style.display = isSrsOverlay ? "flex" : "none";
-        readerTools.style.display = target === "tools" ? "flex" : "none";
     }
     switchPanel = (target, skipHashUpdate = false) => {
         if (!target)
@@ -675,6 +667,18 @@ async function cacheAllForOffline(btn) {
             './js/abhidhamma-srs/ui.js',
             './js/mnemonic-lab/data.js',
             './js/mnemonic-lab/nary-chapters-data.js',
+            './js/mnemonic-lab/chapters/ch0-synthesis.js',
+            './js/mnemonic-lab/chapters/ch2-laws.js',
+            './js/mnemonic-lab/chapters/ch2-sangaha.js',
+            './js/mnemonic-lab/chapters/ch3-pakinnaka.js',
+            './js/mnemonic-lab/chapters/ch4-vithi.js',
+            './js/mnemonic-lab/chapters/ch5-vithimutta.js',
+            './js/mnemonic-lab/chapters/ch6-rupa.js',
+            './js/mnemonic-lab/chapters/ch7-granular.js',
+            './js/mnemonic-lab/chapters/ch7-samuccaya.js',
+            './js/mnemonic-lab/chapters/ch8-paccaya.js',
+            './js/mnemonic-lab/chapters/ch9-kammatthana.js',
+            './js/mnemonic-lab/chapters/mula-supplements.js',
             './js/mnemonic-lab/engine.js',
             './js/mnemonic-lab/ui.js',
         ];
@@ -979,13 +983,13 @@ function parseHash() {
         return null;
     let panel = "tipitaka";
     let workId, partKey, chunkIndexStr;
-    const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "tools", "abhidhamma-srs", "mnemonic-srs"]);
+    const knownPanels = new Set(["tipitaka", "dictionary", "history", "search", "settings", "export", "srs", "abhidhamma-srs", "mnemonic-srs"]);
     if (parts[0] === "srs" && parts[1] === "abhidhamma") {
         parts.shift();
         parts.shift();
         panel = "abhidhamma-srs";
     }
-    else if (parts[0] === "srs" && parts[1] === "mnemonic") {
+    else if ((parts[0] === "srs" || parts[0] === "tools") && parts[1] === "mnemonic") {
         parts.shift();
         parts.shift();
         panel = "mnemonic-srs";
@@ -1086,7 +1090,6 @@ async function init() {
     initSelectionHandler(el("content"));
     initExportPanel(state.manifest, el("export-panel-body"), () => state.work?.id ?? null);
     initSrsPanel(el("srs-full-body"));
-    initToolsPanel(el("tools-full-body"));
     const abhidhammaMount = document.getElementById("srs-abhidhamma-main");
     if (abhidhammaMount) {
         abhidhammaSrsInstance = new AbhidhammaSrsUI(abhidhammaMount, settings.uiLang);

@@ -727,236 +727,10 @@ sup.var-note { color: var(--accent); cursor: help; font-size: .7em; }
   flex-wrap: wrap;
 }
 
-/* ══════════════════════════════════════════════════════════════════════════════
-   ABHIDHAMMA TOOLS
-   ══════════════════════════════════════════════════════════════════════════════ */
-
-.tools-tab-bar {
-  display: flex;
-  gap: 4px;
-  border-bottom: 2px solid var(--border);
-  padding: 0 8px;
-  background: var(--bg-panel);
-  flex-shrink: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.tools-tab-bar::-webkit-scrollbar {
-  display: none;
-}
-.tools-tab-btn {
-  padding: 10px 14px; border: none; background: none;
-  font-size: 13px; font-family: 'Gentium Book Plus', Georgia, serif; cursor: pointer;
-  color: var(--text-muted); border-bottom: 3px solid transparent;
-  transition: all .2s; white-space: nowrap;
-  display: flex; align-items: center; gap: 6px;
-}
-.tools-tab-btn:hover { color: var(--text); background: var(--accent-soft); }
-.tools-tab-btn.active {
-  color: var(--accent); border-bottom-color: var(--accent); font-weight: 600;
-}
-.tools-tab-icon { font-size: 16px; }
-.tools-content {
-  flex: 1; overflow: hidden; padding: 0; min-height: 0; display: flex; flex-direction: column;
-}
-/* Individual tool panels fill the content area */
-.tools-panel {
-  display: none;
-  flex: 1;
-  flex-direction: column;
-  overflow: auto;
-  padding: 20px;
-  min-height: 0;
-}
-/* Patthana panel: let the wrap fill all remaining height */
-#tools-panel-patthana { padding: 12px; }
-.patt-wrap { overflow: auto; flex: 1; min-height: 0; }
-
-#reader-tools > div {
-  max-width: 100%; display: flex; flex-direction: column; height: 100%; width: 100%;
-}
-
-/* ── Mindmap ── */
-.mm-search-wrap { margin-bottom: 16px; }
-.mm-search {
-  width: 100%; padding: 10px 14px; border: 1px solid var(--border);
-  border-radius: 8px; font-size: 14px; font-family: 'Gentium Book Plus', Georgia, serif;
-  background: var(--bg-content); color: var(--text);
-}
-.mm-search:focus { border-color: var(--accent); outline: none; }
-.mm-tree, .mm-children { list-style: none; padding-left: 20px; margin: 0; }
-.mm-tree { padding-left: 0; }
-.mm-node {
-  display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap;
-  padding: 6px 10px; border-radius: 6px; cursor: pointer; transition: background .15s;
-}
-.mm-node:hover { background: var(--accent-soft); }
-.mm-depth-0 { font-size: 18px; font-weight: 700; }
-.mm-depth-1 { font-size: 16px; font-weight: 600; }
-.mm-depth-2 { font-size: 14px; font-weight: 600; }
-.mm-depth-3 { font-size: 13px; }
-.mm-depth-4 { font-size: 12px; }
-.mm-bullet { color: var(--accent); font-size: 8px; }
-.mm-pali { color: var(--text); font-family: 'Gentium Book Plus', Georgia, serif; }
-.mm-trans { color: var(--text-muted); font-style: italic; }
-.mm-count {
-  background: var(--accent); color: #fff; font-size: 10px;
-  padding: 1px 6px; border-radius: 10px; font-weight: 600;
-}
-.mm-desc { font-size: 11px; color: var(--text-muted); display: block; width: 100%; }
 details > summary { list-style: none; }
 details > summary::marker, details > summary::-webkit-details-marker { display: none; }
 details > summary::before { content: "▶"; font-size: 10px; color: var(--accent); margin-right: 6px; transition: transform .2s; display: inline-block; }
 details[open] > summary::before { transform: rotate(90deg); }
-.mm-loading { padding: 40px; text-align: center; color: var(--text-muted); font-style: italic; }
-
-/* ── Paṭṭhāna Matrix ── */
-.patt-wrap { overflow: auto; max-height: 100%; }
-.patt-table { border-collapse: collapse; font-size: 12px; font-family: 'Gentium Book Plus', Georgia, serif; width: max-content; }
-.patt-table th, .patt-table td { border: 1px solid var(--border); padding: 6px 8px; text-align: center; }
-.patt-corner { background: var(--bg-panel); min-width: 160px; }
-.patt-col-header { background: var(--bg-panel); position: sticky; top: 0; z-index: 1; height: 100px; vertical-align: bottom; padding: 4px; }
-.patt-col-text { writing-mode: vertical-lr; transform: rotate(180deg); font-size: 11px; white-space: nowrap; }
-.patt-row-label { text-align: left; font-weight: 600; position: sticky; left: 0; background: var(--bg-panel); z-index: 1; }
-.patt-yes { background: var(--accent-soft); color: var(--accent); font-weight: bold; }
-.patt-no { color: var(--border); }
-
-/* ── Citta-Vīthi ── */
-.vithi-doors { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
-.vithi-door-btn {
-  padding: 8px 14px; border: 1px solid var(--border); border-radius: 8px;
-  background: var(--bg-content); font-size: 13px; cursor: pointer;
-  font-family: 'Gentium Book Plus', Georgia, serif; transition: all .2s;
-}
-.vithi-door-btn:hover { background: var(--accent-soft); }
-.vithi-door-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-.vithi-seq-wrap { overflow-x: auto; padding: 16px 0; margin-bottom: 16px; }
-.vithi-strip { display: flex; align-items: center; gap: 4px; min-width: max-content; }
-.vithi-box {
-  border: 2px solid var(--border); border-radius: 8px;
-  padding: 10px 6px; min-width: 90px; max-width: 120px; text-align: center;
-  cursor: pointer; transition: all .2s; background: var(--bg-content);
-}
-.vithi-box:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.1); }
-.vithi-active { transform: scale(1.1); box-shadow: 0 4px 16px rgba(0,0,0,.15); }
-.vithi-abbrev { font-size: 20px; font-weight: 700; font-family: 'Gentium Book Plus', Georgia, serif; }
-.vithi-label { font-size: 10px; font-weight: 600; color: var(--text); margin-top: 4px; word-break: break-word; line-height: 1.2; }
-.vithi-trans { font-size: 9px; color: var(--text-muted); font-style: italic; margin-top: 2px; line-height: 1.1; }
-.vithi-arrow { color: var(--text-muted); font-size: 14px; flex-shrink: 0; }
-.vithi-controls { display: flex; gap: 8px;
-    flex-wrap: wrap; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
-.vithi-btn {
-  padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px;
-  background: var(--bg-content); font-size: 13px; cursor: pointer; font-family: 'Gentium Book Plus', Georgia, serif;
-}
-.vithi-btn:hover { background: var(--accent-soft); }
-.vithi-speed-label { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
-.vithi-info {
-  background: var(--bg-panel); border: 1px solid var(--border);
-  border-radius: 8px; padding: 16px; min-height: 60px;
-}
-.vithi-info h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); }
-.vithi-cetasika-count { font-size: 12px; color: var(--text-muted); margin: 4px 0; }
-.vithi-cetasika-list { display: flex; flex-wrap: wrap; gap: 4px; }
-
-/* ── Mātikā Explorer ── */
-.mat-tab-bar { display: flex; gap: 4px; margin-bottom: 16px; }
-.mat-tab {
-  padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px;
-  background: var(--bg-content); font-size: 13px; cursor: pointer; font-family: 'Gentium Book Plus', Georgia, serif;
-}
-.mat-tab:hover { background: var(--accent-soft); }
-.mat-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-.mat-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
-.mat-summary {
-  padding: 10px 14px; cursor: pointer; display: flex; align-items: baseline;
-  gap: 8px;
-    flex-wrap: wrap; font-family: 'Gentium Book Plus', Georgia, serif;
-}
-.mat-summary:hover { background: var(--accent-soft); }
-.mat-id { font-size: 12px; color: var(--text-muted); font-weight: 600; min-width: 24px; }
-.mat-title-pali { font-size: 14px; font-weight: 600; color: var(--text); }
-.mat-title-trans { font-size: 13px; color: var(--text-muted); font-style: italic; }
-.mat-body { padding: 12px 14px; background: var(--bg-panel); }
-.mat-term { display: flex; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--border); }
-.mat-term:last-child { border-bottom: none; }
-.mat-pali { font-weight: 600; color: var(--accent); min-width: 180px; font-family: 'Gentium Book Plus', Georgia, serif; }
-.mat-trans { color: var(--text-muted); font-style: italic; }
-.mat-def { font-size: 12px; color: var(--text-muted); margin-top: 8px; font-style: italic; }
-
-/* ── Cetasika Analyzer ── */
-.cet-mode-bar { display: flex; gap: 4px; margin-bottom: 16px; }
-.cet-mode-btn {
-  padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px;
-  background: var(--bg-content); font-size: 13px; cursor: pointer; font-family: 'Gentium Book Plus', Georgia, serif;
-}
-.cet-mode-btn:hover { background: var(--accent-soft); }
-.cet-mode-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-.cet-sel-wrap { margin-bottom: 16px; }
-.cet-select {
-  width: 100%; padding: 10px; border: 1px solid var(--border);
-  border-radius: 8px; font-size: 13px; font-family: 'Gentium Book Plus', Georgia, serif;
-  background: var(--bg-content); color: var(--text);
-}
-.cet-count { font-size: 14px; font-weight: 600; color: var(--accent); margin-bottom: 12px; text-align: center; }
-.cet-group-header {
-  font-size: 13px; font-weight: 600; color: var(--text);
-  padding: 8px 0 4px; border-bottom: 1px solid var(--border); margin-top: 12px;
-}
-.cet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px; padding: 8px 0; }
-.cet-item { display: flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 4px; font-size: 12px; }
-.cet-yes { background: rgba(74,140,80,0.12); }
-.cet-no { background: rgba(0,0,0,0.03); color: var(--text-muted); opacity: 0.6; }
-.cet-check { font-weight: 700; font-size: 14px; }
-.cet-yes .cet-check { color: #4a8c50; }
-.cet-no .cet-check { color: #ccc; }
-.cet-name { font-weight: 600; font-family: 'Gentium Book Plus', Georgia, serif; }
-.cet-trans { color: var(--text-muted); font-style: italic; }
-.cet-comp-wrap { display: flex; gap: 16px; margin-bottom: 16px; }
-.cet-comp-col { flex: 1; }
-.cet-comp-result { margin-top: 12px; }
-.cet-comp-section { margin-bottom: 12px; }
-.cet-comp-title { font-size: 13px; margin: 0 0 6px; }
-.cet-common { color: #4a8c50; }
-.cet-only-a { color: #3a7ac2; }
-.cet-only-b { color: #b33f3f; }
-.cet-tag, .vithi-cetasika-tag {
-  display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: 5px 10px; border-radius: 6px; margin: 3px;
-  vertical-align: top; text-align: center; line-height: 1.2;
-}
-.cet-tag-common { background: rgba(74,140,80,0.15); }
-.cet-tag-a { background: rgba(58,122,194,0.15); }
-.cet-tag-b { background: rgba(179,63,63,0.15); }
-.vithi-cetasika-tag { background: var(--accent-soft); }
-
-.cet-tag-pali { font-size: 13px; font-weight: 600; font-family: 'Gentium Book Plus', Georgia, serif; color: var(--text); }
-.cet-tag-trans { font-size: 10.5px; color: var(--text-muted); font-style: italic; margin-top: 3px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-
-/* Fix for mobile matrices (Sticky Headers) */
-.patt-wrap table {
-  border-collapse: collapse;
-}
-.patt-wrap th {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  background: var(--bg);
-  box-shadow: 0 1px 0 var(--border);
-}
-.patt-wrap th:first-child,
-.patt-wrap td:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 1;
-  background: var(--bg);
-  box-shadow: 1px 0 0 var(--border);
-}
-.patt-wrap th:first-child {
-  z-index: 3;
-}
 
 /* ====== TABLET & SMALL SCREEN DRAWER (<= 860px) ====== */
 @media (max-width: 860px) and (min-width: 601px) {
@@ -1073,21 +847,6 @@ details[open] > summary::before { transform: rotate(90deg); }
     z-index: 35;
   }
 
-  /* Tools matrices */
-  .vithi-doors {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .cet-comp-wrap {
-    flex-direction: column;
-  }
-  
-  .tools-tab-btn {
-    padding: 8px 11px;
-    font-size: 12px;
-  }
-  
   /* SRS Mobile tweaks */
   .srs-card {
     padding: 24px 20px;
@@ -3309,33 +3068,11 @@ details[open] > summary::before { transform: rotate(90deg); }
 .abhi-srs-wrap {
   padding-bottom: 84px; /* Always clears floating Debate button on desktop/laptop */
 }
-.tools-panel {
-  padding-bottom: 76px;
-}
 
 @media (max-width: 768px) {
-  /* Hide floating Debate FAB inside SRS/Anki/Tools on small screens so it never blocks rating or action buttons */
-  body:has(#reader-srs:not([style*="display: none"])) #btn-toggle-interlocutor,
-  body:has(#reader-tools:not([style*="display: none"])) #btn-toggle-interlocutor {
+  /* Hide floating Debate FAB inside SRS/Anki on small screens so it never blocks rating or action buttons */
+  body:has(#reader-srs:not([style*="display: none"])) #btn-toggle-interlocutor {
     display: none !important;
-  }
-
-  /* Wrap all 5 Tools tabs cleanly inside 360px+ viewports with zero right-edge clipping */
-  .tools-tab-bar {
-    flex-wrap: wrap;
-    justify-content: center;
-    overflow-x: visible;
-    gap: 4px;
-    padding: 6px;
-  }
-  .tools-tab-btn {
-    padding: 6px 9px;
-    font-size: 11.5px;
-    gap: 4px;
-    flex: 0 1 auto;
-  }
-  .tools-tab-icon {
-    font-size: 14px;
   }
 
   /* Comfortable Anki mobile layout (Samsung 360x800 / 412x915) */
@@ -3425,15 +3162,7 @@ details[open] > summary::before { transform: rotate(90deg); }
    LABORATÓRIO MNÊMICO (Binary Decompressor · Periodic Table 72 · Phalanx Abacus)
    ============================================================================ */
 
-#reader-tools {
-  padding: 0 !important;
-  align-items: stretch !important;
-  justify-content: flex-start !important;
-  overflow: hidden !important;
-}
-
-#srs-mnemonic-main,
-#tools-panel-mnemonic {
+#srs-mnemonic-main {
   flex: 1;
   overflow-y: auto;
   display: flex;
@@ -4536,6 +4265,177 @@ details[open] > summary::before { transform: rotate(90deg); }
   font-weight: 700;
 }
 
+/* ── Mnemonic Lab Global & Challenge Progress Bars (Native <progress>) ── */
+.mnem-global-progress-strip {
+  flex: 1 0 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  min-width: 0;
+}
+
+.mnem-pillar-progress-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mnem-pillar-prog-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.mnem-pillar-prog-chip strong {
+  color: var(--accent);
+}
+
+.mnem-pillar-prog-chip.is-complete {
+  border-color: #2e8b57;
+  background: #e6f4ea;
+  color: #135325;
+}
+
+.mnem-pillar-prog-chip.is-complete strong {
+  color: #135325;
+}
+
+.mnem-nary-global-bar {
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width: 0;
+}
+
+.mnem-challenge-progress-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 10px;
+  background: var(--bg-content);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 12px;
+  min-width: 0;
+}
+
+.mnem-progress-meter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+  min-width: 0;
+}
+
+.mnem-progress-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 10px;
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.mnem-progress-meter.compact .mnem-progress-head {
+  font-size: 0.78rem;
+}
+
+.mnem-progress-lbl {
+  font-weight: 700;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.mnem-progress-vals {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.mnem-progress-pct {
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.mnem-progress-meter.compact .mnem-progress-pct {
+  font-size: 0.85rem;
+}
+
+.mnem-progress-meter.is-complete .mnem-progress-pct {
+  color: #1e7e34;
+}
+
+.mnem-progress-frac,
+.mnem-progress-meta {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+progress.mnem-progress-bar {
+  --mnem-progress-radius: 1e5px;
+  --mnem-progress-track: var(--border);
+  --mnem-progress-fill: var(--accent);
+  --mnem-progress-transition: inline-size 0.3s ease;
+  appearance: none;
+  display: block;
+  inline-size: 100%;
+  block-size: 9px;
+  border: 0 solid;
+  border-radius: var(--mnem-progress-radius);
+  overflow: clip;
+  background: var(--mnem-progress-track);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  progress.mnem-progress-bar {
+    --mnem-progress-transition: none;
+  }
+}
+
+.mnem-progress-meter.compact progress.mnem-progress-bar {
+  block-size: 7px;
+}
+
+progress.mnem-progress-bar.is-complete {
+  --mnem-progress-fill: #2e8b57;
+}
+
+progress.mnem-progress-bar::-webkit-progress-bar {
+  background: transparent;
+}
+
+progress.mnem-progress-bar::-webkit-progress-value {
+  background: var(--mnem-progress-fill);
+  border-radius: var(--mnem-progress-radius);
+  transition: var(--mnem-progress-transition);
+}
+
+progress.mnem-progress-bar::-moz-progress-bar {
+  background: var(--mnem-progress-fill);
+  border-radius: var(--mnem-progress-radius);
+  transition: var(--mnem-progress-transition);
+}
+
+.mnem-scope-btn.is-complete {
+  border-color: #2e8b57;
+  background: #e6f4ea;
+  color: #135325;
+}
+
 /* ── Mnemonic Lab Chapter Bar & Submatrix Scope Bar (Nava Paricchedā - Cappuccino Palette) ── */
 .mnem-chapter-bar,
 .mnem-scope-bar {
@@ -4562,6 +4462,11 @@ details[open] > summary::before { transform: rotate(90deg); }
   gap: 6px;
 }
 .mnem-chapter-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
   padding: 6px 12px;
   font-size: 0.82rem;
   font-weight: 600;
@@ -4571,8 +4476,21 @@ details[open] > summary::before { transform: rotate(90deg); }
   color: var(--text);
   cursor: pointer;
   transition: all 0.15s ease-in-out;
-  min-height: 38px;
+  min-height: 40px;
   overflow-wrap: anywhere;
+  text-align: left;
+}
+.mnem-chapter-btn-prog {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.mnem-chapter-btn.is-complete {
+  border-color: #2e8b57;
+}
+.mnem-chapter-btn.is-complete .mnem-chapter-btn-prog {
+  color: #1e7e34;
 }
 .mnem-chapter-btn:hover {
   background: var(--accent-soft);
@@ -4586,8 +4504,247 @@ details[open] > summary::before { transform: rotate(90deg); }
   border-color: var(--accent);
   box-shadow: 0 2px 6px rgba(179, 102, 63, 0.28);
 }
+.mnem-chapter-btn.active .mnem-chapter-btn-prog,
+.mnem-chapter-btn[aria-pressed="true"] .mnem-chapter-btn-prog {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* ── 3-Level Rigor Seals, Drill Modes, Reverse, Synthesis & Collapsible Catalogue ── */
+.mnem-level-seals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.mnem-level-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-content);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-variant-numeric: tabular-nums;
+}
+.mnem-level-seal:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.mnem-level-seal.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 2px 5px rgba(179, 102, 63, 0.25);
+}
+.mnem-level-seal.active .mnem-seal-frac {
+  color: rgba(255, 255, 255, 0.88);
+}
+.mnem-level-seal.is-complete {
+  border-color: #2e8b57;
+}
+.mnem-seal-frac {
+  font-size: 0.72rem;
+  opacity: 0.85;
+}
+
+.mnem-drill-mode-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+.mnem-drill-mode-btn {
+  padding: 7px 13px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-content);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.mnem-drill-mode-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.mnem-drill-mode-btn.active,
+.mnem-drill-mode-btn[aria-pressed="true"] {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.mnem-rigor-cue-banner {
+  margin-top: 8px;
+  padding: 7px 11px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-style: italic;
+  background: var(--accent-soft);
+  border: 1px dashed var(--accent);
+  color: var(--text);
+}
+.mnem-srs-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(217, 119, 6, 0.16);
+  color: #b45309;
+  border: 1px solid rgba(217, 119, 6, 0.45);
+}
+.mnem-synth-masked {
+  border-style: dashed;
+  opacity: 0.92;
+}
+
+.mnem-reverse-instruction {
+  margin: 6px 0 10px;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+.mnem-reverse-vector-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--bg-sidebar, rgba(0, 0, 0, 0.03));
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+.mnem-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.mnem-choice-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 11px 13px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-content);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 54px;
+}
+.mnem-choice-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.mnem-choice-btn:disabled {
+  cursor: default;
+}
+.mnem-choice-btn.is-correct {
+  border-color: #2e8b57;
+  background: rgba(46, 139, 87, 0.14);
+}
+.mnem-choice-btn.is-wrong {
+  border-color: #c0392b;
+  background: rgba(192, 57, 43, 0.14);
+}
+.mnem-choice-btn.is-muted {
+  opacity: 0.6;
+}
+.mnem-choice-pali {
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.mnem-choice-name {
+  font-size: 0.82rem;
+  opacity: 0.9;
+}
+.mnem-chapter-pill-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.mnem-chapter-jump-chip {
+  cursor: pointer;
+  border: 1px solid var(--accent);
+  background: var(--bg-content);
+  color: var(--accent);
+  font-weight: 700;
+}
+.mnem-chapter-jump-chip:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Collapsible Canonical Catalogue on Level 2 (modern-web-guidance accordion) */
+.mnem-catalogue-details {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-content);
+  overflow: hidden;
+  interpolate-size: allow-keywords;
+}
+.mnem-catalogue-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  background: var(--accent-soft);
+  color: var(--text);
+}
+.mnem-catalogue-summary::-webkit-details-marker {
+  display: none;
+}
+.mnem-catalogue-summary::before {
+  content: "▸";
+  display: inline-block;
+  font-size: 0.95rem;
+  transition: transform 0.18s ease;
+}
+.mnem-catalogue-details[open] > .mnem-catalogue-summary::before {
+  transform: rotate(90deg);
+}
+/* Exclude closed catalogue items from browser find-in-page so Level 2 stays spoiler-free */
+.mnem-catalogue-details:not([open])::details-content {
+  display: none;
+}
+.mnem-catalogue-body {
+  padding: 12px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .mnem-catalogue-details::details-content {
+    transition: opacity 0.2s ease, content-visibility 0.2s allow-discrete;
+  }
+}
 
 @media (max-width: 640px) {
+  .mnem-choice-grid {
+    grid-template-columns: 1fr;
+  }
+  .mnem-challenge-progress-strip {
+    grid-template-columns: 1fr;
+    padding: 8px 10px;
+  }
+  .mnem-nary-global-bar {
+    padding: 7px 10px;
+  }
   #srs-mnemonic-main {
     padding: 0;
   }

@@ -42,15 +42,13 @@ describe("i18n Parity, PT/ES Purity, and Pāli Terminology Preservation", () => 
     expect(t("exportLangEn", "pt")).toBe("Só Inglês");
     expect(t("exportLangEs", "pt")).toBe("Só Espanhol");
     expect(t("exportLangPaliEnPt", "pt")).toBe("Pāli + Inglês + Português");
-    expect(t("navTools", "pt")).toBe("Ferramentas");
-    expect(t("toolsPanelTitle", "pt")).toBe("Ferramentas do Abhidhamma");
+    expect(t("srsMenuMnemonicTitle", "pt")).toBe("Laboratório Mnêmico");
     expect(t("debate_btn_close", "pt")).toBe("❌ Fechar Debate");
 
     expect(t("exportLangEn", "es")).toBe("Solo inglés");
     expect(t("exportLangPaliEnEs", "es")).toBe("Pāli + Inglés + Español");
     expect(t("exportLangPaliPt", "es")).toBe("Pāli + Portugués");
-    expect(t("navTools", "es")).toBe("Herramientas");
-    expect(t("toolsPanelTitle", "es")).toBe("Herramientas del Abhidhamma");
+    expect(t("srsMenuMnemonicTitle", "es")).toBe("Laboratorio Mnemónico");
     expect(t("debate_btn_close", "es")).toBe("❌ Cerrar Debate");
     expect(t("debate_verdict", "es")).toContain("Niggahaṭṭhāna");
     expect(t("debate_meta_logic", "es")).toContain("Anuṭīkā");
@@ -64,10 +62,7 @@ describe("i18n Parity, PT/ES Purity, and Pāli Terminology Preservation", () => 
       expect(t("part_tika", lang)).toBe("Ṭīkā");
       expect(t("part_anutika", lang)).toBe("Anuṭīkā");
       expect(t("navTipitaka", lang)).toBe("Tipiṭaka");
-      expect(t("toolPatthana", lang)).toBe("Paṭṭhāna");
-      expect(t("toolVithi", lang)).toBe("Citta-Vīthi");
-      expect(t("toolMatikas", lang)).toBe("Mātikās");
-      expect(t("toolCetasika", lang)).toBe("Cetasika");
+      expect(t("srsMenuAbhiTitle", lang)).toBe("Abhidhamma SRS");
       expect(t("graphPanelTitle", lang)).toContain("Dhammas");
     }
   });

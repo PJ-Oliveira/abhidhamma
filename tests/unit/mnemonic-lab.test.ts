@@ -6,6 +6,9 @@ import {
   PHALANX_MAPS,
 } from "../../src/mnemonic-lab/data.js";
 import {
+  computeChapterScopeProgress,
+  computeMnemonicProgressSummary,
+  computeProgressMetric,
   createInitialProgress,
   defaultSwitchStateForFamily,
   detectOntologicalCollisions,
@@ -23,6 +26,7 @@ import {
   evaluateNaryChallenge,
 } from "../../src/mnemonic-lab/engine.js";
 import { CANONICAL_CHAPTERS_META, getSubmatricesForChapter } from "../../src/mnemonic-lab/nary-chapters-data.js";
+import { MULA_SYNTHESIS_ITEMS, SYNTHESIS_AXIS_META } from "../../src/mnemonic-lab/chapters/ch0-synthesis.js";
 import { MnemonicLabUI } from "../../src/mnemonic-lab/ui.js";
 import {
   buildLocalStorageSnapshot,
@@ -405,13 +409,19 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
       expect(meta!.equation.es).toBeTruthy();
     }
 
-    // 2) Chapter 2 has all 52 Cetasikas (13+14+25) + all 33 Saṅgaha-naya classes (5+5+12+7+4) = 85
+    // 2) Chapter 2 has all 52 Cetasikas (13+14+25) + all 33 Saṅgaha-naya classes + 12 Sampayoga/Aniyata laws = 97
     const ch2Items = getNaryItemsForChapter(2);
-    expect(ch2Items.length).toBe(85);
+    expect(ch2Items.length).toBe(97);
     const ch2Samp = getNaryItemsForChapter(2, "sampayoga_52");
     const ch2Sang = getNaryItemsForChapter(2, "sangaha_33");
+    const ch2Laws = getNaryItemsForChapter(2, "cetasika_laws");
     expect(ch2Samp.length).toBe(52);
     expect(ch2Sang.length).toBe(33);
+    expect(ch2Laws.length).toBe(12);
+    // Verify AS II.33–34 Yogitā partition: 41 Niyata + 9 Aniyata Nānā + 2 Aniyata Saha = 52
+    expect(ch2Samp.filter((c) => c.switches.yogita === "niyata").length).toBe(41);
+    expect(ch2Samp.filter((c) => c.switches.yogita === "aniyata_nana").length).toBe(9);
+    expect(ch2Samp.filter((c) => c.switches.yogita === "aniyata_saha").length).toBe(2);
     const annas = ch2Samp.filter((c) => c.primaryGroup === "aññasamana");
     const akus = ch2Samp.filter((c) => c.primaryGroup === "akusala");
     const sobh = ch2Samp.filter((c) => c.primaryGroup === "sobhana");
@@ -424,59 +434,66 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     expect(ch2Sang.filter((c) => c.primaryGroup === "sangaha_akusala").length).toBe(7);
     expect(ch2Sang.filter((c) => c.primaryGroup === "sangaha_ahetuka").length).toBe(4);
 
-    // 3) Chapter 3 covers all 6 exact partitions of AS III.1–74 (5+10+19+8+8+6 = 56)
+    // 3) Chapter 3 covers all 6 exact partitions + Mūla supplements (8+10+20+9+17+9 = 73)
     const ch3Items = getNaryItemsForChapter(3);
-    expect(ch3Items.length).toBe(56);
-    expect(getNaryItemsForChapter(3, "vedana").length).toBe(5);
+    expect(ch3Items.length).toBe(73);
+    expect(getNaryItemsForChapter(3, "vedana").length).toBe(8);
     expect(getNaryItemsForChapter(3, "hetu").length).toBe(10);
-    expect(getNaryItemsForChapter(3, "kicca").length).toBe(19);
-    expect(getNaryItemsForChapter(3, "dvara").length).toBe(8);
-    expect(getNaryItemsForChapter(3, "arammana").length).toBe(8);
-    expect(getNaryItemsForChapter(3, "vatthu").length).toBe(6);
+    expect(getNaryItemsForChapter(3, "kicca").length).toBe(20);
+    expect(getNaryItemsForChapter(3, "dvara").length).toBe(9);
+    expect(getNaryItemsForChapter(3, "arammana").length).toBe(17);
+    expect(getNaryItemsForChapter(3, "vatthu").length).toBe(9);
 
-    // 4) Chapter 4 covers all Vīthisaṅgaha structures (5+7+9+7 = 28)
+    // 4) Chapter 4 covers all Vīthisaṅgaha structures including 6 Chakkas & granular Puggalabheda/Bhūmi (6+5+9+9+14 = 43)
     const ch4Items = getNaryItemsForChapter(4);
-    expect(ch4Items.length).toBe(28);
+    expect(ch4Items.length).toBe(43);
+    expect(getNaryItemsForChapter(4, "chakka_6").length).toBe(6);
     expect(getNaryItemsForChapter(4, "pancadvara").length).toBe(5);
-    expect(getNaryItemsForChapter(4, "manodvara").length).toBe(7);
+    expect(getNaryItemsForChapter(4, "manodvara").length).toBe(9);
     expect(getNaryItemsForChapter(4, "niyama").length).toBe(9);
-    expect(getNaryItemsForChapter(4, "puggala_bhumi").length).toBe(7);
+    expect(getNaryItemsForChapter(4, "puggala_bhumi").length).toBe(14);
 
-    // 5) Chapter 5 covers all 31 planes + Paṭisandhi + 4×4 Kamma + 20 Kammapatha/Puñña + Death/Cuti (31+7+20+20+11 = 89)
+    // 5) Chapter 5 covers all 31 planes + Paṭisandhi + 4×4 Kamma & ripening + 20 Kammapatha/Puñña + Death/Cuti (31+9+25+20+11 = 96)
     const ch5Items = getNaryItemsForChapter(5);
-    expect(ch5Items.length).toBe(89);
+    expect(ch5Items.length).toBe(96);
     expect(getNaryItemsForChapter(5, "bhumi_31").length).toBe(31);
-    expect(getNaryItemsForChapter(5, "patisandhi").length).toBe(7);
-    expect(getNaryItemsForChapter(5, "kamma_16").length).toBe(20);
+    expect(getNaryItemsForChapter(5, "patisandhi").length).toBe(9);
+    expect(getNaryItemsForChapter(5, "kamma_16").length).toBe(25);
     expect(getNaryItemsForChapter(5, "kammapatha_20").length).toBe(20);
     expect(getNaryItemsForChapter(5, "marana_cuti").length).toBe(11);
 
-    // 6) Chapter 6 covers all 28 individual rūpas + 10 dyads/4 origins + 21 kalāpas + pavatti/Nibbāna (28+14+21+10 = 73)
+    // 6) Chapter 6 covers all 28 individual rūpas + 10 dyads/4 origins + 21 kalāpas + pavatti/Nibbāna + 11 Rūpa laws (28+14+21+10+11 = 84)
     const ch6Items = getNaryItemsForChapter(6);
-    expect(ch6Items.length).toBe(73);
+    expect(ch6Items.length).toBe(84);
     expect(getNaryItemsForChapter(6, "rupa_28").length).toBe(28);
     expect(getNaryItemsForChapter(6, "vibhaga_10").length).toBe(14);
     expect(getNaryItemsForChapter(6, "kalapa_21").length).toBe(21);
     expect(getNaryItemsForChapter(6, "pavatti_nibbana").length).toBe(10);
+    expect(getNaryItemsForChapter(6, "rupa_laws").length).toBe(11);
 
-    // 7) Chapter 7 covers all Akusala (10) + Missaka (8) + Bodhipakkhiya (7+14=21) + Sabba (7) = 46
+    // 7) Chapter 7 covers summary + full granular Samuccaya (10+34 + 8+51 + 21+37 + 7+28 = 196)
     const ch7Items = getNaryItemsForChapter(7);
-    expect(ch7Items.length).toBe(46);
+    expect(ch7Items.length).toBe(196);
     expect(getNaryItemsForChapter(7, "akusala_9").length).toBe(10);
+    expect(getNaryItemsForChapter(7, "akusala_members").length).toBe(34);
     expect(getNaryItemsForChapter(7, "missaka_7").length).toBe(8);
+    expect(getNaryItemsForChapter(7, "missaka_members").length).toBe(51);
     expect(getNaryItemsForChapter(7, "bodhipakkhiya_21").length).toBe(21);
+    expect(getNaryItemsForChapter(7, "bodhi_37").length).toBe(37);
     expect(getNaryItemsForChapter(7, "sabba_7").length).toBe(7);
+    expect(getNaryItemsForChapter(7, "sabba_members").length).toBe(28);
 
-    // 8) Chapter 8 covers Paṭiccasamuppāda (12+6=18) + 24 Paṭṭhāna & 4 Samodhāna (28) + Paññattibheda (2+6=8) = 54
+    // 8) Chapter 8 covers Paṭiccasamuppāda (18) + 24 Paṭṭhāna & 4 Samodhāna (28) + 18 Submodes/Atthapaññatti + Paññattibheda (8) = 72
     const ch8Items = getNaryItemsForChapter(8);
-    expect(ch8Items.length).toBe(54);
+    expect(ch8Items.length).toBe(72);
     expect(getNaryItemsForChapter(8, "paticcasamuppada").length).toBe(18);
     expect(getNaryItemsForChapter(8, "patthana_24").length).toBe(28);
+    expect(getNaryItemsForChapter(8, "patthana_submodes").length).toBe(18);
     expect(getNaryItemsForChapter(8, "pannatti_8").length).toBe(8);
 
-    // 9) Chapter 9 covers 40 Samatha + 16 Carita/Vasitā/Abhiññā + 21 Vipassanā (7 Visuddhi + 10 Ñāṇa + 4 Vimokkha/Upakkilesa) + 6 Ariya/Samāpatti = 83
+    // 9) Chapter 9 covers 40 Samatha + 16 Carita/Vasitā/Abhiññā + 21 Vipassanā + 6 Ariya/Samāpatti + 23 Details = 106
     const ch9Items = getNaryItemsForChapter(9);
-    expect(ch9Items.length).toBe(83);
+    expect(ch9Items.length).toBe(106);
     const sam40 = getNaryItemsForChapter(9, "samatha_40");
     expect(sam40.length).toBe(40);
     expect(sam40.filter((i) => i.switches.nimitta === 3).length).toBe(22); // AS IX.34 dvāvīsati
@@ -484,6 +501,7 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     expect(getNaryItemsForChapter(9, "samatha_carita_abhinna").length).toBe(16);
     expect(getNaryItemsForChapter(9, "vipassana_visuddhi_nana").length).toBe(21);
     expect(getNaryItemsForChapter(9, "ariya_samapatti").length).toBe(6);
+    expect(getNaryItemsForChapter(9, "kammatthana_details").length).toBe(23);
 
     // Verify all 9 chapters items return non-empty arrays
     for (let ch = 2; ch <= 9; ch++) {
@@ -781,7 +799,7 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
       }
     }
     host.remove();
-  }, 90000);
+  }, 150000);
 
   it("enforces strict single-language + Pāli purity across ALL 9 chapters, ALL 3 pillars, and error feedback in EN, PT, and ES", () => {
     const forbiddenByLang: Record<"en" | "pt" | "es", RegExp[]> = {
@@ -916,7 +934,7 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     expect(seenSlot.size).toBe(8);
   });
 
-  it("formats all 514 N-ary group names and switch values with zero raw underscores or cross-chapter collisions", () => {
+  it("formats all 767 N-ary group names and switch values with zero raw underscores or cross-chapter collisions", () => {
     const host = document.createElement("div");
     document.body.appendChild(host);
     const ui = new MnemonicLabUI(host, "pt") as any;
@@ -975,6 +993,260 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
     host.querySelector<HTMLButtonElement>('[data-phalanx-idx="1"]')!.click();
     const attemptsAfter = Number(host.querySelectorAll(".mnem-stat-val")[3]?.textContent ?? "0");
     expect(attemptsAfter).toBe(attemptsBefore);
+
+    host.remove();
+  });
+
+  it("computes accurate global, N-ary 9-chapter, chapter, scope, alchemy, and phalanx progress metrics", () => {
+    expect(computeProgressMetric(0, 888)).toEqual({ mastered: 0, total: 888, percent: 0 });
+    expect(computeProgressMetric(1, 888)).toEqual({ mastered: 1, total: 888, percent: 0.1 });
+    expect(computeProgressMetric(887, 888)).toEqual({ mastered: 887, total: 888, percent: 99.9 });
+    expect(computeProgressMetric(888, 888)).toEqual({ mastered: 888, total: 888, percent: 100 });
+    expect(computeProgressMetric(950, 888)).toEqual({ mastered: 888, total: 888, percent: 100 });
+
+    let prog = createInitialProgress();
+    const empty121 = computeMnemonicProgressSummary(prog, 121);
+    expect(empty121.naryGlobal).toEqual({ mastered: 0, total: 888, percent: 0 });
+    expect(empty121.periodic).toEqual({ mastered: 0, total: 27, percent: 0 });
+    expect(empty121.phalanx).toEqual({ mastered: 0, total: 76, percent: 0 });
+    expect(empty121.overall).toEqual({ mastered: 0, total: 991, percent: 0 });
+    expect(empty121.naryChaptersCompleted).toBe(0);
+
+    const empty89 = computeMnemonicProgressSummary(prog, 89);
+    expect(empty89.naryGlobal).toEqual({ mastered: 0, total: 856, percent: 0 });
+    expect(empty89.overall).toEqual({ mastered: 0, total: 959, percent: 0 });
+
+    // Master 1 Lobha citta (#1), 1 Vitthāra-only citta (#105), 1 Ch.2 item, 1 Alchemy citta, and 1 Phalanx slot
+    prog = recordMnemonicAttempt(prog, "binary", "citta:1", true);
+    prog = recordMnemonicAttempt(prog, "binary", "citta:105", true);
+    const ch2First = getNaryItemsForChapter(2)[0]!;
+    prog = recordMnemonicAttempt(prog, "binary", `nary:${ch2First.id}`, true);
+    prog = recordMnemonicAttempt(prog, "periodic", "chem:1", true);
+    prog = recordMnemonicAttempt(prog, "phalanx", "akusala12:1", true);
+
+    const s121 = computeMnemonicProgressSummary(prog, 121);
+    expect(s121.chapters[1].mastered).toBe(2);
+    expect(s121.chapters[2].mastered).toBe(1);
+    expect(s121.naryGlobal).toEqual({ mastered: 3, total: 888, percent: 0.3 });
+    expect(s121.naryByLevel[1]).toEqual({ mastered: 3, total: 888, percent: 0.3 });
+    expect(s121.naryByLevel[2]).toEqual({ mastered: 0, total: 888, percent: 0 });
+    expect(s121.naryByLevel[3]).toEqual({ mastered: 0, total: 888, percent: 0 });
+    expect(s121.periodic).toEqual({ mastered: 1, total: 27, percent: 3.7 });
+    expect(s121.phalanx).toEqual({ mastered: 1, total: 76, percent: 1.3 });
+    expect(s121.overall).toEqual({ mastered: 5, total: 991, percent: 0.5 });
+
+    // In 89-mode, citta:105 is excluded so Ch.1 mastered is 1/89 (never exceeds pool)
+    const s89 = computeMnemonicProgressSummary(prog, 89);
+    expect(s89.chapters[1].mastered).toBe(1);
+    expect(s89.chapters[1].total).toBe(89);
+    expect(s89.naryGlobal.mastered).toBe(2);
+    expect(s89.naryGlobal.total).toBe(856);
+
+    // Scope metric: Lobha has 1/8 = 12.5%
+    expect(computeChapterScopeProgress(prog, 1, "lobha", 121)).toEqual({ mastered: 1, total: 8, percent: 12.5 });
+  });
+
+  it("renders live localized global & N-ary Decoder progress bars across EN, PT, and ES as challenges advance", () => {
+    const host = document.createElement("div");
+    document.body.appendChild(host);
+    const ui = new MnemonicLabUI(host, "en");
+    ui.init();
+
+    // Initial 0% global lab & global N-ary progress in English
+    const globalMeterEn = host.querySelector('[data-progress-role="global-lab"]')!;
+    const naryGlobalEn = host.querySelector('[data-progress-role="nary-global"]')!;
+    expect(globalMeterEn.textContent).toContain("Global Lab Progress");
+    expect(globalMeterEn.textContent).toContain("0%");
+    expect(globalMeterEn.textContent).toContain("(0/991)");
+    expect(naryGlobalEn.textContent).toContain("Global Progress — N-ary Decoder (9 Chapters)");
+    expect(naryGlobalEn.textContent).toContain("(0/888)");
+    expect(naryGlobalEn.querySelector("progress")?.getAttribute("value")).toBe("0");
+    expect(naryGlobalEn.querySelector("progress")?.getAttribute("max")).toBe("888");
+    // Native <progress> must have zero fallback inner text per modern-web-guidance
+    expect(naryGlobalEn.querySelector("progress")?.textContent).toBe("");
+
+    // Switch to Chapter 1 Challenge: N-ary Decoder and solve Citta #1 (default Lobha [1,1,1] matches target #1)
+    host.querySelector<HTMLButtonElement>('[data-bin-mode="challenge"]')!.click();
+    expect(host.querySelector('[data-progress-role="nary-chapter"]')?.textContent).toContain("Ch. 1 Progress");
+    expect(host.querySelector('[data-progress-role="nary-challenge-global"]')?.textContent).toContain("Global (9 Ch.)");
+
+    host.querySelector<HTMLButtonElement>("#mnem-bin-verify")!.click();
+    expect(host.querySelector(".mnem-feedback-ok")).not.toBeNull();
+
+    // After mastering 1 challenge: N-ary global advances to 0.1% (1/888) and Lab global to 0.1% (1/991)
+    expect(host.querySelector('[data-progress-role="nary-global"]')?.textContent).toContain("0.1%");
+    expect(host.querySelector('[data-progress-role="nary-global"]')?.textContent).toContain("(1/888)");
+    expect(host.querySelector('[data-progress-role="nary-global"] progress')?.getAttribute("value")).toBe("1");
+    expect(host.querySelector('[data-progress-role="global-lab"]')?.textContent).toContain("0.1%");
+    expect(host.querySelector('[data-progress-role="global-lab"]')?.textContent).toContain("(1/991)");
+    expect(host.querySelector('[data-bin-chapter="1"] .mnem-chapter-btn-lbl')?.textContent).toBe("1. Cittas (121)");
+    expect(host.querySelector('[data-bin-chapter="1"] .mnem-chapter-btn-prog')?.textContent).toContain("1/121 · 0.8%");
+
+    // Toggle to 89-mode: Ch. 1 button label & denominators update cleanly (89 / 856 / 959)
+    host.querySelector<HTMLButtonElement>("#mnem-bin-mode-toggle")!.click();
+    expect(host.querySelector('[data-bin-chapter="1"] .mnem-chapter-btn-lbl')?.textContent).toBe("1. Cittas (89)");
+    expect(host.querySelector('[data-bin-chapter="1"] .mnem-chapter-btn-prog')?.textContent).toContain("1/89 · 1.1%");
+    expect(host.querySelector('[data-progress-role="nary-global"]')?.textContent).toContain("(1/856)");
+    expect(host.querySelector('[data-progress-role="global-lab"]')?.textContent).toContain("(1/959)");
+    host.querySelector<HTMLButtonElement>("#mnem-bin-mode-toggle")!.click();
+
+    // Advance to Chapter 2 N-ary Decoder and load the active target item into switches, then verify
+    host.querySelector<HTMLButtonElement>('[data-bin-chapter="2"]')!.click();
+    expect(host.querySelector('[data-progress-role="nary-chapter"]')?.textContent).toContain("Ch. 2 Progress");
+    const ch2TargetLoadBtn = host.querySelector<HTMLButtonElement>(".mnem-matrix-cell.target-family [data-nary-load-item]")!;
+    expect(ch2TargetLoadBtn).not.toBeNull();
+    ch2TargetLoadBtn.click();
+    host.querySelector<HTMLButtonElement>("#mnem-nary-verify")!.click();
+    expect(host.querySelector(".mnem-challenge-feedback.ok")).not.toBeNull();
+
+    // Now 2/888 = 0.2% globally in N-ary Decoder, 1/97 = 1% in Chapter 2
+    expect(host.querySelector('[data-progress-role="nary-global"]')?.textContent).toContain("0.2%");
+    expect(host.querySelector('[data-progress-role="nary-global"]')?.textContent).toContain("(2/888)");
+    expect(host.querySelector('[data-progress-role="nary-chapter"]')?.textContent).toContain("1%");
+    expect(host.querySelector('[data-progress-role="nary-chapter"]')?.textContent).toContain("(1/97)");
+    expect(host.querySelector('[data-bin-chapter="2"] .mnem-chapter-btn-prog')?.textContent).toContain("1/97 · 1%");
+
+    // Switch language to Portuguese: localized labels + comma decimal separator (0,2% / 1%)
+    ui.setLang("pt");
+    expect(host.querySelector('[data-progress-role="global-lab"]')?.textContent).toContain("Progresso Global do Laboratório");
+    expect(host.querySelector('[data-progress-role="nary-global"]')?.textContent).toContain("Avanço Global — Decodificador N-ário (9 Capítulos)");
+    expect(host.querySelector('[data-progress-role="nary-global"]')?.textContent).toContain("0,2%");
+    expect(host.querySelector('[data-progress-role="nary-chapter"]')?.textContent).toContain("Avanço do Cap. 2");
+    expect(host.querySelector('[data-progress-role="nary-chapter"]')?.textContent).toContain("1%");
+
+    // Switch language to Spanish: localized labels + comma decimal separator (0,2% / 1%)
+    ui.setLang("es");
+    expect(host.querySelector('[data-progress-role="global-lab"]')?.textContent).toContain("Progreso Global del Laboratorio");
+    expect(host.querySelector('[data-progress-role="nary-global"]')?.textContent).toContain("Avance Global — Decodificador N-ario (9 Capítulos)");
+    expect(host.querySelector('[data-progress-role="nary-global"]')?.textContent).toContain("0,2%");
+    expect(host.querySelector('[data-progress-role="nary-chapter"]')?.textContent).toContain("Avance del Cap. 2");
+    expect(host.querySelector('[data-progress-role="nary-chapter"]')?.textContent).toContain("1%");
+
+    // Verify Pillar 2 Alchemy & Pillar 3 Phalanx progress bars render and advance
+    ui.setLang("en");
+    host.querySelector<HTMLButtonElement>("#mnem-tab-periodic")!.click();
+    host.querySelector<HTMLButtonElement>('[data-per-mode="alchemy"]')!.click();
+    expect(host.querySelector('[data-progress-role="alchemy"]')?.textContent).toContain("Alchemy Progress");
+    expect(host.querySelector('[data-progress-role="alchemy"]')?.textContent).toContain("(0/27)");
+    host.querySelector<HTMLButtonElement>("#mnem-chem-hint")!.click();
+    host.querySelector<HTMLButtonElement>("#mnem-chem-verify")!.click();
+    expect(host.querySelector('[data-progress-role="alchemy"]')?.textContent).toContain("3.7%");
+    expect(host.querySelector('[data-progress-role="alchemy"]')?.textContent).toContain("(1/27)");
+
+    host.querySelector<HTMLButtonElement>("#mnem-tab-phalanx")!.click();
+    expect(host.querySelector('[data-progress-role="phalanx-map"]')?.textContent).toContain("Current Map Progress");
+    expect(host.querySelector('[data-progress-role="phalanx-global"]')?.textContent).toContain("All 5 Maps Global");
+    host.querySelector<HTMLButtonElement>('[data-pha-mode="sequence"]')!.click();
+    host.querySelector<HTMLButtonElement>('[data-phalanx-idx="1"]')!.click();
+    expect(host.querySelector('[data-progress-role="phalanx-map"]')?.textContent).toContain("8.3%");
+    expect(host.querySelector('[data-progress-role="phalanx-map"]')?.textContent).toContain("(1/12)");
+    expect(host.querySelector('[data-progress-role="phalanx-global"]')?.textContent).toContain("1.3%");
+    expect(host.querySelector('[data-progress-role="phalanx-global"]')?.textContent).toContain("(1/76)");
+    expect(host.querySelector('[data-progress-role="global-lab"]')?.textContent).toContain("(4/991)");
+
+    host.remove();
+  });
+
+  it("enforces genuine Rigor Levels 1 / 2 / 3 (anti-spoiler, collapsible accordion, Pāli blind mode, 24 Paṭṭhāna un-filtered, and 3-level seals)", () => {
+    const host = document.createElement("div");
+    document.body.appendChild(host);
+    const ui = new MnemonicLabUI(host, "pt");
+    ui.init();
+
+    // 3 clickable level seals rendered
+    expect(host.querySelectorAll(".mnem-level-seal").length).toBe(3);
+
+    // Go to Chapter 2
+    host.querySelector<HTMLButtonElement>('[data-bin-chapter="2"]')!.click();
+    // Level 1: formula anchor & open catalogue visible, spoiler label visible on Sampayoga switch
+    expect(host.querySelector(".mnem-rel-eradication-box")).not.toBeNull();
+    expect(host.querySelector(".mnem-catalogue-details")).toBeNull();
+    expect(host.textContent).toContain("110 (Adhimokkha)");
+
+    // Switch to Level 2 via clickable seal
+    host.querySelector<HTMLButtonElement>('[data-set-level="2"]')!.click();
+    expect(host.querySelector(".mnem-rigor-cue-banner")).not.toBeNull();
+    expect(host.querySelector(".mnem-rel-eradication-box")).toBeNull();
+    // Switch labels must be spoiler-free on Level 2!
+    expect(host.textContent).not.toContain("110 (Adhimokkha)");
+    // Collapsible <details> catalogue is closed by default and contains NO heading inside <summary>
+    const details = host.querySelector<HTMLDetailsElement>("details.mnem-catalogue-details");
+    expect(details).not.toBeNull();
+    expect(details!.open).toBe(false);
+    expect(details!.querySelector("summary h1, summary h2, summary h3, summary h4")).toBeNull();
+    // Zero .target-family spoiler on Level 2
+    expect(host.querySelector(".mnem-matrix-cell.target-family")).toBeNull();
+
+    // Switch to Level 3 (Hard / Blind Pāli)
+    host.querySelector<HTMLButtonElement>('[data-set-level="3"]')!.click();
+    expect(host.querySelector(".mnem-synth-masked")).not.toBeNull();
+    expect(host.querySelector(".mnem-matrix-section")).toBeNull(); // Catalogue completely hidden before Verify
+
+    // Check Chapter 8 Paṭṭhāna on Level 3: all 24 conditions must be selectable (no directional pre-filter!)
+    host.querySelector<HTMLButtonElement>('[data-bin-chapter="8"]')!.click();
+    host.querySelector<HTMLButtonElement>('[data-nary-key="method"][data-nary-val="patthana_24"]')!.click();
+    expect(host.querySelectorAll('[data-nary-key="index"]').length).toBe(24);
+
+    // Verify reveals feedback + records Level 3 mastery separately from Level 1/2
+    host.querySelector<HTMLButtonElement>("#mnem-nary-verify")!.click();
+    expect(host.querySelector(".mnem-challenge-feedback")).not.toBeNull();
+    expect(host.querySelector(".mnem-synth-masked")).toBeNull();
+
+    // Adaptive SRS queue: verify missedQueue re-surfaces missed item on odd totalAttempts
+    let prog = createInitialProgress();
+    const ch3 = getNaryItemsForChapter(3);
+    const first = ch3[0]!;
+    const second = ch3[1]!;
+    prog = recordMnemonicAttempt(prog, "binary", `nary:${first.id}`, false);
+    expect(prog.missedQueue).toContain(`nary:${first.id}`);
+    // totalAttempts === 1 (odd) and currentItemId !== first.id -> SRS returns first!
+    expect(pickNextNaryChapterChallenge(3, prog, second.id).id).toBe(first.id);
+    // Solving it clears it from missedQueue
+    prog = recordMnemonicAttempt(prog, "binary", `nary:${first.id}`, true);
+    expect(prog.missedQueue).not.toContain(`nary:${first.id}`);
+
+    host.remove();
+  });
+
+  it("supports Reverse Decoding (Ch. 1–9) and Prologue & Cross-Chapter Synthesis (32 Mūla items) across PT, EN, and ES", () => {
+    expect(MULA_SYNTHESIS_ITEMS.length).toBe(32);
+    expect(SYNTHESIS_AXIS_META.length).toBe(4);
+
+    const host = document.createElement("div");
+    document.body.appendChild(host);
+    const ui = new MnemonicLabUI(host, "en");
+    ui.init();
+
+    // 1) Reverse Decoding on Chapter 1 (Level 1 -> 4 choices, Level 3 -> 6 Pāli-only choices)
+    host.querySelector<HTMLButtonElement>('[data-nary-drill="reverse"]')!.click();
+    expect(host.querySelector(".mnem-reverse-vector-card")).not.toBeNull();
+    expect(host.querySelectorAll("[data-reverse-choice]").length).toBe(4);
+    host.querySelector<HTMLButtonElement>('[data-set-level="3"]')!.click();
+    expect(host.querySelectorAll("[data-reverse-choice]").length).toBe(6);
+    expect(host.querySelector(".mnem-choice-name")).toBeNull();
+    host.querySelector<HTMLButtonElement>("[data-reverse-choice]")!.click();
+    expect(host.querySelector(".mnem-challenge-feedback")).not.toBeNull();
+
+    // Reverse Decoding on Chapter 7
+    host.querySelector<HTMLButtonElement>('[data-bin-chapter="7"]')!.click();
+    expect(host.querySelector(".mnem-reverse-vector-card")).not.toBeNull();
+    expect(host.querySelectorAll("[data-reverse-choice]").length).toBe(6);
+
+    // 2) Prologue & Cross-Chapter Synthesis mode
+    host.querySelector<HTMLButtonElement>('[data-set-level="1"]')!.click();
+    host.querySelector<HTMLButtonElement>('[data-nary-drill="synthesis"]')!.click();
+    expect(host.querySelector('[data-progress-role="nary-synthesis"]')?.textContent).toContain("(0/32)");
+    expect(host.querySelectorAll("[data-syn-axis]").length).toBe(5); // all + 4 axes
+    expect(host.querySelectorAll("[data-syn-choice]").length).toBe(4);
+    host.querySelector<HTMLButtonElement>("[data-syn-choice]")!.click();
+    expect(host.querySelector(".mnem-challenge-feedback")).not.toBeNull();
+    expect(host.querySelector(".mnem-chapter-jump-chip")).not.toBeNull();
+
+    // Verify trilingual localization in PT & ES on Synthesis mode
+    ui.setLang("pt");
+    expect(host.textContent).toContain("Avanço em Prólogo & Síntese");
+    ui.setLang("es");
+    expect(host.textContent).toContain("Avance en Prólogo y Síntesis");
 
     host.remove();
   });
