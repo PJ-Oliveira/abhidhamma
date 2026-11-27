@@ -1,7 +1,7 @@
 {
-  "name": "Abhidhamma Piṭaka Trilingue",
+  "name": "Abhidhamma Piṭaka Trilíngue",
   "short_name": "Abhidhamma",
-  "description": "Leitor Offline do Tipitaka e Comentários com Dicionário Pāli Embutido",
+  "description": "Leitor Offline do Tipiṭaka e Comentários com Dicionário Pāli Embutido",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

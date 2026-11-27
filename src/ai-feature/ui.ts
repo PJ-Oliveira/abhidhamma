@@ -4,8 +4,19 @@ import { CanonicalScenarios } from './debate-scenarios.js';
 import { evaluateScenario } from '../ontology/kathavatthu_logic.js';
 
 let isListenerAdded = false;
+let activeContainer: HTMLElement | null = null;
+let pendingTimer: ReturnType<typeof setTimeout> | null = null;
+
+function clearPendingTimer(): void {
+    if (pendingTimer !== null) {
+        clearTimeout(pendingTimer);
+        pendingTimer = null;
+    }
+}
 
 export function initInterlocutorPanel(container: HTMLElement): void {
+    clearPendingTimer();
+    activeContainer = container;
     container.innerHTML = ""; // Clear existing content on re-init
 
     const wrapper = document.createElement('div');
@@ -113,17 +124,19 @@ export function initInterlocutorPanel(container: HTMLElement): void {
     });
 
     select.addEventListener('change', () => {
+        clearPendingTimer();
+        submitBtn.textContent = t('debate_submit', settings.uiLang);
         const val = select.value;
         if (val) {
             const scenario = CanonicalScenarios.find(s => s.id === val);
             if (scenario) {
                 claimText.textContent = '"' + (scenario.claimText as any)[settings.uiLang] + '"';
                 claimDisplay.style.display = 'block';
-                                submitBtn.disabled = false;
+                submitBtn.disabled = false;
             }
         } else {
             claimDisplay.style.display = 'none';
-                        submitBtn.disabled = true;
+            submitBtn.disabled = true;
         }
         // Reset refutation view
         (wrapper.querySelector('#refutation-display') as HTMLElement).style.display = 'none';
@@ -141,6 +154,7 @@ export function initInterlocutorPanel(container: HTMLElement): void {
         }
 
         if (claim) {
+            clearPendingTimer();
             // Dispatch custom event for the main app
             wrapper.dispatchEvent(new CustomEvent('interlocutor-submit', {
                 detail: { claim, scenarioId: val },
@@ -148,12 +162,14 @@ export function initInterlocutorPanel(container: HTMLElement): void {
             }));
             
             // Visual feedback
-            const origText = submitBtn.textContent;
+            const origText = t('debate_submit', settings.uiLang);
             submitBtn.textContent = t('debate_analyzing', settings.uiLang);
             submitBtn.disabled = true;
 
             // Simular a latência do WebWorker/LLM e exibir a refutação detalhada
-            setTimeout(() => {
+            pendingTimer = setTimeout(() => {
+                pendingTimer = null;
+                if (select.value !== val) return;
                 submitBtn.textContent = origText;
                 submitBtn.disabled = false;
 
@@ -187,7 +203,7 @@ export function initInterlocutorPanel(container: HTMLElement): void {
 
     if (!isListenerAdded) {
         window.addEventListener("languageChanged", () => {
-            initInterlocutorPanel(container);
+            if (activeContainer) initInterlocutorPanel(activeContainer);
         });
         isListenerAdded = true;
     }

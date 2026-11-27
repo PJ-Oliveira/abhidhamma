@@ -33,7 +33,7 @@ export function evaluateCustomClaim(claimText: string): any {
 4. <strong>${KathavatthuRule.UPANAYANA}:</strong> You cannot assert the Self exists ultimately ${LogicalConnective.AND} admit it is not found in the Aggregates.
 5. <strong>${KathavatthuRule.NITTHANA}:</strong> The proposition is false.
             `,
-            pedagogicalAnalogy: 'Chariot Analogy (Ratha-vinīta): Just as "chariot" is a concept applied when parts are assembled, "Self" is a label for the 5 Aggregates.',
+            pedagogicalAnalogy: 'Chariot Analogy (Vajirā Sutta, SN 5.10 / Milindapañha): Just as "chariot" is a concept applied when parts are assembled, "Self" is a label for the 5 Aggregates.',
             detailedSyllogismBreakdown: 'By applying strict boolean logic, if A (Self) exists, it must map to an element in set B (Aggregates). A ∉ B, therefore A = ∅ (null) in ultimate reality.'
         };
     }
@@ -196,7 +196,7 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
 4. <strong>Upanaya (Aplicação):</strong> Mas a Pessoa não pode ser classificada dentro dos 5 Agregados (Khandhas).
 5. <strong>Niggamana (Conclusão):</strong> Portanto, a Proposição é falsa.
             `;
-            pedagogicalAnalogy = 'Analogia da Carruagem (Ratha-vinīta / Milindapañhā): Assim como a palavra "carruagem" é apenas um conceito (paññatti) aplicado quando eixo, rodas e armação estão reunidos, "Pessoa" (puggala) é um rótulo aplicado quando os 5 Agregados (Khandhas) estão presentes. Não existe uma "carruagem" independente.';
+            pedagogicalAnalogy = 'Analogia da Carruagem (Vajirā Sutta, SN 5.10 / Milindapañha): Assim como a palavra "carruagem" é apenas um conceito (paññatti) aplicado quando eixo, rodas e armação estão reunidos, "Pessoa" (puggala) é um rótulo aplicado quando os 5 Agregados (Khandhas) estão presentes. Não existe uma "carruagem" independente.';
             detailedSyllogismBreakdown = 'No passo 4 (Upanaya): se examinarmos a "Pessoa" com a precisão de um microscópio (visão de vipassanā), encontraremos apenas Rūpa, Vedanā, Saññā, Saṅkhārā e Viññāṇa. Não há uma sexta realidade chamada "Pessoa". Assim, o argumento original falha em sua base empírica.';
         } else if (lang === 'es') {
             paradox = `<em>"Si la entidad es idéntica a los agregados, es impermanente. Si es distinta, debe ser aprehensible de forma independiente. Ninguna de las dos es cierta."</em>`;
@@ -207,7 +207,7 @@ export function evaluateScenario(scenarioId: string, lang: 'en'|'pt'|'es' = 'en'
 4. <strong>Upanaya (Aplicación):</strong> Pero la Persona no puede ser clasificada dentro de los 5 Agregados (Khandhas).
 5. <strong>Niggamana (Conclusión):</strong> Por lo tanto, la Proposición es falsa.
             `;
-            pedagogicalAnalogy = 'Analogía del Carro (Ratha-vinīta / Milindapañhā): Así como la palabra "carro" es solo un concepto (paññatti) aplicado cuando el eje, las ruedas y el armazón están ensamblados, "Persona" (puggala) es una designación aplicada cuando los 5 Agregados (Khandhas) están presentes. No existe un "carro" independiente.';
+            pedagogicalAnalogy = 'Analogía del Carro (Vajirā Sutta, SN 5.10 / Milindapañha): Así como la palabra "carro" es solo un concepto (paññatti) aplicado cuando el eje, las ruedas y el armazón están ensamblados, "Persona" (puggala) es una designación aplicada cuando los 5 Agregados (Khandhas) están presentes. No existe un "carro" independiente.';
             detailedSyllogismBreakdown = 'En el paso 4 (Upanaya): si examinamos la "Persona" con la precisión de un microscopio (visión de vipassanā), hallaremos únicamente Rūpa, Vedanā, Saññā, Saṅkhārā y Viññāṇa. No existe una sexta realidad llamada "Persona". Por tanto, el argumento original fracasa en su base empírica.';
         } else {
             paradox = `<em>"If the entity is identical to the aggregates, it is impermanent. If distinct, it must be apprehendable independently. Neither is true."</em>`;

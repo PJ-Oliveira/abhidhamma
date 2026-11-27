@@ -30,12 +30,10 @@ Ao clicar em um nó na árvore lateral, o texto será carregado na janela princi
 - **Dicionário Pāli Integrado**: Consulta instantânea de termos, alimentada por um dicionário central curado (derivado do Digital Pāli Dictionary) e otimizado para a terminologia do Abhidhamma.
 - **Busca Avançada Fragmentada (Sharded)**: Motor de busca de alto desempenho no lado do cliente que utiliza fragmentos (shards) JSON pré-construídos para consultas instantâneas em todo o corpus massivo, sem necessidade de backend.
 - **Sistema de Repetição Espaçada (SRS)**: Sistema de flashcards integrado que usa algoritmos de repetição espaçada para memorização de terminologia Pāli complexa e compostos extraídos diretamente dos textos.
-- **Ferramentas Analíticas do Abhidhamma**:
-  - **Mapa Mental**: Árvore interativa e retrátil visualizando a estrutura hierárquica dos 4 *paramattha dhammas*.
-  - **Matriz do Paṭṭhāna**: Matriz interativa de 24 condições que correlaciona os 24 *paccayas* com os grupos analíticos padrão.
-  - **Simulador de Citta-Vīthi**: Simulador animado dos processos cognitivos através das 6 portas sensoriais, detalhando a sequência exata de *cittas*.
-  - **Explorador de Mātikā**: Interface expansível com busca para estudar os 22 *tikas* (tríades) e 100 *dukas* (díades).
-  - **Analisador de Cetasikas**: Componente para inspecionar *cittas* individuais e comparar os *cetasikas* (fatores mentais) comuns e exclusivos entre dois tipos de consciência.
+- **Abhidhamma SRS (Anki)**: 362 flashcards do *Abhidhammatthasaṅgaha* (Tijolos → Casa) com plano de 30/60/90 dias, estudo por capítulos e cofre de progresso offline.
+- **Laboratório Mnêmico**: Descompactação N-ária (9 capítulos · 89/121 cittas), Tabela Periódica de 72 realidades *sabhāva* + 10 *anipphanna* e Ábaco Tátil das Falanges.
+- **Simulador de Debate Canônico**: Prática de debate no estilo do Kathāvatthu por cenários (silogismo, refutação, motivos de derrota).
+- **Exportação PDF / EPUB**: Exporte qualquer obra, parte ou intervalo de capítulos em combinações de Pāli + Inglês/Português/Espanhol.
 
 ## 🏗️ Arquitetura
 

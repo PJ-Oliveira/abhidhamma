@@ -464,39 +464,39 @@ export function initGraphPanel(container: HTMLElement): void {
   function getW(): number { return canvas.width / devicePixelRatio; }
   function getH(): number { return canvas.height / devicePixelRatio; }
 
-  const PACCAYA_LABELS: Record<string, { en: string; pt: string }> = {
-    hetu: { en: "Root Condition", pt: "Condição de Raiz" },
-    arammana: { en: "Object Condition", pt: "Condição de Objeto" },
-    adhipati: { en: "Predominance", pt: "Predominância" },
-    anantara: { en: "Proximity", pt: "Proximidade" },
-    samanantara: { en: "Contiguity", pt: "Contiguidade" },
-    sahajata: { en: "Co-nascence", pt: "Co-nascença" },
-    annamanna: { en: "Mutuality", pt: "Mutualidade" },
-    nissaya: { en: "Support", pt: "Suporte" },
-    upanissaya: { en: "Decisive Support", pt: "Suporte Decisivo" },
-    purejata: { en: "Pre-nascence", pt: "Pré-nascença" },
-    pacchajata: { en: "Post-nascence", pt: "Pós-nascença" },
-    asevana: { en: "Repetition", pt: "Repetição" },
-    kamma: { en: "Kamma", pt: "Kamma" },
-    vipaka: { en: "Result", pt: "Resultado" },
-    ahara: { en: "Nutriment", pt: "Nutrição" },
-    indriya: { en: "Faculty", pt: "Faculdade" },
-    jhana: { en: "Jhāna", pt: "Jhāna" },
-    magga: { en: "Path", pt: "Caminho" },
-    sampayutta: { en: "Association", pt: "Associação" },
-    vippayutta: { en: "Dissociation", pt: "Dissociação" },
-    atthi: { en: "Presence", pt: "Presença" },
-    natthi: { en: "Absence", pt: "Ausência" },
-    vigata: { en: "Disappearance", pt: "Desaparecimento" },
-    avigata: { en: "Non-disappearance", pt: "Não-desaparecimento" },
+  const PACCAYA_LABELS: Record<string, { en: string; pt: string; es: string }> = {
+    hetu: { en: "Root Condition", pt: "Condição de Raiz", es: "Condición de Raíz" },
+    arammana: { en: "Object Condition", pt: "Condição de Objeto", es: "Condición de Objeto" },
+    adhipati: { en: "Predominance", pt: "Predominância", es: "Predominancia" },
+    anantara: { en: "Proximity", pt: "Proximidade", es: "Proximidad" },
+    samanantara: { en: "Contiguity", pt: "Contiguidade", es: "Contigüidad" },
+    sahajata: { en: "Co-nascence", pt: "Co-nascença", es: "Conascencia" },
+    annamanna: { en: "Mutuality", pt: "Mutualidade", es: "Mutualidad" },
+    nissaya: { en: "Support", pt: "Suporte", es: "Soporte" },
+    upanissaya: { en: "Decisive Support", pt: "Suporte Decisivo", es: "Soporte Decisivo" },
+    purejata: { en: "Pre-nascence", pt: "Pré-nascença", es: "Prenascencia" },
+    pacchajata: { en: "Post-nascence", pt: "Pós-nascença", es: "Posnascencia" },
+    asevana: { en: "Repetition", pt: "Repetição", es: "Repetición" },
+    kamma: { en: "Kamma", pt: "Kamma", es: "Kamma" },
+    vipaka: { en: "Result", pt: "Resultado", es: "Resultado" },
+    ahara: { en: "Nutriment", pt: "Nutrição", es: "Nutrimento" },
+    indriya: { en: "Faculty", pt: "Faculdade", es: "Facultad" },
+    jhana: { en: "Jhāna", pt: "Jhāna", es: "Jhāna" },
+    magga: { en: "Path", pt: "Caminho", es: "Sendero" },
+    sampayutta: { en: "Association", pt: "Associação", es: "Asociación" },
+    vippayutta: { en: "Dissociation", pt: "Dissociação", es: "Disociación" },
+    atthi: { en: "Presence", pt: "Presença", es: "Presencia" },
+    natthi: { en: "Absence", pt: "Ausência", es: "Ausencia" },
+    vigata: { en: "Disappearance", pt: "Desaparecimento", es: "Desaparición" },
+    avigata: { en: "Non-disappearance", pt: "Não-desaparecimento", es: "No desaparición" },
   };
 
-  const KHANDHA_LABELS: Record<string, { en: string; pt: string }> = {
-    rupa: { en: "Materiality", pt: "Materialidade" },
-    vedana: { en: "Feeling", pt: "Sensação" },
-    sanna: { en: "Perception", pt: "Percepção" },
-    sankhara: { en: "Formations", pt: "Formações" },
-    vinnana: { en: "Consciousness", pt: "Consciência" },
+  const KHANDHA_LABELS: Record<string, { en: string; pt: string; es: string }> = {
+    rupa: { en: "Materiality", pt: "Materialidade", es: "Materialidad" },
+    vedana: { en: "Feeling", pt: "Sensação", es: "Sensación" },
+    sanna: { en: "Perception", pt: "Percepção", es: "Percepción" },
+    sankhara: { en: "Formations", pt: "Formações", es: "Formaciones" },
+    vinnana: { en: "Consciousness", pt: "Consciência", es: "Conciencia" },
   };
 
   function populateFilters(): void {
@@ -514,7 +514,7 @@ export function initGraphPanel(container: HTMLElement): void {
       opt.value = k;
       const lbl = KHANDHA_LABELS[k];
       if (lbl) {
-        const tr = lang === "pt" ? lbl.pt : lbl.en;
+        const tr = lang === "pt" ? lbl.pt : lang === "es" ? lbl.es : lbl.en;
         opt.textContent = `${k} — ${tr}`;
       } else {
         opt.textContent = k;
@@ -533,7 +533,8 @@ export function initGraphPanel(container: HTMLElement): void {
       opt.value = p;
       const lbl = PACCAYA_LABELS[p];
       if (lbl) {
-        opt.textContent = `${p}-paccaya — ${lbl.en} — ${lbl.pt}`;
+        const tr = lang === "pt" ? lbl.pt : lang === "es" ? lbl.es : lbl.en;
+        opt.textContent = `${p}-paccaya — ${tr}`;
       } else {
         opt.textContent = p + "-paccaya";
       }

@@ -47,6 +47,12 @@ html, body {
   display: grid;
   grid-template-columns: var(--rail-w) var(--panel-w) 8px 1fr;
   height: 100vh;
+  height: 100dvh;
+}
+
+:where(button, a, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* ---- icon rail ---- */
@@ -141,7 +147,8 @@ html, body {
   border: 1px solid var(--border);
   color: var(--text-muted);
   border-radius: 4px;
-  width: 22px; height: 22px;
+  min-inline-size: 26px;
+  min-block-size: 26px;
   cursor: pointer;
   font-size: 14px;
   display: flex; align-items: center; justify-content: center;
@@ -207,10 +214,12 @@ html, body {
   border-radius: 6px;
   cursor: pointer;
   font-size: 13px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .side-item:hover { border-color: var(--accent); }
-.side-item .meta { color: var(--text-muted); font-size: 11px; }
-.side-item .snippet { margin-top: 3px; color: var(--text); }
+.side-item .meta { color: var(--text-muted); font-size: 11px; overflow-wrap: anywhere; word-break: break-word; }
+.side-item .snippet { margin-top: 3px; color: var(--text); overflow-wrap: anywhere; word-break: break-word; }
 .side-item mark { background: var(--accent-soft); color: var(--accent); padding: 0 2px; }
 .side-empty { color: var(--text-muted); font-size: 13px; font-style: italic; }
 
@@ -561,6 +570,7 @@ sup.var-note { color: var(--accent); cursor: help; font-size: .7em; }
   box-shadow: 0 4px 20px rgba(0,0,0,.18);
   font-size: 13px;
   max-height: 60vh;
+  max-height: 60dvh;
   overflow-y: auto;
 }
 #selection-popover.hidden { display: none; }
@@ -835,7 +845,7 @@ details[open] > summary::before { transform: rotate(90deg); }
     overflow-x: hidden;
     position: relative;
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 0;
   }
 
   #panel-resizer {
@@ -866,8 +876,8 @@ details[open] > summary::before { transform: rotate(90deg); }
     flex-wrap: wrap;
   }
 
-  /* Padding adjustments */
-  .panel { padding: 12px; }
+  /* Padding adjustments (reserve bottom clearance for floating Debate pill) */
+  .panel { padding: 12px 12px 56px; }
   #content { padding: 12px; }
 }
 
@@ -1224,12 +1234,13 @@ details[open] > summary::before { transform: rotate(90deg); }
   color: var(--text);
   font-weight: 600;
   cursor: pointer;
-  outline: none;
   transition: border-color 0.15s ease;
 }
 
-.tetris-unit-row select.tetris-unit-select:focus {
+.tetris-unit-row select.tetris-unit-select:focus-visible {
   border-color: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .tetris-stats-row {
@@ -1651,6 +1662,7 @@ details[open] > summary::before { transform: rotate(90deg); }
   bottom: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   max-width: none;
   max-height: none;
   z-index: 1000;
@@ -1701,6 +1713,7 @@ details[open] > summary::before { transform: rotate(90deg); }
   width: 420px;
   max-width: min(420px, calc(100vw - 36px));
   max-height: calc(85vh - 60px);
+  max-height: calc(85dvh - 60px);
   overflow-y: auto;
   box-shadow: 0 10px 32px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
@@ -1872,16 +1885,23 @@ details[open] > summary::before { transform: rotate(90deg); }
     height: 34px;
   }
 
+  /* Reserve right side of #toc-nav for the floating Debate / Close Debate pill on mobile */
+  #toc-nav {
+    justify-content: flex-start;
+    padding: 8px 140px 8px 14px;
+    gap: 10px;
+  }
+
   #btn-toggle-interlocutor {
-    bottom: 70px;
-    right: 12px;
-    padding: 6px 14px;
+    bottom: 66px;
+    right: 10px;
+    padding: 6px 12px;
     height: 32px;
     font-size: 12px;
   }
 
   body.tetris-active #btn-toggle-interlocutor,
-  body:has(#reader-srs.tetris-mode:not([style*="display: none"])) #btn-toggle-interlocutor {
+  body:has(#reader-srs.tetris-mode:not([style*="display: none"]):not([style*="display:none"])) #btn-toggle-interlocutor {
     display: none !important;
   }
 
@@ -1892,10 +1912,11 @@ details[open] > summary::before { transform: rotate(90deg); }
     width: auto;
     max-width: none;
     max-height: 60vh;
+    max-height: 60dvh;
   }
 
   body.tetris-active #interlocutor-container,
-  body:has(#reader-srs.tetris-mode:not([style*="display: none"])) #interlocutor-container {
+  body:has(#reader-srs.tetris-mode:not([style*="display: none"]):not([style*="display:none"])) #interlocutor-container {
     display: none !important;
   }
 }
@@ -2365,9 +2386,10 @@ details[open] > summary::before { transform: rotate(90deg); }
   box-sizing: border-box;
 }
 
-.abhi-recall-input:focus {
-  outline: none;
+.abhi-recall-input:focus-visible {
   border-color: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .abhi-reveal-row {
@@ -3070,8 +3092,9 @@ details[open] > summary::before { transform: rotate(90deg); }
 }
 
 @media (max-width: 768px) {
-  /* Hide floating Debate FAB inside SRS/Anki on small screens so it never blocks rating or action buttons */
-  body:has(#reader-srs:not([style*="display: none"])) #btn-toggle-interlocutor {
+  /* Hide floating Debate FAB & panel inside SRS/Anki on small screens so they never block rating or action buttons */
+  body:has(#reader-srs:not([style*="display: none"]):not([style*="display:none"])) #btn-toggle-interlocutor,
+  body:has(#reader-srs:not([style*="display: none"]):not([style*="display:none"])) #interlocutor-container {
     display: none !important;
   }
 
@@ -3295,25 +3318,46 @@ details[open] > summary::before { transform: rotate(90deg); }
 /* Pillar Tabs (WAI-ARIA Tablist Pattern) */
 .mnem-pillar-tabs {
   display: flex;
-  overflow-x: auto;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px 6px 0;
   border-bottom: 2px solid var(--border);
   background: var(--bg-panel);
   border-radius: 8px 8px 0 0;
-  scroll-snap-type: inline proximity;
 }
 
 .mnem-pillar-tab {
   position: relative;
-  flex: none;
-  scroll-snap-align: start;
+  flex: 1 1 auto;
   background: none;
   border: none;
   color: var(--text-muted);
-  padding: 12px 18px;
-  font-size: 0.92rem;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  text-align: center;
   cursor: pointer;
   min-block-size: 42px;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 640px) {
+  .mnem-pillar-tabs {
+    padding: 4px;
+    gap: 4px;
+  }
+  .mnem-pillar-tab {
+    flex: 1 1 100%;
+    padding: 8px 10px;
+    font-size: 0.84rem;
+    min-block-size: 38px;
+    text-align: left;
+    border-radius: 6px;
+  }
+  .mnem-pillar-tab[aria-selected="true"] {
+    background: var(--accent-soft);
+  }
 }
 
 .mnem-pillar-tab:hover {

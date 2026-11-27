@@ -26,7 +26,7 @@ export const DosaMula1: Citta = {
     description: 'The first consciousness rooted in hatred, arising spontaneously.',
     associatedCetasikas: [
         'Phassa', 'Vedanā', 'Saññā', 'Cetanā', 'Ekaggatā', 'Jīvitindriya', 'Manasikāra', // 7 Universals
-        'Vitakka', 'Vicāra', 'Adhimokkha', 'Viriya', // 4 Occasionals
+        'Vitakka', 'Vicāra', 'Adhimokkha', 'Viriya', 'Chanda', // 5 Occasionals (all except Pīti, AS II.20)
         'Moha', 'Ahirika', 'Anottappa', 'Uddhacca', // 4 Universal Immorals
         'Dosa' // Specific Immoral
     ]

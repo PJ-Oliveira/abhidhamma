@@ -3,7 +3,6 @@ import { settings } from "./state.js";
 import { t } from "./i18n.js";
 import type { CoreDictEntry, DictEntry } from "./types.js";
 
-let currentHighlight: Element | null = null;
 let selectedWordSpans: HTMLElement[] = [];
 let popoverEl: HTMLElement | null = null;
 let contentEl: HTMLElement | null = null;
@@ -31,10 +30,6 @@ export function initSelectionHandler(container: HTMLElement): void {
 }
 
 export function clearSelection(): void {
-  if (currentHighlight) {
-    currentHighlight.classList.remove("selection-counterpart");
-    currentHighlight = null;
-  }
   for (const span of selectedWordSpans) {
     span.classList.remove("pali-word-selected");
   }
@@ -202,13 +197,14 @@ async function handleMouseUp(e: MouseEvent): Promise<void> {
     return;
   }
 
-  // Clear any legacy macro highlight
-  if (currentHighlight) {
-    currentHighlight.classList.remove("selection-counterpart");
-    currentHighlight = null;
+  const isCommentarySeg = segDiv.dataset.commentary === "true";
+  const hasExplicitSelection = Boolean(sel && !sel.isCollapsed && sel.rangeCount > 0);
+  if (isCommentarySeg && !hasExplicitSelection) {
+    clearSelection();
+    return;
   }
 
-  if (inPali) {
+  if (inPali && !isCommentarySeg) {
     const primaryWordSpan = intersectedWords[0] ?? clickedWordSpan ?? (node.closest(".pali-word") as HTMLElement | null);
     if (primaryWordSpan) {
       highlightPaliWords([primaryWordSpan]);
@@ -264,13 +260,14 @@ async function buildPopover(
   const closeBtn = document.createElement("button");
   closeBtn.className = "sp-close";
   closeBtn.textContent = "×";
-  closeBtn.setAttribute("aria-label", "Close");
+  closeBtn.setAttribute("aria-label", t("close", settings.uiLang));
   closeBtn.addEventListener("click", clearSelection);
 
   const linkBtn = document.createElement("button");
   linkBtn.className = "sp-link-btn";
-  linkBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>`;
+  linkBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>`;
   linkBtn.title = t("copyLink", settings.uiLang);
+  linkBtn.setAttribute("aria-label", t("copyLink", settings.uiLang));
   linkBtn.style.cssText = "background:transparent;border:none;color:var(--text-muted);cursor:pointer;padding:4px;display:flex;align-items:center;margin-right:8px;";
   linkBtn.addEventListener("click", () => {
     const [baseHash] = window.location.hash.split("?");
@@ -299,7 +296,12 @@ async function buildPopover(
   textDiv.className = "sp-text";
   let counterpartText = "";
   if (selectedInPali) {
-    counterpartText = segDiv.querySelector(".translation-line")?.innerHTML?.trim() ?? "";
+    const translEl = segDiv.querySelector(".translation-line");
+    if (translEl) {
+      const clone = translEl.cloneNode(true) as HTMLElement;
+      clone.querySelectorAll(".bookmark-toggle").forEach((b) => b.remove());
+      counterpartText = clone.innerHTML.trim();
+    }
   } else {
     counterpartText = (segDiv as HTMLElement).dataset.pali?.trim() ?? "";
   }
@@ -311,8 +313,8 @@ async function buildPopover(
   }
   popoverEl.appendChild(textDiv);
 
-  // Dictionary lookup (only for Pali selections)
-  if (selectedInPali) {
+  // Dictionary lookup (only for Pali selections, never English commentaries)
+  if (selectedInPali && !isCommentarySeg) {
     const words = selectedText.split(/\s+/).filter(Boolean).slice(0, 3);
     let hit: CoreDictEntry | DictEntry | null = null;
     for (const word of words) {
@@ -333,8 +335,10 @@ async function buildPopover(
     }
   }
 
-  positionPopover(rect);
+  popoverEl.style.visibility = "hidden";
   popoverEl.classList.remove("hidden");
+  positionPopover(rect);
+  popoverEl.style.visibility = "";
 }
 
 function renderDictHit(entry: CoreDictEntry | DictEntry): HTMLElement {

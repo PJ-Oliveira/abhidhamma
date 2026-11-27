@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=ec96663c";
-import { settings } from "./state.js?v=ec96663c";
-import { createLogger } from "./logger.js?v=ec96663c";
+import { t } from "./i18n.js?v=06b4ea02";
+import { settings } from "./state.js?v=06b4ea02";
+import { createLogger } from "./logger.js?v=06b4ea02";
 const log = createLogger("srs");
 const SRS_KEY = "atp.srs.v1";
 const SRS_STATS_KEY = "atp.srs.stats.v1";
@@ -124,6 +124,7 @@ export function initSrsPanel(container) {
     let queue = [];
     let currentIndex = 0;
     let isFlipped = false;
+    let viewState = "loading";
     const today = new Date().toISOString().slice(0, 10);
     if (stats.lastSessionDate !== today) {
         const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
@@ -200,6 +201,7 @@ export function initSrsPanel(container) {
         progressText.textContent = `${done} / ${total}`;
     }
     function showCard(vocab) {
+        viewState = "card";
         isFlipped = false;
         cardEl.style.display = "block";
         ratingBar.style.display = "none";
@@ -230,7 +232,7 @@ export function initSrsPanel(container) {
         backEl.style.display = "none";
     }
     function flipCard() {
-        if (isFlipped)
+        if (isFlipped || currentIndex >= queue.length || !queue[currentIndex])
             return;
         isFlipped = true;
         frontEl.style.display = "none";
@@ -264,6 +266,7 @@ export function initSrsPanel(container) {
         }
     }
     function showComplete() {
+        viewState = "complete";
         cardEl.style.display = "none";
         ratingBar.style.display = "none";
         emptyEl.style.display = "block";
@@ -277,6 +280,7 @@ export function initSrsPanel(container) {
     `;
     }
     function showLoading() {
+        viewState = "loading";
         cardEl.style.display = "block";
         frontEl.innerHTML = `<div class="srs-loading">${t("srsLoading", settings.uiLang)}</div>`;
         frontEl.style.display = "block";
@@ -290,6 +294,16 @@ export function initSrsPanel(container) {
     document.addEventListener("keydown", (e) => {
         const overlay = container.closest("#reader-srs");
         if (!overlay || overlay.style.display === "none" || container.style.display === "none")
+            return;
+        if (e.ctrlKey || e.metaKey || e.altKey)
+            return;
+        const target = e.target;
+        if (target &&
+            (target.isContentEditable ||
+                ["INPUT", "TEXTAREA", "SELECT", "BUTTON", "A"].includes(target.tagName))) {
+            return;
+        }
+        if (currentIndex >= queue.length || !queue[currentIndex])
             return;
         if (!isFlipped && (e.key === " " || e.key === "Enter")) {
             e.preventDefault();
@@ -311,19 +325,26 @@ export function initSrsPanel(container) {
             item.btn.textContent = item.label();
         }
         updateStatsBar();
-        if (currentIndex < queue.length && queue[currentIndex]) {
+        if (viewState === "card" && currentIndex < queue.length && queue[currentIndex]) {
             const wasFlipped = isFlipped;
             showCard(queue[currentIndex]);
             if (wasFlipped)
                 flipCard();
         }
-        else if (queue.length > 0) {
+        else if (viewState === "complete") {
             showComplete();
+        }
+        else if (viewState === "nodata") {
+            emptyEl.textContent = t("srsNoData", settings.uiLang);
+        }
+        else if (viewState === "loading") {
+            showLoading();
         }
     });
     showLoading();
     void loadVocab().then((vocab) => {
         if (vocab.length === 0) {
+            viewState = "nodata";
             emptyEl.style.display = "block";
             emptyEl.textContent = t("srsNoData", settings.uiLang);
             cardEl.style.display = "none";

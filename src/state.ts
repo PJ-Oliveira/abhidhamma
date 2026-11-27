@@ -51,7 +51,11 @@ function save<T>(key: string, value: T): void {
   }
 }
 
-export const settings: Settings = load(SETTINGS_KEY, DEFAULT_SETTINGS);
+const storedSettings = load<Partial<Settings> | null>(SETTINGS_KEY, null);
+export const settings: Settings = {
+  ...DEFAULT_SETTINGS,
+  ...(storedSettings && typeof storedSettings === "object" ? storedSettings : {}),
+};
 
 export function updateSettings(patch: Partial<Settings>): void {
   Object.assign(settings, patch);

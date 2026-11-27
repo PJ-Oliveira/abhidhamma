@@ -26,7 +26,7 @@ import {
   type MnemonicProgressState,
 } from "../mnemonic-lab/engine.js";
 
-export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v32";
+export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v34";
 /** Cache permanente de progresso do usuário — nunca apagado por atualizações do Service Worker. */
 export const VAULT_CACHE_NAME = "abhidhamma-anki-vault-v1";
 export const VAULT_SNAPSHOT_PATH = "/_offline_vault/abhidhamma-anki-progress.json";
@@ -701,11 +701,28 @@ export function serializeProgressBackup(snap: AnkiProgressSnapshot): string {
   return JSON.stringify(snap, null, 2);
 }
 
-/** Persiste o estado do Laboratório Mnêmico em todas as 4 camadas do cofre offline. */
+/** Persiste o estado do Laboratório Mnêmico em todas as 4 camadas do cofre offline sem perder o histórico Anki. */
 export async function persistMnemonicOfflineVault(labState: MnemonicProgressState): Promise<boolean> {
   try {
+    const now = Date.now();
     saveMnemonicProgress(labState);
-    const snap = buildLocalStorageSnapshot([], undefined, Date.now());
+    const localSnap = buildLocalStorageSnapshot([], undefined, now);
+    const [idbRes, cacheRes, opfsRes] = await Promise.all([
+      readIdbSnapshot(),
+      readCacheVaultSnapshot(),
+      readOpfsSnapshot(),
+    ]);
+    let merged = localSnap;
+    for (const existing of [idbRes.snapshot, cacheRes.snapshot, opfsRes.snapshot]) {
+      if (hasProgressData(existing)) {
+        merged = mergeSnapshots(merged, existing);
+      }
+    }
+    const snap: AnkiProgressSnapshot = {
+      ...merged,
+      updatedAt: Math.max(merged.updatedAt, now),
+      mnemonicLab: labState,
+    };
     await Promise.allSettled([
       writeIdbSnapshot(snap),
       writeCacheVaultSnapshot(snap),

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'abhidhamma-cache-v32';
+const CACHE_NAME = 'abhidhamma-cache-v34';
 const VAULT_CACHE_NAME = 'abhidhamma-anki-vault-v1';
 const PROTECTED_CACHES = new Set([CACHE_NAME, VAULT_CACHE_NAME]);
 
@@ -14,8 +14,11 @@ const CORE_ASSETS = [
   './img/icon-192.png',
   './img/icon-512.png',
   './data/manifest.json',
+  './data/search/manifest.json',
   './data/dictionary/pali_core.json',
   './data/dictionary/common_pali.json',
+  './data/srs/abhidhamma_cards.json',
+  './data/srs/vocabulary.json',
   './js/app.js',
   './js/dictionary.js',
   './js/export.js',
@@ -29,6 +32,15 @@ const CORE_ASSETS = [
   './js/state.js',
   './js/tree.js',
   './js/types.js',
+  './js/ai-feature/debate-scenarios.js',
+  './js/ai-feature/ui.js',
+  './js/ontology/cetasika.js',
+  './js/ontology/citta.js',
+  './js/ontology/commentary.js',
+  './js/ontology/formal_logic.js',
+  './js/ontology/kathavatthu.js',
+  './js/ontology/kathavatthu_logic.js',
+  './js/ontology/sampayoganaya.js',
   './js/abhidhamma-srs/types.js',
   './js/abhidhamma-srs/scheduler.js',
   './js/abhidhamma-srs/offline-store.js',
@@ -49,7 +61,6 @@ const CORE_ASSETS = [
   './js/mnemonic-lab/chapters/mula-supplements.js',
   './js/mnemonic-lab/engine.js',
   './js/mnemonic-lab/ui.js',
-  './data/srs/abhidhamma_cards.json',
 ];
 
 async function precacheAllData() {

@@ -335,7 +335,7 @@ const WORK_AUTHORS: Record<string, string> = {
   "abhidhamma-in-daily-life": "Nina van Gorkom",
   "the-conditionality-of-life": "Nina van Gorkom",
   "the-buddhist-teaching-on-physical-phenomena": "Nina van Gorkom",
-  "path-without-ownership": "Robert Gillam",
+  "path-without-ownership": "Rob Kirkpatrick",
   "lessons-in-abhidhamma": "Bhikkhu Subhūti",
   "dhamma-now": "Sarah Procter Abbott",
   "dhamma-now-2": "Sarah Procter Abbott",

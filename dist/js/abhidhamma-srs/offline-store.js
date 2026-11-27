@@ -1,6 +1,6 @@
-import { DEFAULT_ANKI_CONFIG, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, normalizeAnkiConfig, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, STORAGE_MNEMONICS_KEY, } from "./scheduler.js?v=ec96663c";
-import { hasMnemonicProgressData, loadMnemonicProgress, mergeMnemonicProgress, normalizeMnemonicProgress, saveMnemonicProgress, } from "../mnemonic-lab/engine.js?v=ec96663c";
-export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v32";
+import { DEFAULT_ANKI_CONFIG, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, normalizeAnkiConfig, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, STORAGE_MNEMONICS_KEY, } from "./scheduler.js?v=06b4ea02";
+import { hasMnemonicProgressData, loadMnemonicProgress, mergeMnemonicProgress, normalizeMnemonicProgress, saveMnemonicProgress, } from "../mnemonic-lab/engine.js?v=06b4ea02";
+export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v34";
 export const VAULT_CACHE_NAME = "abhidhamma-anki-vault-v1";
 export const VAULT_SNAPSHOT_PATH = "/_offline_vault/abhidhamma-anki-progress.json";
 export const VAULT_OPFS_FILENAME = "abhidhamma-anki-progress.json";
@@ -558,8 +558,25 @@ export function serializeProgressBackup(snap) {
 }
 export async function persistMnemonicOfflineVault(labState) {
     try {
+        const now = Date.now();
         saveMnemonicProgress(labState);
-        const snap = buildLocalStorageSnapshot([], undefined, Date.now());
+        const localSnap = buildLocalStorageSnapshot([], undefined, now);
+        const [idbRes, cacheRes, opfsRes] = await Promise.all([
+            readIdbSnapshot(),
+            readCacheVaultSnapshot(),
+            readOpfsSnapshot(),
+        ]);
+        let merged = localSnap;
+        for (const existing of [idbRes.snapshot, cacheRes.snapshot, opfsRes.snapshot]) {
+            if (hasProgressData(existing)) {
+                merged = mergeSnapshots(merged, existing);
+            }
+        }
+        const snap = {
+            ...merged,
+            updatedAt: Math.max(merged.updatedAt, now),
+            mnemonicLab: labState,
+        };
         await Promise.allSettled([
             writeIdbSnapshot(snap),
             writeCacheVaultSnapshot(snap),

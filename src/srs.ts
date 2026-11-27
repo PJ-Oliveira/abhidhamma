@@ -182,6 +182,7 @@ export function initSrsPanel(container: HTMLElement): void {
   let queue: VocabCard[] = [];
   let currentIndex = 0;
   let isFlipped = false;
+  let viewState: "loading" | "nodata" | "card" | "complete" = "loading";
 
   // Check streak
   const today = new Date().toISOString().slice(0, 10);
@@ -283,6 +284,7 @@ export function initSrsPanel(container: HTMLElement): void {
   }
 
   function showCard(vocab: VocabCard): void {
+    viewState = "card";
     isFlipped = false;
     cardEl.style.display = "block";
     ratingBar.style.display = "none";
@@ -318,7 +320,7 @@ export function initSrsPanel(container: HTMLElement): void {
   }
 
   function flipCard(): void {
-    if (isFlipped) return;
+    if (isFlipped || currentIndex >= queue.length || !queue[currentIndex]) return;
     isFlipped = true;
     frontEl.style.display = "none";
     backEl.style.display = "block";
@@ -354,6 +356,7 @@ export function initSrsPanel(container: HTMLElement): void {
   }
 
   function showComplete(): void {
+    viewState = "complete";
     cardEl.style.display = "none";
     ratingBar.style.display = "none";
     emptyEl.style.display = "block";
@@ -368,6 +371,7 @@ export function initSrsPanel(container: HTMLElement): void {
   }
 
   function showLoading(): void {
+    viewState = "loading";
     cardEl.style.display = "block";
     frontEl.innerHTML = `<div class="srs-loading">${t("srsLoading", settings.uiLang)}</div>`;
     frontEl.style.display = "block";
@@ -385,6 +389,16 @@ export function initSrsPanel(container: HTMLElement): void {
     // Only when the SRS reader overlay and vocab panel are visible
     const overlay = container.closest("#reader-srs") as HTMLElement | null;
     if (!overlay || overlay.style.display === "none" || container.style.display === "none") return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    const target = e.target as HTMLElement | null;
+    if (
+      target &&
+      (target.isContentEditable ||
+        ["INPUT", "TEXTAREA", "SELECT", "BUTTON", "A"].includes(target.tagName))
+    ) {
+      return;
+    }
+    if (currentIndex >= queue.length || !queue[currentIndex]) return;
 
     if (!isFlipped && (e.key === " " || e.key === "Enter")) {
       e.preventDefault();
@@ -402,12 +416,16 @@ export function initSrsPanel(container: HTMLElement): void {
       item.btn.textContent = item.label();
     }
     updateStatsBar();
-    if (currentIndex < queue.length && queue[currentIndex]) {
+    if (viewState === "card" && currentIndex < queue.length && queue[currentIndex]) {
       const wasFlipped = isFlipped;
       showCard(queue[currentIndex]!);
       if (wasFlipped) flipCard();
-    } else if (queue.length > 0) {
+    } else if (viewState === "complete") {
       showComplete();
+    } else if (viewState === "nodata") {
+      emptyEl.textContent = t("srsNoData", settings.uiLang);
+    } else if (viewState === "loading") {
+      showLoading();
     }
   });
 
@@ -416,6 +434,7 @@ export function initSrsPanel(container: HTMLElement): void {
   showLoading();
   void loadVocab().then((vocab) => {
     if (vocab.length === 0) {
+      viewState = "nodata";
       emptyEl.style.display = "block";
       emptyEl.textContent = t("srsNoData", settings.uiLang);
       cardEl.style.display = "none";

@@ -4,7 +4,9 @@ import { initSearchPanel } from '../../src/search';
 const fakeManifest = {
   shards: {
     "c": "shard_c.json",
-    "m": "shard_m.json"
+    "m": "shard_m.json",
+    "ā": "shard_ā.json",
+    "ú": "shard_ú.json"
   }
 };
 
@@ -18,14 +20,39 @@ const fakeShardC = {
   ]
 };
 
+const fakeShardAMacron = {
+  postings: {
+    "ārammaṇa": [0]
+  },
+  segments: [
+    { snippet: "Ārammaṇapaccayo snippet", workId: "patthana", partKey: "mula", chunk: 0, segId: 5 }
+  ]
+};
+
+const fakeShardUAcute = {
+  postings: {
+    "última": [0]
+  },
+  segments: [
+    { snippet: "Realidade última snippet", workId: "dhammasangani", partKey: "mula", chunk: 0, segId: 8 }
+  ]
+};
+
 describe('Search Module', () => {
   beforeEach(() => {
     vi.stubGlobal('fetch', vi.fn().mockImplementation((url: string) => {
-      if (url.includes('manifest.json')) {
+      const decoded = decodeURIComponent(url);
+      if (decoded.includes('manifest.json')) {
         return Promise.resolve({ ok: true, json: () => Promise.resolve(fakeManifest) });
       }
-      if (url.includes('shard_c.json')) {
+      if (decoded.includes('shard_c.json')) {
         return Promise.resolve({ ok: true, json: () => Promise.resolve(fakeShardC) });
+      }
+      if (decoded.includes('shard_ā.json')) {
+        return Promise.resolve({ ok: true, json: () => Promise.resolve(fakeShardAMacron) });
+      }
+      if (decoded.includes('shard_ú.json')) {
+        return Promise.resolve({ ok: true, json: () => Promise.resolve(fakeShardUAcute) });
       }
       return Promise.resolve({ ok: false, status: 404 });
     }));
@@ -71,5 +98,27 @@ describe('Search Module', () => {
     await new Promise(r => setTimeout(r, 400));
     
     expect(results.innerHTML).toContain('side-empty');
+  });
+
+  it('initSearchPanel should resolve shards starting with Pāli diacritics and PT/ES accents', async () => {
+    const input = document.createElement('input');
+    const results = document.createElement('div');
+    initSearchPanel(input, results, () => {});
+
+    input.value = "ārammaṇa";
+    input.dispatchEvent(new Event('input'));
+    await new Promise(r => setTimeout(r, 350));
+    expect(results.innerHTML).toContain('Ārammaṇapaccayo snippet');
+
+    input.value = "Última";
+    input.dispatchEvent(new Event('input'));
+    await new Promise(r => setTimeout(r, 350));
+    expect(results.innerHTML).toContain('Realidade última snippet');
+
+    // Multi-word query intersecting across shards
+    input.value = "citta ārammaṇa";
+    input.dispatchEvent(new Event('input'));
+    await new Promise(r => setTimeout(r, 350));
+    expect(results.querySelectorAll('.side-item').length).toBeGreaterThan(0);
   });
 });

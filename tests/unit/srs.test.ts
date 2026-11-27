@@ -90,3 +90,35 @@ describe('SRS Logic (Spaced Repetition)', () => {
 
     expect(container.innerHTML).toContain('srs-card');
   });
+
+  it('should ignore keyboard shortcuts from form inputs and never flip after queue completion', async () => {
+    localStorage.clear();
+    const { initSrsPanel } = await import('../../src/srs');
+    const overlay = document.createElement('div');
+    overlay.id = 'reader-srs';
+    overlay.style.display = 'flex';
+    const container = document.createElement('div');
+    overlay.appendChild(container);
+    document.body.appendChild(overlay);
+
+    initSrsPanel(container);
+    await new Promise(r => setTimeout(r, 20));
+
+    const input = document.createElement('input');
+    document.body.appendChild(input);
+    input.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true }));
+    expect((container.querySelector('.srs-ratings') as HTMLElement).style.display).toBe('none');
+
+    // Flip and rate the single card so session completes
+    (container.querySelector('.srs-card') as HTMLElement).click();
+    expect((container.querySelector('.srs-ratings') as HTMLElement).style.display).toBe('flex');
+    (container.querySelector('.srs-btn-good') as HTMLElement).click();
+    expect((container.querySelector('.srs-ratings') as HTMLElement).style.display).toBe('none');
+
+    // Pressing Space on document after completion must not resurface rating bar
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true }));
+    expect((container.querySelector('.srs-ratings') as HTMLElement).style.display).toBe('none');
+
+    input.remove();
+    overlay.remove();
+  });

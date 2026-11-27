@@ -23,7 +23,7 @@ describe('HomeScreen Responsiveness', () => {
         settings: settingsReducer,
       },
       preloadedState: {
-        settings: { fontSize: 16 }
+        settings: { fontSize: 16, theme: 'light' as const }
       }
     });
   });

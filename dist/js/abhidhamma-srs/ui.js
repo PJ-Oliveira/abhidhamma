@@ -1,6 +1,6 @@
-import { buildEarlyReviewQueue, buildProgressiveCloze, buildStudyQueue, computeAllChapterProgress, computeDailyNewQuota, computePlan90Summary, computeProportionalExtraBatch, countLeeches, createInitialAnkiCardState, defaultClozeStage, ensurePaceTarget, getMaxIntervalForHorizon, getReserveDaysForHorizon, isLeech, isRecitationCard, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, MAX_NEW_CARDS_PER_DAY, MAX_REVIEWS_PER_DAY, PACE_HORIZON_OPTIONS, previewAnkiIntervals, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, saveMnemonicNote, scheduleAnkiCard, setPaceHorizon, } from "./scheduler.js?v=ec96663c";
-import { buildLocalStorageSnapshot, fetchDeckWithOfflineCache, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistOfflineProgress, resetOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "./offline-store.js?v=ec96663c";
-import { settings } from "../state.js?v=ec96663c";
+import { buildEarlyReviewQueue, buildProgressiveCloze, buildStudyQueue, computeAllChapterProgress, computeDailyNewQuota, computePlan90Summary, computeProportionalExtraBatch, countLeeches, createInitialAnkiCardState, defaultClozeStage, ensurePaceTarget, getMaxIntervalForHorizon, getReserveDaysForHorizon, isLeech, isRecitationCard, loadAnkiCardStates, loadAnkiConfig, loadAnkiStats, loadMnemonicNotes, MAX_NEW_CARDS_PER_DAY, MAX_REVIEWS_PER_DAY, PACE_HORIZON_OPTIONS, previewAnkiIntervals, saveAnkiCardStates, saveAnkiConfig, saveAnkiStats, saveMnemonicNote, scheduleAnkiCard, setPaceHorizon, } from "./scheduler.js?v=06b4ea02";
+import { buildLocalStorageSnapshot, fetchDeckWithOfflineCache, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistOfflineProgress, resetOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "./offline-store.js?v=06b4ea02";
+import { settings } from "../state.js?v=06b4ea02";
 const UI_STRINGS = {
     pt: {
         moduleTitle: "Abhidhammatthasaṅgaha — Repetição Espaçada (Anki SRS)",
@@ -103,7 +103,7 @@ const UI_STRINGS = {
         yourRecallLabel: "Sua anotação",
         fourfoldToggle: "Quadrado de 4 campos (Lakkhaṇa · Rasa · Paccupaṭṭhāna · Padaṭṭhāna)",
         checklistPrompt: "Marque os itens que você lembrou por completo:",
-        checklistIncomplete: "Enumeração incompleta — marque «Errei» ou «Difícil» até acertar 100%.",
+        checklistIncomplete: "Enumeração incompleta — marque «De novo» ou «Difícil» até acertar 100%.",
         checklistComplete: "Enumeração 100% completa!",
         sequenceHint: "Clique nos itens abaixo na ordem canônica exata (clique no item colocado para remover):",
         sequenceReset: "Limpar ordem",
@@ -349,7 +349,7 @@ const UI_STRINGS = {
         modeRecitation: "🔤 Recitación Pāli",
         modeGatha: "🎵 Gāthā Ancla",
         recitationLabel: "Recitación Pāli",
-        recallPlaceholder: "Recuerdo activo (opcional): formule mentalmente o escriba su respuesta antes de revelar…",
+        recallPlaceholder: "Recuerdo activo (opcional): formula mentalmente o escribe tu respuesta antes de revelar…",
         yourRecallLabel: "Tu anotación",
         fourfoldToggle: "Cuadrante de 4 campos (Lakkhaṇa · Rasa · Paccupaṭṭhāna · Padaṭṭhāna)",
         checklistPrompt: "Marca los elementos que recordaste completos:",
@@ -447,6 +447,7 @@ export class AbhidhammaSrsUI {
     activeCard = null;
     isFlipped = false;
     keyListenerBound = false;
+    static activeVaultChannel = null;
     recallDraft = "";
     fourfoldDraft = {
         lakkhana: "",
@@ -519,7 +520,9 @@ export class AbhidhammaSrsUI {
         });
         try {
             if (typeof BroadcastChannel !== "undefined") {
+                AbhidhammaSrsUI.activeVaultChannel?.close();
                 const ch = new BroadcastChannel(VAULT_BROADCAST_CHANNEL);
+                AbhidhammaSrsUI.activeVaultChannel = ch;
                 ch.addEventListener("message", () => {
                     void hydrateOfflineVault().then((h) => {
                         this.states = { ...h.snapshot.states };
@@ -531,7 +534,9 @@ export class AbhidhammaSrsUI {
                         if (this.view === "overview")
                             this.render();
                     });
+                    ch.unref?.();
                 });
+                ch.unref?.();
             }
         }
         catch {
@@ -570,11 +575,20 @@ export class AbhidhammaSrsUI {
             const overlay = this.container.closest("#reader-srs");
             if (!overlay || overlay.style.display === "none")
                 return;
-            const activeTag = document.activeElement?.tagName;
-            if (activeTag === "TEXTAREA" || activeTag === "INPUT" || activeTag === "SELECT") {
+            if (e.ctrlKey || e.metaKey || e.altKey)
+                return;
+            const activeEl = document.activeElement;
+            const activeTag = activeEl?.tagName;
+            if (activeTag === "TEXTAREA" ||
+                activeTag === "INPUT" ||
+                activeTag === "SELECT" ||
+                activeEl?.isContentEditable) {
                 if (e.key === "Escape") {
-                    document.activeElement.blur();
+                    activeEl?.blur();
                 }
+                return;
+            }
+            if ((activeTag === "BUTTON" || activeTag === "A") && (e.key === " " || e.key === "Enter")) {
                 return;
             }
             if (!this.isFlipped && (e.key === " " || e.key === "Enter")) {
@@ -800,7 +814,7 @@ export class AbhidhammaSrsUI {
             const unlockReason = p.unlocked
                 ? p.houseUnlocked
                     ? `🏛 ${s.houseUnlockedLabel}`
-                    : `🔒 ${s.houseLockedPrefix} ${meta.houseUnlockAtomPct}% ${s.houseLockedSuffix}`
+                    : `🔒 ${s.houseLockedPrefix} ${meta.houseUnlockAtomPct}${s.houseLockedSuffix}`
                 : `🔒 ${s.unlockHintPrefix} ${meta.unlockPrevAtomPct}${s.unlockHintMiddle} ${prevChapter} (${s.unlockMissingSuffix} ${p.lockedRemainingPrevAtoms} ${s.bricksLabel})`;
             return `
           <div class="abhi-chapter-card ${statusCls}" data-chapter="${meta.chapter}">

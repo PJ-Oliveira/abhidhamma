@@ -30,12 +30,10 @@ Upon clicking a node in the sidebar tree, the text is loaded into the main viewi
 - **Integrated Pāli Dictionary**: Instant term lookup powered by a curated core dictionary (derived from the Digital Pāli Dictionary) optimized for Abhidhamma terminology.
 - **Advanced Sharded Search**: High-performance, client-side search engine utilizing pre-built JSON shards for instant querying across the massive corpus without a backend.
 - **Spaced Repetition System (SRS)**: Built-in flashcard system using spaced repetition algorithms to memorize complex Pāli terminology and compounds extracted directly from the texts.
-- **Abhidhamma Analytical Tools**:
-  - **Mindmap**: Interactive, collapsible tree visualizing the hierarchical structure of the 4 *paramattha dhammas*.
-  - **Paṭṭhāna Matrix**: Interactive 24-condition matrix correlating the 24 *paccayas* across the standard groups.
-  - **Citta-Vīthi Simulator**: Animated simulator of cognitive processes across the 6 sensory doors, detailing the exact sequence of *cittas*.
-  - **Mātikā Explorer**: Searchable accordion interface for studying the 22 *tikas* (triads) and 100 *dukas* (dyads).
-  - **Cetasika Analyzer**: Component for inspecting individual *cittas* and comparing the common and exclusive *cetasikas* (mental factors) between any two consciousness types.
+- **Abhidhamma SRS (Anki)**: 362 flashcards of the *Abhidhammatthasaṅgaha* (Bricks → House) with a 30/60/90-day plan, by-chapter study and offline progress vault.
+- **Mnemonic Lab**: N-ary Decompressor (9 chapters · 89/121 cittas), Periodic Table of 72 *sabhāva* + 10 *anipphanna* realities, and a tactile Phalanx Abacus.
+- **Canonical Debate Simulator**: Scenario-based Kathāvatthu-style debate practice (syllogism, refutation, defeat grounds).
+- **PDF / EPUB Export**: Export any work, part or chapter range in Pāli + English/Portuguese/Spanish combinations.
 
 ## 🏗️ Architecture
 

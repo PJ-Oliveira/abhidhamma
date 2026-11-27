@@ -1,7 +1,6 @@
-import { lookupPali } from "./dictionary.js?v=ec96663c";
-import { settings } from "./state.js?v=ec96663c";
-import { t } from "./i18n.js?v=ec96663c";
-let currentHighlight = null;
+import { lookupPali } from "./dictionary.js?v=06b4ea02";
+import { settings } from "./state.js?v=06b4ea02";
+import { t } from "./i18n.js?v=06b4ea02";
 let selectedWordSpans = [];
 let popoverEl = null;
 let contentEl = null;
@@ -24,10 +23,6 @@ export function initSelectionHandler(container) {
     });
 }
 export function clearSelection() {
-    if (currentHighlight) {
-        currentHighlight.classList.remove("selection-counterpart");
-        currentHighlight = null;
-    }
     for (const span of selectedWordSpans) {
         span.classList.remove("pali-word-selected");
     }
@@ -187,11 +182,13 @@ async function handleMouseUp(e) {
         clearSelection();
         return;
     }
-    if (currentHighlight) {
-        currentHighlight.classList.remove("selection-counterpart");
-        currentHighlight = null;
+    const isCommentarySeg = segDiv.dataset.commentary === "true";
+    const hasExplicitSelection = Boolean(sel && !sel.isCollapsed && sel.rangeCount > 0);
+    if (isCommentarySeg && !hasExplicitSelection) {
+        clearSelection();
+        return;
     }
-    if (inPali) {
+    if (inPali && !isCommentarySeg) {
         const primaryWordSpan = intersectedWords[0] ?? clickedWordSpan ?? node.closest(".pali-word");
         if (primaryWordSpan) {
             highlightPaliWords([primaryWordSpan]);
@@ -238,12 +235,13 @@ async function buildPopover(rect, segDiv, selectedInPali, selectedText) {
     const closeBtn = document.createElement("button");
     closeBtn.className = "sp-close";
     closeBtn.textContent = "×";
-    closeBtn.setAttribute("aria-label", "Close");
+    closeBtn.setAttribute("aria-label", t("close", settings.uiLang));
     closeBtn.addEventListener("click", clearSelection);
     const linkBtn = document.createElement("button");
     linkBtn.className = "sp-link-btn";
-    linkBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>`;
+    linkBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>`;
     linkBtn.title = t("copyLink", settings.uiLang);
+    linkBtn.setAttribute("aria-label", t("copyLink", settings.uiLang));
     linkBtn.style.cssText = "background:transparent;border:none;color:var(--text-muted);cursor:pointer;padding:4px;display:flex;align-items:center;margin-right:8px;";
     linkBtn.addEventListener("click", () => {
         const [baseHash] = window.location.hash.split("?");
@@ -268,7 +266,12 @@ async function buildPopover(rect, segDiv, selectedInPali, selectedText) {
     textDiv.className = "sp-text";
     let counterpartText = "";
     if (selectedInPali) {
-        counterpartText = segDiv.querySelector(".translation-line")?.innerHTML?.trim() ?? "";
+        const translEl = segDiv.querySelector(".translation-line");
+        if (translEl) {
+            const clone = translEl.cloneNode(true);
+            clone.querySelectorAll(".bookmark-toggle").forEach((b) => b.remove());
+            counterpartText = clone.innerHTML.trim();
+        }
     }
     else {
         counterpartText = segDiv.dataset.pali?.trim() ?? "";
@@ -281,7 +284,7 @@ async function buildPopover(rect, segDiv, selectedInPali, selectedText) {
         textDiv.classList.add("sp-empty");
     }
     popoverEl.appendChild(textDiv);
-    if (selectedInPali) {
+    if (selectedInPali && !isCommentarySeg) {
         const words = selectedText.split(/\s+/).filter(Boolean).slice(0, 3);
         let hit = null;
         for (const word of words) {
@@ -300,8 +303,10 @@ async function buildPopover(rect, segDiv, selectedInPali, selectedText) {
             popoverEl.appendChild(renderDictHit(hit));
         }
     }
-    positionPopover(rect);
+    popoverEl.style.visibility = "hidden";
     popoverEl.classList.remove("hidden");
+    positionPopover(rect);
+    popoverEl.style.visibility = "";
 }
 function renderDictHit(entry) {
     const wrap = document.createElement("div");

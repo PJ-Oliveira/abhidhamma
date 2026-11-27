@@ -1,5 +1,5 @@
-import { AllCittas } from './citta.js';
-import { AllCetasikas } from './cetasika.js';
+import { AllCittas } from './citta.js?v=06b4ea02';
+import { AllCetasikas } from './cetasika.js?v=06b4ea02';
 export class AbhidhammaLogicEngine {
     static getAssociatedCetasikas(citta) {
         return citta.associatedCetasikas.map(cetasikaId => AllCetasikas[cetasikaId]).filter(Boolean);

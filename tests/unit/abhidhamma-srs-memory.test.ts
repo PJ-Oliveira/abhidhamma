@@ -40,12 +40,15 @@ import {
   hydrateOfflineVault,
   mergeSnapshots,
   parseProgressBackup,
+  persistMnemonicOfflineVault,
   persistOfflineProgress,
   resetOfflineVault,
   serializeProgressBackup,
   type AnkiProgressSnapshot,
   type AnkiReviewLogEntry,
 } from "../../src/abhidhamma-srs/offline-store.js";
+import { createInitialProgress, recordMnemonicAttempt } from "../../src/mnemonic-lab/engine.js";
+import { MnemonicLabUI } from "../../src/mnemonic-lab/ui.js";
 import type { AbhidhammaDataset, AnkiCardState } from "../../src/abhidhamma-srs/types.js";
 
 const ROOT = path.resolve(__dirname, "../..");
@@ -644,5 +647,97 @@ describe("Teto Estrito de 12 Novas/Dia e Revisão Máxima após concluir a dose 
     expect(mount.querySelectorAll("[data-seq-remove]").length).toBe(1);
     mount.querySelector<HTMLButtonElement>(".abhi-btn-reveal")!.click();
     expect(mount.querySelector(".abhi-seq-result")).not.toBeNull();
+  });
+
+  it("persistMnemonicOfflineVault preserva recentLog e reviewLogCount do Abhidhamma SRS no cofre offline", async () => {
+    localStorage.clear();
+    const cacheMap = new Map<string, string>();
+    const prevCaches = (globalThis as any).caches;
+    (globalThis as any).caches = {
+      open: async () => ({
+        match: async (url: string) => {
+          const body = cacheMap.get(url);
+          if (!body) return undefined;
+          return new Response(body, { status: 200, headers: { "Content-Type": "application/json" } });
+        },
+        put: async (url: string, resp: Response) => {
+          cacheMap.set(url, await resp.text());
+        },
+        delete: async (url: string) => {
+          cacheMap.delete(url);
+        },
+      }),
+    };
+
+    try {
+      const logEntry: AnkiReviewLogEntry = {
+        id: "rev-1",
+        cardId: "c0.citta_atom",
+        rating: 3,
+        phaseBefore: "new",
+        phaseAfter: "learning",
+        intervalDays: 0,
+        easeFactor: 2.5,
+        timestamp: 1_700_000_000_000,
+        offline: true,
+      };
+      const st = { ...createInitialAnkiCardState("c0.citta_atom"), reps: 1, lastReviewAt: 1_700_000_000_000 };
+      const stats = { ...createInitialAnkiStats("2026-11-25"), totalReviewed: 1, reviewedToday: 1 };
+      await persistOfflineProgress({ "c0.citta_atom": st }, stats, DEFAULT_ANKI_CONFIG, {}, [], logEntry, 1_700_000_000_000);
+
+      let lab = createInitialProgress();
+      lab = recordMnemonicAttempt(lab, "binary", "citta:1", true);
+      const ok = await persistMnemonicOfflineVault(lab);
+      expect(ok).toBe(true);
+
+      const hydrated = await hydrateOfflineVault();
+      expect(hydrated.snapshot.recentLog.length).toBe(1);
+      expect(hydrated.snapshot.recentLog[0]?.id).toBe("rev-1");
+      expect(hydrated.snapshot.reviewLogCount).toBeGreaterThanOrEqual(1);
+      expect(hydrated.snapshot.mnemonicLab?.masteredBinary["citta:1"]).toBe(1);
+      expect(hydrated.snapshot.updatedAt).toBeGreaterThan(1_700_000_000_000);
+    } finally {
+      (globalThis as any).caches = prevCaches;
+    }
+  });
+
+  it("importação de backup JSON no Laboratório Mnêmico restaura também estados e notas do Abhidhamma SRS", async () => {
+    localStorage.clear();
+    const prevAlert = globalThis.alert;
+    globalThis.alert = () => {};
+    try {
+      const host = document.createElement("div");
+      document.body.appendChild(host);
+      const ui = new MnemonicLabUI(host, "pt");
+      ui.init();
+
+      let lab = createInitialProgress();
+      lab = recordMnemonicAttempt(lab, "binary", "citta:3", true);
+      const backup: AnkiProgressSnapshot = {
+        schemaVersion: 1,
+        updatedAt: 1_700_000_000_500,
+        states: {
+          "c0.citta_atom": { ...createInitialAnkiCardState("c0.citta_atom"), reps: 2, lastReviewAt: 1_700_000_000_500 },
+        },
+        stats: { ...createInitialAnkiStats("2026-11-25"), totalReviewed: 2, reviewedToday: 2 },
+        config: DEFAULT_ANKI_CONFIG,
+        mnemonics: { "c0.citta_atom": "Nota importada" },
+        mnemonicLab: lab,
+        reviewLogCount: 1,
+        recentLog: [],
+      };
+      const fileInput = host.querySelector<HTMLInputElement>("#mnem-vault-file-input")!;
+      const mockFile = { text: async () => serializeProgressBackup(backup) } as unknown as File;
+      Object.defineProperty(fileInput, "files", { value: [mockFile], configurable: true });
+      fileInput.dispatchEvent(new Event("change"));
+      await new Promise((r) => setTimeout(r, 50));
+
+      expect(loadMnemonicNotes()["c0.citta_atom"]).toBe("Nota importada");
+      expect(localStorage.getItem("atp.abhidhamma.anki.cards.v1")).toContain("c0.citta_atom");
+      expect(localStorage.getItem("abhidhamma_mnemonic_lab_v1")).toContain("citta:3");
+      host.remove();
+    } finally {
+      globalThis.alert = prevAlert;
+    }
   });
 });

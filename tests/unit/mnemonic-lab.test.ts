@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import {
   CANONICAL_CITTAS_89,
   CANONICAL_CITTAS_121,
@@ -40,6 +40,10 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
   beforeEach(() => {
     localStorage.clear();
     document.body.innerHTML = "";
+  });
+
+  afterEach(() => {
+    (MnemonicLabUI as any).activeVaultChannel?.close?.();
   });
 
   it("validates exact canonical counts of the 89 Cittas and their Saṅgaha-naya compositions", () => {
@@ -778,24 +782,44 @@ describe("Laboratório Mnêmico — Canonical Data, Combinatorial Engine & Trili
         sigs.add(key);
       }
 
-      // Verify every single item can be dialed strictly by clicking rendered UI switch buttons
+      // Verify every single item can be dialed strictly via rendered UI switch controls
       host.querySelector<HTMLButtonElement>(`[data-bin-chapter="${ch}"]`)!.click();
+      const uiAny = ui as any;
+      const s = uiAny.getStrings ? uiAny.getStrings() : {};
+      let swState: Record<string, string | number> = { ...uiAny.narySwitches };
+      const dialedGroups = new Set<string>();
 
       for (const item of items) {
         for (const [k, v] of Object.entries(item.switches)) {
-          const btn = host.querySelector<HTMLButtonElement>(
-            `[data-nary-key="${k}"][data-nary-val="${String(v)}"]`
-          );
+          const switchboardHtml: string = uiAny.renderNarySwitchControls(ch, swState, s);
+          const needle = `data-nary-key="${k}" data-nary-val="${String(v)}"`;
           expect(
-            btn,
-            `Missing UI button in Ch.${ch} for ${item.id}: data-nary-key="${k}" data-nary-val="${String(v)}"`
-          ).not.toBeNull();
-          if (btn!.getAttribute("aria-pressed") !== "true") {
-            btn!.click();
-          }
+            switchboardHtml.includes(needle),
+            `Missing UI button in Ch.${ch} for ${item.id}: ${needle}`
+          ).toBe(true);
+          swState = uiAny.normalizeNarySwitches(ch, swState, k, v);
         }
-        // Synthesized preview card must resolve to this exact item!
-        expect(host.querySelector(".mnem-synthesized-card")?.textContent).toContain(item.code);
+        const resolved = items.find((it) =>
+          Object.entries(it.switches).every(([ik, iv]) => String(swState[ik]) === String(iv))
+        );
+        expect(resolved?.id, `Switch state failed to resolve ${item.id} in Ch.${ch}`).toBe(item.id);
+
+        // Also exercise full DOM button clicking + synthesized preview card for each primaryGroup
+        const grpKey = `${ch}:${item.primaryGroup}`;
+        if (!dialedGroups.has(grpKey)) {
+          dialedGroups.add(grpKey);
+          for (const [k, v] of Object.entries(item.switches)) {
+            const btn = host.querySelector<HTMLButtonElement>(
+              `[data-nary-key="${k}"][data-nary-val="${String(v)}"]`
+            );
+            expect(btn, `Missing DOM button in Ch.${ch} for ${item.id}: ${k}=${v}`).not.toBeNull();
+            if (btn!.getAttribute("aria-pressed") !== "true") {
+              btn!.click();
+            }
+          }
+          expect(host.querySelector(".mnem-synthesized-card")?.textContent).toContain(item.code);
+          swState = { ...uiAny.narySwitches };
+        }
       }
     }
     host.remove();

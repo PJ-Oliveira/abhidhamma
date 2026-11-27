@@ -123,4 +123,82 @@ describe('Selection UI Module', () => {
     expect(dictPanel.classList.contains('active')).toBe(true);
     expect(dictInput.value).toBe('Tikamātikā');
   });
+
+  it('should strip .bookmark-toggle from counterpart HTML and remove hidden before measuring popover', async () => {
+    document.body.innerHTML = `
+      <div id="content">
+        <div class="seg" data-seg-id="7" data-pali="Cittaṃ">
+          <div class="pali-line">Cittaṃ</div>
+          <div class="translation-line">Consciência<button class="bookmark-toggle">☆</button></div>
+        </div>
+      </div>
+      <div id="selection-popover" class="selection-popover hidden"></div>
+    `;
+    const paliLine = document.querySelector('.pali-line')!;
+    global.window.getSelection = vi.fn().mockReturnValue({
+      isCollapsed: false,
+      rangeCount: 1,
+      toString: () => 'Cittaṃ',
+      getRangeAt: () => ({
+        getBoundingClientRect: () => ({ top: 100, left: 100, right: 150, bottom: 120, width: 50, height: 20 }),
+        startContainer: paliLine,
+        endContainer: paliLine,
+        intersectsNode: () => false,
+      }),
+    }) as any;
+
+    initSelectionHandler(document.getElementById('content')!);
+    document.getElementById('content')!.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
+    await new Promise(r => setTimeout(r, 50));
+
+    const popover = document.getElementById('selection-popover')!;
+    expect(popover.classList.contains('hidden')).toBe(false);
+    expect(popover.style.visibility).toBe('');
+    expect(popover.querySelector('.sp-text .bookmark-toggle')).toBeNull();
+    expect(popover.querySelector('.sp-text')?.textContent).toBe('Consciência');
+  });
+
+  it('should NOT hijack the Pāli Dictionary panel when selecting English text in a Contemporary Commentary', async () => {
+    document.body.innerHTML = `
+      <button class="rail-btn active" data-panel="tipitaka"></button>
+      <button class="rail-btn" data-panel="dictionary"></button>
+      <aside id="side-panel">
+        <div id="panel-tipitaka" class="panel active"></div>
+        <div id="panel-dictionary" class="panel">
+          <input id="dict-search" type="search" />
+          <div id="dict-results"></div>
+        </div>
+      </aside>
+      <div id="content">
+        <div class="seg" data-seg-id="42" data-commentary="true" data-pali="Reality is conditioned.">
+          <div class="pali-line">Reality is conditioned.</div>
+          <div class="translation-line">A realidade é condicionada.</div>
+        </div>
+      </div>
+      <div id="selection-popover" class="selection-popover hidden"></div>
+    `;
+    const paliLine = document.querySelector('.pali-line')!;
+    global.window.getSelection = vi.fn().mockReturnValue({
+      isCollapsed: false,
+      rangeCount: 1,
+      toString: () => 'Reality',
+      getRangeAt: () => ({
+        getBoundingClientRect: () => ({ top: 100, left: 100, right: 160, bottom: 120, width: 60, height: 20 }),
+        startContainer: paliLine,
+        endContainer: paliLine,
+        intersectsNode: () => false,
+      }),
+    }) as any;
+
+    initSelectionHandler(document.getElementById('content')!);
+    document.getElementById('content')!.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
+    await new Promise((r) => setTimeout(r, 50));
+
+    expect(document.getElementById('panel-dictionary')!.classList.contains('active')).toBe(false);
+    expect((document.getElementById('dict-search') as HTMLInputElement).value).toBe('');
+    const popover = document.getElementById('selection-popover')!;
+    expect(popover.classList.contains('hidden')).toBe(false);
+    expect(popover.querySelector('.sp-text')?.textContent).toBe('A realidade é condicionada.');
+    expect(popover.querySelector('.sp-dict-section')).toBeNull();
+  });
 });

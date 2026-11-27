@@ -9,7 +9,7 @@ describe('InteractivePaliText', () => {
     const text = "Evam me sutam. Ekam samayam bhagava";
     const { getByText } = render(
       <Provider store={store}>
-        <InteractivePaliText text={text} onWordPress={() => {}} />
+        <InteractivePaliText text={text} />
       </Provider>
     );
     expect(getByText('Evam')).toBeTruthy();

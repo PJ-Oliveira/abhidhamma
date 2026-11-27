@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=ec96663c";
-import { settings } from "./state.js?v=ec96663c";
-import { createLogger } from "./logger.js?v=ec96663c";
+import { t } from "./i18n.js?v=06b4ea02";
+import { settings } from "./state.js?v=06b4ea02";
+import { createLogger } from "./logger.js?v=06b4ea02";
 const log = createLogger("export");
 let glossaryData = null;
 async function loadGlossary() {
@@ -270,7 +270,7 @@ const WORK_AUTHORS = {
     "abhidhamma-in-daily-life": "Nina van Gorkom",
     "the-conditionality-of-life": "Nina van Gorkom",
     "the-buddhist-teaching-on-physical-phenomena": "Nina van Gorkom",
-    "path-without-ownership": "Robert Gillam",
+    "path-without-ownership": "Rob Kirkpatrick",
     "lessons-in-abhidhamma": "Bhikkhu Subhūti",
     "dhamma-now": "Sarah Procter Abbott",
     "dhamma-now-2": "Sarah Procter Abbott",

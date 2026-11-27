@@ -1,9 +1,9 @@
-import { settings } from "../state.js?v=ec96663c";
-import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=ec96663c";
-import { CANONICAL_CHAPTERS_META, getSubmatricesForChapter, } from "./nary-chapters-data.js?v=ec96663c";
-import { MULA_SYNTHESIS_ITEMS, SYNTHESIS_AXIS_META, } from "./chapters/ch0-synthesis.js?v=ec96663c";
-import { buildReverseChoices, computeChapterScopeProgress, computeMnemonicProgressSummary, computePhalanxMapProgress, computeProgressMetric, defaultNarySwitchesForChapter, defaultNarySwitchesForSubmatrix, evaluateNaryChallenge, getMasteryScoreForLevel, getNaryItemsForChapter, pickNextNaryChapterChallenge, defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=ec96663c";
-import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=ec96663c";
+import { settings } from "../state.js?v=06b4ea02";
+import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=06b4ea02";
+import { CANONICAL_CHAPTERS_META, getSubmatricesForChapter, } from "./nary-chapters-data.js?v=06b4ea02";
+import { MULA_SYNTHESIS_ITEMS, SYNTHESIS_AXIS_META, } from "./chapters/ch0-synthesis.js?v=06b4ea02";
+import { buildReverseChoices, computeChapterScopeProgress, computeMnemonicProgressSummary, computePhalanxMapProgress, computeProgressMetric, defaultNarySwitchesForChapter, defaultNarySwitchesForSubmatrix, evaluateNaryChallenge, getMasteryScoreForLevel, getNaryItemsForChapter, pickNextNaryChapterChallenge, defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=06b4ea02";
+import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, persistOfflineProgress, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=06b4ea02";
 const LAB_STRINGS = {
     pt: {
         title: "🧮 Laboratório Mnêmico do Abhidhammatthasaṅgaha",
@@ -615,6 +615,7 @@ export class MnemonicLabUI {
     blindTargetSlot;
     blindFeedback = null;
     sequenceStep = 1;
+    static activeVaultChannel = null;
     vaultChannel = null;
     constructor(container, lang = settings.uiLang) {
         this.container = container;
@@ -632,12 +633,16 @@ export class MnemonicLabUI {
         void this.hydrateFromVault();
         try {
             if (typeof BroadcastChannel !== "undefined") {
+                MnemonicLabUI.activeVaultChannel?.close();
                 this.vaultChannel?.close();
                 this.vaultChannel = new BroadcastChannel(VAULT_BROADCAST_CHANNEL);
+                MnemonicLabUI.activeVaultChannel = this.vaultChannel;
                 this.vaultChannel.addEventListener("message", () => {
                     this.progress = mergeMnemonicProgress(this.progress, loadMnemonicProgress());
                     this.render();
+                    this.vaultChannel?.unref?.();
                 });
+                this.vaultChannel.unref?.();
             }
         }
         catch {
@@ -5057,13 +5062,13 @@ export class MnemonicLabUI {
             try {
                 const text = await file.text();
                 const incoming = parseProgressBackup(text);
-                const current = buildLocalStorageSnapshot();
-                const merged = mergeSnapshots(current, incoming);
+                const hydrated = await hydrateOfflineVault();
+                const merged = mergeSnapshots(hydrated.snapshot, incoming);
                 if (merged.mnemonicLab) {
                     this.progress = mergeMnemonicProgress(this.progress, merged.mnemonicLab);
                     saveMnemonicProgress(this.progress);
-                    await persistMnemonicOfflineVault(this.progress);
                 }
+                await persistOfflineProgress(merged.states, merged.stats, merged.config, merged.mnemonics, merged.recentLog, undefined, Date.now());
                 alert((LAB_STRINGS[this.lang] ?? LAB_STRINGS.pt).vaultImportOk);
             }
             catch {

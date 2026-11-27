@@ -12,18 +12,21 @@ JS_DIR = ROOT / "js"
 INDEX = ROOT / "index.html"
 
 js_files = sorted(JS_DIR.rglob("*.js"))
+CSS_FILE = ROOT / "css" / "style.css"
 h = hashlib.md5()
 _strip_v = re.compile(rb'\?v=[a-f0-9]{8}')
 for f in js_files:
     h.update(_strip_v.sub(b'', f.read_bytes()))
+if CSS_FILE.exists():
+    h.update(CSS_FILE.read_bytes())
 VERSION = h.hexdigest()[:8]
 
-PAT = re.compile(r'((?:from|import)\s+")(\.\.?\/[^"?]+\.js)(?:\?v=[^"]*)?(")')
+PAT = re.compile(r'((?:from|import)\s*\(?\s*)(["\'])(\.\.?\/[^"\'?]+\.js)(?:\?v=[^"\']*)?(\2)')
 
 updated = 0
 for js_file in js_files:
     original = js_file.read_text(encoding="utf-8")
-    new_content = PAT.sub(rf'\1\2?v={VERSION}\3', original)
+    new_content = PAT.sub(rf'\1\2\3?v={VERSION}\4', original)
     if new_content != original:
         js_file.write_text(new_content, encoding="utf-8")
         updated += 1

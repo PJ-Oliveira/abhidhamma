@@ -13,6 +13,9 @@ export interface TocEntry {
   id: number;
   rend: string;
   text: string;
+  pt?: string;
+  es?: string;
+  chunk?: number;
 }
 
 export interface WorkPart {

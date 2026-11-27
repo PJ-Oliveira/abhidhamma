@@ -3030,33 +3030,96 @@ def translate_atomic_gloss(sub: str) -> tuple[str, str]:
                 break
 
         if not matched_template:
-            # Replace multi-word phrases from PHRASE_MAP first
-            t_pt = s_low
-            t_es = s_low
-            for phr, (p_pt, p_es) in sorted(PHRASE_MAP.items(), key=lambda kv: len(kv[0]), reverse=True):
-                if phr in t_pt:
-                    t_pt = re.sub(r"\b" + re.escape(phr) + r"\b", p_pt.split(";")[0].strip(), t_pt)
-                    t_es = re.sub(r"\b" + re.escape(phr) + r"\b", p_es.split(";")[0].strip(), t_es)
+            # Handle common idioms, abbreviations, possessives & contractions before word-by-word fallback
+            IDIOM_PATTERNS = [
+                (r"\bi\.e\.", "isto é", "es decir"),
+                (r"\be\.g\.(?=,|\s|$)", "por ex.", "p. ej."),
+                (r"\bas well as\b", "bem como", "así como"),
+                (r"\bas well\b", "também", "también"),
+                (r"\bwell then\b", "pois bem", "pues bien"),
+                (r"\bhow well\b", "quão bem", "cuán bien"),
+                (r"\beach other's\b", "um do outro", "uno del otro"),
+                (r"\bone's own\b", "próprio", "propio"),
+                (r"\bone's\b", "próprio", "propio"),
+                (r"\banother's\b", "de outro", "de otro"),
+                (r"\bother's\b", "alheio", "ajeno"),
+                (r"\bothers'\b", "dos outros", "de los demás"),
+                (r"\bsomeone's\b", "de alguém", "de alguien"),
+                (r"\bsomebody's\b", "de alguém", "de alguien"),
+                (r"\banyone's\b", "de qualquer um", "de cualquiera"),
+                (r"\beveryone's\b", "de todos", "de todos"),
+                (r"\bthat's\b", "isso é", "eso es"),
+                (r"\bwhat's\b", "o que é", "qué es"),
+                (r"\bit's\b", "é", "es"),
+                (r"\bwho's\b", "quem é", "quién es"),
+                (r"\bthere's\b", "há", "hay"),
+                (r"\bhere's\b", "eis", "aquí está"),
+                (r"\byou'd\b", "dir-se-ia", "se diría"),
+                (r"\bdon't\b", "não", "no"),
+                (r"\bdoesn't\b", "não", "no"),
+                (r"\bcan't\b", "não pode", "no puede"),
+                (r"\bwon't\b", "não vai", "no va a"),
+                (r"\bwouldn't\b", "não seria", "no sería"),
+                (r"\bdidn't\b", "não", "no"),
+                (r"\bcouldn't\b", "não pôde", "no pudo"),
+                (r"\bshouldn't\b", "não deveria", "no debería"),
+                (r"\byou've\b", "você tem", "tú has"),
+                (r"\bhaven't\b", "não têm", "no han"),
+                (r"\bhasn't\b", "não tem", "no ha"),
+                (r"\bwasn't\b", "não era", "no era"),
+                (r"\bweren't\b", "não eram", "no eran"),
+                (r"\bisn't\b", "não é", "no es"),
+                (r"\baren't\b", "não são", "no son"),
+                (r"\bdo not\b", "não", "no"),
+                (r"\bdoes not\b", "não", "no"),
+                (r"\bmay one not\b", "que não se", "que no se"),
+                (r"\bback-\s*biting\b", "maledicência", "maledicencia"),
+                (r"\bperforming miracles\b", "realizar milagres", "realizar milagros"),
+                (r"\bclairaudience\b", "clariaudiência", "clariaudiencia"),
+                (r"\bclairvoyance\b", "clarividência", "clarividencia"),
+                (r"\b([A-Za-zāīūṃṅñṭḍṇḷ]+)'s\b", r"de \1", r"de \1"),
+            ]
 
-            # Word-by-word translation on remaining English tokens
-            tokens = re.findall(r"[A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶ'-]+|[^A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶ'-]+", s)
-            out_pt: list[str] = []
-            out_es: list[str] = []
-            for tok in tokens:
-                if not re.match(r"^[A-Za-z'-]+$", tok):
-                    out_pt.append(tok)
-                    out_es.append(tok)
-                    continue
-                tl = tok.lower().strip("'")
-                tr = _morph_word(tl)
-                if tr:
-                    out_pt.append(tr[0].split(";")[0].strip())
-                    out_es.append(tr[1].split(";")[0].strip())
-                else:
-                    out_pt.append(tok)
-                    out_es.append(tok)
-            pt_core = "".join(out_pt).strip()
-            es_core = "".join(out_es).strip()
+            def translate_with_idioms(src: str, lang_idx: int) -> str:
+                # Replace idioms with sentinel placeholders so word-by-word pass doesn't re-mangle them
+                placeholders: list[str] = []
+                work = src
+                for pat, rep_pt, rep_es in IDIOM_PATTERNS:
+                    rep = rep_pt if lang_idx == 0 else rep_es
+                    def _hold(m: re.Match[str], r: str = rep) -> str:
+                        val = m.expand(r)
+                        idx = len(placeholders)
+                        placeholders.append(val)
+                        return f"\x00PH{idx}\x00"
+                    work = re.sub(pat, _hold, work, flags=re.IGNORECASE)
+
+                # Preserve bare Pāli letter examples after "por ex." / "p. ej." like "a i u"
+                def _hold_letters(m: re.Match[str]) -> str:
+                    idx = len(placeholders)
+                    placeholders.append(m.group(0))
+                    return f"\x00PH{idx}\x00"
+                work = re.sub(r"(?<=\x00 )(?:[a-zāīū]\s+){1,4}[a-zāīū]\b", _hold_letters, work)
+
+                tokens = re.findall(r"\x00PH\d+\x00|[A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶ'-]+|[^A-Za-zāīūṃṅñṭḍṇḷĀĪŪṂṄÑṬḌṆḶ'\-\x00]+", work)
+                out: list[str] = []
+                for tok in tokens:
+                    if tok.startswith("\x00PH") and tok.endswith("\x00"):
+                        idx = int(tok[3:-1])
+                        out.append(placeholders[idx])
+                        continue
+                    if not re.match(r"^[A-Za-z'-]+$", tok):
+                        out.append(tok)
+                        continue
+                    tl = tok.lower().strip("'")
+                    tr = _morph_word(tl)
+                    if tr:
+                        out.append(tr[lang_idx].split(";")[0].strip())
+                    else:
+                        out.append(tok)
+                return "".join(out).strip()
+
+            pt_core = translate_with_idioms(s, 0)
+            es_core = translate_with_idioms(s, 1)
 
     if paren_prefix_pt:
         pt_core = f"{paren_prefix_pt} {pt_core}".strip()

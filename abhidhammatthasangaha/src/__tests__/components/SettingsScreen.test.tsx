@@ -7,7 +7,7 @@ import SettingsScreen from '../../components/SettingsScreen';
 
 describe('SettingsScreen Component', () => {
   it('renders correctly', () => {
-    const store = configureStore({ reducer: { settings: settingsReducer }, preloadedState: { settings: { fontSize: 16 } } });
+    const store = configureStore({ reducer: { settings: settingsReducer }, preloadedState: { settings: { fontSize: 16, theme: 'light' as const } } });
     const { getByText } = render(
       <Provider store={store}>
         <SettingsScreen />

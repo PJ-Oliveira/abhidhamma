@@ -26,8 +26,8 @@ async function ensureManifest(): Promise<void> {
 }
 
 function shardKeyFor(token: string): string {
-  const ch = token[0] ?? "";
-  return /[a-z]/i.test(ch) ? ch.toLowerCase() : "misc";
+  const ch = token.normalize("NFC")[0] ?? "";
+  return /\p{L}/u.test(ch) ? ch.toLowerCase() : "misc";
 }
 
 async function loadShard(key: string): Promise<SearchShard | null> {
@@ -39,16 +39,13 @@ async function loadShard(key: string): Promise<SearchShard | null> {
     shardCache.set(key, null);
     return null;
   }
-  const res = await fetch(`data/search/${fileName}`);
+  const res = await fetch(`data/search/${encodeURIComponent(fileName)}`);
   const data = res.ok ? ((await res.json()) as SearchShard) : null;
   shardCache.set(key, data);
   return data;
 }
 
-async function searchQuery(query: string): Promise<SearchHit[]> {
-  const token = query.trim().toLowerCase();
-  if (!token) return [];
-
+async function searchSingleToken(token: string): Promise<SearchHit[]> {
   const shard = await loadShard(shardKeyFor(token));
   if (!shard) return [];
 
@@ -67,6 +64,38 @@ async function searchQuery(query: string): Promise<SearchHit[]> {
     .filter((hit): hit is SearchHit => hit !== undefined);
 }
 
+async function searchQuery(query: string): Promise<SearchHit[]> {
+  const tokens = query
+    .trim()
+    .normalize("NFC")
+    .toLowerCase()
+    .split(/[^\p{L}]+/u)
+    .filter((w) => w.length > 0);
+  if (tokens.length === 0) return [];
+  if (tokens.length === 1) return searchSingleToken(tokens[0]!);
+
+  const uniqueTokens = Array.from(new Set(tokens)).slice(0, 6);
+  const perTokenHits = await Promise.all(uniqueTokens.map((tok) => searchSingleToken(tok)));
+
+  const hitByKey = new Map<string, { hit: SearchHit; count: number }>();
+  for (const list of perTokenHits) {
+    const seenInToken = new Set<string>();
+    for (const hit of list) {
+      const k = `${hit.workId}|${hit.partKey}|${hit.chunk ?? 0}|${hit.segId}`;
+      if (seenInToken.has(k)) continue;
+      seenInToken.add(k);
+      const prev = hitByKey.get(k);
+      if (prev) prev.count += 1;
+      else hitByKey.set(k, { hit, count: 1 });
+    }
+  }
+
+  const allMatches = Array.from(hitByKey.values());
+  const exactAll = allMatches.filter((x) => x.count === uniqueTokens.length);
+  const ranked = (exactAll.length > 0 ? exactAll : allMatches).sort((a, b) => b.count - a.count);
+  return ranked.slice(0, MAX_RESULTS).map((x) => x.hit);
+}
+
 export function initSearchPanel(
   inputEl: HTMLInputElement,
   resultsEl: HTMLElement,
@@ -74,6 +103,7 @@ export function initSearchPanel(
 ): void {
   void ensureManifest();
   let debounceTimer: ReturnType<typeof setTimeout> | undefined;
+  let searchSeq = 0;
 
   const renderEmpty = (key: string) => {
     resultsEl.innerHTML = "";
@@ -84,8 +114,10 @@ export function initSearchPanel(
   };
 
   const run = async () => {
+    const reqSeq = ++searchSeq;
     const query = inputEl.value.trim();
     await ensureManifest();
+    if (reqSeq !== searchSeq) return;
 
     if (!shardManifest) {
       renderEmpty("dictNotReady");
@@ -98,6 +130,7 @@ export function initSearchPanel(
 
     resultsEl.innerHTML = `<p class="side-empty">${t("loading", settings.uiLang)}</p>`;
     const hits = await searchQuery(query);
+    if (reqSeq !== searchSeq) return;
 
     if (!hits.length) {
       renderEmpty("noResults");

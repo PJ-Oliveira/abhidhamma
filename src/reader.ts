@@ -102,7 +102,7 @@ export function renderSegments(segments: Segment[], container: HTMLElement, opti
     }
     const paliText = document.createElement("span");
     paliText.innerHTML = seg.pali || "";
-    wrapPaliWords(paliText);
+    if (!isCommentary) wrapPaliWords(paliText);
     paliLine.appendChild(paliText);
 
     const bookmarkBtn = document.createElement("button");

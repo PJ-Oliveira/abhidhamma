@@ -1,4 +1,4 @@
-import { createLogger } from "./logger.js?v=ec96663c";
+import { createLogger } from "./logger.js?v=06b4ea02";
 const log = createLogger("state");
 const SETTINGS_KEY = "atp.settings.v1";
 const HISTORY_KEY = "atp.history.v1";
@@ -45,7 +45,11 @@ function save(key, value) {
         log.warn(`falha ao salvar "${key}" no localStorage`, err);
     }
 }
-export const settings = load(SETTINGS_KEY, DEFAULT_SETTINGS);
+const storedSettings = load(SETTINGS_KEY, null);
+export const settings = {
+    ...DEFAULT_SETTINGS,
+    ...(storedSettings && typeof storedSettings === "object" ? storedSettings : {}),
+};
 export function updateSettings(patch) {
     Object.assign(settings, patch);
     save(SETTINGS_KEY, settings);

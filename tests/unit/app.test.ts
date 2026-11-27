@@ -145,6 +145,16 @@ describe('App Integration & User Journeys', () => {
       uiLangSel.dispatchEvent(new Event('change'));
       await new Promise(r => setTimeout(r, 100));
     }
+
+    // 11. Rapid collapse -> expand race condition guard
+    const collapseBtn = document.getElementById('panel-collapse') as HTMLButtonElement;
+    const sidePanel = document.getElementById('side-panel') as HTMLElement;
+    if (sidePanel.classList.contains('collapsed')) collapseBtn.click();
+    collapseBtn.click(); // triggers collapse + 160ms timer
+    collapseBtn.click(); // immediately expands again
+    await new Promise(r => setTimeout(r, 220));
+    expect(sidePanel.classList.contains('collapsed')).toBe(false);
+    expect(document.documentElement.style.getPropertyValue('--panel-w')).not.toBe('0px');
   });
 
 });

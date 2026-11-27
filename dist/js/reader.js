@@ -1,6 +1,6 @@
-import { settings } from "./state.js?v=ec96663c";
-import { createLogger } from "./logger.js?v=ec96663c";
-import { t } from "./i18n.js?v=ec96663c";
+import { settings } from "./state.js?v=06b4ea02";
+import { createLogger } from "./logger.js?v=06b4ea02";
+import { t } from "./i18n.js?v=06b4ea02";
 const log = createLogger("reader");
 const chunkCache = new Map();
 export async function loadChunk(workId, partKey, fileName) {
@@ -86,7 +86,8 @@ export function renderSegments(segments, container, options = {}) {
         }
         const paliText = document.createElement("span");
         paliText.innerHTML = seg.pali || "";
-        wrapPaliWords(paliText);
+        if (!isCommentary)
+            wrapPaliWords(paliText);
         paliLine.appendChild(paliText);
         const bookmarkBtn = document.createElement("button");
         bookmarkBtn.className = "bookmark-toggle";

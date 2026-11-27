@@ -1,6 +1,6 @@
-import { t } from "./i18n.js?v=ec96663c";
-import { settings } from "./state.js?v=ec96663c";
-import { createLogger } from "./logger.js?v=ec96663c";
+import { t } from "./i18n.js?v=06b4ea02";
+import { settings } from "./state.js?v=06b4ea02";
+import { createLogger } from "./logger.js?v=06b4ea02";
 const log = createLogger("dictionary");
 let dictData = [];
 let coreData = [];

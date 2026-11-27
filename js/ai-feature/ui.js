@@ -1,9 +1,19 @@
-import { t } from '../i18n.js';
-import { settings } from '../state.js';
-import { CanonicalScenarios } from './debate-scenarios.js';
-import { evaluateScenario } from '../ontology/kathavatthu_logic.js';
+import { t } from '../i18n.js?v=06b4ea02';
+import { settings } from '../state.js?v=06b4ea02';
+import { CanonicalScenarios } from './debate-scenarios.js?v=06b4ea02';
+import { evaluateScenario } from '../ontology/kathavatthu_logic.js?v=06b4ea02';
 let isListenerAdded = false;
+let activeContainer = null;
+let pendingTimer = null;
+function clearPendingTimer() {
+    if (pendingTimer !== null) {
+        clearTimeout(pendingTimer);
+        pendingTimer = null;
+    }
+}
 export function initInterlocutorPanel(container) {
+    clearPendingTimer();
+    activeContainer = container;
     container.innerHTML = "";
     const wrapper = document.createElement('div');
     wrapper.className = 'interlocutor-panel';
@@ -103,6 +113,8 @@ export function initInterlocutorPanel(container) {
         elaborateBtn.style.display = 'none';
     });
     select.addEventListener('change', () => {
+        clearPendingTimer();
+        submitBtn.textContent = t('debate_submit', settings.uiLang);
         const val = select.value;
         if (val) {
             const scenario = CanonicalScenarios.find(s => s.id === val);
@@ -128,14 +140,18 @@ export function initInterlocutorPanel(container) {
             claim = scenario.claimText[settings.uiLang];
         }
         if (claim) {
+            clearPendingTimer();
             wrapper.dispatchEvent(new CustomEvent('interlocutor-submit', {
                 detail: { claim, scenarioId: val },
                 bubbles: true
             }));
-            const origText = submitBtn.textContent;
+            const origText = t('debate_submit', settings.uiLang);
             submitBtn.textContent = t('debate_analyzing', settings.uiLang);
             submitBtn.disabled = true;
-            setTimeout(() => {
+            pendingTimer = setTimeout(() => {
+                pendingTimer = null;
+                if (select.value !== val)
+                    return;
                 submitBtn.textContent = origText;
                 submitBtn.disabled = false;
                 const refutationDisplay = wrapper.querySelector('#refutation-display');
@@ -162,7 +178,8 @@ export function initInterlocutorPanel(container) {
     });
     if (!isListenerAdded) {
         window.addEventListener("languageChanged", () => {
-            initInterlocutorPanel(container);
+            if (activeContainer)
+                initInterlocutorPanel(activeContainer);
         });
         isListenerAdded = true;
     }

@@ -128,4 +128,28 @@ describe("SRS, Abhidhamma SRS & Mnemonic Lab Mobile & Desktop Navigation", () =>
       expect(mnemonicMain.textContent).toContain(expectedMnem);
     }
   });
+
+  it("navigates via hashchange between #/srs/abhidhamma, #/srs/mnemonic, and back to #/srs", async () => {
+    const abhiMain = document.getElementById("srs-abhidhamma-main")!;
+    const mnemonicMain = document.getElementById("srs-mnemonic-main")!;
+    const vocabBody = document.getElementById("srs-full-body")!;
+
+    window.location.hash = "#/srs/abhidhamma";
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+    await new Promise((r) => setTimeout(r, 30));
+    expect(abhiMain.style.display).toBe("flex");
+    expect(vocabBody.style.display).toBe("none");
+
+    window.location.hash = "#/srs/mnemonic";
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+    await new Promise((r) => setTimeout(r, 30));
+    expect(mnemonicMain.style.display).toBe("flex");
+    expect(abhiMain.style.display).toBe("none");
+
+    window.location.hash = "#/srs";
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+    await new Promise((r) => setTimeout(r, 30));
+    expect(vocabBody.style.display).toBe("flex");
+    expect(mnemonicMain.style.display).toBe("none");
+  });
 });

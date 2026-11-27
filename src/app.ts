@@ -141,8 +141,7 @@ function applySettingsToUI(): void {
   }
   document.documentElement.style.setProperty("--font-scale", String(settings.fontSize / 17));
   el<HTMLSelectElement>("setting-lang").value = settings.translationLang;
-    el<HTMLInputElement>("setting-show-pali").checked = settings.showPali;
-  el<HTMLInputElement>("setting-show-translation").checked = settings.showTranslation;
+  updateSettingsLabels();
 }
 
 function updateHash(): void {
@@ -269,7 +268,9 @@ function clampChapterNavList(list: HTMLElement): void {
   list.style.left = "";
   list.style.right = "";
   list.style.transform = "";
+  list.style.maxHeight = "";
   const vw = window.innerWidth;
+  const vh = window.innerHeight;
   if (vw <= 0) return;
   const rect = list.getBoundingClientRect();
   if (rect.width <= 0) return;
@@ -285,6 +286,13 @@ function clampChapterNavList(list: HTMLElement): void {
   }
   if (dx !== 0) {
     list.style.transform = `translateX(${Math.round(dx)}px)`;
+  }
+  if (vh > 0) {
+    const bottomReserve = vw <= 600 ? 68 : margin;
+    const availH = Math.floor(vh - rect.top - bottomReserve);
+    if (availH >= 80) {
+      list.style.maxHeight = `${availH}px`;
+    }
   }
 }
 
@@ -320,7 +328,7 @@ function renderChapterNav(): void {
 
   for (let i = 0; i < chapters.length; i++) {
     const entry = chapters[i]!;
-    const chunkIdx = segIdToChunk(entry.id, part);
+    const chunkIdx = typeof entry.chunk === "number" ? entry.chunk : segIdToChunk(entry.id, part);
     const li = document.createElement("li");
     const numSpan = document.createElement("span");
     numSpan.className = "chap-num";
@@ -329,18 +337,16 @@ function renderChapterNav(): void {
     textSpan.className = "chap-text";
 
     let chapLabel = entry.text.replace(/^\d+\.\s*/, "");
-    if (commMode && segById) {
-      const seg = segById.get(entry.id);
-      if (seg) {
-        const ptClean = stripTags(seg.pt).replace(/^\d+\.\s*/, "");
-        const esClean = stripTags(seg.es).replace(/^\d+\.\s*/, "");
-        if (commMode === "pt" && ptClean) chapLabel = ptClean;
-        else if (commMode === "es" && esClean) chapLabel = esClean;
-        else if (commMode === "en+pt" && ptClean && ptClean.toLowerCase() !== chapLabel.toLowerCase()) {
-          chapLabel = `${chapLabel} · ${ptClean}`;
-        } else if (commMode === "en+es" && esClean && esClean.toLowerCase() !== chapLabel.toLowerCase()) {
-          chapLabel = `${chapLabel} · ${esClean}`;
-        }
+    if (commMode) {
+      const seg = segById?.get(entry.id);
+      const ptClean = stripTags(seg?.pt || entry.pt).replace(/^\d+\.\s*/, "");
+      const esClean = stripTags(seg?.es || entry.es).replace(/^\d+\.\s*/, "");
+      if (commMode === "pt" && ptClean) chapLabel = ptClean;
+      else if (commMode === "es" && esClean) chapLabel = esClean;
+      else if (commMode === "en+pt" && ptClean && ptClean.toLowerCase() !== chapLabel.toLowerCase()) {
+        chapLabel = `${chapLabel} · ${ptClean}`;
+      } else if (commMode === "en+es" && esClean && esClean.toLowerCase() !== chapLabel.toLowerCase()) {
+        chapLabel = `${chapLabel} · ${esClean}`;
       }
     }
     textSpan.textContent = chapLabel;
@@ -373,10 +379,32 @@ function handleNoteHover(evt: MouseEvent | null, text?: string): void {
     return;
   }
   tooltip.textContent = text;
-  tooltip.style.left = `${evt.clientX + 12}px`;
-  tooltip.style.top = `${evt.clientY + 12}px`;
+  tooltip.style.visibility = "hidden";
   tooltip.classList.remove("hidden");
+  const w = tooltip.offsetWidth || 240;
+  const h = tooltip.offsetHeight || 40;
+  const margin = 8;
+  const vw = window.innerWidth || document.documentElement.clientWidth || 1024;
+  const vh = window.innerHeight || document.documentElement.clientHeight || 768;
+
+  let left = evt.clientX + 12;
+  if (left + w + margin > vw) {
+    left = evt.clientX - w - 12;
+  }
+  left = Math.max(margin, Math.min(left, vw - w - margin));
+
+  let top = evt.clientY + 12;
+  if (top + h + margin > vh) {
+    top = evt.clientY - h - 12;
+  }
+  top = Math.max(margin, Math.min(top, vh - h - margin));
+
+  tooltip.style.left = `${left}px`;
+  tooltip.style.top = `${top}px`;
+  tooltip.style.visibility = "";
 }
+
+let selectWorkSeq = 0;
 
 async function selectWork(workId: string, partKey: string, chunkIndex: number, segId?: number | null): Promise<void> {
   const work = findWork(workId);
@@ -390,6 +418,7 @@ async function selectWork(workId: string, partKey: string, chunkIndex: number, s
     return;
   }
 
+  const reqSeq = ++selectWorkSeq;
   state.work = work;
   state.partKey = partKey;
   state.chunkIndex = Math.max(0, Math.min(chunkIndex, part.files.length - 1));
@@ -408,13 +437,18 @@ async function selectWork(workId: string, partKey: string, chunkIndex: number, s
     return;
   }
 
+  let loadedSegments: Segment[];
   try {
-    state.segments = await loadChunk(workId, partKey, fileName);
+    loadedSegments = await loadChunk(workId, partKey, fileName);
   } catch (err) {
+    if (reqSeq !== selectWorkSeq) return;
     log.error("não foi possível carregar o fragmento", err);
     el("content").innerHTML = `<p class="loading">${t("noResults", settings.uiLang)}</p>`;
     return;
   }
+
+  if (reqSeq !== selectWorkSeq) return;
+  state.segments = loadedSegments;
 
   renderChapterNav();
   rerenderContent();
@@ -495,19 +529,35 @@ function wireIconRail(): void {
   const MIN_W = 120;
   const MAX_W = 450;
 
+  let collapseTimer: ReturnType<typeof setTimeout> | null = null;
+
+  function clearCollapseTimer(): void {
+    if (collapseTimer !== null) {
+      clearTimeout(collapseTimer);
+      collapseTimer = null;
+    }
+  }
+
   function currentRenderedW(): number {
     return sidePanel.getBoundingClientRect().width;
   }
 
   function doCollapse(): void {
+    clearCollapseTimer();
     const w = currentRenderedW();
     if (w > 0) localStorage.setItem("panelW", String(Math.round(w)));
     sidePanel.classList.add("collapsed");
     collapseBtn.textContent = "›";
-    setTimeout(() => root.style.setProperty("--panel-w", "0px"), 160);
+    collapseTimer = setTimeout(() => {
+      collapseTimer = null;
+      if (sidePanel.classList.contains("collapsed")) {
+        root.style.setProperty("--panel-w", "0px");
+      }
+    }, 160);
   }
 
   function doExpand(): void {
+    clearCollapseTimer();
     const saved = localStorage.getItem("panelW");
     const w = saved ? Math.max(MIN_W, parseInt(saved, 10)) : 280;
     root.style.setProperty("--panel-w", w + "px");
@@ -610,6 +660,7 @@ function wireIconRail(): void {
   let resizeStartW = 0;
 
   resizer.addEventListener("mousedown", (e: MouseEvent) => {
+    clearCollapseTimer();
     isResizing = true;
     resizeStartX = e.clientX;
     resizeStartW = currentRenderedW();
@@ -708,10 +759,39 @@ async function cacheAllForOffline(btn: HTMLButtonElement): Promise<void> {
       './index.html',
       './manifest.json',
       './css/style.css',
+      './fonts/GentiumBookPlus-Regular.ttf',
+      './fonts/GentiumBookPlus-Italic.ttf',
+      './img/logo.png',
+      './img/icon-192.png',
+      './img/icon-512.png',
       './data/manifest.json',
+      './data/search/manifest.json',
       './data/dictionary/pali_core.json',
       './data/dictionary/common_pali.json',
       './data/srs/abhidhamma_cards.json',
+      './data/srs/vocabulary.json',
+      './js/app.js',
+      './js/dictionary.js',
+      './js/export.js',
+      './js/graph.js',
+      './js/i18n.js',
+      './js/logger.js',
+      './js/reader.js',
+      './js/search.js',
+      './js/selection.js',
+      './js/srs.js',
+      './js/state.js',
+      './js/tree.js',
+      './js/types.js',
+      './js/ai-feature/debate-scenarios.js',
+      './js/ai-feature/ui.js',
+      './js/ontology/cetasika.js',
+      './js/ontology/citta.js',
+      './js/ontology/commentary.js',
+      './js/ontology/formal_logic.js',
+      './js/ontology/kathavatthu.js',
+      './js/ontology/kathavatthu_logic.js',
+      './js/ontology/sampayoganaya.js',
       './js/abhidhamma-srs/types.js',
       './js/abhidhamma-srs/scheduler.js',
       './js/abhidhamma-srs/offline-store.js',
@@ -888,6 +968,10 @@ function applyStaticI18n(): void {
   document.querySelectorAll<HTMLElement>("[data-i18n-title]").forEach((node) => {
     const key = node.dataset.i18nTitle;
     if (key) node.title = t(key, settings.uiLang);
+  });
+  document.querySelectorAll<HTMLElement>("[data-i18n-aria-label]").forEach((node) => {
+    const key = node.dataset.i18nAriaLabel;
+    if (key) node.setAttribute("aria-label", t(key, settings.uiLang));
   });
   updateSettingsLabels();
 }
@@ -1081,7 +1165,7 @@ function wireRouting(): void {
     
     // Check panel switch
     const activeBtn = document.querySelector(".rail-btn.active") as HTMLElement;
-    if (!activeBtn || activeBtn.dataset.panel !== route.panel || route.panel === "abhidhamma-srs" || route.panel === "mnemonic-srs") {
+    if (!activeBtn || activeBtn.dataset.panel !== route.panel || route.panel === "srs" || route.panel === "abhidhamma-srs" || route.panel === "mnemonic-srs") {
        switchPanel?.(route.panel, true);
     }
     

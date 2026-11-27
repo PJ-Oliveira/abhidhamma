@@ -63,4 +63,36 @@ describe('AI Feature UI', () => {
             settings.uiLang = origLang;
         }
     });
+
+    it('cancels pending refutation timer when scenario changes and updates current active container on languageChanged', () => {
+        const origLang = settings.uiLang;
+        try {
+            settings.uiLang = 'en';
+            const container = document.createElement('div');
+            initInterlocutorPanel(container);
+
+            const select = container.querySelector('#scenario-select') as HTMLSelectElement;
+            const submitBtn = container.querySelector('#interlocutor-submit') as HTMLButtonElement;
+            select.value = 'puggala_vada';
+            select.dispatchEvent(new Event('change'));
+
+            vi.useFakeTimers();
+            submitBtn.click();
+            // Switch scenario before 1000ms elapses
+            select.value = 'sassata_vada';
+            select.dispatchEvent(new Event('change'));
+            vi.runAllTimers();
+            vi.useRealTimers();
+
+            const refDisplay = container.querySelector('#refutation-display') as HTMLElement;
+            expect(refDisplay.style.display).toBe('none');
+
+            // Dispatch languageChanged -> must re-render current active container
+            settings.uiLang = 'pt';
+            window.dispatchEvent(new Event('languageChanged'));
+            expect(container.innerHTML).toContain('Exegese Abhidhammika');
+        } finally {
+            settings.uiLang = origLang;
+        }
+    });
 });

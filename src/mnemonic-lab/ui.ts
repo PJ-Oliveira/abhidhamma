@@ -68,6 +68,7 @@ import {
   mergeSnapshots,
   parseProgressBackup,
   persistMnemonicOfflineVault,
+  persistOfflineProgress,
   serializeProgressBackup,
   VAULT_BROADCAST_CHANNEL,
 } from "../abhidhamma-srs/offline-store.js";
@@ -894,6 +895,7 @@ export class MnemonicLabUI {
   private sequenceStep = 1;
 
   // BroadcastChannel reference (closed on re-init)
+  private static activeVaultChannel: BroadcastChannel | null = null;
   private vaultChannel: BroadcastChannel | null = null;
 
   constructor(container: HTMLElement, lang: UiLang = settings.uiLang) {
@@ -913,12 +915,16 @@ export class MnemonicLabUI {
     void this.hydrateFromVault();
     try {
       if (typeof BroadcastChannel !== "undefined") {
+        MnemonicLabUI.activeVaultChannel?.close();
         this.vaultChannel?.close();
         this.vaultChannel = new BroadcastChannel(VAULT_BROADCAST_CHANNEL);
+        MnemonicLabUI.activeVaultChannel = this.vaultChannel;
         this.vaultChannel.addEventListener("message", () => {
           this.progress = mergeMnemonicProgress(this.progress, loadMnemonicProgress());
           this.render();
+          (this.vaultChannel as unknown as { unref?: () => void })?.unref?.();
         });
+        (this.vaultChannel as unknown as { unref?: () => void }).unref?.();
       }
     } catch {
       // ignore broadcast restrictions
@@ -5603,13 +5609,21 @@ export class MnemonicLabUI {
       try {
         const text = await file.text();
         const incoming = parseProgressBackup(text);
-        const current = buildLocalStorageSnapshot();
-        const merged = mergeSnapshots(current, incoming);
+        const hydrated = await hydrateOfflineVault();
+        const merged = mergeSnapshots(hydrated.snapshot, incoming);
         if (merged.mnemonicLab) {
           this.progress = mergeMnemonicProgress(this.progress, merged.mnemonicLab);
           saveMnemonicProgress(this.progress);
-          await persistMnemonicOfflineVault(this.progress);
         }
+        await persistOfflineProgress(
+          merged.states,
+          merged.stats,
+          merged.config,
+          merged.mnemonics,
+          merged.recentLog,
+          undefined,
+          Date.now()
+        );
         alert((LAB_STRINGS[this.lang] ?? LAB_STRINGS.pt).vaultImportOk);
       } catch {
         alert((LAB_STRINGS[this.lang] ?? LAB_STRINGS.pt).vaultImportErr);

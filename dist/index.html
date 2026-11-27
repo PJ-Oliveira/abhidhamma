@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Abhidhamma Piṭaka</title>
+<link rel="icon" type="image/png" href="img/icon-192.png" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#8b0000" />
-<link rel="stylesheet" href="css/style.css?v=ec96663c" />
+<link rel="stylesheet" href="css/style.css?v=06b4ea02" />
 <script>
   window.__deferredPwaPrompt = null;
   window.addEventListener('beforeinstallprompt', function(e) {
@@ -25,7 +26,7 @@
       <span class="icon">☰</span><span class="lbl" data-i18n="navTipitaka">Tipiṭaka</span>
     </button>
     <button class="rail-btn" data-panel="dictionary" data-i18n-title="navDictionary" title="Dictionary">
-      <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5V4.5A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="12" y2="15"/></svg></span><span class="lbl" data-i18n="navDictionary">Dictionary</span>
+      <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5V4.5A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="12" y2="15"/></svg></span><span class="lbl" data-i18n="navDictionary">Dictionary</span>
     </button>
     <button class="rail-btn" data-panel="history" data-i18n-title="navHistory" title="History">
       <span class="icon">⏱</span><span class="lbl" data-i18n="navHistory">History</span>
@@ -45,10 +46,10 @@
   </nav>
 
   <aside id="side-panel">
-    <button id="side-panel-close" type="button" class="side-panel-close" data-i18n-title="closePanel" title="Close menu" aria-label="Close menu">✕</button>
+    <button id="side-panel-close" type="button" class="side-panel-close" data-i18n-title="closePanel" data-i18n-aria-label="closePanel" title="Close menu" aria-label="Close menu">✕</button>
     <div id="pwa-install-container" style="display: block; padding: 12px; background: #e8f5e9; border-bottom: 2px solid #c8e6c9;">
-      <button id="btn-install-pwa" style="width: 100%; padding: 12px; background: #4caf50; color: white; border: none; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <span style="font-size: 18px;">📲</span> App Offline
+      <button id="btn-install-pwa" type="button" style="width: 100%; padding: 12px; background: #4caf50; color: white; border: none; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <span style="font-size: 18px;" aria-hidden="true">📲</span> <span data-i18n="pwaInstallBtn">Offline App</span>
       </button>
     </div>
 
@@ -59,7 +60,7 @@
 
     <div id="panel-dictionary" class="panel">
       <h2 data-i18n="dictPanelTitle">Pāli Dictionary</h2>
-      <input id="dict-search" type="text" data-i18n-placeholder="dictPlaceholder" placeholder="Search Pāli word…" autocomplete="off" />
+      <input id="dict-search" type="text" data-i18n-placeholder="dictPlaceholder" data-i18n-aria-label="dictPlaceholder" placeholder="Search Pāli word…" aria-label="Search Pāli word…" autocomplete="off" />
       <div id="dict-results" class="dict-results"></div>
     </div>
 
@@ -72,12 +73,12 @@
 
     <div id="panel-search" class="panel">
       <h2 data-i18n="navSearch">Search</h2>
-      <input id="search-input" type="text" data-i18n-placeholder="searchPlaceholder" placeholder="Search in Pāli, EN, PT or ES…" autocomplete="off" />
+      <input id="search-input" type="text" data-i18n-placeholder="searchPlaceholder" data-i18n-aria-label="searchPlaceholder" placeholder="Search in Pāli, EN, PT or ES…" aria-label="Search in Pāli, EN, PT or ES…" autocomplete="off" />
       <div id="search-results" class="side-list"></div>
     </div>
 
     <div id="panel-settings" class="panel">
-      <h2 data-i18n="navSettingsTitle">Configurações</h2>
+      <h2 data-i18n="navSettingsTitle">Settings</h2>
       <label class="setting-row">
         <span data-i18n="settingTranslationLang">Translation Language</span>
         <select id="setting-lang">
@@ -129,8 +130,8 @@
         <button class="srs-menu-item" data-srs-mode="mnemonic">
           <span class="srs-item-icon">🧮</span>
           <div class="srs-item-info">
-            <strong class="srs-item-title" data-i18n="srsMenuMnemonicTitle">Laboratório Mnêmico</strong>
-            <span class="srs-item-desc" data-i18n="srsMenuMnemonicDesc">Descompactação N-ária (9 Capítulos · 89/121), Tabela Periódica (72/82) e Ábaco das Falanges</span>
+            <strong class="srs-item-title" data-i18n="srsMenuMnemonicTitle">Mnemonic Lab</strong>
+            <span class="srs-item-desc" data-i18n="srsMenuMnemonicDesc">N-ary decompression (9 Chapters · 89/121), Periodic Table (72/82) &amp; Phalanx Abacus</span>
           </div>
         </button>
       </div>
@@ -143,7 +144,7 @@
 
   <main id="reader">
     <div id="reader-header">
-      <button id="panel-collapse" data-i18n-title="collapsePanel" title="Collapse panel">‹</button>
+      <button id="panel-collapse" type="button" data-i18n-title="collapsePanel" data-i18n-aria-label="collapsePanel" title="Collapse panel" aria-label="Collapse panel">‹</button>
       <div id="header-text">
         <div id="breadcrumb"></div>
         <div id="tabs-row">
@@ -154,13 +155,13 @@
     </div>
     <div id="content" class="content"></div>
     <div id="toc-nav">
-      <button id="prev-chunk" data-i18n-title="prev" title="Anterior">‹</button>
+      <button id="prev-chunk" type="button" data-i18n-title="prev" data-i18n-aria-label="prev" title="Previous" aria-label="Previous">‹</button>
       <span id="chunk-indicator"></span>
-      <button id="next-chunk" data-i18n-title="next" title="Próximo">›</button>
+      <button id="next-chunk" type="button" data-i18n-title="next" data-i18n-aria-label="next" title="Next" aria-label="Next">›</button>
     </div>
 
-    <div id="reader-srs" class="reader-overlay" style="display:none">
-      <div class="srs-top-bar" role="tablist" aria-label="SRS Mode Selection">
+    <div id="reader-srs" class="reader-overlay" style="display: none;">
+      <div class="srs-top-bar" role="tablist" data-i18n-aria-label="srsModeSelectionAria" aria-label="SRS Mode Selection">
         <button class="srs-tab-btn active" data-srs-mode="vocab" type="button" role="tab" aria-selected="true">
           <span class="srs-tab-icon">📖</span>
           <span class="srs-tab-label">
@@ -178,8 +179,8 @@
         <button class="srs-tab-btn" data-srs-mode="mnemonic" type="button" role="tab" aria-selected="false">
           <span class="srs-tab-icon">🧮</span>
           <span class="srs-tab-label">
-            <span class="label-full" data-i18n="srsMenuMnemonicTitle">Laboratório Mnêmico</span>
-            <span class="label-short" data-i18n="srsMenuMnemonicShort">Lab. Mnêmico</span>
+            <span class="label-full" data-i18n="srsMenuMnemonicTitle">Mnemonic Lab</span>
+            <span class="label-short" data-i18n="srsMenuMnemonicShort">Mnemonic Lab</span>
           </span>
         </button>
       </div>
@@ -196,8 +197,8 @@
 
 <!-- ABHIDHAMMIKA INTERLOCUTOR CONTAINER -->
 <div id="interlocutor-container" class="interlocutor-container" style="display: none;"></div>
-<button id="btn-toggle-interlocutor" class="btn-toggle-interlocutor" type="button" aria-label="Toggle Canonical Debate">💬 Debate</button>
+<button id="btn-toggle-interlocutor" class="btn-toggle-interlocutor" type="button" data-i18n-aria-label="debateToggleAria" aria-label="Toggle Canonical Debate">💬 Debate</button>
 
-<script type="module" src="js/app.js?v=ec96663c"></script>
+<script type="module" src="js/app.js?v=06b4ea02"></script>
 </body>
 </html>

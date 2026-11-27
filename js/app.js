@@ -1,16 +1,16 @@
-import { t } from "./i18n.js?v=ec96663c";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=ec96663c";
-import { renderTree, markActiveLeaf } from "./tree.js?v=ec96663c";
-import { loadChunk, renderSegments } from "./reader.js?v=ec96663c";
-import { initDictionaryPanel } from "./dictionary.js?v=ec96663c";
-import { initSearchPanel } from "./search.js?v=ec96663c";
-import { initExportPanel } from "./export.js?v=ec96663c";
-import { initSrsPanel } from "./srs.js?v=ec96663c";
-import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=ec96663c";
-import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=ec96663c";
-import { MnemonicLabUI } from "./mnemonic-lab/ui.js?v=ec96663c";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=ec96663c";
-import { createLogger } from "./logger.js?v=ec96663c";
+import { t } from "./i18n.js?v=06b4ea02";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=06b4ea02";
+import { renderTree, markActiveLeaf } from "./tree.js?v=06b4ea02";
+import { loadChunk, renderSegments } from "./reader.js?v=06b4ea02";
+import { initDictionaryPanel } from "./dictionary.js?v=06b4ea02";
+import { initSearchPanel } from "./search.js?v=06b4ea02";
+import { initExportPanel } from "./export.js?v=06b4ea02";
+import { initSrsPanel } from "./srs.js?v=06b4ea02";
+import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=06b4ea02";
+import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=06b4ea02";
+import { MnemonicLabUI } from "./mnemonic-lab/ui.js?v=06b4ea02";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=06b4ea02";
+import { createLogger } from "./logger.js?v=06b4ea02";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -112,8 +112,7 @@ function applySettingsToUI() {
     }
     document.documentElement.style.setProperty("--font-scale", String(settings.fontSize / 17));
     el("setting-lang").value = settings.translationLang;
-    el("setting-show-pali").checked = settings.showPali;
-    el("setting-show-translation").checked = settings.showTranslation;
+    updateSettingsLabels();
 }
 function updateHash() {
     const activeBtn = document.querySelector(".rail-btn.active");
@@ -233,7 +232,9 @@ function clampChapterNavList(list) {
     list.style.left = "";
     list.style.right = "";
     list.style.transform = "";
+    list.style.maxHeight = "";
     const vw = window.innerWidth;
+    const vh = window.innerHeight;
     if (vw <= 0)
         return;
     const rect = list.getBoundingClientRect();
@@ -252,6 +253,13 @@ function clampChapterNavList(list) {
     }
     if (dx !== 0) {
         list.style.transform = `translateX(${Math.round(dx)}px)`;
+    }
+    if (vh > 0) {
+        const bottomReserve = vw <= 600 ? 68 : margin;
+        const availH = Math.floor(vh - rect.top - bottomReserve);
+        if (availH >= 80) {
+            list.style.maxHeight = `${availH}px`;
+        }
     }
 }
 function renderChapterNav() {
@@ -288,7 +296,7 @@ function renderChapterNav() {
         : null;
     for (let i = 0; i < chapters.length; i++) {
         const entry = chapters[i];
-        const chunkIdx = segIdToChunk(entry.id, part);
+        const chunkIdx = typeof entry.chunk === "number" ? entry.chunk : segIdToChunk(entry.id, part);
         const li = document.createElement("li");
         const numSpan = document.createElement("span");
         numSpan.className = "chap-num";
@@ -296,21 +304,19 @@ function renderChapterNav() {
         const textSpan = document.createElement("span");
         textSpan.className = "chap-text";
         let chapLabel = entry.text.replace(/^\d+\.\s*/, "");
-        if (commMode && segById) {
-            const seg = segById.get(entry.id);
-            if (seg) {
-                const ptClean = stripTags(seg.pt).replace(/^\d+\.\s*/, "");
-                const esClean = stripTags(seg.es).replace(/^\d+\.\s*/, "");
-                if (commMode === "pt" && ptClean)
-                    chapLabel = ptClean;
-                else if (commMode === "es" && esClean)
-                    chapLabel = esClean;
-                else if (commMode === "en+pt" && ptClean && ptClean.toLowerCase() !== chapLabel.toLowerCase()) {
-                    chapLabel = `${chapLabel} · ${ptClean}`;
-                }
-                else if (commMode === "en+es" && esClean && esClean.toLowerCase() !== chapLabel.toLowerCase()) {
-                    chapLabel = `${chapLabel} · ${esClean}`;
-                }
+        if (commMode) {
+            const seg = segById?.get(entry.id);
+            const ptClean = stripTags(seg?.pt || entry.pt).replace(/^\d+\.\s*/, "");
+            const esClean = stripTags(seg?.es || entry.es).replace(/^\d+\.\s*/, "");
+            if (commMode === "pt" && ptClean)
+                chapLabel = ptClean;
+            else if (commMode === "es" && esClean)
+                chapLabel = esClean;
+            else if (commMode === "en+pt" && ptClean && ptClean.toLowerCase() !== chapLabel.toLowerCase()) {
+                chapLabel = `${chapLabel} · ${ptClean}`;
+            }
+            else if (commMode === "en+es" && esClean && esClean.toLowerCase() !== chapLabel.toLowerCase()) {
+                chapLabel = `${chapLabel} · ${esClean}`;
             }
         }
         textSpan.textContent = chapLabel;
@@ -341,10 +347,28 @@ function handleNoteHover(evt, text) {
         return;
     }
     tooltip.textContent = text;
-    tooltip.style.left = `${evt.clientX + 12}px`;
-    tooltip.style.top = `${evt.clientY + 12}px`;
+    tooltip.style.visibility = "hidden";
     tooltip.classList.remove("hidden");
+    const w = tooltip.offsetWidth || 240;
+    const h = tooltip.offsetHeight || 40;
+    const margin = 8;
+    const vw = window.innerWidth || document.documentElement.clientWidth || 1024;
+    const vh = window.innerHeight || document.documentElement.clientHeight || 768;
+    let left = evt.clientX + 12;
+    if (left + w + margin > vw) {
+        left = evt.clientX - w - 12;
+    }
+    left = Math.max(margin, Math.min(left, vw - w - margin));
+    let top = evt.clientY + 12;
+    if (top + h + margin > vh) {
+        top = evt.clientY - h - 12;
+    }
+    top = Math.max(margin, Math.min(top, vh - h - margin));
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${top}px`;
+    tooltip.style.visibility = "";
 }
+let selectWorkSeq = 0;
 async function selectWork(workId, partKey, chunkIndex, segId) {
     const work = findWork(workId);
     if (!work) {
@@ -356,6 +380,7 @@ async function selectWork(workId, partKey, chunkIndex, segId) {
         log.warn(`parte desconhecida: ${workId}/${partKey}`);
         return;
     }
+    const reqSeq = ++selectWorkSeq;
     state.work = work;
     state.partKey = partKey;
     state.chunkIndex = Math.max(0, Math.min(chunkIndex, part.files.length - 1));
@@ -371,14 +396,20 @@ async function selectWork(workId, partKey, chunkIndex, segId) {
         log.error(`fragmento inexistente para ${workId}/${partKey}[${state.chunkIndex}]`);
         return;
     }
+    let loadedSegments;
     try {
-        state.segments = await loadChunk(workId, partKey, fileName);
+        loadedSegments = await loadChunk(workId, partKey, fileName);
     }
     catch (err) {
+        if (reqSeq !== selectWorkSeq)
+            return;
         log.error("não foi possível carregar o fragmento", err);
         el("content").innerHTML = `<p class="loading">${t("noResults", settings.uiLang)}</p>`;
         return;
     }
+    if (reqSeq !== selectWorkSeq)
+        return;
+    state.segments = loadedSegments;
     renderChapterNav();
     rerenderContent();
     if (segId != null) {
@@ -451,18 +482,32 @@ function wireIconRail() {
     const root = document.documentElement;
     const MIN_W = 120;
     const MAX_W = 450;
+    let collapseTimer = null;
+    function clearCollapseTimer() {
+        if (collapseTimer !== null) {
+            clearTimeout(collapseTimer);
+            collapseTimer = null;
+        }
+    }
     function currentRenderedW() {
         return sidePanel.getBoundingClientRect().width;
     }
     function doCollapse() {
+        clearCollapseTimer();
         const w = currentRenderedW();
         if (w > 0)
             localStorage.setItem("panelW", String(Math.round(w)));
         sidePanel.classList.add("collapsed");
         collapseBtn.textContent = "›";
-        setTimeout(() => root.style.setProperty("--panel-w", "0px"), 160);
+        collapseTimer = setTimeout(() => {
+            collapseTimer = null;
+            if (sidePanel.classList.contains("collapsed")) {
+                root.style.setProperty("--panel-w", "0px");
+            }
+        }, 160);
     }
     function doExpand() {
+        clearCollapseTimer();
         const saved = localStorage.getItem("panelW");
         const w = saved ? Math.max(MIN_W, parseInt(saved, 10)) : 280;
         root.style.setProperty("--panel-w", w + "px");
@@ -563,6 +608,7 @@ function wireIconRail() {
     let resizeStartX = 0;
     let resizeStartW = 0;
     resizer.addEventListener("mousedown", (e) => {
+        clearCollapseTimer();
         isResizing = true;
         resizeStartX = e.clientX;
         resizeStartW = currentRenderedW();
@@ -657,10 +703,39 @@ async function cacheAllForOffline(btn) {
             './index.html',
             './manifest.json',
             './css/style.css',
+            './fonts/GentiumBookPlus-Regular.ttf',
+            './fonts/GentiumBookPlus-Italic.ttf',
+            './img/logo.png',
+            './img/icon-192.png',
+            './img/icon-512.png',
             './data/manifest.json',
+            './data/search/manifest.json',
             './data/dictionary/pali_core.json',
             './data/dictionary/common_pali.json',
             './data/srs/abhidhamma_cards.json',
+            './data/srs/vocabulary.json',
+            './js/app.js',
+            './js/dictionary.js',
+            './js/export.js',
+            './js/graph.js',
+            './js/i18n.js',
+            './js/logger.js',
+            './js/reader.js',
+            './js/search.js',
+            './js/selection.js',
+            './js/srs.js',
+            './js/state.js',
+            './js/tree.js',
+            './js/types.js',
+            './js/ai-feature/debate-scenarios.js',
+            './js/ai-feature/ui.js',
+            './js/ontology/cetasika.js',
+            './js/ontology/citta.js',
+            './js/ontology/commentary.js',
+            './js/ontology/formal_logic.js',
+            './js/ontology/kathavatthu.js',
+            './js/ontology/kathavatthu_logic.js',
+            './js/ontology/sampayoganaya.js',
             './js/abhidhamma-srs/types.js',
             './js/abhidhamma-srs/scheduler.js',
             './js/abhidhamma-srs/offline-store.js',
@@ -843,6 +918,11 @@ function applyStaticI18n() {
         if (key)
             node.title = t(key, settings.uiLang);
     });
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((node) => {
+        const key = node.dataset.i18nAriaLabel;
+        if (key)
+            node.setAttribute("aria-label", t(key, settings.uiLang));
+    });
     updateSettingsLabels();
 }
 let abhidhammaSrsInstance = null;
@@ -1024,7 +1104,7 @@ function wireRouting() {
         if (!route)
             return;
         const activeBtn = document.querySelector(".rail-btn.active");
-        if (!activeBtn || activeBtn.dataset.panel !== route.panel || route.panel === "abhidhamma-srs" || route.panel === "mnemonic-srs") {
+        if (!activeBtn || activeBtn.dataset.panel !== route.panel || route.panel === "srs" || route.panel === "abhidhamma-srs" || route.panel === "mnemonic-srs") {
             switchPanel?.(route.panel, true);
         }
         if (route.workId && route.partKey && route.chunkIndex !== undefined) {
@@ -1134,7 +1214,7 @@ if (toggleInterlocutorBtn && interlocutorContainer) {
         if (!isInterlocutorLoaded) {
             toggleInterlocutorBtn.textContent = t('debate_btn_loading', settings.uiLang);
             try {
-                const { initInterlocutorPanel } = await import('./ai-feature/ui.js');
+                const { initInterlocutorPanel } = await import('./ai-feature/ui.js?v=06b4ea02');
                 initInterlocutorPanel(interlocutorContainer);
                 isInterlocutorLoaded = true;
                 interlocutorContainer.addEventListener('interlocutor-submit', (e) => {
