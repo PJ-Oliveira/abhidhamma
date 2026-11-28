@@ -1,8 +1,8 @@
-# 02 — Dados do Corpus
+# 02 — Corpus Data
 
-## 1. Esquema do Segmento (Segment Schema)
+## 1. Segment Schema
 
-Cada segmento é um objeto JSON em conformidade com:
+Every segment is a JSON object conforming to:
 
 ```typescript
 interface Segment {
@@ -17,11 +17,11 @@ interface Segment {
 }
 ```
 
-Os campos de tradução (`en`, `pt`, `es`) são sempre texto simples. Apenas o campo `pali` pode conter HTML inline.
+Translation fields (`en`, `pt`, `es`) are always plain text. The `pali` field alone may contain inline HTML.
 
-## 2. Formato do Manifesto
+## 2. Manifest Format
 
-`data/manifest.json` é a árvore de navegação única carregada na inicialização:
+`data/manifest.json` is the single navigation tree loaded at startup:
 
 ```json
 {
@@ -34,7 +34,7 @@ Os campos de tradução (`en`, `pt`, `es`) são sempre texto simples. Apenas o c
 }
 ```
 
-Cada `WorkEntry`:
+Each `WorkEntry`:
 
 ```json
 {
@@ -54,105 +54,105 @@ Cada `WorkEntry`:
 }
 ```
 
-O array `toc` contém apenas segmentos `chapter` e `subhead` com seu texto Pāli desprovido de HTML. O painel de exportação utiliza entradas de `toc` para preencher os menus suspensos de intervalo de capítulos (de/para).
+The `toc` array contains only `chapter` and `subhead` segments with their Pāli text stripped of HTML. The export panel uses `toc` entries to populate the chapter-range dropdowns (from/to).
 
-## 3. Valores de `rend`
+## 3. `rend` Values
 
-O campo `rend` orienta tanto a estilização CSS quanto a marcação de exportação:
+The `rend` field drives both CSS styling and export markup:
 
-| Valor de rend | Tratamento CSS | Tag de exportação |
+| rend value | CSS treatment | Export tag |
 |---|---|---|
-| `book`, `nikaya`, `title` | centralizado, negrito grande | `<h1>` (atualmente não mapeado na exportação) |
-| `chapter` | negrito colorido, quebra de página antes na impressão (page-break-before) | `<h2 class="seg chapter">` |
-| `subhead` | negrito, margem superior | `<h3 class="seg subhead">` |
-| `subsubhead` | itálico em negrito | `<p class="seg bodytext">` |
-| `bodytext` (padrão) | parágrafo normal | `<p class="seg bodytext">` |
-| `centre` | texto centralizado | `<p class="seg bodytext">` |
-| `gatha*` | itálico, recuo de 2em | `<p class="seg bodytext">` |
-| `hangnum` | recuo deslocado (hanging indent) de 1.4em | `<p class="seg hangnum">` |
-| `indent` | estilo blockquote | `<blockquote class="seg indent">` |
-| `footnote` | 0.82em, esmaecido | `<p class="seg footnote">` |
-| `glossary` | termo de entrada em negrito | `<p class="seg bodytext">` |
+| `book`, `nikaya`, `title` | centred, large bold | `<h1>` (not currently mapped in export) |
+| `chapter` | coloured bold, page-break-before in print | `<h2 class="seg chapter">` |
+| `subhead` | bold, margin-top | `<h3 class="seg subhead">` |
+| `subsubhead` | bold italic | `<p class="seg bodytext">` |
+| `bodytext` (default) | normal paragraph | `<p class="seg bodytext">` |
+| `centre` | centred text | `<p class="seg bodytext">` |
+| `gatha*` | italic, indent 2em | `<p class="seg bodytext">` |
+| `hangnum` | hanging indent 1.4em | `<p class="seg hangnum">` |
+| `indent` | blockquote style | `<blockquote class="seg indent">` |
+| `footnote` | 0.82em, muted | `<p class="seg footnote">` |
+| `glossary` | bold headword | `<p class="seg bodytext">` |
 
-## 4. HTML Inline no Campo `pali`
+## 4. Inline HTML in the `pali` Field
 
-O corpus foi extraído de bancos de dados SQLite de origem, onde o texto Pāli era armazenado como pseudo-XML. `extract_data.py::clean_pali()` converte a marcação de origem em HTML seguro para navegadores antes de gravar os arquivos JSON. Tags presentes no corpus após a extração:
+The corpus was extracted from source SQLite databases where Pāli text was stored as pseudo-XML. `extract_data.py::clean_pali()` converts the source markup to browser-safe HTML before writing the JSON files. Tags present in the corpus after extraction:
 
-| Tag | Contagem no corpus | Origem | Renderização |
+| Tag | Count in corpus | Origin | Rendering |
 |---|---|---|---|
-| `<b>text</b>` | 57.283 ocorrências | `<hi rend="bold">` na origem | Termos/palavras-chave em negrito |
-| `<p rend="gathalast">text</p>` | 8.125 (em todos os valores de rend) | `<p rend="...">` na origem | Formatação de versos |
-| `<sup class="var-note" data-note="N">[N]</sup>` | 873 | `<note>` na origem | Nota de rodapé de leitura variante |
-| `<x_bin_42>` | 1 | Artefato de codificação desconhecido | Removido sem prejuízo |
+| `<b>text</b>` | 57,283 occurrences | `<hi rend="bold">` in source | Bold headwords/keywords |
+| `<p rend="gathalast">text</p>` | 8,125 (across all rend values) | `<p rend="...">` in source | Verse formatting |
+| `<sup class="var-note" data-note="N">[N]</sup>` | 873 | `<note>` in source | Variant reading footnote |
+| `<x_bin_42>` | 1 | Unknown encoding artifact | Stripped harmlessly |
 
-**Nota crítica:** Estas são tags HTML genuínas incorporadas nos valores de string, e não entidades escapadas. Elas são renderizadas no navegador via `.innerHTML` e devem ser analisadas com `DOMParser` na exportação (não escapadas com `escHtml()`).
+**Critical note:** These are genuine HTML tags embedded in string values, not escaped entities. They are rendered in the browser via `.innerHTML` and must be parsed with `DOMParser` in export (not escaped with `escHtml()`).
 
-## 5. Arquivos de Chunks (Fragmentos)
+## 5. Chunk Files
 
-Partes grandes são divididas em arquivos de chunk de aproximadamente 900 segmentos. O limite de divisão (chunking) é alinhado ao próximo segmento `chapter`, `book` ou `subhead` após o limiar de tamanho, garantindo que cada chunk comece em um limite de seção lógico. Há um arquivo de chunk por parte se a parte tiver ≤ 900 segmentos.
+Large parts are split into chunk files of ~900 segments. The chunking boundary is aligned to the next `chapter`, `book`, or `subhead` segment after the size threshold, so each chunk starts at a logical section boundary. One chunk file per part if the part has ≤ 900 segments.
 
-Nomenclatura de arquivos: `{partKey}__{chunkIndex}.json` (multi-chunk) ou `{partKey}.json` (chunk único).
+File naming: `{partKey}__{chunkIndex}.json` (multi-chunk) or `{partKey}.json` (single-chunk).
 
-O leitor armazena em cache os chunks carregados na memória; o módulo de exportação busca todos os chunks para a(s) parte(s) selecionada(s) sequencialmente antes de construir o documento de saída.
+The reader caches loaded chunks in memory; the export module fetches all chunks for the selected part(s) sequentially before building the output document.
 
-## 6. Obras em Detalhe
+## 6. Works in Detail
 
-### Abhidhamma Piṭaka (grupo: `abhidhamma`)
+### Abhidhamma Piṭaka (group: `abhidhamma`)
 
-Sete livros canônicos do Abhidhamma. Cada um possui mūla (texto-raiz) e tipicamente aṭṭhakathā (comentário), ṭīkā (subcomentário) e anuṭīkā (comentário adicional). Os segmentos de anuṭīkā para os livros 3–7 são armazenados em tabelas SQLite compartilhadas e diferenciados por `id_range` em `extract_data.py`.
+Seven canonical Abhidhamma books. Each has mūla (root text) and typically aṭṭhakathā (commentary), ṭīkā (sub-commentary), and anuṭīkā (further commentary). The anuṭīkā segments for books 3–7 are stored in shared SQLite tables and differentiated by `id_range` in `extract_data.py`.
 
-| Obra | Partes | Notas |
+| Work | Parts | Notes |
 |---|---|---|
-| Dhammasaṅgaṇī | mūla · attha · ṭīkā · anuṭīkā | mūla em 3 chunks |
-| Vibhaṅga | mūla · attha · ṭīkā | mūla em 4 chunks, ṭīkā em 3 chunks |
-| Dhātukathā | mūla · attha · ṭīkā · anuṭīkā | Partes em arquivo único |
-| Puggalapaññatti | mūla · attha · ṭīkā · anuṭīkā | Partes em arquivo único |
-| Kathāvatthu | mūla · attha · ṭīkā · anuṭīkā | mūla em 4 chunks |
-| Yamaka | mūla · attha · ṭīkā · anuṭīkā | mūla em 16 chunks (3 tabelas de origem unificadas) |
-| Paṭṭhāna | mūla · attha · ṭīkā · anuṭīkā | mūla em 31 chunks (5 tabelas de origem), maior obra |
+| Dhammasaṅgaṇī | mūla · attha · ṭīkā · anuṭīkā | 3-chunk mūla |
+| Vibhaṅga | mūla · attha · ṭīkā | 4-chunk mūla, 3-chunk ṭīkā |
+| Dhātukathā | mūla · attha · ṭīkā · anuṭīkā | Single-file parts |
+| Puggalapaññatti | mūla · attha · ṭīkā · anuṭīkā | Single-file parts |
+| Kathāvatthu | mūla · attha · ṭīkā · anuṭīkā | 4-chunk mūla |
+| Yamaka | mūla · attha · ṭīkā · anuṭīkā | 16-chunk mūla (3 source tables merged) |
+| Paṭṭhāna | mūla · attha · ṭīkā · anuṭīkā | 31-chunk mūla (5 source tables), largest work |
 
-### Outros Textos Abhidhamma (grupo: `outros`)
+### Outros Textos Abhidhamma (group: `outros`)
 
-Tratados pós-canônicos compostos dentro da tradição do Abhidhamma:
+Post-canonical treatises composed within the Abhidhamma tradition:
 
-| Obra | Partes | Notas |
+| Work | Parts | Notes |
 |---|---|---|
-| Abhidhammāvatāra | mūla · ṭīkā | mūla em 10 chunks |
-| Abhidhammatthasaṅgaha | mūla | 2 chunks |
-| Abhidhammamātikā | mūla | 3 chunks |
+| Abhidhammāvatāra | mūla · ṭīkā | 10-chunk mūla |
+| Abhidhammatthasaṅgaha | mūla | 2-chunk |
+| Abhidhammamātikā | mūla | 3-chunk |
 
-### Visuddhimagga (grupo: `visuddhimagga`)
+### Visuddhimagga (group: `visuddhimagga`)
 
-| Obra | Partes | Notas |
+| Work | Parts | Notes |
 |---|---|---|
-| Visuddhimagga | mūla · ṭīkā · nidānakathā | mūla em 5 chunks, ṭīkā em 4 chunks |
+| Visuddhimagga | mūla · ṭīkā · nidānakathā | 5-chunk mūla, 4-chunk ṭīkā |
 
-### Comentários Contemporâneos (grupo: `comentarios`)
+### Comentários Contemporâneos (group: `comentarios`)
 
-Obras nas quais o campo `pali` contém o texto original em inglês (não Pāli):
+Works where the `pali` field contains the English original text (not Pāli):
 
-| Obra | Partes | Notas |
+| Work | Parts | Notes |
 |---|---|---|
-| Abhidhamma in Daily Life | texto | 2 chunks; bilíngue EN/PT |
+| Abhidhamma in Daily Life | texto | 2-chunk; bilingual EN/PT |
 
-## 7. Bancos de Dados de Origem
+## 7. Source Databases
 
-`extract_data.py` lê de quatro arquivos SQLite (não commitados na pasta do site):
+`extract_data.py` reads from four SQLite files (not committed to the site folder):
 
-| Idioma | Arquivo DB | Coluna da tabela |
+| Language | DB file | Table column |
 |---|---|---|
 | Pāli | `tipitaka-roman-pali.db` | `pali_text` |
-| Inglês | `english_tipitaka_translation_data-2026-04-28.db` | `english_translation` |
-| Português | `portuguese_tipitaka_translation_data-2026-07-22.db` | `portuguese_translation` |
-| Espanhol | `spanish_tipitaka_translation_data-2026-05-15.db` | `spanish_translation` |
+| English | `english_tipitaka_translation_data-2026-04-28.db` | `english_translation` |
+| Portuguese | `portuguese_tipitaka_translation_data-2026-07-22.db` | `portuguese_translation` |
+| Spanish | `spanish_tipitaka_translation_data-2026-05-15.db` | `spanish_translation` |
 
-Estes bancos de dados são armazenados fora da pasta do site e não são necessários para executar o site. Eles são necessários apenas para reexecutar `extract_data.py` se uma nova extração for requerida.
+These databases are stored outside the site folder and are not needed to run the site. They are only needed to re-run `extract_data.py` if a new extraction is required.
 
-## 8. Índice de Busca
+## 8. Search Index
 
-O índice de busca é um índice invertido do lado do cliente construído por `scripts/build_search_index.py`.
+The search index is a client-side inverted index built by `scripts/build_search_index.py`.
 
-### Estrutura dos shards
+### Shard structure
 
 ```json
 {
@@ -165,17 +165,17 @@ O índice de busca é um índice invertido do lado do cliente construído por `s
 }
 ```
 
-50 shards indexados pelo primeiro caractere do token (`a`–`z`, caracteres acentuados, birmanês, devanāgarī e `misc`). Os tokens são caracteres de palavras Unicode com ≥ 3 caracteres. A lista de postagens de cada token é limitada a 30 entradas para evitar shards pesados na memória para palavras extremamente comuns.
+50 shards keyed by the first character of the token (`a`–`z`, accented characters, Burmese, Devanāgarī, and `misc`). Tokens are Unicode word characters of ≥ 3 characters. Each token's postings list is capped at 30 entries to prevent memory-heavy shards for extremely common words.
 
-### Prioridade da fonte do snippet: Pāli > PT > EN > ES
+### Snippet source priority: Pāli > PT > EN > ES
 
-As tags HTML são removidas dos snippets via regex antes do armazenamento. Cada segmento aparece apenas uma vez por shard, independentemente de quantos tokens correspondam a ele (desduplicação pela identidade `(workId, partKey, chunk, segId)`).
+HTML tags are stripped from snippets via a regex before storage. Each segment appears only once per shard regardless of how many tokens match it (deduplication by `(workId, partKey, chunk, segId)` identity).
 
-## 9. Arquivos de Dicionário
+## 9. Dictionary Files
 
 ### `pali_core.json`
 
-Dicionário de múltiplos sentidos rigorosamente estruturado para os 721 lemas Pāli de maior frequência (cobrindo 65,23% das ocorrências de tokens do corpus a partir da fase 7). Construído a partir do Digital Pāli Dictionary (dpd-mobile.db, CC BY-NC-SA 4.0) com traduções manuais em PT/ES.
+Rigorously structured multi-sense dictionary for the 721 highest-frequency Pāli lemmas (covering 65.23% of corpus token occurrences as of stage 7). Built from the Digital Pāli Dictionary (dpd-mobile.db, CC BY-NC-SA 4.0) with manual PT/ES translations.
 
 ```json
 {
@@ -197,7 +197,7 @@ Dicionário de múltiplos sentidos rigorosamente estruturado para os 721 lemas P
 
 ### `common_pali.json`
 
-Dicionário simples de sentido único com 182 palavras gerais em Pāli não cobertas pelo `pali_core.json` (desduplicadas no momento do carregamento pelo módulo `dictionary.ts`).
+Simple single-sense dictionary with 182 general Pāli words not covered by `pali_core.json` (deduplicated at load time by the `dictionary.ts` module).
 
 ```json
 {
@@ -208,8 +208,8 @@ Dicionário simples de sentido único com 182 palavras gerais em Pāli não cobe
 }
 ```
 
-O módulo `dictionary.ts` carrega `pali_core.json` primeiro, cria um `Set` de suas palavras-guia (headwords) e, em seguida, filtra as entradas de `common_pali.json` para excluir qualquer sobreposição, garantindo que as entradas principais sempre tenham precedência.
+The `dictionary.ts` module loads `pali_core.json` first, builds a `Set` of its headwords, then filters `common_pali.json` entries to exclude any overlap, ensuring core entries always take precedence.
 
 ### `vocabulary_blocks.md`
 
-Um documento de referência filológica com 10 blocos terminológicos cobrindo: dhamma, kamma, nibbāna, jhāna, saṃsāra, cetasika, dhammadhātu, psíquico, estado, kusala/akusala. Este arquivo é uma referência legível por humanos para tradutores; não é carregado pela aplicação.
+A philological reference document with 10 terminology blocks covering: dhamma, kamma, nibbāna, jhāna, saṃsāra, cetasika, dhammadhātu, psíquico, estado, kusala/akusala. This file is a human-readable reference for translators; it is not loaded by the application.

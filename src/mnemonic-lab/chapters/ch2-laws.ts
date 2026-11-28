@@ -1,15 +1,15 @@
 // ============================================================================
-// CAPÍTULO 2 (COMPLEMENTO) — LEIS DO CETASIKAPARICCHEDA (AS II.1, 19, 33–34, 42, 52)
+// CHAPTER 2 (SUPPLEMENT) — LAWS OF THE CETASIKAPARICCHEDA (AS II.1, 19, 33–34, 42, 52)
 // ============================================================================
-// Cobre as 4 marcas de Sampayoga, os 11 Aniyata vs. 41 Niyata, as contagens de
-// exclusão (modo 89) dos 6 Pakiṇṇakas, os 14 Sabbākusalayogino e as leis diferenciais.
-// Total: 12 itens complementares 100% fiéis ao mūla.
+// Covers the 4 marks of Sampayoga, the 11 Aniyata vs. 41 Niyata, the exclusion
+// counts (89-mode) of the 6 Pakiṇṇakas, the 14 Sabbākusalayogino, and differential laws.
+// Total: 12 supplementary items 100% faithful to the mūla.
 // ============================================================================
 
 import type { NaryChallengeItem } from "../nary-chapters-data.js";
 
 export const CHAPTER_2_LAWS_ITEMS: readonly NaryChallengeItem[] = [
-  // ── 4 MARCAS DE SAMPAYOGA (AS II.1) ───────────────────────────────────────
+  // ── 4 MARKS OF SAMPAYOGA (AS II.1) ────────────────────────────────────────
   {
     id: "cet:law:1",
     chapter: 2,
@@ -95,7 +95,7 @@ export const CHAPTER_2_LAWS_ITEMS: readonly NaryChallengeItem[] = [
     switches: { lens: "laws", lawGroup: "sampayoga_marks4", slot: 4, metric: 4 },
   },
 
-  // ── 6 LEIS DE EXCLUSÃO DOS PAKIṆṆAKAS (AS II.19 · MODO 121 & 89) ──────────
+  // ── 6 EXCLUSION LAWS OF THE PAKIṆṆAKAS (AS II.19 · 121 & 89 MODES) ────────
   {
     id: "cet:law:5",
     chapter: 2,
@@ -223,7 +223,7 @@ export const CHAPTER_2_LAWS_ITEMS: readonly NaryChallengeItem[] = [
     switches: { lens: "laws", lawGroup: "pakinnaka_excl6", slot: 6, metric: 20 },
   },
 
-  // ── LEIS GLOBAIS: ANIYATA (11) vs. NIYATA (41) & 14 SABBĀKUSALAYOGINO ─────
+  // ── GLOBAL LAWS: ANIYATA (11) vs. NIYATA (41) & 14 SABBĀKUSALAYOGINO ──────
   {
     id: "cet:law:11",
     chapter: 2,

@@ -1,177 +1,146 @@
-# Desenvolvimento
+# Development Guide
 
-## 1. Pré-requisitos
+## Prerequisites
 
-- Node.js ≥ 18
-- npm ≥ 9
-- Python 3 (para `scripts/version_js.py`)
+- Node.js ≥ 18 (for test runner and npm)
+- Python 3 (for build scripts)
+- A modern browser (Chrome/Firefox/Safari) for manual testing
 
----
+## Install
 
-## 2. Scripts npm
-
-| Script | Comando | Descrição |
-|---|---|---|
-| `test` | `vitest run` | Roda todos os testes unitários uma vez |
-| `build` | `tsc && python3 scripts/version_js.py` | Compila TypeScript + adiciona hash de versão |
-| `deploy` | `build + git push` | Build completo e publicação |
-| `watch` | `tsc --watch` | Recompilação incremental |
-| `integrate-books` | `python3 scripts/integrate_books.py` | Integra novos textos no corpus |
-| `rebuild-search` | `python3 scripts/build_search_index.py` | Reconstrói índice de busca fragmentado |
-
----
-
-## 3. Pipeline de Build
-
-```
-src/*.ts
-  │
-  ▼ tsc (tsconfig.json: target=ES2022, module=ESNext, outDir=js)
-  │
-js/*.js (módulos ES sem versionamento)
-  │
-  ▼ python3 scripts/version_js.py
-  │   - calcula MD5 de todos os js/*.js
-  │   - reescreve imports relativos em todos os .js para adicionar ?v={hash}
-  │   - atualiza tag <script src="js/app.js?v={hash}"> em index.html
-  │
-js/*.js?v={hash} + index.html atualizado
-```
-
----
-
-## 4. Configuração TypeScript
-
-`tsconfig.json`:
-```json
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "strict": true,
-    "outDir": "js",
-    "rootDir": "src"
-  },
-  "include": ["src/**/*.ts"]
-}
-```
-
----
-
-## 5. Testes (Vitest 4)
-
-**Localização:** `tests/` com ambiente jsdom.
-
-**Executar:**
 ```bash
-npm test
+npm install
 ```
 
-**Cobertura:**
-```bash
-npx vitest run --coverage
-```
+Dev dependencies: TypeScript 5.6, Vitest 4, jsdom, @vitest/coverage-v8.
+Runtime dependency: @mlc-ai/web-llm (loaded lazily via dynamic import).
 
-### Módulos Testados
+---
 
-| Arquivo de teste | Cobre |
+## Scripts
+
+| Command | Description |
 |---|---|
-| `srs.spec.ts` | Algoritmo SM-2, fila de cartões, limites diários |
-| `dictionary.spec.ts` | `normalizePali`, lookup de 4 fases |
-| `search.spec.ts` | Carregamento de fragmentos, correspondência exata/prefixo |
-| `state.spec.ts` | Persistência localStorage, deduplicação de histórico |
-| `export.spec.ts` | `crc32`, geração de manifesto EPUB, serialização de HTML |
-| `i18n.spec.ts` | `t()` com todas as línguas, fallback |
-| `kathavatthu_logic.spec.ts` | `evaluateCustomClaim`, `evaluateScenario` |
-| `reader.spec.ts` | `renderSegments`, tratamento de rend |
+| `npm test` | Run unit tests + generate coverage report (see `coverage/`) |
+| `npm run build` | Compile TypeScript (`tsc`) then stamp version hash |
+| `npm run watch` | `tsc --watch` for incremental compilation |
+| `npm run deploy` | Run `scripts/preparar_deploy.py` |
+| `npm run integrate-books` | Run `scripts/integrate_books.py` — ingests source books into data/ |
+| `npm run rebuild-search` | Run `scripts/build_search_index.py` — rebuilds search shards |
 
 ---
 
-## 6. Adicionando um Novo Texto
+## Build Steps Detail
 
-1. Prepare fragmentos JSON: arrays `Segment[]` em `data/works/{id}/`.
-2. Adicione entrada em `data/manifest.json` sob o grupo correto.
-3. Execute `npm run rebuild-search` para adicionar o novo texto ao índice de busca.
-4. (Opcional) Execute `npm run integrate-books` se usar o script de integração de pipeline.
+### 1. TypeScript compile
 
----
-
-## 7. Adicionando uma Nova Ferramenta
-
-1. Crie `src/tools/mytool.ts` exportando `init(container: HTMLElement)`.
-2. Adicione à array `TABS` em `src/tools/tools.ts`:
-   ```typescript
-   { id: "mytool", label: "Minha Ferramenta", init: () => import("./mytool.js").then(m => m.init) }
-   ```
-3. Crie arquivo de dados JSON em `data/tools/mytool.json` se necessário.
-
----
-
-## 8. Adicionando Strings de UI
-
-Em `src/i18n.ts`, adicione a nova chave ao objeto `STRINGS` para `pt`, `en` e `es`:
-
-```typescript
-const STRINGS = {
-  pt: { ..., myKey: "Meu Texto" },
-  en: { ..., myKey: "My Text" },
-  es: { ..., myKey: "Mi Texto" },
-}
+```bash
+npx tsc
 ```
 
-Use com `t("myKey", state.settings.uiLang)`.
+Reads `tsconfig.json`. Compiles `src/**/*.ts` → `js/**/*.js`. No bundling.
+
+### 2. Version stamp
+
+```bash
+python3 scripts/version_js.py
+```
+
+1. Reads all `js/*.js` files.
+2. Computes MD5 hash; takes first 8 hex chars.
+3. Rewrites all `from "./X.js"` imports to `from "./X.js?v={hash}"` in every JS file.
+4. Updates `<script src="js/app.js?v={hash}">` in `index.html`.
+5. Updates `<link rel="stylesheet" href="css/style.css?v={hash}">` in `index.html`.
 
 ---
 
-## 9. Atualização do Service Worker
+## Tests
 
-Ao fazer push de novos ativos do corpus, incremente `CACHE_NAME` em `service-worker.js`:
+Tests live in `tests/unit/`. Run with Vitest (jsdom environment).
 
-```javascript
-const CACHE_NAME = 'abhidhamma-cache-v9';  // era v8
-```
+Test setup: `tests/setup/setup.ts` initializes the DOM from `tests/setup/dom.html` before each test.
 
-Isso invalida o cache do cliente e força nova instalação.
+### Test files
 
-**Nota:** Certifique-se de que `CORE_ASSETS` inclui os arquivos JS versionados (com sufixo `?v={hash}`) — veja BUG-001 nos docs de bugs.
+| File | What it tests |
+|---|---|
+| `app.test.ts` | Routing (parseHash), breadcrumb, panel switching |
+| `ontology.test.ts` | Citta, cetasika, sampayoga data integrity |
+| `formal_logic.test.ts` | KathāvatthuRule enum, evaluateCustomClaim branches |
+| `srs.test.ts` | SM-2 algorithm (sm2 function) |
+| `selection.test.ts` | normalizePali inflection rules |
+| `state.test.ts` | settings load/save, history dedup, bookmark toggle |
+| `tools.test.ts` | Tool module registration and tab switching |
+| `export.test.ts` | segToHtml, buildGlossaryHtml, buildZip/CRC32 |
+| `ui-export.test.ts` | initExportPanel rendering |
+| `ai-feature.test.ts` | CanonicalScenarios, evaluateScenario |
 
----
+### Coverage
 
-## 10. Estrutura de Diretórios do Código-Fonte
-
-```
-src/
-  app.ts              Ponto de entrada principal e roteamento
-  types.ts            Interfaces TypeScript compartilhadas
-  i18n.ts             Strings de UI trilíngues
-  state.ts            Persistência localStorage
-  logger.ts           Logger utilitário
-  reader.ts           Renderização de fragmentos/segmentos
-  dictionary.ts       Dicionário Pāli e normalização
-  search.ts           Busca por índice invertido
-  srs.ts              Repetição Espaçada (SM-2)
-  tree.ts             Árvore de navegação de obras
-  selection.ts        Popover de seleção de texto
-  export.ts           Exportação PDF/EPUB
-  tools/
-    tools.ts          Gerenciador de abas das ferramentas
-    mindmap.ts        Mapa mental SVG
-    patthana.ts       Visualização Paṭṭhāna
-    vithi.ts          Animação Citta-Vīthi
-    matikas.ts        Tríades/díades da Mātikā
-    cetasika.ts       Mapeamento Citta-Cetasika
-  ai-feature/
-    ui.ts             UI do Simulador de Debate
-    debate-scenarios.ts  Cenários canônicos
-  ontology/
-    kathavatthu_logic.ts  Motor lógico de debate
-```
+HTML coverage report is generated at `coverage/index.html`.
 
 ---
 
-## 11. Deploy
+## Adding New Content
 
-O projeto é hospedado como site de arquivos estáticos (GitHub Pages). `.nojekyll` na raiz desabilita o processamento Jekyll. O deploy é feito pelo script `deploy` (build + git push para a branch gh-pages ou main, dependendo da configuração do repositório).
+### New work
 
-Não há servidor backend; nenhuma variável de ambiente é necessária em runtime.
+1. Create `data/works/{workId}/` directory.
+2. Add chunk JSON files (`chunk_001.json`, ...) as `Segment[]`.
+3. Add the work to `data/manifest.json` under the appropriate group.
+4. Rebuild search index: `npm run rebuild-search`.
+
+### New i18n string
+
+1. Add key-value pair in all three language blocks in `src/i18n.ts`.
+2. Add `data-i18n="{key}"` attribute to the HTML element.
+3. `applyStaticI18n()` will pick it up on next render.
+
+### New tool tab
+
+1. Create `src/tools/myTool.ts`.
+2. At the end of the file, call `registerToolModule("myTool", initMyTool)`.
+3. Import the module in `src/app.ts`: `import "./tools/myTool.js"`.
+4. Add the tab definition in `TABS` array in `src/tools/tools.ts`.
+5. Add i18n keys `toolMyTool` in `src/i18n.ts`.
+
+---
+
+## Python Helper Scripts
+
+Located in `scripts/`:
+
+| Script | Purpose |
+|---|---|
+| `version_js.py` | Post-compile cache-busting hash |
+| `preparar_deploy.py` | Deploy preparation |
+| `integrate_books.py` | Ingest source books into data/ |
+| `build_search_index.py` | Build sharded search index from corpus |
+
+Root-level fix_*.py files are one-off patch scripts used during development; not part of the build pipeline.
+
+---
+
+## Debugging
+
+`logger.ts` exports `createLogger(name)` which returns a logger with `.info()`, `.warn()`, `.error()` methods. All log to `console` with the module name prefixed: `[app] ...`, `[reader] ...`, etc.
+
+To enable verbose logs, open DevTools → Console.
+
+---
+
+## Deployment
+
+The site deploys as a static directory. `.nojekyll` is present to prevent GitHub Pages from treating it as a Jekyll site. All compiled `js/` files and `data/` are committed to the repo.
+
+Service worker cache version (`CACHE_NAME`) must be bumped manually whenever cached assets change significantly.
+
+---
+
+## Code Style
+
+- TypeScript strict mode (`strict: true`)
+- No bundler — raw ES modules
+- No external UI framework — vanilla DOM APIs only
+- DOM creation via `document.createElement` (not innerHTML except for known-safe template content)
+- Inline styles used in some places (legacy; prefer CSS classes)

@@ -261,7 +261,7 @@ export function countLeeches(
   return n;
 }
 
-/** Inicializa silenciosamente a data-alvo do ritmo automático na primeira sessão (idempotente). */
+/** Silently initializes the target timestamp for automatic pacing on first session (idempotent). */
 export function ensurePaceTarget(config: AnkiConfig, nowMs = Date.now()): AnkiConfig {
   const normalized = normalizeAnkiConfig(config);
   if (!normalized.adaptivePace || normalized.paceTargetMs > 0) return normalized;
@@ -273,9 +273,9 @@ function toDayString(nowMs: number): string {
 }
 
 /**
- * Determina se uma carta já estudada está devida para revisão agora.
- * Para cartas em `review`, considera vencidas todas as agendadas para o dia corrente (rollover diário),
- * garantindo que nenhuma revisão pendente fique oculta até um horário tardio do dia.
+ * Determines whether a previously studied card is due for review now.
+ * For cards in `review`, considers all cards scheduled for the current day as due (daily rollover),
+ * ensuring no pending review remains hidden until late in the day.
  */
 export function isReviewDue(state: AnkiCardState | undefined, nowMs = Date.now()): boolean {
   if (!state || state.phase === "new") return false;
@@ -285,7 +285,7 @@ export function isReviewDue(state: AnkiCardState | undefined, nowMs = Date.now()
   return state.dueAt <= nowMs;
 }
 
-/** Conta cartas vencidas em aprendizado/revisão (medidor de carga diária). */
+/** Counts due cards in learning/review (daily workload meter). */
 export function countDueCards(
   cards: readonly AbhidhammaCard[],
   states: Readonly<Record<string, AnkiCardState>>,
@@ -299,12 +299,12 @@ export function countDueCards(
 }
 
 /**
- * Calcula a cota diária de cartas novas, rigorosamente limitada ao teto máximo de 12/dia.
- * - No modo manual (ou antes da inicialização da data-alvo): `config.newCardsPerDay` (≤ 12).
- * - No modo automático (30, 60 ou 90 dias): distribui as cartas novas restantes pelos dias ativos
- *   restantes com reserva final de consolidação (0d em 30d, 6d em 60d, 12d em 90d), freado
- *   automaticamente se houver acúmulo excessivo de revisões.
- * Soma cartas extras liberadas manualmente apenas para a data corrente, nunca excedendo 12/dia.
+ * Computes the daily quota of new cards, strictly capped at a maximum of 12/day.
+ * - In manual mode (or before target timestamp initialization): `config.newCardsPerDay` (≤ 12).
+ * - In automatic mode (30, 60, or 90 days): distributes remaining new cards across remaining active days
+ *   with a final consolidation reserve (0d in 30d, 6d in 60d, 12d in 90d), automatically throttled
+ *   if there is an excessive backlog of due reviews.
+ * Adds manually unlocked extra cards only for the current date, never exceeding 12/day.
  */
 export function computeDailyNewQuota(
   cards: readonly AbhidhammaCard[],
@@ -346,7 +346,7 @@ export function computeDailyNewQuota(
   return Math.min(MAX_NEW_CARDS_PER_DAY, base + extra);
 }
 
-/** Resumo em tempo real da trilha estruturada (30, 60 ou 90 dias) sobre todo o baralho. */
+/** Real-time summary of the structured track (30, 60, or 90 days) across the entire deck. */
 export function computePlan90Summary(
   cards: readonly AbhidhammaCard[],
   states: Readonly<Record<string, AnkiCardState>>,
@@ -400,7 +400,7 @@ export function computePlan90Summary(
 
 export const computePacePlanSummary = computePlan90Summary;
 
-/** Intercala revisões entre capítulos (round-robin), preservando a ordem interna de vencimento. */
+/** Interleaves reviews across chapters (round-robin), preserving internal due-date ordering. */
 export function interleaveByChapter<T extends { chapter: number }>(items: readonly T[]): T[] {
   const buckets = new Map<number, T[]>();
   for (const it of items) {
@@ -419,10 +419,10 @@ export function interleaveByChapter<T extends { chapter: number }>(items: readon
 }
 
 /**
- * Gera o cloze progressivo em 3 estágios para recitação verbatim do Pāli:
- * - Estágio 1: oculta palavras-chave de conteúdo (≥ 5 letras, alternadas), mantendo âncoras.
- * - Estágio 2: exibe apenas a letra inicial de cada palavra (preservando pontuação e `/`).
- * - Estágio 3: em branco (apenas a pista inicial de abertura e a contagem de palavras).
+ * Generates the 3-stage progressive cloze for verbatim Pāli recitation:
+ * - Stage 1: masks content keywords (≥ 5 letters, alternating), preserving anchor words.
+ * - Stage 2: displays only the initial letter of each word (preserving punctuation and `/`).
+ * - Stage 3: blank (only the opening cue and total word count).
  */
 export function buildProgressiveCloze(paliText: string, stage: 1 | 2 | 3): string {
   const tokens = paliText.split(/\s+/).filter(Boolean);
@@ -449,7 +449,7 @@ export function buildProgressiveCloze(paliText: string, stage: 1 | 2 | 3): strin
       .join(" ");
   }
 
-  // Estágio 1: oculta palavras de conteúdo (≥ 5 caracteres), mantendo a 1ª palavra e conectores curtos
+  // Stage 1: mask content words (≥ 5 characters), keeping the 1st word and short connectors
   let masked = 0;
   const out = tokens.map((tok, idx) => {
     if (tok === "/" || idx === 0) return tok;
@@ -461,7 +461,7 @@ export function buildProgressiveCloze(paliText: string, stage: 1 | 2 | 3): strin
     }
     return tok;
   });
-  // Garante pelo menos 1 lacuna mesmo em frases muito curtas
+  // Ensure at least 1 blank even in very short phrases
   if (masked === 0 && tokens.length > 1) {
     const lastIdx = tokens.length - 1;
     const trail = tokens[lastIdx]!.match(/[.,;:?!]+$/)?.[0] ?? "";
@@ -470,7 +470,7 @@ export function buildProgressiveCloze(paliText: string, stage: 1 | 2 | 3): strin
   return out.join(" ");
 }
 
-/** Determina o estágio automático de cloze progressivo a partir das repetições consolidadas. */
+/** Determines the automatic progressive cloze stage from consolidated repetitions. */
 export function defaultClozeStage(state: AnkiCardState | undefined): 1 | 2 | 3 {
   const reps = state?.reps ?? 0;
   if (reps <= 0) return 1;
@@ -479,14 +479,14 @@ export function defaultClozeStage(state: AnkiCardState | undefined): 1 | 2 | 3 {
 }
 
 /**
- * Motor Anki SM-2:
- * - `new` / `learning`: passos intra-sessão em minutos; `Easy` gradua imediatamente (4d);
- *   `Good` avança passos e gradua ao completar (1d); `Hard` repete / média dos dois primeiros passos;
- *   `Again` reinicia para o passo 0 (1 min).
- * - `review`: `Again` provoca lapso (lapses++, ease -0.20, intervalo reduzido para relearning);
- *   `Hard` multiplica por 1.2 e reduz ease em 0.15; `Good` multiplica por easeFactor;
- *   `Easy` multiplica por easeFactor * 1.3 e aumenta ease em 0.15.
- * - `relearning`: passos de re-aprendizagem; ao graduar retorna para `review` com `lapsedIntervalDays`.
+ * Anki SM-2 scheduling engine:
+ * - `new` / `learning`: intra-session steps in minutes; `Easy` graduates immediately (4d);
+ *   `Good` advances steps and graduates on completion (1d); `Hard` repeats / averages the first two steps;
+ *   `Again` resets to step 0 (1 min).
+ * - `review`: `Again` triggers a lapse (lapses++, ease -0.20, reduced interval entering relearning);
+ *   `Hard` multiplies by 1.2 and reduces ease by 0.15; `Good` multiplies by easeFactor;
+ *   `Easy` multiplies by easeFactor * 1.3 and increases ease by 0.15.
+ * - `relearning`: relearning steps; upon graduation returns to `review` with `lapsedIntervalDays`.
  */
 export function scheduleAnkiCard(
   prev: AnkiCardState,
@@ -588,8 +588,8 @@ export function scheduleAnkiCard(
       };
     }
 
-    // Revisão antecipada (vencimento em dia futuro): reforça a memória proporcionalmente ao tempo decorrido
-    // sem inflar artificialmente o intervalo SM-2.
+    // Early review (due on a future day): reinforces memory proportionally to elapsed time
+    // without artificially inflating the SM-2 interval.
     if (
       toDayString(prev.dueAt) > toDayString(nowMs) &&
       prev.dueAt > nowMs &&
@@ -777,8 +777,8 @@ export function previewAnkiIntervals(
 // ── Conditional Progression & Brick-to-House Unlocking ──────────────────────
 
 /**
- * Uma carta é empiricamente memorizada/consolidada quando graduou para a fase `review`
- * (ou seja, superou o ciclo inicial de aprendizado e não possui lapso pendente em `relearning`).
+ * A card is empirically memorized/consolidated when it has graduated to the `review` phase
+ * (i.e., completed the initial learning cycle and has no pending lapse in `relearning`).
  */
 export function isCardMemorized(state: AnkiCardState | undefined): boolean {
   return state !== undefined && state.phase === "review";
@@ -960,11 +960,11 @@ const TIER_ORDER: Record<AbhidhammaCard["tier"], number> = {
 };
 
 /**
- * Constrói a fila Anki respeitando:
- * 1) Cartas em `learning`/`relearning` vencidas (dueAt <= nowMs)
- * 2) Cartas de `review` vencidas (dueAt <= nowMs)
- * 3) Novas cartas desbloqueadas (átomos/tijolos -> estruturas -> casa), limitadas por cota diária
- * 4) Learn-ahead para cartas em aprendizado dentro da janela de sessão caso nada mais esteja devido
+ * Builds the Anki study queue respecting:
+ * 1) Due `learning`/`relearning` cards (dueAt <= nowMs)
+ * 2) Due `review` cards (dueAt <= nowMs)
+ * 3) Unlocked new cards (atoms/bricks -> structures -> house), capped by the daily quota
+ * 4) Learn-ahead for in-progress learning cards within the session window if nothing else is due
  */
 export function buildStudyQueue(
   chapters: readonly AbhidhammaChapterMeta[],
@@ -1009,7 +1009,7 @@ export function buildStudyQueue(
 
     const st = states[card.id];
     if (filterMode === "leeches") {
-      // No modo sanguessugas, permite revisar imediatamente mesmo fora do vencimento
+      // In leeches mode, allow immediate review even if not yet due
       dueReview.push({ card, dueAt: st?.dueAt ?? nowMs });
       continue;
     }
@@ -1065,8 +1065,8 @@ export function buildStudyQueue(
 }
 
 /**
- * Seleciona cartas já estudadas para revisão máxima/antecipada (sem teto artificial por padrão),
- * priorizando as mais frágeis (menor ease / mais lapsos) e mais próximas do vencimento, intercaladas por capítulo.
+ * Selects previously studied cards for maximum/early review (without artificial cap by default),
+ * prioritizing the most fragile cards (lowest ease / most lapses) and closest to due date, interleaved by chapter.
  */
 export function buildEarlyReviewQueue(
   chapters: readonly AbhidhammaChapterMeta[],
@@ -1085,7 +1085,7 @@ export function buildEarlyReviewQueue(
     if (!prog || !prog.unlocked) continue;
     const st = states[card.id];
     if (!st || st.phase === "new") continue;
-    // Prioridade: learning/relearning pendentes primeiro, depois cartas frágeis e próximas de vencer
+    // Priority: pending learning/relearning first, then fragile cards and cards closest to due date
     const daysUntilDue = Math.max(0, (st.dueAt - nowMs) / DAY_MS);
     const fragility = (3 - st.easeFactor) * 4 + st.lapses * 2;
     const score = (st.phase === "review" ? 10 : 0) + daysUntilDue - fragility;
@@ -1097,8 +1097,8 @@ export function buildEarlyReviewQueue(
 }
 
 /**
- * Calcula um lote extra após a dose do dia, respeitando estritamente o teto máximo de 12 novas/dia
- * e liberando o MÁXIMO de revisões (todas as cartas já estudadas no escopo) para retenção total.
+ * Computes an extra batch after today's dose, strictly respecting the maximum cap of 12 new cards/day
+ * and unlocking MAXIMUM reviews (all previously studied cards in scope) for full retention.
  */
 export function computeProportionalExtraBatch(
   chapters: readonly AbhidhammaChapterMeta[],
@@ -1135,7 +1135,7 @@ export function computeProportionalExtraBatch(
     }
   }
 
-  // Respeita estritamente o teto máximo de 12 novas/dia; o restante é 100% revisão máxima.
+  // Strictly respects the maximum cap of 12 new cards/day; the remainder is 100% maximum review.
   const remainingCapToday = Math.max(0, MAX_NEW_CARDS_PER_DAY - (stats?.newStudiedToday ?? 0));
   const extraNew =
     unlockedNew === 0 || remainingCapToday === 0

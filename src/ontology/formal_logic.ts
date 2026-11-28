@@ -65,7 +65,7 @@ export class Proposition {
 }
 
 /**
- * The Finitist Universe Engine (Motor Lógico Finitista e Completo)
+ * The Finitist Universe Engine (Complete Finitist Logical Engine)
  * It contains the finite set of ALL Paramattha Dhammas.
  * Any question outside this set is either a conventional truth (Sammuti) or a fallacy.
  */

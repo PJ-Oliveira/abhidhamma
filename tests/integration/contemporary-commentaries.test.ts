@@ -119,7 +119,7 @@ describe("Contemporary Commentaries — Full Integration (3 New Works & 5 Versio
         "es",
       ]);
 
-      // 1. Inglês (Original formatado)
+      // 1. English (Formatted original)
       document.querySelector<HTMLElement>('#part-tabs .version-tab[data-version-mode="en"]')!.click();
       let firstSeg = document.querySelector("#content .seg")!;
       expect(firstSeg.classList.contains("no-translation")).toBe(true);
@@ -128,7 +128,7 @@ describe("Contemporary Commentaries — Full Integration (3 New Works & 5 Versio
       expect((document.getElementById("setting-show-pali") as HTMLInputElement).checked).toBe(true);
       expect((document.getElementById("setting-show-translation") as HTMLInputElement).checked).toBe(false);
 
-      // 2. Bilíngue: Inglês – Português
+      // 2. Bilingual: English – Portuguese
       document.querySelector<HTMLElement>('#part-tabs .version-tab[data-version-mode="en+pt"]')!.click();
       firstSeg = document.querySelector("#content .seg")!;
       expect(firstSeg.classList.contains("no-pali")).toBe(false);
@@ -136,13 +136,13 @@ describe("Contemporary Commentaries — Full Integration (3 New Works & 5 Versio
       expect(firstSeg.querySelector(".pali-line")?.textContent).toContain(book.enTitle);
       expect(firstSeg.querySelector(".translation-line")?.textContent).toContain(book.ptTitle);
 
-      // 3. Bilíngue: Inglês – Espanhol
+      // 3. Bilingual: English – Spanish
       document.querySelector<HTMLElement>('#part-tabs .version-tab[data-version-mode="en+es"]')!.click();
       firstSeg = document.querySelector("#content .seg")!;
       expect(firstSeg.querySelector(".pali-line")?.textContent).toContain(book.enTitle);
       expect(firstSeg.querySelector(".translation-line")?.textContent).toContain(book.esTitle);
 
-      // 4. Português (Monolíngue)
+      // 4. Portuguese (Monolingual)
       document.querySelector<HTMLElement>('#part-tabs .version-tab[data-version-mode="pt"]')!.click();
       firstSeg = document.querySelector("#content .seg")!;
       expect(firstSeg.classList.contains("no-pali")).toBe(true);
@@ -152,7 +152,7 @@ describe("Contemporary Commentaries — Full Integration (3 New Works & 5 Versio
       expect((document.getElementById("setting-show-pali") as HTMLInputElement).checked).toBe(false);
       expect((document.getElementById("setting-show-translation") as HTMLInputElement).checked).toBe(true);
 
-      // 5. Espanhol (Monolíngue)
+      // 5. Spanish (Monolingual)
       document.querySelector<HTMLElement>('#part-tabs .version-tab[data-version-mode="es"]')!.click();
       firstSeg = document.querySelector("#content .seg")!;
       expect(firstSeg.classList.contains("no-pali")).toBe(true);

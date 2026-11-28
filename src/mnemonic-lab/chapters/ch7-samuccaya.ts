@@ -1,17 +1,17 @@
 // ============================================================================
-// CAPÍTULO 7 — SAMUCCAYASAṄGAHA: REDUÇÕES NOMINAL → VATTHUTO (AS VII.1–53)
+// CHAPTER 7 — SAMUCCAYASAṄGAHA: NOMINAL → VATTHUTO REDUCTIONS (AS VII.1–53)
 // ============================================================================
-// 1. Akusala-saṅgaha: 9 grupos + Saṃyojana Suttanta & Abhidhamma (10 itens)
-// 2. Missaka-saṅgaha: 7 grupos + leis de exclusão (8 itens)
-// 3. Bodhipakkhiya: 7 grupos (37) + 14 sabhāva-dhammas (9×1+9+8+5+4+2=37) (21 itens)
-// 4. Sabba-saṅgaha: 5 grupos + Dhammāyatana (69) + exclusões das 4 Verdades (7 itens)
-// Total: 46 itens 100% fiéis ao mūla (AS VII.1–53).
+// 1. Akusala-saṅgaha: 9 groups + Suttanta & Abhidhamma Saṃyojana (10 items)
+// 2. Missaka-saṅgaha: 7 groups + exclusion laws (8 items)
+// 3. Bodhipakkhiya: 7 groups (37) + 14 sabhāva-dhammas (9×1+9+8+5+4+2=37) (21 items)
+// 4. Sabba-saṅgaha: 5 groups + Dhammāyatana (69) + 4 Truths exclusions (7 items)
+// Total: 46 items 100% faithful to the mūla (AS VII.1–53).
 // ============================================================================
 
 import type { NaryChallengeItem } from "../nary-chapters-data.js";
 
 export const CHAPTER_7_SAMUCCAYA_ITEMS: readonly NaryChallengeItem[] = [
-  // ── 1. AKUSALA-SAṄGAHA (9 GRUPOS + DUAL SAṂYOJANA — AS VII.3–14) ────────
+  // ── 1. AKUSALA-SAṄGAHA (9 GROUPS + DUAL SAṂYOJANA — AS VII.3–14) ────────
   {
     id: "sam:aku:1", chapter: 7, submatrix: "akusala_9", asRef: "AS VII.3, 14", code: "Sam-Ak1",
     pali: "Cattāro Āsavā (4 → 3 Vatthuto)",
@@ -93,7 +93,7 @@ export const CHAPTER_7_SAMUCCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { compendium: "akusala_9", group: "kilesa", vatthuto: 10 },
   },
 
-  // ── 2. MISSAKA-SAṄGAHA (7 GRUPOS + LEIS DE EXCLUSÃO — AS VII.15–29) ─────
+  // ── 2. MISSAKA-SAṄGAHA (7 GROUPS + EXCLUSION LAWS — AS VII.15–29) ───────
   {
     id: "sam:mis:1", chapter: 7, submatrix: "missaka_7", asRef: "AS VII.15, 29", code: "Sam-Mi1",
     pali: "Cha Hetū (6 → 6 Vatthuto)",
@@ -159,7 +159,7 @@ export const CHAPTER_7_SAMUCCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { compendium: "missaka_7", group: "missaka_laws", vatthuto: 5 },
   },
 
-  // ── 3A. BODHIPAKKHIYA: OS 7 GRUPOS (4+4+4+5+5+7+8 = 37 — AS VII.30–36) ──
+  // ── 3A. BODHIPAKKHIYA: THE 7 GROUPS (4+4+4+5+5+7+8 = 37 — AS VII.30–36) ─
   {
     id: "sam:bod:g1", chapter: 7, submatrix: "bodhipakkhiya_21", asRef: "AS VII.30, 37", code: "Bod-G1",
     pali: "Cattāro Satipaṭṭhānā (4)",
@@ -217,7 +217,7 @@ export const CHAPTER_7_SAMUCCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { compendium: "bodhipakkhiya_21", bodhiMode: "groups", item: "magganga", count: 8 },
   },
 
-  // ── 3B. OS 14 SABHĀVA-DHAMMAS DOS 37 BODHIPAKKHIYAS & SEUS ṬHĀNAS (AS VII.39–40)
+  // ── 3B. THE 14 SABHĀVA-DHAMMAS OF THE 37 BODHIPAKKHIYAS & THEIR ṬHĀNAS (AS VII.39–40)
   {
     id: "sam:bod:s1", chapter: 7, submatrix: "bodhipakkhiya_21", asRef: "AS VII.39–40", code: "Bod-S01",
     pali: "Vīriya (9 Ṭhāna)",
@@ -332,7 +332,7 @@ export const CHAPTER_7_SAMUCCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { compendium: "bodhipakkhiya_21", bodhiMode: "sabhava14", item: "sb_ajiva", count: 1 },
   },
 
-  // ── 4. SABBA-SAṄGAHA (5 GRUPOS + REDUÇÕES CANÔNICAS — AS VII.42–53) ─────
+  // ── 4. SABBA-SAṄGAHA (5 GROUPS + CANONICAL REDUCTIONS — AS VII.42–53) ───
   {
     id: "sam:sab:1", chapter: 7, submatrix: "sabba_7", asRef: "AS VII.42, 49–50", code: "Sab-01",
     pali: "Pañca Khandhā (5)",

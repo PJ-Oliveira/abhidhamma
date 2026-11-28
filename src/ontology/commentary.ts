@@ -33,8 +33,8 @@ export const AtthakathaOntology: Record<string, CommentaryContext> = {
 };
 
 /**
- * Função utilitária para buscar a explicação canônica de por que uma heresia foi refutada,
- * baseando-se estritamente no Aṭṭhakathā e na Anuṭīkā.
+ * Utility function to retrieve the canonical explanation of why a thesis was refuted,
+ * strictly grounded in the Aṭṭhakathā and Anuṭīkā.
  */
 export function getCommentaryExplanation(subject: string, defeatType: Niggahatthana): string {
     const context = AtthakathaOntology[subject.toLowerCase()];

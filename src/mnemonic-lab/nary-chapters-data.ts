@@ -1,8 +1,8 @@
 // ============================================================================
-// ABHIDHAMMATTHASAṄGAHA MŪLA — BANCO DE DADOS DOS 9 CAPÍTULOS CANÔNICOS (NAVA PARICCHEDĀ)
+// ABHIDHAMMATTHASAṄGAHA MŪLA — DATABASE OF THE 9 CANONICAL CHAPTERS (NAVA PARICCHEDĀ)
 // ============================================================================
-// Estrutura canônica 100% fiel ao texto raiz de Ācariya Anuruddha.
-// Alimenta o jogo Challenge N-ary Decoder para todos os 9 capítulos.
+// Canonical structure 100% faithful to Ācariya Anuruddha's root text.
+// Powers the N-ary Decoder Challenge across all 9 chapters.
 // ============================================================================
 
 import type { UiLang } from "../types.js";
@@ -230,7 +230,7 @@ export const CANONICAL_CHAPTERS_META: readonly CanonicalChapterMeta[] = [
 ];
 
 // ============================================================================
-// ESTRUTURA GENÉRICA DE ITEM PARA O CHALLENGE N-ARY DECODER
+// GENERIC ITEM STRUCTURE FOR THE N-ARY DECODER CHALLENGE
 // ============================================================================
 
 export interface NarySubmatrixMeta {
@@ -258,7 +258,7 @@ export interface NaryChallengeItem {
 }
 
 export const CANONICAL_SUBMATRICES: readonly NarySubmatrixMeta[] = [
-  // ── Cap. 2: Matriz Bipartida 52 × 121 (Sampayoga-naya + Saṅgaha-naya) ──
+  // ── Ch. 2: 52 × 121 Bipartite Matrix (Sampayoga-naya + Saṅgaha-naya) ──
   {
     id: "sampayoga_52",
     chapter: 2,
@@ -307,7 +307,7 @@ export const CANONICAL_SUBMATRICES: readonly NarySubmatrixMeta[] = [
     },
     defaultSwitches: { lens: "laws", lawGroup: "sampayoga_marks4", slot: 1, metric: 4 },
   },
-  // ── Cap. 3: As 6 Partições Exatas de Pakiṇṇaka (AS III.1–74) ──
+  // ── Ch. 3: The 6 Exact Partitions of Pakiṇṇaka (AS III.1–74) ──
   {
     id: "vedana",
     chapter: 3,
@@ -380,7 +380,7 @@ export const CANONICAL_SUBMATRICES: readonly NarySubmatrixMeta[] = [
     },
     defaultSwitches: { category: "vatthu", item: "nissaya", count: 43 },
   },
-  // ── Cap. 4: Vīthisaṅgaha (AS IV.1–55) ──
+  // ── Ch. 4: Vīthisaṅgaha (AS IV.1–55) ──
   {
     id: "chakka_6",
     chapter: 4,
@@ -441,7 +441,7 @@ export const CANONICAL_SUBMATRICES: readonly NarySubmatrixMeta[] = [
     },
     defaultSwitches: { door: "puggala_bhumi", vara: "bhu_kama", vithicittas: 80 },
   },
-  // ── Cap. 5: Vīthimuttasaṅgaha (AS V.1–102) ──
+  // ── Ch. 5: Vīthimuttasaṅgaha (AS V.1–102) ──
   {
     id: "bhumi_31",
     chapter: 5,
@@ -502,7 +502,7 @@ export const CANONICAL_SUBMATRICES: readonly NarySubmatrixMeta[] = [
     },
     defaultSwitches: { tetrad: "marana_cuti", mGroup: "marana_4", subtype: "ayukkhaya", rule: "wick_ends" },
   },
-  // ── Cap. 6: Rūpasaṅgaha & Nibbāna (AS VI.1–65) ──
+  // ── Ch. 6: Rūpasaṅgaha & Nibbāna (AS VI.1–65) ──
   {
     id: "rupa_28",
     chapter: 6,
@@ -563,7 +563,7 @@ export const CANONICAL_SUBMATRICES: readonly NarySubmatrixMeta[] = [
     },
     defaultSwitches: { section: "rupa_laws", law: "univ_8", value: 8 },
   },
-  // ── Cap. 7: Samuccayasaṅgaha (AS VII.1–53) ──
+  // ── Ch. 7: Samuccayasaṅgaha (AS VII.1–53) ──
   {
     id: "akusala_9",
     chapter: 7,
@@ -660,7 +660,7 @@ export const CANONICAL_SUBMATRICES: readonly NarySubmatrixMeta[] = [
     },
     defaultSwitches: { compendium: "sabba_members", sbSet: "khandha5", slot: 1, paramatthaMap: "rupa_28" },
   },
-  // ── Cap. 8: Paccayasaṅgaha (AS VIII.1–43) ──
+  // ── Ch. 8: Paccayasaṅgaha (AS VIII.1–43) ──
   {
     id: "paticcasamuppada",
     chapter: 8,
@@ -709,7 +709,7 @@ export const CANONICAL_SUBMATRICES: readonly NarySubmatrixMeta[] = [
     },
     defaultSwitches: { method: "patthana_submodes", subGroup: "paccaya_modes", topic: "sub_upanissaya", modes: 3 },
   },
-  // ── Cap. 9: Kammaṭṭhānasaṅgaha (AS IX.1–75) ──
+  // ── Ch. 9: Kammaṭṭhānasaṅgaha (AS IX.1–75) ──
   {
     id: "samatha_40",
     chapter: 9,
@@ -776,10 +776,10 @@ export function getSubmatricesForChapter(chapterNum: CanonicalChapterNum): reado
   return CANONICAL_SUBMATRICES.filter((sm) => sm.chapter === chapterNum);
 }
 
-// ── CAPÍTULO 2: OS 52 CETASIKAS (SAMPAYOGA) + 33 CLASSES (SAṄGAHA) ──────────
+// ── CHAPTER 2: THE 52 CETASIKAS (SAMPAYOGA) + 33 CLASSES (SAṄGAHA) ──────────
 
 const CHAPTER_2_CETASIKAS_52: readonly NaryChallengeItem[] = [
-  // 7 Sabbacitta-sādhāraṇa (Universalmente presentes em todas as 89/121 Cittas)
+  // 7 Sabbacitta-sādhāraṇa (Universally present in all 89/121 Cittas)
   {
     id: "cet:1",
     chapter: 2,
@@ -893,7 +893,7 @@ const CHAPTER_2_CETASIKAS_52: readonly NaryChallengeItem[] = [
     switches: { group: "aññasamana", sub: "sabbacitta", slot: 7, sampayoga: 121 },
   },
 
-  // 6 Pakiṇṇaka (Particulares — surgem tanto no bem quanto no mal, mas apenas em certas cittas)
+  // 6 Pakiṇṇaka (Particulars — arise in both wholesome and unwholesome states, but only in certain cittas)
   {
     id: "cet:8",
     chapter: 2,
@@ -991,7 +991,7 @@ const CHAPTER_2_CETASIKAS_52: readonly NaryChallengeItem[] = [
     switches: { group: "aññasamana", sub: "pakinnaka", slot: 6, sampayoga: 101 },
   },
 
-  // 14 Akusala (Fatores Mentais Prejudiciais)
+  // 14 Akusala (Unwholesome Mental Factors)
   {
     id: "cet:14",
     chapter: 2,
@@ -1217,7 +1217,7 @@ const CHAPTER_2_CETASIKAS_52: readonly NaryChallengeItem[] = [
     switches: { group: "akusala", sub: "vicikiccha", slot: 1, sampayoga: 1 },
   },
 
-  // 19 Sobhanasādhāraṇa (Universalmente Belos — presentes em todas as 59/91 Cittas Belas)
+  // 19 Sobhanasādhāraṇa (Universal Beautiful — present in all 59/91 Beautiful Cittas)
   {
     id: "cet:28",
     chapter: 2,
@@ -1330,7 +1330,7 @@ const CHAPTER_2_CETASIKAS_52: readonly NaryChallengeItem[] = [
     secondaryGroup: "sobhana_sadharana",
     switches: { group: "sobhana", sub: "sadharana", slot: 7, sampayoga: 91 },
   },
-  // Pares gêmeos de Passaddhi, Lahutā, Mudutā, Kammaññatā, Pāguññatā, Ujukatā (Cetasikas 35–46)
+  // Twin pairs of Passaddhi, Lahutā, Mudutā, Kammaññatā, Pāguññatā, Ujukatā (Cetasikas 35–46)
   {
     id: "cet:35",
     chapter: 2,
@@ -1524,7 +1524,7 @@ const CHAPTER_2_CETASIKAS_52: readonly NaryChallengeItem[] = [
     switches: { group: "sobhana", sub: "sadharana", slot: 19, sampayoga: 91 },
   },
 
-  // 3 Virati (Abstenções Éticas)
+  // 3 Virati (Ethical Abstinences)
   {
     id: "cet:47",
     chapter: 2,
@@ -1574,7 +1574,7 @@ const CHAPTER_2_CETASIKAS_52: readonly NaryChallengeItem[] = [
     switches: { group: "sobhana", sub: "virati", slot: 3, sampayoga: 48 },
   },
 
-  // 2 Appamaññā (Incomensuráveis)
+  // 2 Appamaññā (Illimitables)
   {
     id: "cet:50",
     chapter: 2,
@@ -1658,56 +1658,56 @@ export const CHAPTER_2_ITEMS: readonly NaryChallengeItem[] = [
   ...CHAPTER_2_LAWS_ITEMS,
 ];
 
-// ── CAPÍTULO 3: PAKIṆṆAKA (AS 6 CATEGORIAS MISTAS — AS III.1–74) ─────────────
+// ── CHAPTER 3: PAKIṆṆAKA (THE 6 MISCELLANEOUS CATEGORIES — AS III.1–74) ─────
 
 export const CHAPTER_3_ITEMS: readonly NaryChallengeItem[] = [
   ...CHAPTER_3_PAKINNAKA_ITEMS,
   ...CHAPTER_3_SUPPLEMENT_ITEMS,
 ];
 
-// ── CAPÍTULO 4: VĪTHISAṄGAHA (OS PROCESSOS COGNITIVOS — AS IV.1–55) ─────────
+// ── CHAPTER 4: VĪTHISAṄGAHA (THE COGNITIVE PROCESSES — AS IV.1–55) ──────────
 
 export const CHAPTER_4_ITEMS: readonly NaryChallengeItem[] = [
   ...CHAPTER_4_VITHI_ITEMS,
   ...CHAPTER_4_SUPPLEMENT_ITEMS,
 ];
 
-// ── CAPÍTULO 5: VĪTHIMUTTASAṄGAHA (AS 4 TÉTRADES COMPLETAS — AS V.1–102) ────
+// ── CHAPTER 5: VĪTHIMUTTASAṄGAHA (THE 4 COMPLETE TETRADS — AS V.1–102) ──────
 
 export const CHAPTER_5_ITEMS: readonly NaryChallengeItem[] = [
   ...CHAPTER_5_VITHIMUTTA_ITEMS,
   ...CHAPTER_5_SUPPLEMENT_ITEMS,
 ];
 
-// ── CAPÍTULO 6: RŪPASAṄGAHA & NIBBĀNA (28 RŪPAS · 21 KALĀPAS — AS VI.1–65) ──
+// ── CHAPTER 6: RŪPASAṄGAHA & NIBBĀNA (28 RŪPAS · 21 KALĀPAS — AS VI.1–65) ──
 
 export const CHAPTER_6_ITEMS: readonly NaryChallengeItem[] = [
   ...CHAPTER_6_RUPA_ITEMS,
   ...CHAPTER_6_SUPPLEMENT_ITEMS,
 ];
 
-// ── CAPÍTULO 7: SAMUCCAYASAṄGAHA (4 COMPÊNDIOS + EXPANSÃO GRANULAR — AS VII.1–53)
+// ── CHAPTER 7: SAMUCCAYASAṄGAHA (4 COMPENDIA + GRANULAR EXPANSION — AS VII.1–53)
 
 export const CHAPTER_7_ITEMS: readonly NaryChallengeItem[] = [
   ...CHAPTER_7_SAMUCCAYA_ITEMS,
   ...CHAPTER_7_GRANULAR_ITEMS,
 ];
 
-// ── CAPÍTULO 8: PACCAYASAṄGAHA (PAṬICCASAMUPPĀDA, 24 PAṬṬHĀNA & PAÑÑATTI — AS VIII.1–43)
+// ── CHAPTER 8: PACCAYASAṄGAHA (PAṬICCASAMUPPĀDA, 24 PAṬṬHĀNA & PAÑÑATTI — AS VIII.1–43)
 
 export const CHAPTER_8_ITEMS: readonly NaryChallengeItem[] = [
   ...CHAPTER_8_PACCAYA_ITEMS,
   ...CHAPTER_8_SUPPLEMENT_ITEMS,
 ];
 
-// ── CAPÍTULO 9: KAMMAṬṬHĀNASAṄGAHA (40 SAMATHA · CARITA · VISUDDHI · ÑĀṆA — AS IX.1–75)
+// ── CHAPTER 9: KAMMAṬṬHĀNASAṄGAHA (40 SAMATHA · CARITA · VISUDDHI · ÑĀṆA — AS IX.1–75)
 
 export const CHAPTER_9_ITEMS: readonly NaryChallengeItem[] = [
   ...CHAPTER_9_KAMMATTHANA_ITEMS,
   ...CHAPTER_9_SUPPLEMENT_ITEMS,
 ];
 
-// Dicionário unificado de itens de todos os capítulos não-citta
+// Unified dictionary of items across all non-citta chapters
 export const ALL_NARY_CHAPTER_ITEMS: readonly NaryChallengeItem[] = [
   ...CHAPTER_2_ITEMS,
   ...CHAPTER_3_ITEMS,

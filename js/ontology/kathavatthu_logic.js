@@ -116,8 +116,8 @@ export function evaluateCustomClaim(claimText) {
         detailedSyllogismBreakdown: 'Please provide a clearer proposition (e.g., "The soul transmigrates" or "Time is absolute").'
     };
 }
-import { CanonicalScenarios } from '../ai-feature/debate-scenarios.js?v=06b4ea02';
-import { AtthakathaOntology } from './commentary.js?v=06b4ea02';
+import { CanonicalScenarios } from '../ai-feature/debate-scenarios.js?v=ed8676ed';
+import { AtthakathaOntology } from './commentary.js?v=ed8676ed';
 export function evaluateScenario(scenarioId, lang = 'en') {
     const scenario = CanonicalScenarios.find(s => s.id === scenarioId);
     if (!scenario)

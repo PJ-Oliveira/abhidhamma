@@ -1,7 +1,7 @@
-import { t } from '../i18n.js?v=06b4ea02';
-import { settings } from '../state.js?v=06b4ea02';
-import { CanonicalScenarios } from './debate-scenarios.js?v=06b4ea02';
-import { evaluateScenario } from '../ontology/kathavatthu_logic.js?v=06b4ea02';
+import { t } from '../i18n.js?v=ed8676ed';
+import { settings } from '../state.js?v=ed8676ed';
+import { CanonicalScenarios } from './debate-scenarios.js?v=ed8676ed';
+import { evaluateScenario } from '../ontology/kathavatthu_logic.js?v=ed8676ed';
 let isListenerAdded = false;
 let activeContainer = null;
 let pendingTimer = null;

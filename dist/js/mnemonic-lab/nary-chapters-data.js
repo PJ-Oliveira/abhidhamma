@@ -1,14 +1,14 @@
-import { CHAPTER_2_SANGAHA_33_ITEMS } from "./chapters/ch2-sangaha.js?v=06b4ea02";
-import { CHAPTER_2_LAWS_ITEMS } from "./chapters/ch2-laws.js?v=06b4ea02";
-import { CHAPTER_3_PAKINNAKA_ITEMS } from "./chapters/ch3-pakinnaka.js?v=06b4ea02";
-import { CHAPTER_4_VITHI_ITEMS } from "./chapters/ch4-vithi.js?v=06b4ea02";
-import { CHAPTER_5_VITHIMUTTA_ITEMS } from "./chapters/ch5-vithimutta.js?v=06b4ea02";
-import { CHAPTER_6_RUPA_ITEMS } from "./chapters/ch6-rupa.js?v=06b4ea02";
-import { CHAPTER_7_SAMUCCAYA_ITEMS } from "./chapters/ch7-samuccaya.js?v=06b4ea02";
-import { CHAPTER_7_GRANULAR_ITEMS } from "./chapters/ch7-granular.js?v=06b4ea02";
-import { CHAPTER_8_PACCAYA_ITEMS } from "./chapters/ch8-paccaya.js?v=06b4ea02";
-import { CHAPTER_9_KAMMATTHANA_ITEMS } from "./chapters/ch9-kammatthana.js?v=06b4ea02";
-import { CHAPTER_3_SUPPLEMENT_ITEMS, CHAPTER_4_SUPPLEMENT_ITEMS, CHAPTER_5_SUPPLEMENT_ITEMS, CHAPTER_6_SUPPLEMENT_ITEMS, CHAPTER_8_SUPPLEMENT_ITEMS, CHAPTER_9_SUPPLEMENT_ITEMS, } from "./chapters/mula-supplements.js?v=06b4ea02";
+import { CHAPTER_2_SANGAHA_33_ITEMS } from "./chapters/ch2-sangaha.js?v=ed8676ed";
+import { CHAPTER_2_LAWS_ITEMS } from "./chapters/ch2-laws.js?v=ed8676ed";
+import { CHAPTER_3_PAKINNAKA_ITEMS } from "./chapters/ch3-pakinnaka.js?v=ed8676ed";
+import { CHAPTER_4_VITHI_ITEMS } from "./chapters/ch4-vithi.js?v=ed8676ed";
+import { CHAPTER_5_VITHIMUTTA_ITEMS } from "./chapters/ch5-vithimutta.js?v=ed8676ed";
+import { CHAPTER_6_RUPA_ITEMS } from "./chapters/ch6-rupa.js?v=ed8676ed";
+import { CHAPTER_7_SAMUCCAYA_ITEMS } from "./chapters/ch7-samuccaya.js?v=ed8676ed";
+import { CHAPTER_7_GRANULAR_ITEMS } from "./chapters/ch7-granular.js?v=ed8676ed";
+import { CHAPTER_8_PACCAYA_ITEMS } from "./chapters/ch8-paccaya.js?v=ed8676ed";
+import { CHAPTER_9_KAMMATTHANA_ITEMS } from "./chapters/ch9-kammatthana.js?v=ed8676ed";
+import { CHAPTER_3_SUPPLEMENT_ITEMS, CHAPTER_4_SUPPLEMENT_ITEMS, CHAPTER_5_SUPPLEMENT_ITEMS, CHAPTER_6_SUPPLEMENT_ITEMS, CHAPTER_8_SUPPLEMENT_ITEMS, CHAPTER_9_SUPPLEMENT_ITEMS, } from "./chapters/mula-supplements.js?v=ed8676ed";
 export const CANONICAL_CHAPTERS_META = [
     {
         num: 1,

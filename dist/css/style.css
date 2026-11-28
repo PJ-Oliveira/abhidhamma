@@ -22,7 +22,7 @@
   --accent-soft: #e6cead;
   --translation-bar: #5a7a5f;
 
-  /* dimensões fluidas: escalam com a viewport, sem quebrar em faixas fixas */
+  /* fluid dimensions: scale smoothly with the viewport without rigid fixed bands */
   --rail-w: clamp(64px, 7.5vw, 82px);
   --panel-w: clamp(240px, 30vw, 320px);
   --pad-sm: clamp(10px, 2vw, 16px);
@@ -1653,7 +1653,7 @@ details[open] > summary::before { transform: rotate(90deg); }
   background: var(--accent-soft);
 }
 
-/* Modo Expandido Modal / Main Viewport */
+/* Expanded Modal / Main Viewport Mode */
 .tetris-widget.tetris-expanded {
   position: fixed;
   top: 0;
@@ -3182,7 +3182,7 @@ details[open] > summary::before { transform: rotate(90deg); }
 }
 
 /* ============================================================================
-   LABORATÓRIO MNÊMICO (Binary Decompressor · Periodic Table 72 · Phalanx Abacus)
+   MNEMONIC LABORATORY (Binary Decompressor · Periodic Table 72 · Phalanx Abacus)
    ============================================================================ */
 
 #srs-mnemonic-main {

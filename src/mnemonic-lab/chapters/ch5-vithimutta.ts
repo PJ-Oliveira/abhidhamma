@@ -1,18 +1,18 @@
 // ============================================================================
-// CAPÍTULO 5 — VĪTHIMUTTASAṄGAHA: AS 4 TÉTRADES COMPLETAS (AS V.1–102)
+// CHAPTER 5 — VĪTHIMUTTASAṄGAHA: THE 4 COMPLETE TETRADS (AS V.1–102)
 // ============================================================================
-// 1. 31 Planos & Progressões Geométricas de Longevidade (4+7+16+4 = 31)
-// 2. 4 Paṭisandhis & Leis de Objeto (4+3 = 7)
-// 3. Matriz 4×4 de Kamma & 4 Leis de Maturação (16+4 = 20)
-// 4. 10 Akusala-kammapathas (Porta × Raiz) & 10 Puññakiriyavatthus (10+10 = 20)
-// 5. 4 Maraṇuppattis, 3 Signos da Morte & Matriz Cuti → Paṭisandhi (4+3+4 = 11)
-// Total: 89 itens 100% fiéis ao mūla (AS V.1–102).
+// 1. 31 Planes & Geometric Lifespan Progressions (4+7+16+4 = 31)
+// 2. 4 Paṭisandhis & Object Laws (4+3 = 7)
+// 3. 4×4 Kamma Matrix & 4 Ripening Laws (16+4 = 20)
+// 4. 10 Akusala-kammapathas (Door × Root) & 10 Puññakiriyavatthus (10+10 = 20)
+// 5. 4 Maraṇuppattis, 3 Signs at Death & Cuti → Paṭisandhi Matrix (4+3+4 = 11)
+// Total: 89 items 100% faithful to the mūla (AS V.1–102).
 // ============================================================================
 
 import type { NaryChallengeItem } from "../nary-chapters-data.js";
 
 export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
-  // ── 1A. APĀYABHŪMI (4 PLANOS DE PRIVAÇÃO — AS V.4, 14, 21) ──────────────
+  // ── 1A. APĀYABHŪMI (4 WOEFUL PLANES — AS V.4, 14, 21) ───────────────────
   {
     id: "mut:b31:1",
     chapter: 5,
@@ -82,7 +82,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { tetrad: "bhumi_31", planeGroup: "apaya", slot: 4, lifespan: "unfixed" },
   },
 
-  // ── 1B. KĀMASUGATIBHŪMI (7 PLANOS VENTUROSOS — AS V.5, 21–23: ×4^k) ─────
+  // ── 1B. KĀMASUGATIBHŪMI (7 SENSUOUS BLISSFUL PLANES — AS V.5, 21–23: ×4^k)
   {
     id: "mut:b31:5",
     chapter: 5,
@@ -203,7 +203,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { tetrad: "bhumi_31", planeGroup: "kamasugati", slot: 7, lifespan: "9216m" },
   },
 
-  // ── 1C. RŪPĀVACARA JHĀNAS 1–3 (9 PLANOS — AS V.7–9, 29–37, 75–83: 2^k) ──
+  // ── 1C. RŪPĀVACARA JHĀNAS 1–3 (9 PLANES — AS V.7–9, 29–37, 75–83: 2^k) ──
   {
     id: "mut:b31:12",
     chapter: 5,
@@ -358,7 +358,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { tetrad: "bhumi_31", planeGroup: "rupa_j1_3", slot: 9, lifespan: "k_64" },
   },
 
-  // ── 1D. RŪPĀVACARA 4.º JHĀNA-BHŪMI (7 PLANOS — AS V.10–11, 38–43, 84–86) ─
+  // ── 1D. RŪPĀVACARA 4TH JHĀNA-BHŪMI (7 PLANES — AS V.10–11, 38–43, 84–86) ─
   {
     id: "mut:b31:21",
     chapter: 5,
@@ -479,7 +479,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { tetrad: "bhumi_31", planeGroup: "rupa_j4", slot: 7, lifespan: "k_16000" },
   },
 
-  // ── 1E. ARŪPĀVACARA (4 PLANOS IMATERIAIS — AS V.12, 44–48: 20k/40k/60k/84k)
+  // ── 1E. ARŪPĀVACARA (4 IMMATERIAL PLANES — AS V.12, 44–48: 20k/40k/60k/84k)
   {
     id: "mut:b31:28",
     chapter: 5,
@@ -549,7 +549,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { tetrad: "bhumi_31", planeGroup: "arupa", slot: 4, lifespan: "k_84000" },
   },
 
-  // ── 2. PAṬISANDHI-CATUKKA & LEIS DE OBJETO (AS V.15–20, 24–28, 49, 92–97)
+  // ── 2. PAṬISANDHI-CATUKKA & OBJECT LAWS (AS V.15–20, 24–28, 49, 92–97) ──
   {
     id: "mut:pat:apaya",
     chapter: 5,
@@ -670,7 +670,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { tetrad: "patisandhi", subtype: "pat_const3", count: 3 },
   },
 
-  // ── 3. MATRIZ 4×4 DE KAMMA (16) + 4 LEIS DE MATURAÇÃO (AS V.50–53, 69–74)
+  // ── 3. 4×4 KAMMA MATRIX (16) + 4 RIPENING LAWS (AS V.50–53, 69–74) ──────
   {
     id: "mut:kam:f1",
     chapter: 5,
@@ -1012,7 +1012,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { tetrad: "kamma_16", kammaGroup: "ripening", subtype: "rip_ahe_8", count: 8 },
   },
 
-  // ── 4A. 10 AKUSALA-KAMMAPATHAS (PORTA × RAIZ — AS V.54–60) ───────────────
+  // ── 4A. 10 AKUSALA-KAMMAPATHAS (DOOR × ROOT — AS V.54–60) ────────────────
   {
     id: "mut:kp:a1",
     chapter: 5,
@@ -1356,7 +1356,7 @@ export const CHAPTER_5_VITHIMUTTA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { tetrad: "kammapatha_20", kpathGroup: "punna_10", slot: 10, root: "bhavana" },
   },
 
-  // ── 5. MARAṆUPPATTI (4), SIGNOS DA MORTE (3) & MATRIZ CUTI→PAṬISANDHI (4)
+  // ── 5. MARAṆUPPATTI (4), SIGNS AT DEATH (3) & CUTI→PAṬISANDHI MATRIX (4) ─
   {
     id: "mut:mar:1",
     chapter: 5,

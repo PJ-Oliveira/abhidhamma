@@ -1,97 +1,97 @@
 # Abhidhamma Piṭaka Trilingual Site
 
-> As traduções neste projeto baseiam-se em parte no OpenTipitaka (https://opentipitaka.org), licenciado sob CC BY-NC-SA 4.0. Algumas traduções foram revisadas e corrigidas para este projeto. As traduções revisadas também são distribuídas sob CC BY-NC-SA 4.0.
+> The translations in this project are based in part on OpenTipitaka (https://opentipitaka.org), licensed under CC BY-NC-SA 4.0. Some translations have been revised and proofread for this project. The revised translations are also distributed under CC BY-NC-SA 4.0.
 
-Uma Aplicação de Página Única (SPA) estática projetada para o estudo profundo e estrutural do Abhidhamma Piṭaka da tradição Theravāda. Oferece uma experiência de leitura trilíngue totalmente alinhada (Pāli, Inglês, Espanhol e Português), além de um conjunto de ferramentas analíticas interativas.
+A static Single Page Application (SPA) designed for the deep, structural study of the Theravāda Abhidhamma Piṭaka. It features a fully aligned trilingual reading experience (Pāli, English, Spanish, and Portuguese) alongside a suite of interactive analytical tools.
 
 
-## 📖 Como Usar (How to Use)
+## 📖 How to Use
 
-O site foi estruturado para suportar o estudo do *Abhidhamma* em diferentes contextos, com foco em resiliência e disponibilidade offline. 
+The platform is designed to support the study of the *Abhidhamma* in diverse contexts, with a strong emphasis on resilience and offline availability.
 
-### Modalidades de Acesso
-1. **Produção (Online):** Acesse a versão mais recente e oficial em [https://abhidhamma.com.br/](https://abhidhamma.com.br/).
-2. **Offline (PWA):** Após o primeiro acesso, você pode instalar o aplicativo em seu celular ou desktop (via botão "Instalar Aplicativo" nas configurações). A estrutura de Progressive Web App (PWA) faz cache integral dos dados de texto e das ferramentas, permitindo leitura profunda e buscas durante viagens ou retiros sem conexão à internet.
-3. **Local (Desenvolvimento):** Você pode clonar o repositório e abrir `index.html` via um servidor HTTP local para ter toda a ferramenta rodando na sua máquina.
+### Access Modes
+1. **Production (Online):** Access the latest official release at [https://abhidhamma.com.br/](https://abhidhamma.com.br/).
+2. **Offline (PWA):** After your initial visit, you can install the application on your mobile device or desktop (via the "Install App" button in settings). The Progressive Web App (PWA) architecture fully caches text data and analytical tools, enabling deep reading and complex searches during travel or meditation retreats without an internet connection.
+3. **Local (Development):** You can clone the repository and serve `index.html` via a local HTTP server to run the entire tool suite natively on your machine.
 
-### Taxonomia do Acervo e Navegação
-O corpus foi organizado hierarquicamente de acordo com a tradição *Theravāda*. A barra lateral permite navegar de forma granular por essas camadas interpretativas:
+### Corpus Taxonomy and Navigation
+The corpus is hierarchically organized according to the orthodox *Theravāda* tradition. The sidebar tree allows granular navigation across these interpretive layers:
 
-- **Textos Fundamentais (*Mūla*):** Os 7 livros originais do *Abhidhamma Piṭaka* (ex: *Dhammasaṅgaṇī*, *Paṭṭhāna*). Eles formam a raiz ontológica e matricial.
-- **Comentários Canônicos (*Aṭṭhakathā*):** Explicações clássicas compiladas por Venerável Buddhaghosa e outros (ex: *Atthasālinī*, *Sammohavinodanī*). Essenciais para compreender o significado preciso de um *dhamma*.
-- **Subcomentários (*Ṭīkā / Anuṭīkā*):** Trabalhos escolásticos posteriores (como o *Mūlaṭīkā*) que resolvem ambiguidades filosóficas dos comentários e debatem nuanças epistemológicas.
-- **Literatura Contemporânea:** Visões, esquemas estruturais e manuais modernos (ex: *Abhidhammatthasaṅgaha* e textos contemporâneos) para ajudar na visualização e introdução ao sistema.
+- **Fundamental Texts (*Mūla*):** The 7 original books of the *Abhidhamma Piṭaka* (e.g., *Dhammasaṅgaṇī*, *Paṭṭhāna*). These form the core ontological and structural matrix.
+- **Canonical Commentaries (*Aṭṭhakathā*):** Classical explanations compiled by Venerable Buddhaghosa and others (e.g., *Atthasālinī*, *Sammohavinodanī*). They are essential for grasping the precise technical definition of each *dhamma*.
+- **Subcommentaries (*Ṭīkā / Anuṭīkā*):** Later scholastic works (like the *Mūlaṭīkā*) that resolve philosophical ambiguities within the commentaries and debate epistemological nuances.
+- **Contemporary Literature:** Modern schemas, manuals (e.g., *Abhidhammatthasaṅgaha*), and contemporary texts that assist in visualization and act as an introduction to the system.
 
-Ao clicar em um nó na árvore lateral, o texto será carregado na janela principal. Use as abas no topo da página para alternar rapidamente entre o *Mūla*, o *Aṭṭhakathā* correspondente e o *Ṭīkā*, mantendo a rastreabilidade do contexto.
+Upon clicking a node in the sidebar tree, the text is loaded into the main viewing area. Use the tabs at the top of the page to seamlessly switch between the *Mūla*, the corresponding *Aṭṭhakathā*, and the *Ṭīkā*, maintaining full contextual traceability.
 
-## 🚀 Funcionalidades
+## 🚀 Features
 
-- **Leitor Multilíngue**: Leia os textos canônicos do Abhidhamma com alinhamento parágrafo por parágrafo em Pāli, Inglês, Espanhol e Português.
-- **Dicionário Pāli Integrado**: Consulta instantânea de termos, alimentada por um dicionário central curado (derivado do Digital Pāli Dictionary) e otimizado para a terminologia do Abhidhamma.
-- **Busca Avançada Fragmentada (Sharded)**: Motor de busca de alto desempenho no lado do cliente que utiliza fragmentos (shards) JSON pré-construídos para consultas instantâneas em todo o corpus massivo, sem necessidade de backend.
-- **Sistema de Repetição Espaçada (SRS)**: Sistema de flashcards integrado que usa algoritmos de repetição espaçada para memorização de terminologia Pāli complexa e compostos extraídos diretamente dos textos.
-- **Abhidhamma SRS (Anki)**: 362 flashcards do *Abhidhammatthasaṅgaha* (Tijolos → Casa) com plano de 30/60/90 dias, estudo por capítulos e cofre de progresso offline.
-- **Laboratório Mnêmico**: Descompactação N-ária (9 capítulos · 89/121 cittas), Tabela Periódica de 72 realidades *sabhāva* + 10 *anipphanna* e Ábaco Tátil das Falanges.
-- **Simulador de Debate Canônico**: Prática de debate no estilo do Kathāvatthu por cenários (silogismo, refutação, motivos de derrota).
-- **Exportação PDF / EPUB**: Exporte qualquer obra, parte ou intervalo de capítulos em combinações de Pāli + Inglês/Português/Espanhol.
+- **Multilingual Reader**: Read the canonical Abhidhamma texts with paragraph-by-paragraph alignment in Pāli, English, Spanish, and Portuguese.
+- **Integrated Pāli Dictionary**: Instant term lookup powered by a curated core dictionary (derived from the Digital Pāli Dictionary) optimized for Abhidhamma terminology.
+- **Advanced Sharded Search**: High-performance, client-side search engine utilizing pre-built JSON shards for instant querying across the massive corpus without a backend.
+- **Spaced Repetition System (SRS)**: Built-in flashcard system using spaced repetition algorithms to memorize complex Pāli terminology and compounds extracted directly from the texts.
+- **Abhidhamma SRS (Anki)**: 362 flashcards of the *Abhidhammatthasaṅgaha* (Bricks → House) with a 30/60/90-day plan, by-chapter study and offline progress vault.
+- **Mnemonic Lab**: N-ary Decompressor (9 chapters · 89/121 cittas), Periodic Table of 72 *sabhāva* + 10 *anipphanna* realities, and a tactile Phalanx Abacus.
+- **Canonical Debate Simulator**: Scenario-based Kathāvatthu-style debate practice (syllogism, refutation, defeat grounds).
+- **PDF / EPUB Export**: Export any work, part or chapter range in Pāli + English/Portuguese/Spanish combinations.
 
-## 🏗️ Arquitetura
+## 🏗️ Architecture
 
-O projeto foi construído com extremo foco em desempenho, longevidade e simplicidade. Depende exclusivamente de hospedagem de arquivos estáticos, sem servidores backend ou frameworks pesados de JavaScript.
+The project is built with an extreme focus on performance, longevity, and simplicity. It relies exclusively on static file hosting without any backend servers or heavy JavaScript frameworks.
 
-- **Frontend**: TypeScript puro compilado para JavaScript (Vanilla). Zero dependências npm em tempo de execução.
-- **Estilização**: CSS puro utilizando propriedades customizadas (variáveis CSS) para garantir uma consistência temática estrita.
-- **Camada de Dados**: Pipeline em Python 3 que processa, limpa e traduz os textos brutos em blocos `.json` otimizados (`data/works/`), compila os dicionários e gera os fragmentos de busca.
-- **Gerenciamento de Estado**: Manipulação de DOM no lado do cliente com carregamento preguiçoso (lazy loading) dos módulos para as ferramentas interativas.
+- **Frontend**: Pure TypeScript compiled to vanilla JavaScript. Zero npm dependencies for the runtime.
+- **Styling**: Vanilla CSS using custom properties (CSS variables) for strict thematic consistency.
+- **Data Layer**: Python 3 pipeline that processes, cleans, and translates the raw texts into optimized `.json` chunks (`data/works/`), compiles the dictionaries, and generates the search shards.
+- **State Management**: Client-side DOM manipulation with lazy-loaded modules for the interactive tools.
 
-## 📝 Fluxo de Trabalho de Revisão Linguística
+## 📝 Linguistic Revision Workflow
 
-As traduções em português (e espanhol) passam por uma rigorosa auditoria programática e manual para aderir estritamente à estrutura ontológica canônica Theravāda (conforme definido na *Atthasālinī* e no *Visuddhimagga*).
+The Portuguese (and Spanish) translations undergo a rigorous programmatic and manual audit to adhere strictly to the canonical Theravāda ontological framework (as defined in the *Atthasālinī* and *Visuddhimagga*).
 
-**Princípios Centrais de Tradução:**
-- **Preservação Técnica do Pāli**: Termos-chave como *kamma* (nunca o sanscritizado *karma*), *dhamma* (nunca *dharma*), *nibbāna*, *citta*, *cetasika* e *jhāna* são preservados em sua forma original em Pāli para evitar diluição conceitual.
-- **Anti-Psicologização**: Eliminação de sobreposições psicológicas ocidentais (ex.: traduzir *bhavaṅga* como "subconsciente" ou "inconsciente").
-- **Precisão Ontológica**: O termo *dhamma* é rigorosamente traduzido como "realidade" em contextos ontológicos, rejeitando correspondências kantianas como "fenômeno".
+**Core Translation Tenets:**
+- **Pāli Technical Preservation**: Key terms like *kamma* (never the Sanskritized *karma*), *dhamma* (never *dharma*), *nibbāna*, *citta*, *cetasika*, and *jhāna* are preserved in their native Pāli form to prevent conceptual dilution.
+- **Anti-Psychologization**: Elimination of Western psychological overlays (e.g., translating *bhavaṅga* as "subconscious" or "unconscious").
+- **Ontological Precision**: The term *dhamma* is strictly translated as "reality" (realidade) in ontological contexts, rejecting Kantian mappings like "phenomenon" (fenômeno).
 
-*Consulte o documento interno `docs/abhidhamma_knowledge_base.md` do projeto para acessar as diretrizes terminológicas e doutrinárias completas.*
+*Refer to the project's internal `docs/abhidhamma_knowledge_base.md` for the complete terminological and doctrinal guidelines.*
 
-## ⚙️ Instruções de Build e Execução
+## ⚙️ Build and Run Instructions
 
-Para rodar o projeto localmente ou prepará-lo para deploy no GitHub Pages:
+To run the project locally or prepare it for deployment to GitHub Pages:
 
-### Pré-requisitos
-- Node.js (para o compilador TypeScript)
-- Python 3.x (para scripts de processamento de dados)
+### Prerequisites
+- Node.js (for TypeScript compiler)
+- Python 3.x (for data processing scripts)
 
-### Configuração e Compilação
-1. **Instalar Dependências de Desenvolvimento:**
+### Setup & Compilation
+1. **Install Dev Dependencies:**
    ```bash
    npm install
    ```
-2. **Construir Índice de Busca:** (Execute isso sempre que os dados de tradução forem alterados)
+2. **Build Search Index:** (Run this whenever translation data changes)
    ```bash
    python3 scripts/build_search_index.py
    ```
-3. **Compilar TypeScript e Versionar Arquivos:**
+3. **Compile TypeScript & Stamp Versions:**
    ```bash
    npm run build
    ```
-   *Este comando compila todos os arquivos `.ts` para a pasta `js/` e roda automaticamente o script `scripts/version_js.py` para anexar hashes de quebra de cache (`?v=hash`) aos seus imports.*
+   *This compiles all `.ts` files to `js/` and automatically runs `scripts/version_js.py` to append cache-busting hashes (`?v=hash`) to your imports.*
 
-### Servidor de Desenvolvimento Local
-Sirva o diretório raiz usando o servidor HTTP embutido do Python:
+### Local Development Server
+Serve the root directory using Python's built-in HTTP server:
 ```bash
 python3 -m http.server 8000
 ```
-Em seguida, acesse `http://localhost:8000` no seu navegador.
+Then navigate to `http://localhost:8000` in your browser.
 
-## 🌐 Deploy
-O projeto é estruturalmente otimizado para o **GitHub Pages**. Basta fazer push da branch `main` para o GitHub e configurar o GitHub Pages para servir a partir do diretório raiz `/`. Nenhuma pipeline complexa de CI/CD ou servidor backend é necessária.
+## 🌐 Deployment
+The project is structurally optimized for **GitHub Pages**. Simply push the `main` branch to GitHub and configure GitHub Pages to serve from the root `/` directory. No complex CI/CD pipeline or backend server is required.
 
-## 🤝 Feedback e Agradecimentos
+## 🤝 Feedback & Acknowledgments
 
-Por gentileza, se notar algum erro, erro de digitação (typo) ou algo análogo, por favor, entre em contato comigo para que eu possa corrigir. Ainda faltam realizar algumas atualizações na versão em espanhol, o que espero fazer em breve. 
+If you notice any errors, typos, or similar issues, please feel free to reach out so they can be corrected. There are still some updates pending for the Spanish translation, which I hope to complete soon. 
 
-Essas traduções serão continuamente revistas e retrabalhadas, sempre com o objetivo de aprimoramento. Este projeto só foi possível pelo incentivo e pelos estudos com meu professor de Abhidhamma e Vipassanā Theravāda, Robert Kirk. O projeto é open source pois visa que mais pessoas possam estudar, refletir e desenvolver mais discernimento (*paññā*).
+These translations will be continually reviewed and reworked, always with the goal of improvement. This project was only possible due to the encouragement and studies with my Theravāda Abhidhamma and Vipassanā teacher, Robert Kirk. The project is open source because it aims to allow more people to study, reflect, and accumulate more discernment (*paññā*).
 
-Agradeço profundamente aos meus professores e ao Open Tipitaka.
+I would like to express my deep gratitude to my teachers and to Open Tipitaka.

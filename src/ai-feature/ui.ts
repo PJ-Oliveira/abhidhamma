@@ -120,7 +120,7 @@ export function initInterlocutorPanel(container: HTMLElement): void {
 
     elaborateBtn.addEventListener('click', () => {
         pedagogicalDisplay.style.display = 'block';
-        elaborateBtn.style.display = 'none'; // Esconde o botão após clicar
+        elaborateBtn.style.display = 'none'; // Hide button after click
     });
 
     select.addEventListener('change', () => {
@@ -166,7 +166,7 @@ export function initInterlocutorPanel(container: HTMLElement): void {
             submitBtn.textContent = t('debate_analyzing', settings.uiLang);
             submitBtn.disabled = true;
 
-            // Simular a latência do WebWorker/LLM e exibir a refutação detalhada
+            // Simulate WebWorker/LLM latency and display the detailed refutation
             pendingTimer = setTimeout(() => {
                 pendingTimer = null;
                 if (select.value !== val) return;
@@ -194,10 +194,10 @@ export function initInterlocutorPanel(container: HTMLElement): void {
                 pedaBreakdownEl.textContent = evaluation.detailedSyllogismBreakdown;
                 
                 refutationDisplay.style.display = 'block';
-                pedagogicalDisplay.style.display = 'none'; // Esconde por padrão no novo submit
-                elaborateBtn.style.display = 'inline-block'; // Garante que o botão reapareça
+                pedagogicalDisplay.style.display = 'none'; // Hidden by default on new submission
+                elaborateBtn.style.display = 'inline-block'; // Ensure button reappears
 
-            }, 1000); // Simulando o tempo de resposta do Cérebro
+            }, 1000); // Simulated engine response delay
         }
     });
 

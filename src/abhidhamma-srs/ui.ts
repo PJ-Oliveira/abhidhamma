@@ -921,7 +921,7 @@ export class AbhidhammaSrsUI {
       now,
       this.filterMode
     );
-    // Prioridade: 1) learning/review realmente vencidas; 2) revisões antecipadas do lote extra proporcional; 3) novas desbloqueadas
+    // Priority: 1) actually due learning/review cards; 2) early reviews from proportional extra batch; 3) unlocked new cards
     let nextCard: AbhidhammaCard | null = res.dueLearning[0] ?? res.dueReview[0] ?? null;
     if (!nextCard && this.bonusReviewQueue.length > 0) {
       const nextId = this.bonusReviewQueue[0]!;
@@ -1008,7 +1008,7 @@ export class AbhidhammaSrsUI {
     }
   }
 
-  // ── OVERVIEW (Por Capítulos | Trilha 90 Dias) ────────────────────────────
+  // ── OVERVIEW (By Chapters | 30/60/90-Day Track) ──────────────────────────
 
   private renderOverview(dataset: AbhidhammaDataset): void {
     const s = UI_STRINGS[this.lang];

@@ -1,4 +1,4 @@
-import { Niggahatthana } from './kathavatthu.js?v=06b4ea02';
+import { Niggahatthana } from './kathavatthu.js?v=ed8676ed';
 export const AtthakathaOntology = {
     'puggala': {
         school: 'Puggalavāda (Vajjiputtakas / Sammitīyas)',

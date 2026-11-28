@@ -1,5 +1,5 @@
 /**
- * Motor Combinatório, Validador Ontológico e Agendador de Maestria do Laboratório Mnêmico.
+ * Combinatorial Engine, Ontological Validator, and Mastery Scheduler for the Mnemonic Laboratory.
  */
 
 import {
@@ -45,15 +45,15 @@ export interface MnemonicProgressState {
   readonly bestStreak: number;
   readonly totalCorrect: number;
   readonly totalAttempts: number;
-  /** IDs de Cittas e Itens dominados no Decodificador N-ário (ex.: "citta:1", "nary:cet:1") */
+  /** IDs of Cittas and Items mastered in the N-ary Decoder (e.g., "citta:1", "nary:cet:1") */
   readonly masteredBinary: Readonly<Record<string, number>>;
-  /** IDs de Cittas/Elementos dominados na Tabela Periódica (ex.: "chem:1") */
+  /** IDs of Cittas/Elements mastered in the Periodic Table (e.g., "chem:1") */
   readonly masteredPeriodic: Readonly<Record<string, number>>;
-  /** IDs de falanges dominadas no Ábaco (ex.: "akusala12:1") */
+  /** IDs of phalanges mastered in the Abacus (e.g., "akusala12:1") */
   readonly masteredPhalanx: Readonly<Record<string, number>>;
-  /** Domínio separado por nível de rigor (1 = Fácil, 2 = Médio, 3 = Difícil) */
+  /** Mastery tracked separately per rigor level (1 = Easy, 2 = Medium, 3 = Hard) */
   readonly masteredByLevel?: LevelMasteryMap;
-  /** Fila adaptativa SRS leve: chaves recentemente erradas retornam com prioridade */
+  /** Lightweight adaptive SRS queue: recently missed keys resurface with priority */
   readonly missedQueue?: readonly string[];
 }
 
@@ -264,7 +264,7 @@ export function recordMnemonicAttempt(
   return next;
 }
 
-// ── PILAR 1: MOTOR DO DESCOMPACTADOR & DECODIFICADOR N-ÁRIO ──────────────────
+// ── PILLAR 1: BINARY DECOMPRESSOR & N-ARY DECODER ENGINE ─────────────────────
 
 export type AhetukaSubgroupId = "akusala_vipaka" | "kusala_vipaka" | "kiriya";
 
@@ -431,7 +431,7 @@ export function pickNextBinaryChallenge(
   return filtered[idx] ?? pool[0]!;
 }
 
-// ── PILAR 2: MOTOR DE SÍNTESE QUÍMICA E DETECTOR DE COLISÃO ONTOLÓGICA ───────
+// ── PILLAR 2: CHEMICAL SYNTHESIS ENGINE & ONTOLOGICAL COLLISION DETECTOR ────
 
 export interface ChemicalEvaluationResult {
   readonly isExactFixedMatch: boolean;
@@ -482,14 +482,14 @@ export function detectOntologicalCollisions(
     rules.push(ONTOLOGICAL_COLLISION_RULES.adhimokkha_vicikiccha!);
   }
 
-  // 5. Pīti (#12) em Dosa (#21..24) ou em Citta alvo sem Somanassa / 4º-5º Jhāna
+  // 5. Pīti (#12) in Dosa (#21..24) or in a target Citta without Somanassa / 4th–5th Jhāna
   const targetForbidsPiti =
     targetCitta != null && !targetCitta.fixedCetasikas.includes(12) && !targetCitta.optionalCetasikas.includes(12);
   if (has(12) && (hasAny([21, 22, 23, 24, 27]) || targetForbidsPiti)) {
     rules.push(ONTOLOGICAL_COLLISION_RULES.piti_feeling!);
   }
 
-  // 6. Thīna-Middha (#25, #26) em Citta Asaṅkhārika (não-instigada)
+  // 6. Thīna-Middha (#25, #26) in Asaṅkhārika (unprompted) Citta
   if (
     hasAny([25, 26]) &&
     targetCitta != null &&
@@ -499,20 +499,20 @@ export function detectOntologicalCollisions(
     rules.push(ONTOLOGICAL_COLLISION_RULES.thina_asankharika!);
   }
 
-  // 7. Issā (#22) × Macchariya (#23) × Kukkucca (#24) quando fora do modo Saṅgaha-naya de Dosa
+  // 7. Issā (#22) × Macchariya (#23) × Kukkucca (#24) when outside Dosa Saṅgaha-naya mode
   const dosaSecCount = [22, 23, 24].filter((id) => has(id)).length;
   if (dosaSecCount > 1 && (!targetCitta || targetCitta.family !== "dosa")) {
     rules.push(ONTOLOGICAL_COLLISION_RULES.dosa_secondaries!);
   }
 
-  // 8. Karuṇā (#50) × Muditā (#51) quando em Citta que não admite Appamaññā (ex. Lokuttara, Vipāka, 5º Jhāna)
+  // 8. Karuṇā (#50) × Muditā (#51) when in a Citta that forbids Appamaññā (e.g., Lokuttara, Vipāka, 5th Jhāna)
   const appaCount = [50, 51].filter((id) => has(id)).length;
   const targetAllowsAppa = targetCitta != null && targetCitta.optionalCetasikas.includes(50);
   if ((appaCount > 0 && targetCitta != null && !targetAllowsAppa) || (appaCount > 1 && !targetAllowsAppa)) {
     rules.push(ONTOLOGICAL_COLLISION_RULES.karuna_mudita!);
   }
 
-  // 9. Thīna (#25) e Middha (#26) separados
+  // 9. Thīna (#25) and Middha (#26) split apart
   if (has(25) !== has(26)) {
     rules.push(ONTOLOGICAL_COLLISION_RULES.thina_pair_split!);
   }
@@ -589,7 +589,7 @@ export function evaluateChemicalSynthesis(
   };
 }
 
-/** Lista curada de Cittas arquetípicas para o desafio de Síntese Química (cobrindo todas as famílias) */
+/** Curated list of archetypal Cittas for the Chemical Synthesis challenge (covering all families) */
 export const CHEMICAL_CHALLENGE_CITTA_IDS: readonly number[] = [
   1, 2, 3, 5, 8, 9, 10, 11, 12, 13, 18, 27, 29, 30, 31, 33, 35, 39, 47, 55, 56, 57, 58, 59, 70, 82, 86,
 ];
@@ -622,7 +622,7 @@ export function pickNextPeriodicChallenge(
   return filtered[idx] ?? pool[0]!;
 }
 
-// ── PILAR 3: MOTOR DO ÁBACO NAS FALANGES ─────────────────────────────────────
+// ── PILLAR 3: PHALANX ABACUS ENGINE ──────────────────────────────────────────
 
 export function getPhalanxMapById(id: PhalanxMapSpec["id"]): PhalanxMapSpec {
   return PHALANX_MAPS.find((m) => m.id === id) ?? PHALANX_MAPS[0]!;

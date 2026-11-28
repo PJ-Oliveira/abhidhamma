@@ -1,11 +1,11 @@
 // ============================================================================
-// CAPÍTULO 4 — VĪTHISAṄGAHA: PROCESSOS COGNITIVOS COMPLETOS (AS IV.1–55)
+// CHAPTER 4 — VĪTHISAṄGAHA: COMPLETE COGNITIVE PROCESSES (AS IV.1–55)
 // ============================================================================
-// 1. Pañcadvāra (4 Vāras + Equação Temporal t+2+n ≤ 17 + 7/14/54)
+// 1. Pañcadvāra (4 Vāras + Temporal Equation t+2+n ≤ 17 + 7/14/54)
 // 2. Manodvāra & Appanā (Vibhūta 10, Avibhūta 8, Appanā 32/12/8/6 = 58)
 // 3. Tadārammaṇa-niyama & Javana-niyama (7/6, 5, 4–5, 1, 2, ∞)
 // 4. Puggalabheda (44 / 56 / 54) & Bhūmivibhāga (80 / 64 / 42 / 0)
-// Total: 28 itens 100% fiéis ao mūla (AS IV.1–55).
+// Total: 28 items 100% faithful to the mūla (AS IV.1–55).
 // ============================================================================
 
 import type { NaryChallengeItem } from "../nary-chapters-data.js";

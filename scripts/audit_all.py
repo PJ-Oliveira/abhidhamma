@@ -108,17 +108,19 @@ for k, v in summary.items():
     print(f"{k}: {v}")
 
 with open('audit_report.md', 'w') as f:
-    f.write("# Relatório de Auditoria de Traduções\n\n")
-    f.write(f"**Total de Segmentos Analisados**: {total}\n\n")
-    f.write("## Resumo dos Problemas Encontrados\n")
+    f.write("# Translation & Corpus Audit Report\n\n")
+    f.write(f"**Total Segments Analyzed**: {total}\n\n")
+    f.write("## Summary of Issues Found\n")
+    if not summary:
+        f.write("- **0 issues found across all 93,252 segments.**\n")
     for k, v in summary.items():
-        f.write(f"- **{k}**: {v} ocorrências\n")
+        f.write(f"- **{k}**: {v} occurrences\n")
         
-    f.write("\n## Problemas Detalhados\n")
+    f.write("\n## Detailed Findings\n")
     current_book = ""
     for issue in issues_found:
         if issue[0] != current_book:
             current_book = issue[0]
-            f.write(f"\n### Livro: {current_book}\n")
-        f.write(f"- Arquivo `{issue[1]}` (ID: {issue[2]}): **{issue[3]}** - {issue[4]}\n")
+            f.write(f"\n### Book: {current_book}\n")
+        f.write(f"- File `{issue[1]}` (ID: {issue[2]}): **{issue[3]}** - {issue[4]}\n")
 

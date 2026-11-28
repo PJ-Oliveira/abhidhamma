@@ -1,8 +1,8 @@
 // ============================================================================
-// PRÓLOGO (AS 0.2), EQUAÇÕES DO CAP. 1 (AS I.14–43) & SÍNTESE INTER-CAPÍTULOS
+// PROLOGUE (AS 0.2), CHAPTER 1 EQUATIONS (AS I.14–43) & CROSS-CHAPTER SYNTHESIS
 // ============================================================================
-// Cobre os 4 Paramattha-dhammas, as grandes somas canônicas do Cap. 1 e as
-// pontes lógicas, exceções e análogos transversais dos 9 capítulos do Mūla.
+// Covers the 4 Paramattha-dhammas, the canonical totals of Ch. 1, and the
+// logical bridges, exceptions, and cross-chapter analogues across the 9 Mūla chapters.
 // ============================================================================
 
 import type { UiLang } from "../../types.js";
@@ -62,7 +62,7 @@ export const SYNTHESIS_AXIS_META: readonly {
 ];
 
 export const MULA_SYNTHESIS_ITEMS: readonly SynthesisChallengeItem[] = [
-  // ── 1. PRÓLOGO: CATUPARAMATTHADHAMMO (AS 0.2) ─────────────────────────────
+  // ── 1. PROLOGUE: CATUPARAMATTHADHAMMO (AS 0.2) ────────────────────────────
   {
     id: "syn:pro:1",
     axis: "prologue",
@@ -214,7 +214,7 @@ export const MULA_SYNTHESIS_ITEMS: readonly SynthesisChallengeItem[] = [
     chaptersLinked: [6, 7, 8],
   },
 
-  // ── 2. CAP. 1: EQUAÇÕES DE SÍNTESE (AS I.14, 20, 35–43) ───────────────────
+  // ── 2. CH. 1: SYNTHESIS EQUATIONS (AS I.14, 20, 35–43) ────────────────────
   {
     id: "syn:c1:1",
     axis: "citta_sums",
@@ -366,7 +366,7 @@ export const MULA_SYNTHESIS_ITEMS: readonly SynthesisChallengeItem[] = [
     chaptersLinked: [1, 7],
   },
 
-  // ── 3. PONTE UNIFICADA DOS 4 PLANOS (CAP. 3 × CAP. 4 × CAP. 5 × CAP. 6) ──
+  // ── 3. UNIFIED 4-PLANE BRIDGE (CH. 3 × CH. 4 × CH. 5 × CH. 6) ────────────
   {
     id: "syn:pl:1",
     axis: "realms_bridge",
@@ -468,7 +468,7 @@ export const MULA_SYNTHESIS_ITEMS: readonly SynthesisChallengeItem[] = [
     chaptersLinked: [4, 5, 6],
   },
 
-  // ── 4. ANÁLOGOS, PONTES LÓGICAS & EXCEÇÕES INTER-CAPÍTULOS (16 ITENS) ────
+  // ── 4. ANALOGUES, LOGICAL BRIDGES & CROSS-CHAPTER EXCEPTIONS (16 ITEMS) ──
   {
     id: "syn:law:1",
     axis: "doctrinal_laws",

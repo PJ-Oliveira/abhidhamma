@@ -1,8 +1,8 @@
-# Dados e Corpus
+# Data & Corpus
 
 ## 1. manifest.json
 
-`data/manifest.json` é o registro único de todo o conteúdo navegável. Estrutura:
+`data/manifest.json` is the single registry for all navigable content. Structure:
 
 ```typescript
 interface Manifest {
@@ -10,80 +10,108 @@ interface Manifest {
 }
 
 interface WorkEntry {
-  id: string        // ex: "dhammasangani"
-  title: string     // ex: "Dhammasaṅgaṇī"
+  id: string        // e.g. "dhammasangani"
+  title: string     // e.g. "Dhammasaṅgaṇī"
   parts: Record<string, WorkPart>
 }
 
 interface WorkPart {
-  label: string         // nome de exibição
-  files: string[]       // nomes dos fragmentos, ex: ["chunk_001.json", ...]
-  toc: TocEntry[]       // entradas do sumário (capítulos, etc.)
-  count: number         // total de segmentos
-  chunkStarts?: number[] // ID do seg inicial de cada fragmento (para navegação)
+  label: string         // display name
+  files: string[]       // chunk filenames, e.g. ["chunk_001.json", ...]
+  toc: TocEntry[]       // TOC entries (chapters, etc.)
+  count: number         // total segment count
+  chunkStarts?: number[] // segment ID of first seg in each chunk (for seeking)
 }
 
 interface TocEntry {
-  id: number   // ID do segmento (usado como âncora)
+  id: number   // segment ID (used as anchor)
   rend: string // "chapter" | "book" | ...
-  text: string // texto do cabeçalho
+  text: string // heading text
 }
 ```
 
-Grupos ordenados: `abhidhamma → outros → visuddhimagga → comentarios`.
+Groups are ordered: `abhidhamma → outros → visuddhimagga → comentarios`.
 
 ---
 
-## 2. Formato do Segmento (Fragmento de Conteúdo)
+## 2. Segment (Content Chunk) Format
 
-Cada arquivo de fragmento é um array JSON `Segment[]`:
+Each chunk file is a `Segment[]` JSON array:
 
 ```typescript
 interface Segment {
-  id: number          // ID monotônico crescente em todo o corpus
-  rend: string        // dica de renderização: "chapter" | "bodytext" | "hangnum" | etc.
-  paranum: string | null // badge de número de parágrafo (ex: "§ 42")
-  pali: string        // texto Pāli (pode conter HTML inline: <b>, <p rend="...">, <sup>)
-  en: string          // tradução em inglês
-  pt: string          // tradução em português
-  es: string          // tradução em espanhol
-  notes?: string[]    // textos de notas de rodapé (indexados por superscripts .var-note)
+  id: number          // monotonically increasing corpus-wide ID
+  rend: string        // rendering hint: "chapter" | "bodytext" | "hangnum" | etc.
+  paranum: string | null // paragraph number badge (e.g. "§ 42")
+  pali: string        // Pāli text (may contain inline HTML: <b>, <p rend="...">, <sup>)
+  en: string          // English translation
+  pt: string          // Portuguese translation
+  es: string          // Spanish translation
+  notes?: string[]    // footnote texts (indexed by .var-note superscripts)
 }
 ```
 
-### HTML Inline no campo `pali`
+### Inline HTML in `pali` field
 
-O campo Pāli pode conter:
+The Pāli field can contain:
 
-| Tag | Propósito |
+| Tag | Purpose |
 |---|---|
-| `<b>` | Palavras-chave em negrito (~57.000 ocorrências) |
-| `<p rend="gatha1/2/3/gathalast">` | Estrofes de versos |
-| `<sup class="var-note" data-note="{N}">` | Marcador de nota de variante de leitura |
-| `<x_bin_42>` | Tag anômala única (inofensiva) |
+| `<b>` | Bold headwords (~57,000 occurrences) |
+| `<p rend="gatha1/2/3/gathalast">` | Verse strophes |
+| `<sup class="var-note" data-note="{N}">` | Variant reading footnote marker |
+| `<x_bin_42>` | Single anomalous tag (harmless) |
+
+These are rendered via `innerHTML` in the reader and sanitized through `DOMParser + walkNode()` in the export module.
+
+### rend values
+
+| rend | Meaning |
+|---|---|
+| `book` | Book-level title |
+| `nikaya` | Collection title |
+| `title` | Work title |
+| `chapter` | Chapter heading |
+| `subhead` | Section heading |
+| `subsubhead` | Sub-section heading |
+| `hangnum` | Paragraph with hanging number |
+| `bodytext` | Main body text |
+| `indent` | Indented/verse block |
+| `footnote` | Footnote text |
+| `centre` | Centered text |
+| `glossary` | Glossary term entry |
 
 ---
 
-## 3. Dados do Dicionário
+## 3. Dictionary Data
 
 ### `data/dictionary/pali_core.json`
 
-Dicionário de lemas Pāli de alta frequência. 721 entradas cobrindo as palavras mais comuns (~70% das ocorrências de tokens do corpus).
+High-frequency Pāli lemma dictionary. 721 entries covering the most common words (together representing ~70 % of corpus token occurrences).
 
 ```typescript
+interface CoreDictData {
+  meta: {
+    version: number; stage: number; pct_covered: number;
+    total_corpus_tokens: number; language: string[]; count: number; ...
+  }
+  roots: Record<string, DictRootInfo>  // Pāli roots with EN/PT/ES glosses
+  entries: CoreDictEntry[]
+}
+
 interface CoreDictEntry {
-  h: string          // palavra-cabeçalho
-  freq: number       // frequência no corpus
-  pct: number        // % do total de tokens do corpus
-  usage?: string     // nota de uso contextual
+  h: string          // headword (Pāli, with diacritics)
+  freq: number       // corpus frequency
+  pct: number        // % of total corpus tokens
+  usage?: string     // contextual usage note
   senses: DictSense[]
 }
 
 interface DictSense {
-  id: string         // ex: "citta.1", "citta.2"
-  pos?: string       // classe gramatical
-  grammar?: string   // nota gramatical
-  root?: string      // chave de raiz
+  id: string         // e.g. "citta.1", "citta.2"
+  pos?: string       // part of speech
+  grammar?: string   // grammatical note
+  root?: string      // root key (looks up DictRootInfo)
   en: string; pt: string; es: string
   syn?: string; ant?: string
 }
@@ -91,64 +119,109 @@ interface DictSense {
 
 ### `data/dictionary/common_pali.json`
 
-Dicionário Pāli geral. 182 entradas de sentido único usadas para busca e glossário de exportação.
+General Pāli dictionary. 182 single-sense entries used for lookup and export glossary.
 
-### Normalização Morfológica (`dictionary.ts`)
+```typescript
+interface DictEntry {
+  h: string          // headword (may include " / " alternative forms)
+  pos?: string
+  en: string; pt: string; es: string
+  root?: string
+  syn?: string[]
+  usage?: string
+  freq?: number
+}
+```
 
-`normalizePali(token)` gera formas de lema candidatas por:
-1. Busca suppletiva/sandhi (mapa `SUPPLETIVE` com ~80 entradas para formas irregulares como `so → ta`, `bhikkhave → bhikkhu`)
-2. Remoção de terminações regulares: nom/gen/acc/dat/abl/loc/inst/voc para radicais em -a, -ā, -u, -ū; 3ª pl. presente `-nti → -ti`; iti-sandhi `-tīti → -ti`; compostos com prefixo na-; compostos com prefixo neva-
+### Morphological Normalization (`dictionary.ts`)
+
+`normalizePali(token)` generates candidate lemma forms by:
+1. Suppletive/sandhi lookup (hardcoded ~80-entry `SUPPLETIVE` map for irregular forms like `so → ta`, `bhikkhave → bhikkhu`)
+2. Regular ending stripping: nom/gen/acc/dat/abl/loc/inst/voc endings for a-stems, ā-stems, u-stems, ū-stems; 3rd-pl. present `-nti → -ti`; iti-sandhi `-tīti → -ti`; na-prefix compounds; neva-prefix compounds
+
+Lookup phases:
+1. Exact match against `coreData` headwords
+2. Inflected match (query starts-with headword)
+3. Prefix match on original form
+4. Common dict fallback
 
 ---
 
-## 4. Índice de Busca
+## 4. Search Index
 
-### Fragmentação (Sharding)
+### Sharding
 
-O índice de busca é dividido em fragmentos por caractere inicial. `data/search/manifest.json`:
+The search index is split into per-initial-character shards. `data/search/manifest.json`:
 
 ```json
 { "shards": { "a": "shard_a.json", "b": "shard_b.json", ... "misc": "shard_misc.json" } }
 ```
 
-Fragmentos existem para `a-z`, letras latinas com diacríticos (`ā`, `ī`, `ū`, etc.) e `misc` para qualquer outra coisa.
+Shards exist for `a-z`, extended Latin letters with diacritics (`ā`, `ī`, `ū`, etc.), and `misc` for anything else.
 
-### Formato do Fragmento
+### Shard Format
 
 ```typescript
 interface SearchShard {
-  postings: Record<string, number[]>  // token → array de índices de segmentos
-  segments: SearchHit[]               // array plano de metadados de resultados
+  postings: Record<string, number[]>  // token → array of segment indexes
+  segments: SearchHit[]               // flat array of hit metadata
+}
+
+interface SearchHit {
+  workId: string; partKey: string; chunk: number; segId: number; snippet: string
 }
 ```
 
-### Lógica de Busca
+### Search Logic (`search.ts`)
 
-1. Normaliza consulta para minúsculas.
-2. Carrega fragmento para `query[0]`.
-3. Coleta postings de correspondência exata, depois prefixo (até 50 resultados).
-4. Mapeia índices para objetos `SearchHit`; renderiza na lista de resultados.
-
----
-
-## 5. Dados das Ferramentas
-
-Localizados em `data/tools/`:
-- `vithi.json` — sequências de portas/processo de consciência (Citta-Vīthi)
-- `citta_cetasika.json` — mapeamento citta-cetasika
-- `patthana.json` — relações condicionais
-- `mindmap.json` — dados de nós do mapa mental
-- `matikas.json` — listas de classificação de tríades/díades
+1. Normalize query to lowercase.
+2. Load shard for `query[0]`.
+3. Collect exact-match postings, then prefix-match postings (up to 50 results).
+4. Map indexes to `SearchHit` objects; render in results list.
 
 ---
 
-## 6. Volume de Dados
+## 5. Graph Data
 
-| Recurso | Tamanho aproximado |
+`data/graph/dhammas.json` — node/edge data for the Dhammas knowledge graph (used by the Graph tool). Format is specific to the graph visualization library.
+
+---
+
+## 6. Tools Data
+
+Located in `data/tools/`:
+- `vithi.json` — door/consciousness-process sequences (Citta-Vīthi)
+- `citta_cetasika.json` — citta-to-cetasika mapping
+- `patthana.json` — conditional relations
+- `mindmap.json` — mind map node data
+- `matikas.json` — triad/dyad classification lists
+
+---
+
+## 7. SRS Vocabulary Data
+
+`data/srs/vocabulary.json` — vocabulary cards for the SRS system:
+
+```typescript
+interface VocabCard {
+  id: string; h: string; pos: string; freq: number; vibFreq: number
+  en: string; pt: string; es: string
+  usage: string; grammar: string; root?: string; compounds?: string[]
+  rank: number
+}
+```
+
+Cards are sorted by `vibFreq` (corpus frequency in Vibhaṅga) for priority.
+
+---
+
+## 8. Data Volume
+
+| Resource | Approximate size |
 |---|---|
 | manifest.json | ~50 KB |
-| Todos os fragmentos do corpus | ~140 MB total |
+| All corpus chunks | ~140 MB total |
 | pali_core.json | ~400 KB |
 | common_pali.json | ~80 KB |
-| Todos os fragmentos de busca | ~5 MB |
-| Dados de ferramentas | ~1 MB |
+| All search shards | ~5 MB |
+| Tools data | ~1 MB |

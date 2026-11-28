@@ -1,154 +1,171 @@
-# Interface do Usuário
+# UI & Interface
 
-## 1. Layout Geral
+## 1. Overall Layout
 
 ```
 ┌─────────┬──────────────────────┬───┬────────────────────────────────────┐
 │ #icon-  │   #side-panel        │ R │  main#reader                       │
-│  rail   │  (painel ativo)      │ E │                                    │
-│ 56–76px │  240–320px           │ D │  #reader-header                    │
+│  rail   │  (active panel)      │ E │                                    │
+│ 56–76px │  240–320px           │ S │  #reader-header                    │
 │         │                      │ I │    #breadcrumb                     │
-│ [☰]     │  panel-tipitaka:     │ M │    #part-tabs   #chapter-nav       │
-│ [📖]   │    Árvore de obras   │ E │                                    │
-│ [⏱]   │  panel-dictionary:   │ N │  #content                          │
-│ [🔍]   │    Busca no dict.    │ S │    .seg × N                        │
-│ [⚙]   │  panel-history:      │ I │      .pali-line                    │
-│ [⬇]   │    Histórico+Favor.  │ O │      .translation-line             │
-│ [🧠]   │  panel-search:       │ N │                                    │
-│ [🔬]   │    Busca completa    │ A │  #toc-nav  [‹] [1/N] [›]          │
-│         │  panel-settings:     │ D │                                    │
-│         │    Idioma/Fonte/etc   │ O │  #reader-srs  (overlay SRS)       │
-│         │  panel-export:       │ R │  #reader-tools (overlay Ferramentas)|
-│         │    Export PDF/EPUB   │   │                                    │
-│         │  panel-srs:          │   │  [💬 Debate]  (botão flutuante)  │
-│         │    Atalho SRS        │   │                                    │
+│ [☰]     │  panel-tipitaka:     │ Z │    #part-tabs   #chapter-nav       │
+│ [📖]   │    Tree of works     │ E │                                    │
+│ [⏱]   │  panel-dictionary:   │ R │  #content                          │
+│ [🔍]   │    Pāli dict search  │   │    .seg × N                        │
+│ [⚙]   │  panel-history:      │   │      .pali-line                    │
+│ [⬇]   │    History+Bookmarks │   │      .translation-line             │
+│ [🧠]   │  panel-search:       │   │                                    │
+│ [🔬]   │    Full-text search  │   │  #toc-nav  [‹] [1/N] [›]          │
+│         │  panel-settings:     │   │                                    │
+│         │    Lang/Font/etc      │   │  #reader-srs  (SRS overlay)        │
+│         │  panel-export:       │   │  #reader-tools (Tools overlay)     │
+│         │    PDF/EPUB export   │   │                                    │
+│         │  panel-srs:          │   │  [💬 Debate]  (floating button)   │
+│         │    SRS shortcut      │   │                                    │
 │         │  panel-tools:        │   │                                    │
-│         │    Atalho Ferramentas│   │                                    │
+│         │    Tools shortcut    │   │                                    │
 └─────────┴──────────────────────┴───┴────────────────────────────────────┘
 ```
 
 ---
 
-## 2. Rail de Ícones (#icon-rail)
+## 2. Icon Rail (#icon-rail)
 
-Oito botões de navegação, cada um com `data-panel="{id}"`:
+Eight navigation buttons, each with `data-panel="{id}"`:
 
-| Ícone | Painel | Função |
+| Icon | Panel | Key |
 |---|---|---|
-| ☰ | tipitaka | Navegar obras |
-| 📖 (SVG) | dictionary | Dicionário Pāli |
-| ⏱ | history | Histórico + favoritos |
-| 🔍 | search | Busca de texto completo |
-| ⚙ | settings | Configurações |
-| ⬇ | export | Exportar (PDF/EPUB) |
-| 🧠 | srs | Memorização Pāli |
-| 🔬 | tools | Ferramentas Abhidhamma |
+| ☰ | tipitaka | Browse works |
+| 📖 (book SVG) | dictionary | Pāli dictionary |
+| ⏱ | history | History + bookmarks |
+| 🔍 | search | Full-text search |
+| ⚙ | settings | Settings |
+| ⬇ | export | Export (PDF/EPUB) |
+| 🧠 | srs | Pāli memorization |
+| 🔬 | tools | Abhidhamma tools |
 
-**Comportamento ao clicar:**
-- Se o painel do botão já está ativo E o painel lateral está expandido → colapsa o painel.
-- Caso contrário → muda para o painel + expande (exceto SRS/Tools no mobile, que vão em tela cheia).
-
----
-
-## 3. Painel Lateral (#side-panel)
-
-Apenas um filho `.panel` está ativo por vez (`class="panel active"`). Os painéis `srs` e `tools` mostram apenas um placeholder "Visualizando no painel principal →" — o conteúdo real fica nos overlays do reader.
-
-### Colapsar / Expandir
-
-- `collapseBtn` (‹/›) alterna o colapso.
-- Ao colapsar: salva largura atual em `localStorage("panelW")`, define `--panel-w: 0px` após transição CSS de 160 ms.
-- Ao expandir: restaura largura salva (mín. 120 px, máx. 450 px).
-
-### Redimensionar
-
-`#panel-resizer` é uma coluna de 8 px arrastável. `mousedown` inicia redimensionamento; `mousemove` define `--panel-w`; `mouseup` salva nova largura. Colapsa para 0 se arrastado abaixo de 60 px.
+**Click behaviour:**
+- If the button's panel is already active AND the side panel is expanded → collapses side panel.
+- Otherwise → switches to the panel + expands side panel (except SRS/Tools on mobile, which go fullscreen).
 
 ---
 
-## 4. Leitor (main#reader)
+## 3. Side Panel (#side-panel)
 
-### Cabeçalho
+Only one `.panel` child is active at a time (`class="panel active"`). Panels `srs` and `tools` show only a "Viewing in main panel →" placeholder — the actual content is in the reader overlays.
+
+### Collapsing / Expanding
+
+- `collapseBtn` (‹/›) toggles collapse.
+- On collapse: saves current width to `localStorage("panelW")`, sets `--panel-w: 0px` after 160 ms CSS transition.
+- On expand: restores saved width (min 120 px, max 450 px).
+
+### Resizing
+
+`#panel-resizer` is a draggable 8-px column. On `mousedown` starts resize; `mousemove` sets `--panel-w`; `mouseup` saves new width. Snaps to 0 (collapsed) if dragged below 60 px.
+
+---
+
+## 4. Reader (main#reader)
+
+### Header
 
 ```
 [‹]  Breadcrumb: "Abhidhamma Piṭaka › Dhammasaṅgaṇī"
-     [Mūla] [Aṭṭhakathā] ...   [navegação de capítulos ▾]
+     [Mūla] [Aṭṭhakathā] ...   [chapter nav ▾]
 ```
 
-- **Breadcrumb**: título do grupo + título da obra.
-- **Abas de partes**: um botão por chave de parte; clicar carrega o fragmento 0 daquela parte.
-- **Navegação de capítulos**: dropdown listando entradas TOC `rend=chapter`; clicar rola até e pisca aquele segmento.
+- **Breadcrumb**: group title + work title.
+- **Part tabs**: one button per part key; clicking loads chunk 0 of that part.
+- **Chapter nav**: dropdown listing `rend=chapter` TOC entries; clicking scrolls to and flashes that segment.
 
-### Área de Conteúdo (#content)
+### Content Area (#content)
 
-Cada segmento é renderizado como:
+Each segment is rendered as:
 
 ```html
-<div class="seg" data-rend="{rend}" data-seg-id="{id}" data-pali="{texto}">
+<div class="seg" data-rend="{rend}" data-seg-id="{id}" data-pali="{text}">
   <div class="pali-line">
-    [badge paranum]  texto pali (innerHTML)  [☆ botão favorito]
+    [paranum badge]  pali text (innerHTML)  [☆ bookmark btn]
   </div>
   <div class="translation-line">
-    texto de tradução (innerHTML)
+    translation text (innerHTML)
   </div>
 </div>
 ```
 
-Classes CSS adicionadas baseadas nas configurações:
-- `.no-pali` → oculta `.pali-line`
-- `.no-translation` → oculta `.translation-line`
+CSS classes added based on settings:
+- `.no-pali` → hides `.pali-line`
+- `.no-translation` → hides `.translation-line`
 
-### Navegação de Fragmentos (#toc-nav)
+`rend` values and their HTML mapping:
 
-Botões Anterior/Próximo e um indicador `{atual} / {total}` na parte inferior do leitor.
-
----
-
-## 5. Popover de Seleção (#selection-popover)
-
-Aparece quando o usuário seleciona texto (ou toca uma palavra no mobile) dentro de `.pali-line` ou `.translation-line`.
-
-Conteúdo:
-- **Cabeçalho**: rótulo ("↔ Tradução" ou "↔ Pāli") + botão copiar link + botão fechar.
-- **Texto contraparte**: se o usuário selecionou Pāli → mostra tradução; se selecionou tradução → mostra Pāli.
-- **Seção de dicionário** (apenas seleções Pāli): até 3 palavras buscadas; primeiro resultado mostrado inline.
-
----
-
-## 6. Tooltip de Notas (#note-tooltip)
-
-Notas de variantes de leitura (elementos superscript `.var-note` dentro do texto Pāli) mostram um tooltip flutuante no `mouseenter` com o texto da nota. Segue a posição do cursor.
-
----
-
-## 7. Painel de Configurações
-
-| Controle | Efeito |
+| rend | HTML element |
 |---|---|
-| Seletor de idioma | Muda `translationLang` + `uiLang`; re-renderiza conteúdo e strings de UI |
-| Botões A− / A+ | Muda `fontSize` (12–28 px); atualiza variável CSS `--font-scale` |
-| Checkbox Mostrar Pāli | Alterna classe `.no-pali` em todos os elementos `.seg` |
-| Checkbox Mostrar tradução | Alterna `.no-translation` |
-| Botão Instalar App | Mostrado quando `beforeinstallprompt` dispara (instalação PWA) |
+| book / title / nikaya | `<h1>` |
+| chapter | `<h2>` |
+| subhead | `<h3>` |
+| subsubhead | `<h4>` |
+| hangnum | `<p>` |
+| indent | `<blockquote>` |
+| footnote | `<p>` |
+| centre | `<p>` |
+| glossary | `<p>` |
+| (default) | `<p>` |
+
+### Chunk Navigation (#toc-nav)
+
+Prev/Next buttons and a `{current} / {total}` indicator at the bottom of the reader.
 
 ---
 
-## 8. Overlays em Tela Cheia (SRS e Ferramentas)
+## 5. Selection Popover (#selection-popover)
 
-Quando o botão SRS ou Ferramentas do rail está ativo, o leitor principal se oculta (`display:none`) e o overlay correspondente (`#reader-srs` ou `#reader-tools`) é exibido como `display:flex`.
+Appears when the user selects text (or taps a word on mobile) inside `.pali-line` or `.translation-line`.
+
+Content:
+- **Header**: label ("↔ Translation" or "↔ Pāli") + copy-link button + close button.
+- **Counterpart text**: if user selected Pāli → shows translation; if selected translation → shows Pāli.
+- **Dictionary section** (Pāli selections only): up to 3 words looked up; first hit shown inline.
+
+Position: tries to place to the right of the selection; falls back left if near viewport edge.
 
 ---
 
-## 9. Simulador de Debate (flutuante)
+## 6. Note Tooltip (#note-tooltip)
 
-Um botão fixo `💬 Debate` no canto inferior direito importa lazily `ai-feature/ui.js` no primeiro clique e mostra o painel `#interlocutor-container` (flutuante, rolável, `z-index: 10001`).
+Variant-reading footnotes (`.var-note` superscript elements inside Pāli text) show a floating tooltip on `mouseenter` with the footnote text. Follows cursor position.
 
 ---
 
-## 10. Comportamento Mobile (≤ 860px)
+## 7. Settings Panel
 
-- Rótulos do rail são ocultados (apenas ícones).
-- Painel lateral colapsa automaticamente quando um texto é selecionado.
-- SRS e Tools colapsam o painel e vão em tela cheia.
-- Toque para definir: tocar uma palavra no leitor aciona o popover de seleção usando `document.caretRangeFromPoint`.
-- `user-scalable=0` no viewport meta previne zoom acidental.
+| Control | Effect |
+|---|---|
+| Language select | Changes `translationLang` + `uiLang`; re-renders content and UI strings |
+| A− / A+ buttons | Changes `fontSize` (12–28 px); updates `--font-scale` CSS variable |
+| Show Pāli checkbox | Toggles `.no-pali` class on all `.seg` elements |
+| Show translation checkbox | Toggles `.no-translation` class |
+| Install App button | Shown when `beforeinstallprompt` fires (PWA install); triggers `deferredPrompt.prompt()` |
+
+---
+
+## 8. Fullscreen Overlays (SRS and Tools)
+
+When the SRS or Tools rail button is active, the main reader hides (`#reader-header`, `#content`, `#toc-nav` all `display:none`) and the corresponding overlay (`#reader-srs` or `#reader-tools`) is shown as `display:flex`.
+
+---
+
+## 9. Debate Simulator (floating)
+
+A fixed-position `💬 Debate` button in the bottom-right corner lazily imports `ai-feature/ui.js` on first click and shows the `#interlocutor-container` panel (floating, scrollable, `z-index: 10001`).
+
+---
+
+## 10. Mobile Behaviour (≤ 860px)
+
+- Rail labels are hidden (icons only).
+- Side panel collapses automatically when a text is selected.
+- SRS and Tools panels collapse the side panel and go fullscreen.
+- Tap-to-define: tapping a word in the reader triggers the selection popover using `document.caretRangeFromPoint`.
+- `user-scalable=0` in the viewport meta prevents accidental zoom.

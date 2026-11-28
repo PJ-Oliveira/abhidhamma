@@ -1,16 +1,16 @@
-import { t } from "./i18n.js?v=06b4ea02";
-import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=06b4ea02";
-import { renderTree, markActiveLeaf } from "./tree.js?v=06b4ea02";
-import { loadChunk, renderSegments } from "./reader.js?v=06b4ea02";
-import { initDictionaryPanel } from "./dictionary.js?v=06b4ea02";
-import { initSearchPanel } from "./search.js?v=06b4ea02";
-import { initExportPanel } from "./export.js?v=06b4ea02";
-import { initSrsPanel } from "./srs.js?v=06b4ea02";
-import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=06b4ea02";
-import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=06b4ea02";
-import { MnemonicLabUI } from "./mnemonic-lab/ui.js?v=06b4ea02";
-import { initSelectionHandler, clearSelection } from "./selection.js?v=06b4ea02";
-import { createLogger } from "./logger.js?v=06b4ea02";
+import { t } from "./i18n.js?v=ed8676ed";
+import { settings, updateSettings, getHistory, pushHistory, getBookmarks, toggleBookmark, isBookmarked, } from "./state.js?v=ed8676ed";
+import { renderTree, markActiveLeaf } from "./tree.js?v=ed8676ed";
+import { loadChunk, renderSegments } from "./reader.js?v=ed8676ed";
+import { initDictionaryPanel } from "./dictionary.js?v=ed8676ed";
+import { initSearchPanel } from "./search.js?v=ed8676ed";
+import { initExportPanel } from "./export.js?v=ed8676ed";
+import { initSrsPanel } from "./srs.js?v=ed8676ed";
+import { AbhidhammaSrsUI } from "./abhidhamma-srs/ui.js?v=ed8676ed";
+import { APP_OFFLINE_CACHE_NAME, requestPersistentStorage, VAULT_CACHE_NAME, } from "./abhidhamma-srs/offline-store.js?v=ed8676ed";
+import { MnemonicLabUI } from "./mnemonic-lab/ui.js?v=ed8676ed";
+import { initSelectionHandler, clearSelection } from "./selection.js?v=ed8676ed";
+import { createLogger } from "./logger.js?v=ed8676ed";
 const log = createLogger("app");
 function el(id) {
     const found = document.getElementById(id);
@@ -1214,7 +1214,7 @@ if (toggleInterlocutorBtn && interlocutorContainer) {
         if (!isInterlocutorLoaded) {
             toggleInterlocutorBtn.textContent = t('debate_btn_loading', settings.uiLang);
             try {
-                const { initInterlocutorPanel } = await import('./ai-feature/ui.js?v=06b4ea02');
+                const { initInterlocutorPanel } = await import('./ai-feature/ui.js?v=ed8676ed');
                 initInterlocutorPanel(interlocutorContainer);
                 isInterlocutorLoaded = true;
                 interlocutorContainer.addEventListener('interlocutor-submit', (e) => {

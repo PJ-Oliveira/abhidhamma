@@ -1,97 +1,97 @@
-# Abhidhamma Piṭaka Trilíngue — Visão Geral do Projeto
+# Abhidhamma Piṭaka Trilingual — Project Overview
 
-## O que é este projeto?
+## What is this project?
 
-O **Abhidhamma Piṭaka Trilíngue** é um Progressive Web App (PWA) executado inteiramente no navegador, para leitura, estudo e exportação do Cânone Pāli Abhidhamma Piṭaka — uma das três divisões principais (_piṭaka_) do Cânone Budista Theravāda — em três idiomas: **Pāli** (original), **Inglês** e **Português**, com Espanhol também presente nos dados.
+The **Abhidhamma Piṭaka Trilingual Site** is a client-side Progressive Web App (PWA) for reading, studying, and exporting the Pāli Abhidhamma Piṭaka — one of the three main divisions (_piṭaka_) of the Theravāda Buddhist canon — in three languages: **Pāli** (original), **English**, and **Portuguese**, with Spanish also present in the data.
 
-Não há backend no servidor. Todo o conteúdo, lógica e estado rodam completamente no navegador.
+The project has no server-side backend. All content, logic, and state run entirely in the browser.
 
 ---
 
-## Escopo e Conteúdo
+## Scope and Content
 
-O corpus abrange **sete obras canônicas do Abhidhamma** mais textos complementares:
+The corpus spans **seven canonical Abhidhamma works** plus companion texts:
 
-| Chave do grupo | Obras incluídas |
+| Group key | Works included |
 |---|---|
 | `abhidhamma` | Dhammasaṅgaṇī, Vibhaṅga, Dhātukathā, Puggalapaññatti, Kathāvatthu, Yamaka, Paṭṭhāna |
-| `outros` | Abhidhammatthasaṅgaha, Abhidhammāvatāra, outros manuais |
-| `visuddhimagga` | Visuddhimagga (Caminho da Purificação) |
-| `comentarios` | Comentários contemporâneos (bilíngue EN-PT) |
+| `outros` | Abhidhammatthasaṅgaha, Abhidhammāvatāra, other manuals |
+| `visuddhimagga` | Visuddhimagga (Path of Purification) |
+| `comentarios` | Contemporary commentaries (bilingual EN-PT) |
 
-Cada obra é dividida em **partes** (mūla, aṭṭhakathā, ṭīkā, anuṭīkā…) e subdividida em **arquivos JSON de fragmentos** de ~900 segmentos para carregamento eficiente.
+Each work is split into **parts** (mūla, aṭṭhakathā, ṭīkā, anuṭīkā…) and further divided into **chunk JSON files** of ~900 segments each for efficient loading.
 
 ---
 
-## Funcionalidades Principais
+## Key Features
 
-| Funcionalidade | Descrição |
+| Feature | Description |
 |---|---|
-| **Leitor trilíngue** | Pāli alinhado com traduções EN/PT/ES, segmento por segmento |
-| **Árvore de navegação** | Árvore hierárquica expansível de todas as obras e partes |
-| **Dicionário Pāli** | 721 lemas de alta frequência + 182 entradas gerais; normalização morfológica |
-| **Busca completa** | Índice invertido fragmentado; busca em Pāli, EN, PT, ES |
-| **Favoritos e Histórico** | Persistentes via localStorage |
-| **Exportação** | PDF (impressão do navegador) e EPUB 3 com apêndice de glossário |
-| **SRS** | Sistema de Repetição Espaçada (SM-2) para memorização de vocabulário Pāli |
-| **Ferramentas Abhidhamma** | Visualizações interativas: Mapa Mental, relações Paṭṭhāna, Citta-Vīthi, Mātikās, Cetasika |
-| **Simulador de Debate** | Motor lógico de debate canônico baseado na Kathāvatthu |
-| **PWA / Offline** | Service Worker pré-armazena todos os ~140 MB de conteúdo para leitura offline |
-| **i18n** | Interface em PT, EN ou ES; idioma de tradução selecionável independentemente |
+| **Trilingual reader** | Pāli aligned with EN/PT/ES translations, segment by segment |
+| **Navigation tree** | Hierarchical collapsible tree of all works and parts |
+| **Pāli dictionary** | 721 high-frequency lemmas (pali_core.json) + 182 general entries; morphological normalization (inflected forms) |
+| **Full-text search** | Sharded inverted-index; searches across Pāli, EN, PT, ES |
+| **Bookmarks & History** | Persistent via localStorage |
+| **Export** | PDF (browser print) and EPUB 3 with glossary appendix |
+| **SRS** | Spaced Repetition System (SM-2) for Pāli vocabulary memorization |
+| **Abhidhamma Tools** | Interactive visualizations: Mind Map, Paṭṭhāna relations, Citta-Vīthi, Mātikās, Cetasika |
+| **Debate Simulator** | Kathāvatthu-based canonical debate logic engine |
+| **PWA / Offline** | Service Worker pre-caches all ~140 MB of content for offline reading |
+| **i18n** | Interface in PT, EN, or ES; translation language independently selectable |
 
 ---
 
-## Stack Tecnológico
+## Technology Stack
 
-| Camada | Tecnologia |
+| Layer | Technology |
 |---|---|
-| Linguagem | TypeScript 5.6 (compilado para módulos ES2022 via `tsc`) |
-| Execução | Navegador (sem Node.js em runtime) |
-| Framework de testes | Vitest 4 com jsdom e cobertura via V8 |
-| Build | `tsc` + `scripts/version_js.py` (hash de cache-busting) |
-| Deploy | Arquivos estáticos (GitHub Pages via `.nojekyll`) |
-| Fonte tipográfica | Gentium Book Plus (TTF incluído) |
-| Dependência de IA | `@mlc-ai/web-llm` (carregado de forma lazy — não usado no build estável atual) |
+| Language | TypeScript 5.6 (compiled to ES2022 modules via `tsc`) |
+| Runtime | Browser (no Node.js at runtime) |
+| Test framework | Vitest 4 with jsdom and coverage via V8 |
+| Build | `tsc` + `scripts/version_js.py` (cache-busting hash) |
+| Deployment | Static files (GitHub Pages via `.nojekyll`) |
+| Font | Gentium Book Plus (bundled TTF) |
+| AI dep. | `@mlc-ai/web-llm` (loaded lazily — not used in current stable build) |
 
 ---
 
-## Início Rápido
+## Quick Start
 
 ```bash
-# Instalar dependências de desenvolvimento
+# Install dev dependencies
 npm install
 
-# Rodar testes
+# Run tests
 npm test
 
-# Build (compilação TypeScript + carimbo de versão)
+# Build (TypeScript compile + version stamp)
 npm run build
 
-# Modo watch
+# Watch mode
 npm run watch
 ```
 
-Abra `index.html` no navegador (ou sirva com qualquer servidor de arquivos estáticos). Nenhum passo de build é necessário para visualizar; os arquivos `js/` compilados estão versionados.
+Open `index.html` in a browser (or serve with any static file server). No build step needed to view; the compiled `js/` files are committed.
 
 ---
 
-## Hierarquia de Arquivos (nível raiz)
+## File Hierarchy (top level)
 
 ```
-index.html           Ponto de entrada
-css/style.css        Folha de estilos única
-js/                  Módulos JS compilados (versionados)
-src/                 Código-fonte TypeScript
+index.html           Entry point
+css/style.css        Single stylesheet
+js/                  Compiled JS modules (committed)
+src/                 TypeScript source
 data/
-  manifest.json      Registro de obras/partes/fragmentos
-  works/{id}/*.json  Fragmentos de conteúdo
-  dictionary/        Dicionários Pāli
-  search/            Fragmentos de busca
+  manifest.json      Works/parts/chunks registry
+  works/{id}/*.json  Content chunks
+  dictionary/        Pāli dictionaries
+  search/            Search shards
 fonts/               Gentium Book Plus TTF
 img/                 Logo
-service-worker.js    Cache PWA
+service-worker.js    PWA cache
 manifest.json        Web App Manifest
-tests/               Testes unitários (Vitest)
-scripts/             Auxiliares de build (Python)
-docs/                Documentação (esta pasta)
+tests/               Unit tests (Vitest)
+scripts/             Build helpers (Python)
+docs/                Documentation (this folder)
 ```

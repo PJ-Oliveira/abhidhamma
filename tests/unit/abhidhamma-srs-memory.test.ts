@@ -127,7 +127,7 @@ describe("Trilha de 90 Dias, Freio de Revisões, Sanguessugas e Intercalação",
     expect(PACE_MAX_NEW).toBe(12);
     expect(MAX_REVIEWS_PER_DAY).toBe(9999);
 
-    // Padrão (30 dias): 357 / 30 = 11.9 -> 12 novas/dia, 0d reserva, teto de intervalo 10d
+    // Default (30 days): 357 / 30 = 11.9 -> 12 new/day, 0d reserve, 10d max interval cap
     const cfg30 = ensurePaceTarget(DEFAULT_ANKI_CONFIG, now);
     expect(cfg30.paceHorizonDays).toBe(30);
     expect(cfg30.paceTargetMs).toBe(now + 30 * DAY_MS);
@@ -138,7 +138,7 @@ describe("Trilha de 90 Dias, Freio de Revisões, Sanguessugas e Intercalação",
     expect(sum30.maxIntervalDays).toBe(10);
     expect(sum30.dailyNewTarget).toBe(12);
 
-    // 60 dias: 54 dias ativos + 6 dias de consolidação -> 7 novas/dia, teto 15d
+    // 60 days: 54 active days + 6 consolidation days -> 7 new/day, 15d max interval cap
     const cfg60 = setPaceHorizon(DEFAULT_ANKI_CONFIG, 60, now);
     const expected60 = Math.min(12, Math.ceil(dataset.cards.length / (60 - getReserveDaysForHorizon(60))));
     expect(computeDailyNewQuota(dataset.cards, states, stats, cfg60, now)).toBe(expected60);
@@ -147,7 +147,7 @@ describe("Trilha de 90 Dias, Freio de Revisões, Sanguessugas e Intercalação",
     expect(sum60.reserveDays).toBe(6);
     expect(sum60.maxIntervalDays).toBe(15);
 
-    // 90 dias: 78 dias ativos + 12 dias de consolidação -> 5 novas/dia, teto 21d
+    // 90 days: 78 active days + 12 consolidation days -> 5 new/day, 21d max interval cap
     const cfg90 = setPaceHorizon(DEFAULT_ANKI_CONFIG, 90, now);
     const activeDays90 = 90 - PACE_RESERVE_DAYS;
     const expected90 = Math.min(PACE_MAX_NEW, Math.max(PACE_MIN_NEW, Math.ceil(dataset.cards.length / activeDays90)));
@@ -163,21 +163,21 @@ describe("Trilha de 90 Dias, Freio de Revisões, Sanguessugas e Intercalação",
     const lateSummary90 = computePlan90Summary(dataset.cards, states, stats, cfg90, now + 82 * DAY_MS);
     expect(lateSummary90.isConsolidationPhase).toBe(true);
 
-    // Config manual antiga com 9999 ou 25 novas/dia é sempre limitada a 12 novas/dia e revisões em 9999
+    // Legacy manual config with 9999 or 25 new/day is always clamped to 12 new/day and 9999 reviews
     const legacyCfg = normalizeAnkiConfig({ adaptivePace: false, newCardsPerDay: 9999, extraNewCount: 50 });
     expect(legacyCfg.newCardsPerDay).toBe(12);
     expect(legacyCfg.maxReviewsPerDay).toBe(9999);
     expect(computeDailyNewQuota(dataset.cards, states, stats, legacyCfg, now)).toBe(12);
 
-    // Teto de intervalo SM-2 por horizonte evita intervalos longos demais antes do prazo
+    // Horizon-specific SM-2 interval cap prevents overly long intervals before the target deadline
     let st = createInitialAnkiCardState("c0.citta_atom", cfg30);
     st = { ...st, phase: "review", intervalDays: 8, easeFactor: 2.5, dueAt: now - 1000, lastReviewAt: now - 8 * DAY_MS };
     const next30 = scheduleAnkiCard(st, 3, now, cfg30);
-    expect(next30.intervalDays).toBe(getMaxIntervalForHorizon(30)); // 10d max em 30d
+    expect(next30.intervalDays).toBe(getMaxIntervalForHorizon(30)); // 10d max in 30d
     const next60 = scheduleAnkiCard(st, 3, now, cfg60);
-    expect(next60.intervalDays).toBe(getMaxIntervalForHorizon(60)); // 15d max em 60d
+    expect(next60.intervalDays).toBe(getMaxIntervalForHorizon(60)); // 15d max in 60d
 
-    // Rollover diário: carta graduada ontem à noite já vence hoje pela manhã
+    // Daily rollover: card graduated last night is already due this morning
     const yesterdayNight = Date.UTC(2026, 10, 17, 22, 0, 0);
     const todayMorning = Date.UTC(2026, 10, 18, 8, 0, 0);
     const revSt: AnkiCardState = {
@@ -189,7 +189,7 @@ describe("Trilha de 90 Dias, Freio de Revisões, Sanguessugas e Intercalação",
     };
     expect(isReviewDue(revSt, todayMorning)).toBe(true);
 
-    // Freio automático quando há grande acúmulo de revisões vencidas
+    // Automatic throttling when there is a large backlog of due reviews
     for (const c of dataset.cards.slice(0, 220)) {
       states[c.id] = { ...createInitialAnkiCardState(c.id), phase: "review", intervalDays: 3, dueAt: now - 1 };
     }
@@ -340,11 +340,11 @@ describe("Cofre Offline de Respostas (Cache API, Merge e Fallback sem Rede)", ()
         now
       );
 
-      // Simula limpeza de localStorage (ex.: limpeza de cookies / ITP)
+      // Simulate localStorage wipe (e.g., cookie clearing / ITP)
       localStorage.clear();
       expect(localStorage.getItem("atp.abhidhamma.anki.cards.v1")).toBeNull();
 
-      // Hidratação recupera automaticamente do cofre Cache API e restaura localStorage
+      // Hydration automatically recovers from the Cache API vault and restores localStorage
       const hydrated = await hydrateOfflineVault(now + 1000);
       expect(hydrated.status.recoveredFrom).toBe("cacheAPI");
       expect(hydrated.snapshot.states["c0.paramattha_sabhava"]?.phase).toBe("review");
@@ -352,7 +352,7 @@ describe("Cofre Offline de Respostas (Cache API, Merge e Fallback sem Rede)", ()
       expect(hydrated.snapshot.recentLog.length).toBe(1);
       expect(localStorage.getItem("atp.abhidhamma.anki.cards.v1")).toContain("c0.paramattha_sabhava");
 
-      // Reset limpa o cofre explicitamente
+      // Reset explicitly clears the vault
       await resetOfflineVault();
       localStorage.clear();
       const afterReset = await hydrateOfflineVault(now + 2000);
@@ -399,7 +399,7 @@ describe("Cofre Offline de Respostas (Cache API, Merge e Fallback sem Rede)", ()
       await persistOfflineProgress({ "c0.nibbana_atom": st }, stats, DEFAULT_ANKI_CONFIG, {}, [], undefined, now);
       expect(opfsFiles.size).toBe(1);
 
-      // Limpa tanto localStorage quanto Cache API — sobra só o arquivo privado OPFS da origem
+      // Clear both localStorage and Cache API — leaving only the site-origin private OPFS file
       localStorage.clear();
       (globalThis as any).caches = makeMockCaches();
 
@@ -407,7 +407,7 @@ describe("Cofre Offline de Respostas (Cache API, Merge e Fallback sem Rede)", ()
       expect(healed.status.hasOpfs).toBe(true);
       expect(healed.status.recoveredFrom).toBe("opfs");
       expect(healed.snapshot.states["c0.nibbana_atom"]?.phase).toBe("review");
-      // Auto-curou de volta no localStorage!
+      // Self-healed back into localStorage!
       expect(localStorage.getItem("atp.abhidhamma.anki.cards.v1")).toContain("c0.nibbana_atom");
     } finally {
       (globalThis as any).caches = prevCaches;
@@ -466,7 +466,7 @@ describe("Cofre Offline de Respostas (Cache API, Merge e Fallback sem Rede)", ()
     const prevFetch = global.fetch;
     (globalThis as any).caches = makeMockCaches();
     try {
-      // 1) Online: busca e espelha no cache offline
+      // 1) Online: fetches and mirrors into the offline cache
       global.fetch = async () =>
         new Response(JSON.stringify({ version: 1, chapters: [], cards: [] }), {
           status: 200,
@@ -475,7 +475,7 @@ describe("Cofre Offline de Respostas (Cache API, Merge e Fallback sem Rede)", ()
       const onlineDeck = await fetchDeckWithOfflineCache<AbhidhammaDataset>("data/srs/abhidhamma_cards.json");
       expect(onlineDeck.version).toBe(1);
 
-      // 2) Offline: fetch falha, mas lê direto do cache offline
+      // 2) Offline: fetch fails, but reads directly from the offline cache
       global.fetch = async () => {
         throw new Error("Network offline");
       };
@@ -493,7 +493,7 @@ describe("Teto Estrito de 12 Novas/Dia e Revisão Máxima após concluir a dose 
     localStorage.clear();
     const now = Date.now();
     const states: Record<string, AnkiCardState> = {};
-    // Memoriza 12 cartas hoje (atingindo o teto máximo absoluto de 12 novas/dia)
+    // Memorize 12 cards today (reaching the absolute daily cap of 12 new/day)
     const first12 = dataset.cards.filter((c) => c.chapter === 0 || c.chapter === 1).slice(0, 12);
     for (const c of first12) {
       states[c.id] = scheduleAnkiCard(createInitialAnkiCardState(c.id), 4, now);
@@ -510,19 +510,19 @@ describe("Teto Estrito de 12 Novas/Dia e Revisão Máxima após concluir a dose 
     localStorage.setItem("atp.abhidhamma.anki.cards.v1", JSON.stringify(states));
     localStorage.setItem("atp.abhidhamma.anki.stats.v1", JSON.stringify(statsAtCap));
 
-    // Revisão antecipada 10 min depois de graduar (intervalDays=4) NÃO infla o intervalo para 10+ dias
+    // Early review 10 min after graduation (intervalDays=4) does NOT inflate the interval to 10+ days
     const earlyReviewed = scheduleAnkiCard(states[first12[0]!.id]!, 3, now + 600_000);
     expect(earlyReviewed.intervalDays).toBe(4);
     expect(earlyReviewed.reps).toBe(2);
 
-    // Com 12 novas já feitas hoje: 0 novas extras e TODAS as 12 estudadas liberadas para revisão máxima
+    // With 12 new cards already done today: 0 extra new cards and ALL 12 studied cards unlocked for maximum review
     const batchAtCap = computeProportionalExtraBatch(dataset.chapters, dataset.cards, states, null, now, statsAtCap);
     expect(batchAtCap.extraNew).toBe(0);
     expect(batchAtCap.hasMoreNew).toBe(false);
     expect(batchAtCap.earlyReviews).toBe(12);
     expect(buildEarlyReviewQueue(dataset.chapters, dataset.cards, states, null, undefined, now).length).toBe(12);
 
-    // Com apenas 5 novas feitas hoje (ex.: trilha de 90d): pode adicionar no máximo até completar 12/dia + TODAS as revisões
+    // With only 5 new cards done today (e.g., 90d track): can add up to the 12/day cap + ALL reviews
     const statsUnderCap = { ...statsAtCap, newStudiedToday: 5 };
     const batchUnderCap = computeProportionalExtraBatch(dataset.chapters, dataset.cards, states, null, now, statsUnderCap);
     expect(batchUnderCap.extraNew).toBeGreaterThan(0);
@@ -536,7 +536,7 @@ describe("Teto Estrito de 12 Novas/Dia e Revisão Máxima após concluir a dose 
     const ui = new AbhidhammaSrsUI(mount, "pt");
     await ui.init();
 
-    // Mesmo com 12/12 novas concluídas, ambos os botões permanecem DESBLOQUEADOS para Revisão Máxima
+    // Even with 12/12 new cards completed, both buttons remain UNLOCKED for Maximum Review
     const allBtn = mount.querySelector<HTMLButtonElement>(".abhi-btn-study-all")!;
     expect(allBtn.disabled).toBe(false);
     expect(allBtn.textContent).toContain("Revisão Máxima");
@@ -546,7 +546,7 @@ describe("Teto Estrito de 12 Novas/Dia e Revisão Máxima após concluir a dose 
     expect(planBtn.disabled).toBe(false);
     expect(mount.querySelector(".abhi-btn-review-ahead-plan90")).not.toBeNull();
 
-    // Clicar inicia imediatamente a revisão máxima
+    // Clicking immediately starts maximum review
     planBtn.click();
     expect(mount.querySelector(".abhi-flashcard")).not.toBeNull();
   });
@@ -555,7 +555,7 @@ describe("Teto Estrito de 12 Novas/Dia e Revisão Máxima após concluir a dose 
     localStorage.clear();
     const now = 1_700_000_000_000;
     const states: Record<string, AnkiCardState> = {};
-    // Desbloqueia caps 0..4 marcando átomos como memorizados no futuro
+    // Unlock chapters 0..4 by marking atoms as memorized in the future
     for (const c of dataset.cards) {
       if (c.tier === "atom" && c.chapter <= 4) {
         states[c.id] = {
@@ -572,9 +572,9 @@ describe("Teto Estrito de 12 Novas/Dia e Revisão Máxima após concluir a dose 
         };
       }
     }
-    // 1) Carta com 4 campos + mathStructure + sanguessuga: c2.cet_01 (Phassa)
+    // 1) Card with 4 fields + mathStructure + leech: c2.cet_01 (Phassa)
     states["c2.cet_01"] = { ...states["c2.cet_01"]!, lapses: 5, dueAt: now - 3000 };
-    // 2) Carta de enumeração: c2.enum_universal_7 (força como devida em review para testar imediatamente)
+    // 2) Enumeration card: c2.enum_universal_7 (forced due in review for immediate testing)
     states["c2.enum_universal_7"] = {
       id: "c2.enum_universal_7",
       phase: "review",
@@ -587,7 +587,7 @@ describe("Teto Estrito de 12 Novas/Dia e Revisão Máxima após concluir a dose 
       dueAt: now - 2000,
       lastReviewAt: now - DAY_MS,
     };
-    // 3) Carta de sequência: c4.seq_vithi_17
+    // 3) Sequence card: c4.seq_vithi_17
     states["c4.seq_vithi_17"] = {
       id: "c4.seq_vithi_17",
       phase: "review",
@@ -609,7 +609,7 @@ describe("Teto Estrito de 12 Novas/Dia e Revisão Máxima após concluir a dose 
     const ui = new AbhidhammaSrsUI(mount, "pt");
     await ui.init();
 
-    // Abre Cap. 2 -> 1ª carta é c2.cet_01 (4 campos + mathStructure + sanguessuga)
+    // Open Ch. 2 -> 1st card is c2.cet_01 (4 fields + mathStructure + leech)
     mount.querySelector<HTMLButtonElement>('[data-study-chapter="2"]')!.click();
     const lakInput = mount.querySelector<HTMLInputElement>('[data-fourfold="lakkhana"]')!;
     expect(lakInput).not.toBeNull();
@@ -619,26 +619,26 @@ describe("Teto Estrito de 12 Novas/Dia e Revisão Máxima após concluir a dose 
     expect(mount.querySelector(".abhi-leech-box")).not.toBeNull();
     expect(mount.querySelector(".abhi-char-user")?.textContent).toContain("tocar o objeto");
 
-    // Salva nota mnemônica
+    // Save mnemonic note
     const mnem = mount.querySelector<HTMLTextAreaElement>(".abhi-mnemonic-input")!;
     mnem.value = "Contato = fósforo riscando";
     mnem.dispatchEvent(new Event("input"));
     expect(loadMnemonicNotes()["c2.cet_01"]).toBe("Contato = fósforo riscando");
 
-    // Avalia Bom -> vai para c2.enum_universal_7 (Enumeração com checklist)
+    // Rate Good -> advances to c2.enum_universal_7 (Enumeration with checklist)
     mount.querySelector<HTMLButtonElement>('.abhi-rate-btn[data-rate="3"]')!.click();
     mount.querySelector<HTMLButtonElement>(".abhi-btn-reveal")!.click();
     const enumBoxes = mount.querySelectorAll<HTMLInputElement>("[data-enum-idx]");
     expect(enumBoxes.length).toBe(7);
     expect(mount.querySelector(".abhi-enum-status.warn")).not.toBeNull();
-    // Marca todos os 7 itens -> muda para completo (ok)
+    // Check all 7 items -> transitions to complete (ok)
     enumBoxes.forEach((b) => {
       b.checked = true;
       b.dispatchEvent(new Event("change"));
     });
     expect(mount.querySelector(".abhi-enum-status.ok")).not.toBeNull();
 
-    // Abre Cap. 4 -> c4.seq_vithi_17 (Sequência interativa)
+    // Open Ch. 4 -> c4.seq_vithi_17 (Interactive sequence)
     mount.querySelector<HTMLButtonElement>(".abhi-btn-back")!.click();
     mount.querySelector<HTMLButtonElement>('[data-study-chapter="4"]')!.click();
     const chips = mount.querySelectorAll<HTMLButtonElement>("[data-seq-pick]");

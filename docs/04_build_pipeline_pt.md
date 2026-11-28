@@ -1,6 +1,6 @@
-# 04 — Pipeline de Build
+# 04 — Build Pipeline
 
-## 1. Visão Geral
+## 1. Overview
 
 ```
 Source DBs (SQLite)
@@ -48,102 +48,102 @@ index.html (versioned script src)
 "build": "tsc && python3 scripts/version_js.py"
 ```
 
-Este é o único comando necessário após editar TypeScript. Ele:
-1. Compila todos os `src/*.ts` → `js/*.js`
-2. Aplica hashes de versão em todos os imports
+This is the only command needed after editing TypeScript. It:
+1. Compiles all `src/*.ts` → `js/*.js`
+2. Stamps version hashes on all imports
 
-**Sem bundler.** Cada módulo permanece como um arquivo separado. O navegador os carrega como módulos ES2022 nativos.
+**No bundler.** Each module remains a separate file. The browser loads them as native ES2022 modules.
 
-## 3. `extract_data.py` — Extração do Corpus
+## 3. `extract_data.py` — Corpus Extraction
 
-**Quando executar:** Apenas quando um novo banco de dados de origem estiver disponível ou quando o schema de segmentos mudar. Os arquivos JSON extraídos são commitados na pasta do site.
+**When to run:** Only when a new source database is available or when the segment schema changes. The extracted JSON files are committed to the site folder.
 
-**Bancos de dados de origem necessários (não incluídos na pasta do site):**
+**Source databases required (not in site folder):**
 - `tipitaka-roman-pali.db`
 - `english_tipitaka_translation_data-2026-04-28.db`
 - `portuguese_tipitaka_translation_data-2026-07-22.db`
 - `spanish_tipitaka_translation_data-2026-05-15.db`
 
-**O que ele faz:**
-1. Abre todas as quatro conexões SQLite
-2. Para cada obra/parte no registro `WORKS`:
-   - Lê linhas da(s) tabela(s) especificada(s) com filtro opcional de `id_range`
-   - `clean_pali()` converte o pseudo-XML de origem em HTML para o navegador:
+**What it does:**
+1. Opens all four SQLite connections
+2. For each work/part in `WORKS` registry:
+   - Reads rows from specified table(s) with optional `id_range` filter
+   - `clean_pali()` converts source pseudo-XML to browser HTML:
      - `<hi rend="bold">X</hi>` → `<b>X</b>`
-     - `<note>text</note>` → `<sup class="var-note" data-note="N">[N+1]</sup>` (texto da nota armazenado no array `notes`)
-     - `<hi rend="paranum|dot">` → removido
-     - Marcadores de quebra de página `<pb>` → removidos
-   - Constrói o TOC a partir dos cabeçalhos de `chapter`/`subhead`
-   - Divide em chunks de ≤ 900 segmentos, alinhados aos limites das seções
-   - Grava `{partKey}__{i}.json` ou `{partKey}.json` por chunk
-3. Grava `data/manifest.json`
+     - `<note>text</note>` → `<sup class="var-note" data-note="N">[N+1]</sup>` (note text stored in `notes` array)
+     - `<hi rend="paranum|dot">` → removed
+     - `<pb>` page-break markers → removed
+   - Builds TOC from `chapter`/`subhead` headings
+   - Splits into chunks ≤ 900 segments, aligned to section boundaries
+   - Writes `{partKey}__{i}.json` or `{partKey}.json` per chunk
+3. Writes `data/manifest.json`
 
-**Constante de tamanho do chunk:** `CHUNK_SIZE = 900` (linha 27). Ajustar isso requer reexecutar a extração.
+**Chunk size constant:** `CHUNK_SIZE = 900` (line 27). Adjusting this requires re-running extraction.
 
-## 4. `build_search_index.py` — Construtor do Índice de Busca
+## 4. `build_search_index.py` — Search Index Builder
 
-**Quando executar:** Após qualquer alteração nos arquivos JSON do corpus (`data/works/`). Os resultados de busca ficarão desatualizados até que seja reexecutado.
+**When to run:** After any change to corpus JSON files (`data/works/`). Search results will be stale until re-run.
 
 ```bash
 python3 scripts/build_search_index.py
 ```
 
-**Algoritmo:**
-1. Lê todos os arquivos de segmentos através do manifest
-2. Tokeniza: remove tags HTML, converte para minúsculas, extrai tokens de palavras Unicode ≥ 3 caracteres
-3. Para cada token, registra a qual shard (primeiro caractere ou `misc`) ele pertence
-4. Constrói `shard_postings[key][token] → [segIdx...]` e `shard_segments[key] → [SearchHit...]`
-5. Limita a lista de postagens de cada token a 30 entradas
-6. Grava um arquivo JSON por chave de shard + `manifest.json`
+**Algorithm:**
+1. Reads all segment files via manifest
+2. Tokenizes: strips HTML tags, lowercases, extracts Unicode word tokens ≥ 3 chars
+3. For each token, records which shard (first char or `misc`) it belongs to
+4. Builds `shard_postings[key][token] → [segIdx...]` and `shard_segments[key] → [SearchHit...]`
+5. Caps each token's posting list at 30 entries
+6. Writes one JSON file per shard key + `manifest.json`
 
-**Constantes no script:**
+**Constants in the script:**
 - `MAX_POSTINGS_PER_TOKEN = 30`
 - `MIN_TOKEN_LEN = 3`
-- `SNIPPET_LEN = 90` (caracteres)
+- `SNIPPET_LEN = 90` (chars)
 
-**Resultado da última execução:** 91.065 segmentos processados, 50 shards gravados.
+**Last run result:** 91,065 segments processed, 50 shards written.
 
-**Importante:** O índice de busca remove todo o HTML dos snippets (via `TAG_RE = re.compile(r"<[^>]+")`). Os snippets são, portanto, sempre texto simples, independentemente da marcação inline na fonte.
+**Important:** The search index strips all HTML from snippets (via `TAG_RE = re.compile(r"<[^>]+")`). Snippets are therefore always plain text regardless of inline markup in the source.
 
-## 5. `build_core_dictionary.py` — Construtor do Dicionário Principal
+## 5. `build_core_dictionary.py` — Core Dictionary Builder
 
-**Quando executar:** Ao adicionar novas entradas lexicais ao `pali_core.json`. Este é um processo manual, estágio por estágio.
+**When to run:** When adding new lexical entries to `pali_core.json`. This is a manual, stage-by-stage process.
 
-**Escala:** 14.420 linhas. O arquivo serve tanto como script quanto como documentação oficial de cada decisão lexicográfica tomada para cada uma das 721 entradas.
+**Scale:** 14,420 lines. The file serves as both the script and the authoritative documentation of every lexicographic decision made for each of the 721 entries.
 
-**Metodologia:**
-1. Lê o `dpd-mobile.db` (Digital Pāli Dictionary, CC BY-NC-SA 4.0)
-2. Agrupa formas de superfície (flexões) aos lemas usando a tabela `dpd_headwords.lookup`
-3. Conta frequências de tokens no corpus a partir de `data/works/`
-4. Atribui formas de superfície aos lemas pela leitura dominante (documentada por lema)
-5. Extrai acepções (pos, grammar, root, syn, ant, en) do DPD
-6. Traduções manuais em PT e ES são hardcoded no script
-7. Grava `data/dictionary/pali_core.json`
+**Methodology:**
+1. Reads `dpd-mobile.db` (Digital Pāli Dictionary, CC BY-NC-SA 4.0)
+2. Groups surface forms (inflections) to lemmas using `dpd_headwords.lookup` table
+3. Counts corpus token frequencies from `data/works/`
+4. Assigns surface forms to lemmas by dominant reading (documented per-lemma)
+5. Extracts senses (pos, grammar, root, syn, ant, en) from DPD
+6. Manual PT and ES translations are hardcoded in the script
+7. Writes `data/dictionary/pali_core.json`
 
-**Estágio atual:** Estágio 7 (65,23% de cobertura de tokens do corpus, meta de 82%). 721 entradas, 120 entradas de raízes.
+**Current stage:** Stage 7 (65.23% corpus token coverage, target 82%). 721 entries, 120 root entries.
 
-**Histórico de estágios:**
-- Estágio 1: 4 lemas — ta, ca, na, dhamma (10,79%)
-- Estágio 2: +8 lemas — ti, pe, uppajjati, ya, paccaya, vā, hoti, pana (21,68%)
-- Estágio 3: +17 lemas — khandha, tattha, paṭicca, eka, vutta, ... (total ~30%)
-- Estágio 4: +lemas atingindo ~40%
-- Estágio 5: +lemas atingindo ~50%
-- Estágio 6: +lemas atingindo ~55%
-- Estágio 7: 205 novos lemas atingindo 65,23%
+**Stage history:**
+- Stage 1: 4 lemmas — ta, ca, na, dhamma (10.79%)
+- Stage 2: +8 lemmas — ti, pe, uppajjati, ya, paccaya, vā, hoti, pana (21.68%)
+- Stage 3: +17 lemmas — khandha, tattha, paṭicca, eka, vutta, ... (total ~30%)
+- Stage 4: +lemmas reaching ~40%
+- Stage 5: +lemmas reaching ~50%
+- Stage 6: +lemmas reaching ~55%
+- Stage 7: 205 new lemmas reaching 65.23%
 
-**Pendente conhecido:** Desambiguação de `katatta`/`kaṭatta` (dental vs retroflexo); consulte o docstring do script de build.
+**Known pending:** `katatta`/`kaṭatta` disambiguation (dental vs retroflex); see build script docstring.
 
-## 6. `build_common_dictionary.py` — Construtor do Dicionário Comum
+## 6. `build_common_dictionary.py` — Common Dictionary Builder
 
-**Quando executar:** Ao adicionar entradas simples que não justificam tratamento com múltiplos sentidos.
+**When to run:** When adding simple entries that do not warrant multi-sense treatment.
 
-241 linhas. Lê de uma tabela simples de verbetes e grava `common_pali.json`.
+241 lines. Reads from a simple headword table and writes `common_pali.json`.
 
-## 7. `version_js.py` — Carimbador de Versão de Imports
+## 7. `version_js.py` — Import Version Stamper
 
-**Objetivo:** Invalidar o cache de módulos ES anexando `?v={hash}` a todos os caminhos de importação.
+**Purpose:** Bust ES module cache by appending `?v={hash}` to all import paths.
 
-**Algoritmo:**
+**Algorithm:**
 ```python
 ROOT = Path(__file__).resolve().parent.parent
 JS_DIR = ROOT / "js"
@@ -163,11 +163,11 @@ PAT = re.compile(r'((?:from|import)\s+")(\.\/[^"?]+\.js)(?:\?v=[^"]*)?(")')
 # 3. Rewrite <script> tag in index.html
 ```
 
-**Por que pós-compilação:** O TypeScript resolve caminhos de importação literalmente. `from "./export.js?v=..."` faria com que o `tsc` procurasse por um arquivo nomeado literalmente `export.js?v=...`. O carimbo de versão é, portanto, aplicado apenas à saída compilada.
+**Why post-compile:** TypeScript resolves import paths literally. `from "./export.js?v=..."` would cause `tsc` to look for a file named literally `export.js?v=...`. The version stamp is therefore applied only to compiled output.
 
-**Hash da versão atual:** `5df634f9` (calculado em 23-08-2026).
+**Current version hash:** `5df634f9` (computed 2026-08-23).
 
-## 8. Configurações do `tsconfig.json`
+## 8. `tsconfig.json` Settings
 
 ```json
 {
@@ -194,14 +194,14 @@ PAT = re.compile(r'((?:from|import)\s+")(\.\/[^"?]+\.js)(?:\?v=[^"]*)?(")')
 }
 ```
 
-Configurações principais:
-- `noUncheckedIndexedAccess`: o acesso a arrays retorna `T | undefined`, forçando checagens de nulo. É por isso que o código usa `?.` extensivamente em resultados de arrays.
-- `exactOptionalPropertyTypes`: distingue `{ x?: string }` de `{ x?: string | undefined }`.
-- `removeComments`: arquivos de saída não contêm comentários (mantém o JS enxuto).
-- `sourceMap`: arquivos `.js.map` permitem que o DevTools do navegador exiba o código-fonte TypeScript.
+Key settings:
+- `noUncheckedIndexedAccess`: array access returns `T | undefined`, forcing null checks. This is why the code uses `?.` extensively on array results.
+- `exactOptionalPropertyTypes`: distinguishes `{ x?: string }` from `{ x?: string | undefined }`.
+- `removeComments`: output files contain no comments (keeps JS lean).
+- `sourceMap`: `.js.map` files allow browser DevTools to show TypeScript source.
 
-## 9. Análise de Frequência de Palavras
+## 9. Word Frequency Analysis
 
-`scripts/word_frequency.py` conta as frequências de tokens em todo o corpus e grava `pali_word_freq.tsv`. Este TSV é usado por `build_core_dictionary.py` para determinar quais lemas incluir em cada estágio. `pali_word_freq.tsv` está commitado na pasta do site como um arquivo de referência estático.
+`scripts/word_frequency.py` counts token frequencies across the corpus and writes `pali_word_freq.tsv`. This TSV is used by `build_core_dictionary.py` to determine which lemmas to include in each stage. `pali_word_freq.tsv` is committed to the site folder as a static reference file.
 
-O corpus possui um total de 1.878.244 ocorrências de tokens em Pāli.
+The corpus has 1,878,244 total Pāli token occurrences.

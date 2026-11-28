@@ -1,12 +1,12 @@
 // ============================================================================
-// CAPÍTULO 7 (EXPANSÃO GRANULAR) — TODOS OS DHAMMAS INDIVIDUAIS DO SAMUCCAYA
+// CHAPTER 7 (GRANULAR EXPANSION) — ALL INDIVIDUAL DHAMMAS OF THE SAMUCCAYA
 // ============================================================================
-// Completa AS VII.3–53 no nível de cada dhamma individual:
-// 1. Akusala Granular (34 itens): membros dos 9 grupos → Cetasika real (Vatthuto)
-// 2. Missaka Granular (51 itens): 22 Indriyas + 12 Maggaṅgas + 4 Balas + 4 Adhipatis + 4 Āhāras + 5 Leis
-// 3. 37 Bodhipakkhiyas Individuais (37 itens): cada fator → seu Sabhāva-dhamma real (14)
-// 4. Sabba Granular (28 itens): 5 Khandhas + 12 Āyatanas + 7 Viññāṇadhātus + 4 Ariyasaccas
-// Total: 150 itens individuais 100% fiéis ao mūla (AS VII.3–53).
+// Completes AS VII.3–53 at the level of each individual dhamma:
+// 1. Granular Akusala (34 items): members of the 9 groups → real Cetasika (Vatthuto)
+// 2. Granular Missaka (51 items): 22 Indriyas + 12 Maggaṅgas + 4 Balas + 4 Adhipatis + 4 Āhāras + 5 Laws
+// 3. 37 Individual Bodhipakkhiyas (37 items): each factor → its real Sabhāva-dhamma (14)
+// 4. Granular Sabba (28 items): 5 Khandhas + 12 Āyatanas + 7 Viññāṇadhātus + 4 Ariyasaccas
+// Total: 150 individual items 100% faithful to the mūla (AS VII.3–53).
 // ============================================================================
 
 import type { NaryChallengeItem } from "../nary-chapters-data.js";
@@ -133,9 +133,9 @@ function mkSb(
 
 export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
   // ══════════════════════════════════════════════════════════════════════════
-  // 1. AKUSALA-SAṄGAHA GRANULAR (34 ITENS — AS VII.3–14)
+  // 1. GRANULAR AKUSALA-SAṄGAHA (34 ITEMS — AS VII.3–14)
   // ══════════════════════════════════════════════════════════════════════════
-  // 4 Āsava / Ogha / Yoga (4 → 3 reais: Lobha, Lobha, Diṭṭhi, Moha)
+  // 4 Āsava / Ogha / Yoga (4 → 3 real entities: Lobha, Lobha, Diṭṭhi, Moha)
   mkAk("sam:akm:1", "AS VII.3–5, 14", "AkM-01", "asava_ogha_yoga", 1, "lobha",
     "Kāmāsava · Kāmogha · Kāmayoga", "Efluência/Torrente/Jugo do Prazer Sensual", "Taint/Flood/Yoke of Sense-Desire", "Efluencia/Torrente/Yugo del Deseo Sensual",
     "1.º membro de Āsava, Ogha e Yoga: reduz-se em substância (vatthuto) ao cetasika Lobha.", "1st member of Āsava, Ogha & Yoga: reduces in reality (vatthuto) to Lobha.", "1.er miembro de Āsava, Ogha y Yoga: se reduce a Lobha."),
@@ -149,7 +149,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
     "Avijjāsava · Avijjogha · Avijjāyoga", "Efluência/Torrente/Jugo da Ignorância", "Taint/Flood/Yoke of Ignorance", "Efluencia/Torrente/Yugo de la Ignorancia",
     "4.º membro de Āsava, Ogha e Yoga: corresponde ao cetasika Moha (erradicado apenas no Arahattamagga).", "4th member of Āsava, Ogha & Yoga: corresponds to Moha (eradicated only at Arahantship).", "4.º miembro: corresponde al cetasika Moha."),
 
-  // 4 Gantha (4 → 3 reais: Lobha, Dosa, Diṭṭhi, Diṭṭhi)
+  // 4 Gantha (4 → 3 real entities: Lobha, Dosa, Diṭṭhi, Diṭṭhi)
   mkAk("sam:akm:5", "AS VII.6, 13–14", "AkM-05", "gantha", 1, "lobha",
     "Abhijjhā-kāyagantha", "Nó 1 · Cobiça (Abhijjhā)", "Knot 1 · Covetousness (Abhijjhā)", "Nudo 1 · Codicia (Abhijjhā)",
     "1.º dos 4 Nós corporais: em substância real é Lobha (AS VII.13).", "1st of 4 Bodily Knots: in ultimate reality it is Lobha (AS VII.13).", "1.er Nudo corporal: en realidad última es Lobha (AS VII.13)."),
@@ -163,7 +163,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
     "Idaṃsaccābhinivesa-kāyagantha", "Nó 4 · Dogmatismo ('Só Isto é Verdade')", "Knot 4 · Dogmatic Adherence ('This Alone Is Truth')", "Nudo 4 · Dogmatismo ('Solo Esto es Verdad')",
     "4.º Nó corporal: também se reduz a Diṭṭhi → 4 Ganthas = 3 reais (Lobha, Dosa, Diṭṭhi).", "4th Bodily Knot: also reduces to Diṭṭhi → 4 Knots = 3 real (Lobha, Dosa, Diṭṭhi).", "4.º Nudo corporal: también es Diṭṭhi → 4 Nudos = 3 reales."),
 
-  // 4 Upādāna (4 → 2 reais: Lobha + 3×Diṭṭhi)
+  // 4 Upādāna (4 → 2 real entities: Lobha + 3×Diṭṭhi)
   mkAk("sam:akm:9", "AS VII.7, 13–14", "AkM-09", "upadana", 1, "lobha",
     "Kāmupādāna", "Apego 1 · Apego aos Prazeres Sensuais", "Clinging 1 · Clinging to Sense-Pleasures", "Aferramiento 1 · Apego Sensual",
     "Único dos 4 Upādānas que é Lobha (os outros 3 são todos Diṭṭhi!).", "Sole Upādāna that is Lobha (the other 3 are all Diṭṭhi!).", "Único de los 4 Upādānas que es Lobha (los otros 3 son Diṭṭhi)."),
@@ -177,7 +177,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
     "Attavādupādāna", "Apego 4 · Apego à Doutrina de um Eu", "Clinging 4 · Clinging to Doctrine of Self", "Aferramiento 4 · Apego a la Doctrina del Yo",
     "4.º Upādāna: também é Diṭṭhi (Sakkāyadiṭṭhi) → 4 Upādānas colapsam em 2 reais!", "4th Clinging: also Diṭṭhi (personality view) → 4 Clingings collapse to 2 real!", "4.º Aferramiento: también es Diṭṭhi → 4 colapsan en 2 reales."),
 
-  // 6 Nīvaraṇa (6 → 8 reais!)
+  // 6 Nīvaraṇa (6 → 8 real entities!)
   mkAk("sam:akm:13", "AS VII.8, 14", "AkM-13", "nivarana", 1, "lobha",
     "Kāmacchanda-nīvaraṇa", "Obstáculo 1 · Desejo Sensual (Kāmacchanda)", "Hindrance 1 · Sensual Desire (Kāmacchanda)", "Obstáculo 1 · Deseo Sensual (Kāmacchanda)",
     "1.º Obstáculo: em substância é Lobha (não confundir com o neutro Chanda!).", "1st Hindrance: in reality it is Lobha (not the neutral Chanda!).", "1.er Obstáculo: en realidad es Lobha (no el neutro Chanda)."),
@@ -197,7 +197,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
     "Avijjā-nīvaraṇa", "Obstáculo 6 · Ignorância (Avijjā)", "Hindrance 6 · Ignorance (Avijjā)", "Obstáculo 6 · Ignorancia (Avijjā)",
     "6.º Obstáculo (listado no Abhidhamma além dos 5 clássicos): corresponde a Moha.", "6th Hindrance (added in Abhidhamma to the classic 5): corresponds to Moha.", "6.º Obstáculo (añadido en Abhidhamma): corresponde a Moha."),
 
-  // 7 Anusaya (7 → 6 reais)
+  // 7 Anusaya (7 → 6 real entities)
   mkAk("sam:akm:19", "AS VII.9, 14", "AkM-19", "anusaya", 1, "lobha",
     "Kāmarāgānusaya", "Tendência 1 · Desejo Sensual Latente", "Latent Tendency 1 · Sensual Lust", "Tendencia 1 · Deseo Sensual Latente",
     "1.ª Tendência latente: reduz-se a Lobha (junto com Bhavarāga → 7 viram 6 reais).", "1st Latent Tendency: reduces to Lobha (merges with Bhavarāga → 7 become 6 real).", "1.ª Tendencia latente: se reduce a Lobha."),
@@ -220,7 +220,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
     "Avijjānusaya", "Tendência 7 · Ignorância Latente (Avijjā)", "Latent Tendency 7 · Ignorance (Avijjā)", "Tendencia 7 · Ignorancia Latente (Avijjā)",
     "7.ª Tendência latente: corresponde a Moha (fecha 7 Anusayas → 6 reais).", "7th Latent Tendency: corresponds to Moha (completes 7 Anusayas → 6 real).", "7.ª Tendencia latente: corresponde a Moha (7 → 6 reales)."),
 
-  // Delta Saṃyojana Suttanta vs. Abhidhamma (6 itens distintivos)
+  // Saṃyojana Delta Suttanta vs. Abhidhamma (6 distinctive items)
   mkAk("sam:akm:26", "AS VII.10", "AkM-26", "samyojana_delta", 1, "lobha",
     "Rūparāga-saṃyojana (Suttanta)", "Grilhão Suttanta · Apego à Esfera Rūpa", "Suttanta Fetter · Lust for Fine-Materiality", "Grillete Suttanta · Apego a la Esfera Rūpa",
     "Exclusivo da lista Suttanta (AS VII.10); reduz-se a Lobha (no Abhidhamma funde-se em Bhavarāga).", "Exclusive to Suttanta list (AS VII.10); reduces to Lobha (merged into Bhavarāga in Abhidhamma).", "Exclusivo de Suttanta (AS VII.10); se reduce a Lobha."),
@@ -240,7 +240,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
     "Macchariya-saṃyojana (Abhidhamma)", "Grilhão Abhidhamma · Avareza (Macchariya)", "Abhidhamma Fetter · Stinginess (Macchariya)", "Grillete Abhidhamma · Avaricia (Macchariya)",
     "Exclusivo da lista Abhidhamma (AS VII.11): cetasika distinto (erradicado por Sotāpattimagga).", "Exclusive to Abhidhamma list (AS VII.11): distinct cetasika (eradicated at Stream-Entry).", "Exclusivo de Abhidhamma (AS VII.11): cetasika distinto."),
 
-  // 3 Kilesas que não estão nos Saṃyojanas (AS VII.12)
+  // 3 Kilesas not included among the Saṃyojanas (AS VII.12)
   mkAk("sam:akm:32", "AS VII.12, 14", "AkM-32", "kilesa_extra", 1, "thina",
     "Thīna-kilesa (#7 dos 10 Kilesas)", "Impureza 7 · Preguiça Mental (Thīna)", "Defilement 7 · Sloth (Thīna)", "Impureza 7 · Pereza Mental (Thīna)",
     "AS VII.12: Entre os 10 Kilesas (10→10), Thīna entra isoladamente (sem Middha!).", "AS VII.12: Among the 10 Kilesas (10→10), Sloth enters without Torpor!", "AS VII.12: En los 10 Kilesas, Thīna entra sin Middha."),
@@ -252,9 +252,9 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
     "AS VII.12: 10.º e último Kilesa (correspondência exata 10 → 10 vatthuto).", "AS VII.12: 10th & last Defilement (exact 10 → 10 vatthuto correspondence).", "AS VII.12: 10.º y último Kilesa (10 → 10 vatthuto)."),
 
   // ══════════════════════════════════════════════════════════════════════════
-  // 2. MISSAKA-SAṄGAHA GRANULAR (51 ITENS — AS VII.15–29)
+  // 2. GRANULAR MISSAKA-SAṄGAHA (51 ITEMS — AS VII.15–29)
   // ══════════════════════════════════════════════════════════════════════════
-  // 22 Indriyas (AS VII.18, 22–25, 29 → 16 reais)
+  // 22 Indriyas (AS VII.18, 22–25, 29 → 16 real entities)
   mkMi("sam:mim:i1", "AS VII.18", "Ind-01", "indriya22", 1, "pasada_5", "1. Cakkhundriya", "Faculdade 1 · Olho (Cakkhundriya)", "Faculty 1 · Eye (Cakkhundriya)", "Facultad 1 · Ojo (Cakkhundriya)", "1.º dos 5 Pasāda-rūpas (1 dhamma real).", "1st of 5 sense-sensitivities (1 real dhamma).", "1.º de 5 Pasāda-rūpas."),
   mkMi("sam:mim:i2", "AS VII.18", "Ind-02", "indriya22", 2, "pasada_5", "2. Sotindriya", "Faculdade 2 · Ouvido (Sotindriya)", "Faculty 2 · Ear (Sotindriya)", "Facultad 2 · Oído (Sotindriya)", "2.º dos 5 Pasāda-rūpas.", "2nd of 5 sense-sensitivities.", "2.º de 5 Pasāda-rūpas."),
   mkMi("sam:mim:i3", "AS VII.18", "Ind-03", "indriya22", 3, "pasada_5", "3. Ghānindriya", "Faculdade 3 · Nariz (Ghānindriya)", "Faculty 3 · Nose (Ghānindriya)", "Facultad 3 · Nariz (Ghānindriya)", "3.º dos 5 Pasāda-rūpas.", "3rd of 5 sense-sensitivities.", "3.º de 5 Pasāda-rūpas."),
@@ -278,7 +278,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
   mkMi("sam:mim:i21", "AS VII.18, 23", "Ind-21", "indriya22", 21, "lokuttara_panna_3", "21. Aññindriya", "Faculdade 21 · Conhecimento Final (6 Lokuttaras Médias)", "Faculty 21 · Final Knowledge (6 Intermediate Lokuttaras)", "Facultad 21 · Conocimiento Final (6 Lokuttaras Medias)", "AS VII.23: Paññā nas 6 Cittas intermediárias (Sotāpattiphala até Arahattamagga) → Paññā.", "AS VII.23: Wisdom in the 6 middle supramundane Cittas (Stream-Entry Fruit to Arahant Path) → Paññā.", "AS VII.23: Paññā en las 6 Lokuttaras intermedias."),
   mkMi("sam:mim:i22", "AS VII.18, 24", "Ind-22", "indriya22", 22, "lokuttara_panna_3", "22. Aññātāvindriya", "Faculdade 22 · De Quem Conheceu (Arahattaphala)", "Faculty 22 · One Who Has Final Knowledge (Arahattaphala)", "Facultad 22 · De Quien Conoció (Arahattaphala)", "AS VII.24: Paññā exclusivamente em Arahattaphala → fecha 22 − 4 − 3 + 1 = 16 reais!", "AS VII.24: Wisdom exclusively in Arahantship Fruit → completes 22 − 4 − 3 + 1 = 16 real!", "AS VII.24: Paññā exclusivamente en Arahattaphala → 16 reales."),
 
-  // 12 Maggaṅgas (8 Nobres + 4 Errôneos → 9 reais: 3 pares colapsam!)
+  // 12 Maggaṅgas (8 Noble + 4 Wrong → 9 real entities: 3 pairs collapse!)
   mkMi("sam:mim:m1", "AS VII.17", "Mag-01", "magganga12", 1, "panna", "1. Sammādiṭṭhi", "Caminho 1 · Visão Correta (→ Paññā)", "Path 1 · Right View (→ Paññā)", "Sendero 1 · Visión Recta (→ Paññā)", "1.º dos 8 fatores nobres: cetasika Paññā.", "1st of 8 noble factors: Paññā cetasika.", "1.er factor noble: Paññā."),
   mkMi("sam:mim:m2", "AS VII.17, 29", "Mag-02", "magganga12", 2, "vitakka", "2. Sammāsaṅkappa", "Caminho 2 · Pensamento Correto (→ Vitakka)", "Path 2 · Right Thought (→ Vitakka)", "Sendero 2 · Pensamiento Recto (→ Vitakka)", "Em substância é Vitakka (compartilhado com Micchāsaṅkappa!).", "In substance it is Vitakka (shared with Micchāsaṅkappa!).", "En sustancia es Vitakka (compartido con Micchāsaṅkappa)."),
   mkMi("sam:mim:m3", "AS VII.17", "Mag-03", "magganga12", 3, "virati_3", "3. Sammāvācā", "Caminho 3 · Fala Correta (→ Virati 1)", "Path 3 · Right Speech (→ Virati 1)", "Sendero 3 · Habla Recta (→ Virati 1)", "1.ª das 3 Viratis (abstenções éticas).", "1st of 3 Abstinences (Virati).", "1.ª de 3 Viratis."),
@@ -292,7 +292,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
   mkMi("sam:mim:m11", "AS VII.17, 29", "Mag-11", "magganga12", 11, "viriya", "11. Micchāvāyāma", "Caminho Errado 3 · Esforço Errôneo (→ Vīriya)", "Wrong Path 3 · Wrong Effort (→ Vīriya)", "Sendero Erróneo 3 · Esfuerzo Erróneo (→ Vīriya)", "Colapsa no mesmo cetasika Vīriya que Sammāvāyāma (−1).", "Collapses into the same Vīriya cetasika as Right Effort (−1).", "Colapsa en el mismo Vīriya que Sammāvāyāma."),
   mkMi("sam:mim:m12", "AS VII.17, 29", "Mag-12", "magganga12", 12, "ekaggata", "12. Micchāsamādhi", "Caminho Errado 4 · Concentração Errônea (→ Ekaggatā)", "Wrong Path 4 · Wrong Concentration (→ Ekaggatā)", "Sendero Erróneo 4 · Concentración Errónea (→ Ekaggatā)", "Colapsa no mesmo Ekaggatā que Sammāsamādhi (−1 → 12 − 3 = 9 reais!).", "Collapses into the same Ekaggatā as Right Concentration (−1 → 12 − 3 = 9 real!).", "Colapsa en el mismo Ekaggatā → 12 − 3 = 9 reales."),
 
-  // 4 Balas exclusivos do Missaka além dos 5 espirituais (AS VII.19)
+  // 4 Balas exclusive to Missaka beyond the 5 spiritual powers (AS VII.19)
   mkMi("sam:mim:b1", "AS VII.19", "Bal-06", "bala_extra", 1, "hiri_ottappa", "6. Hiribala", "Poder 6 · Vergonha Moral (Hiri)", "Power 6 · Moral Shame (Hiri)", "Poder 6 · Vergüenza Moral (Hiri)", "6.º dos 9 Balas (par salubre com Ottappa).", "6th of 9 Powers (wholesome pair with Ottappa).", "6.º de 9 Poderes (par hábil con Ottappa)."),
   mkMi("sam:mim:b2", "AS VII.19", "Bal-07", "bala_extra", 2, "hiri_ottappa", "7. Ottappabala", "Poder 7 · Temor Moral (Ottappa)", "Power 7 · Moral Dread (Ottappa)", "Poder 7 · Temor Moral (Ottappa)", "7.º dos 9 Balas (par salubre com Hiri).", "7th of 9 Powers (wholesome pair with Hiri).", "7.º de 9 Poderes (par hábil con Hiri)."),
   mkMi("sam:mim:b3", "AS VII.19", "Bal-08", "bala_extra", 3, "ahirika_anottappa", "8. Ahirikabala", "Poder 8 · Impudência (Ahirika)", "Power 8 · Shamelessness (Ahirika)", "Poder 8 · Desvergüenza (Ahirika)", "8.º dos 9 Balas (par insalubre com Anottappa — prova por que Bala está no Missaka/Misto!).", "8th of 9 Powers (unwholesome pair with Anottappa — proves why Bala is Mixed/Missaka!).", "8.º de 9 Poderes (par inhábil con Anottappa)."),
@@ -310,7 +310,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
   mkMi("sam:mim:h3", "AS VII.21", "Aha-03", "ahara4", 3, "cetana", "3. Manosañcetanāhāra", "Alimento 3 · Volição Mental (Cetanā)", "Nutriment 3 · Mental Volition (Cetanā)", "Alimento 3 · Volición Mental (Cetanā)", "3.º Āhāra (nutre renascimento nos 3 planos).", "3rd Nutriment (nourishes rebirth across 3 realms).", "3.er Āhāra (nutre el renacimiento)."),
   mkMi("sam:mim:h4", "AS VII.21", "Aha-04", "ahara4", 4, "citta_1", "4. Viññāṇāhāra", "Alimento 4 · Consciência (Viññāṇa)", "Nutriment 4 · Consciousness (Viññāṇa)", "Alimento 4 · Conciencia (Viññāṇa)", "4.º Āhāra (nutre Nāmarūpa em Paṭisandhi).", "4th Nutriment (nourishes Nāmarūpa at rebirth).", "4.º Āhāra (nutre Nāmarūpa)."),
 
-  // 5 Leis Individuais de Exclusão do Missaka (AS VII.26–28)
+  // 5 Individual Exclusion Laws of Missaka (AS VII.26–28)
   mkMi("sam:mim:l1", "AS VII.26", "ExM-01", "excl_laws5", 1, "no_jhananga_10", "Dvipañcaviññāṇesu Jhānaṅgāni na labbhanti", "Exclusão 1 · Sem Jhānaṅga nos 10 Sentidos", "Exclusion 1 · No Jhāna Factors in 10 Sense-Cittas", "Exclusión 1 · Sin Jhānaṅga en 10 Sentidos", "AS VII.26: Nos 10 Dvipañcaviññāṇas não há fatores de Jhāna (fracos demais para absorver o objeto).", "AS VII.26: No Jhāna factors occur in the 10 sense-consciousnesses.", "AS VII.26: Sin factores de Jhāna en los 10 sentidos."),
   mkMi("sam:mim:l2", "AS VII.26", "ExM-02", "excl_laws5", 2, "no_bala_16", "Avīriyacittesu Balāni na labbhanti", "Exclusão 2 · Sem Poderes (Bala) nas 16 Avīriya", "Exclusion 2 · No Powers (Bala) in 16 Energy-Free Cittas", "Exclusión 2 · Sin Poderes en 16 Avīriya", "AS VII.26: Nas 16 Cittas sem Vīriya não há Poderes (Bala).", "AS VII.26: In the 16 energy-free Cittas no Powers (Bala) arise.", "AS VII.26: Sin Poderes en las 16 Cittas sin Vīriya."),
   mkMi("sam:mim:l3", "AS VII.26", "ExM-03", "excl_laws5", 3, "no_magga_18", "Ahetukesu Maggaṅgāni na labbhanti", "Exclusão 3 · Sem Maggaṅga nas 18 Ahetukas", "Exclusion 3 · No Path Factors in 18 Rootless Cittas", "Exclusión 3 · Sin Maggaṅga en 18 Ahetukas", "AS VII.26: Nas 18 Cittas sem raízes (Ahetuka) não há fatores do caminho (Maggaṅga).", "AS VII.26: In the 18 rootless Cittas no Path factors occur.", "AS VII.26: Sin factores del camino en las 18 Ahetukas."),
@@ -318,7 +318,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
   mkMi("sam:mim:l5", "AS VII.28", "ExM-05", "excl_laws5", 5, "one_adhipati", "Dvi/Tihetuka-javanesu Ekova Adhipati", "Exclusão 5 · Apenas 1 Adhipati por Javana Dvi/Tihetuka", "Exclusion 5 · Only 1 Adhipati per 2/3-Root Javana", "Exclusión 5 · Solo 1 Adhipati por Javana Dvi/Tihetuka", "AS VII.28: Somente 1 predominância (Adhipati) surge por vez, e apenas em Javanas de 2 ou 3 raízes (52 Cittas).", "AS VII.28: Only 1 predominance arises at a time, and only in 2- or 3-root Javanas (52 Cittas).", "AS VII.28: Solo 1 Adhipati surge a la vez, y solo en Javanas de 2 o 3 raíces."),
 
   // ══════════════════════════════════════════════════════════════════════════
-  // 3. OS 37 BODHIPAKKHIYAS INDIVIDUAIS → 14 SABHĀVA-DHAMMAS (AS VII.30–40)
+  // 3. THE 37 INDIVIDUAL BODHIPAKKHIYAS → 14 SABHĀVA-DHAMMAS (AS VII.30–40)
   // ══════════════════════════════════════════════════════════════════════════
   // 4 Satipaṭṭhānas → Sati
   mkBo("sam:b37:1", "AS VII.30, 37", "B37-01", "satipatthana", 1, "sati", "1. Kāyānupassanā-satipaṭṭhāna", "Satipaṭṭhāna 1 · Contemplação do Corpo", "Satipaṭṭhāna 1 · Contemplation of Body", "Satipaṭṭhāna 1 · Contemplación del Cuerpo", "Sabhāva real: Sati (1.º dos 8 lugares de Sati).", "Real Sabhāva: Sati (1st of Sati's 8 places).", "Sabhāva real: Sati (1.º de 8 lugares)."),
@@ -366,7 +366,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
   mkBo("sam:b37:37", "AS VII.36, 40", "B37-37", "magganga", 8, "samadhi", "8. Sammāsamādhi (Bodhi)", "Maggaṅga 8 · Concentração Correta (Samādhi)", "Maggaṅga 8 · Right Concentration (Samādhi)", "Maggaṅga 8 · Concentración Recta (Samādhi)", "Sabhāva real: Samādhi / Ekaggatā (4.º e último de 4 lugares!).", "Real Sabhāva: Samādhi / Ekaggatā (4th & final of 4 places!).", "Sabhāva real: Samādhi (4.º de 4 lugares)."),
 
   // ══════════════════════════════════════════════════════════════════════════
-  // 4. SABBA-SAṄGAHA GRANULAR (28 ITENS — AS VII.42–53)
+  // 4. GRANULAR SABBA-SAṄGAHA (28 ITEMS — AS VII.42–53)
   // ══════════════════════════════════════════════════════════════════════════
   // 5 Khandhas
   mkSb("sam:sbm:k1", "AS VII.42, 49", "Kha-01", "khandha5", 1, "rupa_28", "1. Rūpakkhandha", "Agregado 1 · Materialidade (28 Rūpas)", "Aggregate 1 · Materiality (28 Rūpas)", "Agregado 1 · Materialidad (28 Rūpas)", "Abrange todos os 28 Rūpas (18 Nipphanna + 10 Anipphanna).", "Encompasses all 28 Rūpas.", "Abarca los 28 Rūpas."),
@@ -375,7 +375,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
   mkSb("sam:sbm:k4", "AS VII.42, 49", "Kha-04", "khandha5", 4, "sankhara_50", "4. Saṅkhārakkhandha", "Agregado 4 · Formações Mentais (50 Cetasikas)", "Aggregate 4 · Mental Formations (50 Cetasikas)", "Agregado 4 · Formaciones Mentales (50 Cetasikas)", "Os 50 Cetasikas restantes (52 − Vedanā − Saññā = 50).", "The remaining 50 Cetasikas (52 − Vedanā − Saññā = 50).", "Los 50 Cetasikas restantes."),
   mkSb("sam:sbm:k5", "AS VII.42, 49–50", "Kha-05", "khandha5", 5, "citta_89", "5. Viññāṇakkhandha", "Agregado 5 · Consciência (89 / 121 Cittas)", "Aggregate 5 · Consciousness (89 / 121 Cittas)", "Agregado 5 · Conciencia (89 / 121 Cittas)", "Todas as 89 [121] Cittas (em Upādānakkhandha, apenas as 81 mundanas!).", "All 89 [121] Cittas (in clinging-aggregate, only the 81 mundane!).", "Todas las 89 [121] Cittas (81 mundanas en Upādānakkhandha)."),
 
-  // 12 Āyatanas (6 Internas + 6 Externas)
+  // 12 Āyatanas (6 Internal + 6 External)
   mkSb("sam:sbm:a1", "AS VII.44", "Aya-01", "ayatana12", 1, "pasada_1", "1. Cakkhāyatana", "Base Interna 1 · Olho (Cakkhu-pasāda)", "Internal Base 1 · Eye (Cakkhu-pasāda)", "Base Interna 1 · Ojo (Cakkhu-pasāda)", "1.ª base interna = Cakkhu-pasāda (1 rūpa).", "1st internal base = Eye sensitivity (1 rūpa).", "1.ª base interna = Cakkhu-pasāda."),
   mkSb("sam:sbm:a2", "AS VII.44", "Aya-02", "ayatana12", 2, "pasada_1", "2. Sotāyatana", "Base Interna 2 · Ouvido (Sota-pasāda)", "Internal Base 2 · Ear (Sota-pasāda)", "Base Interna 2 · Oído (Sota-pasāda)", "2.ª base interna = Sota-pasāda.", "2nd internal base = Ear sensitivity.", "2.ª base interna = Sota-pasāda."),
   mkSb("sam:sbm:a3", "AS VII.44", "Aya-03", "ayatana12", 3, "pasada_1", "3. Ghānāyatana", "Base Interna 3 · Nariz (Ghāna-pasāda)", "Internal Base 3 · Nose (Ghāna-pasāda)", "Base Interna 3 · Nariz (Ghāna-pasāda)", "3.ª base interna = Ghāna-pasāda.", "3rd internal base = Nose sensitivity.", "3.ª base interna = Ghāna-pasāda."),
@@ -389,7 +389,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
   mkSb("sam:sbm:a11", "AS VII.44", "Aya-11", "ayatana12", 11, "bhuta_3", "11. Phoṭṭhabbāyatana", "Base Externa 5 · Tangível (3 Mahābhūtas)", "External Base 5 · Tangible (3 Mahābhūtas)", "Base Externa 5 · Tangible (3 Mahābhūtas)", "Composto pelos 3 elementos tangíveis: Pathavī, Tejo e Vāyo (sem Āpo!).", "Consists of the 3 tangible elements: Earth, Fire, Air (excluding Water!).", "Compuesto por Pathavī, Tejo y Vāyo (sin Āpo)."),
   mkSb("sam:sbm:a12", "AS VII.44, 47", "Aya-12", "ayatana12", 12, "dhamma_69", "12. Dhammāyatana", "Base Externa 6 · Objetos Mentais (69 Dhammas)", "External Base 6 · Mental Objects (69 Dhammas)", "Base Externa 6 · Objetos Mentales (69 Dhammas)", "AS VII.47: 52 Cetasikas + 16 Sukhumarūpas + 1 Nibbāna = 69!", "AS VII.47: 52 Cetasikas + 16 Subtle Rūpas + 1 Nibbāna = 69!", "AS VII.47: 52 Cetasikas + 16 Sukhumarūpas + 1 Nibbāna = 69."),
 
-  // 7 Viññāṇadhātus (desdobramento exato de Manāyatana nos 18 Dhātus — AS VII.45, 48)
+  // 7 Viññāṇadhātus (exact unfolding of Manāyatana into the 18 Dhātus — AS VII.45, 48)
   mkSb("sam:sbm:d1", "AS VII.45, 48", "Dha-01", "vinnana_dhatu7", 1, "sense_pair_2", "1. Cakkhuviññāṇadhātu (2 Cittas)", "Dhātu 1 · Consciência Ocular (#13, #20)", "Element 1 · Eye-Consciousness (#13, #20)", "Dhātu 1 · Conciencia Ocular (#13, #20)", "Par Akusala/Kusala-vipāka (2 Cittas).", "Unwholesome/Wholesome resultant pair (2 Cittas).", "Par Akusala/Kusala-vipāka (2 Cittas)."),
   mkSb("sam:sbm:d2", "AS VII.45, 48", "Dha-02", "vinnana_dhatu7", 2, "sense_pair_2", "2. Sotaviññāṇadhātu (2 Cittas)", "Dhātu 2 · Consciência Auditiva (#14, #21)", "Element 2 · Ear-Consciousness (#14, #21)", "Dhātu 2 · Conciencia Auditiva (#14, #21)", "Par de 2 Cittas auditivas.", "Pair of 2 ear-consciousnesses.", "Par de 2 Cittas auditivas."),
   mkSb("sam:sbm:d3", "AS VII.45, 48", "Dha-03", "vinnana_dhatu7", 3, "sense_pair_2", "3. Ghānaviññāṇadhātu (2 Cittas)", "Dhātu 3 · Consciência Olfativa (#15, #22)", "Element 3 · Nose-Consciousness (#15, #22)", "Dhātu 3 · Conciencia Olfativa (#15, #22)", "Par de 2 Cittas olfativas (ausente em Rūpaloka).", "Pair of 2 nose-consciousnesses (absent in Rūpaloka).", "Par de 2 Cittas olfativas."),
@@ -398,7 +398,7 @@ export const CHAPTER_7_GRANULAR_ITEMS: readonly NaryChallengeItem[] = [
   mkSb("sam:sbm:d6", "AS VII.45, 48", "Dha-06", "vinnana_dhatu7", 6, "manodhatu_3", "6. Manodhātu (3 Cittas: #18, #25, #28)", "Dhātu 6 · Elemento Mente (3 Cittas)", "Element 6 · Mind-Element (3 Cittas)", "Dhātu 6 · Elemento Mente (3 Cittas)", "Tríade Ahetuka: 2 Sampaṭicchanas (#18, #25) + 1 Pañcadvārāvajjana (#28) = 3.", "Ahetuka triad: 2 Receiving (#18, #25) + 1 Five-door adverting (#28) = 3.", "Tríada Ahetuka: 2 Sampaṭicchanas + Pañcadvārāvajjana = 3."),
   mkSb("sam:sbm:d7", "AS VII.45, 48", "Dha-07", "vinnana_dhatu7", 7, "manovinnana_76", "7. Manoviññāṇadhātu (76 [108] Cittas)", "Dhātu 7 · Consciência Mental (76 [108] Cittas)", "Element 7 · Mind-Consciousness (76 [108] Cittas)", "Dhātu 7 · Conciencia Mental (76 [108] Cittas)", "Todas as 76 [108] Cittas restantes (10 + 3 + 76 = 89). Único dhātu presente em Arūpaloka!", "All remaining 76 [108] Cittas (10 + 3 + 76 = 89). Sole element in Arūpaloka!", "Las 76 [108] Cittas restantes (10 + 3 + 76 = 89)."),
 
-  // 4 Ariyasaccas Individuais (AS VII.46, 52–53)
+  // 4 Individual Ariyasaccas (AS VII.46, 52–53)
   mkSb("sam:sbm:s1", "AS VII.46, 52", "Sac-01", "ariyasacca4", 1, "tebhumaka_excl_lobha", "1. Dukkha-ariyasacca", "Nobre Verdade 1 · Sofrimento (Dukkha)", "Noble Truth 1 · Suffering (Dukkha)", "Noble Verdad 1 · Sufrimiento (Dukkha)", "AS VII.52: 81 Cittas mundanas + 51 Cetasikas (excl. Lobha!) + 28 Rūpas.", "AS VII.52: 81 mundane Cittas + 51 Cetasikas (excl. Lobha!) + 28 Rūpas.", "AS VII.52: 81 Cittas mundanas + 51 Cetasikas (sin Lobha) + 28 Rūpas."),
   mkSb("sam:sbm:s2", "AS VII.46, 52", "Sac-02", "ariyasacca4", 2, "lobha_tanha", "2. Dukkhasamudaya-ariyasacca", "Nobre Verdade 2 · Origem do Sofrimento (Taṇhā)", "Noble Truth 2 · Origin of Suffering (Taṇhā)", "Noble Verdad 2 · Origen del Sufrimiento (Taṇhā)", "AS VII.52: Unicamente o cetasika Lobha (Taṇhā — desejo/sede).", "AS VII.52: Exclusively the cetasika Lobha (Craving / Taṇhā).", "AS VII.52: Únicamente el cetasika Lobha (Taṇhā)."),
   mkSb("sam:sbm:s3", "AS VII.46, 52", "Sac-03", "ariyasacca4", 3, "nibbana_1", "3. Dukkhanirodha-ariyasacca", "Nobre Verdade 3 · Cessação (Nibbāna)", "Noble Truth 3 · Cessation (Nibbāna)", "Noble Verdad 3 · Cesación (Nibbāna)", "AS VII.52: Unicamente Nibbāna (Asaṅkhata-dhātu).", "AS VII.52: Exclusively Nibbāna (the Unconditioned).", "AS VII.52: Únicamente Nibbāna."),

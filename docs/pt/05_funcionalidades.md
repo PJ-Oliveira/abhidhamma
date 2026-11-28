@@ -1,156 +1,177 @@
-# Funcionalidades
+# Features
 
-## 1. Leitor de Textos
+## 1. Text Reader
 
-O leitor (`reader.ts`) carrega e exibe segmentos Pāli + tradução alinhados.
+The reader (`reader.ts`) loads and displays aligned Pāli + translation segments.
 
-**Fluxo de carregamento:**
-1. `selectWork(workId, partKey, chunkIndex)` é chamado.
-2. `loadChunk()` busca o JSON do fragmento; resultado armazenado em cache na memória.
-3. `renderSegments()` limpa o DOM e o reconstrói.
-4. Se um `segId` foi solicitado (de favorito ou resultado de busca), o segmento-alvo rola para a visualização e pisca.
+**Loading flow:**
+1. `selectWork(workId, partKey, chunkIndex)` is called.
+2. `loadChunk(workId, partKey, fileName)` fetches the chunk JSON; result cached in-memory.
+3. `renderSegments(segments, container, options)` clears the DOM and rebuilds it.
+4. If a `segId` was requested (from a bookmark or search result), the target segment is scrolled into view and flashed.
 
----
-
-## 2. Árvore de Navegação
-
-`tree.ts` renderiza uma árvore UL expansível a partir do manifest. Grupos aparecem como cabeçalhos em maiúsculas; obras expandem para mostrar partes; clicar em uma folha de parte chama `selectWork(workId, partKey, 0)`.
-
-`markActiveLeaf()` adiciona `.leaf-active` à parte exibida atualmente e abre seus nós-pai.
+**Rendering:** each segment produces a `.seg` div with `.pali-line` (using `innerHTML` for inline HTML) and `.translation-line`. Bookmark buttons and variant-reading footnote hover events are wired per-segment.
 
 ---
 
-## 3. Dicionário Pāli
+## 2. Navigation Tree
 
-`dictionary.ts` fornece `lookupPali(word)` e a UI do painel de dicionário.
+`tree.ts` renders a collapsible UL tree from the manifest. Groups show as uppercase headings; works expand to show parts; clicking a part leaf calls `selectWork(workId, partKey, 0)`.
 
-**Comportamento do painel:**
-- Inicia o carregamento no primeiro evento de `input` (promise compartilhada única).
-- Conforme o usuário digita, todas as palavras-cabeçalho iniciando com a consulta são mostradas.
-- Resultados ordenados por frequência (mais comum primeiro).
-- Exibe: palavra-cabeçalho, frequência, classe gramatical, todos os sentidos com gramática/raiz/sinônimos/antônimos.
-
-**Busca no popover:** quando texto é selecionado no leitor, `lookupPali` é chamado para até 3 palavras; primeiro resultado mostrado inline no popover de seleção.
+`markActiveLeaf()` adds `.leaf-active` to the currently displayed part and opens its parent nodes.
 
 ---
 
-## 4. Busca de Texto Completo
+## 3. Pāli Dictionary
 
-`search.ts` implementa um índice invertido fragmentado do lado do cliente.
+`dictionary.ts` provides `lookupPali(word)` and the dictionary panel UI.
 
-- Input com debounce (250 ms).
-- Carrega o manifest de fragmentos na inicialização do painel, depois carrega fragmentos lazily por consulta.
-- Retorna até 50 resultados como cartões de snippet; clicar em um resultado abre aquele fragmento e rola até o segmento.
+**Panel behaviour:**
+- Starts loading on first `input` event (single shared promise).
+- As user types, all headwords starting with the query are shown.
+- Results are sorted by frequency (most common first).
+- Displays: headword, frequency, part of speech, all senses with grammar/root/synonyms/antonyms.
+- URL is kept in sync: `#/dictionary?q={query}`.
 
----
-
-## 5. Histórico e Favoritos
-
-**Histórico** (`pushHistory`):
-- Cada chamada `selectWork()` adiciona uma entrada.
-- Deduplicação: entrada existente para mesmo `workId/partKey/chunk` é removida antes de prepend.
-- Limite: 50 entradas.
-
-**Favoritos** (`toggleBookmark`):
-- Botão ☆/★ em cada linha Pāli do segmento.
-- Armazena `{ workId, partKey, segId, chunk, snippet }`.
-- Clicar em um favorito abre o fragmento e rola até o segmento.
+**Lookup in popover:** when text is selected in the reader, `lookupPali` is called for up to 3 words; first hit is displayed inline in the selection popover.
 
 ---
 
-## 6. Exportação
+## 4. Full-Text Search
 
-`export.ts` fornece exportação PDF e EPUB para qualquer obra ou o corpus completo.
+`search.ts` implements a client-side sharded inverted-index.
 
-### PDF de Obra Única
+- Debounced input (250 ms).
+- Loads the shard manifest on panel init, then loads shards lazily per query.
+- Returns up to 50 results as snippet cards; clicking a result opens that chunk and scrolls to the segment.
 
-`buildPrintHtml()` cria HTML de página completa com CSS de impressão e chamada `window.print()`. Aberto em nova janela. Se pop-ups estiverem bloqueados, o arquivo HTML é baixado.
+---
 
-### EPUB de Obra Única
+## 5. History & Bookmarks
 
-`buildEpub()` cria um EPUB 3 mínimo (ZIP) com:
-- `mimetype` (sem compressão)
+**History** (`pushHistory`):
+- Each `selectWork()` call adds an entry.
+- Deduplication: existing entry for same `workId/partKey/chunk` is removed before prepend.
+- Limit: 50 entries.
+- Clicking a history entry reopens that exact chunk.
+
+**Bookmarks** (`toggleBookmark`):
+- ☆/★ bookmark button on each segment's Pāli line.
+- Stores `{ workId, partKey, segId, chunk, snippet }`.
+- Clicking a bookmark opens the chunk and scrolls to and flashes the segment.
+- Unbounded storage (user manages manually).
+
+---
+
+## 6. Export
+
+`export.ts` provides PDF and EPUB export for any work or the full corpus.
+
+### Single Work PDF
+
+`buildPrintHtml()` creates a full-page HTML with print CSS and a `window.print()` call. Opened in a new window. If pop-ups are blocked, the HTML file is downloaded.
+
+### Single Work EPUB
+
+`buildEpub()` creates a minimal EPUB 3 (ZIP) with:
+- `mimetype` (uncompressed)
 - `META-INF/container.xml`
-- `OEBPS/content.opf` (pacote OPF)
-- `OEBPS/toc.ncx` (navegação NCX)
-- `OEBPS/style.css` (face de fonte Gentium + layout)
-- `OEBPS/content.html` (todos os segmentos convertidos para HTML)
+- `OEBPS/content.opf` (OPF package)
+- `OEBPS/toc.ncx` (NCX navigation)
+- `OEBPS/style.css` (embedded Gentium font face + layout)
+- `OEBPS/content.html` (all segments converted to HTML)
 
-### EPUB do Corpus Completo
+### Full Corpus EPUB
 
-`buildFullCorpusEpub()` busca todos os fragmentos de todas as obras, constrói arquivos XHTML por obra, NCX hierárquico e `nav.xhtml` EPUB3, e apêndice de glossário. Fontes são buscadas e incluídas. Mensagens de progresso são mostradas durante o build.
+`buildFullCorpusEpub()` fetches all chunks for all works, builds per-work XHTML files, a hierarchical NCX and EPUB3 `nav.xhtml`, and a glossary appendix. Fonts are fetched and bundled. Progress messages are shown during build.
 
-### Modos de Idioma (`LangMode`)
+### Language Modes (`LangMode`)
 
-| Valor | Colunas incluídas |
+| Value | Columns included |
 |---|---|
-| `en` | Apenas inglês |
-| `pali+en` | Pāli + inglês |
-| `pali+en+pt` | Pāli + inglês + português |
-| `pt` | Apenas português |
-| `pali+pt` | Pāli + português |
-| `es` | Apenas espanhol |
-| `pali+es` | Pāli + espanhol |
-| `pali+en+es` | Pāli + inglês + espanhol |
+| `en` | English only |
+| `pali+en` | Pāli + English |
+| `pali+en+pt` | Pāli + English + Portuguese |
+| `pt` | Portuguese only |
+| `pali+pt` | Pāli + Portuguese |
+| `es` | Spanish only |
+| `pali+es` | Pāli + Spanish |
+| `pali+en+es` | Pāli + English + Spanish |
+
+### Glossary
+
+`collectUsedTerms()` finds Pāli headwords that appear in the exported segments and appends a sorted Pāli glossary as an appendix.
 
 ---
 
-## 7. Sistema de Repetição Espaçada (SRS)
+## 7. Spaced Repetition System (SRS)
 
-`srs.ts` implementa um sistema de flashcards usando o **algoritmo SM-2**.
+`srs.ts` implements a flashcard system using the **SM-2 algorithm**.
 
-**Fila de cartões:** cartões devidos (nextReview ≤ agora) primeiro, depois novos cartões ordenados por rank. Limite diário: 20 cartões.
+**SM-2 update formula:**
+```
+if quality < 3: repetitions = 0; interval = 1
+if quality >= 3:
+  rep=0 → interval=1; rep=1 → interval=6; rep>1 → interval = round(interval × easeFactor)
+  repetitions++
 
-**Atalhos de teclado** (quando painel SRS está ativo):
-- Espaço / Enter → virar cartão
-- 1 → Novamente (qualidade 0)
-- 2 → Difícil (qualidade 3)
-- 3 → Bom (qualidade 4)
-- 4 → Fácil (qualidade 5)
+easeFactor = easeFactor + 0.1 − (5−quality) × (0.08 + (5−quality) × 0.02)
+easeFactor = max(1.3, easeFactor)
+nextReview = now + interval × 86,400,000 ms
+```
 
-**Persistência:** estados dos cartões salvos em `atp.srs.v1`; estatísticas em `atp.srs.stats.v1` no localStorage.
+**Card queue:** due cards (nextReview ≤ now) first, then new cards sorted by rank. Daily limit: 20 cards.
+
+**Keyboard shortcuts** (when SRS panel is active):
+- Space / Enter → flip card
+- 1 → Again (quality 0)
+- 2 → Hard (quality 3)
+- 3 → Good (quality 4)
+- 4 → Easy (quality 5)
+
+**Persistence:** card states saved to `atp.srs.v1`; stats to `atp.srs.stats.v1` in localStorage.
 
 ---
 
-## 8. Ferramentas Abhidhamma
+## 8. Abhidhamma Tools
 
-O painel de ferramentas (`tools/tools.ts`) é um gerenciador de abas que inicializa lazily cada sub-módulo na primeira ativação.
+Tools panel (`tools/tools.ts`) is a tab manager that lazily initializes each sub-module on first activation.
 
-### Mapa Mental (`tools/mindmap.ts`)
+### Mind Map (`tools/mindmap.ts`)
 
-Mapa mental hierárquico em SVG dos conceitos Abhidhamma. Pesquisável por texto do nó.
+SVG-based hierarchical mind map of Abhidhamma concepts. Searchable by node text.
 
 ### Paṭṭhāna (`tools/patthana.ts`)
 
-Visualização interativa das 24 relações condicionais (paccaya) do Paṭṭhāna.
+Interactive visualization of the 24 conditional relations (paccaya) from the Paṭṭhāna.
 
 ### Citta-Vīthi (`tools/vithi.ts`)
 
-Visualização animada do processo de consciência (citta-vīthi). Mostra a sequência de momentos de consciência (bhavaṅga → manodvāravajjana → javana × 7 → tadārammaṇa) para diferentes portas dos sentidos. Busca `data/tools/vithi.json` e `data/tools/citta_cetasika.json`.
+Animated visualization of the consciousness process (citta-vīthi). Shows the sequence of consciousness moments (bhavaṅga → manodvāravajjana → javana × 7 → tadārammaṇa) for different sense doors. Fetches `data/tools/vithi.json` and `data/tools/citta_cetasika.json`.
 
 ### Mātikās (`tools/matikas.ts`)
 
-Listas pesquisáveis das tríades (tikas) e díades (dukas) da matriz do Dhammasaṅgaṇī.
+Searchable lists of the Dhammasaṅgaṇī matrix triads (tikas) and dyads (dukas).
 
 ### Cetasika (`tools/cetasika.ts`)
 
-Dois modos:
-- **Análise individual:** selecionar um citta → ver todos os cetasikas associados.
-- **Comparação:** selecionar dois cittas → ver cetasikas comuns, exclusivos de A e exclusivos de B.
+Two modes:
+- **Single analysis:** select a citta → see all associated cetasikas.
+- **Comparison:** select two cittas → see common cetasikas, exclusive to A, and exclusive to B.
 
 ---
 
-## 9. Simulador de Debate (Recurso de IA)
+## 9. Debate Simulator (AI Feature)
 
 `ai-feature/ui.ts` + `ai-feature/debate-scenarios.ts` + `ontology/kathavatthu_logic.ts`
 
-Um simulador de debate baseado em regras (sem LLM) modelado no formato de debate da Kathāvatthu.
+A rule-based (no LLM) debate simulator modeled on the Kathāvatthu debate format.
 
-**Fluxo:**
-1. Usuário seleciona um cenário de `CanonicalScenarios` (proposições codificadas de escolas históricas).
-2. O texto da afirmação é mostrado.
-3. Usuário clica em "Enviar Argumento".
-4. `evaluateScenario(scenarioId, uiLang)` retorna uma refutação estruturada com: veredito, contexto lógico, regra meta-lógica, paradoxo reductio ad absurdum, silogismo formal, analogia pedagógica.
-5. Botão "Aprofundar" revela a análise pedagógica.
+**Flow:**
+1. User selects a scenario from `CanonicalScenarios` (hardcoded propositions from historical schools).
+2. The claim text is shown.
+3. User clicks "Submit Argument."
+4. `evaluateScenario(scenarioId, uiLang)` returns a structured refutation with: verdict, logical context (vāda/aṭṭhakathā), meta-logic rule, reductio ad absurdum paradox, formal syllogism (anuloma → paṭikamma → niggaha → upanayana → niṭṭhāna), pedagogical analogy.
+5. "Elaborate" button reveals the pedagogical breakdown.
 
-A dependência `@mlc-ai/web-llm` está presente mas ainda não conectada ao simulador de debate.
+The `@mlc-ai/web-llm` dependency is present but not yet wired to the debate simulator — all responses are computed deterministically from the ontology modules.

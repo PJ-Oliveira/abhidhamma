@@ -1,74 +1,74 @@
-# Documentação Completa do Projeto: Abhidhamma Piṭaka Trilíngue
+# Complete Project Documentation: Trilingual Abhidhamma Piṭaka
 
-## Visão Geral
+## Overview
 
-Aplicação web **estática** (SPA) de página única, sem backend, que apresenta o **Abhidhamma Piṭaka** completo em paralelo Pāli / Inglês / Português / Espanhol, juntamente com tratados clássicos e comentários contemporâneos.
+Static single-page web application (SPA), backend-free, presenting the complete **Abhidhamma Piṭaka** in parallel Pāli / English / Portuguese / Spanish, along with classical treatises and contemporary commentaries.
 
 > [!IMPORTANT]
-> **Stack tecnológico:** TypeScript (compilado para JS) + Python 3 (scripts de dados). **NÃO há Node.js runtime no servidor** — Node.js é usado apenas para compilar TypeScript via `tsc`.
+> **Tech stack:** TypeScript (compiled to JS) + Python 3 (data scripts). **NO Node.js runtime on the server** — Node.js is only used to compile TypeScript via `tsc`.
 
 ---
 
-## Estrutura de Diretórios
+## Directory Structure
 
 ```
 abhidhamma-pitaka-trilingue-site/
-├── index.html              ← SPA principal (página única)
-├── package.json            ← Scripts npm (build, watch, integrate-books, rebuild-search)
-├── tsconfig.json           ← Configuração TypeScript (ES2022, strict)
-├── .env                    ← GEMINI_API_KEY para tradução automática
-├── .nojekyll               ← Flag para GitHub Pages
+├── index.html              ← Main SPA (single page)
+├── package.json            ← npm scripts (build, watch, integrate-books, rebuild-search)
+├── tsconfig.json           ← TypeScript configuration (ES2022, strict)
+├── .env                    ← GEMINI_API_KEY for automated translation
+├── .nojekyll               ← Flag for GitHub Pages
 │
-├── src/                    ← Código-fonte TypeScript
-│   ├── app.ts              ← Controlador principal, router, bootstrap
-│   ├── reader.ts           ← Renderização de segmentos no leitor
-│   ├── dictionary.ts       ← Dicionário Pāli com lookup
-│   ├── search.ts           ← Busca full-text no corpus
-│   ├── export.ts           ← Gerador PDF/EPUB client-side
-│   ├── selection.ts        ← Seleção bidirecional e popover
-│   ├── tree.ts             ← Árvore de navegação
-│   ├── state.ts            ← Gestão de estado (localStorage)
-│   ├── i18n.ts             ← Internacionalização da UI
-│   ├── types.ts            ← Tipos e interfaces TypeScript
+├── src/                    ← TypeScript source code
+│   ├── app.ts              ← Main controller, router, bootstrap
+│   ├── reader.ts           ← Segment rendering in reader
+│   ├── dictionary.ts       ← Pāli dictionary with lookup
+│   ├── search.ts           ← Full-text corpus search
+│   ├── export.ts           ← Client-side PDF/EPUB generator
+│   ├── selection.ts        ← Bidirectional selection and popover
+│   ├── tree.ts             ← Navigation tree
+│   ├── state.ts            ← State management (localStorage)
+│   ├── i18n.ts             ← UI internationalization
+│   ├── types.ts            ← TypeScript types and interfaces
 │   └── logger.ts           ← Logger
 │
-├── js/                     ← JS compilado (output do tsc) + source maps
+├── js/                     ← Compiled JS (tsc output) + source maps
 │   ├── app.js, reader.js, dictionary.js, search.js, ...
 │   └── *.js.map
 │
 ├── css/
-│   └── style.css           ← Stylesheet único (14.5 KB)
+│   └── style.css           ← Single stylesheet (14.5 KB)
 │
 ├── img/
-│   └── logo.png            ← Logo do projeto
+│   └── logo.png            ← Project logo
 │
-├── scripts/                ← Scripts Python de processamento de dados
-│   ├── integrate_books.py  ← Extração PDF → JSON + chunking + manifest
-│   ├── translate_books.py  ← Tradução EN→PT via Gemini API
-│   ├── build_search_index.py ← Gerador de índice de busca sharded
-│   ├── version_js.py       ← Cache buster (hashes MD5 nos imports)
-│   ├── update_translated_index.py ← Sincroniza TOC/manifest após tradução
-│   ├── clean_html.py       ← Remove tags HTML das traduções
-│   ├── extract_data.py     ← Extrai textos canónicos de SQLite
+├── scripts/                ← Python data processing scripts
+│   ├── integrate_books.py  ← PDF extraction → JSON + chunking + manifest
+│   ├── translate_books.py  ← EN→PT translation via Gemini API
+│   ├── build_search_index.py ← Sharded search index generator
+│   ├── version_js.py       ← Cache buster (MD5 hashes in imports)
+│   ├── update_translated_index.py ← Sync TOC/manifest after translation
+│   ├── clean_html.py       ← Remove HTML tags from translations
+│   ├── extract_data.py     ← Extract canonical texts from SQLite
 │   ├── build_core_dictionary.py
 │   ├── build_common_dictionary.py
-│   └── extracted/          ← Cache de extração intermediária
+│   └── extracted/          ← Intermediate extraction cache
 │
 ├── data/
-│   ├── manifest.json       ← Manifesto global (1.3 MB) — hierarquia de obras
-│   ├── works/              ← 18 diretórios de obras
-│   │   ├── dhammasangani/  ← Canónico (mula__0.json, attha__0.json, etc.)
-│   │   ├── buddhism-in-daily-life/  ← Comentário (texto__0..18.json)
-│   │   ├── path-without-ownership/  ← Comentário (texto.json, texto__1.json)
+│   ├── manifest.json       ← Global manifest (1.3 MB) — work hierarchy
+│   ├── works/              ← 18 work directories
+│   │   ├── dhammasangani/  ← Canonical (mula__0.json, attha__0.json, etc.)
+│   │   ├── buddhism-in-daily-life/  ← Commentary (texto__0..18.json)
+│   │   ├── path-without-ownership/  ← Commentary (texto.json, texto__1.json)
 │   │   └── ...
 │   ├── dictionary/
-│   │   ├── pali_core.json      ← 721 lemas Pāli (711 KB)
-│   │   └── common_pali.json    ← 182 entradas comuns (42 KB)
+│   │   ├── pali_core.json      ← 721 Pāli lemmas (711 KB)
+│   │   └── common_pali.json    ← 182 common entries (42 KB)
 │   └── search/
-│       ├── manifest.json       ← Mapa de shards
-│       └── shard_*.json        ← ~50 ficheiros de índice invertido
+│       ├── manifest.json       ← Shard map
+│       └── shard_*.json        ← ~50 inverted index files
 │
-├── docs/                   ← Documentação arquitetural
+├── docs/                   ← Architectural documentation
 │   ├── 01_architecture.md
 │   ├── 02_corpus_data.md
 │   ├── 03_frontend_modules.md
@@ -78,80 +78,80 @@ abhidhamma-pitaka-trilingue-site/
 │   ├── 07_open_issues.md
 │   └── MASTER_LOG.md
 │
-└── *.pdf                   ← PDFs fonte dos livros contemporâneos
+└── *.pdf                   ← Source PDFs for contemporary books
 ```
 
 ---
 
-## Comandos npm Disponíveis
+## Available npm Commands
 
-| Comando | O que faz |
+| Command | What it does |
 |---|---|
-| `npm run build` | `tsc && python3 scripts/version_js.py` — Compila TS→JS e aplica cache busting |
-| `npm run watch` | `tsc --watch` — Recompila automaticamente ao editar `.ts` |
-| `npm run integrate-books` | `python3 scripts/integrate_books.py` — Extrai PDFs, gera chunks e atualiza manifest |
-| `npm run rebuild-search` | `python3 scripts/build_search_index.py` — Reconstrói índice de busca |
+| `npm run build` | `tsc && python3 scripts/version_js.py` — Compiles TS→JS and applies cache busting |
+| `npm run watch` | `tsc --watch` — Recompiles automatically when editing `.ts` |
+| `npm run integrate-books` | `python3 scripts/integrate_books.py` — Extracts PDFs, generates chunks, and updates manifest |
+| `npm run rebuild-search` | `python3 scripts/build_search_index.py` — Rebuilds search index |
 
 ---
 
-## Scripts Python Críticos
+## Critical Python Scripts
 
-### 1. `scripts/integrate_books.py` — Pipeline de Extração de PDFs
-- Extrai texto dos 6 PDFs de comentários contemporâneos
-- Limpa headers, footers, números de página, ISBN
-- Classifica parágrafos em tipos `rend`: `book`, `chapter`, `subhead`, `bodytext`
-- Gera segmentos JSON com estrutura: `{id, rend, paranum, pali, pt, en, es}`
-- **Chunking:** divide em ficheiros de ~900 segmentos (`texto__0.json`, `texto__1.json`, etc.)
-- Gera `index.json` por obra e atualiza `data/manifest.json`
+### 1. `scripts/integrate_books.py` — PDF Extraction Pipeline
+- Extracts text from the 6 contemporary commentary PDFs
+- Cleans headers, footers, page numbers, ISBN
+- Classifies paragraphs into `rend` types: `book`, `chapter`, `subhead`, `bodytext`
+- Generates JSON segments structured as: `{id, rend, paranum, pali, pt, en, es}`
+- **Chunking:** splits into files of ~900 segments (`texto__0.json`, `texto__1.json`, etc.)
+- Generates `index.json` per work and updates `data/manifest.json`
 
-### 2. `scripts/translate_books.py` — Tradução EN→PT via Gemini
-- Uso: `python3 scripts/translate_books.py <book-id>`
-- Lê `GEMINI_API_KEY` do `.env`
-- Aplica regras filológicas rigorosas (dhamma≠fenômeno, kamma≠karma)
-- Checkpoints a cada 20 segmentos
-- Cascade de modelos: gemini-3.1-pro → 2.5-pro → 3.7-flash → 3.6-flash → 3.5-flash
+### 2. `scripts/translate_books.py` — EN→PT Translation via Gemini
+- Usage: `python3 scripts/translate_books.py <book-id>`
+- Reads `GEMINI_API_KEY` from `.env`
+- Enforces strict philological rules (dhamma≠phenomenon, kamma≠karma)
+- Checkpoints every 20 segments
+- Model cascade: gemini-3.1-pro → 2.5-pro → 3.7-flash → 3.6-flash → 3.5-flash
 
-### 3. `scripts/update_translated_index.py` — Sincronização pós-tradução
-- Lê os chunks traduzidos (`texto__*.json`)
-- Recalcula TOC, contagem de segmentos e `chunkStarts`
-- Atualiza `index.json` da obra e `manifest.json`
+### 3. `scripts/update_translated_index.py` — Post-Translation Synchronization
+- Reads translated chunks (`texto__*.json`)
+- Recalculates TOC, segment count, and `chunkStarts`
+- Updates work's `index.json` and `manifest.json`
 
 ### 4. `scripts/version_js.py` — Cache Buster
-- Calcula hash MD5 de todos os `.js`
-- Reescreve imports (`from "./reader.js"` → `from "./reader.js?v=8374a72b"`)
-- Atualiza `<script>` e `<link>` no `index.html`
+- Computes MD5 hash for all `.js` files
+- Rewrites imports (`from "./reader.js"` → `from "./reader.js?v=8374a72b"`)
+- Updates `<script>` and `<link>` tags in `index.html`
 
-### 5. `scripts/build_search_index.py` — Índice de Busca
-- Itera todas as obras no manifest
-- Tokeniza texto (Pāli, EN, PT, ES)
-- Gera shards por letra inicial (50 ficheiros)
+### 5. `scripts/build_search_index.py` — Search Index
+- Iterates over all works in the manifest
+- Tokenizes text (Pāli, EN, PT, ES)
+- Generates shards by initial letter (50 files)
 
 ---
 
-## Estrutura de Dados
+## Data Structures
 
-### Segmento (`Segment`)
+### Segment (`Segment`)
 ```json
 {
   "id": 42,
   "rend": "bodytext",        // "book" | "chapter" | "subhead" | "bodytext"
   "paranum": null,
-  "pali": "Texto original",  // Para comentários: armazena o INGLÊS aqui
+  "pali": "Texto original",  // For commentaries: ENGLISH is stored here
   "pt": "Tradução PT",
   "en": "",
   "es": ""
 }
 ```
 
-### Manifesto (`manifest.json`) — Grupos
-| Grupo | Conteúdo |
+### Manifest (`manifest.json`) — Groups
+| Group | Contents |
 |---|---|
-| `"abhidhamma"` | 7 livros canónicos (Dhammasaṅgaṇī, Vibhaṅga, etc.) |
-| `"outros"` | Tratados pós-canónicos (Abhidhammāvatāra, etc.) |
+| `"abhidhamma"` | 7 canonical books (Dhammasaṅgaṇī, Vibhaṅga, etc.) |
+| `"outros"` | Post-canonical treatises (Abhidhammāvatāra, etc.) |
 | `"visuddhimagga"` | Visuddhimagga (mūla, ṭīkā, nidānakathā) |
-| `"comentarios"` | 7 livros contemporâneos (Nina van Gorkom, Rob Kirkpatrick) |
+| `"comentarios"` | 7 contemporary books (Nina van Gorkom, Rob Kirkpatrick) |
 
-### Obra no Manifesto
+### Work in Manifest
 ```json
 {
   "id": "buddhism-in-daily-life",
@@ -170,34 +170,34 @@ abhidhamma-pitaka-trilingue-site/
 
 ---
 
-## Pipeline Completo de Trabalho
+## Full Workflow Pipeline
 
 ```mermaid
 flowchart TD
-    A["PDF do Livro"] -->|integrate_books.py| B["data/works/{id}/texto__*.json + index.json"]
-    B -->|translate_books.py OU tradução manual| C["Campos 'pt' preenchidos nos JSONs"]
-    C -->|update_translated_index.py| D["index.json e manifest.json atualizados"]
-    D -->|build_search_index.py| E["data/search/shard_*.json regenerados"]
-    E -->|npm run build| F["JS compilado + cache busting"]
-    F --> G["Site pronto para deploy estático"]
+    A["Book PDF"] -->|integrate_books.py| B["data/works/{id}/texto__*.json + index.json"]
+    B -->|translate_books.py OR manual translation| C["'pt' fields populated in JSONs"]
+    C -->|update_translated_index.py| D["index.json and manifest.json updated"]
+    D -->|build_search_index.py| E["data/search/shard_*.json regenerated"]
+    E -->|npm run build| F["Compiled JS + cache busting"]
+    F --> G["Site ready for static deploy"]
 ```
 
 ---
 
-## Regras Filológicas Absolutas
+## Absolute Philological Rules
 
 > [!CAUTION]
-> - **NUNCA** traduzir `dhamma` como "fenômeno" → usar "realidade" ou manter `dhamma`
-> - **NUNCA** usar "karma" → sempre `kamma`
-> - **NUNCA** traduzir "wholesome" como "habilidoso" → usar "salutar" / "benéfico"
-> - Manter termos Pāli técnicos: `citta`, `cetasika`, `rūpa`, `nibbāna`, `jhāna`, `khandha`, `kusala`, `akusala`, `lobha`, `dosa`, `moha`, `sati`, `paññā`, etc.
-> - Sem tags HTML (`<b>`, `<i>`, `<sup>`, `<br>`) nos campos `pt`
+> - **NEVER** translate `dhamma` as "phenomenon" → use "reality" or keep `dhamma`
+> - **NEVER** use "karma" → always `kamma`
+> - **NEVER** translate "wholesome" as "skillful" ("habilidoso") → use "wholesome" / "salutar" / "benéfico"
+> - Preserve technical Pāli terms: `citta`, `cetasika`, `rūpa`, `nibbāna`, `jhāna`, `khandha`, `kusala`, `akusala`, `lobha`, `dosa`, `moha`, `sati`, `paññā`, etc.
+> - No HTML tags (`<b>`, `<i>`, `<sup>`, `<br>`) in `pt` fields
 
 ---
 
-## Restrições Operacionais
+## Operational Constraints
 
 > [!WARNING]
-> - **Deploy:** Upload manual da pasta para GitHub — **NUNCA git commit/push automático**
-> - **Hosting:** Site 100% estático, sem backend/servidor
-> - **Terminal:** `run_command` bloqueado por hook neste ambiente de agente
+> - **Deploy:** Manual upload of the folder to GitHub — **NEVER automated git commit/push**
+> - **Hosting:** 100% static site, no backend/server
+> - **Terminal:** `run_command` blocked by hook in this agent environment

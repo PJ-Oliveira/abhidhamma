@@ -1,86 +1,86 @@
-# 07 — Registro de Problemas Abertos
+# 07 — Open Issues Registry
 
-**Formato:** ID · Gravidade · Componente · Descrição · Impacto · Próxima ação
+**Format:** ID · Severity · Component · Description · Impact · Next action
 
-Gravidade: **CRITICAL** (integridade dos dados ou falha completa de funcionalidade) · **HIGH** (bug visível ao usuário, significativo) · **MEDIUM** (experiência degradada) · **LOW** (menor/cosmético)
-
----
-
-## Problemas Ativos
+Severity: **CRITICAL** (data integrity or complete feature failure) · **HIGH** (user-facing bug, significant) · **MEDIUM** (degraded experience) · **LOW** (minor/cosmetic)
 
 ---
 
-### OI-003 · MEDIUM · Exportação · PDF via iframes em modo sandbox sempre aciona download de arquivo
-
-**Natureza:** O iframes em modo sandbox bloqueia todos os pop-ups incondicionalmente. `openPrintWindow()` detecta o pop-up bloqueado e recorre ao download do arquivo HTML como alternativa. O usuário deve abrir o arquivo manualmente e pressionar Cmd+P / Ctrl+P.
-
-**Impacto:** A exportação de PDF funciona corretamente em um navegador real (Chrome, Firefox, Safari). No iframes em modo sandbox, requer um passo adicional.
-
-**Causa raiz:** Política de sandbox do painel do navegador; não pode ser corrigida no código da aplicação.
-
-**Solução alternativa:** Testar a exportação de PDF em uma aba de navegador real aberta diretamente em `localhost:PORT`.
-
-**Próxima ação:** Nenhuma ação necessária; documentar esta limitação para os usuários.
+## Active Issues
 
 ---
 
-### OI-006 · MEDIUM · Dicionário · Estágio 7 em andamento — 69,0% de cobertura vs meta de 82%
+### OI-003 · MEDIUM · Export · PDF via sandboxed iframes always triggers file download
 
-**Natureza:** `pali_core.json` atualmente cobre 69,0% das ocorrências de tokens do corpus (797 entradas). A meta de compilação é de 82%. Os ~13% restantes requerem entradas adicionais em `build_core_dictionary.py`.
+**Nature:** The sandboxed iframes blocks all popups unconditionally. `openPrintWindow()` detects the blocked popup and falls back to downloading the HTML file. The user must open the file manually and press Cmd+P / Ctrl+P.
 
-**Progresso do estágio 7 (lotes 3–5):**
-- **RESOLVIDO:** Desambiguação `katatta`/`kaṭattā` — a forma dental possui apenas 2 ocorrências vs 395 para a retroflexa; confirmado como variante ortográfica, não um lema separado
-- **78 novas entradas adicionadas** nos lotes 3–5:
-  - 10 termos compostos de condições do Paṭṭhāna (atthipaccaya, kammapaccaya, adhipatipaccaya, etc.)
-  - 16 fórmulas de negação do Paṭṭhāna (nahetu, nahetuṃ, nahetuyā, nakamme, navippayutte, etc.)
-  - 13 palavras gramaticais/numerais de alta frequência (tīṇi, tato, ceva, tayo, tasmā, cattāri, cattāro, etc.)
-  - 3 compostos técnicos do Abhidhamma (kaṭattārūpa, pahātabbahetuka, uppādakkhaṇa)
-  - 9 termos de rūpa (sukhindriya, dukkhindriya, āpo, tejo, vāyo, kalāpa, hadaya, etc.)
-  - 7 fatores do Nobre Caminho Óctuplo (sammāsaṅkappa até sammāsamādhi)
-  - 10 numerais locativos, pronomes reflexivos e formas flexionadas (tīsu, dvīsu, catūsu, attano, etc.)
-  - 10 termos de discurso/comentário (āvuso, bhante, sādhu, yebhuyyena, etc.)
+**Impact:** PDF export works correctly in a real browser (Chrome, Firefox, Safari). In the sandboxed iframes, it requires an extra step.
 
-**Lacuna restante:** ~244.303 ocorrências de tokens (13,0%). Alcançar 82% requer ~600+ entradas adicionais com extração sistemática da tabela `lookup` do DPD — um esforço que requer múltiplas sessões.
+**Root cause:** Browser pane sandbox policy; cannot be fixed in application code.
 
-**Impacto:** Aproximadamente 582.303 ocorrências de tokens do corpus ainda não possuem entrada no dicionário.
+**Workaround:** Test PDF export in a real browser tab opened directly at `localhost:PORT`.
 
-**Próxima ação:** Continuar adicionando entradas em sessões subsequentes. Categorias prioritárias: fórmulas de negação do Paṭṭhāna restantes, flexões verbais de alta frequência e mais compostos técnicos.
+**Next action:** None required; document this limitation for users.
 
 ---
 
-## Problemas Resolvidos (Arquivo)
+### OI-006 · MEDIUM · Dictionary · Stage 7 in progress — 69.0% coverage vs 82% target
 
-| ID | Data de resolução | Problema | Resolução |
+**Nature:** `pali_core.json` currently covers 69.0% of corpus token occurrences (797 entries). The build target is 82%. The remaining ~13% requires additional entries in `build_core_dictionary.py`.
+
+**Stage 7 progress (batches 3–5):**
+- **RESOLVED:** `katatta`/`kaṭattā` disambiguation — dental form has only 2 occurrences vs 395 for retroflex; confirmed as orthographic variant, not a separate lemma
+- **Added 78 new entries** in batches 3–5:
+  - 10 Paṭṭhāna compound condition terms (atthipaccaya, kammapaccaya, adhipatipaccaya, etc.)
+  - 16 Paṭṭhāna negation formulas (nahetu, nahetuṃ, nahetuyā, nakamme, navippayutte, etc.)
+  - 13 high-frequency grammar/number words (tīṇi, tato, ceva, tayo, tasmā, cattāri, cattāro, etc.)
+  - 3 technical Abhidhamma compounds (kaṭattārūpa, pahātabbahetuka, uppādakkhaṇa)
+  - 9 rūpa terms (sukhindriya, dukkhindriya, āpo, tejo, vāyo, kalāpa, hadaya, etc.)
+  - 7 Noble Eightfold Path factors (sammāsaṅkappa through sammāsamādhi)
+  - 10 locative numerals, reflexive pronouns, and inflected forms (tīsu, dvīsu, catūsu, attano, etc.)
+  - 10 discourse/commentary terms (āvuso, bhante, sādhu, yebhuyyena, etc.)
+
+**Remaining gap:** ~244,303 token occurrences (13.0%). Reaching 82% requires ~600+ more entries with systematic DPD lookup table extraction — a multi-session effort.
+
+**Impact:** Approximately 582,303 corpus token occurrences still have no dictionary entry.
+
+**Next action:** Continue adding entries in subsequent sessions. Priority categories: remaining Paṭṭhāna negation formulas, high-frequency verbal inflections, and more technical compounds.
+
+---
+
+## Resolved Issues (Archive)
+
+| ID | Date resolved | Issue | Resolution |
 |---|---|---|---|
-| OI-001 | 2026-08-23 | "psíquico" — 323 instâncias não auditadas | Auditado: todas as 323 traduzem `iddhi` (poderes supranormais); "poderes psíquicos" é terminologia budista padrão em PT. Nenhuma alteração necessária. |
-| OI-002 | 2026-08-23 | "estado" como tradução de dhamma — auditoria parcial | Auditado: 3 instâncias restantes traduzem `dhammabhāva`/`dhammamattattā` (natureza de dhamma/condição de dhamma) — metalinguístico, não traduzindo dhamma em si. Aceitável. |
-| OI-004 | 2026-08-23 | Nenhuma opção de exportação apenas em PT | Adicionados `"pt"` e `"pali+pt"` ao tipo `LangMode`, `langOptions` e `segToHtml`; adicionadas as chaves i18n `exportLangPt`/`exportLangPaliPt` para todos os 3 idiomas da interface. |
-| OI-005 | 2026-08-23 | `rend="book"/"title"/"nikaya"` não mapeados em `segToHtml` | Adicionados mapeamentos h1/h4/p para `book`, `title`, `nikaya`, `subsubhead`, `centre`, `glossary` em `segToHtml()`; adicionadas regras CSS a `PRINT_CSS` e `EPUB_CSS`. |
-| OI-007 | 2026-08-23 | Busca limitada a 30 entradas por token | Elevado `MAX_POSTINGS_PER_TOKEN` de 30 para 50 em `build_search_index.py`; índice de busca reconstruído. |
-| OI-008 | 2026-08-23 | Tag anômala `<x_bin_42>` | Localizada em `vibhanga/tika__0.json` seg 687 (campo `en`). Restaurado `yogo<x_bin_42>o` corrompido para `yogova` (correspondendo à oração paralela `payogova`). |
-| OI-009 | 2026-08-23 | Rótulos do painel de exportação desatualizados após alteração do idioma da interface | Removida a captura de `const uiLang`; todas as chamadas agora leem `settings.uiLang` dinamicamente. Adicionada a reinicialização do painel em `refreshLocalizedUI()` em `app.ts`. |
-| OI-010 | 2026-08-23 | Código morto de `dpd.json` em `dictionary.ts` | Removido o bloco `try/catch` morto (linhas 42–47); sem impacto funcional. |
-| OI-011 | 2026-08-23 | Verificação de intervalo de attha do Paṭṭhāna | Banco de dados fonte auditado: `abh03a_att` tem ID máx 2421 (2422 linhas no total); a extração já utiliza todas as linhas 1766–2421. O comentário é curto no nível da fonte — não existem dados adicionais. |
-| — | 2026-08 | URL `about:` bloqueada no painel do navegador durante exportação de PDF | Alterada para `URL.createObjectURL(blob)` para a URL do pop-up |
-| — | 2026-08 | Chrome não carregando `export.js` atualizado (cache de módulos ES) | Criado `scripts/version_js.py` para carimbar `?v={hash}` pós-compilação |
-| — | 2026-08 | Tags HTML brutas visíveis como texto literal na saída PDF/EPUB | Adicionados `fieldHtml()`/`walkNode()` usando `DOMParser` |
-| — | 2026-08 | 22 ocorrências de "fenômeno" em `pali_core.json` | Corrigidas todas as 22; mantida 1 ocorrência intencional de instrução negativa |
-| — | 2026-08 | 5 ocorrências de "fenômeno" em `common_pali.json` | Corrigidas todas as 5 |
-| — | 2026-08 | ~25.470 ocorrências de "fenômeno" no nível de segmento nas traduções em PT | Corrigidas em massa em todas as 12 obras |
-| — | 2026-08 | Segmento corrompido `yamaka/mula__9.json` seg 174 (`fenômenosamp;`) | Corrigido para o texto correto em PT |
-| — | 2026-08 | Índice de busca desatualizado após correções no corpus | Reconstruído do zero via `build_search_index.py` |
+| OI-001 | 2026-08-23 | "psíquico" — 323 instances unaudited | Audited: all 323 translate `iddhi` (supernormal powers); "poderes psíquicos" is standard PT Buddhist terminology. No changes needed. |
+| OI-002 | 2026-08-23 | "estado" as dhamma translation — partial audit | Audited: 3 remaining instances translate `dhammabhāva`/`dhammamattattā` (dhamma-nature/dhamma-ness) — metalinguistic, not translating dhamma itself. Acceptable. |
+| OI-004 | 2026-08-23 | No PT-only export option | Added `"pt"` and `"pali+pt"` to `LangMode` type, `langOptions`, and `segToHtml`; added `exportLangPt`/`exportLangPaliPt` i18n keys for all 3 UI languages. |
+| OI-005 | 2026-08-23 | `rend="book"/"title"/"nikaya"` not mapped in `segToHtml` | Added h1/h4/p mappings for `book`, `title`, `nikaya`, `subsubhead`, `centre`, `glossary` in `segToHtml()`; added CSS rules to `PRINT_CSS` and `EPUB_CSS`. |
+| OI-007 | 2026-08-23 | Search capped at 30 postings per token | Raised `MAX_POSTINGS_PER_TOKEN` from 30 to 50 in `build_search_index.py`; rebuilt search index. |
+| OI-008 | 2026-08-23 | `<x_bin_42>` anomalous tag | Located in `vibhanga/tika__0.json` seg 687 (`en` field). Restored corrupt `yogo<x_bin_42>o` to `yogova` (matching parallel clause `payogova`). |
+| OI-009 | 2026-08-23 | Export panel labels stale after UI language change | Removed `const uiLang` capture; all calls now read `settings.uiLang` dynamically. Added panel re-init in `refreshLocalizedUI()` in `app.ts`. |
+| OI-010 | 2026-08-23 | `dpd.json` dead code in `dictionary.ts` | Removed the dead `try/catch` block (lines 42–47); no functional impact. |
+| OI-011 | 2026-08-23 | Paṭṭhāna attha range check | Audited source DB: `abh03a_att` has max ID 2421 (2422 total rows); extraction already uses all rows 1766–2421. Commentary is short at the source level — no additional data exists. |
+| — | 2026-08 | `about:` URL blocked in browser pane during PDF export | Changed to `URL.createObjectURL(blob)` for popup URL |
+| — | 2026-08 | Chrome not loading updated `export.js` (ES module cache) | Created `scripts/version_js.py` to stamp `?v={hash}` post-compile |
+| — | 2026-08 | Raw HTML tags visible as literal text in PDF/EPUB output | Added `fieldHtml()`/`walkNode()` using `DOMParser` |
+| — | 2026-08 | 22 "fenômeno" occurrences in `pali_core.json` | Corrected all 22; 1 intentional negative-instruction occurrence retained |
+| — | 2026-08 | 5 "fenômeno" occurrences in `common_pali.json` | Corrected all 5 |
+| — | 2026-08 | ~25,470 segment-level "fenômeno" occurrences in PT translations | Bulk-corrected across all 12 works |
+| — | 2026-08 | Corrupt segment `yamaka/mula__9.json` seg 174 (`fenômenosamp;`) | Fixed to correct PT text |
+| — | 2026-08 | Search index stale after corpus corrections | Rebuilt from scratch via `build_search_index.py` |
 
-### OI-004 · RESOLVED (HIGH) · Conteúdo/Filologia · Violações residuais da filosofia do Abhidhamma no Dicionário
-**Natureza:** As definições no dicionário `pali_core.json` ainda contêm termos não-canónicos como "fenômenos condicionados" (na definição de *anattā*) e "karma" (na definição de *cetanā*, ex: "o cetasika gerador de karma"), violando as diretrizes ontológicas rigorosas. Várias definições em espanhol também contêm "fenómeno".
-**Impacto:** Desalinhamento das definições do dicionário em relação à filosofia estrita do Abhidhamma (onde *dhamma* = realidade, *kamma* = kamma).
-**Próxima ação:** Realizar uma substituição direcionada dentro de `data/dictionary/*.json`.
+### OI-004 · RESOLVED (HIGH) · Content/Philology · Residual Abhidhamma philosophy violations in Dictionary
+**Nature:** The `pali_core.json` dictionary definitions still contain un-canonical terms like "fenômenos condicionados" (in the definition of *anattā*) and "karma" (in the definition of *cetanā*, e.g., "o cetasika gerador de karma"), violating the strict ontological guidelines. Various Spanish definitions also still contain "fenómeno".
+**Impact:** Misaligns the dictionary definitions with the strict philosophy of the Abhidhamma (where *dhamma* = reality, *kamma* = kamma).
+**Next action:** Perform a targeted search and replace inside `data/dictionary/*.json`.
 
-### OI-005 · RESOLVED (MEDIUM) · Conteúdo/Filologia · Falhas na regex para "subconsciência" e no corpus em Inglês
-**Natureza:** O script usado para limpar o corpus `data/works/` utilizou uma regex estrita (`\bsubconsciente\b`) e deixou escapar formas derivadas como `subconsciência` (PT), `subconsciencia` (ES) e `subconscientes`. Além disso, as traduções em inglês ainda usam pesadamente "karma", "dharma" e "subconsciousness".
-**Impacto:** Termos psicológicos e sanscritizados residuais permanecem em locais isolados (ex: *Abhidhamma in Daily Life*, *Abhidhammāvatāra ṭīkā*).
-**Próxima ação:** Escrever um script de regex mais abrangente para auditar `data/works/` focando em todas as variações morfológicas de `subconsci*`, e estender a auditoria filosófica para as strings em inglês (`en`) para "kamma" e "dhamma".
+### OI-005 · RESOLVED (MEDIUM) · Content/Philology · Regex gaps for "subconsciência" and English corpus
+**Nature:** The script used to clean the corpus `data/works/` used strict regex (`\bsubconsciente\b`) and missed derived forms like `subconsciência` (PT), `subconsciencia` (ES), and `subconscientes`. Furthermore, the English translations still heavily use "karma", "dharma", and "subconsciousness".
+**Impact:** Residual psychological and Sanskritized terminology remains in localized spots (e.g. *Abhidhamma in Daily Life*, *Abhidhammāvatāra ṭīkā*).
+**Next action:** Write a broader regex script to audit `data/works/` targeting all morphological variations of `subconsci*`, and extend the philosophical audit to the `en` language string for "kamma" and "dhamma".
 
-### OI-006 · RESOLVED (LOW) · UI/UX · Responsividade em dispositivos móveis para as ferramentas analíticas
-**Natureza:** A matriz do `patthana` e a árvore do `mindmap` podem gerar elementos DOM muito largos. Embora `overflow-x: auto` esteja parcialmente implementado, layouts de grade complexos em ecrãs móveis pequenos podem cortar os rótulos ou carecer de cabeçalhos fixos (sticky), dificultando a correlação.
-**Impacto:** Experiência do usuário degradada em dispositivos móveis ao utilizar as ferramentas analíticas avançadas.
-**Próxima ação:** Testar a interface em resoluções de telemóvel e implementar `position: sticky` para a primeira coluna/linha na matriz do Paṭṭhāna.
+### OI-006 · RESOLVED (LOW) · UI/UX · Mobile responsiveness for analytical tools
+**Nature:** The `patthana` matrix and `mindmap` tree can generate very wide DOM elements. While `overflow-x: auto` is partially implemented, complex grid layouts on small mobile screens might cut off labels or lack sticky headers, making correlation difficult.
+**Impact:** Degraded user experience on mobile devices when using the advanced analytical tools.
+**Next action:** Test the UI on mobile viewports and implement `position: sticky` for the first column/row in the Paṭṭhāna matrix.

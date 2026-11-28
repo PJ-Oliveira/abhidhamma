@@ -1,43 +1,43 @@
-# 06 — Módulo de Exportação
+# 06 — Export Module
 
-## 1. Visão Geral
+## 1. Overview
 
-`src/export.ts` (compilado para `js/export.js`) implementa o painel de Exportação. Ele fornece dois formatos de saída:
+`src/export.ts` (compiled to `js/export.js`) implements the Export panel. It provides two output formats:
 
-- **PDF**: Gera uma página HTML pronta para impressão como uma URL blob, abre-a em uma nova aba e aciona automaticamente a caixa de diálogo de impressão do navegador. Fallback: faz o download do arquivo HTML se o pop-up for bloqueado.
-- **EPUB**: Gera um arquivo ZIP EPUB 3 válido (com NCX para compatibilidade legada) e faz o download diretamente.
-
----
-
-## 2. Interface do Painel de Exportação
-
-Inicializado por `initExportPanel(manifest, container, getCurrentWorkId)` chamado a partir de `app.ts`.
-
-O painel é renderizado dinamicamente em `#export-panel-body`:
-
-1. **Seletor de obra** — todas as obras do manifesto, agrupadas
-2. **Caixas de seleção de partes** — uma por parte na obra selecionada; todas marcadas por padrão
-3. **Intervalo de capítulos** — exibido apenas quando exatamente uma parte está selecionada E essa parte possui entradas de índice (TOC). Menus suspensos preenchidos a partir de entradas do `toc` com `rend === "chapter"`.
-4. **Seletor de modo de idioma** — 6 opções:
-   - `en` — Apenas inglês
-   - `pali+en` — Pāli + Inglês
-   - `pali+en+pt` — Pāli + Inglês + Português
-   - `es` — Apenas espanhol
-   - `pali+es` — Pāli + Espanhol
-   - `pali+en+es` — Pāli + Inglês + Espanhol
-5. Botão **Exportar PDF**
-6. Botão **Exportar EPUB**
-7. **Texto de status** — exibe "Preparando…" durante a compilação, limpo em caso de sucesso, exibe erro em caso de falha
-
-Quando o usuário abre o painel de exportação enquanto visualiza um texto, o seletor de obra pré-seleciona a obra atual.
+- **PDF**: Generates a print-ready HTML page as a blob URL, opens it in a new tab, and auto-triggers the browser print dialog. Fallback: downloads the HTML file if the popup is blocked.
+- **EPUB**: Generates a valid EPUB 3 ZIP archive (with NCX for legacy compatibility) and downloads it directly.
 
 ---
 
-## 3. Tratamento do Modo de Idioma
+## 2. Export Panel UI
+
+Initialized by `initExportPanel(manifest, container, getCurrentWorkId)` called from `app.ts`.
+
+The panel renders dynamically into `#export-panel-body`:
+
+1. **Work selector** — all works from manifest, grouped
+2. **Part checkboxes** — one per part in the selected work; all checked by default
+3. **Chapter range** — shown only when exactly one part is selected AND that part has TOC entries. Dropdowns populated from `toc` entries with `rend === "chapter"`.
+4. **Language mode selector** — 6 options:
+   - `en` — English only
+   - `pali+en` — Pāli + English
+   - `pali+en+pt` — Pāli + English + Português
+   - `es` — Spanish only
+   - `pali+es` — Pāli + Español
+   - `pali+en+es` — Pāli + English + Español
+5. **Export PDF** button
+6. **Export EPUB** button
+7. **Status text** — shows "Preparando…" during build, cleared on success, shows error on failure
+
+When the user opens the export panel while viewing a text, the work selector pre-selects the current work.
+
+---
+
+## 3. Language Mode Handling
 
 `type LangMode = "en" | "pali+en" | "pali+en+pt" | "es" | "pali+es" | "pali+en+es"`
 
-Em `segToHtml(seg, langMode)`:
+In `segToHtml(seg, langMode)`:
 
 ```typescript
 const showPali = langMode.startsWith("pali");
@@ -46,16 +46,16 @@ const showPt   = langMode === "pali+en+pt";
 const showEs   = langMode.includes("es");
 ```
 
-**Caso especial:** Quando `!showPali && showEn` e o campo `pali` contém texto (obras bilíngues EN/PT no grupo `comentarios`), o texto em inglês é renderizado a partir de `seg.pali` com a classe `"en"`. Isso lida corretamente com os comentários contemporâneos onde o inglês é armazenado no campo `pali`.
+**Special case:** When `!showPali && showEn` and the `pali` field contains text (bilingual EN/PT works in the `comentarios` group), the English text is rendered from `seg.pali` with class `"en"`. This correctly handles the contemporary commentaries where English is stored in the `pali` field.
 
 ---
 
-## 4. Pipeline HTML — `fieldHtml()` e `walkNode()`
+## 4. HTML Pipeline — `fieldHtml()` and `walkNode()`
 
-### Problema
-O campo `pali` contém tags HTML inline reais (`<b>`, `<p rend="gathalast">`, `<sup>`). Chamar `escHtml()` nesses campos produziria `&lt;b&gt;` literal na saída exportada — tags visíveis como texto.
+### Problem
+The `pali` field contains real inline HTML tags (`<b>`, `<p rend="gathalast">`, `<sup>`). Calling `escHtml()` on these fields would produce literal `&lt;b&gt;` in the export output — tags visible as text.
 
-### Solução
+### Solution
 
 ```typescript
 function fieldHtml(raw: string): string {
@@ -67,7 +67,7 @@ function fieldHtml(raw: string): string {
 }
 ```
 
-`walkNode()` serializa recursivamente o DOM analisado:
+`walkNode()` recursively serializes the parsed DOM:
 
 ```typescript
 function walkNode(node: Node): string {
@@ -89,63 +89,63 @@ function walkNode(node: Node): string {
 }
 ```
 
-**Tabela de conversão:**
+**Conversion table:**
 
-| Entrada | Saída |
+| Input | Output |
 |---|---|
 | `<b>text</b>` | `<strong>text</strong>` |
 | `<i>text</i>` | `<em>text</em>` |
 | `<sup>1</sup>` | `<sup>1</sup>` |
 | `<p rend="gathalast">text</p>` | `<br><span class="rend-gathalast">text</span>` |
 | `<p rend="gatha1">text</p>` | `<br><span class="rend-gatha1">text</span>` |
-| `<x_bin_42>text</x_bin_42>` | `text` (removido) |
-| `plain text` | `plain text` (escapado) |
+| `<x_bin_42>text</x_bin_42>` | `text` (stripped) |
+| `plain text` | `plain text` (escaped) |
 
-### Resultado da verificação
+### Verification result
 
-Varredura completa de todo o corpus de 91.065 segmentos (27.462 com HTML) no navegador:
+Full corpus sweep of 91,065 segments (27,462 with HTML) in the browser:
 
 ```
 { segsTotal: 91065, htmlSegsProcessed: 27462, badTagsFound: 0 }
 ```
 
-Zero tags inesperadas na saída de exportação em todas as 12 obras.
+Zero unexpected tags in export output across all 12 works.
 
 ---
 
-## 5. `segToHtml()` — Segmento para Bloco de Exportação
+## 5. `segToHtml()` — Segment to Export Block
 
 ```typescript
 function segToHtml(seg: Segment, langMode: LangMode): string
 ```
 
-Mapeia o campo `rend` para um elemento HTML de exportação:
+Maps the `rend` field to an export HTML element:
 
-| rend | Elemento de exportação |
+| rend | Export element |
 |---|---|
 | `chapter` | `<h2 class="seg chapter">` |
 | `subhead` | `<h3 class="seg subhead">` |
 | `hangnum` | `<p class="seg hangnum">` |
 | `indent` | `<blockquote class="seg indent">` |
 | `footnote` | `<p class="seg footnote">` |
-| qualquer outro | `<p class="seg bodytext">` |
+| any other | `<p class="seg bodytext">` |
 
-Cada linha de idioma é envolvida em `<div class="line {lang}">`. Segmentos vazios (nenhuma linha seria exibida) retornam `""` e são filtrados.
+Each language line is wrapped in `<div class="line {lang}">`. Empty segments (no lines would be shown) return `""` and are filtered out.
 
 ---
 
-## 6. Exportação para PDF
+## 6. PDF Export
 
 ### `buildPrintHtml(segs, title, langMode)`
 
-Gera uma string de documento HTML completa:
-- `<!DOCTYPE html>` com `<meta charset="utf-8">`
-- `PRINT_CSS` embutido (otimizado para impressão: Georgia serif, 11pt, margens de 2cm, CSS `@page` para cabeçalhos contínuos)
-- Título como `<h1>` no topo
-- Todos os blocos HTML de segmentos unidos por `\n`
-- Script de auto-impressão: `window.addEventListener("load", () => setTimeout(() => window.print(), 600))`
+Produces a full HTML document string:
+- `<!DOCTYPE html>` with `<meta charset="utf-8">`
+- Embedded `PRINT_CSS` (print-optimized: Georgia serif, 11pt, 2cm margins, `@page` CSS for running headers)
+- Title as `<h1>` at top
+- All segment HTML blocks joined by `\n`
+- Auto-print script: `window.addEventListener("load", () => setTimeout(() => window.print(), 600))`
 
-### `PRINT_CSS` inclui formatação de versos:
+### `PRINT_CSS` includes verse formatting:
 ```css
 span.rend-gathalast { margin-left: 2em; }
 span.rend-gatha1, span.rend-gatha2, span.rend-gatha3 { margin-left: 1em; }
@@ -175,15 +175,15 @@ function openPrintWindow(html: string, title: string): void {
 }
 ```
 
-**Por que URL blob (e não `window.open("", "_blank")`):** Abrir uma janela em branco e escrever nela cria uma página `about:blank`. URLs `about:` são bloqueadas no iframes em modo sandbox e em alguns contextos estritos de navegadores. Usar `URL.createObjectURL()` cria uma URL `blob:` que é sempre válida na mesma origem.
+**Why blob URL (not `window.open("", "_blank")`):** Opening a blank window and writing to it creates an `about:blank` page. `about:` URLs are blocked in the sandboxed iframes and in some strict-mode browser contexts. Using `URL.createObjectURL()` creates a `blob:` URL which is always valid in the same origin.
 
-**O iframes em modo sandbox sempre bloqueia pop-ups.** O fallback (download do arquivo HTML) é acionado automaticamente nesse ambiente.
+**The sandboxed iframes always blocks popups.** The fallback (download HTML file) fires automatically in that environment.
 
 ---
 
-## 7. Exportação para EPUB
+## 7. EPUB Export
 
-### Estrutura
+### Structure
 
 ```
 mimetype                          (uncompressed, must be first entry)
@@ -194,45 +194,45 @@ OEBPS/style.css                   (EPUB_CSS)
 OEBPS/content.html                (all segments as XHTML)
 ```
 
-### `buildZip(entries)` — Implementação de ZIP em JavaScript puro
+### `buildZip(entries)` — Pure JS ZIP implementation
 
-Gera um arquivo ZIP válido sem qualquer biblioteca. Implementado a partir da especificação do ZIP:
-- Cabeçalho local de arquivo (30 bytes + nome do arquivo)
-- Dados do arquivo (não compactados, método 0)
-- Entradas do diretório central
-- Registro de fim do diretório central (end-of-central-directory)
+Builds a valid ZIP archive without any library. Implemented from the ZIP specification:
+- Local file header (30 bytes + filename)
+- File data (uncompressed, method 0)
+- Central directory entries
+- End-of-central-directory record
 
-Usa CRC-32 com polinômio padrão `0xedb88320`.
+Uses CRC-32 with standard polynomial `0xedb88320`.
 
 ### `buildEpub(segs, title, langMode)`
 
-- O documento de conteúdo é XHTML (declaração XML, `xmlns` no `<html>`)
-- O OPF inclui `<dc:language>pi</dc:language>` (código ISO 639-3 para Pāli)
-- O `dc:identifier` é `abhidhamma-export-{Date.now()}` — único por exportação
+- Content document is XHTML (XML declaration, `xmlns` on `<html>`)
+- OPF includes `<dc:language>pi</dc:language>` (Pāli ISO 639-3 code)
+- The `dc:identifier` is `abhidhamma-export-{Date.now()}` — unique per export
 
-### `EPUB_CSS` inclui formatação de versos (mesma que `PRINT_CSS`).
+### `EPUB_CSS` includes verse formatting (same as `PRINT_CSS`).
 
 ### `downloadBlob(bytes, filename, mimeType)`
 
-Cria um elemento de link temporário, define o `href` para uma URL blob, aciona o clique e realiza a limpeza após 5 segundos.
+Creates a temporary anchor element, sets `href` to a blob URL, triggers click, cleans up after 5 seconds.
 
 ---
 
-## 8. Filtragem por Intervalo de Capítulos
+## 8. Chapter Range Filtering
 
-Quando exatamente uma parte está selecionada e essa parte possui capítulos no TOC:
-- Menus suspensos de intervalo de capítulos são exibidos
-- `fromSegId` = `chapFromSel.value` (ID do segmento do capítulo "de" selecionado)
-- `toSegId` = calculado como `nextChapter.id - 1` onde `nextChapter` é o capítulo imediatamente seguinte à seleção "até" no TOC; `null` se "até" for o último capítulo (busca todos os segmentos restantes)
+When exactly one part is selected and that part has TOC chapters:
+- Chapter-range dropdowns appear
+- `fromSegId` = `chapFromSel.value` (seg ID of the selected "from" chapter)
+- `toSegId` = computed as `nextChapter.id - 1` where `nextChapter` is the chapter immediately following the "to" selection in the TOC; `null` if "to" is the last chapter (fetch all remaining segments)
 
-`fetchWorkSegments(workId, files, fromSegId, toSegId)` busca todos os arquivos de partes em sequência e filtra: `s.id >= fromSegId && s.id <= toSegId`.
+`fetchWorkSegments(workId, files, fromSegId, toSegId)` fetches all chunk files sequentially and filters: `s.id >= fromSegId && s.id <= toSegId`.
 
 ---
 
-## 9. Histórico de Problemas
+## 9. Issue History
 
-| Data | Problema | Correção |
+| Date | Issue | Fix |
 |---|---|---|
-| 2026-08 | `window.open("", "_blank")` criava aba `about:blank`, bloqueada no painel do navegador | Alterado para `URL.createObjectURL(blob)` → `window.open(blobUrl)` |
-| 2026-08 | Chrome não carregava o `export.js` atualizado (cache de módulos ES) | Criado `version_js.py` para inserir `?v={hash}` em todas as importações pós-build |
-| 2026-08 | Tags HTML brutas (`<b>`, `<p rend="gathalast">`) aparecendo como texto literal no PDF/EPUB | Adicionado `walkNode()` + `fieldHtml()` usando `DOMParser` |
+| 2026-08 | `window.open("", "_blank")` created `about:blank` tab, blocked in browser pane | Changed to `URL.createObjectURL(blob)` → `window.open(blobUrl)` |
+| 2026-08 | Chrome not loading updated `export.js` (ES module cache) | Created `version_js.py` to stamp `?v={hash}` on all imports post-build |
+| 2026-08 | Raw HTML tags (`<b>`, `<p rend="gathalast">`) appearing as literal text in PDF/EPUB | Added `walkNode()` + `fieldHtml()` using `DOMParser` |

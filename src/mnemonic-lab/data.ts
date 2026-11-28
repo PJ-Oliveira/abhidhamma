@@ -1,7 +1,7 @@
 /**
- * Base de Dados Canônica e Trilíngue (PT / EN / ES + Pāli) do Laboratório Mnêmico
- * Baseado rigorosamente no Abhidhammatthasaṅgaha (Ācariya Anuruddha),
- * A Comprehensive Manual of Abhidhamma (Bhikkhu Bodhi) e no Glossário Normativo do projeto.
+ * Canonical Trilingual Database (PT / EN / ES + Pāli) for the Mnemonic Laboratory.
+ * Strictly based on the Abhidhammatthasaṅgaha (Ācariya Anuruddha),
+ * A Comprehensive Manual of Abhidhamma (Bhikkhu Bodhi), and the project's Normative Glossary.
  */
 
 import type { UiLang } from "../types.js";
@@ -25,8 +25,8 @@ export type CognitiveBit = 1 | 0 | "patigha" | "vicikiccha" | "uddhacca";
 export type SankharaBit = 1 | 0 | "fixed";
 
 export interface CanonicalCitta {
-  readonly id: number; // 1..89 ou 1..121
-  readonly code: string; // Ex.: "Lobha #1 [1·1·1]", "MK3 [1·0·1]", "R-Ku J1", "Lok-Mag-Sot-J1"
+  readonly id: number; // 1..89 or 1..121
+  readonly code: string; // e.g., "Lobha #1 [1·1·1]", "MK3 [1·0·1]", "R-Ku J1", "Lok-Mag-Sot-J1"
   readonly family: CittaFamilyId;
   readonly bhumi: CittaBhumiId;
   readonly jati: JatiId;
@@ -39,26 +39,26 @@ export interface CanonicalCitta {
   readonly arupaBase?: 1 | 2 | 3 | 4;
   readonly maggaStage?: 1 | 2 | 3 | 4;
   readonly formulaNote: LocalizedText;
-  /** IDs (1..52) dos Cetasikas fixos/constantes que sempre surgem nesta Citta */
+  /** IDs (1..52) of the fixed/constant Cetasikas that always arise in this Citta */
   readonly fixedCetasikas: readonly number[];
-  /** IDs (1..52) dos Cetasikas ocasionais/variáveis (aniyata) que podem surgir nesta Citta */
+  /** IDs (1..52) of the occasional/variable (aniyata) Cetasikas that may arise in this Citta */
   readonly optionalCetasikas: readonly number[];
-  /** Número total máximo de Cetasikas segundo o Saṅgaha-naya (AS II.18-29) */
+  /** Maximum total number of Cetasikas according to the Saṅgaha-naya (AS II.18-29) */
   readonly totalSangahaCount: number;
   readonly asRef: string;
-  /** Classificação canônica de Hetu (AS III.5-7): ahetuka, ekahetuka, dvihetuka, tihetuka */
+  /** Canonical Hetu classification (AS III.5-7): ahetuka, ekahetuka, dvihetuka, tihetuka */
   readonly hetuType?: "ahetuka" | "ekahetuka" | "dvihetuka" | "tihetuka";
-  /** Funções canônicas de Kicca (AS III.8-11) */
+  /** Canonical Kicca functions (AS III.8-11) */
   readonly kiccaPali?: string;
-  /** Portas canônicas de Dvāra (AS III.12-15) */
+  /** Canonical Dvāra doors (AS III.12-15) */
   readonly dvaraPali?: string;
-  /** Objetos canônicos de Ālambaṇa (AS III.16-18) */
+  /** Canonical Ālambaṇa objects (AS III.16-18) */
   readonly arammanaPali?: string;
-  /** Bases físicas de Vatthu (AS III.19-22) */
+  /** Physical Vatthu bases (AS III.19-22) */
   readonly vatthuPali?: string;
-  /** Fatores de Jhāna presentes (Jhānaṅga) */
+  /** Jhāna factors present (Jhānaṅga) */
   readonly jhanaFactorsPali?: string;
-  /** Erradicação/eliminação de kilesas e saṃyojanas (AS I, II) */
+  /** Eradication/elimination of kilesas and saṃyojanas (AS I, II) */
   readonly eradicationNote?: LocalizedText;
 }
 
@@ -89,9 +89,9 @@ export type PeriodicBlockId =
   | "nibbana";
 
 export interface SabhavaElement {
-  /** Número atômico na Tabela Periódica das 82 Realidades (1..72 Sabhāva + 73..82 Anipphanna-rūpa) */
+  /** Atomic number in the Periodic Table of the 82 Realities (1..72 Sabhāva + 73..82 Anipphanna-rūpa) */
   readonly atomicNumber: number;
-  /** Se for Cetasika, seu ID canônico (1..52); se Rūpa, (1..28: 1..18 Nipphanna + 19..28 Anipphanna) */
+  /** If Cetasika, its canonical ID (1..52); if Rūpa, (1..28: 1..18 Nipphanna + 19..28 Anipphanna) */
   readonly subId: number;
   readonly paramattha: "citta" | "cetasika" | "rupa" | "nibbana";
   readonly block: PeriodicBlockId;
@@ -99,12 +99,12 @@ export interface SabhavaElement {
   readonly pali: string;
   readonly name: LocalizedText;
   readonly lakkhana: LocalizedText;
-  /** Em quantas das 89 (ou 121) Cittas este elemento entra (para Cetasikas) ou regra estrutural */
+  /** In how many of the 89 (or 121) Cittas this element enters (for Cetasikas) or structural rule */
   readonly valenceRule: LocalizedText;
   readonly cittaCount89?: number;
   readonly cittaCount121?: number;
-  readonly isAvinibbhoga?: boolean; // Octeto inseparável da matéria
-  readonly isAnipphanna?: boolean; // 10 Rūpas não-concretos (AS VI.4)
+  readonly isAvinibbhoga?: boolean; // Inseparable material octad
+  readonly isAnipphanna?: boolean; // 10 non-concrete Rūpas (AS VI.4)
 }
 
 export interface OntologicalCollisionRule {
@@ -115,7 +115,7 @@ export interface OntologicalCollisionRule {
 }
 
 export interface PhalanxSlot {
-  /** 1..12 na mão esquerda, 13..24 na mão direita, ou 1..14 com dobras da palma */
+  /** 1..12 on the left hand, 13..24 on the right hand, or 1..14 including palm creases */
   readonly index: number;
   readonly hand: "left" | "right";
   readonly finger: "index" | "middle" | "ring" | "little";
@@ -138,7 +138,7 @@ export interface PhalanxMapSpec {
   readonly slots: readonly PhalanxSlot[];
 }
 
-// ── Helpers para conjuntos de Cetasikas (IDs 1..52) ──────────────────────────
+// ── Helpers for Cetasika sets (IDs 1..52) ─────────────────────────────────────
 const UNIV_7 = [1, 2, 3, 4, 5, 6, 7] as const;
 const PAK_ALL_6 = [8, 9, 10, 11, 12, 13] as const;
 const PAK_NO_PITI_5 = [8, 9, 10, 11, 13] as const;
@@ -164,12 +164,12 @@ function jhanaPakinnakas(stage: 1 | 2 | 3 | 4 | 5): number[] {
   }
 }
 
-// ── 1. AS 89 E 121 CITTAS CANÔNICAS (COM VETORES COMBINATÓRIOS E SAṄGAHA-NAYA) ──
+// ── 1. THE 89 AND 121 CANONICAL CITTAS (WITH COMBINATORIAL VECTORS & SAṄGAHA-NAYA) ──
 
 function buildCommonMundaneCittas(): CanonicalCitta[] {
   const list: CanonicalCitta[] = [];
 
-  // A.1: 8 Lobha-mūla Cittas (#1..#8) — Gerador 2³ = 8
+  // A.1: 8 Lobha-mūla Cittas (#1..#8) — 2³ = 8 Generator
   const lobhaSpecs: Array<{
     id: number;
     v: 1 | 0;
@@ -191,10 +191,10 @@ function buildCommonMundaneCittas(): CanonicalCitta[] {
     const dPali = sp.d === 1 ? "diṭṭhigata-sampayuttaṃ" : "diṭṭhigata-vippayuttaṃ";
     const sPali = sp.s === 1 ? "asaṅkhārikaṃ" : "sasaṅkhārikaṃ";
     const pak = sp.v === 1 ? [...PAK_ALL_6] : [...PAK_NO_PITI_5];
-    const specAku = sp.d === 1 ? [18, 19] : [18]; // Lobha + Diṭṭhi (fixo) ou Lobha (com Māna opcional)
+    const specAku = sp.d === 1 ? [18, 19] : [18]; // Lobha + Diṭṭhi (fixed) or Lobha (with optional Māna)
     const optAku: number[] = [];
-    if (sp.d === 0) optAku.push(20); // Māna é ocasional nas 4 diṭṭhigata-vippayutta
-    if (sp.s === 0) optAku.push(25, 26); // Thīna-middha nas sasaṅkhārika
+    if (sp.d === 0) optAku.push(20); // Māna is occasional in the 4 diṭṭhigata-vippayutta
+    if (sp.s === 0) optAku.push(25, 26); // Thīna-middha in sasaṅkhārika
 
     const fixed = [...UNIV_7, ...pak, ...AKU_UNIV_4, ...specAku];
     const totalCount = fixed.length + optAku.length; // 19, 21, 19, 21, 18, 20, 18, 20
@@ -230,8 +230,8 @@ function buildCommonMundaneCittas(): CanonicalCitta[] {
   for (const s of [1, 0] as const) {
     const id = s === 1 ? 9 : 10;
     const sPali = s === 1 ? "asaṅkhārikaṃ" : "sasaṅkhārikaṃ";
-    const fixed = [...UNIV_7, ...PAK_NO_PITI_5, ...AKU_UNIV_4, 21]; // 17 fixos (inclui Dosa=21)
-    const opt = s === 1 ? [22, 23, 24] : [22, 23, 24, 25, 26]; // Issā, Macchariya, Kukkucca (1 por vez) + Thīna-Middha se sasaṅkhārika
+    const fixed = [...UNIV_7, ...PAK_NO_PITI_5, ...AKU_UNIV_4, 21]; // 17 fixed (includes Dosa=21)
+    const opt = s === 1 ? [22, 23, 24] : [22, 23, 24, 25, 26]; // Issā, Macchariya, Kukkucca (1 at a time) + Thīna-Middha if sasaṅkhārika
     const totalCount = s === 1 ? 20 : 22;
     list.push({
       id,
@@ -437,7 +437,7 @@ function buildCommonMundaneCittas(): CanonicalCitta[] {
     });
   });
 
-  // #25: Kusala-vipāka Sampaṭicchana, #26: Kusala-vipāka Santīraṇa (Somanassa), #27: Kusala-vipāka Santīraṇa (Upekkhā) — ordem exata do mūla (AS I.10)
+  // #25: Kusala-vipāka Sampaṭicchana, #26: Kusala-vipāka Santīraṇa (Somanassa), #27: Kusala-vipāka Santīraṇa (Upekkhā) — exact mūla order (AS I.10)
   list.push({
     id: 25,
     code: "Ahetuka #13 (Sp-Ku)",
@@ -647,11 +647,11 @@ function buildCommonMundaneCittas(): CanonicalCitta[] {
 
       const opt: number[] = [];
       if (jt.jati === "kusala") {
-        opt.push(...VIRATI_3, ...APPAMANNA_2); // Virati (3) + Appamaññā (2) entram em Mahā-kusala
+        opt.push(...VIRATI_3, ...APPAMANNA_2); // Virati (3) + Appamaññā (2) enter Mahā-kusala
       } else if (jt.jati === "kiriya") {
-        opt.push(...APPAMANNA_2); // Appamaññā (2) entram em Mahā-kiriya, mas Virati NÃO entram
+        opt.push(...APPAMANNA_2); // Appamaññā (2) enter Mahā-kiriya, whereas Virati do NOT enter
       }
-      // Em Mahā-vipāka, nem Virati nem Appamaññā entram!
+      // In Mahā-vipāka, neither Virati nor Appamaññā enter!
 
       const totalCount = fixed.length + opt.length;
 
@@ -702,7 +702,7 @@ function buildCommonMundaneCittas(): CanonicalCitta[] {
       const id = rj.base + jh;
       const pak = jhanaPakinnakas(jh);
       const fixed = [...UNIV_7, ...pak, ...SOBHANA_UNIV_19, ...PANNA_1];
-      // Karuṇā e Muditā estão presentes nos Jhānas 1..4, mas NÃO no 5º Jhāna (que tem Upekkhā)
+      // Karuṇā and Muditā are present in Jhānas 1..4, but NOT in the 5th Jhāna (which has Upekkhā)
       const opt = jh < 5 ? [...APPAMANNA_2] : [];
       const totalCount = fixed.length + opt.length; // 35, 34, 33, 32, 30
       const enOrd = jh === 1 ? "1st" : jh === 2 ? "2nd" : jh === 3 ? "3rd" : `${jh}th`;
@@ -751,7 +751,7 @@ function buildCommonMundaneCittas(): CanonicalCitta[] {
   for (const aj of arupaJatis) {
     for (const ab of arupaBases) {
       const id = aj.base + ab.idx;
-      const fixed = [...UNIV_7, 10, 11, 13, ...SOBHANA_UNIV_19, ...PANNA_1]; // 30 cetasikas (idêntico ao 5º Jhāna)
+      const fixed = [...UNIV_7, 10, 11, 13, ...SOBHANA_UNIV_19, ...PANNA_1]; // 30 cetasikas (identical to 5th Jhāna)
       list.push({
         id,
         code: `${aj.code} B${ab.idx}`,
@@ -788,7 +788,7 @@ function buildCommonMundaneCittas(): CanonicalCitta[] {
 function buildCanonicalCittas89(): CanonicalCitta[] {
   const list = buildCommonMundaneCittas();
 
-  // F. 8 Lokuttara Cittas (#82..#89) — Modo Saṅkhepa (Resumo canônico AS I.18-19 / II.36)
+  // F. 8 Lokuttara Cittas (#82..#89) — Saṅkhepa Mode (Canonical Summary AS I.18-19 / II.36)
   const maggaStages89: Array<{ idx: 1 | 2 | 3 | 4; pali: string; pt: string; en: string; es: string; eradication: LocalizedText }> = [
     {
       idx: 1,
@@ -844,7 +844,7 @@ function buildCanonicalCittas89(): CanonicalCitta[] {
   for (const kind of ["magga", "phala"] as const) {
     for (const st of maggaStages89) {
       const id = (kind === "magga" ? 81 : 85) + st.idx;
-      // Na contagem de 89 (base 1º Jhāna), todas as 3 Viratis são FIXAS (niyata) em Lokuttara! Total = 36 cetasikas
+      // In the 89-count (1st Jhāna basis), all 3 Viratis are FIXED (niyata) in Lokuttara! Total = 36 cetasikas
       const fixed = [...UNIV_7, ...PAK_ALL_6, ...SOBHANA_UNIV_19, ...VIRATI_3, ...PANNA_1];
       list.push({
         id,
@@ -1071,7 +1071,7 @@ function buildCanonicalCittas121(): CanonicalCitta[] {
 export const CANONICAL_CITTAS_89: readonly CanonicalCitta[] = buildCanonicalCittas89();
 export const CANONICAL_CITTAS_121: readonly CanonicalCitta[] = buildCanonicalCittas121();
 
-// ── 2. A TABELA PERIÓDICA DAS 72 REALIDADES (SABHĀVA-DHAMMAS — AS VII.2) ────
+// ── 2. THE PERIODIC TABLE OF THE 72 REALITIES (SABHĀVA-DHAMMAS — AS VII.2) ──
 
 export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
   // 1. CITTA (1)
@@ -1097,7 +1097,7 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
     cittaCount121: 121,
   },
 
-  // 2..8: 7 UNIVERSAIS (Sabbacittasādhāraṇa)
+  // 2..8: 7 UNIVERSALS (Sabbacittasādhāraṇa)
   {
     atomicNumber: 2,
     subId: 1,
@@ -1190,7 +1190,7 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
     cittaCount121: 121,
   },
 
-  // 9..14: 6 PARTICULARES (Pakiṇṇaka)
+  // 9..14: 6 PARTICULARS (Pakiṇṇaka)
   {
     atomicNumber: 9,
     subId: 8,
@@ -1270,7 +1270,7 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
     cittaCount121: 101,
   },
 
-  // 15..28: 14 INSALUBRES (Akusala = 4 + 3 + 4 + 2 + 1)
+  // 15..28: 14 UNWHOLESOME (Akusala = 4 + 3 + 4 + 2 + 1)
   {
     atomicNumber: 15,
     subId: 14,
@@ -1454,7 +1454,7 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
     cittaCount121: 1,
   },
 
-  // 29..47: 19 BELOS UNIVERSAIS (Sobhana-sādhāraṇa)
+  // 29..47: 19 UNIVERSAL BEAUTIFUL (Sobhana-sādhāraṇa)
   ...[
     { sub: 28, sym: "Sd", pali: "Saddhā", pt: "Confiança / Fé", en: "Confidence / Faith", es: "Confianza / Fe", lakPt: "Clarificar a mente como uma joia que purifica a água", lakEn: "Clarifying the mind like a water-purifying gem", lakEs: "Clarificar la mente como una gema que purifica el agua" },
     { sub: 29, sym: "St", pali: "Sati", pt: "Atenção Plena", en: "Mindfulness", es: "Atención Plena", lakPt: "Presença não-flutuante e não-esquecimento do objeto", lakEn: "Non-wobbling presence and non-forgetfulness", lakEs: "Presencia firme y no olvido del objeto" },
@@ -1493,7 +1493,7 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
     cittaCount121: 91,
   })),
 
-  // 48..50: 3 ABSTINÊNCIAS (Virati)
+  // 48..50: 3 ABSTINENCES (Virati)
   ...[
     { sub: 47, sym: "Sv", pali: "Sammā-vācā", pt: "Fala Correta", en: "Right Speech", es: "Habla Correcta" },
     { sub: 48, sym: "Sk", pali: "Sammā-kammanta", pt: "Ação Correta", en: "Right Action", es: "Acción Correcta" },
@@ -1520,7 +1520,7 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
     cittaCount121: 48,
   })),
 
-  // 51..52: 2 ILIMITADOS (Appamaññā)
+  // 51..52: 2 ILLIMITABLES (Appamaññā)
   {
     atomicNumber: 51,
     subId: 50,
@@ -1556,7 +1556,7 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
     cittaCount121: 28,
   },
 
-  // 53: 1 SABEDORIA (Paññindriya)
+  // 53: 1 WISDOM (Paññindriya)
   {
     atomicNumber: 53,
     subId: 52,
@@ -1575,7 +1575,7 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
     cittaCount121: 79,
   },
 
-  // 54..71: 18 RŪPAS CONCRETOS (Nipphanna-rūpa = 4 + 5 + 4 + 2 + 1 + 1 + 1)
+  // 54..71: 18 CONCRETE RŪPAS (Nipphanna-rūpa = 4 + 5 + 4 + 2 + 1 + 1 + 1)
   ...[
     { sub: 1, sym: "Pṭ", block: "rupa_mahabhuta" as const, avin: true, pali: "Paṭhavī-dhātu", pt: "Elemento Terra (Solidez)", en: "Earth Element (Solidity)", es: "Elemento Tierra (Solidez)", lakPt: "Dureza/maciez; serve de suporte aos elementos conascidos", lakEn: "Hardness/softness; acts as foundation", lakEs: "Dureza/suavidad; sirve de soporte" },
     { sub: 2, sym: "Āp", block: "rupa_mahabhuta" as const, avin: true, pali: "Āpo-dhātu", pt: "Elemento Água (Coesão)", en: "Water Element (Cohesion)", es: "Elemento Agua (Cohesión)", lakPt: "Fluidez e coesão (intocável fisicamente, conhecido apenas pela mente!)", lakEn: "Fluidity and cohesion (cognized only by mind-door!)", lakEs: "Fluidez y cohesión (¡conocido solo por la puerta mental!)" },
@@ -1618,7 +1618,7 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
     isAvinibbhoga: item.avin,
   })),
 
-  // 72: 1 NIBBĀNA (O Incondicionado — fecha os 72 Sabhāva/Vatthu-dhammas)
+  // 72: 1 NIBBĀNA (The Unconditioned — completes the 72 Sabhāva/Vatthu-dhammas)
   {
     atomicNumber: 72,
     subId: 1,
@@ -1639,7 +1639,7 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
     },
   },
 
-  // 73..82: 10 ANIPPHANNA-RŪPAS (Materialidades Não-Concretas = 1 + 2 + 3 + 4 → fecha as 82 Subdivisões de Paramattha)
+  // 73..82: 10 ANIPPHANNA-RŪPAS (Non-Concrete Matter = 1 + 2 + 3 + 4 → completes the 82 Paramattha Subdivisions)
   ...[
     {
       sub: 19,
@@ -1807,7 +1807,7 @@ export const PERIODIC_ELEMENTS_72: readonly SabhavaElement[] = [
 
 export const PERIODIC_ELEMENTS_82 = PERIODIC_ELEMENTS_72;
 
-// ── AS 8 LEIS CANÔNICAS DE COLISÃO ONTOLÓGICA (AS II.10–17) ─────────────────
+// ── THE 8 CANONICAL LAWS OF ONTOLOGICAL COLLISION (AS II.10–17) ─────────────
 
 export const ONTOLOGICAL_COLLISION_RULES: Readonly<Record<string, OntologicalCollisionRule>> = {
   akusala_sobhana: {
@@ -1938,10 +1938,10 @@ export const ONTOLOGICAL_COLLISION_RULES: Readonly<Record<string, OntologicalCol
   },
 };
 
-// ── 3. OS 5 MAPAS DO ÁBACO NAS FALANGES DOS DEDOS ────────────────────────────
+// ── 3. THE 5 PHALANX ABACUS FINGER MAPS ──────────────────────────────────────
 
 export const PHALANX_MAPS: readonly PhalanxMapSpec[] = [
-  // MAPA 1: 12 Akusala Cittas (1 Mão = 12 Falanges)
+  // MAP 1: 12 Akusala Cittas (1 Hand = 12 Phalanges)
   {
     id: "akusala12",
     asRef: "AS I.4–6",
@@ -1978,7 +1978,7 @@ export const PHALANX_MAPS: readonly PhalanxMapSpec[] = [
     ],
   },
 
-  // MAPA 2: 14 Akusala Cetasikas por Dedo (1 Mão = 4 + 3 + 4 + 3)
+  // MAP 2: 14 Akusala Cetasikas by Finger (1 Hand = 4 + 3 + 4 + 3)
   {
     id: "cetasika14",
     asRef: "AS II.3 / II.13",
@@ -2017,7 +2017,7 @@ export const PHALANX_MAPS: readonly PhalanxMapSpec[] = [
     ],
   },
 
-  // MAPA 3: 12 Elos do Paṭiccasamuppāda + 3 Sandhis (1 Mão = 12 Falanges)
+  // MAP 3: 12 Links of Paṭiccasamuppāda + 3 Sandhis (1 Hand = 12 Phalanges)
   {
     id: "paticca12",
     asRef: "AS VIII.3–10",
@@ -2054,7 +2054,7 @@ export const PHALANX_MAPS: readonly PhalanxMapSpec[] = [
     ],
   },
 
-  // MAPA 4: 14 Funções da Consciência (Kicca — Cap. 3)
+  // MAP 4: 14 Functions of Consciousness (Kicca — Ch. 3)
   {
     id: "kicca14",
     asRef: "AS III.8–11",
@@ -2093,7 +2093,7 @@ export const PHALANX_MAPS: readonly PhalanxMapSpec[] = [
     ],
   },
 
-  // MAPA 5: 24 Condições do Paṭṭhāna (2 Mãos = 24 Falanges)
+  // MAP 5: 24 Conditions of Paṭṭhāna (2 Hands = 24 Phalanges)
   {
     id: "patthana24",
     asRef: "AS VIII.11–28",

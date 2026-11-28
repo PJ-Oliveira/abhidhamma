@@ -1,64 +1,64 @@
-# 03 — Módulos TypeScript do Frontend
+# 03 — Frontend TypeScript Modules
 
-Todos os arquivos-fonte residem em `src/`. Todos os arquivos compilados residem em `js/` com carimbos `?v={hash}` nas importações. Source maps são gerados junto a cada arquivo `.js`.
+All source files live in `src/`. All compiled outputs live in `js/` with `?v={hash}` stamps on imports. Source maps are emitted alongside each `.js` file.
 
 ---
 
-## `types.ts` — Definições de Tipos
+## `types.ts` — Type Definitions
 
-**Objetivo:** Registro central de tipos. Compilado para um shim vazio (`types.js` tem 44 bytes); todas as informações de tipo são apagadas em tempo de execução.
+**Purpose:** Central type registry. Compiled to an empty shim (`types.js` is 44 bytes); all type information is erased at runtime.
 
-**Principais interfaces:**
+**Key interfaces:**
 
-| Interface | Descrição |
+| Interface | Description |
 |---|---|
-| `Segment` | Parágrafo individual do corpus (ver doc de corpus §1) |
-| `WorkEntry` / `WorkPart` / `Manifest` | Tipos da árvore de navegação |
-| `Settings` | Preferências do usuário persistidas no localStorage |
-| `HistoryEntry` / `BookmarkEntry` | Itens da lista da barra lateral |
-| `DictEntry` / `CommonDictData` | Tipos de `common_pali.json` |
-| `CoreDictEntry` / `CoreDictData` / `DictSense` / `DictRootInfo` | Tipos de `pali_core.json` |
-| `SearchHit` / `SearchShard` / `SearchManifest` | Tipos do índice de busca |
-| `TranslationLang` | `"en" | "pt" | "es"` |
-| `UiLang` | `"pt" | "en" | "es"` |
+| `Segment` | Single corpus paragraph (see corpus doc §1) |
+| `WorkEntry` / `WorkPart` / `Manifest` | Navigation tree types |
+| `Settings` | User preferences persisted to localStorage |
+| `HistoryEntry` / `BookmarkEntry` | Sidebar list items |
+| `DictEntry` / `CommonDictData` | `common_pali.json` types |
+| `CoreDictEntry` / `CoreDictData` / `DictSense` / `DictRootInfo` | `pali_core.json` types |
+| `SearchHit` / `SearchShard` / `SearchManifest` | Search index types |
+| `TranslationLang` | `"en" \| "pt" \| "es"` |
+| `UiLang` | `"pt" \| "en" \| "es"` |
 
 ---
 
-## `logger.ts` — Logger de Console com Níveis
+## `logger.ts` — Leveled Console Logger
 
-**Objetivo:** Registro no console com prefixo e controle de nível de log.
+**Purpose:** Prefixed console logging with level control.
 
 **API:**
 ```typescript
 createLogger(name: string): { info, warn, error, debug }
 ```
 
-Cada método adiciona o prefixo `[name]` à saída. Na implementação atual, todos os níveis são repassados para `console.*`. Usado por todos os outros módulos.
+Each method prefixes output with `[name]`. In current implementation, all levels pass through to `console.*`. Used by every other module.
 
 ---
 
-## `i18n.ts` — Localização de Strings da UI
+## `i18n.ts` — UI String Localization
 
-**Objetivo:** Traduz chaves de strings da interface de usuário para PT / EN / ES.
+**Purpose:** Translates UI string keys into PT / EN / ES.
 
 **API:**
 ```typescript
 t(key: string, uiLang: UiLang): string
 ```
 
-Cadeia de fallback: `STRINGS[uiLang][key]` → `STRINGS.pt[key]` → chave.
+Fallback chain: `STRINGS[uiLang][key]` → `STRINGS.pt[key]` → key.
 
-**Cobertura:** 57 chaves de string × 3 idiomas = 171 strings. Cobre rótulos de navegação, rótulos de configurações, controles de exportação, nomes de campos do dicionário, mensagens de erro, tela de boas-vindas. Todas as strings são estáticas (sem interpolação).
+**Coverage:** 57 string keys × 3 languages = 171 strings. Covers navigation labels, settings labels, export controls, dictionary field names, error messages, welcome screen. All strings are static (no interpolation).
 
-**Nota:** O rótulo de exportação em `en` para espanhol é `"Spanish only"` (não `"Solo inglés"`) — esta é uma inconsistência de UI conhecida. Consulte [07_open_issues.md](07_open_issues.md) problema #OI-004.
+**Note:** The `en` export label for Spanish is `"Spanish only"` (not `"Solo inglés"`) — this is a known UI inconsistency. See [07_open_issues.md](07_open_issues.md) issue #OI-004.
 
 ---
 
-## `state.ts` — Configurações e Listas Persistentes
+## `state.ts` — Persistent Settings & Lists
 
-**Objetivo:** Todas as operações de leitura/escrita no localStorage. Nenhuma interação com o DOM.
+**Purpose:** All localStorage read/write. No DOM interaction.
 
-**Exportações:**
+**Exports:**
 ```typescript
 settings: Settings                          // live mutable object
 updateSettings(patch: Partial<Settings>): void
@@ -69,30 +69,30 @@ toggleBookmark(entry: Omit<BookmarkEntry, "ts">): boolean  // returns new active
 isBookmarked(workId, partKey, segId): boolean
 ```
 
-**Decisões de design:**
-- `settings` é um objeto mutável em nível de módulo carregado uma única vez na importação. Todos os módulos o importam diretamente. Mutações via `updateSettings()` chamam `Object.assign(settings, patch)`, de modo que todos os módulos visualizam a alteração sem necessidade de reimportação.
-- O histórico elimina duplicatas por `(workId, partKey, chunk)` antes de fazer unshift; limitado a 50 itens.
-- Os favoritos eliminam duplicatas por `(workId, partKey, segId)`. Alternância (toggle): se já estiver nos favoritos → remove e retorna `false`; caso contrário → adiciona e retorna `true`.
+**Design decisions:**
+- `settings` is a module-level mutable object loaded once at import time. All modules import it directly. Mutations via `updateSettings()` call `Object.assign(settings, patch)`, so all modules see the change without re-importing.
+- History deduplicates by `(workId, partKey, chunk)` before unshifting; capped at 50.
+- Bookmarks deduplicate by `(workId, partKey, segId)`. Toggle: if already bookmarked → remove and return `false`; else → add and return `true`.
 
 ---
 
-## `tree.ts` — Árvore de Navegação
+## `tree.ts` — Navigation Tree
 
-**Objetivo:** Renderiza a árvore de navegação do Tipiṭaka a partir do manifesto; marca a folha ativa durante a navegação.
+**Purpose:** Renders the Tipiṭaka navigation tree from the manifest; marks the active leaf on navigation.
 
-**Exportações:**
+**Exports:**
 ```typescript
 renderTree(manifest, container, onSelect: SelectHandler): void
 markActiveLeaf(container, workId, partKey): void
 ```
 
-**Comportamento:**
-- Grupos renderizados na ordem: `abhidhamma → outros → visuddhimagga → comentarios`
-- Cada nó de obra possui um marcador `▸` que alterna a visibilidade da lista de suas partes
-- Clicar em uma folha de parte chama `onSelect(workId, partKey, 0, null)` (sempre chunk 0)
-- `markActiveLeaf` percorre a árvore do DOM para cima para abrir todos os elementos `<ul>` ancestrais, garantindo que o item ativo esteja sempre visível ao navegar via hash de URL
+**Behavior:**
+- Groups rendered in order: `abhidhamma → outros → visuddhimagga → comentarios`
+- Each work node has a `▸` caret that toggles visibility of its parts list
+- Clicking a part leaf calls `onSelect(workId, partKey, 0, null)` (always chunk 0)
+- `markActiveLeaf` walks up the DOM to open all ancestor `<ul>` elements so the active item is always visible when navigating via URL hash
 
-**Estrutura do DOM:**
+**DOM structure:**
 ```html
 <ul>
   <li>
@@ -111,24 +111,24 @@ markActiveLeaf(container, workId, partKey): void
 
 ---
 
-## `reader.ts` — Renderização de Segmentos
+## `reader.ts` — Segment Rendering
 
-**Objetivo:** Busca arquivos de chunks e renderiza arrays de segmentos no elemento DOM `#content`.
+**Purpose:** Fetches chunk files and renders segment arrays into the `#content` DOM element.
 
-**Exportações:**
+**Exports:**
 ```typescript
 loadChunk(workId, partKey, fileName): Promise<Segment[]>
 renderSegments(segments, container, options): void
 ```
 
 **`loadChunk`:**
-- Constrói a chave de cache `{workId}/{partKey}/{fileName}`
-- Retorna o resultado em cache se disponível
-- Caso contrário, executa `fetch("data/works/{workId}/{fileName}")` e armazena em cache
+- Builds cache key `{workId}/{partKey}/{fileName}`
+- Returns cached result if available
+- Otherwise `fetch("data/works/{workId}/{fileName}")` and caches
 
 **`renderSegments`:**
 
-Para cada segmento, cria:
+For each segment, creates:
 ```html
 <div class="seg" data-rend="{rend}" data-seg-id="{id}">
   <div class="pali-line">
@@ -140,11 +140,11 @@ Para cada segmento, cria:
 </div>
 ```
 
-**Crítico:** `paliText.innerHTML = seg.pali` — HTML bruto do corpus é deliberadamente renderizado via `innerHTML`. A `translation-line` usa `.textContent` porque os campos de tradução são texto simples.
+**Critical:** `paliText.innerHTML = seg.pali` — raw HTML from the corpus is deliberately rendered via `innerHTML`. The `translation-line` uses `.textContent` because translation fields are plain text.
 
-Segmentos sem texto de tradução possuem `.translation-line { display: none }`.
+Segments with no translation text have `.translation-line { display: none }`.
 
-**Opções:**
+**Options:**
 ```typescript
 interface RenderSegmentsOptions {
   onNoteHover?: (evt: MouseEvent | null, text?: string) => void;
@@ -156,11 +156,11 @@ interface RenderSegmentsOptions {
 
 ---
 
-## `dictionary.ts` — Painel do Dicionário Pāli
+## `dictionary.ts` — Pāli Dictionary Panel
 
-**Objetivo:** Interface de busca para o dicionário Pāli. Renderiza tanto entradas de `pali_core.json` (ricas, com múltiplos sentidos) quanto de `common_pali.json` (simples).
+**Purpose:** Search interface for Pāli dictionary. Renders both `pali_core.json` (rich multi-sense) and `common_pali.json` (simple) entries.
 
-**Estado interno principal:**
+**Key internal state:**
 ```typescript
 let dictData: DictEntry[] = [];       // common + optional dpd entries
 let coreData: CoreDictEntry[] = [];   // pali_core entries
@@ -168,61 +168,61 @@ let rootInfo: Record<string, DictRootInfo> = {};
 let loadPromise: Promise<void> | null = null;  // singleton guard
 ```
 
-**Ordem de carregamento:**
-1. `pali_core.json` → preenche `coreData` e `rootInfo`
-2. `common_pali.json` → filtrado para excluir verbetes já presentes em `coreData` → anexado a `dictData`
-3. `dpd.json` (opcional, ausente no build atual) → anexado a `dictData`
+**Loading order:**
+1. `pali_core.json` → populates `coreData` and `rootInfo`
+2. `common_pali.json` → filtered to exclude headwords already in `coreData` → appended to `dictData`
+3. `dpd.json` (optional, absent in current build) → appended to `dictData`
 
-**Busca:** correspondência por prefixo no verbete (`.startsWith(query)`), ordenada por `freq` decrescente.
+**Search:** prefix match on headword (`.startsWith(query)`), sorted by `freq` descending.
 
-**Renderização:** Entradas principais (`dict-entry-core`) exibem distintivo de frequência, lista de múltiplos sentidos com gramática/raiz/sinônimos/antônimos por sentido e nota de uso. Entradas simples (`dict-entry`) exibem verbete, significado único, raiz/sinônimos/uso opcionais.
+**Rendering:** Core entries (`dict-entry-core`) show frequency badge, multi-sense list with grammar/root/syn/ant per sense, and usage note. Simple entries (`dict-entry`) show headword, single meaning, optional root/synonyms/usage.
 
-**Exibição de raiz:** Se `sense.root` existir e `rootInfo[sense.root]` for encontrado, exibe a string formatada `"root — tradução (skt. Sânscrito — significado)"`.
+**Root display:** If `sense.root` exists and `rootInfo[sense.root]` is found, displays `"root — translation (skt. Sanskrit — meaning)"` formatted string.
 
 ---
 
-## `search.ts` — Painel de Busca Textual Completa (Full-Text)
+## `search.ts` — Full-Text Search Panel
 
-**Objetivo:** Busca em índice invertido particionado (sharded) em todos os segmentos do corpus (Pāli + EN + PT + ES).
+**Purpose:** Sharded inverted-index search across all corpus segments (Pāli + EN + PT + ES).
 
-**Estado interno principal:**
+**Key internal state:**
 ```typescript
 let shardManifest: SearchManifest | null = null;
 const shardCache = new Map<string, SearchShard | null>();
 ```
 
-**Algoritmo:**
-1. Normaliza a consulta para minúsculas
-2. Determina a chave do fragmento (shard): primeiro caractere se `[a-z]`, senão `"misc"`
-3. Carrega o fragmento de `data/search/shard_{key}.json` (em cache)
-4. Correspondência exata: `shard.postings[token]` → conjunto de índices de segmento
-5. Expansão de prefixo: itera sobre `shard.postings` para tokens que começam com a consulta, unindo os índices (interrompe em `MAX_RESULTS = 50`)
-6. Mapeia índices → objetos `SearchHit` de `shard.segments`
+**Algorithm:**
+1. Normalize query to lowercase
+2. Determine shard key: first char if `[a-z]`, else `"misc"`
+3. Load shard from `data/search/shard_{key}.json` (cached)
+4. Exact match: `shard.postings[token]` → set of segment indices
+5. Prefix expansion: iterate `shard.postings` for tokens starting with query, union indices (stops at `MAX_RESULTS = 50`)
+6. Map indices → `SearchHit` objects from `shard.segments`
 
-Clicar em um resultado chama `onOpenResult(hit)`, o que dispara `selectWork(hit.workId, hit.partKey, hit.chunk, hit.segId)`. O leitor então rola até o segmento correspondente e aplica uma animação `seg-flash`.
+Clicking a result calls `onOpenResult(hit)` which triggers `selectWork(hit.workId, hit.partKey, hit.chunk, hit.segId)`. The reader then scrolls to the matching segment and applies a `seg-flash` animation.
 
-**Debounce:** 250ms em eventos de entrada (input).
-
----
-
-## `export.ts` — Exportação para PDF / EPUB
-
-Totalmente documentado em [06_export_module.md](06_export_module.md). Resumo:
-
-- `initExportPanel(manifest, container, getCurrentWorkId)` — constrói a UI de exportação
-- `buildPrintHtml(segs, title, langMode)` → string HTML pronta para impressão
-- `buildEpub(segs, title, langMode)` → bytes ZIP (`Uint8Array`)
-- `openPrintWindow(html, title)` — abre URL de blob em nova aba; fallback faz download do arquivo HTML
-- `fieldHtml(raw)` — converte com segurança campos de segmento com HTML inline para HTML limpo de exportação
-- `segToHtml(seg, langMode)` — mapeia um segmento para um bloco HTML
+**Debounce:** 250ms on input events.
 
 ---
 
-## `app.ts` — Inicialização (Bootstrap) da Aplicação
+## `export.ts` — PDF / EPUB Export
 
-**Objetivo:** Conecta todos os módulos. Ponto de entrada carregado por `index.html`.
+Fully documented in [06_export_module.md](06_export_module.md). Summary:
 
-**AppState (nível de módulo):**
+- `initExportPanel(manifest, container, getCurrentWorkId)` — builds the export UI
+- `buildPrintHtml(segs, title, langMode)` → print-ready HTML string
+- `buildEpub(segs, title, langMode)` → ZIP bytes (`Uint8Array`)
+- `openPrintWindow(html, title)` — opens blob URL in new tab; fallback downloads HTML file
+- `fieldHtml(raw)` — safely converts inline-HTML segment fields to clean export HTML
+- `segToHtml(seg, langMode)` — maps one segment to one HTML block
+
+---
+
+## `app.ts` — Application Bootstrap
+
+**Purpose:** Wires everything together. Entry point loaded by `index.html`.
+
+**AppState (module-level):**
 ```typescript
 interface AppState {
   manifest: Manifest | null;
@@ -233,22 +233,22 @@ interface AppState {
 }
 ```
 
-**Sequência de `init()`:**
-1. Busca `data/manifest.json`
-2. `applySettingsToUI()` — sincroniza configurações com os elementos do formulário
-3. `applyStaticI18n()` — traduz atributos `data-i18n`
-4. `renderTree()` — preenche a árvore de navegação
+**`init()` sequence:**
+1. Fetch `data/manifest.json`
+2. `applySettingsToUI()` — sync settings to form elements
+3. `applyStaticI18n()` — translate `data-i18n` attributes
+4. `renderTree()` — populate navigation tree
 5. `renderBreadcrumb()`, `renderHistory()`, `renderBookmarks()`
 6. `wireIconRail()`, `wireSettingsPanel()`, `wireChunkNav()`, `wireRouting()`
 7. `initDictionaryPanel()`, `initSearchPanel()`, `initExportPanel()`
-8. Processa hash da URL → `selectWork()` ou exibe tela de boas-vindas
+8. Parse URL hash → `selectWork()` or show welcome screen
 
 **`selectWork(workId, partKey, chunkIndex, segId?)`:**
-- Valida se obra e parte existem no manifesto
-- Força `showPali: true` para obras bilíngues
-- Exibe placeholder de carregamento
-- Chama `loadChunk()` → `rerenderContent()`
-- Se `segId` for fornecido: rola até o segmento, adiciona a classe `seg-flash` por 1600ms
-- Adiciona ao histórico, atualiza o hash da URL
+- Validates work and part exist in manifest
+- Forces `showPali: true` for bilingual works
+- Shows loading placeholder
+- Calls `loadChunk()` → `rerenderContent()`
+- If `segId` provided: scrolls to segment, adds `seg-flash` class for 1600ms
+- Pushes to history, updates URL hash
 
-**Eventos do painel de configurações:** Cada controle chama `updateSettings()` + renderiza novamente o conteúdo afetado. A alteração de idioma da interface chama `refreshLocalizedUI()`, que renderiza novamente toda a árvore e todos os rótulos internacionalizados.
+**Settings panel events:** Each control calls `updateSettings()` + re-renders affected content. UI language change calls `refreshLocalizedUI()` which re-renders the entire tree and all i18n'd labels.

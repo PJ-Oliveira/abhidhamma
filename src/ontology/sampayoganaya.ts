@@ -2,39 +2,38 @@ import { Citta, AllCittas } from './citta.js';
 import { Cetasika, AllCetasikas } from './cetasika.js';
 
 /**
- * Este é o motor absoluto de associação (Sampayoganaya).
- * Aqui, a verdade é matemática e inflexível.
- * O LLM NÃO inventa quais fatores mentais estão presentes. Ele consulta este motor.
+ * Deterministic association engine (Sampayoganaya).
+ * Associations are mathematical and invariant.
+ * The AI engine queries this deterministic matrix rather than guessing mental factors.
  */
 export class AbhidhammaLogicEngine {
     
     /**
-     * Dado um Citta, retorna os Cetasikas que inevitavelmente surgem com ele.
-     * Totalmente imune a alucinações. Se o Citta não existe, lança erro.
+     * Given a Citta, returns the Cetasikas that arise with it.
+     * Throws an error if the Citta is not found.
      */
     static getAssociatedCetasikas(citta: Citta): Cetasika[] {
         return citta.associatedCetasikas.map(cetasikaId => AllCetasikas[cetasikaId]).filter(Boolean) as Cetasika[];
     }
 
     /**
-     * Validador rígido para o debate (Vāda).
-     * O LLM pergunta se um conceito x é Verdade Última.
-     * Este motor não "pensa". Ele confere se X está na ontologia de Paramattha Dhammas.
+     * Strict validator for logical debate (Vāda).
+     * Checks whether concept X belongs to the ontology of Paramattha Dhammas (Ultimate Realities).
      */
     static isUltimateReality(conceptPaliName: string): boolean {
-        // Se é um Cetasika, é realidade última
+        // If it is a Citta or Cetasika, it is an ultimate reality
         if (Object.values(AllCittas).some(c => c.paliName.toLowerCase() === conceptPaliName.toLowerCase() || c.id === conceptPaliName)) return true;
         if (Object.values(AllCetasikas).some(c => c.paliName.toLowerCase() === conceptPaliName.toLowerCase())) {
             return true;
         }
         
-        // Se for "Puggala" (Pessoa), "Satta" (Ser), "Kāla" (Tempo), a resposta matemática é FALSO.
+        // Conventional concepts such as "Puggala" (Person), "Satta" (Being), or "Kāla" (Time) return false.
         const conventionalTruths = ['puggala', 'satta', 'kāla', 'disa', 'nimitta'];
         if (conventionalTruths.includes(conceptPaliName.toLowerCase())) {
             return false;
         }
 
-        // Para evitar que a IA invente respostas sobre o que não conhece:
+        // Default to false for unknown concepts outside the finite ontology:
         return false; 
     }
 }

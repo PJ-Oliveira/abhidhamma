@@ -1,4 +1,4 @@
-# Abhidhamma Piṭaka Trilíngue — Master Project Log
+# Trilingual Abhidhamma Piṭaka — Master Project Log
 
 **Last updated:** 2026-08-24  
 **Project root:** `abhidhamma-pitaka-trilingue-site/`  

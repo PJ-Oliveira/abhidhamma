@@ -1,11 +1,11 @@
 // ============================================================================
-// CAPÍTULO 9 — KAMMAṬṬHĀNASAṄGAHA: 40 SAMATHA, CARITA, VISUDDHI & ÑĀṆA (AS IX.1–75)
+// CHAPTER 9 — KAMMAṬṬHĀNASAṄGAHA: 40 SAMATHA, CARITA, VISUDDHI & ÑĀṆA (AS IX.1–75)
 // ============================================================================
-// 1. Samatha 40 Kammaṭṭhānas (10+10+10+4+1+1+4 = 40; alcance + nimitta exatos)
-// 2. 6 Caritas + 5 Vasitās + 5 Abhiññās (16 itens)
-// 3. Vipassanā: 7 Visuddhis + 10 Ñāṇas + 3 Tríades Vimokkha + 10 Upakkilesas (21 itens)
-// 4. 4 Ariyapuggalas + 2 Samāpattis (Phala & Nirodha) (6 itens)
-// Total: 83 itens 100% fiéis ao mūla (AS IX.1–75).
+// 1. Samatha 40 Kammaṭṭhānas (10+10+10+4+1+1+4 = 40; exact jhāna reach + nimitta)
+// 2. 6 Caritas + 5 Vasitās + 5 Abhiññās (16 items)
+// 3. Vipassanā: 7 Visuddhis + 10 Ñāṇas + 3 Vimokkha Triads + 10 Upakkilesas (21 items)
+// 4. 4 Ariyapuggalas + 2 Samāpattis (Phala & Nirodha) (6 items)
+// Total: 83 items 100% faithful to the mūla (AS IX.1–75).
 // ============================================================================
 
 import type { NaryChallengeItem } from "../nary-chapters-data.js";
@@ -343,7 +343,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { wing: "samatha_40", group: "aruppa", slot: 4, reach: "aruppa_4", nimitta: 2 },
   },
 
-  // ── 2. 6 CARITAS + 5 VASITĀS + 5 ABHIÑÑĀS (16 ITENS — AS IX.3, 13–18, 33, 41–42)
+  // ── 2. 6 CARITAS + 5 VASITĀS + 5 ABHIÑÑĀS (16 ITEMS — AS IX.3, 13–18, 33, 41–42)
   {
     id: "kam:cva:c1", chapter: 9, submatrix: "samatha_carita_abhinna", asRef: "AS IX.3, 13", code: "Car-01",
     pali: "1. Rāgacarita (11 Kammaṭṭhāna)",
@@ -473,7 +473,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { wing: "samatha_carita_abhinna", topicGroup: "abhinna_5", slot: 5 },
   },
 
-  // ── 3A. VIPASSANĀ: AS 7 VISUDDHIS (AS IX.43, 49–60) ──────────────────────
+  // ── 3A. VIPASSANĀ: THE 7 VISUDDHIS (AS IX.43, 49–60) ─────────────────────
   {
     id: "kam:vip:v1", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.43, 49", code: "Vis-01",
     pali: "1. Sīla-visuddhi",
@@ -531,7 +531,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { wing: "vipassana_visuddhi_nana", vipGroup: "visuddhi_7", slot: 7 },
   },
 
-  // ── 3B. VIPASSANĀ: OS 10 VIPASSANĀ-ÑĀṆAS (AS IX.46, 53–56) ───────────────
+  // ── 3B. VIPASSANĀ: THE 10 VIPASSANĀ-ÑĀṆAS (AS IX.46, 53–56) ──────────────
   {
     id: "kam:vip:n1", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.46, 53", code: "Nan-01",
     pali: "1. Sammasana-ñāṇa",
@@ -613,7 +613,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { wing: "vipassana_visuddhi_nana", vipGroup: "nana_10", slot: 10, stage: "v6_vutthanagamini" },
   },
 
-  // ── 3C. 3 TRÍADES LAKKHAṆA ↔ ANUPASSANĀ ↔ VIMOKKHA + 10 UPAKKILESAS ─────
+  // ── 3C. 3 LAKKHAṆA ↔ ANUPASSANĀ ↔ VIMOKKHA TRIADS + 10 UPAKKILESAS ──────
   {
     id: "kam:vip:m1", chapter: 9, submatrix: "vipassana_visuddhi_nana", asRef: "AS IX.44–48, 62, 65", code: "Vim-01",
     pali: "Anicca → Aniccānupassanā → Animitta-vimokkha",
@@ -647,7 +647,7 @@ export const CHAPTER_9_KAMMATTHANA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { wing: "vipassana_visuddhi_nana", vipGroup: "vimokkha_4", slot: 4 },
   },
 
-  // ── 4. 4 ARIYAPUGGALAS & 2 SAMĀPATTIS (6 ITENS — AS IX.68–74) ────────────
+  // ── 4. 4 ARIYAPUGGALAS & 2 SAMĀPATTIS (6 ITEMS — AS IX.68–74) ────────────
   {
     id: "kam:ari:1", chapter: 9, submatrix: "ariya_samapatti", asRef: "AS IX.68", code: "Ari-01",
     pali: "1. Sotāpanna (Diṭṭhi & Vicikicchā)",

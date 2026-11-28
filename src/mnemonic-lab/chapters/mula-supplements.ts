@@ -1,20 +1,20 @@
 // ============================================================================
-// SUPLEMENTO CANÔNICO DO MŪLA — CAPÍTULOS 3, 4, 5, 6, 8 E 9 (91 ITENS)
+// CANONICAL MŪLA SUPPLEMENT — CHAPTERS 3, 4, 5, 6, 8, AND 9 (91 ITEMS)
 // ============================================================================
-// Fecha 100% das lacunas doutrinárias identificadas na auditoria do texto raiz:
-// - Cap. 3 (+17): Tríade Vedanā, 10 Ṭhānas, 46/porta, 6 Dhammārammaṇas + 3 leis temporais, 7/4/1 Dhātus
-// - Cap. 4 (+15): 6 Hêxades (Chakka), Gotrabhū/Vodāna, Magga+Phala, Puggalabheda & exclusões por plano
-// - Cap. 5 (+7):  Restrições Ariya, Unidade Paṭi=Bhav=Cuti, Kecana (12/10/8), 4 leis Jhāna→Brahmā
-// - Cap. 6 (+11): 8 atributos universais, 5 sinônimos Nipphanna, 25/75/32/13/26, 4 nascimentos, 2 externos, 4 epítetos Nibbāna
-// - Cap. 8 (+18): 12 subdivisões internas do Paṭṭhāna + 6 modos canônicos de Atthapaññatti (AS VIII.40)
-// - Cap. 9 (+23): 3 Bhāvanās, 3 Nimittas, 4 Catupārisuddhisīlas, 10 Upakkilesas individuais, Paccavekkhaṇā & 9 Kasiṇas→Āruppas
+// Closes 100% of the doctrinal gaps identified in the root-text audit:
+// - Ch. 3 (+17): Vedanā Triad, 10 Ṭhānas, 46/door, 6 Dhammārammaṇas + 3 temporal laws, 7/4/1 Dhātus
+// - Ch. 4 (+15): 6 Hexads (Chakka), Gotrabhū/Vodāna, Magga+Phala, Puggalabheda & plane exclusions
+// - Ch. 5 (+7):  Ariya restrictions, Paṭi=Bhav=Cuti Unity, Kecana (12/10/8), 4 Jhāna→Brahmā laws
+// - Ch. 6 (+11): 8 universal attributes, 5 Nipphanna synonyms, 25/75/32/13/26, 4 births, 2 external, 4 Nibbāna epithets
+// - Ch. 8 (+18): 12 internal Paṭṭhāna subdivisions + 6 canonical modes of Atthapaññatti (AS VIII.40)
+// - Ch. 9 (+23): 3 Bhāvanās, 3 Nimittas, 4 Catupārisuddhisīlas, 10 individual Upakkilesas, Paccavekkhaṇā & 9 Kasiṇas→Āruppas
 // ============================================================================
 
 import type { NaryChallengeItem } from "../nary-chapters-data.js";
 
-// ── CAPÍTULO 3 (+17 ITENS) ───────────────────────────────────────────────────
+// ── CHAPTER 3 (+17 ITEMS) ────────────────────────────────────────────────────
 export const CHAPTER_3_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
-  // Tríade de Vedanā (AS III.3)
+  // Vedanā Triad (AS III.3)
   {
     id: "pak:ved:tri_suk", chapter: 3, submatrix: "vedana", asRef: "AS III.3", code: "Pak-VT1",
     pali: "Sukhavedanā — Tríade (Sukha + Somanassa)",
@@ -48,7 +48,7 @@ export const CHAPTER_3_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
     primaryGroup: "kicca", secondaryGroup: "kicca_14",
     switches: { category: "kicca", item: "thana_10", count: 10 },
   },
-  // Dvāra: 46 por cada porta sensorial (AS III.39)
+  // Dvāra: 46 per sense door (AS III.39)
   {
     id: "pak:dva:46", chapter: 3, submatrix: "dvara", asRef: "AS III.39", code: "Pak-D46",
     pali: "Ekekasmiṃ Dvāre Chaccattālīsa (46 por Porta Sensorial)",
@@ -57,7 +57,7 @@ export const CHAPTER_3_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
     primaryGroup: "dvara", secondaryGroup: "dvara_totals",
     switches: { category: "dvara", item: "per_sense_46", count: 46 },
   },
-  // Ālambaṇa: 6 constituintes de Dhammārammaṇa + 3 leis temporais (AS III.48–53)
+  // Ālambaṇa: 6 Dhammārammaṇa constituents + 3 temporal laws (AS III.48–53)
   {
     id: "pak:ara:d1", chapter: 3, submatrix: "arammana", asRef: "AS III.49", code: "Pak-AD1",
     pali: "Dhammārammaṇa 1 · Pasādarūpa (5)",
@@ -130,7 +130,7 @@ export const CHAPTER_3_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
     primaryGroup: "arammana", secondaryGroup: "arammana_time",
     switches: { category: "arammana", item: "time_vimutta", count: 3 },
   },
-  // Vatthu: 7 / 4 / 1 Viññāṇadhātus nos 3 Reinos (AS III.65–67, 73)
+  // Vatthu: 7 / 4 / 1 Viññāṇadhātus across the 3 Realms (AS III.65–67, 73)
   {
     id: "pak:vat:d7", chapter: 3, submatrix: "vatthu", asRef: "AS III.65, 73", code: "Pak-BD1",
     pali: "Kāmaloke Satta Viññāṇadhātuyo (7 Dhātus)",
@@ -157,9 +157,9 @@ export const CHAPTER_3_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
   },
 ];
 
-// ── CAPÍTULO 4 (+15 ITENS) ───────────────────────────────────────────────────
+// ── CHAPTER 4 (+15 ITEMS) ────────────────────────────────────────────────────
 export const CHAPTER_4_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
-  // 6 Hêxades (Chakka — AS IV.2–6)
+  // 6 Hexads (Chakka — AS IV.2–6)
   {
     id: "vit:chk:1", chapter: 4, submatrix: "chakka_6", asRef: "AS IV.2", code: "Vit-C1",
     pali: "1. Vatthuchakka (6 Bases Físicas)",
@@ -225,7 +225,7 @@ export const CHAPTER_4_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
     primaryGroup: "manodvara", secondaryGroup: "appana_vithi",
     switches: { door: "manodvara", vara: "magga_phala_ratio", vithicittas: 3 },
   },
-  // Puggalabheda granular & Exclusões por plano (AS IV.40–54)
+  // Granular Puggalabheda & Plane exclusions (AS IV.40–54)
   {
     id: "vit:pb:ahetuka", chapter: 4, submatrix: "puggala_bhumi", asRef: "AS IV.40–41", code: "Vit-PB8",
     pali: "Ahetuka-puggala (Duggati 37 · Sugati 41)",
@@ -284,7 +284,7 @@ export const CHAPTER_4_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
   },
 ];
 
-// ── CAPÍTULO 5 (+7 ITENS) ────────────────────────────────────────────────────
+// ── CHAPTER 5 (+7 ITEMS) ─────────────────────────────────────────────────────
 export const CHAPTER_5_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
   {
     id: "mut:pat:ariya", chapter: 5, submatrix: "patisandhi", asRef: "AS V.13–14", code: "Pat-08",
@@ -302,7 +302,7 @@ export const CHAPTER_5_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
     primaryGroup: "patisandhi", secondaryGroup: "patisandhi_laws",
     switches: { tetrad: "patisandhi", subtype: "pat_bha_cuti_unity", count: 3 },
   },
-  // Opinião minoritária Kecana (AS V.74) + 4 leis de maturação Mahaggata (AS V.75–86)
+  // Kecana minority opinion (AS V.74) + 4 Mahaggata ripening laws (AS V.75–86)
   {
     id: "mut:kam:kecana", chapter: 5, submatrix: "kamma_16", asRef: "AS V.74", code: "Kam-R5",
     pali: "Kecana-vāda (Asaṅkhāra / Sasaṅkhāra → 12 · 10 · 8)",
@@ -345,7 +345,7 @@ export const CHAPTER_5_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
   },
 ];
 
-// ── CAPÍTULO 6 (+11 ITENS: LEIS COMPLEMENTARES DE RŪPA & NIBBĀNA) ────────────
+// ── CHAPTER 6 (+11 ITEMS: SUPPLEMENTARY LAWS OF RŪPA & NIBBĀNA) ─────────────
 export const CHAPTER_6_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
   {
     id: "rup:law:1", chapter: 6, submatrix: "rupa_laws", asRef: "AS VI.18", code: "Rūp-L01",
@@ -437,9 +437,9 @@ export const CHAPTER_6_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
   },
 ];
 
-// ── CAPÍTULO 8 (+18 ITENS: SUBDIVISÕES PAṬṬHĀNA & 6 ATTHAPAÑÑATTIS) ─────────
+// ── CHAPTER 8 (+18 ITEMS: PAṬṬHĀNA SUBDIVISIONS & 6 ATTHAPAÑÑATTIS) ─────────
 export const CHAPTER_8_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
-  // 12 Subdivisões Internas e Leis do Paṭṭhāna (AS VIII.21–38)
+  // 12 Internal Subdivisions and Laws of Paṭṭhāna (AS VIII.21–38)
   {
     id: "pac:sub:1", chapter: 8, submatrix: "patthana_submodes", asRef: "AS VIII.22–25", code: "PSub-01",
     pali: "Upanissaya-paccayo (3 Modos: Ārammaṇa · Anantara · Pakatūpanissaya)",
@@ -536,7 +536,7 @@ export const CHAPTER_8_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
     primaryGroup: "patthana_submodes", secondaryGroup: "paccaya_modes",
     switches: { method: "patthana_submodes", subGroup: "paccaya_modes", topic: "sub_nama5", modes: 5 },
   },
-  // 6 Modos / Exemplos Canônicos de Atthapaññatti (AS VIII.40)
+  // 6 Canonical Modes / Examples of Atthapaññatti (AS VIII.40)
   {
     id: "pac:att:1", chapter: 8, submatrix: "patthana_submodes", asRef: "AS VIII.40", code: "Att-01",
     pali: "1. Bhūmi · Pabbata (Bhūtavipariṇāmākāra)",
@@ -587,7 +587,7 @@ export const CHAPTER_8_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
   },
 ];
 
-// ── CAPÍTULO 9 (+23 ITENS: BHĀVANĀ, NIMITTA, SĪLA 4, UPAKKILESA 10, PACCAVEKKHAṆĀ)
+// ── CHAPTER 9 (+23 ITEMS: BHĀVANĀ, NIMITTA, SĪLA 4, UPAKKILESA 10, PACCAVEKKHAṆĀ)
 export const CHAPTER_9_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
   // 3 Bhāvanās (AS IX.4)
   {
@@ -672,7 +672,7 @@ export const CHAPTER_9_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
     primaryGroup: "kammatthana_details", secondaryGroup: "parisuddhisila_4",
     switches: { wing: "kammatthana_details", detGroup: "parisuddhisila_4", slot: 4, role: "sila_visuddhi" },
   },
-  // 10 Vipassanupakkilesas Individuais (AS IX.53)
+  // 10 Individual Vipassanupakkilesas (AS IX.53)
   {
     id: "kam:det:u1", chapter: 9, submatrix: "kammatthana_details", asRef: "AS IX.53", code: "Upk-01",
     pali: "1. Obhāsa (Iluminação / Aura)", name: { pt: "Upakkilesa 1 · Luz / Iluminação (Obhāsa)", en: "Upakkilesa 1 · Illumination / Aura (Obhāsa)", es: "Upakkilesa 1 · Iluminación (Obhāsa)" },
@@ -743,7 +743,7 @@ export const CHAPTER_9_SUPPLEMENT_ITEMS: readonly NaryChallengeItem[] = [
     primaryGroup: "kammatthana_details", secondaryGroup: "upakkilesa_10",
     switches: { wing: "kammatthana_details", detGroup: "upakkilesa_10", slot: 10, role: "upakkilesa_akusala" },
   },
-  // Paccavekkhaṇā (2 leis) & 9 Kasiṇas → 4 Āruppas (AS IX.36–39, 60)
+  // Paccavekkhaṇā (2 laws) & 9 Kasiṇas → 4 Āruppas (AS IX.36–39, 60)
   {
     id: "kam:det:p1", chapter: 9, submatrix: "kammatthana_details", asRef: "AS IX.60", code: "Pac-01",
     pali: "3 Paccavekkhaṇā Obrigatórias (Magga · Phala · Nibbāna)",

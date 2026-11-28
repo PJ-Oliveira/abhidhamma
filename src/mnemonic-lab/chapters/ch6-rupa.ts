@@ -1,17 +1,17 @@
 // ============================================================================
-// CAPÍTULO 6 — RŪPASAṄGAHA & NIBBĀNA (AS VI.1–65)
+// CHAPTER 6 — RŪPASAṄGAHA & NIBBĀNA (AS VI.1–65)
 // ============================================================================
-// 1. 28 Rūpas Individuais (18 Nipphanna + 10 Anipphanna = 28, AS VI.3–17)
-// 2. 10 Díades do Rūpavibhāga & 4 Samuṭṭhānas (18/15/13/12, AS VI.18–44)
-// 3. 21 Rūpakalāpas pela Álgebra do Octeto (9+6+4+2 = 21, AS VI.45–51)
+// 1. 28 Individual Rūpas (18 Nipphanna + 10 Anipphanna = 28, AS VI.3–17)
+// 2. 10 Dyads of Rūpavibhāga & 4 Samuṭṭhānas (18/15/13/12, AS VI.18–44)
+// 3. 21 Rūpakalāpas via Octad Algebra (9+6+4+2 = 21, AS VI.45–51)
 // 4. Rūpapavattikkama (28/23/17/0 · 7/3/4/1 · 17º Citta) & Nibbāna (1/2/3)
-// Total: 73 itens 100% fiéis ao mūla (AS VI.1–65).
+// Total: 73 items 100% faithful to the mūla (AS VI.1–65).
 // ============================================================================
 
 import type { NaryChallengeItem } from "../nary-chapters-data.js";
 
 export const CHAPTER_6_RUPA_ITEMS: readonly NaryChallengeItem[] = [
-  // ── 1. OS 28 RŪPAS INDIVIDUAIS (18 NIPPHANNA + 10 ANIPPHANNA — AS VI.3–17)
+  // ── 1. THE 28 INDIVIDUAL RŪPAS (18 NIPPHANNA + 10 ANIPPHANNA — AS VI.3–17)
   // 4 Mahābhūta
   {
     id: "rup:28:1", chapter: 6, submatrix: "rupa_28", asRef: "AS VI.4, 41", code: "Rūp-01",
@@ -242,7 +242,7 @@ export const CHAPTER_6_RUPA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { section: "rupa_28", heading: "lakkhana", slot: 4, samutthana: "none_lakkhana" },
   },
 
-  // ── 2. RŪPAVIBHĀGA (10 DÍADES) & 4 SAMUṬṬHĀNAS (AS VI.18–44) ─────────────
+  // ── 2. RŪPAVIBHĀGA (10 DYADS) & 4 SAMUṬṬHĀNAS (AS VI.18–44) ──────────────
   {
     id: "rup:vib:1", chapter: 6, submatrix: "vibhaga_10", asRef: "AS VI.19", code: "Vib-01",
     pali: "Ajjhattika (5) / Bāhira (23)",
@@ -357,7 +357,7 @@ export const CHAPTER_6_RUPA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { section: "vibhaga_10", dyad: "sam_ahara", count: 12 },
   },
 
-  // ── 3. OS 21 RŪPAKALĀPAS PELA ÁLGEBRA DO OCTETO (9+6+4+2 — AS VI.45–51) ─
+  // ── 3. THE 21 RŪPAKALĀPAS VIA OCTAD ALGEBRA (9+6+4+2 — AS VI.45–51) ──────
   // 9 Kamma-samuṭṭhāna (8 Decads + 1 Nonad)
   {
     id: "rup:kal:k1", chapter: 6, submatrix: "kalapa_21", asRef: "AS VI.46", code: "Kal-K1",

@@ -3,10 +3,10 @@ export type Lang = "pt" | "en" | "es";
 export type Localized = Readonly<Record<Lang, string>>;
 
 /**
- * Hierarquia epistêmica de complexidade ("Tijolos -> Casa"):
- * - `atom`: unidade atômica irredutível (definição, característica e mecânica de 1 dhamma discreto).
- * - `structure`: bloco intermediário (subgrupo, relação de associação ou regra operacional).
- * - `house`: edifício conceitual complexo (síntese arquitetônica dependente do acúmulo empírico de átomos).
+ * Epistemic complexity hierarchy ("Bricks -> House"):
+ * - `atom`: irreducible atomic unit (definition, characteristic, and mechanics of 1 discrete dhamma).
+ * - `structure`: intermediate building block (subgroup, association relation, or operational rule).
+ * - `house`: complex conceptual edifice (architectural synthesis dependent on empirical accumulation of atoms).
  */
 export type CardTier = "atom" | "structure" | "house";
 
@@ -86,7 +86,7 @@ export interface AbhidhammaDataset {
 
 // ── Anki SM-2 State & Scheduling ────────────────────────────────────────────
 
-/** 1 = Again (Errei), 2 = Hard (Difícil), 3 = Good (Bom), 4 = Easy (Fácil) */
+/** 1 = Again, 2 = Hard, 3 = Good, 4 = Easy */
 export type AnkiRating = 1 | 2 | 3 | 4;
 
 export type AnkiPhase = "new" | "learning" | "review" | "relearning";
@@ -116,21 +116,21 @@ export interface AnkiConfig {
   readonly hardIntervalMultiplier: number;
   readonly easyBonus: number;
   readonly lapseIntervalMultiplier: number;
-  /** Limite diário de cartas novas (sempre limitado a no máximo 12/dia). */
+  /** Daily limit of new cards (strictly capped at max 12/day). */
   readonly newCardsPerDay: number;
-  /** Limite diário de revisões (fixado no máximo: 9999, nunca ocultando revisões pendentes). */
+  /** Daily limit of reviews (fixed at maximum: 9999, never hiding pending reviews). */
   readonly maxReviewsPerDay: number;
-  /** Ritmo automático diário distribuindo o baralho ao longo da jornada. */
+  /** Automatic daily pace distributing the deck across the chosen horizon. */
   readonly adaptivePace: boolean;
-  /** Meta escolhida de conclusão (30, 60 ou 90 dias). */
+  /** Chosen completion target horizon (30, 60, or 90 days). */
   readonly paceHorizonDays: PaceHorizonDays;
-  /** Data-alvo interna (epoch ms) do ritmo automático; 0 = ainda não inicializada. */
+  /** Internal target timestamp (epoch ms) for automatic pacing; 0 = not yet initialized. */
   readonly paceTargetMs: number;
-  /** Teto máximo de intervalo (em dias) para manter revisão contínua e alta retenção. */
+  /** Maximum review interval cap (in days) to sustain continuous review and high retention. */
   readonly maxIntervalDays: number;
-  /** Avaliação clínica estrita (apenas "De novo" e "Bom", sem negociar com "Difícil"). */
+  /** Strict clinical grading (only "Again" and "Good", without negotiating with "Hard"). */
   readonly strictClinicalGrading: boolean;
-  /** Cartas novas extras liberadas manualmente apenas para o dia `extraNewDate` (YYYY-MM-DD). */
+  /** Extra new cards manually unlocked only for the `extraNewDate` (YYYY-MM-DD). */
   readonly extraNewDate: string;
   readonly extraNewCount: number;
 }

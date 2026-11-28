@@ -1,18 +1,18 @@
 // ============================================================================
-// CAPÍTULO 3 — PAKIṆṆAKASAṄGAHA: AS 6 PARTIÇÕES EXATAS (AS III.1–74)
+// CHAPTER 3 — PAKIṆṆAKASAṄGAHA: THE 6 EXACT PARTITIONS (AS III.1–74)
 // ============================================================================
-// 1. Vedanā (5: 1+1+2+62+55=121) · 2. Hetu (6 raízes + 18+2+22+47=89)
-// 3. Kicca (14 funções em 10 ṭhānas + 68+2+9+8+2=89)
+// 1. Vedanā (5: 1+1+2+62+55=121) · 2. Hetu (6 roots + 18+2+22+47=89)
+// 3. Kicca (14 functions across 10 ṭhānas + 68+2+9+8+2=89)
 // 4. Dvāra (54/67/19 + 36+3+31+10+9=89)
 // 5. Ālambaṇa (6 dhammārammaṇas + 7 classes: 25+6+21+8+20+5+6=91)
-// 6. Vatthu (43+42+4=89 + 6/3/0 bases nos 3 reinos)
-// Total: 56 itens 100% fiéis ao mūla (AS III.1–74).
+// 6. Vatthu (43+42+4=89 + 6/3/0 bases across the 3 realms)
+// Total: 56 items 100% faithful to the mūla (AS III.1–74).
 // ============================================================================
 
 import type { NaryChallengeItem } from "../nary-chapters-data.js";
 
 export const CHAPTER_3_PAKINNAKA_ITEMS: readonly NaryChallengeItem[] = [
-  // ── 1. VEDANĀ-SAṄGAHA (5 SENSAÇÕES — AS III.3–9: 1+1+2+62+55 = 121) ─────
+  // ── 1. VEDANĀ-SAṄGAHA (5 FEELINGS — AS III.3–9: 1+1+2+62+55 = 121) ──────
   {
     id: "pak:ved:som",
     chapter: 3,
@@ -99,7 +99,7 @@ export const CHAPTER_3_PAKINNAKA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { category: "vedana", item: "upekkha", count: 55 },
   },
 
-  // ── 2. HETU-SAṄGAHA (6 RAÍZES + PARTIÇÃO 18+2+22+47=89 — AS III.10–17) ──
+  // ── 2. HETU-SAṄGAHA (6 ROOTS + PARTITION 18+2+22+47=89 — AS III.10–17) ──
   {
     id: "pak:het:ahe",
     chapter: 3,
@@ -271,7 +271,7 @@ export const CHAPTER_3_PAKINNAKA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { category: "hetu", item: "hetu_amoha", count: 47 },
   },
 
-  // ── 3. KICCA-SAṄGAHA (14 FUNÇÕES + PARTIÇÃO 68+2+9+8+2=89 — AS III.18–34) ─
+  // ── 3. KICCA-SAṄGAHA (14 FUNCTIONS + PARTITION 68+2+9+8+2=89 — AS III.18–34)
   {
     id: "pak:kic:pat",
     chapter: 3,
@@ -596,7 +596,7 @@ export const CHAPTER_3_PAKINNAKA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { category: "kicca", item: "pancakicca", count: 2 },
   },
 
-  // ── 4. DVĀRA-SAṄGAHA (54/67/19 + PARTIÇÃO 36+3+31+10+9=89 — AS III.35–47) ─
+  // ── 4. DVĀRA-SAṄGAHA (54/67/19 + PARTITION 36+3+31+10+9=89 — AS III.35–47)
   {
     id: "pak:dva:pan",
     chapter: 3,
@@ -872,7 +872,7 @@ export const CHAPTER_3_PAKINNAKA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { category: "arammana", item: "dhammarammana_6", count: 6 },
   },
 
-  // ── 6. VATTHU-SAṄGAHA (43+42+4=89 + 6/3/0 BASES NOS 3 REINOS — AS III.64–74)
+  // ── 6. VATTHU-SAṄGAHA (43+42+4=89 + 6/3/0 BASES IN 3 REALMS — AS III.64–74)
   {
     id: "pak:vat:nis",
     chapter: 3,

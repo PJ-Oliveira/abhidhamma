@@ -1,5 +1,5 @@
-import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, ONTOLOGICAL_COLLISION_RULES, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=06b4ea02";
-import { CHAPTER_2_ITEMS, CHAPTER_3_ITEMS, CHAPTER_4_ITEMS, CHAPTER_5_ITEMS, CHAPTER_6_ITEMS, CHAPTER_7_ITEMS, CHAPTER_8_ITEMS, CHAPTER_9_ITEMS, getSubmatricesForChapter, } from "./nary-chapters-data.js?v=06b4ea02";
+import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, ONTOLOGICAL_COLLISION_RULES, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=ed8676ed";
+import { CHAPTER_2_ITEMS, CHAPTER_3_ITEMS, CHAPTER_4_ITEMS, CHAPTER_5_ITEMS, CHAPTER_6_ITEMS, CHAPTER_7_ITEMS, CHAPTER_8_ITEMS, CHAPTER_9_ITEMS, getSubmatricesForChapter, } from "./nary-chapters-data.js?v=ed8676ed";
 export const MNEMONIC_STORAGE_KEY = "abhidhamma_mnemonic_lab_v1";
 function createEmptyLevelMastery() {
     return { 1: {}, 2: {}, 3: {} };

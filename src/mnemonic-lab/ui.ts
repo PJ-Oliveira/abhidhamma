@@ -1,9 +1,9 @@
 /**
- * Interface Interativa e Gamificada do Laboratório Mnêmico (PT / EN / ES + Pāli).
- * Implementa os 3 Pilares:
- *   1. Descompactador Binário & Combinatório (89/121 Cittas)
- *   2. Tabela Periódica das 72 Realidades & Alquimia do Saṅgaha-naya
- *   3. Ábaco das Falanges (5 Mapas Táteis Tradicionais)
+ * Interactive and Gamified Mnemonic Laboratory UI (PT / EN / ES + Pāli).
+ * Implements the 3 Pillars:
+ *   1. Binary & Combinatorial N-ary Decoder (89/121 Cittas & Chapters 1–9)
+ *   2. Periodic Table of the 72/82 Realities & Saṅgaha-naya Alchemy
+ *   3. Phalanx Abacus (5 Traditional Tactile Finger Maps)
  */
 
 import type { UiLang } from "../types.js";
@@ -5866,7 +5866,7 @@ export class MnemonicLabUI {
       this.render();
     });
 
-    // ── Chapter Bar, Drill Modes, Reverse & Synthesis Events (Capítulos 0 a 9) ──
+    // ── Chapter Bar, Drill Modes, Reverse & Synthesis Events (Chapters 0 to 9) ──
     this.container.querySelectorAll<HTMLButtonElement>("[data-nary-drill]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const dm = btn.dataset.naryDrill as NaryDrillMode;

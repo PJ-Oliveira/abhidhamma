@@ -1,5 +1,5 @@
-import { AbhidhammaLogicEngine } from './sampayoganaya.js?v=06b4ea02';
-import { AllCittas } from './citta.js?v=06b4ea02';
+import { AbhidhammaLogicEngine } from './sampayoganaya.js?v=ed8676ed';
+import { AllCittas } from './citta.js?v=ed8676ed';
 export var Niggahatthana;
 (function (Niggahatthana) {
     Niggahatthana[Niggahatthana["NONE"] = 0] = "NONE";
@@ -105,5 +105,5 @@ export class DebateStateMachine {
         }
     }
 }
-export * from './formal_logic.js?v=06b4ea02';
+export * from './formal_logic.js?v=ed8676ed';
 //# sourceMappingURL=kathavatthu.js.map

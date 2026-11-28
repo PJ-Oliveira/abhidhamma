@@ -27,7 +27,7 @@ import {
 } from "../mnemonic-lab/engine.js";
 
 export const APP_OFFLINE_CACHE_NAME = "abhidhamma-cache-v34";
-/** Cache permanente de progresso do usuário — nunca apagado por atualizações do Service Worker. */
+/** Permanent user progress cache — never deleted by Service Worker updates. */
 export const VAULT_CACHE_NAME = "abhidhamma-anki-vault-v1";
 export const VAULT_SNAPSHOT_PATH = "/_offline_vault/abhidhamma-anki-progress.json";
 export const VAULT_OPFS_FILENAME = "abhidhamma-anki-progress.json";
@@ -165,8 +165,8 @@ function mergeConfig(a: AnkiConfig, b: AnkiConfig, aUpdated: number, bUpdated: n
 }
 
 /**
- * Mescla deterministicamente dois snapshots de progresso (ex.: dispositivo offline + navegador principal).
- * Nunca perde respostas mais recentes de nenhuma carta e deduplica o log de revisões.
+ * Deterministically merges two progress snapshots (e.g., offline device + main browser).
+ * Never loses the newer answer of any card and deduplicates the review log.
  */
 export function mergeSnapshots(
   a: AnkiProgressSnapshot,
@@ -410,7 +410,7 @@ async function clearCacheVault(): Promise<void> {
   }
 }
 
-// ── Layer 4: Origin Private File System (OPFS — vinculado à origem do site) ──
+// ── Layer 4: Origin Private File System (OPFS — bound to site origin) ────────
 
 interface OpfsFileWritable {
   write(data: string): Promise<void>;
@@ -507,9 +507,9 @@ export async function requestPersistentStorage(): Promise<boolean> {
 // ── Public Vault API ────────────────────────────────────────────────────────
 
 /**
- * Hidrata e reconcilia o progresso Anki a partir das 4 camadas da origem do site:
+ * Hydrates and reconciles Anki progress across all 4 site-origin storage layers:
  * 1) localStorage, 2) IndexedDB, 3) Cache Storage (abhidhamma-anki-vault-v1), 4) OPFS.
- * Se qualquer camada individual for limpa, as demais reconstroem automaticamente o progresso.
+ * If any individual layer is cleared, the remaining layers automatically rebuild the progress.
  */
 export async function hydrateOfflineVault(nowMs = Date.now()): Promise<HydrateResult> {
   const localSnap = buildLocalStorageSnapshot([], undefined, nowMs);
@@ -538,7 +538,7 @@ export async function hydrateOfflineVault(nowMs = Date.now()): Promise<HydrateRe
     recoveredFrom = hasProgressData(localSnap) ? "merged" : sources[0]!.name;
   }
 
-  // Auto-cura: replica o snapshot mais recente em todas as 4 camadas da origem
+  // Self-healing: replicate the latest merged snapshot across all 4 site-origin layers
   if (hasProgressData(finalSnap)) {
     writeToLocalStorage(finalSnap);
     await Promise.all([
@@ -570,8 +570,8 @@ export async function hydrateOfflineVault(nowMs = Date.now()): Promise<HydrateRe
 }
 
 /**
- * Persiste imediatamente uma resposta Anki (ou alteração de nota/config) nas 4 camadas offline
- * da origem do site e notifica outras abas abertas via BroadcastChannel.
+ * Immediately persists an Anki answer (or note/config update) across all 4 offline layers
+ * of the site origin and notifies other open tabs via BroadcastChannel.
  */
 export async function persistOfflineProgress(
   states: Readonly<Record<string, AnkiCardState>>,
@@ -623,14 +623,14 @@ function broadcastVaultUpdate(snap: AnkiProgressSnapshot): void {
   }
 }
 
-/** Limpa explicitamente todas as 4 camadas do cofre quando o usuário confirma Resetar Progresso. */
+/** Explicitly clears all 4 offline vault layers when the user confirms Reset Progress. */
 export async function resetOfflineVault(): Promise<void> {
   await Promise.all([clearIdbVault(), clearCacheVault(), clearOpfsVault()]);
 }
 
 /**
- * Carrega o baralho `data/srs/abhidhamma_cards.json` com estratégia offline-first segura:
- * busca da rede quando disponível e espelha no cache offline; se estiver sem rede, lê direto do Cache API.
+ * Loads the `data/srs/abhidhamma_cards.json` deck using a safe offline-first strategy:
+ * fetches from the network when available and mirrors into the offline cache; when offline, reads directly from the Cache API.
  */
 export async function fetchDeckWithOfflineCache<T>(url = "data/srs/abhidhamma_cards.json"): Promise<T> {
   const tryCache = async (): Promise<T | null> => {
@@ -673,7 +673,7 @@ export async function fetchDeckWithOfflineCache<T>(url = "data/srs/abhidhamma_ca
   throw new Error(`Failed to load ${url} (online and offline cache unavailable)`);
 }
 
-/** Valida e parseia um arquivo JSON de backup exportado do cofre offline. */
+/** Validates and parses a JSON backup file exported from the offline vault. */
 export function parseProgressBackup(rawJson: string): AnkiProgressSnapshot {
   const parsed = JSON.parse(rawJson) as Partial<AnkiProgressSnapshot>;
   if (!parsed || typeof parsed !== "object" || parsed.schemaVersion !== 1) {
@@ -696,12 +696,12 @@ export function parseProgressBackup(rawJson: string): AnkiProgressSnapshot {
   };
 }
 
-/** Gera o texto JSON portátil do cofre offline para download / backup entre dispositivos. */
+/** Generates the portable JSON string of the offline vault for cross-device download / backup. */
 export function serializeProgressBackup(snap: AnkiProgressSnapshot): string {
   return JSON.stringify(snap, null, 2);
 }
 
-/** Persiste o estado do Laboratório Mnêmico em todas as 4 camadas do cofre offline sem perder o histórico Anki. */
+/** Persists the Mnemonic Laboratory state across all 4 offline vault layers without losing Anki history. */
 export async function persistMnemonicOfflineVault(labState: MnemonicProgressState): Promise<boolean> {
   try {
     const now = Date.now();

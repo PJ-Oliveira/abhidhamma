@@ -1,9 +1,9 @@
-import { settings } from "../state.js?v=06b4ea02";
-import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=06b4ea02";
-import { CANONICAL_CHAPTERS_META, getSubmatricesForChapter, } from "./nary-chapters-data.js?v=06b4ea02";
-import { MULA_SYNTHESIS_ITEMS, SYNTHESIS_AXIS_META, } from "./chapters/ch0-synthesis.js?v=06b4ea02";
-import { buildReverseChoices, computeChapterScopeProgress, computeMnemonicProgressSummary, computePhalanxMapProgress, computeProgressMetric, defaultNarySwitchesForChapter, defaultNarySwitchesForSubmatrix, evaluateNaryChallenge, getMasteryScoreForLevel, getNaryItemsForChapter, pickNextNaryChapterChallenge, defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=06b4ea02";
-import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, persistOfflineProgress, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=06b4ea02";
+import { settings } from "../state.js?v=ed8676ed";
+import { CANONICAL_CITTAS_89, CANONICAL_CITTAS_121, PERIODIC_ELEMENTS_72, PHALANX_MAPS, } from "./data.js?v=ed8676ed";
+import { CANONICAL_CHAPTERS_META, getSubmatricesForChapter, } from "./nary-chapters-data.js?v=ed8676ed";
+import { MULA_SYNTHESIS_ITEMS, SYNTHESIS_AXIS_META, } from "./chapters/ch0-synthesis.js?v=ed8676ed";
+import { buildReverseChoices, computeChapterScopeProgress, computeMnemonicProgressSummary, computePhalanxMapProgress, computeProgressMetric, defaultNarySwitchesForChapter, defaultNarySwitchesForSubmatrix, evaluateNaryChallenge, getMasteryScoreForLevel, getNaryItemsForChapter, pickNextNaryChapterChallenge, defaultSwitchStateForFamily, evaluateChemicalSynthesis, getPhalanxMapById, getSynthesizableCittas, loadMnemonicProgress, mergeMnemonicProgress, pickNextBinaryChallenge, pickNextPeriodicChallenge, pickNextPhalanxSlot, recordMnemonicAttempt, resolveCittaFromSwitches, saveMnemonicProgress, } from "./engine.js?v=ed8676ed";
+import { buildLocalStorageSnapshot, hydrateOfflineVault, mergeSnapshots, parseProgressBackup, persistMnemonicOfflineVault, persistOfflineProgress, serializeProgressBackup, VAULT_BROADCAST_CHANNEL, } from "../abhidhamma-srs/offline-store.js?v=ed8676ed";
 const LAB_STRINGS = {
     pt: {
         title: "🧮 Laboratório Mnêmico do Abhidhammatthasaṅgaha",

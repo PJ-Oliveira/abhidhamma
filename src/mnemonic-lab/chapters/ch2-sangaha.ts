@@ -1,5 +1,5 @@
 // ============================================================================
-// CAPÍTULO 2 — CETASIKASAṄGAHA: AS 33 CLASSES DO SAṄGAHA-NAYA (AS II.35–59)
+// CHAPTER 2 — CETASIKASAṄGAHA: THE 33 CLASSES OF THE SAṄGAHA-NAYA (AS II.35–59)
 // ============================================================================
 // "Iti vitthārato vutto, tettiṃsavidhasaṅgaho." (AS II.59)
 // 5 Lokuttara + 5 Mahaggata + 12 Kāmasobhana (4+4+4) + 7 Akusala + 4 Ahetuka = 33
@@ -8,7 +8,7 @@
 import type { NaryChallengeItem } from "../nary-chapters-data.js";
 
 export const CHAPTER_2_SANGAHA_33_ITEMS: readonly NaryChallengeItem[] = [
-  // ── 1. LOKUTTARA (5 CLASSES — AS II.36–37: 36, 35, 34, 33, 33) ───────────
+  // ── 1. LOKUTTARA (5 SETS — AS II.36–37: 36, 35, 34, 33, 33) ──────────────
   {
     id: "cet:san:lok:1",
     chapter: 2,
@@ -115,7 +115,7 @@ export const CHAPTER_2_SANGAHA_33_ITEMS: readonly NaryChallengeItem[] = [
     switches: { lens: "sangaha", sphere: "lokuttara", slot: 5, cetasikas: 33 },
   },
 
-  // ── 2. MAHAGGATA (5 CLASSES — AS II.38–39: 35, 34, 33, 32, 30) ───────────
+  // ── 2. MAHAGGATA (5 SETS — AS II.38–39: 35, 34, 33, 32, 30) ──────────────
   {
     id: "cet:san:mah:1",
     chapter: 2,
@@ -222,7 +222,7 @@ export const CHAPTER_2_SANGAHA_33_ITEMS: readonly NaryChallengeItem[] = [
     switches: { lens: "sangaha", sphere: "mahaggata", slot: 5, cetasikas: 30 },
   },
 
-  // ── 3. KĀMĀVACARA-SOBHANA: MAHĀKUSALA (4 PARES — AS II.40–41: 38, 37, 37, 36)
+  // ── 3. KĀMĀVACARA-SOBHANA: MAHĀKUSALA (4 PAIRS — AS II.40–41: 38, 37, 37, 36)
   {
     id: "cet:san:kus:1",
     chapter: 2,
@@ -308,7 +308,7 @@ export const CHAPTER_2_SANGAHA_33_ITEMS: readonly NaryChallengeItem[] = [
     switches: { lens: "sangaha", sphere: "kamasobhana_kusala", slot: 4, cetasikas: 36 },
   },
 
-  // ── 4. KĀMĀVACARA-SOBHANA: MAHĀKIRIYA (4 PARES — AS II.40–41: 35, 34, 34, 33)
+  // ── 4. KĀMĀVACARA-SOBHANA: MAHĀKIRIYA (4 PAIRS — AS II.40–41: 35, 34, 34, 33)
   {
     id: "cet:san:kir:1",
     chapter: 2,
@@ -394,7 +394,7 @@ export const CHAPTER_2_SANGAHA_33_ITEMS: readonly NaryChallengeItem[] = [
     switches: { lens: "sangaha", sphere: "kamasobhana_kiriya", slot: 4, cetasikas: 33 },
   },
 
-  // ── 5. KĀMĀVACARA-SOBHANA: MAHĀVIPĀKA (4 PARES — AS II.40–41: 33, 32, 32, 31)
+  // ── 5. KĀMĀVACARA-SOBHANA: MAHĀVIPĀKA (4 PAIRS — AS II.40–41: 33, 32, 32, 31)
   {
     id: "cet:san:vip:1",
     chapter: 2,
@@ -480,7 +480,7 @@ export const CHAPTER_2_SANGAHA_33_ITEMS: readonly NaryChallengeItem[] = [
     switches: { lens: "sangaha", sphere: "kamasobhana_vipaka", slot: 4, cetasikas: 31 },
   },
 
-  // ── 6. AKUSALA (7 CLASSES — AS II.43–51: 19, 18, 20, 21, 20, 22, 15) ─────
+  // ── 6. AKUSALA (7 SETS — AS II.43–51: 19, 18, 20, 21, 20, 22, 15) ────────
   {
     id: "cet:san:aku:1",
     chapter: 2,
@@ -629,7 +629,7 @@ export const CHAPTER_2_SANGAHA_33_ITEMS: readonly NaryChallengeItem[] = [
     switches: { lens: "sangaha", sphere: "akusala", slot: 7, cetasikas: 15 },
   },
 
-  // ── 7. AHETUKA (4 CLASSES — AS II.53–58: 12, 11, 10, 7) ──────────────────
+  // ── 7. AHETUKA (4 SETS — AS II.53–58: 12, 11, 10, 7) ─────────────────────
   {
     id: "cet:san:ahe:1",
     chapter: 2,

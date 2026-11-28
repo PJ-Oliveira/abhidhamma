@@ -1,40 +1,40 @@
-# 01 — Arquitetura do Sistema
+# 01 — System Architecture
 
-## 1. Design de Alto Nível
+## 1. High-Level Design
 
 ```
-Navegador
+Browser
 │
-├── index.html          ← ponto único de entrada; sem renderização do lado do servidor (SSR)
+├── index.html          ← single entry point; no server-side rendering
 │     └── <script type="module" src="js/app.js?v={hash}">
 │
-├── css/style.css       ← folha de estilo única, CSS custom properties + Grid
+├── css/style.css       ← single stylesheet, CSS custom properties + Grid
 │
-├── js/                 ← módulos ES2022 compilados (TypeScript → tsc → version_js.py)
-│     ├── app.js        ← bootstrap, roteamento, ligação de configurações
-│     ├── reader.js     ← renderização de segmentos
-│     ├── export.js     ← exportação PDF / EPUB
-│     ├── search.js     ← busca por índice invertido fragmentado (sharded)
-│     ├── dictionary.js ← consulta ao dicionário Pāli
-│     ├── tree.js       ← árvore de navegação
-│     ├── state.js      ← persistência em localStorage
-│     ├── i18n.js       ← literais de texto (PT / EN / ES)
-│     ├── logger.js     ← logger de console com níveis de log
-│     └── types.js      ← shim vazio (apenas interfaces, removidas pelo tsc)
+├── js/                 ← compiled ES2022 modules (TypeScript → tsc → version_js.py)
+│     ├── app.js        ← bootstrap, routing, settings wiring
+│     ├── reader.js     ← segment rendering
+│     ├── export.js     ← PDF / EPUB export
+│     ├── search.js     ← sharded inverted-index search
+│     ├── dictionary.js ← Pāli dictionary lookup
+│     ├── tree.js       ← navigation tree
+│     ├── state.js      ← localStorage persistence
+│     ├── i18n.js       ← string literals (PT / EN / ES)
+│     ├── logger.js     ← leveled console logger
+│     └── types.js      ← empty shim (interfaces only, stripped by tsc)
 │
 └── data/
-      ├── manifest.json            ← árvore de navegação (obras → partes → arquivos de chunk)
-      ├── works/{id}/*.json        ← chunks de conteúdo (~900 segmentos cada)
+      ├── manifest.json            ← navigation tree (works → parts → chunk files)
+      ├── works/{id}/*.json        ← content chunks (~900 segments each)
       ├── dictionary/
-      │     ├── pali_core.json     ← 721 lemas Pāli de alta frequência (múltiplos sentidos)
-      │     ├── common_pali.json   ← 182 entradas Pāli gerais (sentido único)
-      │     └── vocabulary_blocks.md ← glossário de referência (10 blocos terminológicos)
+      │     ├── pali_core.json     ← 721 high-frequency Pāli lemmas (multi-sense)
+      │     ├── common_pali.json   ← 182 general Pāli entries (single-sense)
+      │     └── vocabulary_blocks.md ← reference glossary (10 terminology blocks)
       └── search/
-            ├── manifest.json      ← mapa de chave do shard → nome do arquivo
-            └── shard_{key}.json   ← 50 shards indexados pela inicial do token
+            ├── manifest.json      ← shard key → filename map
+            └── shard_{key}.json   ← 50 shards keyed by token initial
 ```
 
-## 2. Grafo de Dependências de Módulos
+## 2. Module Dependency Graph
 
 ```
 app.ts
@@ -63,7 +63,7 @@ app.ts
        └── logger.ts
 ```
 
-Sem dependências circulares. `logger.ts` e `types.ts` são nós-folha.
+No circular dependencies. `logger.ts` and `types.ts` are leaves.
 
 ## 3. Layout
 
@@ -72,7 +72,7 @@ Sem dependências circulares. `logger.ts` e `types.ts` são nós-folha.
 │  #icon-   │    #side-panel      │   main#reader                │
 │  rail     │  (panel-w: 240–320) │   (flex-grow: 1)             │
 │  (rail-w: │                     │                              │
-│  56–76px) │  Um de:             │  #reader-header              │
+│  56–76px) │  One of:            │  #reader-header              │
 │           │  • panel-tipitaka   │    #breadcrumb               │
 │           │  • panel-dictionary │    #part-tabs                │
 │           │  • panel-history    │                              │
@@ -81,89 +81,89 @@ Sem dependências circulares. `logger.ts` e `types.ts` são nós-folha.
 │           │  • panel-export     │      .pali-line              │
 │           │                     │      .translation-line       │
 │           │                     │                              │
-│           │                     │  #toc-nav (prev/indicador/next)│
+│           │                     │  #toc-nav (prev/indicator/next)│
 └───────────┴─────────────────────┴──────────────────────────────┘
 ```
 
 CSS Grid: `grid-template-columns: var(--rail-w) var(--panel-w) 1fr`
 
-Breakpoint responsivo em `max-width: 860px`: o painel torna-se uma sobreposição com `position:fixed`; rótulos do rail ficam ocultos.
+Responsive breakpoint at `max-width: 860px`: panel becomes `position:fixed` overlay; rail labels hidden.
 
-## 4. Roteamento de URL
+## 4. URL Routing
 
-Baseado em hash: `#/{workId}/{partKey}/{chunkIndex}`
+Hash-based: `#/{workId}/{partKey}/{chunkIndex}`
 
-Exemplos:
+Examples:
 - `#/dhammasangani/mula/0`
 - `#/patthana/attha/3`
 
-No evento `hashchange`, `parseHash()` extrai a trinca de valores e chama `selectWork()`. No carregamento da página, se uma hash estiver presente, o chunk correspondente é carregado imediatamente; caso contrário, a tela de boas-vindas é exibida.
+On `hashchange`, `parseHash()` extracts the triple and calls `selectWork()`. On page load, if a hash is present, the matching chunk is loaded immediately; otherwise the welcome screen is shown.
 
-## 5. Persistência de Estado
+## 5. State Persistence
 
-Três chaves no `localStorage` (versionadas para permitir futuras migrações):
+Three `localStorage` keys (versioned to allow future migration):
 
-| Chave | Tipo | Limite |
+| Key | Type | Limit |
 |---|---|---|
-| `atp.settings.v1` | `Settings` | Sempre 1 objeto |
-| `atp.history.v1` | `HistoryEntry[]` | 50 entradas (FIFO com desduplicação por workId/partKey/chunk) |
-| `atp.bookmarks.v1` | `BookmarkEntry[]` | Ilimitado |
+| `atp.settings.v1` | `Settings` | Always 1 object |
+| `atp.history.v1` | `HistoryEntry[]` | 50 entries (FIFO dedup by workId/partKey/chunk) |
+| `atp.bookmarks.v1` | `BookmarkEntry[]` | Unbounded |
 
-Padrão de configurações (`Settings`): `{ translationLang: "pt", uiLang: "pt", fontSize: 17, showPali: true, showTranslation: true }`
+Settings default: `{ translationLang: "pt", uiLang: "pt", fontSize: 17, showPali: true, showTranslation: true }`
 
-## 6. Estratégia de Carregamento de Dados
+## 6. Data Loading Strategy
 
 ### Manifest
-Buscado uma única vez na inicialização (`init()`) a partir de `data/manifest.json`. Falhas são fatais (o conteúdo não poderá ser navegado).
+Fetched once at `init()` time from `data/manifest.json`. Failure is fatal (content cannot be navigated).
 
 ### Chunks
-Buscados sob demanda via `loadChunk(workId, partKey, fileName)`. Os resultados são mantidos em cache em memória em um `Map<string, Segment[]>` (sem TTL; o cache persiste durante a sessão do navegador). O tamanho da maior obra (Paṭṭhāna mūla) é de ~27.746 segmentos divididos em 31 arquivos de chunk.
+Fetched on demand via `loadChunk(workId, partKey, fileName)`. Results are held in a `Map<string, Segment[]>` in-memory cache (no TTL; cache lives for the browser session). Size of largest work (Paṭṭhāna mūla) is ~27,746 segments split into 31 chunk files.
 
-### Índice de busca
-Os shards são buscados de forma lazy (sob demanda) — apenas o shard correspondente ao primeiro caractere da consulta. O `shardManifest` é carregado uma vez na inicialização do painel; shards individuais são armazenados em cache em `shardCache: Map<string, SearchShard | null>`.
+### Search index
+Shards are fetched lazily — only the shard matching the first character of the query. `shardManifest` is loaded once on panel init; individual shards are cached in `shardCache: Map<string, SearchShard | null>`.
 
-### Dicionário
-Carregado uma única vez no primeiro evento de entrada (`input`): `pali_core.json` → `common_pali.json` → `dpd.json` (opcional, não presente na versão atual). Uma única `loadPromise` evita buscas duplicadas.
+### Dictionary
+Loaded once on first input event: `pali_core.json` → `common_pali.json` → `dpd.json` (optional, not present in current build). A single `loadPromise` prevents double-fetching.
 
-## 7. Versionamento / Cache Busting
+## 7. Versioning / Cache Busting
 
-Módulos ES são armazenados em cache pelo navegador no nível de URL absoluta. Para forçar a invalidação do cache após um build:
+ES modules are cached by the browser at absolute URL level. To force cache invalidation after a build:
 
-1. O `tsc` compila `src/*.ts` → `js/*.js`
-2. O script `scripts/version_js.py` calcula o hash MD5 de todos os arquivos `js/*.js`, extrai os primeiros 8 caracteres hexadecimais e:
-   - Reescreve todas as importações `from "./X.js"` em todos os arquivos `js/*.js` para `from "./X.js?v={hash}"`
-   - Reescreve a tag `<script>` em `index.html` para `src="js/app.js?v={hash}"`
+1. `tsc` compiles `src/*.ts` → `js/*.js`
+2. `scripts/version_js.py` computes an MD5 of all `js/*.js` files, takes the first 8 hex chars, and:
+   - Rewrites every `from "./X.js"` import in all `js/*.js` files to `from "./X.js?v={hash}"`
+   - Rewrites the `<script>` tag in `index.html` to `src="js/app.js?v={hash}"`
 
-Hash atual: `5df634f9` (definido em 23/08/2026).
+Current hash: `5df634f9` (set 2026-08-23).
 
-**Por que apenas pós-compilação:** O resolvedor de módulos do TypeScript trata os caminhos de importação literalmente. Adicionar `?v=...` nos arquivos `.ts` faria com que o `tsc` procurasse um arquivo chamado `export.js?v=...`, que não existe. Portanto, a marcação de versão é aplicada apenas à saída compilada em `.js`.
+**Why post-compile only:** TypeScript's module resolver treats import paths literally. Adding `?v=...` in `.ts` files would cause `tsc` to look for a file named `export.js?v=...`, which does not exist. The version stamp is therefore applied only to compiled `.js` output.
 
-## 8. Renderização de Segmentos (Tratamento de HTML Inline)
+## 8. Segment Rendering (inline HTML handling)
 
-Os dados brutos do corpus no campo `pali` contêm HTML inline real herdado dos bancos de dados SQLite originais:
+The raw corpus data in the `pali` field contains real inline HTML inherited from the source SQLite databases:
 
-| Tag | Frequência | Semântica |
+| Tag | Frequency | Semantic |
 |---|---|---|
-| `<b>` | 57.283 | Palavras-chave em negrito (*headwords*) |
-| `<p rend="gathalast">` | varia | Segundo hemistíquio de dístico de verso |
-| `<p rend="gatha1/2/3">` | varia | Estrofes de verso |
-| `<sup class="var-note">` | 873 | Marcador de nota de rodapé de variantes de leitura |
-| `<x_bin_42>` | 1 | Tag anômala (inofensiva) |
+| `<b>` | 57,283 | Bold headwords |
+| `<p rend="gathalast">` | varies | Second hemistich of verse dístico |
+| `<p rend="gatha1/2/3">` | varies | Verse strophes |
+| `<sup class="var-note">` | 873 | Variant readings footnote marker |
+| `<x_bin_42>` | 1 | Anomalous tag (harmless) |
 
-**No leitor (`reader.ts`):** `paliText.innerHTML = seg.pali` — o navegador analisa e renderiza o HTML inline nativamente. As linhas de tradução usam `.textContent` (apenas texto puro).
+**In the reader (`reader.ts`):** `paliText.innerHTML = seg.pali` — the browser parses and renders the inline HTML natively. Translation lines use `.textContent` (plain text only).
 
-**Na exportação (`export.ts`):** `fieldHtml(raw)` usa `DOMParser` para analisar o HTML inline e resserializá-lo como marcação limpa de exportação via `walkNode()`. Consulte [06_export_module.md](06_export_module.md) para detalhes completos.
+**In export (`export.ts`):** `fieldHtml(raw)` uses `DOMParser` to parse inline HTML and re-serialize as clean export markup via `walkNode()`. See [06_export_module.md](06_export_module.md) for full details.
 
-## 9. Internacionalização
+## 9. Internationalization
 
-O arquivo `i18n.ts` exporta uma única função `t(key, uiLang)`. Todas as strings da interface são estáticas — definidas em um registro `STRINGS` indexado por `UiLang` (`"pt" | "en" | "es"`). Cadeia de fallback: `STRINGS[uiLang][key]` → `STRINGS.pt[key]` → a própria chave.
+`i18n.ts` exports a single `t(key, uiLang)` function. All UI strings are static — defined in a `STRINGS` record keyed by `UiLang` (`"pt" | "en" | "es"`). Fallback chain: `STRINGS[uiLang][key]` → `STRINGS.pt[key]` → key itself.
 
-O idioma da tradução (`translationLang`) é independente do idioma da interface (`uiLang`): o usuário pode ler o conteúdo em português enquanto os rótulos da interface estão em inglês.
+Translation language (`translationLang`) is separate from UI language (`uiLang`): the user can read the content in Portuguese while the interface labels are in English.
 
-## 10. Obras Bilíngues (Comentários Contemporâneos)
+## 10. Bilingual Works (Contemporary Commentaries)
 
-As obras no grupo `"comentarios"` (atualmente: *Abhidhamma in Daily Life*) armazenam o texto em inglês no campo `pali` e em português no campo `pt`. Quando uma obra desse tipo é aberta:
+Works in the `"comentarios"` group (currently: Abhidhamma in Daily Life) store English text in the `pali` field and Portuguese in the `pt` field. When such a work is opened:
 
-- `showPali` é forçado para `true` para que a coluna "Pāli" (na verdade o original em inglês) fique visível.
-- `effectiveLang: "pt"` é passado para `renderSegments`, para que a linha de tradução exiba o português.
-- Os rótulos do painel de configurações mudam de "Mostrar Pāli" → "Mostrar inglês (original)".
+- `showPali` is forced `true` so the "Pāli" (actually English original) column is visible.
+- `effectiveLang: "pt"` is passed to `renderSegments`, so the translation line shows Portuguese.
+- Settings panel labels change from "Mostrar Pāli" → "Mostrar inglês (original)".

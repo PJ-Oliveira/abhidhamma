@@ -1,16 +1,16 @@
 // ============================================================================
-// CAPÍTULO 8 — PACCAYASAṄGAHA: PAṬICCASAMUPPĀDA, 24 PAṬṬHĀNA & PAÑÑATTI (AS VIII.1–43)
+// CHAPTER 8 — PACCAYASAṄGAHA: PAṬICCASAMUPPĀDA, 24 PAṬṬHĀNA & PAÑÑATTI (AS VIII.1–43)
 // ============================================================================
-// 1. Paṭiccasamuppāda: 12 Elos individuais + 6 Análises estruturais (18 itens)
-// 2. Paṭṭhāna: 24 Condições na matriz direcional 6+5+1+1+2+9 + 4 Samodhāna (28 itens)
-// 3. Paññatti: Attha/Nāma + 6 Nāmapaññattis sobre {Vijjamāna, Avijjamāna} (8 itens)
-// Total: 54 itens 100% fiéis ao mūla (AS VIII.1–43).
+// 1. Paṭiccasamuppāda: 12 Individual Links + 6 Structural Analyses (18 items)
+// 2. Paṭṭhāna: 24 Conditions in directional matrix 6+5+1+1+2+9 + 4 Samodhāna (28 items)
+// 3. Paññatti: Attha/Nāma + 6 Nāmapaññattis over {Vijjamāna, Avijjamāna} (8 items)
+// Total: 54 items 100% faithful to the mūla (AS VIII.1–43).
 // ============================================================================
 
 import type { NaryChallengeItem } from "../nary-chapters-data.js";
 
 export const CHAPTER_8_PACCAYA_ITEMS: readonly NaryChallengeItem[] = [
-  // ── 1A. PAṬICCASAMUPPĀDA: OS 12 ELOS INDIVIDUAIS (AS VIII.4–11) ──────────
+  // ── 1A. PAṬICCASAMUPPĀDA: THE 12 INDIVIDUAL LINKS (AS VIII.4–11) ─────────
   {
     id: "pac:ps:1", chapter: 8, submatrix: "paticcasamuppada", asRef: "AS VIII.4–12", code: "PS-01",
     pali: "1. Avijjā (Atīta · Kilesavaṭṭa)",
@@ -108,7 +108,7 @@ export const CHAPTER_8_PACCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { method: "paticcasamuppada", psMode: "links12", slot: 12, addha: "anagata", vatta: "vipakavatta" },
   },
 
-  // ── 1B. PAṬICCASAMUPPĀDA: AS 6 ANÁLISES ESTRUTURAIS (AS VIII.5–13) ───────
+  // ── 1B. PAṬICCASAMUPPĀDA: THE 6 STRUCTURAL ANALYSES (AS VIII.5–13) ───────
   {
     id: "pac:ps:a1", chapter: 8, submatrix: "paticcasamuppada", asRef: "AS VIII.5–6", code: "PS-A1",
     pali: "Tayo Addhā (2 + 8 + 2 = 12)",
@@ -158,7 +158,7 @@ export const CHAPTER_8_PACCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { method: "paticcasamuppada", psMode: "analysis6", topic: "mula_2", count: 2 },
   },
 
-  // ── 2A. PAṬṬHĀNA: VIA 1 — NĀMA → NĀMA (6 CONDIÇÕES — AS VIII.15–16) ─────
+  // ── 2A. PAṬṬHĀNA: WAY 1 — NĀMA → NĀMA (6 CONDITIONS — AS VIII.15–16) ─────
   {
     id: "pac:pat:4", chapter: 8, submatrix: "patthana_24", asRef: "AS VIII.14, 16", code: "Pat-04",
     pali: "4. Anantarapaccayo (Nāma → Nāma)",
@@ -208,7 +208,7 @@ export const CHAPTER_8_PACCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { method: "patthana_24", direction: "nama_nama", index: 23 },
   },
 
-  // ── 2B. PAṬṬHĀNA: VIA 2 — NĀMA → NĀMARŪPA (5 CONDIÇÕES — AS VIII.15, 17) ─
+  // ── 2B. PAṬṬHĀNA: WAY 2 — NĀMA → NĀMARŪPA (5 CONDITIONS — AS VIII.15, 17)
   {
     id: "pac:pat:1", chapter: 8, submatrix: "patthana_24", asRef: "AS VIII.14, 17", code: "Pat-01",
     pali: "1. Hetupaccayo (Nāma → Nāmarūpa)",
@@ -250,7 +250,7 @@ export const CHAPTER_8_PACCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { method: "patthana_24", direction: "nama_namarupa", index: 18 },
   },
 
-  // ── 2C. PAṬṬHĀNA: VIA 3 — NĀMA → RŪPA (1 CONDIÇÃO — AS VIII.15, 18) ──────
+  // ── 2C. PAṬṬHĀNA: WAY 3 — NĀMA → RŪPA (1 CONDITION — AS VIII.15, 18) ─────
   {
     id: "pac:pat:11", chapter: 8, submatrix: "patthana_24", asRef: "AS VIII.14, 18", code: "Pat-11",
     pali: "11. Pacchājātapaccayo (Nāma → Rūpa)",
@@ -260,7 +260,7 @@ export const CHAPTER_8_PACCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { method: "patthana_24", direction: "nama_rupa", index: 11 },
   },
 
-  // ── 2D. PAṬṬHĀNA: VIA 4 — RŪPA → NĀMA (1 CONDIÇÃO — AS VIII.15, 19) ──────
+  // ── 2D. PAṬṬHĀNA: WAY 4 — RŪPA → NĀMA (1 CONDITION — AS VIII.15, 19) ─────
   {
     id: "pac:pat:10", chapter: 8, submatrix: "patthana_24", asRef: "AS VIII.14, 19", code: "Pat-10",
     pali: "10. Purejātapaccayo (Rūpa → Nāma)",
@@ -270,7 +270,7 @@ export const CHAPTER_8_PACCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { method: "patthana_24", direction: "rupa_nama", index: 10 },
   },
 
-  // ── 2E. PAṬṬHĀNA: VIA 5 — PAÑÑATTI + NĀMARŪPA → NĀMA (2 — AS VIII.20–25) ─
+  // ── 2E. PAṬṬHĀNA: WAY 5 — PAÑÑATTI + NĀMARŪPA → NĀMA (2 — AS VIII.20–25) ─
   {
     id: "pac:pat:2", chapter: 8, submatrix: "patthana_24", asRef: "AS VIII.14, 20–21", code: "Pat-02",
     pali: "2. Ārammaṇapaccayo (Paññatti/Nāmarūpa → Nāma · 6)",
@@ -288,7 +288,7 @@ export const CHAPTER_8_PACCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { method: "patthana_24", direction: "pannatti_nama", index: 9 },
   },
 
-  // ── 2F. PAṬṬHĀNA: VIA 6 — NĀMARŪPA → NĀMARŪPA (9 CONDIÇÕES — AS VIII.26–34)
+  // ── 2F. PAṬṬHĀNA: WAY 6 — NĀMARŪPA → NĀMARŪPA (9 CONDITIONS — AS VIII.26–34)
   {
     id: "pac:pat:3", chapter: 8, submatrix: "patthana_24", asRef: "AS VIII.14, 26–27", code: "Pat-03",
     pali: "3. Adhipatipaccayo (Nāmarūpa → Nāmarūpa · 2)",
@@ -362,7 +362,7 @@ export const CHAPTER_8_PACCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { method: "patthana_24", direction: "namarupa_namarupa", index: 24 },
   },
 
-  // ── 2G. PAṬṬHĀNA: AS 4 CONDIÇÕES ABRANGENTES (SAMODHĀNA — AS VIII.35) ───
+  // ── 2G. PAṬṬHĀNA: THE 4 SYNOPTIC CONDITIONS (SAMODHĀNA — AS VIII.35) ─────
   {
     id: "pac:sam:1", chapter: 8, submatrix: "patthana_24", asRef: "AS VIII.35", code: "Sam-01",
     pali: "Samodhāna 1 · Ārammaṇa (#2)",
@@ -396,7 +396,7 @@ export const CHAPTER_8_PACCAYA_ITEMS: readonly NaryChallengeItem[] = [
     switches: { method: "patthana_24", direction: "samodhana_4", index: 21 },
   },
 
-  // ── 3. PAÑÑATTIBHEDA: CONCEITOS (ATTHA & 6 NĀMAPAÑÑATTI — AS VIII.39–43) ─
+  // ── 3. PAÑÑATTIBHEDA: CONCEPTS (ATTHA & 6 NĀMAPAÑÑATTI — AS VIII.39–43) ──
   {
     id: "pac:pan:1", chapter: 8, submatrix: "pannatti_8", asRef: "AS VIII.39–40", code: "Pan-01",
     pali: "Atthapaññatti (Paññāpiyattā · 6)",
